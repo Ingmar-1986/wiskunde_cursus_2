@@ -1,1069 +1,252 @@
-:root {
-	/* definieer de kleuren */
-
-	--kleur_banner: #E6007E;
-	--kleur_donker: #17427F;
-	--kleur_inhoud: #e3e3e3;
-
-	--definition-red: 0;
-	--definition-green: 255;
-	--definition-blue: 0;
-	
-	--definition-background-perc: 0.05;
-	--definition-border-perc: 0.45;
-	
-	--notation-background-perc: 0.05;
-	--notation-border-perc: 0.45;
-	
-	--axiom-background-perc: 0.05;
-	--axiom-border-perc: 0.45;
-	
-	--proposition-background-perc: 0.02;
-	--proposition-border-perc: 0.65;
-	
-	--theorem-background-perc: 0.02;
-	--theorem-border-perc: 0.65;
-	
-	--algorithm-background-perc: 0.02;
-	--algorithm-border-perc: 0.65;
-	
-	--proof-background-perc: 0.00;
-	--proof-border-perc: 0.2;
-	
-	--explanation-background-perc: 0.01;
-	--explanation-border-perc: 0.75;
-	
-	--example-red: 0;
-	--example-green: 0;
-	--example-blue: 255;
-	
-	--example-background-perc: 0.05;
-	--example-border-perc: 0.75;
-	
-	--exercise-background-perc: 0.00;
-	--exercise-border-perc: 0.50;
-	
-	--remark-red: 255;
-	--remark-green: 255;
-	--remark-blue: 0;
-	
-	--remark-background-perc: 0.05;
-	--remark-border-perc: 0.75;
-	
-	--warning-background-perc: 0.02;
-	--warning-border-perc: 0.65;
-	}
-	
-	/*
-	Simpelste vorm
-		
-		.definition {    
-			background-color: rgb(r,g,b);
-			border: 1px solid rgb(r,g,b);
-			border-left: 12px solid rgb(r,g,b);
-		}
-	
-	*/
-	
-	/*
-	
-	Zet voor alle theorems de kleuren van de box'en juist
-	
-	*/
-	.definition {
-		--pba: var(--definition-background-perc);
-		--pbo: var(--definition-border-perc);
-		--r: var(--definition-red);
-		--g: var(--definition-green);
-		--b: var(--definition-blue);
-		
-		--background-color: rgb(
-			calc((1 - var(--pba)) * 255 + var(--pba) * var(--r)),
-			calc((1 - var(--pba)) * 255 + var(--pba) * var(--g)),
-			calc((1 - var(--pba)) * 255 + var(--pba) * var(--b))
-		);
-		
-		--border-color: rgb(
-			calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--r)),
-			calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--g)),
-			calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--b))
-		);	
-		
-		background-color: var(--background-color);
-		border: 1px solid var(--border-color);
-		border-left: 12px solid var(--border-color);
-	}
-	
-	.notation {
-		--pba: var(--notation-background-perc);
-		--pbo: var(--notation-border-perc);
-		--r: var(--definition-red);
-		--g: var(--definition-green);
-		--b: var(--definition-blue);
-		
-		--background-color: rgb(
-			calc((1 - var(--pba)) * 255 + var(--pba) * var(--r)),
-			calc((1 - var(--pba)) * 255 + var(--pba) * var(--g)),
-			calc((1 - var(--pba)) * 255 + var(--pba) * var(--b))
-		);
-		
-		--border-color: rgb(
-			calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--r)),
-			calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--g)),
-			calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--b))
-		);	
-		
-		background-color: var(--background-color);
-		border: 1px solid var(--border-color);
-		border-left: 12px solid var(--border-color);
-	}
-	
-	.axiom {
-		--pba: var(--axiom-background-perc);
-		--pbo: var(--axiom-border-perc);
-		--r: var(--definition-red);
-		--g: var(--definition-green);
-		--b: var(--definition-blue);
-		
-		--background-color: rgb(
-			calc((1 - var(--pba)) * 255 + var(--pba) * var(--r)),
-			calc((1 - var(--pba)) * 255 + var(--pba) * var(--g)),
-			calc((1 - var(--pba)) * 255 + var(--pba) * var(--b))
-		);
-		
-		--border-color: rgb(
-			calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--r)),
-			calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--g)),
-			calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--b))
-		);	
-		
-		background-color: var(--background-color);
-		border: 1px solid var(--border-color);
-		border-left: 12px solid var(--border-color);
-	}
-	
-	.proposition {
-		--pba: var(--proposition-background-perc);
-		--pbo: var(--proposition-border-perc);
-		--r: var(--definition-red);
-		--g: var(--definition-green);
-		--b: var(--definition-blue);
-		
-		--background-color: rgb(
-			calc((1 - var(--pba)) * 255 + var(--pba) * var(--r)),
-			calc((1 - var(--pba)) * 255 + var(--pba) * var(--g)),
-			calc((1 - var(--pba)) * 255 + var(--pba) * var(--b))
-		);
-		
-		--border-color: rgb(
-			calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--r)),
-			calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--g)),
-			calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--b))
-		);	
-		
-		background-color: var(--background-color);
-		border: 1px solid var(--border-color);
-		border-left: 12px solid var(--border-color);
-	}
-	
-	.theorem {
-		--pba: var(--theorem-background-perc);
-		--pbo: var(--theorem-border-perc);
-		--r: var(--definition-red);
-		--g: var(--definition-green);
-		--b: var(--definition-blue);
-		
-		--background-color: rgb(
-			calc((1 - var(--pba)) * 255 + var(--pba) * var(--r)),
-			calc((1 - var(--pba)) * 255 + var(--pba) * var(--g)),
-			calc((1 - var(--pba)) * 255 + var(--pba) * var(--b))
-		);
-		
-		--border-color: rgb(
-			calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--r)),
-			calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--g)),
-			calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--b))
-		);	
-		
-		background-color: var(--background-color);
-		border: 1px solid var(--border-color);
-		border-left: 12px solid var(--border-color);
-	}
-	.algorithm {
-		--pba: var(--algorithm-background-perc);
-		--pbo: var(--algorithm-border-perc);
-		--r: var(--definition-red);
-		--g: var(--definition-green);
-		--b: var(--definition-blue);
-		
-		--background-color: rgb(
-			calc((1 - var(--pba)) * 255 + var(--pba) * var(--r)),
-			calc((1 - var(--pba)) * 255 + var(--pba) * var(--g)),
-			calc((1 - var(--pba)) * 255 + var(--pba) * var(--b))
-		);
-		
-		--border-color: rgb(
-			calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--r)),
-			calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--g)),
-			calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--b))
-		);	
-		
-		background-color: var(--background-color);
-		border: 1px solid var(--border-color);
-		border-left: 12px solid var(--border-color);
-	}
-	
-	.proof {
-		--pba: var(--proof-background-perc);
-		--pbo: var(--proof-border-perc);
-		--r: var(--definition-red);
-		--g: var(--definition-green);
-		--b: var(--definition-blue);
-		
-		--background-color: rgb(
-			calc((1 - var(--pba)) * 255 + var(--pba) * var(--r)),
-			calc((1 - var(--pba)) * 255 + var(--pba) * var(--g)),
-			calc((1 - var(--pba)) * 255 + var(--pba) * var(--b))
-		);
-		
-		--border-color: rgb(
-			calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--r)),
-			calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--g)),
-			calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--b))
-		);	
-		
-		background-color: var(--background-color);
-		border: 1px solid var(--border-color);
-		border-left: 12px solid var(--border-color);
-	
-	}
-	
-	.explanation {
-		--pba: var(--explanation-background-perc);
-		--pbo: var(--explanation-border-perc);
-		--r: var(--definition-red);
-		--g: var(--definition-green);
-		--b: var(--definition-blue);
-		
-		--background-color: rgb(
-			calc((1 - var(--pba)) * 255 + var(--pba) * var(--r)),
-			calc((1 - var(--pba)) * 255 + var(--pba) * var(--g)),
-			calc((1 - var(--pba)) * 255 + var(--pba) * var(--b))
-		);
-		
-		--border-color: rgb(
-			calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--r)),
-			calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--g)),
-			calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--b))
-		);	
-		
-		background-color: var(--background-color);
-		border: 1px solid var(--border-color);
-		border-left: 12px solid var(--border-color);
-	}
-	
-	.example {
-		--pba: var(--example-background-perc);
-		--pbo: var(--example-border-perc);
-		--r: var(--example-red);
-		--g: var(--example-green);
-		--b: var(--example-blue);
-		
-		--background-color: rgb(
-			calc((1 - var(--pba)) * 255 + var(--pba) * var(--r)),
-			calc((1 - var(--pba)) * 255 + var(--pba) * var(--g)),
-			calc((1 - var(--pba)) * 255 + var(--pba) * var(--b))
-		);
-		
-		--border-color: rgb(
-			calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--r)),
-			calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--g)),
-			calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--b))
-		);	
-		
-		background-color: var(--background-color);
-		border: 1px solid var(--border-color);
-		border-left: 12px solid var(--border-color);
-	}
-	
-	.exercise {
-		--pba: var(--exercise-background-perc);
-		--pbo: var(--exercise-border-perc);
-		--r: var(--example-red);
-		--g: var(--example-green);
-		--b: var(--example-blue);
-		
-		--background-color: rgb(
-			calc((1 - var(--pba)) * 255 + var(--pba) * var(--r)),
-			calc((1 - var(--pba)) * 255 + var(--pba) * var(--g)),
-			calc((1 - var(--pba)) * 255 + var(--pba) * var(--b))
-		);
-		
-		--border-color: rgb(
-			calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--r)),
-			calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--g)),
-			calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--b))
-		);	
-		
-		background-color: var(--background-color);
-		border: 1px solid var(--border-color);
-		border-left: 12px solid var(--border-color);
-	}
-	
-	.remark {
-		--pba: var(--remark-background-perc);
-		--pbo: var(--remark-border-perc);
-		--r: var(--remark-red);
-		--g: var(--remark-green);
-		--b: var(--remark-blue);
-		
-		--background-color: rgb(
-			calc((1 - var(--pba)) * 255 + var(--pba) * var(--r)),
-			calc((1 - var(--pba)) * 255 + var(--pba) * var(--g)),
-			calc((1 - var(--pba)) * 255 + var(--pba) * var(--b))
-		);
-		
-		--border-color: rgb(
-			calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--r)),
-			calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--g)),
-			calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--b))
-		);	
-		
-		background-color: var(--background-color);
-		border: 1px solid var(--border-color);
-		border-left: 12px solid var(--border-color);
-	}
-	
-	.warning {
-		--pba: var(--warning-background-perc);
-		--pbo: var(--warning-border-perc);
-		--r: var(--remark-red);
-		--g: var(--remark-green);
-		--b: var(--remark-blue);
-		
-		--background-color: rgb(
-		calc((1 - var(--pba)) * 255 + var(--pba) * var(--r)),
-		calc((1 - var(--pba)) * 255 + var(--pba) * var(--g)),
-		calc((1 - var(--pba)) * 255 + var(--pba) * var(--b))
-		);
-		
-		--border-color: rgb(
-		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--r)),
-		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--g)),
-		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--b))
-		);	
-		
-		background-color: var(--background-color);
-		border: 1px solid var(--border-color);
-		border-left: 12px solid var(--border-color);
-	}
-	
-	/*
-	Fix proof spacing
-	*/
-	
-	.proof{
-		padding-left: 12px;
-		padding-right: 24px;
-		margin-top: 12pt;
-		padding-top: 6pt;
-		padding-bottom: 12pt;
-	}
-	
-	.theorem::before {
-	  content: "stelling" attr(numbered) ".";
-	}
-	
-	.corollary::before {
-	  content: "gevolg" attr(numbered) ".";
-	}
-	
-	[data-feedback="solution"]::before {
-		content: "Uitwerking: ";
-	}
-	.card.activity-card.section{
-		background-color: #002eff33;
-	}
-	div.d-flex div.d-flex{
-		min-width: 100%;
-	}
-	span.fbox {
-		border: 1px solid black;
-	}
-	
-	/* poor-mans tabular for \begin{description} */
-	dt.description {
-		min-width: 10em;
-	}
-	
-	/* try to make tabular not full-width by default ...  */
-	div.tabular {
-		/* width: fit-content; */
-		max-width: max-content;
-	}
-	
-	table.tabular td {
-	  padding: 0 15px;
-	  }
-	
-	/* limit width central panel */
-	main.activity {
-		max-width: 120ch;
-	}
-	
-	/* correct layout of footer */
-	footer .page-link {
-		padding: 0;
-	}
-
-
-	.brandlogo.logo {
-		visibility: hidden; /* Verberg de originele afbeelding */
-		position: relative; /* Zorg dat het pseudo-element correct positioneert */
-	}
-
-	.brandlogo {
-		display: block;
-		position: relative; /* Zorg dat de afbeelding correct wordt gepositioneerd */
-		width: 300px;
-		height: 150px;
-		background-size: contain;
-		background-repeat: no-repeat;
-		background-position: center;
-		background-color: var(--kleur_banner); 
-	}
-
-
-
-	
-
-	.main-title {
-		background-color: var(--kleur_banner); 
-		padding: 10px; /* Voeg wat ruimte toe rondom de inhoud */
-	}
-	
-	body {
-		margin: 0; /* Verwijder standaard marges */
-		padding: 0; /* Verwijder standaard opvulling */
-		background-color: #f9f9fd; 
-		min-height: 100vh; /* Zorg dat de body minimaal de hoogte van het scherm vult */
-		display: flex; /* Gebruik flexbox voor lay-out */
-		flex-direction: column; /* Zorg dat de inhoud onder elkaar staat */
-		justify-content: flex-start; /* Houd de inhoud aan de bovenkant */
-		color: black; 
-	}
-	
-
-	
-	footer {
-		display: flex;
-		justify-content: center; /* Centreer tekst horizontaal */
-		align-items: center; /* Centreer tekst verticaal */
-		background-color: var(--kleur_banner); 
-		height: 100px; /* Hoogte van de footer */
-	}
-	
-	footer > * {
-		display: none; /* Verberg alle directe kinderen van de footer */
-	}
-	
-	footer::after {
-		content: "ATHENA Campus Pottelberg"; /* Voeg de gewenste tekst toe */
-		color: white; /* Maak de tekst wit */
-		font-size: 24px; /* Grotere tekst */
-		font-weight: bold; /* Maak de tekst vetgedrukt */
-		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Voeg een schaduw toe voor betere zichtbaarheid */
-		text-align: center;
-	}
-	
-
-	.main-inhoud {
-		background-color: white;
-	}
-	
-	.toc-search {
-		background-color: var(--kleur_banner); 
-	}
-
-
-	.xmsettings {
-		background-color: var(--kleur_banner); 
-	}
-
-	.xmuser {
-		background-color: var(--kleur_banner); 
-	}
-
-	.xmhelp {
-		background-color: var(--kleur_banner); 
-	}
-
-	.toc {
-		background-color: var(--kleur_donker); 
-	}
-
-	.progress.xmprogresshidden	{
-		background-color: rgb(12, 12, 12); /* Felgroen */
-	}
-
-	.progress-bar {
-		background-color: rgb(207, 99, 46); /* Felgroen */
-	}
-
-
-	.main-inhoud .activity-title {
-  		grid-area: activity-head;
-  		background-color: var(--kleur_banner); 
-  		width: 100%;
-  		display: flex;
-  		align-items: center;
-	}
-
-	.main-inhoud .activity-title .title {
-		width: 100%;
-		background-color: var(--kleur_donker); 
-		color: white;
-		border: 1px solid;
-		border-radius: 8px;
-		text-align: center;
-		min-width: min-content;
-		margin: 5px;
-		font-size: clamp(16px, 1.5vw, 24px);
-	}
-
-	.main-inhoud .toc-search {
-		grid-area: toc-head;
-		align-items: center;
-		display: flex;
-		background-color: var(--kleur_banner);
-	  }
-
-	.toc .part {
-		font-size: larger;
-		background-color: var(--kleur_banner); 
-	}
-
-	.toc .chapter {
-		font-size: 100%;
-	}
-
-	.toc .section {
-		font-size: 75%;
-	}
-
-	.toc .card {
-		display: initial;
-		flex: initial;
-		position: relative;
-		border: 1px solid rgba(65, 22, 220, 0.125);
-		width: 100%;
-		overflow: hidden;
-		white-space: nowrap;
-	}
-
-	.toc .activity-card {
-		color: black;
-	}
-
-
-
-	.toc .card.activity-card.section {
-	background-color: rgba(184, 227, 25, 0.251);
-	}
-
-	.toc .activity-card.active {
-		background-color: #e90f12 !important;
-		color: white;
-		border-color: #292b2c;
-	}
-
-
-
-	.card {
-		position: relative;
-		display: flex;
-		flex-direction: column;
-		background-color: var(--kleur_inhoud); 
-		border: 1px solid #000;
-		border-radius: 8 px;
-	  }
-	  
-	  .card-block {
-		flex: 1 1 auto;
-		padding: 1.25rem;
-	  }
-	  
-	  .card-title {
-		margin-bottom: 0.75rem;
-	  }
-	  
-	  .card-subtitle {
-		margin-top: -0.375rem;
-		margin-bottom: 0;
-	  }
-	  
-	  .card-text:last-child {
-		margin-bottom: 0;
-	  }
-	  
-	  .card-link:hover {
-		text-decoration: none;
-	  }
-	  .card-link + .card-link {
-		margin-left: 1.25rem;
-	  }
-	  
-	  .card-header {
-		padding: 0.75rem 1.25rem;
-		margin-bottom: 0;
-		background-color: var(--kleur_donker); 
-		border-bottom: 1px solid rgba(0, 0, 0, 0.125);
-	  }
-	  .card-footer {
-		padding: 0.75rem 1.25rem;
-		background-color: grey; 
-		border-top: 1px solid rgba(0, 0, 0, 0.125);
-	  }
-	  .card-header-tabs {
-		margin-right: -0.625rem;
-		margin-bottom: -0.75rem;
-		margin-left: -0.625rem;
-		border-bottom: 0;
-	  }
-	  
-	  .card-header-pills {
-		margin-right: -0.625rem;
-		margin-left: -0.625rem;
-	  }
-	  
-	  .card-primary {
-		background-color: #5cb85c;
-		border-color: #0275d8;
-	  }
-	  .card-primary .card-header,
-	  .card-primary .card-footer {
-		background-color: transparent;
-	  }
-	  
-	  .card-success {
-		background-color: #5cb85c;
-		border-color: #5cb85c;
-	  }
-	  .card-success .card-header,
-	  .card-success .card-footer {
-		background-color: transparent;
-	  }
-	  
-	  .card-info {
-		background-color: #5cb85c;
-		border-color: #5bc0de;
-	  }
-	  .card-info .card-header,
-	  .card-info .card-footer {
-		background-color: transparent;
-	  }
-	  
-	  .card-warning {
-		background-color: #5cb85c;
-		border-color: #f0ad4e;
-	  }
-	  .card-warning .card-header,
-	  .card-warning .card-footer {
-		background-color: transparent;
-	  }
-	  
-	  .card-danger {
-		background-color: #5cb85c;
-		border-color: #bb0000;
-	  }
-	  .card-danger .card-header,
-	  .card-danger .card-footer {
-		background-color: transparent;
-	  }
-	  
-	  .card-outline-primary {
-		background-color: transparent;
-		border-color: #0275d8;
-	  }
-	  
-	  .card-outline-secondary {
-		background-color: #24a9d9;
-		border-color: #ccc;
-	  }
-	  
-	  .card-outline-info {
-		background-color: transparent;
-		border-color: #5bc0de;
-	  }
-	  
-	  .card-outline-success {
-		background-color: transparent;
-		border-color: #5cb85c;
-	  }
-	  
-	  .card-outline-warning {
-		background-color: transparent;
-		border-color: #f0ad4e;
-	  }
-	  
-	  .card-outline-danger {
-		background-color: transparent;
-		border-color: #bb0000;
-	  }
-	  
-	  .card-inverse, .activity-card.active {
-		color: rgba(255, 255, 255, 0.65);
-	  }
-	  .card-inverse .card-header, .activity-card.active .card-header,
-	  .card-inverse .card-footer,
-	  .activity-card.active .card-footer {
-		background-color: transparent;
-		border-color: rgba(255, 255, 255, 0.2);
-	  }
-	  .card-inverse .card-header, .activity-card.active .card-header,
-	  .card-inverse .card-footer,
-	  .activity-card.active .card-footer,
-	  .card-inverse .card-title,
-	  .activity-card.active .card-title,
-	  .card-inverse .card-blockquote,
-	  .activity-card.active .card-blockquote {
-		color: #fff;
-	  }
-	  .card-inverse .card-link, .activity-card.active .card-link,
-	  .card-inverse .card-text,
-	  .activity-card.active .card-text,
-	  .card-inverse .card-subtitle,
-	  .activity-card.active .card-subtitle,
-	  .card-inverse .card-blockquote .blockquote-footer,
-	  .activity-card.active .card-blockquote .blockquote-footer {
-		color: rgba(255, 255, 255, 0.65);
-	  }
-	  .card-inverse .card-link:focus, .activity-card.active .card-link:focus, .card-inverse .card-link:hover, .activity-card.active .card-link:hover {
-		color: #fff;
-	  }
-	  
-	  .card-blockquote {
-		padding: 0;
-		margin-bottom: 0;
-		border-left: 0;
-	  }
-	  
-	  .card-img-overlay {
-		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		padding: 1.25rem;
-	  }
-
-
-	  .nav {
-		display: flex;
-		padding-left: 0;
-		margin-bottom: 0;
-		list-style: none;
-		background-color: var(--kleur_banner); 
-	  }
-	  
-	  .nav-link {
-		display: block;
-		padding: 0.5em 1em;
-		background-color: var(--kleur_banner); 
-		color: white; /* Tekstkleur wit voor leesbaarheid */
-	  }
-	  
-	  .nav-link:focus, .nav-link:hover {
-		text-decoration: none;
-		background-color: darkgreen; /* Donkergroen bij hover */
-	  }
-	  
-	  .nav-tabs {
-		border-bottom: 1px solid #ddd;
-		background-color: green; /* Tabs groene achtergrond */
-	  }
-	  
-	  .nav-tabs .nav-link {
-		border: 1px solid transparent;
-		background-color: green; /* Groene achtergrond voor tabs */
-		color: white; /* Tekstkleur wit */
-	  }
-	  
-	  .nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
-		border-color: #eceeef #eceeef #ddd;
-		background-color: darkgreen; /* Donkergroen bij hover */
-	  }
-	  
-	  .nav-tabs .nav-link.active,
-	  .nav-tabs .nav-item.show .nav-link {
-		color: #fff;
-		background-color: green; /* Actieve tab groen */
-		border-color: #ddd #ddd green;
-	  }
-	  
-
-	  .nav-pills .nav-link.active,
-	  .nav-pills .nav-item.show .nav-link {
-		color: #fff;
-		cursor: default;
-		background-color: green; /* Groene achtergrond voor actieve pill */
-	  }
-	  
-	  .navbar {
-		position: relative;
-		display: flex;
-		flex-direction: column;
-		padding: 0.5rem 1rem;
-		background-color: green; /* Navbar groen */
-	  }
-	  
-	  .navbar-brand {
-		display: inline-block;
-		padding-top: 0.25rem;
-		padding-bottom: 0.25rem;
-		margin-right: 1rem;
-		font-size: 1.25rem;
-		line-height: inherit;
-		white-space: nowrap;
-		color: white; /* Witte tekstkleur */
-	  }
-	  
-	  .navbar-nav {
-		display: flex;
-		flex-direction: column;
-		padding-left: 0;
-		margin-bottom: 0;
-		list-style: none;
-		background-color: var(--kleur_banner); 
-	  }
-	  
-	  .navbar-nav .nav-link {
-		padding-right: 0;
-		padding-left: 0;
-		background-color: var(--kleur_banner); 
-		color: white; /* Witte tekstkleur */
-	  }
-	  
-	  .navbar-toggler {
-		align-self: flex-start;
-		padding: 0.25rem 0.75rem;
-		font-size: 1.25rem;
-		line-height: 1;
-		background-color: var(--kleur_banner); 
-		border: 1px solid transparent;
-		color: white; /* Witte tekstkleur */
-	  }
-	  
-	  .navbar-toggler:focus, .navbar-toggler:hover {
-		text-decoration: none;
-		background-color: darkgreen; /* Donkerder bij hover */
-	  }
-	  
-	  .navbar-toggler-icon {
-		background: no-repeat center center;
-		background-size: 100% 100%;
-		background-color: green; /* Groene achtergrond voor icon */
-	  }
-	  
-	  .navbar-text {
-		display: inline-block;
-		padding-top: 0.425rem;
-		padding-bottom: 0.425rem;
-		color: white; /* Witte tekstkleur */
-	  }
-	  
-	  @media (min-width: 576px) {
-		.navbar-toggleable {
-		  flex-direction: row;
-		  flex-wrap: nowrap;
-		  align-items: center;
-		  background-color: var(--kleur_banner); 
-		}
-	  }
-	  
-	  @media (min-width: 768px) {
-		.navbar-toggleable-sm {
-		  flex-direction: row;
-		  flex-wrap: nowrap;
-		  align-items: center;
-		  background-color: var(--kleur_banner); 
-		}
-	  }
-	  
-	  @media (min-width: 992px) {
-		.navbar-toggleable-md {
-		  flex-direction: row;
-		  flex-wrap: nowrap;
-		  align-items: center;
-		  background-color: var(--kleur_banner); 
-		}
-	  }
-	  
-	  @media (min-width: 1200px) {
-		.navbar-toggleable-lg {
-		  flex-direction: row;
-		  flex-wrap: nowrap;
-		  align-items: center;
-		  background-color: var(--kleur_banner); 
-		}
-	  }
-	  
-	  .navbar-light .navbar-brand,
-	  .navbar-light .navbar-toggler {
-		color: white; /* Witte tekstkleur voor lichte navbar */
-	  }
-	  
-	  .navbar-light .navbar-nav .nav-link {
-		color: white; /* Witte tekstkleur voor links */
-	  }
-	  
-	  .navbar-light .navbar-text {
-		color: white; /* Witte tekstkleur voor tekst */
-	  }
-	  
-	  .navbar-inverse .navbar-brand,
-	  .navbar-inverse .navbar-toggler {
-		color: white; /* Witte tekstkleur voor inverse navbar */
-	  }
-	  
-	  .navbar-inverse .navbar-nav .nav-link {
-		color: white; /* Witte tekstkleur voor links */
-	  }
-	  
-	  .navbar-inverse .navbar-text {
-		color: white; /* Witte tekstkleur voor tekst */
-	  }
-	  
-	  .mr-1.topbar-items {
-		display: flex; /* Zorg dat items flexibel zijn */
-		align-items: center; /* Centreer items verticaal */
-		margin-right: 0.25rem; /* Margineer aan de rechterkant */
-		background-color: var(--kleur_banner); 
-		padding: 0.5em 1em; /* Voeg padding toe */
-		color: white; /* Witte tekstkleur */
-
-	  }
-	  
-	  .mr-1.topbar-items a {
-		color: white; /* Witte tekstkleur voor links */
-		text-decoration: none; /* Geen onderstreping */
-		margin-right: 0.5rem; /* Ruimte tussen links */
-	  }
-	  
-	  .mr-1.topbar-items a:hover {
-		color: lightgreen; /* Lichtgroene tekstkleur bij hover */
-	  }
-
-	  .btn {
-		display: inline-block;
-		font-weight: normal;
-		line-height: 1.25;
-		text-align: center;
-		white-space: nowrap;
-		vertical-align: middle;
-		user-select: none;
-		padding: 0.5rem 1rem;
-		font-size: 1rem;
-		border-radius: 25px; /* Zorgt voor afgeronde hoeken */
-		transition: all 0.2s ease-in-out;
-		background-color: white; /* Standaard achtergrondkleur */
-		color: #9C27B0; /* Tekstkleur passend bij de rand */
-	  }
-	  
-	  .btn:hover {
-		background-color: #9C27B0; /* Paarse achtergrondkleur bij hover */
-		color: white; /* Witte tekstkleur bij hover */
-		transform: scale(1.05); /* Vergroot de knop lichtjes */
-	  }
-	  
-	  .btn:active {
-		background-color: #7B1FA2; /* Donkerpaarse achtergrond bij klikken */
-		transform: scale(0.95); /* Maakt de knop iets kleiner bij klikken */
-	  }
-	  
-
-	  .breadcrumb {
-		padding: 0.75rem 1rem;
-		margin-bottom: 1rem;
-		list-style: none;
-		background-color: var(--kleur_banner); 
-	  }
-	  .breadcrumb::after {
-		display: block;
-		content: "";
-		clear: both;
-	  }
-	  
-	  .breadcrumb-item {
-		float: left;
-		background-color: var(--kleur_banner)
-	  }
-	  .breadcrumb-item + .breadcrumb-item::before {
-		display: inline-block;
-		padding-right: 0.5rem;
-		padding-left: 0.5rem;
-		color: #f11313;
-		content: "/";
-	  }
-	  .breadcrumb-item + .breadcrumb-item:hover::before {
-		text-decoration: underline;
-	  }
-	  .breadcrumb-item + .breadcrumb-item:hover::before {
-		text-decoration: none;
-	  }
-	  .breadcrumb-item.active {
-		color: #460f0f;
-	  }
-
-	  /* theoremEnvironments above is a list of lists. Get the correct list: */
-/*Nth from the list the name and color of the class*/
-
-.template {
-    background-color: #ffe5e5; /* Lichte rode achtergrond (red!10) */
-    border: 3px solid #ff6666; /* Rode rand (red!75!black) */
-    border-radius: 5px; /* Subtiele afgeronde hoeken */
-    padding: 12px; /* Ruimte rondom de inhoud */
-    margin-top: 12px; /* Ruimte boven elk kader */
-    position: relative; /* Nodig voor pseudo-elementen */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtiele schaduw */
+/* This file contains CSS rules that extend/overwrite the default rules set in the ximeraServer
+ * 
+ * As of 2024-11
+ *  - this works only on the new (KULeuven-adapted) ximeraServer
+ *  - this file (re-)translates labels into English
+ *
+ * In the (near?) future, this file should
+ *   - be renamed xmHtmlStyle.css   (to sync with xmPreamble.tex and xmPrintStyle.sty)
+ *   - become (almost) empty by default, because the ximeraServer default settings will becom English again
+ */ 
+ 
+ 
+.xmhint::before {
+    content: "Show hint" counter(hint_number, notfirst);
+}
+  
+.xmhint.ui-state-active::before {
+    content: "Hide hint " counter(hint_number, notfirst);
+}
+  
+.xmoplossing::before {
+    content: "Show solution";
 }
 
-/* Titelbalk */
-.template::before {
-    content: "DOELSTELLING"; /* Titeltekst */
-    font-size: 1em; /* Titelgrootte */
-    font-weight: bold; /* Vetgedrukt voor de titel */
-    color: #000; /* Zwarte kleur voor de tekst */
-    display: block; /* Titel op een aparte regel */
-    background-color: #ff6666; /*  */
-    border-radius: 5px 5px 0 0; /* Zelfde afronding als de bovenrand van de box */
-    padding: 8px; /* Ruimte binnen de titel */
-    margin: -15px -15px 8px -15px; /* Zorgt ervoor dat de titel aansluit op de rand */
-    text-align: left; /* Titel uitgelijnd naar links */
-    box-sizing: border-box; /* Inclusief de rand bij breedte */
+.xmoplossing.ui-state-active::before {
+    content: "Hide solution";
 }
 
-.problem {
-    background-color: #fffde5; /* Lichte gele achtergrond (red!10) */
-    border: 3px solid  #bfbf40; /* Gele rand  */
-    border-radius: 5px; /* Subtiele afgeronde hoeken */
-    padding: 12px; /* Ruimte rondom de inhoud */
-    margin-top: 12px; /* Ruimte boven elk kader */
-    position: relative; /* Nodig voor pseudo-elementen */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtiele schaduw */
+.xmoplossing-content::before {
+    content: "Solution: ";
+	font-weight: bold;
 }
 
-/* Titelbalk */
+.xmuitkomst::before {
+    content: "Show answer";
+}
+
+.xmuitkomst.ui-state-active::before {
+    content: "Hide answer";
+}
+
+.xmuitkomst-content::before {
+    content: "Answer: ";
+	font-weight: bold;
+}
+
+
+
+
+.exercise::before {
+	content: "exercise" attr(numbered) ".";
+}
+.definition::before {
+	content: "definition" attr(numbered) ".";
+}
+.remark::before {
+	content: "remark" attr(numbered) ".";
+}
+.proposition::before {
+	content: "proposition" attr(numbered) ".";
+}
+.example::before {
+	content: "example" attr(numbered) ".";
+}
+.warning::before {
+	content: "warning" attr(numbered) ".";
+}
+.theorem::before {
+     content: "theorem" attr(numbered) ".";
+}
+.explanation::before {
+      content: "explanation" attr(numbered) ".";
+}
+.exploration::before {
+      content: "exploration" attr(numbered) ".";
+}
+.formula::before {
+      content: "formula" attr(numbered) ".";
+}
 .problem::before {
-    content: "Voorkennis"; /* Titeltekst */
-    font-size: 1em; /* Titelgrootte */
-    font-weight: bold; /* Vetgedrukt voor de titel */
-    color: #000; /* Zwarte kleur voor de tekst */
-    display: block; /* Titel op een aparte regel */
-    background-color: #bfbf40; /*  */
-    border-radius: 5px 5px 0 0; /* Zelfde afronding als de bovenrand van de box */
-    padding: 8px; /* Ruimte binnen de titel */
-    margin: -15px -15px 8px -15px; /* Zorgt ervoor dat de titel aansluit op de rand */
-    text-align: left; /* Titel uitgelijnd naar links */
-    box-sizing: border-box; /* Inclusief de rand bij breedte */
+      content: "problem" attr(numbered) ".";
 }
+.notation::before {
+      content: "notation" attr(numbered) ".";
+}
+
+/* Overwrite labels */ 
+span.hint-text {
+ display: none;
+}
+
+button.btn-reveal-hint::after {
+ content: "Show hint";
+}
+button.btn-reveal-hint.oplossing::after {
+ content: "Show solution";
+}
+
+.xmerase a span.xmhidden-small {
+  display: none;
+}
+
+.xmerase a::after {
+ content: "Clear";
+}
+
+span.show-check-text {
+  display: none !important;
+}
+
+button.btn-ximera-check::after {
+  content: "Check answer";
+}
+
+span.show-answer-text {
+  display: none !important;
+}
+
+span.show-answer-large button.btn-ximera-show-answer::after {
+  content: "Reveal answer";
+}
+
+#math-edit-button span {
+  display: none;
+}
+
+button#math-edit-button::before {
+  content: "Math Editor";
+}
+
+
+/* Vorige/volgende */
+a.next-activity::before {
+  content: "Next";
+}
+span#next-activity-label {
+  display: none;
+}
+a.prev-activity::after {
+  content: "Previous";
+}
+span#prev-activity-label {
+  display: none;
+}
+
+.en-text {
+      display: initial;
+}
+.nl-text {
+      display: none;
+}
+
+
+/* Multi-Lingual Formatting */
+
+.multiple-choice[titletext]::before {
+	/* Numbered everything in CSS is causing trouble.  TeX should decide the numbering. */
+	/* content:"${nameOfClass} " counter($counterToIncrement) ". ";*/
+	content:attr(titletext);
+}
+
+/*
+We setup the problem-environment(s) default display/title text next.
+*/
+
+/* Set the problem-environment default(s):
+Note that, because there are a number of types, we need a "default" for each type - I don't know how to do this other than hard-code.
+Also note: We may want to decide, as a team, what the default text should *actually* be, e.g. capitalize or not, spacing, etc.
+*/
+
+.problem::before {
+	content:"problem" attr(numbered) ".";
+ }
+
+.exploration::before {
+	content:"exploration" attr(numbered) ".";
+ }
+
+.exercise::before {
+	content:"exercise" attr(numbered) ".";
+ }
+
+.question::before {
+	content:"question" attr(numbered) ".";
+ }
+/*
+If the problem environment(s) have the "titletext" attribute defined, then overwrite the above default with the newly defined default text.
+Note: This is used to do automatic translation, but could also be used to change the default text in *any* way we would want,
+e.g. use "P1", "Problem 1", "Prob 1", "Exciting Problem 1", etc.
+*/
+.problem-environment[titletext]::before {
+	/* Numbered everything in CSS is causing trouble.  TeX should decide the numbering. */
+	/* content:"${nameOfClass} " counter($counterToIncrement) ". ";*/
+	content:attr(titletext) attr(numbered) ".";
+}
+
+.theorem-like[titletext]::before {
+	content:attr(titletext);
+}
+
+.feedback[titletext]::before {
+	content:attr(titletext) ": ";
+}
+
+
+/* Outcome Formatting */
+
+.outcomeContent {
+	/* display: none; */
+	color: rgb(51, 0, 181);
+}
+.outcomeHead {
+	text-align: center;
+	font-weight: bold;
+}
+/* 	  
+.outcomeHead:hover + .outcomeContent {
+	display: block;
+} */
+
+body {
+    background-color: #fff0f3;
+}
+
+
+body::before {
+    content: "";
+    display: block;
+    width: 300px;
+    height: 120px;
+
+    margin: 20px auto;
+
+    background-image: url("logo.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+
+main {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+
+
+h1 {
+    color: #b0004f;
+}
+
