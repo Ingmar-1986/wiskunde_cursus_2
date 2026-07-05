@@ -9,9 +9,12 @@
  *   - become (almost) empty by default, because the ximeraServer default settings will becom English again
  */ 
  
- 
+body {
+    background-color: #ffffcc;
+}
+
 h1 {
-    color: red !important;
+    color: darkred;
 }
 
 .xmhint::before {
