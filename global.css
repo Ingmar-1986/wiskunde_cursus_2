@@ -225,16 +225,18 @@ body {
 
 body::before {
     content: "";
+
     display: block;
+
     width: 300px;
-    height: 120px;
+    height: 140px;
 
     margin: 20px auto;
 
     background-image: url("logo.jpg");
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: contain;
 }
 
 
@@ -247,6 +249,32 @@ main {
 
 
 h1 {
-    color: #b0004f;
+    display: inline-block;
+    background: white;
+
+    color: #0c5a5a;
+
+    padding: 10px 25px;
+
+    border-radius: 30px;
+
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+
+
+.navbar {
+    background-color: #d00063 !important;
+}
+
+body {
+    background-color: #fff1f5 !important;
+}
+
+
+.activity-card {
+    background-color: #f2f2f2 !important;
+    border: 1px solid #999 !important;
+    border-radius: 12px !important;
 }
 
