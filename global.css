@@ -1,14 +1,14 @@
 
 .navbar {
-    background-color: #126b6b !important;
+    background-color: #2ef2f2 !important;
 }
 
 body {
-    background-color: #f8f8f8 !important;
+    background-color: #08de7a !important;
 }
 
 .activity-card {
-    background-color: white !important;
+    background-color: rgb(230, 12, 12) !important;
     border: 1px solid #d0d0d0 !important;
     border-radius: 10px !important;
 }
