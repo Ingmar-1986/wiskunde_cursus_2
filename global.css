@@ -69,38 +69,40 @@ body {
 /* hoofdstuktitels */
 
 .card.part {
+
     background: #126b6b;
     color: white;
 
-    padding: 15px 20px;
+    border-radius: 15px;
 
-    border-radius: 10px;
+    padding: 20px;
 
-    margin-top: 40px;
+    margin-top: 30px;
+
+    font-size: 2rem;
 }
 
 /* hoofdstuklinks */
 
-.activity.card {
-    display: inline-block;
+a.activity.card {
 
-    width: 45%;
+    display: inline-block !important;
 
-    margin: 1%;
+    width: calc(50% - 25px);
+
+    margin: 10px;
 
     vertical-align: top;
 
+    min-height: 180px;
+
     background: white;
 
-    border: 1px solid #d0d0d0;
-
-    border-radius: 10px;
+    border-radius: 12px;
 
     padding: 20px;
 
-    min-height: 180px;
-
-    text-decoration: none;
+    box-shadow: 0 3px 10px rgba(0,0,0,.1);
 }
 
 /* titel in kaart */
@@ -164,5 +166,53 @@ a.activity.card h2 {
     color: #126b6b;
 }
 
+p {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+a.activity.card {
+    flex: 1 1 400px;
+
+    background: white;
+
+    border-radius: 15px;
+
+    border: 1px solid #d0d0d0;
+
+    padding: 20px;
+
+    min-height: 200px;
+
+    text-decoration: none;
+
+    box-shadow: 0 3px 10px rgba(0,0,0,.10);
+}
+
+a.activity.card h2 {
+    color: #126b6b;
+    margin-top: 0;
+}
+
+body::before {
+    content: "AFGELEIDEN";
+
+    display: block;
+
+    background: #126b6b;
+
+    color: white;
+
+    font-size: 4rem;
+
+    font-weight: bold;
+
+    padding: 50px;
+
+    border-radius: 0 0 20px 20px;
+
+    margin-bottom: 30px;
+}
 
 
