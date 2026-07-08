@@ -6,31 +6,35 @@ body {
 
 .card.part {
     background: #126b6b;
-
     color: white;
 
-    border-radius: 15px;
+    padding: 15px 20px;
 
-    padding: 20px;
+    border-radius: 10px;
 
-    margin-top: 30px;
+    margin-top: 40px;
 }
 
 /* hoofdstuklinks */
 
 .activity.card {
+    display: inline-block;
 
-    display: block;
+    width: 45%;
+
+    margin: 1%;
+
+    vertical-align: top;
 
     background: white;
+
+    border: 1px solid #d0d0d0;
 
     border-radius: 10px;
 
     padding: 20px;
 
-    margin: 15px 0;
-
-    border-left: 8px solid #126b6b;
+    min-height: 180px;
 
     text-decoration: none;
 }
@@ -38,10 +42,12 @@ body {
 /* titel in kaart */
 
 .activity.card h2 {
-
     color: #126b6b;
+}
 
-    margin-top: 0;
+.activity.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(0,0,0,.15);
 }
 
 
