@@ -50,5 +50,55 @@ body {
     box-shadow: 0 5px 20px rgba(0,0,0,.15);
 }
 
+/* Container voor activiteiten */
+body {
+    max-width: 1600px;
+    margin: auto;
+}
+
+/* Hoofdstukken */
+.card.part {
+    display: block;
+    width: 100%;
+    background: #126b6b;
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 30px;
+}
+
+/* Activiteiten als tegels */
+a.activity.card {
+    display: inline-block !important;
+
+    width: calc(50% - 30px);
+
+    margin: 10px;
+
+    vertical-align: top;
+
+    background: white;
+
+    border-radius: 12px;
+
+    border: 1px solid #d0d0d0;
+
+    min-height: 220px;
+
+    padding: 20px;
+
+    text-decoration: none;
+
+    box-shadow: 0 3px 10px rgba(0,0,0,.10);
+}
+
+a.activity.card:hover {
+    transform: translateY(-3px);
+}
+
+a.activity.card h2 {
+    color: #126b6b;
+}
+
 
 
