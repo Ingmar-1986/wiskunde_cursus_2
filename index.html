@@ -104,6 +104,146 @@
 
 
 </head><body> 
+
+     <!--div#scroller-anchor-->
+        <nav class="navbar sticky-top navbar-toggleable navbar-light bg-faded" role="navigation">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand hidden-sm-down" href="https://set.kuleuven.be/voorkennis">
+                <img class="brandlogo" src="/voorkennis/public/v2.3.7i/images/kul/logo.svg">
+            </a>
+            <div class="navbar-collapse collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <span class="navbar-text mr-1" id="dueDate" style="display: none;" data-toggle="tooltip" data-placement="bottom">
+                        <i class="fa fa-clock-o mr-1"></i>
+                        <span id="dueDateCountdown"></span>
+                    </span>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarGetHelp" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-hand-paper-o"></i>
+                            <span class="hidden-md-down">&nbsp;Help</span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarGetHelp">
+                            <a class="dropdown-item" id="contact-instructor" href="/voorkennis/zc-so/AUTEUR/instructors">
+                                <i class="fa fa-envelope-o"></i>
+                                <span class="nl-text">Contacteer de lesgevers      </span>
+                                <span class="en-text">Contact the instructors      </span>
+                            </a>
+                            <div class="dropdown-divider"></div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <div class="mr-1 topbar-items">
+                        <button class="btn" id="xourse-implode">
+                            <span class="nl-text">Klap in</span>
+                            <span class="en-text">Fold in</span>
+                        </button>
+                    </div>
+                    <div class="mr-1 topbar-items">
+                        <button class="btn" id="xourse-expand">
+                            <span class="nl-text">Klap uit</span>
+                            <span class="en-text">Fold out</span>
+                        </button>
+                    </div>
+                    <div class="mr-1 topbar-items">
+                        <input class="form-control xourse-search nl-text" type="search" placeholder="Zoek naar...">
+                        <input class="form-control xourse-search en-text" type="search" placeholder="Search for...">
+                        <span class="input-group-addon">
+                            <i class="fa fa-search"></i>
+                        </span>
+                    </div>
+                    <button class="btn btn-success mx-1" id="show-me-another-button" role="button" style="display: none">
+                        <i class="fa fa-repeat"></i>
+                        <span class="hidden-md-down">&nbsp;Andere</span>
+                    </button>
+                    <button class="btn btn-info mx-1" id="math-edit-button" role="button" style="display: none;">
+                        <i class="fa fa-magic"></i>
+                        <span class="hidden-md-down">&nbsp;Wiskunde Editor</span>
+                    </button>
+                    <button class="btn btn-warning pulsate mx-1" id="pageUpdate" type="button" data-toggle="modal" data-target="#updateWarningModal" style="display: none;">
+                        <i class="fa fa-level-up"></i>
+                        <span class="hidden-md-down">&nbsp;Update</span>
+                    </button>
+                    <div id="loginUser" style="display: none;">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarLogin" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <!-- If we're masquerading as someone-->
+                                <i class="fa fa-user"></i>
+                                <span class="hidden-md-down" id="userFirstName">Me</span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarLogin">
+                                <a class="dropdown-item" href="/voorkennis/users/me">
+                                    <i class='fa fa-cogs'></i>
+                                    Profile
+                                </a>
+                                <a class="dropdown-item" id="menu-supervise" href="/voorkennis/supervise" style="display: none;">
+                                    <i class='fa fa-eye'></i>
+                                    Supervise
+                                </a>
+                                <a class="dropdown-item" href="/voorkennis/logout">
+                                    <i class='fa fa-sign-out'></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </li>
+                    </div>
+                    <div id="loginGuest" style="display: none;">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarLogin" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-sign-in"></i>
+                                <span class="hidden-md-down">&nbsp;Sign In</span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarLogin"></div>
+                        </li>
+                    </div>
+                </ul>
+            </div>
+        </nav>
+        <div>
+            <div class="modal fade" id="updateWarningModal" tabindex="-1" role="dialog" aria-labelledby="updateWarningModal">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="updateModalLabel">
+                                <span class="nl-text">Nieuwe Versie Beschikbaar</span>
+                                <span class="en-text">New Version Available</span>
+                            </h5>
+                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p class="nl-text">Er is een nieuwe versie van deze pagina. Hoe wil je verdergaan ?</p>
+                            <p class="en-text">There is a new version if this page. How do you wish to proceed ?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-secondary" type="button" data-dismiss="modal">
+                                <i class="fa fa-level-down"></i>
+                                &nbsp;<span class="nl-text">Blijf bij de oude versie.</span>
+                                <span class="en-text">Stay at the old version.</span>
+                            </button>
+                            <a class="btn btn-primary" id="update-version-button" href="#">
+                                <i class="fa fa-level-up"></i>
+                                &nbsp;<span class="nl-text">Update naar de nieuwe versie.</span>
+                                <span class="en-text">Update to the new version.</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--if (atOhioState)-->
+        <!--include includes/osu-->
+        <!-- Include css files from the repository-->
+        <link rel="stylesheet" type="text/css" href="/voorkennis/zc-so/global.css">
+        <link rel="stylesheet" type="text/css" href="/voorkennis/zc-so/AUTEUR.css">
+        <nav aria-label="breadcrumb" role="navigation">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item active">Gids  voor  Ximera  Auteurs</li>
+            </ol>
+        </nav>
 <div class='preamble'><script type='math/tex'>\newenvironment {prompt}{}{}
 \newcommand {\accordion }[0]{}
 \newcommand {\ungraded }[0]{}
