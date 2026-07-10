@@ -1,218 +1,786 @@
-/* header index*/
+:root {
+--definition-red: 0;
+--definition-green: 255;
+--definition-blue: 0;
 
-body::before {
-    content: "";
+--definition-background-perc: 0.05;
+--definition-border-perc: 0.45;
 
-    display: block;
+--notation-background-perc: 0.05;
+--notation-border-perc: 0.45;
 
-    height: 180px;
+--axiom-background-perc: 0.05;
+--axiom-border-perc: 0.45;
 
-    background-color: #126b6b;
+--proposition-background-perc: 0.02;
+--proposition-border-perc: 0.65;
 
-    background-image: url("logo.jpg");
+--corollary-background-perc: 0.02;
+--corollary-border-perc: 0.65;
 
-    background-repeat: no-repeat;
+--theorem-background-perc: 0.02;
+--theorem-border-perc: 0.65;
 
-    background-position: left 30px center;
+--algorithm-background-perc: 0.02;
+--algorithm-border-perc: 0.65;
 
-    background-size: 220px auto;
+--proof-background-perc: 0.00;
+--proof-border-perc: 0.2;
 
-    border-radius: 0 0 20px 20px;
+--explanation-background-perc: 0.01;
+--explanation-border-perc: 0.75;
 
-    margin-bottom: 30px;
+--example-red: 0;
+--example-green: 0;
+--example-blue: 255;
+
+--example-background-perc: 0.05;
+--example-border-perc: 0.75;
+
+--exercise-background-perc: 0.00;
+--exercise-border-perc: 0.50;
+
+--remark-red: 255;
+--remark-green: 255;
+--remark-blue: 0;
+
+--remark-background-perc: 0.05;
+--remark-border-perc: 0.75;
+
+--warning-background-perc: 0.02;
+--warning-border-perc: 0.65;
+
+--uitweiding-background-perc: 0.1;
+--uitweiding-border-perc: 0.15;	
 }
 
-/* cursustitel */
+/*  Mmm Ximera used non-existent sagemath version ??? */
+.ui-state-active .ui-icon, .ui-button:active .ui-icon {
+	background-image: url("https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.1/themes/base/images/ui-icons_454545_256x240.png") !important;
+}
 
-.title,
-h1.title,
-.maketitle h1 {
-    color: white !important;
+.ui-state-hover .ui-icon, .ui-state-focus .ui-icon, .ui-button:hover .ui-icon, .ui-button:focus .ui-icon, .ui-state-default .ui-icon {
+	background-image: url("https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.1/themes/base/images/ui-icons_454545_256x240.png") !important;
+}
 
-    position: absolute;
+.ui-state-hover,.ui-widget-content .ui-state-hover,.ui-widget-header .ui-state-hover,.ui-state-focus,.ui-widget-content .ui-state-focus,.ui-widget-header .ui-state-focus,.ui-button:hover,.ui-button:focus{
+	background: #dadada;
+	font-weight:normal;color:#212121
+  }
 
-    top: 50px;
+  .ui-state-default,.ui-widget-content .ui-state-default,.ui-widget-header .ui-state-default,.ui-button,html .ui-button.ui-state-disabled:hover,html .ui-button.ui-state-disabled:active{
+	border:1px solid #d3d3d3;
+	background:#e6e6e6; /*  url("https://sagecell.sagemath.org/static/images/ui-bg_glass_75_e6e6e6_1x400.png") 	50% 50% repeat-x; */
+	font-weight:normal;
+	color:#555
+}
 
-    left: 320px;
+.ui-state-active,.ui-widget-content .ui-state-active,.ui-widget-header .ui-state-active,a.ui-button:active,.ui-button:active,.ui-button.ui-state-active:hover{
+	border:1px solid #aaa;
+	background:#fff ;
+	font-weight:normal;
+	color:#212121
+}
 
-    font-size: 3rem;
+/* zet defaults voor accordion; 
+ * worden overschreven door example/definition etc indien nodig 
+ */
 
+/* .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active {
+    border: 1px solid #d3d3d3;
+    background: lightgray;
+    font-weight: normal;
+    margin: 2px 0 0 0;
+    padding: .5em .5em .5em .7em;
+    color: #555;
+}
+
+/* (e.g.?) for xmuitweiding */
+/*
+.ui-accordion-content {   
+	background: #d3d3d340;
+	margin-top: -0.5rem;   /* undo margin of heading 
+} 
+*/
+
+
+/*
+Simpelste vorm
+	
+	.definition {    
+		background-color: rgb(r,g,b);
+		border: 1px solid rgb(r,g,b);
+		border-left: 12px solid rgb(r,g,b);
+	}
+
+*/
+
+/* default whitespace around definitions/theorem/exapmles/... */
+.theorem-like {
+	margin-top: 12pt;
+	margin-bottom: 12pt;
+}
+
+/*
+Zet voor alle theorems de kleuren van de box'en juist
+*/
+.definition, .definition-content {
+    --pba: var(--definition-background-perc);
+    --pbo: var(--definition-border-perc);
+    --r: var(--definition-red);
+    --g: var(--definition-green);
+    --b: var(--definition-blue);
+    
+	--background-color: rgb(
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--r)),
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--g)),
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--b))
+	);
+	
+	--border-color: rgb(
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--r)),
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--g)),
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--b))
+	);	
+	
+	background-color: var(--background-color);
+	border: 1px solid var(--border-color);
+	border-left: 12px solid var(--border-color);
+}
+
+.notation, .notation-content {
+	--pba: var(--notation-background-perc);
+	--pbo: var(--notation-border-perc);
+	--r: var(--definition-red);
+	--g: var(--definition-green);
+	--b: var(--definition-blue);
+	
+	--background-color: rgb(
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--r)),
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--g)),
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--b))
+	);
+	
+	--border-color: rgb(
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--r)),
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--g)),
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--b))
+	);	
+	
+	background-color: var(--background-color);
+	border: 1px solid var(--border-color);
+	border-left: 12px solid var(--border-color);
+}
+
+.axiom, .axiom-content {
+    --pba: var(--axiom-background-perc);
+    --pbo: var(--axiom-border-perc);
+    --r: var(--definition-red);
+    --g: var(--definition-green);
+    --b: var(--definition-blue);
+    
+	--background-color: rgb(
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--r)),
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--g)),
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--b))
+	);
+	
+	--border-color: rgb(
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--r)),
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--g)),
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--b))
+	);	
+	
+	background-color: var(--background-color);
+	border: 1px solid var(--border-color);
+	border-left: 12px solid var(--border-color);
+}
+
+.proposition, .proposition-content {
+	--pba: var(--proposition-background-perc);
+	--pbo: var(--proposition-border-perc);
+	--r: var(--definition-red);
+	--g: var(--definition-green);
+	--b: var(--definition-blue);
+	
+	--background-color: rgb(
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--r)),
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--g)),
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--b))
+	);
+	
+	--border-color: rgb(
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--r)),
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--g)),
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--b))
+	);	
+	
+	background-color: var(--background-color);
+	border: 1px solid var(--border-color);
+	border-left: 12px solid var(--border-color);
+}
+
+.corollary, .corollary-content {
+	--pba: var(--corollary-background-perc);
+	--pbo: var(--corollary-border-perc);
+	--r: var(--definition-red);
+	--g: var(--definition-green);
+	--b: var(--definition-blue);
+	
+	--background-color: rgb(
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--r)),
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--g)),
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--b))
+	);
+	
+	--border-color: rgb(
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--r)),
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--g)),
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--b))
+	);	
+	
+	background-color: var(--background-color);
+	border: 1px solid var(--border-color);
+	border-left: 12px solid var(--border-color);
+}
+
+.theorem, .theorem-content {
+    --pba: var(--theorem-background-perc);
+    --pbo: var(--theorem-border-perc);
+    --r: var(--definition-red);
+    --g: var(--definition-green);
+    --b: var(--definition-blue);
+    
+	--background-color: rgb(
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--r)),
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--g)),
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--b))
+	);
+	
+	--border-color: rgb(
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--r)),
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--g)),
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--b))
+	);	
+	
+	background-color: var(--background-color);
+	border: 1px solid var(--border-color);
+	border-left: 12px solid var(--border-color);
+}
+
+.algorithm, .algorithm-content {
+    --pba: var(--algorithm-background-perc);
+    --pbo: var(--algorithm-border-perc);
+    --r: var(--definition-red);
+    --g: var(--definition-green);
+    --b: var(--definition-blue);
+    
+	--background-color: rgb(
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--r)),
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--g)),
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--b))
+	);
+	
+	--border-color: rgb(
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--r)),
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--g)),
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--b))
+	);	
+	
+	background-color: var(--background-color);
+	border: 1px solid var(--border-color);
+	border-left: 12px solid var(--border-color);
+}
+
+.proof, .proof-content {
+    --pba: var(--proof-background-perc);
+    --pbo: var(--proof-border-perc);
+    --r: var(--definition-red);
+    --g: var(--definition-green);
+    --b: var(--definition-blue);
+    
+	--background-color: rgb(
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--r)),
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--g)),
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--b))
+	);
+	
+	--border-color: rgb(
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--r)),
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--g)),
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--b))
+	);	
+	
+	background-color: var(--background-color);
+	border: 1px solid var(--border-color);
+	border-left: 12px solid var(--border-color);
+
+}
+
+.explanation, .explanation-content {
+    --pba: var(--explanation-background-perc);
+    --pbo: var(--explanation-border-perc);
+    --r: var(--definition-red);
+    --g: var(--definition-green);
+    --b: var(--definition-blue);
+    
+	--background-color: rgb(
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--r)),
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--g)),
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--b))
+	);
+	
+	--border-color: rgb(
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--r)),
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--g)),
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--b))
+	);	
+	
+	background-color: var(--background-color);
+	border: 1px solid var(--border-color);
+	border-left: 12px solid var(--border-color);
+}
+
+.example, .example-content, .example.ui-accordion-header {
+    --pba: var(--example-background-perc);
+    --pbo: var(--example-border-perc);
+    --r: var(--example-red);
+    --g: var(--example-green);
+    --b: var(--example-blue);
+    
+	--background-color: rgb(
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--r)),
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--g)),
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--b))
+	);
+	
+	--border-color: rgb(
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--r)),
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--g)),
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--b))
+	);	
+	
+	background-color: var(--background-color);
+	border: 1px solid var(--border-color);
+	border-left: 12px solid var(--border-color);
+}
+
+.exercise, .exercise-content, .exercise.ui-accordion-header {
+    --pba: var(--exercise-background-perc);
+    --pbo: var(--exercise-border-perc);
+    --r: var(--example-red);
+    --g: var(--example-green);
+    --b: var(--example-blue);
+    
+	--background-color: rgb(
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--r)),
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--g)),
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--b))
+	);
+	
+	--border-color: rgb(
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--r)),
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--g)),
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--b))
+	);	
+	
+	background-color: var(--background-color);
+	border: 1px solid var(--border-color);
+	border-left: 12px solid var(--border-color);
+}
+
+.remark, .remark-content, .remark.ui-accordion-header {
+    --pba: var(--remark-background-perc);
+    --pbo: var(--remark-border-perc);
+    --r: var(--remark-red);
+    --g: var(--remark-green);
+    --b: var(--remark-blue);
+    
+	--background-color: rgb(
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--r)),
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--g)),
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--b))
+	);
+	
+	--border-color: rgb(
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--r)),
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--g)),
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--b))
+	);	
+	
+	background-color: var(--background-color);
+	border: 1px solid var(--border-color);
+	border-left: 12px solid var(--border-color);
+}
+
+.warning, .warning-content {
+	--pba: var(--warning-background-perc);
+	--pbo: var(--warning-border-perc);
+	--r: var(--remark-red);
+	--g: var(--remark-green);
+	--b: var(--remark-blue);
+	
+	--background-color: rgb(
+	calc((1 - var(--pba)) * 255 + var(--pba) * var(--r)),
+	calc((1 - var(--pba)) * 255 + var(--pba) * var(--g)),
+	calc((1 - var(--pba)) * 255 + var(--pba) * var(--b))
+	);
+	
+	--border-color: rgb(
+	calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--r)),
+	calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--g)),
+	calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--b))
+	);	
+	
+	background-color: var(--background-color);
+	border: 1px solid var(--border-color);
+	border-left: 12px solid var(--border-color);
+}
+
+/* uitweiding is (still?) special, as it is no standard theorem-env
+   it was implemented by accordion
+   but that changed 4/2023
+   Presumably could be made completely similar to other envs ...
+ */
+
+
+.xmuitweiding {
+	font-weight:bold; 
+}
+
+.xmuitweiding, .xmuitweiding-content {
+	--pba: var(--uitweiding-background-perc);
+	--pbo: var(--uitweiding-border-perc);
+	--r: var(--remark-red);
+	--g: var(--remark-green);
+	--b: var(--remark-blue);
+	
+	--background-color: rgb(
+	calc((1 - var(--pba)) * 255 + var(--pba) * var(--r)),
+	calc((1 - var(--pba)) * 255 + var(--pba) * var(--g)),
+	calc((1 - var(--pba)) * 255 + var(--pba) * var(--b))
+	);
+	
+	--border-color: rgb(
+	calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--r)),
+	calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--g)),
+	calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--b))
+	);	
+	
+	background-color: var(--background-color);
+	border: 1px solid var(--border-color);
+	border-left: 12px solid var(--border-color);
+	padding: 1em;
+	/* margin-top: 1em;  /* wrong spacing when unfolded ! */
+}
+
+/*
+Fix proof spacing
+*/
+
+.proof{
+	padding-left: 12px;
+    padding-right: 24px;
+    margin-top: 12pt;
+    padding-top: 6pt;
+    padding-bottom: 12pt;
+}
+
+.theorem::before {
+  content: "stelling" attr(numbered) ".";
+}
+
+.corollary::before {
+  content: "gevolg" attr(numbered) ".";
+}
+
+/* black border round 'oplossing' */
+.feedback[data-feedback="solution"] {
+    border: 1px solid black;
+    border-left: 3px solid black;
+    padding: 5px;
+}
+
+.feedback[data-feedback="solution"]::before {
+    content: "Uitwerking: ";
     font-weight: bold;
 }
 
-/* slogan */
-body::after {
-    content: "Wiskunde • Fysica • STEM";
-
-    display: block;
-
-    position: absolute;
-
-    top: 130px;
-
-    left: 320px;
-
-    color: white;
-
-    font-size: 1.2rem;
+.card.activity-card.section{
+    background-color: #002eff33;
+}
+div.d-flex div.d-flex{
+    min-width: 100%;
+}
+span.fbox {
+    border: 1px solid black;
 }
 
-
-/* Body */
-
-body {
-    background-color: #f3640b;
+/* poor-mans tabular for \begin{description} */
+dt.description {
+    min-width: 10em;
 }
 
-
-
-/* hoofdstuktitels */
-
-.card.part {
-
-    background: #126b6b;
-    color: white;
-
-    border-radius: 15px;
-
-    padding: 20px;
-
-    margin-top: 30px;
-
-    font-size: 2rem;
-}
-
-/* hoofdstuklinks */
-
-a.activity.card {
-
-    display: inline-block !important;
-
-    width: calc(50% - 25px);
-
-    margin: 10px;
-
-    vertical-align: top;
-
-    min-height: 180px;
-
-    background: white;
-
-    border-radius: 12px;
-
-    padding: 20px;
-
-    box-shadow: 0 3px 10px rgba(0,0,0,.1);
-}
-
-/* titel in kaart */
-
-.activity.card h2 {
-    color: #126b6b;
-}
-
-.activity.card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 20px rgba(0,0,0,.15);
-}
-
-/* Container voor activiteiten */
-body {
-    max-width: 1600px;
+/* fix \begin{center} for tabular; to be done properly...) */
+div.center > .tabular {
     margin: auto;
 }
 
-/* Hoofdstukken */
-.card.part {
+/* try to make tabular not full-width by default ...  */
+div.tabular {
+    /* width: fit-content; */
+    max-width: max-content;
+}
+
+table.tabular td {
+  padding: 0 15px;
+
+}
+
+/* Poging voor tables met minimal padding tussen columns; zie functie_domein_beeld_light */ 
+.xmminimaltable table td {
+    padding: 0;
+    padding-right: 1ch;
+}  
+
+/* limit width central panel */
+main.activity {
+    max-width: 120ch;
+	margin-top: 1em;
+}
+
+/* cut long titles in nav menu */
+.main-nav .card {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/* correct layout of footer */
+footer .page-link {
+    padding: 0;
+}
+
+/* enlarge environments with wide content (and create horizontal scrollbar) */
+.theorem-like, .problem-environment {
+/*  
+ *  overflow-x: auto;
+ *  overflow-y: hidden;
+ *   BREAKS DROP-DOWNS at bottom of environment ...???
+ */
+/* extend  wide environments to the right (and thus potentially with scrollbar at bottom of page (not at bottom of env ...)*/
+    min-width: 100% !important;
+    width: fit-content !important;
+}
+
+
+/* hack to reduce size of images */
+.image-environment img {
+    max-width: 100%;
+    /* max-width: 60% !important; */
+}
+
+/* maximize, eg for formularium */
+.image-environment-modal-content {
+    width: unset;
+    max-width: unset;
+}
+
+.btn-info {
+    background-color: #1D8DB0;   /* KULeuven-mid */
+    /* background-color: #1FABD5;   /* KULeuven-light */
+    /* background-color: #116E8A;   /* KULeuven-dark */
+}
+
+.btn-primary {
+    background-color: #1D8DB0;   /* KULeuven-mid */
+    border: #1D8DB0;   /* KULeuven-mid */
+}
+
+.btn-primary.disabled, .btn-primary:disabled {
+    background-color: #68a5b8;    /* lighter for disabled ? */
+    border-color: #1D8DB0;
+}
+
+
+
+div[class*="-content"] {
+	border-top: 0px;
+	/* margin-top: -0.5rem;   /* undo margin of heading */
+	padding-left: 5px;
+}
+
+/* hack om 'Toon antwoord' knop altijd voldoende lang te amken (anders soms 'Toon A'- */
+.show-answer-large .btn.btn-info {
+	width: initial !important;
+	padding: 0.5em;
+  }
+  
+
+/* 3-kolom layout over volledige breedte, voor formule_en_voorbeeld_op_één_lijn */
+.xmformulevb .tabular {
+	max-width: unset;
+    width: 100%; 
+    width: -moz-available; 
+    width: -webkit-fill-available;
+    width: fill-available;
+}
+
+.xmformulevb table tr {
+	display: grid;
+	border-collapse: collapse;
+	grid-template-columns: 1fr 1rem 1fr;
+}
+
+.xmformulevb table tr td:nth-child(3) {
+	background-color: #002eff33;
+}
+
+.xmcolorbox {
+	background-color: #1FABD550;   /* KULeuven-light  at 50 opacity */
+	padding-left: 5px;
+}
+
+.xmopmerking {
+	font-size: smaller;
+	margin-left: 5px;
+}
+
+
+
+.btn-reveal-hint {
+    float: none;
+    clear: none;
+    margin-top: 0em;
+	display: block;
+    margin-left: auto;
+    z-index: 1;
+    position: relative;
+}
+
+/* voor button-like Toon ... 
+ * EN voor titels in expandable!!
+*/
+
+/* .ui-accordion .ui-accordion-header {
+    font-size: 0.8em !important;   
+} */
+ 
+
+
+/* following dubious  setting are inserted in a <style> section,
+   to overwrite these, one needs !important infra ...   (??) */
+/*
+.ui-accordion .ui-accordion-header {
     display: block;
-    width: 100%;
-    background: #126b6b;
-    color: white;
-    padding: 20px;
-    border-radius: 15px;
-    margin-top: 30px;
+    cursor: pointer;
+    position: relative;
+    margin: 2px 0 0 0;
+    padding: .5em .5em .5em .7em;
+    font-size: 100%;
+}
+*/
+
+
+.xmhint, .xmoplossing, .xmuitkomst  {
+	background-color: #1D8DB0;
+	color: white;
+	font-family: sans-serif;
+	font-weight: normal;
+	font-size: smaller;
+	margin: 1px !important;
+	margin-left: auto !important;
+	display: block;
+	/* max-width: max-content; */
+	max-width: 10em !important;
+	line-height: 1;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	user-select: none;
+	border: 1px solid transparent;
+	padding: 0px !important;
+	font-size: 1rem;
+	transition: all 0.2s ease-in-out;
+	counter-increment: hint_number;
 }
 
-/* Activiteiten als tegels */
-a.activity.card {
-    display: inline-block !important;
-
-    width: calc(50% - 30px);
-
-    margin: 10px;
-
-    vertical-align: top;
-
-    background: white;
-
-    border-radius: 12px;
-
-    border: 1px solid #d0d0d0;
-
-    min-height: 220px;
-
-    padding: 20px;
-
-    text-decoration: none;
-
-    box-shadow: 0 3px 10px rgba(0,0,0,.10);
+/* increase specificity with double classes ;) */
+div.xmhint-content.ui-accordion-content {
+	background-color: #00000000; /* transparent; overwrites .ui-widget-content ... */
+	border: 1px solid #005000;
+	border-top: 1px solid #005000 !important;
+	border-left: 3px solid #005000;
+	color:   #005000;
+	margin-top: 0rem;
+	padding: 2px 3rem;
+	overflow: visible;    /* set to auto for .ui-accordion .ui-accordion-content in <style> */
 }
 
-a.activity.card:hover {
-    transform: translateY(-3px);
+div.xmhint-content::before {
+	 content: "Hint: ";
+	 font-weight: bold;
+	 margin-left: -3rem;    /* Hack, see padding above ... */
+ }
+ 
+
+
+div.xmoplossing-content.ui-accordion-content, div.xmuitkomst-content.ui-accordion-content {
+	background-color: #00000000; /* transparent; overwrites .ui-widget-content ... */
+	background-color: white;
+	border: 1px solid black;
+	border-left: 3px solid black;
+	color:  black;
+	margin-top: 0rem;
+	padding: 5px;
 }
 
-a.activity.card h2 {
-    color: #126b6b;
+@counter-style notfirst {
+	system: alphabetic;
+	symbols: " " "2" "3" "4" "5" "6" "7" "8" "9" "0";
+}
+  
+.xmhint::before {
+    content: "Toon hint " counter(hint_number, notfirst);
+}
+  
+.xmhint.ui-state-active::before {
+    content: "Verberg hint " counter(hint_number, notfirst);
+}
+  
+.xmoplossing::before {
+    content: "Toon uitwerking";
 }
 
-p {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+.xmoplossing.ui-state-active::before {
+    content: "Verberg uitwerking";
 }
 
-a.activity.card {
-    flex: 1 1 400px;
-
-    background: white;
-
-    border-radius: 15px;
-
-    border: 1px solid #d0d0d0;
-
-    padding: 20px;
-
-    min-height: 200px;
-
-    text-decoration: none;
-
-    box-shadow: 0 3px 10px rgba(0,0,0,.10);
+.xmoplossing-content::before {
+    content: "Uitwerking: ";
+	font-weight: bold;
 }
 
-a.activity.card h2 {
-    color: #126b6b;
-    margin-top: 0;
+.xmuitkomst::before {
+    content: "Toon uitkomst";
 }
 
-body::before {
-    content: "AFGELEIDEN";
-
-    display: block;
-
-    background: #126b6b;
-
-    color: white;
-
-    font-size: 4rem;
-
-    font-weight: bold;
-
-    padding: 50px;
-
-    border-radius: 0 0 20px 20px;
-
-    margin-bottom: 30px;
+.xmuitkomst.ui-state-active::before {
+    content: "Verberg uitkomst";
 }
 
+.xmuitkomst-content::before {
+    content: "Antwoord: ";
+	font-weight: bold;
+}
+
+
+.example, .exercise, .question {
+    counter-reset: hint_number;
+}
+
+span.xmqa1 {
+    min-width: 5cm;
+    /* width: 10cm; */
+    display: inline-block;
+}
 

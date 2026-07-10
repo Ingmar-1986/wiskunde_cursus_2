@@ -1,23 +1,31 @@
-\documentclass{xourse}
+\documentclass[10pt,handout,numbers,noauthor,nooutcomes]{xourse}
+\def\isXourse{true}
+%\pdfOnly{\providecommand\showtodonotes{}}
+\input{preamble.tex}
+%\input{preambles/experimental.tex}
+
+\providecommand{\xmlogo}{x}
+
+\iftikzexport\else\usepackage{printstyle}\fi
 
 
 \begin{document}
+    \author{Wim Obbels}
+    \xmtitle{Gids voor Ximera Auteurs}{Met specifieke richtlijnen voor de zomercursus}
 
+% Geef de Intro nummer 0 !
+%\setcounter{part}{-1}
 
-    \author{Ingmar Herreman}
-    \date{\today}
-    \title{Afgeleiden}
-
-\maketitle
-\part{Mijn eerste verandersd ???hoofdstuk}
-
-\activity{coordinaten}
-\activity{coordinaten}
- \part{Het volgende hoofdstuk}
-\activity{newFolder/newActivity}
-\activity{coordinaten}
- \part{En dit het volgende}
- \activity{coordinaten}
- \activity{coordinaten}
+%\part{Ximera Architectuur}
+%\activitychapter{auteurs/ximeraArchitectuur.tex}
+%\activitychapter{auteurs/ximeraSchema.tex}
+%\activitychapter{auteurs/ximeraGit.tex}
+\part{Ximera voor de Zomercursus}
+\activitychapter{coordinaten}
+\activitychapter{auteurs/ximeraDemo.tex}
+%\activitychapter{auteurs/ximeraShowcase.tex}
+%\activitychapter{auteurs/ximeraSage.tex}
+%\activitychapter{auteurs/sageDemo.tex}
+%\activitychapter{auteurs/ximeraFailcase.tex}
 
 \end{document}
