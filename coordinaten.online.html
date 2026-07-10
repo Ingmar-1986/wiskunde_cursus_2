@@ -12,31 +12,126 @@
 <meta content='version 2.5.1' name='ximera' /> 
 <link href='https://ximera.osu.edu/public/stylesheets/standalone.css' media='screen' rel='stylesheet' /> 
 <link rel="stylesheet" href="global.css">
-<link rel="stylesheet" href="global.css">
-<link rel="stylesheet" href="global.css">
-<link rel="stylesheet" href="global.css">
-<link rel="stylesheet" href="global.css">
-<link rel="stylesheet" href="global.css">
-<link rel="stylesheet" href="global.css">
-<link rel="stylesheet" href="global.css">
-<link rel="stylesheet" href="global.css">
-<link rel="stylesheet" href="global.css">
-<link rel="stylesheet" href="global.css">
-<link rel="stylesheet" href="global.css">
-<link rel="stylesheet" href="global.css">
-<link rel="stylesheet" href="global.css">
 <script src='https://ximera.osu.edu/public/javascripts/standalone.min.js' type='text/javascript'></script> 
 </head><body> 
 <div class='preamble'>
 </div>
 <style> .activity-body pre { white-space: pre; background-color: lightgray; } .xmyoutube { aspect-ratio: 16/9; min-width: 75%; } .image-environment img { width: unset; } </style> 
-
+<p><a id='x1-1doc'></a><a class='ximera-label' id='act_ximeraArchitectuur'></a>    
+</p><div class='abstract'>
+<!-- l. 7 --><p class='noindent'>Globaal overzicht van Ximera voor auteurs of editors van cursussen. </p> 
+</div>
 <div class='maketitle'></div>
-<!-- l. 10 --><p class='noindent'>Beschouw het punt
+<!-- l. 9 --><p class='noindent'>Merk op: de links naar gitlab.kuleuven.be vereisen toegangsrechten tot de betreffende
+repositories.
 </p>
-<div class='mathjax-block'>\[ A=(3,-2) \]</div>
-<!-- l. 16 --><p class='noindent'>Wat zijn de coördinaten van A?
+<h4 class='subsectionHead' id='inleiding'><span class='titlemark'>0.1   </span> <a id='x1-10000.1'></a>Inleiding</h4>
+<!-- l. 14 --><p class='noindent'>Ximera is een open source LaTeX module (of uitbreiding, want Ximera bevat ook
+een webserver en ondersteuning voor het publiceren van modules via die webserver)
+die is ontwikkeld aan Ohio State University. Ximera definieert twee nieuwe
+<em>documentclasses</em> met enkele nieuwe commando’s en nieuwe <em>environments</em> die extra
+functionaliteit leveren om (deels interactieve) documenten ook in HTML te
+publiceren. De LaTeX code blijft echter ook gewoon bruikbaar om met bijvoorbeeld
+pdflatex standaard PDF’s te genereren.
+</p><!-- l. 17 --><p class='noindent'>Ximera bestaat uit drie verschillende onderdelen, die voor de specifieke setup aan de
+KU Leuven zijn aangepast, en die voor auteurs niet onmiddellijk belangrijk zijn (zie
+verder): </p>
+<ul class='itemize1'>     
+<li class='itemize'><a class='url' href='https://github.com/XimeraProject/ximeraLatex'>https://github.com/XimeraProject/ximeraLatex</a>: een LaTeX-module
+die twee nieuwe LaTeX classes <span class='obeylines-h'><code class='verb'>ximera</code></span> en <span class='obeylines-h'><code class='verb'>xourse</code></span> implementeert. Deze
+LaTeX-uitbreiding, die essentieel slechts uit twee bestanden bestaat, kan
+jammer genoeg niet automatisch worden geïnstalleerd via CTAN, MikTex
+of TexLive, maar de bestanden moeten vanuit het ximeraLatex repository
+manueel  worden  geïnstalleerd,  waarna  <em>pdf</em>  bestanden  kunnen  worden
+gemaakt via de standaard latex-commando’s.
+</li>
+<li class='itemize'><a class='url' href='https://github.com/XimeraProject/xake'>https://github.com/XimeraProject/xake</a>:   een   command-line   tool
+(<span class='obeylines-h'><code class='verb'>xake</code></span>) om <em>html</em> files te genereren en te up loaden naar de Ximera-website.
+Dit  programma  kan  op  Linux  worden  geïnstalleerd  via  de  standaard
+package managers. In de KULeuven setup is dit programma automatisch
+geïntegreerd in de gitlab setup en/of beschikbaar via Docker. Voor auteurs
+is het dus nooit nodig het te installeren.
+</li>
+                                                                  
+
+                                                                  
+<li class='itemize'><a class='url' href='https://github.com/XimeraProject/server.git'>https://github.com/XimeraProject/server.git</a>:   een   webapplicatie
+die  de  online  cursussen  host.  In  de  KU  Leuven  setup  wordt  een
+Docker-container gebruikt met een aangepaste versie die op de centrale
+ICTS infrastructuur beschikbaar is. Auteurs kunnen hier indien gewenst
+gebruik van maken.</li></ul>
+<!-- l. 26 --><p class='noindent'>Onder de naam Xronos heeft de University of Florida -net zoals de KULeuven- een eigen
+aangepaste versie ontwikkeld (<a class='url' href='https://github.com/XronosUF/Xronos-Latex-Package'>https://github.com/XronosUF/Xronos-Latex-Package</a>).
+</p><!-- l. 28 --><p class='noindent'>
 </p>
+<h4 class='subsectionHead' id='ku-leuven-specifieke-uitbreidingen-en-aanpassingen-aan-ximera'><span class='titlemark'>0.2   </span> <a id='x1-20000.2'></a>KU Leuven specifieke uitbreidingen en aanpassingen aan Ximera</h4>
+<!-- l. 30 --><p class='noindent'>Aan de KU Leuven zijn enkele wijzigingen en uitbreidingen aangebracht aan
+deze componenten. Alle code en documentatie is terug te vinden in drie
+repo’s op <a class='url' href='https://gitlab.kuleuven.be/monitoraat-wet'>https://gitlab.kuleuven.be/monitoraat-wet</a>. Voor auteurs is
+enkel een eenmalige installatie van (twee bestanden uit) ximeraLatex direct
+relevant.
+</p>     
+<ul class='itemize1'>
+<li class='itemize'><a class='url' href='https://gitlab.kuleuven.be/monitoraat-wet/ximeraLatex'>https://gitlab.kuleuven.be/monitoraat-wet/ximeraLatex</a>:         de
+Ximera-LaTeX-uitbreiding is vertaald naar het Nederlands en uitgebreid
+(accordion, xmuitweiding, …:  <a href='https://gitlab.kuleuven.be/monitoraat-wet/ximeraLatex/compare/f47d71eb646d92e7e8c7953c5cc96ef18b4c740d...master'>deze pagina</a> toont alle wijzigingen)
+</li>
+<li class='itemize'>     
+<!-- l. 36 --><p class='noindent'><a class='url' href='https://gitlab.kuleuven.be/monitoraat-wet/xake'>https://gitlab.kuleuven.be/monitoraat-wet/xake</a>: de Ximera build
+tool draait in een docker-container, en ondersteunt enkele uitbreidingen
+zoals activitychapter, handling van _pdf.tex en _beamer_.tex bestanden,
+uitvoeren van MathjaxTests, etc ( <a href='https://gitlab.kuleuven.be/monitoraat-wet/xake/compare/d298e4b3f3ba630fece197b66c1512ba1b2b8c81...master'>deze pagina</a> toont alle wijzigingen)
+</p>     
+<!-- l. 38 --><p class='noindent'>Merk  op:  de  xake-container  <em>bevat  een  checkout  van  het  ximeraLatex
+repository</em>, en moet dus telkens worden herbuild als ximeraLatex wordt
+gewijzigd. (1/2020)
+</p>     
+</li>
+<li class='itemize'><a class='url' href='https://gitlab.kuleuven.be/monitoraat-wet/Ximera-server'>https://gitlab.kuleuven.be/monitoraat-wet/Ximera-server</a>:
+docker-ondersteuning  en  enkle  uitbreidingen  zoals  een  optionele  prefix
+                                                                  
+
+                                                                  
+in  url  (bv  /voorkennis,  via  env-var),  Nederlands,  feedback[solution],
+ToonAntwoord, .ccs bestanden, etc. (_ <a href='https://gitlab.kuleuven.be/monitoraat-wet/Ximera-server/compare/0f0d1f53d96c5a6ca44a38653dc3f266ee69c08f...master'>deze pagina</a> toont alle wijzigingen)</li></ul>
+<!-- l. 44 --><p class='noindent'>Dit betekent wel dat de LaTeX-code die ontwikkeld is voor de KULeuven setup NIET
+(betrouwbaar) zal werken op een Out-Of-The-Box Ximera-server. De gebruikte
+infrastructuur wordt meer technisch beschreven in  <a href='https://gitlab.kuleuven.be/monitoraat-wet/zomercursus-wiskunde/blob/master/DevOps.md'>DevOps.md</a>
+</p><!-- l. 48 --><p class='noindent'>
+</p>
+<h4 class='subsectionHead' id='latexcode-van-cursussen-die-gebruik-maken-van-ximera'><span class='titlemark'>0.3   </span> <a id='x1-30000.3'></a>LaTeX-code van cursussen die gebruik maken van Ximera</h4>
+<ul class='itemize1'>     
+<li class='itemize'>
+<!-- l. 50 --><p class='noindent'><a class='url' href='https://gitlab.kuleuven.be/monitoraat-wet/zomercursus-wiskunde'>https://gitlab.kuleuven.be/monitoraat-wet/zomercursus-wiskunde</a>:
+de code van de zomercursussen (inclusief branches voor Sint Lucas, en
+folders voor voorkennislessen bij het begin van het acamediejaar). Dit repo
+bevat een uitgebreide   <a href='https://gitlab.kuleuven.be/monitoraat-wet/zomercursus-wiskunde/blob/master/Readme.md'>Readme</a> met extra informatie over de setup van
+Ximera aan de KU Leuven.
+</p>     
+<!-- l. 52 --><p class='noindent'>De         operationale         website         is         beschikbaar         via
+links  op  <a class='url' href='https://wet.kuleuven.be/schoolverlater/basiswiskunde'>https://wet.kuleuven.be/schoolverlater/basiswiskunde</a>
+(en verwante links voor Sint Lucas ...)
+</p>     
+</li>
+<li class='itemize'>     
+<!-- l. 57 --><p class='noindent'><a class='url' href='https://gitlab.kuleuven.be/monitoraat-wet/monitoraat-wiskunde'>https://gitlab.kuleuven.be/monitoraat-wet/monitoraat-wiskunde</a>:
+de code van extra materiaal voor monitoraat van enkele cursussen voor
+eerste bachelor.
+</p>     
+<!-- l. 59 --><p class='noindent'>De  operationale  websites  zijn  bereikbaar  vanuit  de  betreffende  Toledo
+cursussen.
+</p>     
+</li>
+<li class='itemize'>     
+<!-- l. 61 --><p class='noindent'><a class='url' href='https://gitlab.kuleuven.be/monitoraat-wet/ximera-doc)'>https://gitlab.kuleuven.be/monitoraat-wet/ximera-doc)</a>: de code
+voor deze demo-cursus, die kort de mogelijkheden en architectuur van
+Ximera uitlegt.
+</p>     
+<!-- l. 63 --><p class='noindent'>De         operationale         website         is         beschikbaar         op
+<a class='url' href='https://set.kuleuven.be/ximera-wis/demo/demo'>https://set.kuleuven.be/ximera-wis/demo/demo</a>.</p></li></ul>
+                                                                  
+
+                                                                  
 </body> 
  
 </html>
