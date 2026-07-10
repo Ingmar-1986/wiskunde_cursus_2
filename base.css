@@ -15708,3 +15708,7 @@ div.quote p {
     transform: rotate(360deg);
   }
 }
+
+body {
+    background: yellow !important;
+}
