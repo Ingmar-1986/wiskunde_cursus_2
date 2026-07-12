@@ -1,87 +1,25 @@
-.card.part {
-    background: code rgb(7, 230, 11) !important;
-}
-
 a.activity.card {
-    display: inline-block;
-    width: 45%;
-    vertical-align: top;
-
-    padding: 20px;
-    margin: 10px;
-
-    border: 1px solid #cccccc;
-    border-radius: 8px;
-
-    background: white;
-
-    text-decoration: none;
-}
-
-a.activity.card h2 {
-    margin-top: 0;
-    color: black;
-}
-
-
-a.activity.card h3 {
-    font-size: 1rem;
-    font-weight: normal;
-    color: #444;
-}
-
-
-    a.activity.card {
-    display: inline-flex;
-    flex-direction: column;
-}
-
-a.activity.card h2 {
-    order: 1;
-}
-
-a.activity.card h3 {
-    order: 2;
-}
-
-a.activity.card {
-    font-size: 0;
-}
-
-a.activity.card h2,
-a.activity.card h3 {
-    font-size: initial;
-}
-
-a.activity.card {
-    display: inline-flex;
-
-    flex-direction: column;
+    display: block;
 
     width: 400px;
 
-    padding: 25px;
+    padding: 20px;
 
-    margin: 15px;
+    margin: 20px;
 
-    border: 1px solid #cccccc;
+    border: 2px solid red;
 
-    border-radius: 8px;
+    border-radius: 10px;
 
     background: white;
 
     text-decoration: none;
-
-    vertical-align: top;
-}
-
-a.activity.card {
-    border: 3px solid red !important;
 }
 
 a.activity.card h2 {
-    border: 3px solid blue !important;
+    border: 2px solid blue;
 }
+
 a.activity.card h3 {
-    border: 3px solid green !important;
+    border: 2px solid green;
 }
