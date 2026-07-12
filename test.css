@@ -1,3 +1,34 @@
 .card.part {
     background: code rgb(7, 230, 11) !important;
 }
+
+a.activity.card {
+    display: inline-block;
+    width: 45%;
+    vertical-align: top;
+
+    padding: 20px;
+    margin: 10px;
+
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+
+    background: white;
+
+    text-decoration: none;
+}
+
+a.activity.card h2 {
+    margin-top: 0;
+    color: black;
+}
+
+
+a.activity.card h3 {
+    font-size: 1rem;
+    font-weight: normal;
+    color: #444;
+}
+
+
+    
