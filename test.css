@@ -31,4 +31,46 @@ a.activity.card h3 {
 }
 
 
-    
+    a.activity.card {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+a.activity.card h2 {
+    order: 1;
+}
+
+a.activity.card h3 {
+    order: 2;
+}
+
+a.activity.card {
+    font-size: 0;
+}
+
+a.activity.card h2,
+a.activity.card h3 {
+    font-size: initial;
+}
+
+a.activity.card {
+    display: inline-flex;
+
+    flex-direction: column;
+
+    width: 400px;
+
+    padding: 25px;
+
+    margin: 15px;
+
+    border: 1px solid #cccccc;
+
+    border-radius: 8px;
+
+    background: white;
+
+    text-decoration: none;
+
+    vertical-align: top;
+}
