@@ -74,3 +74,14 @@ a.activity.card {
 
     vertical-align: top;
 }
+
+a.activity.card {
+    border: 3px solid red !important;
+}
+
+a.activity.card h2 {
+    border: 3px solid blue !important;
+}
+a.activity.card h3 {
+    border: 3px solid green !important;
+}
