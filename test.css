@@ -1,3 +1,28 @@
+.activity-card.card.chapter {
+    display: inline-block;
+
+    width: 420px;
+
+    margin: 15px;
+
+    padding: 20px;
+
+    vertical-align: top;
+
+    background: white;
+
+    border: 1px solid #d0d0d0;
+
+    border-radius: 10px;
+
+    box-shadow: 0 2px 5px rgba(0,0,0,.1);
+}
+
+
+.activity-card.card.chapter h2 {
+    margin-top: 0;
+}
+
 a.activity.card {
     display: block;
 
@@ -22,4 +47,15 @@ a.activity.card h2 {
 
 a.activity.card h3 {
     border: 2px solid green;
+}
+
+.card-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+
+    margin-bottom: 15px;
+}
+
+.card-text {
+    color: #555;
 }
