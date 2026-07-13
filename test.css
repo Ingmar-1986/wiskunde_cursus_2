@@ -1,27 +1,4 @@
-/* THEMA'S */
-
-.activity-card.card-sectionheading.card.part {
-    background: #e9ecef;
-
-    padding: 25px;
-
-    margin: 20px 0;
-
-    border-radius: 4px;
-}
-
-.activity-card.card-sectionheading.card.part .card-title {
-    margin: 0;
-
-    font-size: 2rem;
-
-    font-weight: bold;
-}
-
-
-/* HOOFDSTUKKEN */
-
-.activity-card.card.chapter {
+a.activity.card {
 
     display: inline-block;
 
@@ -33,7 +10,7 @@
 
     margin: 15px;
 
-    padding: 25px;
+    padding: 20px;
 
     background: white;
 
@@ -42,30 +19,24 @@
     border-radius: 10px;
 
     box-shadow: 0 2px 5px rgba(0,0,0,.1);
+
+    text-decoration: none;
 }
 
+a.activity.card h2 {
 
-/* TITEL */
-
-.card-title {
-
-    margin-top: 0;
-
-    margin-bottom: 15px;
+    margin-top: 15px;
 
     font-size: 1.8rem;
 
     font-weight: bold;
 }
 
+a.activity.card h3 {
 
-/* ABSTRACT */
-
-.card-text {
-
-    color: #555;
+    color: #666;
 
     font-size: 1rem;
 
-    line-height: 1.5;
+    font-weight: normal;
 }
