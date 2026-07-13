@@ -5,7 +5,7 @@ do
     echo "Verwerk $f"
 
     # standalone.css vervangen door test.css
-    sed -i "s#<link href='https://ximera.osu.edu/public/stylesheets/standalone.css' media='screen' rel='stylesheet' />#<link href='../test.css' media='screen' rel='stylesheet' />#g" "$f"
+    sed -i "s#<link href='https://ximera.osu.edu/public/stylesheets/standalone.css' media='screen' rel='stylesheet' />#<link href='https://ximera.osu.edu/public/stylesheets/standalone.css' media='screen' rel='stylesheet' /><link href='../test.css' media='screen' rel='stylesheet' />#g" "$f"
 
     # Parts omzetten naar KU Leuven-achtige secties
     sed -i "
