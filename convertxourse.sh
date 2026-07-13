@@ -13,6 +13,12 @@ sed -i '/<!--HEADER-->/r Header.html' "$f"
 
 sed -i '/<!--HEADER-->/d' "$f"
 
+sed -i 's#<body>#<body>\n<!--INTRO-->#' "$f"
+
+sed -i '/<!--INTRO-->/r ModuleIntro.html' "$f"
+
+sed -i '/<!--INTRO-->/d' "$f"
+
 sed -i '/<\/body>/i\
 PLACEHOLDER_FOOTER
 ' "$f"
