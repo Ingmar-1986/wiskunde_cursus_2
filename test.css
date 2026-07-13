@@ -1,13 +1,39 @@
+/* THEMA'S */
+
+.activity-card.card-sectionheading.card.part {
+    background: #e9ecef;
+
+    padding: 25px;
+
+    margin: 20px 0;
+
+    border-radius: 4px;
+}
+
+.activity-card.card-sectionheading.card.part .card-title {
+    margin: 0;
+
+    font-size: 2rem;
+
+    font-weight: bold;
+}
+
+
+/* HOOFDSTUKKEN */
+
 .activity-card.card.chapter {
+
     display: inline-block;
 
     width: 420px;
 
-    margin: 15px;
-
-    padding: 20px;
+    min-height: 180px;
 
     vertical-align: top;
+
+    margin: 15px;
+
+    padding: 25px;
 
     background: white;
 
@@ -19,43 +45,27 @@
 }
 
 
-.activity-card.card.chapter h2 {
-    margin-top: 0;
-}
-
-a.activity.card {
-    display: block;
-
-    width: 400px;
-
-    padding: 20px;
-
-    margin: 20px;
-
-    border: 2px solid red;
-
-    border-radius: 10px;
-
-    background: white;
-
-    text-decoration: none;
-}
-
-a.activity.card h2 {
-    border: 2px solid blue;
-}
-
-a.activity.card h3 {
-    border: 2px solid green;
-}
+/* TITEL */
 
 .card-title {
-    font-size: 1.8rem;
-    font-weight: bold;
+
+    margin-top: 0;
 
     margin-bottom: 15px;
+
+    font-size: 1.8rem;
+
+    font-weight: bold;
 }
 
+
+/* ABSTRACT */
+
 .card-text {
+
     color: #555;
+
+    font-size: 1rem;
+
+    line-height: 1.5;
 }
