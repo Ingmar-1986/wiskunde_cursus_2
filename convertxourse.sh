@@ -7,7 +7,11 @@ do
     # standalone.css vervangen door test.css
     sed -i "s#<link href='https://ximera.osu.edu/public/stylesheets/standalone.css' media='screen' rel='stylesheet' />#<link href='https://ximera.osu.edu/public/stylesheets/standalone.css' media='screen' rel='stylesheet' /><link href='../test.css' media='screen' rel='stylesheet' /><link href='../Header_Footer.css' media='screen' rel='stylesheet' />#g" "$f"
 
-    sed -i '/<body>/r ./header.html' "$f"
+sed -i 's#<body>#<body>\n<!--HEADER-->#' "$f"
+
+sed -i '/<!--HEADER-->/r Header.html' "$f"
+
+sed -i '/<!--HEADER-->/d' "$f"
 
 sed -i '/<\/body>/i\
 PLACEHOLDER_FOOTER
