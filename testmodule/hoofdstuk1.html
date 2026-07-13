@@ -53,13 +53,13 @@
 \newcommand {\sagesilent }[0]{\NoFonts }
 \newcommand {\ungraded }[0]{\ifvmode \IgnorePar \fi \EndP \HCode {<div class="ungraded">}\IgnoreIndent }
 \newcommand {\accordion }[0]{\ifvmode \IgnorePar \fi \EndP \HCode {<div class="accordion">} }
-\newcommand {\expandable }[2]{\stepcounter {identification}\ifvmode \IgnorePar \fi \EndP \HCode {<div class="accordion">\Hnewline }\HCode {<h3 class="#1">}#2\HCode {</div>\Hnewline }\HCode {<div id="accordion-item\arabic {identification}" class="accordion-item #1-content">\Hnewline } }
+\newcommand {\expandable }[2]{\stepcounter {identification}\ifvmode \IgnorePar \fi \EndP \HCode {<div class="accordion">\Hnewline }\HCode {<h3 class="#1">}#2\HCode {</h3>\Hnewline }\HCode {<div id="accordion-item\arabic {identification}" class="accordion-item #1-content">\Hnewline } }
 \newcommand {\paragraph }[1]{\HCode {<span class="paragraphHead">}#1\HCode {</span>}\par \IgnorePar }
 \newcommand {\subparagraph }[1]{\HCode {<span class="subparagraphHead">}#1\HCode {</span>}\par \IgnorePar }
 \newcommand {\outcome }[1]{\HCode {<span class="learning-outcome">#1</span>} }
 \newcommand {\javascriptCode }[0]{\NoFonts }
 \newcommand {\GetTranslation }[1]{#1}
-\newcommand {\ref }[1]{\HCode {<a class="reference" href="\##1">#1</div>}}</script></div>
+\newcommand {\ref }[1]{\HCode {<a class="reference" href="\##1">#1</a>}}</script></div>
 <style> .activity-body pre { white-space: pre; background-color: lightgray; } .xmyoutube { aspect-ratio: 16/9; min-width: 75%; } .image-environment img { width: unset; } </style> 
 
  
