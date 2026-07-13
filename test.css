@@ -40,3 +40,19 @@ a.activity.card h3 {
 
     font-weight: normal;
 }
+
+a.activity.card {
+    display: inline-block !important;
+
+    width: 350px !important;
+
+    margin: 20px !important;
+
+    padding: 20px !important;
+
+    background: white !important;
+
+    border: 3px solid red !important;
+
+    border-radius: 10px !important;
+}
