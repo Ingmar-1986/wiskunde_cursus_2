@@ -1,18 +1,20 @@
 a.activity.card {
 
-    display: inline-block;
+    display: inline-flex;
 
-    width: 350px;
+    flex-direction: column;
 
-    min-height: 180px;
+    width: 380px;
+
+    min-height: 220px;
 
     margin: 15px;
 
-    padding: 20px;
+    padding: 25px;
 
     vertical-align: top;
 
-    background: rgb(238, 27, 27);
+    background: rgb(238, 22, 22);
 
     border: 1px solid #d0d0d0;
 
@@ -23,31 +25,21 @@ a.activity.card {
     text-decoration: none;
 }
 
-p {
-
-    display: flex;
-
-    flex-wrap: wrap;
-
-    gap: 20px;
-}
-
 a.activity.card h2 {
+    order: 1;
 
     font-size: 2rem;
 
-    margin-top: 10px;
-
-    margin-bottom: 10px;
+    margin: 0 0 15px 0;
 }
 
 a.activity.card h3 {
-
-    color: #666;
+    order: 2;
 
     font-size: 1rem;
 
     font-weight: normal;
-}
 
+    color: #666;
+}
 
