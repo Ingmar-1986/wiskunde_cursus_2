@@ -160,3 +160,25 @@ a.activity.card:focus {
     color: white;
     text-decoration: none;
 }
+
+
+
+
+
+
+/* Pagina moet altijd verder kunnen scrollen */
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    height: auto !important;
+    overflow-x: hidden;
+    overflow-y: auto !important;
+}
+
+.activity-body {
+    width: 100%;
+    min-height: 100vh;
+    height: auto !important;
+    overflow: visible !important;
+}
