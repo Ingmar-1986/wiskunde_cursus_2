@@ -74,82 +74,283 @@ body {
 
 
 /* =========================================================
-   MODULETITEL
+   CREATIEVE MODULE-INTRO
    ========================================================= */
 
 .module-intro {
     position: relative;
+    isolation: isolate;
 
-    width: min(1050px, calc(100% - 40px));
+    width: min(1180px, calc(100% - 48px));
+    min-height: 260px;
 
-    margin: 40px auto 28px;
-    padding: 52px 45px 42px;
+    margin: 42px auto 40px;
+    padding: 58px 70px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
 
     overflow: hidden;
 
-    border-radius: 22px;
+    border-radius: 28px;
 
     background:
         radial-gradient(
-            circle at 0% 100%,
-            rgba(255, 255, 255, 0.10),
-            transparent 34%
+            circle at 85% 20%,
+            rgba(255, 255, 255, 0.16),
+            transparent 26%
         ),
         radial-gradient(
-            circle at 100% 100%,
-            rgba(14, 36, 50, 0.16),
-            transparent 35%
+            circle at 12% 120%,
+            rgba(14, 36, 50, 0.34),
+            transparent 36%
         ),
         linear-gradient(
-            135deg,
-            var(--kleur-banner-donker),
-            var(--kleur-banner)
+            125deg,
+            #8f0036 0%,
+            var(--kleur-banner) 48%,
+            #dd145e 100%
         );
 
     color: white;
-    text-align: center;
 
     box-shadow:
-        0 16px 35px rgba(14, 36, 50, 0.20);
+        0 22px 50px rgba(14, 36, 50, 0.24);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-.module-intro::after {
+
+/* Wiskundig raster */
+
+.module-intro::before {
     content: "";
 
-    display: block;
+    position: absolute;
+    inset: 0;
 
-    width: 85px;
-    height: 3px;
+    z-index: -2;
 
-    margin: 22px auto 0;
+    opacity: 0.13;
 
-    border-radius: 999px;
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.24) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.24) 1px,
+            transparent 1px
+        );
 
-    background: rgba(255, 255, 255, 0.92);
+    background-size: 42px 42px;
+
+    transform:
+        perspective(700px)
+        rotateX(64deg)
+        scale(1.45)
+        translateY(35%);
+
+    transform-origin: center bottom;
 }
 
+
+/* Decoratieve cirkels en formulegevoel */
+
+.module-intro::after {
+    content: "f(x)   ∑   π   √x";
+
+    position: absolute;
+    right: 48px;
+    top: 50%;
+
+    transform: translateY(-50%) rotate(-7deg);
+
+    z-index: -1;
+
+    color: rgba(255, 255, 255, 0.13);
+
+    font-family: Georgia, serif;
+    font-size: clamp(3rem, 7vw, 7rem);
+    font-style: italic;
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+}
+
+
+/* Kleine modulebadge */
+
+.module-intro h2::before {
+    content: "MODULE";
+
+    display: inline-flex;
+    align-items: center;
+
+    margin-bottom: 18px;
+    padding: 7px 13px;
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 999px;
+
+    background: rgba(14, 36, 50, 0.22);
+
+    color: rgba(255, 255, 255, 0.93);
+
+    font-size: 0.72rem;
+    font-weight: 800;
+
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+
+    backdrop-filter: blur(6px);
+}
+
+
+/* Grote titel */
+
 .module-intro h2 {
+    position: relative;
+
+    max-width: 760px;
+
     margin: 0;
 
     color: white;
 
-    font-size: clamp(3rem, 6vw, 5rem);
-    font-weight: 800;
-    line-height: 1;
+    font-size: clamp(3.4rem, 7vw, 6.3rem);
+    font-weight: 850;
+    line-height: 0.95;
 
-    letter-spacing: -0.04em;
+    letter-spacing: -0.055em;
+
+    text-shadow:
+        0 5px 22px rgba(65, 0, 25, 0.26);
 }
 
+
+/* Accentlijn onder de titel */
+
+.module-intro h2::after {
+    content: "";
+
+    display: block;
+
+    width: 110px;
+    height: 5px;
+
+    margin-top: 24px;
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            90deg,
+            white,
+            rgba(255, 255, 255, 0.25)
+        );
+}
+
+
+/* Abstract */
+
 .module-intro p {
-    max-width: 720px;
+    max-width: 650px;
 
-    margin: 25px auto 0;
+    margin: 24px 0 0;
 
-    color: rgba(255, 255, 255, 0.93);
+    color: rgba(255, 255, 255, 0.91);
 
-    font-size: 0.98rem;
+    font-size: 0.95rem;
     font-weight: 400;
     line-height: 1.65;
+}
+
+
+/* Subtiele hover */
+
+.module-intro {
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.module-intro:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 28px 58px rgba(14, 36, 50, 0.29);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .module-intro {
+        min-height: 230px;
+
+        padding: 48px 46px;
+    }
+
+    .module-intro::after {
+        right: 20px;
+
+        opacity: 0.8;
+    }
+}
+
+
+/* =========================================================
+   SMARTPHONE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    .module-intro {
+        width: calc(100% - 28px);
+        min-height: 240px;
+
+        margin: 20px auto 28px;
+        padding: 38px 26px;
+
+        align-items: center;
+
+        border-radius: 20px;
+
+        text-align: center;
+    }
+
+    .module-intro::after {
+        right: 50%;
+        top: auto;
+        bottom: 12px;
+
+        transform: translateX(50%) rotate(-4deg);
+
+        font-size: 3.2rem;
+    }
+
+    .module-intro h2 {
+        font-size: clamp(2.8rem, 14vw, 4.5rem);
+    }
+
+    .module-intro h2::after {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .module-intro p {
+        max-width: 420px;
+
+        font-size: 0.9rem;
+    }
 }
 
 
