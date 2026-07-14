@@ -105,15 +105,23 @@ do
     "s#<h1 class='card part' id='(part[0-9]+)'>([^<]*)</h1>#<div class=\"activity-card card-sectionheading card part\" id=\"\1\"><div class=\"card-block\"><h4 class=\"card-title\">\2</h4></div></div>#g" \
     "$f"
 
-    # --------------------------------------------------------
-    # 5. Ongeldige p-tags rond hoofdstukkaarten verwijderen
-    # --------------------------------------------------------
+# --------------------------------------------------------
+# 5. Paragraaf rond één of meerdere hoofdstukkaarten
+#    volledig verwijderen
+# --------------------------------------------------------
 
-    perl -0pi -e "
-s#<p>(?=\s*<a class='activity card )##g;
-s#</p>(?=\s*<div class=\"activity-card card-sectionheading)#\n#g;
-s#</p>(?=\s*<!-- XIMERA-FOOTER-START -->)#\n#g;
-s#</p>(?=\s*</body>)#\n#g;
+perl -0pi -e "
+s{
+    <p>\s*
+    (
+        (?:
+            <a\s+class='activity\ card\ '\s+.*?</a>\s*
+        )+
+    )
+    </p>
+}{
+    \$1
+}gsx;
 " "$f"
 
     # --------------------------------------------------------
