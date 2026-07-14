@@ -124,9 +124,6 @@ do
     #
     # Voorbeeld:
     #
-    # <h1 class='card part' id='part1'>Eerste thema</h1>
-    #
-    # wordt:
     #
     # <div class="activity-card card-sectionheading card part"
     #      id="part1">
@@ -136,9 +133,17 @@ do
     # </div>
     # --------------------------------------------------------
 
-    sed -E -i \
-    "s#<h1 class='card part' id='part([0-9]+)'>([^<]*)</h1>#<div class=\"activity-card card-sectionheading card part\" id=\"part\1\"><div class=\"card-block\"><h4 class=\"card-title\">\2</h4></div></div>#g" \
-    "$f"
+    # Parts omzetten naar KU Leuven-achtige secties
+    sed -i "
+s#<h1 class='card part' id='part1'>#<div class=\"activity-card card-sectionheading card part\"><div class=\"card-block\"><h4 class=\"card-title\">#g
+s#<h1 class='card part' id='part2'>#<div class=\"activity-card card-sectionheading card part\"><div class=\"card-block\"><h4 class=\"card-title\">#g
+s#<h1 class='card part' id='part3'>#<div class=\"activity-card card-sectionheading card part\"><div class=\"card-block\"><h4 class=\"card-title\">#g
+s#</h1>#</h4></div></div>#g
+" "$f"
+
+
+    echo "Klaar: $f"
+
 
     # --------------------------------------------------------
     # 6. Lege paragrafen verwijderen
@@ -153,6 +158,6 @@ do
     echo "Klaar: $f"
 done
 
-echo
+
 echo "Alle Ximera-HTML-bestanden zijn verwerkt."
 
