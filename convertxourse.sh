@@ -15,7 +15,7 @@ FOOTER_FILE="Footer.html"
 COURSE_CSS="../test.css"
 HEADER_FOOTER_CSS="../Header_Footer.css"
 
-# Zorgt ervoor dat een lege map geen fout veroorzaakt.
+# Voorkomt fouten wanneer de map geen HTML-bestanden bevat.
 shopt -s nullglob
 
 HTML_FILES=("$COURSE_DIR"/*.html)
@@ -26,7 +26,7 @@ if [ ${#HTML_FILES[@]} -eq 0 ]; then
 fi
 
 # ============================================================
-# BESTANDEN CONTROLEREN
+# HULPBESTANDEN CONTROLEREN
 # ============================================================
 
 for required_file in "$HEADER_FILE" "$INTRO_FILE" "$FOOTER_FILE"
@@ -78,7 +78,6 @@ do
 
     # --------------------------------------------------------
     # 3. Module-intro toevoegen
-    # De intro wordt direct na de header geplaatst.
     # --------------------------------------------------------
 
     if ! grep -q "XIMERA-INTRO-START" "$f"; then
@@ -99,7 +98,26 @@ do
     fi
 
     # --------------------------------------------------------
-    # 4. Footer toevoegen
+    # 4. Themahoofden omzetten naar sectiekaarten
+    # --------------------------------------------------------
+
+    sed -E -i \
+    "s#<h1 class='card part' id='(part[0-9]+)'>([^<]*)</h1>#<div class=\"activity-card card-sectionheading card part\" id=\"\1\"><div class=\"card-block\"><h4 class=\"card-title\">\2</h4></div></div>#g" \
+    "$f"
+
+    # --------------------------------------------------------
+    # 5. Ongeldige p-tags rond hoofdstukkaarten verwijderen
+    # --------------------------------------------------------
+
+    perl -0pi -e "
+s#<p>(?=\s*<a class='activity card )##g;
+s#</p>(?=\s*<div class=\"activity-card card-sectionheading)#\n#g;
+s#</p>(?=\s*<!-- XIMERA-FOOTER-START -->)#\n#g;
+s#</p>(?=\s*</body>)#\n#g;
+" "$f"
+
+    # --------------------------------------------------------
+    # 6. Footer toevoegen
     # --------------------------------------------------------
 
     if ! grep -q "XIMERA-FOOTER-START" "$f"; then
@@ -120,35 +138,7 @@ do
     fi
 
     # --------------------------------------------------------
-    # 5. Ximera-parts omzetten naar sectiekaarten
-    #
-    # Voorbeeld:
-    #
-    #
-    # <div class="activity-card card-sectionheading card part"
-    #      id="part1">
-    #     <div class="card-block">
-    #         <h4 class="card-title">Eerste thema</h4>
-    #     </div>
-    # </div>
-    # --------------------------------------------------------
-
-
-# Themahoofden omzetten naar KU Leuven-achtige secties
-# Hoofdstukkaarten zelf worden niet aangepast.
-
-sed -E -i \
-"s#<h1 class='card part' id='(part[0-9]+)'>([^<]*)</h1>#<div class=\"activity-card card-sectionheading card part\" id=\"\1\"><div class=\"card-block\"><h4 class=\"card-title\">\2</h4></div></div>#g" \
-"$f"
-
-
-    echo "Klaar: $f"
-
-
-    # --------------------------------------------------------
-    # 6. Lege paragrafen verwijderen
-    #
-    # Gewone paragrafen blijven behouden.
+    # 7. Lege paragrafen verwijderen
     # --------------------------------------------------------
 
     sed -E -i \
@@ -158,6 +148,5 @@ sed -E -i \
     echo "Klaar: $f"
 done
 
-
+echo
 echo "Alle Ximera-HTML-bestanden zijn verwerkt."
-
