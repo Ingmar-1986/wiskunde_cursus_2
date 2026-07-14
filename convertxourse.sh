@@ -14,6 +14,7 @@ FOOTER_FILE="Footer.html"
 
 COURSE_CSS="../test.css"
 HEADER_FOOTER_CSS="../Header_Footer.css"
+THEME_SCRIPT="../theme-toggle.js"
 
 # Voorkomt fouten wanneer de map geen HTML-bestanden bevat.
 shopt -s nullglob
@@ -153,6 +154,15 @@ s{
     's#<p>[[:space:]]*</p>##g' \
     "$f"
 
+    # --------------------------------------------------------
+    # JavaScript voor uitklapbare thema's toevoegen
+    # --------------------------------------------------------
+
+    if ! grep -q "../theme-toggle.js" "$f"; then
+        sed -i \
+        "s#</body>#  <script src='../theme-toggle.js'></script>\n</body>#" \
+        "$f"
+    fi
     echo "Klaar: $f"
 done
 

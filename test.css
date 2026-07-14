@@ -795,3 +795,94 @@ a.activity.card:hover::after {
         font-size: 1.45rem;
     }
 }
+
+/* =========================================================
+   UITKLAPBARE THEMA'S
+   ========================================================= */
+
+.activity-card.card-sectionheading.card.part {
+    cursor: pointer;
+
+    user-select: none;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.activity-card.card-sectionheading.card.part:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 14px 30px rgba(14, 36, 50, 0.2);
+}
+
+.activity-card.card-sectionheading.card.part:focus-visible {
+    outline: 3px solid rgba(195, 0, 74, 0.35);
+    outline-offset: 4px;
+}
+
+
+/* Pijl rechts */
+
+.activity-card.card-sectionheading.card.part::after {
+    content: "⌄";
+
+    position: absolute;
+    right: 30px;
+    top: 50%;
+
+    transform:
+        translateY(-50%)
+        rotate(0deg);
+
+    color: white;
+
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1;
+
+    transition: transform 0.25s ease;
+}
+
+
+/* Pijl draaien wanneer het thema gesloten is */
+
+.activity-card.card-sectionheading.card.part.is-collapsed::after {
+    transform:
+        translateY(-50%)
+        rotate(-90deg);
+}
+
+
+/* Container rond de hoofdstukken */
+
+.theme-content {
+    display: block;
+
+    max-height: 3000px;
+
+    opacity: 1;
+
+    overflow: hidden;
+
+    transition:
+        max-height 0.4s ease,
+        opacity 0.25s ease,
+        margin 0.3s ease;
+}
+
+
+/* Ingeklapte toestand */
+
+.theme-content.is-collapsed {
+    max-height: 0;
+
+    margin-top: 0;
+    margin-bottom: 0;
+
+    opacity: 0;
+
+    pointer-events: none;
+}
