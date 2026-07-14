@@ -114,75 +114,102 @@
 
     <div class="hero-bottom-line"></div>
 
-</header><!-- XIMERA-HEADER-END --> 
-<!-- XIMERA-INTRO-START -->
-<div class="module-intro">
+</header>
 
-    <h2>Testmodule</h2>
+<button
+    class="course-menu-button"
+    id="courseMenuButton"
+    type="button"
+>
+    ☰ Toon cursusinhoud
+</button>
 
-    <p>
-        Dit is een testmodule om de KU Leuven-layout uit te proberen.
-    </p>
+<main class="chapter-layout">
 
-</div>
-<!-- XIMERA-INTRO-END -->
-<div class='preamble'><script type='math/tex'>\newenvironment {prompt}{}{}
-\newcommand {\accordion }[0]{}
-\newcommand {\ungraded }[0]{}
-\newcommand {\xmDefaultPreamble }[0]{xmPreamble.tex}
-\newcommand {\xmDefaultPrintstyle }[0]{xmPrintstyle.sty}
-\newcommand {\luastring }[1]{"\luatexluaescapestring {#1}"}
-\newcommand {\luastringO }[1]{\luastring {\unexpanded \expandafter {#1}}}
-\newcommand {\luastringN }[1]{\luastring {\unexpanded {#1}}}
-\newcommand {\RestoreMathJaxEnvironment }[1]{\expandafter \let \csname #1\expandafter \endcsname \csname mathjax-#1\endcsname \expandafter \let \csname end#1\expandafter \endcsname \csname mathjax-end#1\endcsname }
-\newcommand {\DeclareMicrotypeVariants }[1]{}
-\newcommand {\DeclareMicrotypeAlias }[2]{}
-\newcommand {\LoadMicrotypeFile }[1]{}
-\newcommand {\DeclareMicrotypeFilePrefix }[1]{}
-\newcommand {\DeclareMicrotypeBabelHook }[2]{}
-\newcommand {\microtypesetup }[1]{}
-\newcommand {\microtypecontext }[1]{}
-\newcommand {\textmicrotypecontext }[2]{#2}
-\newcommand {\leftprotrusion }[1]{#1}
-\newcommand {\rightprotrusion }[1]{#1}
-\newcommand {\noprotrusionifhmode }[0]{}
-\newcommand {\lsstyle }[0]{}
-\newcommand {\lslig }[1]{#1}
-\newcommand {\maketitle }[0]{}
-\newcommand {\problem }[0]{ }
-\newcommand {\exercise }[0]{ }
-\newcommand {\question }[0]{ }
-\newcommand {\exploration }[0]{ }
-\newcommand {\ConfigureTheoremEnv }[1]{\renewenvironment {#1}[1][]{\refstepcounter {problem}\ifthenelse {\equal {###1}{}}{}{\HCode {<span class="theorem-like-title">}###1\HCode {</span>}}}{} \ConfigureEnv {#1}{\stepcounter {identification}\ifvmode \IgnorePar \fi \EndP \HCode {<div class="theorem-like problem-environment #1" id="problem\arabic {identification}" titletext=" \GetTranslation {#1}">}}{\ifvmode \IgnorePar \fi \EndP \HCode {</div>}\IgnoreIndent }{}{}}
-\newcommand {\xmalt }[1]{\ifvmode \IgnorePar \fi \EndP \HCode {<details><summary>Show Alt Text</summary>} #1 \HCode {</details>}}
-\newcommand {\dialogue }[0]{\begin {description}}
-\newcommand {\foldable }[0]{\stepcounter {identification}\ifvmode \IgnorePar \fi \EndP \HCode {<div id="foldable\arabic {identification}" class="foldable">}}
-\newcommand {\unfoldable }[1]{\HCode {<span class="unfoldable">}#1\HCode {</span>}}
-\newcommand {\selectAll }[0]{\refstepcounter {problem}}
-\newcommand {\freeResponse }[0]{\refstepcounter {problem}}
-\newcommand {\javascript }[0]{\NoFonts }
-\newcommand {\sageCell }[0]{\NoFonts }
-\newcommand {\sageOutput }[0]{\NoFonts }
-\newcommand {\sagesilent }[0]{\NoFonts }
-\newcommand {\ungraded }[0]{\ifvmode \IgnorePar \fi \EndP \HCode {<div class="ungraded">}\IgnoreIndent }
-\newcommand {\accordion }[0]{\ifvmode \IgnorePar \fi \EndP \HCode {<div class="accordion">} }
-\newcommand {\expandable }[2]{\stepcounter {identification}\ifvmode \IgnorePar \fi \EndP \HCode {<div class="accordion">\Hnewline }\HCode {<h3 class="#1">}#2\HCode {</h3>\Hnewline }\HCode {<div id="accordion-item\arabic {identification}" class="accordion-item #1-content">\Hnewline } }
-\newcommand {\paragraph }[1]{\HCode {<span class="paragraphHead">}#1\HCode {</span>}\par \IgnorePar }
-\newcommand {\subparagraph }[1]{\HCode {<span class="subparagraphHead">}#1\HCode {</span>}\par \IgnorePar }
-\newcommand {\outcome }[1]{\HCode {<span class="learning-outcome">#1</span>} }
-\newcommand {\javascriptCode }[0]{\NoFonts }
-\newcommand {\GetTranslation }[1]{#1}
-\newcommand {\ref }[1]{\HCode {<a class="reference" href="\##1">#1</a>}}</script></div>
-<style> .activity-body pre { white-space: pre; background-color: lightgray; } .xmyoutube { aspect-ratio: 16/9; min-width: 75%; } .image-environment img { width: unset; } </style> 
+    <!-- SIDEBAR HIER INVOEGEN -->
 
- 
-<div class='abstract'>
-<!--  l. 9  --><p class='noindent'>Dit is het eerste testabsratct.</p> 
-</div>
-<div class='maketitle'></div>
-<!--  l. 13  --><p class='noindent'>Welkom in hoofdstuk 1.
-</p>
-<div class='problem-environment exercise' id='problem1' numbered=' ' role='article' titletext=' Exercise'>  <span class='mathjax-inline'>\(2+3=\answer {5}\)</span>    </div>
+    <article class="chapter-content">
+
+        <header class="chapter-heading">
+
+            <span class="chapter-kicker">
+                Hoofdstuk 2
+            </span>
+
+            <h1>
+                De gemiddelde verandering van een functie
+            </h1>
+
+            <p class="chapter-summary">
+                In dit hoofdstuk leer je hoe je de gemiddelde
+                verandering van een functie berekent en grafisch
+                interpreteert.
+            </p>
+
+        </header>
+
+        <div class="chapter-body">
+
+            <div class="lesson-info-grid">
+
+                <section class="lesson-info-card">
+                    <h3>Voorkennis</h3>
+
+                    <ul>
+                        <li>Functiewaarden berekenen</li>
+                        <li>Werken met coördinaten</li>
+                        <li>Richtingscoëfficiënt herkennen</li>
+                    </ul>
+                </section>
+
+                <section class="lesson-info-card">
+                    <h3>Na deze les kun je</h3>
+
+                    <ul>
+                        <li>Een differentiequotiënt berekenen</li>
+                        <li>Een gemiddelde verandering interpreteren</li>
+                        <li>Een secant tekenen</li>
+                    </ul>
+                </section>
+
+            </div>
+
+            <h2>Wat betekent verandering?</h2>
+
+            <p>
+                Wanneer een grootheid verandert, kunnen we onderzoeken
+                hoeveel die verandering gemiddeld bedraagt over een
+                bepaald interval.
+            </p>
+
+            <h2>Het differentiequotiënt</h2>
+
+            <p>
+                Hier komt de bestaande Ximera-inhoud.
+            </p>
+
+        </div>
+
+        <nav class="chapter-pagination">
+
+            <a class="previous" href="hoofdstuk1.html">
+                ← Vorig hoofdstuk
+            </a>
+
+            <a class="overview" href="testmodule.html">
+                Moduleoverzicht
+            </a>
+
+            <a class="next" href="hoofdstuk3.html">
+                Volgend hoofdstuk →
+            </a>
+
+        </nav>
+
+    </article>
+
+</main>
+
 <!-- XIMERA-FOOTER-START -->
     <footer class="site-footer">
 

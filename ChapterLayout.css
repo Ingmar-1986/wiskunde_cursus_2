@@ -1,0 +1,567 @@
+:root {
+    --kleur-banner: #c3004a;
+    --kleur-banner-donker: #900037;
+
+    --kleur-donker: #0e2432;
+    --kleur-donker-licht: #17394d;
+
+    --kleur-inhoud: #e3e3e3;
+    --kleur-oppervlak: #ffffff;
+    --kleur-oppervlak-zacht: #f4f6f8;
+
+    --kleur-tekst: #0e2432;
+    --kleur-tekst-zacht: #5f6f7a;
+    --kleur-rand: #dce2e6;
+
+    --sidebar-breedte: 340px;
+}
+
+
+/* =========================================================
+   VOLLEDIGE HOOFDSTUKLAY-OUT
+   ========================================================= */
+
+.chapter-layout {
+    display: grid;
+    grid-template-columns:
+        var(--sidebar-breedte)
+        minmax(0, 1fr);
+
+    width: min(1500px, calc(100% - 40px));
+
+    margin: 38px auto 70px;
+
+    align-items: start;
+    gap: 34px;
+}
+
+
+/* =========================================================
+   MOBIELE MENUKNOP
+   ========================================================= */
+
+.course-menu-button {
+    display: none;
+
+    width: calc(100% - 32px);
+
+    margin: 22px 16px 0;
+    padding: 14px 18px;
+
+    border: 0;
+    border-radius: 12px;
+
+    background: var(--kleur-donker);
+
+    color: white;
+
+    font-size: 1rem;
+    font-weight: 750;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   ZIJBALK
+   ========================================================= */
+
+.course-sidebar {
+    position: sticky;
+    top: 24px;
+
+    max-height: calc(100vh - 48px);
+
+    overflow-y: auto;
+
+    border: 1px solid var(--kleur-rand);
+    border-radius: 18px;
+
+    background: var(--kleur-oppervlak);
+
+    box-shadow:
+        0 14px 35px rgba(14, 36, 50, 0.10);
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 24px;
+
+    border-bottom: 1px solid var(--kleur-rand);
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--kleur-donker),
+            var(--kleur-donker-licht)
+        );
+
+    color: white;
+}
+
+.sidebar-label {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: rgba(255, 255, 255, 0.68);
+
+    font-size: 0.7rem;
+    font-weight: 800;
+
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.sidebar-header h2 {
+    margin: 0;
+
+    color: white;
+
+    font-size: 1.55rem;
+}
+
+.sidebar-close {
+    display: none;
+
+    border: 0;
+    background: transparent;
+
+    color: white;
+
+    font-size: 2rem;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   NAVIGATIESECTIES
+   ========================================================= */
+
+.course-section {
+    border-bottom: 1px solid var(--kleur-rand);
+}
+
+.course-section:last-child {
+    border-bottom: 0;
+}
+
+.course-section-toggle {
+    display: grid;
+    grid-template-columns: 38px 1fr 24px;
+    align-items: center;
+    gap: 10px;
+
+    width: 100%;
+
+    padding: 17px 18px;
+
+    border: 0;
+
+    background: white;
+
+    color: var(--kleur-donker);
+
+    text-align: left;
+
+    cursor: pointer;
+}
+
+.course-section-toggle:hover {
+    background: var(--kleur-oppervlak-zacht);
+}
+
+.section-number {
+    display: grid;
+    place-items: center;
+
+    width: 34px;
+    height: 34px;
+
+    border-radius: 50%;
+
+    background: rgba(195, 0, 74, 0.10);
+
+    color: var(--kleur-banner);
+
+    font-size: 0.9rem;
+    font-weight: 800;
+}
+
+.section-name {
+    font-weight: 750;
+    line-height: 1.3;
+}
+
+.section-arrow {
+    color: var(--kleur-banner);
+
+    font-size: 1.25rem;
+
+    transition: transform 0.2s ease;
+}
+
+.course-section:not(.is-open) .section-arrow {
+    transform: rotate(-90deg);
+}
+
+.course-section-content {
+    display: none;
+
+    padding: 0 14px 15px 66px;
+}
+
+.course-section.is-open .course-section-content {
+    display: block;
+}
+
+.course-section-content a {
+    display: block;
+
+    margin: 4px 0;
+    padding: 10px 12px;
+
+    border-radius: 9px;
+
+    color: var(--kleur-tekst-zacht);
+
+    font-size: 0.91rem;
+    line-height: 1.35;
+
+    text-decoration: none;
+}
+
+.course-section-content a:hover {
+    color: var(--kleur-banner);
+    background: rgba(195, 0, 74, 0.07);
+}
+
+.course-section-content a.is-active {
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--kleur-banner-donker),
+            var(--kleur-banner)
+        );
+
+    font-weight: 750;
+}
+
+
+/* =========================================================
+   CENTRALE LESINHOUD
+   ========================================================= */
+
+.chapter-content {
+    min-width: 0;
+
+    overflow: hidden;
+
+    border: 1px solid var(--kleur-rand);
+    border-radius: 20px;
+
+    background: var(--kleur-oppervlak);
+
+    box-shadow:
+        0 15px 40px rgba(14, 36, 50, 0.10);
+}
+
+
+/* =========================================================
+   TITELBLOK HOOFDSTUK
+   ========================================================= */
+
+.chapter-heading {
+    position: relative;
+
+    padding: 48px 56px 42px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(255, 255, 255, 0.10),
+            transparent 25%
+        ),
+        linear-gradient(
+            125deg,
+            var(--kleur-donker),
+            #17445a
+        );
+
+    color: white;
+}
+
+.chapter-heading::after {
+    content: "f(x)  ∆x  ∑  √";
+
+    position: absolute;
+    right: 30px;
+    bottom: -15px;
+
+    color: rgba(255, 255, 255, 0.07);
+
+    font-family: Georgia, serif;
+    font-size: 5rem;
+    font-style: italic;
+}
+
+.chapter-kicker {
+    display: inline-block;
+
+    margin-bottom: 16px;
+    padding: 7px 13px;
+
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 999px;
+
+    color: rgba(255, 255, 255, 0.82);
+
+    font-size: 0.7rem;
+    font-weight: 800;
+
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+}
+
+.chapter-heading h1 {
+    position: relative;
+    z-index: 1;
+
+    max-width: 850px;
+
+    margin: 0;
+
+    color: white;
+
+    font-size: clamp(2.4rem, 5vw, 4.4rem);
+    font-weight: 850;
+    line-height: 1.02;
+
+    letter-spacing: -0.045em;
+}
+
+.chapter-summary {
+    position: relative;
+    z-index: 1;
+
+    max-width: 720px;
+
+    margin: 20px 0 0;
+
+    color: rgba(255, 255, 255, 0.82);
+
+    font-size: 1.05rem;
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   LESLICHAAM
+   ========================================================= */
+
+.chapter-body {
+    max-width: 920px;
+
+    margin: 0 auto;
+    padding: 48px 56px 60px;
+
+    color: var(--kleur-tekst);
+
+    font-size: 1.06rem;
+    line-height: 1.75;
+}
+
+.chapter-body h2 {
+    margin: 52px 0 18px;
+
+    color: var(--kleur-donker);
+
+    font-size: 2rem;
+    line-height: 1.2;
+}
+
+.chapter-body h2:first-child {
+    margin-top: 0;
+}
+
+.chapter-body h3 {
+    margin: 36px 0 14px;
+
+    color: var(--kleur-banner);
+
+    font-size: 1.4rem;
+}
+
+.chapter-body p {
+    margin: 0 0 19px;
+}
+
+.chapter-body ul,
+.chapter-body ol {
+    margin: 0 0 22px;
+    padding-left: 28px;
+}
+
+
+/* =========================================================
+   INFORMATIEKAARTEN
+   ========================================================= */
+
+.lesson-info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+
+    margin-bottom: 40px;
+}
+
+.lesson-info-card {
+    padding: 22px 24px;
+
+    border: 1px solid var(--kleur-rand);
+    border-radius: 14px;
+
+    background: var(--kleur-oppervlak-zacht);
+}
+
+.lesson-info-card h3 {
+    margin: 0 0 12px;
+
+    color: var(--kleur-banner);
+
+    font-size: 0.82rem;
+    font-weight: 850;
+
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+}
+
+.lesson-info-card ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+
+/* =========================================================
+   VORIGE EN VOLGENDE
+   ========================================================= */
+
+.chapter-pagination {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 20px;
+
+    padding: 24px 56px;
+
+    border-top: 1px solid var(--kleur-rand);
+
+    background: var(--kleur-oppervlak-zacht);
+}
+
+.chapter-pagination a {
+    color: var(--kleur-banner);
+
+    font-weight: 750;
+
+    text-decoration: none;
+}
+
+.chapter-pagination .next {
+    text-align: right;
+}
+
+.chapter-pagination .overview {
+    color: var(--kleur-tekst-zacht);
+
+    font-size: 0.9rem;
+}
+
+
+/* =========================================================
+   TABLET EN SMARTPHONE
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .course-menu-button {
+        display: block;
+    }
+
+    .chapter-layout {
+        display: block;
+
+        width: min(100% - 32px, 950px);
+
+        margin-top: 18px;
+    }
+
+    .course-sidebar {
+        position: fixed;
+        z-index: 9999;
+
+        left: 0;
+        top: 0;
+
+        width: min(360px, 88vw);
+        height: 100vh;
+        max-height: none;
+
+        border-radius: 0;
+
+        transform: translateX(-105%);
+
+        transition: transform 0.25s ease;
+    }
+
+    .course-sidebar.is-visible {
+        transform: translateX(0);
+    }
+
+    .sidebar-close {
+        display: block;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .chapter-layout {
+        width: calc(100% - 20px);
+    }
+
+    .chapter-heading {
+        padding: 38px 25px 32px;
+    }
+
+    .chapter-heading h1 {
+        font-size: 2.55rem;
+    }
+
+    .chapter-body {
+        padding: 34px 24px 45px;
+
+        font-size: 1rem;
+    }
+
+    .lesson-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .chapter-pagination {
+        grid-template-columns: 1fr;
+        padding: 22px 24px;
+    }
+
+    .chapter-pagination .next,
+    .chapter-pagination .overview {
+        text-align: left;
+    }
+}
