@@ -133,13 +133,13 @@ do
     # </div>
     # --------------------------------------------------------
 
-    # Parts omzetten naar KU Leuven-achtige secties
-    sed -i "
-s#<h1 class='card part' id='part1'>#<div class=\"activity-card card-sectionheading card part\"><div class=\"card-block\"><h4 class=\"card-title\">#g
-s#<h1 class='card part' id='part2'>#<div class=\"activity-card card-sectionheading card part\"><div class=\"card-block\"><h4 class=\"card-title\">#g
-s#<h1 class='card part' id='part3'>#<div class=\"activity-card card-sectionheading card part\"><div class=\"card-block\"><h4 class=\"card-title\">#g
-s#</h1>#</h4></div></div>#g
-" "$f"
+
+# Themahoofden omzetten naar KU Leuven-achtige secties
+# Hoofdstukkaarten zelf worden niet aangepast.
+
+sed -E -i \
+"s#<h1 class='card part' id='(part[0-9]+)'>([^<]*)</h1>#<div class=\"activity-card card-sectionheading card part\" id=\"\1\"><div class=\"card-block\"><h4 class=\"card-title\">\2</h4></div></div>#g" \
+"$f"
 
 
     echo "Klaar: $f"

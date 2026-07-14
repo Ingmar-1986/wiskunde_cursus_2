@@ -77,12 +77,14 @@ h1.card.part {
 
 
 /* =========================================================
-   KAARTEN VAN DE HOOFDSTUKKEN
+   HOOFDSTUKKAARTEN
+   Titel en abstract staan samen op één kaart
    ========================================================= */
 
 a.activity.card {
     display: inline-flex;
     flex-direction: column;
+    box-sizing: border-box;
 
     width: 380px;
     min-height: 220px;
@@ -116,64 +118,45 @@ a.activity.card:hover {
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.18);
 }
 
-/* Titel van het hoofdstuk */
+/* Hoofdstuktitel */
 
 a.activity.card h2 {
-    order: 1;
-
-    margin: 0 0 15px;
+    margin: 0 0 14px;
 
     color: white;
 
-    font-size: 2rem;
+    font-size: 1.6rem;
     font-weight: 800;
-    line-height: 1.2;
+    line-height: 1.25;
 }
 
-/* Abstract of ondertitel */
+/* Abstract van het hoofdstuk */
 
 a.activity.card h3 {
-    order: 2;
-
     margin: 0;
 
     color: rgba(255, 255, 255, 0.92);
 
     font-size: 1rem;
-    font-weight: normal;
-    line-height: 1.6;
+    font-weight: 400;
+    line-height: 1.55;
 }
 
-/* Wanneer Ximera de abstract in een p-element zet */
+/* Voor het geval Ximera de abstract als paragraaf uitvoert */
 
-a.activity.card p {
-    order: 2;
-
-    margin: 0;
-
-    color: rgba(255, 255, 255, 0.92);
-
-    font-size: 1rem;
-    line-height: 1.6;
-}
-
-/* Wanneer Ximera een div met class abstract gebruikt */
-
+a.activity.card p,
 a.activity.card .abstract {
-    order: 2;
-
     margin: 0;
 
     color: rgba(255, 255, 255, 0.92);
 
     font-size: 1rem;
-    line-height: 1.6;
+    font-weight: 400;
+    line-height: 1.55;
 }
 
-/* Alle tekst in de kaart zichtbaar houden */
-
-a.activity.card span,
-a.activity.card div {
-    font-size: 1rem;
+a.activity.card:hover,
+a.activity.card:focus {
+    color: white;
+    text-decoration: none;
 }
-
