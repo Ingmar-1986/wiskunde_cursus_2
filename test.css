@@ -1,6 +1,7 @@
 body {
-    width: 100%;
-    max-width: none !important;
+    min-height: 100vh;
+    height: auto;
+    overflow-y: auto;
 }
 
 .activity-body {
@@ -181,4 +182,19 @@ body {
     min-height: 100vh;
     height: auto !important;
     overflow: visible !important;
+}
+
+.activity-card.card-sectionheading.card.part {
+    display: block;
+    clear: both;
+
+    width: 100%;
+    box-sizing: border-box;
+
+    margin-top: 35px;
+    margin-bottom: 10px;
+}
+
+a.activity.card {
+    float: none !important;
 }
