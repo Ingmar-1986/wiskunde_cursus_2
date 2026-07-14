@@ -852,3 +852,28 @@ body {
         font-size: 0.64rem;
     }
 }
+
+/* =========================================================
+   FOOTER ALTIJD ONDER DE CURSUSINHOUD
+   ========================================================= */
+
+.site-footer {
+    position: static !important;
+    inset: auto !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+
+    display: block !important;
+    clear: both !important;
+
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+
+    margin: 60px 0 0 !important;
+    transform: none !important;
+
+    box-sizing: border-box;
+}

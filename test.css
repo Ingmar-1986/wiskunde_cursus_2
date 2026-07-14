@@ -167,3 +167,38 @@ body > p {
 body > p:has(a.activity.card) {
     display: contents;
 }
+
+/* Alle cursusonderdelen blijven in de normale paginaflow */
+
+html,
+body {
+    min-height: 100%;
+    height: auto !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+}
+
+body {
+    display: block !important;
+}
+
+.activity-body {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+}
+
+/* Themahoofden starten altijd onder de voorgaande kaarten */
+
+.activity-card.card-sectionheading.card.part {
+    display: block !important;
+    clear: both !important;
+    position: static !important;
+}
+
+/* Footer begint altijd op een nieuwe rij */
+
+.site-footer {
+    clear: both !important;
+}
