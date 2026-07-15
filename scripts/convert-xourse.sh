@@ -129,6 +129,16 @@ s{
 }{}gsx;
 " "$XOURSE_HTML"
 
+# ============================================================
+# XIMERA-LINKS RELATIEF MAKEN
+# ============================================================
+
+MODULE_RELATIVE_PATH="${MODULE_DIR#./}/"
+
+sed -E -i \
+"s#href=['\"]${MODULE_RELATIVE_PATH}([^'\"]+)['\"]#href='\1.html'#g" \
+"$XOURSE_HTML"
+
 # Footer toevoegen
 
 if ! grep -q "XIMERA-FOOTER-START" "$XOURSE_HTML"; then

@@ -1,27 +1,3 @@
-#!/usr/bin/env bash
-
-set -e
-
-PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-cd "$PROJECT_ROOT"
-
-MODULES_DIR="modules"
-
-shopt -s nullglob
-
-MODULE_FILES=("$MODULES_DIR"/*/index.tex)
-
-if [ ${#MODULE_FILES[@]} -eq 0 ]; then
-    echo "Geen modules gevonden in $MODULES_DIR."
-    exit 0
-fi
-
-echo
-echo "========================================"
-echo " Wiskundecursus bouwen"
-echo "========================================"
-echo
-
 for course_file in "${MODULE_FILES[@]}"
 do
     module_dir="$(dirname "$course_file")"
@@ -43,21 +19,28 @@ do
 
     bash scripts/convert-xourse.sh "$module_dir"
 
-    echo "3. Hoofdstukken opmaken"
+    echo "3. Sidebar genereren"
+
+    bash scripts/generate-sidebar.sh "$module_dir"
+
+    echo "4. Hoofdstukken opmaken"
 
     bash scripts/convert-ximera.sh "$module_dir"
 
-    echo "4. PDF genereren"
+    echo "5. PDF genereren"
 
     xmlatex bake \
         --force \
         --compile pdf \
         "$course_file"
 
-    echo "Module $module_name is klaar."
-done
+    mkdir -p pdf
 
-echo
-echo "========================================"
-echo " Alle modules zijn verwerkt"
-echo "========================================"
+    if [ -f "$module_dir/index.pdf" ]; then
+        cp \
+            "$module_dir/index.pdf" \
+            "pdf/${module_name}.pdf"
+
+        echo "PDF geplaatst in pdf/${module_name}.pdf"
+    fi
+done

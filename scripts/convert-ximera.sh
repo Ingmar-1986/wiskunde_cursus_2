@@ -18,7 +18,7 @@ CSS_DIR="$ASSETS_DIR/css"
 JS_DIR="$ASSETS_DIR/js"
 
 HEADER_FILE="$HTML_DIR/Header.html"
-SIDEBAR_FILE="$HTML_DIR/CourseSidebar.html"
+SIDEBAR_FILE="$MODULE_DIR/CourseSidebar.generated.html"
 FOOTER_FILE="$HTML_DIR/Footer.html"
 
 HEADER_FOOTER_CSS="../../assets/css/Header_Footer.css"
