@@ -339,3 +339,7 @@ xmDevEnvFiles.tgz
 
 
 !testmodule/testmodule.pdf
+
+!modules/
+!modules/**/
+!modules/**/*.html
