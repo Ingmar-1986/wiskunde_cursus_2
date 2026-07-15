@@ -107,13 +107,13 @@
 
 
 
-\providecommand{\xmlogo}{ 
-   	\vspace*{-4cm}\begin{minipage}[l]{2cm} \ \ \ \ \ \ \ \includegraphics[width=5cm]{logo_school}\end{minipage}
-}
+\providecommand{\xmlogo}{}
+
 
 \providecommand{\xmorganisatienaam}{{Campus Bellevue Izegem}}
 \providecommand{\xmafdelingsnaam}{{Ingmar Herreman}}
 \providecommand{\xmcursusversie}{\small{(versie \today} | \xmtoonprintopties\ )}
+\providecommand{\xmmodulenaam}{Wiskunde 7 FVD}
 
 \providecommand{\xmtoonprintopties}{
 	\ifhandout Handouts\fi
@@ -125,48 +125,13 @@
 \providecommand{\xmmodulenummer}{}   % print bv "Module xxx" op titelbladen
 \providecommand{\xmcopyright}{
 
-    \begin{minipage}[l]{3cm} \ \ \ \ \ \ \ \includegraphics[height=3cm]{logo_school.png}\end{minipage}
+
     \hspace{2cm}\doclicenseImage[imagewidth=2em]\doclicenseNameRef 
 }
 
 % print een titelblad, globaal of per module (gebaseerd op bovenstaande parameters)
-\newcommand{\xmPrintFrontPage}[1]{
-    \thispagestyle{empty} 
-    \xmlogo  \\ \
-    \bigskip \bigskip
-    \begin{center}
-    \xmcursusnaam \\ \ 
-    \bigskip \bigskip
-    \end{center}
     
-    \begin{center}
-        \begin{tcolorbox}[colback=kleur_banner!80,colframe=blue!75!black, title=\begin{center}\Huge{\xmmodulenaam} \end{center}]
-        \begin{center}
-            \xmcover \\
-            \bigskip
-            \large 
-                \xmmodulenummer
-            \bigskip 
-            \huge{\textbf{{#1}}}
-        \end{center}
-        \end{tcolorbox}
-    \end{center}  
 
-      \bigskip\bigskip
-      \begin{center}
-        \Large{\textbf{\xmafdelingsnaam}}\\ \ \\
-        
-        \textbf{\large{\xmorganisatienaam}}\\
-       	\bigskip
-         \xmcursusversie
-    	\bigskip    	
-    \end{center}    
-
-    \afterpage{\thispagestyle{firstpage}}   
-    \restoregeometry
-    \newpage
-    \pagestyle{otherpage}  
-}
 
 \usepackage{afterpage}
 \usepackage{fancyhdr} % Nodig voor de 'fancy' hoofdingen
@@ -289,7 +254,7 @@
 \renewcommand{\maketitle}{
   % Maak onderscheid tussen (volledige) xourses of (aparte) activities
   \ifdefined\isXourse  
-      \xmPrintFrontPage{\@title}
+      %\xmPrintFrontPage{\@title}
   
       % Toon INHOUDSOPGAVE 
       \thispagestyle{empty}
@@ -383,26 +348,7 @@
     \renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
 
     
-    {% Reset de per-chapter counters 
-         \setcounter{sectiontitlenumber}{0}
-         \setcounter{proposition}{0}
-         \setcounter{problem}{0}
-         \setcounter{definition}{0}
-         \setcounter{example}{0}
-         \setcounter{explanation}{0}
-         \setcounter{remark}{0}
-         \setcounter{notation}{0}
-         \setcounter{observation}{0}
-         \setcounter{theorem}{0}
-         \setcounter{warning}{0}
-         \setcounter{xmuitweiding}{0}
-         \setcounter{xmuitweidingwet}{0}
-         \setcounter{xmuitweidingwis}{0}
-         \setcounter{exercise}{0}
-         \setcounter{question}{0}
-         \setcounter{subsection}{0}
-         \setcounter{subsubsection}{0}         
-    }
+
     
     \markboth{\thetitlenumber\hspace{1em} \@title}{\thetitlenumber\hspace{1em} \@title}   % fix wrong section on last page of activity    
     \thispagestyle{firstpage} 
@@ -774,12 +720,12 @@
 % remove italics def
 \makeatletter
 \let\problem\relax
-\let\c@problem\relax
 \let\endproblem\relax
+\let\c@problem\@undefined
 \makeatother
-% problem environment is een standaard theorem
-\newtheorem*{problem}{}
-\renewcommand{\theproblem}{\theoremtitle{problem}} % titel instellen
+
+\newtheorem{problem}{}
+\renewcommand{\theproblem}{\theoremtitle{problem}}
 \tcolorboxenvironment{problem}{
     colback=yellow!10, % kleur achtergrond voor de inhoud
     colframe=yellow!75!black, % Donkere kleur voor de rand
@@ -793,6 +739,8 @@
     before skip=5pt, % Ruimte vóór de box
     after skip=1pt % Ruimte na de box
 }
+
+         \setcounter{problem}{0}
 
 \makeatletter
 \let\template\relax
@@ -899,36 +847,7 @@
 \AtBeginEnvironment{exercise}{\setcounter{question}{0}}
 \AtBeginEnvironment{example}{\setcounter{question}{0} \handoutfalse}    % print oplossingen in voorbeelden
 
-\ifdefined\isXourse
-   \ifdefined\xmuitweiding
-   \else
-       \def\xmnouitweiding{false}
-   \fi
-\fi
 
-\ifdefined\xmnouitweiding  
-\excludecomment{xmuitweiding}
-\else
-\makeatletter
-\let\xmuitweiding\relax
-\let\c@\xmuitweiding\relax
-\let\endxmuitweiding\relax
-\let\c@xmuitweiding\@undefined % nodig want anders klaagt hij dat \c@xmuitweiding al gedefinieerd is, \@undefined is gewoon een macro die niet gedefinieerd is, je kan eender welke macro gebruiken die niet gedefinieerd is
-\makeatother
-\newtheorem{xmuitweiding}{Uitweiding}
-\renewcommand{\thexmuitweiding}{\theoremtitle{xmuitweiding}} % titel instellen
-\tcolorboxenvironment{xmuitweiding}{
-    boxrule=0pt,
-    boxsep=0pt,
-    colback={gray!2!white},
-    enhanced jigsaw,
-    borderline west={2pt}{0pt}{gray!55!black},
-    sharp corners,
-    before skip=10pt,
-    after skip=10pt,
-    breakable,
-}
-\fi
 
 % Feedback
 % Renew feedback
@@ -1106,54 +1025,22 @@
     \array{*\c@MaxMatrixCols #1}}
     \makeatother
 
-%---- Toevoegd door mij
 
-%uitbreiding wetenschappen
 
-\ifdefined\xmuitweidingwet
-\makeatletter
-\let\xmuitweidingwet\relax
-\let\c@\xmuitweidingwet\relax
-\let\endxmuitweidingwet\relax
-\let\c@xmuitweidingwet\@undefined % nodig want anders klaagt hij dat \c@xmuitweiding al gedefinieerd is, \@undefined is gewoon een macro die niet gedefinieerd is, je kan eender welke macro gebruiken die niet gedefinieerd is
-\makeatother
-\newtheorem{xmuitweidingwet}{Uitbreiding wetenschappen}
-\renewcommand{\thexmuitweiding}{ \theoremtitle{xmuitweidingwet}} % titel instellen
-\tcolorboxenvironment{xmuitweidingwet}{
-    boxrule=0pt,
-    title={{\color{kleur_banner}{\Large{\faIcon{microscope} WET}}}},
-    colbacktitle=teal!50,
-    boxsep=0pt,
-    colback={teal!2!white},
-    enhanced jigsaw,
-    borderline={2pt}{0pt}{teal},
-    sharp corners,
-    before skip=10pt,
-    after skip=10pt,
-    breakable,
-}
-
-%uitbreiding wiskunde
-\ifdefined\xmuitweidingwis
-\makeatletter
-\let\xmuitweidingwis\relax
-\let\c@\xmuitweidingwis\relax
-\let\endxmuitweidingwis\relax
-\let\c@xmuitweidingwis\@undefined % nodig want anders klaagt hij dat \c@xmuitweiding al gedefinieerd is, \@undefined is gewoon een macro die niet gedefinieerd is, je kan eender welke macro gebruiken die niet gedefinieerd is
-\makeatother
-\newtheorem{xmuitweidingwis}{Uitbreiding wiskunde}
-\renewcommand{\thexmuitweiding}{ \theoremtitle{xmuitweidingwis}} % titel instellen
-\tcolorboxenvironment{xmuitweidingwis}{
-    boxrule=0pt,
-    title={\color{red}{\Large{\faIcon{infinity} WIS}}},
-    colbacktitle=violet!50,
-    boxsep=0pt,
-    colback={violet!2!white},
-    enhanced jigsaw,
-    borderline={2pt}{0pt}{violet},
-    sharp corners,
-    before skip=10pt,
-    after skip=10pt,
-    breakable,
-}
-\fi
+    {% Reset de per-chapter counters 
+         \setcounter{sectiontitlenumber}{0}
+         \setcounter{proposition}{0}
+         \setcounter{definition}{0}
+         \setcounter{example}{0}
+         \setcounter{explanation}{0}
+         \setcounter{remark}{0}
+         \setcounter{notation}{0}
+         \setcounter{observation}{0}
+         \setcounter{theorem}{0}
+         \setcounter{warning}{0}
+         \setcounter{xmuitweiding}{0}
+         \setcounter{exercise}{0}
+         \setcounter{question}{0}
+         \setcounter{subsection}{0}
+         \setcounter{subsubsection}{0}         
+    }
