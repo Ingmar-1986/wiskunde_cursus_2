@@ -1,9 +1,17 @@
 #!/usr/bin/env bash
 
-set -e
+set -euo pipefail
+
+# ============================================================
+# PROJECTMAP
+# ============================================================
 
 PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$PROJECT_ROOT"
+
+# ============================================================
+# MODULEMAP ONTVANGEN
+# ============================================================
 
 MODULE_DIR="${1:-}"
 
@@ -11,6 +19,12 @@ if [ -z "$MODULE_DIR" ]; then
     echo "Gebruik: $0 modules/naam-van-module"
     exit 1
 fi
+
+MODULE_DIR="${MODULE_DIR%/}"
+
+# ============================================================
+# MAPPEN EN BESTANDEN
+# ============================================================
 
 ASSETS_DIR="assets"
 HTML_DIR="$ASSETS_DIR/html"
@@ -21,9 +35,14 @@ HEADER_FILE="$HTML_DIR/Header.html"
 SIDEBAR_FILE="$MODULE_DIR/CourseSidebar.generated.html"
 FOOTER_FILE="$HTML_DIR/Footer.html"
 
+# Paden zoals ze vanuit modules/basiswiskunde/*.html geladen worden
 HEADER_FOOTER_CSS="../../assets/css/Header_Footer.css"
 CHAPTER_CSS="../../assets/css/ChapterLayout.css"
-CHAPTER_SCRIPT="../../assets/js/chapter-layout.js"
+CHAPTER_SCRIPT="../../assets/javascripts/chapter-layout.js"
+
+# ============================================================
+# HOOFDSTUKBESTANDEN ZOEKEN
+# ============================================================
 
 shopt -s nullglob
 
@@ -32,15 +51,33 @@ CHAPTER_FILES=()
 
 for html_file in "${ALL_HTML_FILES[@]}"
 do
-    if [ "$(basename "$html_file")" != "index.html" ]; then
-        CHAPTER_FILES+=("$html_file")
-    fi
+    filename="$(basename "$html_file")"
+
+    case "$filename" in
+        index.html)
+            # Xourse-overzicht
+            continue
+            ;;
+
+        CourseSidebar.generated.html)
+            # Gegenereerd hulpbestand, geen hoofdstuk
+            continue
+            ;;
+
+        *)
+            CHAPTER_FILES+=("$html_file")
+            ;;
+    esac
 done
 
 if [ ${#CHAPTER_FILES[@]} -eq 0 ]; then
     echo "Geen hoofdstukpagina's gevonden in $MODULE_DIR."
     exit 0
 fi
+
+# ============================================================
+# BENODIGDE BESTANDEN CONTROLEREN
+# ============================================================
 
 for required_file in \
     "$HEADER_FILE" \
@@ -56,25 +93,33 @@ do
     fi
 done
 
+# ============================================================
+# HOOFDSTUKKEN VERWERKEN
+# ============================================================
+
 for f in "${CHAPTER_FILES[@]}"
 do
     echo "Verwerk hoofdstuk: $f"
 
-    # CSS toevoegen
+    # --------------------------------------------------------
+    # 1. CSS toevoegen
+    # --------------------------------------------------------
 
-    if ! grep -q "$HEADER_FOOTER_CSS" "$f"; then
+    if ! grep -Fq "$HEADER_FOOTER_CSS" "$f"; then
         sed -i \
         "s#</head>#  <link href='$HEADER_FOOTER_CSS' media='screen' rel='stylesheet' />\n</head>#" \
         "$f"
     fi
 
-    if ! grep -q "$CHAPTER_CSS" "$f"; then
+    if ! grep -Fq "$CHAPTER_CSS" "$f"; then
         sed -i \
         "s#</head>#  <link href='$CHAPTER_CSS' media='screen' rel='stylesheet' />\n</head>#" \
         "$f"
     fi
 
-    # Header toevoegen
+    # --------------------------------------------------------
+    # 2. Header toevoegen
+    # --------------------------------------------------------
 
     if ! grep -q "XIMERA-HEADER-START" "$f"; then
         sed -i \
@@ -93,7 +138,9 @@ do
         "$f"
     fi
 
-    # Hoofdstuklayout openen
+    # --------------------------------------------------------
+    # 3. Hoofdstuklayout openen
+    # --------------------------------------------------------
 
     if ! grep -q "XIMERA-CHAPTER-LAYOUT-START" "$f"; then
         sed -i \
@@ -108,7 +155,9 @@ do
         "$f"
     fi
 
-    # Sidebar invoegen
+    # --------------------------------------------------------
+    # 4. Automatisch gegenereerde sidebar invoegen
+    # --------------------------------------------------------
 
     if grep -q "<!-- SIDEBAR-PLACEHOLDER -->" "$f"; then
         sed -i \
@@ -120,7 +169,9 @@ do
         "$f"
     fi
 
-    # Hoofdstuklayout sluiten
+    # --------------------------------------------------------
+    # 5. Hoofdstuklayout sluiten
+    # --------------------------------------------------------
 
     if ! grep -q "XIMERA-CHAPTER-LAYOUT-END" "$f"; then
         sed -i \
@@ -132,7 +183,9 @@ do
         "$f"
     fi
 
-    # Footer toevoegen
+    # --------------------------------------------------------
+    # 6. Footer toevoegen
+    # --------------------------------------------------------
 
     if ! grep -q "XIMERA-FOOTER-START" "$f"; then
         sed -i \
@@ -152,9 +205,11 @@ do
         "$f"
     fi
 
-    # JavaScript toevoegen
+    # --------------------------------------------------------
+    # 7. JavaScript toevoegen
+    # --------------------------------------------------------
 
-    if ! grep -q "$CHAPTER_SCRIPT" "$f"; then
+    if ! grep -Fq "$CHAPTER_SCRIPT" "$f"; then
         sed -i \
         "s#</body>#  <script src='$CHAPTER_SCRIPT'></script>\n</body>#" \
         "$f"
@@ -162,3 +217,6 @@ do
 
     echo "Klaar: $f"
 done
+
+echo
+echo "Alle hoofdstukken in $MODULE_DIR zijn verwerkt."
