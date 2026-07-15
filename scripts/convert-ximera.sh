@@ -38,7 +38,7 @@ FOOTER_FILE="$HTML_DIR/Footer.html"
 # Paden zoals ze vanuit modules/basiswiskunde/*.html geladen worden
 HEADER_FOOTER_CSS="../../assets/css/Header_Footer.css"
 CHAPTER_CSS="../../assets/css/ChapterLayout.css"
-CHAPTER_SCRIPT="../../assets/javascripts/chapter-layout.js"
+CHAPTER_SCRIPT="../../assets/js/chapter-layout.js"
 
 # ============================================================
 # HOOFDSTUKBESTANDEN ZOEKEN
@@ -102,6 +102,23 @@ do
     echo "Verwerk hoofdstuk: $f"
 
     # --------------------------------------------------------
+# Bestaande sidebar verwijderen
+# De hoofdstukinhoud en volledige layout blijven behouden.
+# --------------------------------------------------------
+
+perl -0pi -e '
+s{
+    <aside
+    \s+
+    class=["'\''][^"'\'']*course-sidebar[^"'\'']*["'\'']
+    [^>]*>
+    .*?
+    </aside>
+}{}gsx;
+' "$f"
+
+
+    # --------------------------------------------------------
     # 1. CSS toevoegen
     # --------------------------------------------------------
 
@@ -138,13 +155,25 @@ do
         "$f"
     fi
 
-    # --------------------------------------------------------
-    # 3. Hoofdstuklayout openen
-    # --------------------------------------------------------
+# --------------------------------------------------------
+# 3. Hoofdstuklayout maken of sidebarplaats herstellen
+# --------------------------------------------------------
 
-    if ! grep -q "XIMERA-CHAPTER-LAYOUT-START" "$f"; then
+if grep -q "XIMERA-CHAPTER-LAYOUT-START" "$f"; then
+
+    # De layout bestaat al, maar de oude sidebar werd verwijderd.
+    # Plaats opnieuw een placeholder direct na <main>.
+    if ! grep -q "SIDEBAR-PLACEHOLDER" "$f"; then
         sed -i \
-        '/<!-- XIMERA-HEADER-END -->/a\
+        's#<main class="chapter-layout">#<main class="chapter-layout">\n<!-- SIDEBAR-PLACEHOLDER -->#' \
+        "$f"
+    fi
+
+else
+
+    # Volledig nieuwe hoofdstuklayout maken.
+    sed -i \
+    '/<!-- XIMERA-HEADER-END -->/a\
 <!-- XIMERA-CHAPTER-LAYOUT-START -->\
 <button class="course-menu-button" id="courseMenuButton" type="button">☰ Toon cursusinhoud</button>\
 <div class="course-sidebar-overlay" id="courseSidebarOverlay"></div>\
@@ -152,22 +181,23 @@ do
 <!-- SIDEBAR-PLACEHOLDER -->\
 <article class="chapter-content">\
 <div class="chapter-body">' \
-        "$f"
-    fi
+    "$f"
 
-    # --------------------------------------------------------
-    # 4. Automatisch gegenereerde sidebar invoegen
-    # --------------------------------------------------------
+fi
 
-    if grep -q "<!-- SIDEBAR-PLACEHOLDER -->" "$f"; then
-        sed -i \
-        "/<!-- SIDEBAR-PLACEHOLDER -->/r $SIDEBAR_FILE" \
-        "$f"
+# --------------------------------------------------------
+# 4. Automatisch gegenereerde sidebar invoegen
+# --------------------------------------------------------
 
-        sed -i \
-        '/<!-- SIDEBAR-PLACEHOLDER -->/d' \
-        "$f"
-    fi
+if grep -q "<!-- SIDEBAR-PLACEHOLDER -->" "$f"; then
+    sed -i \
+    "/<!-- SIDEBAR-PLACEHOLDER -->/r $SIDEBAR_FILE" \
+    "$f"
+
+    sed -i \
+    '/<!-- SIDEBAR-PLACEHOLDER -->/d' \
+    "$f"
+fi
 
     # --------------------------------------------------------
     # 5. Hoofdstuklayout sluiten
