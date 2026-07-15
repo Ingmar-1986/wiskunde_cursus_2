@@ -1,3 +1,24 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$PROJECT_ROOT"
+
+shopt -s nullglob
+
+MODULE_FILES=(modules/*/index.tex)
+
+if [ ${#MODULE_FILES[@]} -eq 0 ]; then
+    echo "Geen modules gevonden in modules/*/index.tex"
+    exit 1
+fi
+
+echo
+echo "========================================"
+echo " Wiskundecursus bouwen"
+echo "========================================"
+
 for course_file in "${MODULE_FILES[@]}"
 do
     module_dir="$(dirname "$course_file")"
@@ -9,26 +30,21 @@ do
     echo "----------------------------------------"
 
     echo "1. HTML genereren"
-
     xmlatex bake \
         --force \
         --compile html \
         "$course_file"
 
     echo "2. Moduleoverzicht opmaken"
-
     bash scripts/convert-xourse.sh "$module_dir"
 
     echo "3. Sidebar genereren"
-
     bash scripts/generate-sidebar.sh "$module_dir"
 
     echo "4. Hoofdstukken opmaken"
-
     bash scripts/convert-ximera.sh "$module_dir"
 
     echo "5. PDF genereren"
-
     xmlatex bake \
         --force \
         --compile pdf \
@@ -37,10 +53,16 @@ do
     mkdir -p pdf
 
     if [ -f "$module_dir/index.pdf" ]; then
-        cp \
-            "$module_dir/index.pdf" \
-            "pdf/${module_name}.pdf"
-
+        cp "$module_dir/index.pdf" "pdf/${module_name}.pdf"
         echo "PDF geplaatst in pdf/${module_name}.pdf"
+    else
+        echo "Waarschuwing: $module_dir/index.pdf werd niet gevonden."
     fi
+
+    echo "Module $module_name is klaar."
 done
+
+echo
+echo "========================================"
+echo " Build voltooid"
+echo "========================================"
