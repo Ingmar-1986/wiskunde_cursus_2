@@ -913,3 +913,123 @@
 .chapter-hero .hero-cube__node {
     fill: rgba(48, 211, 228, 0.86);
 }
+
+/* =========================================================
+   CORRECTE PLAATSING BINNEN .chapter-layout
+   ========================================================= */
+
+/*
+   Rij 1: chapter hero over de volledige breedte
+   Rij 2: cursusmenu links, hoofdstukinhoud rechts
+*/
+
+.chapter-layout {
+    display: grid !important;
+
+    grid-template-columns:
+        minmax(280px, 330px)
+        minmax(0, 1fr) !important;
+
+    grid-template-rows: auto auto !important;
+    align-items: start !important;
+
+    gap: 30px !important;
+
+    width: min(1500px, calc(100% - 48px)) !important;
+    max-width: 1500px !important;
+
+    margin: 0 auto !important;
+    padding: 0 !important;
+}
+
+
+/* Chapter hero over beide kolommen */
+
+.chapter-layout > .chapter-hero {
+    grid-column: 1 / -1 !important;
+    grid-row: 1 !important;
+
+    width: 100% !important;
+    max-width: none !important;
+
+    margin: 36px 0 0 !important;
+}
+
+
+/* Cursusinhoud links */
+
+.chapter-layout > .course-sidebar {
+    grid-column: 1 !important;
+    grid-row: 2 !important;
+
+    position: sticky !important;
+    top: 24px !important;
+
+    width: 100% !important;
+    max-width: none !important;
+
+    margin: 0 !important;
+}
+
+
+/* Hoofdstuktekst rechts */
+
+.chapter-layout > .chapter-content {
+    grid-column: 2 !important;
+    grid-row: 2 !important;
+
+    min-width: 0 !important;
+    width: 100% !important;
+
+    margin: 0 !important;
+}
+
+
+/* Binnenste inhoudskaart */
+
+.chapter-layout > .chapter-content > .chapter-body {
+    width: 100% !important;
+    max-width: none !important;
+
+    margin: 0 !important;
+}
+
+
+/* =========================================================
+   TABLET EN SMARTPHONE
+   ========================================================= */
+
+@media (max-width: 980px) {
+    .chapter-layout {
+        display: block !important;
+
+        width: min(100% - 32px, 1240px) !important;
+    }
+
+    .chapter-layout > .chapter-hero {
+        width: 100% !important;
+        margin: 24px 0 24px !important;
+    }
+
+    /*
+       Het cursusmenu wordt op kleinere schermen door je
+       menuknop en JavaScript geopend.
+    */
+
+    .chapter-layout > .course-sidebar {
+        position: fixed !important;
+        top: 0 !important;
+        bottom: 0 !important;
+        left: 0 !important;
+
+        width: min(360px, 88vw) !important;
+        max-width: none !important;
+
+        margin: 0 !important;
+    }
+
+    .chapter-layout > .chapter-content {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+}
