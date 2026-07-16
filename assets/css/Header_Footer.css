@@ -138,9 +138,10 @@
 
 .hero-content {
     grid-template-columns:
-        320px
-        minmax(520px,1fr)
-        minmax(480px,560px);
+
+        300px
+        minmax(500px, 1fr)
+        minmax(520px, 650px);
     position: relative;
     z-index: 2;
 
@@ -401,160 +402,23 @@
    RECHTER VISUAL
    ========================================================= */
 
-.hero-visual,
-.hero-formulas,
-.hero-art {
-    position: relative;
-
-    width: 100%;
-    height: 350px;
-
+.hero-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     min-width: 0;
-
     overflow: visible;
 }
 
-
-/* Decoratieve cirkels */
-
-.hero-visual::before,
-.hero-formulas::before,
-.hero-art::before {
-    content: "";
-
-    position: absolute;
-    z-index: 0;
-
-    top: 38px;
-    left: 50%;
-
-    width: 270px;
-    height: 270px;
-
-    transform: translateX(-50%);
-
-    border: 1px solid rgba(60, 221, 224, 0.26);
-    border-radius: 50%;
-
-    background: rgba(50, 215, 208, 0.025);
-
-    box-shadow:
-        0 0 0 44px rgba(50, 215, 208, 0.024),
-        0 0 0 88px rgba(50, 215, 208, 0.012);
-}
-
-
-/* Extra middelpunt */
-
-.hero-visual::after,
-.hero-formulas::after,
-.hero-art::after {
-    content: "";
-
-    position: absolute;
-    z-index: 1;
-
-    top: 165px;
-    left: 50%;
-
-    width: 8px;
-    height: 8px;
-
-    transform: translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    background: var(--hero-accent);
-
-    box-shadow:
-        0 0 18px rgba(50, 215, 208, 0.85);
-}
-
-
-/* =========================================================
-   FORMULEKAARTEN
-   ========================================================= */
-
-.hero-formula {
-    position: absolute;
-    z-index: 2;
-
-    display: flex;
-    align-items: center;
-
-    width: 360px;
-    min-height: 62px;
-
-    padding: 14px 21px;
-
-    color: rgba(211, 250, 248, 0.92);
-
-    background:
-        linear-gradient(
-            110deg,
-            rgba(8, 38, 52, 0.94),
-            rgba(17, 74, 82, 0.76)
-        );
-
-    border: 1px solid rgba(72, 223, 225, 0.27);
-    border-left: 4px solid var(--hero-accent);
-    border-radius: 10px;
-
-    box-shadow:
-        0 18px 35px rgba(0, 0, 0, 0.24),
-        inset 0 1px rgba(255, 255, 255, 0.04);
-
-    font-size: 1rem;
-    line-height: 1.35;
-
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-}
-
-.hero-formula strong {
-    color: var(--hero-accent-light);
-
-    font-weight: 800;
-}
-
-.hero-formula:nth-child(1) {
-    top: 18px;
-    left: 8px;
-
-    transform: rotate(-1deg);
-}
-
-.hero-formula:nth-child(2) {
-    top: 103px;
-    left: 112px;
-
-    transform: rotate(0.8deg);
-}
-
-.hero-formula:nth-child(3) {
-    top: 188px;
-    left: 38px;
-
-    transform: rotate(-0.5deg);
-}
-
-.hero-formula:nth-child(4) {
-    top: 273px;
-    left: 128px;
-
-    transform: rotate(0.6deg);
-}
-
-.hero-formula img {
+.hero-visual img {
     display: block;
-
-    max-width: 100%;
+    width: 680px;
+    max-width: 135%;
     height: auto;
 
-    background: transparent;
-
-    border: 0;
-    box-shadow: none;
+    filter:
+        drop-shadow(0 24px 40px rgba(0, 0, 0, 0.18))
+        drop-shadow(0 0 22px rgba(50, 215, 208, 0.16));
 }
 
 
