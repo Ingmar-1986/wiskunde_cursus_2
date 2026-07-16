@@ -12,14 +12,17 @@
     --hero-muted: rgba(255, 255, 255, 0.82);
 
     position: relative;
-    display: grid;
-    grid-template-columns:  1fr;
+    display: block;
 
-
+    width: min(1240px, calc(100% - 48px));
+    max-width: 1240px;
     min-height: 390px;
-    margin: 0 0 3rem;
+
+    margin: 36px auto 30px;
+    padding: 0;
 
     overflow: hidden;
+    isolation: isolate;
 
     color: var(--hero-white);
 
@@ -46,49 +49,12 @@
     box-shadow:
         0 24px 60px rgba(5, 23, 53, 0.16),
         0 4px 14px rgba(5, 23, 53, 0.10);
-
-    isolation: isolate;
-}
-
-.chapter-hero__content {
-    position: relative;
-    z-index: 2;
-
-    max-width: 72%;
-}
-
-.chapter-hero__visual {
-    position: absolute;
-    inset: 0;
-
-    z-index: 1;
-    pointer-events: none;
-}
-
-.chapter-hero__title {
-    width: 100%;
-    max-width: 900px;
-
-    font-size: clamp(3.3rem, 5vw, 5.4rem);
-    line-height: .93;
-    letter-spacing: -.05em;
-}
-
-.chapter-hero__abstract{
-    margin-top:.25rem;
-
-    max-width:720px;
-
-    color:rgba(255,255,255,.83);
-
-    font-size:1.08rem;
-    line-height:1.7;
-
-    font-style:italic;
 }
 
 
-/* Rasterstructuur */
+/* =========================================================
+   ACHTERGROND
+   ========================================================= */
 
 .chapter-hero::before {
     content: "";
@@ -120,9 +86,6 @@
         );
 }
 
-
-/* Subtiele bogen onderaan */
-
 .chapter-hero::after {
     content: "";
 
@@ -146,16 +109,21 @@
 
 
 /* =========================================================
-   LINKERZIJDE
+   INHOUD
    ========================================================= */
 
+.chapter-hero__content {
+    position: relative;
+    z-index: 2;
 
+    width: 100%;
+    max-width: 760px;
 
-
-/* Thema */
+    padding: 44px 42px 42px;
+}
 
 .chapter-hero__theme {
-    margin: 0 0 1.55rem;
+    margin: 0 0 24px;
 
     color: var(--hero-cyan);
 
@@ -171,9 +139,6 @@
     opacity: 0.65;
 }
 
-
-/* Hoofdstuklabel */
-
 .chapter-hero__label {
     margin: 0 0 0.65rem;
 
@@ -186,25 +151,25 @@
     text-transform: uppercase;
 }
 
-
-/* Nummer en titel */
-
 .chapter-hero__title-row {
     display: flex;
     align-items: center;
-    gap: 1.4rem;
+    gap: 22px;
 
+    width: 100%;
     min-width: 0;
 }
 
 .chapter-hero__number {
-    flex: 0 0 auto;
+    position: static;
+
+    flex: 0 0 104px;
 
     display: grid;
     place-items: center;
 
-    width: 96px;
-    height: 96px;
+    width: 104px;
+    height: 104px;
 
     color: var(--hero-white);
 
@@ -226,25 +191,29 @@
 }
 
 .chapter-hero__title {
+    width: auto;
     min-width: 0;
+    max-width: 650px;
+
     margin: 0;
 
     color: var(--hero-white);
 
-    font-size: clamp(2.5rem, 4.4vw, 4.6rem);
+    font-size: clamp(2.8rem, 4.6vw, 5rem);
     font-weight: 850;
     letter-spacing: -0.045em;
-    line-height: 0.98;
+    line-height: 0.96;
 
-    overflow-wrap: anywhere;
+    white-space: normal;
+    overflow-wrap: normal;
+    word-break: normal;
+    hyphens: none;
 }
-
-
-/* Accentlijn */
 
 .chapter-hero__accent {
     width: 96px;
     height: 5px;
+
     margin: 1.45rem 0 1.35rem;
 
     border-radius: 999px;
@@ -258,17 +227,15 @@
         );
 }
 
-
-/* Abstract */
-
 .chapter-hero__abstract {
-    max-width: 680px;
+    max-width: 650px;
     margin: 0;
 
     color: var(--hero-muted);
 
     font-size: 1rem;
     line-height: 1.65;
+    font-style: italic;
 }
 
 .chapter-hero__abstract strong {
@@ -282,7 +249,20 @@
 }
 
 
+/* =========================================================
+   VISUELE LAAG
+   ========================================================= */
 
+.chapter-hero__visual {
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+}
 
 .chapter-hero__visual::before {
     content: "";
@@ -306,11 +286,6 @@
 
     filter: blur(12px);
 }
-
-
-/* =========================================================
-   ALGEMENE SVG-INSTELLINGEN
-   ========================================================= */
 
 .chapter-hero__visual svg {
     display: block;
@@ -347,21 +322,18 @@
 
 .hero-graph__grid {
     fill: none;
-
     stroke: rgba(130, 195, 238, 0.10);
     stroke-width: 1;
 }
 
 .hero-graph__axis {
     fill: none;
-
     stroke: rgba(226, 243, 255, 0.42);
     stroke-width: 1.25;
 }
 
 .hero-graph__arrow {
     fill: none;
-
     stroke: rgba(226, 243, 255, 0.42);
     stroke-width: 1.25;
     stroke-linecap: round;
@@ -370,8 +342,7 @@
 
 .hero-graph__curve {
     fill: none;
-
-    stroke: url("#heroCurveGradient");
+    stroke: #f10d69;
     stroke-width: 2.6;
     stroke-linecap: round;
 }
@@ -402,14 +373,12 @@
 
 .hero-vector__axis {
     fill: none;
-
     stroke: rgba(225, 241, 255, 0.28);
     stroke-width: 1.1;
 }
 
 .hero-vector__line {
     fill: none;
-
     stroke: #26d5e4;
     stroke-width: 2.2;
     stroke-linecap: round;
@@ -452,7 +421,6 @@
 .hero-cube__shape,
 .hero-cube__edge {
     fill: none;
-
     stroke: rgba(108, 205, 239, 0.72);
     stroke-width: 1.25;
     stroke-linecap: round;
@@ -491,9 +459,6 @@
     opacity: 0.34;
 }
 
-
-/* Machtenregel */
-
 .hero-formula--power {
     top: 8%;
     right: 10%;
@@ -504,9 +469,6 @@
 .hero-formula--power span {
     margin-inline: 0.35em;
 }
-
-
-/* Vectorformule */
 
 .hero-formula--vector {
     top: 53%;
@@ -531,9 +493,6 @@
 
     font-size: 0.8em;
 }
-
-
-/* ABC-formule */
 
 .hero-formula--quadratic {
     right: 18%;
@@ -577,7 +536,6 @@
     inset: 0;
 
     overflow: hidden;
-
     pointer-events: none;
 }
 
@@ -631,71 +589,70 @@
 
 
 /* =========================================================
-   RESPONSIEF
+   CURSUSINHOUD ONDER DE HERO
    ========================================================= */
 
-@media (max-width: 1100px) {
-    .chapter-hero {
-        grid-template-columns:
-            minmax(0, 1fr)
-            minmax(260px, 0.75fr);
-    }
+.course-overview,
+.course-content,
+.course-toc,
+.chapter-overview,
+.ximera-content,
+.module-overview {
+    position: relative;
 
-    .chapter-hero__content {
-        padding-left: 3rem;
-    }
+    width: min(1240px, calc(100% - 48px));
+    max-width: 1240px;
 
-    .hero-graph {
-        right: 4%;
-        width: 40%;
-    }
+    margin: 0 auto 36px;
 
-    .hero-vector {
-        right: 38%;
-        width: 20%;
-    }
+    float: none;
+    clear: both;
 
-    .hero-cube {
-        right: 4%;
-        width: 19%;
-    }
+    left: auto;
+    right: auto;
+    transform: none;
 
-    .hero-formula--quadratic {
-        right: 13%;
-    }
+    border-radius: 20px;
+    overflow: hidden;
+
+    box-shadow: 0 18px 42px rgba(14, 36, 50, 0.14);
 }
 
 
+/* =========================================================
+   TABLET
+   ========================================================= */
+
 @media (max-width: 820px) {
     .chapter-hero {
-        display: block;
-
+        width: min(100% - 32px, 1240px);
         min-height: auto;
 
+        margin-top: 24px;
         border-radius: 20px;
     }
 
     .chapter-hero__content {
+        max-width: 100%;
+
         padding:
-            2.5rem
-            2rem
-            2.75rem;
+            36px
+            30px
+            38px;
     }
 
     .chapter-hero__visual {
-        position: absolute;
-        inset: 0 0 0 45%;
-
-        min-height: 100%;
-
+        inset: 0 0 0 42%;
         opacity: 0.25;
     }
 
     .chapter-hero__title-row {
-        gap: 1rem;
+        gap: 16px;
     }
 
     .chapter-hero__number {
+        flex-basis: 80px;
+
         width: 80px;
         height: 80px;
 
@@ -705,11 +662,9 @@
     }
 
     .chapter-hero__title {
-        font-size: clamp(2.2rem, 8vw, 3.6rem);
-    }
+        max-width: none;
 
-    .chapter-hero__theme {
-        margin-bottom: 1.25rem;
+        font-size: clamp(2.3rem, 8vw, 3.7rem);
     }
 
     .chapter-hero__abstract {
@@ -743,26 +698,47 @@
         top: 8%;
         right: 5%;
     }
+
+    .course-overview,
+    .course-content,
+    .course-toc,
+    .chapter-overview,
+    .ximera-content,
+    .module-overview {
+        width: min(100% - 32px, 1240px);
+    }
 }
 
 
+/* =========================================================
+   SMARTPHONE
+   ========================================================= */
+
 @media (max-width: 540px) {
+    .chapter-hero {
+        width: calc(100% - 24px);
+    }
+
     .chapter-hero__content {
         padding:
-            2rem
-            1.35rem
-            2.25rem;
+            30px
+            22px
+            32px;
     }
 
     .chapter-hero__visual {
-        inset: 0 0 0 40%;
+        inset: 0 0 0 38%;
+        opacity: 0.18;
     }
 
     .chapter-hero__title-row {
         align-items: flex-start;
+        gap: 14px;
     }
 
     .chapter-hero__number {
+        flex-basis: 62px;
+
         width: 62px;
         height: 62px;
 
@@ -800,6 +776,15 @@
     .hero-symbol {
         opacity: 0.65;
     }
+
+    .course-overview,
+    .course-content,
+    .course-toc,
+    .chapter-overview,
+    .ximera-content,
+    .module-overview {
+        width: calc(100% - 24px);
+    }
 }
 
 
@@ -809,15 +794,13 @@
 
 @media print {
     .chapter-hero {
-        grid-template-columns:
-            minmax(0, 1.1fr)
-            minmax(240px, 0.9fr);
-
+        width: 100%;
+        max-width: none;
         min-height: 105mm;
+
         margin: 0 0 10mm;
 
         border-radius: 5mm;
-
         box-shadow: none;
 
         break-inside: avoid;
@@ -828,6 +811,8 @@
     }
 
     .chapter-hero__content {
+        max-width: 62%;
+
         padding:
             13mm
             8mm
@@ -852,6 +837,7 @@
     .chapter-hero__number {
         width: 22mm;
         height: 22mm;
+        flex-basis: 22mm;
 
         border-radius: 5mm;
 
@@ -861,6 +847,7 @@
     .chapter-hero__accent {
         width: 24mm;
         height: 1.4mm;
+
         margin: 6mm 0 5mm;
     }
 
@@ -870,6 +857,7 @@
     }
 
     .chapter-hero__visual {
+        inset: 0;
         opacity: 0.65;
     }
 
@@ -899,7 +887,10 @@
     }
 }
 
-/* SVG-vullingen expliciet uitschakelen */
+
+/* =========================================================
+   SVG-VULLINGEN
+   ========================================================= */
 
 .chapter-hero .hero-graph svg path,
 .chapter-hero .hero-graph svg line,
@@ -911,125 +902,14 @@
 .chapter-hero .hero-cube svg line,
 .chapter-hero .hero-cube svg polygon,
 .chapter-hero .hero-cube svg polyline {
-    fill: none !important;
+    fill: none;
 }
 
 .chapter-hero .hero-vector__arrowhead {
-    fill: #26d5e4 !important;
+    fill: #26d5e4;
 }
 
 .chapter-hero .hero-vector__origin,
 .chapter-hero .hero-cube__node {
-    fill: rgba(48, 211, 228, 0.86) !important;
-}
-
-.chapter-hero .hero-graph__curve {
-    fill: none !important;
-    stroke: #f10d69 !important;
-}
-
-.chapter-hero .hero-graph__grid,
-.chapter-hero .hero-graph__axis,
-.chapter-hero .hero-graph__arrow {
-    fill: none !important;
-}
-
-/* =========================================================
-   CHAPTER HERO BOVEN DE CURSUSINHOUD
-   ========================================================= */
-
-.chapter-layout,
-.chapter-page,
-.chapter-wrapper {
-    display: block !important;
-    width: 100% !important;
-}
-
-/* Chapter hero altijd over de volledige rij */
-.chapter-hero {
-    position: relative !important;
-    inset: auto !important;
-
-    display: grid !important;
-    grid-template-columns: minmax(170px, 220px) minmax(0, 1fr) !important;
-    align-items: center !important;
-    gap: 36px !important;
-
-    width: min(1240px, calc(100% - 48px)) !important;
-    max-width: none !important;
-    min-height: 260px !important;
-
-    margin: 36px auto 28px !important;
-    padding: 34px 42px !important;
-
-    float: none !important;
-    clear: both !important;
-
-    grid-column: 1 / -1 !important;
-
-    border-radius: 26px !important;
-    overflow: hidden !important;
-}
-
-/* Titelgedeelte niet meer samendrukken */
-.chapter-hero__content,
-.chapter-hero-content,
-.chapter-hero__text,
-.chapter-hero-text {
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: none !important;
-}
-
-/* Hoofdstuktitel normaal over meerdere woorden laten lopen */
-.chapter-hero h1,
-.chapter-hero .chapter-title,
-.chapter-hero__title {
-    width: auto !important;
-    max-width: 850px !important;
-
-    margin: 0 !important;
-
-    white-space: normal !important;
-    overflow-wrap: normal !important;
-    word-break: normal !important;
-    hyphens: none !important;
-
-    font-size: clamp(2.8rem, 5vw, 5.4rem) !important;
-    line-height: 0.95 !important;
-}
-
-/* Hoofdstuknummer */
-.chapter-hero .chapter-number,
-.chapter-hero__number {
-    position: static !important;
-
-    width: 110px !important;
-    height: 110px !important;
-
-    flex: 0 0 110px !important;
-}
-
-/* Abstract onder de titel */
-.chapter-hero .chapter-abstract,
-.chapter-hero__abstract {
-    max-width: 820px !important;
-    margin-top: 24px !important;
-
-    line-height: 1.65 !important;
-}
-
-/* De cursusinhoud daarna opnieuw over volledige breedte */
-.course-content,
-.course-overview,
-.chapter-content,
-.ximera-content {
-    width: min(1240px, calc(100% - 48px)) !important;
-    max-width: none !important;
-
-    margin-left: auto !important;
-    margin-right: auto !important;
-
-    float: none !important;
-    clear: both !important;
+    fill: rgba(48, 211, 228, 0.86);
 }
