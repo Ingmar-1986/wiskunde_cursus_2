@@ -343,3 +343,7 @@ xmDevEnvFiles.tgz
 !modules/
 !modules/**/
 !modules/**/*.html
+
+# Negeer geen PDF's
+!pdf/
+!pdf/*.pdf
