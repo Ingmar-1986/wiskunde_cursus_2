@@ -38,7 +38,10 @@
                 Fundamentele Vorming Digitale Creatie
             </p>
 
-            
+            <h1>
+                Wiskunde
+                <span>7 FVD</span>
+            </h1>
 
             <p class="hero-subtitle">
                 De essentiële wiskundige basis voor Digital Arts & Entertainment
@@ -170,20 +173,18 @@
     </nav>
 
 </aside>
-
-
-
-
 <!-- CHAPTER_HERO_START -->
 <section class="chapter-hero">
     <div class="chapter-hero__content">
         <p class="chapter-hero__theme">
             Thema 1
-            <span>•</span>
+            <span aria-hidden="true">•</span>
             Basiswiskunde
         </p>
 
-        <p class="chapter-hero__label">Hoofdstuk</p>
+        <p class="chapter-hero__label">
+            Hoofdstuk
+        </p>
 
         <div class="chapter-hero__title-row">
             <div class="chapter-hero__number">
@@ -191,7 +192,7 @@
             </div>
 
             <h1 class="chapter-hero__title">
-                }#2\HCode {
+                Rekenen met getallen
             </h1>
         </div>
 
@@ -204,54 +205,240 @@
     </div>
 
     <div class="chapter-hero__visual" aria-hidden="true">
-        <div class="math-number-line">
-            <span class="math-number-line__axis"></span>
-            <span class="math-number-line__point math-number-line__point--left"></span>
-            <span class="math-number-line__point math-number-line__point--right"></span>
+
+        <!-- Subtiel wiskundig patroon -->
+        <div class="hero-symbols">
+            <span class="hero-symbol hero-symbol--sigma">Σ</span>
+            <span class="hero-symbol hero-symbol--integral">∫</span>
+            <span class="hero-symbol hero-symbol--pi">π</span>
+            <span class="hero-symbol hero-symbol--limit">lim</span>
+            <span class="hero-symbol hero-symbol--theta">θ</span>
         </div>
 
-        <div class="math-triangle">
-            <span class="math-triangle__formula">
-                a² + b² = c²
-            </span>
+        <!-- Klein assenstelsel met curve -->
+        <div class="hero-graph">
+            <svg viewBox="0 0 320 210" role="presentation">
+                <defs>
+                    <linearGradient
+                        id="heroCurveGradient"
+                        x1="0"
+                        y1="0"
+                        x2="1"
+                        y2="0"
+                    >
+                        <stop offset="0%" stop-color="#26d5e4"/>
+                        <stop offset="100%" stop-color="#f10d69"/>
+                    </linearGradient>
+                </defs>
 
-            <svg viewBox="0 0 220 170">
-                <path d="M25 145 L25 30 L190 145 Z"></path>
-                <path d="M25 125 L45 125 L45 145"></path>
-            </svg>
-        </div>
+                <line
+                    class="hero-graph__grid"
+                    x1="40"
+                    y1="45"
+                    x2="300"
+                    y2="45"
+                />
+                <line
+                    class="hero-graph__grid"
+                    x1="40"
+                    y1="95"
+                    x2="300"
+                    y2="95"
+                />
+                <line
+                    class="hero-graph__grid"
+                    x1="40"
+                    y1="145"
+                    x2="300"
+                    y2="145"
+                />
 
-        <div class="math-function">
-            <svg viewBox="0 0 300 180">
-                <line x1="20" y1="100" x2="285" y2="100"></line>
-                <line x1="115" y1="15" x2="115" y2="165"></line>
+                <line
+                    class="hero-graph__grid"
+                    x1="90"
+                    y1="20"
+                    x2="90"
+                    y2="185"
+                />
+                <line
+                    class="hero-graph__grid"
+                    x1="150"
+                    y1="20"
+                    x2="150"
+                    y2="185"
+                />
+                <line
+                    class="hero-graph__grid"
+                    x1="210"
+                    y1="20"
+                    x2="210"
+                    y2="185"
+                />
+                <line
+                    class="hero-graph__grid"
+                    x1="270"
+                    y1="20"
+                    x2="270"
+                    y2="185"
+                />
+
+                <line
+                    class="hero-graph__axis"
+                    x1="25"
+                    y1="145"
+                    x2="305"
+                    y2="145"
+                />
+                <line
+                    class="hero-graph__axis"
+                    x1="90"
+                    y1="190"
+                    x2="90"
+                    y2="15"
+                />
+
+                <polyline
+                    class="hero-graph__arrow"
+                    points="297,139 307,145 297,151"
+                />
+                <polyline
+                    class="hero-graph__arrow"
+                    points="84,25 90,15 96,25"
+                />
 
                 <path
-                    class="math-function__curve"
-                    d="M25 110
-                       C55 25, 90 35, 115 90
-                       C140 145, 180 145, 205 92
-                       C225 48, 250 32, 280 20"
-                ></path>
+                    class="hero-graph__curve"
+                    d="
+                        M 32 152
+                        C 62 72, 105 65, 132 118
+                        C 158 171, 201 178, 226 122
+                        C 246 78, 271 62, 300 43
+                    "
+                />
+
+                <text class="hero-graph__label" x="300" y="165">x</text>
+                <text class="hero-graph__label" x="70" y="24">y</text>
             </svg>
         </div>
 
-        <div class="math-pie"></div>
+        <!-- Vector in een klein assenstelsel -->
+        <div class="hero-vector">
+            <svg viewBox="0 0 220 180" role="presentation">
+                <defs>
+                    <marker
+                        id="heroVectorArrow"
+                        markerWidth="8"
+                        markerHeight="8"
+                        refX="7"
+                        refY="4"
+                        orient="auto"
+                    >
+                        <path
+                            class="hero-vector__arrowhead"
+                            d="M 0 0 L 8 4 L 0 8 Z"
+                        />
+                    </marker>
+                </defs>
 
-        <div class="math-formula">
-            x =
-            <span class="math-formula__fraction">
-                <span>−b ± √(b² − 4ac)</span>
-                <span>2a</span>
-            </span>
+                <line
+                    class="hero-vector__axis"
+                    x1="28"
+                    y1="145"
+                    x2="205"
+                    y2="145"
+                />
+
+                <line
+                    class="hero-vector__axis"
+                    x1="50"
+                    y1="165"
+                    x2="50"
+                    y2="22"
+                />
+
+                <line
+                    class="hero-vector__line"
+                    x1="50"
+                    y1="145"
+                    x2="165"
+                    y2="52"
+                    marker-end="url(#heroVectorArrow)"
+                />
+
+                <circle
+                    class="hero-vector__origin"
+                    cx="50"
+                    cy="145"
+                    r="4"
+                />
+
+                <text class="hero-vector__label" x="169" y="50">
+                    v
+                </text>
+            </svg>
+        </div>
+
+        <!-- Wireframekubus als verwijzing naar 3D en DAE -->
+        <div class="hero-cube">
+            <svg viewBox="0 0 220 190" role="presentation">
+                <polygon
+                    class="hero-cube__shape"
+                    points="45,65 130,65 130,150 45,150"
+                />
+
+                <polygon
+                    class="hero-cube__shape"
+                    points="85,35 170,35 170,120 85,120"
+                />
+
+                <line class="hero-cube__edge" x1="45" y1="65" x2="85" y2="35"/>
+                <line class="hero-cube__edge" x1="130" y1="65" x2="170" y2="35"/>
+                <line class="hero-cube__edge" x1="130" y1="150" x2="170" y2="120"/>
+                <line class="hero-cube__edge" x1="45" y1="150" x2="85" y2="120"/>
+
+                <circle class="hero-cube__node" cx="45" cy="65" r="3"/>
+                <circle class="hero-cube__node" cx="130" cy="65" r="3"/>
+                <circle class="hero-cube__node" cx="130" cy="150" r="3"/>
+                <circle class="hero-cube__node" cx="45" cy="150" r="3"/>
+
+                <circle class="hero-cube__node" cx="85" cy="35" r="3"/>
+                <circle class="hero-cube__node" cx="170" cy="35" r="3"/>
+                <circle class="hero-cube__node" cx="170" cy="120" r="3"/>
+                <circle class="hero-cube__node" cx="85" cy="120" r="3"/>
+            </svg>
+        </div>
+
+        <!-- Moderne HTML-formules zonder LaTeX-backslashes -->
+        <div class="hero-formulas">
+            <div class="hero-formula hero-formula--power">
+                a<sup>n</sup> · a<sup>m</sup>
+                <span>=</span>
+                a<sup>n+m</sup>
+            </div>
+
+            <div class="hero-formula hero-formula--vector">
+                <span class="hero-formula__vector-symbol">v</span>
+                =
+                <span>(x, y, z)</span>
+            </div>
+
+            <div class="hero-formula hero-formula--quadratic">
+                <span>x =</span>
+
+                <span class="hero-fraction">
+                    <span class="hero-fraction__top">
+                        −b ± √(b² − 4ac)
+                    </span>
+
+                    <span class="hero-fraction__bottom">
+                        2a
+                    </span>
+                </span>
+            </div>
         </div>
     </div>
 </section>
 <!-- CHAPTER_HERO_END -->
-
-
-
-
 
 
 <article class="chapter-content">
@@ -542,7 +729,6 @@ kunnen werken.
     
     </footer><!-- XIMERA-FOOTER-END -->
   <script src='../../assets/js/chapter-layout.js'></script>
-  <script src='../../assets/javascripts/chapter-layout.js'></script>
 </body> 
  
 </html>
