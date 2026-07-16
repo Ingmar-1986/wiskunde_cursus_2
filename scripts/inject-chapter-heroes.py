@@ -1,4 +1,3 @@
-
 #!/usr/bin/env python3
 
 from __future__ import annotations
@@ -12,20 +11,6 @@ from pathlib import Path
 # ============================================================
 # CONFIGURATIE
 # ============================================================
-
-THEMES: dict[str, tuple[str, str]] = {
-    "basiswiskunde": ("1", "Basiswiskunde"),
-    "algebra": ("2", "Algebra"),
-    "vergelijkingen": ("3", "Vergelijkingen"),
-    "functies": ("4", "Functies"),
-    "vectoren": ("5", "Vectoren"),
-    "coordinaten": ("6", "Coördinaten"),
-    "coördinaten": ("6", "Coördinaten"),
-    "3d-meetkunde": ("7", "3D-meetkunde"),
-    "goniometrie": ("8", "Goniometrie"),
-    "logaritmen": ("9", "Logaritmen"),
-    "transformaties": ("10", "Transformaties"),
-}
 
 IGNORED_TEX_FILES = {
     "index",
@@ -41,20 +26,30 @@ IGNORED_TEX_FILES = {
 # REGULIERE EXPRESSIES
 # ============================================================
 
-ACTIVITY_PATTERN = re.compile(
+INDEX_ITEM_PATTERN = re.compile(
     r"""
+    \\part\s*\{
+        (?P<theme>[^{}]+)
+    \}
+    |
     \\(?:activity|include|input)
     (?:\s*\[[^\]]*\])?
     \s*\{
         (?P<path>[^}]+)
     \}
     """,
-    re.VERBOSE,
+    re.VERBOSE | re.DOTALL,
 )
 
 TEX_TITLE_PATTERN = re.compile(
-    r"\\title\s*\{(?P<title>[^{}]*)\}",
-    re.IGNORECASE | re.DOTALL,
+    r"""
+    \\title
+    \s*
+    \{
+        (?P<title>[^{}]*)
+    \}
+    """,
+    re.IGNORECASE | re.DOTALL | re.VERBOSE,
 )
 
 EXISTING_HERO_PATTERN = re.compile(
@@ -126,24 +121,98 @@ WHITESPACE_PATTERN = re.compile(
 # ============================================================
 
 def read_text(path: Path) -> str:
-    return path.read_text(encoding="utf-8")
+    """Lees een UTF-8-bestand."""
+
+    return path.read_text(
+        encoding="utf-8"
+    )
 
 
-def write_text(path: Path, content: str) -> None:
-    path.write_text(content, encoding="utf-8")
+def write_text(
+    path: Path,
+    content: str,
+) -> None:
+    """Schrijf een UTF-8-bestand."""
+
+    path.write_text(
+        content,
+        encoding="utf-8",
+    )
 
 
 def clean_html_text(value: str) -> str:
-    value = TAG_PATTERN.sub(" ", value)
-    value = html.unescape(value)
-    value = WHITESPACE_PATTERN.sub(" ", value)
+    """Verwijder HTML-tags en normaliseer witruimte."""
+
+    value = TAG_PATTERN.sub(
+        " ",
+        value,
+    )
+
+    value = html.unescape(
+        value
+    )
+
+    value = WHITESPACE_PATTERN.sub(
+        " ",
+        value,
+    )
+
+    return value.strip()
+
+
+def clean_tex_text(value: str) -> str:
+    """Verwijder eenvoudige LaTeX-opmaak uit een titel."""
+
+    value = re.sub(
+        r"""
+        \\(?:textbf|textit|emph|textrm|textsf)
+        \s*
+        \{
+            ([^{}]*)
+        \}
+        """,
+        r"\1",
+        value,
+        flags=re.VERBOSE,
+    )
+
+    value = re.sub(
+        r"\\[A-Za-z@]+",
+        " ",
+        value,
+    )
+
+    value = value.replace(
+        "{",
+        " ",
+    ).replace(
+        "}",
+        " ",
+    )
+
+    value = WHITESPACE_PATTERN.sub(
+        " ",
+        value,
+    )
 
     return value.strip()
 
 
 def humanize_slug(value: str) -> str:
-    result = value.replace("_", " ").replace("-", " ")
-    result = WHITESPACE_PATTERN.sub(" ", result).strip()
+    """Zet een bestandsnaam om naar een leesbare titel."""
+
+    result = value.replace(
+        "_",
+        " ",
+    ).replace(
+        "-",
+        " ",
+    )
+
+    result = WHITESPACE_PATTERN.sub(
+        " ",
+        result,
+    ).strip()
 
     if not result:
         return "Wiskunde"
@@ -152,7 +221,12 @@ def humanize_slug(value: str) -> str:
 
 
 def normalize_stem(raw_path: str) -> str:
-    value = raw_path.strip().replace("\\", "/")
+    """Zet een LaTeX-pad om naar een bestandsstam."""
+
+    value = raw_path.strip().replace(
+        "\\",
+        "/",
+    )
 
     if value.endswith(".tex"):
         value = value[:-4]
@@ -161,25 +235,57 @@ def normalize_stem(raw_path: str) -> str:
 
 
 # ============================================================
-# THEMA EN HOOFDSTUKKEN
+# CURSUSSTRUCTUUR UIT INDEX.TEX
 # ============================================================
 
-def get_theme(module_dir: Path) -> tuple[str, str]:
-    module_name = module_dir.name.casefold()
+def read_course_structure(
+    index_tex: Path,
+) -> list[dict[str, str | int]]:
+    """
+    Lees thema's en hoofdstukken uit index.tex.
 
-    if module_name in THEMES:
-        return THEMES[module_name]
+    Elke \\part{...} start:
+    - een nieuw thema;
+    - de hoofdstuknummering opnieuw vanaf 1.
+    """
 
-    return "", humanize_slug(module_dir.name)
+    document = read_text(
+        index_tex
+    )
 
+    structure: list[dict[str, str | int]] = []
 
-def read_chapter_order(index_tex: Path) -> list[str]:
-    document = read_text(index_tex)
-    chapters: list[str] = []
+    current_theme_number = 0
+    current_theme_title = ""
+    current_chapter_number = 0
 
-    for match in ACTIVITY_PATTERN.finditer(document):
+    for match in INDEX_ITEM_PATTERN.finditer(
+        document
+    ):
+        theme_title = match.group(
+            "theme"
+        )
+
+        activity_path = match.group(
+            "path"
+        )
+
+        if theme_title is not None:
+            current_theme_number += 1
+
+            current_theme_title = clean_tex_text(
+                theme_title
+            )
+
+            current_chapter_number = 0
+
+            continue
+
+        if activity_path is None:
+            continue
+
         stem = normalize_stem(
-            match.group("path")
+            activity_path
         )
 
         if not stem:
@@ -188,10 +294,27 @@ def read_chapter_order(index_tex: Path) -> list[str]:
         if stem.casefold() in IGNORED_TEX_FILES:
             continue
 
-        if stem not in chapters:
-            chapters.append(stem)
+        if current_theme_number == 0:
+            current_theme_number = 1
 
-    return chapters
+            current_theme_title = humanize_slug(
+                index_tex.parent.name
+            )
+
+            current_chapter_number = 0
+
+        current_chapter_number += 1
+
+        structure.append(
+            {
+                "stem": stem,
+                "theme_number": current_theme_number,
+                "theme_title": current_theme_title,
+                "chapter_number": current_chapter_number,
+            }
+        )
+
+    return structure
 
 
 # ============================================================
@@ -202,35 +325,35 @@ def extract_title_from_tex(
     module_dir: Path,
     stem: str,
 ) -> str:
+    """Lees de hoofdstuktitel uit het bijbehorende TeX-bestand."""
+
     tex_path = module_dir / f"{stem}.tex"
 
     if not tex_path.is_file():
-        return humanize_slug(stem)
+        return humanize_slug(
+            stem
+        )
 
-    document = read_text(tex_path)
-    match = TEX_TITLE_PATTERN.search(document)
+    document = read_text(
+        tex_path
+    )
+
+    match = TEX_TITLE_PATTERN.search(
+        document
+    )
 
     if not match:
-        return humanize_slug(stem)
+        return humanize_slug(
+            stem
+        )
 
-    title = match.group("title")
-
-    title = re.sub(
-        r"\\(?:textbf|textit|emph|textrm|textsf)\s*\{([^{}]*)\}",
-        r"\1",
-        title,
+    title = clean_tex_text(
+        match.group("title")
     )
 
-    title = re.sub(
-        r"\\[A-Za-z@]+",
-        " ",
-        title,
+    return title or humanize_slug(
+        stem
     )
-
-    title = title.replace("{", " ").replace("}", " ")
-    title = WHITESPACE_PATTERN.sub(" ", title).strip()
-
-    return title or humanize_slug(stem)
 
 
 # ============================================================
@@ -241,11 +364,20 @@ def extract_abstract(
     document: str,
     title: str,
 ) -> tuple[str, tuple[int, int] | None]:
+    """
+    Zoek het abstract in de gegenereerde HTML.
+
+    Geeft ook de positie terug, zodat de oude losse abstracttekst
+    verwijderd kan worden.
+    """
+
     for pattern in (
         ABSTRACT_CLASS_PATTERN,
         ABSTRACT_PARAGRAPH_PATTERN,
     ):
-        match = pattern.search(document)
+        match = pattern.search(
+            document
+        )
 
         if not match:
             continue
@@ -262,14 +394,20 @@ def extract_abstract(
         ).strip()
 
         if abstract:
-            return abstract, match.span()
+            return (
+                abstract,
+                match.span(),
+            )
 
     fallback = (
         f"In dit hoofdstuk leer je de belangrijkste begrippen, "
         f"methodes en toepassingen van {title.lower()}."
     )
 
-    return fallback, None
+    return (
+        fallback,
+        None,
+    )
 
 
 # ============================================================
@@ -278,16 +416,22 @@ def extract_abstract(
 
 def create_hero(
     template: str,
-    theme_number: str,
+    theme_number: int,
     theme_title: str,
     chapter_number: int,
     chapter_title: str,
     chapter_abstract: str,
 ) -> str:
+    """Vul de placeholders in chapter-hero.html."""
+
     replacements = {
-        "THEME_NUMBER": theme_number,
+        "THEME_NUMBER": str(
+            theme_number
+        ),
         "THEME_TITLE": theme_title,
-        "CHAPTER_NUMBER": str(chapter_number),
+        "CHAPTER_NUMBER": str(
+            chapter_number
+        ),
         "CHAPTER_TITLE": chapter_title,
         "CHAPTER_ABSTRACT": chapter_abstract,
     }
@@ -297,13 +441,18 @@ def create_hero(
     for placeholder, value in replacements.items():
         result = result.replace(
             "{{" + placeholder + "}}",
-            html.escape(value, quote=False),
+            html.escape(
+                value,
+                quote=False,
+            ),
         )
 
     return result.strip()
 
 
 def wrap_hero(hero: str) -> str:
+    """Plaats herkenbare commentaren rond de hero."""
+
     return (
         "<!-- CHAPTER_HERO_START -->\n"
         f"{hero}\n"
@@ -312,10 +461,14 @@ def wrap_hero(hero: str) -> str:
 
 
 # ============================================================
-# HERO EN CSS INVOEGEN
+# CSS EN HERO INVOEGEN
 # ============================================================
 
-def ensure_stylesheet(document: str) -> str:
+def ensure_stylesheet(
+    document: str,
+) -> str:
+    """Voeg chapter-hero.css toe als die nog ontbreekt."""
+
     if "chapter-hero.css" in document:
         return document
 
@@ -324,7 +477,9 @@ def ensure_stylesheet(document: str) -> str:
         'href="../../assets/css/chapter-hero.css">\n'
     )
 
-    match = HEAD_CLOSE_PATTERN.search(document)
+    match = HEAD_CLOSE_PATTERN.search(
+        document
+    )
 
     if match:
         return (
@@ -341,6 +496,8 @@ def insert_after(
     match: re.Match[str],
     content: str,
 ) -> str:
+    """Plaats content direct na een gevonden HTML-element."""
+
     position = match.end()
 
     return (
@@ -356,9 +513,15 @@ def inject_hero(
     document: str,
     hero: str,
 ) -> str:
-    block = wrap_hero(hero)
+    """Vervang een bestaande hero of voeg een nieuwe hero toe."""
 
-    if EXISTING_HERO_PATTERN.search(document):
+    block = wrap_hero(
+        hero
+    )
+
+    if EXISTING_HERO_PATTERN.search(
+        document
+    ):
         return EXISTING_HERO_PATTERN.sub(
             lambda _match: block,
             document,
@@ -370,7 +533,9 @@ def inject_hero(
         ARTICLE_PATTERN,
         BODY_PATTERN,
     ):
-        match = pattern.search(document)
+        match = pattern.search(
+            document
+        )
 
         if match:
             return insert_after(
@@ -383,7 +548,7 @@ def inject_hero(
 
 
 # ============================================================
-# BESTAND VERWERKEN
+# HTML-BESTAND VERWERKEN
 # ============================================================
 
 def process_html_file(
@@ -391,11 +556,15 @@ def process_html_file(
     module_dir: Path,
     stem: str,
     template: str,
-    theme_number: str,
+    theme_number: int,
     theme_title: str,
     chapter_number: int,
 ) -> None:
-    document = read_text(html_path)
+    """Maak en plaats de hero in één hoofdstukbestand."""
+
+    document = read_text(
+        html_path
+    )
 
     title = extract_title_from_tex(
         module_dir,
@@ -440,18 +609,21 @@ def process_html_file(
 
     print(
         f"Hero ingevoegd: {html_path} "
-        f"(hoofdstuk {chapter_number}: {title})"
+        f"(thema {theme_number}: {theme_title}; "
+        f"hoofdstuk {chapter_number}: {title})"
     )
 
 
 # ============================================================
-# MODULE VERWERKEN
+# HTML-BESTANDEN ZOEKEN
 # ============================================================
 
 def html_candidates(
     module_dir: Path,
     stem: str,
 ) -> list[Path]:
+    """Zoek de gewone en online HTML-versie."""
+
     candidates = [
         module_dir / f"{stem}.html",
         module_dir / f"{stem}.online.html",
@@ -464,11 +636,17 @@ def html_candidates(
     ]
 
 
+# ============================================================
+# MODULE VERWERKEN
+# ============================================================
+
 def process_module(
     module_dir: Path,
     index_tex: Path,
     template_path: Path,
 ) -> int:
+    """Verwerk alle hoofdstukken van één module."""
+
     if not module_dir.is_dir():
         raise ValueError(
             f"Modulemap niet gevonden: {module_dir}"
@@ -488,25 +666,34 @@ def process_module(
         template_path
     )
 
-    theme_number, theme_title = get_theme(
-        module_dir
-    )
-
-    chapter_order = read_chapter_order(
+    course_structure = read_course_structure(
         index_tex
     )
 
-    if not chapter_order:
+    if not course_structure:
         raise ValueError(
-            f"Geen hoofdstukken gevonden in {index_tex}"
+            f"Geen thema's of hoofdstukken gevonden in {index_tex}"
         )
 
     processed_count = 0
 
-    for chapter_number, stem in enumerate(
-        chapter_order,
-        start=1,
-    ):
+    for item in course_structure:
+        stem = str(
+            item["stem"]
+        )
+
+        theme_number = int(
+            item["theme_number"]
+        )
+
+        theme_title = str(
+            item["theme_title"]
+        )
+
+        chapter_number = int(
+            item["chapter_number"]
+        )
+
         candidates = html_candidates(
             module_dir,
             stem,
@@ -515,9 +702,10 @@ def process_module(
         if not candidates:
             print(
                 f"Waarschuwing: geen HTML gevonden voor "
-                f"hoofdstuk {chapter_number}: {stem}",
+                f"thema {theme_number}, hoofdstuk {chapter_number}: {stem}",
                 file=sys.stderr,
             )
+
             continue
 
         for html_path in candidates:
@@ -546,6 +734,8 @@ def process_module(
 # ============================================================
 
 def main() -> int:
+    """Lees argumenten en verwerk één module."""
+
     if len(sys.argv) != 4:
         print(
             "Gebruik:\n"
@@ -561,9 +751,17 @@ def main() -> int:
 
         return 1
 
-    module_dir = Path(sys.argv[1])
-    index_tex = Path(sys.argv[2])
-    template_path = Path(sys.argv[3])
+    module_dir = Path(
+        sys.argv[1]
+    )
+
+    index_tex = Path(
+        sys.argv[2]
+    )
+
+    template_path = Path(
+        sys.argv[3]
+    )
 
     try:
         count = process_module(
@@ -590,4 +788,6 @@ def main() -> int:
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    raise SystemExit(
+        main()
+    )
