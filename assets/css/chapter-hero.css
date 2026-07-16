@@ -933,3 +933,103 @@
 .chapter-hero .hero-graph__arrow {
     fill: none !important;
 }
+
+/* =========================================================
+   CHAPTER HERO BOVEN DE CURSUSINHOUD
+   ========================================================= */
+
+.chapter-layout,
+.chapter-page,
+.chapter-wrapper {
+    display: block !important;
+    width: 100% !important;
+}
+
+/* Chapter hero altijd over de volledige rij */
+.chapter-hero {
+    position: relative !important;
+    inset: auto !important;
+
+    display: grid !important;
+    grid-template-columns: minmax(170px, 220px) minmax(0, 1fr) !important;
+    align-items: center !important;
+    gap: 36px !important;
+
+    width: min(1240px, calc(100% - 48px)) !important;
+    max-width: none !important;
+    min-height: 260px !important;
+
+    margin: 36px auto 28px !important;
+    padding: 34px 42px !important;
+
+    float: none !important;
+    clear: both !important;
+
+    grid-column: 1 / -1 !important;
+
+    border-radius: 26px !important;
+    overflow: hidden !important;
+}
+
+/* Titelgedeelte niet meer samendrukken */
+.chapter-hero__content,
+.chapter-hero-content,
+.chapter-hero__text,
+.chapter-hero-text {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+}
+
+/* Hoofdstuktitel normaal over meerdere woorden laten lopen */
+.chapter-hero h1,
+.chapter-hero .chapter-title,
+.chapter-hero__title {
+    width: auto !important;
+    max-width: 850px !important;
+
+    margin: 0 !important;
+
+    white-space: normal !important;
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+    hyphens: none !important;
+
+    font-size: clamp(2.8rem, 5vw, 5.4rem) !important;
+    line-height: 0.95 !important;
+}
+
+/* Hoofdstuknummer */
+.chapter-hero .chapter-number,
+.chapter-hero__number {
+    position: static !important;
+
+    width: 110px !important;
+    height: 110px !important;
+
+    flex: 0 0 110px !important;
+}
+
+/* Abstract onder de titel */
+.chapter-hero .chapter-abstract,
+.chapter-hero__abstract {
+    max-width: 820px !important;
+    margin-top: 24px !important;
+
+    line-height: 1.65 !important;
+}
+
+/* De cursusinhoud daarna opnieuw over volledige breedte */
+.course-content,
+.course-overview,
+.chapter-content,
+.ximera-content {
+    width: min(1240px, calc(100% - 48px)) !important;
+    max-width: none !important;
+
+    margin-left: auto !important;
+    margin-right: auto !important;
+
+    float: none !important;
+    clear: both !important;
+}
