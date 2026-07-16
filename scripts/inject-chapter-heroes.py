@@ -178,9 +178,35 @@ def write_text(path: Path, content: str) -> None:
 
 
 def clean_text(value: str) -> str:
-    """Verwijder HTML-tags en normaliseer witruimte."""
+    """Verwijder HTML- en TeX4ht-code en normaliseer witruimte."""
 
     value = SCRIPT_STYLE_PATTERN.sub("", value)
+
+    value = re.sub(
+        r"\\HCode\s*\{.*?\}",
+        " ",
+        value,
+        flags=re.DOTALL,
+    )
+
+    value = re.sub(
+        r"\\[A-Za-z@]+\s*(?:\[[^\]]*\])?\s*",
+        " ",
+        value,
+    )
+
+    value = re.sub(
+        r"#\d+",
+        " ",
+        value,
+    )
+
+    value = re.sub(
+        r"[{}]",
+        " ",
+        value,
+    )
+
     value = TAG_PATTERN.sub(" ", value)
     value = html.unescape(value)
     value = WHITESPACE_PATTERN.sub(" ", value)
