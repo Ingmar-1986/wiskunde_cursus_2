@@ -891,3 +891,38 @@
         -webkit-print-color-adjust: exact;
     }
 }
+
+/* SVG-vullingen expliciet uitschakelen */
+
+.chapter-hero .hero-graph svg path,
+.chapter-hero .hero-graph svg line,
+.chapter-hero .hero-graph svg polyline,
+.chapter-hero .hero-vector svg path,
+.chapter-hero .hero-vector svg line,
+.chapter-hero .hero-vector svg polyline,
+.chapter-hero .hero-cube svg path,
+.chapter-hero .hero-cube svg line,
+.chapter-hero .hero-cube svg polygon,
+.chapter-hero .hero-cube svg polyline {
+    fill: none !important;
+}
+
+.chapter-hero .hero-vector__arrowhead {
+    fill: #26d5e4 !important;
+}
+
+.chapter-hero .hero-vector__origin,
+.chapter-hero .hero-cube__node {
+    fill: rgba(48, 211, 228, 0.86) !important;
+}
+
+.chapter-hero .hero-graph__curve {
+    fill: none !important;
+    stroke: #f10d69 !important;
+}
+
+.chapter-hero .hero-graph__grid,
+.chapter-hero .hero-graph__axis,
+.chapter-hero .hero-graph__arrow {
+    fill: none !important;
+}

@@ -802,6 +802,14 @@ def process_html_file(
         html_path
     )
 
+   tex_title = extract_title_from_tex(
+    module_dir,
+    stem,
+)
+
+if tex_title:
+    title = tex_title
+else:
     title = extract_title(
         document=document,
         fallback=fallback_title,
