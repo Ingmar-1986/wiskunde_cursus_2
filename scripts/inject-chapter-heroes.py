@@ -464,32 +464,34 @@ def wrap_hero(hero: str) -> str:
 # CSS EN HERO INVOEGEN
 # ============================================================
 
-def ensure_stylesheet(
-    document: str,
-) -> str:
-    """Voeg chapter-hero.css toe als die nog ontbreekt."""
+def ensure_chapter_css(document: str) -> str:
+    """
+    Voeg de CSS voor de chapter hero en pedagogische blokken toe
+    als die nog ontbreken.
+    """
 
-    if "chapter-hero.css" in document:
+    css_files = [
+        "chapter-hero.css",
+        "learning-boxes.css",
+    ]
+
+    missing_links = []
+
+    for css_file in css_files:
+        if css_file not in document:
+            missing_links.append(
+                f'  <link rel="stylesheet" '
+                f'href="../../assets/css/{css_file}">\n'
+            )
+
+    if not missing_links:
         return document
 
-    stylesheet = (
-        '    <link rel="stylesheet" '
-        'href="../../assets/css/chapter-hero.css">\n'
+    return document.replace(
+        "</head>",
+        "".join(missing_links) + "</head>",
+        1,
     )
-
-    match = HEAD_CLOSE_PATTERN.search(
-        document
-    )
-
-    if match:
-        return (
-            document[:match.start()]
-            + stylesheet
-            + document[match.start():]
-        )
-
-    return stylesheet + document
-
 
 def insert_after(
     document: str,
@@ -598,7 +600,7 @@ def process_html_file(
         hero,
     )
 
-    document = ensure_stylesheet(
+    document = ensure_chapter_css(
         document
     )
 
