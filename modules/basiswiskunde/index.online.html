@@ -20,23 +20,26 @@
 <!-- XIMERA-HEADER-START -->
 <header class="hero-header">
 
-    <div class="hero-grid"></div>
-    <div class="hero-glow hero-glow-left"></div>
-    <div class="hero-glow hero-glow-right"></div>
+    <!-- Decoratieve achtergrond -->
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="hero-glow hero-glow-left" aria-hidden="true"></div>
+    <div class="hero-glow hero-glow-right" aria-hidden="true"></div>
 
     <div class="hero-content">
 
-    <div class="hero-logo">
-        <img
-            src="../images/banners/logo_athena.png"
-            alt="Logo Athena"
-        >
-    </div>
+        <!-- Logo -->
+        <div class="hero-logo">
+            <img
+                src="../images/banners/logo_athena.png"
+                alt="Logo Athena Secundair Onderwijs"
+            >
+        </div>
 
+        <!-- Titel en onderwerpen -->
         <div class="hero-text">
 
             <p class="hero-label">
-                Fundamentele Vorming Digitale Creatie
+                Fundamentele vorming digitale creatie
             </p>
 
             <h1>
@@ -45,10 +48,10 @@
             </h1>
 
             <p class="hero-subtitle">
-                De essentiële wiskundige basis voor Digital Arts & Entertainment
+                De essentiële wiskundige basis voor Digital Arts &amp; Entertainment
             </p>
 
-            <div class="hero-tags">
+            <nav class="hero-chips" aria-label="Onderwerpen in deze cursus">
                 <span>Basiswiskunde</span>
                 <span>Algebra</span>
                 <span>Vergelijkingen</span>
@@ -59,62 +62,36 @@
                 <span>Goniometrie</span>
                 <span>Logaritmen</span>
                 <span>Transformaties</span>
-            </div>
+            </nav>
 
         </div>
 
-        <div class="hero-visual">
+        <!-- Decoratieve formules -->
+        <div class="hero-visual" aria-hidden="true">
 
-            <div class="coordinate-system">
-                <span class="axis axis-x"></span>
-                <span class="axis axis-y"></span>
-                <span class="axis axis-z"></span>
+            <div class="hero-formula">
+                <strong>Vector.</strong>&nbsp;
+                <span>v = (x, y, z)</span>
             </div>
 
-            <div class="wireframe-cube">
-                <div class="cube-face cube-front"></div>
-                <div class="cube-face cube-back"></div>
-
-                <span class="cube-line line-1"></span>
-                <span class="cube-line line-2"></span>
-                <span class="cube-line line-3"></span>
-                <span class="cube-line line-4"></span>
+            <div class="hero-formula">
+                <strong>Functie.</strong>&nbsp;
+                <span>f(t)</span>
             </div>
 
-            <svg
-                class="motion-path"
-                viewBox="0 0 500 220"
-                aria-hidden="true"
-            >
-                <path
-                    d="M20 175 C120 20, 260 260, 475 45"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="3"
-                />
+            <div class="hero-formula">
+                <strong>Punt.</strong>&nbsp;
+                <span>P(x, y, z)</span>
+            </div>
 
-                <circle cx="20" cy="175" r="6"></circle>
-                <circle cx="475" cy="45" r="6"></circle>
-
-                <circle class="moving-point" r="8">
-                    <animateMotion
-                        dur="5s"
-                        repeatCount="indefinite"
-                        path="M20 175 C120 20, 260 260, 475 45"
-                    />
-                </circle>
-            </svg>
-
-            <div class="formula formula-1">P(x, y, z)</div>
-            <div class="formula formula-2">v = (x, y, z)</div>
-            <div class="formula formula-3">f(t)</div>
-            <div class="formula formula-4">θ</div>
+            <div class="hero-formula">
+                <strong>Hoek.</strong>&nbsp;
+                <span>θ</span>
+            </div>
 
         </div>
 
     </div>
-
-    <div class="hero-bottom-line"></div>
 
 </header><!-- XIMERA-HEADER-END --> 
 <!-- XIMERA-CHAPTER-LAYOUT-START -->

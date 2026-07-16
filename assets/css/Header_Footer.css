@@ -1,81 +1,160 @@
+/* =========================================================
+   HERO.CSS
+   Wiskunde 7 FVD
+   ========================================================= */
+
 :root {
-    --kleur-banner: #c3004a;
-    --kleur-donker: #0e2432;
-    --kleur-inhoud: #e3e3e3;
+    --hero-bg-dark: #07141f;
+    --hero-bg-mid: #0b2a3a;
+    --hero-bg-light: #105661;
 
-    --kleur-achtergrond: #07141f;
-    --kleur-achtergrond-licht: #123a4e;
-    --kleur-accent: #32d7d0;
-    --kleur-accent-licht: #9bf7ef;
-    --kleur-tekst: #ffffff;
-    --kleur-tekst-zacht: #b8d1dc;
+    --hero-accent: #32d7d0;
+    --hero-accent-light: #9bf7ef;
+    --hero-pink: #c3004a;
+
+    --hero-text: #f7fbff;
+    --hero-text-soft: #b8d1dc;
 }
 
-/* Algemene opmaak */
 
-* {
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    margin: 0;
-    min-height: 100vh;
-
-    background-color: var(--kleur-inhoud);
-    color: var(--kleur-donker);
-
-    font-family:
-        Inter,
-        Segoe UI,
-        Arial,
-        sans-serif;
-}
-
-//* =========================================================
-   ALGEMENE HERO-LAYOUT
+/* =========================================================
+   ALGEMENE HERO
    ========================================================= */
 
 .hero-header {
     position: relative;
+    isolation: isolate;
+
+    width: 100%;
     min-height: 440px;
+
     overflow: hidden;
+
+    color: var(--hero-text);
 
     background:
         radial-gradient(
-            circle at 8% 105%,
-            rgba(224, 0, 121, 0.16),
+            circle at 7% 105%,
+            rgba(195, 0, 74, 0.22) 0%,
             transparent 34%
         ),
         radial-gradient(
-            circle at 88% 10%,
-            rgba(31, 205, 213, 0.16),
-            transparent 42%
+            circle at 88% 5%,
+            rgba(50, 215, 208, 0.22) 0%,
+            transparent 40%
         ),
         linear-gradient(
             115deg,
-            #171526 0%,
-            #092536 50%,
-            #0f5660 100%
+            #171426 0%,
+            var(--hero-bg-mid) 52%,
+            var(--hero-bg-light) 100%
         );
 
-    border-bottom: 4px solid #31dce2;
+    border-bottom: 4px solid var(--hero-accent);
+
+    box-shadow:
+        0 18px 38px rgba(6, 18, 28, 0.22);
 }
+
+
+/* =========================================================
+   ACHTERGRONDRASTER
+   ========================================================= */
+
+.hero-grid {
+    position: absolute;
+    z-index: -3;
+
+    left: 0;
+    right: 0;
+    bottom: -95px;
+
+    height: 245px;
+
+    opacity: 0.18;
+    pointer-events: none;
+
+    background-image:
+        linear-gradient(
+            rgba(82, 227, 225, 0.22) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(82, 227, 225, 0.22) 1px,
+            transparent 1px
+        );
+
+    background-size: 48px 48px;
+
+    transform:
+        perspective(430px)
+        rotateX(64deg)
+        scale(1.18);
+
+    transform-origin: bottom center;
+}
+
+
+/* =========================================================
+   GLOWS
+   ========================================================= */
+
+.hero-glow {
+    position: absolute;
+    z-index: -2;
+
+    border-radius: 50%;
+
+    filter: blur(90px);
+
+    pointer-events: none;
+}
+
+.hero-glow-left {
+    width: 430px;
+    height: 300px;
+
+    left: -170px;
+    bottom: -175px;
+
+    background: rgba(195, 0, 74, 0.19);
+}
+
+.hero-glow-right {
+    width: 520px;
+    height: 360px;
+
+    right: -190px;
+    top: -180px;
+
+    background: rgba(50, 215, 208, 0.18);
+}
+
+
+/* =========================================================
+   HOOFDLAYOUT
+   ========================================================= */
 
 .hero-content {
     position: relative;
-    z-index: 3;
+    z-index: 2;
 
-    width: min(1440px, calc(100% - 64px));
+    width: min(1420px, calc(100% - 64px));
     min-height: 440px;
-    margin: 0 auto;
+
+    margin-inline: auto;
+    padding-block: 28px;
 
     display: grid;
-    grid-template-columns: 150px minmax(500px, 1fr) minmax(460px, 580px);
+
+    grid-template-columns:
+        260px
+        minmax(500px, 1fr)
+        minmax(440px, 560px);
+
     gap: 42px;
+
     align-items: center;
 }
 
@@ -88,34 +167,46 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    min-width: 0;
 }
 
 .hero-logo img {
     display: block;
-    width: 135px;
+
+    width: 240px;
+    max-width: 100%;
     height: auto;
+
     object-fit: contain;
 
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+
     filter:
-        drop-shadow(0 10px 18px rgba(0, 0, 0, 0.25))
-        drop-shadow(0 0 15px rgba(45, 221, 226, 0.08));
+        drop-shadow(0 12px 22px rgba(0, 0, 0, 0.28))
+        drop-shadow(0 0 20px rgba(50, 215, 208, 0.14));
 }
 
 
 /* =========================================================
-   TITEL EN TEKST
+   TEKSTBLOK
    ========================================================= */
 
 .hero-text {
-    padding: 34px 0;
+    min-width: 0;
 }
 
 .hero-label {
-    margin: 0 0 22px;
+    margin: 0 0 20px;
 
-    color: #82efef;
+    color: var(--hero-accent-light);
+
     font-size: 0.78rem;
     font-weight: 800;
+    line-height: 1.35;
+
     letter-spacing: 0.18em;
     text-transform: uppercase;
 }
@@ -123,31 +214,40 @@ body {
 .hero-text h1 {
     margin: 0;
 
-    color: #f7fbff;
+    color: var(--hero-text);
+
     font-size: clamp(4.5rem, 6vw, 6.4rem);
     font-weight: 900;
-    line-height: 0.82;
+    line-height: 0.83;
+
     letter-spacing: -0.055em;
     text-transform: uppercase;
 
-    text-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+    text-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.26);
 }
 
 .hero-text h1 span {
     display: block;
-    margin-top: 24px;
+
+    margin-top: 22px;
 
     color: #35dce4;
-    font-size: clamp(2.4rem, 3.5vw, 3.7rem);
+
+    font-size: clamp(2.4rem, 3.4vw, 3.7rem);
+    font-weight: 850;
     line-height: 1;
+
     letter-spacing: 0.22em;
 }
 
 .hero-subtitle {
-    margin: 26px 0 0;
-    max-width: 650px;
+    max-width: 670px;
 
-    color: rgba(230, 240, 246, 0.82);
+    margin: 25px 0 0;
+
+    color: rgba(230, 241, 247, 0.80);
+
     font-size: 1.03rem;
     line-height: 1.55;
 }
@@ -161,10 +261,12 @@ body {
 .hero-chips {
     display: flex;
     flex-wrap: wrap;
+
     gap: 10px;
 
-    max-width: 670px;
-    margin-top: 26px;
+    max-width: 700px;
+
+    margin-top: 25px;
 }
 
 .hero-tags a,
@@ -176,10 +278,12 @@ body {
     justify-content: center;
 
     min-height: 35px;
+
     padding: 8px 16px;
 
     color: #dff6f7;
-    background: rgba(4, 28, 41, 0.35);
+
+    background: rgba(4, 28, 41, 0.40);
 
     border: 1px solid rgba(66, 213, 219, 0.38);
     border-radius: 999px;
@@ -189,6 +293,26 @@ body {
     line-height: 1;
 
     text-decoration: none;
+
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+
+    transition:
+        transform 160ms ease,
+        background-color 160ms ease,
+        border-color 160ms ease,
+        color 160ms ease;
+}
+
+.hero-tags a:hover,
+.hero-chips a:hover {
+    color: #ffffff;
+
+    transform: translateY(-2px);
+
+    background: rgba(50, 215, 208, 0.14);
+
+    border-color: rgba(50, 215, 208, 0.72);
 }
 
 
@@ -199,39 +323,70 @@ body {
 .hero-visual,
 .hero-formulas,
 .hero-art {
-    position: relative !important;
+    position: relative;
 
-    display: block !important;
-    min-width: 0;
     width: 100%;
-    height: 340px;
+    height: 350px;
+
+    min-width: 0;
+
+    overflow: visible;
 }
 
 
-/* Grote decoratieve cirkel */
+/* Decoratieve cirkels */
 
 .hero-visual::before,
 .hero-formulas::before,
 .hero-art::before {
     content: "";
-    position: absolute;
 
-    width: 260px;
-    height: 260px;
+    position: absolute;
+    z-index: 0;
 
     top: 38px;
     left: 50%;
 
+    width: 270px;
+    height: 270px;
+
     transform: translateX(-50%);
 
-    border: 1px solid rgba(61, 222, 225, 0.25);
+    border: 1px solid rgba(60, 221, 224, 0.26);
     border-radius: 50%;
 
-    box-shadow:
-        0 0 0 42px rgba(61, 222, 225, 0.025),
-        0 0 0 84px rgba(61, 222, 225, 0.015);
+    background: rgba(50, 215, 208, 0.025);
 
-    pointer-events: none;
+    box-shadow:
+        0 0 0 44px rgba(50, 215, 208, 0.024),
+        0 0 0 88px rgba(50, 215, 208, 0.012);
+}
+
+
+/* Extra middelpunt */
+
+.hero-visual::after,
+.hero-formulas::after,
+.hero-art::after {
+    content: "";
+
+    position: absolute;
+    z-index: 1;
+
+    top: 165px;
+    left: 50%;
+
+    width: 8px;
+    height: 8px;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background: var(--hero-accent);
+
+    box-shadow:
+        0 0 18px rgba(50, 215, 208, 0.85);
 }
 
 
@@ -239,79 +394,86 @@ body {
    FORMULEKAARTEN
    ========================================================= */
 
-/*
-Pas ".hero-formula" eventueel aan wanneer jouw elementen
-een andere klassenaam gebruiken.
-*/
-
 .hero-formula {
-    position: absolute !important;
+    position: absolute;
     z-index: 2;
 
-    display: flex !important;
+    display: flex;
     align-items: center;
 
-    width: 330px;
-    min-height: 60px;
-    padding: 14px 20px;
+    width: 360px;
+    min-height: 62px;
 
-    color: rgba(194, 249, 247, 0.9);
+    padding: 14px 21px;
+
+    color: rgba(211, 250, 248, 0.92);
 
     background:
         linear-gradient(
             110deg,
-            rgba(11, 41, 55, 0.92),
-            rgba(17, 75, 82, 0.72)
-        ) !important;
+            rgba(8, 38, 52, 0.94),
+            rgba(17, 74, 82, 0.76)
+        );
 
-    border: 1px solid rgba(75, 224, 226, 0.28) !important;
-    border-left: 4px solid #31dce2 !important;
+    border: 1px solid rgba(72, 223, 225, 0.27);
+    border-left: 4px solid var(--hero-accent);
     border-radius: 10px;
 
     box-shadow:
-        0 18px 34px rgba(0, 0, 0, 0.24),
+        0 18px 35px rgba(0, 0, 0, 0.24),
         inset 0 1px rgba(255, 255, 255, 0.04);
+
+    font-size: 1rem;
+    line-height: 1.35;
 
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-
-    opacity: 0.92;
 }
 
+.hero-formula strong {
+    color: var(--hero-accent-light);
 
-/* De drie kaarten duidelijk verspringen */
+    font-weight: 800;
+}
 
 .hero-formula:nth-child(1) {
-    top: 28px !important;
-    left: 28px !important;
-    right: auto !important;
-    transform: rotate(-1.2deg);
+    top: 18px;
+    left: 8px;
+
+    transform: rotate(-1deg);
 }
 
 .hero-formula:nth-child(2) {
-    top: 132px !important;
-    left: 125px !important;
-    right: auto !important;
-    transform: rotate(1deg);
+    top: 103px;
+    left: 112px;
+
+    transform: rotate(0.8deg);
 }
 
 .hero-formula:nth-child(3) {
-    top: 236px !important;
-    left: 58px !important;
-    right: auto !important;
-    transform: rotate(-0.6deg);
+    top: 188px;
+    left: 38px;
+
+    transform: rotate(-0.5deg);
 }
 
+.hero-formula:nth-child(4) {
+    top: 273px;
+    left: 128px;
 
-/* Verwijder eventueel bestaande witte beeldachtergronden */
+    transform: rotate(0.6deg);
+}
 
 .hero-formula img {
+    display: block;
+
     max-width: 100%;
     height: auto;
 
-    background: transparent !important;
-    border: 0 !important;
-    box-shadow: none !important;
+    background: transparent;
+
+    border: 0;
+    box-shadow: none;
 }
 
 
@@ -319,21 +481,52 @@ een andere klassenaam gebruiken.
    TABLET
    ========================================================= */
 
-@media (max-width: 1150px) {
+@media (max-width: 1180px) {
 
     .hero-content {
-        grid-template-columns: 130px minmax(430px, 1fr);
+        width: min(100% - 44px, 980px);
+
+        grid-template-columns:
+            210px
+            minmax(430px, 1fr);
+
         gap: 30px;
     }
 
     .hero-logo img {
-        width: 115px;
+        width: 195px;
     }
 
     .hero-visual,
     .hero-formulas,
     .hero-art {
-        display: none !important;
+        display: none;
+    }
+}
+
+
+/* =========================================================
+   KLEINE TABLET
+   ========================================================= */
+
+@media (max-width: 880px) {
+
+    .hero-content {
+        grid-template-columns:
+            170px
+            minmax(0, 1fr);
+    }
+
+    .hero-logo img {
+        width: 160px;
+    }
+
+    .hero-text h1 {
+        font-size: clamp(3.8rem, 8vw, 5rem);
+    }
+
+    .hero-text h1 span {
+        font-size: clamp(2.1rem, 5vw, 3rem);
     }
 }
 
@@ -342,7 +535,7 @@ een andere klassenaam gebruiken.
    MOBIEL
    ========================================================= */
 
-@media (max-width: 720px) {
+@media (max-width: 740px) {
 
     .hero-header {
         min-height: auto;
@@ -351,38 +544,87 @@ een andere klassenaam gebruiken.
     .hero-content {
         width: calc(100% - 32px);
         min-height: auto;
-        padding: 40px 0 44px;
+
+        padding: 38px 0 44px;
 
         grid-template-columns: 1fr;
-        gap: 20px;
+
+        gap: 18px;
 
         text-align: center;
     }
 
     .hero-logo img {
-        width: 120px;
+        width: 180px;
     }
 
-    .hero-text {
-        padding: 0;
+    .hero-label {
+        margin-bottom: 16px;
+
+        font-size: 0.70rem;
     }
 
     .hero-text h1 {
-        font-size: clamp(3.4rem, 17vw, 4.8rem);
+        font-size: clamp(3.3rem, 17vw, 4.8rem);
     }
 
     .hero-text h1 span {
-        font-size: clamp(2rem, 9vw, 2.7rem);
+        margin-top: 16px;
+
+        font-size: clamp(2rem, 10vw, 2.8rem);
+
+        letter-spacing: 0.15em;
     }
 
     .hero-subtitle {
         margin-inline: auto;
+
+        font-size: 0.95rem;
     }
 
     .hero-tags,
     .hero-chips {
         justify-content: center;
+
         margin-inline: auto;
+    }
+}
+
+
+/* =========================================================
+   ZEER KLEINE SCHERMEN
+   ========================================================= */
+
+@media (max-width: 430px) {
+
+    .hero-content {
+        width: calc(100% - 24px);
+    }
+
+    .hero-logo img {
+        width: 155px;
+    }
+
+    .hero-tags a,
+    .hero-tags span,
+    .hero-chips a,
+    .hero-chips span {
+        padding: 7px 12px;
+
+        font-size: 0.68rem;
+    }
+}
+
+
+/* =========================================================
+   MINDER ANIMATIE BIJ TOEGANKELIJKHEIDSVOORKEUR
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .hero-tags a,
+    .hero-chips a {
+        transition: none;
     }
 }
 /* =====================================================
