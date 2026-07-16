@@ -35,150 +35,162 @@ body {
         sans-serif;
 }
 
-/* Hero header */
+/* =========================================================
+   HERO HEADER
+   ========================================================= */
 
 .hero-header {
     position: relative;
-
+    width: 100%;
     min-height: 390px;
-
-    display: flex;
-    align-items: center;
-
     overflow: hidden;
-
-    color: var(--kleur-tekst);
 
     background:
         radial-gradient(
-            circle at 75% 35%,
-            rgba(50, 215, 208, 0.20),
-            transparent 28%
+            circle at 12% 105%,
+            rgba(230, 0, 126, 0.16),
+            transparent 34%
         ),
         radial-gradient(
-            circle at 15% 80%,
-            rgba(195, 0, 74, 0.15),
-            transparent 30%
+            circle at 88% 0%,
+            rgba(41, 210, 214, 0.18),
+            transparent 40%
         ),
         linear-gradient(
-            125deg,
-            #06111b 0%,
-            #0b2636 48%,
-            #123d50 100%
+            115deg,
+            #171426 0%,
+            #0b2434 48%,
+            #10505a 100%
         );
 
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+    border-bottom: 4px solid #28d9df;
+    box-shadow: 0 18px 38px rgba(9, 19, 31, 0.22);
 }
 
-/* Achtergrondraster */
+
+/* =========================================================
+   ACHTERGRONDRASTER
+   ========================================================= */
 
 .hero-grid {
     position: absolute;
-    inset: 0;
+    left: 0;
+    right: 0;
+    bottom: -90px;
+    height: 230px;
 
-    opacity: 0.14;
+    pointer-events: none;
+    opacity: 0.18;
 
     background-image:
         linear-gradient(
-            rgba(255, 255, 255, 0.22) 1px,
+            rgba(73, 224, 225, 0.22) 1px,
             transparent 1px
         ),
         linear-gradient(
             90deg,
-            rgba(255, 255, 255, 0.22) 1px,
+            rgba(73, 224, 225, 0.22) 1px,
             transparent 1px
         );
 
-    background-size: 42px 42px;
+    background-size: 46px 46px;
 
     transform:
-        perspective(700px)
-        rotateX(65deg)
-        scale(1.4)
-        translateY(38%);
+        perspective(420px)
+        rotateX(62deg)
+        scale(1.15);
 
-    transform-origin: center bottom;
+    transform-origin: bottom center;
 }
 
-/* Gloeiende achtergrondvlakken */
+
+/* =========================================================
+   GLOWS
+   ========================================================= */
 
 .hero-glow {
     position: absolute;
-
-    width: 380px;
-    height: 380px;
-
     border-radius: 50%;
-
-    filter: blur(85px);
-
-    opacity: 0.18;
+    pointer-events: none;
+    filter: blur(90px);
 }
 
 .hero-glow-left {
+    width: 420px;
+    height: 280px;
     left: -160px;
-    bottom: -180px;
-
-    background: var(--kleur-banner);
+    bottom: -150px;
+    background: rgba(231, 0, 126, 0.19);
 }
 
 .hero-glow-right {
-    right: -120px;
-    top: -170px;
-
-    background: var(--kleur-accent);
+    width: 500px;
+    height: 340px;
+    right: -180px;
+    top: -160px;
+    background: rgba(44, 217, 222, 0.18);
 }
 
-/* Centrale inhoud */
+
+/* =========================================================
+   HOOFDLAYOUT
+   ========================================================= */
 
 .hero-content {
     position: relative;
-    z-index: 2;
+    z-index: 3;
 
-    width: min(1400px, calc(100% - 60px));
-    min-height: 330px;
-
+    width: min(1240px, calc(100% - 48px));
+    min-height: 390px;
     margin: 0 auto;
 
     display: grid;
-    grid-template-columns: 130px minmax(400px, 1fr) minmax(380px, 0.8fr);
+    grid-template-columns: 190px minmax(430px, 1fr) minmax(420px, 0.95fr);
+    gap: 42px;
     align-items: center;
-    gap: 35px;
 }
 
-/* Logo */
+
+/* =========================================================
+   LOGO
+   ========================================================= */
 
 .hero-logo {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
 
 .hero-logo img {
-    width: 105px;
-    max-height: 120px;
+    display: block;
+    width: 155px;
+    max-width: 100%;
+    height: auto;
 
     object-fit: contain;
 
     filter:
-        drop-shadow(0 0 18px rgba(50, 215, 208, 0.35))
-        drop-shadow(0 8px 18px rgba(0, 0, 0, 0.35));
+        drop-shadow(0 8px 16px rgba(0, 0, 0, 0.22))
+        drop-shadow(0 0 12px rgba(44, 217, 222, 0.08));
 }
 
-/* Tekst */
+
+/* =========================================================
+   TEKSTBLOK
+   ========================================================= */
 
 .hero-text {
-    position: relative;
-    z-index: 3;
+    align-self: center;
+    padding: 34px 0 28px;
 }
 
 .hero-label {
-    margin: 0 0 12px;
+    margin: 0 0 20px;
 
-    color: var(--kleur-accent-licht);
-
-    font-size: 0.82rem;
-    font-weight: 700;
+    color: #8ef0ed;
+    font-size: 0.78rem;
+    font-weight: 800;
+    line-height: 1.35;
 
     letter-spacing: 0.18em;
     text-transform: uppercase;
@@ -187,343 +199,320 @@ body {
 .hero-text h1 {
     margin: 0;
 
-    font-size: clamp(3.2rem, 6vw, 5.8rem);
-    line-height: 0.95;
+    color: #f7fbff;
+    font-size: clamp(3.8rem, 5.2vw, 5.8rem);
+    font-weight: 900;
+    line-height: 0.84;
 
-    font-weight: 800;
     letter-spacing: -0.055em;
-
     text-transform: uppercase;
+
+    text-shadow:
+        0 10px 28px rgba(0, 0, 0, 0.24),
+        0 0 30px rgba(44, 217, 222, 0.06);
 }
 
 .hero-text h1 span {
     display: block;
+    margin-top: 18px;
 
-    margin-top: 12px;
+    color: #33dce3;
+    font-size: clamp(2.1rem, 3.1vw, 3.2rem);
+    font-weight: 850;
+    line-height: 1;
 
-    color: var(--kleur-accent);
-
-    font-size: 0.46em;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.22em;
+    text-indent: 0.1em;
 }
 
 .hero-subtitle {
-    max-width: 680px;
+    max-width: 620px;
+    margin: 23px 0 0;
 
-    margin: 24px 0 0;
-
-    color: var(--kleur-tekst-zacht);
-
-    font-size: clamp(1rem, 1.6vw, 1.3rem);
+    color: rgba(226, 238, 244, 0.72);
+    font-size: 1.04rem;
     line-height: 1.6;
 }
 
-/* Onderwerptags */
 
-.hero-tags {
-    margin-top: 24px;
+/* =========================================================
+   ONDERWERP-CHIPS
+   ========================================================= */
 
+.hero-tags,
+.hero-chips {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 9px;
+
+    margin-top: 24px;
 }
 
-.hero-tags span {
-    padding: 8px 14px;
+.hero-tags a,
+.hero-tags span,
+.hero-chips a,
+.hero-chips span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
-    border: 1px solid rgba(155, 247, 239, 0.24);
-    border-radius: 100px;
+    min-height: 34px;
+    padding: 7px 15px;
 
-    color: #dffdf9;
+    color: #d8f2f4;
+    background: rgba(6, 27, 40, 0.38);
 
-    background: rgba(8, 29, 41, 0.52);
+    border: 1px solid rgba(86, 211, 216, 0.32);
+    border-radius: 999px;
 
-    font-size: 0.78rem;
-    font-weight: 600;
+    font-size: 0.73rem;
+    font-weight: 700;
+    line-height: 1;
 
-    letter-spacing: 0.04em;
+    text-decoration: none;
 
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+
+    transition:
+        transform 160ms ease,
+        border-color 160ms ease,
+        background-color 160ms ease,
+        color 160ms ease;
 }
 
-/* Rechter illustratie */
+.hero-tags a:hover,
+.hero-chips a:hover {
+    color: #ffffff;
+    background: rgba(34, 205, 211, 0.14);
+    border-color: rgba(74, 229, 231, 0.72);
+    transform: translateY(-2px);
+}
 
-.hero-visual {
+
+/* =========================================================
+   RECHTERZIJDE / FORMULES
+   ========================================================= */
+
+.hero-visual,
+.hero-formulas,
+.hero-art {
     position: relative;
+    min-height: 300px;
 
-    height: 285px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    perspective: 900px;
+    isolation: isolate;
 }
 
-/* Coördinatenstelsel */
 
-.coordinate-system {
+/* Decoratieve cirkel achter de formules */
+
+.hero-visual::before,
+.hero-formulas::before,
+.hero-art::before {
+    content: "";
     position: absolute;
 
-    right: 80px;
-    bottom: 60px;
+    width: 300px;
+    height: 300px;
 
-    width: 180px;
-    height: 150px;
+    border: 1px solid rgba(51, 220, 227, 0.18);
+    border-radius: 50%;
 
-    opacity: 0.58;
+    box-shadow:
+        0 0 0 38px rgba(51, 220, 227, 0.025),
+        0 0 0 76px rgba(51, 220, 227, 0.018);
 
-    transform:
-        rotateX(58deg)
-        rotateZ(-12deg);
+    z-index: -1;
 }
 
-.axis {
+
+/*
+   Gebruik deze regels voor formuleblokken.
+   Pas eventueel ".formula-card" aan naar de echte klassenaam
+   van jouw drie formule-elementen.
+*/
+
+.formula-card,
+.hero-formula {
     position: absolute;
 
-    left: 50%;
-    top: 50%;
+    width: min(390px, 92%);
+    min-height: 58px;
+    padding: 15px 22px;
 
-    display: block;
+    display: flex;
+    align-items: center;
 
-    height: 2px;
-
-    background: linear-gradient(
-        90deg,
-        transparent,
-        var(--kleur-accent)
-    );
-
-    transform-origin: left center;
-
-    box-shadow: 0 0 8px rgba(50, 215, 208, 0.7);
-}
-
-.axis-x {
-    width: 150px;
-    transform: rotate(0deg);
-}
-
-.axis-y {
-    width: 130px;
-    transform: rotate(120deg);
-}
-
-.axis-z {
-    width: 110px;
-    transform: rotate(235deg);
-}
-
-/* Wireframe kubus */
-
-.wireframe-cube {
-    position: absolute;
-
-    right: 80px;
-    top: 40px;
-
-    width: 125px;
-    height: 125px;
-
-    transform:
-        rotateX(-15deg)
-        rotateY(35deg)
-        rotateZ(-5deg);
-
-    transform-style: preserve-3d;
-
-    animation: cubeFloat 6s ease-in-out infinite;
-}
-
-.cube-face {
-    position: absolute;
-    inset: 0;
-
-    border: 2px solid rgba(93, 245, 235, 0.76);
+    color: rgba(173, 249, 246, 0.82);
 
     background:
         linear-gradient(
-            135deg,
-            rgba(50, 215, 208, 0.08),
-            rgba(50, 215, 208, 0)
+            115deg,
+            rgba(11, 41, 53, 0.82),
+            rgba(19, 71, 79, 0.44)
         );
 
+    border: 1px solid rgba(91, 229, 229, 0.24);
+    border-left: 4px solid rgba(45, 222, 225, 0.75);
+    border-radius: 10px;
+
     box-shadow:
-        inset 0 0 20px rgba(50, 215, 208, 0.09),
-        0 0 13px rgba(50, 215, 208, 0.2);
+        0 18px 38px rgba(0, 0, 0, 0.18),
+        inset 0 1px rgba(255, 255, 255, 0.04);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    font-size: 1.05rem;
+    opacity: 0.82;
 }
 
-.cube-front {
-    transform: translateZ(35px);
+
+/* Posities van de drie formuleblokken */
+
+.formula-card:nth-child(1),
+.hero-formula:nth-child(1) {
+    top: 18px;
+    right: 18px;
+    transform: rotate(1.2deg);
 }
 
-.cube-back {
-    transform: translateZ(-35px);
-    opacity: 0.55;
+.formula-card:nth-child(2),
+.hero-formula:nth-child(2) {
+    top: 112px;
+    right: -12px;
+    transform: rotate(-0.8deg);
 }
 
-.cube-line {
-    position: absolute;
-
-    width: 70px;
-    height: 2px;
-
-    background: rgba(93, 245, 235, 0.72);
-
-    transform-origin: left center;
+.formula-card:nth-child(3),
+.hero-formula:nth-child(3) {
+    top: 205px;
+    right: 58px;
+    transform: rotate(0.5deg);
 }
 
-.line-1 {
-    left: 0;
-    top: 0;
 
-    transform: rotateY(90deg);
+/* Verwijder witte achtergronden van afbeeldingen in formuleblokken */
+
+.formula-card img,
+.hero-formula img,
+.hero-visual img,
+.hero-formulas img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+
+    background: transparent !important;
+    border: 0;
+    box-shadow: none;
 }
 
-.line-2 {
-    right: -70px;
-    top: 0;
 
-    transform: rotateY(90deg);
-}
+/* =========================================================
+   TABLET
+   ========================================================= */
 
-.line-3 {
-    left: 0;
-    bottom: 0;
+@media (max-width: 1100px) {
 
-    transform: rotateY(90deg);
-}
-
-.line-4 {
-    right: -70px;
-    bottom: 0;
-
-    transform: rotateY(90deg);
-}
-
-/* Bézier- of animatiepad */
-
-.motion-path {
-    position: absolute;
-
-    left: -25px;
-    bottom: 30px;
-
-    width: 100%;
-    height: 170px;
-
-    overflow: visible;
-
-    color: rgba(50, 215, 208, 0.65);
-
-    filter: drop-shadow(0 0 8px rgba(50, 215, 208, 0.4));
-}
-
-.motion-path circle {
-    fill: var(--kleur-accent);
-}
-
-.motion-path .moving-point {
-    fill: #ffffff;
-
-    filter: drop-shadow(0 0 8px #ffffff);
-}
-
-/* Zwevende formules */
-
-.formula {
-    position: absolute;
-
-    color: rgba(220, 255, 252, 0.64);
-
-    font-family: Georgia, serif;
-    font-style: italic;
-
-    text-shadow: 0 0 10px rgba(50, 215, 208, 0.25);
-
-    animation: formulaFloat 5s ease-in-out infinite;
-}
-
-.formula-1 {
-    top: 12px;
-    left: 10px;
-
-    font-size: 1.1rem;
-}
-
-.formula-2 {
-    right: 3px;
-    bottom: 22px;
-
-    font-size: 1rem;
-
-    animation-delay: -1.5s;
-}
-
-.formula-3 {
-    left: 85px;
-    top: 120px;
-
-    font-size: 1.7rem;
-
-    animation-delay: -2.5s;
-}
-
-.formula-4 {
-    right: 245px;
-    top: 30px;
-
-    font-size: 2rem;
-
-    animation-delay: -3.5s;
-}
-
-/* Onderlijn */
-
-.hero-bottom-line {
-    position: absolute;
-
-    left: 0;
-    bottom: 0;
-
-    width: 100%;
-    height: 4px;
-
-    background: linear-gradient(
-        90deg,
-        var(--kleur-banner),
-        var(--kleur-accent),
-        transparent
-    );
-}
-
-/* Animaties */
-
-@keyframes cubeFloat {
-    0%,
-    100% {
-        transform:
-            translateY(0)
-            rotateX(-15deg)
-            rotateY(35deg)
-            rotateZ(-5deg);
+    .hero-header {
+        min-height: auto;
     }
 
-    50% {
-        transform:
-            translateY(-14px)
-            rotateX(-9deg)
-            rotateY(48deg)
-            rotateZ(2deg);
+    .hero-content {
+        grid-template-columns: 145px minmax(380px, 1fr);
+        gap: 30px;
+        min-height: 380px;
+    }
+
+    .hero-logo img {
+        width: 125px;
+    }
+
+    .hero-visual,
+    .hero-formulas,
+    .hero-art {
+        display: none;
     }
 }
 
-@keyframes formulaFloat {
-    0%,
-    100% {
-        transform: translateY(0);
-        opacity: 0.48;
+
+/* =========================================================
+   MOBIEL
+   ========================================================= */
+
+@media (max-width: 720px) {
+
+    .hero-content {
+        width: min(100% - 32px, 620px);
+        min-height: auto;
+        padding: 36px 0 42px;
+
+        grid-template-columns: 1fr;
+        gap: 18px;
+
+        text-align: center;
     }
 
-    50% {
-        transform: translateY(-9px);
-        opacity: 0.9;
+    .hero-logo img {
+        width: 120px;
+    }
+
+    .hero-text {
+        padding: 0;
+    }
+
+    .hero-label {
+        margin-bottom: 16px;
+        font-size: 0.7rem;
+    }
+
+    .hero-text h1 {
+        font-size: clamp(3.1rem, 17vw, 4.5rem);
+        line-height: 0.88;
+    }
+
+    .hero-text h1 span {
+        margin-top: 16px;
+        font-size: clamp(1.75rem, 9vw, 2.5rem);
+        letter-spacing: 0.15em;
+    }
+
+    .hero-subtitle {
+        margin-inline: auto;
+        font-size: 0.95rem;
+    }
+
+    .hero-tags,
+    .hero-chips {
+        justify-content: center;
+    }
+}
+
+
+/* =========================================================
+   ZEER KLEINE SCHERMEN
+   ========================================================= */
+
+@media (max-width: 430px) {
+
+    .hero-content {
+        width: min(100% - 24px, 400px);
+    }
+
+    .hero-logo img {
+        width: 105px;
+    }
+
+    .hero-tags a,
+    .hero-tags span,
+    .hero-chips a,
+    .hero-chips span {
+        padding: 7px 12px;
+        font-size: 0.68rem;
     }
 }
 
