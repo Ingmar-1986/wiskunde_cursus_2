@@ -117,11 +117,10 @@
     z-index: 2;
 
     width: 100%;
-    max-width: 760px;
+    max-width: 90%;
 
     padding: 44px 42px 42px;
 }
-
 .chapter-hero__theme {
     margin: 0 0 24px;
 
@@ -193,18 +192,18 @@
 .chapter-hero__title {
     width: auto;
     min-width: 0;
-    max-width: 650px;
+    max-width: none;
 
     margin: 0;
 
     color: var(--hero-white);
 
-    font-size: clamp(2.8rem, 4.6vw, 5rem);
+    font-size: clamp(2.8rem, 4.2vw, 4.8rem);
     font-weight: 850;
     letter-spacing: -0.045em;
     line-height: 0.96;
 
-    white-space: normal;
+    white-space: nowrap;
     overflow-wrap: normal;
     word-break: normal;
     hyphens: none;
@@ -623,7 +622,7 @@
    TABLET
    ========================================================= */
 
-@media (max-width: 820px) {
+@media (max-width: 899px) {
     .chapter-hero {
         width: min(100% - 32px, 1240px);
         min-height: auto;
@@ -661,11 +660,12 @@
         font-size: 3.3rem;
     }
 
-    .chapter-hero__title {
-        max-width: none;
 
-        font-size: clamp(2.3rem, 8vw, 3.7rem);
+
+    .chapter-hero__title {
+        white-space: normal;
     }
+
 
     .chapter-hero__abstract {
         max-width: 100%;
