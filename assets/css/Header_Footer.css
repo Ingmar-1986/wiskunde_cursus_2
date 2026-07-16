@@ -137,6 +137,10 @@
    ========================================================= */
 
 .hero-content {
+    grid-template-columns:
+        320px
+        minmax(520px,1fr)
+        minmax(480px,560px);
     position: relative;
     z-index: 2;
 
@@ -147,11 +151,6 @@
     padding-block: 28px;
 
     display: grid;
-
-    grid-template-columns:
-        260px
-        minmax(500px, 1fr)
-        minmax(440px, 560px);
 
     gap: 42px;
 
@@ -174,7 +173,7 @@
 .hero-logo img {
     display: block;
 
-    width: 240px;
+    width: 300px;
     max-width: 100%;
     height: auto;
 
