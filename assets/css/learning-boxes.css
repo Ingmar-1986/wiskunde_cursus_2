@@ -224,3 +224,17 @@
         -webkit-print-color-adjust: exact;
     }
 }
+
+.learning-box--prior .learning-box__icon::before {
+    content: "\1F4DA";
+}
+
+.learning-box--goals .learning-box__icon::before {
+    content: "\1F3AF";
+}
+
+.learning-box__icon::before {
+    display: block;
+    font-size: 1.25rem;
+    line-height: 1;
+}

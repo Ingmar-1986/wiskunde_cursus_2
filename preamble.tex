@@ -1123,58 +1123,41 @@
 %=================================================
 % Pedagogische omgevingen
 % PDF: tcolorbox
-% HTML: semantische learning-box
+% HTML: learning-box
 %=================================================
 
 \newenvironment{voorkennis}
 {%
     \ifdefined\HCode
-
         \HCode{%
-            <section class="learning-box learning-box--prior">
-                <div class="learning-box__header">
-                    <span class="learning-box__icon" aria-hidden="true">
-                        &##128218;
-                    </span>
-                    <span class="learning-box__title">
-                        Voorkennis
-                    </span>
-                </div>
-                <div class="learning-box__content">
+<section class="learning-box learning-box--prior">
+<div class="learning-box__header">
+<span class="learning-box__icon" aria-hidden="true"></span>
+<span class="learning-box__title">Voorkennis</span>
+</div>
+<div class="learning-box__content">
         }%
-
         \begin{itemize}
-
     \else
-
         \begin{tcolorbox}[
             title=Voorkennis,
             colback=green!5,
             colframe=green!60!black,
-            coltitle=white,
             fonttitle=\bfseries,
-            rounded corners,
-            boxrule=0.8pt,
             breakable
         ]
         \begin{itemize}
-
     \fi
 }
 {%
     \end{itemize}
-
     \ifdefined\HCode
-
         \HCode{%
-                </div>
-            </section>
+</div>
+</section>
         }%
-
     \else
-
         \end{tcolorbox}
-
     \fi
 }
 
@@ -1182,51 +1165,34 @@
 \newenvironment{leerdoelen}
 {%
     \ifdefined\HCode
-
         \HCode{%
-            <section class="learning-box learning-box--goals">
-                <div class="learning-box__header">
-                    <span class="learning-box__icon" aria-hidden="true">
-                        &##127919;
-                    </span>
-                    <span class="learning-box__title">
-                        Leerdoelen
-                    </span>
-                </div>
-                <div class="learning-box__content">
+<section class="learning-box learning-box--goals">
+<div class="learning-box__header">
+<span class="learning-box__icon" aria-hidden="true"></span>
+<span class="learning-box__title">Leerdoelen</span>
+</div>
+<div class="learning-box__content">
         }%
-
         \begin{itemize}
-
     \else
-
         \begin{tcolorbox}[
             title=Leerdoelen,
             colback=red!5,
             colframe=red!70!black,
-            coltitle=white,
             fonttitle=\bfseries,
-            rounded corners,
-            boxrule=0.8pt,
             breakable
         ]
         \begin{itemize}
-
     \fi
 }
 {%
     \end{itemize}
-
     \ifdefined\HCode
-
         \HCode{%
-                </div>
-            </section>
+</div>
+</section>
         }%
-
     \else
-
         \end{tcolorbox}
-
     \fi
 }
