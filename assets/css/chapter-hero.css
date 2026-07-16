@@ -14,7 +14,7 @@
     position: relative;
     display: grid;
     grid-template-columns:  1fr;
-}
+
 
     min-height: 390px;
     margin: 0 0 3rem;
