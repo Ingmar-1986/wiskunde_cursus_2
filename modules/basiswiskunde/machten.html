@@ -14,8 +14,6 @@
 <script src='https://ximera.osu.edu/public/javascripts/standalone.min.js' type='text/javascript'></script> 
   <link href='../../assets/css/Header_Footer.css' media='screen' rel='stylesheet' />
   <link href='../../assets/css/ChapterLayout.css' media='screen' rel='stylesheet' />
-  <link rel="stylesheet" href="../../assets/css/chapter-hero.css">
-  <link rel="stylesheet" href="../../assets/css/learning-boxes.css">
 </head><body>
 <!-- XIMERA-HEADER-START -->
 <header class="hero-header">
@@ -165,272 +163,6 @@
 <button class="course-menu-button" id="courseMenuButton" type="button">☰ Toon cursusinhoud</button>
 <div class="course-sidebar-overlay" id="courseSidebarOverlay"></div>
 <main class="chapter-layout">
-<!-- CHAPTER_HERO_START -->
-<section class="chapter-hero">
-    <div class="chapter-hero__content">
-        <p class="chapter-hero__theme">
-            Thema 2
-            <span aria-hidden="true">•</span>
-            Machten en wortels
-        </p>
-
-        <p class="chapter-hero__label">
-            Hoofdstuk
-        </p>
-
-        <div class="chapter-hero__title-row">
-            <div class="chapter-hero__number">
-                1
-            </div>
-
-            <h1 class="chapter-hero__title">
-                Algebraïsche uitdrukkingen
-            </h1>
-        </div>
-
-        <div class="chapter-hero__accent"></div>
-
-        <p class="chapter-hero__abstract">
-           Algebra vormt de taal van de wiskunde. Je leert uitdrukkingen vereenvoudigen en formules correct gebruiken.
-        </p>
-    </div>
-
-    <div class="chapter-hero__visual" aria-hidden="true">
-
-        <!-- Subtiel wiskundig patroon -->
-        <div class="hero-symbols">
-            <span class="hero-symbol hero-symbol--sigma">Σ</span>
-            <span class="hero-symbol hero-symbol--integral">∫</span>
-            <span class="hero-symbol hero-symbol--pi">π</span>
-            <span class="hero-symbol hero-symbol--limit">lim</span>
-            <span class="hero-symbol hero-symbol--theta">θ</span>
-        </div>
-
-        <!-- Klein assenstelsel met curve -->
-        <div class="hero-graph">
-            <svg viewBox="0 0 320 210" role="presentation">
-                <defs>
-                    <linearGradient
-                        id="heroCurveGradient"
-                        x1="0"
-                        y1="0"
-                        x2="1"
-                        y2="0"
-                    >
-                        <stop offset="0%" stop-color="#26d5e4"/>
-                        <stop offset="100%" stop-color="#f10d69"/>
-                    </linearGradient>
-                </defs>
-
-                <line
-                    class="hero-graph__grid"
-                    x1="40"
-                    y1="45"
-                    x2="300"
-                    y2="45"
-                />
-                <line
-                    class="hero-graph__grid"
-                    x1="40"
-                    y1="95"
-                    x2="300"
-                    y2="95"
-                />
-                <line
-                    class="hero-graph__grid"
-                    x1="40"
-                    y1="145"
-                    x2="300"
-                    y2="145"
-                />
-
-                <line
-                    class="hero-graph__grid"
-                    x1="90"
-                    y1="20"
-                    x2="90"
-                    y2="185"
-                />
-                <line
-                    class="hero-graph__grid"
-                    x1="150"
-                    y1="20"
-                    x2="150"
-                    y2="185"
-                />
-                <line
-                    class="hero-graph__grid"
-                    x1="210"
-                    y1="20"
-                    x2="210"
-                    y2="185"
-                />
-                <line
-                    class="hero-graph__grid"
-                    x1="270"
-                    y1="20"
-                    x2="270"
-                    y2="185"
-                />
-
-                <line
-                    class="hero-graph__axis"
-                    x1="25"
-                    y1="145"
-                    x2="305"
-                    y2="145"
-                />
-                <line
-                    class="hero-graph__axis"
-                    x1="90"
-                    y1="190"
-                    x2="90"
-                    y2="15"
-                />
-
-                <polyline
-                    class="hero-graph__arrow"
-                    points="297,139 307,145 297,151"
-                />
-                <polyline
-                    class="hero-graph__arrow"
-                    points="84,25 90,15 96,25"
-                />
-
-                <path
-                    class="hero-graph__curve"
-                    d="
-                        M 32 152
-                        C 62 72, 105 65, 132 118
-                        C 158 171, 201 178, 226 122
-                        C 246 78, 271 62, 300 43
-                    "
-                />
-
-                <text class="hero-graph__label" x="300" y="165">x</text>
-                <text class="hero-graph__label" x="70" y="24">y</text>
-            </svg>
-        </div>
-
-        <!-- Vector in een klein assenstelsel -->
-        <div class="hero-vector">
-            <svg viewBox="0 0 220 180" role="presentation">
-                <defs>
-                    <marker
-                        id="heroVectorArrow"
-                        markerWidth="8"
-                        markerHeight="8"
-                        refX="7"
-                        refY="4"
-                        orient="auto"
-                    >
-                        <path
-                            class="hero-vector__arrowhead"
-                            d="M 0 0 L 8 4 L 0 8 Z"
-                        />
-                    </marker>
-                </defs>
-
-                <line
-                    class="hero-vector__axis"
-                    x1="28"
-                    y1="145"
-                    x2="205"
-                    y2="145"
-                />
-
-                <line
-                    class="hero-vector__axis"
-                    x1="50"
-                    y1="165"
-                    x2="50"
-                    y2="22"
-                />
-
-                <line
-                    class="hero-vector__line"
-                    x1="50"
-                    y1="145"
-                    x2="165"
-                    y2="52"
-                    marker-end="url(#heroVectorArrow)"
-                />
-
-                <circle
-                    class="hero-vector__origin"
-                    cx="50"
-                    cy="145"
-                    r="4"
-                />
-
-                <text class="hero-vector__label" x="169" y="50">
-                    v
-                </text>
-            </svg>
-        </div>
-
-        <!-- Wireframekubus als verwijzing naar 3D en DAE -->
-        <div class="hero-cube">
-            <svg viewBox="0 0 220 190" role="presentation">
-                <polygon
-                    class="hero-cube__shape"
-                    points="45,65 130,65 130,150 45,150"
-                />
-
-                <polygon
-                    class="hero-cube__shape"
-                    points="85,35 170,35 170,120 85,120"
-                />
-
-                <line class="hero-cube__edge" x1="45" y1="65" x2="85" y2="35"/>
-                <line class="hero-cube__edge" x1="130" y1="65" x2="170" y2="35"/>
-                <line class="hero-cube__edge" x1="130" y1="150" x2="170" y2="120"/>
-                <line class="hero-cube__edge" x1="45" y1="150" x2="85" y2="120"/>
-
-                <circle class="hero-cube__node" cx="45" cy="65" r="3"/>
-                <circle class="hero-cube__node" cx="130" cy="65" r="3"/>
-                <circle class="hero-cube__node" cx="130" cy="150" r="3"/>
-                <circle class="hero-cube__node" cx="45" cy="150" r="3"/>
-
-                <circle class="hero-cube__node" cx="85" cy="35" r="3"/>
-                <circle class="hero-cube__node" cx="170" cy="35" r="3"/>
-                <circle class="hero-cube__node" cx="170" cy="120" r="3"/>
-                <circle class="hero-cube__node" cx="85" cy="120" r="3"/>
-            </svg>
-        </div>
-
-        <!-- Moderne HTML-formules zonder LaTeX-backslashes -->
-        <div class="hero-formulas">
-            <div class="hero-formula hero-formula--power">
-                a<sup>n</sup> · a<sup>m</sup>
-                <span>=</span>
-                a<sup>n+m</sup>
-            </div>
-
-            <div class="hero-formula hero-formula--vector">
-                <span class="hero-formula__vector-symbol">v</span>
-                =
-                <span>(x, y, z)</span>
-            </div>
-
-            <div class="hero-formula hero-formula--quadratic">
-                <span>x =</span>
-
-                <span class="hero-fraction">
-                    <span class="hero-fraction__top">
-                        −b ± √(b² − 4ac)
-                    </span>
-
-                    <span class="hero-fraction__bottom">
-                        2a
-                    </span>
-                </span>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- CHAPTER_HERO_END -->
-
 <aside class="course-sidebar" id="courseSidebar">
 
     <div class="sidebar-header">
@@ -636,8 +368,6 @@
 \newcommand {\Tzodat }[0]{\nlentext { zodat }{ such that }}
 \newcommand {\Tdeth }[0]{\nlentext {de }{th }}
 \newcommand {\Tomdat }[0]{\nlentext {omdat }{because }}
-\newcommand {\voorkennis }[0]{\ifdefined \HCode \HCode {<section class="learning-box learning-box--prior"> <div class="learning-box__header"> <span class="learning-box__icon" aria-hidden="true"></span> <span class="learning-box__title">Voorkennis</span> </div> <div class="learning-box__content"> }\begin {itemize} \else \begin {tcolorbox}[ title=Voorkennis, colback=green!5, colframe=green!60!black, fonttitle=\bfseries , breakable ] \begin {itemize} \fi }
-\newcommand {\leerdoelen }[0]{\ifdefined \HCode \HCode {<section class="learning-box learning-box--goals"> <div class="learning-box__header"> <span class="learning-box__icon" aria-hidden="true"></span> <span class="learning-box__title">Leerdoelen</span> </div> <div class="learning-box__content"> }\begin {itemize} \else \begin {tcolorbox}[ title=Leerdoelen, colback=red!5, colframe=red!70!black, fonttitle=\bfseries , breakable ] \begin {itemize} \fi }
 \newcommand {\luastring }[1]{"\luatexluaescapestring {#1}"}
 \newcommand {\luastringO }[1]{\luastring {\unexpanded \expandafter {#1}}}
 \newcommand {\luastringN }[1]{\luastring {\unexpanded {#1}}}
@@ -683,7 +413,10 @@
 <style> .activity-body pre { white-space: pre; background-color: lightgray; } .xmyoutube { aspect-ratio: 16/9; min-width: 75%; } .image-environment img { width: unset; } </style> 
 
  
-
+<div class='abstract'>
+<!--  l. 11  --><p class='noindent'>Algebra vormt de taal van de wiskunde. Je leert uitdrukkingen vereenvoudigen en
+formules correct gebruiken.</p> 
+</div>
 <div class='maketitle'></div>
 <h3 class='sectionHead' id='voorkennis'><span class='titlemark'>1   </span> <a id='x1-10001'></a>voorkennis</h3>
 <ul class='itemize1'>     

@@ -1,0 +1,150 @@
+
+
+\definecolor{fvdnavy}{HTML}{071D43}
+\definecolor{fvdcyan}{HTML}{20BFC6}
+\definecolor{fvdcyanlight}{HTML}{EFFCFB}
+\definecolor{fvdmagenta}{HTML}{F10D69}
+\definecolor{fvdmagentalight}{HTML}{FFF1F7}
+\definecolor{fvdtext}{HTML}{163044}
+
+
+
+
+
+%=================================================
+% Pedagogische omgevingen
+% PDF: tcolorbox
+% HTML: learning-box
+%=================================================
+
+\newenvironment{voorkennis}
+{%
+    \ifdefined\HCode
+        \HCode{%
+<section class="learning-box learning-box--prior">
+<div class="learning-box__header">
+<span class="learning-box__icon" aria-hidden="true"></span>
+<span class="learning-box__title">Voorkennis</span>
+</div>
+<div class="learning-box__content">
+        }%
+        \begin{itemize}
+    \else
+       \begin{tcolorbox}[
+    enhanced,
+    breakable,
+    colback=fvdcyanlight,
+    colframe=fvdcyan,
+    coltext=fvdtext,
+    boxrule=0.5pt,
+    leftrule=4pt,
+    arc=4mm,
+    outer arc=4mm,
+    left=7mm,
+    right=6mm,
+    top=5mm,
+    bottom=5mm,
+    before skip=6mm,
+    after skip=6mm,
+    title=Voorkennis,
+    coltitle=fvdcyan,
+    fonttitle=\bfseries\Large,
+    attach title to upper={\par\smallskip},
+    boxed title style={
+        empty,
+        left=0mm,
+        right=0mm,
+        top=0mm,
+        bottom=0mm
+    },
+    overlay={
+        \draw[
+            fvdcyan,
+            line width=0.5pt
+        ]
+        ([xshift=42mm,yshift=-13mm]frame.north west)
+        --
+        ([xshift=-7mm,yshift=-13mm]frame.north east);
+    }
+]
+        \begin{itemize}
+    \fi
+}
+{%
+    \end{itemize}
+    \ifdefined\HCode
+        \HCode{%
+</div>
+</section>
+        }%
+    \else
+        \end{tcolorbox}
+    \fi
+}
+
+
+\newenvironment{leerdoelen}
+{%
+    \ifdefined\HCode
+        \HCode{%
+<section class="learning-box learning-box--goals">
+<div class="learning-box__header">
+<span class="learning-box__icon" aria-hidden="true"></span>
+<span class="learning-box__title">Leerdoelen</span>
+</div>
+<div class="learning-box__content">
+        }%
+        \begin{itemize}
+    \else
+\begin{tcolorbox}[
+    enhanced,
+    breakable,
+    colback=fvdmagentalight,
+    colframe=fvdmagenta,
+    coltext=fvdtext,
+    boxrule=0.5pt,
+    leftrule=4pt,
+    arc=4mm,
+    outer arc=4mm,
+    left=7mm,
+    right=6mm,
+    top=5mm,
+    bottom=5mm,
+    before skip=6mm,
+    after skip=6mm,
+    title=Leerdoelen,
+    coltitle=fvdmagenta,
+    fonttitle=\bfseries\Large,
+    attach title to upper={\par\smallskip},
+    boxed title style={
+        empty,
+        left=0mm,
+        right=0mm,
+        top=0mm,
+        bottom=0mm
+    },
+    overlay={
+        \draw[
+            fvdmagenta,
+            line width=0.5pt
+        ]
+        ([xshift=42mm,yshift=-13mm]frame.north west)
+        --
+        ([xshift=-7mm,yshift=-13mm]frame.north east);
+    }
+]
+        \begin{itemize}
+    \fi
+}
+{%
+    \end{itemize}
+    \ifdefined\HCode
+        \HCode{%
+</div>
+</section>
+        }%
+    \else
+        \end{tcolorbox}
+    \fi
+}
+
