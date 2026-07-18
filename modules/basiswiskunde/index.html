@@ -323,8 +323,13 @@
 \newcommand {\Tzodat }[0]{\nlentext { zodat }{ such that }}
 \newcommand {\Tdeth }[0]{\nlentext {de }{th }}
 \newcommand {\Tomdat }[0]{\nlentext {omdat }{because }}
-\newcommand {\voorkennis }[0]{\ifdefined \HCode \HCode {<section class="learning-box learning-box--prior"> <div class="learning-box__header"> <span class="learning-box__icon" aria-hidden="true"></span> <span class="learning-box__title">Voorkennis</span> </div> <div class="learning-box__content"> }\begin {itemize} \else \begin {tcolorbox}[ enhanced, breakable, colback=fvdcyanlight, colframe=fvdcyan, coltext=fvdtext, boxrule=0.5pt, leftrule=4pt, arc=4mm, outer arc=4mm, left=7mm, right=6mm, top=5mm, bottom=5mm, before skip=6mm, after skip=6mm, title=Voorkennis, coltitle=fvdcyan, fonttitle=\bfseries \Large , attach title to upper={\par \smallskip }, boxed title style={ empty, left=0mm, right=0mm, top=0mm, bottom=0mm }, overlay={ \draw [ fvdcyan, line width=0.5pt ] ([xshift=42mm,yshift=-13mm]frame.north west) -- ([xshift=-7mm,yshift=-13mm]frame.north east); } ] \begin {itemize} \fi }
-\newcommand {\leerdoelen }[0]{\ifdefined \HCode \HCode {<section class="learning-box learning-box--goals"> <div class="learning-box__header"> <span class="learning-box__icon" aria-hidden="true"></span> <span class="learning-box__title">Leerdoelen</span> </div> <div class="learning-box__content"> }\begin {itemize} \else \begin {tcolorbox}[ enhanced, breakable, colback=fvdmagentalight, colframe=fvdmagenta, coltext=fvdtext, boxrule=0.5pt, leftrule=4pt, arc=4mm, outer arc=4mm, left=7mm, right=6mm, top=5mm, bottom=5mm, before skip=6mm, after skip=6mm, title=Leerdoelen, coltitle=fvdmagenta, fonttitle=\bfseries \Large , attach title to upper={\par \smallskip }, boxed title style={ empty, left=0mm, right=0mm, top=0mm, bottom=0mm }, overlay={ \draw [ fvdmagenta, line width=0.5pt ] ([xshift=42mm,yshift=-13mm]frame.north west) -- ([xshift=-7mm,yshift=-13mm]frame.north east); } ] \begin {itemize} \fi }
+\newcommand {\fvdtitletext }[0]{}
+\newcommand {\fvdtitle }[1]{\gdef \fvdtitletext {#1}\title {#1}}
+\newcommand {\voorkennisicon }[0]{\begin {tikzpicture}[ baseline=-0.6ex, line cap=round, line join=round ] \par \fill [fvdcyanicon] (0,0) circle (0.38cm); \par \draw [ fvdcyan, line width=0.7pt ] (-0.22,0.14) .. controls (-0.10,0.19) and (-0.04,0.17) .. (0,0.10) -- (0,-0.19) .. controls (-0.08,-0.13) and (-0.15,-0.12) .. (-0.22,-0.15) -- cycle; \par \draw [ fvdcyan, line width=0.7pt ] (0.22,0.14) .. controls (0.10,0.19) and (0.04,0.17) .. (0,0.10) -- (0,-0.19) .. controls (0.08,-0.13) and (0.15,-0.12) .. (0.22,-0.15) -- cycle; \par \end {tikzpicture}}
+\newcommand {\leerdoelenicon }[0]{\begin {tikzpicture}[ baseline=-0.6ex, line cap=round, line join=round ] \par \fill [fvdmagentaicon] (0,0) circle (0.38cm); \par \draw [ fvdmagenta, line width=0.7pt ] (0,0) circle (0.20cm); \par \draw [ fvdmagenta, line width=0.7pt ] (0,0) circle (0.10cm); \par \fill [fvdmagenta] (0,0) circle (0.025cm); \par \draw [ fvdmagenta, line width=0.7pt ] (0.05,0.05) -- (0.25,0.25); \par \draw [ fvdmagenta, line width=0.7pt ] (0.18,0.25) -- (0.25,0.25) -- (0.25,0.18); \par \end {tikzpicture}}
+\newcommand {\fvdboxtitle }[3]{\par \noindent #1\hspace {2.5mm}{\large \bfseries \color {#2}#3}\par \vspace {1.5mm}{\color {#2}\hrule height 0.4pt}\vspace {2mm}}
+\newcommand {\voorkennis }[0]{\ifdefined \HCode \par \HCode {<section class="learning-box learning-box--prior"> <div class="learning-box__header"> <span class="learning-box__icon"></span> <span class="learning-box__title">Voorkennis</span> </div> <div class="learning-box__content"> }\par \begin {itemize} \par \else \par \begin {tcolorbox}[ enhanced, breakable, frame hidden, colback=fvdcyanlight, coltext=fvdnavy, borderline west={1.8pt}{0pt}{fvdcyan}, sharp corners, boxrule=0pt, left=5mm, right=5mm, top=3.5mm, bottom=3.5mm, before skip=4mm, after skip=4mm ] \par \fvdboxtitle {\voorkennisicon } {fvdcyan} {Voorkennis} \par \begin {itemize}[ leftmargin=6mm, itemsep=1.5mm, topsep=0mm, parsep=0pt ] \par \fi }
+\newcommand {\leerdoelen }[0]{\ifdefined \HCode \par \HCode {<section class="learning-box learning-box--goals"> <div class="learning-box__header"> <span class="learning-box__icon"></span> <span class="learning-box__title">Leerdoelen</span> </div> <div class="learning-box__content"> }\par \begin {itemize} \par \else \par \begin {tcolorbox}[ enhanced, breakable, frame hidden, colback=fvdmagentalight, coltext=fvdnavy, borderline west={1.8pt}{0pt}{fvdmagenta}, sharp corners, boxrule=0pt, left=5mm, right=5mm, top=3.5mm, bottom=3.5mm, before skip=4mm, after skip=4mm ] \par \fvdboxtitle {\leerdoelenicon } {fvdmagenta} {Leerdoelen} \par \begin {itemize}[ leftmargin=6mm, itemsep=1.5mm, topsep=0mm, parsep=0pt ] \par \fi }
 \newcommand {\luastring }[1]{"\luatexluaescapestring {#1}"}
 \newcommand {\luastringO }[1]{\luastring {\unexpanded \expandafter {#1}}}
 \newcommand {\luastringN }[1]{\luastring {\unexpanded {#1}}}
@@ -373,24 +378,11 @@
 <div class='maketitle'></div>
 <div class="activity-card card-sectionheading card part" id="part1"><div class="card-block"><h4 class="card-title">Getallen en bewerkingen</h4></div></div>
 
-    <a class='activity card ' data-options='' href='rekenen.html'><h3>
-In dit hoofdstuk herhaal je de rekenvaardigheden die je nodig hebt voor de rest van
-de cursus. Je leert nauwkeurig werken met gehele getallen, breuken, decimalen en
-percentages. 
-</h3><h2>Rekenen met getallen</h2>rekenen</a> <a class='activity card ' data-options='' href='breuken.html'><h3>
-Machten en wortels worden voortdurend gebruikt in wetenschap, technologie en
-computergraphics. Je leert de belangrijkste rekenregels toepassen. 
-</h3><h2>Machten en wortels</h2>breuken</a>
+    <a class='activity card ' data-options='' href='rekenen.html'><h2>Rekenen met getallen</h2>rekenen</a> <a class='activity card ' data-options='' href='breuken.html'><h2>Machten en wortels</h2>breuken</a>
 
 <div class="activity-card card-sectionheading card part" id="part2"><div class="card-block"><h4 class="card-title">Machten en wortels</h4></div></div>
 
-    <a class='activity card ' data-options='' href='machten.html'><h3>
-Algebra vormt de taal van de wiskunde. Je leert uitdrukkingen vereenvoudigen en
-formules correct gebruiken. 
-</h3><h2>Algebraïsche uitdrukkingen</h2>machten</a> <a class='activity card ' data-options='' href='wortels.html'><h3>
-Vergelijkingen vormen de basis van vrijwel alle verdere wiskunde. Je leert onbekenden
-stap voor stap oplossen. 
-</h3><h2>Lineaire vergelijkingen</h2>wortels</a>
+    <a class='activity card ' data-options='' href='machten.html'><h2>Algebraïsche uitdrukkingen</h2>machten</a> <a class='activity card ' data-options='' href='wortels.html'><h2>Lineaire vergelijkingen</h2>wortels</a>
                                                                   
 
                                                                   

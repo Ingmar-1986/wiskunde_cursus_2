@@ -1,24 +1,5 @@
-% ============================================================
-% OPMAAK.TEX
-% Gemeenschappelijke opmaak voor HTML en PDF
-% ============================================================
-
-% ------------------------------------------------------------
-% Pakketten
-% ------------------------------------------------------------
-
 \usepackage{array}
 \usepackage{tabularx}
-\usepackage{enumitem}
-\usepackage{tikz}
-\usepackage{tcolorbox}
-
-\tcbuselibrary{skins,breakable}
-
-
-% ============================================================
-% KLEUREN
-% ============================================================
 
 \definecolor{fvdnavy}{HTML}{102538}
 
@@ -31,61 +12,23 @@
 \definecolor{fvdmagentaicon}{HTML}{FFE3EE}
 
 
-% ============================================================
-% ALGEMENE CURSUSTITEL
-% ============================================================
-%
-% Gebruik:
-%
-%   \fvdtitle{Basiswiskunde}
-%
-% Intern blijft dit de gewone Ximera-\title.
-% ============================================================
-
-\providecommand{\fvdtitletext}{}
-
-\providecommand{\fvdtitle}[1]{%
-    \gdef\fvdtitletext{#1}%
-    \title{#1}%
-}
 
 
-% ============================================================
-% PDF-OPMAAK LADEN
-% ============================================================
-%
-% De PDF-code staat bewust in een afzonderlijk bestand.
-% TeX4ht hoeft die code daardoor niet te verwerken.
-% ============================================================
 
-\ifdefined\HCode
-    % HTML: niets extra laden.
-\else
-    \IfFileExists{../../Opmaak-pdf.tex}{%
-        \input{../../Opmaak-pdf.tex}%
-    }{%
-        \input{Opmaak-pdf.tex}%
-    }%
-\fi
+%=================================================
+% Pedagogische omgevingen
+% PDF: tcolorbox
+% HTML: learning-box
+%=================================================
 
-
-% ============================================================
-% ICONEN
-% ============================================================
-
-% ------------------------------------------------------------
 % Boekicoon voor voorkennis
-% ------------------------------------------------------------
-
 \newcommand{\voorkennisicon}{%
     \begin{tikzpicture}[
         baseline=-0.6ex,
         line cap=round,
         line join=round
     ]
-
-        \fill[fvdcyanicon]
-            (0,0) circle (0.38cm);
+        \fill[fvdcyanicon] (0,0) circle (0.38cm);
 
         \draw[
             fvdcyan,
@@ -112,39 +55,29 @@
         .. controls (0.08,-0.13) and (0.15,-0.12) ..
         (0.22,-0.15)
         -- cycle;
-
     \end{tikzpicture}%
 }
 
-
-% ------------------------------------------------------------
 % Doelwiticoon voor leerdoelen
-% ------------------------------------------------------------
-
 \newcommand{\leerdoelenicon}{%
     \begin{tikzpicture}[
         baseline=-0.6ex,
         line cap=round,
         line join=round
     ]
-
-        \fill[fvdmagentaicon]
-            (0,0) circle (0.38cm);
+        \fill[fvdmagentaicon] (0,0) circle (0.38cm);
 
         \draw[
             fvdmagenta,
             line width=0.7pt
-        ]
-        (0,0) circle (0.20cm);
+        ] (0,0) circle (0.20cm);
 
         \draw[
             fvdmagenta,
             line width=0.7pt
-        ]
-        (0,0) circle (0.10cm);
+        ] (0,0) circle (0.10cm);
 
-        \fill[fvdmagenta]
-            (0,0) circle (0.025cm);
+        \fill[fvdmagenta] (0,0) circle (0.025cm);
 
         \draw[
             fvdmagenta,
@@ -156,36 +89,35 @@
             fvdmagenta,
             line width=0.7pt
         ]
-        (0.18,0.25)
-        --
-        (0.25,0.25)
-        --
-        (0.25,0.18);
-
+        (0.18,0.25) -- (0.25,0.25) -- (0.25,0.18);
     \end{tikzpicture}%
 }
 
-
-% ============================================================
-% TITEL VAN PEDAGOGISCHE KADERS
-% ============================================================
-
 \newcommand{\fvdboxtitle}[3]{%
-    \par
     \noindent
-    #1%
-    \hspace{2.5mm}%
-    {\large\bfseries\color{#2}#3}%
-    \par
-    \vspace{1.5mm}%
-    {\color{#2}\hrule height 0.4pt}%
-    \vspace{2mm}%
+    \begin{tabularx}{\linewidth}{
+        @{}
+        >{\centering\arraybackslash}m{9mm}
+        @{\hspace{2mm}}
+        >{\raggedright\arraybackslash}m{34mm}
+        @{\hspace{2mm}}
+        X
+        @{}
+    }
+        #1
+        &
+        {\large\bfseries\color{#2}#3}
+        &
+        {\color{#2}\rule{\linewidth}{0.45pt}}
+    \end{tabularx}
+    \par\vspace{2mm}
 }
 
 
-% ============================================================
-% VOORKENNIS
-% ============================================================
+
+
+
+
 
 \newenvironment{voorkennis}
 {%
@@ -212,7 +144,6 @@
             coltext=fvdnavy,
             borderline west={1.8pt}{0pt}{fvdcyan},
             sharp corners,
-            boxrule=0pt,
             left=5mm,
             right=5mm,
             top=3.5mm,
@@ -252,11 +183,6 @@
     \fi
 }
 
-
-% ============================================================
-% LEERDOELEN
-% ============================================================
-
 \newenvironment{leerdoelen}
 {%
     \ifdefined\HCode
@@ -282,7 +208,6 @@
             coltext=fvdnavy,
             borderline west={1.8pt}{0pt}{fvdmagenta},
             sharp corners,
-            boxrule=0pt,
             left=5mm,
             right=5mm,
             top=3.5mm,

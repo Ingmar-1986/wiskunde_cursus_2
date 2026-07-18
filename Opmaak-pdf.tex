@@ -1,0 +1,289 @@
+% ============================================================
+% OPMAAK-PDF.TEX
+% Uitsluitend geladen tijdens PDF-compilatie
+% ============================================================
+
+\makeatletter
+
+
+% ============================================================
+% TELLERS EN METADATA
+% ============================================================
+
+\@ifundefined{c@fvdthema}{%
+    \newcounter{fvdthema}%
+}{}
+
+\@ifundefined{c@fvdhoofdstuk}{%
+    \newcounter{fvdhoofdstuk}%
+}{}
+
+\providecommand{\fvdthematitel}{}
+\providecommand{\fvdabstracttext}{}
+
+\global\let\fvdabstracttext\@empty
+
+
+% ============================================================
+% CONTROLEREN OF DIT EEN XOURSE IS
+% ============================================================
+
+\newif\iffvdxourse
+
+\@ifclassloaded{xourse}{%
+    \fvdxoursetrue
+}{%
+    \fvdxoursefalse
+}
+
+
+% ============================================================
+% PART EN ACTIVITY
+% ============================================================
+%
+% Alleen aanpassen in het centrale index.tex/xourse-bestand.
+%
+% De bron blijft:
+%
+%   \part{Getallen en bewerkingen}
+%   \activity{rekenen}
+%   \activity{breuken}
+%
+% ============================================================
+
+\iffvdxourse
+
+    \let\fvdoriginalpart\part
+    \let\fvdoriginalactivity\activity
+
+    % --------------------------------------------------------
+    % THEMA
+    % --------------------------------------------------------
+
+    \RenewDocumentCommand{\part}{o m}{%
+
+        \stepcounter{fvdthema}%
+        \setcounter{fvdhoofdstuk}{0}%
+
+        \gdef\fvdthematitel{#2}%
+
+        \IfNoValueTF{#1}{%
+            \fvdoriginalpart{#2}%
+        }{%
+            \fvdoriginalpart[#1]{#2}%
+        }%
+    }
+
+    % --------------------------------------------------------
+    % HOOFDSTUK
+    % --------------------------------------------------------
+
+    \RenewDocumentCommand{\activity}{o m}{%
+
+        \stepcounter{fvdhoofdstuk}%
+
+        \IfNoValueTF{#1}{%
+            \fvdoriginalactivity{#2}%
+        }{%
+            \fvdoriginalactivity[#1]{#2}%
+        }%
+    }
+
+\fi
+
+
+% ============================================================
+% HANDMATIGE METADATA
+% ============================================================
+%
+% Handig bij het afzonderlijk compileren van één hoofdstuk.
+%
+% Gebruik eventueel:
+%
+%   \fvdchapterdata
+%       {1}
+%       {Getallen en bewerkingen}
+%       {2}
+%
+% Bij compilatie vanuit index.tex is dit niet nodig.
+% ============================================================
+
+\newcommand{\fvdchapterdata}[3]{%
+    \setcounter{fvdthema}{#1}%
+    \gdef\fvdthematitel{#2}%
+    \setcounter{fvdhoofdstuk}{#3}%
+}
+
+
+% ============================================================
+% HOOFDSTUKHERO
+% ============================================================
+
+\newcommand{\fvdchapterhero}[1]{%
+
+    \clearpage
+    \thispagestyle{empty}
+
+    \noindent
+    \begin{tcolorbox}[
+        enhanced,
+        frame hidden,
+        colback=fvdnavy,
+        coltext=white,
+        sharp corners,
+        boxrule=0pt,
+        width=\textwidth,
+        left=12mm,
+        right=12mm,
+        top=12mm,
+        bottom=13mm,
+        before skip=0pt,
+        after skip=10mm,
+        overlay={
+
+            % Grote cyaan cirkel rechtsboven
+            \fill[
+                fvdcyan,
+                opacity=0.16
+            ]
+            ([xshift=-14mm,yshift=-8mm]frame.north east)
+            circle[radius=27mm];
+
+            % Magenta cirkel rechtsonder
+            \fill[
+                fvdmagenta,
+                opacity=0.12
+            ]
+            ([xshift=-3mm,yshift=6mm]frame.south east)
+            circle[radius=19mm];
+
+            % Subtiele curve
+            \draw[
+                white,
+                opacity=0.16,
+                line width=0.7pt
+            ]
+            ([xshift=-52mm,yshift=-10mm]frame.north east)
+            .. controls
+            ([xshift=-37mm,yshift=-3mm]frame.east)
+            and
+            ([xshift=-25mm,yshift=7mm]frame.south east)
+            ..
+            ([xshift=-7mm,yshift=12mm]frame.south east);
+        }
+    ]
+
+        % ----------------------------------------------------
+        % Thema
+        % ----------------------------------------------------
+
+        \ifnum\value{fvdthema}>0\relax
+
+            {\small
+             \bfseries
+             \color{fvdcyan}%
+             THEMA \arabic{fvdthema}\par}
+
+            \vspace{1mm}
+
+            {\large
+             \bfseries
+             \color{white}%
+             \fvdthematitel\par}
+
+            \vspace{8mm}
+
+        \fi
+
+        % ----------------------------------------------------
+        % Hoofdstuk
+        % ----------------------------------------------------
+
+        \ifnum\value{fvdhoofdstuk}>0\relax
+
+            {\small
+             \bfseries
+             \color{fvdmagenta}%
+             HOOFDSTUK \arabic{fvdhoofdstuk}\par}
+
+            \vspace{2mm}
+
+        \fi
+
+        % ----------------------------------------------------
+        % Titel
+        % ----------------------------------------------------
+
+        {\fontsize{25}{29}\selectfont
+         \bfseries
+         \color{white}%
+         \@title\par}
+
+        \vspace{5mm}
+
+        {\color{white!65}%
+         \rule{48mm}{0.6pt}\par}
+
+        % ----------------------------------------------------
+        % Abstract
+        % ----------------------------------------------------
+
+        \ifx\fvdabstracttext\@empty
+        \else
+
+            \vspace{5mm}
+
+            {\large
+             \color{white!88}%
+             #1\par}
+
+        \fi
+
+    \end{tcolorbox}
+}
+
+
+% ============================================================
+% ABSTRACT BEWAREN
+% ============================================================
+%
+% Deze code wordt uitsluitend in PDF geladen.
+% De HTML-abstractomgeving blijft dus volledig onaangeroerd.
+% ============================================================
+
+\let\fvdoriginalabstract\abstract
+\let\fvdoriginalendabstract\endabstract
+
+\RenewDocumentEnvironment{abstract}{+b}{%
+    \global\long\def\fvdabstracttext{#1}%
+}{}
+
+
+% ============================================================
+% MAKETITLE
+% ============================================================
+%
+% In een hoofdstuk wordt \maketitle de hero.
+%
+% In index.tex blijft de oorspronkelijke cursustitel actief.
+% ============================================================
+
+\let\fvdoriginalmaketitle\maketitle
+
+\renewcommand{\maketitle}{%
+
+    \iffvdxourse
+
+        % Titelpagina van de volledige cursus
+        \fvdoriginalmaketitle
+
+    \else
+
+        % Titelhero van een afzonderlijk hoofdstuk
+        \fvdchapterhero{\fvdabstracttext}%
+
+    \fi
+}
+
+
+\makeatother
