@@ -1,4 +1,17 @@
 % ============================================================
+% VOORKOM DAT OPMAAK-PDF.TEX MEERDERE KEREN WORDT INGELADEN
+% ============================================================
+
+\ifdefined\fvdpdfopmaakgeladen
+    \expandafter\endinput
+\fi
+
+\global\let\fvdpdfopmaakgeladen\relax
+
+
+
+
+% ============================================================
 % OPMAAK-PDF.TEX
 % Uitsluitend geladen tijdens PDF-compilatie
 % ============================================================
@@ -29,12 +42,18 @@
 % ============================================================
 
 \newif\iffvdxourse
+\newif\iffvdinsideactivity
+
+\fvdinsideactivityfalse
 
 \@ifclassloaded{xourse}{%
     \fvdxoursetrue
 }{%
     \fvdxoursefalse
+    \fvdinsideactivitytrue
 }
+
+
 
 
 % ============================================================
@@ -80,14 +99,22 @@
 
     \RenewDocumentCommand{\activity}{o m}{%
 
-        \stepcounter{fvdhoofdstuk}%
+    \stepcounter{fvdhoofdstuk}%
 
-        \IfNoValueTF{#1}{%
-            \fvdoriginalactivity{#2}%
-        }{%
-            \fvdoriginalactivity[#1]{#2}%
-        }%
-    }
+    % Elk hoofdstuk begint bovenaan een nieuwe pagina.
+    % De inhoud volgt onmiddellijk onder de hero.
+    \clearpage
+
+    \global\fvdinsideactivitytrue
+
+    \IfNoValueTF{#1}{%
+        \fvdoriginalactivity{#2}%
+    }{%
+        \fvdoriginalactivity[#1]{#2}%
+    }%
+
+    \global\fvdinsideactivityfalse
+}
 
 \fi
 
@@ -121,8 +148,7 @@
 
 \newcommand{\fvdchapterhero}[1]{%
 
-    \clearpage
-    \thispagestyle{empty}
+
 
     \noindent
     \begin{tcolorbox}[
@@ -272,15 +298,18 @@
 
 \renewcommand{\maketitle}{%
 
-    \iffvdxourse
+    \iffvdinsideactivity
 
-        % Titelpagina van de volledige cursus
-        \fvdoriginalmaketitle
+        % Hoofdstuk: compacte hero bovenaan de pagina.
+        \fvdchapterhero{\fvdabstracttext}%
+
+        % Abstract leegmaken voor het volgende hoofdstuk.
+        \global\let\fvdabstracttext\@empty
 
     \else
 
-        % Titelhero van een afzonderlijk hoofdstuk
-        \fvdchapterhero{\fvdabstracttext}%
+        % Hoofdtitel van de volledige cursus.
+        \fvdoriginalmaketitle
 
     \fi
 }

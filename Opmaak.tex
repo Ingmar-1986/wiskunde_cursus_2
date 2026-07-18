@@ -1,4 +1,17 @@
 % ============================================================
+% VOORKOM DAT OPMAAK.TEX MEERDERE KEREN WORDT INGELADEN
+% ============================================================
+
+\ifdefined\fvdopmaakgeladen
+    \expandafter\endinput
+\fi
+
+\global\let\fvdopmaakgeladen\relax
+
+
+
+
+% ============================================================
 % OPMAAK.TEX
 % Gemeenschappelijke opmaak voor HTML en PDF
 % ============================================================
