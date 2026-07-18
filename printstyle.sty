@@ -1,3 +1,21 @@
+% ============================================================
+% MODERNE FVD-KLEUREN
+% ============================================================
+
+\definecolor{fvdNavy}{HTML}{07141F}
+\definecolor{fvdNavyLight}{HTML}{0B2535}
+\definecolor{fvdTeal}{HTML}{32D7D0}
+\definecolor{fvdPink}{HTML}{C3004A}
+\definecolor{fvdText}{HTML}{243746}
+\definecolor{fvdMuted}{HTML}{667784}
+\definecolor{fvdLine}{HTML}{DDE5EA}
+\definecolor{fvdSoft}{HTML}{F3F8FA}
+
+
+\usetikzlibrary{positioning}
+
+
+
 %
 % Layout / Formattering voor de PDF versie van de
 % Zomercursus Wiskunde KU Leuven
@@ -15,7 +33,6 @@
 \ProcessOptions\relax
 
 \usepackage{stix}
-\usepackage{tcolorbox}
 \renewcommand{\familydefault}{\sfdefault}    % sans-serif by default
 
 % Alternative font: a version of Bitstream Vera% Sans.
@@ -27,9 +44,7 @@
 \renewcommand{\d}{\mathop{}\!d} %% unclobbers \d
 %\usepackage{gillius}
 \usepackage{ccicons}
-\usepackage{anyfontsize}
 %\usepackage{microtype}
-
 
 \usepackage[yyyymmdd,hhmmss]{datetime}    % for \currenttime
 %\usepackage{totpage}  % for LastPage  (ie Page n of M)
@@ -37,12 +52,6 @@
 %\usepackage{rotating}
 
 \newcommand{\dfn}[1]{\textbf{#1}\index{#1}}
-
-\definecolor{kleur_banner}{HTML}{C3004A}
-\definecolor{kleur_inhoud}{HTML}{E3E3E3}
-\definecolor{Magenta-athena}{HTML}{E6007E}
-\definecolor{Blauw-athena}{HTML}{17427F}
-
 
 %% Size of the page
 \usepackage[margin=.5in, includehead, includefoot, hmargin={.8in,.5in}, a4paper]{geometry}
@@ -97,109 +106,327 @@
 
 %
 % provide defaults for frontpage/headers/footers
-
-
-
-% provide defaults for frontpage/headers/footers
-
-
-
-
-
-
-\providecommand{\xmlogo}{}
-
-
-\providecommand{\xmorganisatienaam}{{Campus Bellevue Izegem}}
-\providecommand{\xmafdelingsnaam}{{Ingmar Herreman}}
-\providecommand{\xmcursusversie}{\small{(versie \today} | \xmtoonprintopties\ )}
-\providecommand{\xmmodulenaam}{Wiskunde 7 FVD}
+%
+\providecommand{\xmmodulenaam}{Module}
+\providecommand{\xmcursusnaam}{Zomercursus Wiskunde}
+\providecommand{\xmlogo}{
+   	\begin{minipage}[c]{2cm}\includegraphics[width=2cm]{modules/images/banners/logo_athena.png}\end{minipage}
+}
+\providecommand{\xmorganisatienaam}{{\textsc{KU Leuven}}}
+\providecommand{\xmafdelingsnaam}{{\textsc{Groep Wetenschap \& Technologie}}}
+\providecommand{\xmcursusversie}{(\small{versie \today} \xmtoonprintopties)}
 
 \providecommand{\xmtoonprintopties}{
-	\ifhandout Handouts\fi
-	\ifprintbasicversion Basis\fi
+	\ifhandout H\fi
+	\ifprintbasicversion B\fi
 }
-
 
 
 \providecommand{\xmmodulenummer}{}   % print bv "Module xxx" op titelbladen
 \providecommand{\xmcopyright}{
-
-
-    \hspace{2cm}\doclicenseImage[imagewidth=2em]\doclicenseNameRef 
+\doclicenseImage[imagewidth=2em]\doclicenseNameRef%\begin{minipage}[c]{1.1cm}\includegraphics[height=1.8cm]{./x_zomercursus/sedes.jpg}\end{minipage}
 }
 
-% print een titelblad, globaal of per module (gebaseerd op bovenstaande parameters)
-    
+% ============================================================
+% TITELPAGINA IN DE STIJL VAN DE WEBSITE
+% ============================================================
 
+\newcommand{\xmPrintFrontPage}[1]{%
+    \thispagestyle{empty}%
 
-\usepackage{afterpage}
-\usepackage{fancyhdr} % Nodig voor de 'fancy' hoofdingen
-\usepackage{extramarks}
+    % --------------------------------------------------------
+    % Bovenste witte balk met logo en cursuslabel
+    % --------------------------------------------------------
+    \noindent
+    \begin{minipage}[c]{0.48\textwidth}
+        \raggedright
+        \ifx\xmlogo\empty
+            {\sffamily\bfseries\Large\color{fvdNavy}
+                WISKUNDE
+            }
+        \else
+            \xmlogo
+        \fi
+    \end{minipage}%
+    \begin{minipage}[c]{0.52\textwidth}
+        \raggedleft
+        {\sffamily\footnotesize\bfseries\color{fvdMuted}
+            ONLINE CURSUS
+        }
+    \end{minipage}
 
-\renewcommand{\headrule}{
-    \vspace{-7pt} % Schuif de lijn omhoog
-    \color{kleur_banner}\rule{\textwidth + 0.2cm}{1pt} % Lijn met aangepaste kleur en dikte
+    \vspace{7mm}
+
+    % --------------------------------------------------------
+    % Grote hero
+    % --------------------------------------------------------
+    \noindent
+    \begin{tikzpicture}
+        \path[use as bounding box]
+            (0,0)
+            rectangle
+            (\textwidth,-116mm);
+
+        % Donkere achtergrond
+        \fill[fvdNavy]
+            (0,0)
+            rectangle
+            (\textwidth,-116mm);
+
+        % Raster zoals bij digitale creatie
+        \foreach \x in {0,12,...,180}{
+            \draw[
+                fvdTeal,
+                opacity=0.045,
+                line width=0.3pt
+            ]
+            (\x mm,0)
+            --
+            (\x mm,-116mm);
+        }
+
+        \foreach \y in {0,-12,...,-108}{
+            \draw[
+                fvdTeal,
+                opacity=0.045,
+                line width=0.3pt
+            ]
+            (0,\y mm)
+            --
+            (\textwidth,\y mm);
+        }
+
+        % Decoratieve cirkels
+        \fill[fvdTeal,opacity=0.10]
+            (\textwidth-8mm,-4mm)
+            circle (39mm);
+
+        \fill[fvdPink,opacity=0.11]
+            (8mm,-111mm)
+            circle (31mm);
+
+        % Magenta verticale accentlijn
+        \fill[fvdPink]
+            (10mm,-17mm)
+            rectangle
+            (12mm,-37mm);
+
+        % Klein label
+        \node[
+            anchor=west,
+            text=fvdTeal,
+            font=\sffamily\bfseries\small
+        ]
+        at (19mm,-20mm)
+        {WISKUNDE · 7 FVD};
+
+        % Hoofdtitel
+        \node[
+            anchor=north west,
+            text width=.78\textwidth,
+            align=left,
+            text=white,
+            font=\sffamily\bfseries\fontsize{31}{36}\selectfont
+        ]
+        at (19mm,-34mm)
+        {#1};
+
+        % Ondertitel
+        \node[
+            anchor=north west,
+            text width=.72\textwidth,
+            align=left,
+            text=white,
+            opacity=0.80,
+            font=\sffamily\fontsize{11}{16}\selectfont
+        ]
+        at (19mm,-68mm)
+        {Wiskunde als fundament voor digitale creatie};
+
+        % Magenta lijn
+        \fill[fvdPink]
+            (19mm,-87mm)
+            rectangle
+            (55mm,-89mm);
+
+        % Auteur
+        \node[
+            anchor=west,
+            text=white,
+            opacity=0.74,
+            font=\sffamily\small
+        ]
+        at (19mm,-101mm)
+        {Ingmar Herreman};
+    \end{tikzpicture}
+
+    \vspace{8mm}
+
+    % --------------------------------------------------------
+    % Chips zoals op de website
+    % --------------------------------------------------------
+    \begin{center}
+        \begin{tikzpicture}[
+            chip/.style={
+                rounded corners=3mm,
+                draw=fvdLine,
+                fill=fvdSoft,
+                text=fvdNavy,
+                font=\sffamily\scriptsize\bfseries,
+                inner xsep=4mm,
+                inner ysep=2mm
+            }
+        ]
+            \node[chip] (c1) at (0,0) {BASISWISKUNDE};
+            \node[chip, right=3mm of c1] (c2) {ALGEBRA};
+            \node[chip, right=3mm of c2] (c3) {FUNCTIES};
+            \node[chip, right=3mm of c3] (c4) {VECTOREN};
+            \node[chip, right=3mm of c4] (c5) {3D};
+        \end{tikzpicture}
+    \end{center}
+
+    \vfill
+
+    % --------------------------------------------------------
+    % Onderaan
+    % --------------------------------------------------------
+    \noindent
+    \color{fvdLine}
+    \rule{\textwidth}{0.6pt}
+
+    \vspace{3mm}
+
+    \noindent
+    \begin{minipage}[t]{0.66\textwidth}
+        {\sffamily\footnotesize\color{fvdMuted}
+            \xmcursusnaam
+            \par
+            \xmafdelingsnaam
+        }
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[t]{0.30\textwidth}
+        \raggedleft
+        {\sffamily\footnotesize\color{fvdMuted}
+            \xmcursusversie
+        }
+    \end{minipage}
+
+    \clearpage
+    \pagestyle{otherpage}%
 }
 
-\def\mymoduletitle{}   % will be set by \part
+% ============================================================
+% MODERNE KOP- EN VOETTEKST
+% ============================================================
+
+\setlength{\headheight}{24pt}
+
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
 
 
-\fancypagestyle{otherpage}{%  op de eerste pagina BOLD titel in BLAUW
-% \rightmark = activity-titel
-    \fancyhead{}  
-    \fancyhead[RO]{\small{{p. \thepage}\rblob\\\ }}
-    \fancyhead[LE]{\small{{p. \thepage}\lblob\\\ }}
-    \fancyhead[L]{\textsc{\rightmark}} 
-    % Maak onderscheid tussen (volledige) xourses of (aparte) activities
-    \ifdefined\isXourse  
-       \fancyhead[LO,RE]{\small{{  \arabic{part}. \mymoduletitle}}\\
-                         \ } 
-    \fi
-    
-    \fancyfoot[RO,LE]{{\small \xmmodulenaam \ \\\xmafdelingsnaam}}
-    \fancyfoot[C]{}
-    \fancyfoot[LO,RE]{\xmcopyright}
-    
-    %\fancyhead[RO]{\textsc{\thepage/\pageref{LastPage}}}
-    %\fancyhead[C]{\small{\textsc{\mytitle}}}
+% ------------------------------------------------------------
+% Gewone cursuspagina
+% ------------------------------------------------------------
+
+\fancypagestyle{otherpage}{%
+    \fancyhf{}
+
+    % Linksboven: huidig thema
+    \fancyhead[L]{%
+        \sffamily
+        \footnotesize
+        \color{fvdMuted}%
+        \ifdefined\isXourse
+            \xmmodulenaam
+            \ifx\mymoduletitle\empty
+            \else
+                \enspace|\enspace
+                \mymoduletitle
+            \fi
+        \else
+            \firstleftmark
+        \fi
+    }
+
+    % Rechtsboven: paginanummer
+    \fancyhead[R]{%
+        \sffamily
+        \footnotesize
+        \bfseries
+        \color{fvdNavy}%
+        \thepage
+    }
+
+    % Dunne cyaan-magenta lijn onder de kop
+    \fancyhead[C]{%
+        \raisebox{-7mm}[0pt][0pt]{%
+            \begin{tikzpicture}
+                \shade[
+                    left color=fvdTeal,
+                    right color=fvdPink
+                ]
+                (0,0)
+                rectangle
+                (\textwidth,0.45mm);
+            \end{tikzpicture}%
+        }%
+    }
+
+    % Voettekst
+    \fancyfoot[L]{%
+        \sffamily
+        \scriptsize
+        \color{fvdMuted}%
+        \xmcursusnaam
+    }
+
+    \fancyfoot[C]{%
+        \sffamily
+        \scriptsize
+        \color{fvdMuted}%
+        \xmcursusversie
+    }
+
+    \fancyfoot[R]{%
+        \sffamily
+        \scriptsize
+        \color{fvdMuted}%
+        \xmafdelingsnaam
+    }
 }
 
-\fancypagestyle{firstpage}{%  op de eerste pagina BOLD titel in BLAUW
-    \fancyhead[RO]{\small{{p. \thepage}\\\rbigblob}} % Rechts bij oneven pagina's
-    \fancyhead[LE]{\small{{p. \thepage}\\\lbigblob}} % Links bij even pagina's
-    \ifdefined\isXourse      
-        \fancyhead[LE]{\colorbox{kleur_banner!80}{\makebox[\textwidth][l]{\small{{  \arabic{part}. \mymoduletitle}}}}\\ \ }
-        \fancyhead[RO]{\colorbox{kleur_banner!80}{\makebox[\textwidth][r]{\small{{  \arabic{part}. \mymoduletitle}}}}\\ \ }
-    \else
-        \fancyhead[LE]{\colorbox{kleur_banner!80}{\makebox[\textwidth][l]{\small{{\phantom{M}}}}}\\ \ }
-        \fancyhead[RO]{\colorbox{kleur_banner!80}{\makebox[\textwidth][r]{\small{{\phantom{M}}}}}\\ \ }
-    \fi
-%   \fancyhead[C]{\ \\
-%   \colorbox{blue!10}{\makebox[\textwidth][c]{\selectfont\bfseries\color{blue}\rightmark}}} 
-    \fancyhead[L]{\ \\
-    \colorbox{kleur_banner!80}{\makebox[\textwidth][l]{\selectfont\bfseries\color{kleur_inhoud}\textsc{\firstleftmark}}}} 
-    
-    \fancyfoot[RO,LE]{{\small \xmmodulenaam \ \\\xmafdelingsnaam}}
-    \fancyfoot[C]{}
-    \fancyfoot[LO,RE]{\xmcopyright}
-    
-}
 
-\pagestyle{otherpage}
+% ------------------------------------------------------------
+% Eerste pagina van een hoofdstuk
+% ------------------------------------------------------------
 
-% Print een zwarte BLOB  rechts op de pagina bij elke nieuwe activity
-%    ( handig bij het bladeren door de PDF ... ?)
-\ifdefined\isXourse   % enkel in xourse, niet bij individuele ximera
-\setlength{\unitlength}{18mm}
-%\newcommand{\blob}{\rule[-.2\unitlength]{1\unitlength}{.25\unitlength}}
-\newcommand{\blob}{{\color{green}\rule{.5\unitlength}{.2\unitlength}}} 
-\newcommand\rblob{
-    \begin{picture}(0,0)
-%        \put(1,-\value{titlenumber}){\begin{sideways}\@title \thetitlenumber\end{sideways} \blob}
-        \put(1,-\value{titlenumber}){\thetitlenumber\;\blob}
+\fancypagestyle{firstpage}{%
+    \fancyhf{}
 
-    \end{picture}
+    % Geen kop boven de chapter hero
+    \fancyfoot[L]{%
+        \sffamily
+        \scriptsize
+        \color{fvdMuted}%
+        \xmcursusnaam
+    }
+
+    \fancyfoot[C]{%
+        \sffamily
+        \scriptsize
+        \color{fvdMuted}%
+        \xmcopyright
+    }
+
+    \fancyfoot[R]{%
+        \sffamily
+        \scriptsize
+        \bfseries
+        \color{fvdNavy}%
+        \thepage
+    }
 }
 
 \newcommand\lblob{
@@ -212,7 +439,7 @@
     \begin{picture}(0,0)
     \put(0,-0.2)
      {     % \framebox{\selectfont\bfseries\color{blue}\thetitlenumber}
-           \colorbox{purple}{\makebox(1,0.56){\selectfont\bfseries\color{blue}\thetitlenumber}}
+           \colorbox{blue!10}{\makebox(1,0.56){\selectfont\bfseries\color{blue}\thetitlenumber}}
      }
     \end{picture}
 }
@@ -220,15 +447,11 @@
     \begin{picture}(0,0)
     \put(-1.15,-0.2)
      {     % \framebox{\selectfont\bfseries\color{blue}\thetitlenumber}
-	     \colorbox{purple}{\makebox(1,0.56){\selectfont\bfseries\color{blue}\thetitlenumber}}
+	     \colorbox{blue!10}{\makebox(1,0.56){\selectfont\bfseries\color{blue}\thetitlenumber}}
      }
     \end{picture}
 }
-\else
-\newcommand\rblob{}
-\newcommand\lblob{}
-\newcommand\rbigblob{}
-\fi
+
 
 %\usepackage{minitoc}
 %\usepackage{tocloft}
@@ -254,7 +477,7 @@
 \renewcommand{\maketitle}{
   % Maak onderscheid tussen (volledige) xourses of (aparte) activities
   \ifdefined\isXourse  
-      %\xmPrintFrontPage{\@title}
+      \xmPrintFrontPage{\@title}
   
       % Toon INHOUDSOPGAVE 
       \thispagestyle{empty}
@@ -330,7 +553,16 @@
     \addtocounter{titlenumber}{1}% Verhoog counter voor 'titlenumber' = 2e niveau
 
      \ifprintactivitytitle    % if not, it's in the header ....
-        {\normalfont\Large\bfseries \thetitlenumber\hspace{1em} \@title}
+   \ifdefined\fvdchapterhero
+      \ifdefined\fvdabstracttext
+         \fvdchapterhero{\fvdabstracttext}%
+      \else
+         \fvdchapterhero{}%
+      \fi
+   \else
+      {\normalfont\Large\bfseries
+       \thetitlenumber\hspace{1em}\@title\par}%
+   \fi
      \fi 
      \ifprintactivityqrcode
 	 \marginnote{\qrcode[hyperlink,height=1.5cm]{\xmbaseurl\currfiledir\currfilebase}}%[-2cm] % left
@@ -339,7 +571,9 @@
         \url{\xmbaseurl\currfiledir\currfilebase}
      \fi
     \phantomsection
-    \addcontentsline{toc}{section}{\textbf{\thetitlenumber\hspace{1em}\@title}}% Voeg toe aan inhoudsopgave
+    \addcontentsline{toc}{section}{%
+  \protect\numberline{\thetitlenumber}\@title%
+}
 
     % Inside \chapterstyle, sections map to subsections     
     \renewcommand\xmsection\subsection
@@ -348,7 +582,24 @@
     \renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
 
     
-
+    {% Reset de per-chapter counters 
+         \setcounter{sectiontitlenumber}{0}
+         \setcounter{proposition}{0}
+         \setcounter{problem}{0}
+         \setcounter{definition}{0}
+         \setcounter{example}{0}
+         \setcounter{explanation}{0}
+         \setcounter{remark}{0}
+         \setcounter{notation}{0}
+         \setcounter{observation}{0}
+         \setcounter{theorem}{0}
+         \setcounter{warning}{0}
+         \setcounter{xmuitweiding}{0}
+         \setcounter{exercise}{0}
+         \setcounter{question}{0}
+         \setcounter{subsection}{0}
+         \setcounter{subsubsection}{0}         
+    }
     
     \markboth{\thetitlenumber\hspace{1em} \@title}{\thetitlenumber\hspace{1em} \@title}   % fix wrong section on last page of activity    
     \thispagestyle{firstpage} 
@@ -410,9 +661,9 @@
  \ifprintcontinuouspagenumbers
    \renewcommand{\thepage}{\arabic{page}}   % 
  \else
-  %\counterwithin{page}{part}
+  \counterwithin{page}{part}
  %  \renewcommand{\thepage}{\thepart - \arabic{page}}   % 
- \renewcommand{\thepage}{\arabic{page}}   % Ingmar aangepast
+  \renewcommand{\thepage}{\thepart.\arabic{page}}   % 
 \fi
 \fi
 
@@ -436,7 +687,7 @@
     
     \ifprintpartfrontpage
        % Toon titelpagina voor nieuw \part
-       \renewcommand{\xmmodulenummer}{\textbf{\xmmodulenaam\  \arabic{part}}\\}
+       \renewcommand{\xmmodulenummer}{\textsc{\xmmodulenaam\  \arabic{part}}\\}
        \xmPrintFrontPage{#1}
        \ifparttoc  % TODO: does not work ?
             % Toon INHOUDSOPGAVE 
@@ -720,51 +971,12 @@
 % remove italics def
 \makeatletter
 \let\problem\relax
+\let\c@problem\relax
 \let\endproblem\relax
-\let\c@problem\@undefined
 \makeatother
-
-\newtheorem{problem}{}
-\renewcommand{\theproblem}{\theoremtitle{problem}}
-\tcolorboxenvironment{problem}{
-    colback=yellow!10, % kleur achtergrond voor de inhoud
-    colframe=yellow!75!black, % Donkere kleur voor de rand
-    title=Voorkennis, % Standaard titeltekst
-    coltitle=white, % kleur voor de titeltekst
-    fonttitle=\bfseries, % Vetgedrukte titeltekst
-    boxrule=1pt, % Dikte van de rand
-    boxsep=4pt, % Ruimte tussen rand en inhoud
-    enhanced, % Maakt meer stijlaanpassingen mogelijk
-    rounded corners=2pt, % Subtiele afgeronde hoeken
-    before skip=5pt, % Ruimte vóór de box
-    after skip=1pt % Ruimte na de box
-}
-
-         \setcounter{problem}{0}
-
-\makeatletter
-\let\template\relax
-\let\c@template\relax
-\let\endtemplate\relax
-\makeatother
-\newtheorem*{template}{}
-
-\renewcommand{\thetemplate}{\theoremtitle{template}} % titel instellen
-\tcolorboxenvironment{template}{
-    colback=red!10, % kleur achtergrond voor de inhoud
-    colframe=red!75!black, % Donkere kleur voor de rand
-    title=DOELSTELLINGEN, % Standaard titeltekst
-    coltitle=white, % kleur voor de titeltekst
-    fonttitle=\bfseries, % Vetgedrukte titeltekst
-    boxrule=1pt, % Dikte van de rand
-    boxsep=4pt, % Ruimte tussen rand en inhoud
-    enhanced, % Maakt meer stijlaanpassingen mogelijk
-    rounded corners=2pt, % Subtiele afgeronde hoeken
-    before skip=5pt, % Ruimte vóór de box
-    after skip=1pt % Ruimte na de box
-}
-
-
+% problem environment is een standaard theorem
+\newtheorem{problem}{Probleem}
+\renewcommand{\theproblem}{\theoremtitle{problem}} % titel instellen
 
 % exercise environment instellen
 \newcounter{exercise} % Counter bestaat niet, dus zelf maken
@@ -847,7 +1059,36 @@
 \AtBeginEnvironment{exercise}{\setcounter{question}{0}}
 \AtBeginEnvironment{example}{\setcounter{question}{0} \handoutfalse}    % print oplossingen in voorbeelden
 
+\ifdefined\isXourse
+   \ifdefined\xmuitweiding
+   \else
+       \def\xmnouitweiding{true}
+   \fi
+\fi
 
+\ifdefined\xmnouitweiding  
+\excludecomment{xmuitweiding}
+\else
+\makeatletter
+\let\xmuitweiding\relax
+\let\c@\xmuitweiding\relax
+\let\endxmuitweiding\relax
+\let\c@xmuitweiding\@undefined % nodig want anders klaagt hij dat \c@xmuitweiding al gedefinieerd is, \@undefined is gewoon een macro die niet gedefinieerd is, je kan eender welke macro gebruiken die niet gedefinieerd is
+\makeatother
+\newtheorem{xmuitweiding}{Uitweiding}
+\renewcommand{\thexmuitweiding}{\theoremtitle{xmuitweiding}} % titel instellen
+\tcolorboxenvironment{xmuitweiding}{
+    boxrule=0pt,
+    boxsep=0pt,
+    colback={gray!2!white},
+    enhanced jigsaw,
+    borderline west={2pt}{0pt}{gray!55!black},
+    sharp corners,
+    before skip=10pt,
+    after skip=10pt,
+    breakable,
+}
+\fi
 
 % Feedback
 % Renew feedback
@@ -969,8 +1210,8 @@
     \def\PH@Command{#1}% Use PH@Command to hold the content and be a target for "\expandafter" to expand once.
 
     \begin{trivlist}% Begin the trivlist to use formating of the label.
-    \item[\hskip \labelsep\small\slshape\bfseries \textcolor{blue}{Uitwerking: \hspace{2ex}}]\small
-    \textcolor{blue}{\BODY}
+    \item[\hskip \labelsep\small\slshape\bfseries Uitwerking: \hspace{2ex}]\small
+    \BODY
     \end{trivlist}
     }
     {  % \begin{feedback}[solution]   \BODY     \end{feedback}  }
@@ -980,8 +1221,8 @@
     \def\PH@Command{#1}% Use PH@Command to hold the content and be a target for "\expandafter" to expand once.
 
     \begin{trivlist}% Begin the trivlist to use formating of the "Feedback" label.
-    \item[\hskip \labelsep\small\slshape\bfseries\textcolor{blue}{Uitwerking: \hspace{2ex}}]\small
-    \textcolor{blue}{\BODY}
+    \item[\hskip \labelsep\small\slshape\bfseries Uitwerking: \hspace{2ex}]\small
+    \BODY
     \end{trivlist}
     }
 \fi
@@ -1025,22 +1266,3 @@
     \array{*\c@MaxMatrixCols #1}}
     \makeatother
 
-
-
-    {% Reset de per-chapter counters 
-         \setcounter{sectiontitlenumber}{0}
-         \setcounter{proposition}{0}
-         \setcounter{definition}{0}
-         \setcounter{example}{0}
-         \setcounter{explanation}{0}
-         \setcounter{remark}{0}
-         \setcounter{notation}{0}
-         \setcounter{observation}{0}
-         \setcounter{theorem}{0}
-         \setcounter{warning}{0}
-         \setcounter{xmuitweiding}{0}
-         \setcounter{exercise}{0}
-         \setcounter{question}{0}
-         \setcounter{subsection}{0}
-         \setcounter{subsubsection}{0}         
-    }

@@ -52,6 +52,22 @@ TEX_TITLE_PATTERN = re.compile(
     re.IGNORECASE | re.DOTALL | re.VERBOSE,
 )
 
+CHAPTER_DATA_PATTERN = re.compile(
+    r"""
+    %\s*FVD_CHAPTER_DATA_START\s*
+    .*?
+    %\s*FVD_CHAPTER_DATA_END\s*
+    """,
+    re.IGNORECASE | re.DOTALL | re.VERBOSE,
+)
+
+DOCUMENT_PATTERN = re.compile(
+    r"""
+    \\begin\s*\{\s*document\s*\}
+    """,
+    re.IGNORECASE | re.VERBOSE,
+)
+
 EXISTING_HERO_PATTERN = re.compile(
     r"""
     <!--\s*CHAPTER_HERO_START\s*-->
@@ -357,6 +373,135 @@ def extract_title_from_tex(
 
 
 # ============================================================
+# PDF-HOOFDSTUKGEGEVENS IN TEX
+# ============================================================
+
+def escape_tex_argument(value: str) -> str:
+    """
+    Maak gewone tekst veilig genoeg voor gebruik als argument
+    van \\fvdchapterdata.
+
+    Bestaande LaTeX-commando's in de thematitel blijven behouden.
+    Alleen tekens die de argumentstructuur kunnen verstoren,
+    worden beschermd.
+    """
+
+    return (
+        value
+        .replace("%", r"\%")
+        .replace("#", r"\#")
+        .replace("&", r"\&")
+    )
+
+
+def create_chapter_data_block(
+    theme_number: int,
+    theme_title: str,
+    chapter_number: int,
+) -> str:
+    """Maak het automatisch beheerde PDF-metadatablok."""
+
+    safe_theme_title = escape_tex_argument(
+        theme_title
+    )
+
+    return (
+        "% FVD_CHAPTER_DATA_START\n"
+        "% Automatisch gegenereerd uit index.tex.\n"
+        "% Niet handmatig aanpassen.\n"
+        "\\fvdchapterdata"
+        f"{{{theme_number}}}"
+        f"{{{safe_theme_title}}}"
+        f"{{{chapter_number}}}\n"
+        "% FVD_CHAPTER_DATA_END"
+    )
+
+
+def inject_chapter_data(
+    document: str,
+    block: str,
+) -> str:
+    """
+    Vervang bestaande hoofdstukmetadata of voeg ze toe.
+
+    Het blok wordt bij voorkeur direct na \\begin{document}
+    geplaatst. Daardoor is Opmaak.tex al geladen en bestaat
+    \\fvdchapterdata zeker.
+    """
+
+    if CHAPTER_DATA_PATTERN.search(
+        document
+    ):
+        return CHAPTER_DATA_PATTERN.sub(
+            lambda _match: block,
+            document,
+            count=1,
+        )
+
+    match = DOCUMENT_PATTERN.search(
+        document
+    )
+
+    if not match:
+        raise ValueError(
+            "Geen \\begin{document} gevonden."
+        )
+
+    position = match.end()
+
+    return (
+        document[:position]
+        + "\n\n"
+        + block
+        + "\n"
+        + document[position:]
+    )
+
+
+def process_tex_file(
+    tex_path: Path,
+    theme_number: int,
+    theme_title: str,
+    chapter_number: int,
+) -> None:
+    """Plaats of actualiseer de PDF-hoofdstukgegevens."""
+
+    if not tex_path.is_file():
+        raise ValueError(
+            f"Hoofdstukbestand niet gevonden: {tex_path}"
+        )
+
+    document = read_text(
+        tex_path
+    )
+
+    block = create_chapter_data_block(
+        theme_number=theme_number,
+        theme_title=theme_title,
+        chapter_number=chapter_number,
+    )
+
+    updated_document = inject_chapter_data(
+        document,
+        block,
+    )
+
+    if updated_document != document:
+        write_text(
+            tex_path,
+            updated_document,
+        )
+
+        print(
+            f"PDF-gegevens bijgewerkt: {tex_path} "
+            f"(thema {theme_number}; hoofdstuk {chapter_number})"
+        )
+    else:
+        print(
+            f"PDF-gegevens zijn actueel: {tex_path}"
+        )
+
+# ============================================================
 # ABSTRACT UIT HTML
 # ============================================================
 
@@ -647,7 +792,13 @@ def process_module(
     index_tex: Path,
     template_path: Path,
 ) -> int:
-    """Verwerk alle hoofdstukken van één module."""
+    """
+    Verwerk alle hoofdstukken van één module.
+
+    Voor ieder hoofdstuk:
+    - werk de PDF-metadata in het TeX-bestand bij;
+    - werk de hero in bestaande HTML-bestanden bij.
+    """
 
     if not module_dir.is_dir():
         raise ValueError(
@@ -677,7 +828,8 @@ def process_module(
             f"Geen thema's of hoofdstukken gevonden in {index_tex}"
         )
 
-    processed_count = 0
+    processed_tex_count = 0
+    processed_html_count = 0
 
     for item in course_structure:
         stem = str(
@@ -696,6 +848,25 @@ def process_module(
             item["chapter_number"]
         )
 
+        # ----------------------------------------------------
+        # TEX: PDF-METADATA BIJWERKEN
+        # ----------------------------------------------------
+
+        tex_path = module_dir / f"{stem}.tex"
+
+        process_tex_file(
+            tex_path=tex_path,
+            theme_number=theme_number,
+            theme_title=theme_title,
+            chapter_number=chapter_number,
+        )
+
+        processed_tex_count += 1
+
+        # ----------------------------------------------------
+        # HTML: HERO BIJWERKEN
+        # ----------------------------------------------------
+
         candidates = html_candidates(
             module_dir,
             stem,
@@ -704,7 +875,8 @@ def process_module(
         if not candidates:
             print(
                 f"Waarschuwing: geen HTML gevonden voor "
-                f"thema {theme_number}, hoofdstuk {chapter_number}: {stem}",
+                f"thema {theme_number}, hoofdstuk "
+                f"{chapter_number}: {stem}",
                 file=sys.stderr,
             )
 
@@ -721,14 +893,25 @@ def process_module(
                 chapter_number=chapter_number,
             )
 
-            processed_count += 1
+            processed_html_count += 1
 
-    if processed_count == 0:
+    if processed_tex_count == 0:
         raise ValueError(
-            f"Geen HTML-bestanden verwerkt in {module_dir}"
+            f"Geen hoofdstukbestanden verwerkt in {module_dir}"
         )
 
-    return processed_count
+    print()
+    print(
+        f"PDF-metadata bijgewerkt in "
+        f"{processed_tex_count} TeX-bestand(en)."
+    )
+
+    print(
+        f"HTML-hero bijgewerkt in "
+        f"{processed_html_count} HTML-bestand(en)."
+    )
+
+    return processed_tex_count + processed_html_count
 
 
 # ============================================================
@@ -782,10 +965,10 @@ def main() -> int:
 
     print()
     print(
-        f"Klaar: {count} hoofdstukbestand(en) verwerkt "
+        f"Klaar: {count} bewerking(en) uitgevoerd "
         f"in {module_dir}."
     )
-
+    
     return 0
 
 
