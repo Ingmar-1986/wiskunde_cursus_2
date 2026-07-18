@@ -1,0 +1,454 @@
+% ============================================================
+% FVD PDF STYLE
+% Frontpage
+% ============================================================
+
+%\NeedsTeXFormat{LaTeX2e}
+%\ProvidesPackage{frontpage}[2026/07/18 FVD Frontpage]
+
+% ------------------------------------------------------------
+% Vereiste pakketten
+% ------------------------------------------------------------
+
+\RequirePackage{tikz}
+\RequirePackage{graphicx}
+\RequirePackage{etoolbox}
+
+\usetikzlibrary{
+    positioning,
+    calc
+}
+
+% ------------------------------------------------------------
+% Standaardwaarden
+%
+% Deze worden alleen gebruikt wanneer ze nog niet elders
+% zijn ingesteld.
+% ------------------------------------------------------------
+
+\providecommand{\xmcursusnaam}{Wiskunde 7 FVD}
+
+\providecommand{\xmcursusondertitel}{%
+    De essentiële wiskundige basis voor
+    Digital Arts \& Entertainment%
+}
+
+\providecommand{\xmcursuslabel}{ONLINE CURSUS}
+
+\providecommand{\xmorganisatienaam}{Athena Campus Heule}
+
+\providecommand{\xmafdelingsnaam}{%
+    Fundamentele Vorming Digitale Creatie%
+}
+
+\providecommand{\xmcursusversie}{%
+    versie \today%
+}
+
+\providecommand{\xmmodulenummer}{}
+
+\providecommand{\xmlogo}{}
+
+% ------------------------------------------------------------
+% Onderwerpen op de cover
+%
+% Deze macro kan eventueel vanuit index.tex opnieuw worden
+% gedefinieerd.
+% ------------------------------------------------------------
+
+\providecommand{\FVDFrontpageChips}{%
+    \node[FVD front chip] (chip1) {BASISWISKUNDE};
+
+    \node[
+        FVD front chip,
+        right=3mm of chip1
+    ] (chip2) {ALGEBRA};
+
+    \node[
+        FVD front chip,
+        right=3mm of chip2
+    ] (chip3) {FUNCTIES};
+
+    \node[
+        FVD front chip,
+        right=3mm of chip3
+    ] (chip4) {VECTOREN};
+
+    \node[
+        FVD front chip,
+        right=3mm of chip4
+    ] (chip5) {3D};
+}
+
+% ============================================================
+% HULPMACRO'S
+% ============================================================
+
+% ------------------------------------------------------------
+% Logo
+%
+% Als \xmlogo leeg is, wordt een tekstlogo gebruikt.
+% ------------------------------------------------------------
+
+\newcommand{\FVDFrontLogo}{%
+    \ifdefempty{\xmlogo}
+    {%
+        \begin{minipage}[c]{0.42\textwidth}
+            \raggedright
+
+            {\sffamily
+             \bfseries
+             \fontsize{15}{17}\selectfont
+             \color{TitleColor}
+             WISKUNDE}
+
+            \par
+            \vspace{0.6mm}
+
+            {\sffamily
+             \bfseries
+             \fontsize{9}{11}\selectfont
+             \color{PrimaryColor}
+             7 FVD}
+        \end{minipage}%
+    }
+    {%
+        \xmlogo
+    }%
+}
+
+% ------------------------------------------------------------
+% Achtergrond van de hero
+% ------------------------------------------------------------
+
+\newcommand{\FVDFrontHeroBackground}{%
+    % Hoofdvlak
+    \fill[FVDNavy]
+        (0,0)
+        rectangle
+        (\textwidth,-\FVDHeroHeight);
+
+    % Raster: verticale lijnen
+    \foreach \x in {0,12,...,180}{%
+        \draw[
+            SecondaryColor,
+            opacity=0.055,
+            line width=0.3pt
+        ]
+        (\x mm,0)
+        --
+        (\x mm,-\FVDHeroHeight);
+    }
+
+    % Raster: horizontale lijnen
+    \foreach \y in {0,-12,...,-108}{%
+        \draw[
+            SecondaryColor,
+            opacity=0.055,
+            line width=0.3pt
+        ]
+        (0,\y mm)
+        --
+        (\textwidth,\y mm);
+    }
+
+    % Decoratieve cirkel rechtsboven
+    \fill[
+        SecondaryColor,
+        opacity=0.10
+    ]
+    ($(current bounding box.north east)+(-8mm,-5mm)$)
+    circle (37mm);
+
+    % Decoratieve cirkel linksonder
+    \fill[
+        PrimaryColor,
+        opacity=0.12
+    ]
+    (7mm,-\FVDHeroHeight+5mm)
+    circle (31mm);
+
+    % Kleine punten
+    \foreach \x/\y in {
+        133/-28,
+        141/-28,
+        149/-28,
+        133/-36,
+        141/-36,
+        149/-36,
+        133/-44,
+        141/-44,
+        149/-44
+    }{%
+        \fill[
+            SecondaryColor,
+            opacity=0.38
+        ]
+        (\x mm,\y mm)
+        circle (0.7mm);
+    }
+}
+
+% ------------------------------------------------------------
+% Cursusidentiteit in de hero
+% ------------------------------------------------------------
+
+\newcommand{\FVDFrontCourseIdentity}{%
+    % Verticale magenta lijn
+    \fill[PrimaryColor]
+        (10mm,-17mm)
+        rectangle
+        (12mm,-38mm);
+
+    % Klein label
+    \node[
+        anchor=west,
+        text=SecondaryColor,
+        font=\FVDLabelFont
+    ]
+    at (19mm,-20mm)
+    {FUNDAMENTELE VORMING DIGITALE CREATIE};
+
+    % WISKUNDE
+    \node[
+        anchor=north west,
+        text=white,
+        align=left,
+        font=\sffamily\bfseries\fontsize{31}{34}\selectfont
+    ]
+    at (19mm,-31mm)
+    {WISKUNDE};
+
+    % 7 FVD
+    \node[
+        anchor=north west,
+        text=white,
+        align=left,
+        font=\sffamily\bfseries\fontsize{31}{34}\selectfont
+    ]
+    at (19mm,-47mm)
+    {7 FVD};
+
+    % Ondertitel
+    \node[
+        anchor=north west,
+        text width=.63\textwidth,
+        align=left,
+        text=white,
+        opacity=0.84,
+        font=\FVDSubtitleFont
+    ]
+    at (19mm,-68mm)
+    {\xmcursusondertitel};
+
+    % Accentlijn
+    \fill[PrimaryColor]
+        (19mm,-91mm)
+        rectangle
+        (55mm,-93mm);
+}
+
+% ------------------------------------------------------------
+% Modulekaart onderaan in de hero
+%
+% Titel komt uit \xmtitle{...}{...}.
+% Modulenummer komt uit \xmmodulenummer.
+% ------------------------------------------------------------
+
+\newcommand{\FVDFrontModuleCard}[1]{%
+    % Kaart
+    \fill[
+        PrimaryColor,
+        rounded corners=\FVDModuleCardRadius
+    ]
+    (87mm,-79mm)
+    rectangle
+    (\textwidth-9mm,-107mm);
+
+    % Modulenummer
+    \node[
+        anchor=north west,
+        text=white,
+        opacity=0.84,
+        font=\sffamily\bfseries\fontsize{8.5}{10}\selectfont
+    ]
+    at (94mm,-84mm)
+    {%
+        \ifdefempty{\xmmodulenummer}
+        {MODULE}
+        {\xmmodulenummer}%
+    };
+
+    % Moduletitel uit \xmtitle
+    \node[
+        anchor=north west,
+        text width=.40\textwidth,
+        align=left,
+        text=white,
+        font=\sffamily\bfseries\fontsize{18}{21}\selectfont
+    ]
+    at (94mm,-91mm)
+    {#1};
+}
+
+% ------------------------------------------------------------
+% Auteur uit \author{...}
+% ------------------------------------------------------------
+
+\makeatletter
+
+\newcommand{\FVDFrontAuthor}{%
+    \node[
+        anchor=west,
+        text=white,
+        opacity=0.72,
+        font=\sffamily\small
+    ]
+    at (19mm,-104mm)
+    {%
+        \ifdefempty{\@author}
+        {}
+        {\@author}%
+    };
+}
+
+\makeatother
+
+% ------------------------------------------------------------
+% Chips
+% ------------------------------------------------------------
+
+\tikzset{
+    FVD front chip/.style={
+        rounded corners=\FVDChipRadius,
+        draw=BorderColor,
+        line width=\FVDThinLine,
+        fill=SoftBackground,
+        text=TitleColor,
+        font=\FVDChipFont,
+        inner xsep=\FVDChipPaddingHorizontal,
+        inner ysep=\FVDChipPaddingVertical
+    }
+}
+
+\newcommand{\FVDFrontChips}{%
+    \begin{center}
+        \begin{tikzpicture}
+            \FVDFrontpageChips
+        \end{tikzpicture}
+    \end{center}
+}
+
+% ------------------------------------------------------------
+% Footer van de cover
+% ------------------------------------------------------------
+
+\newcommand{\FVDFrontFooter}{%
+    \noindent
+    {\color{BorderColor}%
+        \rule{\textwidth}{\FVDThinLine}%
+    }
+
+    \vspace{\FVDSpaceXS}
+
+    \noindent
+    \begin{minipage}[t]{0.63\textwidth}
+        {\FVDFooterFont
+         \color{SubtitleColor}
+
+         \xmcursusnaam
+
+         \par
+         \xmafdelingsnaam}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[t]{0.33\textwidth}
+        \raggedleft
+
+        {\FVDFooterFont
+         \color{SubtitleColor}
+
+         \xmcursusversie}
+    \end{minipage}
+}
+
+% ============================================================
+% VOLLEDIGE TITELPAGINA
+%
+% #1 is de titel uit:
+%
+% \xmtitle{Titel}{abstract}
+%
+% De auteur wordt automatisch uit \author gehaald.
+% ============================================================
+
+\newcommand{\xmPrintFrontPage}[1]{%
+    \begingroup
+
+    \thispagestyle{empty}%
+
+    % Geen inspringing op de cover
+    \setlength{\parindent}{0pt}%
+
+    % --------------------------------------------------------
+    % Bovenbalk
+    % --------------------------------------------------------
+
+    \noindent
+    \begin{minipage}[c]{0.54\textwidth}
+        \raggedright
+        \FVDFrontLogo
+    \end{minipage}%
+    \begin{minipage}[c]{0.46\textwidth}
+        \raggedleft
+
+        {\FVDLabelFont
+         \color{SubtitleColor}
+         \xmcursuslabel}
+    \end{minipage}
+
+    \vspace{\FVDSpaceMedium}
+
+    % --------------------------------------------------------
+    % Hero
+    % --------------------------------------------------------
+
+    \noindent
+    \begin{tikzpicture}
+        % Vaste begrenzing van de illustratie
+        \path[
+            use as bounding box
+        ]
+        (0,0)
+        rectangle
+        (\textwidth,-\FVDHeroHeight);
+
+        \FVDFrontHeroBackground
+        \FVDFrontCourseIdentity
+        \FVDFrontModuleCard{#1}
+        \FVDFrontAuthor
+    \end{tikzpicture}
+
+    \vspace{\FVDSpaceMedium}
+
+    % --------------------------------------------------------
+    % Onderwerpen
+    % --------------------------------------------------------
+
+    \FVDFrontChips
+
+    \vfill
+
+    % --------------------------------------------------------
+    % Footer
+    % --------------------------------------------------------
+
+    \FVDFrontFooter
+
+    \clearpage
+
+    \endgroup
+
+    % Vanaf de volgende pagina terug de gewone paginastijl
+    \pagestyle{otherpage}%
+}

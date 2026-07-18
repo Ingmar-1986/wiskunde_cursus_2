@@ -1,0 +1,201 @@
+% ============================================================
+% FVD PDF STYLE
+% Centrale ontwerpinstellingen
+% ============================================================
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{theme}[2026/07/18 FVD Theme]
+
+% ============================================================
+% PAGINA EN WITRUIMTE
+% ============================================================
+
+% Algemene verticale witruimte
+\newlength{\FVDSpaceXS}
+\setlength{\FVDSpaceXS}{2mm}
+
+\newlength{\FVDSpaceSmall}
+\setlength{\FVDSpaceSmall}{4mm}
+
+\newlength{\FVDSpaceMedium}
+\setlength{\FVDSpaceMedium}{7mm}
+
+\newlength{\FVDSpaceLarge}
+\setlength{\FVDSpaceLarge}{12mm}
+
+\newlength{\FVDSpaceXL}
+\setlength{\FVDSpaceXL}{18mm}
+
+% ============================================================
+% PAGINAKOP EN VOETTEKST
+% ============================================================
+
+\newlength{\FVDHeaderHeight}
+\setlength{\FVDHeaderHeight}{24pt}
+
+\newlength{\FVDHeaderSeparation}
+\setlength{\FVDHeaderSeparation}{9mm}
+
+\newlength{\FVDFooterSeparation}
+\setlength{\FVDFooterSeparation}{12mm}
+
+\newlength{\FVDHeaderLineWidth}
+\setlength{\FVDHeaderLineWidth}{0.45mm}
+
+% ============================================================
+% TITELPAGINA
+% ============================================================
+
+\newlength{\FVDHeroHeight}
+\setlength{\FVDHeroHeight}{116mm}
+
+\newlength{\FVDHeroPaddingLeft}
+\setlength{\FVDHeroPaddingLeft}{19mm}
+
+\newlength{\FVDHeroPaddingTop}
+\setlength{\FVDHeroPaddingTop}{20mm}
+
+\newlength{\FVDHeroTitleWidth}
+\setlength{\FVDHeroTitleWidth}{0.78\textwidth}
+
+\newlength{\FVDHeroSubtitleWidth}
+\setlength{\FVDHeroSubtitleWidth}{0.72\textwidth}
+
+\newlength{\FVDHeroAccentWidth}
+\setlength{\FVDHeroAccentWidth}{2mm}
+
+\newlength{\FVDHeroAccentHeight}
+\setlength{\FVDHeroAccentHeight}{20mm}
+
+% ============================================================
+% MODULEPAGINA
+% ============================================================
+
+\newlength{\FVDModuleCardHeight}
+\setlength{\FVDModuleCardHeight}{48mm}
+
+\newlength{\FVDModuleCardPadding}
+\setlength{\FVDModuleCardPadding}{11mm}
+
+\newlength{\FVDModuleCardRadius}
+\setlength{\FVDModuleCardRadius}{5mm}
+
+% ============================================================
+% CHAPTER HERO
+% ============================================================
+
+\newlength{\FVDChapterHeroHeight}
+\setlength{\FVDChapterHeroHeight}{58mm}
+
+\newlength{\FVDChapterHeroPadding}
+\setlength{\FVDChapterHeroPadding}{11mm}
+
+\newlength{\FVDChapterHeroRadius}
+\setlength{\FVDChapterHeroRadius}{4mm}
+
+\newlength{\FVDChapterHeroNumberWidth}
+\setlength{\FVDChapterHeroNumberWidth}{18mm}
+
+% ============================================================
+% BOXEN
+% ============================================================
+
+\newlength{\FVDBoxBorderWidth}
+\setlength{\FVDBoxBorderWidth}{2pt}
+
+\newlength{\FVDBoxRadius}
+\setlength{\FVDBoxRadius}{2mm}
+
+\newlength{\FVDBoxPadding}
+\setlength{\FVDBoxPadding}{4mm}
+
+\newlength{\FVDBoxBeforeSkip}
+\setlength{\FVDBoxBeforeSkip}{10pt}
+
+\newlength{\FVDBoxAfterSkip}
+\setlength{\FVDBoxAfterSkip}{10pt}
+
+% ============================================================
+% CHIPS EN LABELS
+% ============================================================
+
+\newlength{\FVDChipRadius}
+\setlength{\FVDChipRadius}{3mm}
+
+\newlength{\FVDChipPaddingHorizontal}
+\setlength{\FVDChipPaddingHorizontal}{4mm}
+
+\newlength{\FVDChipPaddingVertical}
+\setlength{\FVDChipPaddingVertical}{2mm}
+
+\newlength{\FVDLabelRadius}
+\setlength{\FVDLabelRadius}{2mm}
+
+% ============================================================
+% LIJNDIKTES
+% ============================================================
+
+\newlength{\FVDThinLine}
+\setlength{\FVDThinLine}{0.4pt}
+
+\newlength{\FVDMediumLine}
+\setlength{\FVDMediumLine}{0.8pt}
+
+\newlength{\FVDThickLine}
+\setlength{\FVDThickLine}{2pt}
+
+% ============================================================
+% LETTERGROOTTES
+% ============================================================
+
+\newcommand{\FVDCourseTitleFont}{%
+    \sffamily\bfseries\fontsize{32}{36}\selectfont
+}
+
+\newcommand{\FVDModuleTitleFont}{%
+    \sffamily\bfseries\fontsize{26}{31}\selectfont
+}
+
+\newcommand{\FVDChapterTitleFont}{%
+    \sffamily\bfseries\fontsize{23}{28}\selectfont
+}
+
+\newcommand{\FVDSubtitleFont}{%
+    \sffamily\fontsize{11}{16}\selectfont
+}
+
+\newcommand{\FVDLabelFont}{%
+    \sffamily\bfseries\small
+}
+
+\newcommand{\FVDChipFont}{%
+    \sffamily\bfseries\scriptsize
+}
+
+\newcommand{\FVDHeaderFont}{%
+    \sffamily\footnotesize
+}
+
+\newcommand{\FVDFooterFont}{%
+    \sffamily\scriptsize
+}
+
+% ============================================================
+% ALGEMENE ONTWERPKEUZES
+% ============================================================
+
+% Radius die gebruikt kan worden voor algemene kaarten
+\newlength{\FVDCardRadius}
+\setlength{\FVDCardRadius}{4mm}
+
+% Standaard binnenruimte van kaarten
+\newlength{\FVDCardPadding}
+\setlength{\FVDCardPadding}{6mm}
+
+% Standaard afstand tussen kaarten
+\newlength{\FVDCardGap}
+\setlength{\FVDCardGap}{5mm}
+
+% Hoogte van de accentlijn onder paginakoppen
+\newlength{\FVDAccentLineHeight}
+\setlength{\FVDAccentLineHeight}{0.45mm}
