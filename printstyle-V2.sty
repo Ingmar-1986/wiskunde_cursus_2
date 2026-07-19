@@ -1,0 +1,33 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{printstyle}[2026/07/18 FVD Print Style]
+
+\input{assets/pdf/colors.sty}
+\input{assets/pdf/theme.sty}
+\input{assets/pdf/frontpage.sty}
+\input{assets/pdf/fonts.sty}
+
+%\input{assets/pdf/toc.sty}
+%\input{assets/pdf/pagestyles.sty}
+%\input{assets/pdf/chapterhero.sty}
+%\input{assets/pdf/theoremstyles.sty}
+%\input{assets/pdf/boxes.sty}
+%\input{assets/pdf/utilities.sty}
+
+
+
+% ============================================================
+% EIGEN PDF-OPMAAK
+% Moet als laatste geladen worden, omdat Ximera hierboven
+% \maketitle opnieuw definieert.
+% ============================================================
+
+\IfFileExists{Opmaak-pdf.tex}{%
+    \input{Opmaak-pdf.tex}%
+}{%
+    \IfFileExists{../../Opmaak-pdf.tex}{%
+        \input{../../Opmaak-pdf.tex}%
+    }{%
+        \PackageWarning{printstyle}
+        {Opmaak-pdf.tex kon niet worden gevonden}%
+    }%
+}
