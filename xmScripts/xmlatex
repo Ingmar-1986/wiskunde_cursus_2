@@ -1,127 +1,197 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 #
-# This script is a wrapper around (and in its full version an extension of) ximera's xake command
-#  THAT ENSURES IT'S RUNNING IN A DOCKER CONTAINER 
+# Ximera wrapper
+# Zorgt ervoor dat xmlatex binnen de juiste Docker-container draait.
 #
-# Usage: 
-#   xmlatex bake
-#   xmlatex bake test/myximerafile.tex
-#   xmlatex bash   # gets a bash-shell INSIDE the container
-#   xmlatex frost
-#   xmlatex serve
-#   xmlatex name
-#   xmlatex all    # runs bake / frost / serve
-#
-# Advanced usage
-#   XAKE_IMAGE=ghcr.io/ximeraproject/xake2023:latest xmlatex compile demo.tex    # use a different docker image
-#   COMMAND=pdflatex xmlatex demo.tex                                            # do not run the xake-wrapper, but $COMMAND
-#
-# This script
-#  - loads some configuration from ./xmScripts/config.tex (can be overwritten with CONFIG_FILE)
-#  - for serving, also (basefolder)/$XM_KEYFILE (default .xmKeyFile) will be read (for GPG key settings)
-#  - starts a xake docker container (unless we're already IN a container)
-#  - starts (presumably) a container-specific version of this very script
-#  - that (presumably) starts (lua-)xake with the arguments passed to this script
-#  - optionally gets you a shell inside the container
-#  - optionally automates lots of other things
-#
-# Note: set environment variable 'export DEBUG=1' and/or use -d option for debugging/tracing
-# Note: this scrips RESTARTS itself (or a variant of itself!!!) IN A DOCKER CONTAINER
-#
-#
+
+set -o pipefail
 
 : "${CONFIG_FILE:=./xmScripts/config.txt}"
 
-if [[ -f "$CONFIG_FILE" ]]
-then
-        [[ -n "$DEBUG" ]] && echo "Loading settings from config file $CONFIG_FILE."
-        . $CONFIG_FILE
+if [[ -f "$CONFIG_FILE" ]]; then
+    [[ -n "${DEBUG:-}" ]] && echo "Loading settings from config file $CONFIG_FILE."
+    # shellcheck disable=SC1090
+    . "$CONFIG_FILE"
 fi
 
-
-# Set some defaults
 #
-# default docker image to run; overwrite with 'export XAKE_IMAGE=myxake:0.1'
+# Standaardinstellingen
+#
+
 : "${XAKE_BASE:=ximeralatex}"
 : "${XAKE_VERSION:=v2.7.10}"
 : "${XAKE_CONTAINER:=$XAKE_BASE:$XAKE_VERSION}"
 : "${DOCKER_REPO:=ghcr.io/ximeraproject/}"
 
-# For historic compatibility, keep supporting XAKE_IMAGE
-: "${XAKE_IMAGE:=$DOCKER_REPO$XAKE_CONTAINER}"   # TO BE OBSOLETED
+# Historische compatibiliteit
+: "${XAKE_IMAGE:=$DOCKER_REPO$XAKE_CONTAINER}"
 : "${DOCKER_IMAGE:=$XAKE_IMAGE}"
-: "${DOCKER_DEFAULT_PLATFORM:=linux/amd64}"      # needed for MacOS ?
+
+: "${DOCKER_DEFAULT_PLATFORM:=linux/amd64}"
 export DOCKER_DEFAULT_PLATFORM
 
 : "${SERVER_PORT:=2000}"
 : "${SERVER_NAME:=ximeraserver}"
 : "${SERVER_IMAGE:=registry.gitlab.kuleuven.be/wet/ximera/ximeradocker:2.3_b}"
 
-# How to sync DevEnvFiles (.vscode/.devcontainer/xmScripts)
 : "${DEVENV_TGZFILE:=xmDevEnvFiles.tgz}"
 : "${DEVENV_VERSION:=releases/latest/download}"
-# : "${DEVENV_VERSION:=releases/download/v2.4.2}"   # Note the inversed order !!!!
 : "${DEVENV_REPO:=ximeraProject/ximeraNewProject}"
-: "${DEVENV_URL:=https://github.com/$DEVENV_REPO/$DEVENV_VERSION/xmDevEnvFiles.tgz}"
-
+: "${DEVENV_URL:=https://github.com/$DEVENV_REPO/$DEVENV_VERSION/$DEVENV_TGZFILE}"
 
 #
-# Which folder to mount INSIDE the container, under /code  (use with care: it should contain a build.sh !)
+# Lokale projectmap wordt in de container gekoppeld aan /code
+#
+
 : "${MOUNTDIR:=$(pwd)}"
-: "${XM_KEYFILE:=.xmKeyFile}"
 #
-# Which script to start inside the container; 
+# De Windows Docker-client begrijpt geen WSL-pad zoals /mnt/c/...
+# Zet het mountpad daarom om naar een Windows-pad wanneer docker.exe wordt gebruikt.
+#
+DOCKER_MOUNTDIR="$MOUNTDIR"
+
+if docker version 2>/dev/null | grep -q "OS/Arch:.*windows"; then
+    DOCKER_MOUNTDIR="$(wslpath -w "$MOUNTDIR")"
+fi
+: "${XM_KEYFILE:=.xmKeyFile}"
+
+#
+# Commando dat binnen de container wordt uitgevoerd
+#
+
 : "${COMMAND:=xmlatex}"
-# : "${COMMAND:=pdflatex}"     # skip xmlatex inside the container, and directly run a specific command ...    
 
+#
+# Bevinden we ons al in Docker?
+#
 
-if [[ -f /.dockerenv ]]  
-then
-    [[ -n "$DEBUG" ]] && echo "Running in docker container (with local hostname $HOSTNAME)"
-elif [[ -n "$KUBERNETES_SERVICE_HOST" ]] 
-then
+if [[ -f /.dockerenv ]]; then
+    [[ -n "${DEBUG:-}" ]] && \
+        echo "Running in docker container (with local hostname $HOSTNAME)"
+
+elif [[ -n "${KUBERNETES_SERVICE_HOST:-}" ]]; then
     echo "Running in kubernetes container ($KUBERNETES_SERVICE_HOST)"
-else 
-    [[ -n "$DEBUG" ]] && echo "Running $0 on host ($HOSTNAME)"
 
-    if [[ "$1" == "-i" ]]
-    then
-        INTERACTIVE="-it"  # start an interactive docker session (i.e. with a terminal attached)
-        shift 
-    fi 
+else
+    [[ -n "${DEBUG:-}" ]] && echo "Running $0 on host ($HOSTNAME)"
 
-    # make the -i default for bash (finally ...)
-    if [[ "$1" == "bash" ]]
-    then
-        INTERACTIVE="-it"  # start an interactive docker session (i.e. with a terminal attached)
-    fi 
+    INTERACTIVE=""
 
-    # LOCAL_IP is only needed if you want to serve to a ximeraServer on your localhost; do NOT use XIMERA_URL when using LOCAL_IP
-    # TODO: is it still needed at all ????   The hostname -I confuses MacOS !
-    if [[ "$LOCAL_IP" == "" ]]
-    then
-        LOCAL_IP=$(set -- $(hostname -I); echo "$1")
-        [[ -n "$DEBUG" ]] && echo "Setting LOCAL_IP=$LOCAL_IP"
+    #
+    # Optionele interactieve modus
+    #
+
+    if [[ "${1:-}" == "-i" ]]; then
+        INTERACTIVE="-it"
+        shift
     fi
 
-    if [[ "$1" == "ximeraserver" ]]
-    then    
+    if [[ "${1:-}" == "bash" ]]; then
+        INTERACTIVE="-it"
+    elif tty >/dev/null 2>&1; then
+        INTERACTIVE="-it"
+    fi
+
+    #
+    # Lokaal IP-adres
+    #
+
+    if [[ -z "${LOCAL_IP:-}" ]]; then
+        LOCAL_IP="$(hostname -I 2>/dev/null | awk '{print $1}')"
+        [[ -n "${DEBUG:-}" ]] && echo "Setting LOCAL_IP=$LOCAL_IP"
+    fi
+
+    export LOCAL_IP
+
+    #
+    # Lokale Ximera-server starten
+    #
+
+    if [[ "${1:-}" == "ximeraserver" ]]; then
         echo "Starting ximera $SERVER_NAME from $SERVER_IMAGE on port $SERVER_PORT"
-        docker run --rm --name $SERVER_NAME -p 2000:$SERVER_PORT $SERVER_IMAGE
-        exit
+
+        docker run \
+            --rm \
+            --name "$SERVER_NAME" \
+            -p "2000:$SERVER_PORT" \
+            "$SERVER_IMAGE"
+
+        exit $?
     fi
 
-    echo "Restarting myself in docker (from image $DOCKER_IMAGE)"	
-    tty >/dev/null && INTERACTIVE="-it"  # HACK: in termanal, run with -it, to process interrupts with CTRL-C
+    #
+    # Controleer of Docker beschikbaar is
+    #
 
-    [[ -n "$DEBUG" ]] && echo  \
-    docker run --env LOCAL_IP --env XIMERA_URL --env XIMERA_NAME --env GPG_KEY --env GPG_KEY_ID --env DEBUG --network host --rm $INTERACTIVE --mount type=bind,source=$MOUNTDIR,target=/code $DOCKER_IMAGE $COMMAND $*
-    docker run --env LOCAL_IP --env XIMERA_URL --env XIMERA_NAME --env GPG_KEY --env GPG_KEY_ID --env DEBUG --network host --rm $INTERACTIVE --mount type=bind,source=$MOUNTDIR,target=/code $DOCKER_IMAGE $COMMAND $*
-    exit 
+    if ! command -v docker >/dev/null 2>&1; then
+        echo "Fout: Docker werd niet gevonden."
+        echo "Controleer Docker Desktop en de WSL-integratie."
+        exit 127
+    fi
+
+    if ! docker info >/dev/null 2>&1; then
+        echo "Fout: Docker is gevonden, maar de Docker-engine is niet bereikbaar."
+        echo "Start Docker Desktop en wacht tot de engine actief is."
+        exit 1
+    fi
+
+    echo "Restarting myself in docker (from image $DOCKER_IMAGE)"
+
+    if [[ -n "${DEBUG:-}" ]]; then
+        echo "Dockerinstellingen:"
+        echo "  projectmap : $MOUNTDIR"
+        echo "  dockerpad  : $DOCKER_MOUNTDIR"
+        echo "  mountpunt  : /code"
+        echo "  image      : $DOCKER_IMAGE"
+        echo "  commando   : $COMMAND $*"
+    fi
+
+    #
+    # Bouw de docker-argumenten veilig op als array.
+    # Daardoor blijven paden met spaties correct behouden.
+    #
+
+    DOCKER_ARGS=(
+        run
+        --env LOCAL_IP
+        --env XIMERA_URL
+        --env XIMERA_NAME
+        --env GPG_KEY
+        --env GPG_KEY_ID
+        --env DEBUG
+        --network host
+        --rm
+        --mount "type=bind,source=$DOCKER_MOUNTDIR,target=/code"
+        --workdir /code
+    )
+
+    if [[ -n "$INTERACTIVE" ]]; then
+        DOCKER_ARGS+=("$INTERACTIVE")
+    fi
+
+    DOCKER_ARGS+=(
+        "$DOCKER_IMAGE"
+        "$COMMAND"
+    )
+
+    DOCKER_ARGS+=("$@")
+
+    if [[ -n "${DEBUG:-}" ]]; then
+        printf 'Uitgevoerd commando:'
+        printf ' %q' docker "${DOCKER_ARGS[@]}"
+        printf '\n'
+    fi
+
+    command docker "${DOCKER_ARGS[@]}"
+    exit $?
 fi
 
 #
-# The 'REAL' contents are ommitted in this version, but (presumably...) are present in the copy *inside* the container $DOCKER_IMAGE !!!!
+# Deze lokale wrapper hoort normaal niet rechtstreeks binnen Docker te draaien.
+# In de container hoort de volledige xmlatex-versie uit de image aanwezig te zijn.
 #
-echo "Sorry, this limited version of this xmlatex script should not be run *inside* a docker container. Find and run the full version, perhaps called xmlatex.full!"
+
+echo "Sorry, this limited xmlatex wrapper should not run directly inside a Docker container."
+echo "The Docker image should provide the full xmlatex implementation."
 exit 1
