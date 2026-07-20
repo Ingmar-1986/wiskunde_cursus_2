@@ -1,8 +1,20 @@
 % ============================================================
 % OPMAAK-PDF.TEX
-% PDF-specifieke hoofdstukopmaak voor de Ximera-cursus
+% PDF-specifieke hoofdstukhero voor de Ximera-cursus
 %
-% Wordt onderaan Opmaak.tex ingeladen.
+% BELANGRIJK:
+% Dit bestand wordt helemaal onderaan printstyle.sty geladen,
+% nadat chapterstyle en maketitle zijn ingesteld.
+%
+% Dit bestand:
+% - tekent de hoofdstukhero;
+% - bewaart het abstract;
+% - gebruikt de bestaande tellers uit printstyle.sty.
+%
+% Dit bestand herdefinieert NIET:
+% - \part
+% - \activity
+% - \maketitle
 % ============================================================
 
 
@@ -17,129 +29,114 @@
 \global\let\fvdpdfopmaakgeladen\relax
 
 
-\makeatletter
+% ============================================================
+% BENODIGDE TIKZ-BIBLIOTHEKEN
+% ============================================================
+
+\usetikzlibrary{
+    calc,
+    positioning,
+    shadows.blur
+}
 
 
 % ============================================================
 % KLEUREN VAN DE HOOFDSTUKHERO
 % ============================================================
 
-\definecolor{fvdNavyLeft}{HTML}{071F45}
-\definecolor{fvdNavyRight}{HTML}{173F78}
+\definecolor{fvdHeroNavyLeft}{HTML}{071F45}
+\definecolor{fvdHeroNavyRight}{HTML}{173F78}
 \definecolor{fvdHeroPink}{HTML}{F20D68}
 \definecolor{fvdHeroCyan}{HTML}{28D9E8}
+\definecolor{fvdHeroSoftBlue}{HTML}{6CA6D9}
+
+
+\makeatletter
 
 
 % ============================================================
-% TELLERS
+% FALLBACKS EN METADATA
 % ============================================================
 
-\@ifundefined{c@fvdthema}{%
-    \newcounter{fvdthema}%
-}{}
-
-\@ifundefined{c@fvdhoofdstuk}{%
-    \newcounter{fvdhoofdstuk}%
-}{}
-
-
-% ============================================================
-% METADATA
-% ============================================================
-
-\providecommand{\fvdthematitel}{}
+% Hierin wordt het abstract van het huidige hoofdstuk bewaard.
 \providecommand{\fvdabstracttext}{}
-
 \global\let\fvdabstracttext\@empty
 
+% Deze macro wordt door printstyle.sty via \part ingesteld.
+\providecommand{\mymoduletitle}{}
 
-% ============================================================
-% XOURSE OF AFZONDERLIJK HOOFDSTUK
-% ============================================================
-
-\newif\iffvdxourse
-\newif\iffvdinsideactivity
-
-\fvdinsideactivityfalse
-
-\@ifclassloaded{xourse}{%
-    \fvdxoursetrue
-}{%
-    \fvdxoursefalse
-
-    % Bij het afzonderlijk compileren van een hoofdstuk
-    % wordt \maketitle als hoofdstuktitel behandeld.
-    \fvdinsideactivitytrue
-}
-
-
-% ============================================================
-% THEMA'S EN HOOFDSTUKKEN IN EEN XOURSE
-% ============================================================
-
-\iffvdxourse
-
-    \let\fvdoriginalpart\part
-    \let\fvdoriginalactivity\activity
-
-    % --------------------------------------------------------
-    % THEMA
-    % --------------------------------------------------------
-
-    \RenewDocumentCommand{\part}{o m}{%
-
-        \stepcounter{fvdthema}%
-        \setcounter{fvdhoofdstuk}{0}%
-
-        \gdef\fvdthematitel{#2}%
-
-        \IfNoValueTF{#1}{%
-            \fvdoriginalpart{#2}%
-        }{%
-            \fvdoriginalpart[#1]{#2}%
-        }%
-    }
-
-    % --------------------------------------------------------
-    % HOOFDSTUK
-    % --------------------------------------------------------
-
-    \RenewDocumentCommand{\activity}{o m}{%
-
-        \stepcounter{fvdhoofdstuk}%
-
-        \clearpage
-        \global\fvdinsideactivitytrue
-
-        \IfNoValueTF{#1}{%
-            \fvdoriginalactivity{#2}%
-        }{%
-            \fvdoriginalactivity[#1]{#2}%
-        }%
-
-        \global\fvdinsideactivityfalse
-    }
-
-\fi
+% Ximera heeft normaal al een teller titlenumber.
+% Deze fallback voorkomt fouten bij uitzonderlijke
+% afzonderlijke compilaties.
+\@ifundefined{c@titlenumber}{%
+    \newcounter{titlenumber}%
+}{}
 
 
 % ============================================================
 % HANDMATIGE HOOFDSTUKGEGEVENS
 % ============================================================
 %
-% Voor het afzonderlijk compileren van een hoofdstuk:
+% Alleen nodig wanneer een hoofdstuk afzonderlijk wordt
+% gecompileerd en je toch een thema- en hoofdstuknummer
+% wilt tonen.
+%
+% Gebruik vóór \xmtitle:
 %
 % \fvdchapterdata
 %     {1}
 %     {Getallen en bewerkingen}
 %     {2}
 %
+% Bij compilatie vanuit index.tex is dit niet nodig.
 % ============================================================
 
+\providecommand{\fvdmanualthemanummer}{}
+\providecommand{\fvdmanualthematitel}{}
+\newif\iffvdmanualchapterdata
+
+\fvdmanualchapterdatafalse
+
 \providecommand{\fvdchapterdata}[3]{%
-    \setcounter{fvdthema}{#1}%
-    \gdef\fvdthematitel{#2}%
-    \setcounter{fvdhoofdstuk}{#3}%
+    \global\fvdmanualchapterdatatrue
+    \gdef\fvdmanualthemanummer{#1}%
+    \gdef\fvdmanualthematitel{#2}%
+    \setcounter{titlenumber}{#3}%
+}
+
+
+% ============================================================
+% THEMANUMMER
+% ============================================================
+
+\newcommand{\fvdherothemanummer}{%
+    \iffvdmanualchapterdata
+        \fvdmanualthemanummer
+    \else
+        \thepart
+    \fi
+}
+
+
+% ============================================================
+% THEMATITEL
+% ============================================================
+
+\newcommand{\fvdherothematitel}{%
+    \iffvdmanualchapterdata
+        \fvdmanualthematitel
+    \else
+        \mymoduletitle
+    \fi
+}
+
+
+% ============================================================
+% HOOFDSTUKNUMMER
+% ============================================================
+
+\newcommand{\fvdherohoofdstuknummer}{%
+    \arabic{titlenumber}%
 }
 
 
@@ -149,31 +146,28 @@
 
 \newcommand{\fvdchapterhero}[1]{%
 
-    \thispagestyle{empty}
+    \thispagestyle{firstpage}%
 
     \par
-    \vspace*{-30mm}
+    \vspace*{-7mm}
 
+    \noindent
     \begin{tcolorbox}[
         enhanced,
-        width=\dimexpr\paperwidth-16mm\relax,
-        enlarge left by=-8mm,
-        enlarge right by=-8mm,
-        height=65mm,
-        valign=top,
+        width=\textwidth,
         boxrule=0pt,
         frame hidden,
         arc=6mm,
         outer arc=6mm,
         left=10mm,
         right=10mm,
-        top=6mm,
-        bottom=5mm,
+        top=7mm,
+        bottom=7mm,
         before skip=0pt,
-        after skip=7mm,
+        after skip=8mm,
         interior style={
-            left color=fvdNavyLeft,
-            right color=fvdNavyRight
+            left color=fvdHeroNavyLeft,
+            right color=fvdHeroNavyRight
         },
         overlay={
 
@@ -188,6 +182,38 @@
             ([xshift=-48mm,yshift=-39mm]frame.north east)
             circle[radius=35mm];
 
+
+            % ------------------------------------------------
+            % SUBTIEL RASTER AAN DE RECHTERKANT
+            % ------------------------------------------------
+
+            \begin{scope}[
+                opacity=0.055
+            ]
+
+                \foreach \x in {0,8,...,72} {
+                    \draw[
+                        white,
+                        line width=0.25pt
+                    ]
+                    ([xshift=-\x mm]frame.north east)
+                    --
+                    ([xshift=-\x mm]frame.south east);
+                }
+
+                \foreach \y in {0,8,...,64} {
+                    \draw[
+                        white,
+                        line width=0.25pt
+                    ]
+                    ([yshift=\y mm]frame.south east)
+                    --
+                    ([xshift=-72mm,yshift=\y mm]frame.south east);
+                }
+
+            \end{scope}
+
+
             % ------------------------------------------------
             % FORMULE RECHTSBOVEN
             % ------------------------------------------------
@@ -200,6 +226,7 @@
             ]
             at ([xshift=-12mm,yshift=-7mm]frame.north east)
             {$a^n\cdot a^m=a^{n+m}$};
+
 
             % ------------------------------------------------
             % VECTOR RECHTSONDER
@@ -214,13 +241,14 @@
             at ([xshift=-16mm,yshift=9mm]frame.south east)
             {$\vec{v}=(x,y,z)$};
 
+
             % ------------------------------------------------
-            % ASSENSTELSEL
+            % ASSENSTELSEL MET FUNCTIECURVE
             % ------------------------------------------------
 
             \begin{scope}[
                 shift={
-                    ([xshift=-47mm,yshift=-28mm]frame.north east)
+                    ([xshift=-47mm,yshift=-29mm]frame.north east)
                 }
             ]
 
@@ -259,6 +287,7 @@
 
             \end{scope}
 
+
             % ------------------------------------------------
             % 3D-KUBUS
             % ------------------------------------------------
@@ -271,31 +300,65 @@
                 scale=0.48
             ]
 
-                \draw[fvdHeroCyan,line width=0.7pt]
-                    (0,0) rectangle (1.5,1.5);
+                \draw[
+                    fvdHeroCyan,
+                    line width=0.7pt
+                ]
+                (0,0) rectangle (1.5,1.5);
 
-                \draw[fvdHeroCyan,line width=0.7pt]
-                    (0.45,0.45) rectangle (1.95,1.95);
+                \draw[
+                    fvdHeroCyan,
+                    line width=0.7pt
+                ]
+                (0.45,0.45) rectangle (1.95,1.95);
 
-                \draw[fvdHeroCyan,line width=0.7pt]
-                    (0,0)--(0.45,0.45);
+                \draw[
+                    fvdHeroCyan,
+                    line width=0.7pt
+                ]
+                (0,0)--(0.45,0.45);
 
-                \draw[fvdHeroCyan,line width=0.7pt]
-                    (1.5,0)--(1.95,0.45);
+                \draw[
+                    fvdHeroCyan,
+                    line width=0.7pt
+                ]
+                (1.5,0)--(1.95,0.45);
 
-                \draw[fvdHeroCyan,line width=0.7pt]
-                    (0,1.5)--(0.45,1.95);
+                \draw[
+                    fvdHeroCyan,
+                    line width=0.7pt
+                ]
+                (0,1.5)--(0.45,1.95);
 
-                \draw[fvdHeroCyan,line width=0.7pt]
-                    (1.5,1.5)--(1.95,1.95);
+                \draw[
+                    fvdHeroCyan,
+                    line width=0.7pt
+                ]
+                (1.5,1.5)--(1.95,1.95);
 
             \end{scope}
         }
     ]
 
+
     % ========================================================
-    % THEMA
+    % THEMAREGEL
     % ========================================================
+
+    {\sffamily
+     \bfseries
+     \fontsize{8.5}{10.5}\selectfont
+     \color{fvdHeroCyan}
+     \MakeUppercase{%
+        THEMA \fvdherothemanummer
+        \enspace\textbullet\enspace
+        \fvdherothematitel
+     }%
+     \par
+    }
+
+    \vspace{5mm}
+
 
     % ========================================================
     % HOOFDSTUKLABEL
@@ -311,17 +374,18 @@
 
     \vspace{2mm}
 
+
     % ========================================================
     % NUMMER EN TITEL
     % ========================================================
 
     \noindent
-    \begin{minipage}[c]{21mm}
+    \begin{minipage}[c]{23mm}
 
         \begin{tcolorbox}[
             enhanced,
-            width=20mm,
-            height=20mm,
+            width=21mm,
+            height=21mm,
             valign=center,
             halign=center,
             boxrule=0pt,
@@ -339,14 +403,14 @@
              \bfseries
              \fontsize{25}{25}\selectfont
              \color{white}
-             \thefvdhoofdstuk
+             \fvdherohoofdstuknummer
             }
 
         \end{tcolorbox}
 
     \end{minipage}%
     \hspace{3mm}%
-    \begin{minipage}[c]{\dimexpr\linewidth-27mm\relax}
+    \begin{minipage}[c]{\dimexpr\linewidth-29mm\relax}
 
         {\raggedright
          \sffamily
@@ -359,7 +423,8 @@
 
     \end{minipage}
 
-    \vspace{2.5mm}
+    \vspace{3mm}
+
 
     % ========================================================
     % ACCENTLIJN
@@ -374,62 +439,69 @@
         (0,0) rectangle (25mm,0.8mm);
     \end{tikzpicture}
 
+
     % ========================================================
     % ABSTRACT
     % ========================================================
 
     \if\relax\detokenize{#1}\relax
+        % Geen abstract: niets tonen.
     \else
 
-        \vspace{2.5mm}
+        \vspace{3mm}
 
-        \begin{minipage}{\linewidth}
+        \begin{minipage}{0.76\linewidth}
 
             {\raggedright
-            \sffamily
-            \itshape
-            \fontsize{9.3}{13.5}\selectfont
-            \color{white!88}
-            #1
-            \par
+             \sffamily
+             \itshape
+             \fontsize{9.3}{13.5}\selectfont
+             \color{white!88}
+             #1
+             \par
             }
 
-\end{minipage}
+        \end{minipage}
 
     \fi
 
     \end{tcolorbox}
+
+    % Voorkom dat het abstract naar het volgende hoofdstuk
+    % wordt meegenomen.
+    \global\let\fvdabstracttext\@empty
 }
 
 
 % ============================================================
-% ABSTRACT OPSLAAN
+% ABSTRACT BEWAREN
+% ============================================================
+%
+% \xmtitle uit preamble.tex doet intern:
+%
+%   \begin{abstract}
+%       ...
+%   \end{abstract}
+%   \maketitle
+%
+% We bewaren hier de inhoud. De chapterstyle uit printstyle.sty
+% geeft die daarna door aan \fvdchapterhero.
+%
+% Het woord "Abstract" wordt hierdoor niet afzonderlijk getoond.
 % ============================================================
 
-\RenewDocumentEnvironment{abstract}{+b}{%
-    \global\long\def\fvdabstracttext{#1}%
-}{}
+\@ifundefined{abstract}{%
 
+    \NewDocumentEnvironment{abstract}{+b}{%
+        \global\long\def\fvdabstracttext{#1}%
+    }{}
 
-% ============================================================
-% MAKETITLE
-% ============================================================
+}{%
 
-\let\fvdoriginalmaketitle\maketitle
+    \RenewDocumentEnvironment{abstract}{+b}{%
+        \global\long\def\fvdabstracttext{#1}%
+    }{}
 
-\renewcommand{\maketitle}{%
-
-    \iffvdinsideactivity
-
-        \fvdchapterhero{\fvdabstracttext}%
-
-        \global\let\fvdabstracttext\@empty
-
-    \else
-
-        \fvdoriginalmaketitle
-
-    \fi
 }
 
 

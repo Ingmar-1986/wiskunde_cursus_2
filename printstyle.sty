@@ -1289,3 +1289,13 @@
 \RequirePackage{assets/pdf/fonts}
 \RequirePackage{assets/pdf/frontpage}
 
+\IfFileExists{Opmaak-pdf.tex}{%
+    \input{Opmaak-pdf.tex}%
+}{%
+    \IfFileExists{../../Opmaak-pdf.tex}{%
+        \input{../../Opmaak-pdf.tex}%
+    }{%
+        \PackageWarning{printstyle}
+        {Opmaak-pdf.tex kon niet worden gevonden}%
+    }%
+}
