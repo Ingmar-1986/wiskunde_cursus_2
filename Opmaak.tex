@@ -335,3 +335,44 @@
 %         \input{Opmaak-pdf.tex}%
 %     }%
 % \fi
+
+% ============================================================
+% FVD-KLEUREN VOOR GEDEELDE COMMANDO'S
+% ============================================================
+
+\providecolor{fvdHeroPinkBright}{HTML}{F50068}
+\providecolor{fvdHeroCyan}{HTML}{28D9E8}
+\providecolor{fvdBodyText}{HTML}{243746}
+
+% ============================================================
+% FVD-SECTIES
+% ============================================================
+
+\makeatletter
+\@ifundefined{c@fvdsection}{%
+  \newcounter{fvdsection}%
+}{}
+\makeatother
+
+\providecommand{\FVDsection}[1]{%
+  \refstepcounter{fvdsection}%
+  \par
+  \vspace{7mm}%
+  \noindent
+  \begin{tikzpicture}[baseline=(fvdtitle.base)]
+    \node[
+      circle,
+      fill=fvdHeroPinkBright,
+      minimum size=9mm,
+      inner sep=0pt,
+      text=white,
+      font=\sffamily\bfseries\large
+    ] (fvdnumber) {\thefvdsection};
+
+    \node[
+      anchor=west,
+      text=fvdHeroPinkBright,
+      font=\sffamily\bfseries\Large
+    ] (fvdtitle) at ([xshift=4mm]fvdnumber.east) {#1};
+  \end{tikzpicture}%
+}

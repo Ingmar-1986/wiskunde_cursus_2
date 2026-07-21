@@ -1,528 +1,352 @@
-<!DOCTYPE html> 
-<html lang='en-US' xml:lang='en-US'> 
-<head> <title>Rekenen met getallen</title> 
-<meta charset='utf-8' /> 
-<meta content='TeX4ht (https://tug.org/tex4ht/)' name='generator' /> 
-<meta content='width=device-width,initial-scale=1' name='viewport' /> 
-<link href='\aa:CssFile ' rel='stylesheet' type='text/css' /> 
-<meta content='rekenen.online.tex' name='src' /> 
-<script>window.MathJax = { tex: { tags: "ams", }, }; </script> 
-<script async='async' id='MathJax-script' src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js' type='text/javascript'></script>  
-<meta content='' name='author' /> 
-<meta content='version 2.5.1' name='ximera' /> 
-<link href='https://ximera.osu.edu/public/stylesheets/standalone.css' media='screen' rel='stylesheet' /> 
-<script async='' src='https://ximera.osu.edu/public/javascripts/standalone.min.js' type='text/javascript'></script> 
-  <link href='../../assets/css/Header_Footer.css' media='screen' rel='stylesheet' />
-  <link href='../../assets/css/ChapterLayout.css' media='screen' rel='stylesheet' />
-</head><body>
-<!-- XIMERA-HEADER-START -->
-<header class="hero-header">
-
-    <div class="hero-grid" aria-hidden="true"></div>
-    <div class="hero-glow hero-glow-left" aria-hidden="true"></div>
-    <div class="hero-glow hero-glow-right" aria-hidden="true"></div>
-
-    <div class="hero-content">
-
-        <div class="hero-logo">
-            <img
-                src="../images/banners/logo_athena.png"
-                alt="Logo Athena Secundair Onderwijs"
-            >
-        </div>
-
-        <div class="hero-text">
-
-            <p class="hero-label">
+<!DOCTYPE html>
+<html lang="en-US" xml:lang="en-US">
+<head> <title>Rekenen met getallen – Basiswiskunde</title>
+<meta charset="utf-8"/>
+<meta content="TeX4ht (https://tug.org/tex4ht/)" name="generator"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="\aa:CssFile " rel="stylesheet" type="text/css"/>
+<meta content="rekenen.online.tex" name="src"/>
+<script>window.MathJax = { tex: { tags: "ams", }, }; </script>
+<script async="async" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+<meta content="" name="author"/>
+<meta content="version 2.5.1" name="ximera"/>
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" media="screen" rel="stylesheet"/>
+<script async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js" type="text/javascript"></script>
+<link href="../../assets/css/base.css" media="screen" rel="stylesheet"/><link href="../../assets/css/global.css" media="screen" rel="stylesheet"/><link href="../../assets/css/Header_Footer.css" media="screen" rel="stylesheet"/><link href="../../assets/css/ChapterLayout.css" media="screen" rel="stylesheet"/><link href="../../assets/css/chapter-hero.css" media="screen" rel="stylesheet"/><link href="../../assets/css/learning-boxes.css" media="screen" rel="stylesheet"/></head><body><!-- XIMERA-HEADER-START --><header class="hero-header">
+<div aria-hidden="true" class="hero-grid"></div>
+<div aria-hidden="true" class="hero-glow hero-glow-left"></div>
+<div aria-hidden="true" class="hero-glow hero-glow-right"></div>
+<div class="hero-content">
+<div class="hero-logo">
+<img alt="Logo Athena Secundair Onderwijs" src="../../assets/images/banners/logo_athena.png"/>
+</div>
+<div class="hero-text">
+<p class="hero-label">
                 Fundamentele vorming digitale creatie
             </p>
-
-            <h1>
+<h1>
                 Wiskunde
                 <span>7 FVD</span>
-            </h1>
-
-            <p class="hero-subtitle">
-                De essentiële wiskundige basis voor Digital Arts &amp; Entertainment
+</h1>
+<p class="hero-subtitle">
+                De essentiële wiskundige basis voor
+                Digital Arts &amp; Entertainment
             </p>
-
-          <nav class="hero-chips" aria-label="Onderwerpen in deze cursus">
-
-    <span class="hero-chip">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-            <rect x="3" y="3" width="18" height="18" rx="3"></rect>
-            <line x1="7" y1="8" x2="17" y2="8"></line>
-            <line x1="8" y1="12" x2="8" y2="17"></line>
-            <line x1="12" y1="12" x2="12" y2="17"></line>
-            <line x1="16" y1="12" x2="16" y2="17"></line>
-        </svg>
-        <span>Basiswiskunde</span>
-    </span>
-
-    <span class="hero-chip">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M4 18L10 6"></path>
-            <path d="M7 18L13 6"></path>
-            <path d="M4.8 14H11.2"></path>
-            <path d="M15 7H21"></path>
-            <path d="M18 4V10"></path>
-            <path d="M15 17L21 11"></path>
-            <path d="M15 11L21 17"></path>
-        </svg>
-        <span>Algebra</span>
-    </span>
-
-    <span class="hero-chip">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-            <line x1="4" y1="9" x2="20" y2="9"></line>
-            <line x1="4" y1="15" x2="20" y2="15"></line>
-        </svg>
-        <span>Vergelijkingen</span>
-    </span>
-
-    <span class="hero-chip">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-            <line x1="4" y1="20" x2="4" y2="4"></line>
-            <line x1="4" y1="20" x2="20" y2="20"></line>
-            <path d="M6 17C9 16 9 9 13 9C16 9 16 5 20 4"></path>
-        </svg>
-        <span>Functies</span>
-    </span>
-
-    <span class="hero-chip">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-            <line x1="5" y1="19" x2="19" y2="5"></line>
-            <polyline points="12,5 19,5 19,12"></polyline>
-            <circle cx="5" cy="19" r="1.5"></circle>
-        </svg>
-        <span>Vectoren</span>
-    </span>
-
-    <span class="hero-chip">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-            <circle cx="12" cy="12" r="7"></circle>
-            <line x1="12" y1="2" x2="12" y2="22"></line>
-            <line x1="2" y1="12" x2="22" y2="12"></line>
-            <circle cx="12" cy="12" r="2"></circle>
-        </svg>
-        <span>Coördinaten</span>
-    </span>
-
-    <span class="hero-chip">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-            <polygon points="12,3 20,7 20,17 12,21 4,17 4,7"></polygon>
-            <polyline points="4,7 12,11 20,7"></polyline>
-            <line x1="12" y1="11" x2="12" y2="21"></line>
-        </svg>
-        <span>3D-meetkunde</span>
-    </span>
-
-    <span class="hero-chip">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M3 12C6 5 9 5 12 12C15 19 18 19 21 12"></path>
-        </svg>
-        <span>Goniometrie</span>
-    </span>
-
-    <span class="hero-chip">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M4 17V7"></path>
-            <path d="M8 17V11"></path>
-            <path d="M12 17V14"></path>
-            <path d="M4 17H20"></path>
-            <path d="M14 8C16 5 19 5 20 8"></path>
-            <path d="M14 8V12"></path>
-        </svg>
-        <span>Logaritmen</span>
-    </span>
-
-    <span class="hero-chip">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-            <polygon points="12,3 20,7 12,11 4,7"></polygon>
-            <polyline points="4,12 12,16 20,12"></polyline>
-            <polyline points="4,17 12,21 20,17"></polyline>
-        </svg>
-        <span>Transformaties</span>
-    </span>
-
+<nav aria-label="Onderwerpen in deze cursus" class="hero-chips">
+<span class="hero-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<rect height="18" rx="3" width="18" x="3" y="3"></rect>
+<line x1="7" x2="17" y1="8" y2="8"></line>
+<line x1="8" x2="8" y1="12" y2="17"></line>
+<line x1="12" x2="12" y1="12" y2="17"></line>
+<line x1="16" x2="16" y1="12" y2="17"></line>
+</svg>
+<span>Basiswiskunde</span>
+</span>
+<span class="hero-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M4 18L10 6"></path>
+<path d="M7 18L13 6"></path>
+<path d="M4.8 14H11.2"></path>
+<path d="M15 7H21"></path>
+<path d="M18 4V10"></path>
+<path d="M15 17L21 11"></path>
+<path d="M15 11L21 17"></path>
+</svg>
+<span>Algebra</span>
+</span>
+<span class="hero-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<line x1="4" x2="20" y1="9" y2="9"></line>
+<line x1="4" x2="20" y1="15" y2="15"></line>
+</svg>
+<span>Vergelijkingen</span>
+</span>
+<span class="hero-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<line x1="4" x2="4" y1="20" y2="4"></line>
+<line x1="4" x2="20" y1="20" y2="20"></line>
+<path d="M6 17C9 16 9 9 13 9C16 9 16 5 20 4"></path>
+</svg>
+<span>Functies</span>
+</span>
+<span class="hero-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<line x1="5" x2="19" y1="19" y2="5"></line>
+<polyline points="12,5 19,5 19,12"></polyline>
+<circle cx="5" cy="19" r="1.5"></circle>
+</svg>
+<span>Vectoren</span>
+</span>
+<span class="hero-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="7"></circle>
+<line x1="12" x2="12" y1="2" y2="22"></line>
+<line x1="2" x2="22" y1="12" y2="12"></line>
+<circle cx="12" cy="12" r="2"></circle>
+</svg>
+<span>Coördinaten</span>
+</span>
+<span class="hero-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<polygon points="12,3 20,7 20,17 12,21 4,17 4,7"></polygon>
+<polyline points="4,7 12,11 20,7"></polyline>
+<line x1="12" x2="12" y1="11" y2="21"></line>
+</svg>
+<span>3D-meetkunde</span>
+</span>
+<span class="hero-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M3 12C6 5 9 5 12 12C15 19 18 19 21 12"></path>
+</svg>
+<span>Goniometrie</span>
+</span>
+<span class="hero-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M4 17V7"></path>
+<path d="M8 17V11"></path>
+<path d="M12 17V14"></path>
+<path d="M4 17H20"></path>
+<path d="M14 8C16 5 19 5 20 8"></path>
+<path d="M14 8V12"></path>
+</svg>
+<span>Logaritmen</span>
+</span>
+<span class="hero-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<polygon points="12,3 20,7 12,11 4,7"></polygon>
+<polyline points="4,12 12,16 20,12"></polyline>
+<polyline points="4,17 12,21 20,17"></polyline>
+</svg>
+<span>Transformaties</span>
+</span>
 </nav>
+</div>
+<div aria-hidden="true" class="hero-visual">
+<img alt="" src="../../assets/images/banners/hero_math_visual.svg"/>
+</div>
+</div>
+</header><!-- XIMERA-HEADER-END --><!-- XIMERA-CHAPTER-HERO-START --><section class="chapter-hero">
+<div class="chapter-hero-background"></div>
+<div class="chapter-hero-content">
+<div class="chapter-meta">
+<span class="chapter-theme">
+                Getallen en bewerkingen
+            </span>
+<span class="chapter-number">
+                Hoofdstuk 1.1
+            </span>
+</div>
+<h1 class="chapter-title">
+            Rekenen met getallen
+        </h1>
+<p class="chapter-abstract">
+            In dit hoofdstuk herhaal je de rekenvaardigheden die je nodig hebt voor de rest van de cursus. Je leert nauwkeurig werken met gehele getallen, breuken, decimalen en percentages.
+        </p>
+</div>
+<div class="chapter-hero-graphic">
+<img alt="" src="../../modules/images/banners/hero_math_visual.svg"/>
+</div>
+</section><!-- XIMERA-CHAPTER-HERO-END --><button aria-controls="courseSidebar" aria-expanded="false" class="course-menu-button" id="courseMenuButton" type="button">☰ Toon cursusinhoud</button><div class="course-sidebar-overlay" id="courseSidebarOverlay"></div><!-- XIMERA-CHAPTER-LAYOUT-START --><main class="chapter-layout"><!--
+    AUTOMATISCH GEGENEREERD BESTAND
 
-        </div>
+    Dit bestand wordt opgebouwd door:
+        scripts/generate-sidebar.sh
 
-        <div class="hero-visual" aria-hidden="true">
-            <img
-                src="../images/banners/hero_math_visual.svg"
-                alt=""
-            >
-        </div>
-
-    </div>
-
-</header><!-- XIMERA-HEADER-END --> 
-<!-- XIMERA-CHAPTER-LAYOUT-START -->
-<button class="course-menu-button" id="courseMenuButton" type="button">☰ Toon cursusinhoud</button>
-<div class="course-sidebar-overlay" id="courseSidebarOverlay"></div>
-<main class="chapter-layout">
+    Bewerk niet dit bestand, maar:
+        assets/html/SidebarTemplate.html
+        en modules/.../index.tex
+-->
 <aside class="course-sidebar" id="courseSidebar">
-
-    <div class="sidebar-header">
-        <div>
-            <span class="sidebar-label">Basiswiskunde</span>
-            <h2>Cursusinhoud</h2>
-        </div>
-
-        <button
-            class="sidebar-close"
-            id="sidebarClose"
-            type="button"
-            aria-label="Sluit cursusmenu"
-        >
+<div class="sidebar-header">
+<div class="sidebar-header__text">
+<span class="sidebar-label">
+                Basiswiskunde
+            </span>
+<h2 class="sidebar-title">
+                Cursusinhoud
+            </h2>
+</div>
+<button aria-label="Sluit cursusmenu" class="sidebar-close" id="sidebarClose" type="button">
             ×
         </button>
-    </div>
-
-    <nav class="course-navigation" aria-label="Cursusinhoud">
-
-        <div class="course-section">
-
-            <button class="course-section-toggle" type="button">
-                <span class="section-number">1</span>
-                <span class="section-name">Getallen en bewerkingen</span>
-                <span class="section-arrow">⌄</span>
-            </button>
-
-            <div class="course-section-content">
-                <a href="rekenen.html">1.1 Rekenen met getallen</a>
-                <a href="breuken.html">1.2 Machten en wortels</a>
-            </div>
-
-        </div>
-
-        <div class="course-section">
-
-            <button class="course-section-toggle" type="button">
-                <span class="section-number">2</span>
-                <span class="section-name">Machten en wortels</span>
-                <span class="section-arrow">⌄</span>
-            </button>
-
-            <div class="course-section-content">
-                <a href="machten.html">2.1 Algebraïsche uitdrukkingen</a>
-                <a href="wortels.html">2.2 Lineaire vergelijkingen</a>
-            </div>
-
-        </div>
-
-    </nav>
-
-</aside>
-<article class="chapter-content">
-<div class="chapter-body">
-<div class='preamble'><script type='math/tex'>\newenvironment {prompt}{}{}
-\newcommand {\accordion }[0]{}
-\newcommand {\ungraded }[0]{}
-\newcommand {\xmDefaultPreamble }[0]{xmPreamble.tex}
-\newcommand {\xmDefaultPrintstyle }[0]{xmPrintstyle.sty}
-\newcommand {\multirowsetup }[0]{\raggedright }
-\newcommand {\textscale  }[2]{\leavevmode \begingroup \relscale {#1}#2\endgroup }
-\newcommand {\officialeuro  }[0]{{\fontencoding {U}\fontfamily {eurosym}\selectfont {}e}}
-\newcommand {\eurobars  }[0]{{\fontencoding {U}\fontfamily {eurosym}\selectfont {}A}}
-\newcommand {\eurobarsnarrow  }[0]{{\fontencoding {U}\fontfamily {eurosym}\selectfont {}B}}
-\newcommand {\eurobarswide  }[0]{{\fontencoding {U}\fontfamily {eurosym}\selectfont {}C}}
-\newcommand {\p }[0]{}
-\newcommand {\captionnewline }[0]{\\\relax }
-\newcommand {\memcaptioninfo }[4]{}
-\newcommand {\captiongroup }[0]{\setcaptiontype }
-\newcommand {\LTcaptype }[0]{table}
-\newcommand {\showtodonotes }[0]{disable}
-\newcommand {\todo }[1]{\typeout {TODO #1}}
-\newcommand {\tcbpkgprefix }[0]{}
-\newcommand {\blue }[1]{{\color {blue}#1}}
-\newcommand {\red }[1]{{\color {red}#1}}
-\newcommand {\CancelColor }[0]{\color {xmaccent!50!black}}
-\newcommand {\important }[1]{\ensuremath {\colorbox {orange}{$#1$}}}
-\newcommand {\pdfnl }[0]{}
-\newcommand {\handoutnl }[0]{}
-\newcommand {\importantcell }[1]{\ensuremath {#1}}
-\newcommand {\xmPlotsColor }[0]{ \pgfplotsset { plot1/.style={darkgray,no marks,samples=100}, plot2/.style={lightgray,no marks,samples=100}, plotresult/.style={blue,no marks,samples=100}, plotblue/.style={blue,no marks,samples=100}, plotred/.style={red,no marks,samples=100}, plotgreen/.style={green,no marks,samples=100}, plotpurple/.style={purple,no marks,samples=100} } }
-\newcommand {\xmPlotsBlackWhite }[0]{ \pgfplotsset { plot1/.style={black,loosely dashed,no marks,samples=100}, plot2/.style={black,loosely dotted,no marks,samples=100}, plotresult/.style={black,no marks,samples=100}, plotblue/.style={black,no marks,samples=100}, plotred/.style={black,dotted,no marks,samples=100}, plotgreen/.style={black,dashed,no marks,samples=100}, plotpurple/.style={black,dashdotted,no marks,samples=100} } }
-\newcommand {\xmPlotsColorAndStyle }[0]{ \pgfplotsset { plot1/.style={darkgray,no marks,samples=100}, plot2/.style={lightgray,no marks,samples=100}, plotresult/.style={blue,no marks,samples=100}, plotblue/.style={xmblue,no marks,samples=100}, plotred/.style={xmred,dashed,thick,no marks,samples=100}, plotgreen/.style={xmgreen,dotted,very thick,no marks,samples=100}, plotpurple/.style={purple,no marks,samples=100} } }
-\newcommand {\geqnoslant }[0]{\geq }
-\newcommand {\geq }[0]{\geqslant }
-\newcommand {\leqnoslant }[0]{\leq }
-\newcommand {\leq }[0]{\leqslant }
-\newcommand {\emph }[1]{\textit {#1}}
-\newcommand {\ds }[0]{\displaystyle }
-\newcommand {\ts }[0]{\textstyle }
-\newcommand {\bron }[1]{\begin {scriptsize} \emph {#1} \end {scriptsize}}
-\newcommand {\R }[0]{\ensuremath {\mathbb {R}}}
-\newcommand {\Rnul }[0]{\ensuremath {\mathbb {R}_0}}
-\newcommand {\Reen }[0]{\ensuremath {\mathbb {R}\setminus \{1\}}}
-\newcommand {\Rnuleen }[0]{\ensuremath {\mathbb {R}\setminus \{0,1\}}}
-\newcommand {\Rplus }[0]{\ensuremath {\mathbb {R}^+}}
-\newcommand {\Rmin }[0]{\ensuremath {\mathbb {R}^-}}
-\newcommand {\Rnulplus }[0]{\ensuremath {\mathbb {R}_0^+}}
-\newcommand {\Rnulmin }[0]{\ensuremath {\mathbb {R}_0^-}}
-\newcommand {\Rnuleenplus }[0]{\ensuremath {\mathbb {R}^+\setminus \{0,1\}}}
-\newcommand {\N }[0]{\ensuremath {\mathbb {N}}}
-\newcommand {\Nnul }[0]{\ensuremath {\mathbb {N}_0}}
-\newcommand {\Z }[0]{\ensuremath {\mathbb {Z}}}
-\newcommand {\Znul }[0]{\ensuremath {\mathbb {Z}_0}}
-\newcommand {\Zplus }[0]{\ensuremath {\mathbb {Z}^+}}
-\newcommand {\Zmin }[0]{\ensuremath {\mathbb {Z}^-}}
-\newcommand {\Znulplus }[0]{\ensuremath {\mathbb {Z}_0^+}}
-\newcommand {\Znulmin }[0]{\ensuremath {\mathbb {Z}_0^-}}
-\newcommand {\C }[0]{\ensuremath {\mathbb {C}}}
-\newcommand {\Cnul }[0]{\ensuremath {\mathbb {C}_0}}
-\newcommand {\Cplus }[0]{\ensuremath {\mathbb {C}^+}}
-\newcommand {\Cmin }[0]{\ensuremath {\mathbb {C}^-}}
-\newcommand {\Cnulplus }[0]{\ensuremath {\mathbb {C}_0^+}}
-\newcommand {\Cnulmin }[0]{\ensuremath {\mathbb {C}_0^-}}
-\newcommand {\Q }[0]{\ensuremath {\mathbb {Q}}}
-\newcommand {\Qnul }[0]{\ensuremath {\mathbb {Q}_0}}
-\newcommand {\Qplus }[0]{\ensuremath {\mathbb {Q}^+}}
-\newcommand {\Qmin }[0]{\ensuremath {\mathbb {Q}^-}}
-\newcommand {\Qnulplus }[0]{\ensuremath {\mathbb {Q}_0^+}}
-\newcommand {\Qnulmin }[0]{\ensuremath {\mathbb {Q}_0^-}}
-\newcommand {\perdef }[0]{\overset {\mathrm {def}}{=}}
-\newcommand {\pernot }[0]{\overset {\mathrm {notatie}}{=}}
-\newcommand {\perinderdaad }[0]{\overset {!}{=}}
-\newcommand {\perhaps }[0]{\overset {?}{=}}
-\newcommand {\degree }[0]{^\circ }
-\DeclareMathOperator {\dom }{dom}
-\DeclareMathOperator {\codom }{codom}
-\DeclareMathOperator {\bld }{bld}
-\DeclareMathOperator {\graf }{graf}
-\DeclareMathOperator {\rico }{rico}
-\DeclareMathOperator {\co }{co}
-\DeclareMathOperator {\gr }{gr}
-\DeclareMathOperator {\bgsin }{bgsin}
-\DeclareMathOperator {\bgcos }{bgcos}
-\DeclareMathOperator {\bgtan }{bgtan}
-\DeclareMathOperator {\bgcot }{bgcot}
-\DeclareMathOperator {\bgsinh }{bgsinh}
-\DeclareMathOperator {\bgcosh }{bgcosh}
-\DeclareMathOperator {\bgtanh }{bgtanh}
-\DeclareMathOperator {\bgcoth }{bgcoth}
-\newcommand {\d }[0]{\mathrm {d}}
-\newcommand {\dx }[0]{\d x}
-\newcommand {\dd }[1]{\frac {\mathrm {d}}{\mathrm {d}#1}}
-\newcommand {\ddx }[0]{\dd {x}}
-\newcommand {\afg }[1]{{#1}'}
-\newcommand {\xmshortabstract }[0]{}
-\newcommand {\xmopje }[1]{\iftoggle {showxmopje}{#1}{}}
-\newcommand {\xmcolorbox }[2]{ \HCode {\Hnewline <div class="xmcolorbox">\Hnewline }#2\HCode {\Hnewline </div>\Hnewline } }
-\newcommand {\xmopmerking }[1]{ \HCode {\Hnewline <div class="xmopmerking">\Hnewline }#1\HCode {\Hnewline </div>\Hnewline } }
-\newcommand {\proofname }[0]{Bewijs}
-\newcommand {\xmonlineChoice }[1]{\pdfOnly {\wordchoicegiventrue }\wordChoice {#1}\pdfOnly {\wordchoicegivenfalse }}
-\newcommand {\onlineChoice }[1]{\pdfOnly {\wordchoicegiventrue }\wordChoice {#1}\pdfOnly {\wordchoicegivenfalse }}
-\newcommand {\TJa }[0]{\nlentext { Ja }{ Yes }}
-\newcommand {\TNee }[0]{\nlentext { Nee }{ No }}
-\newcommand {\TJuist }[0]{\nlentext { Juist }{ True }}
-\newcommand {\TFout }[0]{\nlentext { Fout }{ False }}
-\newcommand {\choiceTrue }[0]{{\wordChoice {\choice [correct]{\TJuist }\choice {\TFout }}}}
-\newcommand {\choiceFalse }[0]{{\wordChoice {\choice {\TJuist }\choice [correct]{\TFout }}}}
-\newcommand {\choiceYes }[0]{{\wordChoice {\choice [correct]{\TJa }\choice {\TNee }}}}
-\newcommand {\choiceNo }[0]{{\wordChoice {\choice {\TJa }\choice [correct]{\TNee }}}}
-\newcommand {\choiceminimumverticalsize }[0]{\vphantom {$\tfrac {2}{2}$}}
-\newcommand {\setchoicedefanswer }[0]{ \ifdefined \HCode \else \let \inlinechoice \inlinechoicedefanswer \fi }
-\newcommand {\xmsection }[0]{\subsection }
-\newcommand {\xmsubsection }[0]{\subsubsection }
-\newcommand {\activitychapter }[1]{ \typeout {ACTIVITYCHAPTER #1} \chapterstyle \activity {#1} }
-\newcommand {\activitysection }[1]{ \typeout {ACTIVITYSECTION #1} \sectionstyle \activity {#1} }
-\newcommand {\practicesection }[1]{ \typeout {PRACTICESECTION #1} \sectionstyle \activity {#1} }
-\newcommand {\hypertarget }[1]{\HCode {<a class="ximera-label" id="#1"></a>}}
-\newcommand {\hyperlink }[2]{\HCode {<a class="reference reference-keeptext" href="\##1">}#2\HCode {</a>}}
-\newcommand {\figurename }[0]{Figuur}
-\newcommand {\tablename }[0]{Tabel}
-\newcommand {\printFull }[0]{ \hintstrue \handoutfalse \toggletrue {showonline} }
-\newcommand {\nl }[0]{}
-\newcommand {\basicOnly }[0]{}
-\newcommand {\basicSkip }[0]{}
-\newcommand {\tab }[0]{\quad }
-\newcommand {\instructorNotes }[0]{\setbox 0\vbox \bgroup }
-\newcommand {\nlen }[2]{#1}
-\newcommand {\nlentext }[2]{\text {#1}}
-\newcommand {\nlentextbf }[2]{\textbf {#1}}
-\newcommand {\TWaar }[0]{\nlentext { Waar }{ True }}
-\newcommand {\TOnwaar }[0]{\nlentext { Vals }{ False }}
-\newcommand {\Ten }[0]{\nlentext { en }{ and }}
-\newcommand {\Tof }[0]{\nlentext { of }{ or }}
-\newcommand {\Tdus }[0]{\nlentext { dus }{ so }}
-\newcommand {\Tendus }[0]{\nlentext { en dus }{ and thus }}
-\newcommand {\Tvooralle }[0]{\nlentext { voor alle }{ for all }}
-\newcommand {\Took }[0]{\nlentext { ook }{ also }}
-\newcommand {\Tals }[0]{\nlentext { als }{ when }}
-\newcommand {\Twant }[0]{\nlentext { want }{ as }}
-\newcommand {\Tmaal }[0]{\nlentext { maal }{ times }}
-\newcommand {\Toptellen }[0]{\nlentext { optellen }{ add }}
-\newcommand {\Tde }[0]{\nlentext { de }{ the }}
-\newcommand {\Thet }[0]{\nlentext { het }{ the }}
-\newcommand {\Tis }[0]{\nlentext { is }{ is }}
-\newcommand {\Tmet }[0]{\nlentext { met }{ where }}
-\newcommand {\Tnooit }[0]{\nlentext { nooit }{ never }}
-\newcommand {\Tmaar }[0]{\nlentext { maar }{ but }}
-\newcommand {\Tniet }[0]{\nlentext { niet }{ not }}
-\newcommand {\Tuit }[0]{\nlentext { uit }{ from }}
-\newcommand {\Ttov }[0]{\nlentext { t.o.v. }{ w.r.t. }}
-\newcommand {\Tzodat }[0]{\nlentext { zodat }{ such that }}
-\newcommand {\Tdeth }[0]{\nlentext {de }{th }}
-\newcommand {\Tomdat }[0]{\nlentext {omdat }{because }}
-\newcommand {\fvdtitletext }[0]{}
-\newcommand {\fvdtitle }[1]{\gdef \fvdtitletext {#1}\title {#1}}
-\newcommand {\voorkennisicon }[0]{\begin {tikzpicture}[ baseline=-0.6ex, line cap=round, line join=round ] \par \fill [fvdcyanicon] (0,0) circle (0.38cm); \par \draw [ fvdcyan, line width=0.7pt ] (-0.22,0.14) .. controls (-0.10,0.19) and (-0.04,0.17) .. (0,0.10) -- (0,-0.19) .. controls (-0.08,-0.13) and (-0.15,-0.12) .. (-0.22,-0.15) -- cycle; \par \draw [ fvdcyan, line width=0.7pt ] (0.22,0.14) .. controls (0.10,0.19) and (0.04,0.17) .. (0,0.10) -- (0,-0.19) .. controls (0.08,-0.13) and (0.15,-0.12) .. (0.22,-0.15) -- cycle; \par \end {tikzpicture}}
-\newcommand {\leerdoelenicon }[0]{\begin {tikzpicture}[ baseline=-0.6ex, line cap=round, line join=round ] \par \fill [fvdmagentaicon] (0,0) circle (0.38cm); \par \draw [ fvdmagenta, line width=0.7pt ] (0,0) circle (0.20cm); \par \draw [ fvdmagenta, line width=0.7pt ] (0,0) circle (0.10cm); \par \fill [fvdmagenta] (0,0) circle (0.025cm); \par \draw [ fvdmagenta, line width=0.7pt ] (0.05,0.05) -- (0.25,0.25); \par \draw [ fvdmagenta, line width=0.7pt ] (0.18,0.25) -- (0.25,0.25) -- (0.25,0.18); \par \end {tikzpicture}}
-\newcommand {\fvdboxtitle }[3]{\par \noindent #1\hspace {2.5mm}{\large \bfseries \color {#2}#3}\par \vspace {1.5mm}{\color {#2}\hrule height 0.4pt}\vspace {2mm}}
-\newcommand {\voorkennis }[0]{\ifdefined \HCode \par \HCode {<section class="learning-box learning-box--prior"> <div class="learning-box__header"> <span class="learning-box__icon"></span> <span class="learning-box__title">Voorkennis</span> </div> <div class="learning-box__content"> }\par \begin {itemize} \par \else \par \begin {tcolorbox}[ enhanced, breakable, frame hidden, colback=fvdcyanlight, coltext=fvdnavy, borderline west={1.8pt}{0pt}{fvdcyan}, sharp corners, boxrule=0pt, left=5mm, right=5mm, top=3.5mm, bottom=3.5mm, before skip=4mm, after skip=4mm ] \par \fvdboxtitle {\voorkennisicon } {fvdcyan} {Voorkennis} \par \begin {itemize}[ leftmargin=6mm, itemsep=1.5mm, topsep=0mm, parsep=0pt ] \par \fi }
-\newcommand {\leerdoelen }[0]{\ifdefined \HCode \par \HCode {<section class="learning-box learning-box--goals"> <div class="learning-box__header"> <span class="learning-box__icon"></span> <span class="learning-box__title">Leerdoelen</span> </div> <div class="learning-box__content"> }\par \begin {itemize} \par \else \par \begin {tcolorbox}[ enhanced, breakable, frame hidden, colback=fvdmagentalight, coltext=fvdnavy, borderline west={1.8pt}{0pt}{fvdmagenta}, sharp corners, boxrule=0pt, left=5mm, right=5mm, top=3.5mm, bottom=3.5mm, before skip=4mm, after skip=4mm ] \par \fvdboxtitle {\leerdoelenicon } {fvdmagenta} {Leerdoelen} \par \begin {itemize}[ leftmargin=6mm, itemsep=1.5mm, topsep=0mm, parsep=0pt ] \par \fi }
-\newcommand {\luastring }[1]{"\luatexluaescapestring {#1}"}
-\newcommand {\luastringO }[1]{\luastring {\unexpanded \expandafter {#1}}}
-\newcommand {\luastringN }[1]{\luastring {\unexpanded {#1}}}
-\newcommand {\RestoreMathJaxEnvironment }[1]{\expandafter \let \csname #1\expandafter \endcsname \csname mathjax-#1\endcsname \expandafter \let \csname end#1\expandafter \endcsname \csname mathjax-end#1\endcsname }
-\newcommand {\DeclareMicrotypeVariants }[1]{}
-\newcommand {\DeclareMicrotypeAlias }[2]{}
-\newcommand {\LoadMicrotypeFile }[1]{}
-\newcommand {\DeclareMicrotypeFilePrefix }[1]{}
-\newcommand {\DeclareMicrotypeBabelHook }[2]{}
-\newcommand {\microtypesetup }[1]{}
-\newcommand {\microtypecontext }[1]{}
-\newcommand {\textmicrotypecontext }[2]{#2}
-\newcommand {\leftprotrusion }[1]{#1}
-\newcommand {\rightprotrusion }[1]{#1}
-\newcommand {\noprotrusionifhmode }[0]{}
-\newcommand {\lsstyle }[0]{}
-\newcommand {\lslig }[1]{#1}
-\newcommand {\maketitle }[0]{}
-\newcommand {\problem }[0]{ }
-\newcommand {\exercise }[0]{ }
-\newcommand {\question }[0]{ }
-\newcommand {\exploration }[0]{ }
-\newcommand {\ConfigureTheoremEnv }[1]{\renewenvironment {#1}[1][]{\refstepcounter {problem}\ifthenelse {\equal {###1}{}}{}{\HCode {<span class="theorem-like-title">}###1\HCode {</span>}}}{} \ConfigureEnv {#1}{\stepcounter {identification}\ifvmode \IgnorePar \fi \EndP \HCode {<div class="theorem-like problem-environment #1" id="problem\arabic {identification}" titletext=" \GetTranslation {#1}">}}{\ifvmode \IgnorePar \fi \EndP \HCode {</div>}\IgnoreIndent }{}{}}
-\newcommand {\xmalt }[1]{\ifvmode \IgnorePar \fi \EndP \HCode {<details><summary>Show Alt Text</summary>} #1 \HCode {</details>}}
-\newcommand {\dialogue }[0]{\begin {description}}
-\newcommand {\foldable }[0]{\stepcounter {identification}\ifvmode \IgnorePar \fi \EndP \HCode {<div id="foldable\arabic {identification}" class="foldable">}}
-\newcommand {\unfoldable }[1]{\HCode {<span class="unfoldable">}#1\HCode {</span>}}
-\newcommand {\selectAll }[0]{\refstepcounter {problem}}
-\newcommand {\freeResponse }[0]{\refstepcounter {problem}}
-\newcommand {\javascript }[0]{\NoFonts }
-\newcommand {\sageCell }[0]{\NoFonts }
-\newcommand {\sageOutput }[0]{\NoFonts }
-\newcommand {\sagesilent }[0]{\NoFonts }
-\newcommand {\ungraded }[0]{\ifvmode \IgnorePar \fi \EndP \HCode {<div class="ungraded">}\IgnoreIndent }
-\newcommand {\accordion }[0]{\ifvmode \IgnorePar \fi \EndP \HCode {<div class="accordion">} }
-\newcommand {\expandable }[2]{\stepcounter {identification}\ifvmode \IgnorePar \fi \EndP \HCode {<div class="accordion">\Hnewline }\HCode {<h3 class="#1">}#2\HCode {</h3>\Hnewline }\HCode {<div id="accordion-item\arabic {identification}" class="accordion-item #1-content">\Hnewline } }
-\newcommand {\paragraph }[1]{\HCode {<span class="paragraphHead">}#1\HCode {</span>}\par \IgnorePar }
-\newcommand {\subparagraph }[1]{\HCode {<span class="subparagraphHead">}#1\HCode {</span>}\par \IgnorePar }
-\newcommand {\outcome }[1]{\HCode {<span class="learning-outcome">#1</span>} }
-\newcommand {\javascriptCode }[0]{\NoFonts }
-\newcommand {\GetTranslation }[1]{#1}
-\newcommand {\ref }[1]{\HCode {<a class="reference" href="\##1">#1</a>}}</script></div>
-<style> .activity-body pre { white-space: pre; background-color: lightgray; } .xmyoutube { aspect-ratio: 16/9; min-width: 75%; } .image-environment img { width: unset; } </style> 
-
- 
-<div class='abstract'>
-<!--  l. 13  --><p class='noindent'>In dit hoofdstuk herhaal je de rekenvaardigheden die je nodig hebt voor de rest van
-de cursus. Je leert nauwkeurig werken met gehele getallen, breuken, decimalen en
-percentages.</p> 
 </div>
-<div class='maketitle'></div>
-<!--  l. 18  --><section class='learning-box learning-box--prior'> <div class='learning-box__header'> <span class='learning-box__icon'> </span><span class='learning-box__title'>Voorkennis</span> </div> <div class='learning-box__content'> 
-     
-<ul class='itemize1'>
-<li class='itemize'>Optellen, aftrekken, vermenigvuldigen en delen
+<nav aria-label="Cursusinhoud" class="course-navigation">
+<div class="course-section is-open" data-theme="1">
+<button aria-controls="course-section-1-getallen-en-bewerkingen" aria-expanded="true" class="course-section-toggle" type="button">
+<span class="course-section-number">
+            1
+        </span>
+<span class="course-section-title">
+            Getallen en bewerkingen
+        </span>
+<span aria-hidden="true" class="course-section-arrow">
+            ▾
+        </span>
+</button>
+<div class="course-section-content" id="course-section-1-getallen-en-bewerkingen">
+<a aria-current="page" class="course-chapter-link is-active" data-chapter="rekenen" href="rekenen.html">
+<span class="course-chapter-number">
+                1.1
+            </span>
+<span class="course-chapter-title">
+                Rekenen met getallen
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="breuken" href="breuken.html">
+<span class="course-chapter-number">
+                1.2
+            </span>
+<span class="course-chapter-title">
+                Machten en wortels
+            </span>
+</a>
+</div>
+</div>
+<div class="course-section" data-theme="2">
+<button aria-controls="course-section-2-machten-en-wortels" aria-expanded="true" class="course-section-toggle" type="button">
+<span class="course-section-number">
+            2
+        </span>
+<span class="course-section-title">
+            Machten en wortels
+        </span>
+<span aria-hidden="true" class="course-section-arrow">
+            ▾
+        </span>
+</button>
+<div class="course-section-content" id="course-section-2-machten-en-wortels">
+<a class="course-chapter-link" data-chapter="machten" href="machten.html">
+<span class="course-chapter-number">
+                2.1
+            </span>
+<span class="course-chapter-title">
+                Algebraïsche uitdrukkingen
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="wortels" href="wortels.html">
+<span class="course-chapter-number">
+                2.2
+            </span>
+<span class="course-chapter-title">
+                Lineaire vergelijkingen
+            </span>
+</a>
+</div>
+</div>
+</nav>
+</aside>
+<article class="chapter-content"><div class="chapter-body">
+<div class="preamble">
+</div>
+<style> .activity-body pre { white-space: pre; background-color: lightgray; } .xmyoutube { aspect-ratio: 16/9; min-width: 75%; } .image-environment img { width: unset; } </style>
+<div class="abstract">
+<!-- l. 13 --><p class="noindent">In dit hoofdstuk herhaal je de rekenvaardigheden die je nodig hebt voor de rest van
+de cursus. Je leert nauwkeurig werken met gehele getallen, breuken, decimalen en
+percentages.</p>
+</div>
+<!-- l. 18 --><p class="noindent"></p><section class="learning-box learning-box--prior"> <div class="learning-box__header"> <span class="learning-box__icon"> </span><span class="learning-box__title">Voorkennis</span> </div> <div class="learning-box__content">
+<p></p>
+<ul class="itemize1">
+<li class="itemize">Optellen, aftrekken, vermenigvuldigen en delen
 </li>
-<li class='itemize'>Kommagetallen
+<li class="itemize">Kommagetallen
 </li>
-<li class='itemize'>Breuken
+<li class="itemize">Breuken
 </li></ul>
-<!--  l. 24  --></div> </section> 
-<!--  l. 26  --><section class='learning-box learning-box--goals'> <div class='learning-box__header'> <span class='learning-box__icon'> </span><span class='learning-box__title'>Leerdoelen</span> </div> <div class='learning-box__content'> 
-     
-<ul class='itemize1'>
-<li class='itemize'>Rekenen met gehele getallen
+<!-- l. 24 --><p class="noindent"></p></div> </section>
+<p></p><!-- l. 26 --><p class="noindent"></p><section class="learning-box learning-box--goals"> <div class="learning-box__header"> <span class="learning-box__icon"> </span><span class="learning-box__title">Leerdoelen</span> </div> <div class="learning-box__content">
+<p></p>
+<ul class="itemize1">
+<li class="itemize">Rekenen met gehele getallen
 </li>
-<li class='itemize'>Rekenen met breuken
+<li class="itemize">Rekenen met breuken
 </li>
-<li class='itemize'>Percentages toepassen
-                                                                  
-
-                                                                  
+<li class="itemize">Percentages toepassen
 </li>
-<li class='itemize'>Afronden en schatten
+<li class="itemize">Afronden en schatten
 </li></ul>
-<!--  l. 33  --></div> </section> 
-
-<h3 class='sectionHead' id='waarom-dit-hoofdstuk'><span class='titlemark'>1   </span> <a id='x1-10001'></a>Waarom dit hoofdstuk?</h3>
-<!--  l. 37  --><p class='noindent'>Een goede basis is noodzakelijk om later met functies, vergelijkingen en vectoren te
+<!-- l. 33 --><p class="noindent"></p></div> </section>
+<p></p>
+<h3 class="sectionHead" id="waarom-dit-hoofdstuk"><span class="titlemark">1   </span> <a id="x1-10001"></a>Waarom dit hoofdstuk?</h3>
+<!-- l. 37 --><p class="noindent">Een goede basis is noodzakelijk om later met functies, vergelijkingen en vectoren te
 kunnen werken.
 </p>
-<div class='theorem-like problem-environment example' id='problem1' titletext=' example'><a id='x1-1001r1'></a>Bereken
-<div class='mathjax-block'>\[ 18+24-13 \]</div> </div>
-<div class='problem-environment exercise' id='problem2' numbered=' ' role='article' titletext=' Exercise'>  Bereken
-<div class='mathjax-block'>\[ 125+48=\answer {173} \]</div>   </div>
-                                                                  
-
-                                                                  
+<div class="theorem-like problem-environment example" id="problem1" titletext=" example"><a id="x1-1001r1"></a>Bereken
+<div class="mathjax-block">\[ 18+24-13 \]</div> </div>
+<div class="problem-environment exercise" id="problem2" numbered=" " role="article" titletext=" Exercise">  Bereken
+<div class="mathjax-block">\[ 125+48=\answer {173} \]</div> </div>
+</div><!-- XIMERA-PREVIOUS-NEXT-START --><nav aria-label="Navigatie tussen hoofdstukken" class="chapter-navigation">
+<a class="chapter-navigation__item chapter-navigation__item--previous" data-visible="false" href="#">
+<span class="chapter-navigation__direction">
+            ← Vorig hoofdstuk
+        </span>
+<span class="chapter-navigation__title">
+</span>
+</a>
+<a class="chapter-navigation__overview" href="index.html">
+<span aria-hidden="true" class="chapter-navigation__overview-icon">
+            ◈
+        </span>
+<span>
+            Cursusoverzicht
+        </span>
+</a>
+<a class="chapter-navigation__item chapter-navigation__item--next" data-visible="true" href="breuken.html">
+<span class="chapter-navigation__direction">
+            Volgend hoofdstuk →
+        </span>
+<span class="chapter-navigation__title">
+            Machten en wortels
+        </span>
+</a>
+</nav><!-- XIMERA-PREVIOUS-NEXT-END --></article></main><!-- XIMERA-CHAPTER-LAYOUT-END --><div class="course-footer-clear"></div><!-- XIMERA-FOOTER-START --><footer class="site-footer">
+<div class="footer-quote">
+<div class="quote-icon">◈</div>
+<p class="quote-main">
+            Wiskunde vormt de onzichtbare motor achter games,
+            animaties en digitale werelden.
+        </p>
+<div class="quote-values">
+<span>Think mathematically.</span>
+<span>Create digitally.</span>
+<span>Shape the future.</span>
 </div>
-</article>
-</main>
-<!-- XIMERA-CHAPTER-LAYOUT-END -->
-<div class="course-footer-clear"></div>
-<!-- XIMERA-FOOTER-START -->
-    <footer class="site-footer">
-
-        <div class="footer-quote">
-    
-            <div class="quote-icon">◈</div>
-    
-            <p class="quote-main">
-                Wiskunde vormt de onzichtbare motor achter games,
-                animaties en digitale werelden.
-            </p>
-    
-            <div class="quote-values">
-                <span>◈ Think mathematically.</span>
-                <span>◈ Create digitally.</span>
-                <span>◈ Shape the future.</span>
-            </div>
-    
-        </div>
-    
-        <div class="footer-divider"></div>
-    
-        <div class="footer-info">
-    
-            <div class="footer-column">
-                <h3>Wiskunde – 7 FVD</h3>
-                <p>Fundamentele Vorming Digitale Creatie</p>
-            </div>
-    
-            <div class="footer-column">
-                <h4>Ontwikkeld door</h4>
-                <p>&copy; 2026 Ingmar Herreman</p>
-                <p>Voor de opleiding 7 FVD</p>
-            </div>
-    
-            <div class="footer-column">
-                <h4>Technologie</h4>
-                <p>Gebouwd met Ximera</p>
-                <p>Interactieve wiskundecursus</p>
-            </div>
-    
-        </div>
-    
-        <div class="footer-bottom">
-            Technology based on Ximera,
-            &copy; 2013–2026,
-            The Ohio State University —
-            Ximera Team.
-        </div>
-    
-    </footer><!-- XIMERA-FOOTER-END -->
-  <script src='../../assets/js/chapter-layout.js'></script>
-</body> 
- 
+</div>
+<div class="footer-divider"></div>
+<div class="footer-info">
+<div class="footer-column">
+<h3>Wiskunde 7 FVD</h3>
+<p>Fundamentele Vorming Digitale Creatie</p>
+<p>Voor de opleiding Digital Arts &amp; Entertainment</p>
+</div>
+<div class="footer-column">
+<h4>Ontwikkeling</h4>
+<p><strong>Ingmar Herreman</strong></p>
+<p>GO! Athena Campus Bellevue</p>
+<p>Versie 1.0 • 2026</p>
+</div>
+<div class="footer-column">
+<h4>Technologie</h4>
+<p>Ximera interactieve leeromgeving</p>
+<p>HTML • PDF • GeoGebra</p>
+<p>Open source onderwijs</p>
+</div>
+</div>
+<div class="footer-divider footer-divider-small"></div>
+<div class="footer-bottom">
+<span>
+            Gebouwd met <strong>Ximera</strong>
+</span>
+<span class="footer-separator">•</span>
+<span>
+            © 2013–2026 The Ohio State University
+        </span>
+<span class="footer-separator">•</span>
+<span>
+            Aangepast en uitgebreid voor de opleiding
+            <strong>7 FVD</strong>
+</span>
+</div>
+</footer><!-- XIMERA-FOOTER-END --><script src="../../assets/js/chapter-layout.js"></script></body>
 </html>
-                                                                  
-
-

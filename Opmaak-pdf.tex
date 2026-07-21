@@ -1,508 +1,495 @@
 % ============================================================
 % OPMAAK-PDF.TEX
-% PDF-specifieke hoofdstukhero voor de Ximera-cursus
+% Definitieve PDF-huisstijl voor Wiskunde 7 FVD
 %
-% BELANGRIJK:
-% Dit bestand wordt helemaal onderaan printstyle.sty geladen,
-% nadat chapterstyle en maketitle zijn ingesteld.
-%
-% Dit bestand:
-% - tekent de hoofdstukhero;
-% - bewaart het abstract;
-% - gebruikt de bestaande tellers uit printstyle.sty.
-%
-% Dit bestand herdefinieert NIET:
-% - \part
-% - \activity
-% - \maketitle
+% Dit bestand wordt helemaal onderaan printstyle.sty geladen.
+% Het gebruikt alleen pakketten die in jouw Ximera-opbouw
+% al aanwezig zijn. Geen lastpage, geen nieuwe tcolorbox-load,
+% geen pakketopties die clashes veroorzaken.
 % ============================================================
 
-
-% ============================================================
-% VOORKOM DUBBEL INLADEN
-% ============================================================
-
-\ifdefined\fvdpdfopmaakgeladen
-    \expandafter\endinput
+\ifdefined\fvdpdfstijlgeladen
+  \expandafter\endinput
 \fi
+\global\let\fvdpdfstijlgeladen\relax
 
-\global\let\fvdpdfopmaakgeladen\relax
-
-
-% ============================================================
-% BENODIGDE TIKZ-BIBLIOTHEKEN
-% ============================================================
-
-\usetikzlibrary{
-    calc,
-    positioning,
-    shadows.blur
-}
-
+% De bibliotheken worden toegevoegd aan de reeds geladen pakketten.
+\tcbuselibrary{skins,breakable}
+\usetikzlibrary{positioning,calc,shadows}
 
 % ============================================================
-% KLEUREN VAN DE HOOFDSTUKHERO
+% HUISSTIJL
 % ============================================================
 
-\definecolor{fvdHeroNavyLeft}{HTML}{071F45}
-\definecolor{fvdHeroNavyRight}{HTML}{173F78}
-\definecolor{fvdHeroPink}{HTML}{F20D68}
+\definecolor{fvdHeroNavyA}{HTML}{071F45}
+\definecolor{fvdHeroNavyB}{HTML}{173F78}
+\definecolor{fvdHeroPink}{HTML}{C3004A}
+\definecolor{fvdHeroPinkBright}{HTML}{F20D68}
 \definecolor{fvdHeroCyan}{HTML}{28D9E8}
-\definecolor{fvdHeroSoftBlue}{HTML}{6CA6D9}
-
+\definecolor{fvdHeroText}{HTML}{FFFFFF}
+\definecolor{fvdBodyText}{HTML}{243746}
+\definecolor{fvdBodyMuted}{HTML}{667784}
+\definecolor{fvdBodyLine}{HTML}{DDE5EA}
+\definecolor{fvdBodySoft}{HTML}{F3F8FA}
+\definecolor{fvdHeroDark}{HTML}{0E2432}
 
 \makeatletter
 
 
 % ============================================================
-% FALLBACKS EN METADATA
+% FVD-THEMASTART
 % ============================================================
 
-% Hierin wordt het abstract van het huidige hoofdstuk bewaard.
+\newcounter{fvdpart}
+\setcounter{fvdpart}{0}
+
+\newcommand{\FVDpart}[1]{%
+  \clearpage
+  \thispagestyle{empty}%
+  \refstepcounter{fvdpart}%
+  \setcounter{fvdsection}{0}%
+
+  \vspace*{18mm}%
+
+  \noindent
+  \begin{tikzpicture}
+    \node[
+      rounded corners=6mm,
+      fill=fvdHeroDark,
+      minimum width=\textwidth,
+      minimum height=72mm,
+      text width=\dimexpr\textwidth-24mm\relax,
+      inner xsep=12mm,
+      inner ysep=12mm,
+      align=left
+    ] {%
+      {\sffamily\bfseries\small\color{fvdHeroCyan}%
+        THEMA \thefvdpart
+      }
+
+      \vspace{5mm}
+
+      {\sffamily\bfseries
+       \fontsize{28}{33}\selectfont
+       \color{white}%
+       #1\par
+      }
+    };
+  \end{tikzpicture}
+
+  \par
+  \vfill
+  \clearpage
+}
+
+
+% ============================================================
+% ABSTRACTTEKST
+% ============================================================
+
 \providecommand{\fvdabstracttext}{}
-\global\let\fvdabstracttext\@empty
 
-% Deze macro wordt door printstyle.sty via \part ingesteld.
+% ============================================================
+% VEILIGE METADATA VOOR LOSSE HOOFDSTUKKEN
+% ============================================================
+
 \providecommand{\mymoduletitle}{}
+\providecommand{\fvdstandalonetheme}{Basiswiskunde}
+\providecommand{\fvdstandalonethemenumber}{1}
 
-% Ximera heeft normaal al een teller titlenumber.
-% Deze fallback voorkomt fouten bij uitzonderlijke
-% afzonderlijke compilaties.
-\@ifundefined{c@titlenumber}{%
-    \newcounter{titlenumber}%
-}{}
-
-
-% ============================================================
-% HANDMATIGE HOOFDSTUKGEGEVENS
-% ============================================================
-%
-% Alleen nodig wanneer een hoofdstuk afzonderlijk wordt
-% gecompileerd en je toch een thema- en hoofdstuknummer
-% wilt tonen.
-%
-% Gebruik vóór \xmtitle:
-%
-% \fvdchapterdata
-%     {1}
-%     {Getallen en bewerkingen}
-%     {2}
-%
-% Bij compilatie vanuit index.tex is dit niet nodig.
-% ============================================================
-
-\providecommand{\fvdmanualthemanummer}{}
-\providecommand{\fvdmanualthematitel}{}
-\newif\iffvdmanualchapterdata
-
-\fvdmanualchapterdatafalse
-
-\providecommand{\fvdchapterdata}[3]{%
-    \global\fvdmanualchapterdatatrue
-    \gdef\fvdmanualthemanummer{#1}%
-    \gdef\fvdmanualthematitel{#2}%
-    \setcounter{titlenumber}{#3}%
+\newcommand{\fvdthemenumber}{%
+  \ifnum\value{part}>0
+    \thepart
+  \else
+    \fvdstandalonethemenumber
+  \fi
 }
 
-
-% ============================================================
-% THEMANUMMER
-% ============================================================
-
-\newcommand{\fvdherothemanummer}{%
-    \iffvdmanualchapterdata
-        \fvdmanualthemanummer
-    \else
-        \thepart
-    \fi
+\newcommand{\fvdthemetitle}{%
+  \ifx\mymoduletitle\@empty
+    \fvdstandalonetheme
+  \else
+    \mymoduletitle
+  \fi
 }
 
-
-% ============================================================
-% THEMATITEL
-% ============================================================
-
-\newcommand{\fvdherothematitel}{%
-    \iffvdmanualchapterdata
-        \fvdmanualthematitel
-    \else
-        \mymoduletitle
-    \fi
-}
-
-
-% ============================================================
-% HOOFDSTUKNUMMER
-% ============================================================
-
-\newcommand{\fvdherohoofdstuknummer}{%
+\newcommand{\fvdchapterlocalnumber}{%
+  \ifnum\value{titlenumber}>0
     \arabic{titlenumber}%
+  \else
+    1%
+  \fi
 }
 
+% Optioneel bruikbaar vóór \xmtitle bij een losse hoofdstukbuild:
+% \fvdchapterdata{2}{Algebra}{3}
+\providecommand{\fvdchapterdata}[3]{%
+  \gdef\fvdstandalonethemenumber{#1}%
+  \gdef\fvdstandalonetheme{#2}%
+  \setcounter{part}{#1}%
+  \setcounter{titlenumber}{\numexpr#3-1\relax}%
+}
 
 % ============================================================
 % HOOFDSTUKHERO
 % ============================================================
 
 \newcommand{\fvdchapterhero}[1]{%
+  \thispagestyle{firstpage}%
+  \noindent
+  \par
+  \vspace*{-18mm}%
+  
+  \noindent
+  \hspace*{-7mm}%
+  \begin{tcolorbox}[
+    enhanced,
+    width=\dimexpr\textwidth+14mm\relax,
+    boxrule=0pt,
+    frame hidden,
+    arc=5mm,
+    outer arc=5mm,
+    left=10mm,
+    right=10mm,
+    top=8mm,
+    bottom=8mm,
+    before skip=0pt,
+    after skip=9mm,
+    interior style={
+      left color=fvdHeroNavyA,
+      right color=fvdHeroNavyB
+    },
+    overlay={
+      % Cyaan gloed linksboven
+      \fill[fvdHeroCyan,opacity=.055]
+        ([xshift=3mm,yshift=-5mm]frame.north west)
+        circle[radius=29mm];
+
+      % Magenta gloed rechtsonder
+      \fill[fvdHeroPinkBright,opacity=.055]
+        ([xshift=-8mm,yshift=7mm]frame.south east)
+        circle[radius=34mm];
+
+      % Digitaal raster rechts
+      \begin{scope}[opacity=.055]
+        \foreach \x in {0,8,...,72}{
+          \draw[white,line width=.25pt]
+            ([xshift=-\x mm]frame.north east) --
+            ([xshift=-\x mm]frame.south east);
+        }
+        \foreach \y in {0,8,...,64}{
+          \draw[white,line width=.25pt]
+            ([yshift=\y mm]frame.south east) --
+            ([xshift=-72mm,yshift=\y mm]frame.south east);
+        }
+      \end{scope}
+
+      % Assenstelsel en curve
+      \begin{scope}[
+        shift={([xshift=-49mm,yshift=-31mm]frame.north east)}
+      ]
+        \draw[white,opacity=.14,line width=.35pt] (-1.9,0)--(1.9,0);
+        \draw[white,opacity=.14,line width=.35pt] (0,-1.0)--(0,1.15);
+        \draw[
+          fvdHeroPinkBright,
+          opacity=.88,
+          line width=1.15pt,
+          smooth
+        ]
+        plot coordinates {
+          (-1.75,-.42) (-1.35,.28) (-.95,.68)
+          (-.55,.43) (-.15,-.12) (.28,-.49)
+          (.68,-.31) (1.08,.27) (1.48,.76) (1.77,1.00)
+        };
+      \end{scope}
+
+      % 3D-kubus
+      \begin{scope}[
+        shift={([xshift=-28mm,yshift=15mm]frame.south east)},
+        opacity=.20,
+        scale=.48
+      ]
+        \draw[fvdHeroCyan,line width=.7pt] (0,0) rectangle (1.5,1.5);
+        \draw[fvdHeroCyan,line width=.7pt] (.45,.45) rectangle (1.95,1.95);
+        \draw[fvdHeroCyan,line width=.7pt] (0,0)--(.45,.45);
+        \draw[fvdHeroCyan,line width=.7pt] (1.5,0)--(1.95,.45);
+        \draw[fvdHeroCyan,line width=.7pt] (0,1.5)--(.45,1.95);
+        \draw[fvdHeroCyan,line width=.7pt] (1.5,1.5)--(1.95,1.95);
+      \end{scope}
+
+      % Subtiele formules
+      \node[
+        anchor=north east,
+        text=white,
+        opacity=.10,
+        font=\fontsize{9}{11}\selectfont
+      ] at ([xshift=-11mm,yshift=-7mm]frame.north east)
+      {$f(x)=ax^2+bx+c$};
+
+      \node[
+        anchor=south east,
+        text=white,
+        opacity=.085,
+        font=\fontsize{9}{11}\selectfont
+      ] at ([xshift=-13mm,yshift=8mm]frame.south east)
+      {$\vec{u}\cdot\vec{v}=\|\vec{u}\|\,\|\vec{v}\|\cos\theta$};
+    }
+  ]
+
+  % Thema
+  {\sffamily\bfseries
+   \fontsize{8.5}{10.5}\selectfont
+   \color{fvdHeroCyan}
+   \MakeUppercase{%
+     THEMA \fvdthemenumber
+     \enspace\textbullet\enspace
+     \fvdthemetitle
+   }\par}
+
+  \vspace{5mm}
+
+  % Label
+  {\sffamily\bfseries
+   \fontsize{8.3}{10.3}\selectfont
+   \color{fvdHeroPinkBright}
+   \MakeUppercase{HOOFDSTUK}\par}
+
+  \vspace{2mm}
+
+  % Nummer en titel
+  \noindent
+  \begin{minipage}[c]{24mm}
+    \begin{tcolorbox}[
+      enhanced,
+      width=22mm,
+      height=22mm,
+      valign=center,
+      halign=center,
+      boxrule=0pt,
+      frame hidden,
+      arc=4.5mm,
+      colback=fvdHeroPinkBright,
+      left=0pt,right=0pt,top=0pt,bottom=0pt
+    ]
+      {\sffamily\bfseries
+      \fontsize{23}{26}\selectfont
+       \color{white}
+       \fvdchapterlocalnumber}
+    \end{tcolorbox}
+    \hspace*{-7mm}%
+  \end{minipage}%
+  \hspace{3mm}%
+  \begin{minipage}[c]{\dimexpr\linewidth-44mm\relax}
+    {\raggedright\sffamily\bfseries
+     \fontsize{25}{28}\selectfont
+     \color{white}
+     \@title\par}
+  \end{minipage}
+
+  \vspace{3.5mm}
+
+  % Accentlijn
+  \begin{tikzpicture}
+    \shade[
+      left color=fvdHeroPinkBright,
+      right color=fvdHeroCyan
+    ] (0,0) rectangle (31mm,.85mm);
+  \end{tikzpicture}
+
+  % Abstract
+  \if\relax\detokenize{#1}\relax
+  \else
+    \vspace{3mm}
+    \begin{minipage}{.79\linewidth}
+      {\raggedright\sffamily
+       \fontsize{9.5}{13.5}\selectfont
+       \color{white!91}
+       #1\par}
+    \end{minipage}
+  \fi
+
+  \end{tcolorbox}
+
+  \global\let\fvdabstracttext\@empty
+}
+
+% ============================================================
+% DEFINITIEVE CHAPTERSTYLE
+% ============================================================
+%
+% Dit is de cruciale koppeling. De oude PDF miste de hero omdat
+% gewone \activity-oproepen niet altijd als chapter werden gezet.
+% De aangepaste printstyle activeert chapterstyle voor elke
+% activity; deze definitie tekent vervolgens altijd de hero.
+% ============================================================
+
+\renewcommand\chapterstyle{%
+  \def\maketitle{%
+    \addtocounter{titlenumber}{1}%
+
+    \phantomsection
+    \addcontentsline{toc}{section}{%
+      \protect\numberline{\thetitlenumber}\@title
+    }%
+
+    \renewcommand\xmsection\subsection
+    \renewcommand\xmsubsection\subsubsection
+    \renewcommand{\thesubsection}{%
+      \thetitlenumber.\arabic{subsection}%
+    }
+    \renewcommand{\thesubsubsection}{%
+      \thesubsection.\arabic{subsubsection}%
+    }
+
+    \setcounter{sectiontitlenumber}{0}%
+    \setcounter{problem}{0}%
+    \setcounter{example}{0}%
+    \setcounter{exercise}{0}%
+    \setcounter{question}{0}%
+    \setcounter{subsection}{0}%
+    \setcounter{subsubsection}{0}%
+
+    \@ifundefined{c@proposition}{}{\setcounter{proposition}{0}}%
+    \@ifundefined{c@definition}{}{\setcounter{definition}{0}}%
+    \@ifundefined{c@explanation}{}{\setcounter{explanation}{0}}%
+    \@ifundefined{c@remark}{}{\setcounter{remark}{0}}%
+    \@ifundefined{c@notation}{}{\setcounter{notation}{0}}%
+    \@ifundefined{c@observation}{}{\setcounter{observation}{0}}%
+    \@ifundefined{c@theorem}{}{\setcounter{theorem}{0}}%
+    \@ifundefined{c@warning}{}{\setcounter{warning}{0}}%
+    \@ifundefined{c@xmuitweiding}{}{\setcounter{xmuitweiding}{0}}%
+
+    \fvdchapterhero{\fvdabstracttext}%
+
+    \markboth
+      {\thetitlenumber\enspace\@title}
+      {\thetitlenumber\enspace\@title}%
 
     \thispagestyle{firstpage}%
+    \afterpage{\thispagestyle{otherpage}}%
+  }%
+}
 
-    \par
-    \vspace*{-7mm}
+% ============================================================
+% SECTIETITELS
+% ============================================================
+%
+% Geen #1 in \titleformat en geen complexe after-code:
+% daardoor blijven deze definities compatibel met titlesec 2.17.
+% ============================================================
 
-    \noindent
-    \begin{tcolorbox}[
-        enhanced,
-        width=\textwidth,
-        boxrule=0pt,
-        frame hidden,
-        arc=6mm,
-        outer arc=6mm,
-        left=10mm,
-        right=10mm,
-        top=7mm,
-        bottom=7mm,
-        before skip=0pt,
-        after skip=8mm,
-        interior style={
-            left color=fvdHeroNavyLeft,
-            right color=fvdHeroNavyRight
-        },
-        overlay={
+\titleformat{\subsection}[hang]
+  {\sffamily\bfseries\Large\color{fvdHeroPinkBright}}
+  {%
+    \raisebox{-1.5mm}{%
+      \begin{tikzpicture}[baseline]
+        \fill[fvdHeroPinkBright]
+          (0,0) circle[radius=4.2mm];
+        \node[
+          text=white,
+          font=\sffamily\bfseries\small
+        ] at (0,0) {\thesubsection};
+      \end{tikzpicture}%
+    }%
+  }
+  {3.5mm}
+  {}
 
-            % ------------------------------------------------
-            % LICHTE ACHTERGRONDCIRKEL
-            % ------------------------------------------------
+\titlespacing*{\subsection}
+  {0pt}{7mm}{3.5mm}
 
-            \fill[
-                fvdHeroCyan,
-                opacity=0.035
-            ]
-            ([xshift=-48mm,yshift=-39mm]frame.north east)
-            circle[radius=35mm];
+\titleformat{\subsubsection}[hang]
+  {\sffamily\bfseries\large\color{fvdNavyLight}}
+  {\thesubsubsection}
+  {2.5mm}
+  {}
 
+\titlespacing*{\subsubsection}
+  {0pt}{4.5mm}{2.5mm}
 
-            % ------------------------------------------------
-            % SUBTIEL RASTER AAN DE RECHTERKANT
-            % ------------------------------------------------
+\titleformat{\paragraph}[hang]
+  {\sffamily\bfseries\normalsize\color{fvdPink}}
+  {\theparagraph}
+  {2mm}
+  {}
 
-            \begin{scope}[
-                opacity=0.055
-            ]
-
-                \foreach \x in {0,8,...,72} {
-                    \draw[
-                        white,
-                        line width=0.25pt
-                    ]
-                    ([xshift=-\x mm]frame.north east)
-                    --
-                    ([xshift=-\x mm]frame.south east);
-                }
-
-                \foreach \y in {0,8,...,64} {
-                    \draw[
-                        white,
-                        line width=0.25pt
-                    ]
-                    ([yshift=\y mm]frame.south east)
-                    --
-                    ([xshift=-72mm,yshift=\y mm]frame.south east);
-                }
-
-            \end{scope}
+\titlespacing*{\paragraph}
+  {0pt}{4mm}{2mm}
 
 
-            % ------------------------------------------------
-            % FORMULE RECHTSBOVEN
-            % ------------------------------------------------
 
-            \node[
-                anchor=north east,
-                text=white,
-                opacity=0.11,
-                font=\fontsize{10}{12}\selectfont
-            ]
-            at ([xshift=-12mm,yshift=-7mm]frame.north east)
-            {$a^n\cdot a^m=a^{n+m}$};
+% ============================================================
+% MODERNE KOP- EN VOETTEKST
+% ============================================================
 
+\fancypagestyle{firstpage}{%
+  \fancyhf{}
+  \fancyfoot[L]{%
+    \sffamily\scriptsize\color{fvdBodyMuted}%
+    \xmcursusnaam
+  }
+  \fancyfoot[C]{%
+    \sffamily\scriptsize\color{fvdBodyMuted}%
+    \xmafdelingsnaam
+  }
+  \fancyfoot[R]{%
+    \sffamily\scriptsize\bfseries\color{fvdBodyText}%
+    \thepage
+  }
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
 
-            % ------------------------------------------------
-            % VECTOR RECHTSONDER
-            % ------------------------------------------------
+\fancypagestyle{otherpage}{%
+  \fancyhf{}
 
-            \node[
-                anchor=south east,
-                text=white,
-                opacity=0.09,
-                font=\fontsize{10}{12}\selectfont
-            ]
-            at ([xshift=-16mm,yshift=9mm]frame.south east)
-            {$\vec{v}=(x,y,z)$};
-
-
-            % ------------------------------------------------
-            % ASSENSTELSEL MET FUNCTIECURVE
-            % ------------------------------------------------
-
-            \begin{scope}[
-                shift={
-                    ([xshift=-47mm,yshift=-29mm]frame.north east)
-                }
-            ]
-
-                \draw[
-                    white,
-                    opacity=0.14,
-                    line width=0.35pt
-                ]
-                (-1.8,0)--(1.8,0);
-
-                \draw[
-                    white,
-                    opacity=0.14,
-                    line width=0.35pt
-                ]
-                (0,-1.0)--(0,1.1);
-
-                \draw[
-                    fvdHeroPink,
-                    opacity=0.82,
-                    line width=1.1pt,
-                    smooth
-                ]
-                plot coordinates {
-                    (-1.65,-0.35)
-                    (-1.30,0.35)
-                    (-0.90,0.68)
-                    (-0.55,0.42)
-                    (-0.15,-0.12)
-                    (0.25,-0.48)
-                    (0.65,-0.35)
-                    (1.05,0.22)
-                    (1.45,0.72)
-                    (1.75,0.98)
-                };
-
-            \end{scope}
-
-
-            % ------------------------------------------------
-            % 3D-KUBUS
-            % ------------------------------------------------
-
-            \begin{scope}[
-                shift={
-                    ([xshift=-27mm,yshift=15mm]frame.south east)
-                },
-                opacity=0.18,
-                scale=0.48
-            ]
-
-                \draw[
-                    fvdHeroCyan,
-                    line width=0.7pt
-                ]
-                (0,0) rectangle (1.5,1.5);
-
-                \draw[
-                    fvdHeroCyan,
-                    line width=0.7pt
-                ]
-                (0.45,0.45) rectangle (1.95,1.95);
-
-                \draw[
-                    fvdHeroCyan,
-                    line width=0.7pt
-                ]
-                (0,0)--(0.45,0.45);
-
-                \draw[
-                    fvdHeroCyan,
-                    line width=0.7pt
-                ]
-                (1.5,0)--(1.95,0.45);
-
-                \draw[
-                    fvdHeroCyan,
-                    line width=0.7pt
-                ]
-                (0,1.5)--(0.45,1.95);
-
-                \draw[
-                    fvdHeroCyan,
-                    line width=0.7pt
-                ]
-                (1.5,1.5)--(1.95,1.95);
-
-            \end{scope}
-        }
-    ]
-
-
-    % ========================================================
-    % THEMAREGEL
-    % ========================================================
-
-    {\sffamily
-     \bfseries
-     \fontsize{8.5}{10.5}\selectfont
-     \color{fvdHeroCyan}
-     \MakeUppercase{%
-        THEMA \fvdherothemanummer
-        \enspace\textbullet\enspace
-        \fvdherothematitel
-     }%
-     \par
-    }
-
-    \vspace{5mm}
-
-
-    % ========================================================
-    % HOOFDSTUKLABEL
-    % ========================================================
-
-    {\sffamily
-     \bfseries
-     \fontsize{8.5}{10.5}\selectfont
-     \color{fvdHeroPink}
-     \MakeUppercase{HOOFDSTUK}
-     \par
-    }
-
-    \vspace{2mm}
-
-
-    % ========================================================
-    % NUMMER EN TITEL
-    % ========================================================
-
-    \noindent
-    \begin{minipage}[c]{23mm}
-
-        \begin{tcolorbox}[
-            enhanced,
-            width=21mm,
-            height=21mm,
-            valign=center,
-            halign=center,
-            boxrule=0pt,
-            frame hidden,
-            arc=4.5mm,
-            outer arc=4.5mm,
-            colback=fvdHeroPink,
-            left=0pt,
-            right=0pt,
-            top=0pt,
-            bottom=0pt
-        ]
-
-            {\sffamily
-             \bfseries
-             \fontsize{25}{25}\selectfont
-             \color{white}
-             \fvdherohoofdstuknummer
-            }
-
-        \end{tcolorbox}
-
-    \end{minipage}%
-    \hspace{3mm}%
-    \begin{minipage}[c]{\dimexpr\linewidth-29mm\relax}
-
-        {\raggedright
-         \sffamily
-         \bfseries
-         \fontsize{24}{27}\selectfont
-         \color{white}
-         \@title
-         \par
-        }
-
-    \end{minipage}
-
-    \vspace{3mm}
-
-
-    % ========================================================
-    % ACCENTLIJN
-    % ========================================================
-
-    \noindent
-    \begin{tikzpicture}
-        \shade[
-            left color=fvdHeroPink,
-            right color=fvdHeroCyan
-        ]
-        (0,0) rectangle (25mm,0.8mm);
-    \end{tikzpicture}
-
-
-    % ========================================================
-    % ABSTRACT
-    % ========================================================
-
-    \if\relax\detokenize{#1}\relax
-        % Geen abstract: niets tonen.
+  \fancyhead[L]{%
+    \sffamily\footnotesize\color{fvdBodyMuted}%
+    \ifdefined\isXourse
+      Thema \thepart\enspace|\enspace\mymoduletitle
     \else
-
-        \vspace{3mm}
-
-        \begin{minipage}{0.76\linewidth}
-
-            {\raggedright
-             \sffamily
-             \itshape
-             \fontsize{9.3}{13.5}\selectfont
-             \color{white!88}
-             #1
-             \par
-            }
-
-        \end{minipage}
-
+      \leftmark
     \fi
+  }
 
-    \end{tcolorbox}
+  \fancyhead[R]{%
+    \sffamily\footnotesize\bfseries\color{fvdBodyText}%
+    \thepage
+  }
 
-    % Voorkom dat het abstract naar het volgende hoofdstuk
-    % wordt meegenomen.
-    \global\let\fvdabstracttext\@empty
+  \fancyhead[C]{%
+    \raisebox{-6.5mm}[0pt][0pt]{%
+      \begin{tikzpicture}
+        \shade[
+          left color=fvdHeroCyan,
+          right color=fvdHeroPink
+        ] (0,0) rectangle (\textwidth,.4mm);
+      \end{tikzpicture}%
+    }%
+  }
+
+  \fancyfoot[L]{%
+    \sffamily\scriptsize\color{fvdBodyMuted}%
+    Wiskunde 7 FVD
+  }
+
+  \fancyfoot[R]{%
+    \sffamily\scriptsize\color{fvdBodyMuted}%
+    Ingmar Herreman
+  }
+
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
 }
 
+\pagestyle{otherpage}
 
-% ============================================================
-% ABSTRACT BEWAREN
-% ============================================================
-%
-% \xmtitle uit preamble.tex doet intern:
-%
-%   \begin{abstract}
-%       ...
-%   \end{abstract}
-%   \maketitle
-%
-% We bewaren hier de inhoud. De chapterstyle uit printstyle.sty
-% geeft die daarna door aan \fvdchapterhero.
-%
-% Het woord "Abstract" wordt hierdoor niet afzonderlijk getoond.
-% ============================================================
-
-\@ifundefined{abstract}{%
-
-    \NewDocumentEnvironment{abstract}{+b}{%
-        \global\long\def\fvdabstracttext{#1}%
-    }{}
-
-}{%
-
-    \RenewDocumentEnvironment{abstract}{+b}{%
-        \global\long\def\fvdabstracttext{#1}%
-    }{}
-
+% Links in de huisstijl
+\hypersetup{
+  colorlinks=true,
+  linkcolor=fvdHeroPink,
+  urlcolor=fvdHeroNavyB,
+  citecolor=fvdHeroNavyB
 }
-
 
 \makeatother

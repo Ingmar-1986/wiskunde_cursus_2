@@ -1259,6 +1259,9 @@
 \let\otherinput\input
 \renewcommand{\activity}[2][]{%
     \setkeys{activity}{#1}%
+    % Alle gewone activities in deze cursus zijn hoofdstukken.
+    % Dit activeert de juiste maketitle, tellers en hoofdstukhero.
+    \chapterstyle%
     \renewcommand{\input}[1]{}%
     \ifnonewpage%
        \begingroup\skip@preamble\otherinput{#2}\endgroup\par\vspace{\topsep}%

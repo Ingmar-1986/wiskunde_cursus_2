@@ -377,3 +377,4 @@ echo
 find "$CHAPTER_DIST_DIR" -maxdepth 1 -type f -name '*.pdf' \
     -printf '  - %f\n' |
     sort
+    
