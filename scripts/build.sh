@@ -377,3 +377,12 @@ echo
 find "$CHAPTER_DIST_DIR" -maxdepth 1 -type f -name '*.pdf' \
     -printf '  - %f\n' |
     sort
+
+
+    echo
+echo "Sidebar genereren..."
+bash scripts/generate-sidebar.sh modules/basiswiskunde
+
+echo
+echo "Hoofdstukken verrijken..."
+python3 scripts/enhance-chapter.py modules/basiswiskunde

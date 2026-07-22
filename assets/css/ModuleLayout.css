@@ -363,526 +363,384 @@ body > .abstract {
 }
 
 
-/* =========================================================
-   THEMAHOOFDEN
-   ========================================================= */
+/* ============================================================
+   HOOFDSTUKKAARTEN
+   ============================================================ */
 
-.activity-card.card-sectionheading.card.part {
-    position: relative;
-
-    display: flex !important;
-    align-items: center;
-
-    clear: both !important;
-
-    width: calc(100% - 64px) !important;
-    min-height: 76px;
-
-    margin: 55px 32px 22px !important;
-    padding: 17px 78px 17px 78px;
-
-    overflow: hidden;
-
-    border: 0;
-    border-left: 10px solid var(--kleur-banner);
-    border-radius: 0;
-
-    background:
-        linear-gradient(
-            100deg,
-            #081d2b 0%,
-            var(--kleur-donker) 55%,
-            var(--kleur-donker-licht) 100%
-        );
-
-    color: white;
-
-    box-shadow: var(--schaduw-zacht);
-}
-
-.activity-card.card-sectionheading.card.part::before {
-    position: absolute;
-    left: 20px;
-    top: 50%;
-
+   .course-theme-cards {
     display: grid;
-    place-items: center;
-
-    width: 38px;
-    height: 38px;
-
-    transform: translateY(-50%);
-
-    border-radius: 50%;
-
-    background: var(--kleur-banner);
-
-    color: white;
-
-    font-size: 1.1rem;
-    font-weight: 800;
-}
-
-.activity-card.card-sectionheading.card.part#part1::before {
-    content: "1";
-}
-
-.activity-card.card-sectionheading.card.part#part2::before {
-    content: "2";
-}
-
-.activity-card.card-sectionheading.card.part#part3::before {
-    content: "3";
-}
-
-.activity-card.card-sectionheading.card.part#part4::before {
-    content: "4";
-}
-
-.activity-card.card-sectionheading.card.part#part5::before {
-    content: "5";
-}
-
-.activity-card.card-sectionheading.card.part::after {
-    content: "▤";
-
-    position: absolute;
-    right: 27px;
-    top: 50%;
-
-    transform: translateY(-50%);
-
-    color: rgba(255, 255, 255, 0.92);
-
-    font-size: 1.65rem;
-    font-weight: 400;
-}
-
-.activity-card.card-sectionheading.card.part .card-block {
-    display: block;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
 
     width: 100%;
+    padding: 28px;
+
+    box-sizing: border-box;
 }
 
-.activity-card.card-sectionheading.card.part .card-title {
-    margin: 0;
-
-    color: white;
-
-    font-size: clamp(1.35rem, 2vw, 1.8rem);
-    font-weight: 800;
-    line-height: 1.25;
-}
-
-
-/* Schuine accentvorm rechts */
-
-.activity-card.card-sectionheading.card.part .card-block::after {
-    content: "";
-
-    position: absolute;
-    top: 0;
-    right: 0;
-
-    width: 18px;
+.course-card {
+    min-width: 0;
     height: 100%;
-
-    background: var(--kleur-banner);
-
-    clip-path: polygon(65% 0, 100% 0, 35% 100%, 0 100%);
+    margin: 0;
 }
 
-
-/* =========================================================
-   HOOFDSTUKKAARTEN
-   ========================================================= */
-
-a.activity.card {
-    position: relative;
-
-    display: inline-flex !important;
+.course-card-link {
+    display: flex;
     flex-direction: column;
 
-    float: none !important;
+    width: 100%;
+    min-height: 260px;
+    height: 100%;
 
-    width: calc(50% - 51px);
-    min-height: 235px;
+    padding: 24px;
 
-    margin: 0 15px 28px 32px;
-    padding: 38px 38px 28px 145px;
+    box-sizing: border-box;
 
-    vertical-align: top;
-
-    overflow: hidden;
-
-    border: 1px solid var(--kleur-rand);
-    border-top: 4px solid var(--kleur-banner);
-    border-radius: 15px;
+    color: inherit;
+    text-decoration: none;
 
     background:
         linear-gradient(
             145deg,
             #ffffff 0%,
-            #ffffff 75%,
-            #fafbfc 100%
+            #f3f9fa 100%
         );
 
-    color: var(--kleur-tekst);
-    text-decoration: none;
+    border: 1px solid #d5e3e8;
+    border-radius: 20px;
 
-    box-shadow: var(--schaduw-zacht);
-
-    font-size: 0;
+    box-shadow:
+        0 12px 30px rgba(14, 36, 50, 0.08);
 
     transition:
-        transform 0.22s ease,
-        box-shadow 0.22s ease,
-        border-color 0.22s ease;
+        transform 180ms ease,
+        box-shadow 180ms ease,
+        border-color 180ms ease;
 }
 
-a.activity.card:nth-of-type(even) {
-    margin-left: 0;
+.course-card-link:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(0, 175, 184, 0.48);
+
+    box-shadow:
+        0 18px 38px rgba(14, 36, 50, 0.14);
 }
 
-a.activity.card:hover,
-a.activity.card:focus {
-    transform: translateY(-5px);
+.course-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 
-    border-color: rgba(195, 0, 74, 0.35);
-
-    box-shadow: var(--schaduw-hover);
-
-    color: var(--kleur-tekst);
-    text-decoration: none;
+    margin-bottom: 18px;
 }
 
-
-/* Ronde illustratie links */
-
-a.activity.card::before {
-    content: "▤";
-
-    position: absolute;
-    left: 35px;
-    top: 39px;
-
+.course-card-number {
     display: grid;
     place-items: center;
 
-    width: 76px;
-    height: 76px;
+    min-width: 54px;
+    height: 54px;
+    padding: 0 10px;
 
-    border-radius: 50%;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 900;
+
+    background:
+        linear-gradient(
+            145deg,
+            #c3004a,
+            #ed0060
+        );
+
+    border-radius: 15px;
+}
+
+.course-card-theme {
+    color: #087f88;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.course-card-title {
+    margin: 0 0 12px;
+
+    color: #0e2432;
+    font-size: 25px;
+    font-weight: 900;
+    line-height: 1.18;
+}
+
+.course-card-abstract {
+    margin: 0;
+
+    color: #60717d;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.course-card-footer {
+    margin-top: auto;
+    padding-top: 24px;
+}
+
+.course-card-button {
+    color: #c3004a;
+    font-size: 14px;
+    font-weight: 850;
+}
+
+@media (max-width: 900px) {
+    .course-theme,
+    .module-intro {
+        width: calc(100% - 28px);
+    }
+
+    .course-theme-cards {
+        grid-template-columns: 1fr;
+        padding: 18px;
+    }
+}
+
+
+/* ============================================================
+   THEMA-ACCORDIONS
+   ============================================================ */
+
+.course-theme {
+    width: min(1500px, calc(100% - 48px));
+    margin: 0 auto 24px;
+
+    overflow: hidden;
+
+    background: #ffffff;
+    border: 1px solid #d5e1e6;
+    border-radius: 24px;
+
+    box-shadow:
+        0 16px 40px rgba(14, 36, 50, 0.09);
+}
+
+.course-theme__summary {
+    list-style: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 22px;
+
+    min-height: 104px;
+    padding: 22px 28px;
+
+    box-sizing: border-box;
+    cursor: pointer;
+
+    background:
+        linear-gradient(
+            115deg,
+            #f7fafb 0%,
+            #eaf4f6 100%
+        );
+
+    transition:
+        background 180ms ease,
+        color 180ms ease;
+}
+
+.course-theme__summary::-webkit-details-marker {
+    display: none;
+}
+
+.course-theme[open] > .course-theme__summary {
+    background:
+        linear-gradient(
+            115deg,
+            #082653 0%,
+            #123f78 62%,
+            #1a6192 100%
+        );
+}
+
+.course-theme__summary-main {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    min-width: 0;
+}
+
+.course-theme__badge {
+    flex: 0 0 auto;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 34px;
+    padding: 7px 15px;
+
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
 
     background:
         linear-gradient(
             135deg,
-            rgba(195, 0, 74, 0.07),
-            rgba(237, 61, 124, 0.14)
+            #c3004a,
+            #f00062
         );
 
-    color: var(--kleur-banner);
-
-    font-size: 2rem;
-    font-weight: 500;
+    border-radius: 999px;
 }
 
+.course-theme__text {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 
-/* Klein label boven de titel */
-
-a.activity.card h2::before {
-    content: "HOOFDSTUK";
-
-    display: block;
-
-    margin-bottom: 10px;
-
-    color: var(--kleur-banner);
-
-    font-size: 0.78rem;
-    font-weight: 800;
-
-    letter-spacing: 0.08em;
+    min-width: 0;
 }
 
-
-/*
-   Ximera zet eerst h3 en daarna h2 in de HTML.
-   Met order plaatsen we de titel visueel eerst.
-*/
-
-a.activity.card h2 {
-    order: 1;
-
-    margin: 0 0 12px;
-
-    color: var(--kleur-donker);
-
-    font-size: clamp(1.45rem, 2vw, 1.85rem);
-    font-weight: 800;
-    line-height: 1.22;
-
-    letter-spacing: -0.02em;
+.course-theme__title {
+    color: #0e2432;
+    font-size: clamp(25px, 3vw, 36px);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
 }
 
-a.activity.card h3 {
-    order: 2;
-
-    margin: 0 0 26px;
-
-    color: var(--kleur-tekst-zacht);
-
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.55;
-}
-
-
-/* Horizontale lijn onder de beschrijving */
-
-a.activity.card h3::after {
-    content: "";
-
-    display: block;
-
-    width: 100%;
-    height: 1px;
-
-    margin-top: 25px;
-
-    background: var(--kleur-rand);
-}
-
-
-/* Startknop onderaan */
-
-a.activity.card::after {
-    content: "Start hoofdstuk  →";
-
-    position: absolute;
-    right: 35px;
-    bottom: 22px;
-
-    color: var(--kleur-banner);
-
-    font-size: 0.96rem;
-    font-weight: 800;
-
-    transition: transform 0.2s ease;
-}
-
-a.activity.card:hover::after {
-    transform: translateX(5px);
-}
-
-
-/* =========================================================
-   FOOTERAFSTAND
-   ========================================================= */
-
-.course-footer-clear {
-    display: block;
-    clear: both;
-
-    width: 100%;
-    height: 1px;
-}
-
-.site-footer {
-    position: static !important;
-
-    display: block !important;
-    clear: both !important;
-
-    width: 100% !important;
-    height: auto !important;
-
-    margin-top: 55px !important;
-}
-
-
-/* =========================================================
-   TABLET
-   ========================================================= */
-
-@media (max-width: 950px) {
-
-    a.activity.card {
-        width: calc(100% - 64px);
-
-        margin: 0 32px 24px;
-    }
-
-    a.activity.card:nth-of-type(even) {
-        margin-left: 32px;
-    }
-}
-
-
-/* =========================================================
-   SMARTPHONE
-   ========================================================= */
-
-@media (max-width: 650px) {
-
-    .module-intro {
-        width: calc(100% - 28px);
-
-        margin: 20px auto 24px;
-        padding: 40px 20px 34px;
-
-        border-radius: 16px;
-    }
-
-    .module-intro h2 {
-        font-size: clamp(2.5rem, 14vw, 3.8rem);
-    }
-
-    .module-intro p {
-        margin-top: 20px;
-
-        font-size: 0.9rem;
-    }
-
-    .activity-card.card-sectionheading.card.part {
-        width: calc(100% - 28px) !important;
-
-        margin: 38px 14px 18px !important;
-        padding: 15px 55px 15px 65px;
-
-        border-left-width: 7px;
-    }
-
-    .activity-card.card-sectionheading.card.part::before {
-        left: 15px;
-
-        width: 34px;
-        height: 34px;
-    }
-
-    .activity-card.card-sectionheading.card.part::after {
-        right: 16px;
-
-        font-size: 1.35rem;
-    }
-
-    .activity-card.card-sectionheading.card.part .card-title {
-        font-size: 1.25rem;
-    }
-
-    a.activity.card {
-        width: calc(100% - 28px);
-        min-height: 260px;
-
-        margin: 0 14px 20px !important;
-        padding: 120px 24px 70px;
-    }
-
-    a.activity.card::before {
-        left: 24px;
-        top: 27px;
-
-        width: 70px;
-        height: 70px;
-    }
-
-    a.activity.card::after {
-        right: 24px;
-        bottom: 24px;
-    }
-
-    a.activity.card h2 {
-        font-size: 1.45rem;
-    }
-}
-
-/* =========================================================
-   UITKLAPBARE THEMA'S
-   ========================================================= */
-
-.activity-card.card-sectionheading.card.part {
-    cursor: pointer;
-
-    user-select: none;
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease,
-        background 0.2s ease;
-}
-
-.activity-card.card-sectionheading.card.part:hover {
-    transform: translateY(-2px);
-
-    box-shadow:
-        0 14px 30px rgba(14, 36, 50, 0.2);
-}
-
-.activity-card.card-sectionheading.card.part:focus-visible {
-    outline: 3px solid rgba(195, 0, 74, 0.35);
-    outline-offset: 4px;
-}
-
-
-/* Pijl rechts */
-
-.activity-card.card-sectionheading.card.part::after {
-    content: "⌄";
-
-    position: absolute;
-    right: 30px;
-    top: 50%;
-
-    transform:
-        translateY(-50%)
-        rotate(0deg);
-
-    color: white;
-
-    font-size: 1.8rem;
+.course-theme__count {
+    color: #667986;
+    font-size: 13px;
     font-weight: 700;
+}
+
+.course-theme[open]
+.course-theme__title {
+    color: #ffffff;
+}
+
+.course-theme[open]
+.course-theme__count {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.course-theme__chevron {
+    flex: 0 0 auto;
+
+    display: grid;
+    place-items: center;
+
+    width: 44px;
+    height: 44px;
+
+    color: #087f88;
+    font-size: 26px;
     line-height: 1;
 
-    transition: transform 0.25s ease;
-}
-
-
-/* Pijl draaien wanneer het thema gesloten is */
-
-.activity-card.card-sectionheading.card.part.is-collapsed::after {
-    transform:
-        translateY(-50%)
-        rotate(-90deg);
-}
-
-
-/* Container rond de hoofdstukken */
-
-.theme-content {
-    display: block;
-
-    max-height: 3000px;
-
-    opacity: 1;
-
-    overflow: hidden;
+    background: rgba(0, 175, 184, 0.1);
+    border: 1px solid rgba(0, 175, 184, 0.18);
+    border-radius: 14px;
 
     transition:
-        max-height 0.4s ease,
-        opacity 0.25s ease,
-        margin 0.3s ease;
+        transform 180ms ease,
+        color 180ms ease,
+        background 180ms ease;
 }
 
+.course-theme[open]
+.course-theme__chevron {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.16);
 
-/* Ingeklapte toestand */
+    transform: rotate(180deg);
+}
 
-.theme-content.is-collapsed {
-    max-height: 0;
+.course-card-header {
+    display: flex;
+    align-items: center;
+    gap: 22px;
 
-    margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: 24px;
+}
 
-    opacity: 0;
+.course-card-number-block {
+    flex: 0 0 auto;
 
-    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 7px;
+}
+
+.course-card-label {
+    padding: 5px 10px;
+
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    background: #0e6c78;
+    border-radius: 999px;
+}
+
+.course-card-number {
+    display: grid;
+    place-items: center;
+
+    width: 58px;
+    height: 58px;
+
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 900;
+
+    background:
+        linear-gradient(
+            145deg,
+            #c3004a,
+            #ed0060
+        );
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 10px 22px rgba(195, 0, 74, 0.18);
+}
+
+.course-card-title {
+    margin: 0;
+
+    color: #0e2432;
+    font-size: clamp(24px, 2.2vw, 32px);
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+}
+
+.course-card-abstract {
+    margin: 0;
+
+    color: #60717d;
+    font-size: 15px;
+    line-height: 1.65;
+}
+
+.course-card-footer {
+    margin-top: auto;
+    padding-top: 28px;
+}
+
+.course-card-button {
+    color: #c3004a;
+    font-size: 14px;
+    font-weight: 850;
 }

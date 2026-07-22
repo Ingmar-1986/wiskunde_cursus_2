@@ -1,37 +1,51 @@
 <section class="chapter-hero">
 
-    <div class="chapter-hero-background"></div>
+    <div class="chapter-hero__decoration" aria-hidden="true">
+        <span class="chapter-hero__formula">
+            f(x) = ax² + bx + c
+        </span>
 
-    <div class="chapter-hero-content">
+        <span class="chapter-hero__curve"></span>
+        <span class="chapter-hero__grid"></span>
+    </div>
 
-        <div class="chapter-meta">
+    <div class="chapter-hero__content">
 
-            <span class="chapter-theme">
+        <div class="chapter-hero__theme">
+            <span class="chapter-hero__theme-label">
+                Thema {{THEME_NUMBER}}
+            </span>
+
+            <span class="chapter-hero__theme-dot"></span>
+
+            <span class="chapter-hero__theme-name">
                 {{THEME}}
             </span>
+        </div>
 
-            <span class="chapter-number">
-                Hoofdstuk {{NUMBER}}
-            </span>
+        <div class="chapter-hero__chapter-label">
+            Hoofdstuk
+        </div>
+
+        <div class="chapter-hero__main">
+
+            <div class="chapter-hero__number">
+                {{CHAPTER_LOCAL_NUMBER}}
+            </div>
+
+            <div class="chapter-hero__text">
+                <h1 class="chapter-hero__title">
+                    {{TITLE}}
+                </h1>
+
+                <p class="chapter-hero__abstract">
+                    {{ABSTRACT}}
+                </p>
+            </div>
 
         </div>
 
-        <h1 class="chapter-title">
-            {{TITLE}}
-        </h1>
-
-        <p class="chapter-abstract">
-            {{ABSTRACT}}
-        </p>
-
-    </div>
-
-    <div class="chapter-hero-graphic">
-
-        <img
-            src="../../modules/images/banners/hero_math_visual.svg"
-            alt=""
-        >
+        <div class="chapter-hero__accent"></div>
 
     </div>
 

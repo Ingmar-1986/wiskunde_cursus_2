@@ -402,7 +402,7 @@ def parse_module(module_dir: Path) -> Module:
 
     token_pattern = re.compile(
         r"""
-        \\part\s*\{(?P<part>[^{}]*)\}
+        \\(?:FVDpart|part)\s*\{(?P<part>[^{}]*)\}
         |
         \\activity\s*\{(?P<activity>[^{}]*)\}
         """,
@@ -770,12 +770,22 @@ def render_chapter_hero(
 ) -> str:
     replacements = {
         "THEME": html.escape(chapter.theme),
+        "THEME_NUMBER": str(chapter.theme_number),
+
         "NUMBER": html.escape(chapter.number),
+        "CHAPTER_NUMBER": str(chapter.chapter_number),
+        "CHAPTER_LOCAL_NUMBER": str(chapter.chapter_number),
+
         "TITLE": html.escape(chapter.title),
         "ABSTRACT": html.escape(chapter.abstract),
+
         "MODULE_TITLE": html.escape(module.title),
         "MODULE": html.escape(module.title),
-        "ASSET_PREFIX": html.escape(asset_prefix, quote=True),
+
+        "ASSET_PREFIX": html.escape(
+            asset_prefix,
+            quote=True,
+        ),
     }
 
     return loader.render(
@@ -846,6 +856,7 @@ def enhance_chapter(
         "ChapterLayout.css",
         "chapter-hero.css",
         "learning-boxes.css",
+        "CourseOverview.css",
     )
 
     for stylesheet_name in stylesheet_names:
@@ -1031,11 +1042,13 @@ def validate_required_files(
     errors: list[str] = []
 
     required_templates = (
-        "Header.html",
-        "Footer.html",
-        "ChapterHero.html",
-        "PreviousNext.html",
-    )
+    "Header.html",
+    "Footer.html",
+    "ChapterHero.html",
+    "PreviousNext.html",
+    "CourseCard.html",
+    "CourseOverview.html",
+)
 
     for filename in required_templates:
         path = loader.path(filename)
@@ -1189,3 +1202,76 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
+def render_course_card(
+    loader: TemplateLoader,
+    chapter: Chapter,
+) -> str:
+    return loader.render(
+        "CourseCard.html",
+        {
+            "URL": html.escape(chapter.url, quote=True),
+            "NUMBER": html.escape(chapter.number),
+            "THEME": html.escape(chapter.theme),
+            "TITLE": html.escape(chapter.title),
+            "ABSTRACT": html.escape(chapter.abstract),
+        },
+    )
+    
+def render_course_overview(
+    loader: TemplateLoader,
+    module: Module,
+) -> str:
+    theme_groups: dict[
+        tuple[int, str],
+        list[Chapter],
+    ] = {}
+
+    for chapter in module.chapters:
+        key = (
+            chapter.theme_number,
+            chapter.theme,
+        )
+
+        theme_groups.setdefault(key, []).append(chapter)
+
+    theme_sections: list[str] = []
+
+    for (theme_number, theme_name), chapters in theme_groups.items():
+        cards = "".join(
+            render_course_card(
+                loader,
+                chapter,
+            )
+            for chapter in chapters
+        )
+
+        theme_sections.append(
+            f"""
+            <section class="course-theme">
+
+                <header class="course-theme-header">
+                    <span class="course-theme-number">
+                        Thema {theme_number}
+                    </span>
+
+                    <h2 class="course-theme-title">
+                        {html.escape(theme_name)}
+                    </h2>
+                </header>
+
+                <div class="course-card-grid">
+                    {cards}
+                </div>
+
+            </section>
+            """
+        )
+
+    return loader.render(
+        "CourseOverview.html",
+        {
+            "MODULE_TITLE": html.escape(module.title),
+            "THEME_SECTIONS": "".join(theme_sections),
+        },
+    )

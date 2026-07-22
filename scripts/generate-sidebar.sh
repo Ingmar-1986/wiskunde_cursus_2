@@ -321,7 +321,7 @@ module_title = (
 
 token_pattern = re.compile(
     r"""
-    \\part\s*\{(?P<part>[^{}]*)\}
+    \\(?:FVDpart|part)\s*\{(?P<part>[^{}]*)\}
     |
     \\activity\s*\{(?P<activity>[^{}]*)\}
     """,
