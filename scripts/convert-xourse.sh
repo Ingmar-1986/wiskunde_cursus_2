@@ -114,6 +114,42 @@ if [[ -f "$CSS_DIR/CourseCard.css" ]]; then
     add_stylesheet "$COURSE_CARD_CSS"
 fi
 
+# Compacte hoofdstukkaarten afdwingen.
+# Dit voorkomt dat één kaart de volledige hoogte van het themablok inneemt.
+if ! grep -Fq "FVD-COMPACT-COURSE-CARDS" "$XOURSE_HTML"; then
+    sed -i \
+        "s#</head>#  <style id='FVD-COMPACT-COURSE-CARDS'>\n\
+.course-theme-cards {\n\
+    display: grid;\n\
+    grid-template-columns: repeat(auto-fit, minmax(280px, 420px));\n\
+    align-items: start;\n\
+    align-content: start;\n\
+    grid-auto-rows: auto;\n\
+    gap: 1.25rem;\n\
+}\n\
+.course-card {\n\
+    height: auto !important;\n\
+    min-height: 0 !important;\n\
+    align-self: start;\n\
+}\n\
+.course-card-link {\n\
+    display: flex;\n\
+    flex-direction: column;\n\
+    height: auto !important;\n\
+    min-height: 0 !important;\n\
+    padding: 1.25rem;\n\
+}\n\
+.course-card-abstract {\n\
+    margin: 0.9rem 0 1.1rem;\n\
+    line-height: 1.55;\n\
+}\n\
+.course-card-footer {\n\
+    margin-top: auto;\n\
+}\n\
+</style>\n</head>#" \
+        "$XOURSE_HTML"
+fi
+
 # ============================================================
 # HEADER TOEVOEGEN
 # ============================================================
@@ -162,50 +198,6 @@ sed -i \
      s#{{ABSTRACT}}##g;
      s#{{ASSET_PREFIX}}#../../assets#g" \
     "$XOURSE_HTML"
-
-# ============================================================
-# MODULEINTRO RECHTSTREEKS GENEREREN
-# ============================================================
-
-MODULE_INTRO=$(cat <<EOF
-<section class="module-overview-intro">
-    <div class="module-overview-intro__content">
-        <span class="module-overview-intro__eyebrow">
-            $MODULE_TITLE
-        </span>
-
-        <h1 class="module-overview-intro__title">
-            Cursusinhoud
-        </h1>
-
-        <p class="module-overview-intro__description">
-            Kies hieronder een thema en open het hoofdstuk waarmee je wilt starten.
-        </p>
-    </div>
-</section>
-EOF
-)
-
-INTRO_TEMP_FILE="$(mktemp)"
-
-printf '%s\n' "$MODULE_INTRO" > "$INTRO_TEMP_FILE"
-
-sed -i \
-    '/<!-- XIMERA-HEADER-END -->/a\
-<!-- XIMERA-INTRO-START -->\
-<!-- INTRO-PLACEHOLDER -->\
-<!-- XIMERA-INTRO-END -->' \
-    "$XOURSE_HTML"
-
-sed -i \
-    "/<!-- INTRO-PLACEHOLDER -->/r $INTRO_TEMP_FILE" \
-    "$XOURSE_HTML"
-
-sed -i \
-    '/<!-- INTRO-PLACEHOLDER -->/d' \
-    "$XOURSE_HTML"
-
-rm -f "$INTRO_TEMP_FILE"
 
 # ============================================================
 # THEMA'S EN HOOFDSTUKKAARTEN OPBOUWEN
@@ -456,7 +448,10 @@ def read_chapter_metadata(
     abstract = (
         clean_latex_text(abstract_raw)
         if abstract_raw
-        else ""
+        else (
+            "Open dit hoofdstuk om de leerstof, voorbeelden "
+            "en oefeningen te bekijken."
+        )
     )
 
     return title, abstract   
@@ -469,6 +464,13 @@ def render_card(
     title: str,
     abstract: str,
 ) -> list[Tag | NavigableString]:
+    """
+    Render één geldige hoofdstukkaart.
+
+    Wanneer CourseCard.html onvolledig of fout afgesloten is,
+    wordt automatisch een veilige standaardkaart opgebouwd.
+    """
+
     rendered = card_template
 
     replacements = {
@@ -482,7 +484,65 @@ def render_card(
         rendered = rendered.replace(placeholder, value)
 
     fragment = BeautifulSoup(rendered, "html.parser")
-    return list(fragment.contents)
+    article = fragment.select_one("article.course-card")
+
+    if article is not None:
+        return [article.extract()]
+
+    # Veilige fallback wanneer de template geen geldige kaart oplevert.
+    fallback = BeautifulSoup("", "html.parser")
+
+    article = fallback.new_tag("article")
+    article["class"] = ["course-card"]
+
+    link = fallback.new_tag("a", href=url)
+    link["class"] = ["course-card-link"]
+
+    header = fallback.new_tag("div")
+    header["class"] = ["course-card-header"]
+
+    number_block = fallback.new_tag("div")
+    number_block["class"] = ["course-card-number-block"]
+
+    label = fallback.new_tag("span")
+    label["class"] = ["course-card-label"]
+    label.string = "Hoofdstuk"
+
+    number_tag = fallback.new_tag("span")
+    number_tag["class"] = ["course-card-number"]
+    number_tag.string = number
+
+    number_block.append(label)
+    number_block.append(number_tag)
+
+    title_tag = fallback.new_tag("h3")
+    title_tag["class"] = ["course-card-title"]
+    title_tag.string = title
+
+    header.append(number_block)
+    header.append(title_tag)
+
+    abstract_tag = fallback.new_tag("p")
+    abstract_tag["class"] = ["course-card-abstract"]
+    abstract_tag.string = abstract or (
+        "Open dit hoofdstuk om de leerstof, voorbeelden en oefeningen te bekijken."
+    )
+
+    footer = fallback.new_tag("div")
+    footer["class"] = ["course-card-footer"]
+
+    button = fallback.new_tag("span")
+    button["class"] = ["course-card-button"]
+    button.string = "Hoofdstuk openen →"
+
+    footer.append(button)
+
+    link.append(header)
+    link.append(abstract_tag)
+    link.append(footer)
+    article.append(link)
+
+    return [article]
 
 
 theme_headers = list(soup.select("h1.card.part"))
@@ -581,16 +641,20 @@ for theme_index, theme_header in enumerate(theme_headers, start=1):
             flags=re.IGNORECASE,
         )
 
-        activity = Path(activity).name
 
         chapter_title, abstract = read_chapter_metadata(
             module_dir,
             activity,
         )
 
-        # Verwijder de moduletitel achteraan, indien aanwezig.
+        # Verwijder een eventueel achtervoegsel met de moduletitel.
+        # Dit werkt voor alle modules en niet alleen voor Basiswiskunde.
+        module_name_pattern = re.escape(
+            module_dir.name.replace("-", " ").replace("_", " ")
+        )
+
         chapter_title = re.sub(
-            r"\s*[–—-]\s*Basiswiskunde\s*$",
+            rf"\s*[–—-]\s*{module_name_pattern}\s*$",
             "",
             chapter_title,
             flags=re.IGNORECASE,
@@ -645,35 +709,132 @@ perl -0pi -e '
 # ============================================================
 # FOOTER TOEVOEGEN
 # ============================================================
+#
+# De footer wordt via BeautifulSoup rechtstreeks als laatste kind
+# van <body> geplaatst. Daardoor kan hij niet per ongeluk binnen
+# een hoofdstukkaart, grid of themablok terechtkomen.
+#
 
-sed -i \
-    '/<\/body>/i\
-<div class="course-footer-clear"></div>\
-<!-- XIMERA-FOOTER-START -->\
-<!-- FOOTER-PLACEHOLDER -->\
-<!-- XIMERA-FOOTER-END -->' \
-    "$XOURSE_HTML"
+XOURSE_HTML="$XOURSE_HTML" \
+FOOTER_FILE="$FOOTER_FILE" \
+MODULE_TITLE="$MODULE_TITLE" \
+python3 - <<'PYFOOTER'
+from __future__ import annotations
 
-sed -i \
-    "/<!-- FOOTER-PLACEHOLDER -->/r $FOOTER_FILE" \
-    "$XOURSE_HTML"
+import os
+import re
+from pathlib import Path
 
-sed -i \
-    '/<!-- FOOTER-PLACEHOLDER -->/d' \
-    "$XOURSE_HTML"
+from bs4 import BeautifulSoup, Comment
 
-# Ook in de footer de algemene placeholders vervangen.
-sed -i \
-    "s#{{MODULE_TITLE}}#$MODULE_TITLE#g;
-     s#{{MODULE}}#$MODULE_TITLE#g;
-     s#{{CHAPTER_TITLE}}##g;
-     s#{{CHAPTER_NUMBER}}##g;
-     s#{{CHAPTER_LOCAL_NUMBER}}##g;
-     s#{{THEME}}##g;
-     s#{{THEME_NUMBER}}##g;
-     s#{{ABSTRACT}}##g;
-     s#{{ASSET_PREFIX}}#../../assets#g" \
-    "$XOURSE_HTML"
+
+html_file = Path(os.environ["XOURSE_HTML"])
+footer_file = Path(os.environ["FOOTER_FILE"])
+module_title = os.environ["MODULE_TITLE"]
+
+document = html_file.read_text(encoding="utf-8")
+footer_html = footer_file.read_text(encoding="utf-8")
+
+replacements = {
+    "{{MODULE_TITLE}}": module_title,
+    "{{MODULE}}": module_title,
+    "{{CHAPTER_TITLE}}": "",
+    "{{CHAPTER_NUMBER}}": "",
+    "{{CHAPTER_LOCAL_NUMBER}}": "",
+    "{{THEME}}": "",
+    "{{THEME_NUMBER}}": "",
+    "{{ABSTRACT}}": "",
+    "{{ASSET_PREFIX}}": "../../assets",
+}
+
+for placeholder, value in replacements.items():
+    footer_html = footer_html.replace(placeholder, value)
+
+soup = BeautifulSoup(document, "lxml")
+
+if soup.body is None:
+    raise RuntimeError("Geen <body> gevonden in het moduleoverzicht.")
+
+# Verwijder een eventueel eerder geïnjecteerde footer.
+start_comment = None
+end_comment = None
+
+for comment in soup.find_all(string=lambda value: isinstance(value, Comment)):
+    normalized = re.sub(r"\s+", " ", str(comment)).strip()
+
+    if normalized == "XIMERA-FOOTER-START":
+        start_comment = comment
+
+    elif normalized == "XIMERA-FOOTER-END":
+        end_comment = comment
+
+if start_comment is not None and end_comment is not None:
+    current = start_comment
+
+    while current is not None:
+        next_node = current.next_sibling
+        current.extract()
+
+        if current is end_comment:
+            break
+
+        current = next_node
+
+# Verwijder ook los achtergebleven footers en clear-elementen.
+for old_footer in soup.select("footer.site-footer"):
+    old_footer.decompose()
+
+for old_clear in soup.select(".course-footer-clear"):
+    old_clear.decompose()
+
+footer_fragment = BeautifulSoup(footer_html, "html.parser")
+footer = footer_fragment.select_one("footer.site-footer")
+
+if footer is None:
+    raise RuntimeError(
+        "Footer.html bevat geen <footer class=\"site-footer\">."
+    )
+
+clear = soup.new_tag("div")
+clear["class"] = ["course-footer-clear"]
+
+# Expliciet als directe kinderen van body invoegen.
+soup.body.append(clear)
+soup.body.append(Comment(" XIMERA-FOOTER-START "))
+soup.body.append(footer.extract())
+soup.body.append(Comment(" XIMERA-FOOTER-END "))
+
+# Extra zekerheid dat de footer altijd over de volle breedte staat.
+style = soup.new_tag("style")
+style["id"] = "FVD-FOOTER-LAYOUT-FIX"
+style.string = """
+.course-footer-clear {
+    display: block;
+    width: 100%;
+    clear: both;
+}
+
+body > .site-footer {
+    display: block;
+    width: 100%;
+    max-width: none;
+    clear: both;
+    box-sizing: border-box;
+}
+"""
+
+old_style = soup.find("style", id="FVD-FOOTER-LAYOUT-FIX")
+
+if old_style is not None:
+    old_style.replace_with(style)
+elif soup.head is not None:
+    soup.head.append(style)
+
+html_file.write_text(
+    str(soup) + "\n",
+    encoding="utf-8",
+)
+PYFOOTER
 
 # ============================================================
 # JAVASCRIPT TOEVOEGEN

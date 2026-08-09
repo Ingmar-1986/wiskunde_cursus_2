@@ -1029,6 +1029,86 @@ def enhance_chapter(
     )
 
 
+
+# ============================================================
+# CURSUSOVERZICHT RENDEREN
+# ============================================================
+
+
+def render_course_card(
+    loader: TemplateLoader,
+    chapter: Chapter,
+) -> str:
+    return loader.render(
+        "CourseCard.html",
+        {
+            "URL": html.escape(chapter.url, quote=True),
+            "NUMBER": html.escape(chapter.number),
+            "THEME": html.escape(chapter.theme),
+            "TITLE": html.escape(chapter.title),
+            "ABSTRACT": html.escape(chapter.abstract),
+        },
+    )
+    
+def render_course_overview(
+    loader: TemplateLoader,
+    module: Module,
+) -> str:
+    theme_groups: dict[
+        tuple[int, str],
+        list[Chapter],
+    ] = {}
+
+    for chapter in module.chapters:
+        key = (
+            chapter.theme_number,
+            chapter.theme,
+        )
+
+        theme_groups.setdefault(key, []).append(chapter)
+
+    theme_sections: list[str] = []
+
+    for (theme_number, theme_name), chapters in theme_groups.items():
+        cards = "".join(
+            render_course_card(
+                loader,
+                chapter,
+            )
+            for chapter in chapters
+        )
+
+        theme_sections.append(
+            f"""
+            <section class="course-theme">
+
+                <header class="course-theme-header">
+                    <span class="course-theme-number">
+                        Thema {theme_number}
+                    </span>
+
+                    <h2 class="course-theme-title">
+                        {html.escape(theme_name)}
+                    </h2>
+                </header>
+
+                <div class="course-card-grid">
+                    {cards}
+                </div>
+
+            </section>
+            """
+        )
+
+    return loader.render(
+        "CourseOverview.html",
+        {
+            "MODULE_TITLE": html.escape(module.title),
+            "THEME_SECTIONS": "".join(theme_sections),
+        },
+    )
+
+
 # ============================================================
 # CONTROLES
 # ============================================================
@@ -1202,76 +1282,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-
-def render_course_card(
-    loader: TemplateLoader,
-    chapter: Chapter,
-) -> str:
-    return loader.render(
-        "CourseCard.html",
-        {
-            "URL": html.escape(chapter.url, quote=True),
-            "NUMBER": html.escape(chapter.number),
-            "THEME": html.escape(chapter.theme),
-            "TITLE": html.escape(chapter.title),
-            "ABSTRACT": html.escape(chapter.abstract),
-        },
-    )
-    
-def render_course_overview(
-    loader: TemplateLoader,
-    module: Module,
-) -> str:
-    theme_groups: dict[
-        tuple[int, str],
-        list[Chapter],
-    ] = {}
-
-    for chapter in module.chapters:
-        key = (
-            chapter.theme_number,
-            chapter.theme,
-        )
-
-        theme_groups.setdefault(key, []).append(chapter)
-
-    theme_sections: list[str] = []
-
-    for (theme_number, theme_name), chapters in theme_groups.items():
-        cards = "".join(
-            render_course_card(
-                loader,
-                chapter,
-            )
-            for chapter in chapters
-        )
-
-        theme_sections.append(
-            f"""
-            <section class="course-theme">
-
-                <header class="course-theme-header">
-                    <span class="course-theme-number">
-                        Thema {theme_number}
-                    </span>
-
-                    <h2 class="course-theme-title">
-                        {html.escape(theme_name)}
-                    </h2>
-                </header>
-
-                <div class="course-card-grid">
-                    {cards}
-                </div>
-
-            </section>
-            """
-        )
-
-    return loader.render(
-        "CourseOverview.html",
-        {
-            "MODULE_TITLE": html.escape(module.title),
-            "THEME_SECTIONS": "".join(theme_sections),
-        },
-    )

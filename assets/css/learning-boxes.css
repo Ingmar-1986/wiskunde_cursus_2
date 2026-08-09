@@ -545,3 +545,68 @@
         -webkit-print-color-adjust: exact;
     }
 }
+
+.fvd-example {
+    margin: 1.4rem 0;
+    padding: 0.75rem 1.35rem 1.2rem 1.55rem;
+  
+    background: #f4f8fd;
+    color: #0e2432;
+  
+    border: 1px solid #4b8ac4;
+    border-left: 5px solid #1769b0;
+    border-radius: 10px;
+  
+    box-shadow: 0 5px 16px rgba(14, 36, 50, 0.06);
+  }
+  
+  .fvd-example__header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.25rem;
+  
+    margin: 0;
+    color: #1769b0;
+  
+    font-family: Inter, "Segoe UI", Arial, sans-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  
+  .fvd-example__number { color: #0e2432; }
+  
+  .fvd-example__subtitle {
+    color: #52606d;
+    font-weight: 600;
+  }
+  
+  .fvd-example__rule {
+    display: none;
+  }
+  
+  .fvd-example__content {
+    margin-top: 0.65rem;
+    color: #243746;
+    line-height: 1.62;
+  }
+  
+  .fvd-example__content > :first-child { margin-top: 0; }
+  .fvd-example__content > :last-child { margin-bottom: 0; }
+  .fvd-example__content p { margin: 0.55rem 0; }
+  
+  @media (max-width: 700px) {
+    .fvd-example {
+      padding: 1rem 1rem 1.05rem 1.15rem;
+      border-radius: 8px;
+    }
+    .fvd-example__header { font-size: 1rem; }
+  }
+  
+  @media print {
+    .fvd-example {
+      break-inside: avoid;
+      box-shadow: none;
+    }
+  }

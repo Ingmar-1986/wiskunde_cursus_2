@@ -23,6 +23,7 @@
 \usepackage{array}
 \usepackage{tabularx}
 \usepackage{enumitem}
+\usepackage{graphicx}
 \usepackage{tikz}
 \usepackage{tcolorbox}
 
@@ -43,6 +44,12 @@
 \definecolor{fvdmagentalight}{HTML}{FFF7FA}
 \definecolor{fvdmagentaicon}{HTML}{FFE3EE}
 
+\definecolor{fvddark}{HTML}{0E2432}
+
+\definecolor{fvdexampleblue}{HTML}{1769B0}
+\definecolor{fvdexamplelight}{HTML}{F4F8FD}
+\definecolor{fvdexampleborder}{HTML}{4B8AC4}
+
 
 % ============================================================
 % ALGEMENE CURSUSTITEL
@@ -62,6 +69,125 @@
     \title{#1}%
 }
 
+% ============================================================
+% MODULE-OPENINGSPAGINA
+% ============================================================
+
+\newcommand{\FVDchaptertile}[2]{%
+  \begin{minipage}[t]{0.47\textwidth}
+    \begin{tcolorbox}[
+      enhanced,
+      colback=white,
+      colframe=fvdcyan!35,
+      boxrule=0.7pt,
+      arc=4mm,
+      left=4mm,
+      right=4mm,
+      top=3mm,
+      bottom=3mm,
+      height=24mm,
+      valign=center,
+      drop shadow={opacity=0.08},
+    ]
+      \begin{minipage}[c]{13mm}
+        \centering
+        \begin{tikzpicture}
+          \node[
+            circle,
+            fill=fvdmagenta,
+            text=white,
+            minimum size=10mm,
+            font=\bfseries
+          ] {#1};
+        \end{tikzpicture}
+      \end{minipage}%
+      \hfill
+      \begin{minipage}[c]{\dimexpr\linewidth-17mm\relax}
+        \raggedright
+        \textbf{\color{fvddark}#2}
+      \end{minipage}
+    \end{tcolorbox}
+  \end{minipage}%
+}
+
+\newcommand{\FVDmodulepage}[4]{%
+  \clearpage
+  \thispagestyle{empty}
+
+  % Achtergrondvormen
+  \begin{tikzpicture}[remember picture,overlay]
+
+    \fill[fvdcyan!8]
+      ([xshift=-22mm,yshift=-15mm]current page.north east)
+      circle (43mm);
+
+    \fill[fvdmagenta!8]
+      ([xshift=8mm,yshift=18mm]current page.south west)
+      circle (38mm);
+
+  \end{tikzpicture}
+
+  % Label
+  \noindent
+  {\color{fvdcyan}\bfseries\large
+    THEMA #1
+  }
+
+  \vspace{4mm}
+
+  % Hoofdtitel
+  {\color{fvddark}\bfseries\fontsize{30}{34}\selectfont
+    #2
+  }
+
+  \vspace{4mm}
+
+  \noindent
+  \begin{tikzpicture}
+    \fill[fvdmagenta] (0,0) rectangle (32mm,1.5mm);
+    \fill[fvdcyan] (32mm,0) rectangle (55mm,1.5mm);
+  \end{tikzpicture}
+
+  \vspace{10mm}
+
+  % Abstract
+  \begin{tcolorbox}[
+    enhanced,
+    colback=fvdcyan!5,
+    colframe=fvdcyan!35,
+    boxrule=0.6pt,
+    arc=4mm,
+    borderline west={2.5pt}{0pt}{fvdcyan},
+    left=6mm,
+    right=6mm,
+    top=5mm,
+    bottom=5mm,
+  ]
+    {\color{fvdcyan}\bfseries\large
+      Waarom dit thema?
+    }
+
+    \vspace{2mm}
+
+    \color{fvddark}
+    #3
+  \end{tcolorbox}
+
+  \vfill
+
+  % Hoofdstukkenoverzicht
+  {\color{fvddark}\bfseries\Large
+    In dit thema
+  }
+
+  \vspace{4mm}
+
+  #4
+
+  \vspace{5mm}
+
+  \clearpage
+}
 
 
 
@@ -345,6 +471,75 @@
 \providecolor{fvdBodyText}{HTML}{243746}
 
 % ============================================================
+% FVD-THEMA'S
+% ============================================================
+
+\makeatletter
+\@ifundefined{c@fvdtheme}{\newcounter{fvdtheme}}{}
+\@ifundefined{c@fvdsection}{\newcounter{fvdsection}}{}
+\makeatother
+
+\providecommand{\fvdcurrentthemetitle}{}
+\providecommand{\FVDpart}[1]{}
+
+\ifdefined\HCode
+
+  % HTML: behoud de normale Ximera-partstructuur.
+  \renewcommand{\FVDpart}[1]{%
+    \refstepcounter{fvdtheme}%
+    \setcounter{fvdsection}{0}%
+    \gdef\fvdcurrentthemetitle{#1}%
+    \part{#1}%
+  }
+
+\else
+
+  % PDF: registreer alleen het thema en reset de sectieteller.
+  % De zichtbare themapagina wordt gemaakt met \FVDthemeopening.
+  \renewcommand{\FVDpart}[1]{%
+    \refstepcounter{fvdtheme}%
+    \setcounter{fvdsection}{0}%
+    \gdef\fvdcurrentthemetitle{#1}%
+  }
+
+\fi
+
+
+% ============================================================
+% VISUELE THEMAOPENING
+%
+% #1 = bannerafbeelding
+% ============================================================
+
+\ifdefined\HCode
+
+  \newcommand{\FVDthemeopening}[1]{%
+    \begin{center}
+      \includegraphics[width=\textwidth]{#1}
+    \end{center}
+  }
+
+\else
+
+\newcommand{\FVDthemeopening}[1]{%
+\clearpage
+\thispagestyle{fvdthemeopening}%
+
+\noindent
+\makebox[\textwidth][c]{%
+  \includegraphics[width=\textwidth]{#1}%
+}%
+
+\par
+\vspace{6mm}%
+}
+
+
+\fi
+
+
+
+% ============================================================
 % FVD-SECTIES
 % ============================================================
 
@@ -353,10 +548,6 @@
   \newcounter{fvdsection}%
 }{}
 \makeatother
-
-\providecommand{\FVDpart}[1]{%
-  \part{#1}%
-}
 
 \providecommand{\FVDsection}[1]{%
   \refstepcounter{fvdsection}%
@@ -380,3 +571,443 @@
     ] (fvdtitle) at ([xshift=4mm]fvdnumber.east) {#1};
   \end{tikzpicture}%
 }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% PAGINASTIJL VOOR THEMA-OPENING
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\fancypagestyle{fvdthemeopening}{%
+  \fancyhf{}%
+
+  % Alleen het paginanummer onderaan in het midden
+  \fancyfoot[C]{\thepage}%
+
+  % Geen lijnen bovenaan of onderaan
+  \renewcommand{\headrulewidth}{0pt}%
+  \renewcommand{\footrulewidth}{0pt}%
+}
+
+
+
+% ============================================================
+% THEMA-INLEIDING
+% ============================================================
+
+\ifdefined\HCode
+
+  \newenvironment{themaintro}[1]
+  {%
+    \par
+    \bigskip
+    \noindent
+    \begin{minipage}{\textwidth}
+    \textbf{\large #1}
+    \par
+    \smallskip
+  }
+  {%
+    \end{minipage}
+    \par
+    \medskip
+  }
+
+\else
+
+\newtcolorbox{themaintro}[1]{%
+enhanced,
+breakable,
+colback=black!1.5,
+colframe=black!15,
+boxrule=0.45pt,
+arc=1mm,
+left=5mm,
+right=5mm,
+top=4mm,
+bottom=4mm,
+before skip=5mm,
+after skip=5mm,
+title={#1},
+coltitle=black!75,
+fonttitle=\bfseries\small,
+colbacktitle=black!1.5,
+titlerule=0pt
+}
+
+\fi
+
+
+% ============================================================
+% HOOFDSTUKOVERZICHT PER THEMA
+% ============================================================
+
+\providecommand{\FVDthemechaptertile}[2]{}
+
+\ifdefined\HCode
+
+  % HTML: gebruik zuivere HTML. Vermijd tcolorbox, minipage,
+  % TikZ en \dimexpr, omdat tex4ht die breedteberekening niet
+  % betrouwbaar kan omzetten.
+  \renewcommand{\FVDthemechaptertile}[2]{%
+    \HCode{<div class="fvd-theme-chapter-tile">}%
+      \HCode{<span class="fvd-theme-chapter-tile__number">}%
+        #1%
+      \HCode{</span>}%
+      \HCode{<span class="fvd-theme-chapter-tile__title">}%
+        #2%
+      \HCode{</span>}%
+    \HCode{</div>}%
+  }
+
+\else
+
+  % PDF: visuele tegel met tcolorbox en TikZ.
+  \renewcommand{\FVDthemechaptertile}[2]{%
+    \begin{tcolorbox}[
+      enhanced,
+      colback=white,
+      colframe=fvdcyan!28,
+      boxrule=0.6pt,
+      arc=2.5mm,
+      left=4mm,
+      right=4mm,
+      top=2.6mm,
+      bottom=2.6mm,
+      before skip=1.4mm,
+      after skip=1.4mm
+    ]
+      \begin{minipage}[c]{10mm}
+        \centering
+        \begin{tikzpicture}
+          \node[
+            circle,
+            fill=fvdmagenta,
+            text=white,
+            minimum size=7.5mm,
+            inner sep=0pt,
+            font=\sffamily\bfseries\small
+          ] {#1};
+        \end{tikzpicture}
+      \end{minipage}%
+      \hfill
+      \begin{minipage}[c]{\dimexpr\linewidth-15mm\relax}
+        \raggedright
+        {\color{fvddark}
+         \sffamily
+         \bfseries
+         #2}
+      \end{minipage}
+    \end{tcolorbox}%
+  }
+
+\fi
+
+\providecommand{\FVDthemeoverviewempty}{%
+  \emph{Voor dit thema zijn nog geen hoofdstukken toegevoegd.}%
+}
+
+\ifdefined\HCode
+
+  \newenvironment{hoofdstukoverzicht}
+  {%
+    \HCode{<section class="fvd-theme-overview">}%
+    \HCode{<h2 class="fvd-theme-overview__title">}%
+      Overzicht van de hoofdstukken%
+    \HCode{</h2>}%
+    \HCode{<div class="fvd-theme-overview__grid">}%
+  }
+  {%
+    \HCode{</div>}%
+    \HCode{</section>}%
+  }
+
+\else
+
+  \newenvironment{hoofdstukoverzicht}
+  {%
+    \par
+    \begin{samepage}
+    \noindent
+    {\color{fvddark}
+     \sffamily
+     \bfseries
+     \Large
+     In dit thema\par}
+
+    \vspace{2mm}
+  }
+  {%
+    \end{samepage}
+    \clearpage
+  }
+
+\fi
+
+% ============================================================
+% AUTOMATISCHE MODULE-OPENING VOOR PDF
+% ============================================================
+
+\ifdefined\HCode
+  % De website gebruikt de bestaande Ximera-modulepagina.
+\else
+
+\providecolor{fvddark}{HTML}{0E2432}
+\providecolor{fvdcyan}{HTML}{1D8079}
+\providecolor{fvdmagenta}{HTML}{C3004A}
+
+% ------------------------------------------------------------
+% Eén themategel op de modulepagina
+% ------------------------------------------------------------
+
+\newcommand{\FVDmodulethemetile}[2]{%
+  \begin{tcolorbox}[
+    enhanced,
+    colback=white,
+    colframe=fvdcyan!35,
+    boxrule=0.7pt,
+    arc=3mm,
+    left=5mm,
+    right=5mm,
+    top=4mm,
+    bottom=4mm,
+    before skip=2mm,
+    after skip=2mm
+  ]
+    \begin{minipage}[c]{12mm}
+      \centering
+
+      \begin{tikzpicture}
+        \node[
+          circle,
+          fill=fvdmagenta,
+          text=white,
+          minimum size=9mm,
+          inner sep=0pt,
+          font=\sffamily\bfseries
+        ] {#1};
+      \end{tikzpicture}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[c]{\dimexpr\linewidth-18mm\relax}
+      \raggedright
+      \color{fvddark}
+      \sffamily
+      \bfseries
+      \large
+      #2
+    \end{minipage}
+  \end{tcolorbox}%
+}
+
+% ------------------------------------------------------------
+% Volledige module-openingspagina
+%
+% #1 = moduletitel
+% #2 = moduleabstract
+% #3 = overzicht van de thema's
+% ------------------------------------------------------------
+
+\newcommand{\FVDmoduleopening}[3]{%
+  \clearpage
+  \thispagestyle{empty}
+
+  \begin{tikzpicture}[remember picture,overlay]
+    \fill[fvdcyan!8]
+      ([xshift=-18mm,yshift=-16mm]current page.north east)
+      circle[radius=42mm];
+
+    \fill[fvdmagenta!7]
+      ([xshift=10mm,yshift=12mm]current page.south west)
+      circle[radius=37mm];
+  \end{tikzpicture}
+
+  \noindent
+  {\color{fvdmagenta}
+   \sffamily
+   \bfseries
+   \large
+   MODULE\par}
+
+  \vspace{4mm}
+
+  \noindent
+  {\color{fvddark}
+   \sffamily
+   \bfseries
+   \fontsize{30}{34}\selectfont
+   #1\par}
+
+  \vspace{4mm}
+
+  \noindent
+  \begin{tikzpicture}
+    \fill[fvdmagenta]
+      (0,0) rectangle (34mm,1.4mm);
+
+    \fill[fvdcyan]
+      (34mm,0) rectangle (58mm,1.4mm);
+  \end{tikzpicture}
+
+  \vspace{9mm}
+
+  \begin{tcolorbox}[
+    enhanced,
+    colback=fvdcyan!5,
+    colframe=fvdcyan!30,
+    borderline west={2.5pt}{0pt}{fvdcyan},
+    boxrule=0.5pt,
+    arc=3mm,
+    left=6mm,
+    right=6mm,
+    top=5mm,
+    bottom=5mm
+  ]
+    {\color{fvdcyan}
+     \sffamily
+     \bfseries
+     \large
+     Over deze module\par}
+
+    \vspace{2mm}
+
+    #2
+  \end{tcolorbox}
+
+  \vspace{8mm}
+
+  {\color{fvddark}
+   \sffamily
+   \bfseries
+   \Large
+   Thema's\par}
+
+  \vspace{3mm}
+
+  #3
+
+  \vfill
+}
+
+\fi
+
+\tikzset{
+  fvd axis/.style={
+    ->,
+    line width=1.4pt,
+    color=fvddark,
+    line cap=round
+  },
+  fvd tick/.style={
+    line width=0.8pt,
+    color=fvddark
+  },
+  fvd guide/.style={
+    dashed,
+    line width=0.8pt,
+    color=fvdcyan
+  },
+  fvd label/.style={
+    fill=fvdmagenta,
+    text=white,
+    rounded corners=2pt,
+    inner xsep=6pt,
+    inner ysep=3pt,
+    font=\small\bfseries
+  },
+  fvd panel/.style={
+    fill=fvdcyan!6,
+    rounded corners=3pt
+  }
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% OpmaakExamples.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\ifdefined\fvdexamplesloaded
+  \expandafter\endinput
+\fi
+\global\let\fvdexamplesloaded\relax
+
+\makeatletter
+\@ifundefined{c@fvdexample}{\newcounter{fvdexample}}{}
+\makeatother
+
+\newcommand{\FVDResetExamples}{\setcounter{fvdexample}{0}}
+\AtBeginDocument{\FVDResetExamples}
+
+\newcommand{\FVDExampleOptionalTitle}[1]{%
+  \if\relax\detokenize{#1}\relax
+  \else
+    \space---\space #1%
+  \fi
+}
+
+\ifdefined\HCode
+
+  \newenvironment{voorbeeld}[1][]
+  {%
+    \refstepcounter{fvdexample}%
+    \HCode{<section class="fvd-example">}%
+    \HCode{<div class="fvd-example__header">}%
+    \HCode{<span class="fvd-example__number">}%
+      Voorbeeld \thefvdexample
+    \HCode{</span>}%
+    \if\relax\detokenize{#1}\relax
+    \else
+      \HCode{<span class="fvd-example__subtitle">}%
+        \space---\space #1%
+      \HCode{</span>}%
+    \fi
+    \HCode{</div>}%
+    \HCode{<div class="fvd-example__rule"></div>}%
+    \HCode{<div class="fvd-example__content">}%
+  }
+  {%
+    \HCode{</div></section>}%
+  }
+
+\else
+
+
+% ============================================================
+% VOORBEELD — PDF
+% ============================================================
+
+\newenvironment{voorbeeld}[1][]
+{%
+  \refstepcounter{fvdexample}%
+  \begin{tcolorbox}[
+    enhanced,
+    breakable,
+    colback=fvdexamplelight,
+    colframe=fvdexampleblue,
+    coltext=fvddark,
+    boxrule=0.7pt,
+    leftrule=3pt,
+    rightrule=0.7pt,
+    toprule=0.7pt,
+    bottomrule=0.7pt,
+    arc=3mm,
+    outer arc=3mm,
+    left=6mm,
+    right=6mm,
+    top=2.5mm,
+    bottom=4mm,
+    before skip=5mm,
+    after skip=5mm,
+    fontupper=\color{fvddark}
+  ]%
+  {\sffamily\bfseries\normalsize\color{fvdexampleblue}%
+   Voorbeeld~\thefvdexample
+   \FVDExampleOptionalTitle{#1}\par}%
+  \vspace{2mm}%
+}
+{%
+  \end{tcolorbox}%
+}
+\fi
+
+
+\input{OpmaakTikz.tex}

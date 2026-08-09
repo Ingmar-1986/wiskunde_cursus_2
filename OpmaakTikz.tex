@@ -1,0 +1,432 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% OpmaakTikZ.tex
+%% FVD Graphics Library — Ximera-proof basisversie
+%%
+%% Belangrijk:
+%% - definieert GEEN nieuwe kleuren
+%% - definieert GEEN nieuwe tikzset-stijlen
+%% - gebruikt alleen bestaande stijlen uit Opmaak.tex:
+%%     fvd axis
+%%     fvd tick
+%%     fvd guide
+%%     fvd label
+%%     fvd panel
+%%
+%% Deze versie vermijdt:
+%% - externe afbeeldingen
+%% - emoji
+%% - background layers
+%% - complexe pgfkeys
+%% - berekeningen in tikz-coördinaten
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% ============================================================
+% VEILIGHEID: VOORKOM DUBBEL INLADEN
+% ============================================================
+
+\ifdefined\fvdTikZLibraryLoaded
+  \expandafter\endinput
+\fi
+
+\global\let\fvdTikZLibraryLoaded\relax
+
+
+% ============================================================
+% BASIS: GETALLENLIJN
+% ============================================================
+%
+% Gebruik binnen een tikzpicture:
+%
+%   \FVDNumberLine{-6}{6}
+%
+% ============================================================
+
+\newcommand{\FVDNumberLine}[2]{%
+  \draw[fvd axis] (#1-0.6,0) -- (#2+0.6,0);
+
+  \foreach \x in {#1,...,#2}{%
+    \draw[fvd tick] (\x,0.13) -- (\x,-0.13);
+
+    \ifnum\x=0
+      \node[
+        below=3pt,
+        text=fvdmagenta,
+        font=\small\bfseries
+      ] at (\x,0) {0};
+    \else
+      \node[
+        below=3pt,
+        text=fvddark,
+        font=\small
+      ] at (\x,0) {\x};
+    \fi
+  }%
+}
+
+
+% ============================================================
+% PUNTEN OP DE GETALLENLIJN
+% ============================================================
+
+\newcommand{\FVDPoint}[1]{%
+  \fill[fvdmagenta] (#1,0) circle (2.2pt);
+}
+
+\newcommand{\FVDPointCyan}[1]{%
+  \fill[fvdcyan] (#1,0) circle (2.2pt);
+}
+
+\newcommand{\FVDLabeledPoint}[2]{%
+  \fill[fvdmagenta] (#1,0) circle (2.2pt);
+
+  \node[
+    fvd label,
+    above=7pt
+  ] at (#1,0) {#2};
+}
+
+
+% ============================================================
+% HULPLIJNEN
+% ============================================================
+
+\newcommand{\FVDGuideUp}[2]{%
+  \draw[fvd guide] (#1,0.08) -- (#1,#2);
+}
+
+
+% ============================================================
+% EENVOUDIGE BEWEGING
+% ============================================================
+%
+% Gebruik:
+%
+%   \FVDMoveLeft{5}{2}{3 stappen naar links}
+%   \FVDMoveRight{2}{7}{5 stappen naar rechts}
+%
+% De macro's gebruiken een vaste booghoogte.
+% Daardoor zijn ze betrouwbaarder in TeX4ht dan berekende control points.
+%
+% ============================================================
+
+\newcommand{\FVDMoveLeft}[3]{%
+  \draw[
+    ->,
+    line width=1.4pt,
+    color=fvdcyan
+  ]
+    (#1,0.52)
+    to[bend left=28]
+    (#2,0.52);
+
+  \node[
+    fill=white,
+    draw=fvdcyan!40,
+    text=fvddark,
+    rounded corners=2pt,
+    inner xsep=5pt,
+    inner ysep=2pt,
+    font=\small
+  ] at (#2+1.5,1.15) {#3};
+
+  \FVDGuideUp{#1}{0.50}
+  \FVDGuideUp{#2}{0.50}
+}
+
+\newcommand{\FVDMoveRight}[3]{%
+  \draw[
+    ->,
+    line width=1.4pt,
+    color=fvdcyan
+  ]
+    (#1,0.52)
+    to[bend left=28]
+    (#2,0.52);
+
+  \node[
+    fill=white,
+    draw=fvdcyan!40,
+    text=fvddark,
+    rounded corners=2pt,
+    inner xsep=5pt,
+    inner ysep=2pt,
+    font=\small
+  ] at (#1+2.0,1.15) {#3};
+
+  \FVDGuideUp{#1}{0.50}
+  \FVDGuideUp{#2}{0.50}
+}
+
+
+% ============================================================
+% PIXELPERSONAGE
+% ============================================================
+%
+% Gebruik binnen een scope:
+%
+% \begin{scope}[shift={(5,0.75)},scale=0.06]
+%   \FVDPixelPlayer
+% \end{scope}
+%
+% ============================================================
+
+\newcommand{\FVDPixelPlayer}{%
+  % hoofd
+  \fill[fvddark] (0,4) rectangle (4,8);
+
+  % ogen
+  \fill[fvdcyan] (0.8,5.7) rectangle (1.7,6.6);
+  \fill[fvdcyan] (2.8,5.7) rectangle (3.7,6.6);
+
+  \fill[white] (1.05,5.95) rectangle (1.45,6.35);
+  \fill[white] (3.05,5.95) rectangle (3.45,6.35);
+
+  % lichaam
+  \fill[fvdmagenta] (1,1.5) rectangle (3.5,4);
+
+  % armen
+  \fill[fvdcyan] (0,2.3) rectangle (1,3.8);
+  \fill[fvdcyan] (3.5,2.3) rectangle (4.5,3.8);
+
+  % benen
+  \fill[fvddark] (1,0) rectangle (1.9,1.5);
+  \fill[fvddark] (2.6,0) rectangle (3.5,1.5);
+}
+
+
+% ============================================================
+% PIXELCONTROLLER
+% ============================================================
+%
+% Gebruik binnen een scope:
+%
+% \begin{scope}[shift={(0,0)},scale=0.06]
+%   \FVDPixelController
+% \end{scope}
+%
+% ============================================================
+
+\newcommand{\FVDPixelController}{%
+  % buitenvorm
+  \fill[fvddark] (1,2) rectangle (11,7);
+  \fill[fvddark] (0,3) rectangle (12,6);
+  \fill[fvddark] (2,1) rectangle (4,3);
+  \fill[fvddark] (8,1) rectangle (10,3);
+
+  % binnenvlak
+  \fill[white] (1.5,2.5) rectangle (10.5,6.5);
+  \fill[fvdcyan] (1.5,6.0) rectangle (10.5,6.5);
+
+  % d-pad
+  \fill[fvddark] (2.2,4.1) rectangle (5.0,4.9);
+  \fill[fvddark] (3.2,3.1) rectangle (4.0,5.9);
+
+  % actieknoppen
+  \fill[fvdmagenta] (8.0,4.8) circle (0.42);
+  \fill[fvdmagenta] (9.2,3.7) circle (0.42);
+  \fill[fvdcyan] (6.9,3.7) circle (0.42);
+  \fill[fvdcyan] (8.0,2.8) circle (0.42);
+
+  % middenknoppen
+  \fill[fvddark] (5.2,4.15) rectangle (5.9,4.45);
+  \fill[fvddark] (6.2,4.15) rectangle (6.9,4.45);
+}
+
+
+% ============================================================
+% KANT-EN-KLARE FIGUUR: STARTPOSITIE
+% ============================================================
+%
+% Gebruik:
+%
+%   \FVDStartPositionFigure{-6}{6}{5}
+%
+% ============================================================
+
+\newcommand{\FVDStartPositionFigure}[3]{%
+  \begin{center}
+    \begin{tikzpicture}[
+      x=0.85cm,
+      y=1cm,
+      line cap=round,
+      line join=round
+    ]
+
+
+      \FVDNumberLine{#1}{#2}
+
+      \draw[fvd guide]
+        (#3,0.08)
+        --
+        (#3,0.70);
+
+      \begin{scope}[shift={(#3-0.18,0.76)},scale=0.055]
+        \FVDPixelPlayer
+      \end{scope}
+
+      \node[
+        fvd label
+      ] at (#3,1.42) {startpositie \(#3\)};
+
+      \node[
+        anchor=east,
+        text=fvdmagenta,
+        font=\small\bfseries
+      ] at (-0.35,-1) {negatieve richting};
+
+      \node[
+        anchor=west,
+        text=fvdcyan,
+        font=\small\bfseries
+      ] at (0.35,-1) {positieve richting};
+
+    \end{tikzpicture}
+  \end{center}
+}
+
+
+% ============================================================
+% KANT-EN-KLARE FIGUREN: BEWEGING
+% ============================================================
+%
+% Deze twee macro's zijn bewust apart gehouden.
+% Zo vermijden we complexe berekeningen en conditionele TikZ-code.
+%
+% ============================================================
+
+\newcommand{\FVDMovementLeftFigure}[5]{%
+  \begin{center}
+    \begin{tikzpicture}[
+      x=0.85cm,
+      y=1cm,
+      line cap=round,
+      line join=round
+    ]
+
+        (#1-0.8,-0.72)
+        rectangle
+        (#2+0.8,1.72);
+
+      \FVDNumberLine{#1}{#2}
+
+      \FVDPoint{#3}
+      \FVDPointCyan{#4}
+      \FVDMoveLeft{#3}{#4}{#5}
+
+    \end{tikzpicture}
+  \end{center}
+}
+
+\newcommand{\FVDMovementRightFigure}[5]{%
+  \begin{center}
+    \begin{tikzpicture}[
+      x=0.85cm,
+      y=1cm,
+      line cap=round,
+      line join=round
+    ]
+
+      \fill[fvdcyan!6]
+        (#1-0.8,-0.72)
+        rectangle
+        (#2+0.8,1.72);
+
+      \FVDNumberLine{#1}{#2}
+
+      \FVDPoint{#3}
+      \FVDPointCyan{#4}
+      \FVDMoveRight{#3}{#4}{#5}
+
+    \end{tikzpicture}
+  \end{center}
+}
+
+
+% ============================================================
+% EENVOUDIG ASSENSTELSEL
+% ============================================================
+%
+% Gebruik binnen een tikzpicture:
+%
+%   \FVDCoordinatePlane{-5}{5}{-4}{4}
+%
+% ============================================================
+
+\newcommand{\FVDCoordinatePlane}[4]{%
+  \draw[
+    step=1cm,
+    color=fvdcyan!18,
+    line width=0.35pt
+  ] (#1,#3) grid (#2,#4);
+
+  \draw[fvd axis]
+    (#1,0)
+    --
+    (#2+0.35,0)
+    node[
+      below left=2pt,
+      text=fvddark
+    ] {\(x\)};
+
+  \draw[fvd axis]
+    (0,#3)
+    --
+    (0,#4+0.35)
+    node[
+      below left=2pt,
+      text=fvddark
+    ] {\(y\)};
+
+  \foreach \x in {#1,...,#2}{%
+    \ifnum\x=0
+    \else
+      \draw[fvd tick] (\x,0.10) -- (\x,-0.10);
+      \node[
+        below=2pt,
+        text=fvddark,
+        font=\scriptsize
+      ] at (\x,0) {\x};
+    \fi
+  }
+
+  \foreach \y in {#3,...,#4}{%
+    \ifnum\y=0
+    \else
+      \draw[fvd tick] (0.10,\y) -- (-0.10,\y);
+      \node[
+        left=2pt,
+        text=fvddark,
+        font=\scriptsize
+      ] at (0,\y) {\y};
+    \fi
+  }
+
+  \node[
+    below left=2pt,
+    text=fvdmagenta,
+    font=\scriptsize\bfseries
+  ] at (0,0) {0};
+}
+
+
+% ============================================================
+% PUNT IN EEN ASSENSTELSEL
+% ============================================================
+
+\newcommand{\FVDCoordinatePoint}[3]{%
+  \draw[fvd guide] (#1,0) -- (#1,#2);
+  \draw[fvd guide] (0,#2) -- (#1,#2);
+
+  \fill[fvdmagenta] (#1,#2) circle (2.2pt);
+
+  \node[
+    fvd label,
+    above right=3pt
+  ] at (#1,#2) {\(#3\)};
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% EINDE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

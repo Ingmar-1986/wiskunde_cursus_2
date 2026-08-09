@@ -44,42 +44,9 @@
 \setcounter{fvdpart}{0}
 
 \renewcommand{\FVDpart}[1]{%
-  \clearpage
-  \thispagestyle{empty}%
-  \refstepcounter{fvdpart}%
+  \refstepcounter{fvdtheme}%
   \setcounter{fvdsection}{0}%
-
-  \vspace*{18mm}%
-
-  \noindent
-  \begin{tikzpicture}
-    \node[
-      rounded corners=6mm,
-      fill=fvdHeroDark,
-      minimum width=\textwidth,
-      minimum height=72mm,
-      text width=\dimexpr\textwidth-24mm\relax,
-      inner xsep=12mm,
-      inner ysep=12mm,
-      align=left
-    ] {%
-      {\sffamily\bfseries\small\color{fvdHeroCyan}%
-        THEMA \thefvdpart
-      }
-
-      \vspace{5mm}
-
-      {\sffamily\bfseries
-       \fontsize{28}{33}\selectfont
-       \color{white}%
-       #1\par
-      }
-    };
-  \end{tikzpicture}
-
-  \par
-  \vfill
-  \clearpage
+  \gdef\fvdcurrentthemetitle{#1}%
 }
 
 
@@ -241,10 +208,10 @@
    \fontsize{8.5}{10.5}\selectfont
    \color{fvdHeroCyan}
    \MakeUppercase{%
-     THEMA \fvdthemenumber
-     \enspace\textbullet\enspace
-     \fvdthemetitle
-   }\par}
+   THEMA \fvdstandalonethemenumber
+   \enspace\textbullet\enspace
+   \fvdstandalonetheme
+ }\par}
 
   \vspace{5mm}
 
