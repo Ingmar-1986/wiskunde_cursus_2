@@ -23,6 +23,7 @@ if [[ ! -f "$XOURSE_SOURCE" ]]; then
     exit 1
 fi
 
+sudo rm -f "$XOURSE_HTML"
 cp "$XOURSE_SOURCE" "$XOURSE_HTML"
 
 
@@ -206,7 +207,7 @@ sed -i \
 MODULE_DIR="$MODULE_DIR" \
 XOURSE_HTML="$XOURSE_HTML" \
 COURSE_CARD_FILE="$COURSE_CARD_FILE" \
-python - <<'PY'
+python3 - <<'PY'
 from __future__ import annotations
 
 import html

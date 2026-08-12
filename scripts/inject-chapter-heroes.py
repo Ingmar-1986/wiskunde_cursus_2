@@ -1002,11 +1002,10 @@ def inject_module_banner(
 def module_html_candidates(
     module_dir: Path,
 ) -> list[Path]:
-    """Zoek de gewone en online HTML-versie van de module-index."""
+    """Zoek de gewone HTML-versie van de module-index."""
 
     candidates = [
         module_dir / "index.html",
-        module_dir / "index.online.html",
     ]
 
     return [
@@ -1288,11 +1287,10 @@ def html_candidates(
     module_dir: Path,
     stem: str,
 ) -> list[Path]:
-    """Zoek de gewone en online HTML-versie."""
+    """Zoek de gewone HTML-versie."""
 
     candidates = [
         module_dir / f"{stem}.html",
-        module_dir / f"{stem}.online.html",
     ]
 
     return [

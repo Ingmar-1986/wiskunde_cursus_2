@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en-US" xml:lang="en-US">
+<head> <title>Verandering en het afgeleid getal – Functies in verandering</title>
+<meta charset="utf-8"/>
+<meta content="TeX4ht (https://tug.org/tex4ht/)" name="generator"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="\aa:CssFile " rel="stylesheet" type="text/css"/>
+<meta content="Afgeleid-getal.online.tex" name="src"/>
+<script>window.MathJax = { tex: { tags: "ams", }, }; </script>
+<script async="async" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+<meta content="" name="author"/>
+<meta content="version 2.5.1" name="ximera"/>
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" media="screen" rel="stylesheet"/>
+<script async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js" type="text/javascript"></script>
+<link href="../../../assets/css/base.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/global.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/Header_Footer.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/ChapterLayout.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/chapter-hero.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/learning-boxes.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/CourseOverview.css" media="screen" rel="stylesheet"/></head><body><!-- XIMERA-HEADER-START --><!-- =========================================================
+     HEADER.HTML — Wiskunde 7 FVD
+     Plaats dit bestand bijvoorbeeld in:
+     assets/html/Header.html
+     ========================================================= -->
+<header aria-labelledby="fvd-hero-title" class="fvd-hero">
+<div aria-hidden="true" class="fvd-hero__grid"></div>
+<div aria-hidden="true" class="fvd-hero__glow fvd-hero__glow--left"></div>
+<div aria-hidden="true" class="fvd-hero__glow fvd-hero__glow--right"></div>
+<div class="fvd-hero__inner">
+<!-- Groot Athena-logo links -->
+<div class="fvd-hero__brand">
+<img alt="Athena secundair onderwijs" class="fvd-hero__logo" src="/images/banners/logo_athena.png"/>
+</div>
+<div aria-hidden="true" class="fvd-hero__divider"></div>
+<!-- Centrale titel en leerinhouden -->
+<div class="fvd-hero__content">
+<p class="fvd-hero__eyebrow">
+                    Fundamentele Vorming Digitale Creatie
+                </p>
+<h1 class="fvd-hero__title" id="fvd-hero-title">
+<span class="fvd-hero__title-main">Wiskunde</span>
+<span class="fvd-hero__title-accent">7 FVD</span>
+</h1>
+<div aria-hidden="true" class="fvd-hero__pink-line"></div>
+<p class="fvd-hero__subtitle">
+                    Wiskundige inzichten die je nodig hebt om digitale werelden te bouwen.
+                </p>
+<div aria-label="Onderwerpen in deze cursus" class="fvd-hero__chips">
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<rect height="18" rx="2" width="14" x="5" y="3"></rect>
+<path d="M8 7h8M8 11h2M14 11h2M8 15h2M14 15h2M8 18h2M14 18h2"></path>
+</svg>
+                        Basiswiskunde
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M4 17c4-1 4-10 8-10 2 0 2 3 4 3 1 0 2-.4 4-2"></path>
+<path d="M7 20 13 4"></path>
+</svg>
+                        Algebra
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M5 8h14M5 16h14"></path>
+</svg>
+                        Vergelijkingen
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M4 19V5M4 19h16"></path>
+<path d="m7 16 4-5 3 2 4-6"></path>
+</svg>
+                        Functies
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M5 18 18 5"></path>
+<path d="M12 5h6v6"></path>
+</svg>
+                        Vectoren
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="7"></circle>
+<path d="M12 2v20M2 12h20"></path>
+</svg>
+                        Coördinaten
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="m12 3 8 4.5v9L12 21l-8-4.5v-9z"></path>
+<path d="m4 7.5 8 4.5 8-4.5M12 12v9"></path>
+</svg>
+                        3D-meetkunde
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M3 16c3-8 7-8 10 0 2 5 5 4 8-4"></path>
+</svg>
+                        Goniometrie
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M5 18V6M5 18h14"></path>
+<path d="M8 16c1-6 3-9 8-10"></path>
+</svg>
+                        Logaritmen
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="m7 6 10 5-10 5z"></path>
+<path d="m7 10 10 5-10 5"></path>
+</svg>
+                        Transformaties
+                    </span>
+</div>
+</div>
+<!-- Rechterzijde met wiskundige SVG-tekeningen -->
+<div aria-hidden="true" class="fvd-hero__visual">
+<!-- 3D-kubus -->
+<svg class="fvd-visual fvd-visual--cube" viewbox="0 0 310 245">
+<g class="fvd-svg-cyan">
+<path d="M65 72 185 86 245 48 125 34Z"></path>
+<path d="M65 72v110l120 16V86"></path>
+<path d="M185 86 245 48v110l-60 40"></path>
+<path class="fvd-svg-dash" d="M125 34v110M125 144 65 182M125 144l120 14"></path>
+<path d="M125 144 90 210M125 144l88 28M125 144V15"></path>
+<path d="m90 210 11-4-7-9M213 172l-9-7-2 11M125 15l-6 11h12"></path>
+</g>
+<g class="fvd-svg-label">
+<text x="82" y="225">x</text>
+<text x="220" y="180">y</text>
+<text x="132" y="18">z</text>
+</g>
+</svg>
+<!-- Matrix -->
+<svg class="fvd-visual fvd-visual--matrix" viewbox="0 0 220 100">
+<g class="fvd-svg-soft">
+<text x="0" y="58">A =</text>
+<path d="M60 10c-12 18-12 62 0 80M205 10c12 18 12 62 0 80"></path>
+<text x="82" y="36">1</text>
+<text x="123" y="36">2</text>
+<text x="165" y="36">0</text>
+<text x="73" y="61">−1</text>
+<text x="123" y="61">0</text>
+<text x="165" y="61">3</text>
+<text x="82" y="86">2</text>
+<text x="113" y="86">−2</text>
+<text x="165" y="86">1</text>
+</g>
+</svg>
+<!-- Vectoren en rotatie -->
+<svg class="fvd-visual fvd-visual--vectors" viewbox="0 0 260 170">
+<g class="fvd-svg-cyan">
+<path d="M55 138 132 74"></path>
+<path d="m132 74-13 3 8 10"></path>
+<path d="M55 138h125"></path>
+<path d="m180 138-12-6v12"></path>
+<path class="fvd-svg-dash" d="M55 138c24-65 116-95 156-25"></path>
+</g>
+<g class="fvd-svg-pink">
+<path d="M55 138 207 104"></path>
+<path d="m207 104-13-2 5 12"></path>
+<path class="fvd-svg-dash" d="M211 113c17-13 25-5 21 11"></path>
+<path d="m232 124-9-8-2 12"></path>
+</g>
+<g class="fvd-svg-label">
+<text x="38" y="153">O</text>
+<text x="138" y="73">u⃗</text>
+<text x="188" y="98">v⃗</text>
+<text x="141" y="130">x⃗</text>
+<text x="222" y="102">Rθ</text>
+</g>
+</svg>
+<!-- Bézier-curve -->
+<svg class="fvd-visual fvd-visual--bezier" viewbox="0 0 280 110">
+<g class="fvd-svg-soft">
+<path d="M30 82 85 30 190 30 245 82"></path>
+</g>
+<g class="fvd-svg-cyan">
+<path d="M30 82c42-12 55-52 105-52s67 40 110 52"></path>
+</g>
+<g class="fvd-svg-pink">
+<circle cx="30" cy="82" r="4"></circle>
+<circle cx="85" cy="30" r="4"></circle>
+<circle cx="190" cy="30" r="4"></circle>
+<circle cx="245" cy="82" r="4"></circle>
+</g>
+<g class="fvd-svg-label">
+<text x="18" y="102">P₀</text>
+<text x="74" y="20">P₁</text>
+<text x="181" y="20">P₂</text>
+<text x="238" y="102">P₃</text>
+<text x="103" y="79">Bézier-curve</text>
+</g>
+</svg>
+</div>
+</div>
+<div aria-hidden="true" class="fvd-hero__pink-corner"></div>
+</header><!-- XIMERA-HEADER-END --><!-- XIMERA-CHAPTER-HERO-START --><section class="chapter-hero">
+<div aria-hidden="true" class="chapter-hero__decoration">
+<span class="chapter-hero__formula">
+            f(x) = ax² + bx + c
+        </span>
+<span class="chapter-hero__curve"></span>
+<span class="chapter-hero__grid"></span>
+</div>
+<div class="chapter-hero__content">
+<div class="chapter-hero__theme">
+<span class="chapter-hero__theme-label">
+                Thema 1
+            </span>
+<span class="chapter-hero__theme-dot"></span>
+<span class="chapter-hero__theme-name">
+                Veranderingen in beeld
+            </span>
+</div>
+<div class="chapter-hero__chapter-label">
+            Hoofdstuk
+        </div>
+<div class="chapter-hero__main">
+<div class="chapter-hero__number">
+                1
+            </div>
+<div class="chapter-hero__text">
+<h1 class="chapter-hero__title">
+                    Verandering en het afgeleid getal
+                </h1>
+<p class="chapter-hero__abstract">
+                    In dit hoofdstuk frissen we een centraal idee uit de analyse op: hoe beschrijf je hoe snel een functie verandert? We vertrekken van de gemiddelde verandering over een interval en herkennen daarin de helling van een secant. Door het interval steeds kleiner te maken, komen we opnieuw bij de ogenblikkelijke verandering, het afgeleid getal en de raaklijn. Zo leggen we de basis om verderop nieuwe functies en nieuwe afleidingstechnieken te onderzoeken.
+                </p>
+</div>
+</div>
+<div class="chapter-hero__accent"></div>
+</div>
+</section><!-- XIMERA-CHAPTER-HERO-END --><button aria-controls="courseSidebar" aria-expanded="false" class="course-menu-button" id="courseMenuButton" type="button">☰ Toon cursusinhoud</button><div class="course-sidebar-overlay" id="courseSidebarOverlay"></div><!-- XIMERA-CHAPTER-LAYOUT-START --><main class="chapter-layout">
+<!-- CHAPTER_HERO_START -->
+<section class="chapter-hero">
+
+    <div class="chapter-hero__decoration" aria-hidden="true">
+        <span class="chapter-hero__formula">
+            f(x) = ax² + bx + c
+        </span>
+
+        <span class="chapter-hero__curve"></span>
+        <span class="chapter-hero__grid"></span>
+    </div>
+
+    <div class="chapter-hero__content">
+
+        <div class="chapter-hero__theme">
+            <span class="chapter-hero__theme-label">
+                Thema 1
+            </span>
+
+            <span class="chapter-hero__theme-dot"></span>
+
+            <span class="chapter-hero__theme-name">
+                {{THEME}}
+            </span>
+        </div>
+
+        <div class="chapter-hero__chapter-label">
+            Hoofdstuk
+        </div>
+
+        <div class="chapter-hero__main">
+
+            <div class="chapter-hero__number">
+                {{CHAPTER_LOCAL_NUMBER}}
+            </div>
+
+            <div class="chapter-hero__text">
+                <h1 class="chapter-hero__title">
+                    {{TITLE}}
+                </h1>
+
+                <p class="chapter-hero__abstract">
+                    {{ABSTRACT}}
+                </p>
+            </div>
+
+        </div>
+
+        <div class="chapter-hero__accent"></div>
+
+    </div>
+
+</section>
+<!-- CHAPTER_HERO_END -->
+<!--
+    AUTOMATISCH GEGENEREERD BESTAND
+
+    Dit bestand wordt opgebouwd door:
+        scripts/generate-sidebar.sh
+
+    Bewerk niet dit bestand, maar:
+        assets/html/SidebarTemplate.html
+        en modules/.../index.tex
+-->
+<aside class="course-sidebar" id="courseSidebar">
+<div class="sidebar-header">
+<div class="sidebar-header__text">
+<span class="sidebar-label">
+                Functies in verandering
+            </span>
+<h2 class="sidebar-title">
+                Cursusinhoud
+            </h2>
+</div>
+<button aria-label="Sluit cursusmenu" class="sidebar-close" id="sidebarClose" type="button">
+            ×
+        </button>
+</div>
+<nav aria-label="Cursusinhoud" class="course-navigation">
+<div class="course-section is-open" data-theme="1">
+<button aria-controls="course-section-1-veranderingen-in-beeld" aria-expanded="true" class="course-section-toggle" type="button">
+<span class="course-section-number">
+            1
+        </span>
+<span class="course-section-title">
+            Veranderingen in beeld
+        </span>
+<span aria-hidden="true" class="course-section-arrow">
+            ▾
+        </span>
+</button>
+<div class="course-section-content" id="course-section-1-veranderingen-in-beeld">
+<a aria-current="page" class="course-chapter-link is-active" data-chapter="Thema1-Opfrissing/Afgeleid-getal" href="Thema1-Opfrissing/Afgeleid-getal.html">
+<span class="course-chapter-number">
+                1.1
+            </span>
+<span class="course-chapter-title">
+                Verandering en het afgeleid getal
+            </span>
+</a>
+</div>
+</div>
+</nav>
+</aside>
+<article class="chapter-content"><div class="chapter-body">
+<div class="preamble">
+</div>
+<style> .activity-body pre { white-space: pre; background-color: lightgray; } .xmyoutube { aspect-ratio: 16/9; min-width: 75%; } .image-environment img { width: unset; } </style>
+
+<div class="maketitle"></div>
+<!-- l. 32 --><p class="noindent"></p><section class="learning-box learning-box--prior"> <div class="learning-box__header"> <span class="learning-box__icon"> </span><span class="learning-box__title">Voorkennis</span> </div> <div class="learning-box__content">
+<p></p>
+<ul class="itemize1">
+<li class="itemize">Je kan functiewaarden berekenen.
+</li>
+<li class="itemize">Je kent de richtingscoëfficiënt van een rechte.
+</li>
+<li class="itemize">Je kan een differentiequotiënt berekenen.
+</li>
+<li class="itemize">Je kent het begrip limiet.
+</li>
+<li class="itemize">Je kent het afgeleid getal en de afgeleide functie.
+</li>
+<li class="itemize">Je kan eenvoudige veeltermfuncties afleiden.</li></ul>
+<!-- l. 39 --><p class="noindent"></p></div> </section>
+<p></p><!-- l. 41 --><p class="noindent"></p><section class="learning-box learning-box--goals"> <div class="learning-box__header"> <span class="learning-box__icon"> </span><span class="learning-box__title">Leerdoelen</span> </div> <div class="learning-box__content">
+<p></p>
+<ul class="itemize1">
+<li class="itemize">Je kan een gemiddelde verandering berekenen en interpreteren.
+</li>
+<li class="itemize">Je   kan   het   differentiequotiënt   meetkundig   interpreteren   als   de
+richtingscoëfficiënt van een secant.
+</li>
+<li class="itemize">Je kan gemiddelde en ogenblikkelijke verandering onderscheiden.
+</li>
+<li class="itemize">Je   kan   het   afgeleid   getal   interpreteren   als   een   limiet   van
+differentiequotiënten.
+</li>
+<li class="itemize">Je                                          kan                                          het
+afgeleid getal meetkundig interpreteren als de richtingscoëfficiënt van de
+raaklijn.
+</li>
+<li class="itemize">Je kan het teken en de eenheid van een afgeleid getal interpreteren.
+</li>
+<li class="itemize">Je kan uit <span class="mathjax-inline">\(f(a)\)</span> en <span class="mathjax-inline">\(f'(a)\)</span> de vergelijking van de raaklijn aan de grafiek in <span class="mathjax-inline">\(x=a\)</span> bepalen.</li></ul>
+<!-- l. 54 --><p class="noindent"></p></div> </section>
+<p></p>
+<div class="center">
+<!-- l. 56 --><p class="noindent">
+</p><!-- l. 56 --><p class="noindent"><img alt="[Picture]" src="Afgeleid-getal.online-60965e8d1a57f6f64f1479c3c453fc4f.svg"/></p></div>
+<p><a id="x1-2r1"></a>
+</p><!-- l. 63 --><p class="noindent"> <img alt="[Picture]" src="Afgeleid-getal.online-b8731eaff1415ef04d3813561d7eb448.svg"/>
+</p><!-- l. 65 --><p class="noindent">In wetenschappen beschrijven functies vaak grootheden die veranderen.
+</p><!-- l. 67 --><p class="noindent">Een temperatuur stijgt of daalt. De hoeveelheid van een stof verandert tijdens een
+reactie. Een populatie groeit. Een elektrische spanning varieert in de tijd. Een
+meetwaarde bereikt een maximum of minimum.
+</p><!-- l. 73 --><p class="noindent">Een functie vertelt ons welke waarde een grootheid heeft. Maar in veel situaties willen
+we nog iets anders weten:
+</p>
+<div class="center">
+<!-- l. 76 --><p class="noindent">
+</p><!-- l. 77 --><p class="noindent"><strong>Hoe verandert die grootheid?</strong></p></div>
+<!-- l. 80 --><p class="noindent">Daarvoor gebruiken we afgeleiden.
+</p><!-- l. 82 --><p class="noindent">Je hebt het afgeleid getal en de afgeleide van veeltermfuncties al in het vijfde jaar
+bestudeerd. In dit hoofdstuk bouwen we die theorie daarom niet opnieuw volledig
+op.
+</p><!-- l. 86 --><p class="noindent">We halen vooral de fundamentele verbanden opnieuw naar boven:
+</p>
+<div class="mathjax-block">\[ \boxed {\text {gemiddelde verandering}} \longleftrightarrow \boxed {\text {secant}} \]</div>
+<!-- l. 94 --><p class="noindent">en
+</p>
+<div class="mathjax-block">\[ \boxed {\text {ogenblikkelijke verandering}} \longleftrightarrow \boxed {\text {raaklijn}} \longleftrightarrow \boxed {\text {afgeleid getal}}. \]</div>
+<!-- l. 104 --><p class="noindent">Die verbanden zullen we in de volgende hoofdstukken telkens opnieuw gebruiken
+wanneer we afgeleiden van nieuwe soorten functies onderzoeken.
+</p>
+<h3 class="sectionHead" id="ontdekken"><span class="titlemark">1   </span> <a id="x1-10001"></a>Ontdekken</h3>
+<div class="problem-environment exploration" id="problem1" numbered=" " role="article" titletext=" Exploration"> Hoe verandert een functie?
+<!-- l. 116 --><p class="noindent">Beschouw de functie
+</p>
+<div class="mathjax-block">\[ f(x)=x^2. \]</div>
+<!-- l. 122 --><p class="noindent">We onderzoeken de verandering van deze functie in de buurt van <span class="mathjax-inline">\(x=1\)</span>.
+</p><!-- l. 124 --><p class="noindent">Neem eerst het interval <span class="mathjax-inline">\([1,3]\)</span>.
+</p>
+<div class="mathjax-block">\[ \frac {f(3)-f(1)}{3-1} = \frac {9-1}{2} = 4. \]</div>
+<!-- l. 134 --><p class="noindent">Neem daarna het kleinere interval <span class="mathjax-inline">\([1,2]\)</span>.
+</p>
+<div class="mathjax-block">\[ \frac {f(2)-f(1)}{2-1} = \frac {4-1}{1} = 3. \]</div>
+<!-- l. 144 --><p class="noindent">Nog dichter bij <span class="mathjax-inline">\(1\)</span> krijgen we bijvoorbeeld
+</p>
+<div class="mathjax-block">\[ \frac {f(1,5)-f(1)}{1,5-1} = \frac {2,25-1}{0,5} = 2,5. \]</div>
+<!-- l. 154 --><p class="noindent">En voor <span class="mathjax-inline">\(x=1,1\)</span>:
+</p>
+<div class="mathjax-block">\[ \frac {f(1,1)-f(1)}{1,1-1} = \frac {1,21-1}{0,1} = 2,1. \]</div>
+<div class="problem-environment question" id="problem2" numbered=" " role="article" titletext=" Question">  Naar welke waarde lijken deze differentiequotiënten te naderen wanneer de tweede
+<span class="mathjax-inline">\(x\)</span>-waarde steeds dichter bij <span class="mathjax-inline">\(1\)</span> komt?
+<div class="mathjax-block">\[ \answer {2} \]</div> </div>
+<div class="problem-environment question" id="problem3" numbered=" " role="article" titletext=" Question">  Welke uitspraak past het best bij die waarde?
+<div class="multiple-choice" id="problem4" titletext=" Multiple Choice"><span class="choice" id="choice1">Het is de functiewaarde <span class="mathjax-inline">\(f(1)\)</span>.</span> <span class="choice" id="choice2">Het is de gemiddelde verandering over <span class="mathjax-inline">\([1,3]\)</span>.</span> <span class="choice correct" id="choice3">Het
+is de ogenblikkelijke verandering van <span class="mathjax-inline">\(f\)</span> bij <span class="mathjax-inline">\(x=1\)</span>.</span> <span class="choice" id="choice4">Het is de nulwaarde van <span class="mathjax-inline">\(f\)</span>.</span> </div>
+</div>
+</div>
+<p><a id="x1-1001r2"></a>
+</p><!-- l. 192 --><p class="noindent"> <img alt="[Picture]" src="Afgeleid-getal.online-ee87323169ac7ef48567e3a1d38daf9a.svg"/>
+</p><!-- l. 194 --><p class="noindent">Wanneer we twee verschillende punten van een grafiek nemen, krijgen we een
+<strong>secant</strong>.
+</p><!-- l. 197 --><p class="noindent">De helling van die secant beschrijft een <strong>gemiddelde verandering</strong>.
+</p><!-- l. 200 --><p class="noindent">Wanneer het tweede punt steeds dichter bij het eerste punt komt, wordt het interval
+steeds kleiner.
+</p><!-- l. 203 --><p class="noindent">De secant nadert dan naar de <strong>raaklijn</strong> in het vaste punt.
+</p><!-- l. 205 --><p class="noindent">Tegelijk gaat de gemiddelde verandering over in een <strong>ogenblikkelijke verandering</strong>.
+</p><!-- l. 208 --><p class="noindent">Dit proces vatten we samen als
+</p>
+<div class="mathjax-block">\[ \boxed { \text {secant} \longrightarrow \text {raaklijn} } \]</div>
+<!-- l. 218 --><p class="noindent">en
+                                                                  
+
+                                                                  
+</p>
+<div class="mathjax-block">\[ \boxed { \text {gemiddelde verandering} \longrightarrow \text {ogenblikkelijke verandering} }. \]</div>
+<!-- l. 228 --><p class="noindent">De wiskundige techniek waarmee we deze overgang exact beschrijven, is een
+<strong>limiet</strong>.
+<a id="x1-1002r3"></a>
+</p><!-- l. 236 --><p class="noindent"> <img alt="[Picture]" src="Afgeleid-getal.online-0981fccc447a41e093d6523efffad3ad.svg"/>
+</p><!-- l. 238 --><p class="noindent">
+</p>
+<h5 class="subsubsectionHead" id="verandering-over-een-interval"><a id="x1-2000"></a>Verandering over een interval</h5>
+<!-- l. 240 --><p class="noindent">Beschouw een functie <span class="mathjax-inline">\(f\)</span> en twee waarden <span class="mathjax-inline">\(a\)</span> en <span class="mathjax-inline">\(b\)</span>.
+</p><!-- l. 242 --><p class="noindent">De verandering van de onafhankelijke veranderlijke is
+</p>
+<div class="mathjax-block">\[ \Delta x=b-a. \]</div>
+<!-- l. 248 --><p class="noindent">De verandering van de functiewaarde is
+</p>
+<div class="mathjax-block">\[ \Delta f=f(b)-f(a). \]</div>
+<!-- l. 254 --><p class="noindent">Om te weten hoeveel de functiewaarde gemiddeld verandert per eenheid verandering
+van <span class="mathjax-inline">\(x\)</span>, vergelijken we beide veranderingen.
+</p>
+<div class="theorem-like problem-environment definition" id="problem5" titletext=" definition"><a id="x1-2001r1"></a>De <strong>gemiddelde verandering</strong> van een functie <span class="mathjax-inline">\(f\)</span> over het interval <span class="mathjax-inline">\([a,b]\)</span> is
+<div class="mathjax-block">\[ \important { \frac {\Delta f}{\Delta x} = \frac {f(b)-f(a)}{b-a} }. \]</div>
+<!-- l. 269 --><p class="noindent">Deze verhouding noemen we het <strong>differentiequotiënt</strong>. </p></div>
+<div class="theorem-like problem-environment example" id="problem6" titletext=" example"><a id="x1-2002r2"></a>
+<!-- l. 275 --><p class="noindent">Beschouw
+</p>
+<div class="mathjax-block">\[ f(x)=-x^2+8x. \]</div>
+<!-- l. 281 --><p class="noindent">Bepaal de gemiddelde verandering over <span class="mathjax-inline">\([2,4]\)</span>.
+</p>
+<div class="accordion">
+<h3 class="xmoplossing"></h3>
+<div class="accordion-item xmoplossing-content" id="accordion-item7">
+<!-- l. 285 --><p class="noindent">We berekenen eerst
+</p>
+<div class="mathjax-block">\[ f(2)=-2^2+8\cdot 2=12 \]</div>
+<!-- l. 291 --><p class="noindent">en
+</p>
+<div class="mathjax-block">\[ f(4)=-4^2+8\cdot 4=16. \]</div>
+<!-- l. 297 --><p class="noindent">Daarom is
+</p>
+<div class="mathjax-block">\[ \frac {f(4)-f(2)}{4-2} = \frac {16-12}{2} = 2. \]</div>
+<!-- l. 307 --><p class="noindent">De functiewaarde neemt tussen <span class="mathjax-inline">\(x=2\)</span> en <span class="mathjax-inline">\(x=4\)</span> <strong>gemiddeld met <span class="mathjax-inline">\(2\)</span> eenheden toe per eenheid
+toename van <span class="mathjax-inline">\(x\)</span></strong>.
+</p></div>
+</div>
+<p></p>
+</div>
+<div class="problem-environment exercise" id="problem8" numbered=" " role="article" titletext=" Exercise">
+<!-- l. 317 --><p class="noindent">Voor een functie <span class="mathjax-inline">\(f\)</span> geldt
+</p>
+<div class="mathjax-block">\[ f(3)=7 \qquad \text {en}\qquad f(8)=2. \]</div>
+<!-- l. 325 --><p class="noindent">Bereken de gemiddelde verandering over <span class="mathjax-inline">\([3,8]\)</span>.
+</p>
+<div class="mathjax-block">\[ \frac {f(8)-f(3)}{8-3} = \answer {-1}. \]</div>
+<!-- l. 333 --><p class="noindent">Welke interpretatie is correct?
+</p>
+<div class="multiple-choice" id="problem9" titletext=" Multiple Choice"><span class="choice" id="choice5">De functie daalt overal met precies <span class="mathjax-inline">\(1\)</span>.</span> <span class="choice correct" id="choice6">Tussen <span class="mathjax-inline">\(x=3\)</span> en <span class="mathjax-inline">\(x=8\)</span> neemt de functiewaarde
+gemiddeld met <span class="mathjax-inline">\(1\)</span> af per eenheid toename van <span class="mathjax-inline">\(x\)</span>.</span> <span class="choice" id="choice7">De functiewaarde is gelijk aan <span class="mathjax-inline">\(-1\)</span>.</span> <span class="choice" id="choice8">Elke raaklijn aan de grafiek heeft richtingscoëfficiënt <span class="mathjax-inline">\(-1\)</span>.</span> </div>
+</div>
+<!-- l. 350 --><p class="noindent">
+</p>
+<h5 class="subsubsectionHead" id="meetkundige-betekenis"><a id="x1-3000"></a>Meetkundige betekenis</h5>
+<!-- l. 352 --><p class="noindent">Beschouw de punten
+</p>
+<div class="mathjax-block">\[ A(a,f(a)) \qquad \text {en}\qquad B(b,f(b)) \]</div>
+<!-- l. 360 --><p class="noindent">op de grafiek van <span class="mathjax-inline">\(f\)</span>.
+</p><!-- l. 362 --><p class="noindent">De rechte door <span class="mathjax-inline">\(A\)</span> en <span class="mathjax-inline">\(B\)</span> is een <strong>secant</strong>.
+</p><!-- l. 364 --><p class="noindent">De richtingscoëfficiënt van deze secant is
+</p>
+<div class="mathjax-block">\[ \operatorname {rico}(AB) = \frac {f(b)-f(a)}{b-a}. \]</div>
+<!-- l. 372 --><p class="noindent">Dat is precies het differentiequotiënt.
+</p>
+<div class="theorem-like problem-environment definition" id="problem10" titletext=" definition"><a id="x1-3001r3"></a>Het differentiequotiënt is de <strong>richtingscoëfficiënt van de secant</strong> door de twee
+overeenkomstige punten van de grafiek.
+<div class="mathjax-block">\[ \important { \text {gemiddelde verandering} \longleftrightarrow \text {richtingscoëfficiënt van een secant} } \]</div> </div>
+<!-- l. 393 --><p class="noindent">
+</p>
+<h5 class="subsubsectionHead" id="eenheden"><a id="x1-4000"></a>Eenheden</h5>
+<!-- l. 395 --><p class="noindent">Bij toepassingen heeft een differentiequotiënt meestal ook een eenheid.
+</p><!-- l. 397 --><p class="noindent">Stel bijvoorbeeld dat <span class="mathjax-inline">\(T(t)\)</span> de temperatuur in graden Celsius voorstelt op tijdstip <span class="mathjax-inline">\(t\)</span>,
+uitgedrukt in seconden.
+</p><!-- l. 400 --><p class="noindent">Dan heeft
+</p>
+<div class="mathjax-block">\[ \frac {\Delta T}{\Delta t} \]</div>
+<!-- l. 406 --><p class="noindent">als eenheid
+</p>
+<div class="mathjax-block">\[ \frac {^\circ \mathrm {C}}{\mathrm {s}}. \]</div>
+<!-- l. 412 --><p class="noindent">Als
+</p>
+<div class="mathjax-block">\[ \frac {\Delta T}{\Delta t}=-0,8, \]</div>
+<!-- l. 418 --><p class="noindent">dan betekent dit dat de temperatuur over het onderzochte interval <strong>gemiddeld met <span class="mathjax-inline">\(0,8~^\circ \mathrm {C}\)</span>
+per seconde afneemt</strong>.
+</p>
+<div class="theorem-like problem-environment remark" id="problem11" titletext=" remark"><a id="x1-4001r4"></a>Bij een toepassing is een getal alleen meestal geen volledig antwoord.
+<!-- l. 424 --><p class="noindent">Vermeld indien mogelijk:
+</p>
+<ul class="itemize1">
+<li class="itemize">welke grootheid verandert;
+</li>
+<li class="itemize">of de grootheid toeneemt of afneemt;
+                                                                  
+
+                                                                  
+</li>
+<li class="itemize">hoeveel de grootheid verandert;
+</li>
+<li class="itemize">per welke eenheid;
+</li>
+<li class="itemize">over welk interval de uitspraak geldt.</li></ul>
+</div>
+<p><a id="x1-4002r4"></a>
+</p><!-- l. 440 --><p class="noindent"> <img alt="[Picture]" src="Afgeleid-getal.online-21fa7b3714ee345e5e880ced3a2ffee0.svg"/>
+</p><!-- l. 442 --><p class="noindent">
+</p>
+<h5 class="subsubsectionHead" id="het-interval-steeds-kleiner-maken"><a id="x1-5000"></a>Het interval steeds kleiner maken</h5>
+<!-- l. 444 --><p class="noindent">We kiezen een vast punt
+</p>
+<div class="mathjax-block">\[ A(a,f(a)) \]</div>
+<!-- l. 450 --><p class="noindent">op de grafiek van <span class="mathjax-inline">\(f\)</span>.
+</p><!-- l. 452 --><p class="noindent">Daarnaast nemen we een tweede punt
+</p>
+<div class="mathjax-block">\[ B(x,f(x)). \]</div>
+<!-- l. 458 --><p class="noindent">Voor <span class="mathjax-inline">\(x\neq a\)</span> heeft de secant <span class="mathjax-inline">\(AB\)</span> richtingscoëfficiënt
+</p>
+<div class="mathjax-block">\[ \frac {f(x)-f(a)}{x-a}. \]</div>
+<!-- l. 464 --><p class="noindent">Nu laten we <span class="mathjax-inline">\(x\)</span> steeds dichter bij <span class="mathjax-inline">\(a\)</span> komen:
+</p>
+<div class="mathjax-block">\[ x\to a. \]</div>
+<!-- l. 470 --><p class="noindent">Het punt <span class="mathjax-inline">\(B\)</span> nadert dan tot <span class="mathjax-inline">\(A\)</span>.
+</p><!-- l. 472 --><p class="noindent">De secant door <span class="mathjax-inline">\(A\)</span> en <span class="mathjax-inline">\(B\)</span> nadert naar de raaklijn aan de grafiek in <span class="mathjax-inline">\(A\)</span>.
+</p><!-- l. 475 --><p class="noindent">We onderzoeken daarom
+                                                                  
+
+                                                                  
+</p>
+<div class="mathjax-block">\[ \lim _{x\to a} \frac {f(x)-f(a)}{x-a}. \]</div>
+<!-- l. 482 --><p class="noindent">Deze limiet beschrijft niet langer een gemiddelde verandering over een interval, maar
+de <strong>ogenblikkelijke verandering</strong> bij <span class="mathjax-inline">\(x=a\)</span>.
+<a id="x1-5001r5"></a>
+</p><!-- l. 491 --><p class="noindent"> <img alt="[Picture]" src="Afgeleid-getal.online-e7c8a0c2e2554df55d956b053047b4f6.svg"/>
+</p>
+<div class="theorem-like problem-environment definition" id="problem12" titletext=" definition"><a id="x1-5002r5"></a>Als de limiet
+<div class="mathjax-block">\[ \lim _{x\to a} \frac {f(x)-f(a)}{x-a} \]</div>
+<!-- l. 501 --><p class="noindent">bestaat en een reëel getal is, dan is <span class="mathjax-inline">\(f\)</span> <strong>afleidbaar in <span class="mathjax-inline">\(a\)</span></strong>.
+</p><!-- l. 504 --><p class="noindent">Het <strong>afgeleid getal van <span class="mathjax-inline">\(f\)</span> in <span class="mathjax-inline">\(a\)</span></strong> is
+</p>
+<div class="mathjax-block">\[ \important { f'(a) = \lim _{x\to a} \frac {f(x)-f(a)}{x-a} }. \]</div> </div>
+<!-- l. 516 --><p class="noindent">We kunnen dezelfde definitie schrijven met
+</p>
+<div class="mathjax-block">\[ x=a+h. \]</div>
+<!-- l. 522 --><p class="noindent">Wanneer <span class="mathjax-inline">\(x\to a\)</span>, geldt <span class="mathjax-inline">\(h\to 0\)</span>.
+</p><!-- l. 524 --><p class="noindent">Daarom is ook
+</p>
+<div class="mathjax-block">\[ \important { f'(a) = \lim _{h\to 0} \frac {f(a+h)-f(a)}{h} }. \]</div>
+<!-- l. 536 --><p class="noindent">
+</p>
+<h5 class="subsubsectionHead" id="een-voorbeeld-met-de-definitie"><a id="x1-6000"></a>Een voorbeeld met de definitie</h5>
+<div class="theorem-like problem-environment example" id="problem13" titletext=" example"><a id="x1-6001r6"></a>
+<!-- l. 540 --><p class="noindent">Gegeven is
+</p>
+<div class="mathjax-block">\[ f(x)=x^2+2x. \]</div>
+<!-- l. 546 --><p class="noindent">Bepaal <span class="mathjax-inline">\(f'(1)\)</span> met de definitie.
+</p>
+<div class="accordion">
+<h3 class="xmoplossing"></h3>
+<div class="accordion-item xmoplossing-content" id="accordion-item14">
+<!-- l. 550 --><p class="noindent">We gebruiken
+</p>
+<div class="mathjax-block">\[ f'(1) = \lim _{x\to 1} \frac {f(x)-f(1)}{x-1}. \]</div>
+<!-- l. 559 --><p class="noindent">Omdat
+</p>
+<div class="mathjax-block">\[ f(1)=3, \]</div>
+<!-- l. 565 --><p class="noindent">volgt
+</p>
+<div class="mathjax-env mathjax-align*">\begin{align*} f'(1) &amp;= \lim _{x\to 1} \frac {x^2+2x-3}{x-1} \\ &amp;= \lim _{x\to 1} \frac {(x-1)(x+3)}{x-1} \\ &amp;= \lim _{x\to 1}(x+3) \\ &amp;=4. \end{align*}</div>
+<!-- l. 583 --><p class="noindent">Dus
+</p>
+<div class="mathjax-block">\[ \boxed {f'(1)=4}. \]</div>
+</div>
+</div>
+</div>
+<!-- l. 593 --><p class="noindent">De berekening is slechts één deel van het antwoord.
+</p><!-- l. 595 --><p class="noindent">De waarde
+</p>
+<div class="mathjax-block">\[ f'(1)=4 \]</div>
+<!-- l. 601 --><p class="noindent">betekent ook dat de ogenblikkelijke verandering van <span class="mathjax-inline">\(f\)</span> bij <span class="mathjax-inline">\(x=1\)</span> gelijk is aan <span class="mathjax-inline">\(4\)</span>.
+<a id="x1-6002r6"></a>
+</p><!-- l. 609 --><p class="noindent"> <img alt="[Picture]" src="Afgeleid-getal.online-81936a500140cc9aa6349fba5b1e9299.svg"/>
+</p><!-- l. 611 --><p class="noindent">
+</p>
+<h5 class="subsubsectionHead" id="meetkundige-betekenis1"><a id="x1-7000"></a>Meetkundige betekenis</h5>
+<!-- l. 613 --><p class="noindent">De overgang van secant naar raaklijn geeft onmiddellijk de meetkundige betekenis
+van het afgeleid getal.
+</p>
+<div class="theorem-like problem-environment definition" id="problem15" titletext=" definition"><a id="x1-7001r7"></a>Het afgeleid getal <span class="mathjax-inline">\(f'(a)\)</span> is de <strong>richtingscoëfficiënt van de raaklijn</strong> aan de grafiek van <span class="mathjax-inline">\(f\)</span>
+in het punt
+<div class="mathjax-block">\[ P(a,f(a)). \]</div>
+<!-- l. 625 --><p class="noindent">Dus
+</p>
+<div class="mathjax-block">\[ \important { f'(a)=\operatorname {rico}(t) } \]</div>
+<!-- l. 633 --><p class="noindent">waarbij <span class="mathjax-inline">\(t\)</span> de raaklijn is in <span class="mathjax-inline">\(P\)</span>. </p></div>
+<!-- l. 637 --><p class="noindent">
+</p>
+<h5 class="subsubsectionHead" id="wat-vertelt-het-teken"><a id="x1-8000"></a>Wat vertelt het teken?</h5>
+<!-- l. 639 --><p class="noindent">Als
+</p>
+<div class="mathjax-block">\[ f'(a)&gt;0, \]</div>
+<!-- l. 645 --><p class="noindent">heeft de raaklijn een positieve richtingscoëfficiënt.
+</p><!-- l. 647 --><p class="noindent">Als
+</p>
+<div class="mathjax-block">\[ f'(a)&lt;0, \]</div>
+<!-- l. 653 --><p class="noindent">heeft de raaklijn een negatieve richtingscoëfficiënt.
+</p><!-- l. 655 --><p class="noindent">Als
+</p>
+<div class="mathjax-block">\[ f'(a)=0, \]</div>
+<!-- l. 661 --><p class="noindent">is de raaklijn horizontaal.
+</p>
+<div class="theorem-like problem-environment remark" id="problem16" titletext=" remark"><a id="x1-8001r8"></a>Uit
+<div class="mathjax-block">\[ f'(a)=0 \]</div>
+<!-- l. 670 --><p class="noindent">mag je niet onmiddellijk besluiten dat <span class="mathjax-inline">\(f\)</span> in <span class="mathjax-inline">\(a\)</span> een maximum of minimum bereikt.
+</p><!-- l. 673 --><p class="noindent">Een horizontale raaklijn is op zichzelf onvoldoende om een extremum te besluiten.
+</p></div>
+<p><a id="x1-8002r7"></a>
+</p><!-- l. 682 --><p class="noindent"> <img alt="[Picture]" src="Afgeleid-getal.online-8c4d3862526f10d21d5499e42f902231.svg"/>
+</p><!-- l. 684 --><p class="noindent">Bij een toepassing moeten we opnieuw rekening houden met de betekenis en de
+eenheden van de grootheden.
+</p><!-- l. 687 --><p class="noindent">Stel dat <span class="mathjax-inline">\(Q(t)\)</span> een hoeveelheid in milligram voorstelt en dat <span class="mathjax-inline">\(t\)</span> in uren wordt uitgedrukt.
+</p><!-- l. 690 --><p class="noindent">Als
+</p>
+<div class="mathjax-block">\[ Q'(4)=-2,5, \]</div>
+<!-- l. 696 --><p class="noindent">dan heeft de afgeleide als eenheid
+</p>
+<div class="mathjax-block">\[ \frac {\mathrm {mg}}{\mathrm {uur}}. \]</div>
+<!-- l. 702 --><p class="noindent">Een volledige interpretatie is:
+</p>
+<div class="center">
+<!-- l. 704 --><p class="noindent">
+</p><!-- l. 705 --><p class="noindent">Op het tijdstip <span class="mathjax-inline">\(t=4\)</span> uur neemt de hoeveelheid <span class="mathjax-inline">\(Q\)</span> ogenblikkelijk af met <span class="mathjax-inline">\(2,5\)</span> milligram per
+uur.</p></div>
+<!-- l. 709 --><p class="noindent">Bij een interpretatie stellen we dus drie vragen:
+</p><!-- l. 712 --><p class="noindent">
+</p>
+<ol class="enumerate1">
+<li class="enumerate" id="x1-8004x1"><strong>Waar?</strong> Bij welke invoerwaarde?
+</li>
+<li class="enumerate" id="x1-8006x2"><strong>In welke richting?</strong> Toename, afname of horizontaal?
+</li>
+<li class="enumerate" id="x1-8008x3"><strong>Hoe sterk?</strong> Met welke waarde en welke eenheid?</li></ol>
+<div class="problem-environment exercise" id="problem17" numbered=" " role="article" titletext=" Exercise">
+<!-- l. 720 --><p class="noindent">De functie <span class="mathjax-inline">\(C(t)\)</span> beschrijft een concentratie in <span class="mathjax-inline">\(\mathrm {mg/L}\)</span>, waarbij <span class="mathjax-inline">\(t\)</span> wordt uitgedrukt in
+minuten.
+</p><!-- l. 723 --><p class="noindent">Er geldt
+</p>
+<div class="mathjax-block">\[ C'(12)=-0,30. \]</div>
+<!-- l. 729 --><p class="noindent">Welke interpretatie is correct?
+</p>
+<div class="multiple-choice" id="problem18" titletext=" Multiple Choice">
+<span class="choice" id="choice9"> Na <span class="mathjax-inline">\(12\)</span> minuten bedraagt de concentratie <span class="mathjax-inline">\(-0,30~\mathrm {mg/L}\)</span>. </span>
+<span class="choice" id="choice10"> Gedurende de eerste <span class="mathjax-inline">\(12\)</span> minuten daalt de concentratie gemiddeld met <span class="mathjax-inline">\(0,30~\mathrm {mg/L}\)</span>.
+</span>
+<span class="choice correct" id="choice11"> Op het tijdstip <span class="mathjax-inline">\(t=12\)</span> minuten neemt de concentratie ogenblikkelijk af met <span class="mathjax-inline">\(0,30~\mathrm {mg/L}\)</span> per minuut.
+</span>
+<span class="choice" id="choice12"> Na <span class="mathjax-inline">\(12\)</span> minuten is de concentratie nul. </span>
+</div>
+</div>
+<p><a id="x1-8009r8"></a>
+</p><!-- l. 761 --><p class="noindent"> <img alt="[Picture]" src="Afgeleid-getal.online-af507f746585fcd322ce53aaed20276c.svg"/>
+</p><!-- l. 763 --><p class="noindent">De raaklijn aan de grafiek in
+</p>
+<div class="mathjax-block">\[ P(a,f(a)) \]</div>
+<!-- l. 769 --><p class="noindent">heeft richtingscoëfficiënt
+</p>
+<div class="mathjax-block">\[ f'(a). \]</div>
+<!-- l. 775 --><p class="noindent">Een rechte met richtingscoëfficiënt <span class="mathjax-inline">\(m\)</span> door een punt <span class="mathjax-inline">\((x_1,y_1)\)</span> heeft vergelijking
+</p>
+<div class="mathjax-block">\[ y-y_1=m(x-x_1). \]</div>
+<!-- l. 782 --><p class="noindent">Daaruit volgt:
+</p>
+<div class="theorem-like problem-environment definition" id="problem19" titletext=" definition"><a id="x1-8010r9"></a>De raaklijn aan de grafiek van <span class="mathjax-inline">\(f\)</span> in het punt <span class="mathjax-inline">\(P(a,f(a))\)</span> heeft vergelijking
+<div class="mathjax-block">\[ \important { y-f(a)=f'(a)(x-a) }. \]</div> </div>
+<div class="theorem-like problem-environment example" id="problem20" titletext=" example"><a id="x1-8011r10"></a>
+<!-- l. 798 --><p class="noindent">Gegeven is
+</p>
+<div class="mathjax-block">\[ f(x)=x^2+2x. \]</div>
+<!-- l. 804 --><p class="noindent">We weten dat
+</p>
+<div class="mathjax-block">\[ f(1)=3 \qquad \text {en}\qquad f'(1)=4. \]</div>
+<!-- l. 812 --><p class="noindent">De raaklijn bij <span class="mathjax-inline">\(x=1\)</span> heeft dus vergelijking
+</p>
+<div class="mathjax-env mathjax-align*">\begin{align*} y-3 &amp;= 4(x-1) \\ y-3 &amp;= 4x-4 \\ y &amp;= 4x-1. \end{align*}</div>
+<!-- l. 822 --><p class="noindent">Dus
+</p>
+<div class="mathjax-block">\[ \boxed {y=4x-1}. \]</div>
+</div>
+<div class="problem-environment exercise" id="problem21" numbered=" " role="article" titletext=" Exercise">
+<!-- l. 833 --><p class="noindent">Voor een functie <span class="mathjax-inline">\(f\)</span> geldt
+</p>
+<div class="mathjax-block">\[ f(2)=5 \qquad \text {en}\qquad f'(2)=-3. \]</div>
+<!-- l. 841 --><p class="noindent">Vul aan.
+</p><!-- l. 843 --><p class="noindent">De raaklijn gaat door
+</p>
+<div class="mathjax-block">\[ P=(\answer {2},\answer {5}) \]</div>
+<!-- l. 849 --><p class="noindent">en heeft richtingscoëfficiënt
+</p>
+<div class="mathjax-block">\[ \answer {-3}. \]</div>
+<!-- l. 855 --><p class="noindent">De vergelijking is
+</p>
+<div class="mathjax-block">\[ y-5=-3(x-2), \]</div>
+<!-- l. 861 --><p class="noindent">dus
+</p>
+<div class="mathjax-block">\[ y=\answer {-3}x+\answer {11}. \]</div>
+</div>
+<p><a id="x1-8012r9"></a>
+</p><!-- l. 874 --><p class="noindent"> <img alt="[Picture]" src="Afgeleid-getal.online-91aec9b6fee55e807a8438cc44ef86b9.svg"/>
+</p><!-- l. 876 --><p class="noindent">De belangrijkste begrippen uit dit hoofdstuk kunnen we in twee ketens samenvatten.
+</p><!-- l. 879 --><p class="noindent">Voor twee verschillende punten:
+</p>
+<div class="mathjax-block">\[ \important { \text {differentiequotiënt} \longleftrightarrow \text {gemiddelde verandering} \longleftrightarrow \text {secant} } \]</div>
+<!-- l. 891 --><p class="noindent">Voor één punt:
+</p>
+<div class="mathjax-block">\[ \important { \text {afgeleid getal} \longleftrightarrow \text {ogenblikkelijke verandering} \longleftrightarrow \text {raaklijn} } \]</div>
+<!-- l. 903 --><p class="noindent">De overgang tussen beide gebeurt door een limiet:
+</p>
+<div class="mathjax-block">\[ \boxed { f'(a) = \lim _{x\to a} \frac {f(x)-f(a)}{x-a} }. \]</div>
+<!-- l. 915 --><p class="noindent">
+</p>
+<h5 class="subsubsectionHead" id="drie-talen-van-de-afgeleide"><a id="x1-9000"></a>Drie talen van de afgeleide</h5>
+<!-- l. 917 --><p class="noindent">Eenzelfde uitspraak over een afgeleide kunnen we op verschillende manieren
+formuleren.
+</p>
+<div class="center">
+<!-- l. 920 --><p class="noindent">
+</p>
+<div class="tabular"> <table class="tabular" id="TBL-1"><colgroup id="TBL-1-1g"><col id="TBL-1-1"/></colgroup><colgroup id="TBL-1-2g"><col id="TBL-1-2"/></colgroup><tr id="TBL-1-1-" style="vertical-align:baseline;"><td class="td11" id="TBL-1-1-1" style="white-space:normal; text-align:left;"> <!-- l. 922 --><p class="noindent"><strong>Algebraïsch</strong> </p></td>
+<td class="td11" id="TBL-1-1-2" style="white-space:normal; text-align:left;"> <!-- l. 924 --><p class="noindent"><span class="mathjax-inline">\(f'(a)\)</span> is de limiet van de differentiequotiënten.            </p></td>
+</tr><tr class="vspace" style="font-size:5.69054pt"><td></td><td></td></tr><tr id="TBL-1-2-" style="vertical-align:baseline;"><td class="td11" id="TBL-1-2-1" style="white-space:normal; text-align:left;"> <!-- l. 927 --><p class="noindent"><strong>Meetkundig</strong> </p></td>
+<td class="td11" id="TBL-1-2-2" style="white-space:normal; text-align:left;"> <!-- l. 929 --><p class="noindent"><span class="mathjax-inline">\(f'(a)\)</span> is de richtingscoëfficiënt van de raaklijn bij <span class="mathjax-inline">\(x=a\)</span>.      </p></td>
+</tr><tr class="vspace" style="font-size:5.69054pt"><td></td><td></td></tr><tr id="TBL-1-3-" style="vertical-align:baseline;"><td class="td11" id="TBL-1-3-1" style="white-space:normal; text-align:left;"> <!-- l. 932 --><p class="noindent"><strong>In context</strong> </p></td><td class="td11" id="TBL-1-3-2" style="white-space:normal; text-align:left;"> <!-- l. 934 --><p class="noindent"><span class="mathjax-inline">\(f'(a)\)</span> beschrijft de ogenblikkelijke verandering van de 
+afhankelijke grootheid bij <span class="mathjax-inline">\(x=a\)</span>.                               </p></td>
+</tr></table> </div></div>
+<!-- l. 939 --><p class="noindent">Bij analyse moet je tussen deze drie voorstellingen kunnen schakelen.
+<a id="x1-9001r10"></a>
+</p><!-- l. 946 --><p class="noindent"> <img alt="[Picture]" src="Afgeleid-getal.online-a84c805dd6151b259ad9141a541825fb.svg"/>
+</p>
+<div class="theorem-like problem-environment remark" id="problem22" titletext=" remark"><a id="x1-9002r11"></a><strong>Gemiddelde en ogenblikkelijke verandering verwarren</strong>
+<div class="mathjax-block">\[ \frac {f(b)-f(a)}{b-a} \]</div>
+<!-- l. 955 --><p class="noindent">beschrijft een verandering over een interval.
+</p>
+<div class="mathjax-block">\[ f'(a) \]</div>
+<!-- l. 961 --><p class="noindent">beschrijft een ogenblikkelijke verandering bij één invoerwaarde. </p></div>
+<div class="theorem-like problem-environment remark" id="problem23" titletext=" remark"><a id="x1-9003r12"></a><strong>De afgeleide verwarren met de functiewaarde</strong>
+<div class="mathjax-block">\[ f(a) \]</div>
+<!-- l. 972 --><p class="noindent">vertelt waar het punt op de grafiek ligt.
+</p>
+<div class="mathjax-block">\[ f'(a) \]</div>
+<!-- l. 978 --><p class="noindent">vertelt hoe de grafiek daar ogenblikkelijk verandert. </p></div>
+<div class="theorem-like problem-environment remark" id="problem24" titletext=" remark"><a id="x1-9004r13"></a><strong>Uit <span class="mathjax-inline">\(f'(a)=0\)</span> onmiddellijk een extremum besluiten</strong>
+<!-- l. 985 --><p class="noindent">Een horizontale raaklijn is niet noodzakelijk een maximum of minimum. Het verloop
+rond het punt moet eveneens onderzocht worden. </p></div>
+<p><a id="x1-9005r11"></a>
+</p><!-- l. 994 --><p class="noindent"> <img alt="[Picture]" src="Afgeleid-getal.online-47d6f0de3c21c1ea668a2fb84bda36ec.svg"/>
+</p>
+<div class="problem-environment exercise" id="problem25" numbered=" " role="article" titletext=" Exercise">
+<!-- l. 998 --><p class="noindent">Van een functie <span class="mathjax-inline">\(f\)</span> weten we dat
+</p>
+<div class="mathjax-block">\[ f(2)=7 \qquad \text {en}\qquad f'(2)=-3. \]</div>
+<div class="problem-environment question" id="problem26" numbered=" " role="article" titletext=" Question">
+<!-- l. 1008 --><p class="noindent">Door welk punt gaat de raaklijn?
+</p>
+<div class="mathjax-block">\[ P=(\answer {2},\answer {7}). \]</div>
+</div>
+<div class="problem-environment question" id="problem27" numbered=" " role="article" titletext=" Question">
+<!-- l. 1018 --><p class="noindent">Wat is de richtingscoëfficiënt van de raaklijn?
+</p>
+<div class="mathjax-block">\[ \operatorname {rico}(t)=\answer {-3}. \]</div>
+</div>
+<div class="problem-environment question" id="problem28" numbered=" " role="article" titletext=" Question">
+<!-- l. 1028 --><p class="noindent">Hoe verloopt de raaklijn van links naar rechts?
+</p>
+<div class="multiple-choice" id="problem29" titletext=" Multiple Choice"><span class="choice" id="choice13">Ze stijgt. </span><span class="choice correct" id="choice14">Ze daalt. </span><span class="choice" id="choice15">Ze is horizontaal.</span> </div>
+</div>
+<div class="problem-environment question" id="problem30" numbered=" " role="article" titletext=" Question">
+<!-- l. 1040 --><p class="noindent">Bepaal de vergelijking van de raaklijn.
+</p>
+<div class="mathjax-block">\[ y-7=-3(x-2), \]</div>
+<!-- l. 1046 --><p class="noindent">dus
+</p>
+<div class="mathjax-block">\[ y=\answer {-3}x+\answer {13}. \]</div>
+</div>
+<div class="problem-environment question" id="problem31" numbered=" " role="article" titletext=" Question">
+<!-- l. 1056 --><p class="noindent">Een leerling beweert:
+</p>
+<div class="center">
+<!-- l. 1058 --><p class="noindent">
+</p><!-- l. 1059 --><p class="noindent">“Omdat <span class="mathjax-inline">\(f'(2)=-3\)</span>, geldt noodzakelijk <span class="mathjax-inline">\(f(3)=4\)</span>.”</p></div>
+<!-- l. 1062 --><p class="noindent">Is dat correct?
+</p>
+<div class="multiple-choice" id="problem32" titletext=" Multiple Choice">
+<span class="choice" id="choice16"> Ja, want <span class="mathjax-inline">\(7-3=4\)</span>. </span>
+<span class="choice correct" id="choice17"> Nee. <span class="mathjax-inline">\(f'(2)\)</span> beschrijft de ogenblikkelijke verandering bij <span class="mathjax-inline">\(x=2\)</span>. Daaruit volgt niet dat de
+functie over het volledige interval <span class="mathjax-inline">\([2,3]\)</span> met precies <span class="mathjax-inline">\(3\)</span> afneemt. </span>
+</div>
+</div>
+</div>
+<p><a id="x1-9006r12"></a>
+</p><!-- l. 1087 --><p class="noindent"> <img alt="[Picture]" src="Afgeleid-getal.online-37f6d988d2b89727ff6123f5c4ce6813.svg"/>
+</p><!-- l. 1089 --><p class="noindent">Over een interval <span class="mathjax-inline">\([a,b]\)</span> gebruiken we het differentiequotiënt
+</p>
+<div class="mathjax-block">\[ \boxed { \frac {f(b)-f(a)}{b-a} }. \]</div>
+<!-- l. 1097 --><p class="noindent">Dit beschrijft de gemiddelde verandering en is de richtingscoëfficiënt van een
+secant.
+</p><!-- l. 1100 --><p class="noindent">Bij één punt gebruiken we het afgeleid getal
+</p>
+<div class="mathjax-block">\[ \boxed { f'(a) = \lim _{x\to a} \frac {f(x)-f(a)}{x-a} }. \]</div>
+<!-- l. 1111 --><p class="noindent">Dit beschrijft de ogenblikkelijke verandering en is de richtingscoëfficiënt van de
+raaklijn bij <span class="mathjax-inline">\(x=a\)</span>.
+</p><!-- l. 1114 --><p class="noindent">De vergelijking van die raaklijn is
+</p>
+<div class="mathjax-block">\[ \boxed { y-f(a)=f'(a)(x-a) }. \]</div>
+<!-- l. 1122 --><p class="noindent">Bij toepassingen interpreteren we een afgeleid getal altijd in functie van de
+grootheden, het teken en de eenheden.
+<a id="x1-9007r13"></a>
+</p><!-- l. 1130 --><p class="noindent"> <img alt="[Picture]" src="Afgeleid-getal.online-a7de1809d486ecdef110d5f4c3fb4f99.svg"/>
+</p><!-- l. 1132 --><p class="noindent">Na deze korte opfrissing moet je zelfstandig:
+                                                                  
+
+                                                                  
+</p>
+<ul class="itemize1">
+<li class="itemize">een differentiequotiënt berekenen en interpreteren;
+</li>
+<li class="itemize">het verband leggen tussen differentiequotiënt en secant;
+</li>
+<li class="itemize">gemiddelde en ogenblikkelijke verandering onderscheiden;
+</li>
+<li class="itemize">het afgeleid getal herkennen als een limiet van differentiequotiënten;
+</li>
+<li class="itemize">het verband leggen tussen afgeleid getal en raaklijn;
+</li>
+<li class="itemize">een  afgeleid  getal  in  een  wetenschappelijke  context  interpreteren,  met
+teken en eenheid;
+</li>
+<li class="itemize">uit <span class="mathjax-inline">\(f(a)\)</span> en <span class="mathjax-inline">\(f'(a)\)</span> de vergelijking van een raaklijn bepalen;
+</li>
+<li class="itemize">uitleggen waarom <span class="mathjax-inline">\(f'(a)=0\)</span> op zichzelf nog geen extremum bewijst.</li></ul>
+<!-- l. 1147 --><p class="noindent">Dit is de noodzakelijke basis voor de volgende hoofdstukken, waarin we deze ideeën
+toepassen op nieuwe functieklassen en nieuwe afleidingsregels.
+                                                                  
+
+                                                                  
+</p>
+</div><!-- XIMERA-PREVIOUS-NEXT-START --><nav aria-label="Hoofdstuknavigatie" class="chapter-navigation">
+<a class="chapter-navigation__card chapter-navigation__card--previous" data-visible="false" href="#">
+<span aria-hidden="true" class="chapter-navigation__icon">
+            ←
+        </span>
+<span class="chapter-navigation__content">
+<span class="chapter-navigation__label">
+                Vorig hoofdstuk
+            </span>
+<span class="chapter-navigation__title">
+</span>
+</span>
+</a>
+<a class="chapter-navigation__card chapter-navigation__card--overview" href="index.html">
+<span aria-hidden="true" class="chapter-navigation__overview-icon">
+<span></span>
+<span></span>
+<span></span>
+</span>
+<span class="chapter-navigation__content">
+<span class="chapter-navigation__label">
+                Cursus
+            </span>
+<span class="chapter-navigation__title">
+                Overzicht
+            </span>
+</span>
+</a>
+<a class="chapter-navigation__card chapter-navigation__card--next" data-visible="false" href="#">
+<span class="chapter-navigation__content">
+<span class="chapter-navigation__label">
+                Volgend hoofdstuk
+            </span>
+<span class="chapter-navigation__title">
+</span>
+</span>
+<span aria-hidden="true" class="chapter-navigation__icon">
+            →
+        </span>
+</a>
+</nav><!-- XIMERA-PREVIOUS-NEXT-END --></article></main><!-- XIMERA-CHAPTER-LAYOUT-END --><div class="course-footer-clear"></div><!-- XIMERA-FOOTER-START --><footer class="site-footer">
+<div aria-hidden="true" class="site-footer__accent"></div>
+<div class="site-footer__inner">
+<div class="site-footer__quote">
+<span aria-hidden="true" class="site-footer__quote-mark">◈</span>
+<p class="site-footer__quote-text">
+                Think mathematically. Create digitally. Shape the future.
+            </p>
+</div>
+<div aria-hidden="true" class="site-footer__divider"></div>
+<div class="site-footer__grid">
+<section class="site-footer__column">
+<p class="site-footer__eyebrow">
+                    Wiskunde 7 FVD
+                </p>
+<h2 class="site-footer__title">
+                    Fundamentele Vorming Digitale Creatie
+                </h2>
+<p class="site-footer__text">
+                    Wiskundige basis voor programmeren, graphics,
+                    animatie, simulatie en 3D.
+                </p>
+</section>
+<section class="site-footer__column">
+<p class="site-footer__eyebrow">
+                    Ontwikkeling
+                </p>
+<p class="site-footer__name">
+                    Ingmar Herreman
+                </p>
+<p class="site-footer__text">
+                    GO! Athena Campus Bellevue
+                </p>
+<p class="site-footer__text">
+                    Versie 1.0 · 2026
+                </p>
+</section>
+<section class="site-footer__column">
+<p class="site-footer__eyebrow">
+                    Technologie
+                </p>
+<div class="site-footer__tech">
+<span>Ximera</span>
+<span>HTML</span>
+<span>PDF</span>
+<span>GeoGebra</span>
+<span>GitHub</span>
+</div>
+</section>
+</div>
+<div class="site-footer__bottom">
+<span>Gebouwd met Ximera</span>
+<span aria-hidden="true">•</span>
+<span>Voor 7 FVD</span>
+<span aria-hidden="true">•</span>
+<span>© 2026</span>
+</div>
+</div>
+</footer><!-- XIMERA-FOOTER-END --><script src="../../../assets/js/chapter-layout.js"></script></body>
+</html>
