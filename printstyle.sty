@@ -81,6 +81,9 @@
 \providebool{printactivityurl}
 \providebool{printcontinuouspagenumbers}
 
+% Altijd doorlopende paginanummers in de volledige cursus
+\printcontinuouspagenumberstrue
+
 % for PDF by activity, it makes sens not to include the title, as it is in the header already
 \printactivitytitletrue   % overwrite AFTER loading printstyle ...
 
@@ -350,33 +353,44 @@
 \fancypagestyle{otherpage}{%
     \fancyhf{}
 
-    % Linksboven: huidig thema
+    % --------------------------------------------------------
+    % LINKS: thema
+    % --------------------------------------------------------
     \fancyhead[L]{%
-        \sffamily
-        \footnotesize
-        \color{fvdMuted}%
-        \ifdefined\isXourse
-            \xmmodulenaam
-            \ifx\mymoduletitle\empty
-            \else
-                \enspace|\enspace
-                \mymoduletitle
-            \fi
-        \else
-            \firstleftmark
-        \fi
+        \begin{tikzpicture}[baseline=(thematitle.base)]
+            \node[
+                fill=fvdPink,
+                text=white,
+                rounded corners=1.5mm,
+                inner xsep=2.2mm,
+                inner ysep=1.15mm,
+                font=\sffamily\bfseries\scriptsize
+            ] (themabadge)
+            {THEMA \fvdthemenumber};
+
+            \node[
+                anchor=west,
+                text=fvdNavy,
+                font=\sffamily\bfseries\footnotesize
+            ] (thematitle)
+            at ([xshift=2.5mm]themabadge.east)
+            {\fvdthemetitle};
+        \end{tikzpicture}%
     }
 
-    % Rechtsboven: paginanummer
+    % --------------------------------------------------------
+    % RECHTS: huidig hoofdstuk
+    % --------------------------------------------------------
     \fancyhead[R]{%
         \sffamily
-        \footnotesize
-        \bfseries
-        \color{fvdNavy}%
-        \thepage
+        \scriptsize
+        \color{fvdMuted}%
+        \nouppercase{\rightmark}%
     }
 
-    % Dunne cyaan-magenta lijn onder de kop
+    % --------------------------------------------------------
+    % Gradientlijn onder de kop
+    % --------------------------------------------------------
     \fancyhead[C]{%
         \raisebox{-7mm}[0pt][0pt]{%
             \begin{tikzpicture}
@@ -384,14 +398,61 @@
                     left color=fvdTeal,
                     right color=fvdPink
                 ]
-                (0,0)
-                rectangle
-                (\textwidth,0.45mm);
+                (0,0) rectangle (\textwidth,0.5mm);
             \end{tikzpicture}%
         }%
     }
 
-    % Voettekst
+    % --------------------------------------------------------
+    % VOETTEKST LINKS
+    % --------------------------------------------------------
+    \fancyfoot[L]{%
+        \sffamily
+        \scriptsize
+        \color{fvdMuted}%
+        \xmcursusnaam
+    }
+
+    % --------------------------------------------------------
+    % VOETTEKST MIDDEN
+    % --------------------------------------------------------
+    \fancyfoot[C]{%
+        \sffamily
+        \scriptsize
+        \color{fvdMuted}%
+        \xmcursusversie
+    }
+
+    % --------------------------------------------------------
+    % PAGINANUMMER RECHTS
+    % --------------------------------------------------------
+    \fancyfoot[R]{%
+        \begin{tikzpicture}[baseline=(pagenumber.base)]
+            \node[
+                fill=fvdNavy,
+                text=white,
+                rounded corners=1.6mm,
+                minimum width=8mm,
+                minimum height=5.5mm,
+                inner xsep=2mm,
+                inner ysep=.8mm,
+                font=\sffamily\bfseries\scriptsize
+            ] (pagenumber)
+            {\thepage};
+        \end{tikzpicture}%
+    }
+}
+
+
+% ------------------------------------------------------------
+% Eerste pagina van een hoofdstuk
+% ------------------------------------------------------------
+
+\fancypagestyle{firstpage}{%
+    \fancyhf{}
+
+    % Geen kop: de chapter hero bevat de hoofdstukinformatie.
+
     \fancyfoot[L]{%
         \sffamily
         \scriptsize
@@ -407,42 +468,19 @@
     }
 
     \fancyfoot[R]{%
-        \sffamily
-        \scriptsize
-        \color{fvdMuted}%
-        \xmafdelingsnaam
-    }
-}
-
-
-% ------------------------------------------------------------
-% Eerste pagina van een hoofdstuk
-% ------------------------------------------------------------
-
-\fancypagestyle{firstpage}{%
-    \fancyhf{}
-
-    % Geen kop boven de chapter hero
-    \fancyfoot[L]{%
-        \sffamily
-        \scriptsize
-        \color{fvdMuted}%
-        \xmcursusnaam
-    }
-
-    \fancyfoot[C]{%
-        \sffamily
-        \scriptsize
-        \color{fvdMuted}%
-        \xmcopyright
-    }
-
-    \fancyfoot[R]{%
-        \sffamily
-        \scriptsize
-        \bfseries
-        \color{fvdNavy}%
-        \thepage
+        \begin{tikzpicture}[baseline=(pagenumber.base)]
+            \node[
+                fill=fvdNavy,
+                text=white,
+                rounded corners=1.6mm,
+                minimum width=8mm,
+                minimum height=5.5mm,
+                inner xsep=2mm,
+                inner ysep=.8mm,
+                font=\sffamily\bfseries\scriptsize
+            ] (pagenumber)
+            {\thepage};
+        \end{tikzpicture}%
     }
 }
 
@@ -700,7 +738,13 @@
 %    \markboth{}{}%
 %    \markright{#1}   % fix wrong section on first page of activity    
 
-    \refstepcounter{page}  % Paginanummers vanaf 1 binnen de modules (default: vanaf 0)
+    % Alleen bij paginanummering per thema handmatig verhogen.
+% Bij doorlopende nummering laat LaTeX de pagina's zelf tellen.
+\ifprintcontinuouspagenumbers
+% niets
+\else
+\refstepcounter{page}%
+\fi
     
     \ifprintpartfrontpage
        % Toon titelpagina voor nieuw \part

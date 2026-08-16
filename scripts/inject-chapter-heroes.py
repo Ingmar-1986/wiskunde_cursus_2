@@ -1,4 +1,3 @@
-
 #!/usr/bin/env python3
 
 from __future__ import annotations
@@ -127,7 +126,7 @@ CHAPTER_DATA_PATTERN = re.compile(
     r"""
     %\s*FVD_CHAPTER_DATA_START\s*
     .*?
-    %\s*FVD_CHAPTER_DATA_END\s*
+    %\s*FVD_CHAPTER_DATA_END[^\S\r\n]*
     """,
     re.IGNORECASE | re.DOTALL | re.VERBOSE,
 )
@@ -346,16 +345,35 @@ def normalize_stem(raw_path: str) -> str:
 def read_course_structure(
     index_tex: Path,
 ) -> list[dict[str, str | int]]:
-    """
+    r"""
     Lees thema's en hoofdstukken uit index.tex.
 
-    Elke \\part{...} start:
+    Elke \FVDpart{...} of \part{...} start:
     - een nieuw thema;
     - de hoofdstuknummering opnieuw vanaf 1.
+
+    \FVDchapterpair{theorie}{oefeningen} wordt voor deze parser
+    omgezet naar één of twee gewone \activity{...}-items.
+    Een leeg tweede argument wordt overgeslagen.
     """
 
-    document = read_text(
-        index_tex
+    document = read_text(index_tex)
+
+    # Maak \FVDchapterpair begrijpelijk voor de bestaande activity-parser.
+    # Theorie en oefeningen blijven aparte online activities.
+    document = re.sub(
+        r"\\FVDchapterpair\s*"
+        r"\{([^{}]*)\}\s*"
+        r"\{([^{}]*)\}",
+        lambda match: (
+            f"\\activity{{{match.group(1).strip()}}}\n"
+            + (
+                f"\\activity{{{match.group(2).strip()}}}"
+                if match.group(2).strip()
+                else ""
+            )
+        ),
+        document,
     )
 
     structure: list[dict[str, str | int]] = []
@@ -364,34 +382,26 @@ def read_course_structure(
     current_theme_title = ""
     current_chapter_number = 0
 
-    for match in INDEX_ITEM_PATTERN.finditer(
-        document
-    ):
-        theme_title = match.group(
-            "theme"
-        )
-
-        activity_path = match.group(
-            "path"
-        )
+    for match in INDEX_ITEM_PATTERN.finditer(document):
+        theme_title = match.group("theme")
+        activity_path = match.group("path")
 
         if theme_title is not None:
             current_theme_number += 1
-
-            current_theme_title = clean_tex_text(
-                theme_title
-            )
-
+            current_theme_title = clean_tex_text(theme_title)
             current_chapter_number = 0
-
             continue
 
         if activity_path is None:
             continue
 
-        stem = normalize_stem(
-            activity_path
-        )
+        activity_path = activity_path.strip()
+
+        # Deze placeholders komen alleen voor in de macrodefinitie zelf.
+        if activity_path in {"#1", "#2"}:
+            continue
+
+        stem = normalize_stem(activity_path)
 
         if not stem:
             continue
@@ -401,11 +411,7 @@ def read_course_structure(
 
         if current_theme_number == 0:
             current_theme_number = 1
-
-            current_theme_title = humanize_slug(
-                index_tex.parent.name
-            )
-
+            current_theme_title = humanize_slug(index_tex.parent.name)
             current_chapter_number = 0
 
         current_chapter_number += 1
@@ -428,7 +434,7 @@ def extract_module_metadata(
     module_dir: Path,
     module_number: int,
 ) -> tuple[str, str]:
-    """
+    r"""
     Lees de moduletitel en modulebeschrijving rechtstreeks uit index.tex.
 
     De titel komt uit:
@@ -490,30 +496,18 @@ def extract_title_from_tex(
     tex_path = module_dir / f"{stem}.tex"
 
     if not tex_path.is_file():
-        return humanize_slug(
-            stem
-        )
+        return humanize_slug(stem)
 
-    document = read_text(
-        tex_path
-    )
+    document = read_text(tex_path)
 
-    match = TEX_TITLE_PATTERN.search(
-        document
-    )
+    match = TEX_TITLE_PATTERN.search(document)
 
     if not match:
-        return humanize_slug(
-            stem
-        )
+        return humanize_slug(stem)
 
-    title = clean_tex_text(
-        match.group("title")
-    )
+    title = clean_tex_text(match.group("title"))
 
-    return title or humanize_slug(
-        stem
-    )
+    return title or humanize_slug(stem)
 
 
 # ============================================================
@@ -557,7 +551,7 @@ def create_chapter_data_block(
         f"{{{theme_number}}}"
         f"{{{safe_theme_title}}}"
         f"{{{chapter_number}}}\n"
-        "% FVD_CHAPTER_DATA_END"
+        "% FVD_CHAPTER_DATA_END\n\n"
     )
 
 

@@ -1,0 +1,1782 @@
+\documentclass{ximera}
+
+\input{../../../preamble.tex}
+\input{../../../Opmaak.tex}
+\addPrintStyle{../../..}
+
+\title{Verloop van functies}
+\author{Ingmar Herreman}
+
+\begin{abstract}
+Een afgeleide is meer dan een nieuwe functie die je kunt berekenen.
+Ze vertelt hoe de oorspronkelijke functie verandert.
+
+In dit hoofdstuk brengen we de belangrijkste verbanden uit het vijfde
+jaar opnieuw samen. We gebruiken de eerste afgeleide om stijgen,
+dalen en extrema te onderzoeken en de tweede afgeleide om de
+kromming en buigpunten van een grafiek te bestuderen.
+
+Daarbij staat één idee centraal:
+uit informatie over $f'$ en $f''$ leiden we eigenschappen van $f$ af.
+\end{abstract}
+
+\begin{document}
+
+% FVD_CHAPTER_DATA_START
+% Automatisch gegenereerd uit index.tex.
+% Niet handmatig aanpassen.
+\fvdchapterdata{1}{Veranderingen in beeld}{5}
+% FVD_CHAPTER_DATA_END
+
+
+
+
+
+
+
+\maketitle
+
+
+% ============================================================
+% VOORKENNIS EN LEERDOELEN
+% ============================================================
+
+\begin{voorkennis}
+    \item Je kan veeltermfuncties afleiden.
+    \item Je kan een eerste en tweede afgeleide bepalen.
+    \item Je kan het teken van een functie onderzoeken.
+    \item Je kan nulwaarden algebraïsch bepalen.
+    \item Je kan een tekentabel lezen en opstellen.
+    \item Je kan het verschil uitleggen tussen $f'(a)$ en $f'(x)$.
+  \end{voorkennis}
+  
+  \begin{leerdoelen}
+    \item Je kan het verband leggen tussen het teken van $f'$ en het stijgen of dalen van $f$.
+    \item Je kan stijg- en daalintervallen bepalen met behulp van $f'$.
+    \item Je kan stationaire punten herkennen en onderzoeken.
+    \item Je kan lokale extrema bepalen met behulp van een tekenonderzoek van $f'$.
+    \item Je kan uitleggen waarom $f'(a)=0$ op zichzelf niet volstaat om een extremum te besluiten.
+    \item Je kan het verband leggen tussen het teken van $f''$ en de kromming van de grafiek.
+    \item Je kan buigpunten onderzoeken met behulp van $f''$.
+    \item Je kan uitleggen waarom $f''(a)=0$ op zichzelf niet volstaat om een buigpunt te besluiten.
+    \item Je kan informatie over $f$, $f'$ en $f''$ met elkaar verbinden.
+    \item Je kan eenvoudige wetenschappelijke situaties interpreteren met eerste en tweede afgeleiden.
+  \end{leerdoelen}
+
+% ============================================================
+% 1 WAAROM LEER JE DIT?
+% ============================================================
+
+\FVDsection{Waarom leer je dit?}
+
+In het vorige hoofdstuk hebben we de afgeleide functie opnieuw
+opgebouwd. We weten bijvoorbeeld dat
+
+\[
+f'(x)
+\]
+
+beschrijft hoe $f$ verandert en dat
+
+\[
+f''(x)
+\]
+
+beschrijft hoe die verandering zelf verandert.
+
+Maar uiteindelijk willen we meestal niet alleen $f'$ en $f''$
+\emph{berekenen}. We willen ze gebruiken om iets over $f$ te weten
+te komen.
+
+Denk bijvoorbeeld aan de hoogte $h(t)$ van een voorwerp.
+
+Uit
+
+\[
+h'(t)>0
+\]
+
+kunnen we afleiden dat het voorwerp op dat ogenblik omhoog beweegt.
+
+Uit
+
+\[
+h'(t)<0
+\]
+
+kunnen we afleiden dat het naar beneden beweegt.
+
+En wanneer de snelheid van positief naar negatief verandert, bereikt
+het voorwerp zijn hoogste punt.
+
+We gebruiken dus informatie over een afgeleide om conclusies te
+trekken over de oorspronkelijke functie.
+
+\begin{opmerking}
+Dat is de belangrijkste denkstap in dit hoofdstuk:
+
+\[
+\boxed{
+\text{informatie over }f'
+\quad\Longrightarrow\quad
+\text{informatie over }f
+}
+\]
+
+en vervolgens
+
+\[
+\boxed{
+\text{informatie over }f''
+\quad\Longrightarrow\quad
+\text{informatie over de verandering van }f'
+}
+\]
+
+Je moet deze verbanden niet alleen kunnen toepassen, maar ook
+kunnen verklaren.
+\end{opmerking}
+
+
+% ============================================================
+% 2 TEKEN VAN f'
+% ============================================================
+
+\FVDsection{Van het teken van $f'$ naar het verloop van $f$}
+
+\FVDsubsection{Wat betekent $f'(x)>0$?}
+
+Neem een interval waarop
+
+\[
+f'(x)>0.
+\]
+
+In elk punt van dat interval heeft de grafiek van $f$ een raaklijn
+met positieve richtingscoëfficiënt.
+
+Als $x$ toeneemt, neemt ook $f(x)$ toe.
+
+De functie is daar dus stijgend.
+
+Op dezelfde manier geldt:
+
+\begin{eigenschap}[Teken van de eerste afgeleide]
+
+Op een interval geldt:
+
+\[
+\boxed{
+f'(x)>0
+\quad\Longrightarrow\quad
+f \text{ is stijgend}
+}
+\]
+
+en
+
+\[
+\boxed{
+f'(x)<0
+\quad\Longrightarrow\quad
+f \text{ is dalend}.
+}
+\]
+
+\end{eigenschap}
+
+Dit is een uitspraak over een \emph{interval}.
+
+Eén enkele waarde zoals
+
+\[
+f'(2)>0
+\]
+
+vertelt alleen wat er in de buurt van $x=2$ gebeurt. Daaruit mag je
+niet besluiten dat $f$ op haar volledige domein stijgend is.
+
+
+% ============================================================
+% EERSTE KORTE CHECK
+% ============================================================
+
+\begin{oefening}[Van afgeleide naar verloop]{\oefB\ESS}
+
+Van een functie $f$ weten we:
+
+\[
+f'(x)>0
+\qquad\text{voor }-3<x<2
+\]
+
+en
+
+\[
+f'(x)<0
+\qquad\text{voor }x>2.
+\]
+
+Vul aan.
+
+\begin{question}
+Op $]-3,2[$ is $f$
+
+\begin{multipleChoice}
+\choice[correct]{stijgend.}
+\choice{dalend.}
+\choice{constant.}
+\end{multipleChoice}
+\end{question}
+
+\begin{question}
+Op $]2,+\infty[$ is $f$
+
+\begin{multipleChoice}
+\choice{stijgend.}
+\choice[correct]{dalend.}
+\choice{constant.}
+\end{multipleChoice}
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 3 TEKENONDERZOEK
+% ============================================================
+
+\FVDsection{Stijgen en dalen bepalen}
+
+Om te onderzoeken waar een functie stijgt of daalt, kunnen we dus
+het teken van $f'$ onderzoeken.
+
+De werkwijze is:
+
+\[
+f
+\longrightarrow
+f'
+\longrightarrow
+\text{nulwaarden van }f'
+\longrightarrow
+\text{teken van }f'
+\longrightarrow
+\text{verloop van }f.
+\]
+
+\begin{voorbeeld}[Stijgen en dalen van een derdegraadsfunctie]
+
+Gegeven:
+
+\[
+f(x)=x^3-3x^2-9x+5.
+\]
+
+We onderzoeken waar $f$ stijgt en daalt.
+
+\textbf{Stap 1: bepaal de afgeleide.}
+
+\[
+f'(x)=3x^2-6x-9.
+\]
+
+Factoriseren geeft
+
+\[
+f'(x)=3(x^2-2x-3)
+\]
+
+en dus
+
+\[
+\boxed{
+f'(x)=3(x+1)(x-3).
+}
+\]
+
+\textbf{Stap 2: bepaal de nulwaarden van $f'$.}
+
+\[
+f'(x)=0
+\]
+
+geeft
+
+\[
+x=-1
+\qquad\text{of}\qquad
+x=3.
+\]
+
+Deze waarden verdelen de getallenas in drie intervallen.
+
+\[
+]-\infty,-1[,
+\qquad
+]-1,3[,
+\qquad
+]3,+\infty[.
+\]
+
+\textbf{Stap 3: onderzoek het teken van $f'$.}
+
+Omdat
+
+\[
+f'(x)=3(x+1)(x-3),
+\]
+
+vinden we:
+
+\[
+\begin{array}{c|ccccc}
+x
+& ]-\infty,-1[
+& -1
+& ]-1,3[
+& 3
+& ]3,+\infty[
+\\ \hline
+f'(x)
+& +
+& 0
+& -
+& 0
+& +
+\end{array}
+\]
+
+\textbf{Stap 4: vertaal naar het verloop van $f$.}
+
+Dus:
+
+\[
+\boxed{
+f \text{ stijgt op }]-\infty,-1[
+\text{ en } ]3,+\infty[
+}
+\]
+
+en
+
+\[
+\boxed{
+f \text{ daalt op }]-1,3[.
+}
+\]
+
+\end{voorbeeld}
+
+
+% ============================================================
+% 4 STATIONAIRE PUNTEN
+% ============================================================
+
+\FVDsection{Stationaire punten}
+
+De waarden waarvoor
+
+\[
+f'(x)=0
+\]
+
+verdienen bijzondere aandacht.
+
+\begin{definitie}[Stationair punt]
+
+Een punt
+
+\[
+P(a,f(a))
+\]
+
+van de grafiek van een afleidbare functie $f$ heet een
+\textbf{stationair punt} als
+
+\[
+\boxed{f'(a)=0.}
+\]
+
+De raaklijn aan de grafiek is daar horizontaal.
+
+\end{definitie}
+
+Maar een stationair punt is niet noodzakelijk een maximum of minimum.
+
+Dat hebben we in hoofdstuk 1 al aangekondigd.
+
+Vergelijk bijvoorbeeld:
+
+\[
+f(x)=x^2
+\]
+
+en
+
+\[
+g(x)=x^3.
+\]
+
+Voor beide functies geldt:
+
+\[
+f'(0)=0
+\qquad\text{en}\qquad
+g'(0)=0.
+\]
+
+Toch heeft $f$ in $x=0$ een minimum, terwijl $g$ daar geen extremum
+heeft.
+
+We moeten dus onderzoeken wat het teken van de afgeleide
+\emph{voor en na} het stationaire punt doet.
+
+
+% ============================================================
+% 5 EXTREMA
+% ============================================================
+
+\FVDsection{Extrema herkennen met $f'$}
+
+\FVDsubsection{Van stijgen naar dalen}
+
+Stel dat bij $x=a$ het teken van $f'$ verandert als
+
+\[
++\quad 0\quad -.
+\]
+
+Links van $a$ stijgt $f$.
+
+Rechts van $a$ daalt $f$.
+
+De functie gaat dus eerst omhoog en daarna omlaag.
+
+Daarom heeft $f$ in $x=a$ een lokaal maximum.
+
+\FVDsubsection{Van dalen naar stijgen}
+
+Wanneer het teken verandert als
+
+\[
+-\quad 0\quad +,
+\]
+
+daalt $f$ eerst en stijgt ze daarna.
+
+Dan heeft $f$ in $x=a$ een lokaal minimum.
+
+\begin{eigenschap}[Extrema via het teken van $f'$]
+
+Als $f'$ bij $x=a$ van teken verandert, dan geldt:
+
+\[
+\boxed{
++\;\longrightarrow\;-
+\quad\Rightarrow\quad
+\text{lokaal maximum}
+}
+\]
+
+en
+
+\[
+\boxed{
+-\;\longrightarrow\;+
+\quad\Rightarrow\quad
+\text{lokaal minimum}.
+}
+\]
+
+Als $f'(a)=0$ maar $f'$ niet van teken verandert, kunnen we op basis
+daarvan geen lokaal extremum besluiten.
+
+\end{eigenschap}
+
+
+% ============================================================
+% VOORBEELD EXTREMA
+% ============================================================
+
+\begin{voorbeeld}[De extrema volledig bepalen]
+
+We keren terug naar
+
+\[
+f(x)=x^3-3x^2-9x+5.
+\]
+
+We vonden:
+
+\[
+\begin{array}{c|ccccc}
+x
+& ]-\infty,-1[
+& -1
+& ]-1,3[
+& 3
+& ]3,+\infty[
+\\ \hline
+f'(x)
+& +
+& 0
+& -
+& 0
+& +
+\\ \hline
+f
+& \nearrow
+&
+& \searrow
+&
+& \nearrow
+\end{array}
+\]
+
+Bij $x=-1$ verandert $f'$ van positief naar negatief.
+
+Dus heeft $f$ daar een lokaal maximum.
+
+De functiewaarde is
+
+\[
+f(-1)
+=
+(-1)^3-3(-1)^2-9(-1)+5
+=
+10.
+\]
+
+Het lokale maximumpunt is dus
+
+\[
+\boxed{(-1,10)}.
+\]
+
+Bij $x=3$ verandert $f'$ van negatief naar positief.
+
+Dus heeft $f$ daar een lokaal minimum.
+
+\[
+f(3)
+=
+27-27-27+5
+=
+-22.
+\]
+
+Het lokale minimumpunt is
+
+\[
+\boxed{(3,-22)}.
+\]
+
+\end{voorbeeld}
+
+
+% ============================================================
+% OEFENING EXTREMA
+% ============================================================
+
+\begin{oefening}[Lees de tekentabel]{\oefB\ESS}
+
+Van een afleidbare functie $f$ is gegeven:
+
+\[
+\begin{array}{c|ccccc}
+x
+& ]-\infty,1[
+& 1
+& ]1,4[
+& 4
+& ]4,+\infty[
+\\ \hline
+f'(x)
+& -
+& 0
+& +
+& 0
+& -
+\end{array}
+\]
+
+\begin{question}
+Welke uitspraak over $x=1$ is correct?
+
+\begin{multipleChoice}
+\choice{Daar ligt noodzakelijk een lokaal maximum.}
+\choice[correct]{Daar ligt een lokaal minimum.}
+\choice{Daar ligt geen stationair punt.}
+\end{multipleChoice}
+\end{question}
+
+\begin{question}
+Welke uitspraak over $x=4$ is correct?
+
+\begin{multipleChoice}
+\choice[correct]{Daar ligt een lokaal maximum.}
+\choice{Daar ligt een lokaal minimum.}
+\choice{De functie is daar noodzakelijk niet afleidbaar.}
+\end{multipleChoice}
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 6 BELANGRIJKE DENKFOUT
+% ============================================================
+
+\FVDsection{Een nulwaarde van $f'$ is niet genoeg}
+
+Een veelgemaakte redenering is:
+
+\[
+f'(a)=0
+\quad\Rightarrow\quad
+f \text{ heeft een extremum in }a.
+\]
+
+Die redenering is fout.
+
+Neem
+
+\[
+f(x)=x^3.
+\]
+
+Dan
+
+\[
+f'(x)=3x^2
+\]
+
+en dus
+
+\[
+f'(0)=0.
+\]
+
+Maar
+
+\[
+f'(x)>0
+\]
+
+zowel voor $x<0$ als voor $x>0$.
+
+Het tekenverloop is:
+
+\[
++\quad 0\quad +.
+\]
+
+De functie blijft dus stijgen.
+
+Er is geen maximum en geen minimum.
+
+\begin{opmerking}
+De vergelijking
+
+\[
+f'(x)=0
+\]
+
+levert \emph{kandidaten} voor stationaire extrema.
+
+Daarna moet je onderzoeken wat er met het teken van $f'$ gebeurt.
+\end{opmerking}
+
+
+\begin{oefening}[Is er een extremum?]{\oefU\ESS}
+
+Een leerling onderzoekt
+
+\[
+f(x)=x^3
+\]
+
+en schrijft:
+
+\begin{quote}
+Omdat $f'(0)=0$, heeft $f$ in $x=0$ een extremum.
+\end{quote}
+
+Leg uit waarom deze redenering niet geldig is en geef het correcte
+besluit.
+
+\end{oefening}
+
+
+% ============================================================
+% 7 TWEEDE AFGELEIDE
+% ============================================================
+
+\FVDsection{Wat vertelt de tweede afgeleide?}
+
+Tot nu toe gebruikten we $f'$ om te onderzoeken of $f$ stijgt of
+daalt.
+
+Maar ook $f'$ zelf kan stijgen of dalen.
+
+Daarover geeft $f''$ informatie.
+
+Herinner je:
+
+\[
+f''=(f')'.
+\]
+
+Dus:
+
+\[
+f''(x)>0
+\]
+
+betekent dat $f'$ stijgt, terwijl
+
+\[
+f''(x)<0
+\]
+
+betekent dat $f'$ daalt.
+
+Dit zegt iets over de manier waarop de hellingen van de grafiek van
+$f$ veranderen.
+
+\begin{eigenschap}[Teken van de tweede afgeleide]
+
+Op een interval geldt:
+
+\[
+\boxed{
+f''(x)>0
+\quad\Longrightarrow\quad
+f' \text{ is stijgend}
+}
+\]
+
+en
+
+\[
+\boxed{
+f''(x)<0
+\quad\Longrightarrow\quad
+f' \text{ is dalend}.
+}
+\]
+
+Daardoor geeft $f''$ informatie over de \textbf{kromming} van de
+grafiek van $f$.
+
+\end{eigenschap}
+
+
+% ============================================================
+% 8 KROMMING
+% ============================================================
+
+\FVDsection{Kromming van de grafiek}
+
+Bekijk eerst een stijgende functie.
+
+Het is mogelijk dat de functie stijgt en tegelijk steeds steiler
+wordt.
+
+Dan neemt $f'$ toe en geldt typisch
+
+\[
+f''>0.
+\]
+
+Maar een stijgende functie kan ook steeds minder steil worden.
+
+Dan neemt $f'$ af en geldt typisch
+
+\[
+f''<0.
+\]
+
+Daarom zijn ``stijgend'' en ``positieve tweede afgeleide'' twee
+verschillende eigenschappen.
+
+\begin{opmerking}
+Verwar de rollen van de twee afgeleiden niet:
+
+\[
+\boxed{
+f'
+\text{ vertelt vooral of }f\text{ stijgt of daalt}
+}
+\]
+
+terwijl
+
+\[
+\boxed{
+f''
+\text{ vertelt hoe de helling van }f\text{ verandert}.
+}
+\]
+
+Een functie kan dus tegelijk stijgend zijn en $f''<0$ hebben.
+\end{opmerking}
+
+
+% ============================================================
+% HOL/BOL
+% ============================================================
+
+\FVDsubsection{Hol en bol}
+
+In deze cursus gebruiken we de volgende terminologie:
+
+\begin{eigenschap}[Kromming]
+
+Op een interval:
+
+\[
+f''(x)>0
+\]
+
+betekent dat de hellingen toenemen.
+
+De grafiek is daar \textbf{hol}.
+
+Wanneer
+
+\[
+f''(x)<0,
+\]
+
+nemen de hellingen af.
+
+De grafiek is daar \textbf{bol}.
+
+\end{eigenschap}
+
+\begin{opmerking}
+De woorden \emph{hol} en \emph{bol} worden in verschillende bronnen
+niet altijd op dezelfde manier gebruikt.
+
+Daarom is het veiliger om bij een redenering ook het teken van
+$f''$ te vermelden.
+\end{opmerking}
+
+
+% ============================================================
+% OEFENING f''
+% ============================================================
+
+\begin{oefening}[Wat kun je besluiten uit $f''$?]{\oefB\ESS}
+
+Op een interval $I$ geldt
+
+\[
+f''(x)>0.
+\]
+
+Welke uitspraak volgt daaruit?
+
+\begin{multipleChoice}
+\choice{$f$ is noodzakelijk stijgend op $I$.}
+\choice{$f$ is noodzakelijk positief op $I$.}
+\choice[correct]{$f'$ is stijgend op $I$.}
+\choice{$f'$ is negatief op $I$.}
+\end{multipleChoice}
+
+\end{oefening}
+
+
+% ============================================================
+% 9 BUIGPUNT
+% ============================================================
+
+\FVDsection{Buigpunten}
+
+Een buigpunt is een punt waar de aard van de kromming verandert.
+
+\begin{definitie}[Buigpunt]
+
+Een punt van de grafiek van $f$ waar de kromming verandert, noemen
+we een \textbf{buigpunt}.
+
+Bij een tweemaal afleidbare functie onderzoeken we daarvoor het
+teken van $f''$.
+
+\end{definitie}
+
+Wanneer $f''$ bijvoorbeeld verandert als
+
+\[
+-\quad 0\quad +,
+\]
+
+verandert de kromming.
+
+Het overeenkomstige punt van de grafiek is dan een buigpunt.
+
+
+% ============================================================
+% DENKFOUT f''
+% ============================================================
+
+\FVDsection{Ook $f''(a)=0$ is niet genoeg}
+
+Er ontstaat nu een situatie die sterk lijkt op die bij extrema.
+
+Voor extrema was
+
+\[
+f'(a)=0
+\]
+
+op zichzelf niet voldoende.
+
+Voor buigpunten is
+
+\[
+f''(a)=0
+\]
+
+op zichzelf evenmin voldoende.
+
+Neem bijvoorbeeld
+
+\[
+f(x)=x^4.
+\]
+
+Dan
+
+\[
+f'(x)=4x^3
+\]
+
+en
+
+\[
+f''(x)=12x^2.
+\]
+
+We hebben inderdaad
+
+\[
+f''(0)=0.
+\]
+
+Maar voor $x\neq0$ geldt
+
+\[
+12x^2>0.
+\]
+
+Het teken van $f''$ is dus:
+
+\[
++\quad 0\quad +.
+\]
+
+Er is geen verandering van kromming.
+
+Dus is $(0,0)$ geen buigpunt.
+
+\begin{opmerking}
+Ook hier geldt:
+
+\[
+f''(a)=0
+\]
+
+geeft een mogelijke kandidaat, maar je moet onderzoeken of de
+kromming werkelijk verandert.
+\end{opmerking}
+
+
+% ============================================================
+% VOORBEELD BUIGPUNT
+% ============================================================
+
+\begin{voorbeeld}[Een buigpunt bepalen]
+
+Neem opnieuw
+
+\[
+f(x)=x^3-3x^2-9x+5.
+\]
+
+We vonden:
+
+\[
+f'(x)=3x^2-6x-9.
+\]
+
+Dus:
+
+\[
+f''(x)=6x-6.
+\]
+
+Een mogelijke verandering van kromming vinden we uit
+
+\[
+f''(x)=0.
+\]
+
+Dus:
+
+\[
+6x-6=0
+\]
+
+en bijgevolg
+
+\[
+x=1.
+\]
+
+Voor $x<1$ geldt
+
+\[
+f''(x)<0,
+\]
+
+en voor $x>1$:
+
+\[
+f''(x)>0.
+\]
+
+Het teken verandert dus:
+
+\[
+-\quad 0\quad +.
+\]
+
+Er is werkelijk een verandering van kromming.
+
+De functiewaarde is
+
+\[
+f(1)=1-3-9+5=-6.
+\]
+
+Het buigpunt is dus
+
+\[
+\boxed{(1,-6)}.
+\]
+
+\end{voorbeeld}
+
+
+% ============================================================
+% OEFENING BUIGPUNT
+% ============================================================
+
+\begin{oefening}[Buigpunt of niet?]{\oefU\ESS}
+
+Onderzoek voor elke functie of de oorsprong een buigpunt is.
+
+\begin{question}
+
+\[
+f(x)=x^3
+\]
+
+Bepaal $f''(x)$ en onderzoek het teken links en rechts van $0$.
+
+\end{question}
+
+\begin{question}
+
+\[
+g(x)=x^4
+\]
+
+Bepaal $g''(x)$ en onderzoek het teken links en rechts van $0$.
+
+\end{question}
+
+Leg daarna uit waarom
+
+\[
+f''(0)=0
+\]
+
+niet voldoende is om te besluiten dat $(0,f(0))$ een buigpunt is.
+
+\end{oefening}
+
+
+% ============================================================
+% 10 ALLES SAMEN
+% ============================================================
+
+\FVDsection{$f$, $f'$ en $f''$ samen lezen}
+
+We kunnen de belangrijkste verbanden nu samenbrengen.
+
+\[
+\boxed{
+f'(x)>0
+\quad\Longrightarrow\quad
+f \text{ stijgt}
+}
+\]
+
+\[
+\boxed{
+f'(x)<0
+\quad\Longrightarrow\quad
+f \text{ daalt}
+}
+\]
+
+\[
+\boxed{
+f' : +\to-
+\quad\Longrightarrow\quad
+\text{lokaal maximum}
+}
+\]
+
+\[
+\boxed{
+f' : -\to+
+\quad\Longrightarrow\quad
+\text{lokaal minimum}
+}
+\]
+
+en
+
+\[
+\boxed{
+f''(x)>0
+\quad\Longrightarrow\quad
+f' \text{ stijgt}
+}
+\]
+
+\[
+\boxed{
+f''(x)<0
+\quad\Longrightarrow\quad
+f' \text{ daalt}.
+}
+\]
+
+Een tekenwisseling van $f''$ wijst op een verandering van kromming
+en dus op een buigpunt.
+
+
+% ============================================================
+% CONCEPTUELE OEFENING
+% ============================================================
+
+\begin{oefening}[Van $f'$ naar $f$]{\oefU\ESS}
+
+Van een functie $f$ is de volgende informatie over $f'$ bekend:
+
+\[
+\begin{array}{c|ccccc}
+x
+& ]-\infty,-2[
+& -2
+& ]-2,3[
+& 3
+& ]3,+\infty[
+\\ \hline
+f'(x)
+& +
+& 0
+& -
+& 0
+& +
+\end{array}
+\]
+
+Zonder een voorschrift van $f$ te kennen:
+
+\begin{question}
+Bepaal de intervallen waarop $f$ stijgt.
+\end{question}
+
+\begin{question}
+Bepaal de intervallen waarop $f$ daalt.
+\end{question}
+
+\begin{question}
+Classificeer de stationaire punten bij $x=-2$ en $x=3$.
+\end{question}
+
+\begin{question}
+Kun je uit deze gegevens bepalen waar de buigpunten liggen?
+Verantwoord.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 11 FUNCTIEONDERZOEK
+% ============================================================
+
+\FVDsection{Een functie systematisch onderzoeken}
+
+Voor een veeltermfunctie kunnen we de informatie nu systematisch
+organiseren.
+
+Een mogelijke werkwijze is:
+
+\begin{enumerate}
+
+\item Bepaal $f'(x)$.
+
+\item Los
+\[
+f'(x)=0
+\]
+op.
+
+\item Onderzoek het teken van $f'$.
+
+\item Besluit waar $f$ stijgt en daalt.
+
+\item Onderzoek eventuele extrema en bereken hun coördinaten.
+
+\item Bepaal $f''(x)$.
+
+\item Onderzoek het teken van $f''$.
+
+\item Bepaal waar de kromming verandert.
+
+\item Bereken de coördinaten van eventuele buigpunten.
+
+\item Combineer alle informatie tot één coherent beeld van de functie.
+
+\end{enumerate}
+
+\begin{opmerking}
+Een functieonderzoek is geen verzameling losse berekeningen.
+
+Elke stap moet informatie opleveren over de grafiek.
+
+Vraag jezelf daarom telkens af:
+
+\[
+\boxed{\text{Wat vertelt dit resultaat mij over }f?}
+\]
+\end{opmerking}
+
+
+% ============================================================
+% VOLLEDIGE OEFENING
+% ============================================================
+
+\begin{oefening}[Volledig verlooponderzoek]{\oefU\ESS}
+
+Gegeven:
+
+\[
+f(x)=x^3-6x^2+9x+1.
+\]
+
+Onderzoek het verloop van $f$.
+
+\begin{question}
+Bepaal $f'(x)$ en factoriseer zo ver mogelijk.
+\end{question}
+
+\begin{question}
+Bepaal de stationaire punten.
+\end{question}
+
+\begin{question}
+Stel een tekentabel op voor $f'$ en bepaal waar $f$ stijgt en daalt.
+\end{question}
+
+\begin{question}
+Bepaal en classificeer de lokale extrema.
+\end{question}
+
+\begin{question}
+Bepaal $f''(x)$.
+\end{question}
+
+\begin{question}
+Onderzoek de kromming van de grafiek en bepaal het buigpunt.
+\end{question}
+
+\begin{question}
+Vat je resultaten samen in één verloopschema.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 12 WETENSCHAPPELIJKE CONTEXT
+% ============================================================
+
+\FVDsection{Van positie naar snelheid en versnelling}
+
+Een bijzonder belangrijke toepassing vinden we in de mechanica.
+
+Stel dat
+
+\[
+s(t)
+\]
+
+de positie van een bewegend voorwerp beschrijft.
+
+Dan is
+
+\[
+v(t)=s'(t)
+\]
+
+de ogenblikkelijke snelheid.
+
+De afgeleide daarvan is
+
+\[
+a(t)=v'(t)=s''(t),
+\]
+
+de versnelling.
+
+We krijgen dus:
+
+\[
+\boxed{
+s
+\longrightarrow
+s'=v
+\longrightarrow
+s''=v'=a
+}
+\]
+
+Dit is precies dezelfde structuur als
+
+\[
+f
+\longrightarrow
+f'
+\longrightarrow
+f''.
+\]
+
+
+% ============================================================
+% STEM-OEFENING
+% ============================================================
+
+\begin{oefening}[Beweging interpreteren]{\oefU\ESS}
+
+De positie van een bewegend voorwerp langs een rechte wordt gegeven
+door
+
+\[
+s(t)=t^3-6t^2+9t,
+\qquad t\geq0,
+\]
+
+waarbij $s$ in meter en $t$ in seconde wordt uitgedrukt.
+
+\begin{question}
+Bepaal de snelheid $v(t)$.
+\end{question}
+
+\begin{question}
+Op welke tijdstippen staat het voorwerp ogenblikkelijk stil?
+\end{question}
+
+\begin{question}
+Onderzoek op welke tijdsintervallen het voorwerp in positieve en in
+negatieve richting beweegt.
+\end{question}
+
+\begin{question}
+Bepaal de versnelling $a(t)$.
+\end{question}
+
+\begin{question}
+Op welk tijdstip verandert de versnelling van teken?
+Wat betekent dat voor de snelheid?
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 13 REDENEREN ZONDER REKENEN
+% ============================================================
+
+\FVDsection{Redeneren zonder voorschrift}
+
+Bij analyseren krijg je niet altijd een functievoorschrift.
+
+Soms krijg je alleen informatie over een functie of haar afgeleiden.
+
+\begin{oefening}[Wat moet waar zijn?]{\oefU\ESS}
+
+Een tweemaal afleidbare functie $f$ voldoet op een interval $I$ aan
+
+\[
+f'(x)>0
+\qquad\text{en}\qquad
+f''(x)<0.
+\]
+
+Welke beschrijving is correct?
+
+\begin{multipleChoice}
+\choice{$f$ daalt en wordt steeds steiler.}
+\choice{$f$ daalt en wordt steeds vlakker.}
+\choice{$f$ stijgt en wordt steeds steiler.}
+\choice[correct]{$f$ stijgt, maar haar helling neemt af.}
+\end{multipleChoice}
+
+Leg je keuze uit met behulp van de betekenis van $f'$ en $f''$.
+
+\end{oefening}
+
+
+% ============================================================
+% 14 OMGEKEERD REDENEREN
+% ============================================================
+
+\FVDsection{Van het gedrag van $f$ naar haar afgeleiden}
+
+Tot nu toe redeneerden we meestal van de afgeleiden naar de functie.
+
+Maar je moet ook in de andere richting kunnen denken.
+
+Als $f$ stijgt, verwachten we:
+
+\[
+f'>0.
+\]
+
+Als de grafiek tijdens dat stijgen steeds steiler wordt, neemt $f'$
+toe en verwachten we:
+
+\[
+f''>0.
+\]
+
+Als de grafiek stijgt maar steeds vlakker wordt, blijft
+
+\[
+f'>0,
+\]
+
+terwijl
+
+\[
+f''<0.
+\]
+
+Dat onderscheid is belangrijk.
+
+\begin{oefening}[Van functie naar afgeleiden]{\oefU\ESS}
+
+Een functie $f$ is op een interval stijgend. Haar grafiek wordt van
+links naar rechts steeds vlakker.
+
+Welke combinatie past daarbij?
+
+\begin{multipleChoice}
+\choice{$f'<0$ en $f''<0$}
+\choice{$f'<0$ en $f''>0$}
+\choice{$f'>0$ en $f''>0$}
+\choice[correct]{$f'>0$ en $f''<0$}
+\end{multipleChoice}
+
+\end{oefening}
+
+
+% ============================================================
+% 15 VEELGEMAAKTE DENKFOUTEN
+% ============================================================
+
+\FVDsection{Veelgemaakte denkfouten}
+
+\begin{opmerking}
+
+\textbf{Denkfout 1}
+
+\[
+f'(a)>0
+\]
+
+betekent niet dat $f$ overal stijgt.
+
+Het zegt iets over de verandering rond $x=a$.
+
+\medskip
+
+\textbf{Denkfout 2}
+
+\[
+f'(a)=0
+\]
+
+betekent niet automatisch dat $f$ een extremum heeft.
+
+Onderzoek het teken van $f'$.
+
+\medskip
+
+\textbf{Denkfout 3}
+
+\[
+f''(a)=0
+\]
+
+betekent niet automatisch dat $f$ een buigpunt heeft.
+
+Onderzoek of de kromming verandert.
+
+\medskip
+
+\textbf{Denkfout 4}
+
+\[
+f''>0
+\]
+
+betekent niet dat $f$ stijgt.
+
+Het betekent dat $f'$ stijgt.
+
+\medskip
+
+\textbf{Denkfout 5}
+
+Een extremum is een \emph{punt} van de grafiek.
+
+Wanneer $x=a$ de extremumplaats is, is
+
+\[
+(a,f(a))
+\]
+
+het bijbehorende extremumpunt.
+
+\end{opmerking}
+
+
+% ============================================================
+% 16 VERBIND ALLES
+% ============================================================
+
+\FVDsection{Kun je alles verbinden?}
+
+\begin{oefening}[Eén functie, drie niveaus]{\oefG}
+
+Een functie $f$ is tweemaal afleidbaar.
+
+Er geldt:
+
+\[
+f'(2)=0,
+\qquad
+f''(2)=0.
+\]
+
+Een leerling beweert:
+
+\begin{quote}
+Bij $x=2$ ligt dus zowel een extremum als een buigpunt.
+\end{quote}
+
+Onderzoek deze uitspraak kritisch.
+
+Leg uit:
+\begin{itemize}
+  \item waarom de gegeven informatie niet voldoende is;
+  \item welke bijkomende informatie over $f'$ nodig is om een extremum
+        te onderzoeken;
+  \item welke bijkomende informatie over $f''$ nodig is om een buigpunt
+        te onderzoeken;
+  \item welke verschillende situaties mogelijk zijn.
+\end{itemize}
+
+\end{oefening}
+
+
+% ============================================================
+% 17 SAMENVATTING
+% ============================================================
+
+\FVDsection{Samengevat}
+
+De eerste afgeleide beschrijft de verandering van $f$:
+
+\[
+f'(x)>0
+\Rightarrow
+f \text{ stijgt},
+\]
+
+\[
+f'(x)<0
+\Rightarrow
+f \text{ daalt}.
+\]
+
+Een tekenwisseling van $f'$ kan een extremum opleveren:
+
+\[
++\to-
+\Rightarrow
+\text{lokaal maximum},
+\]
+
+\[
+-\to+
+\Rightarrow
+\text{lokaal minimum}.
+\]
+
+De tweede afgeleide beschrijft de verandering van $f'$:
+
+\[
+f''(x)>0
+\Rightarrow
+f' \text{ stijgt},
+\]
+
+\[
+f''(x)<0
+\Rightarrow
+f' \text{ daalt}.
+\]
+
+Een verandering van teken van $f''$ wijst op een verandering van
+kromming.
+
+Het belangrijkste verband van dit hoofdstuk is daarom:
+
+\[
+\boxed{
+f
+\;\longrightarrow\;
+f'
+\;\longrightarrow\;
+f''
+}
+\]
+
+maar bij een analyse redeneren we ook terug:
+
+\[
+\boxed{
+f''
+\;\longrightarrow\;
+\text{gedrag van }f'
+\;\longrightarrow\;
+\text{gedrag van }f.
+}
+\]
+
+
+% ============================================================
+% 18 MINIMUMTRAJECT
+% ============================================================
+
+\FVDsection{Wat moet je zeker beheersen?}
+
+Na deze opfrissing moet je niet alleen eerste en tweede afgeleiden
+kunnen berekenen.
+
+Je moet informatie uit $f'$ en $f''$ kunnen \textbf{analyseren} en
+vertalen naar eigenschappen van $f$.
+
+Je moet zelfstandig kunnen:
+
+\begin{itemize}
+
+\item uit het teken van $f'$ besluiten waar $f$ stijgt of daalt;
+
+\item met een tekenonderzoek van $f'$ lokale extrema herkennen;
+
+\item uitleggen waarom $f'(a)=0$ niet automatisch een extremum geeft;
+
+\item uit het teken van $f''$ afleiden hoe de hellingen van $f$
+veranderen;
+
+\item een verandering van kromming onderzoeken;
+
+\item uitleggen waarom $f''(a)=0$ niet automatisch een buigpunt geeft;
+
+\item informatie over $f$, $f'$ en $f''$ in beide richtingen met elkaar
+verbinden;
+
+\item deze begrippen betekenisvol interpreteren in een eenvoudige
+wetenschappelijke context.
+
+\end{itemize}
+
+\begin{opmerking}
+De oefeningen met de diamant vormen in dit hoofdstuk het
+minimumtraject.
+
+Concreet zijn dat:
+
+\begin{itemize}
+  \item \textit{Van afgeleide naar verloop};
+  \item \textit{Lees de tekentabel};
+  \item \textit{Is er een extremum?};
+  \item \textit{Wat kun je besluiten uit $f''$?};
+  \item \textit{Buigpunt of niet?};
+  \item \textit{Van $f'$ naar $f$};
+  \item \textit{Volledig verlooponderzoek};
+  \item \textit{Beweging interpreteren};
+  \item \textit{Wat moet waar zijn?};
+  \item \textit{Van functie naar afgeleiden}.
+\end{itemize}
+
+Merk op dat verschillende essentiële oefeningen het label
+\oefU{} dragen. Dat is bewust: het leerplandoel vraagt uiteindelijk
+\emph{analyseren}. Alleen standaardtechnieken uitvoeren is daarvoor
+niet voldoende.
+\end{opmerking}
+
+
+% ============================================================
+% OVERGANG
+% ============================================================
+
+\FVDsection{Van opfrissing naar nieuwe analyse}
+
+We hebben nu de belangrijkste ideeën uit het vijfde jaar opnieuw
+samengebracht:
+
+\[
+\text{verandering}
+\longrightarrow
+\text{afgeleid getal}
+\longrightarrow
+\text{afgeleide functie}
+\longrightarrow
+\text{verloop van een functie}.
+\]
+
+Tot nu toe werkten we vooral met veeltermfuncties waarvoor de
+afgeleiden relatief eenvoudig te bepalen zijn.
+
+In de volgende thema's breiden we onze gereedschapskist uit.
+
+We zullen dezelfde ideeën gebruiken bij andere functieklassen en
+nieuwe afleidingstechnieken. Daardoor wordt het mogelijk om veel
+rijkere functies te analyseren en later ook extremumproblemen
+systematisch aan te pakken.
+
+\end{document}

@@ -1,0 +1,1424 @@
+<!DOCTYPE html>
+<html lang="en-US" xml:lang="en-US">
+<head> <title>Verloop van functies – Functies in verandering</title>
+<meta charset="utf-8"/>
+<meta content="TeX4ht (https://tug.org/tex4ht/)" name="generator"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="\aa:CssFile " rel="stylesheet" type="text/css"/>
+<meta content="Verloop-functies.online.tex" name="src"/>
+<script>window.MathJax = { tex: { tags: "ams", }, }; </script>
+<script async="async" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+<meta content="Ingmar Herreman" name="author"/>
+<meta content="version 2.5.1" name="ximera"/>
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" media="screen" rel="stylesheet"/>
+<script async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js" type="text/javascript"></script>
+<link href="../../../assets/css/base.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/global.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/Header_Footer.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/ChapterLayout.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/chapter-hero.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/learning-boxes.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/CourseOverview.css" media="screen" rel="stylesheet"/></head><body><!-- XIMERA-HEADER-START --><!-- =========================================================
+     HEADER.HTML — Wiskunde 7 FVD
+     Plaats dit bestand bijvoorbeeld in:
+     assets/html/Header.html
+     ========================================================= -->
+<header aria-labelledby="fvd-hero-title" class="fvd-hero">
+<div aria-hidden="true" class="fvd-hero__grid"></div>
+<div aria-hidden="true" class="fvd-hero__glow fvd-hero__glow--left"></div>
+<div aria-hidden="true" class="fvd-hero__glow fvd-hero__glow--right"></div>
+<div class="fvd-hero__inner">
+<!-- Groot Athena-logo links -->
+<div class="fvd-hero__brand">
+<img alt="Athena secundair onderwijs" class="fvd-hero__logo" src="/images/banners/logo_athena.png"/>
+</div>
+<div aria-hidden="true" class="fvd-hero__divider"></div>
+<!-- Centrale titel en leerinhouden -->
+<div class="fvd-hero__content">
+<p class="fvd-hero__eyebrow">
+                    Fundamentele Vorming Digitale Creatie
+                </p>
+<h1 class="fvd-hero__title" id="fvd-hero-title">
+<span class="fvd-hero__title-main">Wiskunde</span>
+<span class="fvd-hero__title-accent">7 FVD</span>
+</h1>
+<div aria-hidden="true" class="fvd-hero__pink-line"></div>
+<p class="fvd-hero__subtitle">
+                    Wiskundige inzichten die je nodig hebt om digitale werelden te bouwen.
+                </p>
+<div aria-label="Onderwerpen in deze cursus" class="fvd-hero__chips">
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<rect height="18" rx="2" width="14" x="5" y="3"></rect>
+<path d="M8 7h8M8 11h2M14 11h2M8 15h2M14 15h2M8 18h2M14 18h2"></path>
+</svg>
+                        Basiswiskunde
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M4 17c4-1 4-10 8-10 2 0 2 3 4 3 1 0 2-.4 4-2"></path>
+<path d="M7 20 13 4"></path>
+</svg>
+                        Algebra
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M5 8h14M5 16h14"></path>
+</svg>
+                        Vergelijkingen
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M4 19V5M4 19h16"></path>
+<path d="m7 16 4-5 3 2 4-6"></path>
+</svg>
+                        Functies
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M5 18 18 5"></path>
+<path d="M12 5h6v6"></path>
+</svg>
+                        Vectoren
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="7"></circle>
+<path d="M12 2v20M2 12h20"></path>
+</svg>
+                        Coördinaten
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="m12 3 8 4.5v9L12 21l-8-4.5v-9z"></path>
+<path d="m4 7.5 8 4.5 8-4.5M12 12v9"></path>
+</svg>
+                        3D-meetkunde
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M3 16c3-8 7-8 10 0 2 5 5 4 8-4"></path>
+</svg>
+                        Goniometrie
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M5 18V6M5 18h14"></path>
+<path d="M8 16c1-6 3-9 8-10"></path>
+</svg>
+                        Logaritmen
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="m7 6 10 5-10 5z"></path>
+<path d="m7 10 10 5-10 5"></path>
+</svg>
+                        Transformaties
+                    </span>
+</div>
+</div>
+<!-- Rechterzijde met wiskundige SVG-tekeningen -->
+<div aria-hidden="true" class="fvd-hero__visual">
+<!-- 3D-kubus -->
+<svg class="fvd-visual fvd-visual--cube" viewbox="0 0 310 245">
+<g class="fvd-svg-cyan">
+<path d="M65 72 185 86 245 48 125 34Z"></path>
+<path d="M65 72v110l120 16V86"></path>
+<path d="M185 86 245 48v110l-60 40"></path>
+<path class="fvd-svg-dash" d="M125 34v110M125 144 65 182M125 144l120 14"></path>
+<path d="M125 144 90 210M125 144l88 28M125 144V15"></path>
+<path d="m90 210 11-4-7-9M213 172l-9-7-2 11M125 15l-6 11h12"></path>
+</g>
+<g class="fvd-svg-label">
+<text x="82" y="225">x</text>
+<text x="220" y="180">y</text>
+<text x="132" y="18">z</text>
+</g>
+</svg>
+<!-- Matrix -->
+<svg class="fvd-visual fvd-visual--matrix" viewbox="0 0 220 100">
+<g class="fvd-svg-soft">
+<text x="0" y="58">A =</text>
+<path d="M60 10c-12 18-12 62 0 80M205 10c12 18 12 62 0 80"></path>
+<text x="82" y="36">1</text>
+<text x="123" y="36">2</text>
+<text x="165" y="36">0</text>
+<text x="73" y="61">−1</text>
+<text x="123" y="61">0</text>
+<text x="165" y="61">3</text>
+<text x="82" y="86">2</text>
+<text x="113" y="86">−2</text>
+<text x="165" y="86">1</text>
+</g>
+</svg>
+<!-- Vectoren en rotatie -->
+<svg class="fvd-visual fvd-visual--vectors" viewbox="0 0 260 170">
+<g class="fvd-svg-cyan">
+<path d="M55 138 132 74"></path>
+<path d="m132 74-13 3 8 10"></path>
+<path d="M55 138h125"></path>
+<path d="m180 138-12-6v12"></path>
+<path class="fvd-svg-dash" d="M55 138c24-65 116-95 156-25"></path>
+</g>
+<g class="fvd-svg-pink">
+<path d="M55 138 207 104"></path>
+<path d="m207 104-13-2 5 12"></path>
+<path class="fvd-svg-dash" d="M211 113c17-13 25-5 21 11"></path>
+<path d="m232 124-9-8-2 12"></path>
+</g>
+<g class="fvd-svg-label">
+<text x="38" y="153">O</text>
+<text x="138" y="73">u⃗</text>
+<text x="188" y="98">v⃗</text>
+<text x="141" y="130">x⃗</text>
+<text x="222" y="102">Rθ</text>
+</g>
+</svg>
+<!-- Bézier-curve -->
+<svg class="fvd-visual fvd-visual--bezier" viewbox="0 0 280 110">
+<g class="fvd-svg-soft">
+<path d="M30 82 85 30 190 30 245 82"></path>
+</g>
+<g class="fvd-svg-cyan">
+<path d="M30 82c42-12 55-52 105-52s67 40 110 52"></path>
+</g>
+<g class="fvd-svg-pink">
+<circle cx="30" cy="82" r="4"></circle>
+<circle cx="85" cy="30" r="4"></circle>
+<circle cx="190" cy="30" r="4"></circle>
+<circle cx="245" cy="82" r="4"></circle>
+</g>
+<g class="fvd-svg-label">
+<text x="18" y="102">P₀</text>
+<text x="74" y="20">P₁</text>
+<text x="181" y="20">P₂</text>
+<text x="238" y="102">P₃</text>
+<text x="103" y="79">Bézier-curve</text>
+</g>
+</svg>
+</div>
+</div>
+<div aria-hidden="true" class="fvd-hero__pink-corner"></div>
+</header><!-- XIMERA-HEADER-END --><!-- XIMERA-CHAPTER-HERO-START --><section class="chapter-hero">
+<div aria-hidden="true" class="chapter-hero__decoration">
+<span class="chapter-hero__formula">
+            f(x) = ax² + bx + c
+        </span>
+<span class="chapter-hero__curve"></span>
+<span class="chapter-hero__grid"></span>
+</div>
+<div class="chapter-hero__content">
+<div class="chapter-hero__theme">
+<span class="chapter-hero__theme-label">
+                Thema 1
+            </span>
+<span class="chapter-hero__theme-dot"></span>
+<span class="chapter-hero__theme-name">
+                Veranderingen in beeld
+            </span>
+</div>
+<div class="chapter-hero__chapter-label">
+            Hoofdstuk
+        </div>
+<div class="chapter-hero__main">
+<div class="chapter-hero__number">
+                5
+            </div>
+<div class="chapter-hero__text">
+<h1 class="chapter-hero__title">
+                    Verloop van functies
+                </h1>
+<p class="chapter-hero__abstract">
+                    Een afgeleide is meer dan een nieuwe functie die je kunt berekenen. Ze vertelt hoe de oorspronkelijke functie verandert. In dit hoofdstuk brengen we de belangrijkste verbanden uit het vijfde jaar opnieuw samen. We gebruiken de eerste afgeleide om stijgen, dalen en extrema te onderzoeken en de tweede afgeleide om de kromming en buigpunten van een grafiek te bestuderen. Daarbij staat één idee centraal: uit informatie over f' en f'' leiden we eigenschappen van f af.
+                </p>
+</div>
+</div>
+<div class="chapter-hero__accent"></div>
+</div>
+</section><!-- XIMERA-CHAPTER-HERO-END --><button aria-controls="courseSidebar" aria-expanded="false" class="course-menu-button" id="courseMenuButton" type="button">☰ Toon cursusinhoud</button><div class="course-sidebar-overlay" id="courseSidebarOverlay"></div><!-- XIMERA-CHAPTER-LAYOUT-START --><main class="chapter-layout">
+<!-- CHAPTER_HERO_START -->
+<section class="chapter-hero">
+
+    <div class="chapter-hero__decoration" aria-hidden="true">
+        <span class="chapter-hero__formula">
+            f(x) = ax² + bx + c
+        </span>
+
+        <span class="chapter-hero__curve"></span>
+        <span class="chapter-hero__grid"></span>
+    </div>
+
+    <div class="chapter-hero__content">
+
+        <div class="chapter-hero__theme">
+            <span class="chapter-hero__theme-label">
+                Thema 1
+            </span>
+
+            <span class="chapter-hero__theme-dot"></span>
+
+            <span class="chapter-hero__theme-name">
+                {{THEME}}
+            </span>
+        </div>
+
+        <div class="chapter-hero__chapter-label">
+            Hoofdstuk
+        </div>
+
+        <div class="chapter-hero__main">
+
+            <div class="chapter-hero__number">
+                {{CHAPTER_LOCAL_NUMBER}}
+            </div>
+
+            <div class="chapter-hero__text">
+                <h1 class="chapter-hero__title">
+                    {{TITLE}}
+                </h1>
+
+                <p class="chapter-hero__abstract">
+                    {{ABSTRACT}}
+                </p>
+            </div>
+
+        </div>
+
+        <div class="chapter-hero__accent"></div>
+
+    </div>
+
+</section>
+<!-- CHAPTER_HERO_END -->
+<!--
+    AUTOMATISCH GEGENEREERD BESTAND
+
+    Dit bestand wordt opgebouwd door:
+        scripts/generate-sidebar.sh
+
+    Bewerk niet dit bestand, maar:
+        assets/html/SidebarTemplate.html
+        en modules/.../index.tex
+-->
+<aside class="course-sidebar" id="courseSidebar">
+<div class="sidebar-header">
+<div class="sidebar-header__text">
+<span class="sidebar-label">
+                Functies in verandering
+            </span>
+<h2 class="sidebar-title">
+                Cursusinhoud
+            </h2>
+</div>
+<button aria-label="Sluit cursusmenu" class="sidebar-close" id="sidebarClose" type="button">
+            ×
+        </button>
+</div>
+<nav aria-label="Cursusinhoud" class="course-navigation">
+<div class="course-section is-open" data-theme="1">
+<button aria-controls="course-section-1-veranderingen-in-beeld" aria-expanded="true" class="course-section-toggle" type="button">
+<span class="course-section-number">
+            1
+        </span>
+<span class="course-section-title">
+            Veranderingen in beeld
+        </span>
+<span aria-hidden="true" class="course-section-arrow">
+            ▾
+        </span>
+</button>
+<div class="course-section-content" id="course-section-1-veranderingen-in-beeld">
+<a class="course-chapter-link" data-chapter="Thema1-Opfrissing/Afgeleid-getal" href="Thema1-Opfrissing/Afgeleid-getal.html">
+<span class="course-chapter-number">
+                1.1
+            </span>
+<span class="course-chapter-title">
+                Verandering en het afgeleid getal
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema1-Opfrissing/Oefeningen-Afgeleid-getal" href="Thema1-Opfrissing/Oefeningen-Afgeleid-getal.html">
+<span class="course-chapter-number">
+                1.2
+            </span>
+<span class="course-chapter-title">
+                Oefeningen — Verandering en het afgeleid getal
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema1-Opfrissing/Afgeleide-functie" href="Thema1-Opfrissing/Afgeleide-functie.html">
+<span class="course-chapter-number">
+                1.3
+            </span>
+<span class="course-chapter-title">
+                De afgeleide functie
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema1-Opfrissing/Oefeningen-Afgeleide-functie" href="Thema1-Opfrissing/Oefeningen-Afgeleide-functie.html">
+<span class="course-chapter-number">
+                1.4
+            </span>
+<span class="course-chapter-title">
+                Oefeningen — De afgeleide functie
+            </span>
+</a>
+<a aria-current="page" class="course-chapter-link is-active" data-chapter="Thema1-Opfrissing/Verloop-functies" href="Thema1-Opfrissing/Verloop-functies.html">
+<span class="course-chapter-number">
+                1.5
+            </span>
+<span class="course-chapter-title">
+                Verloop van functies
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema1-Opfrissing/Oefeningen-Verloop-functies" href="Thema1-Opfrissing/Oefeningen-Verloop-functies.html">
+<span class="course-chapter-number">
+                1.6
+            </span>
+<span class="course-chapter-title">
+                Oefeningen — Verloop van functies
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema1-Opfrissing/Limieten" href="Thema1-Opfrissing/Limieten.html">
+<span class="course-chapter-number">
+                1.7
+            </span>
+<span class="course-chapter-title">
+                Limieten en asymptotisch gedrag
+            </span>
+</a>
+</div>
+</div>
+</nav>
+</aside>
+<article class="chapter-content"><div class="chapter-body">
+<div class="preamble">
+</div>
+<style> .activity-body pre { white-space: pre; background-color: lightgray; } .xmyoutube { aspect-ratio: 16/9; min-width: 75%; } .image-environment img { width: unset; } </style>
+<div class="maketitle"></div>
+<!-- l. 36 --><p class="noindent"></p><section class="learning-box learning-box--prior"> <div class="learning-box__header"> <span class="learning-box__icon"> </span><span class="learning-box__title">Voorkennis</span> </div> <div class="learning-box__content">
+<p></p>
+<ul class="itemize1">
+<li class="itemize">Je kan veeltermfuncties afleiden.
+</li>
+<li class="itemize">Je kan een eerste en tweede afgeleide bepalen.
+</li>
+<li class="itemize">Je kan het teken van een functie onderzoeken.
+</li>
+<li class="itemize">Je kan nulwaarden algebraïsch bepalen.
+</li>
+<li class="itemize">Je kan een tekentabel lezen en opstellen.
+</li>
+<li class="itemize">Je kan het verschil uitleggen tussen <span class="mathjax-inline">\(f'(a)\)</span> en <span class="mathjax-inline">\(f'(x)\)</span>.</li></ul>
+<!-- l. 43 --><p class="noindent"></p></div> </section>
+<p></p><!-- l. 45 --><p class="noindent"></p><section class="learning-box learning-box--goals"> <div class="learning-box__header"> <span class="learning-box__icon"> </span><span class="learning-box__title">Leerdoelen</span> </div> <div class="learning-box__content">
+<p></p>
+<ul class="itemize1">
+<li class="itemize">Je kan het verband leggen tussen het teken van <span class="mathjax-inline">\(f'\)</span> en het stijgen of dalen
+van <span class="mathjax-inline">\(f\)</span>.
+</li>
+<li class="itemize">Je kan stijg- en daalintervallen bepalen met behulp van <span class="mathjax-inline">\(f'\)</span>.
+                                                                  
+
+                                                                  
+</li>
+<li class="itemize">Je kan stationaire punten herkennen en onderzoeken.
+</li>
+<li class="itemize">Je kan lokale extrema bepalen met behulp van een tekenonderzoek van <span class="mathjax-inline">\(f'\)</span>.
+</li>
+<li class="itemize">Je kan uitleggen waarom <span class="mathjax-inline">\(f'(a)=0\)</span> op zichzelf niet volstaat om een extremum te
+besluiten.
+</li>
+<li class="itemize">Je kan het verband leggen tussen het teken van <span class="mathjax-inline">\(f''\)</span> en de kromming van de
+grafiek.
+</li>
+<li class="itemize">Je kan buigpunten onderzoeken met behulp van <span class="mathjax-inline">\(f''\)</span>.
+</li>
+<li class="itemize">Je kan uitleggen waarom <span class="mathjax-inline">\(f''(a)=0\)</span> op zichzelf niet volstaat om een buigpunt te
+besluiten.
+</li>
+<li class="itemize">Je kan informatie over <span class="mathjax-inline">\(f\)</span>, <span class="mathjax-inline">\(f'\)</span> en <span class="mathjax-inline">\(f''\)</span> met elkaar verbinden.
+</li>
+<li class="itemize">Je kan eenvoudige wetenschappelijke situaties interpreteren met eerste en
+tweede afgeleiden.</li></ul>
+<!-- l. 56 --><p class="noindent"></p></div> </section>
+<p><a id="x1-2r1"></a>
+</p><p></p><!-- l. 62 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">1</div><div class="fvd-section-bar__title">Waarom leer je dit?</div></div>
+<p></p><!-- l. 64 --><p class="noindent">In het vorige hoofdstuk hebben we de afgeleide functie opnieuw opgebouwd. We
+weten bijvoorbeeld dat
+</p>
+<div class="mathjax-block">\[ f'(x) \]</div>
+<!-- l. 71 --><p class="noindent">beschrijft hoe <span class="mathjax-inline">\(f\)</span> verandert en dat
+                                                                  
+
+                                                                  
+</p>
+<div class="mathjax-block">\[ f''(x) \]</div>
+<!-- l. 77 --><p class="noindent">beschrijft hoe die verandering zelf verandert.
+</p><!-- l. 79 --><p class="noindent">Maar uiteindelijk willen we meestal niet alleen <span class="mathjax-inline">\(f'\)</span> en <span class="mathjax-inline">\(f''\)</span> <em>berekenen</em>. We willen ze gebruiken
+om iets over <span class="mathjax-inline">\(f\)</span> te weten te komen.
+</p><!-- l. 83 --><p class="noindent">Denk bijvoorbeeld aan de hoogte <span class="mathjax-inline">\(h(t)\)</span> van een voorwerp.
+</p><!-- l. 85 --><p class="noindent">Uit
+</p>
+<div class="mathjax-block">\[ h'(t)&gt;0 \]</div>
+<!-- l. 91 --><p class="noindent">kunnen we afleiden dat het voorwerp op dat ogenblik omhoog beweegt.
+</p><!-- l. 93 --><p class="noindent">Uit
+</p>
+<div class="mathjax-block">\[ h'(t)&lt;0 \]</div>
+<!-- l. 99 --><p class="noindent">kunnen we afleiden dat het naar beneden beweegt.
+</p><!-- l. 101 --><p class="noindent">En wanneer de snelheid van positief naar negatief verandert, bereikt het voorwerp
+zijn hoogste punt.
+</p><!-- l. 104 --><p class="noindent">We gebruiken dus informatie over een afgeleide om conclusies te trekken over de
+oorspronkelijke functie.
+</p><!-- l. 108 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">Dat is de belangrijkste denkstap in dit hoofdstuk:
+<p></p>
+<div class="mathjax-block">\[ \boxed { \text {informatie over }f' \quad \Longrightarrow \quad \text {informatie over }f } \]</div>
+<!-- l. 118 --><p class="noindent">en vervolgens
+</p>
+<div class="mathjax-block">\[ \boxed { \text {informatie over }f'' \quad \Longrightarrow \quad \text {informatie over de verandering van }f' } \]</div>
+<!-- l. 128 --><p class="noindent">Je moet deze verbanden niet alleen kunnen toepassen, maar ook kunnen verklaren.
+</p></div></section>
+<p><a id="x1-3r2"></a>
+</p><p></p><!-- l. 137 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">2</div><div class="fvd-section-bar__title">Van het teken van <span class="mathjax-inline">\(f'\)</span> naar het verloop van <span class="mathjax-inline">\(f\)</span></div></div>
+<p><a id="x1-4r1"></a>
+</p><p></p><!-- l. 139 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 139 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 139 --><p class="noindent"></p><div class="fvd-subsection__number">2.1</div>
+<p></p><!-- l. 139 --><p class="noindent"></p><div class="fvd-subsection__title">Wat betekent <span class="mathjax-inline">\(f'(x)&gt;0\)</span>?</div>
+<p></p><!-- l. 139 --><p class="noindent"></p></div>
+<p></p><!-- l. 139 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 139 --><p class="noindent"></p></div>
+<p></p><!-- l. 141 --><p class="noindent">Neem een interval waarop
+</p>
+<div class="mathjax-block">\[ f'(x)&gt;0. \]</div>
+<!-- l. 147 --><p class="noindent">In elk punt van dat interval heeft de grafiek van <span class="mathjax-inline">\(f\)</span> een raaklijn met positieve
+richtingscoëfficiënt.
+</p><!-- l. 150 --><p class="noindent">Als <span class="mathjax-inline">\(x\)</span> toeneemt, neemt ook <span class="mathjax-inline">\(f(x)\)</span> toe.
+</p><!-- l. 152 --><p class="noindent">De functie is daar dus stijgend.
+</p><!-- l. 154 --><p class="noindent">Op dezelfde manier geldt:
+</p><!-- l. 156 --><p class="noindent"></p><section class="fvd-property"><div class="fvd-property__title"><span class="fvd-property__label">EIGENSCHAP</span><span class="fvd-property__separator"> — </span><span class="fvd-property__name">Teken van de eerste afgeleide</span></div><div class="fvd-property__content">
+<p></p><!-- l. 158 --><p class="noindent">Op een interval geldt:
+</p>
+<div class="mathjax-block">\[ \boxed { f'(x)&gt;0 \quad \Longrightarrow \quad f \text { is stijgend} } \]</div>
+<!-- l. 168 --><p class="noindent">en
+</p>
+<div class="mathjax-block">\[ \boxed { f'(x)&lt;0 \quad \Longrightarrow \quad f \text { is dalend}. } \]</div>
+</div></section>
+<!-- l. 180 --><p class="noindent">Dit is een uitspraak over een <em>interval</em>.
+</p><!-- l. 182 --><p class="noindent">Eén enkele waarde zoals
+</p>
+<div class="mathjax-block">\[ f'(2)&gt;0 \]</div>
+<!-- l. 188 --><p class="noindent">vertelt alleen wat er in de buurt van <span class="mathjax-inline">\(x=2\)</span> gebeurt. Daaruit mag je niet besluiten dat <span class="mathjax-inline">\(f\)</span> op
+haar volledige domein stijgend is.
+<a id="x1-5r1"></a>
+</p><!-- l. 196 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 196 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 196 --><p class="noindent">Oefening 1
+</p><!-- l. 196 --><p class="noindent">— Van afgeleide naar verloop
+</p><!-- l. 196 --><p class="noindent"></p></div>
+<p></p><!-- l. 196 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 196 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--b">B</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 196 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 198 --><p class="noindent">Van een functie <span class="mathjax-inline">\(f\)</span> weten we:
+</p>
+<div class="mathjax-block">\[ f'(x)&gt;0 \qquad \text {voor }-3&lt;x&lt;2 \]</div>
+<!-- l. 205 --><p class="noindent">en
+</p>
+<div class="mathjax-block">\[ f'(x)&lt;0 \qquad \text {voor }x&gt;2. \]</div>
+<!-- l. 212 --><p class="noindent">Vul aan.
+</p>
+<div class="problem-environment question" id="problem1" numbered=" " role="article" titletext=" Question">  Op <span class="mathjax-inline">\(]-3,2[\)</span> is <span class="mathjax-inline">\(f\)</span>
+<div class="multiple-choice" id="problem2" titletext=" Multiple Choice"><span class="choice correct" id="choice1">stijgend. </span><span class="choice" id="choice2">dalend. </span><span class="choice" id="choice3">constant.</span> </div> </div>
+<div class="problem-environment question" id="problem3" numbered=" " role="article" titletext=" Question">  Op <span class="mathjax-inline">\(]2,+\infty [\)</span> is <span class="mathjax-inline">\(f\)</span>
+<div class="multiple-choice" id="problem4" titletext=" Multiple Choice"><span class="choice" id="choice4">stijgend. </span><span class="choice correct" id="choice5">dalend. </span><span class="choice" id="choice6">constant.</span> </div> </div>
+</div>
+<!-- l. 234 --><p class="noindent"></p></div>
+<p></p><!-- l. 234 --><p class="noindent"></p></section>
+<p><a id="x1-6r3"></a>
+</p><p></p><!-- l. 241 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">3</div><div class="fvd-section-bar__title">Stijgen en dalen bepalen</div></div>
+<p></p><!-- l. 243 --><p class="noindent">Om te onderzoeken waar een functie stijgt of daalt, kunnen we dus het teken van <span class="mathjax-inline">\(f'\)</span>
+onderzoeken.
+</p><!-- l. 246 --><p class="noindent">De werkwijze is:
+</p>
+<div class="mathjax-block">\[ f \longrightarrow f' \longrightarrow \text {nulwaarden van }f' \longrightarrow \text {teken van }f' \longrightarrow \text {verloop van }f. \]</div>
+<p><a id="x1-7r1"></a>
+</p><!-- l. 260 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 260 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 1<span class="fvd-example__subtitle"> — Stijgen en dalen van een derdegraadsfunctie</span></div>
+<p></p><!-- l. 260 --><p class="noindent"></p><div class="fvd-example__content">
+<p></p><!-- l. 262 --><p class="noindent">Gegeven:
+</p>
+<div class="mathjax-block">\[ f(x)=x^3-3x^2-9x+5. \]</div>
+<!-- l. 268 --><p class="noindent">We onderzoeken waar <span class="mathjax-inline">\(f\)</span> stijgt en daalt.
+</p><!-- l. 270 --><p class="noindent"><strong>Stap 1: bepaal de afgeleide.</strong>
+</p>
+<div class="mathjax-block">\[ f'(x)=3x^2-6x-9. \]</div>
+<!-- l. 276 --><p class="noindent">Factoriseren geeft
+</p>
+<div class="mathjax-block">\[ f'(x)=3(x^2-2x-3) \]</div>
+<!-- l. 282 --><p class="noindent">en dus
+</p>
+<div class="mathjax-block">\[ \boxed { f'(x)=3(x+1)(x-3). } \]</div>
+<!-- l. 290 --><p class="noindent"><strong>Stap 2: bepaal de nulwaarden van <span class="mathjax-inline">\(f'\)</span>.</strong>
+</p>
+<div class="mathjax-block">\[ f'(x)=0 \]</div>
+<!-- l. 296 --><p class="noindent">geeft
+</p>
+<div class="mathjax-block">\[ x=-1 \qquad \text {of}\qquad x=3. \]</div>
+<!-- l. 304 --><p class="noindent">Deze waarden verdelen de getallenas in drie intervallen.
+</p>
+<div class="mathjax-block">\[ ]-\infty ,-1[, \qquad ]-1,3[, \qquad ]3,+\infty [. \]</div>
+<!-- l. 314 --><p class="noindent"><strong>Stap 3: onderzoek het teken van <span class="mathjax-inline">\(f'\)</span>.</strong>
+</p><!-- l. 316 --><p class="noindent">Omdat
+</p>
+<div class="mathjax-block">\[ f'(x)=3(x+1)(x-3), \]</div>
+<!-- l. 322 --><p class="noindent">vinden we:
+</p>
+<div class="mathjax-block">\[ \begin {array}{c|ccccc} x &amp; ]-\infty ,-1[ &amp; -1 &amp; ]-1,3[ &amp; 3 &amp; ]3,+\infty [ \\ \hline f'(x) &amp; + &amp; 0 &amp; - &amp; 0 &amp; + \end {array} \]</div>
+<!-- l. 342 --><p class="noindent"><strong>Stap 4: vertaal naar het verloop van <span class="mathjax-inline">\(f\)</span>.</strong>
+</p><!-- l. 344 --><p class="noindent">Dus:
+</p>
+<div class="mathjax-block">\[ \boxed { f \text { stijgt op }]-\infty ,-1[ \text { en } ]3,+\infty [ } \]</div>
+<!-- l. 353 --><p class="noindent">en
+</p>
+<div class="mathjax-block">\[ \boxed { f \text { daalt op }]-1,3[. } \]</div>
+</div></section>
+<p><a id="x1-8r4"></a>
+</p><!-- l. 368 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">4</div><div class="fvd-section-bar__title">Stationaire punten</div></div>
+<p></p><!-- l. 370 --><p class="noindent">De waarden waarvoor
+</p>
+<div class="mathjax-block">\[ f'(x)=0 \]</div>
+<!-- l. 376 --><p class="noindent">verdienen bijzondere aandacht.
+</p><!-- l. 378 --><p class="noindent"></p><section class="fvd-definition"><div class="fvd-definition__title"><span class="fvd-definition__label">DEFINITIE</span><span class="fvd-definition__separator"> — </span><span class="fvd-definition__name">Stationair punt</span></div><div class="fvd-definition__content">
+<p></p><!-- l. 380 --><p class="noindent">Een punt
+</p>
+<div class="mathjax-block">\[ P(a,f(a)) \]</div>
+<!-- l. 386 --><p class="noindent">van de grafiek van een afleidbare functie <span class="mathjax-inline">\(f\)</span> heet een <strong>stationair punt</strong> als
+</p>
+<div class="mathjax-block">\[ \boxed {f'(a)=0.} \]</div>
+<!-- l. 393 --><p class="noindent">De raaklijn aan de grafiek is daar horizontaal.
+</p></div></section>
+<p></p><!-- l. 397 --><p class="noindent">Maar een stationair punt is niet noodzakelijk een maximum of minimum.
+</p><!-- l. 399 --><p class="noindent">Dat hebben we in hoofdstuk 1 al aangekondigd.
+</p><!-- l. 401 --><p class="noindent">Vergelijk bijvoorbeeld:
+</p>
+<div class="mathjax-block">\[ f(x)=x^2 \]</div>
+<!-- l. 407 --><p class="noindent">en
+</p>
+<div class="mathjax-block">\[ g(x)=x^3. \]</div>
+<!-- l. 413 --><p class="noindent">Voor beide functies geldt:
+</p>
+<div class="mathjax-block">\[ f'(0)=0 \qquad \text {en}\qquad g'(0)=0. \]</div>
+<!-- l. 421 --><p class="noindent">Toch heeft <span class="mathjax-inline">\(f\)</span> in <span class="mathjax-inline">\(x=0\)</span> een minimum, terwijl <span class="mathjax-inline">\(g\)</span> daar geen extremum heeft.
+</p><!-- l. 424 --><p class="noindent">We moeten dus onderzoeken wat het teken van de afgeleide <em>voor en na</em> het
+stationaire punt doet.
+<a id="x1-9r5"></a>
+</p><!-- l. 432 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">5</div><div class="fvd-section-bar__title">Extrema herkennen met <span class="mathjax-inline">\(f'\)</span></div></div>
+<p><a id="x1-10r1"></a>
+</p><p></p><!-- l. 434 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 434 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 434 --><p class="noindent"></p><div class="fvd-subsection__number">5.1</div>
+<p></p><!-- l. 434 --><p class="noindent"></p><div class="fvd-subsection__title">Van stijgen naar dalen</div>
+<p></p><!-- l. 434 --><p class="noindent"></p></div>
+<p></p><!-- l. 434 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 434 --><p class="noindent"></p></div>
+<p></p><!-- l. 436 --><p class="noindent">Stel dat bij <span class="mathjax-inline">\(x=a\)</span> het teken van <span class="mathjax-inline">\(f'\)</span> verandert als
+</p>
+<div class="mathjax-block">\[ +\quad 0\quad -. \]</div>
+<!-- l. 442 --><p class="noindent">Links van <span class="mathjax-inline">\(a\)</span> stijgt <span class="mathjax-inline">\(f\)</span>.
+</p><!-- l. 444 --><p class="noindent">Rechts van <span class="mathjax-inline">\(a\)</span> daalt <span class="mathjax-inline">\(f\)</span>.
+</p><!-- l. 446 --><p class="noindent">De functie gaat dus eerst omhoog en daarna omlaag.
+                                                                  
+
+                                                                  
+</p><!-- l. 448 --><p class="noindent">Daarom heeft <span class="mathjax-inline">\(f\)</span> in <span class="mathjax-inline">\(x=a\)</span> een lokaal maximum.
+<a id="x1-11r2"></a>
+</p><!-- l. 450 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 450 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 450 --><p class="noindent"></p><div class="fvd-subsection__number">5.2</div>
+<p></p><!-- l. 450 --><p class="noindent"></p><div class="fvd-subsection__title">Van dalen naar stijgen</div>
+<p></p><!-- l. 450 --><p class="noindent"></p></div>
+<p></p><!-- l. 450 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 450 --><p class="noindent"></p></div>
+<p></p><!-- l. 452 --><p class="noindent">Wanneer het teken verandert als
+</p>
+<div class="mathjax-block">\[ -\quad 0\quad +, \]</div>
+<!-- l. 458 --><p class="noindent">daalt <span class="mathjax-inline">\(f\)</span> eerst en stijgt ze daarna.
+</p><!-- l. 460 --><p class="noindent">Dan heeft <span class="mathjax-inline">\(f\)</span> in <span class="mathjax-inline">\(x=a\)</span> een lokaal minimum.
+</p><!-- l. 462 --><p class="noindent"></p><section class="fvd-property"><div class="fvd-property__title"><span class="fvd-property__label">EIGENSCHAP</span><span class="fvd-property__separator"> — </span><span class="fvd-property__name">Extrema via het teken van <span class="mathjax-inline">\(f'\)</span></span></div><div class="fvd-property__content">
+<p></p><!-- l. 464 --><p class="noindent">Als <span class="mathjax-inline">\(f'\)</span> bij <span class="mathjax-inline">\(x=a\)</span> van teken verandert, dan geldt:
+</p>
+<div class="mathjax-block">\[ \boxed { +\;\longrightarrow \;- \quad \Rightarrow \quad \text {lokaal maximum} } \]</div>
+<!-- l. 474 --><p class="noindent">en
+</p>
+<div class="mathjax-block">\[ \boxed { -\;\longrightarrow \;+ \quad \Rightarrow \quad \text {lokaal minimum}. } \]</div>
+<!-- l. 484 --><p class="noindent">Als <span class="mathjax-inline">\(f'(a)=0\)</span> maar <span class="mathjax-inline">\(f'\)</span> niet van teken verandert, kunnen we op basis daarvan geen lokaal
+extremum besluiten.
+</p></div></section>
+<p><a id="x1-12r2"></a>
+</p><p></p><!-- l. 494 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 494 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 2<span class="fvd-example__subtitle"> — De extrema volledig bepalen</span></div>
+<p></p><!-- l. 494 --><p class="noindent"></p><div class="fvd-example__content">
+<p></p><!-- l. 496 --><p class="noindent">We keren terug naar
+</p>
+<div class="mathjax-block">\[ f(x)=x^3-3x^2-9x+5. \]</div>
+<!-- l. 502 --><p class="noindent">We vonden:
+</p>
+<div class="mathjax-block">\[ \begin {array}{c|ccccc} x &amp; ]-\infty ,-1[ &amp; -1 &amp; ]-1,3[ &amp; 3 &amp; ]3,+\infty [ \\ \hline f'(x) &amp; + &amp; 0 &amp; - &amp; 0 &amp; + \\ \hline f &amp; \nearrow &amp; &amp; \searrow &amp; &amp; \nearrow \end {array} \]</div>
+<!-- l. 529 --><p class="noindent">Bij <span class="mathjax-inline">\(x=-1\)</span> verandert <span class="mathjax-inline">\(f'\)</span> van positief naar negatief.
+                                                                  
+
+                                                                  
+</p><!-- l. 531 --><p class="noindent">Dus heeft <span class="mathjax-inline">\(f\)</span> daar een lokaal maximum.
+</p><!-- l. 533 --><p class="noindent">De functiewaarde is
+</p>
+<div class="mathjax-block">\[ f(-1) = (-1)^3-3(-1)^2-9(-1)+5 = 10. \]</div>
+<!-- l. 543 --><p class="noindent">Het lokale maximumpunt is dus
+</p>
+<div class="mathjax-block">\[ \boxed {(-1,10)}. \]</div>
+<!-- l. 549 --><p class="noindent">Bij <span class="mathjax-inline">\(x=3\)</span> verandert <span class="mathjax-inline">\(f'\)</span> van negatief naar positief.
+</p><!-- l. 551 --><p class="noindent">Dus heeft <span class="mathjax-inline">\(f\)</span> daar een lokaal minimum.
+</p>
+<div class="mathjax-block">\[ f(3) = 27-27-27+5 = -22. \]</div>
+<!-- l. 561 --><p class="noindent">Het lokale minimumpunt is
+</p>
+<div class="mathjax-block">\[ \boxed {(3,-22)}. \]</div>
+</div></section>
+<p><a id="x1-13r2"></a>
+</p><!-- l. 574 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 574 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 574 --><p class="noindent">Oefening 2
+</p><!-- l. 574 --><p class="noindent">— Lees de tekentabel
+</p><!-- l. 574 --><p class="noindent"></p></div>
+<p></p><!-- l. 574 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 574 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--b">B</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 574 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 576 --><p class="noindent">Van een afleidbare functie <span class="mathjax-inline">\(f\)</span> is gegeven:
+</p>
+<div class="mathjax-block">\[ \begin {array}{c|ccccc} x &amp; ]-\infty ,1[ &amp; 1 &amp; ]1,4[ &amp; 4 &amp; ]4,+\infty [ \\ \hline f'(x) &amp; - &amp; 0 &amp; + &amp; 0 &amp; - \end {array} \]</div>
+<div class="problem-environment question" id="problem5" numbered=" " role="article" titletext=" Question">  Welke uitspraak over <span class="mathjax-inline">\(x=1\)</span> is correct?
+<div class="multiple-choice" id="problem6" titletext=" Multiple Choice"><span class="choice" id="choice7">Daar ligt noodzakelijk een lokaal maximum. </span><span class="choice correct" id="choice8">Daar ligt een lokaal minimum. </span><span class="choice" id="choice9">Daar ligt geen stationair punt.</span> </div> </div>
+<div class="problem-environment question" id="problem7" numbered=" " role="article" titletext=" Question">  Welke uitspraak over <span class="mathjax-inline">\(x=4\)</span> is correct?
+<div class="multiple-choice" id="problem8" titletext=" Multiple Choice"><span class="choice correct" id="choice10">Daar ligt een lokaal maximum. </span><span class="choice" id="choice11">Daar ligt een lokaal minimum. </span><span class="choice" id="choice12">De functie is
+daar noodzakelijk niet afleidbaar.</span> </div> </div>
+</div>
+<!-- l. 616 --><p class="noindent"></p></div>
+<p></p><!-- l. 616 --><p class="noindent"></p></section>
+<p><a id="x1-14r6"></a>
+</p><p></p><!-- l. 623 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">6</div><div class="fvd-section-bar__title">Een nulwaarde van <span class="mathjax-inline">\(f'\)</span> is niet genoeg</div></div>
+<p></p><!-- l. 625 --><p class="noindent">Een veelgemaakte redenering is:
+</p>
+<div class="mathjax-block">\[ f'(a)=0 \quad \Rightarrow \quad f \text { heeft een extremum in }a. \]</div>
+<!-- l. 633 --><p class="noindent">Die redenering is fout.
+</p><!-- l. 635 --><p class="noindent">Neem
+</p>
+<div class="mathjax-block">\[ f(x)=x^3. \]</div>
+<!-- l. 641 --><p class="noindent">Dan
+</p>
+<div class="mathjax-block">\[ f'(x)=3x^2 \]</div>
+<!-- l. 647 --><p class="noindent">en dus
+</p>
+<div class="mathjax-block">\[ f'(0)=0. \]</div>
+<!-- l. 653 --><p class="noindent">Maar
+</p>
+<div class="mathjax-block">\[ f'(x)&gt;0 \]</div>
+<!-- l. 659 --><p class="noindent">zowel voor <span class="mathjax-inline">\(x&lt;0\)</span> als voor <span class="mathjax-inline">\(x&gt;0\)</span>.
+</p><!-- l. 661 --><p class="noindent">Het tekenverloop is:
+</p>
+<div class="mathjax-block">\[ +\quad 0\quad +. \]</div>
+<!-- l. 667 --><p class="noindent">De functie blijft dus stijgen.
+</p><!-- l. 669 --><p class="noindent">Er is geen maximum en geen minimum.
+</p><!-- l. 672 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">De vergelijking
+<p></p>
+<div class="mathjax-block">\[ f'(x)=0 \]</div>
+<!-- l. 678 --><p class="noindent">levert <em>kandidaten</em> voor stationaire extrema.
+</p><!-- l. 680 --><p class="noindent">Daarna moet je onderzoeken wat er met het teken van <span class="mathjax-inline">\(f'\)</span> gebeurt. </p></div></section>
+<p><a id="x1-15r3"></a>
+</p><p></p><!-- l. 684 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 684 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 684 --><p class="noindent">Oefening 3
+</p><!-- l. 684 --><p class="noindent">— Is er een extremum?
+                                                                  
+
+                                                                  
+</p><!-- l. 684 --><p class="noindent"></p></div>
+<p></p><!-- l. 684 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 684 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 684 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 686 --><p class="noindent">Een leerling onderzoekt
+</p>
+<div class="mathjax-block">\[ f(x)=x^3 \]</div>
+<!-- l. 692 --><p class="noindent">en schrijft:
+</p>
+<blockquote class="quote">
+<!-- l. 695 --><p class="noindent">Omdat <span class="mathjax-inline">\(f'(0)=0\)</span>, heeft <span class="mathjax-inline">\(f\)</span> in <span class="mathjax-inline">\(x=0\)</span> een extremum.</p></blockquote>
+<!-- l. 698 --><p class="noindent">Leg uit waarom deze redenering niet geldig is en geef het correcte besluit.
+</p></div>
+<p></p><!-- l. 701 --><p class="noindent"></p></div>
+<p></p><!-- l. 701 --><p class="noindent"></p></section>
+<p><a id="x1-16r7"></a>
+</p><p></p><!-- l. 708 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">7</div><div class="fvd-section-bar__title">Wat vertelt de tweede afgeleide?</div></div>
+<p></p><!-- l. 710 --><p class="noindent">Tot nu toe gebruikten we <span class="mathjax-inline">\(f'\)</span> om te onderzoeken of <span class="mathjax-inline">\(f\)</span> stijgt of daalt.
+</p><!-- l. 713 --><p class="noindent">Maar ook <span class="mathjax-inline">\(f'\)</span> zelf kan stijgen of dalen.
+</p><!-- l. 715 --><p class="noindent">Daarover geeft <span class="mathjax-inline">\(f''\)</span> informatie.
+</p><!-- l. 717 --><p class="noindent">Herinner je:
+</p>
+<div class="mathjax-block">\[ f''=(f')'. \]</div>
+<!-- l. 723 --><p class="noindent">Dus:
+</p>
+<div class="mathjax-block">\[ f''(x)&gt;0 \]</div>
+<!-- l. 729 --><p class="noindent">betekent dat <span class="mathjax-inline">\(f'\)</span> stijgt, terwijl
+</p>
+<div class="mathjax-block">\[ f''(x)&lt;0 \]</div>
+<!-- l. 735 --><p class="noindent">betekent dat <span class="mathjax-inline">\(f'\)</span> daalt.
+</p><!-- l. 737 --><p class="noindent">Dit zegt iets over de manier waarop de hellingen van de grafiek van <span class="mathjax-inline">\(f\)</span> veranderen.
+</p><!-- l. 740 --><p class="noindent"></p><section class="fvd-property"><div class="fvd-property__title"><span class="fvd-property__label">EIGENSCHAP</span><span class="fvd-property__separator"> — </span><span class="fvd-property__name">Teken van de tweede afgeleide</span></div><div class="fvd-property__content">
+<p></p><!-- l. 742 --><p class="noindent">Op een interval geldt:
+</p>
+<div class="mathjax-block">\[ \boxed { f''(x)&gt;0 \quad \Longrightarrow \quad f' \text { is stijgend} } \]</div>
+<!-- l. 752 --><p class="noindent">en
+</p>
+<div class="mathjax-block">\[ \boxed { f''(x)&lt;0 \quad \Longrightarrow \quad f' \text { is dalend}. } \]</div>
+<!-- l. 762 --><p class="noindent">Daardoor geeft <span class="mathjax-inline">\(f''\)</span> informatie over de <strong>kromming</strong> van de grafiek van <span class="mathjax-inline">\(f\)</span>.
+</p></div></section>
+<p><a id="x1-17r8"></a>
+</p><p></p><!-- l. 772 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">8</div><div class="fvd-section-bar__title">Kromming van de grafiek</div></div>
+<p></p><!-- l. 774 --><p class="noindent">Bekijk eerst een stijgende functie.
+</p><!-- l. 776 --><p class="noindent">Het is mogelijk dat de functie stijgt en tegelijk steeds steiler wordt.
+</p><!-- l. 779 --><p class="noindent">Dan neemt <span class="mathjax-inline">\(f'\)</span> toe en geldt typisch
+</p>
+<div class="mathjax-block">\[ f''&gt;0. \]</div>
+<!-- l. 785 --><p class="noindent">Maar een stijgende functie kan ook steeds minder steil worden.
+</p><!-- l. 787 --><p class="noindent">Dan neemt <span class="mathjax-inline">\(f'\)</span> af en geldt typisch
+</p>
+<div class="mathjax-block">\[ f''&lt;0. \]</div>
+<!-- l. 793 --><p class="noindent">Daarom zijn “stijgend” en “positieve tweede afgeleide” twee verschillende
+eigenschappen.
+</p><!-- l. 797 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">Verwar de rollen van de twee afgeleiden niet:
+<p></p>
+<div class="mathjax-block">\[ \boxed { f' \text { vertelt vooral of }f\text { stijgt of daalt} } \]</div>
+<!-- l. 806 --><p class="noindent">terwijl
+</p>
+<div class="mathjax-block">\[ \boxed { f'' \text { vertelt hoe de helling van }f\text { verandert}. } \]</div>
+<!-- l. 815 --><p class="noindent">Een functie kan dus tegelijk stijgend zijn en <span class="mathjax-inline">\(f''&lt;0\)</span> hebben. </p></div></section>
+<p><a id="x1-18r1"></a>
+</p><p></p><!-- l. 823 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 823 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 823 --><p class="noindent"></p><div class="fvd-subsection__number">8.1</div>
+<p></p><!-- l. 823 --><p class="noindent"></p><div class="fvd-subsection__title">Hol en bol</div>
+<p></p><!-- l. 823 --><p class="noindent"></p></div>
+<p></p><!-- l. 823 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 823 --><p class="noindent"></p></div>
+<p></p><!-- l. 825 --><p class="noindent">In deze cursus gebruiken we de volgende terminologie:
+                                                                  
+
+                                                                  
+</p><!-- l. 827 --><p class="noindent"></p><section class="fvd-property"><div class="fvd-property__title"><span class="fvd-property__label">EIGENSCHAP</span><span class="fvd-property__separator"> — </span><span class="fvd-property__name">Kromming</span></div><div class="fvd-property__content">
+<p></p><!-- l. 829 --><p class="noindent">Op een interval:
+</p>
+<div class="mathjax-block">\[ f''(x)&gt;0 \]</div>
+<!-- l. 835 --><p class="noindent">betekent dat de hellingen toenemen.
+</p><!-- l. 837 --><p class="noindent">De grafiek is daar <strong>hol</strong>.
+</p><!-- l. 839 --><p class="noindent">Wanneer
+</p>
+<div class="mathjax-block">\[ f''(x)&lt;0, \]</div>
+<!-- l. 845 --><p class="noindent">nemen de hellingen af.
+</p><!-- l. 847 --><p class="noindent">De grafiek is daar <strong>bol</strong>.
+</p></div></section>
+<p></p><!-- l. 852 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">De woorden <em>hol</em> en <em>bol</em> worden in verschillende bronnen niet altijd op
+dezelfde manier gebruikt.
+<p></p><!-- l. 855 --><p class="noindent">Daarom is het veiliger om bij een redenering ook het teken van <span class="mathjax-inline">\(f''\)</span> te vermelden.
+</p></div></section>
+<p><a id="x1-19r4"></a>
+</p><p></p><!-- l. 864 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 864 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 864 --><p class="noindent">Oefening 4
+</p><!-- l. 864 --><p class="noindent">— Wat kun je besluiten uit <span class="mathjax-inline">\(f''\)</span>?
+</p><!-- l. 864 --><p class="noindent"></p></div>
+<p></p><!-- l. 864 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 864 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--b">B</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 864 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 866 --><p class="noindent">Op een interval <span class="mathjax-inline">\(I\)</span> geldt
+</p>
+<div class="mathjax-block">\[ f''(x)&gt;0. \]</div>
+<!-- l. 872 --><p class="noindent">Welke uitspraak volgt daaruit?
+</p>
+<div class="multiple-choice" id="problem9" titletext=" Multiple Choice"><span class="choice" id="choice13"><span class="mathjax-inline">\(f\)</span> is noodzakelijk stijgend op <span class="mathjax-inline">\(I\)</span>.</span> <span class="choice" id="choice14"><span class="mathjax-inline">\(f\)</span> is noodzakelijk positief op <span class="mathjax-inline">\(I\)</span>.</span> <span class="choice correct" id="choice15"><span class="mathjax-inline">\(f'\)</span> is stijgend op <span class="mathjax-inline">\(I\)</span>.</span> <span class="choice" id="choice16"><span class="mathjax-inline">\(f'\)</span> is
+negatief op <span class="mathjax-inline">\(I\)</span>.</span> </div>
+</div>
+<!-- l. 881 --><p class="noindent"></p></div>
+<p></p><!-- l. 881 --><p class="noindent"></p></section>
+<p><a id="x1-20r9"></a>
+</p><p></p><!-- l. 888 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">9</div><div class="fvd-section-bar__title">Buigpunten</div></div>
+<p></p><!-- l. 890 --><p class="noindent">Een buigpunt is een punt waar de aard van de kromming verandert.
+</p><!-- l. 892 --><p class="noindent"></p><section class="fvd-definition"><div class="fvd-definition__title"><span class="fvd-definition__label">DEFINITIE</span><span class="fvd-definition__separator"> — </span><span class="fvd-definition__name">Buigpunt</span></div><div class="fvd-definition__content">
+<p></p><!-- l. 894 --><p class="noindent">Een punt van de grafiek van <span class="mathjax-inline">\(f\)</span> waar de kromming verandert, noemen we een
+<strong>buigpunt</strong>.
+</p><!-- l. 897 --><p class="noindent">Bij een tweemaal afleidbare functie onderzoeken we daarvoor het teken van
+<span class="mathjax-inline">\(f''\)</span>.
+</p></div></section>
+<p></p><!-- l. 902 --><p class="noindent">Wanneer <span class="mathjax-inline">\(f''\)</span> bijvoorbeeld verandert als
+</p>
+<div class="mathjax-block">\[ -\quad 0\quad +, \]</div>
+<!-- l. 908 --><p class="noindent">verandert de kromming.
+</p><!-- l. 910 --><p class="noindent">Het overeenkomstige punt van de grafiek is dan een buigpunt.
+<a id="x1-21r10"></a>
+</p><!-- l. 917 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">10</div><div class="fvd-section-bar__title">Ook <span class="mathjax-inline">\(f''(a)=0\)</span> is niet genoeg</div></div>
+<p></p><!-- l. 919 --><p class="noindent">Er ontstaat nu een situatie die sterk lijkt op die bij extrema.
+</p><!-- l. 921 --><p class="noindent">Voor extrema was
+</p>
+<div class="mathjax-block">\[ f'(a)=0 \]</div>
+<!-- l. 927 --><p class="noindent">op zichzelf niet voldoende.
+</p><!-- l. 929 --><p class="noindent">Voor buigpunten is
+</p>
+<div class="mathjax-block">\[ f''(a)=0 \]</div>
+<!-- l. 935 --><p class="noindent">op zichzelf evenmin voldoende.
+</p><!-- l. 937 --><p class="noindent">Neem bijvoorbeeld
+</p>
+<div class="mathjax-block">\[ f(x)=x^4. \]</div>
+<!-- l. 943 --><p class="noindent">Dan
+</p>
+<div class="mathjax-block">\[ f'(x)=4x^3 \]</div>
+<!-- l. 949 --><p class="noindent">en
+</p>
+<div class="mathjax-block">\[ f''(x)=12x^2. \]</div>
+<!-- l. 955 --><p class="noindent">We hebben inderdaad
+                                                                  
+
+                                                                  
+</p>
+<div class="mathjax-block">\[ f''(0)=0. \]</div>
+<!-- l. 961 --><p class="noindent">Maar voor <span class="mathjax-inline">\(x\neq 0\)</span> geldt
+</p>
+<div class="mathjax-block">\[ 12x^2&gt;0. \]</div>
+<!-- l. 967 --><p class="noindent">Het teken van <span class="mathjax-inline">\(f''\)</span> is dus:
+</p>
+<div class="mathjax-block">\[ +\quad 0\quad +. \]</div>
+<!-- l. 973 --><p class="noindent">Er is geen verandering van kromming.
+</p><!-- l. 975 --><p class="noindent">Dus is <span class="mathjax-inline">\((0,0)\)</span> geen buigpunt.
+</p><!-- l. 978 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">Ook hier geldt:
+<p></p>
+<div class="mathjax-block">\[ f''(a)=0 \]</div>
+<!-- l. 984 --><p class="noindent">geeft een mogelijke kandidaat, maar je moet onderzoeken of de kromming werkelijk
+verandert. </p></div></section>
+<p><a id="x1-22r3"></a>
+</p><p></p><!-- l. 993 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 993 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 3<span class="fvd-example__subtitle"> — Een buigpunt bepalen</span></div>
+<p></p><!-- l. 993 --><p class="noindent"></p><div class="fvd-example__content">
+<p></p><!-- l. 995 --><p class="noindent">Neem opnieuw
+</p>
+<div class="mathjax-block">\[ f(x)=x^3-3x^2-9x+5. \]</div>
+<!-- l. 1001 --><p class="noindent">We vonden:
+</p>
+<div class="mathjax-block">\[ f'(x)=3x^2-6x-9. \]</div>
+<!-- l. 1007 --><p class="noindent">Dus:
+</p>
+<div class="mathjax-block">\[ f''(x)=6x-6. \]</div>
+<!-- l. 1013 --><p class="noindent">Een mogelijke verandering van kromming vinden we uit
+</p>
+<div class="mathjax-block">\[ f''(x)=0. \]</div>
+<!-- l. 1019 --><p class="noindent">Dus:
+</p>
+<div class="mathjax-block">\[ 6x-6=0 \]</div>
+<!-- l. 1025 --><p class="noindent">en bijgevolg
+</p>
+<div class="mathjax-block">\[ x=1. \]</div>
+<!-- l. 1031 --><p class="noindent">Voor <span class="mathjax-inline">\(x&lt;1\)</span> geldt
+</p>
+<div class="mathjax-block">\[ f''(x)&lt;0, \]</div>
+<!-- l. 1037 --><p class="noindent">en voor <span class="mathjax-inline">\(x&gt;1\)</span>:
+</p>
+<div class="mathjax-block">\[ f''(x)&gt;0. \]</div>
+<!-- l. 1043 --><p class="noindent">Het teken verandert dus:
+</p>
+<div class="mathjax-block">\[ -\quad 0\quad +. \]</div>
+<!-- l. 1049 --><p class="noindent">Er is werkelijk een verandering van kromming.
+</p><!-- l. 1051 --><p class="noindent">De functiewaarde is
+</p>
+<div class="mathjax-block">\[ f(1)=1-3-9+5=-6. \]</div>
+<!-- l. 1057 --><p class="noindent">Het buigpunt is dus
+</p>
+<div class="mathjax-block">\[ \boxed {(1,-6)}. \]</div>
+</div></section>
+<p><a id="x1-23r5"></a>
+</p><!-- l. 1070 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 1070 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 1070 --><p class="noindent">Oefening 5
+</p><!-- l. 1070 --><p class="noindent">— Buigpunt of niet?
+</p><!-- l. 1070 --><p class="noindent"></p></div>
+<p></p><!-- l. 1070 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 1070 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 1070 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 1072 --><p class="noindent">Onderzoek voor elke functie of de oorsprong een buigpunt is.
+</p>
+<div class="problem-environment question" id="problem10" numbered=" " role="article" titletext=" Question">
+<div class="mathjax-block">\[ f(x)=x^3 \]</div>
+<!-- l. 1080 --><p class="noindent">Bepaal <span class="mathjax-inline">\(f''(x)\)</span> en onderzoek het teken links en rechts van <span class="mathjax-inline">\(0\)</span>.
+</p>
+</div>
+<div class="problem-environment question" id="problem11" numbered=" " role="article" titletext=" Question">
+<div class="mathjax-block">\[ g(x)=x^4 \]</div>
+<!-- l. 1090 --><p class="noindent">Bepaal <span class="mathjax-inline">\(g''(x)\)</span> en onderzoek het teken links en rechts van <span class="mathjax-inline">\(0\)</span>.
+</p>
+</div>
+<!-- l. 1094 --><p class="noindent">Leg daarna uit waarom
+</p>
+<div class="mathjax-block">\[ f''(0)=0 \]</div>
+<!-- l. 1100 --><p class="noindent">niet voldoende is om te besluiten dat <span class="mathjax-inline">\((0,f(0))\)</span> een buigpunt is.
+</p></div>
+<p></p><!-- l. 1102 --><p class="noindent"></p></div>
+<p></p><!-- l. 1102 --><p class="noindent"></p></section>
+<p><a id="x1-24r11"></a>
+</p><p></p><!-- l. 1109 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">11</div><div class="fvd-section-bar__title"><span class="mathjax-inline">\(f\)</span>, <span class="mathjax-inline">\(f'\)</span> en <span class="mathjax-inline">\(f''\)</span> samen lezen</div></div>
+<p></p><!-- l. 1111 --><p class="noindent">We kunnen de belangrijkste verbanden nu samenbrengen.
+</p>
+<div class="mathjax-block">\[ \boxed { f'(x)&gt;0 \quad \Longrightarrow \quad f \text { stijgt} } \]</div>
+<div class="mathjax-block">\[ \boxed { f'(x)&lt;0 \quad \Longrightarrow \quad f \text { daalt} } \]</div>
+<div class="mathjax-block">\[ \boxed { f' : +\to - \quad \Longrightarrow \quad \text {lokaal maximum} } \]</div>
+<div class="mathjax-block">\[ \boxed { f' : -\to + \quad \Longrightarrow \quad \text {lokaal minimum} } \]</div>
+<!-- l. 1145 --><p class="noindent">en
+</p>
+<div class="mathjax-block">\[ \boxed { f''(x)&gt;0 \quad \Longrightarrow \quad f' \text { stijgt} } \]</div>
+<div class="mathjax-block">\[ \boxed { f''(x)&lt;0 \quad \Longrightarrow \quad f' \text { daalt}. } \]</div>
+<!-- l. 1163 --><p class="noindent">Een tekenwisseling van <span class="mathjax-inline">\(f''\)</span> wijst op een verandering van kromming en dus op een
+buigpunt.
+<a id="x1-25r6"></a>
+</p><!-- l. 1171 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 1171 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 1171 --><p class="noindent">Oefening 6
+</p><!-- l. 1171 --><p class="noindent">— Van <span class="mathjax-inline">\(f'\)</span> naar <span class="mathjax-inline">\(f\)</span>
+</p><!-- l. 1171 --><p class="noindent"></p></div>
+<p></p><!-- l. 1171 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 1171 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 1171 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 1173 --><p class="noindent">Van een functie <span class="mathjax-inline">\(f\)</span> is de volgende informatie over <span class="mathjax-inline">\(f'\)</span> bekend:
+</p>
+<div class="mathjax-block">\[ \begin {array}{c|ccccc} x &amp; ]-\infty ,-2[ &amp; -2 &amp; ]-2,3[ &amp; 3 &amp; ]3,+\infty [ \\ \hline f'(x) &amp; + &amp; 0 &amp; - &amp; 0 &amp; + \end {array} \]</div>
+<!-- l. 1193 --><p class="noindent">Zonder een voorschrift van <span class="mathjax-inline">\(f\)</span> te kennen:
+</p>
+<div class="problem-environment question" id="problem12" numbered=" " role="article" titletext=" Question">  Bepaal de intervallen waarop <span class="mathjax-inline">\(f\)</span> stijgt.    </div>
+<div class="problem-environment question" id="problem13" numbered=" " role="article" titletext=" Question">  Bepaal de intervallen waarop <span class="mathjax-inline">\(f\)</span> daalt.    </div>
+<div class="problem-environment question" id="problem14" numbered=" " role="article" titletext=" Question">  Classificeer de stationaire punten bij <span class="mathjax-inline">\(x=-2\)</span> en <span class="mathjax-inline">\(x=3\)</span>.    </div>
+<div class="problem-environment question" id="problem15" numbered=" " role="article" titletext=" Question">  Kun je uit deze gegevens bepalen waar de buigpunten liggen? Verantwoord.
+</div>
+</div>
+<!-- l. 1212 --><p class="noindent"></p></div>
+<p></p><!-- l. 1212 --><p class="noindent"></p></section>
+<p><a id="x1-26r12"></a>
+</p><p></p><!-- l. 1219 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">12</div><div class="fvd-section-bar__title">Een functie systematisch onderzoeken</div></div>
+<p></p><!-- l. 1221 --><p class="noindent">Voor een veeltermfunctie kunnen we de informatie nu systematisch organiseren.
+</p><!-- l. 1224 --><p class="noindent">Een mogelijke werkwijze is:
+</p>
+<ol class="enumerate1">
+<li class="enumerate" id="x1-28x1">Bepaal <span class="mathjax-inline">\(f'(x)\)</span>.
+</li>
+<li class="enumerate" id="x1-30x2">
+<!-- l. 1230 --><p class="noindent">Los </p><div class="mathjax-block">\[ f'(x)=0 \]</div> op.
+</li>
+<li class="enumerate" id="x1-32x3">Onderzoek het teken van <span class="mathjax-inline">\(f'\)</span>.
+</li>
+<li class="enumerate" id="x1-34x4">Besluit waar <span class="mathjax-inline">\(f\)</span> stijgt en daalt.
+</li>
+<li class="enumerate" id="x1-36x5">Onderzoek eventuele extrema en bereken hun coördinaten.
+</li>
+<li class="enumerate" id="x1-38x6">Bepaal <span class="mathjax-inline">\(f''(x)\)</span>.
+</li>
+<li class="enumerate" id="x1-40x7">Onderzoek het teken van <span class="mathjax-inline">\(f''\)</span>.
+</li>
+<li class="enumerate" id="x1-42x8">Bepaal waar de kromming verandert.
+</li>
+<li class="enumerate" id="x1-44x9">Bereken de coördinaten van eventuele buigpunten.
+</li>
+<li class="enumerate" id="x1-46x10">Combineer alle informatie tot één coherent beeld van de functie.
+</li></ol>
+<!-- l. 1255 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">Een functieonderzoek is geen verzameling losse berekeningen.
+<p></p><!-- l. 1257 --><p class="noindent">Elke stap moet informatie opleveren over de grafiek.
+</p><!-- l. 1259 --><p class="noindent">Vraag jezelf daarom telkens af:
+</p>
+<div class="mathjax-block">\[ \boxed {\text {Wat vertelt dit resultaat mij over }f?} \]</div> </div></section>
+<p><a id="x1-47r7"></a>
+</p><!-- l. 1271 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 1271 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 1271 --><p class="noindent">Oefening 7
+</p><!-- l. 1271 --><p class="noindent">— Volledig verlooponderzoek
+</p><!-- l. 1271 --><p class="noindent"></p></div>
+<p></p><!-- l. 1271 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 1271 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 1271 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 1273 --><p class="noindent">Gegeven:
+</p>
+<div class="mathjax-block">\[ f(x)=x^3-6x^2+9x+1. \]</div>
+<!-- l. 1279 --><p class="noindent">Onderzoek het verloop van <span class="mathjax-inline">\(f\)</span>.
+</p>
+<div class="problem-environment question" id="problem16" numbered=" " role="article" titletext=" Question">  Bepaal <span class="mathjax-inline">\(f'(x)\)</span> en factoriseer zo ver mogelijk.    </div>
+<div class="problem-environment question" id="problem17" numbered=" " role="article" titletext=" Question">  Bepaal de stationaire punten.    </div>
+<div class="problem-environment question" id="problem18" numbered=" " role="article" titletext=" Question">  Stel een tekentabel op voor <span class="mathjax-inline">\(f'\)</span> en bepaal waar <span class="mathjax-inline">\(f\)</span> stijgt en daalt.    </div>
+<div class="problem-environment question" id="problem19" numbered=" " role="article" titletext=" Question">  Bepaal en classificeer de lokale extrema.    </div>
+<div class="problem-environment question" id="problem20" numbered=" " role="article" titletext=" Question">  Bepaal <span class="mathjax-inline">\(f''(x)\)</span>.    </div>
+<div class="problem-environment question" id="problem21" numbered=" " role="article" titletext=" Question">  Onderzoek de kromming van de grafiek en bepaal het buigpunt.    </div>
+<div class="problem-environment question" id="problem22" numbered=" " role="article" titletext=" Question">  Vat je resultaten samen in één verloopschema.    </div>
+</div>
+<!-- l. 1309 --><p class="noindent"></p></div>
+<p></p><!-- l. 1309 --><p class="noindent"></p></section>
+<p><a id="x1-48r13"></a>
+</p><p></p><!-- l. 1316 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">13</div><div class="fvd-section-bar__title">Van positie naar snelheid en versnelling</div></div>
+<p></p><!-- l. 1318 --><p class="noindent">Een bijzonder belangrijke toepassing vinden we in de mechanica.
+</p><!-- l. 1320 --><p class="noindent">Stel dat
+</p>
+<div class="mathjax-block">\[ s(t) \]</div>
+<!-- l. 1326 --><p class="noindent">de positie van een bewegend voorwerp beschrijft.
+</p><!-- l. 1328 --><p class="noindent">Dan is
+</p>
+<div class="mathjax-block">\[ v(t)=s'(t) \]</div>
+<!-- l. 1334 --><p class="noindent">de ogenblikkelijke snelheid.
+</p><!-- l. 1336 --><p class="noindent">De afgeleide daarvan is
+</p>
+<div class="mathjax-block">\[ a(t)=v'(t)=s''(t), \]</div>
+<!-- l. 1342 --><p class="noindent">de versnelling.
+</p><!-- l. 1344 --><p class="noindent">We krijgen dus:
+</p>
+<div class="mathjax-block">\[ \boxed { s \longrightarrow s'=v \longrightarrow s''=v'=a } \]</div>
+<!-- l. 1356 --><p class="noindent">Dit is precies dezelfde structuur als
+</p>
+<div class="mathjax-block">\[ f \longrightarrow f' \longrightarrow f''. \]</div>
+<p><a id="x1-49r8"></a>
+</p><!-- l. 1371 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 1371 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 1371 --><p class="noindent">Oefening 8
+</p><!-- l. 1371 --><p class="noindent">— Beweging interpreteren
+</p><!-- l. 1371 --><p class="noindent"></p></div>
+<p></p><!-- l. 1371 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 1371 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 1371 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 1373 --><p class="noindent">De positie van een bewegend voorwerp langs een rechte wordt gegeven door
+</p>
+<div class="mathjax-block">\[ s(t)=t^3-6t^2+9t, \qquad t\geq 0, \]</div>
+<!-- l. 1381 --><p class="noindent">waarbij <span class="mathjax-inline">\(s\)</span> in meter en <span class="mathjax-inline">\(t\)</span> in seconde wordt uitgedrukt.
+</p>
+<div class="problem-environment question" id="problem23" numbered=" " role="article" titletext=" Question">  Bepaal de snelheid <span class="mathjax-inline">\(v(t)\)</span>.    </div>
+<div class="problem-environment question" id="problem24" numbered=" " role="article" titletext=" Question">  Op welke tijdstippen staat het voorwerp ogenblikkelijk stil?    </div>
+<div class="problem-environment question" id="problem25" numbered=" " role="article" titletext=" Question">  Onderzoek op welke tijdsintervallen het voorwerp in positieve en in negatieve
+richting beweegt.    </div>
+<div class="problem-environment question" id="problem26" numbered=" " role="article" titletext=" Question">  Bepaal de versnelling <span class="mathjax-inline">\(a(t)\)</span>.    </div>
+<div class="problem-environment question" id="problem27" numbered=" " role="article" titletext=" Question">  Op welk tijdstip verandert de versnelling van teken? Wat betekent dat voor de
+snelheid?    </div>
+</div>
+<!-- l. 1405 --><p class="noindent"></p></div>
+<p></p><!-- l. 1405 --><p class="noindent"></p></section>
+<p><a id="x1-50r14"></a>
+</p><p></p><!-- l. 1412 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">14</div><div class="fvd-section-bar__title">Redeneren zonder voorschrift</div></div>
+<p></p><!-- l. 1414 --><p class="noindent">Bij analyseren krijg je niet altijd een functievoorschrift.
+</p><!-- l. 1416 --><p class="noindent">Soms krijg je alleen informatie over een functie of haar afgeleiden.
+<a id="x1-51r9"></a>
+</p><!-- l. 1418 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 1418 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 1418 --><p class="noindent">Oefening 9
+</p><!-- l. 1418 --><p class="noindent">— Wat moet waar zijn?
+</p><!-- l. 1418 --><p class="noindent"></p></div>
+<p></p><!-- l. 1418 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 1418 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 1418 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 1420 --><p class="noindent">Een tweemaal afleidbare functie <span class="mathjax-inline">\(f\)</span> voldoet op een interval <span class="mathjax-inline">\(I\)</span> aan
+</p>
+<div class="mathjax-block">\[ f'(x)&gt;0 \qquad \text {en}\qquad f''(x)&lt;0. \]</div>
+<!-- l. 1428 --><p class="noindent">Welke beschrijving is correct?
+</p>
+<div class="multiple-choice" id="problem28" titletext=" Multiple Choice"><span class="choice" id="choice17"><span class="mathjax-inline">\(f\)</span> daalt en wordt steeds steiler.</span> <span class="choice" id="choice18"><span class="mathjax-inline">\(f\)</span> daalt en wordt steeds vlakker.</span> <span class="choice" id="choice19"><span class="mathjax-inline">\(f\)</span> stijgt en wordt
+steeds steiler.</span> <span class="choice correct" id="choice20"><span class="mathjax-inline">\(f\)</span> stijgt, maar haar helling neemt af.</span> </div>
+<!-- l. 1437 --><p class="noindent">Leg je keuze uit met behulp van de betekenis van <span class="mathjax-inline">\(f'\)</span> en <span class="mathjax-inline">\(f''\)</span>.
+</p></div>
+<p></p><!-- l. 1439 --><p class="noindent"></p></div>
+<p></p><!-- l. 1439 --><p class="noindent"></p></section>
+<p><a id="x1-52r15"></a>
+</p><p></p><!-- l. 1446 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">15</div><div class="fvd-section-bar__title">Van het gedrag van <span class="mathjax-inline">\(f\)</span> naar haar afgeleiden</div></div>
+<p></p><!-- l. 1448 --><p class="noindent">Tot nu toe redeneerden we meestal van de afgeleiden naar de functie.
+</p><!-- l. 1450 --><p class="noindent">Maar je moet ook in de andere richting kunnen denken.
+</p><!-- l. 1452 --><p class="noindent">Als <span class="mathjax-inline">\(f\)</span> stijgt, verwachten we:
+</p>
+<div class="mathjax-block">\[ f'&gt;0. \]</div>
+<!-- l. 1458 --><p class="noindent">Als de grafiek tijdens dat stijgen steeds steiler wordt, neemt <span class="mathjax-inline">\(f'\)</span> toe en verwachten
+we:
+</p>
+<div class="mathjax-block">\[ f''&gt;0. \]</div>
+<!-- l. 1465 --><p class="noindent">Als de grafiek stijgt maar steeds vlakker wordt, blijft
+</p>
+<div class="mathjax-block">\[ f'&gt;0, \]</div>
+<!-- l. 1471 --><p class="noindent">terwijl
+</p>
+<div class="mathjax-block">\[ f''&lt;0. \]</div>
+<!-- l. 1477 --><p class="noindent">Dat onderscheid is belangrijk.
+                                                                  
+
+                                                                  
+<a id="x1-53r10"></a>
+</p><!-- l. 1479 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 1479 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 1479 --><p class="noindent">Oefening 10
+</p><!-- l. 1479 --><p class="noindent">— Van functie naar afgeleiden
+</p><!-- l. 1479 --><p class="noindent"></p></div>
+<p></p><!-- l. 1479 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 1479 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 1479 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 1481 --><p class="noindent">Een functie <span class="mathjax-inline">\(f\)</span> is op een interval stijgend. Haar grafiek wordt van links naar rechts
+steeds vlakker.
+</p><!-- l. 1484 --><p class="noindent">Welke combinatie past daarbij?
+</p>
+<div class="multiple-choice" id="problem29" titletext=" Multiple Choice"><span class="choice" id="choice21"><span class="mathjax-inline">\(f'&lt;0\)</span> en <span class="mathjax-inline">\(f''&lt;0\)</span></span> <span class="choice" id="choice22"><span class="mathjax-inline">\(f'&lt;0\)</span> en <span class="mathjax-inline">\(f''&gt;0\)</span></span> <span class="choice" id="choice23"><span class="mathjax-inline">\(f'&gt;0\)</span> en <span class="mathjax-inline">\(f''&gt;0\)</span></span> <span class="choice correct" id="choice24"><span class="mathjax-inline">\(f'&gt;0\)</span> en <span class="mathjax-inline">\(f''&lt;0\)</span></span> </div>
+</div>
+<!-- l. 1493 --><p class="noindent"></p></div>
+<p></p><!-- l. 1493 --><p class="noindent"></p></section>
+<p><a id="x1-54r16"></a>
+</p><p></p><!-- l. 1500 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">16</div><div class="fvd-section-bar__title">Veelgemaakte denkfouten</div></div>
+<p></p><!-- l. 1503 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">
+<p></p><!-- l. 1504 --><p class="noindent"><strong>Denkfout 1</strong>
+</p>
+<div class="mathjax-block">\[ f'(a)&gt;0 \]</div>
+<!-- l. 1510 --><p class="noindent">betekent niet dat <span class="mathjax-inline">\(f\)</span> overal stijgt.
+</p><!-- l. 1512 --><p class="noindent">Het zegt iets over de verandering rond <span class="mathjax-inline">\(x=a\)</span>.
+</p><!-- l. 1516 --><p class="noindent"><strong>Denkfout 2</strong>
+</p>
+<div class="mathjax-block">\[ f'(a)=0 \]</div>
+<!-- l. 1522 --><p class="noindent">betekent niet automatisch dat <span class="mathjax-inline">\(f\)</span> een extremum heeft.
+</p><!-- l. 1524 --><p class="noindent">Onderzoek het teken van <span class="mathjax-inline">\(f'\)</span>.
+</p><!-- l. 1528 --><p class="noindent"><strong>Denkfout 3</strong>
+</p>
+<div class="mathjax-block">\[ f''(a)=0 \]</div>
+<!-- l. 1534 --><p class="noindent">betekent niet automatisch dat <span class="mathjax-inline">\(f\)</span> een buigpunt heeft.
+                                                                  
+
+                                                                  
+</p><!-- l. 1536 --><p class="noindent">Onderzoek of de kromming verandert.
+</p><!-- l. 1540 --><p class="noindent"><strong>Denkfout 4</strong>
+</p>
+<div class="mathjax-block">\[ f''&gt;0 \]</div>
+<!-- l. 1546 --><p class="noindent">betekent niet dat <span class="mathjax-inline">\(f\)</span> stijgt.
+</p><!-- l. 1548 --><p class="noindent">Het betekent dat <span class="mathjax-inline">\(f'\)</span> stijgt.
+</p><!-- l. 1552 --><p class="noindent"><strong>Denkfout 5</strong>
+</p><!-- l. 1554 --><p class="noindent">Een extremum is een <em>punt</em> van de grafiek.
+</p><!-- l. 1556 --><p class="noindent">Wanneer <span class="mathjax-inline">\(x=a\)</span> de extremumplaats is, is
+</p>
+<div class="mathjax-block">\[ (a,f(a)) \]</div>
+<!-- l. 1562 --><p class="noindent">het bijbehorende extremumpunt.
+</p></div></section>
+<p><a id="x1-55r17"></a>
+</p><p></p><!-- l. 1571 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">17</div><div class="fvd-section-bar__title">Kun je alles verbinden?</div></div>
+<p><a id="x1-56r11"></a>
+</p><p></p><!-- l. 1573 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 1573 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 1573 --><p class="noindent">Oefening 11
+</p><!-- l. 1573 --><p class="noindent">— Eén functie, drie niveaus
+</p><!-- l. 1573 --><p class="noindent"></p></div>
+<p></p><!-- l. 1573 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 1573 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--g">G</span></div>
+<p></p><!-- l. 1573 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 1575 --><p class="noindent">Een functie <span class="mathjax-inline">\(f\)</span> is tweemaal afleidbaar.
+</p><!-- l. 1577 --><p class="noindent">Er geldt:
+</p>
+<div class="mathjax-block">\[ f'(2)=0, \qquad f''(2)=0. \]</div>
+<!-- l. 1585 --><p class="noindent">Een leerling beweert:
+</p>
+<blockquote class="quote">
+<!-- l. 1588 --><p class="noindent">Bij <span class="mathjax-inline">\(x=2\)</span> ligt dus zowel een extremum als een buigpunt.</p></blockquote>
+<!-- l. 1591 --><p class="noindent">Onderzoek deze uitspraak kritisch.
+                                                                  
+
+                                                                  
+</p><!-- l. 1593 --><p class="noindent">Leg uit: </p>
+<ul class="itemize1">
+<li class="itemize">waarom de gegeven informatie niet voldoende is;
+</li>
+<li class="itemize">welke  bijkomende  informatie  over  <span class="mathjax-inline">\(f'\)</span>  nodig  is  om  een  extremum  te
+onderzoeken;
+</li>
+<li class="itemize">welke  bijkomende  informatie  over  <span class="mathjax-inline">\(f''\)</span>  nodig  is  om  een  buigpunt  te
+onderzoeken;
+</li>
+<li class="itemize">welke verschillende situaties mogelijk zijn.</li></ul>
+</div>
+<!-- l. 1603 --><p class="noindent"></p></div>
+<p></p><!-- l. 1603 --><p class="noindent"></p></section>
+<p><a id="x1-57r18"></a>
+</p><p></p><!-- l. 1610 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">18</div><div class="fvd-section-bar__title">Samengevat</div></div>
+<p></p><!-- l. 1612 --><p class="noindent">De eerste afgeleide beschrijft de verandering van <span class="mathjax-inline">\(f\)</span>:
+</p>
+<div class="mathjax-block">\[ f'(x)&gt;0 \Rightarrow f \text { stijgt}, \]</div>
+<div class="mathjax-block">\[ f'(x)&lt;0 \Rightarrow f \text { daalt}. \]</div>
+<!-- l. 1626 --><p class="noindent">Een tekenwisseling van <span class="mathjax-inline">\(f'\)</span> kan een extremum opleveren:
+</p>
+<div class="mathjax-block">\[ +\to - \Rightarrow \text {lokaal maximum}, \]</div>
+<div class="mathjax-block">\[ -\to + \Rightarrow \text {lokaal minimum}. \]</div>
+<!-- l. 1640 --><p class="noindent">De tweede afgeleide beschrijft de verandering van <span class="mathjax-inline">\(f'\)</span>:
+</p>
+<div class="mathjax-block">\[ f''(x)&gt;0 \Rightarrow f' \text { stijgt}, \]</div>
+<div class="mathjax-block">\[ f''(x)&lt;0 \Rightarrow f' \text { daalt}. \]</div>
+<!-- l. 1654 --><p class="noindent">Een verandering van teken van <span class="mathjax-inline">\(f''\)</span> wijst op een verandering van kromming.
+</p><!-- l. 1657 --><p class="noindent">Het belangrijkste verband van dit hoofdstuk is daarom:
+</p>
+<div class="mathjax-block">\[ \boxed { f \;\longrightarrow \; f' \;\longrightarrow \; f'' } \]</div>
+<!-- l. 1669 --><p class="noindent">maar bij een analyse redeneren we ook terug:
+</p>
+<div class="mathjax-block">\[ \boxed { f'' \;\longrightarrow \; \text {gedrag van }f' \;\longrightarrow \; \text {gedrag van }f. } \]</div>
+<p><a id="x1-58r19"></a>
+</p><!-- l. 1686 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">19</div><div class="fvd-section-bar__title">Wat moet je zeker beheersen?</div></div>
+<p></p><!-- l. 1688 --><p class="noindent">Na deze opfrissing moet je niet alleen eerste en tweede afgeleiden kunnen
+berekenen.
+</p><!-- l. 1691 --><p class="noindent">Je moet informatie uit <span class="mathjax-inline">\(f'\)</span> en <span class="mathjax-inline">\(f''\)</span> kunnen <strong>analyseren</strong> en vertalen naar eigenschappen van
+<span class="mathjax-inline">\(f\)</span>.
+</p><!-- l. 1694 --><p class="noindent">Je moet zelfstandig kunnen:
+</p>
+<ul class="itemize1">
+<li class="itemize">uit het teken van <span class="mathjax-inline">\(f'\)</span> besluiten waar <span class="mathjax-inline">\(f\)</span> stijgt of daalt;
+</li>
+<li class="itemize">met een tekenonderzoek van <span class="mathjax-inline">\(f'\)</span> lokale extrema herkennen;
+</li>
+<li class="itemize">uitleggen waarom <span class="mathjax-inline">\(f'(a)=0\)</span> niet automatisch een extremum geeft;
+</li>
+<li class="itemize">uit het teken van <span class="mathjax-inline">\(f''\)</span> afleiden hoe de hellingen van <span class="mathjax-inline">\(f\)</span> veranderen;
+</li>
+<li class="itemize">een verandering van kromming onderzoeken;
+</li>
+<li class="itemize">uitleggen waarom <span class="mathjax-inline">\(f''(a)=0\)</span> niet automatisch een buigpunt geeft;
+</li>
+<li class="itemize">informatie over <span class="mathjax-inline">\(f\)</span>, <span class="mathjax-inline">\(f'\)</span> en <span class="mathjax-inline">\(f''\)</span> in beide richtingen met elkaar verbinden;
+</li>
+<li class="itemize">deze
+begrippen betekenisvol interpreteren in een eenvoudige wetenschappelijke
+context.
+</li></ul>
+<!-- l. 1720 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">De oefeningen met de diamant vormen in dit hoofdstuk het
+minimumtraject.
+<p></p><!-- l. 1723 --><p class="noindent">Concreet zijn dat:
+</p>
+<ul class="itemize1">
+<li class="itemize"><em>Van afgeleide naar verloop</em>;
+</li>
+<li class="itemize"><em>Lees de tekentabel</em>;
+</li>
+<li class="itemize"><em>Is er een extremum?</em>;
+</li>
+<li class="itemize"><em>Wat kun je besluiten uit <span class="mathjax-inline">\(f''\)</span>?</em>;
+</li>
+<li class="itemize"><em>Buigpunt of niet?</em>;
+</li>
+<li class="itemize"><em>Van <span class="mathjax-inline">\(f'\)</span> naar <span class="mathjax-inline">\(f\)</span></em>;
+</li>
+<li class="itemize"><em>Volledig verlooponderzoek</em>;
+</li>
+<li class="itemize"><em>Beweging interpreteren</em>;
+</li>
+<li class="itemize"><em>Wat moet waar zijn?</em>;
+                                                                  
+
+                                                                  
+</li>
+<li class="itemize"><em>Van functie naar afgeleiden</em>.</li></ul>
+<!-- l. 1738 --><p class="noindent">Merk op dat verschillende essentiële oefeningen het label <span class="fvd-exercise-chip fvd-exercise-chip--u">U</span> dragen. Dat is bewust: het
+leerplandoel vraagt uiteindelijk <em>analyseren</em>. Alleen standaardtechnieken uitvoeren is
+daarvoor niet voldoende. </p></div></section>
+<p><a id="x1-59r20"></a>
+</p><p></p><!-- l. 1749 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">20</div><div class="fvd-section-bar__title">Van opfrissing naar nieuwe analyse</div></div>
+<p></p><!-- l. 1751 --><p class="noindent">We hebben nu de belangrijkste ideeën uit het vijfde jaar opnieuw samengebracht:
+</p>
+<div class="mathjax-block">\[ \text {verandering} \longrightarrow \text {afgeleid getal} \longrightarrow \text {afgeleide functie} \longrightarrow \text {verloop van een functie}. \]</div>
+<!-- l. 1764 --><p class="noindent">Tot nu toe werkten we vooral met veeltermfuncties waarvoor de afgeleiden relatief
+eenvoudig te bepalen zijn.
+</p><!-- l. 1767 --><p class="noindent">In de volgende thema’s breiden we onze gereedschapskist uit.
+</p><!-- l. 1769 --><p class="noindent">We zullen dezelfde ideeën gebruiken bij andere functieklassen en nieuwe
+afleidingstechnieken. Daardoor wordt het mogelijk om veel rijkere functies te
+analyseren en later ook extremumproblemen systematisch aan te pakken.
+                                                                  
+
+                                                                  
+</p>
+</div><!-- XIMERA-PREVIOUS-NEXT-START --><nav aria-label="Hoofdstuknavigatie" class="chapter-navigation">
+<a class="chapter-navigation__card chapter-navigation__card--previous" data-visible="true" href="Oefeningen-Afgeleide-functie.html">
+<span aria-hidden="true" class="chapter-navigation__icon">
+            ←
+        </span>
+<span class="chapter-navigation__content">
+<span class="chapter-navigation__label">
+                Vorig hoofdstuk
+            </span>
+<span class="chapter-navigation__title">
+                Oefeningen — De afgeleide functie
+            </span>
+</span>
+</a>
+<a class="chapter-navigation__card chapter-navigation__card--overview" href="index.html">
+<span aria-hidden="true" class="chapter-navigation__overview-icon">
+<span></span>
+<span></span>
+<span></span>
+</span>
+<span class="chapter-navigation__content">
+<span class="chapter-navigation__label">
+                Cursus
+            </span>
+<span class="chapter-navigation__title">
+                Overzicht
+            </span>
+</span>
+</a>
+<a class="chapter-navigation__card chapter-navigation__card--next" data-visible="true" href="Oefeningen-Verloop-functies.html">
+<span class="chapter-navigation__content">
+<span class="chapter-navigation__label">
+                Volgend hoofdstuk
+            </span>
+<span class="chapter-navigation__title">
+                Oefeningen — Verloop van functies
+            </span>
+</span>
+<span aria-hidden="true" class="chapter-navigation__icon">
+            →
+        </span>
+</a>
+</nav><!-- XIMERA-PREVIOUS-NEXT-END --></article></main><!-- XIMERA-CHAPTER-LAYOUT-END --><div class="course-footer-clear"></div><!-- XIMERA-FOOTER-START --><footer class="site-footer">
+<div aria-hidden="true" class="site-footer__accent"></div>
+<div class="site-footer__inner">
+<div class="site-footer__quote">
+<span aria-hidden="true" class="site-footer__quote-mark">◈</span>
+<p class="site-footer__quote-text">
+                Think mathematically. Create digitally. Shape the future.
+            </p>
+</div>
+<div aria-hidden="true" class="site-footer__divider"></div>
+<div class="site-footer__grid">
+<section class="site-footer__column">
+<p class="site-footer__eyebrow">
+                    Wiskunde 7 FVD
+                </p>
+<h2 class="site-footer__title">
+                    Fundamentele Vorming Digitale Creatie
+                </h2>
+<p class="site-footer__text">
+                    Wiskundige basis voor programmeren, graphics,
+                    animatie, simulatie en 3D.
+                </p>
+</section>
+<section class="site-footer__column">
+<p class="site-footer__eyebrow">
+                    Ontwikkeling
+                </p>
+<p class="site-footer__name">
+                    Ingmar Herreman
+                </p>
+<p class="site-footer__text">
+                    GO! Athena Campus Bellevue
+                </p>
+<p class="site-footer__text">
+                    Versie 1.0 · 2026
+                </p>
+</section>
+<section class="site-footer__column">
+<p class="site-footer__eyebrow">
+                    Technologie
+                </p>
+<div class="site-footer__tech">
+<span>Ximera</span>
+<span>HTML</span>
+<span>PDF</span>
+<span>GeoGebra</span>
+<span>GitHub</span>
+</div>
+</section>
+</div>
+<div class="site-footer__bottom">
+<span>Gebouwd met Ximera</span>
+<span aria-hidden="true">•</span>
+<span>Voor 7 FVD</span>
+<span aria-hidden="true">•</span>
+<span>© 2026</span>
+</div>
+</div>
+</footer><!-- XIMERA-FOOTER-END --><script src="../../../assets/js/chapter-layout.js"></script></body>
+</html>

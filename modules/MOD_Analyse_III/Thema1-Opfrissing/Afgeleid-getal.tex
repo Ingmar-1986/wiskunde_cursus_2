@@ -3,6 +3,9 @@
 \input{../../../preamble.tex}
 \input{../../../Opmaak.tex}
 
+
+
+
 \title{Verandering en het afgeleid getal}
 
 \begin{document}
@@ -12,6 +15,113 @@
 % Niet handmatig aanpassen.
 \fvdchapterdata{1}{Veranderingen in beeld}{1}
 % FVD_CHAPTER_DATA_END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -60,7 +170,7 @@ afleidingstechnieken te onderzoeken.
         raaklijn aan de grafiek in $x=a$ bepalen.
 \end{leerdoelen}
 
-\FVDStartPositionFigure{-6}{6}{5}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -112,128 +222,6 @@ Die verbanden zullen we in de volgende hoofdstukken telkens opnieuw
 gebruiken wanneer we afgeleiden van nieuwe soorten functies onderzoeken.
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% ONTDEKKEN
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{Ontdekken}
-
-\begin{exploration}{Hoe verandert een functie?}
-
-Beschouw de functie
-
-\[
-f(x)=x^2.
-\]
-
-We onderzoeken de verandering van deze functie in de buurt van $x=1$.
-
-Neem eerst het interval $[1,3]$.
-
-\[
-\frac{f(3)-f(1)}{3-1}
-=
-\frac{9-1}{2}
-=
-4.
-\]
-
-Neem daarna het kleinere interval $[1,2]$.
-
-\[
-\frac{f(2)-f(1)}{2-1}
-=
-\frac{4-1}{1}
-=
-3.
-\]
-
-Nog dichter bij $1$ krijgen we bijvoorbeeld
-
-\[
-\frac{f(1,5)-f(1)}{1,5-1}
-=
-\frac{2,25-1}{0,5}
-=
-2,5.
-\]
-
-En voor $x=1,1$:
-
-\[
-\frac{f(1,1)-f(1)}{1,1-1}
-=
-\frac{1,21-1}{0,1}
-=
-2,1.
-\]
-
-\begin{question}
-Naar welke waarde lijken deze differentiequotiënten te naderen
-wanneer de tweede $x$-waarde steeds dichter bij $1$ komt?
-
-\[
-\answer{2}
-\]
-\end{question}
-
-\begin{question}
-Welke uitspraak past het best bij die waarde?
-
-\begin{multipleChoice}
-  \choice{Het is de functiewaarde $f(1)$.}
-  \choice{Het is de gemiddelde verandering over $[1,3]$.}
-  \choice[correct]{Het is de ogenblikkelijke verandering van $f$
-                   bij $x=1$.}
-  \choice{Het is de nulwaarde van $f$.}
-\end{multipleChoice}
-\end{question}
-
-\end{exploration}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% WAT MERK JE?
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\FVDsection{Wat merk je?}
-
-Wanneer we twee verschillende punten van een grafiek nemen,
-krijgen we een \textbf{secant}.
-
-De helling van die secant beschrijft een
-\textbf{gemiddelde verandering}.
-
-Wanneer het tweede punt steeds dichter bij het eerste punt komt,
-wordt het interval steeds kleiner.
-
-De secant nadert dan naar de \textbf{raaklijn} in het vaste punt.
-
-Tegelijk gaat de gemiddelde verandering over in een
-\textbf{ogenblikkelijke verandering}.
-
-Dit proces vatten we samen als
-
-\[
-\boxed{
-\text{secant}
-\longrightarrow
-\text{raaklijn}
-}
-\]
-
-en
-
-\[
-\boxed{
-\text{gemiddelde verandering}
-\longrightarrow
-\text{ogenblikkelijke verandering}
-}.
-\]
-
-De wiskundige techniek waarmee we deze overgang exact beschrijven,
-is een \textbf{limiet}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -242,7 +230,7 @@ is een \textbf{limiet}.
 
 \FVDsection{Gemiddelde verandering}
 
-\xmsubsection{Verandering over een interval}
+\FVDsubsection{Verandering over een interval}
 
 Beschouw een functie $f$ en twee waarden $a$ en $b$.
 
@@ -261,7 +249,7 @@ De verandering van de functiewaarde is
 Om te weten hoeveel de functiewaarde gemiddeld verandert per
 eenheid verandering van $x$, vergelijken we beide veranderingen.
 
-\begin{definition}
+\begin{definitie}[Differentiequotiënt]
 De \textbf{gemiddelde verandering} van een functie $f$
 over het interval $[a,b]$ is
 
@@ -274,10 +262,10 @@ over het interval $[a,b]$ is
 \]
 
 Deze verhouding noemen we het \textbf{differentiequotiënt}.
-\end{definition}
+\end{definitie}
 
 
-\begin{example}
+\begin{voorbeeld}
 
 Beschouw
 
@@ -287,7 +275,7 @@ f(x)=-x^2+8x.
 
 Bepaal de gemiddelde verandering over $[2,4]$.
 
-\begin{oplossing}
+\begin{oplossing}[toon]
 
 We berekenen eerst
 
@@ -316,10 +304,10 @@ De functiewaarde neemt tussen $x=2$ en $x=4$
 
 \end{oplossing}
 
-\end{example}
+\end{voorbeeld}
 
 
-\begin{exercise}
+\begin{oefening}[Gemiddelde verandering]{\oefB \ESS}
 
 Voor een functie $f$ geldt
 
@@ -347,14 +335,14 @@ Welke interpretatie is correct?
   \choice{Elke raaklijn aan de grafiek heeft richtingscoëfficiënt $-1$.}
 \end{multipleChoice}
 
-\end{exercise}
+\end{oefening}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% SECANT
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\xmsubsection{Meetkundige betekenis}
+\FVDsubsection{Meetkundige betekenis}
 
 Beschouw de punten
 
@@ -378,7 +366,7 @@ De richtingscoëfficiënt van deze secant is
 
 Dat is precies het differentiequotiënt.
 
-\begin{definition}
+\begin{definitie}[]
 Het differentiequotiënt is de
 \textbf{richtingscoëfficiënt van de secant}
 door de twee overeenkomstige punten van de grafiek.
@@ -390,14 +378,14 @@ door de twee overeenkomstige punten van de grafiek.
 \text{richtingscoëfficiënt van een secant}
 }
 \]
-\end{definition}
+\end{definitie}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% EENHEDEN
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\xmsubsection{Eenheden}
+\FVDsubsection{Eenheden}
 
 Bij toepassingen heeft een differentiequotiënt meestal ook een eenheid.
 
@@ -425,7 +413,7 @@ Als
 dan betekent dit dat de temperatuur over het onderzochte interval
 \textbf{gemiddeld met $0,8~^\circ\mathrm{C}$ per seconde afneemt}.
 
-\begin{remark}
+\begin{opmerking}
 Bij een toepassing is een getal alleen meestal geen volledig antwoord.
 
 Vermeld indien mogelijk:
@@ -437,7 +425,7 @@ Vermeld indien mogelijk:
   \item per welke eenheid;
   \item over welk interval de uitspraak geldt.
 \end{itemize}
-\end{remark}
+\end{opmerking}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -446,7 +434,7 @@ Vermeld indien mogelijk:
 
 \FVDsection{Van gemiddelde naar ogenblikkelijke verandering}
 
-\xmsubsection{Het interval steeds kleiner maken}
+\FVDsubsection{Het interval steeds kleiner maken}
 
 We kiezen een vast punt
 
@@ -459,7 +447,7 @@ op de grafiek van $f$.
 Daarnaast nemen we een tweede punt
 
 \[
-B(x,f(x)).
+B(F,f(x)).
 \]
 
 Voor $x\neq a$ heeft de secant $AB$ richtingscoëfficiënt
@@ -497,7 +485,7 @@ bij $x=a$.
 
 \FVDsection{Het afgeleid getal}
 
-\begin{definition}
+\begin{definitie}[Afgeleid getal]
 Als de limiet
 
 \[
@@ -518,7 +506,7 @@ f'(a)
 \frac{f(x)-f(a)}{x-a}
 }.
 \]
-\end{definition}
+\end{definitie}
 
 We kunnen dezelfde definitie schrijven met
 
@@ -540,9 +528,9 @@ f'(a)
 \]
 
 
-\xmsubsection{Een voorbeeld met de definitie}
+\FVDsubsection{Een voorbeeld met de definitie}
 
-\begin{example}
+\begin{voorbeeld}
 
 Gegeven is
 
@@ -595,7 +583,7 @@ Dus
 
 \end{oplossing}
 
-\end{example}
+\end{voorbeeld}
 
 De berekening is slechts één deel van het antwoord.
 
@@ -615,12 +603,12 @@ bij $x=1$ gelijk is aan $4$.
 
 \FVDsection{De afgeleide en de raaklijn}
 
-\xmsubsection{Meetkundige betekenis}
+\FVDsubsection{Meetkundige betekenis}
 
 De overgang van secant naar raaklijn geeft onmiddellijk de
 meetkundige betekenis van het afgeleid getal.
 
-\begin{definition}
+\begin{definitie}[Betekenis afgeleid getal]
 Het afgeleid getal $f'(a)$ is de
 \textbf{richtingscoëfficiënt van de raaklijn}
 aan de grafiek van $f$ in het punt
@@ -638,10 +626,10 @@ f'(a)=\operatorname{rico}(t)
 \]
 
 waarbij $t$ de raaklijn is in $P$.
-\end{definition}
+\end{definitie}
 
 
-\xmsubsection{Wat vertelt het teken?}
+\FVDsubsection{Wat vertelt het teken?}
 
 Als
 
@@ -722,7 +710,7 @@ Bij een interpretatie stellen we dus drie vragen:
 \end{enumerate}
 
 
-\begin{exercise}
+\begin{oefening}
 
 De functie $C(t)$ beschrijft een concentratie in $\mathrm{mg/L}$,
 waarbij $t$ wordt uitgedrukt in minuten.
@@ -758,7 +746,7 @@ Na $12$ minuten is de concentratie nul.
 
 \end{multipleChoice}
 
-\end{exercise}
+\end{oefening}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -788,7 +776,7 @@ y-y_1=m(x-x_1).
 
 Daaruit volgt:
 
-\begin{definition}
+\begin{definitie}[De raaklijn]
 De raaklijn aan de grafiek van $f$ in het punt
 $P(a,f(a))$ heeft vergelijking
 
@@ -797,10 +785,10 @@ $P(a,f(a))$ heeft vergelijking
 y-f(a)=f'(a)(x-a)
 }.
 \]
-\end{definition}
+\end{definitie}
 
 
-\begin{example}
+\begin{voorbeeld}
 
 Gegeven is
 
@@ -832,10 +820,10 @@ Dus
 \boxed{y=4x-1}.
 \]
 
-\end{example}
+\end{voorbeeld}
 
 
-\begin{exercise}
+\begin{oefening} {\oefB \ESS}
 
 Voor een functie $f$ geldt
 
@@ -871,7 +859,7 @@ dus
 y=\answer{-3}x+\answer{11}.
 \]
 
-\end{exercise}
+\end{oefening}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -919,7 +907,7 @@ f'(a)
 \]
 
 
-\xmsubsection{Drie talen van de afgeleide}
+\FVDsubsection{Drie talen van de afgeleide}
 
 Eenzelfde uitspraak over een afgeleide kunnen we op verschillende
 manieren formuleren.
@@ -1000,7 +988,7 @@ Het verloop rond het punt moet eveneens onderzocht worden.
 
 \FVDsection{Kun je alles verbinden?}
 
-\begin{exercise}
+\begin{oefening}
 
 Van een functie $f$ weten we dat
 
@@ -1084,7 +1072,7 @@ $[2,3]$ met precies $3$ afneemt.
 
 \end{question}
 
-\end{exercise}
+\end{oefening}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

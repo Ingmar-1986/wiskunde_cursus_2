@@ -36,6 +36,16 @@ PART_PATTERN = re.compile(r"\\FVDpart\s*\{")
 ACTIVITY_PATTERN = re.compile(r"\\activity\s*\{")
 THEME_INTRO_PATTERN = re.compile(r"\\begin\s*\{\s*themaintro\s*\}")
 
+ACTIVITY_COMMAND_PATTERN = re.compile(
+    r"\\activity\s*\{(?P<activity>[^{}]*)\}"
+)
+
+CHAPTERPAIR_COMMAND_PATTERN = re.compile(
+    r"\\FVDchapterpair\s*"
+    r"\{(?P<theory>[^{}]*)\}\s*"
+    r"\{(?P<exercises>[^{}]*)\}"
+)
+
 
 @dataclass
 class Activity:
@@ -278,15 +288,42 @@ def find_themes(lines: list[str], index_file: Path) -> list[Theme]:
 
         activities: list[Activity] = []
 
-        for line_number in range(part_line + 1, next_part_line):
-            activity_path = extract_argument_from_line(
-                lines[line_number],
-                ACTIVITY_PATTERN,
+        theme_start_line = part_line + 1
+        theme_text = "\n".join(lines[theme_start_line:next_part_line])
+
+        found_activities: list[tuple[int, str]] = []
+
+        # Gewone \activity{...}
+        for match in ACTIVITY_COMMAND_PATTERN.finditer(theme_text):
+            activity_path = match.group("activity").strip()
+
+            line_number = (
+                theme_start_line
+                + theme_text.count("\n", 0, match.start())
             )
 
-            if activity_path is None:
-                continue
+            found_activities.append(
+                (line_number, activity_path)
+            )
 
+        # \FVDchapterpair{theorie}{oefeningen}
+        # Voor het thema-overzicht telt alleen het theoriehoofdstuk.
+        for match in CHAPTERPAIR_COMMAND_PATTERN.finditer(theme_text):
+            activity_path = match.group("theory").strip()
+
+            line_number = (
+                theme_start_line
+                + theme_text.count("\n", 0, match.start())
+            )
+
+            found_activities.append(
+                (line_number, activity_path)
+            )
+
+        # Bronvolgorde behouden
+        found_activities.sort(key=lambda item: item[0])
+
+        for line_number, activity_path in found_activities:
             activities.append(
                 Activity(
                     line_number=line_number,

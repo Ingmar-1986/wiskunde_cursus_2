@@ -404,6 +404,10 @@ def parse_module(module_dir: Path) -> Module:
         r"""
         \\(?:FVDpart|part)\s*\{(?P<part>[^{}]*)\}
         |
+        \\FVDchapterpair\s*
+            \{(?P<pair_theory>[^{}]*)\}\s*
+            \{(?P<pair_exercises>[^{}]*)\}
+        |
         \\activity\s*\{(?P<activity>[^{}]*)\}
         """,
         re.VERBOSE,
@@ -418,6 +422,8 @@ def parse_module(module_dir: Path) -> Module:
     for match in token_pattern.finditer(source):
         part = match.group("part")
         activity = match.group("activity")
+        pair_theory = match.group("pair_theory")
+        pair_exercises = match.group("pair_exercises")
 
         if part is not None:
             theme_number += 1
@@ -425,39 +431,61 @@ def parse_module(module_dir: Path) -> Module:
             current_theme = clean_latex_text(part)
             continue
 
-        if activity is None:
+        activities_to_add: list[str] = []
+
+        if pair_theory is not None:
+            theory = pair_theory.strip()
+            exercises = (pair_exercises or "").strip()
+
+            if theory:
+                activities_to_add.append(theory)
+
+            if exercises:
+                activities_to_add.append(exercises)
+
+        elif activity is not None:
+            activity = activity.strip()
+
+            # #1 en #2 komen uit de definitie van \FVDchapterpair
+            # en zijn geen echte activities.
+            if activity in {"#1", "#2"}:
+                continue
+
+            activities_to_add.append(activity)
+
+        if not activities_to_add:
             continue
 
         if theme_number == 0:
             theme_number = 1
 
-        chapter_number += 1
-        activity = activity.strip()
+        for activity in activities_to_add:
+            chapter_number += 1
 
-        tex_file = resolve_tex_file(module_dir, activity)
-        source_html_file, output_html_file = resolve_html_files(
-            module_dir,
-            activity,
-        )
-
-        title, abstract = extract_chapter_metadata(
-            tex_file,
-            activity,
-        )
-
-        chapters.append(
-            Chapter(
-                activity=activity_base_path(activity),
-                theme=current_theme,
-                theme_number=theme_number,
-                chapter_number=chapter_number,
-                tex_file=tex_file,
-                source_html_file=source_html_file,
-                output_html_file=output_html_file,
-                title=title,
-                abstract=abstract,
+            tex_file = resolve_tex_file(module_dir, activity)
+            source_html_file, output_html_file = resolve_html_files(
+                module_dir,
+                activity,
             )
-        )
+
+            title, abstract = extract_chapter_metadata(
+                tex_file,
+                activity,
+            )
+
+            chapters.append(
+                Chapter(
+                    activity=activity_base_path(activity),
+                    theme=current_theme,
+                    theme_number=theme_number,
+                    chapter_number=chapter_number,
+                    tex_file=tex_file,
+                    source_html_file=source_html_file,
+                    output_html_file=output_html_file,
+                    title=title,
+                    abstract=abstract,
+                )
+            )
 
     if not chapters:
         raise ValueError(

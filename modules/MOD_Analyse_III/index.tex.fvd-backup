@@ -4,9 +4,6 @@
 \input{../../Opmaak.tex}
 \addPrintStyle{../..}
 
-
-
-
 \fvdtitle{Functies in verandering}
 \author{Ingmar Herreman}
 
@@ -30,47 +27,22 @@
 \def\fvdmoduletitel{Functies in verandering}
 \def\fvdmodulebeeld{../images/banners/afgeleiden.png}
 \def\fvdschoolembleem{../images/banners/logo_athena.png}
-\def\fvdschoollogo{../images/banners/logo_bellevue.png}
 \renewcommand{\fvdschoolnaam}{Campus Bellevue Izegem}
-
 
 \def\fvdklas{6 Wetenschappen-wiskunde}
 \def\fvdschooljaar{2026--2027}
 
 
 
-% ============================================================
-% THEORIE + BIJHORENDE OEFENINGEN
-% ============================================================
 
-\newcommand{\FVDchapterpair}[2]{%
-  \activity{#1}%
-  \if\relax\detokenize{#2}\relax
-  \else
-    \activity{#2}%
-  \fi
-}
 
 
 \begin{document}
 
-
-\FVDmodulecover
-
-
-
-% ============================================================
-% UITLEG BIJ DE MODULE — ALLEEN PDF
-% ============================================================
-
-\ifdefined\HCode
-  % HTML: niets
-\else
-  \input{../Hoe_werkt_module.tex}
-\fi
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% MODULE-OPENING
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\FVDmodulecover
 
 \ifdefined\HCode
   % Website: gebruik de gewone Ximera-titelpagina.
@@ -130,12 +102,64 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 % BEGIN AUTO THEME OVERVIEW
 \begin{hoofdstukoverzicht}
   \FVDthemechaptertile{1}{Verandering en het afgeleid getal}
-  \FVDthemechaptertile{2}{De afgeleide functie}
-  \FVDthemechaptertile{3}{Verloop van functies}
-  \FVDthemechaptertile{4}{Limieten en asymptotisch gedrag}
 \end{hoofdstukoverzicht}
 % END AUTO THEME OVERVIEW
 
@@ -189,21 +213,8 @@
   
   \end{themaintro}
 
-  \FVDchapterpair
-  {Thema1-Opfrissing/Afgeleid-getal}
-  {Thema1-Opfrissing/Oefeningen-Afgeleid-getal}
+  \activity{Thema1-Opfrissing/Afgeleid-getal}
 
-\FVDchapterpair
-  {Thema1-Opfrissing/Afgeleide-functie}
-  {Thema1-Opfrissing/Oefeningen-Afgeleide-functie}
-
-\FVDchapterpair
-  {Thema1-Opfrissing/Verloop-functies}
-  {Thema1-Opfrissing/Oefeningen-Verloop-functies}
-
-\FVDchapterpair
-  {Thema1-Opfrissing/Limieten}
-  {}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% andere thema's
@@ -217,105 +228,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \FVDpart{Van oppervlakte naar integraal}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -515,105 +427,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 % BEGIN AUTO THEME OVERVIEW
 \begin{hoofdstukoverzicht}
   \FVDthemeoverviewempty
@@ -621,105 +434,6 @@
 % END AUTO THEME OVERVIEW
 
 \FVDpart{Groei,verval en logaritmen}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -919,105 +633,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 % BEGIN AUTO THEME OVERVIEW
 \begin{hoofdstukoverzicht}
   \FVDthemeoverviewempty
@@ -1121,105 +736,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 % BEGIN AUTO THEME OVERVIEW
 \begin{hoofdstukoverzicht}
   \FVDthemeoverviewempty
@@ -1227,105 +743,6 @@
 % END AUTO THEME OVERVIEW
 
 \FVDpart{Integralen begrijpen}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

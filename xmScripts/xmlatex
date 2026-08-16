@@ -181,7 +181,7 @@ docker run \
   "$DOCKER_IMAGE" \
   "$COMMAND" \
   "$@"
-
+  
     exit $?
 fi
 

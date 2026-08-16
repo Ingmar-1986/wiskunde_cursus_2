@@ -323,6 +323,10 @@ token_pattern = re.compile(
     r"""
     \\(?:FVDpart|part)\s*\{(?P<part>[^{}]*)\}
     |
+    \\FVDchapterpair\s*
+        \{(?P<pair_theory>[^{}]*)\}\s*
+        \{(?P<pair_exercises>[^{}]*)\}
+    |
     \\activity\s*\{(?P<activity>[^{}]*)\}
     """,
     re.VERBOSE,
@@ -334,6 +338,8 @@ current_section: dict[str, object] | None = None
 for match in token_pattern.finditer(index_source):
     part_name = match.group("part")
     activity_name = match.group("activity")
+    pair_theory = match.group("pair_theory")
+    pair_exercises = match.group("pair_exercises")
 
     if part_name is not None:
         theme_title = clean_latex_text(part_name)
@@ -346,20 +352,40 @@ for match in token_pattern.finditer(index_source):
         sections.append(current_section)
         continue
 
-    if activity_name is not None:
+    activities_to_add: list[str] = []
+
+    if pair_theory is not None:
+        theory = pair_theory.strip()
+        exercises = (pair_exercises or "").strip()
+
+        if theory:
+            activities_to_add.append(theory)
+
+        if exercises:
+            activities_to_add.append(exercises)
+
+    elif activity_name is not None:
         activity_name = activity_name.strip()
 
-        # Activities vóór de eerste \part krijgen een neutrale sectie.
-        if current_section is None:
-            current_section = {
-                "title": "Inleiding",
-                "activities": [],
-            }
+        # De #1 en #2 uit de definitie van \FVDchapterpair
+        # zijn geen echte activities.
+        if activity_name in {"#1", "#2"}:
+            continue
 
-            sections.append(current_section)
+        activities_to_add.append(activity_name)
 
-        current_section["activities"].append(activity_name)
+    if not activities_to_add:
+        continue
 
+    # Activities vóór de eerste \part krijgen een neutrale sectie.
+    if current_section is None:
+        current_section = {
+            "title": "Inleiding",
+            "activities": [],
+        }
+        sections.append(current_section)
+
+    current_section["activities"].extend(activities_to_add)
 
 if not sections:
     raise SystemExit(

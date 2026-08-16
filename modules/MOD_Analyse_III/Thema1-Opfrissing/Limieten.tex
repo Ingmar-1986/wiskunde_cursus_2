@@ -1,0 +1,2017 @@
+\documentclass{ximera}
+
+\input{../../../preamble.tex}
+\input{../../../Opmaak.tex}
+\addPrintStyle{../../..}
+
+\title{Limieten en asymptotisch gedrag}
+\author{Ingmar Herreman}
+
+\begin{abstract}
+Een functie hoeft niet overal een functiewaarde te hebben om toch
+voorspelbaar gedrag te vertonen. Met limieten beschrijven we wat er
+met de functiewaarden gebeurt wanneer $x$ een bepaalde waarde nadert
+of onbeperkt groot of klein wordt.
+
+In het vijfde jaar leerde je al limieten berekenen en asymptoten
+bepalen bij veeltermfuncties, rationale en irrationale functies.
+In dit hoofdstuk halen we de kern daarvan opnieuw naar boven.
+
+De nadruk ligt niet op nieuwe rekentechnieken, maar op betekenis:
+wat vertelt een limiet over een grafiek en hoe herken je daaruit
+asymptotisch gedrag?
+\end{abstract}
+
+\begin{document}
+
+% FVD_CHAPTER_DATA_START
+% Automatisch gegenereerd uit index.tex.
+% Niet handmatig aanpassen.
+\fvdchapterdata{1}{Veranderingen in beeld}{7}
+% FVD_CHAPTER_DATA_END
+
+
+
+
+
+
+
+\maketitle
+
+
+% ============================================================
+% VOORKENNIS EN LEERDOELEN
+% ============================================================
+
+\begin{voorkennis}
+    \item Je kent het domein van veelterm-, rationale en irrationale functies.
+    \item Je kan eenvoudige limieten algebraïsch berekenen.
+    \item Je kan rationale uitdrukkingen vereenvoudigen.
+    \item Je kan bij wortelvormen werken met de toegevoegde factor.
+    \item Je kan verticale, horizontale en schuine asymptoten bepalen.
+    \item Je kan informatie aflezen uit een grafiek.
+  \end{voorkennis}
+  
+  \begin{leerdoelen}
+    \item Je kan in woorden uitleggen wat een limiet beschrijft.
+    \item Je kan functiewaarde en limiet van elkaar onderscheiden.
+    \item Je kan linker- en rechterlimieten interpreteren.
+    \item Je kan limieten in een punt en op oneindig uit een grafiek aflezen.
+    \item Je kan een oneindige limiet correct interpreteren.
+    \item Je kan verticale, horizontale en schuine asymptoten herkennen.
+    \item Je kan het verband tussen limieten en asymptotisch gedrag uitleggen.
+    \item Je kan eerder geleerde limiettechnieken opnieuw gebruiken.
+    \item Je kan vanuit limietinformatie uitspraken doen over het mogelijke verloop van een grafiek.
+  \end{leerdoelen}
+
+
+% ============================================================
+% 1 WAAROM?
+% ============================================================
+
+\FVDsection{Waarom opnieuw limieten?}
+
+In de vorige hoofdstukken onderzochten we hoe een functie
+\emph{verandert}.
+
+Met $f'$ en $f''$ kunnen we bijvoorbeeld stijgen, dalen, extrema en
+kromming onderzoeken.
+
+Maar daarmee kennen we nog niet het volledige gedrag van een functie.
+
+Bij de functie
+
+\[
+f(x)=\frac{1}{x-2}
+\]
+
+is bijvoorbeeld vooral interessant wat er gebeurt wanneer
+
+\[
+x\to2
+\]
+
+of wanneer
+
+\[
+x\to+\infty.
+\]
+
+De functie is niet gedefinieerd voor $x=2$, maar haar gedrag in de
+buurt van $2$ kunnen we wel heel precies beschrijven.
+
+Daarvoor gebruiken we \textbf{limieten}.
+
+\begin{opmerking}
+Een limiet beantwoordt niet in de eerste plaats de vraag
+
+\[
+\text{``Wat is de functiewaarde?''}
+\]
+
+maar wel
+
+\[
+\boxed{
+\text{``Waarheen gaan de functiewaarden wanneer }x
+\text{ een bepaalde waarde nadert?''}
+}
+\]
+\end{opmerking}
+
+
+% ============================================================
+% 2 KERNIDEE
+% ============================================================
+
+\FVDsection{Wat vertelt een limiet?}
+
+Neem een functie $f$ en laat $x$ steeds dichter bij een getal $a$
+komen.
+
+Wanneer de functiewaarden daarbij steeds dichter bij een getal $L$
+komen, schrijven we
+
+\[
+\boxed{
+\lim_{x\to a}f(x)=L.
+}
+\]
+
+We lezen:
+
+\begin{center}
+``de limiet van $f(x)$ voor $x$ gaande naar $a$ is $L$''.
+\end{center}
+
+Het getal $a$ vertelt dus \emph{waarheen $x$ gaat}.
+
+Het getal $L$ vertelt \emph{waarheen $f(x)$ gaat}.
+
+
+% ============================================================
+% GRAFIEK 1
+% ============================================================
+
+\FVDsubsection{Een limiet gaat over gedrag in de buurt}
+
+\begin{center}
+\begin{tikzpicture}[x=1.15cm,y=0.9cm]
+
+  % assen
+  \draw[->,black!45] (-3.2,0) -- (3.5,0)
+    node[right] {$x$};
+  \draw[->,black!45] (0,-0.8) -- (0,4.4)
+    node[above] {$y$};
+
+  % grafiek y = x^2 met gat bij x=1
+  \draw[fvdnavy,very thick,smooth,domain=-2:0.94,samples=80]
+    plot (\x,{0.7*(\x)^2+1});
+
+  \draw[fvdnavy,very thick,smooth,domain=1.06:2.1,samples=80]
+    plot (\x,{0.7*(\x)^2+1});
+
+  % open punt
+  \draw[fvdmagenta,very thick,fill=white]
+    (1,1.7) circle (2.5pt);
+
+  % aparte functiewaarde
+  \fill[fvdmagenta]
+    (1,3.3) circle (2.5pt);
+
+  % hulplijnen
+  \draw[dashed,black!45]
+    (1,0) -- (1,1.7);
+
+  \draw[dashed,black!45]
+    (0,1.7) -- (1,1.7);
+
+  \node[below] at (1,0) {$a$};
+  \node[left] at (0,1.7) {$L$};
+
+  \node[right] at (1.1,3.3) {$f(a)$};
+
+\end{tikzpicture}
+\end{center}
+
+In deze grafiek geldt:
+
+\[
+f(a)\neq L,
+\]
+
+maar toch:
+
+\[
+\boxed{
+\lim_{x\to a}f(x)=L.
+}
+\]
+
+De waarden van $f(x)$ naderen immers $L$ wanneer $x$ naar $a$
+nadert.
+
+\begin{eigenschap}[Functiewaarde en limiet]
+
+De uitspraken
+
+\[
+f(a)=L
+\]
+
+en
+
+\[
+\lim_{x\to a}f(x)=L
+\]
+
+zeggen niet hetzelfde.
+
+De eerste gaat over de waarde \emph{in} $a$.
+
+De tweede gaat over het gedrag van de functie \emph{in de buurt van}
+$a$.
+
+\end{eigenschap}
+
+
+% ============================================================
+% OEFENING
+% ============================================================
+
+\begin{oefening}[Functiewaarde of limiet?]{\oefB\ESS}
+
+Uit een grafiek lezen we:
+
+\[
+f(2)=5
+\]
+
+en
+
+\[
+\lim_{x\to2}f(x)=3.
+\]
+
+Welke uitspraak is correct?
+
+\begin{multipleChoice}
+\choice{Dit is onmogelijk: functiewaarde en limiet moeten gelijk zijn.}
+\choice{De grafiek gaat noodzakelijk door $(2,3)$.}
+\choice[correct]{In $x=2$ is de functiewaarde $5$, terwijl de functiewaarden in de buurt van $2$ naar $3$ naderen.}
+\choice{De functie is niet gedefinieerd in $x=2$.}
+\end{multipleChoice}
+
+\end{oefening}
+
+
+% ============================================================
+% 3 LINKER EN RECHTERLIMIET
+% ============================================================
+
+\FVDsection{Van links of van rechts naderen}
+
+We kunnen een waarde $a$ op twee manieren naderen.
+
+Van links:
+
+\[
+x\to a^-.
+\]
+
+Van rechts:
+
+\[
+x\to a^+.
+\]
+
+Daarom onderscheiden we:
+
+\[
+\boxed{
+\lim_{x\to a^-}f(x)
+}
+\]
+
+en
+
+\[
+\boxed{
+\lim_{x\to a^+}f(x).
+}
+\]
+
+Dit noemen we respectievelijk de \textbf{linkerlimiet} en de
+\textbf{rechterlimiet}.
+
+\begin{eigenschap}[Wanneer bestaat de tweezijdige limiet?]
+
+Als beide eenzijdige limieten bestaan en gelijk zijn, dan bestaat de
+limiet:
+
+\[
+\boxed{
+\lim_{x\to a}f(x)=L
+}
+\]
+
+precies wanneer
+
+\[
+\lim_{x\to a^-}f(x)=L
+\]
+
+en
+
+\[
+\lim_{x\to a^+}f(x)=L.
+\]
+
+Zijn linker- en rechterlimiet verschillend, dan bestaat de
+tweezijdige limiet niet.
+
+\end{eigenschap}
+
+
+% ============================================================
+% OEFENING
+% ============================================================
+
+\begin{oefening}[Links en rechts]{\oefB\ESS}
+
+Voor een functie $f$ geldt:
+
+\[
+\lim_{x\to3^-}f(x)=2
+\]
+
+en
+
+\[
+\lim_{x\to3^+}f(x)=5.
+\]
+
+Welke uitspraak is correct?
+
+\begin{multipleChoice}
+\choice{$\displaystyle\lim_{x\to3}f(x)=2$}
+\choice{$\displaystyle\lim_{x\to3}f(x)=5$}
+\choice{$\displaystyle\lim_{x\to3}f(x)=\frac72$}
+\choice[correct]{De tweezijdige limiet voor $x\to3$ bestaat niet.}
+\end{multipleChoice}
+
+\end{oefening}
+
+
+% ============================================================
+% 4 ONEINDIGE LIMIET
+% ============================================================
+
+\FVDsection{Wanneer functiewaarden onbegrensd worden}
+
+Een limiet hoeft geen reëel getal te zijn.
+
+Bijvoorbeeld:
+
+\[
+\lim_{x\to2^+}\frac{1}{x-2}=+\infty.
+\]
+
+Dat betekent:
+
+wanneer $x$ langs rechts steeds dichter bij $2$ komt, worden de
+functiewaarden positief en onbeperkt groot.
+
+Langs links geldt:
+
+\[
+\lim_{x\to2^-}\frac{1}{x-2}=-\infty.
+\]
+
+
+% ============================================================
+% GRAFIEK 2
+% ============================================================
+
+\begin{center}
+\begin{tikzpicture}[x=1.15cm,y=0.8cm]
+
+  \draw[->,black!45] (-2.5,0) -- (4.8,0)
+    node[right] {$x$};
+  \draw[->,black!45] (0,-4.2) -- (0,4.2)
+    node[above] {$y$};
+
+  % verticale asymptoot x=2
+  \draw[dashed,draw=fvdmagenta,thick]
+    (2,-4.0) -- (2,4.0);
+
+  \node[below] at (2,0) {$2$};
+
+  % 1/(x-2)
+  \draw[fvdnavy,very thick,smooth,domain=-2.2:1.75,samples=100]
+    plot (\x,{1/(\x-2)});
+
+  \draw[fvdnavy,very thick,smooth,domain=2.25:4.6,samples=100]
+    plot (\x,{1/(\x-2)});
+
+\end{tikzpicture}
+\end{center}
+
+De rechte
+
+\[
+x=2
+\]
+
+beschrijft hier een verticale grens die de grafiek steeds dichter
+nadert.
+
+Dat brengt ons bij asymptoten.
+
+
+% ============================================================
+% 5 VERTICALE ASYMPTOTEN
+% ============================================================
+
+\FVDsection{Verticale asymptoten}
+
+\begin{definitie}[Verticale asymptoot]
+
+De rechte
+
+\[
+\boxed{x=a}
+\]
+
+is een \textbf{verticale asymptoot} van de grafiek van $f$ wanneer
+minstens één van de relevante eenzijdige limieten bij $a$ oneindig
+is.
+
+Bijvoorbeeld:
+
+\[
+\lim_{x\to a^-}f(x)=+\infty,
+\qquad
+\lim_{x\to a^+}f(x)=-\infty.
+\]
+
+\end{definitie}
+
+Let op: het teken links en rechts hoeft niet hetzelfde te zijn.
+
+Bij
+
+\[
+f(x)=\frac{1}{(x-2)^2}
+\]
+
+geldt bijvoorbeeld:
+
+\[
+\lim_{x\to2^-}f(x)=+\infty
+\]
+
+en
+
+\[
+\lim_{x\to2^+}f(x)=+\infty.
+\]
+
+Ook daar is
+
+\[
+x=2
+\]
+
+een verticale asymptoot.
+
+
+% ============================================================
+% OEFENING
+% ============================================================
+
+\begin{oefening}[Van limieten naar verticale asymptoot]{\oefB\ESS}
+
+Gegeven:
+
+\[
+\lim_{x\to-1^-}f(x)=-\infty
+\]
+
+en
+
+\[
+\lim_{x\to-1^+}f(x)=+\infty.
+\]
+
+Welke conclusie kun je trekken?
+
+\begin{multipleChoice}
+\choice{$y=-1$ is een horizontale asymptoot.}
+\choice[correct]{$x=-1$ is een verticale asymptoot.}
+\choice{$(-1,0)$ is noodzakelijk een nulpunt.}
+\choice{$f(-1)=0$.}
+\end{multipleChoice}
+
+\end{oefening}
+
+
+% ============================================================
+% 6 GEDRAG OP ONEINDIG
+% ============================================================
+
+\FVDsection{Wat gebeurt er ver naar links en rechts?}
+
+Limieten kunnen ook beschrijven wat er gebeurt wanneer $x$
+onbegrensd groot of klein wordt.
+
+We schrijven bijvoorbeeld
+
+\[
+\lim_{x\to+\infty}f(x)=3.
+\]
+
+Dit betekent dat de functiewaarden steeds dichter bij $3$ komen
+wanneer we op de grafiek steeds verder naar rechts gaan.
+
+Analoog beschrijft
+
+\[
+\lim_{x\to-\infty}f(x)
+\]
+
+het gedrag ver naar links.
+
+\begin{opmerking}
+De symbolen
+
+\[
++\infty
+\qquad\text{en}\qquad
+-\infty
+\]
+
+zijn hier geen gewone getallen.
+
+De notatie $x\to+\infty$ betekent dat $x$ onbeperkt toeneemt.
+\end{opmerking}
+
+
+% ============================================================
+% 7 HORIZONTALE ASYMPTOTEN
+% ============================================================
+
+\FVDsection{Horizontale asymptoten}
+
+\begin{definitie}[Horizontale asymptoot]
+
+Als
+
+\[
+\lim_{x\to+\infty}f(x)=b
+\]
+
+of
+
+\[
+\lim_{x\to-\infty}f(x)=b,
+\]
+
+dan is
+
+\[
+\boxed{y=b}
+\]
+
+een \textbf{horizontale asymptoot} van de grafiek van $f$ aan de
+overeenkomstige zijde.
+
+\end{definitie}
+
+
+% ============================================================
+% GRAFIEK 3
+% ============================================================
+
+\begin{center}
+\begin{tikzpicture}[x=1.0cm,y=0.8cm]
+
+  \draw[->,black!45] (-4.5,0) -- (5,0)
+    node[right] {$x$};
+  \draw[->,black!45] (0,-1) -- (0,4.7)
+    node[above] {$y$};
+
+  % horizontale asymptoot
+  \draw[dashed,fvdmagenta,thick]
+    (-4.3,2) -- (4.8,2);
+
+  \node[left] at (0,2) {$2$};
+
+  % voorbeeldcurve y=2+1/(x^2+1)
+  \draw[fvdnavy,very thick,smooth,domain=-4.2:4.6,samples=120]
+    plot (\x,{2+1/(\x*\x+1)});
+
+\end{tikzpicture}
+\end{center}
+
+Voor deze grafiek zien we:
+
+\[
+\lim_{x\to-\infty}f(x)=2
+\]
+
+en
+
+\[
+\lim_{x\to+\infty}f(x)=2.
+\]
+
+Dus:
+
+\[
+\boxed{y=2}
+\]
+
+is een horizontale asymptoot.
+
+
+% ============================================================
+% BELANGRIJKE DENKFOUT
+% ============================================================
+
+\FVDsubsection{Mag een grafiek een horizontale asymptoot snijden?}
+
+Ja.
+
+Een horizontale asymptoot beschrijft het gedrag voor
+
+\[
+x\to+\infty
+\]
+
+of
+
+\[
+x\to-\infty.
+\]
+
+Ze zegt niet dat de grafiek de rechte nergens mag snijden.
+
+\begin{opmerking}
+Een asymptoot is geen ``muur'' waar een grafiek niet doorheen mag.
+
+De limiet beschrijft hoe de afstand tussen de grafiek en de
+asymptoot zich gedraagt in de relevante richting.
+\end{opmerking}
+
+
+% ============================================================
+% 8 SCHUINE ASYMPTOTEN
+% ============================================================
+
+\FVDsection{Schuine asymptoten}
+
+Een functie hoeft voor grote $|x|$ niet naar een constante waarde te
+naderen.
+
+Ze kan ook steeds dichter bij een schuine rechte komen.
+
+\begin{definitie}[Schuine asymptoot]
+
+De rechte
+
+\[
+\boxed{y=ax+b}
+\qquad (a\neq0)
+\]
+
+is een schuine asymptoot wanneer
+
+\[
+\boxed{
+\lim_{x\to\pm\infty}
+\bigl(f(x)-(ax+b)\bigr)=0
+}
+\]
+
+voor de onderzochte richting.
+
+\end{definitie}
+
+Het verschil
+
+\[
+f(x)-(ax+b)
+\]
+
+is de verticale afstand met teken tussen de functiewaarde en de
+waarde op de rechte.
+
+Als dat verschil naar nul gaat, komen grafiek en rechte steeds
+dichter bij elkaar.
+
+
+% ============================================================
+% GRAFIEK 4
+% ============================================================
+
+\begin{center}
+\begin{tikzpicture}[x=0.9cm,y=0.7cm]
+
+  \draw[->,black!45] (-4.8,0) -- (5.2,0)
+    node[right] {$x$};
+  \draw[->,black!45] (0,-3.5) -- (0,5.2)
+    node[above] {$y$};
+
+  % asymptoot y = 0.6x + 1
+  \draw[dashed,fvdmagenta,thick,domain=-4.5:4.8]
+    plot (\x,{0.6*\x+1});
+
+  \node[fvdmagenta] at (3.5,3.8) {$y=ax+b$};
+
+  % curve die asymptoot nadert
+  \draw[fvdnavy,very thick,smooth,domain=-4.4:4.8,samples=120]
+    plot (\x,{0.6*\x+1+1/(\x*\x+1)});
+
+\end{tikzpicture}
+\end{center}
+
+
+% ============================================================
+% OEFENING ASYMPTOTEN
+% ============================================================
+
+\begin{oefening}[Welke asymptoot?]{\oefB\ESS}
+
+Koppel elke limietuitspraak aan de juiste conclusie.
+
+\begin{question}
+
+\[
+\lim_{x\to4^+}f(x)=+\infty.
+\]
+
+Welke asymptoot kan hieruit volgen?
+
+\begin{multipleChoice}
+\choice{$y=4$}
+\choice[correct]{$x=4$}
+\choice{$y=x+4$}
+\end{multipleChoice}
+
+\end{question}
+
+\begin{question}
+
+\[
+\lim_{x\to+\infty}f(x)=-3.
+\]
+
+Welke asymptoot volgt hieruit?
+
+\begin{multipleChoice}
+\choice{$x=-3$}
+\choice[correct]{$y=-3$}
+\choice{$y=x-3$}
+\end{multipleChoice}
+
+\end{question}
+
+\begin{question}
+
+\[
+\lim_{x\to+\infty}
+\bigl(f(x)-(2x-1)\bigr)=0.
+\]
+
+Welke asymptoot volgt hieruit?
+
+\begin{multipleChoice}
+\choice{$x=2$}
+\choice{$y=-1$}
+\choice[correct]{$y=2x-1$}
+\end{multipleChoice}
+
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 9 DE DRIE SOORTEN SAMEN
+% ============================================================
+
+\FVDsection{Drie soorten asymptotisch gedrag}
+
+De drie situaties kunnen we nu naast elkaar plaatsen.
+
+\[
+\boxed{
+\begin{array}{c|c}
+\text{limietgedrag}
+&
+\text{asymptoot}
+\\ \hline
+f(x)\to\pm\infty
+\text{ voor }x\to a^\pm
+&
+x=a
+\\[2mm]
+f(x)\to b
+\text{ voor }x\to\pm\infty
+&
+y=b
+\\[2mm]
+f(x)-(ax+b)\to0
+\text{ voor }x\to\pm\infty
+&
+y=ax+b
+\end{array}
+}
+\]
+
+\begin{opmerking}
+Probeer deze verbanden niet als drie losse recepten te onthouden.
+
+Vraag telkens:
+
+\[
+\boxed{\text{Wat doet de grafiek?}}
+\]
+
+Bij een verticale asymptoot wordt $x$ begrensd terwijl $f(x)$
+onbegrensd wordt.
+
+Bij een horizontale of schuine asymptoot gaat $x$ juist naar
+$\pm\infty$ en nadert de grafiek steeds dichter tot een rechte.
+\end{opmerking}
+
+
+% ============================================================
+% 10 REKENTECHNIEKEN
+% ============================================================
+
+\FVDsection{Kun je de limieten nog berekenen?}
+
+In het vijfde jaar heb je verschillende technieken geleerd om
+limieten algebraïsch te bepalen.
+
+We bouwen die technieken hier niet opnieuw volledig op.
+
+Je moet wel opnieuw herkennen welke aanpak geschikt is.
+
+\begin{center}
+\[
+\boxed{
+\text{eerst analyseren}
+\quad\longrightarrow\quad
+\text{dan pas rekenen}
+}
+\]
+\end{center}
+
+Een nuttige eerste stap is altijd:
+
+\begin{enumerate}
+  \item naar welke waarde gaat $x$?
+  \item wat verwacht je dat teller en noemer doen?
+  \item ontstaat een gewone waarde, oneindig gedrag of een
+        onbepaalde vorm?
+  \item welke eerder geleerde techniek kan die vorm vereenvoudigen?
+\end{enumerate}
+
+
+% ============================================================
+% VEELTERMFUNCTIE
+% ============================================================
+
+\FVDsubsection{Veeltermfuncties}
+
+Voor gedrag op oneindig bepaalt de term van de hoogste graad het
+uiteindelijke gedrag.
+
+Bijvoorbeeld:
+
+\[
+f(x)=-2x^5+3x^2-7.
+\]
+
+Voor grote positieve $x$ overheerst
+
+\[
+-2x^5.
+\]
+
+Daarom:
+
+\[
+\boxed{
+\lim_{x\to+\infty}f(x)=-\infty.
+}
+\]
+
+Voor $x\to-\infty$ geldt:
+
+\[
+-2x^5\to+\infty,
+\]
+
+dus:
+
+\[
+\boxed{
+\lim_{x\to-\infty}f(x)=+\infty.
+}
+\]
+
+
+% ============================================================
+% RATIONALE FUNCTIE
+% ============================================================
+
+\FVDsubsection{Rationale functies}
+
+Neem
+
+\[
+f(x)=\frac{2x^2+3x-1}{x^2-4}.
+\]
+
+Voor $|x|$ groot delen we teller en noemer bijvoorbeeld door $x^2$:
+
+\[
+f(x)
+=
+\frac{
+2+\frac3x-\frac1{x^2}
+}{
+1-\frac4{x^2}
+}.
+\]
+
+Voor $x\to\pm\infty$ verdwijnen de termen met $\frac1x$ en
+$\frac1{x^2}$.
+
+Dus:
+
+\[
+\boxed{
+\lim_{x\to\pm\infty}f(x)=2.
+}
+\]
+
+Daaruit volgt de horizontale asymptoot
+
+\[
+\boxed{y=2.}
+\]
+
+Voor verticale asymptoten onderzoeken we onder meer waar de noemer
+nul wordt en wat de functie daar langs beide zijden doet.
+
+
+% ============================================================
+% IRRATIONALE FUNCTIE
+% ============================================================
+
+\FVDsubsection{Irrationale functies}
+
+Bij wortelvormen kan de toegevoegde factor opnieuw nuttig zijn.
+
+Neem bijvoorbeeld
+
+\[
+f(x)=\sqrt{x^2+4x}-x,
+\qquad x\to+\infty.
+\]
+
+Rechtstreeks invullen suggereert de onbepaalde vorm
+
+\[
+\infty-\infty.
+\]
+
+We vermenigvuldigen met de toegevoegde factor:
+
+\[
+\sqrt{x^2+4x}-x
+=
+\frac{
+(\sqrt{x^2+4x}-x)(\sqrt{x^2+4x}+x)
+}{
+\sqrt{x^2+4x}+x
+}.
+\]
+
+Dus:
+
+\[
+f(x)
+=
+\frac{4x}
+{\sqrt{x^2+4x}+x}.
+\]
+
+Voor $x>0$ kunnen we $x$ afzonderen:
+
+\[
+f(x)
+=
+\frac{4}
+{\sqrt{1+\frac4x}+1}.
+\]
+
+Daarom:
+
+\[
+\boxed{
+\lim_{x\to+\infty}f(x)=2.
+}
+\]
+
+De grafiek heeft voor $x\to+\infty$ dus horizontale asymptoot
+
+\[
+\boxed{y=2.}
+\]
+
+
+% ============================================================
+% DIAGNOSTISCHE OEFENING
+% ============================================================
+
+\begin{oefening}[Parate rekentechniek]{\oefB\ESS}
+
+Bereken zonder dat een methode wordt aangegeven.
+
+\begin{question}
+
+\[
+\lim_{x\to+\infty}
+\left(-3x^4+2x^2-7\right).
+\]
+
+\end{question}
+
+\begin{question}
+
+\[
+\lim_{x\to+\infty}
+\frac{5x^2-x+1}{2x^2+3}.
+\]
+
+\end{question}
+
+\begin{question}
+
+\[
+\lim_{x\to+\infty}
+\left(\sqrt{x^2+6x}-x\right).
+\]
+
+\end{question}
+
+Noteer bij elke limiet niet alleen het resultaat, maar ook welke
+eigenschap of techniek je gebruikt.
+
+\end{oefening}
+
+
+% ============================================================
+% 11 GRAFIEK -> LIMIET
+% ============================================================
+
+\FVDsection{Van grafiek naar limiet}
+
+Limieten moeten niet altijd algebraïsch worden berekend.
+
+Uit een grafiek kun je vaak rechtstreeks aflezen:
+
+\begin{itemize}
+  \item welke waarde $f(x)$ nadert voor $x\to a^-$;
+  \item welke waarde $f(x)$ nadert voor $x\to a^+$;
+  \item of de functiewaarden onbegrensd worden;
+  \item hoe de functie zich gedraagt voor $x\to\pm\infty$;
+  \item welke asymptoten zichtbaar zijn.
+\end{itemize}
+
+Belangrijk is dat je de grafiek \emph{gericht} leest.
+
+Volg de grafiek in de richting waarin $x$ nadert.
+
+
+% ============================================================
+% 12 LIMIET -> GRAFIEK
+% ============================================================
+
+\FVDsection{Van limietinformatie naar een grafiek}
+
+De omgekeerde richting is minstens even belangrijk.
+
+Stel dat een functie $f$ voldoet aan:
+
+\[
+\lim_{x\to-2^-}f(x)=+\infty,
+\]
+
+\[
+\lim_{x\to-2^+}f(x)=-\infty,
+\]
+
+\[
+\lim_{x\to-\infty}f(x)=1
+\]
+
+en
+
+\[
+\lim_{x\to+\infty}f(x)=3.
+\]
+
+Zonder het voorschrift van $f$ te kennen, weten we al heel wat.
+
+Er is een verticale asymptoot
+
+\[
+x=-2.
+\]
+
+Links nadert de grafiek voor $x\to-\infty$ de rechte
+
+\[
+y=1.
+\]
+
+Rechts nadert de grafiek voor $x\to+\infty$ de rechte
+
+\[
+y=3.
+\]
+
+De limieten leggen dus belangrijke randvoorwaarden op aan de vorm
+van de grafiek.
+
+
+% ============================================================
+% GRAFIEKCONSTRUCTIE
+% ============================================================
+
+\begin{oefening}[Schets uit limietgegevens]{\oefU\ESS}
+
+Van een functie $f$ is gegeven:
+
+\[
+\lim_{x\to1^-}f(x)=-\infty,
+\]
+
+\[
+\lim_{x\to1^+}f(x)=+\infty,
+\]
+
+\[
+\lim_{x\to-\infty}f(x)=2
+\]
+
+en
+
+\[
+\lim_{x\to+\infty}
+\bigl(f(x)-(x-1)\bigr)=0.
+\]
+
+\begin{question}
+Bepaal alle asymptoten die uit deze informatie volgen.
+\end{question}
+
+\begin{question}
+Geef bij elke asymptoot aan aan welke zijde van de grafiek de
+informatie betrekking heeft.
+\end{question}
+
+\begin{question}
+Maak een mogelijke schets van de grafiek.
+
+Je schets hoeft niet uniek te zijn, maar moet met alle gegeven
+limieten overeenstemmen.
+\end{question}
+
+\begin{question}
+Leg uit waarom verschillende grafieken aan dezelfde vier
+limietvoorwaarden kunnen voldoen.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 13 EEN ASYMPTOOT IS GEEN VERBODSLIJN
+% ============================================================
+
+\FVDsection{Wat een asymptoot niet zegt}
+
+Een asymptoot vertelt hoe een grafiek zich in een bepaalde
+limietsituatie gedraagt.
+
+Daaruit mag je niet méér besluiten dan de limiet werkelijk zegt.
+
+\begin{opmerking}
+
+\textbf{Een verticale asymptoot}
+
+\[
+x=a
+\]
+
+betekent niet automatisch dat de linker- en rechterlimiet hetzelfde
+teken hebben.
+
+\medskip
+
+\textbf{Een horizontale asymptoot}
+
+\[
+y=b
+\]
+
+betekent niet dat de grafiek de rechte nooit kan snijden.
+
+\medskip
+
+\textbf{Een schuine asymptoot}
+
+\[
+y=ax+b
+\]
+
+betekent niet dat de grafiek voor eindige $x$ exact op die rechte
+ligt.
+
+\medskip
+
+Een asymptoot beschrijft \textbf{naderingsgedrag}.
+
+\end{opmerking}
+
+
+% ============================================================
+% 14 COMBINATIEOEFENING
+% ============================================================
+
+\begin{oefening}[Wat kun je werkelijk besluiten?]{\oefU\ESS}
+
+Een functie $f$ voldoet aan
+
+\[
+\lim_{x\to+\infty}f(x)=4.
+\]
+
+Beoordeel de volgende uitspraken.
+
+\begin{question}
+Voor voldoende grote $x$ is $f(x)=4$.
+
+\begin{multipleChoice}
+\choice{Altijd waar.}
+\choice[correct]{Niet noodzakelijk waar.}
+\end{multipleChoice}
+\end{question}
+
+\begin{question}
+De rechte $y=4$ is een horizontale asymptoot voor
+$x\to+\infty$.
+
+\begin{multipleChoice}
+\choice[correct]{Waar.}
+\choice{Niet waar.}
+\end{multipleChoice}
+\end{question}
+
+\begin{question}
+De grafiek kan de rechte $y=4$ nergens snijden.
+
+\begin{multipleChoice}
+\choice{Waar.}
+\choice[correct]{Niet noodzakelijk waar.}
+\end{multipleChoice}
+\end{question}
+
+\begin{question}
+Uit deze limiet alleen kunnen we besluiten dat $f$ stijgend is voor
+grote $x$.
+
+\begin{multipleChoice}
+\choice{Waar.}
+\choice[correct]{Niet noodzakelijk waar.}
+\end{multipleChoice}
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 15 STEM
+% ============================================================
+
+\FVDsection{Asymptotisch gedrag in een model}
+
+Asymptoten komen niet alleen voor in abstracte functievoorschriften.
+
+Ze kunnen in een model een grenswaarde voorstellen die steeds dichter
+wordt benaderd.
+
+Stel bijvoorbeeld dat de temperatuur van een voorwerp wordt
+beschreven door $T(t)$ en dat
+
+\[
+\lim_{t\to+\infty}T(t)=20.
+\]
+
+Dan betekent dit dat de temperatuur bij langdurig verloop steeds
+dichter bij
+
+\[
+20\,^\circ\mathrm{C}
+\]
+
+komt.
+
+De horizontale asymptoot
+
+\[
+T=20
+\]
+
+heeft dan een concrete betekenis: ze stelt de
+\textbf{evenwichtstemperatuur} van het model voor.
+
+\begin{opmerking}
+Bij een toepassing moet je een limiet daarom altijd terug vertalen
+naar de oorspronkelijke grootheden en eenheden.
+
+Niet alleen
+
+\[
+\lim_{t\to+\infty}T(t)=20,
+\]
+
+maar bijvoorbeeld:
+
+\begin{quote}
+Op lange termijn nadert de temperatuur volgens het model
+$20\,^\circ\mathrm{C}$.
+\end{quote}
+\end{opmerking}
+
+
+% ============================================================
+% 16 DENKVRAAG
+% ============================================================
+
+\begin{oefening}[Een grenswaarde interpreteren]{\oefU\ESS}
+
+De concentratie $C(t)$ van een stof in een reactor wordt uitgedrukt
+in $\mathrm{mg/L}$.
+
+Er geldt:
+
+\[
+\lim_{t\to+\infty}C(t)=8.
+\]
+
+\begin{question}
+Geef een correcte interpretatie van deze limiet in de context.
+\end{question}
+
+\begin{question}
+Welke horizontale asymptoot hoort bij het model?
+\end{question}
+
+\begin{question}
+Kun je uit deze informatie alleen besluiten dat de concentratie
+altijd kleiner is dan $8\,\mathrm{mg/L}$?
+
+Verantwoord.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 17 VEELGEMAAKTE DENKFOUTEN
+% ============================================================
+
+\FVDsection{Veelgemaakte denkfouten}
+
+\begin{opmerking}
+
+\textbf{Denkfout 1}
+
+\[
+\lim_{x\to a}f(x)=L
+\]
+
+betekent niet automatisch
+
+\[
+f(a)=L.
+\]
+
+\medskip
+
+\textbf{Denkfout 2}
+
+Als
+
+\[
+f(a)
+\]
+
+niet bestaat, betekent dat niet automatisch dat
+
+\[
+\lim_{x\to a}f(x)
+\]
+
+niet bestaat.
+
+\medskip
+
+\textbf{Denkfout 3}
+
+Een nulwaarde van de noemer betekent niet zonder verder onderzoek
+automatisch dat er een verticale asymptoot is.
+
+Onderzoek het werkelijke limietgedrag.
+
+\medskip
+
+\textbf{Denkfout 4}
+
+Een horizontale asymptoot mag door de grafiek worden gesneden.
+
+\medskip
+
+\textbf{Denkfout 5}
+
+Bij
+
+\[
+x\to-\infty
+\]
+
+mag je tekens niet gedachteloos behandelen alsof $x$ positief is.
+
+Dat is vooral belangrijk bij uitdrukkingen met wortels, want
+
+\[
+\sqrt{x^2}=|x|.
+\]
+
+\medskip
+
+\textbf{Denkfout 6}
+
+Een asymptoot is geen afzonderlijk rekenobject.
+
+Ze volgt uit het limietgedrag van de functie.
+
+\end{opmerking}
+
+
+% ============================================================
+% 18 STERKE SYNTHESE
+% ============================================================
+
+\FVDsection{Kun je alles verbinden?}
+
+% ============================================================
+% SYNTHESEGRAFIEK — LIMIETEN EN ASYMPTOTEN
+% ============================================================
+
+\FVDsection{Eén grafiek, meerdere limieten}
+
+Een grafiek kan tegelijk verschillende vormen van asymptotisch gedrag
+vertonen.
+
+Beschouw de functie
+
+\[
+f(x)=x+1+\frac{1}{x-1}.
+\]
+
+De grafiek heeft een verticale asymptoot en een schuine asymptoot.
+
+\begin{center}
+\begin{tikzpicture}[x=0.9cm,y=0.7cm]
+
+  % ----------------------------------------------------------
+  % Assen
+  % ----------------------------------------------------------
+
+  \draw[->,black!45]
+    (-5,0) -- (5.5,0)
+    node[right] {$x$};
+
+  \draw[->,black!45]
+    (0,-4.5) -- (0,6)
+    node[above] {$y$};
+
+
+  % ----------------------------------------------------------
+  % Verticale asymptoot x = 1
+  % ----------------------------------------------------------
+
+  \draw[
+    dashed,
+    fvdmagenta,
+    thick
+  ]
+    (1,-4.2) -- (1,5.7);
+
+  \node[
+    fvdmagenta,
+    below
+  ]
+    at (1,0)
+    {$1$};
+
+
+  % ----------------------------------------------------------
+  % Schuine asymptoot y = x + 1
+  % ----------------------------------------------------------
+
+  \draw[
+    dashed,
+    fvdmagenta,
+    thick,
+    domain=-4.7:4.8
+  ]
+    plot (\x,{\x+1});
+
+  \node[
+    fvdmagenta,
+    rotate=34
+  ]
+    at (3.7,5.0)
+    {$y=x+1$};
+
+
+  % ----------------------------------------------------------
+  % Grafiek links van x=1
+  % f(x)=x+1+1/(x-1)
+  % ----------------------------------------------------------
+
+  \draw[
+    fvdnavy,
+    very thick,
+    smooth,
+    domain=-4.7:0.78,
+    samples=160
+  ]
+    plot (\x,{\x+1+1/(\x-1)});
+
+
+  % ----------------------------------------------------------
+  % Grafiek rechts van x=1
+  % ----------------------------------------------------------
+
+  \draw[
+    fvdnavy,
+    very thick,
+    smooth,
+    domain=1.22:4.8,
+    samples=160
+  ]
+    plot (\x,{\x+1+1/(\x-1)});
+
+
+  % ----------------------------------------------------------
+  % Labels
+  % ----------------------------------------------------------
+
+  \node[
+    fvdnavy
+  ]
+    at (-2.8,-2.3)
+    {$f$};
+
+\end{tikzpicture}
+\end{center}
+
+
+\begin{oefening}[Lees het asymptotisch gedrag]{\oefU\ESS}
+
+Gebruik uitsluitend de grafiek.
+
+\begin{question}
+
+Wat is
+
+\[
+\lim_{x\to1^-}f(x)?
+\]
+
+\[
+\answer{-\infty}
+\]
+
+\end{question}
+
+\begin{question}
+
+Wat is
+
+\[
+\lim_{x\to1^+}f(x)?
+\]
+
+\[
+\answer{+\infty}
+\]
+
+\end{question}
+
+\begin{question}
+
+Welke verticale asymptoot volgt hieruit?
+
+\[
+\boxed{x=\answer{1}}
+\]
+
+\end{question}
+
+\begin{question}
+
+Wat gebeurt er met het verschil
+
+\[
+f(x)-(x+1)
+\]
+
+wanneer
+
+\[
+x\to+\infty?
+\]
+
+\[
+\answer{0}
+\]
+
+\end{question}
+
+\begin{question}
+
+En wanneer
+
+\[
+x\to-\infty?
+\]
+
+\[
+\answer{0}
+\]
+
+\end{question}
+
+\begin{question}
+
+Welke schuine asymptoot volgt daaruit?
+
+\[
+\boxed{y=\answer{x+1}}
+\]
+
+\end{question}
+
+\end{oefening}
+
+\begin{oefening}[Van formule naar volledig asymptotisch beeld]{\oefU\ESS}
+
+Gegeven:
+
+\[
+f(x)=\frac{2x^2-x+3}{x-1}.
+\]
+
+\begin{question}
+Bepaal het domein.
+\end{question}
+
+\begin{question}
+Onderzoek het gedrag voor
+
+\[
+x\to1^-
+\qquad\text{en}\qquad
+x\to1^+.
+\]
+
+Bepaal daaruit een eventuele verticale asymptoot.
+\end{question}
+
+\begin{question}
+Voer de veeltermdeling uit en schrijf $f$ in de vorm
+
+\[
+f(x)=ax+b+\frac{r}{x-1}.
+\]
+
+\end{question}
+
+\begin{question}
+Gebruik die vorm om het gedrag voor
+
+\[
+x\to\pm\infty
+\]
+
+te analyseren.
+\end{question}
+
+\begin{question}
+Bepaal de schuine asymptoot.
+\end{question}
+
+\begin{question}
+Maak op basis van je resultaten een kwalitatieve schets van de
+grafiek.
+
+Duid de asymptoten duidelijk aan.
+\end{question}
+
+\end{oefening}
+
+\begin{opmerking}
+
+    Uit één grafiek kunnen dus verschillende soorten limietinformatie
+    worden afgeleid.
+    
+    Bij
+    
+    \[
+    x\to1^\pm
+    \]
+    
+    onderzoeken we lokaal gedrag in de buurt van een bepaalde
+    $x$-waarde.
+    
+    Bij
+    
+    \[
+    x\to\pm\infty
+    \]
+    
+    onderzoeken we het gedrag van de grafiek ver naar links en rechts.
+    
+    Dezelfde grafiek kan dus tegelijk een verticale én een schuine
+    asymptoot hebben.
+    
+    \end{opmerking}
+
+% ============================================================
+% 19 GEVORDERD
+% ============================================================
+
+\begin{oefening}[Kan dezelfde functie dit allemaal?]{\oefG}
+
+Onderzoek of er een functie kan bestaan waarvoor tegelijk geldt:
+
+\[
+\lim_{x\to2^-}f(x)=+\infty,
+\]
+
+\[
+\lim_{x\to2^+}f(x)=-\infty,
+\]
+
+\[
+\lim_{x\to-\infty}f(x)=1
+\]
+
+en
+
+\[
+\lim_{x\to+\infty}\bigl(f(x)-(2x+3)\bigr)=0.
+\]
+
+Als je denkt dat dit mogelijk is, maak dan een kwalitatieve schets.
+
+Als je denkt dat dit onmogelijk is, leg dan uit welke voorwaarden
+elkaar tegenspreken.
+
+\end{oefening}
+
+
+% ============================================================
+% 20 SAMENVATTING
+% ============================================================
+
+\FVDsection{Samengevat}
+
+Een limiet beschrijft het gedrag van functiewaarden wanneer $x$ een
+bepaalde waarde nadert:
+
+\[
+\boxed{
+\lim_{x\to a}f(x)=L.
+}
+\]
+
+Functiewaarde en limiet zijn verschillende begrippen:
+
+\[
+f(a)
+\qquad\text{tegenover}\qquad
+\lim_{x\to a}f(x).
+\]
+
+Voor een tweezijdige limiet moeten linker- en rechterlimiet
+overeenkomen.
+
+Een verticale asymptoot heeft vergelijking
+
+\[
+\boxed{x=a}
+\]
+
+en hangt samen met oneindig gedrag voor $x\to a^\pm$.
+
+Een horizontale asymptoot heeft vergelijking
+
+\[
+\boxed{y=b}
+\]
+
+wanneer
+
+\[
+\lim_{x\to\pm\infty}f(x)=b.
+\]
+
+Een schuine asymptoot heeft vergelijking
+
+\[
+\boxed{y=ax+b}
+\]
+
+wanneer
+
+\[
+\lim_{x\to\pm\infty}
+\bigl(f(x)-(ax+b)\bigr)=0.
+\]
+
+De centrale gedachte is:
+
+\[
+\boxed{
+\text{limiet}
+\quad\longleftrightarrow\quad
+\text{gedrag van de grafiek}
+}
+\]
+
+Een goede analyse gaat daarom in beide richtingen:
+
+\[
+\text{formule}
+\longrightarrow
+\text{limiet}
+\longrightarrow
+\text{grafiek}
+\]
+
+maar ook
+
+\[
+\text{grafiek}
+\longrightarrow
+\text{limietinformatie}.
+\]
+
+
+% ============================================================
+% 21 MINIMUMTRAJECT
+% ============================================================
+
+\FVDsection{Wat moet je zeker beheersen?}
+
+Na deze opfrissing moet je opnieuw vlot kunnen:
+
+\begin{itemize}
+
+  \item uitleggen wat een limiet betekent;
+
+  \item functiewaarde en limiet onderscheiden;
+
+  \item linker- en rechterlimieten lezen en interpreteren;
+
+  \item limieten uit een grafiek aflezen;
+
+  \item oneindige limieten interpreteren;
+
+  \item het verband leggen tussen limieten en verticale,
+        horizontale en schuine asymptoten;
+
+  \item eenvoudige limieten van veelterm-, rationale en irrationale
+        functies opnieuw berekenen;
+
+  \item een geschikte rekentechniek zelfstandig herkennen;
+
+  \item uit limietgegevens eigenschappen van een mogelijke grafiek
+        afleiden;
+
+  \item asymptotisch gedrag in een eenvoudige wetenschappelijke
+        context interpreteren.
+
+\end{itemize}
+
+\begin{opmerking}
+De oefeningen met de diamant vormen het minimumtraject.
+
+Concreet:
+
+\begin{itemize}
+  \item \textit{Functiewaarde of limiet?};
+  \item \textit{Links en rechts};
+  \item \textit{Van limieten naar verticale asymptoot};
+  \item \textit{Welke asymptoot?};
+  \item \textit{Parate rekentechniek};
+  \item \textit{Schets uit limietgegevens};
+  \item \textit{Wat kun je werkelijk besluiten?};
+  \item \textit{Een grenswaarde interpreteren};
+  \item \textit{Van formule naar volledig asymptotisch beeld}.
+\end{itemize}
+
+Merk op dat meerdere essentiële oefeningen als \oefU{} zijn
+geclassificeerd.
+
+Dat is bewust: limieten en asymptotisch gedrag moeten uiteindelijk
+niet alleen berekend, maar ook geïnterpreteerd en geanalyseerd
+kunnen worden.
+\end{opmerking}
+
+
+% ============================================================
+% 22 THEMA AFSLUITEN
+% ============================================================
+
+\FVDsection{De gereedschapskist is opnieuw klaar}
+
+In dit eerste thema hebben we geen volledig nieuwe theorie opgebouwd.
+
+We hebben het wiskundige gereedschap uit het vijfde jaar opnieuw
+scherpgesteld.
+
+We begonnen met gemiddelde verandering:
+
+\[
+\frac{\Delta y}{\Delta x}.
+\]
+
+Door het interval steeds kleiner te maken kwamen we bij het afgeleid
+getal:
+
+\[
+f'(a).
+\]
+
+Daaruit bouwden we de afgeleide functie:
+
+\[
+f'(x),
+\]
+
+en vervolgens de tweede afgeleide:
+
+\[
+f''(x).
+\]
+
+Met die functies konden we het verloop van $f$ analyseren.
+
+En met limieten beschreven we wat er gebeurt nabij bijzondere
+$x$-waarden en op oneindig.
+
+De belangrijkste ideeën van Thema 1 vormen zo één geheel:
+
+\[
+\boxed{
+\text{functie}
+\;\longrightarrow\;
+\text{verandering}
+\;\longrightarrow\;
+\text{afgeleiden}
+\;\longrightarrow\;
+\text{verloop}
+\;\longrightarrow\;
+\text{limietgedrag}
+}
+\]
+
+Vanaf nu kunnen we deze gereedschapskist gebruiken bij nieuwe
+functieklassen en nieuwe technieken.
+
+\end{document}

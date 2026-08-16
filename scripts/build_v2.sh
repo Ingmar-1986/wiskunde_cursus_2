@@ -167,26 +167,170 @@ build_module() {
     [[ -f "$generated_module_page" ]] \
         || fail "De moduleopening werd niet aangemaakt: $generated_module_page"
 
-    # --------------------------------------------------------
+       # --------------------------------------------------------
     # 4. XIMERA EN HTML
     # --------------------------------------------------------
 
     log_step "4/9 Ximera- en HTML-bestanden genereren"
 
+    # Alleen HTML genereren.
+    # De twee PDF-versies worden afzonderlijk in stap 5 gebouwd.
     xmlatex bake \
         --force \
+        --compile html \
         "$index_tex"
 
-    # --------------------------------------------------------
-    # 5. PDF
+
+       # --------------------------------------------------------
+    # 5. PDF — leerlingenversie + uitwerkingenversie
     # --------------------------------------------------------
 
-    log_step "5/9 PDF van de volledige module genereren"
+    log_step "5/9 PDF-versies van de volledige module genereren"
+
+    local pdf_dir
+    local student_tex
+    local student_stem
+    local student_pdf
+    local solutions_pdf
+    local built_pdf
+    local stamp
+
+    pdf_dir="$module_dir/pdf"
+    mkdir -p "$pdf_dir"
+
+    student_tex="$module_dir/index_leerlingen.tmp.tex"
+    student_stem="index_leerlingen.tmp"
+
+    student_pdf="$pdf_dir/${module_name}_leerlingen.pdf"
+    solutions_pdf="$pdf_dir/${module_name}_uitwerkingen.pdf"
+
+
+    # ========================================================
+    # 5A. LEERLINGENVERSIE
+    # ========================================================
+
+    echo
+    echo "  Leerlingenversie genereren"
+    echo "  └─ tijdelijke kopie met \\handouttrue"
+
+    # Originele index kopiëren.
+    cp "$index_tex" "$student_tex"
+
+    # \handouttrue invoegen na \documentclass{xourse}
+    python3 - "$student_tex" <<'PY'
+from pathlib import Path
+import re
+import sys
+
+path = Path(sys.argv[1])
+text = path.read_text(encoding="utf-8")
+
+# Zorg dat er niet toevallig al een handouttrue staat.
+text = re.sub(
+    r'(?m)^[ \t]*\\handouttrue[ \t]*\n?',
+    '',
+    text
+)
+
+pattern = r'(\\documentclass(?:\[[^\]]*\])?\{xourse\})'
+
+if not re.search(pattern, text):
+    raise SystemExit(
+        f"Fout: \\documentclass{{xourse}} niet gevonden in {path}"
+    )
+
+text = re.sub(
+    pattern,
+    r'\1\n\n\\handouttrue',
+    text,
+    count=1
+)
+
+path.write_text(text, encoding="utf-8")
+PY
+
+    # Tijdstip registreren zodat we alleen een NIEUWE PDF accepteren.
+    stamp="$(mktemp)"
+    touch "$stamp"
+
+    xmlatex bake \
+        --force \
+        --compile pdf \
+        "$student_tex"
+
+    built_pdf=""
+
+    # Ximera kan de PDF lokaal laten staan of naar zijn downloadmap verplaatsen.
+    for candidate in \
+        "$module_dir/${student_stem}.pdf" \
+        "ximera-downloads/without-answers/$module_dir/${student_stem}.pdf" \
+        "ximera-downloads/with-answers/$module_dir/${student_stem}.pdf"
+    do
+        if [[ -f "$candidate" && "$candidate" -nt "$stamp" ]]; then
+            built_pdf="$candidate"
+            break
+        fi
+    done
+
+    rm -f "$stamp"
+
+    if [[ -z "$built_pdf" ]]; then
+        rm -f "$student_tex"
+        fail "De leerlingen-PDF werd niet gevonden na de build."
+    fi
+
+    cp "$built_pdf" "$student_pdf"
+
+    # Alleen ons eigen tijdelijke .tex-bestand verwijderen.
+    rm -f "$student_tex"
+
+    echo "  ✓ Leerlingen-PDF:"
+    echo "    $student_pdf"
+
+
+    # ========================================================
+    # 5B. UITWERKINGENVERSIE
+    # ========================================================
+
+    echo
+    echo "  Uitwerkingenversie genereren"
+    echo "  └─ originele index.tex zonder \\handouttrue"
+
+    stamp="$(mktemp)"
+    touch "$stamp"
 
     xmlatex bake \
         --force \
         --compile pdf \
         "$index_tex"
+
+    built_pdf=""
+
+    for candidate in \
+        "$module_dir/index.pdf" \
+        "ximera-downloads/with-answers/$module_dir/index.pdf" \
+        "ximera-downloads/without-answers/$module_dir/index.pdf"
+    do
+        if [[ -f "$candidate" && "$candidate" -nt "$stamp" ]]; then
+            built_pdf="$candidate"
+            break
+        fi
+    done
+
+    rm -f "$stamp"
+
+    [[ -n "$built_pdf" ]] \
+        || fail "De uitwerkingen-PDF werd niet gevonden na de build."
+
+    cp "$built_pdf" "$solutions_pdf"
+
+    echo "  ✓ Uitwerkingen-PDF:"
+    echo "    $solutions_pdf"
+
+    echo
+    echo "  Beide PDF-versies zijn klaar:"
+    echo "    Leerlingen:   $student_pdf"
+    echo "    Uitwerkingen: $solutions_pdf"
 
     # --------------------------------------------------------
     # 6. SIDEBAR

@@ -9,6 +9,23 @@
 \global\let\fvdopmaakgeladen\relax
 
 
+% ============================================================
+% ALGEMENE SCHOOL- EN MODULEMETADATA
+% beschikbaar voor HTML én PDF
+% ============================================================
+
+\providecommand{\fvdschoollogo}{}
+\providecommand{\fvdschoollogobreedte}{0.65\textwidth}
+
+\providecommand{\fvdschoolnaam}{}
+\providecommand{\fvdschooljaar}{}
+\providecommand{\fvdklas}{}
+\providecommand{\fvdleerkracht}{}
+
+\providecommand{\fvdmodulenummer}{1}
+\providecommand{\fvdmoduletitel}{}
+\providecommand{\fvdmodulebeeld}{}
+
 
 
 % ============================================================
@@ -69,125 +86,6 @@
     \title{#1}%
 }
 
-% ============================================================
-% MODULE-OPENINGSPAGINA
-% ============================================================
-
-\newcommand{\FVDchaptertile}[2]{%
-  \begin{minipage}[t]{0.47\textwidth}
-    \begin{tcolorbox}[
-      enhanced,
-      colback=white,
-      colframe=fvdcyan!35,
-      boxrule=0.7pt,
-      arc=4mm,
-      left=4mm,
-      right=4mm,
-      top=3mm,
-      bottom=3mm,
-      height=24mm,
-      valign=center,
-      drop shadow={opacity=0.08},
-    ]
-      \begin{minipage}[c]{13mm}
-        \centering
-        \begin{tikzpicture}
-          \node[
-            circle,
-            fill=fvdmagenta,
-            text=white,
-            minimum size=10mm,
-            font=\bfseries
-          ] {#1};
-        \end{tikzpicture}
-      \end{minipage}%
-      \hfill
-      \begin{minipage}[c]{\dimexpr\linewidth-17mm\relax}
-        \raggedright
-        \textbf{\color{fvddark}#2}
-      \end{minipage}
-    \end{tcolorbox}
-  \end{minipage}%
-}
-
-\newcommand{\FVDmodulepage}[4]{%
-  \clearpage
-  \thispagestyle{empty}
-
-  % Achtergrondvormen
-  \begin{tikzpicture}[remember picture,overlay]
-
-    \fill[fvdcyan!8]
-      ([xshift=-22mm,yshift=-15mm]current page.north east)
-      circle (43mm);
-
-    \fill[fvdmagenta!8]
-      ([xshift=8mm,yshift=18mm]current page.south west)
-      circle (38mm);
-
-  \end{tikzpicture}
-
-  % Label
-  \noindent
-  {\color{fvdcyan}\bfseries\large
-    THEMA #1
-  }
-
-  \vspace{4mm}
-
-  % Hoofdtitel
-  {\color{fvddark}\bfseries\fontsize{30}{34}\selectfont
-    #2
-  }
-
-  \vspace{4mm}
-
-  \noindent
-  \begin{tikzpicture}
-    \fill[fvdmagenta] (0,0) rectangle (32mm,1.5mm);
-    \fill[fvdcyan] (32mm,0) rectangle (55mm,1.5mm);
-  \end{tikzpicture}
-
-  \vspace{10mm}
-
-  % Abstract
-  \begin{tcolorbox}[
-    enhanced,
-    colback=fvdcyan!5,
-    colframe=fvdcyan!35,
-    boxrule=0.6pt,
-    arc=4mm,
-    borderline west={2.5pt}{0pt}{fvdcyan},
-    left=6mm,
-    right=6mm,
-    top=5mm,
-    bottom=5mm,
-  ]
-    {\color{fvdcyan}\bfseries\large
-      Waarom dit thema?
-    }
-
-    \vspace{2mm}
-
-    \color{fvddark}
-    #3
-  \end{tcolorbox}
-
-  \vfill
-
-  % Hoofdstukkenoverzicht
-  {\color{fvddark}\bfseries\Large
-    In dit thema
-  }
-
-  \vspace{4mm}
-
-  #4
-
-  \vspace{5mm}
-
-  \clearpage
-}
 
 
 
@@ -463,6 +361,47 @@
 % \fi
 
 % ============================================================
+% HOOFDSTUKMETADATA — beschikbaar voor PDF én HTML
+% ============================================================
+
+% Wordt automatisch door inject-chapter-heroes.py
+% na \begin{document} in een hoofdstuk geplaatst:
+%
+% \fvdchapterdata{themanummer}{themanaam}{hoofdstuknummer}
+
+\providecommand{\fvdchapterdata}[3]{%
+
+  % ----------------------------------------------------------
+  % PDF: elk hoofdstuk op een nieuwe pagina
+  % HTML: geen pagebreak
+  % ----------------------------------------------------------
+
+  \ifdefined\HCode
+    % niets
+  \else
+    \clearpage
+  \fi
+
+  % ----------------------------------------------------------
+  % HOOFDSTUKMETADATA
+  % ----------------------------------------------------------
+
+  \gdef\fvdstandalonethemenumber{#1}%
+  \gdef\fvdstandalonetheme{#2}%
+
+  \setcounter{part}{#1}%
+  \setcounter{titlenumber}{\numexpr#3-1\relax}%
+
+  % ----------------------------------------------------------
+  % NUMMERING PER HOOFDSTUK RESETTEN
+  % ----------------------------------------------------------
+
+  \setcounter{fvdsection}{0}%
+  \setcounter{fvdsubsection}{0}%
+  \setcounter{fvdoefening}{0}%
+}
+
+% ============================================================
 % FVD-KLEUREN VOOR GEDEELDE COMMANDO'S
 % ============================================================
 
@@ -537,41 +476,216 @@
 
 \fi
 
-
-
 % ============================================================
-% FVD-SECTIES
+% TELLERS VOOR SECTION EN SUBSECTION
 % ============================================================
 
 \makeatletter
 \@ifundefined{c@fvdsection}{%
   \newcounter{fvdsection}%
 }{}
+
+\@ifundefined{c@fvdsubsection}{%
+  \newcounter{fvdsubsection}[fvdsection]%
+}{}
 \makeatother
 
-\providecommand{\FVDsection}[1]{%
+% Nummerweergave
+\renewcommand{\thefvdsection}{\arabic{fvdsection}}
+\renewcommand{\thefvdsubsection}{%
+  \thefvdsection.\arabic{fvdsubsection}%
+}
+
+% ============================================================
+% FVD SECTION + SUBSECTION
+% ============================================================
+
+\providecommand{\FVDsection}[1]{}
+\providecommand{\FVDsubsection}[1]{}
+
+\ifdefined\HCode
+
+% ============================================================
+% HTML — SECTION
+% ============================================================
+
+\renewcommand{\FVDsection}[1]{%
   \refstepcounter{fvdsection}%
+
+  \HCode{<div class="fvd-section-bar">}%
+    \HCode{<div class="fvd-section-bar__number">}%
+      \thefvdsection
+    \HCode{</div>}%
+    \HCode{<div class="fvd-section-bar__title">}%
+      #1%
+    \HCode{</div>}%
+  \HCode{</div>}%
+}
+
+
+% ============================================================
+% HTML — SUBSECTION
+% ============================================================
+
+\renewcommand{\FVDsubsection}[1]{%
+  \refstepcounter{fvdsubsection}%
+
+  \HCode{<div class="fvd-subsection">}%
+
+    \HCode{<div class="fvd-subsection__row">}%
+
+      \HCode{<div class="fvd-subsection__number">}%
+        \thefvdsection.\arabic{fvdsubsection}%
+      \HCode{</div>}%
+
+      \HCode{<div class="fvd-subsection__title">}%
+        #1%
+      \HCode{</div>}%
+
+    \HCode{</div>}%
+
+    \HCode{<div class="fvd-subsection__line"></div>}%
+
+  \HCode{</div>}%
+}
+
+\else
+
+% ============================================================
+% PDF — SECTION
+% navy balk + afgerond magenta nummerblok
+% ============================================================
+
+\renewcommand{\FVDsection}[1]{%
+  \refstepcounter{fvdsection}%
+
   \par
   \vspace{7mm}%
+
   \noindent
-  \begin{tikzpicture}[baseline=(fvdtitle.base)]
+  \begin{tikzpicture}
+
+    % volledige balk
     \node[
-      circle,
-      fill=fvdHeroPinkBright,
-      minimum size=9mm,
-      inner sep=0pt,
+      anchor=north west,
+      minimum width=\linewidth,
+      minimum height=12mm,
+      inner sep=0pt
+    ] (bar) {};
+
+    % navy achtergrond
+    \fill[
+      fvdnavy,
+      rounded corners=3mm
+    ]
+      (0,0)
+      rectangle
+      (\linewidth,-12mm);
+
+    % magenta nummerblok
+    % links én rechts afgerond
+    \fill[
+      fvdmagenta,
+      rounded corners=3mm
+    ]
+      (0,0)
+      rectangle
+      (20mm,-12mm);
+
+    % nummer
+    \node[
       text=white,
-      font=\sffamily\bfseries\large
-    ] (fvdnumber) {\thefvdsection};
+      font=\sffamily\bfseries\Large
+    ]
+      at (10mm,-6mm)
+      {\thefvdsection};
+
+    % titel
+    \node[
+      anchor=west,
+      text=white,
+      font=\sffamily\bfseries\Large
+    ]
+      at (25mm,-6mm)
+      {#1};
+
+  \end{tikzpicture}%
+
+  \par
+  \vspace{4mm}%
+}
+
+
+% ============================================================
+% FVD SUBSECTION — PDF
+% afgerond nummerblok + titel + langere magenta lijn
+% ============================================================
+
+\renewcommand{\FVDsubsection}[1]{%
+  \refstepcounter{fvdsubsection}%
+
+  \par
+  \vspace{5mm}%
+
+  \noindent
+  \begin{tikzpicture}
+
+    % --------------------------------------------------------
+    % NUMMERBLOK
+    % --------------------------------------------------------
+
+    \node[
+      anchor=north west,
+      fill=fvdmagenta,
+      text=white,
+      rounded corners=2.5mm,
+      minimum width=16mm,
+      minimum height=9mm,
+      inner xsep=3mm,
+      inner ysep=1.5mm,
+      font=\sffamily\bfseries\normalsize
+    ] (num)
+    at (0,0)
+    {\thefvdsubsection};
+
+
+    % --------------------------------------------------------
+    % TITEL
+    % --------------------------------------------------------
 
     \node[
       anchor=west,
-      text=fvdHeroPinkBright,
-      font=\sffamily\bfseries\Large
-    ] (fvdtitle) at ([xshift=4mm]fvdnumber.east) {#1};
+      text=fvddark,
+      font=\sffamily\bfseries\normalsize,
+      inner sep=0pt
+    ] (title)
+    at ([xshift=5mm]num.east)
+    {#1};
+
+
+    % --------------------------------------------------------
+    % LIJN
+    %
+    % start links onder het nummerblok
+    % en loopt tot volledige tekstbreedte
+    % --------------------------------------------------------
+
+    \draw[
+      fvdmagenta,
+      line width=0.9pt
+    ]
+    ([xshift=4mm,yshift=0.25mm]num.south west)
+    --
+    ++(\dimexpr\linewidth-3.5mm\relax,0);
+
   \end{tikzpicture}%
+
+  \par
+  \vspace{3mm}%
 }
 
+
+\fi
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% PAGINASTIJL VOOR THEMA-OPENING
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -747,7 +861,7 @@ titlerule=0pt
 % ============================================================
 
 \ifdefined\HCode
-  % De website gebruikt de bestaande Ximera-modulepagina.
+ % De website gebruikt de bestaande Ximera-modulepagina.
 \else
 
 \providecolor{fvddark}{HTML}{0E2432}
@@ -755,47 +869,69 @@ titlerule=0pt
 \providecolor{fvdmagenta}{HTML}{C3004A}
 
 % ------------------------------------------------------------
+% Teller voor automatische plaatsing in twee kolommen
+% ------------------------------------------------------------
+
+\newcounter{fvdmoduletilecount}
+
+% ------------------------------------------------------------
 % Eén themategel op de modulepagina
+%
+% #1 = themanummer
+% #2 = thematitel
 % ------------------------------------------------------------
 
 \newcommand{\FVDmodulethemetile}[2]{%
-  \begin{tcolorbox}[
-    enhanced,
-    colback=white,
-    colframe=fvdcyan!35,
-    boxrule=0.7pt,
-    arc=3mm,
-    left=5mm,
-    right=5mm,
-    top=4mm,
-    bottom=4mm,
-    before skip=2mm,
-    after skip=2mm
-  ]
-    \begin{minipage}[c]{12mm}
-      \centering
-
-      \begin{tikzpicture}
-        \node[
-          circle,
-          fill=fvdmagenta,
-          text=white,
-          minimum size=9mm,
-          inner sep=0pt,
-          font=\sffamily\bfseries
-        ] {#1};
-      \end{tikzpicture}
-    \end{minipage}%
-    \hfill
-    \begin{minipage}[c]{\dimexpr\linewidth-18mm\relax}
-      \raggedright
-      \color{fvddark}
-      \sffamily
-      \bfseries
-      \large
-      #2
-    \end{minipage}
-  \end{tcolorbox}%
+  \stepcounter{fvdmoduletilecount}%
+  % Bij het eerste kaartje van elke rij: geen paragraafinspringing.
+  \ifodd\value{fvdmoduletilecount}%
+    \noindent
+  \fi
+  \begin{minipage}[t]{0.48\textwidth}%
+    \begin{tcolorbox}[
+      enhanced,
+      colback=white,
+      colframe=fvdcyan!35,
+      boxrule=0.7pt,
+      arc=3mm,
+      left=4mm,
+      right=4mm,
+      top=3mm,
+      bottom=3mm,
+      before skip=0mm,
+      after skip=0mm,
+      height=18mm,
+      valign=center
+    ]%
+      \begin{minipage}[c]{10mm}%
+        \centering
+        \begin{tikzpicture}
+          \node[
+            circle,
+            fill=fvdmagenta,
+            text=white,
+            minimum size=8mm,
+            inner sep=0pt,
+            font=\sffamily\bfseries\small
+          ] {#1};
+        \end{tikzpicture}%
+      \end{minipage}%
+      \hspace{3mm}%
+      \begin{minipage}[c]{\dimexpr\linewidth-17mm\relax}%
+        \raggedright
+        \color{fvddark}%
+        \sffamily
+        \bfseries
+        \small
+        #2%
+      \end{minipage}%
+    \end{tcolorbox}%
+  \end{minipage}%
+  \ifodd\value{fvdmoduletilecount}%
+    \hfill\ignorespaces
+  \else
+    \par\vspace{3mm}%
+  \fi
 }
 
 % ------------------------------------------------------------
@@ -807,128 +943,182 @@ titlerule=0pt
 % ------------------------------------------------------------
 
 \newcommand{\FVDmoduleopening}[3]{%
-  \clearpage
-  \thispagestyle{empty}
+ \clearpage
+ \thispagestyle{empty}
 
-  \begin{tikzpicture}[remember picture,overlay]
-    \fill[fvdcyan!8]
-      ([xshift=-18mm,yshift=-16mm]current page.north east)
-      circle[radius=42mm];
 
-    \fill[fvdmagenta!7]
-      ([xshift=10mm,yshift=12mm]current page.south west)
-      circle[radius=37mm];
-  \end{tikzpicture}
+ % ==========================================================
+ % MODULECHIP
+ % ==========================================================
 
-  \noindent
-  {\color{fvdmagenta}
-   \sffamily
-   \bfseries
-   \large
-   MODULE\par}
+\noindent
+ \begin{tikzpicture}[baseline=(modulechip.base)]
+ \node[
+fill=fvdmagenta,
+   text=white,
+   rounded corners=5pt,
+   inner xsep=14pt,
+   inner ysep=5pt,
+   font=\sffamily\bfseries\small
+  ] (modulechip)
+  {MODULE 1};
+ \end{tikzpicture}
 
-  \vspace{4mm}
+ \vspace{6mm}
 
-  \noindent
-  {\color{fvddark}
-   \sffamily
-   \bfseries
-   \fontsize{30}{34}\selectfont
-   #1\par}
 
-  \vspace{4mm}
+ % ==========================================================
+ % MODULETITEL
+ % ==========================================================
 
-  \noindent
-  \begin{tikzpicture}
-    \fill[fvdmagenta]
-      (0,0) rectangle (34mm,1.4mm);
+ \noindent
+ {\color{fvddark}
+ \sffamily
+ \bfseries
+ \fontsize{34}{39}\selectfont
+ #1\par}
 
-    \fill[fvdcyan]
-      (34mm,0) rectangle (58mm,1.4mm);
-  \end{tikzpicture}
+ \vspace{10mm}
 
-  \vspace{9mm}
 
-  \begin{tcolorbox}[
-    enhanced,
-    colback=fvdcyan!5,
-    colframe=fvdcyan!30,
-    borderline west={2.5pt}{0pt}{fvdcyan},
-    boxrule=0.5pt,
-    arc=3mm,
-    left=6mm,
-    right=6mm,
-    top=5mm,
-    bottom=5mm
-  ]
-    {\color{fvdcyan}
-     \sffamily
-     \bfseries
-     \large
-     Over deze module\par}
+ % ==========================================================
+ % OVER DEZE MODULE
+ % ==========================================================
 
-    \vspace{2mm}
+ \noindent
+ {\color{fvdcyan}
+ \sffamily
+ \bfseries
+ \large
+  Over deze module\par}
 
-    #2
-  \end{tcolorbox}
+ \vspace{3mm}
 
-  \vspace{8mm}
+ \noindent
+ {\color{fvddark}
+ \sffamily
+ \small
+ #2\par}
 
-  {\color{fvddark}
-   \sffamily
-   \bfseries
-   \Large
-   Thema's\par}
+ \vspace{10mm}
 
-  \vspace{3mm}
 
-  #3
+ % ==========================================================
+ % THEMA'S
+ % ==========================================================
 
-  \vfill
+ {\color{fvddark}
+ \sffamily
+ \bfseries
+ \Large
+  Thema's\par}
+
+ \vspace{4mm}
+
+ \setcounter{fvdmoduletilecount}{0}
+
+ #3
+
+ \ifodd\value{fvdmoduletilecount}
+  \par
+ \fi
+
+ \vfill
 }
 
 \fi
 
-\tikzset{
-  fvd axis/.style={
-    ->,
-    line width=1.4pt,
-    color=fvddark,
-    line cap=round
-  },
-  fvd tick/.style={
-    line width=0.8pt,
-    color=fvddark
-  },
-  fvd guide/.style={
-    dashed,
-    line width=0.8pt,
-    color=fvdcyan
-  },
-  fvd label/.style={
-    fill=fvdmagenta,
-    text=white,
-    rounded corners=2pt,
-    inner xsep=6pt,
-    inner ysep=3pt,
-    font=\small\bfseries
-  },
-  fvd panel/.style={
-    fill=fvdcyan!6,
-    rounded corners=3pt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% OPMERKING
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% ============================================================
+% KLEUREN
+% ============================================================
+
+\providecolor{fvdremark}{HTML}{C79A18}
+\providecolor{fvdremarkdark}{HTML}{9A7410}
+\providecolor{fvdremarklight}{HTML}{FFFBEF}
+
+
+% ============================================================
+% HTML
+% ============================================================
+
+\ifdefined\HCode
+
+  \newenvironment{opmerking}[1][]
+  {%
+    \HCode{<section class="fvd-remark">}%
+    \HCode{<div class="fvd-remark__title">}%
+    \HCode{<span class="fvd-remark__label">}%
+      OPMERKING%
+    \HCode{</span>}%
+    \if\relax\detokenize{#1}\relax
+    \else
+      \HCode{<span class="fvd-remark__separator"> — </span>}%
+      \HCode{<span class="fvd-remark__subtitle">}%
+        #1%
+      \HCode{</span>}%
+    \fi
+    \HCode{</div>}%
+    \HCode{<div class="fvd-remark__content">}%
   }
-}
+  {%
+    \HCode{</div></section>}%
+  }
 
+\else
 
+% ============================================================
+% PDF
+% ============================================================
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% OpmaakExamples.tex
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \newenvironment{opmerking}[1][]
+  {%
+    \begin{tcolorbox}[
+      enhanced,
+      breakable,
+      colback=fvdremarklight,
+      colframe=fvdremark,
+      coltext=fvddark,
+      boxrule=0.8pt,
+      arc=3mm,
+      outer arc=3mm,
+      left=7mm,
+      right=7mm,
+      top=4mm,
+      bottom=5mm,
+      before skip=5mm,
+      after skip=5mm,
+      fontupper=\color{fvddark}
+    ]%
 
-\ifdefined\fvdexamplesloaded
-  \expandafter\endinput
+    \noindent
+    {\sffamily\bfseries\normalsize
+      {\color{fvdremarkdark} OPMERKING}%
+      \if\relax\detokenize{#1}\relax
+      \else
+        {\color{fvdremarkdark}\space---\space}%
+        {\color{fvddark}#1}%
+      \fi
+      \par
+    }%
+
+    \vspace{3mm}%
+
+    \begin{minipage}{\dimexpr\linewidth-5mm\relax}
+  }
+  {%
+    \end{minipage}%
+    \end{tcolorbox}%
+  }
+
 \fi
-\global\let\fvdexamplesloaded\relax
+
+% ============================================================
+% VOORBEELD
+% ============================================================
 
 \makeatletter
 \@ifundefined{c@fvdexample}{\newcounter{fvdexample}}{}
@@ -946,34 +1136,40 @@ titlerule=0pt
 
 \ifdefined\HCode
 
-  \newenvironment{voorbeeld}[1][]
-  {%
-    \refstepcounter{fvdexample}%
-    \HCode{<section class="fvd-example">}%
-    \HCode{<div class="fvd-example__header">}%
-    \HCode{<span class="fvd-example__number">}%
-      Voorbeeld \thefvdexample
+% ============================================================
+% VOORBEELD — HTML
+% ============================================================
+
+\newenvironment{voorbeeld}[1][]
+{%
+  \refstepcounter{fvdexample}%
+
+  \HCode{<section class="fvd-example">}%
+
+  \HCode{<div class="fvd-example__title">}%
+  Voorbeeld \thefvdexample%
+  \if\relax\detokenize{#1}\relax
+  \else
+    \HCode{<span class="fvd-example__subtitle">}%
+      \space---\space #1%
     \HCode{</span>}%
-    \if\relax\detokenize{#1}\relax
-    \else
-      \HCode{<span class="fvd-example__subtitle">}%
-        \space---\space #1%
-      \HCode{</span>}%
-    \fi
-    \HCode{</div>}%
-    \HCode{<div class="fvd-example__rule"></div>}%
-    \HCode{<div class="fvd-example__content">}%
-  }
-  {%
-    \HCode{</div></section>}%
-  }
+  \fi
+  \HCode{</div>}%
+
+  \HCode{<div class="fvd-example__content">}%
+}
+{%
+  \HCode{</div></section>}%
+}
 
 \else
-
 
 % ============================================================
 % VOORBEELD — PDF
 % ============================================================
+
+\definecolor{fvdExampleBlue}{HTML}{1059B4}
+\definecolor{fvdExampleText}{HTML}{243746}
 
 \newenvironment{voorbeeld}[1][]
 {%
@@ -981,33 +1177,607 @@ titlerule=0pt
   \begin{tcolorbox}[
     enhanced,
     breakable,
-    colback=fvdexamplelight,
-    colframe=fvdexampleblue,
-    coltext=fvddark,
-    boxrule=0.7pt,
-    leftrule=3pt,
-    rightrule=0.7pt,
-    toprule=0.7pt,
-    bottomrule=0.7pt,
-    arc=3mm,
-    outer arc=3mm,
-    left=6mm,
-    right=6mm,
-    top=2.5mm,
+    colback=white,
+    colframe=white,
+    boxrule=0pt,
+    borderline west={2.6pt}{0pt}{fvdExampleBlue},
+    coltext=fvdExampleText,
+    arc=0mm,
+    outer arc=0mm,
+    left=8mm,
+    right=2mm,
+    top=3mm,
     bottom=4mm,
-    before skip=5mm,
-    after skip=5mm,
-    fontupper=\color{fvddark}
+    before skip=7mm,
+    after skip=7mm
   ]%
-  {\sffamily\bfseries\normalsize\color{fvdexampleblue}%
+  {\sffamily
+   \bfseries
+   \large
+   \color{fvdExampleBlue}
    Voorbeeld~\thefvdexample
-   \FVDExampleOptionalTitle{#1}\par}%
-  \vspace{2mm}%
+   \FVDExampleOptionalTitle{#1}
+   \par}%
+  \vspace{3mm}%
 }
 {%
   \end{tcolorbox}%
 }
 \fi
+
+% ============================================================
+% OEFENINGENBUNDEL — VEILIGE COMMANDO'S
+% ============================================================
+
+\providecommand{\FVDbeginExercises}{}
+\providecommand{\FVDendExercises}{}
+
+\providecommand{\FVDwidebegin}{}
+\providecommand{\FVDwideend}{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% OEFENINGEN
+%%
+%% Gebruik:
+%%
+%%   \begin{oefening}{\oefB}
+%%     ...
+%%   \end{oefening}
+%%
+%%   \begin{oefening}{\oefB\ESS}
+%%     ...
+%%   \end{oefening}
+%%
+%%   \begin{oefening}{\oefU}
+%%     ...
+%%   \end{oefening}
+%%
+%%   \begin{oefening}[Titel]{\oefG\ESS}
+%%     ...
+%%   \end{oefening}
+%%
+%% B   = Basis
+%% U   = Verdieping
+%% G   = Gevorderd
+%% ESS = Essentieel
+%%
+%% De labels staan in de linkermarge:
+%%
+%%      B  │ oefeninhoud
+%%    ESS  │
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% ============================================================
+% TELLER
+% ============================================================
+
+\makeatletter
+\@ifundefined{c@fvdoefening}{%
+  \newcounter{fvdoefening}%
+}{}
+\makeatother
+
+\providecommand{\FVDResetExercises}{%
+  \setcounter{fvdoefening}{0}%
+}
+
+
+% ============================================================
+% KLEUREN
+% ============================================================
+
+% Essentieel
+\providecolor{fvdEssBg}{HTML}{FDE7F0}
+\providecolor{fvdEssText}{HTML}{D90B5B}
+
+% Basis
+\providecolor{fvdBasisBg}{HTML}{DDF5F3}
+\providecolor{fvdBasisText}{HTML}{087F86}
+
+% Verdieping
+\providecolor{fvdVerdiepingBg}{HTML}{E5EEFF}
+\providecolor{fvdVerdiepingText}{HTML}{2458C6}
+
+% Gevorderd
+\providecolor{fvdGevorderdBg}{HTML}{EEE8FA}
+\providecolor{fvdGevorderdText}{HTML}{5942B5}
+
+
+% ============================================================
+% COMMANDO'S VOORZIEN
+% ============================================================
+
+\providecommand{\oefB}{}
+\providecommand{\oefU}{}
+\providecommand{\oefG}{}
+\providecommand{\ESS}{}
+
+
+% ============================================================
+% HTML
+% ============================================================
+
+\ifdefined\HCode
+
+
+% ------------------------------------------------------------
+% LABELS — HTML
+% ------------------------------------------------------------
+
+\renewcommand{\oefB}{%
+  \HCode{<span class="fvd-exercise-chip fvd-exercise-chip--b">B</span>}%
+}
+
+\renewcommand{\oefU}{%
+  \HCode{<span class="fvd-exercise-chip fvd-exercise-chip--u">U</span>}%
+}
+
+\renewcommand{\oefG}{%
+  \HCode{<span class="fvd-exercise-chip fvd-exercise-chip--g">G</span>}%
+}
+
+\renewcommand{\ESS}{%
+  \HCode{<span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span>}%
+}
+
+
+% ------------------------------------------------------------
+% OEFENING — HTML
+%
+% #1 = optionele titel
+% #2 = labels
+% ------------------------------------------------------------
+
+\newenvironment{oefening}[2][]%
+{%
+  \refstepcounter{fvdoefening}%
+ 
+
+  \HCode{<section class="fvd-exercise">}%
+
+  % --------------------------
+  % Titel
+  % --------------------------
+
+  \HCode{<div class="fvd-exercise__title">}%
+
+    Oefening \thefvdoefening%
+
+    \if\relax\detokenize{#1}\relax
+    \else
+      \space---\space #1%
+    \fi
+
+  \HCode{</div>}%
+
+  % --------------------------
+  % Body
+  % --------------------------
+
+  \HCode{<div class="fvd-exercise__body">}%
+
+    % Linkermarge
+    \HCode{<div class="fvd-exercise__meta">}%
+      #2%
+    \HCode{</div>}%
+
+    % Oefeninhoud
+    \HCode{<div class="fvd-exercise__content">}%
+}%
+{%
+    \HCode{</div>}%
+
+  \HCode{</div>}%
+
+  \HCode{</section>}%
+}
+
+\else
+
+
+
+% ============================================================
+% LABELS — PDF
+% ============================================================
+
+\renewcommand{\oefB}{%
+  \tikz[baseline=(chip.base)]{%
+    \node[
+      fill=fvdBasisBg,
+      text=fvdBasisText,
+      rounded corners=1.5mm,
+      minimum width=11mm,
+      minimum height=7mm,
+      inner sep=0pt,
+      font=\sffamily\bfseries\normalsize
+    ] (chip) {B};
+  }%
+  \par\vspace{1.5mm}%
+}
+
+\renewcommand{\oefU}{%
+  \tikz[baseline=(chip.base)]{%
+    \node[
+      fill=fvdVerdiepingBg,
+      text=fvdVerdiepingText,
+      rounded corners=1.5mm,
+      minimum width=11mm,
+      minimum height=7mm,
+      inner sep=0pt,
+      font=\sffamily\bfseries\normalsize
+    ] (chip) {U};
+  }%
+  \par\vspace{1.5mm}%
+}
+
+\renewcommand{\oefG}{%
+  \tikz[baseline=(chip.base)]{%
+    \node[
+      fill=fvdGevorderdBg,
+      text=fvdGevorderdText,
+      rounded corners=1.5mm,
+      minimum width=11mm,
+      minimum height=7mm,
+      inner sep=0pt,
+      font=\sffamily\bfseries\normalsize
+    ] (chip) {G};
+  }%
+  \par\vspace{1.5mm}%
+}
+
+\renewcommand{\ESS}{%
+  \tikz[baseline=(chip.base)]{%
+    \node[
+      fill=fvdEssBg,
+      text=fvdEssText,
+      rounded corners=1.5mm,
+      minimum width=11mm,
+      minimum height=7mm,
+      inner sep=0pt,
+      font=\sffamily\bfseries\normalsize
+    ] (chip) {$\blacklozenge$};
+  }%
+}
+
+
+% ============================================================
+% OEFENING — PDF
+% Labels als overlay in linkermarge
+% ============================================================
+
+\newenvironment{oefening}[2][]%
+{%
+  \refstepcounter{fvdoefening}%
+
+  \def\FVDExerciseLabels{#2}%
+
+  \begin{tcolorbox}[
+    enhanced,
+    breakable,
+    colback=white,
+    colframe=white,
+    boxrule=0pt,
+    sharp corners,
+    left=19mm,
+    right=1mm,
+    top=3mm,
+    bottom=3mm,
+    before skip=4mm,
+    after skip=4mm,
+    borderline west={2.2pt}{0pt}{fvdcyan}
+  ]%
+
+  \noindent
+  \iffvdoefbundel
+    \hspace*{-10mm}%
+  \else
+    \hspace*{-15mm}%
+  \fi
+  {%
+    \sffamily
+    \bfseries
+    \normalsize
+    \color{fvdcyan}%
+    Oefening~\thefvdoefening
+    \if\relax\detokenize{#1}\relax
+    \else
+      \space---\space
+      {\color{fvddark}#1}%
+    \fi
+  }%
+
+  \par
+  \vspace{3mm}%
+
+  \noindent
+  \tikz[remember picture,overlay]{%
+    \node[
+      anchor=north west,
+      inner sep=0pt
+    ] at (-15mm,1.5mm) {%
+      \begin{minipage}[t]{12mm}
+        \centering
+        \FVDExerciseLabels
+      \end{minipage}%
+    };
+  }%
+
+% ==========================================================
+% INHOUD
+% iets hoger zodat eerste regel naast B staat
+% ==========================================================
+
+\vspace*{-8mm}%
+\noindent
+\color{fvddark}%
+\ignorespaces
+}%
+{%
+  \par
+  \end{tcolorbox}%
+}
+
+  
+
+\fi
+
+% ============================================================
+% DEELVRAGEN BINNEN ELKE OEFENING OPNIEUW VANAF 1
+% ============================================================
+
+\makeatletter
+
+\AtBeginEnvironment{oefening}{%
+  \@ifundefined{c@question}{}{%
+    \setcounter{question}{0}%
+  }%
+}
+
+\makeatother
+
+% ============================================================
+% MODULEVOORBLAD
+% HTML: niets tonen
+% PDF: wordt overschreven in Opmaak-pdf.tex
+% ============================================================
+
+\providecommand{\FVDmodulecover}{}
+
+% ============================================================
+% SCHOOLNAAM
+% ============================================================
+
+\providecommand{\fvdschoolnaam}{Schoolnaam}
+
+% ============================================================
+% DEFINITIE
+%
+% Gebruik:
+% \begin{definitie}[Differentiequotiënt]
+% ...
+% \end{definitie}
+% ============================================================
+
+\ifdefined\HCode
+
+% ============================================================
+% DEFINITIE — HTML
+% ============================================================
+
+\newenvironment{definitie}[1][]
+{%
+  \HCode{<section class="fvd-definition">}%
+  \HCode{<div class="fvd-definition__title">}%
+  \HCode{<span class="fvd-definition__label">}%
+  DEFINITIE%
+  \HCode{</span>}%
+  \if\relax\detokenize{#1}\relax
+  \else
+    \HCode{<span class="fvd-definition__separator"> — </span>}%
+    \HCode{<span class="fvd-definition__name">}%
+    #1%
+    \HCode{</span>}%
+  \fi
+  \HCode{</div>}%
+  \HCode{<div class="fvd-definition__content">}%
+}
+{%
+  \HCode{</div></section>}%
+}
+
+\else
+
+% ============================================================
+% DEFINITIE — PDF
+% ============================================================
+
+\definecolor{fvdDefinitionPink}{HTML}{F20D68}
+\definecolor{fvdDefinitionSoft}{HTML}{FFF7FA}
+\definecolor{fvdDefinitionText}{HTML}{243746}
+\definecolor{fvdDefinitionNavy}{HTML}{062D68}
+
+\newtcolorbox{definitie}[1][]{%
+  enhanced,
+  breakable,
+  colback=fvdDefinitionSoft,
+  colframe=fvdDefinitionPink,
+  coltext=fvdDefinitionText,
+  boxrule=0.8pt,
+  arc=3mm,
+  outer arc=3mm,
+  left=12mm,
+  right=7mm,
+  top=4mm,
+  bottom=5mm,
+  before skip=6mm,
+  after skip=7mm,
+  title={%
+    \sffamily\bfseries
+    \color{fvdDefinitionPink}%
+    DEFINITIE%
+    \if\relax\detokenize{#1}\relax
+    \else
+      \hspace{1mm}---\hspace{1mm}%
+      \color{fvdDefinitionNavy}#1%
+    \fi
+  },
+  colbacktitle=fvdDefinitionSoft,
+  coltitle=fvdDefinitionPink,
+  fonttitle=\normalsize,
+  titlerule=0pt,
+  lefttitle=8mm,
+  righttitle=0mm,
+  toptitle=1.5mm,
+  bottomtitle=2mm
+}
+
+\fi
+
+% ============================================================
+% EIGENSCHAP
+%
+% Gebruik:
+% \begin{eigenschap}[Machtsregel]
+% ...
+% \end{eigenschap}
+% ============================================================
+
+\ifdefined\HCode
+
+% ============================================================
+% EIGENSCHAP — HTML
+% ============================================================
+
+\newenvironment{eigenschap}[1][]
+{%
+  \HCode{<section class="fvd-property">}%
+  \HCode{<div class="fvd-property__title">}%
+  \HCode{<span class="fvd-property__label">}%
+  EIGENSCHAP%
+  \HCode{</span>}%
+  \if\relax\detokenize{#1}\relax
+  \else
+    \HCode{<span class="fvd-property__separator"> — </span>}%
+    \HCode{<span class="fvd-property__name">}%
+    #1%
+    \HCode{</span>}%
+  \fi
+  \HCode{</div>}%
+  \HCode{<div class="fvd-property__content">}%
+}
+{%
+  \HCode{</div>}%
+  \HCode{</section>}%
+}
+
+\else
+
+% ============================================================
+% EIGENSCHAP — PDF
+% ============================================================
+
+\definecolor{fvdPropertyCyan}{HTML}{16B8C4}
+\definecolor{fvdPropertySoft}{HTML}{F3FBFC}
+\definecolor{fvdPropertyText}{HTML}{243746}
+\definecolor{fvdPropertyNavy}{HTML}{062D68}
+
+\newtcolorbox{eigenschap}[1][]{%
+  enhanced,
+  breakable,
+  colback=fvdPropertySoft,
+  colframe=fvdPropertyCyan,
+  coltext=fvdPropertyText,
+  boxrule=0.8pt,
+  arc=3mm,
+  outer arc=3mm,
+  left=7mm,
+  right=7mm,
+  top=4mm,
+  bottom=5mm,
+  before skip=6mm,
+  after skip=7mm,
+  colbacktitle=fvdPropertySoft,
+  coltitle=fvdPropertyCyan,
+  fonttitle=\sffamily\bfseries\normalsize,
+  titlerule=0pt,
+  lefttitle=7mm,
+  righttitle=0mm,
+  toptitle=1.5mm,
+  bottomtitle=2mm,
+  title={%
+    EIGENSCHAP%
+    \if\relax\detokenize{#1}\relax
+    \else
+      \hspace{1mm}---\hspace{1mm}%
+      {\color{fvdPropertyNavy}#1}%
+    \fi
+  }
+}
+
+\fi
+
+% ============================================================
+% INLINE OEFENLABELS
+% voor gebruik midden in lopende tekst
+% ============================================================
+
+\newcommand{\ESSinline}{%
+  \tikz[baseline=-0.6ex]{%
+    \node[
+      fill=fvdEssBg,
+      text=fvdEssText,
+      rounded corners=1.5mm,
+      minimum width=9mm,
+      minimum height=5.5mm,
+      inner sep=0pt,
+      font=\sffamily\bfseries\scriptsize
+    ] {$\blacklozenge$};
+  }%
+}
+
+\newcommand{\oefBinline}{%
+  \tikz[baseline=-0.6ex]{%
+    \node[
+      fill=fvdBasisBg,
+      text=fvdBasisText,
+      rounded corners=1.5mm,
+      minimum width=9mm,
+      minimum height=5.5mm,
+      inner sep=0pt,
+      font=\sffamily\bfseries\scriptsize
+    ] {B};
+  }%
+}
+
+\newcommand{\oefUinline}{%
+  \tikz[baseline=-0.6ex]{%
+    \node[
+      fill=fvdVerdiepingBg,
+      text=fvdVerdiepingText,
+      rounded corners=1.5mm,
+      minimum width=9mm,
+      minimum height=5.5mm,
+      inner sep=0pt,
+      font=\sffamily\bfseries\scriptsize
+    ] {U};
+  }%
+}
+
+\newcommand{\oefGinline}{%
+  \tikz[baseline=-0.6ex]{%
+    \node[
+      fill=fvdGevorderdBg,
+      text=fvdGevorderdText,
+      rounded corners=1.5mm,
+      minimum width=9mm,
+      minimum height=5.5mm,
+      inner sep=0pt,
+      font=\sffamily\bfseries\scriptsize
+    ] {G};
+  }%
+}
 
 
 \input{OpmaakTikz.tex}

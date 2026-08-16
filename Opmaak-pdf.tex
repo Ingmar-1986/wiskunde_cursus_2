@@ -280,18 +280,16 @@
   \global\let\fvdabstracttext\@empty
 }
 
+
+
+
 % ============================================================
 % DEFINITIEVE CHAPTERSTYLE
-% ============================================================
-%
-% Dit is de cruciale koppeling. De oude PDF miste de hero omdat
-% gewone \activity-oproepen niet altijd als chapter werden gezet.
-% De aangepaste printstyle activeert chapterstyle voor elke
-% activity; deze definitie tekent vervolgens altijd de hero.
 % ============================================================
 
 \renewcommand\chapterstyle{%
   \def\maketitle{%
+
     \addtocounter{titlenumber}{1}%
 
     \phantomsection
@@ -301,12 +299,18 @@
 
     \renewcommand\xmsection\subsection
     \renewcommand\xmsubsection\subsubsection
+
     \renewcommand{\thesubsection}{%
       \thetitlenumber.\arabic{subsection}%
     }
+
     \renewcommand{\thesubsubsection}{%
       \thesubsection.\arabic{subsubsection}%
     }
+
+    % --------------------------------------------------------
+    % Counters resetten
+    % --------------------------------------------------------
 
     \setcounter{sectiontitlenumber}{0}%
     \setcounter{problem}{0}%
@@ -326,16 +330,42 @@
     \@ifundefined{c@warning}{}{\setcounter{warning}{0}}%
     \@ifundefined{c@xmuitweiding}{}{\setcounter{xmuitweiding}{0}}%
 
-    \fvdchapterhero{\fvdabstracttext}%
+    % --------------------------------------------------------
+    % HERO
+    % --------------------------------------------------------
+
+    \iffvdoefbundel
+      \fvdexercisechapterhero
+    \else
+      \fvdchapterhero{\fvdabstracttext}%
+    \fi
+
+    % --------------------------------------------------------
+    % HEADERMARKERING
+    % --------------------------------------------------------
 
     \markboth
       {\thetitlenumber\enspace\@title}
       {\thetitlenumber\enspace\@title}%
 
-    \thispagestyle{firstpage}%
-    \afterpage{\thispagestyle{otherpage}}%
-  }%
-}
+        % --------------------------------------------------------
+    % PAGINASTIJL
+    % --------------------------------------------------------
+
+    \iffvdoefbundel
+      \pagestyle{fvdOefLandscape}%
+      \thispagestyle{fvdOefLandscape}%
+    \else
+      \pagestyle{otherpage}%
+      \thispagestyle{firstpage}%
+    \fi
+
+  }% einde \maketitle
+}% einde \chapterstyle
+
+% ============================================================
+% SECTIETITELS
+% ============================================================
 
 % ============================================================
 % SECTIETITELS
@@ -389,74 +419,864 @@
 % MODERNE KOP- EN VOETTEKST
 % ============================================================
 
-\fancypagestyle{firstpage}{%
-  \fancyhf{}
-  \fancyfoot[L]{%
-    \sffamily\scriptsize\color{fvdBodyMuted}%
-    \xmcursusnaam
-  }
-  \fancyfoot[C]{%
-    \sffamily\scriptsize\color{fvdBodyMuted}%
-    \xmafdelingsnaam
-  }
-  \fancyfoot[R]{%
-    \sffamily\scriptsize\bfseries\color{fvdBodyText}%
-    \thepage
-  }
-  \renewcommand{\headrulewidth}{0pt}
-  \renewcommand{\footrulewidth}{0pt}
+\setlength{\headheight}{25pt}
+\setlength{\footskip}{16mm}
+
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% ============================================================
+% VEILIGE METADATA
+%
+% Kan in index.tex worden aangepast, bijvoorbeeld:
+%
+% \renewcommand{\fvdschoolnaam}{Athena Campus ...}
+% \renewcommand{\fvdleerkracht}{Ingmar Herreman}
+% ============================================================
+
+\providecommand{\fvdschoolnaam}{Schoolnaam}
+\providecommand{\fvdleerkracht}{Ingmar Herreman}
+
+% ============================================================
+% THEMATITEL VOOR HEADER
+% ============================================================
+
+\providecommand{\fvdcurrentthemetitle}{}
+\providecommand{\fvdstandalonetheme}{}
+
+\newcommand{\fvdheaderthemetitle}{%
+  \ifdefined\isXourse
+    \fvdcurrentthemetitle
+  \else
+    \fvdstandalonetheme
+  \fi
 }
 
-\fancypagestyle{otherpage}{%
-  \fancyhf{}
+% ============================================================
+% GEDEELDE HEADER VOOR NORMALE CURSUSPAGINA'S
+% ============================================================
+
+\newcommand{\FVDstandardheader}{%
+
+  % ----------------------------------------------------------
+  % LINKS: THEMA + THEMATITEL
+  % ----------------------------------------------------------
 
   \fancyhead[L]{%
-    \sffamily\footnotesize\color{fvdBodyMuted}%
-    \ifdefined\isXourse
-      Thema \thepart\enspace|\enspace\mymoduletitle
-    \else
-      \leftmark
-    \fi
-  }
+    \begin{tikzpicture}[baseline=(themetitle.base)]
 
-  \fancyhead[R]{%
-    \sffamily\footnotesize\bfseries\color{fvdBodyText}%
-    \thepage
-  }
+      \node[
+        fill=fvdHeroPinkBright,
+        text=white,
+        rounded corners=1.5mm,
+        inner xsep=2.4mm,
+        inner ysep=1.15mm,
+        font=\sffamily\bfseries\scriptsize
+      ] (themabadge)
+      {THEMA \fvdthemenumber};
 
-  \fancyhead[C]{%
-    \raisebox{-6.5mm}[0pt][0pt]{%
-      \begin{tikzpicture}
-        \shade[
-          left color=fvdHeroCyan,
-          right color=fvdHeroPink
-        ] (0,0) rectangle (\textwidth,.4mm);
-      \end{tikzpicture}%
-    }%
-  }
+      \node[
+        anchor=west,
+        text=fvdBodyText,
+        font=\sffamily\bfseries\scriptsize
+      ] (themetitle)
+      at ([xshift=3mm]themabadge.east)
+      {\fvdheaderthemetitle};
 
-  \fancyfoot[L]{%
-    \sffamily\scriptsize\color{fvdBodyMuted}%
-    Wiskunde 7 FVD
-  }
+    \end{tikzpicture}%
+  }%
 
-  \fancyfoot[R]{%
-    \sffamily\scriptsize\color{fvdBodyMuted}%
-    Ingmar Herreman
-  }
+% ----------------------------------------------------------
+% RECHTS: HOOFDSTUKNAAM
+% ----------------------------------------------------------
 
-  \renewcommand{\headrulewidth}{0pt}
-  \renewcommand{\footrulewidth}{0pt}
+\fancyhead[R]{%
+  \nouppercase{%
+    \sffamily
+    \scriptsize
+    \color{fvdBodyMuted}%
+    \leftmark
+  }%
 }
 
+}
+
+% ============================================================
+% GEDEELDE VOETTEKST
+% ============================================================
+
+\newcommand{\FVDstandardfooter}{%
+
+  % LINKS: SCHOOL
+  \fancyfoot[L]{%
+    \begin{tikzpicture}[baseline=(school.base)]
+      \node[
+        anchor=west,
+        text=fvdBodyMuted,
+        font=\sffamily\scriptsize
+      ] (school)
+      {\fvdschoolnaam};
+    \end{tikzpicture}%
+  }%
+
+  % MIDDEN: PAGINANUMMER
+  \fancyfoot[C]{%
+    \begin{tikzpicture}[baseline=(footerpage.base)]
+      \node[
+        fill=fvdHeroPinkBright,
+        text=white,
+        rounded corners=1.5mm,
+        minimum width=7.5mm,
+        minimum height=5.5mm,
+        inner xsep=1.7mm,
+        inner ysep=.6mm,
+        font=\sffamily\bfseries\scriptsize
+      ] (footerpage)
+      {\thepage};
+    \end{tikzpicture}%
+  }%
+
+  % RECHTS: LEERKRACHT
+  \fancyfoot[R]{%
+    \begin{tikzpicture}[baseline=(teacher.base)]
+      \node[
+        anchor=east,
+        text=fvdBodyMuted,
+        font=\sffamily\scriptsize
+      ] (teacher)
+      {\fvdleerkracht};
+    \end{tikzpicture}%
+  }%
+}
+
+% ============================================================
+% EERSTE PAGINA VAN EEN HOOFDSTUK
+% ============================================================
+
+\fancypagestyle{firstpage}{%
+  \fancyhf{}%
+
+  \FVDstandardfooter
+
+  \renewcommand{\headrulewidth}{0pt}%
+  \renewcommand{\footrulewidth}{0pt}%
+}
+
+% ============================================================
+% GEWONE CURSUSPAGINA
+% ============================================================
+
+\fancypagestyle{otherpage}{%
+  \fancyhf{}%
+
+  \FVDstandardheader
+  \FVDstandardfooter
+
+  \renewcommand{\headrulewidth}{0pt}%
+  \renewcommand{\footrulewidth}{0pt}%
+}
+
+% ============================================================
+% PAGINASTIJL OEFENINGENBUNDEL
+% ============================================================
+
+\fancypagestyle{fvdOefLandscape}{%
+  \fancyhf{}%
+
+  % Altijd volledige tekstbreedte gebruiken,
+  % ook wanneer de pagina in multicols staat.
+  \setlength{\headwidth}{\textwidth}%
+  \fancyheadoffset[L,R]{0pt}%
+
+  \FVDstandardheader
+  \FVDstandardfooter
+
+  \renewcommand{\headrulewidth}{0pt}%
+  \renewcommand{\footrulewidth}{0pt}%
+}
+
+% Standaard paginastijl
 \pagestyle{otherpage}
 
-% Links in de huisstijl
-\hypersetup{
-  colorlinks=true,
-  linkcolor=fvdHeroPink,
-  urlcolor=fvdHeroNavyB,
-  citecolor=fvdHeroNavyB
+
+
+
+% ============================================================
+% MODULECOVER — WISKUNDE
+% ============================================================
+
+\definecolor{WWAthenaBlue}{RGB}{0,55,112}
+\definecolor{WWAthenaPink}{RGB}{233,0,91}
+\definecolor{WWMathGrey}{RGB}{155,166,180}
+
+% ------------------------------------------------------------
+% VEILIGE STANDAARDWAARDEN
+% ------------------------------------------------------------
+
+\providecommand{\fvdmodulebeeld}{}
+\providecommand{\fvdschoollogo}{../images/banners/logo_athena.png}
+\providecommand{\fvdschoollogobreedte}{0.62\textwidth}
+
+\providecommand{\fvdschooljaar}{}
+\providecommand{\fvdklas}{}
+\providecommand{\fvdleerkracht}{}
+
+\providecommand{\fvdmodulenummer}{1}
+\providecommand{\fvdmoduletitel}{Functies in verandering}
+
+
+% ============================================================
+% MODULECOVER — WISKUNDE
+% ============================================================
+
+\definecolor{WWAthenaBlue}{RGB}{0,55,112}
+\definecolor{WWAthenaPink}{RGB}{233,0,91}
+\definecolor{WWMathGrey}{RGB}{155,166,180}
+
+
+% ------------------------------------------------------------
+% VEILIGE STANDAARDWAARDEN
+% ------------------------------------------------------------
+
+\providecommand{\fvdmodulebeeld}{}
+
+\providecommand{\fvdschoollogo}{../images/banners/logo_athena.png}
+\providecommand{\fvdschoollogobreedte}{0.65\textwidth}
+
+\providecommand{\fvdschooljaar}{}
+\providecommand{\fvdklas}{}
+\providecommand{\fvdleerkracht}{}
+
+\providecommand{\fvdmodulenummer}{1}
+\providecommand{\fvdmoduletitel}{Functies in verandering}
+
+
+% ============================================================
+% MODULECOVER
+% ============================================================
+
+\renewcommand{\FVDmodulecover}{%
+
+  \thispagestyle{empty}%
+
+  % ----------------------------------------------------------
+  % SUBTIELE WISKUNDIGE ACHTERGROND
+  % ----------------------------------------------------------
+
+  \begin{tikzpicture}[remember picture,overlay]
+
+    \node[
+      anchor=west,
+      text=WWMathGrey,
+      opacity=0.20,
+      font=\fontsize{17}{20}\selectfont
+    ]
+    at ([xshift=12mm,yshift=-42mm]current page.north west)
+    {$f(x)$};
+
+    \node[
+      anchor=west,
+      text=WWMathGrey,
+      opacity=0.16,
+      font=\fontsize{15}{18}\selectfont
+    ]
+    at ([xshift=12mm,yshift=-58mm]current page.north west)
+    {$f'(x)$};
+
+    \node[
+      anchor=east,
+      text=WWMathGrey,
+      opacity=0.18,
+      font=\fontsize{13}{16}\selectfont
+    ]
+    at ([xshift=-12mm,yshift=-36mm]current page.north east)
+    {$\displaystyle
+      f'(x)=
+      \lim_{h\to0}
+      \frac{f(x+h)-f(x)}{h}$};
+
+    \node[
+      anchor=east,
+      text=WWMathGrey,
+      opacity=0.15,
+      font=\fontsize{13}{16}\selectfont
+    ]
+    at ([xshift=-16mm,yshift=-60mm]current page.north east)
+    {$\Delta y,\quad \Delta x$};
+
+  \end{tikzpicture}
+
+
+  % ==========================================================
+  % BOVENSTE TITELDEEL
+  % ==========================================================
+
+  \begin{center}
+
+    % Hele cover duidelijk hoger
+    \vspace*{-22mm}
+
+    % --------------------------------------------------------
+    % SCHOOLLOGO
+    % --------------------------------------------------------
+
+    \includegraphics[
+      width=\fvdschoollogobreedte
+    ]{\fvdschoollogo}
+
+    \vspace{1mm}
+
+
+    % --------------------------------------------------------
+    % VAKNAAM
+    % --------------------------------------------------------
+
+    {\color{WWAthenaBlue}
+     \sffamily
+     \fontsize{38}{42}\selectfont
+     \bfseries
+     Wiskunde
+     \par}
+
+    \vspace{1.5mm}
+
+
+    % --------------------------------------------------------
+    % DECORATIEVE LIJN
+    % --------------------------------------------------------
+
+    \begin{tikzpicture}
+
+      \draw[
+        WWAthenaPink,
+        line width=1pt
+      ]
+      (0,0) -- (3.25,0);
+
+      \fill[
+        WWAthenaPink
+      ]
+      (3.60,0) circle (2.3pt);
+
+      \draw[
+        WWAthenaPink,
+        line width=1pt
+      ]
+      (3.95,0) -- (7.20,0);
+
+    \end{tikzpicture}
+
+    \vspace{2.5mm}
+
+
+    % --------------------------------------------------------
+    % MODULECHIP
+    % --------------------------------------------------------
+
+    \begin{tikzpicture}
+
+      \node[
+        rounded corners=8pt,
+        fill=WWAthenaPink,
+        text=white,
+        inner xsep=32pt,
+        inner ysep=10pt,
+        font=\sffamily\bfseries\large
+      ]
+      {MODULE \fvdmodulenummer};
+
+    \end{tikzpicture}
+
+    \vspace{3.5mm}
+
+
+    % --------------------------------------------------------
+    % MODULETITEL
+    % --------------------------------------------------------
+
+    {\color{WWAthenaBlue}
+     \sffamily
+     \fontsize{27}{31}\selectfont
+     \bfseries
+     \fvdmoduletitel
+     \par}
+
+    \vspace{4mm}
+
+  \end{center}
+
+
+  % ==========================================================
+  % MODULEAFBEELDING
+  % ==========================================================
+
+  \begin{center}
+
+    \begin{tikzpicture}
+
+      \clip[
+        rounded corners=5mm
+      ]
+      (0,0)
+      rectangle
+      (\textwidth,82mm);
+
+      \node[
+        anchor=south west,
+        inner sep=0pt
+      ]
+      at (0,0)
+      {%
+        \includegraphics[
+          width=\textwidth,
+          height=82mm
+        ]{\fvdmodulebeeld}%
+      };
+
+    \end{tikzpicture}
+
+  \end{center}
+
+
+  \vfill
+
+
+  % ==========================================================
+  % GEGEVENS ONDERAAN
+  % ==========================================================
+
+  \noindent
+
+  \begin{minipage}[t]{0.31\textwidth}
+    \centering
+
+    {\sffamily
+     \bfseries
+     \scriptsize
+     \color{fvdHeroCyan}
+     SCHOOLJAAR\par}
+
+    \vspace{1mm}
+
+    {\sffamily
+     \normalsize
+     \color{fvdBodyText}
+     \fvdschooljaar\par}
+
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{0.31\textwidth}
+    \centering
+
+    {\sffamily
+     \bfseries
+     \scriptsize
+     \color{fvdHeroCyan}
+     KLAS\par}
+
+    \vspace{1mm}
+
+    {\sffamily
+     \normalsize
+     \color{fvdBodyText}
+     \fvdklas\par}
+
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{0.31\textwidth}
+    \centering
+
+    {\sffamily
+     \bfseries
+     \scriptsize
+     \color{fvdHeroCyan}
+     LEERKRACHT\par}
+
+    \vspace{1mm}
+
+    {\sffamily
+     \normalsize
+     \color{fvdBodyText}
+     \fvdleerkracht\par}
+
+  \end{minipage}
+
+  \vspace*{1.5mm}
+
+
+  % ==========================================================
+  % EINDE VOORPAGINA
+  % ==========================================================
+
+  \clearpage
+
+
+  % ==========================================================
+  % LEEG TWEEDE BLAD
+  % ==========================================================
+
+  \thispagestyle{empty}%
+  \null
+  \clearpage
+
+}
+
+% ============================================================
+% MODULEOVERZICHT — TWEEDE PAGINA
+% ============================================================
+
+\definecolor{fvdModuleOverviewNavy}{HTML}{062D68}
+\definecolor{fvdModuleOverviewPink}{HTML}{F20D68}
+\definecolor{fvdModuleOverviewCyan}{HTML}{16B8C4}
+\definecolor{fvdModuleOverviewText}{HTML}{243746}
+\definecolor{fvdModuleOverviewLine}{HTML}{E8EDF0}
+
+
+% ============================================================
+% MODULEOVERZICHT — OPENING
+%
+% #1 = modulenummer
+% #2 = moduletitel
+% #3 = abstract / modulebeschrijving
+% ============================================================
+
+\newcommand{\FVDmoduleoverviewstart}[3]{%
+
+  \clearpage
+  \thispagestyle{empty}%
+
+  % ============================================================
+% MODULECHIP
+% ============================================================
+
+\noindent
+\begin{tikzpicture}[baseline=(modulechip.base)]
+  \node[
+    fill=fvdmagenta,
+    text=white,
+    rounded corners=5pt,
+    inner xsep=14pt,
+    inner ysep=5pt,
+    font=\sffamily\bfseries\small
+  ] (modulechip)
+  {MODULE 1};
+\end{tikzpicture}
+
+\vspace{6mm}
+
+
+% ============================================================
+% MODULETITEL
+% ============================================================
+
+{\raggedright
+ \sffamily
+ \bfseries
+ \fontsize{32}{37}\selectfont
+ \color{fvddark}
+ #1\par}
+
+\vspace{9mm}
+
+  % ============================================================
+% OVER DEZE MODULE
+% ============================================================
+
+{\raggedright
+\sffamily
+\bfseries
+\large
+\color{fvdcyan}
+Over deze module\par}
+
+\vspace{2.5mm}
+
+{\raggedright
+\sffamily
+\small
+\color{fvddark}
+#2\par}
+
+\vspace{9mm}
+
+  % ----------------------------------------------------------
+  % THEMA'S
+  % ----------------------------------------------------------
+
+  \noindent
+  \begin{tikzpicture}[baseline=(fvdthematitle.base)]
+
+    % lijsticoon
+    \foreach \yy in {0,.19,.38}{
+      \fill[fvdModuleOverviewPink]
+        (0,\yy) circle (1pt);
+
+      \draw[
+        fvdModuleOverviewPink,
+        line width=.8pt
+      ]
+        (.13,\yy) -- (.52,\yy);
+    }
+
+    \node[
+      anchor=west,
+      text=fvdModuleOverviewNavy,
+      font=\sffamily\bfseries\Large
+    ] (fvdthematitle)
+      at (.80,.19)
+      {Thema's};
+
+    \draw[
+      fvdModuleOverviewPink,
+      line width=1.1pt
+    ]
+      (.80,-.11) -- (1.75,-.11);
+
+  \end{tikzpicture}
+
+  \vspace{4mm}
+}
+
+
+% ============================================================
+% INDIVIDUELE THEMAKAART
+%
+% #1 = nummer
+% #2 = titel
+%
+% BELANGRIJK:
+% ALLE kaarten gebruiken bewust DEZELFDE roze kleur.
+% ============================================================
+
+\newcommand{\FVDmodulethemacard}[2]{%
+  \begin{tcolorbox}[
+    enhanced,
+    width=\linewidth,
+    height=18mm,
+    boxrule=.35pt,
+    colframe=fvdModuleOverviewLine,
+    colback=white,
+    arc=3mm,
+    outer arc=3mm,
+    left=2.5mm,
+    right=2.5mm,
+    top=2mm,
+    bottom=2mm,
+    valign=center,
+    before skip=0pt,
+    after skip=0pt,
+    borderline west={
+      1.3mm
+    }{
+      0mm
+    }{
+      fvdModuleOverviewPink
+    }
+  ]
+
+    \noindent
+    \begin{minipage}[c]{10mm}
+      \centering
+
+      \begin{tikzpicture}
+        \node[
+          circle,
+          fill=fvdModuleOverviewPink,
+          text=white,
+          minimum size=7.5mm,
+          inner sep=0pt,
+          font=\sffamily\bfseries\small
+        ]
+        {#1};
+      \end{tikzpicture}
+
+    \end{minipage}%
+    \hspace{1.5mm}%
+    {\color{fvdModuleOverviewPink}
+     \vrule width .45pt height 7.5mm}%
+    \hspace{2.5mm}%
+    \begin{minipage}[c]{\dimexpr\linewidth-20mm\relax}
+
+      {\raggedright
+       \sffamily
+       \bfseries
+       \small
+       \color{fvdModuleOverviewNavy}
+       #2\par}
+
+    \end{minipage}
+
+  \end{tcolorbox}%
+}
+
+
+% ============================================================
+% RIJ VAN TWEE THEMA'S
+%
+% #1 = nummer links
+% #2 = titel links
+% #3 = nummer rechts
+% #4 = titel rechts
+% ============================================================
+
+\newcommand{\FVDmodulethemerow}[4]{%
+
+  \noindent
+  \begin{minipage}[t]{0.485\textwidth}
+    \FVDmodulethemacard{#1}{#2}
+  \end{minipage}%
+  \hfill
+  \begin{minipage}[t]{0.485\textwidth}
+
+    \if\relax\detokenize{#3}\relax
+      % Geen rechterthema bij oneven aantal.
+    \else
+      \FVDmodulethemacard{#3}{#4}
+    \fi
+
+  \end{minipage}
+
+  \vspace{3mm}
+}
+
+
+% ============================================================
+% EINDE MODULEOVERZICHT
+% ============================================================
+
+\newcommand{\FVDmoduleoverviewend}{%
+  \vfill
+  \clearpage
+}
+
+
+
+% ============================================================
+% XOURSE: OUDE AUTOMATISCHE TITELPAGINA UITSCHAKELEN
+% ============================================================
+%
+% De module-opbouw wordt nu expliciet geregeld in index.tex:
+%
+%   1. \FVDmodulecover
+%   2. module-opening.generated.tex
+%
+% Daarom mag de oude Ximera/printstyle-\maketitle
+% geen extra titelpagina meer genereren.
+% ============================================================
+
+\ifdefined\isXourse
+  \renewcommand{\maketitle}{}%
+\fi
+
+% ============================================================
+% OEFENINGENBUNDEL — TWEE KOLOMMEN
+% ============================================================
+
+\renewcommand{\FVDbeginExercises}{%
+  \iffvdoefbundel
+    \par
+    \setlength{\columnsep}{7mm}%
+    \setlength{\columnseprule}{0pt}%
+
+    \typeout{FVDDEBUG paperwidth=\the\paperwidth}%
+    \typeout{FVDDEBUG textwidth=\the\textwidth}%
+    \typeout{FVDDEBUG linewidth=\the\linewidth}%
+    \typeout{FVDDEBUG hsize=\the\hsize}%
+    \typeout{FVDDEBUG columnwidth=\the\columnwidth}%
+    \typeout{FVDDEBUG leftskip=\the\leftskip}%
+    \typeout{FVDDEBUG oddsidemargin=\the\oddsidemargin}%
+    \typeout{FVDDEBUG hoffset=\the\hoffset}%
+    \typeout{FVDDEBUG headwidth=\the\headwidth}%
+
+    \begin{multicols}{2}%
+      \raggedcolumns
+      \fontsize{10}{12.2}\selectfont
+  \fi
+}
+
+\renewcommand{\FVDendExercises}{%
+  \iffvdoefbundel
+    \end{multicols}%
+    \par
+  \fi
+}
+
+
+% ============================================================
+% COMPACTE CHAPTER HERO — OEFENINGENBUNDEL
+% ============================================================
+
+\makeatletter
+
+\newcommand{\fvdexercisechapterhero}{%
+  \par
+  \noindent
+  \begin{tcolorbox}[
+    enhanced,
+    width=\linewidth,
+    height=24mm,
+    boxrule=0pt,
+    frame hidden,
+    arc=4mm,
+    outer arc=4mm,
+    left=5mm,
+    right=5mm,
+    top=3mm,
+    bottom=3mm,
+    before skip=0pt,
+    after skip=5mm,
+    colback=fvdHeroNavyA,
+    colframe=fvdHeroNavyA
+  ]
+
+    \noindent
+    \begin{minipage}[c]{15mm}
+      \centering
+      \begin{tikzpicture}
+        \node[
+          fill=fvdHeroPinkBright,
+          text=white,
+          rounded corners=2mm,
+          minimum width=12mm,
+          minimum height=12mm,
+          inner sep=0pt,
+          font=\sffamily\bfseries\large
+        ] {\fvdchapterlocalnumber};
+      \end{tikzpicture}
+    \end{minipage}%
+    \hspace{3mm}%
+    \begin{minipage}[c]{\dimexpr\linewidth-23mm\relax}
+      {\raggedright
+       \sffamily
+       \fontsize{17}{20}\selectfont
+       \color{white}
+       Oefeningen --- \@title
+       \par}
+    \end{minipage}
+
+  \end{tcolorbox}%
 }
 
 \makeatother
+
+% ============================================================
+% TIJDELIJK VOLLE BREEDTE
+% ============================================================
+
+\renewcommand{\FVDwidebegin}{%
+  \iffvdoefbundel
+    \end{multicols}%
+    \par
+    \vspace{2mm}%
+  \fi
+}
+
+\renewcommand{\FVDwideend}{%
+  \iffvdoefbundel
+    \par
+    \vspace{2mm}%
+    \begin{multicols}{2}%
+      \raggedcolumns
+      \fontsize{10}{12.2}\selectfont
+  \fi
+}
