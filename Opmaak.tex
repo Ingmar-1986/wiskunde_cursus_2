@@ -26,7 +26,8 @@
 \providecommand{\fvdmoduletitel}{}
 \providecommand{\fvdmodulebeeld}{}
 
-
+\providecommand{\fvdmodulevariant}{}
+\providecommand{\fvdmodulesubtitel}{}
 
 % ============================================================
 % OPMAAK.TEX
@@ -1268,21 +1269,17 @@ fill=fvdmagenta,
 % KLEUREN
 % ============================================================
 
-% Essentieel
-\providecolor{fvdEssBg}{HTML}{FDE7F0}
-\providecolor{fvdEssText}{HTML}{D90B5B}
+\providecolor{fvdEssBg}{HTML}{F8D4E4}
+\providecolor{fvdEssText}{HTML}{B90A4D}
 
-% Basis
-\providecolor{fvdBasisBg}{HTML}{DDF5F3}
-\providecolor{fvdBasisText}{HTML}{087F86}
+\providecolor{fvdBasisBg}{HTML}{C8ECE9}
+\providecolor{fvdBasisText}{HTML}{066A70}
 
-% Verdieping
-\providecolor{fvdVerdiepingBg}{HTML}{E5EEFF}
-\providecolor{fvdVerdiepingText}{HTML}{2458C6}
+\providecolor{fvdVerdiepingBg}{HTML}{D5E3FC}
+\providecolor{fvdVerdiepingText}{HTML}{1E4BAA}
 
-% Gevorderd
-\providecolor{fvdGevorderdBg}{HTML}{EEE8FA}
-\providecolor{fvdGevorderdText}{HTML}{5942B5}
+\providecolor{fvdGevorderdBg}{HTML}{E0D8F4}
+\providecolor{fvdGevorderdText}{HTML}{49359A}
 
 
 % ============================================================
@@ -1387,14 +1384,14 @@ fill=fvdmagenta,
     \node[
       fill=fvdBasisBg,
       text=fvdBasisText,
-      rounded corners=1.5mm,
-      minimum width=11mm,
-      minimum height=7mm,
+      rounded corners=1.1mm,
+      minimum width=8.5mm,
+      minimum height=5.5mm,
       inner sep=0pt,
-      font=\sffamily\bfseries\normalsize
+      font=\sffamily\bfseries\scriptsize
     ] (chip) {B};
   }%
-  \par\vspace{1.5mm}%
+  \par\vspace{0.8mm}%
 }
 
 \renewcommand{\oefU}{%
@@ -1402,14 +1399,14 @@ fill=fvdmagenta,
     \node[
       fill=fvdVerdiepingBg,
       text=fvdVerdiepingText,
-      rounded corners=1.5mm,
-      minimum width=11mm,
-      minimum height=7mm,
+      rounded corners=1.1mm,
+      minimum width=8.5mm,
+      minimum height=5.5mm,
       inner sep=0pt,
-      font=\sffamily\bfseries\normalsize
+      font=\sffamily\bfseries\scriptsize
     ] (chip) {U};
   }%
-  \par\vspace{1.5mm}%
+  \par\vspace{0.8mm}%
 }
 
 \renewcommand{\oefG}{%
@@ -1417,14 +1414,14 @@ fill=fvdmagenta,
     \node[
       fill=fvdGevorderdBg,
       text=fvdGevorderdText,
-      rounded corners=1.5mm,
-      minimum width=11mm,
-      minimum height=7mm,
+      rounded corners=1.1mm,
+      minimum width=8.5mm,
+      minimum height=5.5mm,
       inner sep=0pt,
-      font=\sffamily\bfseries\normalsize
+      font=\sffamily\bfseries\scriptsize
     ] (chip) {G};
   }%
-  \par\vspace{1.5mm}%
+  \par\vspace{0.8mm}%
 }
 
 \renewcommand{\ESS}{%
@@ -1432,11 +1429,11 @@ fill=fvdmagenta,
     \node[
       fill=fvdEssBg,
       text=fvdEssText,
-      rounded corners=1.5mm,
-      minimum width=11mm,
-      minimum height=7mm,
+      rounded corners=1.1mm,
+      minimum width=8.5mm,
+      minimum height=5.5mm,
       inner sep=0pt,
-      font=\sffamily\bfseries\normalsize
+      font=\sffamily\bfseries\scriptsize
     ] (chip) {$\blacklozenge$};
   }%
 }
@@ -1450,6 +1447,12 @@ fill=fvdmagenta,
 \newenvironment{oefening}[2][]%
 {%
   \refstepcounter{fvdoefening}%
+  % In de theoriebundel oefening 5 mm naar rechts schuiven
+\def\FVDExerciseLeftSkip{0mm}%
+\iffvdoefbundel
+\else
+  \def\FVDExerciseLeftSkip{5mm}%
+\fi
 
   \def\FVDExerciseLabels{#2}%
 
@@ -1460,26 +1463,27 @@ fill=fvdmagenta,
     colframe=white,
     boxrule=0pt,
     sharp corners,
-    left=19mm,
+    left skip=\FVDExerciseLeftSkip,
+    left=14mm,
     right=1mm,
-    top=3mm,
-    bottom=3mm,
-    before skip=4mm,
-    after skip=4mm,
-    borderline west={2.2pt}{0pt}{fvdcyan}
+    top=1.5mm,
+    bottom=1.5mm,
+    before skip=2mm,
+    after skip=2mm,
+    borderline west={2.2pt}{-5mm}{fvdcyan}
   ]%
 
   \noindent
   \iffvdoefbundel
-    \hspace*{-10mm}%
+    \hspace*{-12mm}%
   \else
-    \hspace*{-15mm}%
+    \hspace*{-17mm}%
   \fi
   {%
     \sffamily
     \bfseries
     \normalsize
-    \color{fvdcyan}%
+    \color{fvdBasisText}%
     Oefening~\thefvdoefening
     \if\relax\detokenize{#1}\relax
     \else
@@ -1489,7 +1493,7 @@ fill=fvdmagenta,
   }%
 
   \par
-  \vspace{3mm}%
+  \vspace{1.5mm}%
 
   \noindent
   \tikz[remember picture,overlay]{%

@@ -1,6 +1,6 @@
 <article class="course-card">
 
-    <a href="{{URL}}" class="course-card-link">
+    <div class="course-card-link">
 
         <div class="course-card-header">
 
@@ -25,11 +25,15 @@
         </p>
 
         <div class="course-card-footer">
-            <span class="course-card-button">
+
+            <a href="{{URL}}" class="course-card-button">
                 Hoofdstuk openen →
-            </span>
+            </a>
+
+            {{EXERCISE_BUTTON}}
+
         </div>
 
-    </a>
+    </div>
 
 </article>

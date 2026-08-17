@@ -24,6 +24,8 @@ class Chapter:
     theme: str
     theme_number: int
     chapter_number: int
+    display_number: str
+    is_exercises: bool
     tex_file: Path
     source_html_file: Path
     output_html_file: Path
@@ -418,6 +420,7 @@ def parse_module(module_dir: Path) -> Module:
     current_theme = "Inleiding"
     theme_number = 0
     chapter_number = 0
+    theory_number = 0
 
     for match in token_pattern.finditer(source):
         part = match.group("part")
@@ -428,6 +431,7 @@ def parse_module(module_dir: Path) -> Module:
         if part is not None:
             theme_number += 1
             chapter_number = 0
+            theory_number = 0
             current_theme = clean_latex_text(part)
             continue
 
@@ -462,6 +466,15 @@ def parse_module(module_dir: Path) -> Module:
         for activity in activities_to_add:
             chapter_number += 1
 
+            activity_name = Path(activity).name.casefold()
+            is_exercises = activity_name.startswith("oefeningen-")
+
+            if is_exercises:
+                display_number = f"{theory_number}.OEF"
+            else:
+                theory_number += 1
+                display_number = str(theory_number)
+
             tex_file = resolve_tex_file(module_dir, activity)
             source_html_file, output_html_file = resolve_html_files(
                 module_dir,
@@ -479,6 +492,8 @@ def parse_module(module_dir: Path) -> Module:
                     theme=current_theme,
                     theme_number=theme_number,
                     chapter_number=chapter_number,
+                    display_number=display_number,
+                    is_exercises=is_exercises,
                     tex_file=tex_file,
                     source_html_file=source_html_file,
                     output_html_file=output_html_file,
@@ -486,6 +501,7 @@ def parse_module(module_dir: Path) -> Module:
                     abstract=abstract,
                 )
             )
+            
 
     if not chapters:
         raise ValueError(
@@ -796,15 +812,27 @@ def render_chapter_hero(
     chapter: Chapter,
     asset_prefix: str,
 ) -> str:
+    chapter_title = chapter.title
+
+    # Bij oefeningen staat "Oefeningen —" al als apart label
+    # in de oefenhero, dus verwijderen we dit uit de titel.
+    if chapter.is_exercises:
+        chapter_title = re.sub(
+            r"^\s*Oefeningen\s*[—–-]\s*",
+            "",
+            chapter_title,
+            flags=re.IGNORECASE,
+        )
+
     replacements = {
         "THEME": html.escape(chapter.theme),
         "THEME_NUMBER": str(chapter.theme_number),
 
-        "NUMBER": html.escape(chapter.number),
-        "CHAPTER_NUMBER": str(chapter.chapter_number),
-        "CHAPTER_LOCAL_NUMBER": str(chapter.chapter_number),
+        "NUMBER": html.escape(chapter.display_number),
+        "CHAPTER_NUMBER": html.escape(chapter.display_number),
+        "CHAPTER_LOCAL_NUMBER": html.escape(chapter.display_number),
 
-        "TITLE": html.escape(chapter.title),
+        "TITLE": html.escape(chapter_title),
         "ABSTRACT": html.escape(chapter.abstract),
 
         "MODULE_TITLE": html.escape(module.title),
@@ -816,10 +844,18 @@ def render_chapter_hero(
         ),
     }
 
+    template_name = (
+        "ExerciseHero.html"
+        if chapter.is_exercises
+        else "ChapterHero.html"
+    )
+
     return loader.render(
-        "ChapterHero.html",
+        template_name,
         replacements,
     )
+
+
 
 
 def replace_common_placeholders(
@@ -883,6 +919,7 @@ def enhance_chapter(
         "Header_Footer.css",
         "ChapterLayout.css",
         "chapter-hero.css",
+        "ExerciseHero.css",
         "learning-boxes.css",
         "CourseOverview.css",
     )

@@ -37,6 +37,8 @@ HEADER_FILE="$HTML_DIR/Header.html"
 FOOTER_FILE="$HTML_DIR/Footer.html"
 COURSE_CARD_FILE="$HTML_DIR/CourseCard.html"
 
+BASE_CSS="../../assets/css/base.css"
+GLOBAL_CSS="../../assets/css/global.css"
 HEADER_FOOTER_CSS="../../assets/css/Header_Footer.css"
 MODULE_CSS="../../assets/css/ModuleLayout.css"
 COURSE_CARD_CSS="../../assets/css/CourseCard.css"
@@ -107,6 +109,8 @@ add_stylesheet() {
     fi
 }
 
+add_stylesheet "$BASE_CSS"
+add_stylesheet "$GLOBAL_CSS"
 add_stylesheet "$HEADER_FOOTER_CSS"
 add_stylesheet "$MODULE_CSS"
 
@@ -459,11 +463,11 @@ def read_chapter_metadata(
 
 
 def render_card(
-    *,
     url: str,
     number: str,
     title: str,
     abstract: str,
+    exercise_url: str | None = None,
 ) -> list[Tag | NavigableString]:
     """
     Render één geldige hoofdstukkaart.
@@ -474,11 +478,23 @@ def render_card(
 
     rendered = card_template
 
+    if exercise_url:
+        exercise_button = (
+            '<a href="'
+            + html.escape(exercise_url, quote=True)
+            + '" class="course-card-button course-card-button--exercise">'
+            + 'Oefeningen →'
+            + '</a>'
+        )
+    else:
+        exercise_button = ""
+
     replacements = {
         "{{URL}}": html.escape(url, quote=True),
         "{{CHAPTER_NUMBER}}": html.escape(number),
         "{{TITLE}}": html.escape(title),
         "{{ABSTRACT}}": html.escape(abstract),
+        "{{EXERCISE_BUTTON}}": exercise_button,
     }
 
     for placeholder, value in replacements.items():
@@ -605,7 +621,69 @@ for theme_index, theme_header in enumerate(theme_headers, start=1):
     count = soup.new_tag("span")
     count["class"] = ["course-theme__count"]
 
-    chapter_count = len(activity_links)
+        # --------------------------------------------------------
+    # Theorie + oefeningen koppelen tot één hoofdstukkaart
+    # --------------------------------------------------------
+
+    chapter_groups: list[tuple[Tag, str, str | None]] = []
+
+    activity_index = 0
+
+    while activity_index < len(activity_links):
+        link = activity_links[activity_index]
+
+        href = str(link.get("href", "")).strip()
+
+        activity = re.sub(
+            r"(?:\.html)+$",
+            "",
+            href.rstrip("/"),
+            flags=re.IGNORECASE,
+        )
+
+        # Een oefeningenactivity hoort bij het voorgaande
+        # theoriehoofdstuk en krijgt dus geen eigen kaart.
+        if Path(activity).name.casefold().startswith("oefeningen-"):
+            activity_index += 1
+            continue
+
+        exercise_activity = None
+
+        # Kijk of de volgende activity de oefeningen bij dit
+        # theoriehoofdstuk zijn.
+        if activity_index + 1 < len(activity_links):
+            next_link = activity_links[activity_index + 1]
+
+            next_href = str(
+                next_link.get("href", "")
+            ).strip()
+
+            next_activity = re.sub(
+                r"(?:\.html)+$",
+                "",
+                next_href.rstrip("/"),
+                flags=re.IGNORECASE,
+            )
+
+            if Path(next_activity).name.casefold().startswith(
+                "oefeningen-"
+            ):
+                exercise_activity = next_activity
+                activity_index += 1
+
+        chapter_groups.append(
+            (
+                link,
+                activity,
+                exercise_activity,
+            )
+        )
+
+        activity_index += 1
+
+
+    chapter_count = len(chapter_groups)
+
     count.string = (
         f"{chapter_count} hoofdstuk"
         if chapter_count == 1
@@ -629,27 +707,26 @@ for theme_index, theme_header in enumerate(theme_headers, start=1):
     card_grid = soup.new_tag("div")
     card_grid["class"] = ["course-theme-cards"]
 
-    for chapter_index, link in enumerate(
-        activity_links,
+
+    # --------------------------------------------------------
+    # Alleen theoriehoofdstukken krijgen een kaart
+    # --------------------------------------------------------
+
+    for chapter_index, (
+        link,
+        activity,
+        exercise_activity,
+    ) in enumerate(
+        chapter_groups,
         start=1,
     ):
-        href = str(link.get("href", "")).strip()
-
-        activity = re.sub(
-            r"(?:\.html)+$",
-            "",
-            href.rstrip("/"),
-            flags=re.IGNORECASE,
-        )
-
 
         chapter_title, abstract = read_chapter_metadata(
             module_dir,
             activity,
         )
 
-        # Verwijder een eventueel achtervoegsel met de moduletitel.
-        # Dit werkt voor alle modules en niet alleen voor Basiswiskunde.
+        # Verwijder eventueel achtervoegsel met moduletitel.
         module_name_pattern = re.escape(
             module_dir.name.replace("-", " ").replace("_", " ")
         )
@@ -662,6 +739,13 @@ for theme_index, theme_header in enumerate(theme_headers, start=1):
         )
 
         href_name = f"{activity}.html"
+
+        exercise_url = (
+            f"{exercise_activity}.html"
+            if exercise_activity
+            else None
+        )
+
         chapter_number = str(chapter_index)
 
         for card_node in render_card(
@@ -669,6 +753,7 @@ for theme_index, theme_header in enumerate(theme_headers, start=1):
             number=chapter_number,
             title=chapter_title,
             abstract=abstract,
+            exercise_url=exercise_url,
         ):
             card_grid.append(card_node)
 

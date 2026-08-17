@@ -381,6 +381,7 @@ def read_course_structure(
     current_theme_number = 0
     current_theme_title = ""
     current_chapter_number = 0
+    current_theory_number = 0
 
     for match in INDEX_ITEM_PATTERN.finditer(document):
         theme_title = match.group("theme")
@@ -416,12 +417,25 @@ def read_course_structure(
 
         current_chapter_number += 1
 
+        activity_name = Path(stem).name.casefold()
+        is_exercises = activity_name.startswith("oefeningen-")
+
+        if is_exercises:
+            display_number = f"{current_theory_number}.OEF"
+            pdf_chapter_number = current_theory_number
+        else:
+            current_theory_number += 1
+            display_number = str(current_theory_number)
+            pdf_chapter_number = current_theory_number
+
         structure.append(
             {
                 "stem": stem,
                 "theme_number": current_theme_number,
                 "theme_title": current_theme_title,
                 "chapter_number": current_chapter_number,
+                "display_number": display_number,
+                "pdf_chapter_number": pdf_chapter_number,
             }
         )
 
@@ -839,6 +853,15 @@ def remove_old_module_intro(
                 continue
 
             classes = " ".join(element.get("class", []))
+            element_classes = element.get("class", [])
+
+            # Decoratieve onderdelen van de algemene FVD-header
+            # mogen nooit als "lege wrappers" verwijderd worden.
+            if any(
+                class_name.startswith("fvd-hero__")
+                for class_name in element_classes
+            ):
+                continue
 
             if "module-banner" in classes:
                 continue
@@ -1128,9 +1151,10 @@ def ensure_chapter_css(document: str) -> str:
     """
 
     css_files = [
-        "chapter-hero.css",
-        "learning-boxes.css",
-    ]
+    "chapter-hero.css",
+    "exercise-hero.css",
+    "learning-boxes.css",
+]
 
     missing_links = []
 
@@ -1366,6 +1390,14 @@ def process_module(
         chapter_number = int(
             item["chapter_number"]
         )
+        
+        display_number = str(
+            item["display_number"]
+        )
+        
+        pdf_chapter_number = int(
+            item["pdf_chapter_number"]
+        )
 
         # ----------------------------------------------------
         # TEX: PDF-METADATA BIJWERKEN
@@ -1377,42 +1409,16 @@ def process_module(
             tex_path=tex_path,
             theme_number=theme_number,
             theme_title=theme_title,
-            chapter_number=chapter_number,
+            chapter_number=pdf_chapter_number,
         )
 
         processed_tex_count += 1
 
         # ----------------------------------------------------
-        # HTML: HERO BIJWERKEN
+        # HTML-HERO
         # ----------------------------------------------------
-
-        candidates = html_candidates(
-            module_dir,
-            stem,
-        )
-
-        if not candidates:
-            print(
-                f"Waarschuwing: geen HTML gevonden voor "
-                f"thema {theme_number}, hoofdstuk "
-                f"{chapter_number}: {stem}",
-                file=sys.stderr,
-            )
-
-            continue
-
-        for html_path in candidates:
-            process_html_file(
-                html_path=html_path,
-                module_dir=module_dir,
-                stem=stem,
-                template=template,
-                theme_number=theme_number,
-                theme_title=theme_title,
-                chapter_number=chapter_number,
-            )
-
-            processed_html_count += 1
+        # Wordt volledig beheerd door enhance-chapter.py.
+        # Hier niets meer injecteren om dubbele hero's te vermijden.
 
     if processed_tex_count == 0:
         raise ValueError(

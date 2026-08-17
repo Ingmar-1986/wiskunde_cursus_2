@@ -93,6 +93,7 @@
 \providecommand{\fvdchapterdata}[3]{%
   \gdef\fvdstandalonethemenumber{#1}%
   \gdef\fvdstandalonetheme{#2}%
+  \gdef\fvdstandalonechapternumber{#3}%
   \setcounter{part}{#1}%
   \setcounter{titlenumber}{\numexpr#3-1\relax}%
 }
@@ -289,6 +290,16 @@
 
 \renewcommand\chapterstyle{%
   \def\maketitle{%
+
+    % --------------------------------------------------------
+    % Automatisch herkennen of dit een oefeningenhoofdstuk is
+    % --------------------------------------------------------
+
+    \IfBeginWith{\@title}{Oefeningen}{%
+      \fvdoefbundeltrue
+    }{%
+      \fvdoefbundelfalse
+    }%
 
     \addtocounter{titlenumber}{1}%
 
@@ -623,6 +634,8 @@
 
 \providecommand{\fvdmodulenummer}{1}
 \providecommand{\fvdmoduletitel}{Functies in verandering}
+\providecommand{\fvdmodulevariant}{}
+\providecommand{\fvdmodulesubtitel}{}
 
 
 % ============================================================
@@ -659,53 +672,7 @@
 
   \thispagestyle{empty}%
 
-  % ----------------------------------------------------------
-  % SUBTIELE WISKUNDIGE ACHTERGROND
-  % ----------------------------------------------------------
-
-  \begin{tikzpicture}[remember picture,overlay]
-
-    \node[
-      anchor=west,
-      text=WWMathGrey,
-      opacity=0.20,
-      font=\fontsize{17}{20}\selectfont
-    ]
-    at ([xshift=12mm,yshift=-42mm]current page.north west)
-    {$f(x)$};
-
-    \node[
-      anchor=west,
-      text=WWMathGrey,
-      opacity=0.16,
-      font=\fontsize{15}{18}\selectfont
-    ]
-    at ([xshift=12mm,yshift=-58mm]current page.north west)
-    {$f'(x)$};
-
-    \node[
-      anchor=east,
-      text=WWMathGrey,
-      opacity=0.18,
-      font=\fontsize{13}{16}\selectfont
-    ]
-    at ([xshift=-12mm,yshift=-36mm]current page.north east)
-    {$\displaystyle
-      f'(x)=
-      \lim_{h\to0}
-      \frac{f(x+h)-f(x)}{h}$};
-
-    \node[
-      anchor=east,
-      text=WWMathGrey,
-      opacity=0.15,
-      font=\fontsize{13}{16}\selectfont
-    ]
-    at ([xshift=-16mm,yshift=-60mm]current page.north east)
-    {$\Delta y,\quad \Delta x$};
-
-  \end{tikzpicture}
-
+ 
 
   % ==========================================================
   % BOVENSTE TITELDEEL
@@ -787,21 +754,60 @@
 
     \end{tikzpicture}
 
-    \vspace{3.5mm}
-
-
-    % --------------------------------------------------------
-    % MODULETITEL
-    % --------------------------------------------------------
-
-    {\color{WWAthenaBlue}
-     \sffamily
-     \fontsize{27}{31}\selectfont
-     \bfseries
-     \fvdmoduletitel
-     \par}
-
     \vspace{4mm}
+
+% --------------------------------------------------------
+% MODULETITEL
+% --------------------------------------------------------
+
+{\color{WWAthenaBlue}
+ \sffamily
+ \fontsize{27}{31}\selectfont
+ \bfseries
+ \fvdmoduletitel
+ \par}
+
+% --------------------------------------------------------
+% VARIANTCHIP
+% --------------------------------------------------------
+
+\ifx\fvdmodulevariant\empty
+\else
+
+  \vspace{3mm}
+
+  \begin{tikzpicture}
+    \node[
+      rounded corners=7pt,
+      fill=fvdcyan!70!fvdnavy,
+      text=white,
+      inner xsep=22pt,
+      inner ysep=7pt,
+      font=\sffamily\bfseries\normalsize
+    ]
+    {\fvdmodulevariant};
+  \end{tikzpicture}
+
+\fi
+
+% --------------------------------------------------------
+% SUBTITEL
+% --------------------------------------------------------
+
+\ifx\fvdmodulesubtitel\empty
+\else
+
+  \vspace{1.5mm}
+
+  {\sffamily
+   \fontsize{10.5}{12}\selectfont
+   \color{fvdnavy!60}
+   \fvdmodulesubtitel
+   \par}
+
+\fi
+
+\vspace{5mm}
 
   \end{center}
 
@@ -1169,34 +1175,17 @@ Over deze module\par}
 \fi
 
 % ============================================================
-% OEFENINGENBUNDEL — TWEE KOLOMMEN
+% OEFENINGENBUNDEL — ÉÉN KOLOM
 % ============================================================
 
 \renewcommand{\FVDbeginExercises}{%
   \iffvdoefbundel
     \par
-    \setlength{\columnsep}{7mm}%
-    \setlength{\columnseprule}{0pt}%
-
-    \typeout{FVDDEBUG paperwidth=\the\paperwidth}%
-    \typeout{FVDDEBUG textwidth=\the\textwidth}%
-    \typeout{FVDDEBUG linewidth=\the\linewidth}%
-    \typeout{FVDDEBUG hsize=\the\hsize}%
-    \typeout{FVDDEBUG columnwidth=\the\columnwidth}%
-    \typeout{FVDDEBUG leftskip=\the\leftskip}%
-    \typeout{FVDDEBUG oddsidemargin=\the\oddsidemargin}%
-    \typeout{FVDDEBUG hoffset=\the\hoffset}%
-    \typeout{FVDDEBUG headwidth=\the\headwidth}%
-
-    \begin{multicols}{2}%
-      \raggedcolumns
-      \fontsize{10}{12.2}\selectfont
   \fi
 }
 
 \renewcommand{\FVDendExercises}{%
   \iffvdoefbundel
-    \end{multicols}%
     \par
   \fi
 }
@@ -1210,62 +1199,86 @@ Over deze module\par}
 
 \newcommand{\fvdexercisechapterhero}{%
   \par
+  \vspace*{-2mm}%
   \noindent
   \begin{tcolorbox}[
     enhanced,
+    breakable,
+    colback=fvdcyan!4,
+    colframe=fvdcyan!65!black,
+    boxrule=0.6pt,
+    arc=2mm,
+    outer arc=2mm,
+    left=3.2mm,
+    right=3.2mm,
+    top=2.4mm,
+    bottom=2.2mm,
     width=\linewidth,
-    height=24mm,
-    boxrule=0pt,
-    frame hidden,
-    arc=4mm,
-    outer arc=4mm,
-    left=5mm,
-    right=5mm,
-    top=3mm,
-    bottom=3mm,
-    before skip=0pt,
-    after skip=5mm,
-    colback=fvdHeroNavyA,
-    colframe=fvdHeroNavyA
+    before skip=2mm,
+    after skip=4mm
   ]
 
+    % --------------------------------------------------------
+    % LABEL BOVENAAN
+    % --------------------------------------------------------
+    {\sffamily
+     \bfseries
+     \fontsize{7.8}{9}\selectfont
+     \color{fvdmagenta}
+     OEFENINGEN
+     \par}
+
+    \vspace{1.2mm}
+
+    % --------------------------------------------------------
+    % NUMMER + TITEL
+    % --------------------------------------------------------
     \noindent
-    \begin{minipage}[c]{15mm}
+    \begin{minipage}[c]{21mm}
       \centering
       \begin{tikzpicture}
         \node[
-          fill=fvdHeroPinkBright,
+          fill=fvdmagenta,
           text=white,
-          rounded corners=2mm,
-          minimum width=12mm,
-          minimum height=12mm,
-          inner sep=0pt,
-          font=\sffamily\bfseries\large
-        ] {\fvdchapterlocalnumber};
+          rounded corners=1.6mm,
+          inner xsep=4.2mm,
+          inner ysep=2.1mm,
+          font=\sffamily\bfseries\fontsize{10.5}{11.5}\selectfont
+        ] {
+          \arabic{titlenumber}.OEF
+        };
       \end{tikzpicture}
     \end{minipage}%
-    \hspace{3mm}%
-    \begin{minipage}[c]{\dimexpr\linewidth-23mm\relax}
+    \hspace{2.2mm}%
+    \begin{minipage}[c]{\dimexpr\linewidth-23.2mm\relax}
       {\raggedright
        \sffamily
-       \fontsize{17}{20}\selectfont
-       \color{white}
-       Oefeningen --- \@title
+       \bfseries
+       \fontsize{13.5}{15}\selectfont
+       \color{fvdnavy}
+       \IfBeginWith{\@title}{Oefeningen — }{%
+         \StrBehind{\@title}{Oefeningen — }%
+       }{%
+         \@title
+       }%
        \par}
     \end{minipage}
 
   \end{tcolorbox}%
 }
-
 \makeatother
+
+
 
 % ============================================================
 % TIJDELIJK VOLLE BREEDTE
+%
+% Oefeningenbundel is voortaan altijd één kolom,
+% dus er hoeft geen multicols meer gestopt/herstart te worden.
 % ============================================================
 
 \renewcommand{\FVDwidebegin}{%
   \iffvdoefbundel
-    \end{multicols}%
     \par
     \vspace{2mm}%
   \fi
@@ -1275,8 +1288,5 @@ Over deze module\par}
   \iffvdoefbundel
     \par
     \vspace{2mm}%
-    \begin{multicols}{2}%
-      \raggedcolumns
-      \fontsize{10}{12.2}\selectfont
   \fi
 }

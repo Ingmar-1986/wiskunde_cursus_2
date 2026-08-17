@@ -181,156 +181,264 @@ build_module() {
         "$index_tex"
 
 
-       # --------------------------------------------------------
-    # 5. PDF — leerlingenversie + uitwerkingenversie
+           # --------------------------------------------------------
+    # 5. PDF — theorie + oefeningen
+    #    telkens leerlingenversie + uitwerkingen
     # --------------------------------------------------------
 
-    log_step "5/9 PDF-versies van de volledige module genereren"
+    log_step "5/9 PDF-versies genereren"
 
     local pdf_dir
-    local student_tex
-    local student_stem
-    local student_pdf
-    local solutions_pdf
-    local built_pdf
-    local stamp
+    local exercise_index_tex
+
+    local theory_student_pdf
+    local theory_solutions_pdf
+    local exercise_student_pdf
+    local exercise_solutions_pdf
 
     pdf_dir="$module_dir/pdf"
     mkdir -p "$pdf_dir"
 
-    student_tex="$module_dir/index_leerlingen.tmp.tex"
-    student_stem="index_leerlingen.tmp"
+    exercise_index_tex="$module_dir/index_oefeningen.tex"
 
-    student_pdf="$pdf_dir/${module_name}_leerlingen.pdf"
-    solutions_pdf="$pdf_dir/${module_name}_uitwerkingen.pdf"
+    theory_student_pdf="$pdf_dir/${module_name}_leerlingen.pdf"
+    theory_solutions_pdf="$pdf_dir/${module_name}_uitwerkingen.pdf"
+
+    exercise_student_pdf="$pdf_dir/${module_name}_oefeningen_leerlingen.pdf"
+    exercise_solutions_pdf="$pdf_dir/${module_name}_oefeningen_uitwerkingen.pdf"
 
 
     # ========================================================
-    # 5A. LEERLINGENVERSIE
+    # HULPFUNCTIE: ÉÉN PDF-VERSIE BOUWEN
     # ========================================================
 
-    echo
-    echo "  Leerlingenversie genereren"
-    echo "  └─ tijdelijke kopie met \\handouttrue"
+    build_pdf_variant() {
+        local source_tex="$1"
+        local destination_pdf="$2"
+        local handout_mode="$3"
+        local label="$4"
 
-    # Originele index kopiëren.
-    cp "$index_tex" "$student_tex"
+        local source_stem
+        local build_tex
+        local build_stem
+        local temp_tex
+        local built_pdf
+        local candidate
+        local stamp
 
-    # \handouttrue invoegen na \documentclass{xourse}
-    python3 - "$student_tex" <<'PY'
+        source_stem="$(basename "$source_tex" .tex)"
+
+        build_tex="$source_tex"
+        build_stem="$source_stem"
+        temp_tex=""
+
+        echo
+        echo "  $label genereren"
+
+        # ----------------------------------------------------
+        # Leerlingenversie:
+        # tijdelijke xourse maken met \handouttrue
+        # ----------------------------------------------------
+
+        if [[ "$handout_mode" == "true" ]]; then
+
+            temp_tex="$module_dir/${source_stem}_leerlingen.tmp.tex"
+
+            cp "$source_tex" "$temp_tex"
+
+            python3 - "$temp_tex" <<'PY'
 from pathlib import Path
 import re
 import sys
 
 path = Path(sys.argv[1])
-text = path.read_text(encoding="utf-8")
 
-# Zorg dat er niet toevallig al een handouttrue staat.
+text = path.read_text(
+    encoding="utf-8"
+)
+
+# Eventuele bestaande \handouttrue verwijderen.
 text = re.sub(
     r'(?m)^[ \t]*\\handouttrue[ \t]*\n?',
     '',
-    text
+    text,
 )
 
-pattern = r'(\\documentclass(?:\[[^\]]*\])?\{xourse\})'
+pattern = (
+    r'(\\documentclass'
+    r'(?:\[[^\]]*\])?'
+    r'\{xourse\})'
+)
 
 if not re.search(pattern, text):
     raise SystemExit(
-        f"Fout: \\documentclass{{xourse}} niet gevonden in {path}"
+        f"Fout: \\documentclass{{xourse}} "
+        f"niet gevonden in {path}"
     )
 
 text = re.sub(
     pattern,
     r'\1\n\n\\handouttrue',
     text,
-    count=1
+    count=1,
 )
 
-path.write_text(text, encoding="utf-8")
+path.write_text(
+    text,
+    encoding="utf-8",
+)
 PY
 
-    # Tijdstip registreren zodat we alleen een NIEUWE PDF accepteren.
-    stamp="$(mktemp)"
-    touch "$stamp"
+            build_tex="$temp_tex"
+            build_stem="$(basename "$temp_tex" .tex)"
 
-    xmlatex bake \
-        --force \
-        --compile pdf \
-        "$student_tex"
+            echo "  └─ tijdelijke kopie met \\handouttrue"
 
-    built_pdf=""
+        else
 
-    # Ximera kan de PDF lokaal laten staan of naar zijn downloadmap verplaatsen.
-    for candidate in \
-        "$module_dir/${student_stem}.pdf" \
-        "ximera-downloads/without-answers/$module_dir/${student_stem}.pdf" \
-        "ximera-downloads/with-answers/$module_dir/${student_stem}.pdf"
-    do
-        if [[ -f "$candidate" && "$candidate" -nt "$stamp" ]]; then
-            built_pdf="$candidate"
-            break
+            echo "  └─ volledige versie met uitwerkingen"
+
         fi
-    done
 
-    rm -f "$stamp"
 
-    if [[ -z "$built_pdf" ]]; then
-        rm -f "$student_tex"
-        fail "De leerlingen-PDF werd niet gevonden na de build."
+        # ----------------------------------------------------
+        # Tijdstip registreren
+        # ----------------------------------------------------
+
+        stamp="$(mktemp)"
+        touch "$stamp"
+
+
+        # ----------------------------------------------------
+        # PDF bouwen
+        # ----------------------------------------------------
+
+        xmlatex bake \
+            --force \
+            --compile pdf \
+            "$build_tex"
+
+
+        # ----------------------------------------------------
+        # Nieuwe PDF terugvinden
+        # ----------------------------------------------------
+
+        built_pdf=""
+
+        for candidate in \
+            "$module_dir/${build_stem}.pdf" \
+            "ximera-downloads/without-answers/$module_dir/${build_stem}.pdf" \
+            "ximera-downloads/with-answers/$module_dir/${build_stem}.pdf"
+        do
+            if [[ -f "$candidate" && "$candidate" -nt "$stamp" ]]; then
+                built_pdf="$candidate"
+                break
+            fi
+        done
+
+        rm -f "$stamp"
+
+
+        # ----------------------------------------------------
+        # Controle
+        # ----------------------------------------------------
+
+        if [[ -z "$built_pdf" ]]; then
+
+            if [[ -n "$temp_tex" ]]; then
+                rm -f "$temp_tex"
+            fi
+
+            fail "$label werd niet gevonden na de PDF-build."
+        fi
+
+
+        # ----------------------------------------------------
+        # Definitieve PDF bewaren
+        # ----------------------------------------------------
+
+        cp "$built_pdf" "$destination_pdf"
+
+
+        # Alleen onze tijdelijke bron verwijderen.
+        if [[ -n "$temp_tex" ]]; then
+            rm -f "$temp_tex"
+        fi
+
+        echo "  ✓ $destination_pdf"
+    }
+
+
+    # ========================================================
+    # 5A. THEORIE — LEERLINGEN
+    # ========================================================
+
+    build_pdf_variant \
+        "$index_tex" \
+        "$theory_student_pdf" \
+        "true" \
+        "Theorie — leerlingenversie"
+
+
+    # ========================================================
+    # 5B. THEORIE — UITWERKINGEN
+    # ========================================================
+
+    build_pdf_variant \
+        "$index_tex" \
+        "$theory_solutions_pdf" \
+        "false" \
+        "Theorie — uitwerkingen"
+
+
+    # ========================================================
+    # 5C + 5D. OEFENINGEN
+    # ========================================================
+
+    if [[ -f "$exercise_index_tex" ]]; then
+
+        build_pdf_variant \
+            "$exercise_index_tex" \
+            "$exercise_student_pdf" \
+            "true" \
+            "Oefeningen — leerlingenversie"
+
+        build_pdf_variant \
+            "$exercise_index_tex" \
+            "$exercise_solutions_pdf" \
+            "false" \
+            "Oefeningen — uitwerkingen"
+
+    else
+
+        echo
+        echo "  Geen index_oefeningen.tex gevonden."
+        echo "  Oefeningen-PDF's worden overgeslagen."
+
     fi
 
-    cp "$built_pdf" "$student_pdf"
-
-    # Alleen ons eigen tijdelijke .tex-bestand verwijderen.
-    rm -f "$student_tex"
-
-    echo "  ✓ Leerlingen-PDF:"
-    echo "    $student_pdf"
-
 
     # ========================================================
-    # 5B. UITWERKINGENVERSIE
+    # OVERZICHT
     # ========================================================
 
     echo
-    echo "  Uitwerkingenversie genereren"
-    echo "  └─ originele index.tex zonder \\handouttrue"
-
-    stamp="$(mktemp)"
-    touch "$stamp"
-
-    xmlatex bake \
-        --force \
-        --compile pdf \
-        "$index_tex"
-
-    built_pdf=""
-
-    for candidate in \
-        "$module_dir/index.pdf" \
-        "ximera-downloads/with-answers/$module_dir/index.pdf" \
-        "ximera-downloads/without-answers/$module_dir/index.pdf"
-    do
-        if [[ -f "$candidate" && "$candidate" -nt "$stamp" ]]; then
-            built_pdf="$candidate"
-            break
-        fi
-    done
-
-    rm -f "$stamp"
-
-    [[ -n "$built_pdf" ]] \
-        || fail "De uitwerkingen-PDF werd niet gevonden na de build."
-
-    cp "$built_pdf" "$solutions_pdf"
-
-    echo "  ✓ Uitwerkingen-PDF:"
-    echo "    $solutions_pdf"
-
+    echo "  PDF-build klaar:"
     echo
-    echo "  Beide PDF-versies zijn klaar:"
-    echo "    Leerlingen:   $student_pdf"
-    echo "    Uitwerkingen: $solutions_pdf"
+    echo "    Theorie leerlingen:"
+    echo "      $theory_student_pdf"
+    echo
+    echo "    Theorie uitwerkingen:"
+    echo "      $theory_solutions_pdf"
+
+    if [[ -f "$exercise_index_tex" ]]; then
+        echo
+        echo "    Oefeningen leerlingen:"
+        echo "      $exercise_student_pdf"
+        echo
+        echo "    Oefeningen uitwerkingen:"
+        echo "      $exercise_solutions_pdf"
+    fi
 
     # --------------------------------------------------------
     # 6. SIDEBAR

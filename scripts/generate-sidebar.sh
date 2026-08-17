@@ -413,8 +413,12 @@ for theme_index, section in enumerate(sections, start=1):
 
     chapter_links: list[str] = []
 
-    # De hoofdstuknummering begint per thema opnieuw bij 1.
-    for chapter_index, activity in enumerate(activities, start=1):
+        # De theoriehoofdstukken beginnen per thema opnieuw bij 1.
+    # Een oefeningenactivity krijgt het nummer van het vorige
+    # theoriehoofdstuk, gevolgd door .OEF.
+    theory_index = 0
+
+    for activity in activities:
         total_chapters += 1
 
         chapter_title, chapter_file = get_activity_title(activity)
@@ -422,7 +426,15 @@ for theme_index, section in enumerate(sections, start=1):
         if chapter_file is None:
             missing_files.append(activity)
 
-        number = f"{theme_index}.{chapter_index}"
+        activity_name = Path(activity).name.casefold()
+        is_exercises = activity_name.startswith("oefeningen-")
+
+        if is_exercises:
+            number = f"{theory_index}.OEF"
+        else:
+            theory_index += 1
+            number = str(theory_index)
+            
         url = activity_url(activity)
 
         chapter_links.append(
