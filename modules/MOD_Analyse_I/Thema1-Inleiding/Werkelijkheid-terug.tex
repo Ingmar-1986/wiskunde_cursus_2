@@ -1,0 +1,1826 @@
+\documentclass{ximera}
+
+\input{../../../preamble.tex}
+\input{../../../Opmaak.tex}
+\addPrintStyle{../../..}
+
+\title{Van werkelijkheid naar wiskunde --- en terug}
+\author{Ingmar Herreman}
+
+\begin{abstract}
+Wetenschap begint met vragen over de werkelijkheid.
+Maar waarnemingen en meetgegevens alleen volstaan meestal niet:
+we willen patronen herkennen, verbanden beschrijven, voorspellingen
+maken en conclusies kunnen verantwoorden.
+
+In dit hoofdstuk onderzoeken we hoe wiskunde daarbij helpt.
+We vertrekken van een concrete wetenschappelijke situatie en bouwen
+geleidelijk de weg op van werkelijkheid naar gegevens, van gegevens
+naar een wiskundige voorstelling en van daaruit naar een model.
+
+Daarbij staat één idee centraal:
+
+\[
+\boxed{
+\text{werkelijkheid}
+\longrightarrow
+\text{wiskunde}
+\longrightarrow
+\text{betekenis in de werkelijkheid}
+}
+\]
+
+We leren ook waarom een model nooit de volledige werkelijkheid is,
+waarom voorspellingen grenzen hebben en waarom correcte notatie,
+eenheden en duidelijke afspraken noodzakelijk zijn.
+
+Deze manier van denken vormt een rode draad doorheen de verdere cursus:
+waarnemen, verbanden zoeken, mathematiseren, analyseren, controleren,
+interpreteren en kritisch terugkeren naar de oorspronkelijke situatie.
+\end{abstract}
+
+\begin{document}
+
+% FVD_CHAPTER_DATA_START
+% Automatisch gegenereerd uit index.tex.
+% Niet handmatig aanpassen.
+\fvdchapterdata{1}{Verbanden, functies en gedrag}{1}
+% FVD_CHAPTER_DATA_END
+
+\maketitle
+
+
+% ============================================================
+% VOORKENNIS EN LEERDOELEN
+% ============================================================
+
+\begin{voorkennis}
+  \item Je kan informatie aflezen uit een eenvoudige tabel en grafiek.
+  \item Je kent courante grootheden en eenheden uit de wetenschapsvakken.
+  \item Je kan eenvoudige berekeningen uitvoeren met formules.
+  \item Je kan een resultaat in woorden formuleren.
+  \item Je kan onderscheid maken tussen een exacte waarde en een afgeronde waarde.
+\end{voorkennis}
+
+\begin{leerdoelen}
+  \item Je kan in een wetenschappelijke situatie relevante grootheden, waarden en eenheden herkennen.
+  \item Je kan uitleggen waarom gegevens slechts een geselecteerde beschrijving van de werkelijkheid vormen.
+  \item Je kan een patroon of verband in een tabel of grafiek beschrijven.
+  \item Je kan uitleggen wat een wiskundig model is en waarom een model altijd een vereenvoudiging is.
+  \item Je kan de begrippen mathematiseren en demathematiseren in een concrete situatie herkennen.
+  \item Je kan een wiskundig resultaat terug interpreteren in de oorspronkelijke context.
+  \item Je kan onderscheid maken tussen interpoleren en extrapoleren en de betrouwbaarheid ervan kritisch beoordelen.
+  \item Je kan eenvoudige grafische voorstellingen kritisch beoordelen.
+  \item Je kan uitleggen waarom samenhang niet automatisch causaliteit betekent.
+  \item Je kan correct omgaan met grootheden, eenheden en de symbolen $=$ en $\approx$.
+  \item Je kan een eenvoudige wetenschappelijke situatie doorlopen volgens een wiskundige modelleercyclus.
+\end{leerdoelen}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 1 WAAROM?
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\FVDsection{Waarom leer je dit?}
+
+Wiskunde in Wetenschappen-Wiskunde gaat niet alleen over sneller
+rekenen of meer formules kennen.
+
+We willen wiskunde gebruiken om iets over de werkelijkheid te weten
+te komen.
+
+Stel bijvoorbeeld dat je onderzoekt hoe een beker warm water afkoelt.
+Om de twee minuten meet je de temperatuur.
+
+\[
+\begin{array}{c|ccccccc}
+t\;(\mathrm{min})
+&0&2&4&6&8&10&12\\ \hline
+T\;({}^{\circ}\mathrm C)
+&82{,}1&68{,}4&57{,}9&49{,}6&43{,}3&38{,}5&34{,}8
+\end{array}
+\]
+
+Op het eerste gezicht is dit gewoon een tabel met getallen.
+
+Maar een wetenschapper stelt andere vragen:
+
+\begin{itemize}
+  \item Hoe verandert de temperatuur?
+  \item Is er een herkenbaar patroon?
+  \item Kunnen we de temperatuur na $7$ minuten schatten?
+  \item Kunnen we voorspellen wat er na $20$ minuten gebeurt?
+  \item Welk wiskundig model past bij deze gegevens?
+  \item Hoe betrouwbaar zou zo'n voorspelling zijn?
+\end{itemize}
+
+De tabel is dus geen eindpunt.
+
+Ze is het begin van een onderzoek.
+
+\begin{opmerking}
+In deze cursus zullen we vaak dezelfde beweging maken:
+
+\[
+\important{
+\text{waarnemen}
+\longrightarrow
+\text{gegevens}
+\longrightarrow
+\text{wiskundig model}
+\longrightarrow
+\text{analyse}
+\longrightarrow
+\text{interpretatie}
+}
+\]
+
+Die beweging is belangrijk in wiskunde, fysica, chemie, biologie,
+engineering en datawetenschap.
+\end{opmerking}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% OPENINGSACTIVITEIT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\FVDsubsection{Wat kun je al uit gegevens halen?}
+
+\begin{oefening}[Een eerste blik op meetgegevens]{\oefB \ESS}
+
+Gebruik de tabel van het afkoelingsexperiment.
+
+\begin{question}
+Welke twee grootheden worden gemeten?
+
+\begin{multipleChoice}
+  \choice{massa en temperatuur}
+  \choice[correct]{tijd en temperatuur}
+  \choice{tijd en volume}
+  \choice{temperatuur en energie}
+\end{multipleChoice}
+\end{question}
+
+\begin{question}
+Welke grootheid verandert doordat de tijd verstrijkt?
+
+\begin{multipleChoice}
+  \choice{De tijd}
+  \choice[correct]{De temperatuur}
+\end{multipleChoice}
+\end{question}
+
+\begin{question}
+Kun je uit de tabel \emph{exact aflezen} wat de temperatuur na
+$7$ minuten was?
+
+\begin{multipleChoice}
+  \choice{Ja}
+  \choice[correct]{Nee}
+\end{multipleChoice}
+\end{question}
+
+\begin{question}
+Welke uitspraak wordt het best door de gegevens ondersteund?
+
+\begin{multipleChoice}
+  \choice{De temperatuur stijgt met de tijd.}
+  \choice{De temperatuur daalt elke twee minuten met exact hetzelfde aantal graden.}
+  \choice[correct]{De temperatuur daalt, maar de daling wordt geleidelijk kleiner.}
+  \choice{Na $20$ minuten is de temperatuur zeker $0^\circ\mathrm C$.}
+\end{multipleChoice}
+\end{question}
+
+\end{oefening}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 2 WERKELIJKHEID -> GEGEVENS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\FVDsection{Van werkelijkheid naar gegevens}
+
+De werkelijkheid verschijnt niet vanzelf in de vorm van een tabel.
+
+Een onderzoeker maakt keuzes:
+
+\begin{itemize}
+  \item welke verschijnselen worden onderzocht;
+  \item welke grootheden relevant zijn;
+  \item wat gemeten wordt;
+  \item hoe vaak gemeten wordt;
+  \item met welk meetinstrument;
+  \item met welke nauwkeurigheid.
+\end{itemize}
+
+Gegevens zijn dus nooit ``de volledige werkelijkheid''.
+
+Ze zijn een geselecteerde en meetbare beschrijving van een deel ervan.
+
+
+% --------------------------------------------------------------------
+% GROOTHEID, WAARDE, EENHEID
+% --------------------------------------------------------------------
+
+\FVDsubsection{Grootheid, waarde en eenheid}
+
+In een wetenschappelijke situatie maken we onderscheid tussen een
+\textbf{grootheid}, een \textbf{getalwaarde} en een
+\textbf{eenheid}.
+
+\begin{definitie}[Grootheid]
+
+Een \textbf{grootheid} is een meetbare eigenschap van een object,
+systeem of verschijnsel.
+
+Voorbeelden zijn:
+
+\[
+\text{tijd},\quad
+\text{lengte},\quad
+\text{massa},\quad
+\text{temperatuur},\quad
+\text{snelheid},\quad
+\text{spanning}.
+\]
+
+\end{definitie}
+
+Een meetresultaat kan bijvoorbeeld geschreven worden als
+
+\[
+T=57{,}9\,^\circ\mathrm C.
+\]
+
+Daarin is
+
+\[
+T
+\]
+
+het symbool voor de grootheid temperatuur,
+
+\[
+57{,}9
+\]
+
+de getalwaarde en
+
+\[
+^\circ\mathrm C
+\]
+
+de eenheid.
+
+\begin{opmerking}
+Een getal zonder context is in een wetenschappelijke situatie vaak
+onvoldoende.
+
+De uitspraken
+
+\[
+23,
+\qquad
+23\,\mathrm{m},
+\qquad
+23\,\mathrm{s},
+\qquad
+23\,\mathrm{m/s}
+\]
+
+hebben een totaal verschillende betekenis.
+\end{opmerking}
+
+
+\begin{oefening}[Grootheid, waarde en eenheid]{\oefB \ESS}
+
+Een sensor meet een elektrische spanning
+
+\[
+U=4{,}7\,\mathrm V.
+\]
+
+\begin{question}
+Wat is de grootheid?
+
+\begin{multipleChoice}
+  \choice{volt}
+  \choice[correct]{elektrische spanning}
+  \choice{$4{,}7$}
+\end{multipleChoice}
+\end{question}
+
+\begin{question}
+Wat is de getalwaarde?
+
+\[
+\answer{4.7}
+\]
+\end{question}
+
+\begin{question}
+Wat is de eenheid?
+
+\begin{multipleChoice}
+  \choice[correct]{volt}
+  \choice{ampère}
+  \choice{seconde}
+\end{multipleChoice}
+\end{question}
+
+\end{oefening}
+
+
+% --------------------------------------------------------------------
+% VARIABELEN
+% --------------------------------------------------------------------
+
+\FVDsubsection{Variabelen}
+
+Wanneer een grootheid verschillende waarden kan aannemen, gebruiken we
+vaak een letter.
+
+In het afkoelingsexperiment schrijven we bijvoorbeeld
+
+\[
+t=\text{tijd},
+\qquad
+T=\text{temperatuur}.
+\]
+
+We willen onderzoeken hoe $T$ verandert wanneer $t$ verandert.
+
+Daarom beschouwen we hier:
+
+\[
+\boxed{
+t=\text{onafhankelijke variabele}
+}
+\]
+
+en
+
+\[
+\boxed{
+T=\text{afhankelijke variabele}.
+}
+\]
+
+Later zullen we dergelijke verbanden formeler beschrijven met
+\textbf{functies}.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 3 EXACT EN BENADERD
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\FVDsection{Meten is niet hetzelfde als exact weten}
+
+Wiskunde kan werken met exacte waarden.
+
+Zo is
+
+\[
+\sqrt{2}
+\]
+
+een exact getal.
+
+Wanneer we schrijven
+
+\[
+\sqrt{2}\approx1{,}414,
+\]
+
+gebruiken we een benadering.
+
+Daarom betekenen de symbolen
+
+\[
+=
+\qquad\text{en}\qquad
+\approx
+\]
+
+niet hetzelfde.
+
+\begin{eigenschap}[Exact of benaderd]
+
+Het symbool
+
+\[
+=
+\]
+
+betekent \textbf{is exact gelijk aan}.
+
+Het symbool
+
+\[
+\approx
+\]
+
+betekent \textbf{is bij benadering gelijk aan}.
+
+\end{eigenschap}
+
+
+\begin{voorbeeld}
+
+De uitspraak
+
+\[
+\pi=3{,}14
+\]
+
+is niet correct.
+
+Wel correct is:
+
+\[
+\pi\approx3{,}14.
+\]
+
+Daarentegen is
+
+\[
+2+5=7
+\]
+
+exact.
+
+\end{voorbeeld}
+
+
+\begin{oefening}[Exact of benaderd?]{\oefB \ESS}
+
+Vul telkens het juiste symbool in.
+
+\begin{question}
+\[
+2+5\ \wordChoice{\choice[correct]{$=$}\choice{$\approx$}}\ 7.
+\]
+\end{question}
+
+\begin{question}
+\[
+\pi\ \wordChoice{\choice{$=$}\choice[correct]{$\approx$}}\ 3{,}14.
+\]
+\end{question}
+
+\begin{question}
+\[
+\frac13\ \wordChoice{\choice{$=$}\choice[correct]{$\approx$}}\ 0{,}333.
+\]
+\end{question}
+
+\end{oefening}
+
+
+\FVDsubsection{Een meetwaarde heeft een beperkte nauwkeurigheid}
+
+Wanneer een thermometer aangeeft
+
+\[
+57{,}9\,^\circ\mathrm C,
+\]
+
+wil dat niet zeggen dat de werkelijke temperatuur mathematisch exact
+
+\[
+57{,}900000000\ldots\,^\circ\mathrm C
+\]
+
+bedraagt.
+
+Een meetinstrument heeft een beperkte nauwkeurigheid.
+
+Dat onderscheid is belangrijk:
+
+\[
+\boxed{
+\text{wiskundige exactheid}
+\neq
+\text{experimentele nauwkeurigheid}
+}
+\]
+
+In deze wiskundecursus zullen we niet telkens een volledige
+meetonzekerheidsanalyse uitvoeren.
+
+We zullen wel consequent vragen of een getal exact, gemeten,
+afgerond of geschat is.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 4 DATA -> PATROON
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\FVDsection{Van gegevens naar een patroon}
+
+Een tabel is nuttig om waarden nauwkeurig af te lezen.
+
+Een grafiek maakt daarentegen vaak het \emph{gedrag} zichtbaar.
+
+Voor het afkoelingsexperiment kunnen we de meetpunten
+$(t,T)$ in een assenstelsel plaatsen.
+
+\begin{center}
+\begin{tikzpicture}[x=0.55cm,y=0.055cm]
+
+  % assen
+  \draw[->,black!45] (-0.5,20) -- (14,20)
+    node[right] {$t\;(\mathrm{min})$};
+  \draw[->,black!45] (0,18) -- (0,90)
+    node[above] {$T\;({}^{\circ}\mathrm C)$};
+
+  % hulplijnen
+  \foreach \x in {2,4,6,8,10,12}
+    \draw[black!8] (\x,20) -- (\x,86);
+  \foreach \y in {30,40,50,60,70,80}
+    \draw[black!8] (0,\y) -- (13,\y);
+
+  % meetpunten
+  \fill[fvdmagenta] (0,82.1) circle (3pt);
+  \fill[fvdmagenta] (2,68.4) circle (3pt);
+  \fill[fvdmagenta] (4,57.9) circle (3pt);
+  \fill[fvdmagenta] (6,49.6) circle (3pt);
+  \fill[fvdmagenta] (8,43.3) circle (3pt);
+  \fill[fvdmagenta] (10,38.5) circle (3pt);
+  \fill[fvdmagenta] (12,34.8) circle (3pt);
+
+  % verbindende curve enkel als visuele gids
+  \draw[fvdnavy,very thick,smooth]
+    plot coordinates {
+      (0,82.1)
+      (2,68.4)
+      (4,57.9)
+      (6,49.6)
+      (8,43.3)
+      (10,38.5)
+      (12,34.8)
+    };
+
+  % x labels
+  \foreach \x in {2,4,6,8,10,12}
+    \node[below] at (\x,20) {\x};
+
+  % y labels
+  \foreach \y in {30,40,50,60,70,80}
+    \node[left] at (0,\y) {\y};
+
+\end{tikzpicture}
+\end{center}
+
+We zien nu onmiddellijk dat:
+
+\begin{itemize}
+  \item de temperatuur daalt;
+  \item de daling eerst sterk is;
+  \item de grafiek later minder snel daalt;
+  \item er een duidelijk patroon aanwezig lijkt te zijn.
+\end{itemize}
+
+\begin{opmerking}
+Een grafiek voegt geen nieuwe meetgegevens toe.
+
+Ze kan wel structuur zichtbaar maken die in een tabel minder
+opvallend is.
+\end{opmerking}
+
+
+% --------------------------------------------------------------------
+% TABEL OF GRAFIEK
+% --------------------------------------------------------------------
+
+\begin{oefening}[Tabel of grafiek?]{\oefB}
+
+Je wilt telkens informatie uit een experiment halen.
+
+\begin{question}
+Je wilt de gemeten temperatuur na precies $8$ minuten aflezen.
+
+Welke voorstelling is meestal het handigst?
+
+\begin{multipleChoice}
+  \choice[correct]{De tabel}
+  \choice{De grafiek}
+\end{multipleChoice}
+\end{question}
+
+\begin{question}
+Je wilt snel zien of de temperatuur stijgt, daalt of ongeveer constant
+blijft.
+
+Welke voorstelling is meestal het handigst?
+
+\begin{multipleChoice}
+  \choice{De tabel}
+  \choice[correct]{De grafiek}
+\end{multipleChoice}
+\end{question}
+
+\end{oefening}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 5 MODEL
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\FVDsection{Van patroon naar wiskundig model}
+
+Wanneer we een patroon herkennen, proberen we het vaak wiskundig te
+beschrijven.
+
+\begin{definitie}[Wiskundig model]
+
+Een \textbf{wiskundig model} is een wiskundige beschrijving van
+bepaalde aspecten van een werkelijke situatie.
+
+Een model kan bijvoorbeeld bestaan uit:
+
+\begin{itemize}
+  \item een tabel;
+  \item een grafiek;
+  \item een formule;
+  \item een verzameling vergelijkingen;
+  \item een kansmodel;
+  \item een matrixmodel.
+\end{itemize}
+
+\end{definitie}
+
+Het woord \emph{bepaalde} is belangrijk.
+
+Een model probeert niet de volledige werkelijkheid te kopiëren.
+
+Het kiest precies die eigenschappen die voor de onderzoeksvraag
+belangrijk zijn.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% MATHEMATISEREN
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\FVDsubsection{Mathematiseren}
+
+De stap van de werkelijke situatie naar een wiskundige beschrijving
+noemen we \textbf{mathematiseren}.
+
+\[
+\important{
+\text{werkelijkheid}
+\longrightarrow
+\text{wiskundig model}
+}
+\]
+
+Daarbij kunnen we bijvoorbeeld:
+
+\begin{itemize}
+  \item relevante grootheden kiezen;
+  \item variabelen invoeren;
+  \item gegevens in een tabel plaatsen;
+  \item een grafiek tekenen;
+  \item een formule zoeken;
+  \item aannames formuleren.
+\end{itemize}
+
+
+\begin{voorbeeld}
+
+Een auto rijdt op een rechte weg.
+
+We willen niet de kleur, het merk, de temperatuur van de motor en de
+muziek in de auto beschrijven.
+
+We onderzoeken alleen de beweging.
+
+Dan kunnen we bijvoorbeeld kiezen voor:
+
+\[
+t=\text{tijd},
+\qquad
+s=\text{positie}.
+\]
+
+De werkelijke beweging wordt zo vertaald naar een wiskundig verband
+tussen $t$ en $s$.
+
+Dat is mathematiseren.
+
+\end{voorbeeld}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% DEMATHEMATISEREN
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\FVDsubsection{Demathematiseren}
+
+Na een berekening moeten we terugkeren naar de oorspronkelijke
+situatie.
+
+Die stap noemen we \textbf{demathematiseren}.
+
+\[
+\important{
+\text{wiskundig resultaat}
+\longrightarrow
+\text{betekenis in de werkelijkheid}
+}
+\]
+
+\begin{voorbeeld}
+
+Stel dat een model voor de afgelegde afstand gegeven wordt door
+
+\[
+s(t)=4{,}9t^2,
+\]
+
+waarbij $t$ in seconden en $s$ in meter wordt uitgedrukt.
+
+Voor $t=2$ vinden we:
+
+\[
+s(2)=4{,}9\cdot2^2=19{,}6.
+\]
+
+Het getal
+
+\[
+19{,}6
+\]
+
+is nog geen volledig antwoord.
+
+In de situatie betekent het:
+
+\[
+\boxed{
+\text{na }2\,\mathrm s\text{ is volgens het model }19{,}6\,\mathrm m
+\text{ afgelegd.}
+}
+\]
+
+\end{voorbeeld}
+
+
+\begin{opmerking}
+Bij toepassingen eindigt een oplossing dus niet noodzakelijk bij
+
+\[
+x=3{,}2.
+\]
+
+We vragen altijd:
+
+\[
+\boxed{\text{Wat betekent dit getal in de oorspronkelijke situatie?}}
+\]
+\end{opmerking}
+
+
+\begin{oefening}[Van resultaat naar betekenis]{\oefB \ESS}
+
+Een model voor de massa $m(t)$ van een stof geeft
+
+\[
+m(6)=24{,}7,
+\]
+
+waarbij $t$ in uren en $m$ in gram wordt uitgedrukt.
+
+Welke interpretatie is correct?
+
+\begin{multipleChoice}
+  \choice{Na $24{,}7$ uur is de massa $6$ gram.}
+  \choice[correct]{Na $6$ uur is de massa volgens het model $24{,}7$ gram.}
+  \choice{De massa neemt elke $6$ uur met $24{,}7$ gram toe.}
+  \choice{De massa is altijd $24{,}7$ gram.}
+\end{multipleChoice}
+
+\end{oefening}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 6 MODEL IS NIET WERKELIJKHEID
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\FVDsection{Een model is niet de werkelijkheid}
+
+Een formule kan zeer nauwkeurig zijn zonder de volledige werkelijkheid
+te beschrijven.
+
+Beschouw bijvoorbeeld het vereenvoudigde model voor vrije val:
+
+\[
+h(t)=h_0-\frac12gt^2.
+\]
+
+Zo'n model kan gebaseerd zijn op aannames zoals:
+
+\begin{itemize}
+  \item de luchtweerstand wordt verwaarloosd;
+  \item $g$ wordt constant genomen;
+  \item het voorwerp wordt als een punt beschouwd;
+  \item andere invloeden worden niet meegenomen.
+\end{itemize}
+
+Toch kan het model in veel situaties zeer bruikbaar zijn.
+
+\begin{opmerking}
+Een model hoeft niet perfect te zijn om nuttig te zijn.
+
+De juiste vraag is:
+
+\[
+\important{
+\text{Is dit model geschikt voor de vraag die we willen beantwoorden?}
+}
+\]
+\end{opmerking}
+
+
+% --------------------------------------------------------------------
+% AANNAMES
+% --------------------------------------------------------------------
+
+\FVDsubsection{Aannames}
+
+Een \textbf{aanname} is iets wat we veronderstellen wanneer we een
+model opstellen of gebruiken.
+
+Aannames maken een probleem vaak eenvoudiger.
+
+Maar ze bepalen ook de grenzen van het model.
+
+\begin{oefening}[Welke aanname?]{\oefU}
+
+Een leerling gebruikt
+
+\[
+s=vt
+\]
+
+om de afgelegde afstand van een fietser te berekenen.
+
+Welke belangrijke aanname maakt de leerling?
+
+\begin{multipleChoice}
+  \choice{De fietser rijdt in een cirkel.}
+  \choice[correct]{De snelheid $v$ wordt als constant beschouwd.}
+  \choice{De tijd is gelijk aan nul.}
+  \choice{De fietser heeft geen massa.}
+\end{multipleChoice}
+
+\end{oefening}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 7 VIER FUNCTIES VAN WISKUNDE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\FVDsection{Wat doet wiskunde in de wetenschappen?}
+
+Wiskunde vervult verschillende rollen.
+
+Vier ervan zullen in deze cursus voortdurend terugkomen:
+
+\[
+\boxed{
+\text{beschrijven}
+\qquad
+\text{verbanden onderzoeken}
+\qquad
+\text{voorspellen}
+\qquad
+\text{optimaliseren}
+}
+\]
+
+
+% --------------------------------------------------------------------
+% BESCHRIJVEN
+% --------------------------------------------------------------------
+
+\FVDsubsection{Beschrijven}
+
+Een bewegend voorwerp kunnen we beschrijven door zijn positie $s$ als
+functie van de tijd $t$.
+
+Een chemisch proces kan beschreven worden door een concentratie als
+functie van de tijd.
+
+Een biologisch systeem kan beschreven worden door het aantal organismen
+doorheen de tijd.
+
+Wiskunde geeft ons een taal om veranderingen systematisch te
+beschrijven.
+
+
+% --------------------------------------------------------------------
+% VERBAND
+% --------------------------------------------------------------------
+
+\FVDsubsection{Verbanden onderzoeken}
+
+In wetenschappelijke experimenten onderzoeken we vaak hoe twee
+grootheden samenhangen.
+
+Bijvoorbeeld:
+
+\[
+U \longleftrightarrow I
+\]
+
+voor spanning en stroomsterkte,
+
+of
+
+\[
+m \longleftrightarrow V
+\]
+
+voor massa en volume.
+
+Later in deze module zullen we dergelijke verbanden onderzoeken met
+spreidingsdiagrammen, correlatie en regressie.
+
+
+% --------------------------------------------------------------------
+% VOORSPELLEN
+% --------------------------------------------------------------------
+
+\FVDsubsection{Voorspellen}
+
+Een model kan ons helpen een waarde te schatten die we niet rechtstreeks
+gemeten hebben.
+
+Bijvoorbeeld:
+
+\begin{itemize}
+  \item de temperatuur na een bepaald tijdstip;
+  \item de positie van een bewegend voorwerp;
+  \item de hoeveelheid radioactieve stof na enkele jaren;
+  \item de verwachte opbrengst van een systeem.
+\end{itemize}
+
+Een voorspelling is echter nooit automatisch betrouwbaar.
+
+Daarvoor moeten we ook weten \emph{waar} en \emph{onder welke
+voorwaarden} het model gebruikt wordt.
+
+
+% --------------------------------------------------------------------
+% OPTIMALISEREN
+% --------------------------------------------------------------------
+
+\FVDsubsection{Optimaliseren}
+
+Wiskunde helpt ook om een beste keuze te zoeken.
+
+Bijvoorbeeld:
+
+\begin{itemize}
+  \item Welke verpakking gebruikt het minste materiaal?
+  \item Welke route vraagt de minste tijd?
+  \item Bij welke instelling is het rendement maximaal?
+  \item Welke afmetingen geven een zo groot mogelijk volume?
+\end{itemize}
+
+Later zullen afgeleiden een krachtig hulpmiddel worden om zulke
+extremumproblemen systematisch op te lossen.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 8 INTERPOLATIE / EXTRAPOLATIE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\FVDsection{Voorspellen binnen en buiten de gegevens}
+
+Niet elke voorspelling is even gewaagd.
+
+\begin{definitie}[Interpoleren]
+
+\textbf{Interpoleren} betekent een waarde schatten
+\emph{tussen} bekende of gemeten waarden.
+
+\end{definitie}
+
+In ons afkoelingsexperiment is een schatting van de temperatuur na
+$7$ minuten een interpolatie, want
+
+\[
+6<7<8.
+\]
+
+\begin{definitie}[Extrapoleren]
+
+\textbf{Extrapoleren} betekent een waarde voorspellen
+\emph{buiten} het gebied waarin gegevens beschikbaar zijn.
+
+\end{definitie}
+
+Een voorspelling voor $t=30$ minuten op basis van metingen tot
+$t=12$ minuten is extrapolatie.
+
+\begin{opmerking}
+Extrapolatie is vaak riskanter dan interpolatie.
+
+Een patroon dat binnen het gemeten gebied goed werkt, hoeft buiten dat
+gebied niet te blijven gelden.
+\end{opmerking}
+
+
+\begin{oefening}[Interpoleren of extrapoleren?]{\oefB \ESS}
+
+Een experiment bevat metingen voor
+
+\[
+0\leq t\leq 20.
+\]
+
+\begin{question}
+Een waarde wordt geschat voor $t=13$.
+
+\begin{multipleChoice}
+  \choice[correct]{interpolatie}
+  \choice{extrapolatie}
+\end{multipleChoice}
+\end{question}
+
+\begin{question}
+Een waarde wordt voorspeld voor $t=50$.
+
+\begin{multipleChoice}
+  \choice{interpolatie}
+  \choice[correct]{extrapolatie}
+\end{multipleChoice}
+\end{question}
+
+\end{oefening}
+
+
+\begin{oefening}[Een model te ver doortrekken]{\oefU \ESS}
+
+Een groeimodel werd opgesteld met gegevens uit de eerste
+$20$ levensdagen van een jonge plant.
+
+Een leerling gebruikt hetzelfde model om de hoogte van de plant
+na $10$ jaar te voorspellen.
+
+\begin{question}
+Waarom is die voorspelling problematisch?
+
+\begin{multipleChoice}
+  \choice{Een wiskundig model mag nooit gebruikt worden om te voorspellen.}
+  \choice{Een plant kan niet gemeten worden.}
+  \choice[correct]{De leerling extrapoleert zeer ver buiten het gebied waarop het model gebaseerd is.}
+  \choice{Een model mag alleen gehele getallen bevatten.}
+\end{multipleChoice}
+\end{question}
+
+\begin{question}
+Welke bijkomende vraag is wetenschappelijk belangrijk?
+
+\begin{multipleChoice}
+  \choice{Is de formule mooi geschreven?}
+  \choice[correct]{Zijn de aannames van het model over zo'n lange periode nog redelijk?}
+  \choice{Heeft de leerling een blauwe pen gebruikt?}
+\end{multipleChoice}
+\end{question}
+
+\end{oefening}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 9 KRITISCH LEZEN VAN GRAFIEKEN
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\FVDsection{Een grafiek kan correct zijn en toch misleiden}
+
+Grafieken maken patronen zichtbaar.
+
+Maar de manier waarop een grafiek wordt getekend beïnvloedt ook de
+indruk die we krijgen.
+
+Stel dat twee waarden respectievelijk
+
+\[
+98
+\qquad\text{en}\qquad
+102
+\]
+
+zijn.
+
+Op een verticale schaal van $0$ tot $120$ lijkt het verschil klein.
+
+Op een verticale schaal van $97$ tot $103$ lijkt hetzelfde verschil
+plots zeer groot.
+
+De gegevens zijn niet veranderd.
+
+De voorstelling wel.
+
+\begin{opmerking}
+Lees een grafiek daarom nooit alleen ``op het zicht''.
+
+Controleer minstens:
+
+\begin{itemize}
+  \item welke grootheden op de assen staan;
+  \item welke eenheden gebruikt worden;
+  \item welke schaal gekozen is;
+  \item waar de assen beginnen;
+  \item welke gegevens wel en niet zichtbaar zijn.
+\end{itemize}
+\end{opmerking}
+
+
+\begin{oefening}[De schaal beïnvloedt de indruk]{\oefU \ESS}
+
+Twee grafieken stellen exact dezelfde gegevens voor.
+
+De eerste verticale as loopt van $0$ tot $100$.
+
+De tweede verticale as loopt van $80$ tot $100$.
+
+\begin{question}
+Waarom kunnen beide grafieken een verschillende indruk geven?
+
+\begin{multipleChoice}
+  \choice{De meetwaarden worden automatisch anders.}
+  \choice[correct]{De tweede schaal vergroot kleine verticale verschillen visueel uit.}
+  \choice{Een grafiek die niet bij nul begint is altijd fout.}
+  \choice{De eerste grafiek bevat minder gegevens.}
+\end{multipleChoice}
+\end{question}
+
+\begin{question}
+Welke conclusie is het meest verantwoord?
+
+\begin{multipleChoice}
+  \choice{Een grafiek moet altijd bij nul beginnen.}
+  \choice{De schaal van een grafiek is onbelangrijk.}
+  \choice[correct]{De schaal moet mee beoordeeld worden wanneer we een grafiek interpreteren.}
+\end{multipleChoice}
+\end{question}
+
+\end{oefening>
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 10 SAMENHANG EN CAUSALITEIT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\FVDsection{Samenhang is nog geen oorzaak}
+
+Wanneer twee grootheden samen veranderen, spreken we van een
+\textbf{samenhang}.
+
+Maar daaruit volgt niet automatisch dat de ene grootheid de andere
+\emph{veroorzaakt}.
+
+Stel bijvoorbeeld dat in warme zomermaanden zowel de verkoop van ijsjes
+als het aantal mensen aan openluchtzwembaden stijgt.
+
+Daaruit volgt niet dat meer ijsjes kopen rechtstreeks veroorzaakt dat
+meer mensen gaan zwemmen.
+
+Een derde factor --- de temperatuur --- beïnvloedt beide.
+
+\begin{opmerking}
+Een gevonden verband kan een belangrijke aanwijzing zijn.
+
+Maar:
+
+\[
+\important{
+\text{samenhang}
+\not\Longrightarrow
+\text{oorzaak-gevolg}
+}
+\]
+
+Om causaliteit te besluiten is bijkomend wetenschappelijk onderzoek
+nodig.
+\end{opmerking}
+
+
+\begin{oefening}[Samenhang of oorzaak?]{\oefU}
+
+Een onderzoek toont dat leerlingen die gemiddeld langer slapen,
+gemiddeld betere resultaten behalen.
+
+Een leerling besluit:
+
+\begin{center}
+``Meer slapen veroorzaakt dus noodzakelijk betere punten.''
+\end{center}
+
+\begin{question}
+Is die conclusie verantwoord op basis van alleen deze samenhang?
+
+\begin{multipleChoice}
+  \choice{Ja}
+  \choice[correct]{Nee}
+\end{multipleChoice}
+\end{question}
+
+\begin{question}
+Welke reden is het best?
+
+\begin{multipleChoice}
+  \choice{Twee grootheden kunnen nooit samenhangen.}
+  \choice[correct]{Andere factoren kunnen beide grootheden beïnvloeden en samenhang alleen bewijst geen causaliteit.}
+  \choice{Slaap kan niet gemeten worden.}
+\end{multipleChoice}
+\end{question}
+
+\end{oefening}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 11 AFSPRAKEN
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\FVDsection{Waarom wiskunde afspraken nodig heeft}
+
+Wetenschappelijke resultaten moeten zo duidelijk mogelijk
+gecommuniceerd worden.
+
+Andere onderzoekers moeten kunnen:
+
+\begin{itemize}
+  \item begrijpen wat bedoeld wordt;
+  \item een berekening controleren;
+  \item dezelfde werkwijze opnieuw uitvoeren;
+  \item nagaan waar een eventuele fout zit.
+\end{itemize}
+
+Daarom zijn afspraken in wiskunde geen decoratie.
+
+Ze maken wiskundige communicatie:
+
+\[
+\boxed{
+\text{eenduidig}
+\qquad
+\text{controleerbaar}
+\qquad
+\text{reproduceerbaar}
+}
+\]
+
+
+% --------------------------------------------------------------------
+% REKENVOLGORDE
+% --------------------------------------------------------------------
+
+\FVDsubsection{Rekenvolgorde en haakjes}
+
+Op sociale media duiken geregeld uitdrukkingen op zoals
+
+\[
+8:2(2+2).
+\]
+
+Vaak ontstaat discussie doordat de schrijfwijze onzorgvuldig is of
+omdat mensen verschillende interpretaties aannemen.
+
+Een wetenschappelijke tekst probeert zulke dubbelzinnigheid te
+vermijden.
+
+De schrijfwijzen
+
+\[
+\frac{8}{2(2+2)}
+\]
+
+en
+
+\[
+\left(\frac82\right)(2+2)
+\]
+
+maken bijvoorbeeld twee verschillende bedoelingen zichtbaar.
+
+\begin{opmerking}
+Het belangrijke inzicht is niet wie een internetpuzzel het snelst
+oplost.
+
+Het belangrijke inzicht is:
+
+\[
+\important{
+\text{goede wiskundige notatie maakt de bedoelde betekenis expliciet.}
+}
+\]
+\end{opmerking}
+
+
+% --------------------------------------------------------------------
+% EENHEDEN
+% --------------------------------------------------------------------
+
+\FVDsubsection{Eenheden zijn deel van het antwoord}
+
+In een wetenschappelijke berekening schrijven we bijvoorbeeld:
+
+\[
+t=3{,}2\,\mathrm s,
+\qquad
+v=15\,\mathrm{m/s}.
+\]
+
+Niet alleen het getal, maar ook de eenheid draagt betekenis.
+
+Als een berekening voor een snelheid eindigt met
+
+\[
+v=12,
+\]
+
+is het antwoord daarom onvolledig wanneer de eenheid bekend hoort te
+zijn.
+
+
+\begin{oefening}[Welk antwoord is volledig?]{\oefB \ESS}
+
+Een berekening levert een tijdsduur van $3{,}2$ seconden.
+
+Welke eindnotatie is het meest volledig?
+
+\begin{multipleChoice}
+  \choice{$3{,}2$}
+  \choice{$t=3{,}2$}
+  \choice[correct]{$t=3{,}2\,\mathrm s$}
+  \choice{$t\approx\mathrm s$}
+\end{multipleChoice}
+
+\end{oefening>
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 12 ICT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\FVDsection{ICT als hulpmiddel, niet als vervanging van denken}
+
+In deze cursus zullen we regelmatig ICT gebruiken.
+
+Denk aan:
+
+\begin{itemize}
+  \item grafieken tekenen;
+  \item meetgegevens verwerken;
+  \item regressiemodellen bepalen;
+  \item vergelijkingen grafisch onderzoeken;
+  \item hypotheses verkennen;
+  \item resultaten controleren.
+\end{itemize}
+
+Software kan zeer snel rekenen.
+
+Maar software beslist niet automatisch of een model geschikt is,
+of een grafiek misleidend is, of een resultaat in de context zinvol is.
+
+\begin{opmerking}
+Een goede vuistregel is:
+
+\[
+\boxed{
+\text{ICT helpt ons rekenen en onderzoeken;}
+\quad
+\text{wij blijven verantwoordelijk voor de interpretatie.}
+}
+\]
+\end{opmerking>
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 13 MODELLEERCYCLUS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\FVDsection{De wiskundige modelleercyclus}
+
+De belangrijkste ideeën van dit hoofdstuk kunnen we samenbrengen in
+één cyclus.
+
+\begin{center}
+\begin{tikzpicture}[
+  node distance=1.6cm and 1.9cm,
+  every node/.style={font=\small},
+  box/.style={
+    draw=fvdnavy,
+    rounded corners=3pt,
+    very thick,
+    fill=white,
+    minimum width=2.5cm,
+    minimum height=0.9cm,
+    align=center
+  },
+  >=stealth
+]
+
+\node[box] (realiteit) {Werkelijkheid};
+\node[box, right=of realiteit] (vraag) {Onderzoeksvraag};
+\node[box, right=of vraag] (data) {Gegevens};
+\node[box, below=of data] (model) {Wiskundig model};
+\node[box, left=of model] (analyse) {Wiskundige\\analyse};
+\node[box, left=of analyse] (resultaat) {Resultaat};
+\node[box, below=of resultaat] (interpretatie) {Interpretatie};
+
+\draw[->,very thick,fvdmagenta] (realiteit) -- (vraag);
+\draw[->,very thick,fvdmagenta] (vraag) -- (data);
+\draw[->,very thick,fvdmagenta] (data) -- (model);
+\draw[->,very thick,fvdmagenta] (model) -- (analyse);
+\draw[->,very thick,fvdmagenta] (analyse) -- (resultaat);
+\draw[->,very thick,fvdmagenta] (resultaat) -- (interpretatie);
+
+\draw[->,very thick,fvdmagenta,bend left=25]
+  (interpretatie.west) to node[left,align=center] {controleren\\en bijsturen}
+  (realiteit.south);
+
+\node[above=0.15cm of data, text=fvdnavy] {mathematiseren};
+\node[below=0.15cm of resultaat, text=fvdnavy] {demathematiseren};
+
+\end{tikzpicture}
+\end{center}
+
+De precieze stappen kunnen van probleem tot probleem verschillen.
+
+Maar de denkwijze blijft herkenbaar.
+
+\begin{enumerate}
+  \item \textbf{Werkelijkheid:} welk verschijnsel onderzoeken we?
+  \item \textbf{Vraag:} wat willen we precies weten?
+  \item \textbf{Gegevens:} welke informatie is relevant?
+  \item \textbf{Model:} hoe vertalen we de situatie naar wiskunde?
+  \item \textbf{Analyse:} welke berekeningen of redeneringen voeren we uit?
+  \item \textbf{Resultaat:} wat vinden we wiskundig?
+  \item \textbf{Interpretatie:} wat betekent dat resultaat in de werkelijkheid?
+  \item \textbf{Controle:} is het resultaat redelijk en past het model voldoende goed?
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 14 PROBLEEMOPLOSSEN
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\FVDsection{Problemen oplossen zonder vooraf gegeven recept}
+
+Bij routineoefeningen weet je soms meteen welke formule of techniek
+nodig is.
+
+Bij een echt probleem is dat vaak niet zo.
+
+Daarom leren we doorheen deze cursus bewust strategieën gebruiken.
+
+Bij een nieuwe situatie kun je bijvoorbeeld vragen:
+
+\begin{itemize}
+  \item Wat is gegeven?
+  \item Wat wordt gevraagd?
+  \item Welke informatie is relevant?
+  \item Welke grootheden spelen een rol?
+  \item Kan een schets helpen?
+  \item Kan ik de gegevens in een tabel plaatsen?
+  \item Welke grafiek past?
+  \item Ken ik een eenvoudiger vergelijkbaar probleem?
+  \item Is een schatting mogelijk?
+  \item Kan ik mijn antwoord op een andere manier controleren?
+\end{itemize}
+
+\begin{opmerking}
+Probleemoplossen betekent dus niet:
+
+\[
+\text{``zoek de formule en vul in''.}
+\]
+
+Het betekent onder andere:
+
+\[
+\important{
+\text{begrijpen}
+\longrightarrow
+\text{kiezen}
+\longrightarrow
+\text{redeneren}
+\longrightarrow
+\text{controleren}
+}
+\]
+\end{opmerking>
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 15 GROTE SYNTHese
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\FVDsection{Van werkelijkheid naar wiskunde --- en terug}
+
+We sluiten dit hoofdstuk af met één nieuwe situatie.
+
+Hier krijg je niet bij iedere stap een formule of methode voorgeschreven.
+
+Je moet zelf informatie selecteren en je conclusies verantwoorden.
+
+
+\begin{oefening}[Een bewegend object onderzoeken]{\oefU \ESS}
+
+Tijdens een experiment wordt om de $10$ seconden de afstand gemeten
+die een klein bewegend object vanaf zijn startpunt heeft afgelegd.
+
+\[
+\begin{array}{c|cccccc}
+t\;(\mathrm s)
+&0&10&20&30&40&50\\ \hline
+s\;(\mathrm m)
+&0&4{,}8&10{,}1&15{,}0&20{,}2&24{,}9
+\end{array}
+\]
+
+\begin{question}
+Welke twee grootheden worden onderzocht?
+
+\begin{multipleChoice}
+  \choice{tijd en snelheid}
+  \choice[correct]{tijd en afgelegde afstand}
+  \choice{massa en afstand}
+  \choice{afstand en temperatuur}
+\end{multipleChoice}
+\end{question}
+
+\begin{question}
+Welke grootheid is hier de onafhankelijke variabele?
+
+\begin{multipleChoice}
+  \choice[correct]{de tijd $t$}
+  \choice{de afstand $s$}
+\end{multipleChoice}
+\end{question}
+
+\begin{question}
+Welke beschrijving past het best bij de gegevens?
+
+\begin{multipleChoice}
+  \choice{De afstand blijft ongeveer constant.}
+  \choice{De afstand neemt steeds sneller toe.}
+  \choice[correct]{De afstand neemt ongeveer gelijkmatig toe met de tijd.}
+  \choice{De afstand daalt.}
+\end{multipleChoice}
+\end{question}
+
+\begin{question}
+Een leerling schat voor $t=25\,\mathrm s$:
+
+\[
+s\approx12{,}5\,\mathrm m.
+\]
+
+Is dit interpolatie of extrapolatie?
+
+\begin{multipleChoice}
+  \choice[correct]{interpolatie}
+  \choice{extrapolatie}
+\end{multipleChoice}
+\end{question}
+
+\begin{question}
+Dezelfde leerling gebruikt het patroon om de afstand na
+$5000\,\mathrm s$ te voorspellen.
+
+Welke uitspraak is correct?
+
+\begin{multipleChoice}
+  \choice{De voorspelling is zeker correct omdat de eerste meetpunten bijna lineair liggen.}
+  \choice[correct]{De voorspelling is een zeer verre extrapolatie en is zonder bijkomende informatie niet betrouwbaar.}
+  \choice{Extrapoleren levert altijd exact dezelfde waarde als meten.}
+\end{multipleChoice}
+\end{question}
+
+\begin{question}
+Een leerling beweert:
+
+\begin{center}
+``Omdat de meetpunten bijna op een rechte lijn liggen,
+bewoog het object op elk ogenblik exact met dezelfde snelheid.''
+\end{center}
+
+Welke beoordeling is het best?
+
+\begin{multipleChoice}
+  \choice[correct]{De conclusie is te sterk: de gegevens ondersteunen een ongeveer lineair model, maar bewijzen geen exact constante snelheid op elk ogenblik.}
+  \choice{De conclusie is noodzakelijk juist.}
+  \choice{Uit een tabel mag je nooit iets over beweging besluiten.}
+\end{multipleChoice}
+\end{question}
+
+\begin{question}
+Wat zou een wiskundig model in deze situatie moeten beschrijven?
+
+\begin{multipleChoice}
+  \choice{De kleur en vorm van het object.}
+  \choice[correct]{Hoe de afgelegde afstand $s$ verandert in functie van de tijd $t$.}
+  \choice{Alle eigenschappen van het object en zijn omgeving.}
+\end{multipleChoice}
+\end{question}
+
+\end{oefening>
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 16 VERDIEPING
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\FVDsection{Verdieping: wanneer is een model ``goed''?}
+
+Er bestaat niet één universele definitie van een ``goed'' model voor
+elke situatie.
+
+We kunnen een model wel beoordelen met vragen zoals:
+
+\begin{itemize}
+  \item Past het voldoende goed bij de gegevens?
+  \item Zijn de aannames redelijk?
+  \item Is het model eenvoudig genoeg om bruikbaar te zijn?
+  \item Is het model nauwkeurig genoeg voor de onderzoeksvraag?
+  \item Wordt het model alleen gebruikt binnen een verantwoord gebied?
+  \item Levert het zinvolle voorspellingen?
+\end{itemize}
+
+Soms kiezen wetenschappers bewust een eenvoudiger model, ook wanneer
+een complexer model iets nauwkeuriger is.
+
+Een model is immers een hulpmiddel om een vraag te beantwoorden.
+
+
+\begin{oefening}[Twee modellen vergelijken]{\oefG}
+
+Twee modellen beschrijven dezelfde dataset.
+
+Model A is zeer eenvoudig en wijkt op de gemeten waarden maximaal
+$1\%$ af.
+
+Model B is veel ingewikkelder en wijkt maximaal $0{,}9\%$ af.
+
+Een onderzoeker kiest toch model A.
+
+\begin{question}
+Kan dat een redelijke keuze zijn?
+
+\begin{multipleChoice}
+  \choice[correct]{Ja. Een iets minder nauwkeurig maar veel eenvoudiger model kan voor de onderzoeksvraag geschikter zijn.}
+  \choice{Nee. Het model met de kleinste fout moet altijd gekozen worden.}
+\end{multipleChoice}
+\end{question}
+
+\begin{question}
+Welke informatie heb je nog nodig om de keuze echt te beoordelen?
+
+\begin{multipleChoice}
+  \choice{De kleur van de grafiek.}
+  \choice[correct]{De onderzoeksvraag, vereiste nauwkeurigheid, aannames en het gebruiksgebied van beide modellen.}
+  \choice{Het aantal letters in de formule.}
+\end{multipleChoice}
+\end{question}
+
+\end{oefening>
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 17 SAMENGEVAT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\FVDsection{Samengevat}
+
+Wetenschap start met vragen over de werkelijkheid.
+
+We kiezen relevante grootheden en verzamelen gegevens.
+
+\[
+\boxed{
+\text{werkelijkheid}
+\longrightarrow
+\text{gegevens}
+}
+\]
+
+Vervolgens proberen we patronen en verbanden te herkennen en bouwen
+we een wiskundige beschrijving.
+
+\[
+\boxed{
+\text{gegevens}
+\longrightarrow
+\text{wiskundig model}
+}
+\]
+
+De stap van werkelijkheid naar wiskunde noemen we
+\textbf{mathematiseren}.
+
+Na de wiskundige analyse keren we terug naar de context.
+
+\[
+\boxed{
+\text{wiskundig resultaat}
+\longrightarrow
+\text{interpretatie}
+}
+\]
+
+Die stap noemen we \textbf{demathematiseren}.
+
+Een model is altijd een vereenvoudiging en is slechts bruikbaar binnen
+bepaalde aannames en grenzen.
+
+Daarom controleren we steeds:
+
+\[
+\boxed{
+\text{Is het resultaat redelijk?}
+}
+\]
+
+en
+
+\[
+\boxed{
+\text{Is het model geschikt voor de vraag?}
+}
+\]
+
+Grafieken, formules en ICT zijn krachtige hulpmiddelen, maar ze nemen
+het kritisch denken niet over.
+
+Tot slot gebruiken we duidelijke wiskundige afspraken zodat resultaten
+eenduidig, controleerbaar en reproduceerbaar zijn.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ESSENTIELE OEFENINGEN
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\FVDsection{Essentiële oefeningen}
+
+Om de kern van dit hoofdstuk te beheersen, moet je minstens alle
+oefeningen met de aanduiding \textbf{◆ Essentieel} beheersen.
+
+In dit hoofdstuk zijn dat inhoudelijk vooral de oefeningen rond:
+
+\begin{itemize}
+  \item grootheid, waarde en eenheid;
+  \item exact en benaderd;
+  \item interpretatie van een wiskundig resultaat;
+  \item interpoleren en extrapoleren;
+  \item kritisch lezen van grafieken;
+  \item de grenzen van een model;
+  \item de syntheseopdracht \emph{Een bewegend object onderzoeken}.
+\end{itemize}
+
+De syntheseopdracht is bijzonder belangrijk.
+
+Daar toon je niet alleen dat je losse begrippen kent, maar dat je in
+een nieuwe situatie informatie kunt selecteren, een verband kunt
+beschrijven, een voorspelling kritisch kunt beoordelen en een
+wiskundig resultaat kunt interpreteren.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% BRUG NAAR VOLGEND HOOFDSTUK
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\FVDsection{En nu?}
+
+We hebben gezien dat wiskunde een taal is waarmee we de werkelijkheid
+kunnen beschrijven en onderzoeken.
+
+Maar een taal is alleen bruikbaar wanneer de basis voldoende vlot
+beheerst wordt.
+
+Wanneer we straks met functies, modellen, vergelijkingen en
+wetenschappelijke formules werken, moeten bewerkingen met getallen,
+breuken, machten, wortels en algebra betrouwbaar verlopen.
+
+Daarom brengen we in het volgende hoofdstuk onze
+\textbf{parate kennis} opnieuw op scherp.
+
+Daarna keren we terug naar een centrale vraag uit dit hoofdstuk:
+
+\[
+\boxed{
+\text{Hoe kunnen we een verband tussen twee gemeten grootheden
+systematisch onderzoeken?}
+}
+\]
+
+Dat leidt ons naar spreidingsdiagrammen, correlatie, regressie en het
+belangrijke onderscheid tussen samenhang en causaliteit.
+
+\end{document}

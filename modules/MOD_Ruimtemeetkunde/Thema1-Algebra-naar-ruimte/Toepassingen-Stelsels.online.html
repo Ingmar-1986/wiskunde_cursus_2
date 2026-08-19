@@ -1,0 +1,300 @@
+<!DOCTYPE html> 
+<html lang='en-US' xml:lang='en-US'> 
+<head> <title>Stelsels aan het werk</title> 
+<meta charset='utf-8' /> 
+<meta content='TeX4ht (https://tug.org/tex4ht/)' name='generator' /> 
+<meta content='width=device-width,initial-scale=1' name='viewport' /> 
+<link href='\aa:CssFile ' rel='stylesheet' type='text/css' /> 
+<meta content='Toepassingen-Stelsels.online.tex' name='src' /> 
+<script>window.MathJax = { tex: { tags: "ams", }, }; </script> 
+<script async='async' id='MathJax-script' src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js' type='text/javascript'></script>  
+<meta content='Ingmar Herreman' name='author' /> 
+<meta content='version 2.5.1' name='ximera' /> 
+<link href='https://ximera.osu.edu/public/stylesheets/standalone.css' media='screen' rel='stylesheet' /> 
+<script async='' src='https://ximera.osu.edu/public/javascripts/standalone.min.js' type='text/javascript'></script> 
+</head><body> 
+<div class='preamble'>
+</div>
+<style> .activity-body pre { white-space: pre; background-color: lightgray; } .xmyoutube { aspect-ratio: 16/9; min-width: 75%; } .image-environment img { width: unset; } </style> 
+
+<div class='maketitle'></div>
+<!-- l. 31 --><p class='noindent'></p><section class='learning-box learning-box--prior'> <div class='learning-box__header'> <span class='learning-box__icon'> </span><span class='learning-box__title'>Voorkennis</span> </div> <div class='learning-box__content'> 
+<p></p>     
+<ul class='itemize1'>
+<li class='itemize'>Je kan een lineair stelsel herkennen en in matrixnotatie schrijven.
+</li>
+<li class='itemize'>Je kan een uitgebreide matrix met ICT reduceren.
+</li>
+<li class='itemize'>Je kan de rang van een matrix uit een gereduceerde vorm aflezen.
+</li>
+<li class='itemize'>Je kan de oplosbaarheid van een lineair stelsel analyseren.
+</li>
+<li class='itemize'>Je kan vrije onbekenden herkennen en een oplossing parametriseren.</li></ul>
+<!-- l. 37 --><p class='noindent'></p></div> </section> 
+<p></p><!-- l. 39 --><p class='noindent'></p><section class='learning-box learning-box--goals'> <div class='learning-box__header'> <span class='learning-box__icon'> </span><span class='learning-box__title'>Leerdoelen</span> </div> <div class='learning-box__content'> 
+<p></p>     
+<ul class='itemize1'>
+<li class='itemize'>Je kan in een concrete situatie geschikte onbekenden kiezen.
+</li>
+<li class='itemize'>Je kan voorwaarden uit een context vertalen naar lineaire vergelijkingen.
+</li>
+<li class='itemize'>Je kan het verkregen stelsel als uitgebreide matrix invoeren in ICT.
+                                                                  
+
+                                                                  
+</li>
+<li class='itemize'>Je   kan   de   ICT-uitvoer   interpreteren   en   terugkoppelen   naar   de
+oorspronkelijke context.
+</li>
+<li class='itemize'>Je kan controleren of een wiskundige oplossing ook binnen de context
+aanvaardbaar is.
+</li>
+<li class='itemize'>Je kan bij een onderbepaald of strijdig model uitleggen wat dit in de
+context betekent.
+</li>
+<li class='itemize'>Je kan een chemische reactievergelijking balanceren door atoombehoud als
+een homogeen lineair stelsel te modelleren.
+</li>
+<li class='itemize'>Je  kan  uitleggen  waarom  de  coëfficiënten  van  een  gebalanceerde
+reactievergelijking slechts tot op een schaalfactor bepaald zijn.</li></ul>
+<!-- l. 48 --><p class='noindent'></p></div> </section> 
+<p></p><!-- l. 50 --><p class='noindent'></p><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span><span class='fvd-remark__separator'> — </span><span class='fvd-remark__subtitle'>ICT neemt het rekenwerk over</span></div><div class='fvd-remark__content'> In dit hoofdstuk is het niet de
+bedoeling om omvangrijke matrices volledig met de hand te reduceren. Gebruik ICT
+voor de Gauss–Jordan-reductie.
+<p></p><!-- l. 54 --><p class='noindent'>De kern van het werk ligt vóór en na die berekening: </p><div class='mathjax-block'>\[ \boxed {\text {context} \longrightarrow \text {model} \longrightarrow \text {matrix} \longrightarrow \text {ICT} \longrightarrow \text {interpretatie}} \]</div>
+<!-- l. 67 --><p class='noindent'>Een correcte <code>rref</code>-uitvoer is nog geen antwoord op een vraagstuk. </p></div></section>
+<p><a id='x1-2r1'></a>
+</p><p></p><!-- l. 75 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>1</div><div class='fvd-section-bar__title'>Van een probleem naar een stelsel</div></div>
+<p></p><!-- l. 77 --><p class='noindent'>Bij een gewoon stelsel zijn de onbekenden en vergelijkingen al gegeven. Bij een
+toepassing moet je het stelsel eerst <strong>zelf bouwen</strong>. Dat noemen we <strong>mathematiseren</strong>:
+informatie uit de werkelijkheid vertalen naar wiskunde.
+<a id='x1-3r1'></a>
+</p><!-- l. 82 --><p class='noindent'></p><div class='fvd-subsection'>
+<p></p><!-- l. 82 --><p class='noindent'></p><div class='fvd-subsection__row'>
+<p></p><!-- l. 82 --><p class='noindent'></p><div class='fvd-subsection__number'>1.1</div>
+<p></p><!-- l. 82 --><p class='noindent'></p><div class='fvd-subsection__title'>Een vaste aanpak</div>
+                                                                  
+
+                                                                  
+<p></p><!-- l. 82 --><p class='noindent'></p></div>
+<p></p><!-- l. 82 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
+<p></p><!-- l. 82 --><p class='noindent'></p></div>
+<p></p><!-- l. 84 --><p class='noindent'>Een betrouwbare aanpak bestaat uit zes stappen.
+</p>     
+<ol class='enumerate1'>
+<li class='enumerate' id='x1-5x1'><strong>Lees en structureer.</strong> Welke grootheden zijn onbekend? Welke gegevens
+en voorwaarden zijn er?
+</li>
+<li class='enumerate' id='x1-7x2'><strong>Kies de onbekenden.</strong> Noteer duidelijk wat elke letter betekent, met
+eenheid waar nodig.
+</li>
+<li class='enumerate' id='x1-9x3'><strong>Vertaal elke onafhankelijke voorwaarde.</strong> Bouw zo een lineair stelsel.
+</li>
+<li class='enumerate' id='x1-11x4'><strong>Maak de uitgebreide matrix.</strong> Bewaak overal dezelfde volgorde van de
+onbekenden.
+</li>
+<li class='enumerate' id='x1-13x5'><strong>Reduceer met ICT en analyseer.</strong> Lees oplossing, rang en eventuele
+vrije onbekenden correct af.
+</li>
+<li class='enumerate' id='x1-15x6'><strong>Keer  terug  naar  de  context.</strong>  Controleer  eenheden,  teken,  gehele
+aantallen, redelijkheid en de oorspronkelijke voorwaarden.</li></ol>
+<!-- l. 102 --><p class='noindent'></p><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span><span class='fvd-remark__separator'> — </span><span class='fvd-remark__subtitle'>Een vergelijking moet ergens vandaan komen</span></div><div class='fvd-remark__content'> Schrijf niet meteen
+formules neer. Geef voor jezelf bij elke vergelijking aan <em>welke voorwaarde uit de tekst</em>
+ze voorstelt. Dat maakt fouten veel makkelijker zichtbaar. </div></section>
+<p><a id='x1-16r2'></a>
+                                                                  
+
+                                                                  
+</p><p></p><!-- l. 113 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>2</div><div class='fvd-section-bar__title'>Een volledig modelleerprobleem</div></div>
+<p><a id='x1-17r1'></a>
+</p><p></p><!-- l. 115 --><p class='noindent'></p><section class='fvd-example'>
+<p></p><!-- l. 115 --><p class='noindent'></p><div class='fvd-example__title'>Voorbeeld 1<span class='fvd-example__subtitle'> — Kippen, eenden en duiven</span></div>
+<p></p><!-- l. 115 --><p class='noindent'></p><div class='fvd-example__content'>
+<p></p><!-- l. 117 --><p class='noindent'>Joeri verkoopt zijn kippen, eenden en duiven. Hij heeft in totaal <span class='mathjax-inline'>\(27\)</span> dieren.
+Het aantal kippen is driemaal het aantal eenden. Een handelaar biedt <span class='mathjax-inline'>\(1\)</span> euro
+per kip, <span class='mathjax-inline'>\(1{,}50\)</span> euro per eend en <span class='mathjax-inline'>\(0{,}50\)</span> euro per duif. Voor alle dieren samen biedt hij <span class='mathjax-inline'>\(21\)</span>
+euro.
+</p><!-- l. 122 --><p class='noindent'>Hoeveel dieren heeft Joeri van elke soort?
+</p><!-- l. 124 --><p class='noindent'><strong>Stap 1 – onbekenden kiezen</strong>
+</p><!-- l. 126 --><p class='noindent'>We nemen </p><div class='mathjax-block'>\[ x=\text {aantal kippen},\qquad y=\text {aantal eenden},\qquad z=\text {aantal duiven}. \]</div>
+<!-- l. 133 --><p class='noindent'><strong>Stap 2 – voorwaarden vertalen</strong>
+</p><!-- l. 135 --><p class='noindent'>Uit het totaal aantal dieren: </p><div class='mathjax-block'>\[ x+y+z=27. \]</div>
+<!-- l. 140 --><p class='noindent'>Uit “driemaal zoveel kippen als eenden”: </p><div class='mathjax-block'>\[ x=3y \qquad \Longleftrightarrow \qquad x-3y=0. \]</div>
+<!-- l. 147 --><p class='noindent'>Uit het totale bod: </p><div class='mathjax-block'>\[ x+1{,}5y+0{,}5z=21. \]</div>
+<!-- l. 152 --><p class='noindent'>Dus </p><div class='mathjax-block'>\[ \begin {cases} x+y+z=27,\\ x-3y=0,\\ x+1{,}5y+0{,}5z=21. \end {cases} \]</div>
+<!-- l. 161 --><p class='noindent'><strong>Stap 3 – uitgebreide matrix</strong>
+</p>
+<div class='mathjax-block'>\[ A_b= \left [ \begin {array}{ccc|c} 1&amp;1&amp;1&amp;27\\ 1&amp;-3&amp;0&amp;0\\ 1&amp;1{,}5&amp;0{,}5&amp;21 \end {array} \right ]. \]</div>
+<!-- l. 174 --><p class='noindent'><strong>Stap 4 – reduceren met ICT</strong>
+</p><!-- l. 176 --><p class='noindent'>De gereduceerde vorm is </p><div class='mathjax-block'>\[ \left [ \begin {array}{ccc|c} 1&amp;0&amp;0&amp;9\\ 0&amp;1&amp;0&amp;3\\ 0&amp;0&amp;1&amp;15 \end {array} \right ]. \]</div>
+<!-- l. 187 --><p class='noindent'>Dus </p><div class='mathjax-block'>\[ x=9,\qquad y=3,\qquad z=15. \]</div>
+<!-- l. 192 --><p class='noindent'><strong>Stap 5 – interpreteren en controleren</strong>
+</p><!-- l. 194 --><p class='noindent'>De waarden zijn niet-negatieve gehele aantallen, zoals aantallen dieren moeten zijn.
+Bovendien: </p><div class='mathjax-block'>\[ 9+3+15=27,\qquad 9=3\cdot 3, \]</div> en <div class='mathjax-block'>\[ 9+1{,}5\cdot 3+0{,}5\cdot 15=21. \]</div>
+<!-- l. 204 --><p class='noindent'>Joeri heeft dus <span class='mathjax-inline'>\(9\)</span> kippen, <span class='mathjax-inline'>\(3\)</span> eenden en <span class='mathjax-inline'>\(15\)</span> duiven.
+</p></div></section>
+<p><a id='x1-18r3'></a>
+</p><p></p><!-- l. 213 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>3</div><div class='fvd-section-bar__title'>Wat doet ICT, en wat doe jij?</div></div>
+<p></p><!-- l. 215 --><p class='noindent'>Bij toepassingen is een digitale matrixreductie bijzonder nuttig: de berekening
+mag snel gaan, zodat de aandacht naar het model en de interpretatie kan
+gaan.
+</p><!-- l. 219 --><p class='noindent'></p><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span><span class='fvd-remark__separator'> — </span><span class='fvd-remark__subtitle'>Jouw verantwoordelijkheid</span></div><div class='fvd-remark__content'> ICT kan controleren noch beslissen of
+<p></p>
+                                                                  
+
+                                                                  
+<ul class='itemize1'>     
+<li class='itemize'>je de juiste onbekenden gekozen hebt;
+</li>
+<li class='itemize'>je de tekst correct naar vergelijkingen vertaald hebt;
+</li>
+<li class='itemize'>de kolommen van de matrix in de juiste volgorde staan;
+</li>
+<li class='itemize'>een negatieve oplossing betekenis heeft;
+</li>
+<li class='itemize'>een kommagetal aanvaardbaar is als je personen of toestellen telt;
+</li>
+<li class='itemize'>een vrije parameter binnen de context alle reële waarden mag aannemen.</li></ul>
+<!-- l. 229 --><p class='noindent'>Dat blijft jouw wiskundige taak. </p></div></section>
+<p><a id='x1-19r1'></a>
+</p><p></p><!-- l. 232 --><p class='noindent'></p><div class='fvd-subsection'>
+<p></p><!-- l. 232 --><p class='noindent'></p><div class='fvd-subsection__row'>
+<p></p><!-- l. 232 --><p class='noindent'></p><div class='fvd-subsection__number'>3.1</div>
+<p></p><!-- l. 232 --><p class='noindent'></p><div class='fvd-subsection__title'>Een oplossingsverzameling kan door de context kleiner worden</div>
+<p></p><!-- l. 232 --><p class='noindent'></p></div>
+<p></p><!-- l. 232 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
+<p></p><!-- l. 232 --><p class='noindent'></p></div>
+<p></p><!-- l. 234 --><p class='noindent'>Stel dat ICT voor een model met drie onbekenden geeft </p><div class='mathjax-block'>\[ (x,y,z)=(25+t,\,35-5t,\,4t). \]</div>
+<!-- l. 239 --><p class='noindent'>Algebraïsch kan <span class='mathjax-inline'>\(t\)</span> elke reële waarde aannemen. Als <span class='mathjax-inline'>\(x,y,z\)</span> aantallen lampen voorstellen,
+gelden echter extra voorwaarden: </p><div class='mathjax-block'>\[ x,y,z\in \mathbb {N} \qquad \text {en}\qquad x,y,z\geq 0. \]</div>
+<!-- l. 247 --><p class='noindent'>De context legt dus beperkingen op die niet automatisch in het oorspronkelijke
+lineaire stelsel aanwezig zijn.
+</p><!-- l. 251 --><p class='noindent'></p><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span></div><div class='fvd-remark__content'><strong>Demathematiseren</strong> betekent dat je de wiskundige uitkomst opnieuw
+vertaalt naar de werkelijkheid. Een model kan algebraïsch correct opgelost zijn en
+toch een onbruikbaar contextantwoord opleveren. </div></section>
+                                                                  
+
+                                                                  
+<p><a id='x1-20r4'></a>
+</p><p></p><!-- l. 261 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>4</div><div class='fvd-section-bar__title'>Mengproblemen</div></div>
+<p></p><!-- l. 263 --><p class='noindent'>Mengproblemen leveren natuurlijke lineaire stelsels op omdat verschillende
+bestanddelen tegelijk aan opgelegde totalen moeten voldoen.
+<a id='x1-21r2'></a>
+</p><!-- l. 266 --><p class='noindent'></p><section class='fvd-example'>
+<p></p><!-- l. 266 --><p class='noindent'></p><div class='fvd-example__title'>Voorbeeld 2<span class='fvd-example__subtitle'> — Voedingsmengsel</span></div>
+<p></p><!-- l. 266 --><p class='noindent'></p><div class='fvd-example__content'>
+<p></p><!-- l. 268 --><p class='noindent'>Een bioloog wil een mengsel maken dat <span class='mathjax-inline'>\(23\)</span> g proteïne, <span class='mathjax-inline'>\(6{,}2\)</span> g vet en <span class='mathjax-inline'>\(16\)</span> g vocht bevat. Hij
+beschikt over:
+</p>     
+<ul class='itemize1'>
+<li class='itemize'>mengsel A: <span class='mathjax-inline'>\(20\%\)</span> proteïne, <span class='mathjax-inline'>\(2\%\)</span> vet en <span class='mathjax-inline'>\(15\%\)</span> vocht;
+</li>
+<li class='itemize'>mengsel B: <span class='mathjax-inline'>\(10\%\)</span> proteïne, <span class='mathjax-inline'>\(6\%\)</span> vet en <span class='mathjax-inline'>\(10\%\)</span> vocht;
+</li>
+<li class='itemize'>mengsel C: <span class='mathjax-inline'>\(15\%\)</span> proteïne, <span class='mathjax-inline'>\(5\%\)</span> vet en <span class='mathjax-inline'>\(5\%\)</span> vocht.</li></ul>
+<!-- l. 277 --><p class='noindent'>Neem <span class='mathjax-inline'>\(x,y,z\)</span> als het aantal gram van respectievelijk A, B en C.
+</p><!-- l. 279 --><p class='noindent'>Dan geeft behoud van elke component: </p><div class='mathjax-block'>\[ \begin {cases} 0{,}20x+0{,}10y+0{,}15z=23,\\ 0{,}02x+0{,}06y+0{,}05z=6{,}2,\\ 0{,}15x+0{,}10y+0{,}05z=16. \end {cases} \]</div>
+<!-- l. 288 --><p class='noindent'>Voer de uitgebreide matrix in ICT in. De reductie levert </p><div class='mathjax-block'>\[ x=60,\qquad y=50,\qquad z=40. \]</div>
+<!-- l. 293 --><p class='noindent'>De contextcontrole is essentieel. Voor proteïne bijvoorbeeld: </p><div class='mathjax-block'>\[ 0{,}20\cdot 60+0{,}10\cdot 50+0{,}15\cdot 40 =12+5+6=23. \]</div>
+<!-- l. 299 --><p class='noindent'>Er is dus <span class='mathjax-inline'>\(60\)</span> g van A, <span class='mathjax-inline'>\(50\)</span> g van B en <span class='mathjax-inline'>\(40\)</span> g van C nodig. </p></div></section>
+<p><a id='x1-22r5'></a>
+</p><p></p><!-- l. 307 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>5</div><div class='fvd-section-bar__title'>Wanneer een model niet één antwoord geeft</div></div>
+<p></p><!-- l. 309 --><p class='noindent'>De rang vertelt niet alleen iets over een abstract stelsel. Ook in een context heeft elke
+mogelijkheid betekenis.
+</p><!-- l. 312 --><p class='noindent'></p><section class='fvd-property'><div class='fvd-property__title'><span class='fvd-property__label'>EIGENSCHAP</span><span class='fvd-property__separator'> — </span><span class='fvd-property__name'>Interpretatie van de oplosbaarheid</span></div><div class='fvd-property__content'> Voor een lineair model met <span class='mathjax-inline'>\(n\)</span>
+onbekenden geldt:
+<p></p>     
+<ul class='itemize1'>
+<li class='itemize'><span class='mathjax-inline'>\(\operatorname {rang}(A)&lt;\operatorname {rang}(A_b)\)</span>: de voorwaarden zijn onderling strijdig; er bestaat geen oplossing;
+                                                                  
+
+                                                                  
+</li>
+<li class='itemize'><span class='mathjax-inline'>\(\operatorname {rang}(A)=\operatorname {rang}(A_b)=n\)</span>: de voorwaarden bepalen precies één wiskundige oplossing;
+</li>
+<li class='itemize'><span class='mathjax-inline'>\(\operatorname {rang}(A)=\operatorname {rang}(A_b)&lt;n\)</span>: de gegeven voorwaarden bepalen de situatie niet volledig; er blijven vrije
+parameters over.</li></ul>
+</div></section>
+<p><a id='x1-23r3'></a>
+</p><!-- l. 326 --><p class='noindent'></p><section class='fvd-example'>
+<p></p><!-- l. 326 --><p class='noindent'></p><div class='fvd-example__title'>Voorbeeld 3<span class='fvd-example__subtitle'> — Zestig ledlampen</span></div>
+<p></p><!-- l. 326 --><p class='noindent'></p><div class='fvd-example__content'>
+<p></p><!-- l. 328 --><p class='noindent'>Er moeten <span class='mathjax-inline'>\(60\)</span> ledlampen worden geplaatst met samen <span class='mathjax-inline'>\(40\,000\)</span> lumen. Er is keuze uit lampen
+van <span class='mathjax-inline'>\(900\)</span>, <span class='mathjax-inline'>\(500\)</span> en <span class='mathjax-inline'>\(400\)</span> lumen.
+</p><!-- l. 331 --><p class='noindent'>Met <span class='mathjax-inline'>\(x,y,z\)</span> als de aantallen krijgen we </p><div class='mathjax-block'>\[ \begin {cases} x+y+z=60,\\ 900x+500y+400z=40\,000. \end {cases} \]</div>
+<!-- l. 339 --><p class='noindent'>Er zijn drie onbekenden maar slechts twee onafhankelijke voorwaarden. Na reductie
+blijft één vrije parameter over.
+</p><!-- l. 342 --><p class='noindent'>Dat betekent niet dat elke reële parameterwaarde bruikbaar is: aantallen lampen
+moeten niet-negatieve gehele getallen zijn.
+</p><!-- l. 345 --><p class='noindent'>De context verandert een oneindige algebraïsche oplossingsverzameling dus in een
+eindige verzameling praktisch mogelijke keuzes. </p></div></section>
+<p><a id='x1-24r6'></a>
+</p><p></p><!-- l. 354 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>6</div><div class='fvd-section-bar__title'>Chemische reactievergelijkingen als stelsel</div></div>
+<p></p><!-- l. 356 --><p class='noindent'>Een bijzonder mooie toepassing ontstaat in de chemie. Bij het balanceren van een
+reactievergelijking moeten van elk element evenveel atomen vóór als na de reactie
+aanwezig zijn.
+</p><!-- l. 360 --><p class='noindent'></p><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span><span class='fvd-remark__separator'> — </span><span class='fvd-remark__subtitle'>Wat wordt behouden?</span></div><div class='fvd-remark__content'> Bij het balanceren veranderen we <strong>alleen de
+coëfficiënten vóór de stoffen</strong>. We veranderen nooit de indices in een chemische
+formule.
+<p></p><!-- l. 364 --><p class='noindent'>De vergelijkingen drukken het behoud van het aantal atomen van elk element uit.
+Dat is de wiskundige vertaling die we nodig hebben. </p></div></section>
+<p><a id='x1-25r4'></a>
+</p><p></p><!-- l. 368 --><p class='noindent'></p><section class='fvd-example'>
+<p></p><!-- l. 368 --><p class='noindent'></p><div class='fvd-example__title'>Voorbeeld 4<span class='fvd-example__subtitle'> — Verbranding van methaan</span></div>
+<p></p><!-- l. 368 --><p class='noindent'></p><div class='fvd-example__content'>
+<p></p><!-- l. 370 --><p class='noindent'>We willen </p><div class='mathjax-block'>\[ \ldots \,CH_4+\ldots \,O_2 \longrightarrow \ldots \,CO_2+\ldots \,H_2O \]</div> balanceren.
+                                                                  
+
+                                                                  
+<!-- l. 378 --><p class='noindent'>Geef de onbekende coëfficiënten namen: </p><div class='mathjax-block'>\[ a\,CH_4+b\,O_2 \longrightarrow c\,CO_2+d\,H_2O. \]</div>
+<!-- l. 385 --><p class='noindent'>Voor elk element schrijven we een behoudsvergelijking.
+</p><!-- l. 387 --><p class='noindent'>Koolstof: </p><div class='mathjax-block'>\[ a=c. \]</div>
+<!-- l. 392 --><p class='noindent'>Waterstof: </p><div class='mathjax-block'>\[ 4a=2d. \]</div>
+<!-- l. 397 --><p class='noindent'>Zuurstof: </p><div class='mathjax-block'>\[ 2b=2c+d. \]</div>
+<!-- l. 402 --><p class='noindent'>Dus: </p><div class='mathjax-block'>\[ \begin {cases} a-c=0,\\ 4a-2d=0,\\ 2b-2c-d=0. \end {cases} \]</div>
+<!-- l. 411 --><p class='noindent'>De coëfficiënten vormen een homogeen stelsel: </p><div class='mathjax-block'>\[ \left [ \begin {array}{cccc|c} 1&amp;0&amp;-1&amp;0&amp;0\\ 4&amp;0&amp;0&amp;-2&amp;0\\ 0&amp;2&amp;-2&amp;-1&amp;0 \end {array} \right ]. \]</div>
+<!-- l. 422 --><p class='noindent'>Laat ICT reduceren: </p><div class='mathjax-block'>\[ \left [ \begin {array}{cccc|c} 1&amp;0&amp;0&amp;-\frac 12&amp;0\\ 0&amp;1&amp;0&amp;-1&amp;0\\ 0&amp;0&amp;1&amp;-\frac 12&amp;0 \end {array} \right ]. \]</div>
+<!-- l. 433 --><p class='noindent'>Er zijn vier onbekenden en drie pivots: </p><div class='mathjax-block'>\[ \operatorname {rang}(A)=3&lt;4. \]</div>
+<!-- l. 438 --><p class='noindent'>Er is dus één vrije parameter. Neem <span class='mathjax-inline'>\(d=t\)</span>. Dan: </p><div class='mathjax-block'>\[ a=\frac 12t,\qquad b=t,\qquad c=\frac 12t,\qquad d=t. \]</div>
+<!-- l. 443 --><p class='noindent'>Of: </p><div class='mathjax-block'>\[ (a,b,c,d) = t\left (\frac 12,1,\frac 12,1\right ). \]</div>
+<!-- l. 450 --><p class='noindent'>Chemisch kiezen we de <strong>kleinste positieve gehele verhouding</strong>. Met <span class='mathjax-inline'>\(t=2\)</span>:
+</p><div class='mathjax-block'>\[ (a,b,c,d)=(1,2,1,2). \]</div>
+<!-- l. 456 --><p class='noindent'>Daarom: </p><div class='mathjax-block'>\[ \boxed {CH_4+2O_2\longrightarrow CO_2+2H_2O}. \]</div>
+</div></section>
+<p><a id='x1-26r7'></a>
+</p><!-- l. 468 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>7</div><div class='fvd-section-bar__title'>Waarom is een reactievergelijking niet uniek?</div></div>
+<p></p><!-- l. 470 --><p class='noindent'>Als </p><div class='mathjax-block'>\[ CH_4+2O_2\longrightarrow CO_2+2H_2O \]</div><p> klopt, dan klopt ook </p><div class='mathjax-block'>\[ 2CH_4+4O_2\longrightarrow 2CO_2+4H_2O. \]</div>
+<!-- l. 479 --><p class='noindent'>Beide beschrijven dezelfde verhouding.
+</p><!-- l. 481 --><p class='noindent'>Wiskundig zien we precies hetzelfde: als <span class='mathjax-inline'>\(X\)</span> een oplossing is van het homogene stelsel </p><div class='mathjax-block'>\[ AX=0, \]</div><p>
+dan is voor elke <span class='mathjax-inline'>\(\lambda \in \mathbb {R}\)</span> </p><div class='mathjax-block'>\[ A(\lambda X)=\lambda AX=0. \]</div>
+<!-- l. 491 --><p class='noindent'>Daarom bepaalt het stelsel bij een gewone balanceeropgave geen unieke
+coëfficiëntenvector. We zoeken uiteindelijk de kleinste positieve gehele
+vertegenwoordiger van die verhouding.
+</p><!-- l. 495 --><p class='noindent'></p><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span><span class='fvd-remark__separator'> — </span><span class='fvd-remark__subtitle'>De nuloplossing</span></div><div class='fvd-remark__content'> Omdat het stelsel homogeen is, is <p></p><div class='mathjax-block'>\[ (a,b,c,d)=(0,0,0,0) \]</div> altijd een
+wiskundige oplossing. Chemisch is die betekenisloos. We zoeken daarom een
+<strong>niet-triviale</strong> oplossing met positieve coëfficiënten. </div></section>
+<p><a id='x1-27r8'></a>
+</p><!-- l. 510 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>8</div><div class='fvd-section-bar__title'>Samenvatting: van werkelijkheid naar antwoord</div></div>
+<p></p><!-- l. 512 --><p class='noindent'>Bij toepassingen van stelsels is de matrixreductie slechts één schakel.
+</p>
+<div class='mathjax-block'>\[ \boxed { \begin {array}{c} \text {1. kies onbekenden}\\ \downarrow \\ \text {2. vertaal voorwaarden naar vergelijkingen}\\ \downarrow \\ \text {3. maak de uitgebreide matrix}\\ \downarrow \\ \text {4. reduceer met ICT}\\ \downarrow \\ \text {5. analyseer rang en oplossingen}\\ \downarrow \\ \text {6. interpreteer en controleer in de context} \end {array}} \]</div>
+<!-- l. 531 --><p class='noindent'></p><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span><span class='fvd-remark__separator'> — </span><span class='fvd-remark__subtitle'>Wat moet je zeker beheersen?</span></div><div class='fvd-remark__content'> Je moet niet alleen een gegeven matrix
+met ICT kunnen reduceren. Voor het minimumtraject van dit hoofdstuk moet je ook
+zelfstandig een betekenisvolle context kunnen mathematiseren en de verkregen
+oplossing correct kunnen demathematiseren.
+                                                                  
+
+                                                                  
+<p></p><!-- l. 537 --><p class='noindent'>Bij chemische reactievergelijkingen moet je bovendien het homogene stelsel, de vrije
+parameter en de keuze van de kleinste positieve gehele verhouding kunnen verklaren.
+</p></div></section>
+                                                                  
+
+                                                                  
+<p></p>
+</body> 
+ 
+</html>
+                                                                  
+
+

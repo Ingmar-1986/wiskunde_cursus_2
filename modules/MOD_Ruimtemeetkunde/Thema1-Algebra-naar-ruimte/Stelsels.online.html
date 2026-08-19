@@ -1,0 +1,748 @@
+<!DOCTYPE html> 
+<html lang='en-US' xml:lang='en-US'> 
+<head> <title>Stelsels herbekeken: rang en oplossingsverzamelingen</title> 
+<meta charset='utf-8' /> 
+<meta content='TeX4ht (https://tug.org/tex4ht/)' name='generator' /> 
+<meta content='width=device-width,initial-scale=1' name='viewport' /> 
+<link href='\aa:CssFile ' rel='stylesheet' type='text/css' /> 
+<meta content='Stelsels.online.tex' name='src' /> 
+<script>window.MathJax = { tex: { tags: "ams", }, }; </script> 
+<script async='async' id='MathJax-script' src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js' type='text/javascript'></script>  
+<meta content='Ingmar Herreman' name='author' /> 
+<meta content='version 2.5.1' name='ximera' /> 
+<link href='https://ximera.osu.edu/public/stylesheets/standalone.css' media='screen' rel='stylesheet' /> 
+<script async='' src='https://ximera.osu.edu/public/javascripts/standalone.min.js' type='text/javascript'></script> 
+</head><body> 
+<div class='preamble'>
+</div>
+<style> .activity-body pre { white-space: pre; background-color: lightgray; } .xmyoutube { aspect-ratio: 16/9; min-width: 75%; } .image-environment img { width: unset; } </style> 
+
+ 
+<div class='abstract'>
+<!-- l. 35 --><p class='noindent'>Lineaire stelsels, matrixnotatie en de methode van Gauss–Jordan heb je in het vijfde
+jaar al bestudeerd.
+</p><!-- l. 35 --><p class='noindent'>In dit hoofdstuk halen we die kennis opnieuw naar boven, maar de nadruk
+verschuift. Voor omvangrijke reducties gebruiken we ICT. Belangrijker is
+dat je een gereduceerde matrix correct kunt lezen, de rang kunt bepalen en
+kunt analyseren of een stelsel geen, precies één of oneindig veel oplossingen
+heeft.
+</p><!-- l. 35 --><p class='noindent'>Die analyse vormt een belangrijke brug van algebra naar ruimtemeetkunde:
+oplossingsverzamelingen zullen straks punten, rechten en vlakken in de ruimte
+beschrijven.</p> 
+</div>
+<div class='maketitle'></div>
+<!-- l. 44 --><p class='noindent'></p><section class='learning-box learning-box--prior'> <div class='learning-box__header'> <span class='learning-box__icon'> </span><span class='learning-box__title'>Voorkennis</span> </div> <div class='learning-box__content'> 
+<p></p>     
+<ul class='itemize1'>
+<li class='itemize'>Je herkent een lineair stelsel.
+</li>
+<li class='itemize'>Je kan een stelsel in matrixnotatie schrijven.
+</li>
+<li class='itemize'>Je kent de elementaire rijoperaties van Gauss–Jordan.
+</li>
+<li class='itemize'>Je weet wat een uitgebreide matrix is.
+</li>
+<li class='itemize'>Je hebt eerder matrices met ICT gereduceerd.</li></ul>
+<!-- l. 50 --><p class='noindent'></p></div> </section> 
+<p></p><!-- l. 52 --><p class='noindent'></p><section class='learning-box learning-box--goals'> <div class='learning-box__header'> <span class='learning-box__icon'> </span><span class='learning-box__title'>Leerdoelen</span> </div> <div class='learning-box__content'> 
+<p></p>
+                                                                  
+
+                                                                  
+<ul class='itemize1'>     
+<li class='itemize'>Je kan een lineair stelsel omzetten naar een uitgebreide matrix.
+</li>
+<li class='itemize'>Je kan een uitgebreide matrix met behulp van ICT reduceren.
+</li>
+<li class='itemize'>Je kan uit een gereduceerde matrix de rang aflezen.
+</li>
+<li class='itemize'>Je  kan  de  rang  van  de  coëfficiëntenmatrix  en  de  uitgebreide  matrix
+vergelijken.
+</li>
+<li class='itemize'>Je kan bepalen of een stelsel geen, precies één of oneindig veel oplossingen
+heeft.
+</li>
+<li class='itemize'>Je  kan  vrije  onbekenden  herkennen  en  een  oplossingsverzameling  met
+parameters schrijven.
+</li>
+<li class='itemize'>Je kan je besluit over de oplosbaarheid wiskundig beargumenteren.
+</li>
+<li class='itemize'>Je kan de eerste link leggen tussen een algebraïsche oplossingsverzameling
+en meetkundige objecten in de ruimte.</li></ul>
+<!-- l. 62 --><p class='noindent'></p></div> </section> 
+<p></p><!-- l. 66 --><p class='noindent'></p><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span></div><div class='fvd-remark__content'>Dit hoofdstuk is een <strong>opfrissing</strong>.
+<p></p><!-- l. 68 --><p class='noindent'>Je hebt deze leerstof al gezien. We bouwen de theorie daarom niet opnieuw vanaf nul
+op. In het zesde jaar verschuift de aandacht van lange handberekeningen naar het
+<strong>interpreteren van de reductie</strong>.
+</p><!-- l. 72 --><p class='noindent'>Voor omvangrijke berekeningen gebruiken we waar mogelijk ICT. Jij moet de invoer
+correct kunnen opstellen, het resultaat kunnen lezen en er een wiskundig besluit uit
+kunnen trekken. </p></div></section>
+                                                                  
+
+                                                                  
+<p><a id='x1-2r1'></a>
+</p><p></p><!-- l. 82 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>1</div><div class='fvd-section-bar__title'>Waarom beginnen we opnieuw met stelsels?</div></div>
+<p></p><!-- l. 84 --><p class='noindent'>Een groot deel van de ruimtemeetkunde die volgt, zal uiteindelijk leiden tot vragen
+zoals:
+</p>     
+<ul class='itemize1'>
+<li class='itemize'>Snijden twee meetkundige objecten elkaar?
+</li>
+<li class='itemize'>Bestaat er precies één gemeenschappelijk punt?
+</li>
+<li class='itemize'>Zijn er oneindig veel gemeenschappelijke punten?
+</li>
+<li class='itemize'>Is een combinatie van voorwaarden onmogelijk?</li></ul>
+<!-- l. 94 --><p class='noindent'>Op het eerste gezicht zijn dat meetkundige vragen.
+</p><!-- l. 96 --><p class='noindent'>Toch zullen we ze vaak oplossen met <strong>algebra</strong>.
+</p><!-- l. 98 --><p class='noindent'>Wanneer verschillende voorwaarden tegelijk moeten gelden, ontstaat immers een
+<strong>stelsel van vergelijkingen</strong>. De oplossingsverzameling van dat stelsel vertelt ons
+dan wat er meetkundig gebeurt.
+</p><!-- l. 102 --><p class='noindent'>Daarom frissen we eerst het algebraïsche gereedschap op dat we doorheen de hele
+module nodig zullen hebben.
+<a id='x1-3r1'></a>
+</p><!-- l. 106 --><p class='noindent'></p><section class='fvd-example'>
+<p></p><!-- l. 106 --><p class='noindent'></p><div class='fvd-example__title'>Voorbeeld 1<span class='fvd-example__subtitle'> — Een voorproefje</span></div>
+<p></p><!-- l. 106 --><p class='noindent'></p><div class='fvd-example__content'>
+<p></p><!-- l. 108 --><p class='noindent'>Beschouw de twee vergelijkingen
+</p>
+<div class='mathjax-block'>\[ \begin {cases} x+y=4,\\ x-y=2. \end {cases} \]</div>
+<!-- l. 117 --><p class='noindent'>Een koppel <span class='mathjax-inline'>\((x,y)\)</span> is een oplossing van het stelsel als het <strong>beide vergelijkingen tegelijk</strong>
+doet kloppen.
+</p><!-- l. 120 --><p class='noindent'>De oplossing is
+</p>
+                                                                  
+
+                                                                  
+<div class='mathjax-block'>\[ (x,y)=(3,1). \]</div>
+<!-- l. 126 --><p class='noindent'>Meetkundig stellen beide vergelijkingen een rechte in het vlak voor. Het punt <span class='mathjax-inline'>\((3,1)\)</span>
+behoort tot beide rechten en is dus hun snijpunt.
+</p>
+<div class='mathjax-block'>\[ \text {\textbf {gemeenschappelijke oplossing}} \quad \longleftrightarrow \quad \text {\textbf {gemeenschappelijk punt}} \]</div>
+<!-- l. 135 --><p class='noindent'>In de ruimte zullen we precies hetzelfde principe gebruiken voor rechten en vlakken.
+</p></div></section>
+<p><a id='x1-4r2'></a>
+</p><p></p><!-- l. 145 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>2</div><div class='fvd-section-bar__title'>Van een stelsel naar een matrix</div></div>
+<p></p><!-- l. 147 --><p class='noindent'>Beschouw een lineair stelsel met <span class='mathjax-inline'>\(m\)</span> vergelijkingen en <span class='mathjax-inline'>\(n\)</span> onbekenden:
+</p>
+<div class='mathjax-block'>\[ S= \begin {cases} a_{11}x_1+a_{12}x_2+\cdots +a_{1n}x_n=b_1,\\ a_{21}x_1+a_{22}x_2+\cdots +a_{2n}x_n=b_2,\\ \vdots \\ a_{m1}x_1+a_{m2}x_2+\cdots +a_{mn}x_n=b_m. \end {cases} \]</div>
+<!-- l. 159 --><p class='noindent'>We kunnen dit compact schrijven als
+</p>
+<div class='mathjax-block'>\[ A\,X=B, \]</div>
+<!-- l. 165 --><p class='noindent'>met
+</p>
+<div class='mathjax-block'>\[ A= \begin {bmatrix} a_{11}&amp;a_{12}&amp;\cdots&amp;a _{1n}\\ a_{21}&amp;a_{22}&amp;\cdots&amp;a _{2n}\\ \vdots&amp; \vdots&amp; \ddots&amp; \vdots \\ a_{m1}&amp;a_{m2}&amp;\cdots&amp;a _{mn} \end {bmatrix}, \qquad X= \begin {bmatrix} x_1\\x_2\\\vdots \\x_n \end {bmatrix}, \qquad B= \begin {bmatrix} b_1\\b_2\\\vdots \\b_m \end {bmatrix}. \]</div>
+<!-- l. 189 --><p class='noindent'></p><section class='fvd-definition'><div class='fvd-definition__title'><span class='fvd-definition__label'>DEFINITIE</span></div><div class='fvd-definition__content'>De matrix <span class='mathjax-inline'>\(A\)</span> noemen we de <strong>coëfficiëntenmatrix</strong>.
+<p></p><!-- l. 191 --><p class='noindent'>De matrix
+</p>
+<div class='mathjax-block'>\[ A_b= \left [ \begin {array}{cccc|c} a_{11}&amp;a_{12}&amp;\cdots&amp;a _{1n}&amp;b_1\\ a_{21}&amp;a_{22}&amp;\cdots&amp;a _{2n}&amp;b_2\\ \vdots&amp; \vdots&amp;&amp; \vdots&amp; \vdots \\ a_{m1}&amp;a_{m2}&amp;\cdots&amp;a _{mn}&amp;b_m \end {array} \right ] \]</div>
+<!-- l. 205 --><p class='noindent'>noemen we de <strong>uitgebreide matrix</strong> van het stelsel. </p></div></section>
+<p><a id='x1-5r2'></a>
+</p><p></p><!-- l. 210 --><p class='noindent'></p><section class='fvd-example'>
+<p></p><!-- l. 210 --><p class='noindent'></p><div class='fvd-example__title'>Voorbeeld 2</div>
+<p></p><!-- l. 210 --><p class='noindent'></p><div class='fvd-example__content'>
+<p></p><!-- l. 211 --><p class='noindent'>Gegeven
+</p>
+<div class='mathjax-block'>\[ S= \begin {cases} 2x-y+3z=5,\\ 3x+2y+2z=4,\\ 5x+3y-z=7. \end {cases} \]</div>
+<!-- l. 222 --><p class='noindent'>Dan is
+</p>
+<div class='mathjax-block'>\[ A= \begin {bmatrix} 2&amp;-1&amp;3\\ 3&amp;2&amp;2\\ 5&amp;3&amp;-1 \end {bmatrix}, \qquad B= \begin {bmatrix} 5\\4\\7 \end {bmatrix}, \]</div>
+<!-- l. 238 --><p class='noindent'>en de uitgebreide matrix is
+</p>
+<div class='mathjax-block'>\[ A_b= \left [ \begin {array}{ccc|c} 2&amp;-1&amp;3&amp;5\\ 3&amp;2&amp;2&amp;4\\ 5&amp;3&amp;-1&amp;7 \end {array} \right ]. \]</div>
+                                                                  
+
+                                                                  
+</div></section>
+<!-- l. 254 --><p class='noindent'></p><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span><span class='fvd-remark__separator'> — </span><span class='fvd-remark__subtitle'>Let op de volgorde</span></div><div class='fvd-remark__content'>
+<p></p><!-- l. 256 --><p class='noindent'>De kolommen van <span class='mathjax-inline'>\(A\)</span> horen bij de onbekenden.
+</p><!-- l. 258 --><p class='noindent'>Als we de volgorde
+</p>
+<div class='mathjax-block'>\[ x,\ y,\ z \]</div>
+<!-- l. 264 --><p class='noindent'>kiezen, moet die volgorde in <strong>elke vergelijking</strong> worden gerespecteerd.
+</p><!-- l. 266 --><p class='noindent'>Zo moet
+</p>
+<div class='mathjax-block'>\[ x+3z=5 \]</div>
+<!-- l. 272 --><p class='noindent'>in de matrix worden genoteerd als
+</p>
+<div class='mathjax-block'>\[ \begin {bmatrix} 1&amp;0&amp;3&amp;|&amp;5 \end {bmatrix}. \]</div>
+<!-- l. 280 --><p class='noindent'>De ontbrekende <span class='mathjax-inline'>\(y\)</span>-term heeft coëfficiënt <span class='mathjax-inline'>\(0\)</span>. </p></div></section>
+<p><a id='x1-6r3'></a>
+</p><p></p><!-- l. 289 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>3</div><div class='fvd-section-bar__title'>Gauss–Jordan: wat moet je nog kennen?</div></div>
+<p></p><!-- l. 291 --><p class='noindent'>Je kent de methode van Gauss–Jordan al.
+</p><!-- l. 293 --><p class='noindent'>Het basisidee blijft hetzelfde: we vervangen de uitgebreide matrix door een
+eenvoudiger matrix die <strong>dezelfde oplossingsverzameling</strong> beschrijft.
+</p><!-- l. 297 --><p class='noindent'>Daarvoor gebruiken we elementaire rijoperaties:
+</p>
+<div class='mathjax-block'>\[ R_i\leftrightarrow R_j, \]</div>
+<div class='mathjax-block'>\[ R_i\longrightarrow \lambda R_i \qquad (\lambda \neq 0), \]</div>
+<!-- l. 308 --><p class='noindent'>en
+</p>
+<div class='mathjax-block'>\[ R_i\longrightarrow R_i+\lambda R_j. \]</div>
+<!-- l. 316 --><p class='noindent'></p><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span></div><div class='fvd-remark__content'>Deze rijoperaties veranderen de oplossingsverzameling van het stelsel
+niet.
+<p></p><!-- l. 318 --><p class='noindent'>Daarom mogen we een ingewikkelde uitgebreide matrix vervangen door een
+rij-equivalente, eenvoudiger matrix. </p></div></section>
+<p><a id='x1-7r1'></a>
+</p><p></p><!-- l. 323 --><p class='noindent'></p><div class='fvd-subsection'>
+<p></p><!-- l. 323 --><p class='noindent'></p><div class='fvd-subsection__row'>
+<p></p><!-- l. 323 --><p class='noindent'></p><div class='fvd-subsection__number'>3.1</div>
+<p></p><!-- l. 323 --><p class='noindent'></p><div class='fvd-subsection__title'>Gereduceerde rij-echelonvorm</div>
+                                                                  
+
+                                                                  
+<p></p><!-- l. 323 --><p class='noindent'></p></div>
+<p></p><!-- l. 323 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
+<p></p><!-- l. 323 --><p class='noindent'></p></div>
+<p></p><!-- l. 325 --><p class='noindent'>Na volledige Gauss–Jordan-reductie verkrijgen we de <strong>gereduceerde rij-echelonvorm</strong>
+van de matrix.
+</p><!-- l. 328 --><p class='noindent'>Je herkent die vorm onder andere aan:
+</p>     
+<ul class='itemize1'>
+<li class='itemize'>alle nulrijen staan onderaan;
+</li>
+<li class='itemize'>elke niet-nulrij heeft een eerste niet-nulelement dat gelijk is aan <span class='mathjax-inline'>\(1\)</span>;
+</li>
+<li class='itemize'>zo’n eerste <span class='mathjax-inline'>\(1\)</span> noemen we een <strong>spil</strong> of <strong>pivot</strong>;
+</li>
+<li class='itemize'>in een pivotkolom zijn alle andere elementen <span class='mathjax-inline'>\(0\)</span>;
+</li>
+<li class='itemize'>de pivots schuiven naar rechts wanneer we naar beneden gaan.</li></ul>
+<!-- l. 339 --><p class='noindent'>Bijvoorbeeld:
+</p>
+<div class='mathjax-block'>\[ \begin {bmatrix} 1&amp;0&amp;2&amp;0&amp;-3\\ 0&amp;1&amp;-1&amp;0&amp;4\\ 0&amp;0&amp;0&amp;1&amp;2\\ 0&amp;0&amp;0&amp;0&amp;0 \end {bmatrix}. \]</div>
+<!-- l. 350 --><p class='noindent'>De pivots bevinden zich hier in kolom <span class='mathjax-inline'>\(1\)</span>, <span class='mathjax-inline'>\(2\)</span> en <span class='mathjax-inline'>\(4\)</span>.
+<a id='x1-8r4'></a>
+</p><!-- l. 358 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>4</div><div class='fvd-section-bar__title'>Reduceren met ICT</div></div>
+<p></p><!-- l. 360 --><p class='noindent'>Vanaf nu hoef je een omvangrijk stelsel niet telkens volledig met de hand te
+reduceren.
+</p><!-- l. 363 --><p class='noindent'>Gebruik de functie van je rekentoestel of software die een matrix naar haar
+<strong>gereduceerde rij-echelonvorm</strong> brengt (<em>rref</em>, <em>row reduce</em>, <em>reduced row echelon form</em>,
+…).
+</p><!-- l. 367 --><p class='noindent'>De wiskunde begint echter niet wanneer je op ENTER drukt. Ze begint bij de
+correcte invoer en vooral bij de interpretatie van de uitvoer.
+                                                                  
+
+                                                                  
+</p><!-- l. 371 --><p class='noindent'></p><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span><span class='fvd-remark__separator'> — </span><span class='fvd-remark__subtitle'>ICT is een hulpmiddel, geen besluit</span></div><div class='fvd-remark__content'>
+<p></p><!-- l. 373 --><p class='noindent'>Bij een oefening van dit hoofdstuk moet je meestal nog steeds zelf:
+</p>     
+<ol class='enumerate1'>
+<li class='enumerate' id='x1-10x1'>de uitgebreide matrix correct opstellen;
+</li>
+<li class='enumerate' id='x1-12x2'>de matrix met ICT reduceren;
+</li>
+<li class='enumerate' id='x1-14x3'>de pivots herkennen;
+</li>
+<li class='enumerate' id='x1-16x4'>de rang bepalen;
+</li>
+<li class='enumerate' id='x1-18x5'>vrije onbekenden herkennen;
+</li>
+<li class='enumerate' id='x1-20x6'>de oplosbaarheid bepalen;
+</li>
+<li class='enumerate' id='x1-22x7'>de oplossingsverzameling correct formuleren;
+</li>
+<li class='enumerate' id='x1-24x8'>je besluit kunnen verklaren.</li></ol>
+                                                                  
+
+                                                                  
+</div></section>
+<p><a id='x1-25r3'></a>
+</p><!-- l. 388 --><p class='noindent'></p><section class='fvd-example'>
+<p></p><!-- l. 388 --><p class='noindent'></p><div class='fvd-example__title'>Voorbeeld 3<span class='fvd-example__subtitle'> — Van ICT-uitvoer naar wiskunde</span></div>
+<p></p><!-- l. 388 --><p class='noindent'></p><div class='fvd-example__content'>
+<p></p><!-- l. 390 --><p class='noindent'>Stel dat ICT voor een stelsel met drie onbekenden de volgende gereduceerde
+uitgebreide matrix geeft:
+</p>
+<div class='mathjax-block'>\[ \left [ \begin {array}{ccc|c} 1&amp;0&amp;2&amp;3\\ 0&amp;1&amp;-1&amp;4\\ 0&amp;0&amp;0&amp;0 \end {array} \right ]. \]</div>
+<!-- l. 403 --><p class='noindent'>De berekening is nu afgelopen, maar de analyse nog niet.
+</p><!-- l. 405 --><p class='noindent'>Er zijn twee pivots in de coëfficiëntenmatrix. Dus
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A)=2. \]</div>
+<!-- l. 411 --><p class='noindent'>Ook de uitgebreide matrix heeft twee niet-nulrijen:
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A_b)=2. \]</div>
+<!-- l. 417 --><p class='noindent'>Er zijn <span class='mathjax-inline'>\(n=3\)</span> onbekenden en slechts <span class='mathjax-inline'>\(2\)</span> pivotvariabelen. Er is dus
+</p>
+<div class='mathjax-block'>\[ 3-2=1 \]</div>
+<!-- l. 424 --><p class='noindent'>vrije onbekende.
+</p><!-- l. 426 --><p class='noindent'>Omdat
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A)=\operatorname {rang}(A_b)&lt;3, \]</div>
+<!-- l. 432 --><p class='noindent'>heeft het stelsel oneindig veel oplossingen. </p></div></section>
+<p><a id='x1-26r5'></a>
+</p><p></p><!-- l. 441 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>5</div><div class='fvd-section-bar__title'>De rang van een matrix</div></div>
+<p></p><!-- l. 444 --><p class='noindent'></p><section class='fvd-definition'><div class='fvd-definition__title'><span class='fvd-definition__label'>DEFINITIE</span></div><div class='fvd-definition__content'>De <strong>rang</strong> van een matrix is het aantal pivots in haar gereduceerde
+rij-echelonvorm.
+<p></p><!-- l. 447 --><p class='noindent'>Equivalent: de rang is het aantal niet-nulrijen in die gereduceerde vorm.
+</p></div></section>
+<p><a id='x1-27r4'></a>
+</p><p></p><!-- l. 452 --><p class='noindent'></p><section class='fvd-example'>
+<p></p><!-- l. 452 --><p class='noindent'></p><div class='fvd-example__title'>Voorbeeld 4</div>
+<p></p><!-- l. 452 --><p class='noindent'></p><div class='fvd-example__content'>
+<p></p>
+<div class='mathjax-block'>\[ A\sim \begin {bmatrix} 1&amp;0&amp;2&amp;-1\\ 0&amp;1&amp;3&amp;4\\ 0&amp;0&amp;0&amp;0 \end {bmatrix}. \]</div>
+                                                                  
+
+                                                                  
+<!-- l. 462 --><p class='noindent'>Er zijn twee pivots, dus
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A)=2. \]</div>
+</div></section>
+<!-- l. 471 --><p class='noindent'></p><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span><span class='fvd-remark__separator'> — </span><span class='fvd-remark__subtitle'>Belangrijk</span></div><div class='fvd-remark__content'>
+<p></p><!-- l. 473 --><p class='noindent'>Voor een stelsel moeten we vaak <strong>twee rangen</strong> onderscheiden:
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A) \qquad \text {en}\qquad \operatorname {rang}(A_b). \]</div>
+<!-- l. 481 --><p class='noindent'>Dat verschil is essentieel.
+</p><!-- l. 483 --><p class='noindent'>De matrix <span class='mathjax-inline'>\(A_b\)</span> bevat één extra kolom ten opzichte van <span class='mathjax-inline'>\(A\)</span>. Daarom geldt altijd
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A_b)\geq \operatorname {rang}(A). \]</div>
+<!-- l. 490 --><p class='noindent'>De rang van de uitgebreide matrix kan dus nooit kleiner zijn dan de rang van de
+coëfficiëntenmatrix. </p></div></section>
+<p><a id='x1-28r6'></a>
+</p><p></p><!-- l. 500 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>6</div><div class='fvd-section-bar__title'>Wat vertelt de rang over de oplossingen?</div></div>
+<p></p><!-- l. 502 --><p class='noindent'>Beschouw een lineair stelsel met <span class='mathjax-inline'>\(n\)</span> onbekenden.
+</p><!-- l. 504 --><p class='noindent'>Na reductie zijn er slechts drie fundamenteel verschillende mogelijkheden.
+<a id='x1-29r1'></a>
+</p><!-- l. 507 --><p class='noindent'></p><div class='fvd-subsection'>
+<p></p><!-- l. 507 --><p class='noindent'></p><div class='fvd-subsection__row'>
+<p></p><!-- l. 507 --><p class='noindent'></p><div class='fvd-subsection__number'>6.1</div>
+<p></p><!-- l. 507 --><p class='noindent'></p><div class='fvd-subsection__title'>Geen oplossing</div>
+<p></p><!-- l. 507 --><p class='noindent'></p></div>
+<p></p><!-- l. 507 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
+<p></p><!-- l. 507 --><p class='noindent'></p></div>
+<p></p><!-- l. 509 --><p class='noindent'>Stel dat
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A)&lt;\operatorname {rang}(A_b). \]</div>
+<!-- l. 515 --><p class='noindent'>Dan ontstaat in de gereduceerde uitgebreide matrix een rij van het type
+</p>
+<div class='mathjax-block'>\[ \left [ \begin {array}{ccc|c} 0&amp;0&amp;0&amp;c \end {array} \right ], \qquad c\neq 0. \]</div>
+<!-- l. 526 --><p class='noindent'>Die rij stelt de vergelijking
+</p>
+<div class='mathjax-block'>\[ 0=c \]</div>
+                                                                  
+
+                                                                  
+<!-- l. 532 --><p class='noindent'>voor.
+</p><!-- l. 534 --><p class='noindent'>Dat is onmogelijk.
+</p><!-- l. 537 --><p class='noindent'></p><section class='fvd-property'><div class='fvd-property__title'><span class='fvd-property__label'>EIGENSCHAP</span></div><div class='fvd-property__content'>Als
+<p></p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A)&lt;\operatorname {rang}(A_b), \]</div>
+<!-- l. 543 --><p class='noindent'>dan is het stelsel <strong>strijdig</strong> en heeft het geen oplossing. </p></div></section>
+<p><a id='x1-30r5'></a>
+</p><p></p><!-- l. 548 --><p class='noindent'></p><section class='fvd-example'>
+<p></p><!-- l. 548 --><p class='noindent'></p><div class='fvd-example__title'>Voorbeeld 5</div>
+<p></p><!-- l. 548 --><p class='noindent'></p><div class='fvd-example__content'>
+<p></p>
+<div class='mathjax-block'>\[ A_b\sim \left [ \begin {array}{ccc|c} 1&amp;0&amp;2&amp;3\\ 0&amp;1&amp;-1&amp;4\\ 0&amp;0&amp;0&amp;5 \end {array} \right ]. \]</div>
+<!-- l. 560 --><p class='noindent'>Voor <span class='mathjax-inline'>\(A\)</span> zien we twee pivots:
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A)=2. \]</div>
+<!-- l. 566 --><p class='noindent'>Voor <span class='mathjax-inline'>\(A_b\)</span> verschijnt een extra pivot in de laatste kolom:
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A_b)=3. \]</div>
+<!-- l. 572 --><p class='noindent'>De laatste rij betekent
+</p>
+<div class='mathjax-block'>\[ 0=5. \]</div>
+<!-- l. 578 --><p class='noindent'>Dus
+</p>
+<div class='mathjax-block'>\[ V=\varnothing . \]</div>
+</div></section>
+<p><a id='x1-31r2'></a>
+</p><!-- l. 588 --><p class='noindent'></p><div class='fvd-subsection'>
+<p></p><!-- l. 588 --><p class='noindent'></p><div class='fvd-subsection__row'>
+<p></p><!-- l. 588 --><p class='noindent'></p><div class='fvd-subsection__number'>6.2</div>
+<p></p><!-- l. 588 --><p class='noindent'></p><div class='fvd-subsection__title'>Precies één oplossing</div>
+<p></p><!-- l. 588 --><p class='noindent'></p></div>
+<p></p><!-- l. 588 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
+<p></p><!-- l. 588 --><p class='noindent'></p></div>
+<p></p><!-- l. 590 --><p class='noindent'>Stel nu dat
+</p>
+                                                                  
+
+                                                                  
+<div class='mathjax-block'>\[ \operatorname {rang}(A)=\operatorname {rang}(A_b)=n. \]</div>
+<!-- l. 596 --><p class='noindent'>Elke onbekende hoort dan bij een pivotkolom. Er zijn geen vrije onbekenden.
+</p><!-- l. 600 --><p class='noindent'></p><section class='fvd-property'><div class='fvd-property__title'><span class='fvd-property__label'>EIGENSCHAP</span></div><div class='fvd-property__content'>Als
+<p></p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A) = \operatorname {rang}(A_b) = n, \]</div>
+<!-- l. 610 --><p class='noindent'>dan heeft het stelsel <strong>precies één oplossing</strong>. </p></div></section>
+<p><a id='x1-32r6'></a>
+</p><p></p><!-- l. 615 --><p class='noindent'></p><section class='fvd-example'>
+<p></p><!-- l. 615 --><p class='noindent'></p><div class='fvd-example__title'>Voorbeeld 6</div>
+<p></p><!-- l. 615 --><p class='noindent'></p><div class='fvd-example__content'>
+<p></p><!-- l. 616 --><p class='noindent'>Voor een stelsel met drie onbekenden geeft ICT:
+</p>
+<div class='mathjax-block'>\[ A_b\sim \left [ \begin {array}{ccc|c} 1&amp;0&amp;0&amp;2\\ 0&amp;1&amp;0&amp;-1\\ 0&amp;0&amp;1&amp;4 \end {array} \right ]. \]</div>
+<!-- l. 629 --><p class='noindent'>Hier geldt
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A) = \operatorname {rang}(A_b) = 3=n. \]</div>
+<!-- l. 639 --><p class='noindent'>Dus het stelsel heeft precies één oplossing:
+</p>
+<div class='mathjax-block'>\[ x=2,\qquad y=-1,\qquad z=4, \]</div>
+<!-- l. 645 --><p class='noindent'>of
+</p>
+<div class='mathjax-block'>\[ V=\{(2,-1,4)\}. \]</div>
+</div></section>
+<p><a id='x1-33r3'></a>
+</p><!-- l. 655 --><p class='noindent'></p><div class='fvd-subsection'>
+<p></p><!-- l. 655 --><p class='noindent'></p><div class='fvd-subsection__row'>
+<p></p><!-- l. 655 --><p class='noindent'></p><div class='fvd-subsection__number'>6.3</div>
+<p></p><!-- l. 655 --><p class='noindent'></p><div class='fvd-subsection__title'>Oneindig veel oplossingen</div>
+<p></p><!-- l. 655 --><p class='noindent'></p></div>
+<p></p><!-- l. 655 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
+<p></p><!-- l. 655 --><p class='noindent'></p></div>
+<p></p><!-- l. 657 --><p class='noindent'>Ten slotte kan
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A) = \operatorname {rang}(A_b) &lt; n. \]</div>
+<!-- l. 667 --><p class='noindent'>Het stelsel is dan wel oplosbaar, maar er zijn minder pivots dan onbekenden.
+                                                                  
+
+                                                                  
+Minstens één onbekende is vrij.
+</p><!-- l. 671 --><p class='noindent'></p><section class='fvd-property'><div class='fvd-property__title'><span class='fvd-property__label'>EIGENSCHAP</span></div><div class='fvd-property__content'>Als
+<p></p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A) = \operatorname {rang}(A_b) &lt; n, \]</div>
+<!-- l. 681 --><p class='noindent'>dan heeft het stelsel <strong>oneindig veel oplossingen</strong>. </p></div></section>
+<p></p><!-- l. 685 --><p class='noindent'>Het aantal vrije parameters is
+</p>
+<div class='mathjax-block'>\[ \boxed { n-\operatorname {rang}(A) } \]</div>
+<!-- l. 693 --><p class='noindent'>zolang het stelsel oplosbaar is.
+<a id='x1-34r7'></a>
+</p><!-- l. 697 --><p class='noindent'></p><section class='fvd-example'>
+<p></p><!-- l. 697 --><p class='noindent'></p><div class='fvd-example__title'>Voorbeeld 7</div>
+<p></p><!-- l. 697 --><p class='noindent'></p><div class='fvd-example__content'>
+<p></p><!-- l. 698 --><p class='noindent'>Beschouw een stelsel met drie onbekenden waarvoor
+</p>
+<div class='mathjax-block'>\[ A_b\sim \left [ \begin {array}{ccc|c} 1&amp;0&amp;2&amp;3\\ 0&amp;1&amp;-1&amp;4\\ 0&amp;0&amp;0&amp;0 \end {array} \right ]. \]</div>
+<!-- l. 711 --><p class='noindent'>We hebben
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A) = \operatorname {rang}(A_b) = 2&lt;3. \]</div>
+<!-- l. 721 --><p class='noindent'>Er is dus één vrije parameter.
+</p><!-- l. 723 --><p class='noindent'>De derde kolom bevat geen pivot, dus <span class='mathjax-inline'>\(z\)</span> is vrij. Stel
+</p>
+<div class='mathjax-block'>\[ z=t, \qquad t\in \mathbb {R}. \]</div>
+<!-- l. 731 --><p class='noindent'>Uit de eerste rij volgt
+</p>
+<div class='mathjax-block'>\[ x+2z=3 \quad \Longrightarrow \quad x=3-2t. \]</div>
+<!-- l. 739 --><p class='noindent'>Uit de tweede rij volgt
+</p>
+<div class='mathjax-block'>\[ y-z=4 \quad \Longrightarrow \quad y=4+t. \]</div>
+<!-- l. 747 --><p class='noindent'>Dus
+</p>
+<div class='mathjax-block'>\[ V= \left \{ (3-2t,\;4+t,\;t) \mid t\in \mathbb {R} \right \}. \]</div>
+<!-- l. 757 --><p class='noindent'>We kunnen dezelfde oplossing ook schrijven als
+</p>
+<div class='mathjax-block'>\[ \begin {pmatrix} x\\y\\z \end {pmatrix} = \begin {pmatrix} 3\\4\\0 \end {pmatrix} + t \begin {pmatrix} -2\\1\\1 \end {pmatrix}, \qquad t\in \mathbb {R}. \]</div>
+                                                                  
+
+                                                                  
+<!-- l. 775 --><p class='noindent'>Bewaar vooral die laatste vorm in je achterhoofd. Ze zal zeer snel opnieuw
+verschijnen. </p></div></section>
+<p><a id='x1-35r7'></a>
+</p><p></p><!-- l. 785 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>7</div><div class='fvd-section-bar__title'>Een vast beslisschema</div></div>
+<p></p><!-- l. 787 --><p class='noindent'>Na de reductie hoef je niet te gokken hoeveel oplossingen een stelsel heeft.
+</p><!-- l. 789 --><p class='noindent'>Voor een stelsel met <span class='mathjax-inline'>\(n\)</span> onbekenden kijk je eerst naar
+</p>
+<div class='mathjax-block'>\[ r=\operatorname {rang}(A) \qquad \text {en}\qquad r_b=\operatorname {rang}(A_b). \]</div>
+<!-- l. 797 --><p class='noindent'>Daarna geldt:
+</p>
+<div class='mathjax-block'>\[ \boxed { \begin {array}{ccl} r&lt;r_b &amp;\Longrightarrow&amp; \text {geen oplossing}, \\[2mm] r=r_b=n &amp;\Longrightarrow&amp; \text {precies één oplossing}, \\[2mm] r=r_b&lt;n &amp;\Longrightarrow&amp; \text {oneindig veel oplossingen}. \end {array}} \]</div>
+<!-- l. 817 --><p class='noindent'>In het laatste geval is het aantal vrije parameters
+</p>
+<div class='mathjax-block'>\[ n-r. \]</div>
+<!-- l. 824 --><p class='noindent'></p><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span><span class='fvd-remark__separator'> — </span><span class='fvd-remark__subtitle'>Een goede analyse bevat meer dan één woord</span></div><div class='fvd-remark__content'>
+<p></p><!-- l. 826 --><p class='noindent'>Schrijf bij een oefening niet alleen:
+</p>
+<div class='mathjax-block'>\[ \text {``oneindig veel oplossingen''.} \]</div>
+<!-- l. 832 --><p class='noindent'>Een volledige redenering kan bijvoorbeeld zijn:
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A) = \operatorname {rang}(A_b) = 2&lt;3. \]</div>
+<!-- l. 842 --><p class='noindent'>Dus het stelsel is oplosbaar en heeft één vrije parameter. Daarom zijn er oneindig
+veel oplossingen. </p></div></section>
+<p><a id='x1-36r8'></a>
+</p><p></p><!-- l. 852 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>8</div><div class='fvd-section-bar__title'>Vrije onbekenden en parameters</div></div>
+<p></p><!-- l. 854 --><p class='noindent'>Een onbekende waarvan de kolom in de gereduceerde coëfficiëntenmatrix geen pivot
+bevat, noemen we een <strong>vrije onbekende</strong>.
+</p><!-- l. 857 --><p class='noindent'>Die onbekende mag vrij worden gekozen.
+</p><!-- l. 859 --><p class='noindent'>We vervangen ze meestal door een parameter zoals
+</p>
+<div class='mathjax-block'>\[ t,\quad s,\quad \lambda ,\quad \mu . \]</div>
+<p><a id='x1-37r8'></a>
+</p><!-- l. 866 --><p class='noindent'></p><section class='fvd-example'>
+<p></p><!-- l. 866 --><p class='noindent'></p><div class='fvd-example__title'>Voorbeeld 8<span class='fvd-example__subtitle'> — Twee vrije parameters</span></div>
+<p></p><!-- l. 866 --><p class='noindent'></p><div class='fvd-example__content'>
+<p></p><!-- l. 868 --><p class='noindent'>Een stelsel met vier onbekenden <span class='mathjax-inline'>\(x,y,z,u\)</span> wordt gereduceerd tot
+                                                                  
+
+                                                                  
+</p>
+<div class='mathjax-block'>\[ \left [ \begin {array}{cccc|c} 1&amp;0&amp;2&amp;-1&amp;3\\ 0&amp;1&amp;-1&amp;4&amp;2\\ 0&amp;0&amp;0&amp;0&amp;0 \end {array} \right ]. \]</div>
+<!-- l. 880 --><p class='noindent'>Er zijn twee pivots, dus
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A)=2. \]</div>
+<!-- l. 886 --><p class='noindent'>Omdat er vier onbekenden zijn,
+</p>
+<div class='mathjax-block'>\[ n-r=4-2=2. \]</div>
+<!-- l. 892 --><p class='noindent'>De kolommen van <span class='mathjax-inline'>\(z\)</span> en <span class='mathjax-inline'>\(u\)</span> bevatten geen pivot. We kiezen
+</p>
+<div class='mathjax-block'>\[ z=s, \qquad u=t. \]</div>
+<!-- l. 901 --><p class='noindent'>Dan
+</p>
+<div class='mathjax-block'>\[ x+2z-u=3 \quad \Longrightarrow \quad x=3-2s+t, \]</div>
+<!-- l. 909 --><p class='noindent'>en
+</p>
+<div class='mathjax-block'>\[ y-z+4u=2 \quad \Longrightarrow \quad y=2+s-4t. \]</div>
+<!-- l. 917 --><p class='noindent'>Dus
+</p>
+<div class='mathjax-block'>\[ V= \left \{ (3-2s+t,\;2+s-4t,\;s,\;t) \mid s,t\in \mathbb {R} \right \}. \]</div>
+</div></section>
+<p><a id='x1-38r9'></a>
+</p><!-- l. 935 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>9</div><div class='fvd-section-bar__title'>Een bijzonder geval: homogene stelsels</div></div>
+<p></p><!-- l. 938 --><p class='noindent'></p><section class='fvd-definition'><div class='fvd-definition__title'><span class='fvd-definition__label'>DEFINITIE</span></div><div class='fvd-definition__content'>Een lineair stelsel heet <strong>homogeen</strong> wanneer alle rechterleden gelijk zijn
+aan nul:
+<p></p>
+<div class='mathjax-block'>\[ A\,X=0. \]</div> </div></section>
+<!-- l. 947 --><p class='noindent'>Bijvoorbeeld:
+</p>
+<div class='mathjax-block'>\[ \begin {cases} x+2y-z=0,\\ 2x-y+3z=0. \end {cases} \]</div>
+<!-- l. 957 --><p class='noindent'>Een homogeen stelsel heeft altijd minstens de oplossing
+</p>
+<div class='mathjax-block'>\[ x_1=x_2=\cdots =x_n=0. \]</div>
+<!-- l. 963 --><p class='noindent'>Die noemen we de <strong>nuloplossing</strong> of <strong>triviale oplossing</strong>.
+</p><!-- l. 967 --><p class='noindent'></p><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span></div><div class='fvd-remark__content'>Een homogeen stelsel kan dus <strong>nooit strijdig</strong> zijn.
+<p></p><!-- l. 969 --><p class='noindent'>Voor een homogeen stelsel geldt automatisch
+                                                                  
+
+                                                                  
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A) = \operatorname {rang}(A_b). \]</div>
+<!-- l. 977 --><p class='noindent'>Er blijven slechts twee mogelijkheden over:
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A)=n \]</div>
+<!-- l. 983 --><p class='noindent'>geeft alleen de nuloplossing, terwijl
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A)&lt;n \]</div>
+<!-- l. 989 --><p class='noindent'>oneindig veel oplossingen geeft. </p></div></section>
+<p><a id='x1-39r9'></a>
+</p><p></p><!-- l. 994 --><p class='noindent'></p><section class='fvd-example'>
+<p></p><!-- l. 994 --><p class='noindent'></p><div class='fvd-example__title'>Voorbeeld 9</div>
+<p></p><!-- l. 994 --><p class='noindent'></p><div class='fvd-example__content'>
+<p></p><!-- l. 995 --><p class='noindent'>Stel dat een homogeen stelsel met drie onbekenden na reductie geeft
+</p>
+<div class='mathjax-block'>\[ \left [ \begin {array}{ccc|c} 1&amp;2&amp;-1&amp;0\\ 0&amp;0&amp;0&amp;0 \end {array} \right ]. \]</div>
+<!-- l. 1006 --><p class='noindent'>Dan
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A)=1 \]</div>
+<!-- l. 1012 --><p class='noindent'>en zijn er
+</p>
+<div class='mathjax-block'>\[ 3-1=2 \]</div>
+<!-- l. 1018 --><p class='noindent'>vrije parameters.
+</p><!-- l. 1020 --><p class='noindent'>Neem
+</p>
+<div class='mathjax-block'>\[ y=s,\qquad z=t. \]</div>
+<!-- l. 1026 --><p class='noindent'>Dan
+</p>
+<div class='mathjax-block'>\[ x+2s-t=0 \quad \Longrightarrow \quad x=-2s+t. \]</div>
+<!-- l. 1034 --><p class='noindent'>Dus
+</p>
+<div class='mathjax-block'>\[ V= \left \{ (-2s+t,\;s,\;t) \mid s,t\in \mathbb {R} \right \}. \]</div>
+</div></section>
+<p><a id='x1-40r10'></a>
+</p><!-- l. 1052 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>10</div><div class='fvd-section-bar__title'>Van algebra naar ruimte</div></div>
+                                                                  
+
+                                                                  
+<p></p><!-- l. 1054 --><p class='noindent'>Hier verschijnt de reden waarom dit hoofdstuk aan het begin van de ruimtemeetkunde
+staat.
+</p><!-- l. 1057 --><p class='noindent'>Beschouw een oplosbaar lineair stelsel in drie onbekenden
+</p>
+<div class='mathjax-block'>\[ x,\ y,\ z. \]</div>
+<!-- l. 1063 --><p class='noindent'>De oplossingen zijn punten van de driedimensionale ruimte.
+</p><!-- l. 1065 --><p class='noindent'>Het aantal vrije parameters vertelt dan hoeveel bewegingsvrijheid de
+oplossingsverzameling heeft.
+</p>
+<div class='center'>
+<!-- l. 1069 --><p class='noindent'>
+</p>
+<div class='mathjax-block'>\[ \begin {array}{c|c|c|c} \operatorname {rang}(A) &amp; \text {vrije parameters} &amp; \text {aantal oplossingen} &amp; \text {meetkundig} \\ \hline 3&amp;0&amp;1&amp;\text {één punt}\\ 2&amp;1&amp;\infty&amp; \text {een rechte}\\ 1&amp;2&amp;\infty&amp; \text {een vlak}\\ 0&amp;3&amp;\infty&amp; \mathbb {R}^3 \end {array} \]</div></div>
+<!-- l. 1091 --><p class='noindent'></p><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span></div><div class='fvd-remark__content'>Deze tabel geldt voor een <strong>oplosbaar</strong> stelsel in drie onbekenden.
+<p></p><!-- l. 1093 --><p class='noindent'>Wanneer
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A)&lt;\operatorname {rang}(A_b), \]</div>
+<!-- l. 1099 --><p class='noindent'>is er geen oplossingsverzameling en dus ook geen gemeenschappelijk meetkundig
+object. </p></div></section>
+<p><a id='x1-41r10'></a>
+</p><p></p><!-- l. 1104 --><p class='noindent'></p><section class='fvd-example'>
+<p></p><!-- l. 1104 --><p class='noindent'></p><div class='fvd-example__title'>Voorbeeld 10<span class='fvd-example__subtitle'> — Waarom één vrije parameter een rechte oplevert</span></div>
+<p></p><!-- l. 1104 --><p class='noindent'></p><div class='fvd-example__content'>
+<p></p><!-- l. 1106 --><p class='noindent'>We keerden eerder terug naar
+</p>
+<div class='mathjax-block'>\[ V= \left \{ (3-2t,\;4+t,\;t) \mid t\in \mathbb {R} \right \}. \]</div>
+<!-- l. 1116 --><p class='noindent'>Schrijf dit als
+</p>
+<div class='mathjax-block'>\[ \begin {pmatrix} x\\y\\z \end {pmatrix} = \begin {pmatrix} 3\\4\\0 \end {pmatrix} + t \begin {pmatrix} -2\\1\\1 \end {pmatrix}. \]</div>
+<!-- l. 1133 --><p class='noindent'>Voor <span class='mathjax-inline'>\(t=0\)</span> krijgen we het punt
+</p>
+<div class='mathjax-block'>\[ (3,4,0). \]</div>
+<!-- l. 1139 --><p class='noindent'>Wanneer <span class='mathjax-inline'>\(t\)</span> verandert, bewegen we telkens in dezelfde richting
+</p>
+<div class='mathjax-block'>\[ \begin {pmatrix} -2\\1\\1 \end {pmatrix}. \]</div>
+                                                                  
+
+                                                                  
+<!-- l. 1147 --><p class='noindent'>De oplossingsverzameling vormt dus een <strong>rechte in de ruimte</strong>.
+</p><!-- l. 1149 --><p class='noindent'>Binnenkort zullen we deze schrijfwijze herkennen als een parametrische/vectoriële
+vergelijking van een rechte. </p></div></section>
+<p><a id='x1-42r11'></a>
+</p><p></p><!-- l. 1159 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>11</div><div class='fvd-section-bar__title'>Kan je de uitvoer lezen zonder opnieuw te rekenen?</div></div>
+<p></p><!-- l. 1161 --><p class='noindent'>Dit is de belangrijkste vaardigheid uit dit hoofdstuk.
+</p><!-- l. 1163 --><p class='noindent'>Stel dat de oorspronkelijke stelsels telkens drie onbekenden bevatten.
+<a id='x1-43r1'></a>
+</p><!-- l. 1166 --><p class='noindent'></p><div class='fvd-subsection'>
+<p></p><!-- l. 1166 --><p class='noindent'></p><div class='fvd-subsection__row'>
+<p></p><!-- l. 1166 --><p class='noindent'></p><div class='fvd-subsection__number'>11.1</div>
+<p></p><!-- l. 1166 --><p class='noindent'></p><div class='fvd-subsection__title'>Uitvoer A</div>
+<p></p><!-- l. 1166 --><p class='noindent'></p></div>
+<p></p><!-- l. 1166 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
+<p></p><!-- l. 1166 --><p class='noindent'></p></div>
+<p></p>
+<div class='mathjax-block'>\[ \left [ \begin {array}{ccc|c} 1&amp;0&amp;0&amp;2\\ 0&amp;1&amp;0&amp;-1\\ 0&amp;0&amp;1&amp;5 \end {array} \right ] \]</div>
+<!-- l. 1178 --><p class='noindent'>We zien:
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A)=3, \qquad \operatorname {rang}(A_b)=3. \]</div>
+<!-- l. 1186 --><p class='noindent'>Omdat <span class='mathjax-inline'>\(n=3\)</span>,
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A)=\operatorname {rang}(A_b)=n. \]</div>
+<!-- l. 1192 --><p class='noindent'>Dus er is precies één oplossing:
+</p>
+<div class='mathjax-block'>\[ V=\{(2,-1,5)\}. \]</div>
+<p><a id='x1-44r2'></a>
+</p><!-- l. 1199 --><p class='noindent'></p><div class='fvd-subsection'>
+<p></p><!-- l. 1199 --><p class='noindent'></p><div class='fvd-subsection__row'>
+<p></p><!-- l. 1199 --><p class='noindent'></p><div class='fvd-subsection__number'>11.2</div>
+<p></p><!-- l. 1199 --><p class='noindent'></p><div class='fvd-subsection__title'>Uitvoer B</div>
+<p></p><!-- l. 1199 --><p class='noindent'></p></div>
+<p></p><!-- l. 1199 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
+<p></p><!-- l. 1199 --><p class='noindent'></p></div>
+<p></p>
+                                                                  
+
+                                                                  
+<div class='mathjax-block'>\[ \left [ \begin {array}{ccc|c} 1&amp;0&amp;2&amp;4\\ 0&amp;1&amp;-3&amp;1\\ 0&amp;0&amp;0&amp;0 \end {array} \right ] \]</div>
+<!-- l. 1211 --><p class='noindent'>We zien:
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A)=2, \qquad \operatorname {rang}(A_b)=2. \]</div>
+<!-- l. 1219 --><p class='noindent'>Er is één vrije parameter:
+</p>
+<div class='mathjax-block'>\[ 3-2=1. \]</div>
+<!-- l. 1225 --><p class='noindent'>Dus het stelsel heeft oneindig veel oplossingen.
+<a id='x1-45r3'></a>
+</p><!-- l. 1228 --><p class='noindent'></p><div class='fvd-subsection'>
+<p></p><!-- l. 1228 --><p class='noindent'></p><div class='fvd-subsection__row'>
+<p></p><!-- l. 1228 --><p class='noindent'></p><div class='fvd-subsection__number'>11.3</div>
+<p></p><!-- l. 1228 --><p class='noindent'></p><div class='fvd-subsection__title'>Uitvoer C</div>
+<p></p><!-- l. 1228 --><p class='noindent'></p></div>
+<p></p><!-- l. 1228 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
+<p></p><!-- l. 1228 --><p class='noindent'></p></div>
+<p></p>
+<div class='mathjax-block'>\[ \left [ \begin {array}{ccc|c} 1&amp;0&amp;2&amp;4\\ 0&amp;1&amp;-3&amp;1\\ 0&amp;0&amp;0&amp;1 \end {array} \right ] \]</div>
+<!-- l. 1240 --><p class='noindent'>Voor de coëfficiëntenmatrix:
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A)=2. \]</div>
+<!-- l. 1246 --><p class='noindent'>Voor de uitgebreide matrix:
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A_b)=3. \]</div>
+<!-- l. 1252 --><p class='noindent'>Dus
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A)&lt;\operatorname {rang}(A_b). \]</div>
+<!-- l. 1258 --><p class='noindent'>De laatste rij betekent
+</p>
+<div class='mathjax-block'>\[ 0=1. \]</div>
+<!-- l. 1264 --><p class='noindent'>Het stelsel is strijdig:
+</p>
+<div class='mathjax-block'>\[ V=\varnothing . \]</div>
+<!-- l. 1272 --><p class='noindent'></p><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span></div><div class='fvd-remark__content'>Uitvoer B en C lijken bijna identiek.
+<p></p><!-- l. 1274 --><p class='noindent'>Toch verandert één enkel getal de conclusie volledig:
+                                                                  
+
+                                                                  
+</p>
+<div class='mathjax-block'>\[ [0\ 0\ 0\mid 0] \]</div>
+<!-- l. 1280 --><p class='noindent'>voegt geen nieuwe voorwaarde toe, terwijl
+</p>
+<div class='mathjax-block'>\[ [0\ 0\ 0\mid 1] \]</div>
+<!-- l. 1286 --><p class='noindent'>een tegenspraak veroorzaakt.
+</p><!-- l. 1288 --><p class='noindent'>Dat verschil moet je onmiddellijk kunnen herkennen. </p></div></section>
+<p><a id='x1-46r12'></a>
+</p><p></p><!-- l. 1297 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>12</div><div class='fvd-section-bar__title'>Veelgemaakte fouten</div></div>
+<p></p><!-- l. 1299 --><p class='noindent'></p><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span><span class='fvd-remark__separator'> — </span><span class='fvd-remark__subtitle'>Fout 1: alleen het aantal vergelijkingen tellen</span></div><div class='fvd-remark__content'>
+<p></p><!-- l. 1301 --><p class='noindent'>Drie vergelijkingen en drie onbekenden betekenen <strong>niet automatisch</strong> dat er één
+oplossing is.
+</p><!-- l. 1304 --><p class='noindent'>Vergelijkingen kunnen afhankelijk zijn of elkaar tegenspreken.
+</p><!-- l. 1306 --><p class='noindent'>De rang bepaalt hoeveel onafhankelijke voorwaarden werkelijk overblijven.
+</p></div></section>
+<p></p><!-- l. 1310 --><p class='noindent'></p><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span><span class='fvd-remark__separator'> — </span><span class='fvd-remark__subtitle'>Fout 2: rang en aantal onbekenden verwarren</span></div><div class='fvd-remark__content'>
+<p></p><!-- l. 1312 --><p class='noindent'>De rang is het aantal pivots.
+</p><!-- l. 1314 --><p class='noindent'>Het aantal vrije parameters is
+</p>
+<div class='mathjax-block'>\[ n-\operatorname {rang}(A) \]</div>
+<!-- l. 1320 --><p class='noindent'>alleen wanneer het stelsel oplosbaar is. </p></div></section>
+<p></p><!-- l. 1324 --><p class='noindent'></p><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span><span class='fvd-remark__separator'> — </span><span class='fvd-remark__subtitle'>Fout 3: <span class='mathjax-inline'>\(0=0\)</span> en <span class='mathjax-inline'>\(0=c\)</span> verwarren</span></div><div class='fvd-remark__content'>
+<p></p>
+<div class='mathjax-block'>\[ 0=0 \]</div>
+<!-- l. 1330 --><p class='noindent'>is altijd waar en levert geen nieuwe voorwaarde.
+</p><!-- l. 1332 --><p class='noindent'>Maar
+</p>
+<div class='mathjax-block'>\[ 0=c,\qquad c\neq 0, \]</div>
+<!-- l. 1338 --><p class='noindent'>is onmogelijk en maakt het volledige stelsel strijdig. </p></div></section>
+<p></p><!-- l. 1342 --><p class='noindent'></p><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span><span class='fvd-remark__separator'> — </span><span class='fvd-remark__subtitle'>Fout 4: alleen naar <span class='mathjax-inline'>\(\operatorname {rang}(A)\)</span> kijken</span></div><div class='fvd-remark__content'>
+<p></p><!-- l. 1344 --><p class='noindent'>Voor de oplosbaarheid moet je <span class='mathjax-inline'>\(A\)</span> en <span class='mathjax-inline'>\(A_b\)</span> vergelijken.
+</p><!-- l. 1346 --><p class='noindent'>Een stelsel met
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A)=2 \]</div>
+<!-- l. 1352 --><p class='noindent'>kan zowel oneindig veel oplossingen als geen enkele oplossing hebben.
+                                                                  
+
+                                                                  
+</p><!-- l. 1354 --><p class='noindent'>Het verschil wordt zichtbaar in
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A_b). \]</div> </div></section>
+<!-- l. 1362 --><p class='noindent'></p><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span><span class='fvd-remark__separator'> — </span><span class='fvd-remark__subtitle'>Fout 5: ICT-uitvoer als eindantwoord beschouwen</span></div><div class='fvd-remark__content'>
+<p></p><!-- l. 1364 --><p class='noindent'>Een gereduceerde matrix is meestal nog geen volledig antwoord.
+</p><!-- l. 1366 --><p class='noindent'>Je moet ze nog interpreteren en, indien nodig, de oplossingsverzameling formuleren.
+</p></div></section>
+<p><a id='x1-47r13'></a>
+</p><p></p><!-- l. 1376 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>13</div><div class='fvd-section-bar__title'>Wat moet je uit deze opfrissing meenemen?</div></div>
+<p></p><!-- l. 1378 --><p class='noindent'>Voor een stelsel met <span class='mathjax-inline'>\(n\)</span> onbekenden is de kern:
+</p>
+<div class='mathjax-block'>\[ \boxed { \operatorname {rang}(A)&lt;\operatorname {rang}(A_b) \Longrightarrow \text {geen oplossing} } \]</div>
+<div class='mathjax-block'>\[ \boxed { \operatorname {rang}(A) = \operatorname {rang}(A_b) = n \Longrightarrow \text {één oplossing} } \]</div>
+<div class='mathjax-block'>\[ \boxed { \operatorname {rang}(A) = \operatorname {rang}(A_b) &lt; n \Longrightarrow \text {oneindig veel oplossingen} } \]</div>
+<!-- l. 1412 --><p class='noindent'>en in het laatste geval:
+</p>
+<div class='mathjax-block'>\[ \boxed { \text {aantal vrije parameters} = n-\operatorname {rang}(A) } \]</div>
+<!-- l. 1423 --><p class='noindent'>Maar belangrijker dan de formules is de betekenis:
+</p>
+<div class='center'>
+<!-- l. 1425 --><p class='noindent'>
+</p><!-- l. 1426 --><p class='noindent'><strong>De rang vertelt hoeveel onafhankelijke voorwaarden aanwezig zijn.</strong></p></div>
+<!-- l. 1429 --><p class='noindent'>en
+</p>
+<div class='center'>
+<!-- l. 1431 --><p class='noindent'>
+</p><!-- l. 1433 --><p class='noindent'><strong>Vrije parameters vertellen hoeveel bewegingsvrijheid de
+oplossingsverzameling nog heeft.</strong></p></div>
+<!-- l. 1436 --><p class='noindent'>Dat idee nemen we mee naar de ruimtemeetkunde.
+</p><!-- l. 1438 --><p class='noindent'>Daar zullen oplossingsverzamelingen niet langer alleen rijen getallen zijn. Ze worden
+punten, rechten en vlakken in de ruimte.
+                                                                  
+
+                                                                  
+</p>
+</body> 
+ 
+</html>
+                                                                  
+
+

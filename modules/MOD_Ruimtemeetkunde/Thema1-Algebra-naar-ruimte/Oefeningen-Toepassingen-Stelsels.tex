@@ -1,0 +1,730 @@
+\documentclass{ximera}
+
+\input{../../../preamble.tex}
+\input{../../../Opmaak.tex}
+\addPrintStyle{../../..}
+
+\title{Oefeningen — Stelsels aan het werk}
+\author{Ingmar Herreman}
+
+\begin{document}
+
+% FVD_CHAPTER_DATA_START
+% Automatisch gegenereerd uit index.tex.
+% Niet handmatig aanpassen.
+\fvdchapterdata{1}{Van algebra naar ruimte}{2}
+% FVD_CHAPTER_DATA_END
+
+
+
+
+
+\maketitle
+
+\FVDbeginExercises
+
+\begin{opmerking}
+Gebruik bij de oefeningen ICT voor de matrixreductie, tenzij uitdrukkelijk
+anders vermeld.
+
+Noteer bij een volledig modelleerprobleem steeds:
+\begin{enumerate}
+  \item de betekenis van de onbekenden;
+  \item het stelsel;
+  \item de uitgebreide matrix;
+  \item de relevante ICT-uitvoer;
+  \item de interpretatie van de oplossing in de context;
+  \item een korte controle.
+\end{enumerate}
+\end{opmerking}
+
+
+% ============================================================
+% BASIS
+% ============================================================
+
+\FVDsection{Basis — van context naar oplossing}
+
+\begin{oefening}[Bloemenprijzen]{\oefB\ESS}
+
+In de lente worden \(24\) geraniums, \(12\) hanggeraniums en \(18\)
+lobelia's gekocht voor \(47{,}40\) euro.
+
+Voor een grote bloembak worden \(6\) geraniums, \(3\) hanggeraniums en
+\(2\) lobelia's gebruikt. Deze bloemen kosten samen \(10{,}60\) euro.
+
+Voor een pergola worden \(5\) geraniums, \(7\) hanggeraniums en \(6\)
+lobelia's gebruikt. Deze kosten samen \(16{,}40\) euro.
+
+Bepaal met een lineair stelsel en ICT de prijs per stuk van elke bloemsoort.
+
+\begin{oplossing}
+Neem \(x,y,z\) als de prijs in euro van respectievelijk een geranium,
+hanggeranium en lobelia.
+
+\[
+\begin{cases}
+24x+12y+18z=47{,}40,\\
+6x+3y+2z=10{,}60,\\
+5x+7y+6z=16{,}40.
+\end{cases}
+\]
+
+ICT geeft:
+\[
+x=1,\qquad y=1{,}20,\qquad z=0{,}50.
+\]
+
+Dus een geranium kost \(1{,}00\) euro, een hanggeranium \(1{,}20\) euro
+en een lobelia \(0{,}50\) euro.
+\end{oplossing}
+\end{oefening}
+
+
+\begin{oefening}[Voedingsmengsel]{\oefB\ESS}
+
+Een bioloog wil een voedselmengsel maken dat \(23\) g proteïne,
+\(6{,}2\) g vet en \(16\) g vocht bevat.
+
+\begin{itemize}
+  \item A bevat \(20\%\) proteïne, \(2\%\) vet en \(15\%\) vocht.
+  \item B bevat \(10\%\) proteïne, \(6\%\) vet en \(10\%\) vocht.
+  \item C bevat \(15\%\) proteïne, \(5\%\) vet en \(5\%\) vocht.
+\end{itemize}
+
+Hoeveel gram van elk mengsel is nodig?
+
+\begin{oplossing}
+Neem \(x,y,z\) als de massa's in gram.
+
+\[
+\begin{cases}
+0{,}20x+0{,}10y+0{,}15z=23,\\
+0{,}02x+0{,}06y+0{,}05z=6{,}2,\\
+0{,}15x+0{,}10y+0{,}05z=16.
+\end{cases}
+\]
+
+ICT geeft
+\[
+(x,y,z)=(60,50,40).
+\]
+
+Er is dus \(60\) g A, \(50\) g B en \(40\) g C nodig.
+\end{oplossing}
+\end{oefening}
+
+
+\begin{oefening}[Een parabool door drie punten]{\oefB\ESS}
+
+Een parabool heeft voorschrift
+\[
+y=ax^2+bx+c
+\]
+en gaat door de punten
+\[
+(1,1),\qquad (-1,5),\qquad (2,2).
+\]
+
+Stel een lineair stelsel op voor \(a,b,c\), los het met ICT op en bepaal
+het voorschrift.
+
+\begin{oplossing}
+Invullen van de drie punten geeft
+\[
+\begin{cases}
+a+b+c=1,\\
+a-b+c=5,\\
+4a+2b+c=2.
+\end{cases}
+\]
+
+ICT geeft
+\[
+a=1,\qquad b=-2,\qquad c=2.
+\]
+
+Dus
+\[
+\boxed{y=x^2-2x+2}.
+\]
+\end{oplossing}
+\end{oefening}
+
+
+\begin{oefening}[Tuinmest mengen]{\oefB\ESS}
+
+Een groothandel beschikt over drie meststoffen:
+
+\begin{itemize}
+  \item A bevat \(5\%\) stikstof;
+  \item B bevat \(10\%\) stikstof;
+  \item C bevat \(20\%\) stikstof.
+\end{itemize}
+
+Er moet \(1000\) kg mest met \(15\%\) stikstof worden gemaakt.
+Van soort C wil men tweemaal zoveel gebruiken als van soort A.
+
+Bepaal hoeveel kilogram van elke soort nodig is.
+
+\begin{oplossing}
+Neem \(x,y,z\) als de massa's A, B en C.
+
+\[
+\begin{cases}
+x+y+z=1000,\\
+0{,}05x+0{,}10y+0{,}20z=150,\\
+z=2x.
+\end{cases}
+\]
+
+ICT geeft
+\[
+x=\frac{1000}{3},\qquad y=0,\qquad z=\frac{2000}{3}.
+\]
+
+Dus ongeveer
+\[
+333{,}333\text{ kg A},\qquad
+0\text{ kg B},\qquad
+666{,}667\text{ kg C}.
+\]
+
+Controle:
+\[
+0{,}05\cdot\frac{1000}{3}
++
+0{,}20\cdot\frac{2000}{3}
+=150.
+\]
+\end{oplossing}
+\end{oefening}
+
+
+\begin{oefening}[Lees eerst, reken daarna]{\oefB\ESS}
+
+Een laboratorium mengt drie oplossingen A, B en C. De massa's zijn
+\(x,y,z\) gram. Uit de context werden de volgende voorwaarden afgeleid:
+\[
+\begin{cases}
+x+y+z=200,\\
+0{,}10x+0{,}20y+0{,}30z=42,\\
+x-z=20.
+\end{cases}
+\]
+
+\begin{question}
+Schrijf de uitgebreide matrix op.
+\begin{oplossing}
+\[
+\left[
+\begin{array}{ccc|c}
+1&1&1&200\\
+0{,}10&0{,}20&0{,}30&42\\
+1&0&-1&20
+\end{array}
+\right].
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Reduceer met ICT en interpreteer de oplossing.
+\begin{oplossing}
+ICT geeft
+\[
+x=80,\qquad y=60,\qquad z=60.
+\]
+Er is \(80\) g A, \(60\) g B en \(60\) g C nodig.
+\end{oplossing}
+\end{question}
+\end{oefening}
+
+
+% ============================================================
+% VERDIEPING
+% ============================================================
+
+\FVDsection{Verdieping — modelleren en interpreteren}
+
+\begin{oefening}[Zestig ledlampen]{\oefU\ESS}
+
+Een ruimte moet worden verlicht met precies \(60\) ledlampen en een totale
+lichtstroom van \(40\,000\) lumen. Er zijn lampen van \(900\), \(500\) en
+\(400\) lumen.
+
+\begin{question}
+Kies onbekenden en stel het stelsel op.
+\begin{oplossing}
+Met \(x,y,z\) als de aantallen lampen:
+\[
+\begin{cases}
+x+y+z=60,\\
+900x+500y+400z=40\,000.
+\end{cases}
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Gebruik ICT. Leg met rang uit waarom het stelsel niet één unieke
+algebraïsche oplossing heeft.
+\begin{oplossing}
+Er zijn drie onbekenden en de twee vergelijkingen zijn onafhankelijk:
+\[
+\operatorname{rang}(A)=\operatorname{rang}(A_b)=2<3.
+\]
+Er is dus één vrije parameter en algebraïsch zijn er oneindig veel oplossingen.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Bepaal alle praktisch mogelijke combinaties.
+\begin{oplossing}
+De niet-negatieve gehele oplossingen zijn:
+\[
+\begin{array}{c|c|c}
+x&y&z\\ \hline
+25&35&0\\
+26&30&4\\
+27&25&8\\
+28&20&12\\
+29&15&16\\
+30&10&20\\
+31&5&24\\
+32&0&28
+\end{array}
+\]
+De context reduceert de oneindige reële oplossingsverzameling dus tot acht
+praktisch mogelijke keuzes.
+\end{oplossing}
+\end{question}
+\end{oefening}
+
+
+\begin{oefening}[Een onmogelijk productieplan]{\oefU\ESS}
+
+Een atelier produceert drie onderdelen \(A,B,C\). Voor een dagplanning
+worden de volgende voorwaarden opgesteld:
+\[
+\begin{cases}
+x+y+z=100,\\
+2x+y+3z=180,\\
+4x+2y+6z=365.
+\end{cases}
+\]
+
+Gebruik ICT en analyseer de oplosbaarheid. Wat betekent je besluit voor
+het productieplan?
+
+\begin{oplossing}
+De linkerkant van de derde vergelijking is tweemaal de linkerkant van
+de tweede, maar
+\[
+365\neq2\cdot180.
+\]
+Na reductie ontstaat een strijdige rij. Dus
+\[
+\operatorname{rang}(A)<\operatorname{rang}(A_b).
+\]
+Er bestaat geen productieplan dat aan alle drie de voorwaarden tegelijk voldoet.
+Minstens één opgelegde voorwaarde of één gegeven moet worden herzien.
+\end{oplossing}
+\end{oefening}
+
+
+\begin{oefening}[Is de oplossing bruikbaar?]{\oefU\ESS}
+
+Een stelsel voor de aantallen van drie types sensoren levert met ICT
+\[
+(x,y,z)=(12{,}5,8,19{,}5).
+\]
+
+Een leerling besluit: ``Het probleem is opgelost.''
+
+Beoordeel die uitspraak.
+
+\begin{oplossing}
+Algebraïsch kan de oplossing correct zijn, maar aantallen sensoren moeten
+gehele, niet-negatieve getallen zijn. De waarden \(12{,}5\) en \(19{,}5\)
+zijn dus niet uitvoerbaar.
+
+De juiste conclusie is dat het lineaire model een unieke reële oplossing
+heeft, maar geen bruikbare oplossing binnen de context van aantallen sensoren.
+\end{oplossing}
+\end{oefening}
+
+
+\begin{oefening}[Welke vergelijking hoort bij welke voorwaarde?]{\oefU}
+
+Een bedrijf maakt drie producten \(P,Q,R\). Voor één product zijn
+respectievelijk de volgende hoeveelheden grondstof en machinetijd nodig:
+
+\[
+\begin{array}{c|ccc}
+& P&Q&R\\ \hline
+\text{grondstof (kg)}&2&3&1\\
+\text{machinetijd (min)}&4&2&5
+\end{array}
+\]
+
+Er is \(200\) kg grondstof en \(360\) minuten machinetijd beschikbaar.
+Men wil in totaal \(100\) producten maken.
+
+\begin{question}
+Stel het stelsel op.
+\begin{oplossing}
+Met \(x,y,z\) als de aantallen \(P,Q,R\):
+\[
+\begin{cases}
+x+y+z=100,\\
+2x+3y+z=200,\\
+4x+2y+5z=360.
+\end{cases}
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Los met ICT op en controleer of het plan praktisch mogelijk is.
+\begin{oplossing}
+ICT geeft
+\[
+x=20,\qquad y=40,\qquad z=40.
+\]
+Alle aantallen zijn niet-negatieve gehele getallen. Controle:
+\[
+20+40+40=100,
+\]
+\[
+2(20)+3(40)+40=200,
+\]
+Ook de grondstof- en machinetijdvoorwaarden zijn voldaan. Het productieplan is dus praktisch mogelijk.
+\end{oplossing}
+\end{question}
+\end{oefening}
+
+
+% ============================================================
+% CHEMIE
+% ============================================================
+
+\FVDsection{STEM — reactievergelijkingen balanceren}
+
+\begin{oefening}[Ammoniak oxideert]{\oefB\ESS}
+
+Balanceer met een homogeen stelsel en ICT:
+\[
+\ldots\,NH_3+\ldots\,O_2
+\longrightarrow
+\ldots\,NO+\ldots\,H_2O.
+\]
+
+Noteer ook de rang, het aantal vrije parameters en verklaar waarom je
+uiteindelijk gehele coëfficiënten kiest.
+
+\begin{oplossing}
+Neem
+\[
+aNH_3+bO_2\longrightarrow cNO+dH_2O.
+\]
+Atoombehoud geeft
+\[
+\begin{cases}
+a-c=0,\\
+3a-2d=0,\\
+2b-c-d=0.
+\end{cases}
+\]
+Er zijn vier onbekenden en drie onafhankelijke vergelijkingen:
+\[
+\operatorname{rang}(A)=3.
+\]
+Er is dus één vrije parameter. De kleinste positieve gehele verhouding is
+\[
+(a,b,c,d)=(4,5,4,6).
+\]
+Dus
+\[
+\boxed{4NH_3+5O_2\longrightarrow4NO+6H_2O}.
+\]
+\end{oplossing}
+\end{oefening}
+
+
+\begin{oefening}[Neerslagreactie]{\oefB\ESS}
+
+Balanceer met een stelsel:
+\[
+\ldots\,AgNO_3+\ldots\,HCl
+\longrightarrow
+\ldots\,AgCl+\ldots\,HNO_3.
+\]
+
+\begin{oplossing}
+Met coëfficiënten \(a,b,c,d\) volgt uit atoombehoud een homogeen stelsel.
+De kleinste positieve gehele oplossing is
+\[
+(a,b,c,d)=(1,1,1,1).
+\]
+Dus
+\[
+\boxed{AgNO_3+HCl\longrightarrow AgCl+HNO_3}.
+\]
+\end{oplossing}
+\end{oefening}
+
+
+\begin{oefening}[IJzer(III)hydroxide en zwavelzuur]{\oefU\ESS}
+
+Balanceer volledig met een homogeen stelsel en ICT:
+\[
+\ldots\,Fe(OH)_3+\ldots\,H_2SO_4
+\longrightarrow
+\ldots\,Fe_2(SO_4)_3+\ldots\,H_2O.
+\]
+
+\begin{oplossing}
+Neem
+\[
+aFe(OH)_3+bH_2SO_4\longrightarrow cFe_2(SO_4)_3+dH_2O.
+\]
+Atoombehoud levert onder andere
+\[
+a=2c,\qquad b=3c,
+\]
+en uit waterstof
+\[
+3a+2b=2d.
+\]
+Kies \(c=1\). Dan
+\[
+a=2,\qquad b=3,\qquad d=6.
+\]
+Dus
+\[
+\boxed{2Fe(OH)_3+3H_2SO_4\longrightarrow Fe_2(SO_4)_3+6H_2O}.
+\]
+\end{oplossing}
+\end{oefening}
+
+
+\begin{oefening}[Verbranding van propaan]{\oefB\ESS}
+
+Balanceer:
+\[
+\ldots\,C_3H_8+\ldots\,O_2
+\longrightarrow
+\ldots\,CO_2+\ldots\,H_2O.
+\]
+
+Gebruik expliciet de stappen
+\[
+\text{atoombehoud}\to\text{stelsel}\to\text{matrix}\to\text{ICT}
+\to\text{gehele verhouding}.
+\]
+
+\begin{oplossing}
+Neem coëfficiënten \(a,b,c,d\). Dan
+\[
+\begin{cases}
+3a-c=0,\\
+8a-2d=0,\\
+2b-2c-d=0.
+\end{cases}
+\]
+De kleinste positieve gehele verhouding is
+\[
+(a,b,c,d)=(1,5,3,4).
+\]
+Dus
+\[
+\boxed{C_3H_8+5O_2\longrightarrow3CO_2+4H_2O}.
+\]
+\end{oplossing}
+\end{oefening}
+
+
+\begin{oefening}[Roosten van pyriet]{\oefU}
+Pyriet \(FeS_2\) kan reageren met zuurstof:
+\[
+\ldots\,FeS_2+\ldots\,O_2
+\longrightarrow
+\ldots\,Fe_2O_3+\ldots\,SO_2.
+\]
+
+Balanceer met een homogeen stelsel.
+
+\begin{oplossing}
+Met coëfficiënten \(a,b,c,d\):
+\[
+\begin{cases}
+a-2c=0,\\
+2a-d=0,\\
+2b-3c-2d=0.
+\end{cases}
+\]
+De kleinste positieve gehele verhouding is
+\[
+(a,b,c,d)=(4,11,2,8).
+\]
+Dus
+\[
+\boxed{4FeS_2+11O_2\longrightarrow2Fe_2O_3+8SO_2}.
+\]
+\end{oplossing}
+\end{oefening}
+
+
+\begin{oefening}[Waarom is \(2,4,2,4\) niet het eindantwoord?]{\oefU\ESS}
+
+Een leerling balanceert methaanverbranding en vindt
+\[
+2CH_4+4O_2\longrightarrow2CO_2+4H_2O.
+\]
+
+De vergelijking is qua atoomaantallen correct. Toch wordt gewoonlijk
+\[
+CH_4+2O_2\longrightarrow CO_2+2H_2O
+\]
+genoteerd.
+
+Leg dit uit vanuit de oplossingsverzameling van het homogene stelsel.
+
+\begin{oplossing}
+Alle veelvouden van een niet-triviale oplossing zijn opnieuw oplossingen
+van het homogene stelsel. De vector
+\[
+(2,4,2,4)
+\]
+is tweemaal
+\[
+(1,2,1,2).
+\]
+Beide geven dezelfde verhouding. Conventioneel kiest men de kleinste
+positieve gehele coëfficiënten.
+\end{oplossing}
+\end{oefening}
+
+
+% ============================================================
+% GEVORDERD
+% ============================================================
+
+\FVDsection{Gevorderd — kritisch modelleren}
+
+\begin{oefening}[Ontbrekende informatie]{\oefG}
+
+Een onderzoeker wil drie oplossingen A, B en C mengen. Hij weet alleen:
+\[
+x+y+z=500
+\]
+en
+\[
+0{,}10x+0{,}20y+0{,}30z=100.
+\]
+
+\begin{question}
+Analyseer met rang hoeveel vrijheid het model nog bevat.
+\begin{oplossing}
+Er zijn drie onbekenden en twee onafhankelijke vergelijkingen:
+\[
+\operatorname{rang}(A)=\operatorname{rang}(A_b)=2<3.
+\]
+Er blijft één vrije parameter over. De gegevens bepalen dus niet één uniek mengsel.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Geef een voorbeeld van een extra lineaire voorwaarde die tot een unieke
+oplossing kan leiden.
+\begin{oplossing}
+Bijvoorbeeld
+\[
+x=z
+\]
+of een opgelegde hoeveelheid van één mengsel. De extra voorwaarde moet
+onafhankelijk zijn van de twee bestaande voorwaarden.
+\end{oplossing}
+\end{question}
+\end{oefening}
+
+
+\begin{oefening}[Ontwerp zelf een stelsel]{\oefG}
+  
+Bedenk zelf een realistische STEM-context met drie onbekenden en minstens
+drie lineaire voorwaarden.
+
+\begin{enumerate}
+  \item Beschrijf de context en de betekenis van de onbekenden.
+  \item Stel het stelsel op.
+  \item Voorspel vóór de ICT-berekening of je één, geen of mogelijk
+        oneindig veel oplossingen verwacht.
+  \item Reduceer de uitgebreide matrix met ICT.
+  \item Bepaal de relevante rangen.
+  \item Interpreteer en controleer de oplossing.
+  \item Geef aan welke aannames of beperkingen jouw model heeft.
+\end{enumerate}
+
+\begin{oplossing}
+Eigen antwoord. Een volledig antwoord bevat een consistente context,
+een correct lineair stelsel, een correcte ICT-analyse en een expliciete
+terugkoppeling naar de context.
+\end{oplossing}
+\end{oefening}
+
+
+% ============================================================
+% EINDCHECK
+% ============================================================
+
+\FVDsection{Eindcheck}
+
+\begin{oefening}[Van tekst tot besluit]{\oefU\ESS}
+
+Een labo wil \(100\) ml van een oplossing maken uit drie voorraadoplossingen
+A, B en C. Hun concentraties zijn respectievelijk \(10\%\), \(20\%\) en
+\(40\%\). Het eindmengsel moet \(25\%\) bevatten. Bovendien moet de
+hoeveelheid A gelijk zijn aan de hoeveelheid C.
+
+Los het probleem volledig op met een stelsel en ICT.
+
+\begin{oplossing}
+Neem \(x,y,z\) als de volumes in ml.
+
+\[
+\begin{cases}
+x+y+z=100,\\
+0{,}10x+0{,}20y+0{,}40z=25,\\
+x-z=0.
+\end{cases}
+\]
+
+Omdat \(z=x\), volgt
+\[
+2x+y=100
+\]
+en
+\[
+0{,}50x+0{,}20y=25.
+\]
+ICT geeft
+\[
+x=z=\frac{50}{3},\qquad y=\frac{200}{3}.
+\]
+
+Dus ongeveer
+\[
+16{,}67\text{ ml A},\qquad
+66{,}67\text{ ml B},\qquad
+16{,}67\text{ ml C}.
+\]
+
+Alle volumes zijn positief en samen \(100\) ml. De concentratiecontrole
+geeft \(25\) ml werkzame stof per \(100\) ml mengsel.
+\end{oplossing}
+\end{oefening}
+
+
+
+\end{document}

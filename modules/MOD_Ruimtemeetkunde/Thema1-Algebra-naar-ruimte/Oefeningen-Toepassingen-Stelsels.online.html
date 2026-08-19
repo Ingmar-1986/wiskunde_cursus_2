@@ -1,0 +1,575 @@
+<!DOCTYPE html> 
+<html lang='en-US' xml:lang='en-US'> 
+<head> <title>Oefeningen — Stelsels aan het werk</title> 
+<meta charset='utf-8' /> 
+<meta content='TeX4ht (https://tug.org/tex4ht/)' name='generator' /> 
+<meta content='width=device-width,initial-scale=1' name='viewport' /> 
+<link href='\aa:CssFile ' rel='stylesheet' type='text/css' /> 
+<meta content='Oefeningen-Toepassingen-Stelsels.online.tex' name='src' /> 
+<script>window.MathJax = { tex: { tags: "ams", }, }; </script> 
+<script async='async' id='MathJax-script' src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js' type='text/javascript'></script>  
+<meta content='Ingmar Herreman' name='author' /> 
+<meta content='version 2.5.1' name='ximera' /> 
+<link href='https://ximera.osu.edu/public/stylesheets/standalone.css' media='screen' rel='stylesheet' /> 
+<script async='' src='https://ximera.osu.edu/public/javascripts/standalone.min.js' type='text/javascript'></script> 
+</head><body> 
+<div class='preamble'>
+</div>
+<style> .activity-body pre { white-space: pre; background-color: lightgray; } .xmyoutube { aspect-ratio: 16/9; min-width: 75%; } .image-environment img { width: unset; } </style> 
+
+<div class='maketitle'></div>
+<!-- l. 23 --><p class='noindent'></p><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span></div><div class='fvd-remark__content'>Gebruik bij de oefeningen ICT voor de matrixreductie, tenzij
+uitdrukkelijk anders vermeld.
+<p></p><!-- l. 26 --><p class='noindent'>Noteer bij een volledig modelleerprobleem steeds:
+</p>     
+<ol class='enumerate1'>
+<li class='enumerate' id='x1-3x1'>de betekenis van de onbekenden;
+</li>
+<li class='enumerate' id='x1-5x2'>het stelsel;
+</li>
+<li class='enumerate' id='x1-7x3'>de uitgebreide matrix;
+</li>
+<li class='enumerate' id='x1-9x4'>de relevante ICT-uitvoer;
+</li>
+<li class='enumerate' id='x1-11x5'>de interpretatie van de oplossing in de context;
+</li>
+<li class='enumerate' id='x1-13x6'>een korte controle.</li></ol>
+</div></section>
+<p><a id='x1-14r1'></a>
+</p><!-- l. 42 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>1</div><div class='fvd-section-bar__title'>Basis — van context naar oplossing</div></div>
+<p><a id='x1-15r1'></a>
+</p><p></p><!-- l. 44 --><p class='noindent'></p><section class='fvd-exercise'>
+                                                                  
+
+                                                                  
+<p></p><!-- l. 44 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 44 --><p class='noindent'>Oefening 1
+</p><!-- l. 44 --><p class='noindent'>— Bloemenprijzen
+</p><!-- l. 44 --><p class='noindent'></p></div>
+<p></p><!-- l. 44 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 44 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 44 --><p class='noindent'></p><div class='fvd-exercise__content'> In de lente worden <span class='mathjax-inline'>\(24\)</span> geraniums, <span class='mathjax-inline'>\(12\)</span> hanggeraniums en <span class='mathjax-inline'>\(18\)</span> lobelia’s gekocht voor <span class='mathjax-inline'>\(47{,}40\)</span>
+euro.
+<p></p><!-- l. 48 --><p class='noindent'>Voor een grote bloembak worden <span class='mathjax-inline'>\(6\)</span> geraniums, <span class='mathjax-inline'>\(3\)</span> hanggeraniums en <span class='mathjax-inline'>\(2\)</span> lobelia’s gebruikt.
+Deze bloemen kosten samen <span class='mathjax-inline'>\(10{,}60\)</span> euro.
+</p><!-- l. 51 --><p class='noindent'>Voor een pergola worden <span class='mathjax-inline'>\(5\)</span> geraniums, <span class='mathjax-inline'>\(7\)</span> hanggeraniums en <span class='mathjax-inline'>\(6\)</span> lobelia’s gebruikt. Deze
+kosten samen <span class='mathjax-inline'>\(16{,}40\)</span> euro.
+</p><!-- l. 54 --><p class='noindent'>Bepaal met een lineair stelsel en ICT de prijs per stuk van elke bloemsoort.
+</p>
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item1'> 
+  Neem <span class='mathjax-inline'>\(x,y,z\)</span> als de prijs in euro van respectievelijk een geranium, hanggeranium en
+lobelia.
+<div class='mathjax-block'>\[ \begin {cases} 24x+12y+18z=47{,}40,\\ 6x+3y+2z=10{,}60,\\ 5x+7y+6z=16{,}40. \end {cases} \]</div>
+<!-- l. 68 --><p class='noindent'>ICT geeft: </p><div class='mathjax-block'>\[ x=1,\qquad y=1{,}20,\qquad z=0{,}50. \]</div>
+<!-- l. 73 --><p class='noindent'>Dus een geranium kost <span class='mathjax-inline'>\(1{,}00\)</span> euro, een hanggeranium <span class='mathjax-inline'>\(1{,}20\)</span> euro en een lobelia <span class='mathjax-inline'>\(0{,}50\)</span> euro. </p></div> 
+</div> 
+
+</div>
+<p></p><!-- l. 76 --><p class='noindent'></p></div>
+<p></p><!-- l. 76 --><p class='noindent'></p></section>
+<p><a id='x1-16r2'></a>
+</p><p></p><!-- l. 79 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 79 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 79 --><p class='noindent'>Oefening 2
+</p><!-- l. 79 --><p class='noindent'>— Voedingsmengsel
+</p><!-- l. 79 --><p class='noindent'></p></div>
+<p></p><!-- l. 79 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 79 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 79 --><p class='noindent'></p><div class='fvd-exercise__content'> Een bioloog wil een voedselmengsel maken dat <span class='mathjax-inline'>\(23\)</span> g proteïne, <span class='mathjax-inline'>\(6{,}2\)</span> g vet en <span class='mathjax-inline'>\(16\)</span> g vocht
+bevat.
+<p></p>     
+<ul class='itemize1'>
+<li class='itemize'>A bevat <span class='mathjax-inline'>\(20\%\)</span> proteïne, <span class='mathjax-inline'>\(2\%\)</span> vet en <span class='mathjax-inline'>\(15\%\)</span> vocht.
+</li>
+<li class='itemize'>B bevat <span class='mathjax-inline'>\(10\%\)</span> proteïne, <span class='mathjax-inline'>\(6\%\)</span> vet en <span class='mathjax-inline'>\(10\%\)</span> vocht.
+</li>
+<li class='itemize'>C bevat <span class='mathjax-inline'>\(15\%\)</span> proteïne, <span class='mathjax-inline'>\(5\%\)</span> vet en <span class='mathjax-inline'>\(5\%\)</span> vocht.</li></ul>
+<!-- l. 89 --><p class='noindent'>Hoeveel gram van elk mengsel is nodig?
+</p>
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item2'> 
+  Neem <span class='mathjax-inline'>\(x,y,z\)</span> als de massa’s in gram.
+<div class='mathjax-block'>\[ \begin {cases} 0{,}20x+0{,}10y+0{,}15z=23,\\ 0{,}02x+0{,}06y+0{,}05z=6{,}2,\\ 0{,}15x+0{,}10y+0{,}05z=16. \end {cases} \]</div>
+<!-- l. 102 --><p class='noindent'>ICT geeft </p><div class='mathjax-block'>\[ (x,y,z)=(60,50,40). \]</div>
+<!-- l. 107 --><p class='noindent'>Er is dus <span class='mathjax-inline'>\(60\)</span> g A, <span class='mathjax-inline'>\(50\)</span> g B en <span class='mathjax-inline'>\(40\)</span> g C nodig. </p></div> 
+</div> 
+  </div>
+<p></p><!-- l. 109 --><p class='noindent'></p></div>
+<p></p><!-- l. 109 --><p class='noindent'></p></section>
+<p><a id='x1-17r3'></a>
+</p><p></p><!-- l. 112 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 112 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 112 --><p class='noindent'>Oefening 3
+</p><!-- l. 112 --><p class='noindent'>— Een parabool door drie punten
+</p><!-- l. 112 --><p class='noindent'></p></div>
+<p></p><!-- l. 112 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 112 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 112 --><p class='noindent'></p><div class='fvd-exercise__content'> Een parabool heeft voorschrift <p></p><div class='mathjax-block'>\[ y=ax^2+bx+c \]</div> en gaat door de punten <div class='mathjax-block'>\[ (1,1),\qquad (-1,5),\qquad (2,2). \]</div>
+<!-- l. 122 --><p class='noindent'>Stel een lineair stelsel op voor <span class='mathjax-inline'>\(a,b,c\)</span>, los het met ICT op en bepaal het voorschrift.
+</p>
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item3'> 
+  Invullen van de drie punten geeft <div class='mathjax-block'>\[ \begin {cases} a+b+c=1,\\ a-b+c=5,\\ 4a+2b+c=2. \end {cases} \]</div>
+<!-- l. 135 --><p class='noindent'>ICT geeft </p><div class='mathjax-block'>\[ a=1,\qquad b=-2,\qquad c=2. \]</div>
+<!-- l. 140 --><p class='noindent'>Dus </p><div class='mathjax-block'>\[ \boxed {y=x^2-2x+2}. \]</div> </div> 
+</div> 
+  </div>
+<!-- l. 145 --><p class='noindent'></p></div>
+<p></p><!-- l. 145 --><p class='noindent'></p></section>
+<p><a id='x1-18r4'></a>
+</p><p></p><!-- l. 148 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 148 --><p class='noindent'></p><div class='fvd-exercise__title'>
+                                                                  
+
+                                                                  
+<p></p><!-- l. 148 --><p class='noindent'>Oefening 4
+</p><!-- l. 148 --><p class='noindent'>— Tuinmest mengen
+</p><!-- l. 148 --><p class='noindent'></p></div>
+<p></p><!-- l. 148 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 148 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 148 --><p class='noindent'></p><div class='fvd-exercise__content'> Een groothandel beschikt over drie meststoffen:
+<p></p>     
+<ul class='itemize1'>
+<li class='itemize'>A bevat <span class='mathjax-inline'>\(5\%\)</span> stikstof;
+</li>
+<li class='itemize'>B bevat <span class='mathjax-inline'>\(10\%\)</span> stikstof;
+</li>
+<li class='itemize'>C bevat <span class='mathjax-inline'>\(20\%\)</span> stikstof.</li></ul>
+<!-- l. 157 --><p class='noindent'>Er moet <span class='mathjax-inline'>\(1000\)</span> kg mest met <span class='mathjax-inline'>\(15\%\)</span> stikstof worden gemaakt. Van soort C wil men tweemaal
+zoveel gebruiken als van soort A.
+</p><!-- l. 160 --><p class='noindent'>Bepaal hoeveel kilogram van elke soort nodig is.
+</p>
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item4'> 
+  Neem <span class='mathjax-inline'>\(x,y,z\)</span> als de massa’s A, B en C.
+<div class='mathjax-block'>\[ \begin {cases} x+y+z=1000,\\ 0{,}05x+0{,}10y+0{,}20z=150,\\ z=2x. \end {cases} \]</div>
+<!-- l. 173 --><p class='noindent'>ICT geeft </p><div class='mathjax-block'>\[ x=\frac {1000}{3},\qquad y=0,\qquad z=\frac {2000}{3}. \]</div>
+<!-- l. 178 --><p class='noindent'>Dus ongeveer </p><div class='mathjax-block'>\[ 333{,}333\text { kg A},\qquad 0\text { kg B},\qquad 666{,}667\text { kg C}. \]</div>
+<!-- l. 185 --><p class='noindent'>Controle: </p><div class='mathjax-block'>\[ 0{,}05\cdot \frac {1000}{3} + 0{,}20\cdot \frac {2000}{3} =150. \]</div> </div> 
+</div> 
+  </div>
+<!-- l. 193 --><p class='noindent'></p></div>
+<p></p><!-- l. 193 --><p class='noindent'></p></section>
+<p><a id='x1-19r5'></a>
+</p><p></p><!-- l. 196 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 196 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 196 --><p class='noindent'>Oefening 5
+</p><!-- l. 196 --><p class='noindent'>— Lees eerst, reken daarna
+</p><!-- l. 196 --><p class='noindent'></p></div>
+                                                                  
+
+                                                                  
+<p></p><!-- l. 196 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 196 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 196 --><p class='noindent'></p><div class='fvd-exercise__content'> Een laboratorium mengt drie oplossingen A, B en C. De massa’s zijn <span class='mathjax-inline'>\(x,y,z\)</span> gram. Uit de
+context werden de volgende voorwaarden afgeleid: <p></p><div class='mathjax-block'>\[ \begin {cases} x+y+z=200,\\ 0{,}10x+0{,}20y+0{,}30z=42,\\ x-z=20. \end {cases} \]</div>
+<div class='problem-environment question' id='problem5' numbered=' ' role='article' titletext=' Question'>  Schrijf de uitgebreide matrix op. <div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item6'> 
+   <div class='mathjax-block'>\[ \left [ \begin {array}{ccc|c} 1&amp;1&amp;1&amp;200\\ 0{,}10&amp;0{,}20&amp;0{,}30&amp;42\\ 1&amp;0&amp;-1&amp;20 \end {array} \right ]. \]</div> </div> 
+</div> 
+     </div>
+<div class='problem-environment question' id='problem7' numbered=' ' role='article' titletext=' Question'>  Reduceer met ICT en interpreteer de oplossing. <div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item8'> 
+   ICT geeft <div class='mathjax-block'>\[ x=80,\qquad y=60,\qquad z=60. \]</div> Er is <span class='mathjax-inline'>\(80\)</span> g A, <span class='mathjax-inline'>\(60\)</span> g B en <span class='mathjax-inline'>\(60\)</span> g
+C nodig. </div> 
+</div> 
+     </div> </div>
+<!-- l. 232 --><p class='noindent'></p></div>
+<p></p><!-- l. 232 --><p class='noindent'></p></section>
+<p><a id='x1-20r2'></a>
+</p><p></p><!-- l. 239 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>2</div><div class='fvd-section-bar__title'>Verdieping — modelleren en interpreteren</div></div>
+<p><a id='x1-21r6'></a>
+</p><p></p><!-- l. 241 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 241 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 241 --><p class='noindent'>Oefening 6
+</p><!-- l. 241 --><p class='noindent'>— Zestig ledlampen
+</p><!-- l. 241 --><p class='noindent'></p></div>
+<p></p><!-- l. 241 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 241 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 241 --><p class='noindent'></p><div class='fvd-exercise__content'> Een ruimte moet worden verlicht met precies <span class='mathjax-inline'>\(60\)</span> ledlampen en een totale lichtstroom
+van <span class='mathjax-inline'>\(40\,000\)</span> lumen. Er zijn lampen van <span class='mathjax-inline'>\(900\)</span>, <span class='mathjax-inline'>\(500\)</span> en <span class='mathjax-inline'>\(400\)</span> lumen.
+<p></p>
+<div class='problem-environment question' id='problem9' numbered=' ' role='article' titletext=' Question'>  Kies onbekenden en stel het stelsel op. <div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item10'> 
+   Met <span class='mathjax-inline'>\(x,y,z\)</span> als de aantallen lampen: <div class='mathjax-block'>\[ \begin {cases} x+y+z=60,\\ 900x+500y+400z=40\,000. \end {cases} \]</div> </div> 
+</div> 
+
+</div>
+<div class='problem-environment question' id='problem11' numbered=' ' role='article' titletext=' Question'>  Gebruik ICT. Leg met rang uit waarom het stelsel niet één unieke algebraïsche
+oplossing heeft. <div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item12'> 
+   Er zijn drie onbekenden en de twee vergelijkingen zijn
+onafhankelijk: <div class='mathjax-block'>\[ \operatorname {rang}(A)=\operatorname {rang}(A_b)=2&lt;3. \]</div> Er is dus één vrije parameter en algebraïsch zijn er oneindig veel
+oplossingen. </div> 
+</div> 
+     </div>
+<div class='problem-environment question' id='problem13' numbered=' ' role='article' titletext=' Question'>  Bepaal alle praktisch mogelijke combinaties. <div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item14'> 
+   De niet-negatieve gehele oplossingen
+zijn: <div class='mathjax-block'>\[ \begin {array}{c|c|c} x&amp;y&amp;z\\ \hline 25&amp;35&amp;0\\ 26&amp;30&amp;4\\ 27&amp;25&amp;8\\ 28&amp;20&amp;12\\ 29&amp;15&amp;16\\ 30&amp;10&amp;20\\ 31&amp;5&amp;24\\ 32&amp;0&amp;28 \end {array} \]</div> De context reduceert de oneindige reële oplossingsverzameling dus tot acht
+praktisch mogelijke keuzes. </div> 
+</div> 
+     </div> </div>
+<!-- l. 292 --><p class='noindent'></p></div>
+<p></p><!-- l. 292 --><p class='noindent'></p></section>
+<p><a id='x1-22r7'></a>
+</p><p></p><!-- l. 295 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 295 --><p class='noindent'></p><div class='fvd-exercise__title'>
+                                                                  
+
+                                                                  
+<p></p><!-- l. 295 --><p class='noindent'>Oefening 7
+</p><!-- l. 295 --><p class='noindent'>— Een onmogelijk productieplan
+</p><!-- l. 295 --><p class='noindent'></p></div>
+<p></p><!-- l. 295 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 295 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 295 --><p class='noindent'></p><div class='fvd-exercise__content'> Een atelier produceert drie onderdelen <span class='mathjax-inline'>\(A,B,C\)</span>. Voor een dagplanning worden de volgende
+voorwaarden opgesteld: <p></p><div class='mathjax-block'>\[ \begin {cases} x+y+z=100,\\ 2x+y+3z=180,\\ 4x+2y+6z=365. \end {cases} \]</div>
+<!-- l. 306 --><p class='noindent'>Gebruik ICT en analyseer de oplosbaarheid. Wat betekent je besluit voor het
+productieplan?
+</p>
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item15'> 
+  De linkerkant van de derde vergelijking is tweemaal de linkerkant van de tweede,
+maar <div class='mathjax-block'>\[ 365\neq 2\cdot 180. \]</div> Na reductie ontstaat een strijdige rij. Dus <div class='mathjax-block'>\[ \operatorname {rang}(A)&lt;\operatorname {rang}(A_b). \]</div> Er bestaat geen productieplan dat
+aan alle drie de voorwaarden tegelijk voldoet. Minstens één opgelegde voorwaarde of
+één gegeven moet worden herzien. </div> 
+</div> 
+  </div>
+<!-- l. 322 --><p class='noindent'></p></div>
+<p></p><!-- l. 322 --><p class='noindent'></p></section>
+<p><a id='x1-23r8'></a>
+</p><p></p><!-- l. 325 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 325 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 325 --><p class='noindent'>Oefening 8
+</p><!-- l. 325 --><p class='noindent'>— Is de oplossing bruikbaar?
+</p><!-- l. 325 --><p class='noindent'></p></div>
+<p></p><!-- l. 325 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 325 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 325 --><p class='noindent'></p><div class='fvd-exercise__content'> Een stelsel voor de aantallen van drie types sensoren levert met ICT <p></p><div class='mathjax-block'>\[ (x,y,z)=(12{,}5,8,19{,}5). \]</div>
+<!-- l. 331 --><p class='noindent'>Een leerling besluit: “Het probleem is opgelost.”
+</p><!-- l. 333 --><p class='noindent'>Beoordeel die uitspraak.
+</p>
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item16'> 
+  Algebraïsch kan de oplossing correct zijn, maar aantallen sensoren moeten gehele,
+niet-negatieve getallen zijn. De waarden <span class='mathjax-inline'>\(12{,}5\)</span> en <span class='mathjax-inline'>\(19{,}5\)</span> zijn dus niet uitvoerbaar.
+<!-- l. 340 --><p class='noindent'>De juiste conclusie is dat het lineaire model een unieke reële oplossing heeft,
+maar geen bruikbare oplossing binnen de context van aantallen sensoren. </p></div> 
+</div> 
+
+</div>
+<p></p><!-- l. 343 --><p class='noindent'></p></div>
+<p></p><!-- l. 343 --><p class='noindent'></p></section>
+<p><a id='x1-24r9'></a>
+                                                                  
+
+                                                                  
+</p><p></p><!-- l. 346 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 346 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 346 --><p class='noindent'>Oefening 9
+</p><!-- l. 346 --><p class='noindent'>— Welke vergelijking hoort bij welke voorwaarde?
+</p><!-- l. 346 --><p class='noindent'></p></div>
+<p></p><!-- l. 346 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 346 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span></div>
+<p></p><!-- l. 346 --><p class='noindent'></p><div class='fvd-exercise__content'> Een bedrijf maakt drie producten <span class='mathjax-inline'>\(P,Q,R\)</span>. Voor één product zijn respectievelijk de volgende
+hoeveelheden grondstof en machinetijd nodig:
+<p></p>
+<div class='mathjax-block'>\[ \begin {array}{c|ccc} &amp; P&amp;Q&amp;R\\ \hline \text {grondstof (kg)}&amp;2&amp;3&amp;1\\ \text {machinetijd (min)}&amp;4&amp;2&amp;5 \end {array} \]</div>
+<!-- l. 358 --><p class='noindent'>Er is <span class='mathjax-inline'>\(200\)</span> kg grondstof en <span class='mathjax-inline'>\(360\)</span> minuten machinetijd beschikbaar. Men wil in totaal <span class='mathjax-inline'>\(100\)</span>
+producten maken.
+</p>
+<div class='problem-environment question' id='problem17' numbered=' ' role='article' titletext=' Question'>  Stel het stelsel op. <div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item18'> 
+   Met <span class='mathjax-inline'>\(x,y,z\)</span> als de aantallen <span class='mathjax-inline'>\(P,Q,R\)</span>: <div class='mathjax-block'>\[ \begin {cases} x+y+z=100,\\ 2x+3y+z=200,\\ 4x+2y+5z=360. \end {cases} \]</div> </div> 
+</div> 
+     </div>
+<div class='problem-environment question' id='problem19' numbered=' ' role='article' titletext=' Question'>  Los met ICT op en controleer of het plan praktisch mogelijk is. <div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item20'> 
+   ICT geeft <div class='mathjax-block'>\[ x=20,\qquad y=40,\qquad z=40. \]</div> Alle
+aantallen zijn niet-negatieve gehele getallen. Controle: <div class='mathjax-block'>\[ 20+40+40=100, \]</div> <div class='mathjax-block'>\[ 2(20)+3(40)+40=200, \]</div> Ook de grondstof- en
+machinetijdvoorwaarden zijn voldaan. Het productieplan is dus praktisch mogelijk. </div> 
+</div> 
+
+</div> </div>
+<!-- l. 392 --><p class='noindent'></p></div>
+<p></p><!-- l. 392 --><p class='noindent'></p></section>
+<p><a id='x1-25r3'></a>
+</p><p></p><!-- l. 399 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>3</div><div class='fvd-section-bar__title'>STEM — reactievergelijkingen balanceren</div></div>
+<p><a id='x1-26r10'></a>
+</p><p></p><!-- l. 401 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 401 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 401 --><p class='noindent'>Oefening 10
+</p><!-- l. 401 --><p class='noindent'>— Ammoniak oxideert
+</p><!-- l. 401 --><p class='noindent'></p></div>
+<p></p><!-- l. 401 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 401 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 401 --><p class='noindent'></p><div class='fvd-exercise__content'> Balanceer met een homogeen stelsel en ICT: <p></p><div class='mathjax-block'>\[ \ldots \,NH_3+\ldots \,O_2 \longrightarrow \ldots \,NO+\ldots \,H_2O. \]</div>
+<!-- l. 409 --><p class='noindent'>Noteer ook de rang, het aantal vrije parameters en verklaar waarom je uiteindelijk
+gehele coëfficiënten kiest.
+</p>
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item21'> 
+  Neem <div class='mathjax-block'>\[ aNH_3+bO_2\longrightarrow cNO+dH_2O. \]</div> Atoombehoud geeft <div class='mathjax-block'>\[ \begin {cases} a-c=0,\\ 3a-2d=0,\\ 2b-c-d=0. \end {cases} \]</div> Er zijn vier onbekenden en drie onafhankelijke
+                                                                  
+
+                                                                  
+vergelijkingen: <div class='mathjax-block'>\[ \operatorname {rang}(A)=3. \]</div> Er is dus één vrije parameter. De kleinste positieve gehele verhouding
+is <div class='mathjax-block'>\[ (a,b,c,d)=(4,5,4,6). \]</div> Dus <div class='mathjax-block'>\[ \boxed {4NH_3+5O_2\longrightarrow 4NO+6H_2O}. \]</div> </div> 
+</div> 
+  </div>
+<!-- l. 438 --><p class='noindent'></p></div>
+<p></p><!-- l. 438 --><p class='noindent'></p></section>
+<p><a id='x1-27r11'></a>
+</p><p></p><!-- l. 441 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 441 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 441 --><p class='noindent'>Oefening 11
+</p><!-- l. 441 --><p class='noindent'>— Neerslagreactie
+</p><!-- l. 441 --><p class='noindent'></p></div>
+<p></p><!-- l. 441 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 441 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 441 --><p class='noindent'></p><div class='fvd-exercise__content'> Balanceer met een stelsel: <p></p><div class='mathjax-block'>\[ \ldots \,AgNO_3+\ldots \,HCl \longrightarrow \ldots \,AgCl+\ldots \,HNO_3. \]</div>
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item22'> 
+  Met coëfficiënten <span class='mathjax-inline'>\(a,b,c,d\)</span> volgt uit atoombehoud een homogeen stelsel. De kleinste
+positieve gehele oplossing is <div class='mathjax-block'>\[ (a,b,c,d)=(1,1,1,1). \]</div> Dus <div class='mathjax-block'>\[ \boxed {AgNO_3+HCl\longrightarrow AgCl+HNO_3}. \]</div> </div> 
+</div> 
+  </div>
+<!-- l. 460 --><p class='noindent'></p></div>
+<p></p><!-- l. 460 --><p class='noindent'></p></section>
+<p><a id='x1-28r12'></a>
+</p><p></p><!-- l. 463 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 463 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 463 --><p class='noindent'>Oefening 12
+</p><!-- l. 463 --><p class='noindent'>— IJzer(III)hydroxide en zwavelzuur
+</p><!-- l. 463 --><p class='noindent'></p></div>
+<p></p><!-- l. 463 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 463 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 463 --><p class='noindent'></p><div class='fvd-exercise__content'> Balanceer volledig met een homogeen stelsel en ICT: <p></p><div class='mathjax-block'>\[ \ldots \,Fe(OH)_3+\ldots \,H_2SO_4 \longrightarrow \ldots \,Fe_2(SO_4)_3+\ldots \,H_2O. \]</div>
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item23'> 
+  Neem <div class='mathjax-block'>\[ aFe(OH)_3+bH_2SO_4\longrightarrow cFe_2(SO_4)_3+dH_2O. \]</div> Atoombehoud levert onder andere <div class='mathjax-block'>\[ a=2c,\qquad b=3c, \]</div> en uit waterstof <div class='mathjax-block'>\[ 3a+2b=2d. \]</div> Kies <span class='mathjax-inline'>\(c=1\)</span>. Dan <div class='mathjax-block'>\[ a=2,\qquad b=3,\qquad d=6. \]</div> Dus <div class='mathjax-block'>\[ \boxed {2Fe(OH)_3+3H_2SO_4\longrightarrow Fe_2(SO_4)_3+6H_2O}. \]</div> </div> 
+</div> 
+
+</div>
+<!-- l. 493 --><p class='noindent'></p></div>
+<p></p><!-- l. 493 --><p class='noindent'></p></section>
+<p><a id='x1-29r13'></a>
+</p><p></p><!-- l. 496 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 496 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 496 --><p class='noindent'>Oefening 13
+                                                                  
+
+                                                                  
+</p><!-- l. 496 --><p class='noindent'>— Verbranding van propaan
+</p><!-- l. 496 --><p class='noindent'></p></div>
+<p></p><!-- l. 496 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 496 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 496 --><p class='noindent'></p><div class='fvd-exercise__content'> Balanceer: <p></p><div class='mathjax-block'>\[ \ldots \,C_3H_8+\ldots \,O_2 \longrightarrow \ldots \,CO_2+\ldots \,H_2O. \]</div>
+<!-- l. 504 --><p class='noindent'>Gebruik expliciet de stappen </p><div class='mathjax-block'>\[ \text {atoombehoud}\to \text {stelsel}\to \text {matrix}\to \text {ICT} \to \text {gehele verhouding}. \]</div>
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item24'> 
+  Neem coëfficiënten <span class='mathjax-inline'>\(a,b,c,d\)</span>. Dan <div class='mathjax-block'>\[ \begin {cases} 3a-c=0,\\ 8a-2d=0,\\ 2b-2c-d=0. \end {cases} \]</div> De kleinste positieve gehele verhouding is <div class='mathjax-block'>\[ (a,b,c,d)=(1,5,3,4). \]</div> Dus <div class='mathjax-block'>\[ \boxed {C_3H_8+5O_2\longrightarrow 3CO_2+4H_2O}. \]</div> </div> 
+</div> 
+
+</div>
+<!-- l. 528 --><p class='noindent'></p></div>
+<p></p><!-- l. 528 --><p class='noindent'></p></section>
+<p><a id='x1-30r14'></a>
+</p><p></p><!-- l. 531 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 531 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 531 --><p class='noindent'>Oefening 14
+</p><!-- l. 531 --><p class='noindent'>— Roosten van pyriet
+</p><!-- l. 531 --><p class='noindent'></p></div>
+<p></p><!-- l. 531 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 531 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span></div>
+<p></p><!-- l. 531 --><p class='noindent'></p><div class='fvd-exercise__content'> Pyriet <span class='mathjax-inline'>\(FeS_2\)</span> kan reageren met zuurstof: <p></p><div class='mathjax-block'>\[ \ldots \,FeS_2+\ldots \,O_2 \longrightarrow \ldots \,Fe_2O_3+\ldots \,SO_2. \]</div>
+<!-- l. 539 --><p class='noindent'>Balanceer met een homogeen stelsel.
+</p>
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item25'> 
+  Met coëfficiënten <span class='mathjax-inline'>\(a,b,c,d\)</span>: <div class='mathjax-block'>\[ \begin {cases} a-2c=0,\\ 2a-d=0,\\ 2b-3c-2d=0. \end {cases} \]</div> De kleinste positieve gehele verhouding is <div class='mathjax-block'>\[ (a,b,c,d)=(4,11,2,8). \]</div> Dus <div class='mathjax-block'>\[ \boxed {4FeS_2+11O_2\longrightarrow 2Fe_2O_3+8SO_2}. \]</div> </div> 
+</div> 
+
+</div>
+<!-- l. 559 --><p class='noindent'></p></div>
+<p></p><!-- l. 559 --><p class='noindent'></p></section>
+<p><a id='x1-31r15'></a>
+</p><p></p><!-- l. 562 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 562 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 562 --><p class='noindent'>Oefening 15
+</p><!-- l. 562 --><p class='noindent'>— Waarom is <span class='mathjax-inline'>\(2,4,2,4\)</span> niet het eindantwoord?
+</p><!-- l. 562 --><p class='noindent'></p></div>
+<p></p><!-- l. 562 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 562 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 562 --><p class='noindent'></p><div class='fvd-exercise__content'> Een leerling balanceert methaanverbranding en vindt <p></p><div class='mathjax-block'>\[ 2CH_4+4O_2\longrightarrow 2CO_2+4H_2O. \]</div>
+                                                                  
+
+                                                                  
+<!-- l. 568 --><p class='noindent'>De vergelijking is qua atoomaantallen correct. Toch wordt gewoonlijk </p><div class='mathjax-block'>\[ CH_4+2O_2\longrightarrow CO_2+2H_2O \]</div> genoteerd.
+<!-- l. 574 --><p class='noindent'>Leg dit uit vanuit de oplossingsverzameling van het homogene stelsel.
+</p>
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item26'> 
+  Alle veelvouden van een niet-triviale oplossing zijn opnieuw oplossingen van het
+homogene stelsel. De vector <div class='mathjax-block'>\[ (2,4,2,4) \]</div> is tweemaal <div class='mathjax-block'>\[ (1,2,1,2). \]</div> Beide geven dezelfde verhouding.
+Conventioneel kiest men de kleinste positieve gehele coëfficiënten. </div> 
+</div> 
+  </div>
+<!-- l. 589 --><p class='noindent'></p></div>
+<p></p><!-- l. 589 --><p class='noindent'></p></section>
+<p><a id='x1-32r4'></a>
+</p><p></p><!-- l. 596 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>4</div><div class='fvd-section-bar__title'>Gevorderd — kritisch modelleren</div></div>
+<p><a id='x1-33r16'></a>
+</p><p></p><!-- l. 598 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 598 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 598 --><p class='noindent'>Oefening 16
+</p><!-- l. 598 --><p class='noindent'>— Ontbrekende informatie
+</p><!-- l. 598 --><p class='noindent'></p></div>
+<p></p><!-- l. 598 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 598 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--g'>G</span></div>
+<p></p><!-- l. 598 --><p class='noindent'></p><div class='fvd-exercise__content'> Een onderzoeker wil drie oplossingen A, B en C mengen. Hij weet alleen: <p></p><div class='mathjax-block'>\[ x+y+z=500 \]</div> en
+<div class='mathjax-block'>\[ 0{,}10x+0{,}20y+0{,}30z=100. \]</div>
+<div class='problem-environment question' id='problem27' numbered=' ' role='article' titletext=' Question'>  Analyseer met rang hoeveel vrijheid het model nog bevat. <div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item28'> 
+   Er zijn drie
+onbekenden en twee onafhankelijke vergelijkingen: <div class='mathjax-block'>\[ \operatorname {rang}(A)=\operatorname {rang}(A_b)=2&lt;3. \]</div> Er blijft één vrije parameter over.
+De gegevens bepalen dus niet één uniek mengsel. </div> 
+</div> 
+     </div>
+<div class='problem-environment question' id='problem29' numbered=' ' role='article' titletext=' Question'>  Geef een voorbeeld van een extra lineaire voorwaarde die tot een unieke oplossing
+kan leiden. <div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item30'> 
+   Bijvoorbeeld <div class='mathjax-block'>\[ x=z \]</div> of een opgelegde hoeveelheid van één mengsel. De extra
+voorwaarde moet onafhankelijk zijn van de twee bestaande voorwaarden. </div> 
+</div> 
+     </div>
+</div>
+<!-- l. 631 --><p class='noindent'></p></div>
+<p></p><!-- l. 631 --><p class='noindent'></p></section>
+<p><a id='x1-34r17'></a>
+</p><p></p><!-- l. 634 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 634 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 634 --><p class='noindent'>Oefening 17
+</p><!-- l. 634 --><p class='noindent'>— Ontwerp zelf een stelsel
+</p><!-- l. 634 --><p class='noindent'></p></div>
+<p></p><!-- l. 634 --><p class='noindent'></p><div class='fvd-exercise__body'>
+                                                                  
+
+                                                                  
+<p></p><!-- l. 634 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--g'>G</span></div>
+<p></p><!-- l. 634 --><p class='noindent'></p><div class='fvd-exercise__content'> Bedenk zelf een realistische STEM-context met drie onbekenden en minstens drie
+lineaire voorwaarden.
+<p></p>     
+<ol class='enumerate1'>
+<li class='enumerate' id='x1-36x1'>Beschrijf de context en de betekenis van de onbekenden.
+</li>
+<li class='enumerate' id='x1-38x2'>Stel het stelsel op.
+</li>
+<li class='enumerate' id='x1-40x3'>Voorspel vóór de ICT-berekening of je één, geen of mogelijk oneindig veel
+oplossingen verwacht.
+</li>
+<li class='enumerate' id='x1-42x4'>Reduceer de uitgebreide matrix met ICT.
+</li>
+<li class='enumerate' id='x1-44x5'>Bepaal de relevante rangen.
+</li>
+<li class='enumerate' id='x1-46x6'>Interpreteer en controleer de oplossing.
+</li>
+<li class='enumerate' id='x1-48x7'>Geef aan welke aannames of beperkingen jouw model heeft.</li></ol>
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item31'> 
+  Eigen antwoord. Een volledig antwoord bevat een consistente context, een correct
+lineair stelsel, een correcte ICT-analyse en een expliciete terugkoppeling naar de
+context. </div> 
+</div> 
+  </div>
+<!-- l. 654 --><p class='noindent'></p></div>
+                                                                  
+
+                                                                  
+<p></p><!-- l. 654 --><p class='noindent'></p></section>
+<p><a id='x1-49r5'></a>
+</p><p></p><!-- l. 661 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>5</div><div class='fvd-section-bar__title'>Eindcheck</div></div>
+<p><a id='x1-50r18'></a>
+</p><p></p><!-- l. 663 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 663 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 663 --><p class='noindent'>Oefening 18
+</p><!-- l. 663 --><p class='noindent'>— Van tekst tot besluit
+</p><!-- l. 663 --><p class='noindent'></p></div>
+<p></p><!-- l. 663 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 663 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 663 --><p class='noindent'></p><div class='fvd-exercise__content'> Een labo wil <span class='mathjax-inline'>\(100\)</span> ml van een oplossing maken uit drie voorraadoplossingen A, B
+en C. Hun concentraties zijn respectievelijk <span class='mathjax-inline'>\(10\%\)</span>, <span class='mathjax-inline'>\(20\%\)</span> en <span class='mathjax-inline'>\(40\%\)</span>. Het eindmengsel moet <span class='mathjax-inline'>\(25\%\)</span>
+bevatten. Bovendien moet de hoeveelheid A gelijk zijn aan de hoeveelheid
+C.
+<p></p><!-- l. 669 --><p class='noindent'>Los het probleem volledig op met een stelsel en ICT.
+</p>
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item32'> 
+  Neem <span class='mathjax-inline'>\(x,y,z\)</span> als de volumes in ml.
+<div class='mathjax-block'>\[ \begin {cases} x+y+z=100,\\ 0{,}10x+0{,}20y+0{,}40z=25,\\ x-z=0. \end {cases} \]</div>
+<!-- l. 682 --><p class='noindent'>Omdat <span class='mathjax-inline'>\(z=x\)</span>, volgt </p><div class='mathjax-block'>\[ 2x+y=100 \]</div> en <div class='mathjax-block'>\[ 0{,}50x+0{,}20y=25. \]</div> ICT geeft <div class='mathjax-block'>\[ x=z=\frac {50}{3},\qquad y=\frac {200}{3}. \]</div>
+<!-- l. 695 --><p class='noindent'>Dus ongeveer </p><div class='mathjax-block'>\[ 16{,}67\text { ml A},\qquad 66{,}67\text { ml B},\qquad 16{,}67\text { ml C}. \]</div>
+<!-- l. 702 --><p class='noindent'>Alle volumes zijn positief en samen <span class='mathjax-inline'>\(100\)</span> ml. De concentratiecontrole geeft <span class='mathjax-inline'>\(25\)</span> ml werkzame
+stof per <span class='mathjax-inline'>\(100\)</span> ml mengsel. </p></div> 
+</div> 
+  </div>
+<p></p><!-- l. 705 --><p class='noindent'></p></div>
+<p></p><!-- l. 705 --><p class='noindent'></p></section>
+<p><a id='x1-51r6'></a>
+</p><p></p><!-- l. 712 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>6</div><div class='fvd-section-bar__title'>Essentiële oefeningen</div></div>
+<p></p><!-- l. 715 --><p class='noindent'></p><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span></div><div class='fvd-remark__content'>Voor het minimumtraject van dit hoofdstuk moet je minstens de
+oefeningen met <span class='mathjax-inline'>\(\ESS \)</span> zelfstandig kunnen uitvoeren.
+<p></p><!-- l. 718 --><p class='noindent'>Daarbij horen bewust zowel <span class='mathjax-inline'>\(\oefB \)</span>- als <span class='mathjax-inline'>\(\oefU \)</span>-oefeningen. Om het vereiste niveau te bereiken
+volstaat het niet om alleen een reeds gegeven matrix met ICT te reduceren. Je moet
+ook:
+</p>     
+<ul class='itemize1'>
+<li class='itemize'>een context zelfstandig naar een lineair stelsel vertalen;
+                                                                  
+
+                                                                  
+</li>
+<li class='itemize'>de matrix correct invoeren en reduceren met ICT;
+</li>
+<li class='itemize'>rang en oplosbaarheid interpreteren;
+</li>
+<li class='itemize'>een wiskundige oplossing aan contextvoorwaarden toetsen;
+</li>
+<li class='itemize'>een chemische balanceeropgave als homogeen stelsel modelleren;
+</li>
+<li class='itemize'>vrije parameters en schaalfactoren betekenisvol interpreteren.</li></ul>
+</div></section>
+                                                                  
+
+                                                                  
+</body> 
+ 
+</html>
+                                                                  
+
+

@@ -1,0 +1,1379 @@
+<!DOCTYPE html> 
+<html lang='en-US' xml:lang='en-US'> 
+<head> <title>Oefeningen — Stelsels herbekeken</title> 
+<meta charset='utf-8' /> 
+<meta content='TeX4ht (https://tug.org/tex4ht/)' name='generator' /> 
+<meta content='width=device-width,initial-scale=1' name='viewport' /> 
+<link href='\aa:CssFile ' rel='stylesheet' type='text/css' /> 
+<meta content='Oefeningen-Stelsels.online.tex' name='src' /> 
+<script>window.MathJax = { tex: { tags: "ams", }, }; </script> 
+<script async='async' id='MathJax-script' src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js' type='text/javascript'></script>  
+<meta content='Ingmar Herreman' name='author' /> 
+<meta content='version 2.5.1' name='ximera' /> 
+<link href='https://ximera.osu.edu/public/stylesheets/standalone.css' media='screen' rel='stylesheet' /> 
+<script async='' src='https://ximera.osu.edu/public/javascripts/standalone.min.js' type='text/javascript'></script> 
+</head><body> 
+<div class='preamble'>
+</div>
+<style> .activity-body pre { white-space: pre; background-color: lightgray; } .xmyoutube { aspect-ratio: 16/9; min-width: 75%; } .image-environment img { width: unset; } </style> 
+
+<div class='maketitle'></div>
+<!-- l. 27 --><p class='noindent'></p><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span></div><div class='fvd-remark__content'>Dit hoofdstuk is een herhaling van leerstof uit het vijfde jaar.
+<p></p><!-- l. 29 --><p class='noindent'>De bedoeling is niet dat je opnieuw tientallen stelsels volledig met de hand reduceert.
+Voor omvangrijke berekeningen mag je ICT gebruiken.
+</p><!-- l. 32 --><p class='noindent'>Je moet vooral kunnen:
+</p>     
+<ul class='itemize1'>
+<li class='itemize'>een stelsel correct invoeren;
+</li>
+<li class='itemize'>de gereduceerde matrix interpreteren;
+</li>
+<li class='itemize'>de rang bepalen;
+</li>
+<li class='itemize'>de oplosbaarheid analyseren;
+</li>
+<li class='itemize'>vrije onbekenden herkennen;
+</li>
+<li class='itemize'>een oplossingsverzameling correct schrijven;
+</li>
+<li class='itemize'>je besluit wiskundig motiveren.</li></ul>
+</div></section>
+<p><a id='x1-2r1'></a>
+</p><!-- l. 50 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>1</div><div class='fvd-section-bar__title'>Basis — techniek opnieuw activeren</div></div>
+<p><a id='x1-3r1'></a>
+                                                                  
+
+                                                                  
+</p><p></p><!-- l. 57 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 57 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 57 --><p class='noindent'>Oefening 1
+</p><!-- l. 57 --><p class='noindent'>— Van stelsel naar matrix
+</p><!-- l. 57 --><p class='noindent'></p></div>
+<p></p><!-- l. 57 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 57 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 57 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 59 --><p class='noindent'>Schrijf van elk stelsel de coëfficiëntenmatrix <span class='mathjax-inline'>\(A\)</span>, de kolommatrix <span class='mathjax-inline'>\(B\)</span> en de uitgebreide
+matrix <span class='mathjax-inline'>\(A_b\)</span>.
+</p>
+<div class='problem-environment question' id='problem1' numbered=' ' role='article' titletext=' Question'>
+<div class='mathjax-block'>\[ \begin {cases} 2x-3y+z=7,\\ x+4y-2z=-1,\\ 3x-z=5. \end {cases} \]</div>
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item2'> 
+
+<!-- l. 74 --><p class='noindent'>De volgorde van de onbekenden is <span class='mathjax-inline'>\(x,y,z\)</span>.
+</p>
+<div class='mathjax-block'>\[ A= \begin {bmatrix} 2&amp;-3&amp;1\\ 1&amp;4&amp;-2\\ 3&amp;0&amp;-1 \end {bmatrix}, \qquad B= \begin {bmatrix} 7\\-1\\5 \end {bmatrix}. \]</div>
+<!-- l. 90 --><p class='noindent'>Dus
+</p>
+<div class='mathjax-block'>\[ A_b= \left [ \begin {array}{ccc|c} 2&amp;-3&amp;1&amp;7\\ 1&amp;4&amp;-2&amp;-1\\ 3&amp;0&amp;-1&amp;5 \end {array} \right ]. \]</div>
+<!-- l. 103 --><p class='noindent'>Merk op dat in de derde vergelijking de coëfficiënt van <span class='mathjax-inline'>\(y\)</span> gelijk is aan <span class='mathjax-inline'>\(0\)</span>.
+</p></div> 
+</div> 
+
+<p></p>
+</div>
+<div class='problem-environment question' id='problem3' numbered=' ' role='article' titletext=' Question'>
+<div class='mathjax-block'>\[ \begin {cases} x_1-2x_3+x_4=3,\\ 2x_1+x_2+4x_4=-1,\\ x_2+3x_3=5. \end {cases} \]</div>
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item4'> 
+
+<!-- l. 123 --><p class='noindent'>De volgorde is
+</p>
+<div class='mathjax-block'>\[ x_1,x_2,x_3,x_4. \]</div>
+<!-- l. 129 --><p class='noindent'>Daarom
+</p>
+<div class='mathjax-block'>\[ A= \begin {bmatrix} 1&amp;0&amp;-2&amp;1\\ 2&amp;1&amp;0&amp;4\\ 0&amp;1&amp;3&amp;0 \end {bmatrix}, \qquad B= \begin {bmatrix} 3\\-1\\5 \end {bmatrix}. \]</div>
+<!-- l. 145 --><p class='noindent'>De uitgebreide matrix is
+</p>
+                                                                  
+
+                                                                  
+<div class='mathjax-block'>\[ A_b= \left [ \begin {array}{cccc|c} 1&amp;0&amp;-2&amp;1&amp;3\\ 2&amp;1&amp;0&amp;4&amp;-1\\ 0&amp;1&amp;3&amp;0&amp;5 \end {array} \right ]. \]</div>
+</div> 
+</div> 
+
+</div>
+</div>
+<!-- l. 162 --><p class='noindent'></p></div>
+<p></p><!-- l. 162 --><p class='noindent'></p></section>
+<p><a id='x1-4r2'></a>
+</p><p></p><!-- l. 170 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 170 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 170 --><p class='noindent'>Oefening 2
+</p><!-- l. 170 --><p class='noindent'>— Lees de gereduceerde matrix
+</p><!-- l. 170 --><p class='noindent'></p></div>
+<p></p><!-- l. 170 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 170 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 170 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 172 --><p class='noindent'>De volgende matrices zijn reeds met ICT gereduceerd.
+</p><!-- l. 174 --><p class='noindent'>Bepaal telkens:
+</p>     
+<ol class='enumerate1'>
+<li class='enumerate' id='x1-6x1'><span class='mathjax-inline'>\(\operatorname {rang}(A)\)</span>;
+</li>
+<li class='enumerate' id='x1-8x2'><span class='mathjax-inline'>\(\operatorname {rang}(A_b)\)</span>;
+</li>
+<li class='enumerate' id='x1-10x3'>het aantal vrije onbekenden;
+</li>
+<li class='enumerate' id='x1-12x4'>het aantal oplossingen;
+</li>
+                                                                  
+
+                                                                  
+<li class='enumerate' id='x1-14x5'>indien mogelijk: de oplossingsverzameling.</li></ol>
+<div class='problem-environment question' id='problem5' numbered=' ' role='article' titletext=' Question'>
+<div class='mathjax-block'>\[ \left [ \begin {array}{ccc|c} 1&amp;0&amp;0&amp;2\\ 0&amp;1&amp;0&amp;-1\\ 0&amp;0&amp;1&amp;5 \end {array} \right ] \]</div>
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item6'> 
+
+<!-- l. 199 --><p class='noindent'>Er zijn drie pivots in <span class='mathjax-inline'>\(A\)</span>:
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A)=3. \]</div>
+<!-- l. 205 --><p class='noindent'>Ook
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A_b)=3. \]</div>
+<!-- l. 211 --><p class='noindent'>Er zijn <span class='mathjax-inline'>\(n=3\)</span> onbekenden, dus
+</p>
+<div class='mathjax-block'>\[ 3-3=0 \]</div>
+<!-- l. 217 --><p class='noindent'>vrije onbekenden.
+</p><!-- l. 219 --><p class='noindent'>Daarom is er precies één oplossing:
+</p>
+<div class='mathjax-block'>\[ V=\{(2,-1,5)\}. \]</div>
+</div> 
+</div> 
+
+</div>
+<div class='problem-environment question' id='problem7' numbered=' ' role='article' titletext=' Question'>
+<div class='mathjax-block'>\[ \left [ \begin {array}{ccc|c} 1&amp;0&amp;2&amp;4\\ 0&amp;1&amp;-3&amp;1\\ 0&amp;0&amp;0&amp;0 \end {array} \right ] \]</div>
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item8'> 
+
+<div class='mathjax-block'>\[ \operatorname {rang}(A) = \operatorname {rang}(A_b) = 2. \]</div>
+<!-- l. 252 --><p class='noindent'>Omdat <span class='mathjax-inline'>\(n=3\)</span>, is er
+</p>
+<div class='mathjax-block'>\[ 3-2=1 \]</div>
+<!-- l. 258 --><p class='noindent'>vrije onbekende.
+</p><!-- l. 260 --><p class='noindent'>Dus het stelsel heeft oneindig veel oplossingen.
+</p><!-- l. 262 --><p class='noindent'>Neem
+</p>
+<div class='mathjax-block'>\[ z=t. \]</div>
+<!-- l. 268 --><p class='noindent'>Dan
+</p>
+                                                                  
+
+                                                                  
+<div class='mathjax-block'>\[ x+2z=4 \quad \Longrightarrow \quad x=4-2t \]</div>
+<!-- l. 276 --><p class='noindent'>en
+</p>
+<div class='mathjax-block'>\[ y-3z=1 \quad \Longrightarrow \quad y=1+3t. \]</div>
+<!-- l. 284 --><p class='noindent'>Dus
+</p>
+<div class='mathjax-block'>\[ V= \left \{ (4-2t,1+3t,t) \mid t\in \mathbb {R} \right \}. \]</div>
+</div> 
+</div> 
+
+</div>
+<div class='problem-environment question' id='problem9' numbered=' ' role='article' titletext=' Question'>
+<div class='mathjax-block'>\[ \left [ \begin {array}{ccc|c} 1&amp;0&amp;2&amp;4\\ 0&amp;1&amp;-3&amp;1\\ 0&amp;0&amp;0&amp;1 \end {array} \right ] \]</div>
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item10'> 
+
+<!-- l. 313 --><p class='noindent'>Voor <span class='mathjax-inline'>\(A\)</span>:
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A)=2. \]</div>
+<!-- l. 319 --><p class='noindent'>Voor <span class='mathjax-inline'>\(A_b\)</span>:
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A_b)=3. \]</div>
+<!-- l. 325 --><p class='noindent'>Dus
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A)&lt;\operatorname {rang}(A_b). \]</div>
+<!-- l. 331 --><p class='noindent'>De laatste rij betekent bovendien
+</p>
+<div class='mathjax-block'>\[ 0=1, \]</div>
+<!-- l. 337 --><p class='noindent'>wat onmogelijk is.
+</p><!-- l. 339 --><p class='noindent'>Daarom
+</p>
+<div class='mathjax-block'>\[ V=\varnothing . \]</div>
+</div> 
+</div> 
+
+</div>
+</div>
+<!-- l. 349 --><p class='noindent'></p></div>
+<p></p><!-- l. 349 --><p class='noindent'></p></section>
+<p><a id='x1-15r3'></a>
+</p><p></p><!-- l. 357 --><p class='noindent'></p><section class='fvd-exercise'>
+                                                                  
+
+                                                                  
+<p></p><!-- l. 357 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 357 --><p class='noindent'>Oefening 3
+</p><!-- l. 357 --><p class='noindent'>— Reduceren met ICT en analyseren
+</p><!-- l. 357 --><p class='noindent'></p></div>
+<p></p><!-- l. 357 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 357 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 357 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 359 --><p class='noindent'>Gebruik ICT om de uitgebreide matrix van elk stelsel naar gereduceerde
+rij-echelonvorm te brengen.
+</p><!-- l. 362 --><p class='noindent'>Noteer vervolgens expliciet:
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A),\qquad \operatorname {rang}(A_b), \]</div>
+<!-- l. 369 --><p class='noindent'>het aantal vrije onbekenden en je besluit over de oplosbaarheid.
+</p>
+<div class='problem-environment question' id='problem11' numbered=' ' role='article' titletext=' Question'>
+<div class='mathjax-block'>\[ \begin {cases} 2x+3y+z=11,\\ 3x+y+2z=11,\\ x+2y+3z=14. \end {cases} \]</div>
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item12'> 
+
+<!-- l. 384 --><p class='noindent'>Met ICT:
+</p>
+<div class='mathjax-block'>\[ A_b \sim \left [ \begin {array}{ccc|c} 1&amp;0&amp;0&amp;1\\ 0&amp;1&amp;0&amp;2\\ 0&amp;0&amp;1&amp;3 \end {array} \right ]. \]</div>
+<!-- l. 398 --><p class='noindent'>Dus
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A) = \operatorname {rang}(A_b) = 3=n. \]</div>
+<!-- l. 408 --><p class='noindent'>Er zijn geen vrije onbekenden.
+</p><!-- l. 410 --><p class='noindent'>Het stelsel heeft precies één oplossing:
+</p>
+<div class='mathjax-block'>\[ V=\{(1,2,3)\}. \]</div>
+</div> 
+</div> 
+
+</div>
+<div class='problem-environment question' id='problem13' numbered=' ' role='article' titletext=' Question'>
+<div class='mathjax-block'>\[ \begin {cases} x-2y=1,\\ 2x+y-z=1,\\ 3x-y-z=2. \end {cases} \]</div>
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item14'> 
+
+<!-- l. 433 --><p class='noindent'>Met ICT:
+</p>
+                                                                  
+
+                                                                  
+<div class='mathjax-block'>\[ A_b \sim \left [ \begin {array}{ccc|c} 1&amp;0&amp;-\frac 25&amp;\frac 35\\ 0&amp;1&amp;-\frac 15&amp;-\frac 15\\ 0&amp;0&amp;0&amp;0 \end {array} \right ]. \]</div>
+<!-- l. 447 --><p class='noindent'>Daarom
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A) = \operatorname {rang}(A_b) = 2&lt;3. \]</div>
+<!-- l. 457 --><p class='noindent'>Er is één vrije onbekende.
+</p><!-- l. 459 --><p class='noindent'>Neem
+</p>
+<div class='mathjax-block'>\[ z=t. \]</div>
+<!-- l. 465 --><p class='noindent'>Dan
+</p>
+<div class='mathjax-block'>\[ x=\frac 35+\frac 25t \]</div>
+<!-- l. 471 --><p class='noindent'>en
+</p>
+<div class='mathjax-block'>\[ y=-\frac 15+\frac 15t. \]</div>
+<!-- l. 477 --><p class='noindent'>Dus
+</p>
+<div class='mathjax-block'>\[ V= \left \{ \left ( \frac 35+\frac 25t, -\frac 15+\frac 15t, t \right ) \mid t\in \mathbb {R} \right \}. \]</div>
+</div> 
+</div> 
+
+</div>
+<div class='problem-environment question' id='problem15' numbered=' ' role='article' titletext=' Question'>
+<div class='mathjax-block'>\[ \begin {cases} 2x+2y+4z=13,\\ y+z=5,\\ x+2y+3z=8. \end {cases} \]</div>
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item16'> 
+
+<!-- l. 508 --><p class='noindent'>Met ICT:
+</p>
+<div class='mathjax-block'>\[ A_b \sim \left [ \begin {array}{ccc|c} 1&amp;0&amp;1&amp;0\\ 0&amp;1&amp;1&amp;0\\ 0&amp;0&amp;0&amp;1 \end {array} \right ]. \]</div>
+<!-- l. 522 --><p class='noindent'>Voor de coëfficiëntenmatrix geldt
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A)=2, \]</div>
+<!-- l. 528 --><p class='noindent'>maar voor de uitgebreide matrix
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A_b)=3. \]</div>
+<!-- l. 534 --><p class='noindent'>Dus
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A) &lt; \operatorname {rang}(A_b). \]</div>
+<!-- l. 542 --><p class='noindent'>Het stelsel is strijdig:
+                                                                  
+
+                                                                  
+</p>
+<div class='mathjax-block'>\[ V=\varnothing . \]</div>
+</div> 
+</div> 
+
+</div>
+</div>
+<!-- l. 552 --><p class='noindent'></p></div>
+<p></p><!-- l. 552 --><p class='noindent'></p></section>
+<p><a id='x1-16r4'></a>
+</p><p></p><!-- l. 560 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 560 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 560 --><p class='noindent'>Oefening 4
+</p><!-- l. 560 --><p class='noindent'>— Vrije onbekenden
+</p><!-- l. 560 --><p class='noindent'></p></div>
+<p></p><!-- l. 560 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 560 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 560 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 562 --><p class='noindent'>Voor elk van de volgende gereduceerde matrices:
+</p>     
+<ol class='enumerate1'>
+<li class='enumerate' id='x1-18x1'>duid de pivotkolommen aan;
+</li>
+<li class='enumerate' id='x1-20x2'>geef de vrije onbekenden;
+</li>
+<li class='enumerate' id='x1-22x3'>bepaal het aantal vrije parameters;
+</li>
+<li class='enumerate' id='x1-24x4'>schrijf de volledige oplossingsverzameling.</li></ol>
+<div class='problem-environment question' id='problem17' numbered=' ' role='article' titletext=' Question'>
+                                                                  
+
+                                                                  
+<div class='mathjax-block'>\[ \left [ \begin {array}{ccc|c} 1&amp;0&amp;2&amp;3\\ 0&amp;1&amp;-1&amp;4\\ 0&amp;0&amp;0&amp;0 \end {array} \right ] \]</div>
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item18'> 
+
+<!-- l. 586 --><p class='noindent'>De pivots liggen in kolommen <span class='mathjax-inline'>\(1\)</span> en <span class='mathjax-inline'>\(2\)</span>.
+</p><!-- l. 588 --><p class='noindent'>Dus <span class='mathjax-inline'>\(x\)</span> en <span class='mathjax-inline'>\(y\)</span> zijn pivotvariabelen en <span class='mathjax-inline'>\(z\)</span> is vrij.
+</p><!-- l. 590 --><p class='noindent'>Neem
+</p>
+<div class='mathjax-block'>\[ z=t. \]</div>
+<!-- l. 596 --><p class='noindent'>Dan
+</p>
+<div class='mathjax-block'>\[ x=3-2t, \qquad y=4+t. \]</div>
+<!-- l. 604 --><p class='noindent'>Dus
+</p>
+<div class='mathjax-block'>\[ V= \left \{ (3-2t,4+t,t) \mid t\in \mathbb {R} \right \}. \]</div>
+<!-- l. 614 --><p class='noindent'>Equivalent:
+</p>
+<div class='mathjax-block'>\[ \begin {pmatrix} x\\y\\z \end {pmatrix} = \begin {pmatrix} 3\\4\\0 \end {pmatrix} + t \begin {pmatrix} -2\\1\\1 \end {pmatrix}. \]</div>
+</div> 
+</div> 
+
+</div>
+<div class='problem-environment question' id='problem19' numbered=' ' role='article' titletext=' Question'>
+<div class='mathjax-block'>\[ \left [ \begin {array}{cccc|c} 1&amp;0&amp;-2&amp;3&amp;1\\ 0&amp;1&amp;1&amp;-1&amp;2\\ 0&amp;0&amp;0&amp;0&amp;0 \end {array} \right ] \]</div>
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item20'> 
+
+<!-- l. 650 --><p class='noindent'>De pivots liggen in kolommen <span class='mathjax-inline'>\(1\)</span> en <span class='mathjax-inline'>\(2\)</span>.
+</p><!-- l. 652 --><p class='noindent'>Dus
+</p>
+<div class='mathjax-block'>\[ x_3=s, \qquad x_4=t \]</div>
+<!-- l. 660 --><p class='noindent'>zijn vrij.
+</p><!-- l. 662 --><p class='noindent'>Uit de eerste rij:
+</p>
+<div class='mathjax-block'>\[ x_1-2x_3+3x_4=1 \]</div>
+<!-- l. 668 --><p class='noindent'>volgt
+</p>
+<div class='mathjax-block'>\[ x_1=1+2s-3t. \]</div>
+<!-- l. 674 --><p class='noindent'>Uit de tweede rij:
+</p>
+<div class='mathjax-block'>\[ x_2+x_3-x_4=2 \]</div>
+                                                                  
+
+                                                                  
+<!-- l. 680 --><p class='noindent'>volgt
+</p>
+<div class='mathjax-block'>\[ x_2=2-s+t. \]</div>
+<!-- l. 686 --><p class='noindent'>Dus
+</p>
+<div class='mathjax-block'>\[ V= \left \{ (1+2s-3t,\,2-s+t,\,s,\,t) \mid s,t\in \mathbb {R} \right \}. \]</div>
+</div> 
+</div> 
+
+</div>
+</div>
+<!-- l. 700 --><p class='noindent'></p></div>
+<p></p><!-- l. 700 --><p class='noindent'></p></section>
+<p><a id='x1-25r5'></a>
+</p><p></p><!-- l. 708 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 708 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 708 --><p class='noindent'>Oefening 5
+</p><!-- l. 708 --><p class='noindent'>— Homogene stelsels
+</p><!-- l. 708 --><p class='noindent'></p></div>
+<p></p><!-- l. 708 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 708 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 708 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 710 --><p class='noindent'>Gebruik ICT waar nodig.
+</p>
+<div class='problem-environment question' id='problem21' numbered=' ' role='article' titletext=' Question'>
+<!-- l. 715 --><p class='noindent'>Beschouw
+</p>
+<div class='mathjax-block'>\[ \begin {cases} 2x+y+3z=0,\\ y+2z=0,\\ -x+5y=0. \end {cases} \]</div>
+<!-- l. 725 --><p class='noindent'>Heeft dit stelsel niet-triviale oplossingen?
+</p><!-- l. 727 --><p class='noindent'>Motiveer met behulp van de rang.
+</p>
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item22'> 
+
+<!-- l. 731 --><p class='noindent'>De reductie geeft
+</p>
+<div class='mathjax-block'>\[ A_b \sim \left [ \begin {array}{ccc|c} 1&amp;0&amp;0&amp;0\\ 0&amp;1&amp;0&amp;0\\ 0&amp;0&amp;1&amp;0 \end {array} \right ]. \]</div>
+<!-- l. 745 --><p class='noindent'>Dus
+</p>
+                                                                  
+
+                                                                  
+<div class='mathjax-block'>\[ \operatorname {rang}(A)=3=n. \]</div>
+<!-- l. 751 --><p class='noindent'>Er zijn geen vrije onbekenden.
+</p><!-- l. 753 --><p class='noindent'>Het stelsel heeft enkel de triviale oplossing:
+</p>
+<div class='mathjax-block'>\[ V=\{(0,0,0)\}. \]</div>
+</div> 
+</div> 
+
+</div>
+<div class='problem-environment question' id='problem23' numbered=' ' role='article' titletext=' Question'>
+<!-- l. 766 --><p class='noindent'>Beschouw
+</p>
+<div class='mathjax-block'>\[ \begin {cases} x+3y-z=0,\\ 2x+6y-3z=0,\\ x+3y+3z=0. \end {cases} \]</div>
+<!-- l. 776 --><p class='noindent'>Bepaal de oplossingsverzameling.
+</p>
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item24'> 
+
+<!-- l. 780 --><p class='noindent'>Met ICT:
+</p>
+<div class='mathjax-block'>\[ A_b \sim \left [ \begin {array}{ccc|c} 1&amp;3&amp;0&amp;0\\ 0&amp;0&amp;1&amp;0\\ 0&amp;0&amp;0&amp;0 \end {array} \right ]. \]</div>
+<!-- l. 794 --><p class='noindent'>Dus
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A)=2&lt;3. \]</div>
+<!-- l. 800 --><p class='noindent'>Er is één vrije onbekende.
+</p><!-- l. 802 --><p class='noindent'>Uit de tweede rij:
+</p>
+<div class='mathjax-block'>\[ z=0. \]</div>
+<!-- l. 808 --><p class='noindent'>Neem
+</p>
+<div class='mathjax-block'>\[ y=t. \]</div>
+<!-- l. 814 --><p class='noindent'>Dan
+</p>
+<div class='mathjax-block'>\[ x=-3t. \]</div>
+<!-- l. 820 --><p class='noindent'>Dus
+</p>
+<div class='mathjax-block'>\[ V= \left \{ (-3t,t,0) \mid t\in \mathbb {R} \right \}. \]</div>
+</div> 
+</div> 
+
+</div>
+                                                                  
+
+                                                                  
+</div>
+<!-- l. 834 --><p class='noindent'></p></div>
+<p></p><!-- l. 834 --><p class='noindent'></p></section>
+<p><a id='x1-26r2'></a>
+</p><p></p><!-- l. 842 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>2</div><div class='fvd-section-bar__title'>Verdieping — analyseren en redeneren</div></div>
+<p><a id='x1-27r6'></a>
+</p><p></p><!-- l. 849 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 849 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 849 --><p class='noindent'>Oefening 6
+</p><!-- l. 849 --><p class='noindent'>— Beslis zonder verder te rekenen
+</p><!-- l. 849 --><p class='noindent'></p></div>
+<p></p><!-- l. 849 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 849 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 849 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 851 --><p class='noindent'>Voor elk geval is de reductie voldoende ver uitgevoerd om de oplosbaarheid te kunnen
+bepalen.
+</p><!-- l. 854 --><p class='noindent'>Je mag niet verder reduceren.
+</p><!-- l. 856 --><p class='noindent'>Bepaal het aantal oplossingen en motiveer.
+</p>
+<div class='problem-environment question' id='problem25' numbered=' ' role='article' titletext=' Question'>
+<div class='mathjax-block'>\[ \left [ \begin {array}{ccc|c} 1&amp;2&amp;-1&amp;4\\ 0&amp;1&amp;3&amp;2\\ 0&amp;0&amp;5&amp;-10 \end {array} \right ]. \]</div>
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item26'> 
+
+<!-- l. 873 --><p class='noindent'>Alle drie de coëfficiëntenkolommen bevatten een pivot.
+</p><!-- l. 875 --><p class='noindent'>Daarom
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A) = \operatorname {rang}(A_b) = 3=n. \]</div>
+<!-- l. 885 --><p class='noindent'>Het stelsel heeft precies één oplossing.
+</p><!-- l. 887 --><p class='noindent'>Het is niet nodig de oplossing zelf uit te rekenen.
+</p></div> 
+</div> 
+
+<p></p>
+</div>
+<div class='problem-environment question' id='problem27' numbered=' ' role='article' titletext=' Question'>
+<div class='mathjax-block'>\[ \left [ \begin {array}{ccc|c} 1&amp;2&amp;-1&amp;4\\ 0&amp;1&amp;3&amp;2\\ 0&amp;0&amp;0&amp;-6 \end {array} \right ]. \]</div>
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item28'> 
+
+                                                                  
+
+                                                                  
+<!-- l. 908 --><p class='noindent'>De laatste rij geeft
+</p>
+<div class='mathjax-block'>\[ 0=-6. \]</div>
+<!-- l. 914 --><p class='noindent'>Dat is onmogelijk.
+</p><!-- l. 916 --><p class='noindent'>Equivalent:
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A)=2 \]</div>
+<!-- l. 922 --><p class='noindent'>maar
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A_b)=3. \]</div>
+<!-- l. 928 --><p class='noindent'>Dus het stelsel heeft geen oplossing.
+</p></div> 
+</div> 
+
+<p></p>
+</div>
+<div class='problem-environment question' id='problem29' numbered=' ' role='article' titletext=' Question'>
+<div class='mathjax-block'>\[ \left [ \begin {array}{cccc|c} 1&amp;2&amp;0&amp;-1&amp;5\\ 0&amp;0&amp;1&amp;3&amp;2\\ 0&amp;0&amp;0&amp;0&amp;0 \end {array} \right ]. \]</div>
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item30'> 
+
+<!-- l. 949 --><p class='noindent'>Er zijn twee pivots:
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A) = \operatorname {rang}(A_b) = 2. \]</div>
+<!-- l. 959 --><p class='noindent'>Er zijn vier onbekenden.
+</p><!-- l. 961 --><p class='noindent'>Dus
+</p>
+<div class='mathjax-block'>\[ 4-2=2 \]</div>
+<!-- l. 967 --><p class='noindent'>vrije onbekenden.
+</p><!-- l. 969 --><p class='noindent'>Het stelsel heeft oneindig veel oplossingen met twee vrije parameters.
+</p></div> 
+</div> 
+
+<p></p>
+</div>
+</div>
+<!-- l. 975 --><p class='noindent'></p></div>
+<p></p><!-- l. 975 --><p class='noindent'></p></section>
+<p><a id='x1-28r7'></a>
+</p><p></p><!-- l. 983 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 983 --><p class='noindent'></p><div class='fvd-exercise__title'>
+                                                                  
+
+                                                                  
+<p></p><!-- l. 983 --><p class='noindent'>Oefening 7
+</p><!-- l. 983 --><p class='noindent'>— Vind de fout in de redenering
+</p><!-- l. 983 --><p class='noindent'></p></div>
+<p></p><!-- l. 983 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 983 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 983 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 985 --><p class='noindent'>Een leerling krijgt na reductie
+</p>
+<div class='mathjax-block'>\[ \left [ \begin {array}{ccc|c} 1&amp;0&amp;1&amp;-2\\ 0&amp;1&amp;1&amp;5\\ 0&amp;0&amp;0&amp;7 \end {array} \right ]. \]</div>
+<!-- l. 997 --><p class='noindent'>Hij schrijft:
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A)=3, \qquad \operatorname {rang}(A_b)=2. \]</div>
+<!-- l. 1005 --><p class='noindent'>Daarom heeft het stelsel geen oplossing.
+</p><!-- l. 1007 --><p class='noindent'>Analyseer deze redenering.
+</p>
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item31'> 
+
+<!-- l. 1011 --><p class='noindent'>De conclusie “geen oplossing” is juist, maar de rangen zijn fout.
+</p><!-- l. 1013 --><p class='noindent'>Voor de coëfficiëntenmatrix
+</p>
+<div class='mathjax-block'>\[ A= \begin {bmatrix} 1&amp;0&amp;1\\ 0&amp;1&amp;1\\ 0&amp;0&amp;0 \end {bmatrix} \]</div>
+<!-- l. 1024 --><p class='noindent'>zijn er twee pivots. Dus
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A)=2. \]</div>
+<!-- l. 1030 --><p class='noindent'>In de uitgebreide matrix ontstaat door de laatste kolom een derde pivot:
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A_b)=3. \]</div>
+<!-- l. 1036 --><p class='noindent'>Dus
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A) &lt; \operatorname {rang}(A_b), \]</div>
+<!-- l. 1044 --><p class='noindent'>en daarom is het stelsel strijdig.
+</p><!-- l. 1046 --><p class='noindent'>Bovendien geldt algemeen altijd
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A_b) \geq \operatorname {rang}(A), \]</div>
+<!-- l. 1054 --><p class='noindent'>omdat <span class='mathjax-inline'>\(A_b\)</span> ontstaat door aan <span class='mathjax-inline'>\(A\)</span> een kolom toe te voegen.
+</p></div> 
+</div> 
+
+                                                                  
+
+                                                                  
+</div>
+<p></p><!-- l. 1058 --><p class='noindent'></p></div>
+<p></p><!-- l. 1058 --><p class='noindent'></p></section>
+<p><a id='x1-29r8'></a>
+</p><p></p><!-- l. 1066 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 1066 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 1066 --><p class='noindent'>Oefening 8
+</p><!-- l. 1066 --><p class='noindent'>— Zelfde coëfficiënten, ander rechterlid
+</p><!-- l. 1066 --><p class='noindent'></p></div>
+<p></p><!-- l. 1066 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 1066 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 1066 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 1068 --><p class='noindent'>Beschouw de twee gereduceerde uitgebreide matrices
+</p>
+<div class='mathjax-block'>\[ M_1= \left [ \begin {array}{ccc|c} 1&amp;0&amp;2&amp;3\\ 0&amp;1&amp;-1&amp;4\\ 0&amp;0&amp;0&amp;0 \end {array} \right ] \]</div>
+<!-- l. 1081 --><p class='noindent'>en
+</p>
+<div class='mathjax-block'>\[ M_2= \left [ \begin {array}{ccc|c} 1&amp;0&amp;2&amp;0\\ 0&amp;1&amp;-1&amp;0\\ 0&amp;0&amp;0&amp;1 \end {array} \right ]. \]</div>
+<div class='problem-environment question' id='problem32' numbered=' ' role='article' titletext=' Question'>
+<!-- l. 1096 --><p class='noindent'>De coëfficiëntenmatrices hebben dezelfde rang. Toch is de oplosbaarheid volledig
+verschillend.
+</p><!-- l. 1099 --><p class='noindent'>Verklaar.
+</p>
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item33'> 
+
+<!-- l. 1103 --><p class='noindent'>Voor beide matrices is
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A)=2. \]</div>
+<!-- l. 1109 --><p class='noindent'>Bij <span class='mathjax-inline'>\(M_1\)</span>:
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A_b)=2, \]</div>
+<!-- l. 1115 --><p class='noindent'>dus
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A) = \operatorname {rang}(A_b) &lt; 3. \]</div>
+<!-- l. 1125 --><p class='noindent'>Het stelsel heeft oneindig veel oplossingen.
+</p><!-- l. 1127 --><p class='noindent'>Bij <span class='mathjax-inline'>\(M_2\)</span> geeft de laatste rij
+                                                                  
+
+                                                                  
+</p>
+<div class='mathjax-block'>\[ 0=1. \]</div>
+<!-- l. 1133 --><p class='noindent'>Daarom
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A_b)=3. \]</div>
+<!-- l. 1139 --><p class='noindent'>Dus
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A) &lt; \operatorname {rang}(A_b), \]</div>
+<!-- l. 1147 --><p class='noindent'>en het stelsel heeft geen oplossing.
+</p><!-- l. 1149 --><p class='noindent'>De rang van <span class='mathjax-inline'>\(A\)</span> alleen is dus onvoldoende om de oplosbaarheid van een niet-homogeen
+stelsel te bepalen.
+</p></div> 
+</div> 
+
+<p></p>
+</div>
+</div>
+<!-- l. 1156 --><p class='noindent'></p></div>
+<p></p><!-- l. 1156 --><p class='noindent'></p></section>
+<p><a id='x1-30r9'></a>
+</p><p></p><!-- l. 1164 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 1164 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 1164 --><p class='noindent'>Oefening 9
+</p><!-- l. 1164 --><p class='noindent'>— Hoeveel vrijheid blijft over?
+</p><!-- l. 1164 --><p class='noindent'></p></div>
+<p></p><!-- l. 1164 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 1164 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 1164 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 1166 --><p class='noindent'>Een oplosbaar lineair stelsel bevat <span class='mathjax-inline'>\(7\)</span> onbekenden.
+</p><!-- l. 1168 --><p class='noindent'>De coëfficiëntenmatrix heeft rang <span class='mathjax-inline'>\(4\)</span>.
+</p>
+<div class='problem-environment question' id='problem34' numbered=' ' role='article' titletext=' Question'>
+<!-- l. 1172 --><p class='noindent'>Hoeveel vrije parameters heeft de oplossingsverzameling?
+</p>
+<div class='mathjax-block'>\[ \answer {3} \]</div>
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item35'> 
+
+                                                                  
+
+                                                                  
+<!-- l. 1180 --><p class='noindent'>Omdat het stelsel oplosbaar is,
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A) = \operatorname {rang}(A_b). \]</div>
+<!-- l. 1188 --><p class='noindent'>Het aantal vrije parameters is
+</p>
+<div class='mathjax-block'>\[ n-\operatorname {rang}(A) = 7-4 = 3. \]</div>
+</div> 
+</div> 
+
+</div>
+<div class='problem-environment question' id='problem36' numbered=' ' role='article' titletext=' Question'>
+<!-- l. 1205 --><p class='noindent'>Heeft het stelsel één of oneindig veel oplossingen?
+</p>
+<div class='multiple-choice' id='problem37' titletext=' Multiple Choice'><span class='choice  ' id='choice1'>geen oplossing </span><span class='choice  ' id='choice2'>precies één oplossing </span><span class='choice correct ' id='choice3'>oneindig veel oplossingen</span> </div>
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item38'> 
+
+<!-- l. 1215 --><p class='noindent'>Er zijn drie vrije parameters. Elke parameter kan vrij variëren in <span class='mathjax-inline'>\(\mathbb {R}\)</span>, dus er zijn
+oneindig veel oplossingen.
+</p></div> 
+</div> 
+
+<p></p>
+</div>
+</div>
+<!-- l. 1222 --><p class='noindent'></p></div>
+<p></p><!-- l. 1222 --><p class='noindent'></p></section>
+<p><a id='x1-31r10'></a>
+</p><p></p><!-- l. 1230 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 1230 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 1230 --><p class='noindent'>Oefening 10
+</p><!-- l. 1230 --><p class='noindent'>— Van parameter naar ruimte
+</p><!-- l. 1230 --><p class='noindent'></p></div>
+<p></p><!-- l. 1230 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 1230 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 1230 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 1232 --><p class='noindent'>Beschouw
+</p>
+<div class='mathjax-block'>\[ V= \left \{ (3-2t,4+t,t) \mid t\in \mathbb {R} \right \}. \]</div>
+<div class='problem-environment question' id='problem39' numbered=' ' role='article' titletext=' Question'>
+                                                                  
+
+                                                                  
+<!-- l. 1244 --><p class='noindent'>Schrijf deze oplossingsverzameling in de vorm
+</p>
+<div class='mathjax-block'>\[ \begin {pmatrix} x\\y\\z \end {pmatrix} = \begin {pmatrix} x_0\\y_0\\z_0 \end {pmatrix} + t \begin {pmatrix} a\\b\\c \end {pmatrix}. \]</div>
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item40'> 
+
+<div class='mathjax-block'>\[ \begin {pmatrix} x\\y\\z \end {pmatrix} = \begin {pmatrix} 3\\4\\0 \end {pmatrix} + t \begin {pmatrix} -2\\1\\1 \end {pmatrix}. \]</div>
+</div> 
+</div> 
+
+</div>
+<div class='problem-environment question' id='problem41' numbered=' ' role='article' titletext=' Question'>
+<!-- l. 1285 --><p class='noindent'>Bereken de punten van de oplossingsverzameling voor
+</p>
+<div class='mathjax-block'>\[ t=0,\qquad t=1,\qquad t=-1. \]</div>
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item42'> 
+
+<!-- l. 1293 --><p class='noindent'>Voor <span class='mathjax-inline'>\(t=0\)</span>:
+</p>
+<div class='mathjax-block'>\[ (3,4,0). \]</div>
+<!-- l. 1299 --><p class='noindent'>Voor <span class='mathjax-inline'>\(t=1\)</span>:
+</p>
+<div class='mathjax-block'>\[ (1,5,1). \]</div>
+<!-- l. 1305 --><p class='noindent'>Voor <span class='mathjax-inline'>\(t=-1\)</span>:
+</p>
+<div class='mathjax-block'>\[ (5,3,-1). \]</div>
+</div> 
+</div> 
+
+</div>
+<div class='problem-environment question' id='problem43' numbered=' ' role='article' titletext=' Question'>
+<!-- l. 1318 --><p class='noindent'>Wat voor meetkundige figuur vormen alle oplossingen?
+</p>
+<div class='multiple-choice' id='problem44' titletext=' Multiple Choice'><span class='choice  ' id='choice4'>één punt </span><span class='choice correct ' id='choice5'>een rechte </span><span class='choice  ' id='choice6'>een vlak </span><span class='choice  ' id='choice7'>de volledige ruimte</span> </div>
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item45'> 
+
+<!-- l. 1329 --><p class='noindent'>Er is één vrije parameter.
+</p><!-- l. 1331 --><p class='noindent'>Wanneer <span class='mathjax-inline'>\(t\)</span> varieert, vertrekken we vanuit het vaste punt
+</p>
+<div class='mathjax-block'>\[ (3,4,0) \]</div>
+<!-- l. 1337 --><p class='noindent'>en bewegen we in de vaste richting
+</p>
+<div class='mathjax-block'>\[ (-2,1,1). \]</div>
+                                                                  
+
+                                                                  
+<!-- l. 1343 --><p class='noindent'>Daarom vormt de oplossingsverzameling een rechte.
+</p></div> 
+</div> 
+
+<p></p>
+</div>
+</div>
+<!-- l. 1349 --><p class='noindent'></p></div>
+<p></p><!-- l. 1349 --><p class='noindent'></p></section>
+<p><a id='x1-32r11'></a>
+</p><p></p><!-- l. 1357 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 1357 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 1357 --><p class='noindent'>Oefening 11
+</p><!-- l. 1357 --><p class='noindent'>— Rang en meetkundige betekenis
+</p><!-- l. 1357 --><p class='noindent'></p></div>
+<p></p><!-- l. 1357 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 1357 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 1357 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 1359 --><p class='noindent'>Een oplosbaar stelsel heeft drie onbekenden <span class='mathjax-inline'>\(x,y,z\)</span>.
+</p><!-- l. 1361 --><p class='noindent'>Vul de tabel aan.
+</p>
+<div class='mathjax-block'>\[ \begin {array}{c|c|c|c} \operatorname {rang}(A) &amp; \text {vrije parameters} &amp; \text {aantal oplossingen} &amp; \text {meetkundige vorm} \\ \hline 3 &amp; ? &amp; ? &amp; ?\\ 2 &amp; ? &amp; ? &amp; ?\\ 1 &amp; ? &amp; ? &amp; ?\\ 0 &amp; ? &amp; ? &amp; ? \end {array} \]</div>
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item46'> 
+
+<div class='mathjax-block'>\[ \begin {array}{c|c|c|c} \operatorname {rang}(A) &amp; \text {vrije parameters} &amp; \text {aantal oplossingen} &amp; \text {meetkundige vorm} \\ \hline 3&amp;0&amp;1&amp;\text {punt}\\ 2&amp;1&amp;\infty&amp; \text {rechte}\\ 1&amp;2&amp;\infty&amp; \text {vlak}\\ 0&amp;3&amp;\infty&amp; \mathbb {R}^{3} \end {array} \]</div>
+<!-- l. 1401 --><p class='noindent'>De tabel geldt alleen wanneer het stelsel oplosbaar is.
+</p></div> 
+</div> 
+
+</div>
+<p></p><!-- l. 1405 --><p class='noindent'></p></div>
+<p></p><!-- l. 1405 --><p class='noindent'></p></section>
+<p><a id='x1-33r12'></a>
+</p><p></p><!-- l. 1413 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 1413 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 1413 --><p class='noindent'>Oefening 12
+</p><!-- l. 1413 --><p class='noindent'>— Een homogeen stelsel analyseren zonder het op te lossen
+</p><!-- l. 1413 --><p class='noindent'></p></div>
+                                                                  
+
+                                                                  
+<p></p><!-- l. 1413 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 1413 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span></div>
+<p></p><!-- l. 1413 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 1415 --><p class='noindent'>Een homogeen stelsel heeft <span class='mathjax-inline'>\(5\)</span> onbekenden en
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A)=3. \]</div>
+<!-- l. 1421 --><p class='noindent'>Beantwoord zonder het stelsel expliciet op te lossen.
+</p>
+<div class='problem-environment question' id='problem47' numbered=' ' role='article' titletext=' Question'>
+<!-- l. 1425 --><p class='noindent'>Kan het stelsel strijdig zijn?
+</p>
+<div class='multiple-choice' id='problem48' titletext=' Multiple Choice'><span class='choice  ' id='choice8'>ja </span><span class='choice correct ' id='choice9'>nee</span> </div>
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item49'> 
+
+<!-- l. 1434 --><p class='noindent'>Nee.
+</p><!-- l. 1436 --><p class='noindent'>Een homogeen stelsel heeft altijd minstens de nuloplossing.
+</p></div> 
+</div> 
+
+<p></p>
+</div>
+<div class='problem-environment question' id='problem50' numbered=' ' role='article' titletext=' Question'>
+<!-- l. 1445 --><p class='noindent'>Hoeveel vrije parameters zijn er?
+</p>
+<div class='mathjax-block'>\[ \answer {2} \]</div>
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item51'> 
+
+<div class='mathjax-block'>\[ 5-3=2. \]</div>
+</div> 
+</div> 
+
+</div>
+<div class='problem-environment question' id='problem52' numbered=' ' role='article' titletext=' Question'>
+<!-- l. 1464 --><p class='noindent'>Bestaan er niet-triviale oplossingen?
+</p>
+<div class='multiple-choice' id='problem53' titletext=' Multiple Choice'><span class='choice correct ' id='choice10'>ja </span><span class='choice  ' id='choice11'>nee</span> </div>
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item54'> 
+
+<!-- l. 1473 --><p class='noindent'>Ja.
+</p><!-- l. 1475 --><p class='noindent'>Omdat
+</p>
+                                                                  
+
+                                                                  
+<div class='mathjax-block'>\[ \operatorname {rang}(A)=3&lt;5, \]</div>
+<!-- l. 1481 --><p class='noindent'>zijn er twee vrije parameters. De nuloplossing is dus niet de enige oplossing.
+</p></div> 
+</div> 
+
+<p></p>
+</div>
+</div>
+<!-- l. 1488 --><p class='noindent'></p></div>
+<p></p><!-- l. 1488 --><p class='noindent'></p></section>
+<p><a id='x1-34r13'></a>
+</p><p></p><!-- l. 1496 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 1496 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 1496 --><p class='noindent'>Oefening 13
+</p><!-- l. 1496 --><p class='noindent'>— Kies de juiste informatie
+</p><!-- l. 1496 --><p class='noindent'></p></div>
+<p></p><!-- l. 1496 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 1496 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span></div>
+<p></p><!-- l. 1496 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 1498 --><p class='noindent'>Voor een stelsel met vier onbekenden is gegeven:
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A)=3. \]</div>
+<!-- l. 1504 --><p class='noindent'>Een leerling beweert:
+</p>
+<div class='center'>
+<!-- l. 1506 --><p class='noindent'>
+</p><!-- l. 1507 --><p class='noindent'>“Het stelsel heeft dus oneindig veel oplossingen.”</p></div>
+<!-- l. 1510 --><p class='noindent'>Is dit besluit correct?
+</p>
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item55'> 
+
+<!-- l. 1514 --><p class='noindent'>Niet noodzakelijk.
+</p><!-- l. 1516 --><p class='noindent'>Uit
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A)=3&lt;4 \]</div>
+<!-- l. 1522 --><p class='noindent'>weten we alleen dat er, <em>als het stelsel oplosbaar is</em>, één vrije parameter zal
+                                                                  
+
+                                                                  
+zijn.
+</p><!-- l. 1525 --><p class='noindent'>We moeten eerst ook
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A_b) \]</div>
+<!-- l. 1531 --><p class='noindent'>kennen.
+</p><!-- l. 1533 --><p class='noindent'>Er zijn twee mogelijkheden:
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A_b)=3 \]</div>
+<!-- l. 1539 --><p class='noindent'>geeft oneindig veel oplossingen, maar
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A_b)=4 \]</div>
+<!-- l. 1545 --><p class='noindent'>geeft geen oplossing.
+</p><!-- l. 1547 --><p class='noindent'>De gegeven informatie is dus onvoldoende.
+</p></div> 
+</div> 
+
+</div>
+<p></p><!-- l. 1551 --><p class='noindent'></p></div>
+<p></p><!-- l. 1551 --><p class='noindent'></p></section>
+<p><a id='x1-35r3'></a>
+</p><p></p><!-- l. 1559 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>3</div><div class='fvd-section-bar__title'>Gevorderd — combineren en generaliseren</div></div>
+<p><a id='x1-36r14'></a>
+</p><p></p><!-- l. 1566 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 1566 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 1566 --><p class='noindent'>Oefening 14
+</p><!-- l. 1566 --><p class='noindent'>— Een parameter in het rechterlid
+</p><!-- l. 1566 --><p class='noindent'></p></div>
+<p></p><!-- l. 1566 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 1566 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--g'>G</span></div>
+<p></p><!-- l. 1566 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 1568 --><p class='noindent'>Beschouw
+</p>
+<div class='mathjax-block'>\[ \begin {cases} x+y+z=2,\\ 2x+2y+2z=4,\\ x+y+z=k. \end {cases} \]</div>
+<!-- l. 1578 --><p class='noindent'>Onderzoek afhankelijk van <span class='mathjax-inline'>\(k\)</span> de oplosbaarheid van het stelsel.
+</p>
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item56'> 
+
+                                                                  
+
+                                                                  
+<!-- l. 1582 --><p class='noindent'>De tweede vergelijking is tweemaal de eerste.
+</p><!-- l. 1584 --><p class='noindent'>De derde vergelijking heeft hetzelfde linkerlid als de eerste.
+</p><!-- l. 1586 --><p class='noindent'>Als
+</p>
+<div class='mathjax-block'>\[ k=2, \]</div>
+<!-- l. 1592 --><p class='noindent'>zijn de eerste en derde vergelijking identiek en geldt
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A) = \operatorname {rang}(A_b) = 1&lt;3. \]</div>
+<!-- l. 1602 --><p class='noindent'>Er zijn dan twee vrije parameters en dus oneindig veel oplossingen.
+</p><!-- l. 1604 --><p class='noindent'>Als
+</p>
+<div class='mathjax-block'>\[ k\neq 2, \]</div>
+<!-- l. 1610 --><p class='noindent'>vragen de eerste en derde vergelijking tegelijk dat
+</p>
+<div class='mathjax-block'>\[ x+y+z=2 \]</div>
+<!-- l. 1616 --><p class='noindent'>en
+</p>
+<div class='mathjax-block'>\[ x+y+z=k. \]</div>
+<!-- l. 1622 --><p class='noindent'>Dat is onmogelijk.
+</p><!-- l. 1624 --><p class='noindent'>Na reductie ontstaat een rij van de vorm
+</p>
+<div class='mathjax-block'>\[ [0\ 0\ 0\mid k-2]. \]</div>
+<!-- l. 1630 --><p class='noindent'>Dus voor
+</p>
+<div class='mathjax-block'>\[ k\neq 2 \]</div>
+<!-- l. 1636 --><p class='noindent'>geldt
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A) &lt; \operatorname {rang}(A_b), \]</div>
+<!-- l. 1644 --><p class='noindent'>en heeft het stelsel geen oplossing.
+</p><!-- l. 1646 --><p class='noindent'>Samengevat:
+</p>
+<div class='mathjax-block'>\[ \boxed { \begin {array}{ll} k=2 &amp;: \text {oneindig veel oplossingen},\\[1mm] k\neq 2 &amp;: \text {geen oplossing}. \end {array} } \]</div>
+</div> 
+</div> 
+
+</div>
+<!-- l. 1659 --><p class='noindent'></p></div>
+                                                                  
+
+                                                                  
+<p></p><!-- l. 1659 --><p class='noindent'></p></section>
+<p><a id='x1-37r15'></a>
+</p><p></p><!-- l. 1667 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 1667 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 1667 --><p class='noindent'>Oefening 15
+</p><!-- l. 1667 --><p class='noindent'>— Kan dit bestaan?
+</p><!-- l. 1667 --><p class='noindent'></p></div>
+<p></p><!-- l. 1667 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 1667 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--g'>G</span></div>
+<p></p><!-- l. 1667 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 1669 --><p class='noindent'>Bepaal telkens of de beschreven situatie mogelijk is. Motiveer.
+</p>
+<div class='problem-environment question' id='problem57' numbered=' ' role='article' titletext=' Question'>
+<!-- l. 1675 --><p class='noindent'>Een stelsel met drie onbekenden waarvoor
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A)=3 \]</div>
+<!-- l. 1681 --><p class='noindent'>en
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A_b)=2. \]</div>
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item58'> 
+
+<!-- l. 1689 --><p class='noindent'>Dit is onmogelijk.
+</p><!-- l. 1691 --><p class='noindent'>Omdat <span class='mathjax-inline'>\(A_b\)</span> ontstaat door aan <span class='mathjax-inline'>\(A\)</span> één kolom toe te voegen, geldt altijd
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A_b) \geq \operatorname {rang}(A). \]</div>
+</div> 
+</div> 
+
+</div>
+<div class='problem-environment question' id='problem59' numbered=' ' role='article' titletext=' Question'>
+<!-- l. 1706 --><p class='noindent'>Een stelsel met vier onbekenden waarvoor
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A) = \operatorname {rang}(A_b) = 3 \]</div>
+<!-- l. 1716 --><p class='noindent'>en precies één oplossing.
+</p>
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item60'> 
+
+<!-- l. 1720 --><p class='noindent'>Dit is onmogelijk.
+                                                                  
+
+                                                                  
+</p><!-- l. 1722 --><p class='noindent'>Er zijn vier onbekenden maar slechts drie pivots.
+</p><!-- l. 1724 --><p class='noindent'>Dus
+</p>
+<div class='mathjax-block'>\[ 4-3=1 \]</div>
+<!-- l. 1730 --><p class='noindent'>onbekende is vrij.
+</p><!-- l. 1732 --><p class='noindent'>Het stelsel heeft daarom oneindig veel oplossingen.
+</p></div> 
+</div> 
+
+<p></p>
+</div>
+<div class='problem-environment question' id='problem61' numbered=' ' role='article' titletext=' Question'>
+<!-- l. 1741 --><p class='noindent'>Een homogeen stelsel met zes onbekenden, rang <span class='mathjax-inline'>\(6\)</span> en alleen de nuloplossing.
+</p>
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item62'> 
+
+<!-- l. 1746 --><p class='noindent'>Dit is mogelijk.
+</p><!-- l. 1748 --><p class='noindent'>Omdat
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A)=6=n, \]</div>
+<!-- l. 1754 --><p class='noindent'>zijn alle onbekenden pivotvariabelen en zijn er geen vrije parameters.
+</p><!-- l. 1756 --><p class='noindent'>Het homogene stelsel heeft dan enkel
+</p>
+<div class='mathjax-block'>\[ X=0. \]</div>
+</div> 
+</div> 
+
+</div>
+</div>
+<!-- l. 1766 --><p class='noindent'></p></div>
+<p></p><!-- l. 1766 --><p class='noindent'></p></section>
+<p><a id='x1-38r16'></a>
+</p><p></p><!-- l. 1774 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 1774 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 1774 --><p class='noindent'>Oefening 16
+</p><!-- l. 1774 --><p class='noindent'>— Van een rechte naar een stelsel
+</p><!-- l. 1774 --><p class='noindent'></p></div>
+<p></p><!-- l. 1774 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 1774 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--g'>G</span></div>
+                                                                  
+
+                                                                  
+<p></p><!-- l. 1774 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 1776 --><p class='noindent'>Gegeven is de verzameling
+</p>
+<div class='mathjax-block'>\[ V= \left \{ (1+2t,-1+t,3-t) \mid t\in \mathbb {R} \right \}. \]</div>
+<div class='problem-environment question' id='problem63' numbered=' ' role='article' titletext=' Question'>
+<!-- l. 1788 --><p class='noindent'>Toon aan dat voor elk punt van <span class='mathjax-inline'>\(V\)</span>
+</p>
+<div class='mathjax-block'>\[ x-2y=3 \]</div>
+<!-- l. 1794 --><p class='noindent'>geldt.
+</p>
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item64'> 
+
+<!-- l. 1798 --><p class='noindent'>Voor een punt van <span class='mathjax-inline'>\(V\)</span> geldt
+</p>
+<div class='mathjax-block'>\[ x=1+2t, \qquad y=-1+t. \]</div>
+<!-- l. 1806 --><p class='noindent'>Dus
+</p>
+<div class='mathjax-block'>\[ x-2y = 1+2t-2(-1+t) = 1+2t+2-2t = 3. \]</div>
+</div> 
+</div> 
+
+</div>
+<div class='problem-environment question' id='problem65' numbered=' ' role='article' titletext=' Question'>
+<!-- l. 1825 --><p class='noindent'>Zoek nog een lineaire vergelijking in <span class='mathjax-inline'>\(x,y,z\)</span> die door elk punt van <span class='mathjax-inline'>\(V\)</span> wordt voldaan.
+</p>
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item66'> 
+
+<!-- l. 1830 --><p class='noindent'>Er zijn meerdere mogelijkheden.
+</p><!-- l. 1832 --><p class='noindent'>We hebben
+</p>
+<div class='mathjax-block'>\[ y=-1+t \]</div>
+<!-- l. 1838 --><p class='noindent'>en
+</p>
+<div class='mathjax-block'>\[ z=3-t. \]</div>
+<!-- l. 1844 --><p class='noindent'>Daarom
+</p>
+<div class='mathjax-block'>\[ y+z = (-1+t)+(3-t) = 2. \]</div>
+<!-- l. 1854 --><p class='noindent'>Een mogelijke tweede vergelijking is dus
+</p>
+                                                                  
+
+                                                                  
+<div class='mathjax-block'>\[ y+z=2. \]</div>
+</div> 
+</div> 
+
+</div>
+<div class='problem-environment question' id='problem67' numbered=' ' role='article' titletext=' Question'>
+<!-- l. 1867 --><p class='noindent'>Beschouw nu het stelsel
+</p>
+<div class='mathjax-block'>\[ \begin {cases} x-2y=3,\\ y+z=2. \end {cases} \]</div>
+<!-- l. 1876 --><p class='noindent'>Toon met behulp van rang en vrije parameters aan dat het oneindig veel oplossingen
+heeft.
+</p>
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item68'> 
+
+<!-- l. 1881 --><p class='noindent'>De uitgebreide matrix is
+</p>
+<div class='mathjax-block'>\[ \left [ \begin {array}{ccc|c} 1&amp;-2&amp;0&amp;3\\ 0&amp;1&amp;1&amp;2 \end {array} \right ]. \]</div>
+<!-- l. 1892 --><p class='noindent'>Er zijn twee pivots:
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A) = \operatorname {rang}(A_b) = 2. \]</div>
+<!-- l. 1902 --><p class='noindent'>Er zijn drie onbekenden, dus
+</p>
+<div class='mathjax-block'>\[ 3-2=1 \]</div>
+<!-- l. 1908 --><p class='noindent'>vrije parameter.
+</p><!-- l. 1910 --><p class='noindent'>Het stelsel heeft daarom oneindig veel oplossingen.
+</p><!-- l. 1912 --><p class='noindent'>Neem
+</p>
+<div class='mathjax-block'>\[ z=s. \]</div>
+<!-- l. 1918 --><p class='noindent'>Dan
+</p>
+<div class='mathjax-block'>\[ y=2-s \]</div>
+<!-- l. 1924 --><p class='noindent'>en
+</p>
+<div class='mathjax-block'>\[ x=3+2y =7-2s. \]</div>
+<!-- l. 1931 --><p class='noindent'>Dus
+</p>
+<div class='mathjax-block'>\[ V= \left \{ (7-2s,2-s,s) \mid s\in \mathbb {R} \right \}. \]</div>
+<!-- l. 1941 --><p class='noindent'>Dit is dezelfde rechte als de oorspronkelijke verzameling, maar met een andere
+parametrisatie.
+                                                                  
+
+                                                                  
+</p><!-- l. 1944 --><p class='noindent'>Neem namelijk
+</p>
+<div class='mathjax-block'>\[ s=3-t. \]</div>
+<!-- l. 1950 --><p class='noindent'>Dan
+</p>
+<div class='mathjax-block'>\[ (7-2s,2-s,s) = (1+2t,-1+t,3-t). \]</div>
+</div> 
+</div> 
+
+</div>
+</div>
+<!-- l. 1962 --><p class='noindent'></p></div>
+<p></p><!-- l. 1962 --><p class='noindent'></p></section>
+<p><a id='x1-39r17'></a>
+</p><p></p><!-- l. 1970 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 1970 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 1970 --><p class='noindent'>Oefening 17
+</p><!-- l. 1970 --><p class='noindent'>— Redeneren over rang
+</p><!-- l. 1970 --><p class='noindent'></p></div>
+<p></p><!-- l. 1970 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 1970 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--g'>G</span></div>
+<p></p><!-- l. 1970 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 1972 --><p class='noindent'>Leg uit waarom voor elke matrix <span class='mathjax-inline'>\(A\)</span> en haar uitgebreide matrix <span class='mathjax-inline'>\(A_b\)</span>
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A_b) \geq \operatorname {rang}(A) \]</div>
+<!-- l. 1980 --><p class='noindent'>moet gelden.
+</p>
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item69'> 
+
+<!-- l. 1984 --><p class='noindent'>De uitgebreide matrix <span class='mathjax-inline'>\(A_b\)</span> ontstaat door aan <span class='mathjax-inline'>\(A\)</span> één extra kolom toe te voegen.
+</p><!-- l. 1987 --><p class='noindent'>Alle kolommen die reeds in <span class='mathjax-inline'>\(A\)</span> aanwezig waren, blijven dus aanwezig in <span class='mathjax-inline'>\(A_b\)</span>.
+</p><!-- l. 1990 --><p class='noindent'>Door een kolom toe te voegen kunnen bestaande onafhankelijke kolommen niet plots
+afhankelijk worden.
+</p><!-- l. 1993 --><p class='noindent'>De maximale hoeveelheid lineair onafhankelijke informatie kan daarom niet
+afnemen.
+</p><!-- l. 1996 --><p class='noindent'>Dus
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A_b) \geq \operatorname {rang}(A). \]</div>
+                                                                  
+
+                                                                  
+<!-- l. 2004 --><p class='noindent'>De extra kolom kan de rang:
+</p>     
+<ul class='itemize1'>
+<li class='itemize'>onveranderd laten;
+</li>
+<li class='itemize'>of met één verhogen.</li></ul>
+<!-- l. 2011 --><p class='noindent'>Daarom is ook
+</p>
+<div class='mathjax-block'>\[ \operatorname {rang}(A_b) \leq \operatorname {rang}(A)+1. \]</div>
+</div> 
+</div> 
+
+</div>
+<!-- l. 2021 --><p class='noindent'></p></div>
+<p></p><!-- l. 2021 --><p class='noindent'></p></section>
+<p><a id='x1-40r4'></a>
+</p><p></p><!-- l. 2029 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>4</div><div class='fvd-section-bar__title'>Eindcheck</div></div>
+<p><a id='x1-41r18'></a>
+</p><p></p><!-- l. 2032 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 2032 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 2032 --><p class='noindent'>Oefening 18
+</p><!-- l. 2032 --><p class='noindent'>— Alles samen
+</p><!-- l. 2032 --><p class='noindent'></p></div>
+<p></p><!-- l. 2032 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 2032 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 2032 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 2034 --><p class='noindent'>Een stelsel met onbekenden <span class='mathjax-inline'>\(x,y,z\)</span> wordt met ICT gereduceerd tot
+</p>
+<div class='mathjax-block'>\[ \left [ \begin {array}{ccc|c} 1&amp;0&amp;-2&amp;5\\ 0&amp;1&amp;3&amp;-1\\ 0&amp;0&amp;0&amp;0 \end {array} \right ]. \]</div>
+<!-- l. 2046 --><p class='noindent'>Beantwoord zonder bijkomende ICT.
+</p>
+<div class='problem-environment question' id='problem70' numbered=' ' role='article' titletext=' Question'>
+<!-- l. 2051 --><p class='noindent'>Bepaal
+</p>
+                                                                  
+
+                                                                  
+<div class='mathjax-block'>\[ \operatorname {rang}(A) \qquad \text {en}\qquad \operatorname {rang}(A_b). \]</div>
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item71'> 
+
+<div class='mathjax-block'>\[ \operatorname {rang}(A) = \operatorname {rang}(A_b) = 2. \]</div>
+</div> 
+</div> 
+
+</div>
+<div class='problem-environment question' id='problem72' numbered=' ' role='article' titletext=' Question'>
+<!-- l. 2076 --><p class='noindent'>Hoeveel vrije onbekenden zijn er?
+</p>
+<div class='mathjax-block'>\[ \answer {1} \]</div>
+</div>
+<div class='problem-environment question' id='problem73' numbered=' ' role='article' titletext=' Question'>
+<!-- l. 2087 --><p class='noindent'>Hoeveel oplossingen heeft het stelsel?
+</p>
+<div class='multiple-choice' id='problem74' titletext=' Multiple Choice'><span class='choice  ' id='choice12'>geen </span><span class='choice  ' id='choice13'>precies één </span><span class='choice correct ' id='choice14'>oneindig veel</span> </div>
+</div>
+<div class='problem-environment question' id='problem75' numbered=' ' role='article' titletext=' Question'>
+<!-- l. 2100 --><p class='noindent'>Schrijf de oplossingsverzameling.
+</p>
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item76'> 
+
+<!-- l. 2104 --><p class='noindent'>De derde kolom bevat geen pivot, dus neem
+</p>
+<div class='mathjax-block'>\[ z=t. \]</div>
+<!-- l. 2110 --><p class='noindent'>Dan
+</p>
+<div class='mathjax-block'>\[ x-2z=5 \quad \Longrightarrow \quad x=5+2t \]</div>
+<!-- l. 2118 --><p class='noindent'>en
+</p>
+<div class='mathjax-block'>\[ y+3z=-1 \quad \Longrightarrow \quad y=-1-3t. \]</div>
+<!-- l. 2126 --><p class='noindent'>Dus
+</p>
+<div class='mathjax-block'>\[ V= \left \{ (5+2t,-1-3t,t) \mid t\in \mathbb {R} \right \}. \]</div>
+</div> 
+</div> 
+
+</div>
+<div class='problem-environment question' id='problem77' numbered=' ' role='article' titletext=' Question'>
+                                                                  
+
+                                                                  
+<!-- l. 2143 --><p class='noindent'>Schrijf de oplossing in vectorvorm.
+</p>
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item78'> 
+
+<div class='mathjax-block'>\[ \begin {pmatrix} x\\y\\z \end {pmatrix} = \begin {pmatrix} 5\\-1\\0 \end {pmatrix} + t \begin {pmatrix} 2\\-3\\1 \end {pmatrix}. \]</div>
+</div> 
+</div> 
+
+</div>
+<div class='problem-environment question' id='problem79' numbered=' ' role='article' titletext=' Question'>
+<!-- l. 2169 --><p class='noindent'>Welke meetkundige figuur beschrijft deze oplossingsverzameling?
+</p>
+<div class='multiple-choice' id='problem80' titletext=' Multiple Choice'><span class='choice  ' id='choice15'>een punt </span><span class='choice correct ' id='choice16'>een rechte </span><span class='choice  ' id='choice17'>een vlak </span><span class='choice  ' id='choice18'>de volledige ruimte</span> </div>
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item81'> 
+
+<!-- l. 2180 --><p class='noindent'>Er is één vrije parameter.
+</p><!-- l. 2182 --><p class='noindent'>De oplossing heeft de vorm
+</p>
+<div class='mathjax-block'>\[ P=P_0+t\vec {v}. \]</div>
+<!-- l. 2188 --><p class='noindent'>Dat beschrijft een rechte in de ruimte.
+</p><!-- l. 2190 --><p class='noindent'>Dit is precies de vorm die in een volgend hoofdstuk opnieuw zal verschijnen.
+</p></div> 
+</div> 
+
+<p></p>
+</div>
+</div>
+<!-- l. 2196 --><p class='noindent'></p></div>
+<p></p><!-- l. 2196 --><p class='noindent'></p></section>
+<p><a id='x1-42r5'></a>
+</p><p></p><!-- l. 2204 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>5</div><div class='fvd-section-bar__title'>Essentiële oefeningen</div></div>
+<p></p><!-- l. 2207 --><p class='noindent'></p><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span></div><div class='fvd-remark__content'>Om deze opfrissing voldoende te beheersen voor het vervolg van de
+module, moet je minstens de volgende oefeningen zelfstandig aankunnen:
+<p></p>     
+<ul class='itemize1'>
+<li class='itemize'><strong>Oefening 1:</strong> een stelsel correct naar matrixnotatie omzetten;
+</li>
+<li class='itemize'><strong>Oefening 2:</strong> rang en oplosbaarheid uit een gereduceerde matrix aflezen;
+</li>
+                                                                  
+
+                                                                  
+<li class='itemize'><strong>Oefening 3:</strong> een stelsel met ICT reduceren en het resultaat analyseren;
+</li>
+<li class='itemize'><strong>Oefening 4:</strong> vrije onbekenden herkennen en parametriseren;
+</li>
+<li class='itemize'><strong>Oefening 5:</strong> homogene stelsels analyseren;
+</li>
+<li class='itemize'><strong>Oefening 6:</strong> oplosbaarheid bepalen zonder onnodig verder te rekenen;
+</li>
+<li class='itemize'><strong>Oefening 7:</strong> fouten in een rangredenering herkennen;
+</li>
+<li class='itemize'><strong>Oefening 8:</strong> <span class='mathjax-inline'>\(\operatorname {rang}(A)\)</span> en <span class='mathjax-inline'>\(\operatorname {rang}(A_b)\)</span> correct onderscheiden;
+</li>
+<li class='itemize'><strong>Oefening 9:</strong> rang koppelen aan het aantal vrije parameters;
+</li>
+<li class='itemize'><strong>Oefening 10:</strong> een geparametriseerde oplossing in vectorvorm schrijven;
+</li>
+<li class='itemize'><strong>Oefening  11:</strong>  rang  koppelen  aan  de  meetkundige  dimensie  van  een
+oplosbare oplossingsverzameling;
+</li>
+<li class='itemize'><strong>Eindcheck:</strong> de volledige redenering zelfstandig uitvoeren.</li></ul>
+<!-- l. 2227 --><p class='noindent'>De oefeningen uit de categorie <strong>Gevorderd</strong> zijn niet noodzakelijk voor het
+minimumtraject, maar bereiden sterk voor op verdere ruimtemeetkunde en lineaire
+algebra. </p></div></section>
+                                                                  
+
+                                                                  
+<p></p>
+</body> 
+ 
+</html>
+                                                                  
+
+

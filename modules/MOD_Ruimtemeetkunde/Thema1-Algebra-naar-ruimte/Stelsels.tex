@@ -1,0 +1,1448 @@
+\documentclass{ximera}
+
+\input{../../../preamble.tex}
+\input{../../../Opmaak.tex}
+
+\title{Stelsels herbekeken: rang en oplossingsverzamelingen}
+\author{Ingmar Herreman}
+
+\begin{document}
+
+% FVD_CHAPTER_DATA_START
+% Automatisch gegenereerd uit index.tex.
+% Niet handmatig aanpassen.
+\fvdchapterdata{1}{Van algebra naar ruimte}{1}
+% FVD_CHAPTER_DATA_END
+
+
+
+
+
+
+
+
+% ============================================================
+% ABSTRACT
+% ============================================================
+
+\begin{abstract}
+Lineaire stelsels, matrixnotatie en de methode van Gauss--Jordan
+heb je in het vijfde jaar al bestudeerd.
+
+In dit hoofdstuk halen we die kennis opnieuw naar boven, maar de nadruk
+verschuift. Voor omvangrijke reducties gebruiken we ICT. Belangrijker is
+dat je een gereduceerde matrix correct kunt lezen, de rang kunt bepalen
+en kunt analyseren of een stelsel geen, precies één of oneindig veel
+oplossingen heeft.
+
+Die analyse vormt een belangrijke brug van algebra naar ruimtemeetkunde:
+oplossingsverzamelingen zullen straks punten, rechten en vlakken in de
+ruimte beschrijven.
+\end{abstract}
+
+\maketitle
+
+
+% ============================================================
+% VOORKENNIS EN LEERDOELEN
+% ============================================================
+
+\begin{voorkennis}
+  \item Je herkent een lineair stelsel.
+  \item Je kan een stelsel in matrixnotatie schrijven.
+  \item Je kent de elementaire rijoperaties van Gauss--Jordan.
+  \item Je weet wat een uitgebreide matrix is.
+  \item Je hebt eerder matrices met ICT gereduceerd.
+\end{voorkennis}
+
+\begin{leerdoelen}
+  \item Je kan een lineair stelsel omzetten naar een uitgebreide matrix.
+  \item Je kan een uitgebreide matrix met behulp van ICT reduceren.
+  \item Je kan uit een gereduceerde matrix de rang aflezen.
+  \item Je kan de rang van de coëfficiëntenmatrix en de uitgebreide matrix vergelijken.
+  \item Je kan bepalen of een stelsel geen, precies één of oneindig veel oplossingen heeft.
+  \item Je kan vrije onbekenden herkennen en een oplossingsverzameling met parameters schrijven.
+  \item Je kan je besluit over de oplosbaarheid wiskundig beargumenteren.
+  \item Je kan de eerste link leggen tussen een algebraïsche oplossingsverzameling
+        en meetkundige objecten in de ruimte.
+\end{leerdoelen}
+
+
+\begin{opmerking}
+Dit hoofdstuk is een \textbf{opfrissing}.
+
+Je hebt deze leerstof al gezien. We bouwen de theorie daarom niet opnieuw
+vanaf nul op. In het zesde jaar verschuift de aandacht van lange
+handberekeningen naar het \textbf{interpreteren van de reductie}.
+
+Voor omvangrijke berekeningen gebruiken we waar mogelijk ICT.
+Jij moet de invoer correct kunnen opstellen, het resultaat kunnen lezen
+en er een wiskundig besluit uit kunnen trekken.
+\end{opmerking}
+
+
+% ============================================================
+% 1. WAAROM STELSELS OPNIEUW?
+% ============================================================
+
+\FVDsection{Waarom beginnen we opnieuw met stelsels?}
+
+Een groot deel van de ruimtemeetkunde die volgt, zal uiteindelijk leiden tot
+vragen zoals:
+
+\begin{itemize}
+    \item Snijden twee meetkundige objecten elkaar?
+    \item Bestaat er precies één gemeenschappelijk punt?
+    \item Zijn er oneindig veel gemeenschappelijke punten?
+    \item Is een combinatie van voorwaarden onmogelijk?
+\end{itemize}
+
+Op het eerste gezicht zijn dat meetkundige vragen.
+
+Toch zullen we ze vaak oplossen met \textbf{algebra}.
+
+Wanneer verschillende voorwaarden tegelijk moeten gelden, ontstaat immers
+een \textbf{stelsel van vergelijkingen}. De oplossingsverzameling van dat
+stelsel vertelt ons dan wat er meetkundig gebeurt.
+
+Daarom frissen we eerst het algebraïsche gereedschap op dat we doorheen
+de hele module nodig zullen hebben.
+
+
+\begin{voorbeeld}[Een voorproefje]
+
+Beschouw de twee vergelijkingen
+
+\[
+\begin{cases}
+x+y=4,\\
+x-y=2.
+\end{cases}
+\]
+
+Een koppel \((x,y)\) is een oplossing van het stelsel als het
+\textbf{beide vergelijkingen tegelijk} doet kloppen.
+
+De oplossing is
+
+\[
+(x,y)=(3,1).
+\]
+
+Meetkundig stellen beide vergelijkingen een rechte in het vlak voor.
+Het punt \((3,1)\) behoort tot beide rechten en is dus hun snijpunt.
+
+\[
+\text{\textbf{gemeenschappelijke oplossing}}
+\quad\longleftrightarrow\quad
+\text{\textbf{gemeenschappelijk punt}}
+\]
+
+In de ruimte zullen we precies hetzelfde principe gebruiken voor
+rechten en vlakken.
+\end{voorbeeld}
+
+
+
+% ============================================================
+% 2. VAN STELSEL NAAR MATRIX
+% ============================================================
+
+\FVDsection{Van een stelsel naar een matrix}
+
+Beschouw een lineair stelsel met \(m\) vergelijkingen en \(n\) onbekenden:
+
+\[
+S=
+\begin{cases}
+a_{11}x_1+a_{12}x_2+\cdots+a_{1n}x_n=b_1,\\
+a_{21}x_1+a_{22}x_2+\cdots+a_{2n}x_n=b_2,\\
+\vdots\\
+a_{m1}x_1+a_{m2}x_2+\cdots+a_{mn}x_n=b_m.
+\end{cases}
+\]
+
+We kunnen dit compact schrijven als
+
+\[
+A\,X=B,
+\]
+
+met
+
+\[
+A=
+\begin{bmatrix}
+a_{11}&a_{12}&\cdots&a_{1n}\\
+a_{21}&a_{22}&\cdots&a_{2n}\\
+\vdots&\vdots&\ddots&\vdots\\
+a_{m1}&a_{m2}&\cdots&a_{mn}
+\end{bmatrix},
+\qquad
+X=
+\begin{bmatrix}
+x_1\\x_2\\\vdots\\x_n
+\end{bmatrix},
+\qquad
+B=
+\begin{bmatrix}
+b_1\\b_2\\\vdots\\b_m
+\end{bmatrix}.
+\]
+
+
+\begin{definitie}
+De matrix \(A\) noemen we de \textbf{coëfficiëntenmatrix}.
+
+De matrix
+
+\[
+A_b=
+\left[
+\begin{array}{cccc|c}
+a_{11}&a_{12}&\cdots&a_{1n}&b_1\\
+a_{21}&a_{22}&\cdots&a_{2n}&b_2\\
+\vdots&\vdots&&\vdots&\vdots\\
+a_{m1}&a_{m2}&\cdots&a_{mn}&b_m
+\end{array}
+\right]
+\]
+
+noemen we de \textbf{uitgebreide matrix} van het stelsel.
+\end{definitie}
+
+
+\begin{voorbeeld}
+
+Gegeven
+
+\[
+S=
+\begin{cases}
+2x-y+3z=5,\\
+3x+2y+2z=4,\\
+5x+3y-z=7.
+\end{cases}
+\]
+
+Dan is
+
+\[
+A=
+\begin{bmatrix}
+2&-1&3\\
+3&2&2\\
+5&3&-1
+\end{bmatrix},
+\qquad
+B=
+\begin{bmatrix}
+5\\4\\7
+\end{bmatrix},
+\]
+
+en de uitgebreide matrix is
+
+\[
+A_b=
+\left[
+\begin{array}{ccc|c}
+2&-1&3&5\\
+3&2&2&4\\
+5&3&-1&7
+\end{array}
+\right].
+\]
+
+\end{voorbeeld}
+
+
+\begin{opmerking}[Let op de volgorde]
+
+De kolommen van \(A\) horen bij de onbekenden.
+
+Als we de volgorde
+
+\[
+x,\ y,\ z
+\]
+
+kiezen, moet die volgorde in \textbf{elke vergelijking} worden gerespecteerd.
+
+Zo moet
+
+\[
+x+3z=5
+\]
+
+in de matrix worden genoteerd als
+
+\[
+\begin{bmatrix}
+1&0&3&|&5
+\end{bmatrix}.
+\]
+
+De ontbrekende \(y\)-term heeft coëfficiënt \(0\).
+\end{opmerking}
+
+
+
+% ============================================================
+% 3. GAUSS-JORDAN: WAT MOET JE NOG KENNEN?
+% ============================================================
+
+\FVDsection{Gauss--Jordan: wat moet je nog kennen?}
+
+Je kent de methode van Gauss--Jordan al.
+
+Het basisidee blijft hetzelfde: we vervangen de uitgebreide matrix door
+een eenvoudiger matrix die \textbf{dezelfde oplossingsverzameling}
+beschrijft.
+
+Daarvoor gebruiken we elementaire rijoperaties:
+
+\[
+R_i\leftrightarrow R_j,
+\]
+
+\[
+R_i\longrightarrow \lambda R_i
+\qquad (\lambda\neq 0),
+\]
+
+en
+
+\[
+R_i\longrightarrow R_i+\lambda R_j.
+\]
+
+
+\begin{opmerking}
+Deze rijoperaties veranderen de oplossingsverzameling van het stelsel niet.
+
+Daarom mogen we een ingewikkelde uitgebreide matrix vervangen door een
+rij-equivalente, eenvoudiger matrix.
+\end{opmerking}
+
+
+\FVDsubsection{Gereduceerde rij-echelonvorm}
+
+Na volledige Gauss--Jordan-reductie verkrijgen we de
+\textbf{gereduceerde rij-echelonvorm} van de matrix.
+
+Je herkent die vorm onder andere aan:
+
+\begin{itemize}
+    \item alle nulrijen staan onderaan;
+    \item elke niet-nulrij heeft een eerste niet-nulelement dat gelijk is aan \(1\);
+    \item zo'n eerste \(1\) noemen we een \textbf{spil} of \textbf{pivot};
+    \item in een pivotkolom zijn alle andere elementen \(0\);
+    \item de pivots schuiven naar rechts wanneer we naar beneden gaan.
+\end{itemize}
+
+
+Bijvoorbeeld:
+
+\[
+\begin{bmatrix}
+1&0&2&0&-3\\
+0&1&-1&0&4\\
+0&0&0&1&2\\
+0&0&0&0&0
+\end{bmatrix}.
+\]
+
+De pivots bevinden zich hier in kolom \(1\), \(2\) en \(4\).
+
+
+
+% ============================================================
+% 4. ICT
+% ============================================================
+
+\FVDsection{Reduceren met ICT}
+
+Vanaf nu hoef je een omvangrijk stelsel niet telkens volledig met de hand
+te reduceren.
+
+Gebruik de functie van je rekentoestel of software die een matrix naar
+haar \textbf{gereduceerde rij-echelonvorm} brengt
+(\emph{rref}, \emph{row reduce}, \emph{reduced row echelon form}, \ldots).
+
+De wiskunde begint echter niet wanneer je op ENTER drukt.
+Ze begint bij de correcte invoer en vooral bij de interpretatie van de uitvoer.
+
+
+\begin{opmerking}[ICT is een hulpmiddel, geen besluit]
+
+Bij een oefening van dit hoofdstuk moet je meestal nog steeds zelf:
+
+\begin{enumerate}
+    \item de uitgebreide matrix correct opstellen;
+    \item de matrix met ICT reduceren;
+    \item de pivots herkennen;
+    \item de rang bepalen;
+    \item vrije onbekenden herkennen;
+    \item de oplosbaarheid bepalen;
+    \item de oplossingsverzameling correct formuleren;
+    \item je besluit kunnen verklaren.
+\end{enumerate}
+\end{opmerking}
+
+
+\begin{voorbeeld}[Van ICT-uitvoer naar wiskunde]
+
+Stel dat ICT voor een stelsel met drie onbekenden de volgende
+gereduceerde uitgebreide matrix geeft:
+
+\[
+\left[
+\begin{array}{ccc|c}
+1&0&2&3\\
+0&1&-1&4\\
+0&0&0&0
+\end{array}
+\right].
+\]
+
+De berekening is nu afgelopen, maar de analyse nog niet.
+
+Er zijn twee pivots in de coëfficiëntenmatrix. Dus
+
+\[
+\operatorname{rang}(A)=2.
+\]
+
+Ook de uitgebreide matrix heeft twee niet-nulrijen:
+
+\[
+\operatorname{rang}(A_b)=2.
+\]
+
+Er zijn \(n=3\) onbekenden en slechts \(2\) pivotvariabelen.
+Er is dus
+
+\[
+3-2=1
+\]
+
+vrije onbekende.
+
+Omdat
+
+\[
+\operatorname{rang}(A)=\operatorname{rang}(A_b)<3,
+\]
+
+heeft het stelsel oneindig veel oplossingen.
+\end{voorbeeld}
+
+
+
+% ============================================================
+% 5. RANG
+% ============================================================
+
+\FVDsection{De rang van een matrix}
+
+\begin{definitie}
+De \textbf{rang} van een matrix is het aantal pivots in haar
+gereduceerde rij-echelonvorm.
+
+Equivalent: de rang is het aantal niet-nulrijen in die gereduceerde vorm.
+\end{definitie}
+
+
+\begin{voorbeeld}
+
+\[
+A\sim
+\begin{bmatrix}
+1&0&2&-1\\
+0&1&3&4\\
+0&0&0&0
+\end{bmatrix}.
+\]
+
+Er zijn twee pivots, dus
+
+\[
+\operatorname{rang}(A)=2.
+\]
+
+\end{voorbeeld}
+
+
+\begin{opmerking}[Belangrijk]
+
+Voor een stelsel moeten we vaak \textbf{twee rangen} onderscheiden:
+
+\[
+\operatorname{rang}(A)
+\qquad\text{en}\qquad
+\operatorname{rang}(A_b).
+\]
+
+Dat verschil is essentieel.
+
+De matrix \(A_b\) bevat één extra kolom ten opzichte van \(A\).
+Daarom geldt altijd
+
+\[
+\operatorname{rang}(A_b)\geq \operatorname{rang}(A).
+\]
+
+De rang van de uitgebreide matrix kan dus nooit kleiner zijn dan
+de rang van de coëfficiëntenmatrix.
+\end{opmerking}
+
+
+
+% ============================================================
+% 6. OPLOSBAARHEID
+% ============================================================
+
+\FVDsection{Wat vertelt de rang over de oplossingen?}
+
+Beschouw een lineair stelsel met \(n\) onbekenden.
+
+Na reductie zijn er slechts drie fundamenteel verschillende mogelijkheden.
+
+
+\FVDsubsection{Geen oplossing}
+
+Stel dat
+
+\[
+\operatorname{rang}(A)<\operatorname{rang}(A_b).
+\]
+
+Dan ontstaat in de gereduceerde uitgebreide matrix een rij van het type
+
+\[
+\left[
+\begin{array}{ccc|c}
+0&0&0&c
+\end{array}
+\right],
+\qquad c\neq 0.
+\]
+
+Die rij stelt de vergelijking
+
+\[
+0=c
+\]
+
+voor.
+
+Dat is onmogelijk.
+
+\begin{eigenschap}
+Als
+
+\[
+\operatorname{rang}(A)<\operatorname{rang}(A_b),
+\]
+
+dan is het stelsel \textbf{strijdig} en heeft het geen oplossing.
+\end{eigenschap}
+
+
+\begin{voorbeeld}
+
+\[
+A_b\sim
+\left[
+\begin{array}{ccc|c}
+1&0&2&3\\
+0&1&-1&4\\
+0&0&0&5
+\end{array}
+\right].
+\]
+
+Voor \(A\) zien we twee pivots:
+
+\[
+\operatorname{rang}(A)=2.
+\]
+
+Voor \(A_b\) verschijnt een extra pivot in de laatste kolom:
+
+\[
+\operatorname{rang}(A_b)=3.
+\]
+
+De laatste rij betekent
+
+\[
+0=5.
+\]
+
+Dus
+
+\[
+V=\varnothing.
+\]
+
+\end{voorbeeld}
+
+
+
+\FVDsubsection{Precies één oplossing}
+
+Stel nu dat
+
+\[
+\operatorname{rang}(A)=\operatorname{rang}(A_b)=n.
+\]
+
+Elke onbekende hoort dan bij een pivotkolom.
+Er zijn geen vrije onbekenden.
+
+\begin{eigenschap}
+Als
+
+\[
+\operatorname{rang}(A)
+=
+\operatorname{rang}(A_b)
+=
+n,
+\]
+
+dan heeft het stelsel \textbf{precies één oplossing}.
+\end{eigenschap}
+
+
+\begin{voorbeeld}
+
+Voor een stelsel met drie onbekenden geeft ICT:
+
+\[
+A_b\sim
+\left[
+\begin{array}{ccc|c}
+1&0&0&2\\
+0&1&0&-1\\
+0&0&1&4
+\end{array}
+\right].
+\]
+
+Hier geldt
+
+\[
+\operatorname{rang}(A)
+=
+\operatorname{rang}(A_b)
+=
+3=n.
+\]
+
+Dus het stelsel heeft precies één oplossing:
+
+\[
+x=2,\qquad y=-1,\qquad z=4,
+\]
+
+of
+
+\[
+V=\{(2,-1,4)\}.
+\]
+
+\end{voorbeeld}
+
+
+
+\FVDsubsection{Oneindig veel oplossingen}
+
+Ten slotte kan
+
+\[
+\operatorname{rang}(A)
+=
+\operatorname{rang}(A_b)
+<
+n.
+\]
+
+Het stelsel is dan wel oplosbaar, maar er zijn minder pivots dan onbekenden.
+Minstens één onbekende is vrij.
+
+\begin{eigenschap}
+Als
+
+\[
+\operatorname{rang}(A)
+=
+\operatorname{rang}(A_b)
+<
+n,
+\]
+
+dan heeft het stelsel \textbf{oneindig veel oplossingen}.
+\end{eigenschap}
+
+
+Het aantal vrije parameters is
+
+\[
+\boxed{
+n-\operatorname{rang}(A)
+}
+\]
+
+zolang het stelsel oplosbaar is.
+
+
+\begin{voorbeeld}
+
+Beschouw een stelsel met drie onbekenden waarvoor
+
+\[
+A_b\sim
+\left[
+\begin{array}{ccc|c}
+1&0&2&3\\
+0&1&-1&4\\
+0&0&0&0
+\end{array}
+\right].
+\]
+
+We hebben
+
+\[
+\operatorname{rang}(A)
+=
+\operatorname{rang}(A_b)
+=
+2<3.
+\]
+
+Er is dus één vrije parameter.
+
+De derde kolom bevat geen pivot, dus \(z\) is vrij.
+Stel
+
+\[
+z=t,
+\qquad t\in\mathbb{R}.
+\]
+
+Uit de eerste rij volgt
+
+\[
+x+2z=3
+\quad\Longrightarrow\quad
+x=3-2t.
+\]
+
+Uit de tweede rij volgt
+
+\[
+y-z=4
+\quad\Longrightarrow\quad
+y=4+t.
+\]
+
+Dus
+
+\[
+V=
+\left\{
+(3-2t,\;4+t,\;t)
+\mid t\in\mathbb{R}
+\right\}.
+\]
+
+We kunnen dezelfde oplossing ook schrijven als
+
+\[
+\begin{pmatrix}
+x\\y\\z
+\end{pmatrix}
+=
+\begin{pmatrix}
+3\\4\\0
+\end{pmatrix}
++
+t
+\begin{pmatrix}
+-2\\1\\1
+\end{pmatrix},
+\qquad t\in\mathbb{R}.
+\]
+
+Bewaar vooral die laatste vorm in je achterhoofd.
+Ze zal zeer snel opnieuw verschijnen.
+\end{voorbeeld}
+
+
+
+% ============================================================
+% 7. HET BESLISSCHEMA
+% ============================================================
+
+\FVDsection{Een vast beslisschema}
+
+Na de reductie hoef je niet te gokken hoeveel oplossingen een stelsel heeft.
+
+Voor een stelsel met \(n\) onbekenden kijk je eerst naar
+
+\[
+r=\operatorname{rang}(A)
+\qquad\text{en}\qquad
+r_b=\operatorname{rang}(A_b).
+\]
+
+Daarna geldt:
+
+\[
+\boxed{
+\begin{array}{ccl}
+r<r_b
+&\Longrightarrow&
+\text{geen oplossing},
+\\[2mm]
+r=r_b=n
+&\Longrightarrow&
+\text{precies één oplossing},
+\\[2mm]
+r=r_b<n
+&\Longrightarrow&
+\text{oneindig veel oplossingen}.
+\end{array}}
+\]
+
+
+In het laatste geval is het aantal vrije parameters
+
+\[
+n-r.
+\]
+
+
+\begin{opmerking}[Een goede analyse bevat meer dan één woord]
+
+Schrijf bij een oefening niet alleen:
+
+\[
+\text{``oneindig veel oplossingen''.}
+\]
+
+Een volledige redenering kan bijvoorbeeld zijn:
+
+\[
+\operatorname{rang}(A)
+=
+\operatorname{rang}(A_b)
+=
+2<3.
+\]
+
+Dus het stelsel is oplosbaar en heeft één vrije parameter.
+Daarom zijn er oneindig veel oplossingen.
+\end{opmerking}
+
+
+
+% ============================================================
+% 8. VRIJE ONBEKENDEN
+% ============================================================
+
+\FVDsection{Vrije onbekenden en parameters}
+
+Een onbekende waarvan de kolom in de gereduceerde coëfficiëntenmatrix
+geen pivot bevat, noemen we een \textbf{vrije onbekende}.
+
+Die onbekende mag vrij worden gekozen.
+
+We vervangen ze meestal door een parameter zoals
+
+\[
+t,\quad s,\quad \lambda,\quad \mu.
+\]
+
+
+\begin{voorbeeld}[Twee vrije parameters]
+
+Een stelsel met vier onbekenden \(x,y,z,u\) wordt gereduceerd tot
+
+\[
+\left[
+\begin{array}{cccc|c}
+1&0&2&-1&3\\
+0&1&-1&4&2\\
+0&0&0&0&0
+\end{array}
+\right].
+\]
+
+Er zijn twee pivots, dus
+
+\[
+\operatorname{rang}(A)=2.
+\]
+
+Omdat er vier onbekenden zijn,
+
+\[
+n-r=4-2=2.
+\]
+
+De kolommen van \(z\) en \(u\) bevatten geen pivot.
+We kiezen
+
+\[
+z=s,
+\qquad
+u=t.
+\]
+
+Dan
+
+\[
+x+2z-u=3
+\quad\Longrightarrow\quad
+x=3-2s+t,
+\]
+
+en
+
+\[
+y-z+4u=2
+\quad\Longrightarrow\quad
+y=2+s-4t.
+\]
+
+Dus
+
+\[
+V=
+\left\{
+(3-2s+t,\;2+s-4t,\;s,\;t)
+\mid s,t\in\mathbb{R}
+\right\}.
+\]
+
+\end{voorbeeld}
+
+
+
+% ============================================================
+% 9. HOMOGENE STELSELS
+% ============================================================
+
+\FVDsection{Een bijzonder geval: homogene stelsels}
+
+\begin{definitie}
+Een lineair stelsel heet \textbf{homogeen} wanneer alle rechterleden
+gelijk zijn aan nul:
+
+\[
+A\,X=0.
+\]
+\end{definitie}
+
+
+Bijvoorbeeld:
+
+\[
+\begin{cases}
+x+2y-z=0,\\
+2x-y+3z=0.
+\end{cases}
+\]
+
+
+Een homogeen stelsel heeft altijd minstens de oplossing
+
+\[
+x_1=x_2=\cdots=x_n=0.
+\]
+
+Die noemen we de \textbf{nuloplossing} of \textbf{triviale oplossing}.
+
+
+\begin{opmerking}
+Een homogeen stelsel kan dus \textbf{nooit strijdig} zijn.
+
+Voor een homogeen stelsel geldt automatisch
+
+\[
+\operatorname{rang}(A)
+=
+\operatorname{rang}(A_b).
+\]
+
+Er blijven slechts twee mogelijkheden over:
+
+\[
+\operatorname{rang}(A)=n
+\]
+
+geeft alleen de nuloplossing, terwijl
+
+\[
+\operatorname{rang}(A)<n
+\]
+
+oneindig veel oplossingen geeft.
+\end{opmerking}
+
+
+\begin{voorbeeld}
+
+Stel dat een homogeen stelsel met drie onbekenden na reductie geeft
+
+\[
+\left[
+\begin{array}{ccc|c}
+1&2&-1&0\\
+0&0&0&0
+\end{array}
+\right].
+\]
+
+Dan
+
+\[
+\operatorname{rang}(A)=1
+\]
+
+en zijn er
+
+\[
+3-1=2
+\]
+
+vrije parameters.
+
+Neem
+
+\[
+y=s,\qquad z=t.
+\]
+
+Dan
+
+\[
+x+2s-t=0
+\quad\Longrightarrow\quad
+x=-2s+t.
+\]
+
+Dus
+
+\[
+V=
+\left\{
+(-2s+t,\;s,\;t)
+\mid s,t\in\mathbb{R}
+\right\}.
+\]
+
+\end{voorbeeld}
+
+
+
+% ============================================================
+% 10. VAN RANG NAAR MEETKUNDE
+% ============================================================
+
+\FVDsection{Van algebra naar ruimte}
+
+Hier verschijnt de reden waarom dit hoofdstuk aan het begin van de
+ruimtemeetkunde staat.
+
+Beschouw een oplosbaar lineair stelsel in drie onbekenden
+
+\[
+x,\ y,\ z.
+\]
+
+De oplossingen zijn punten van de driedimensionale ruimte.
+
+Het aantal vrije parameters vertelt dan hoeveel bewegingsvrijheid
+de oplossingsverzameling heeft.
+
+
+\begin{center}
+\[
+\begin{array}{c|c|c|c}
+\operatorname{rang}(A)
+&
+\text{vrije parameters}
+&
+\text{aantal oplossingen}
+&
+\text{meetkundig}
+\\
+\hline
+3&0&1&\text{één punt}\\
+2&1&\infty&\text{een rechte}\\
+1&2&\infty&\text{een vlak}\\
+0&3&\infty&\mathbb{R}^3
+\end{array}
+\]
+\end{center}
+
+
+\begin{opmerking}
+Deze tabel geldt voor een \textbf{oplosbaar} stelsel in drie onbekenden.
+
+Wanneer
+
+\[
+\operatorname{rang}(A)<\operatorname{rang}(A_b),
+\]
+
+is er geen oplossingsverzameling en dus ook geen gemeenschappelijk
+meetkundig object.
+\end{opmerking}
+
+
+\begin{voorbeeld}[Waarom één vrije parameter een rechte oplevert]
+
+We keerden eerder terug naar
+
+\[
+V=
+\left\{
+(3-2t,\;4+t,\;t)
+\mid t\in\mathbb{R}
+\right\}.
+\]
+
+Schrijf dit als
+
+\[
+\begin{pmatrix}
+x\\y\\z
+\end{pmatrix}
+=
+\begin{pmatrix}
+3\\4\\0
+\end{pmatrix}
++
+t
+\begin{pmatrix}
+-2\\1\\1
+\end{pmatrix}.
+\]
+
+Voor \(t=0\) krijgen we het punt
+
+\[
+(3,4,0).
+\]
+
+Wanneer \(t\) verandert, bewegen we telkens in dezelfde richting
+
+\[
+\begin{pmatrix}
+-2\\1\\1
+\end{pmatrix}.
+\]
+
+De oplossingsverzameling vormt dus een \textbf{rechte in de ruimte}.
+
+Binnenkort zullen we deze schrijfwijze herkennen als een
+parametrische/vectoriële vergelijking van een rechte.
+\end{voorbeeld}
+
+
+
+% ============================================================
+% 11. DRIE MATRIXUITVOEREN LEZEN
+% ============================================================
+
+\FVDsection{Kan je de uitvoer lezen zonder opnieuw te rekenen?}
+
+Dit is de belangrijkste vaardigheid uit dit hoofdstuk.
+
+Stel dat de oorspronkelijke stelsels telkens drie onbekenden bevatten.
+
+
+\FVDsubsection{Uitvoer A}
+
+\[
+\left[
+\begin{array}{ccc|c}
+1&0&0&2\\
+0&1&0&-1\\
+0&0&1&5
+\end{array}
+\right]
+\]
+
+We zien:
+
+\[
+\operatorname{rang}(A)=3,
+\qquad
+\operatorname{rang}(A_b)=3.
+\]
+
+Omdat \(n=3\),
+
+\[
+\operatorname{rang}(A)=\operatorname{rang}(A_b)=n.
+\]
+
+Dus er is precies één oplossing:
+
+\[
+V=\{(2,-1,5)\}.
+\]
+
+
+\FVDsubsection{Uitvoer B}
+
+\[
+\left[
+\begin{array}{ccc|c}
+1&0&2&4\\
+0&1&-3&1\\
+0&0&0&0
+\end{array}
+\right]
+\]
+
+We zien:
+
+\[
+\operatorname{rang}(A)=2,
+\qquad
+\operatorname{rang}(A_b)=2.
+\]
+
+Er is één vrije parameter:
+
+\[
+3-2=1.
+\]
+
+Dus het stelsel heeft oneindig veel oplossingen.
+
+
+\FVDsubsection{Uitvoer C}
+
+\[
+\left[
+\begin{array}{ccc|c}
+1&0&2&4\\
+0&1&-3&1\\
+0&0&0&1
+\end{array}
+\right]
+\]
+
+Voor de coëfficiëntenmatrix:
+
+\[
+\operatorname{rang}(A)=2.
+\]
+
+Voor de uitgebreide matrix:
+
+\[
+\operatorname{rang}(A_b)=3.
+\]
+
+Dus
+
+\[
+\operatorname{rang}(A)<\operatorname{rang}(A_b).
+\]
+
+De laatste rij betekent
+
+\[
+0=1.
+\]
+
+Het stelsel is strijdig:
+
+\[
+V=\varnothing.
+\]
+
+
+\begin{opmerking}
+Uitvoer B en C lijken bijna identiek.
+
+Toch verandert één enkel getal de conclusie volledig:
+
+\[
+[0\ 0\ 0\mid 0]
+\]
+
+voegt geen nieuwe voorwaarde toe, terwijl
+
+\[
+[0\ 0\ 0\mid 1]
+\]
+
+een tegenspraak veroorzaakt.
+
+Dat verschil moet je onmiddellijk kunnen herkennen.
+\end{opmerking}
+
+
+
+% ============================================================
+% 12. VEELGEMAAKTE FOUTEN
+% ============================================================
+
+\FVDsection{Veelgemaakte fouten}
+
+\begin{opmerking}[Fout 1: alleen het aantal vergelijkingen tellen]
+
+Drie vergelijkingen en drie onbekenden betekenen \textbf{niet automatisch}
+dat er één oplossing is.
+
+Vergelijkingen kunnen afhankelijk zijn of elkaar tegenspreken.
+
+De rang bepaalt hoeveel onafhankelijke voorwaarden werkelijk overblijven.
+\end{opmerking}
+
+
+\begin{opmerking}[Fout 2: rang en aantal onbekenden verwarren]
+
+De rang is het aantal pivots.
+
+Het aantal vrije parameters is
+
+\[
+n-\operatorname{rang}(A)
+\]
+
+alleen wanneer het stelsel oplosbaar is.
+\end{opmerking}
+
+
+\begin{opmerking}[Fout 3: \(0=0\) en \(0=c\) verwarren]
+
+\[
+0=0
+\]
+
+is altijd waar en levert geen nieuwe voorwaarde.
+
+Maar
+
+\[
+0=c,\qquad c\neq0,
+\]
+
+is onmogelijk en maakt het volledige stelsel strijdig.
+\end{opmerking}
+
+
+\begin{opmerking}[Fout 4: alleen naar \(\operatorname{rang}(A)\) kijken]
+
+Voor de oplosbaarheid moet je \(A\) en \(A_b\) vergelijken.
+
+Een stelsel met
+
+\[
+\operatorname{rang}(A)=2
+\]
+
+kan zowel oneindig veel oplossingen als geen enkele oplossing hebben.
+
+Het verschil wordt zichtbaar in
+
+\[
+\operatorname{rang}(A_b).
+\]
+\end{opmerking}
+
+
+\begin{opmerking}[Fout 5: ICT-uitvoer als eindantwoord beschouwen]
+
+Een gereduceerde matrix is meestal nog geen volledig antwoord.
+
+Je moet ze nog interpreteren en, indien nodig,
+de oplossingsverzameling formuleren.
+\end{opmerking}
+
+
+
+% ============================================================
+% 13. WAT MOET BLIJVEN HANGEN?
+% ============================================================
+
+\FVDsection{Wat moet je uit deze opfrissing meenemen?}
+
+Voor een stelsel met \(n\) onbekenden is de kern:
+
+\[
+\boxed{
+\operatorname{rang}(A)<\operatorname{rang}(A_b)
+\Longrightarrow
+\text{geen oplossing}
+}
+\]
+
+\[
+\boxed{
+\operatorname{rang}(A)
+=
+\operatorname{rang}(A_b)
+=
+n
+\Longrightarrow
+\text{één oplossing}
+}
+\]
+
+\[
+\boxed{
+\operatorname{rang}(A)
+=
+\operatorname{rang}(A_b)
+<
+n
+\Longrightarrow
+\text{oneindig veel oplossingen}
+}
+\]
+
+en in het laatste geval:
+
+\[
+\boxed{
+\text{aantal vrije parameters}
+=
+n-\operatorname{rang}(A)
+}
+\]
+
+
+Maar belangrijker dan de formules is de betekenis:
+
+\begin{center}
+\textbf{De rang vertelt hoeveel onafhankelijke voorwaarden aanwezig zijn.}
+\end{center}
+
+en
+
+\begin{center}
+\textbf{Vrije parameters vertellen hoeveel bewegingsvrijheid
+de oplossingsverzameling nog heeft.}
+\end{center}
+
+Dat idee nemen we mee naar de ruimtemeetkunde.
+
+Daar zullen oplossingsverzamelingen niet langer alleen rijen getallen zijn.
+Ze worden punten, rechten en vlakken in de ruimte.
+
+\end{document}
+
