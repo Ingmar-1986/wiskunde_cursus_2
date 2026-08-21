@@ -5,44 +5,54 @@
 \addPrintStyle{../..}
 
 
-\fvdtitle{Ruimte in beeld}
+\fvdtitle{Van data naar functies — verbanden herkennen en gedrag onderzoeken}
 \author{Ingmar Herreman}
 
 \begin{abstract}
-  In deze module onderzoeken we hoe punten, richtingen, rechten en vlakken
-  in de ruimte wiskundig beschreven kunnen worden.
 
-  We starten met een korte opfrissing van stelsels van lineaire vergelijkingen.
-  Die vormen een belangrijke brug tussen algebra en meetkunde:
-  een stelsel beschrijft niet alleen vergelijkingen, maar ook de onderlinge
-  ligging van meetkundige objecten.
+  In deze module leggen we de basis voor het onderzoeken van verbanden en functies.
 
-  Daarna bouwen we de vectorrekening in de ruimte op. Vectoren laten toe
-  om richting, verplaatsing en loodrechte stand nauwkeurig te beschrijven.
-  Met behulp van vectoren stellen we vervolgens vergelijkingen van rechten
-  en vlakken op en onderzoeken we hoe deze objecten ten opzichte van elkaar liggen.
+  We starten met een korte herhaling van belangrijke reken- en algebraïsche
+  vaardigheden die we doorheen de verdere cursus nodig hebben.
 
-  Ten slotte gebruiken we deze technieken om afstanden en hoeken in de ruimte
-  te berekenen.
+  Daarna onderzoeken we verbanden tussen grootheden aan de hand van gegevens.
+  Met spreidingsdiagrammen, correlatie en lineaire regressie leren we patronen
+  herkennen en modellen beoordelen. Daarbij besteden we bijzondere aandacht
+  aan het verschil tussen samenhang en causaliteit.
 
-  Ruimtemeetkunde verbindt algebra, meetkunde en vectorrekening.
-  Dezelfde ideeën spelen bovendien een belangrijke rol in onder andere
-  mechanica, fysica, engineering, computergraphics en driedimensionale modellering.
-\end{abstract}
+  Vervolgens maken we de overstap van relaties naar functies.
+  We bouwen de taal op waarmee we functies kunnen beschrijven en onderzoeken:
+  domein en bereik, nulwaarden, tekenverloop, stijgen en dalen, extrema,
+  symmetrie en verschillende voorstellingsvormen.
+
+  Grafieken gebruiken we niet alleen om functies te visualiseren, maar ook
+  om vergelijkingen en ongelijkheden op te lossen en om het gedrag van
+  functies te onderzoeken.
+
+  Ten slotte bestuderen we wat er gebeurt wanneer een veranderlijke een punt
+  nadert of onbegrensd groot wordt. Zo ontstaan de begrippen limiet,
+  continuïteit en asymptotisch gedrag.
+
+  Verbanden en functies vormen een centrale taal van de wiskunde.
+  Dezelfde ideeën gebruiken we in onder andere fysica, chemie, biologie,
+  data-analyse, engineering en andere wetenschappen om verschijnselen
+  te beschrijven, modellen op te stellen en voorspellingen te maken.
+
+\end{abstract}  
 
 
 % ============================================================
 % MODULEGEGEVENS
 % ============================================================
 
-\def\fvdmodulenummer{2}
-\def\fvdmoduletitel{Ruimte in beeld}
-\def\fvdmodulebeeld{../images/banners/ruimtemeetkunde.png}
+\def\fvdmodulenummer{1}
+\def\fvdmoduletitel{Van data naar functies — verbanden herkennen en gedrag onderzoeken}
+\def\fvdmodulebeeld{../images/banners/analyse_I.png}
 \def\fvdschoolembleem{../images/banners/logo_bellevue.png}
 \def\fvdschoollogo{../images/banners/logo_bellevue.png}
 \renewcommand{\fvdschoolnaam}{Campus Bellevue Izegem}
 
-\def\fvdklas{6 Wetenschappen-wiskunde}
+\def\fvdklas{5 Wetenschappen-wiskunde}
 \def\fvdschooljaar{2026--2027}
 \def\fvdmodulevariant{THEORIE}
 \def\fvdmodulesubtitel{}
@@ -116,19 +126,10 @@
 \fi
 
 
+\FVDpart{Parate kennis — Het gereedschap dat je nodig hebt}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% THEMA 1 — VAN ALGEBRA NAAR RUIMTE
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\FVDthemeopening{../images/banners/Analyse_thema_parate.png}
 
-\FVDpart{Van algebra naar ruimte}
-
-\FVDthemeopening{../images/banners/ruimte_thema1_algebra.png}
-
-BEGIN AUTO THEME OVERVIEW
-\begin{hoofdstukoverzicht}
-  \FVDthemechaptertile{1}{Stelsels herbekeken: rang en oplossingsverzamelingen}
-\end{hoofdstukoverzicht}
 
 
 
@@ -142,74 +143,324 @@ BEGIN AUTO THEME OVERVIEW
 
 % BEGIN AUTO THEME OVERVIEW
 \begin{hoofdstukoverzicht}
-  \FVDthemechaptertile{1}{Stelsels}
-  \FVDthemechaptertile{2}{Toepassingen Stelsels}
+  \FVDthemechaptertile{1}{Parate kennis --- Je wiskundige gereedschapskist}
 \end{hoofdstukoverzicht}
 % END AUTO THEME OVERVIEW
 
-\begin{themaintro}{Waarom beginnen we met stelsels?}
+\begin{themaintro}{}
 
-  Ruimtemeetkunde lijkt op het eerste gezicht vooral over punten,
-  rechten en vlakken te gaan. Toch speelt algebra er een belangrijke rol in.
+Wiskunde bouwt voort op wat je al kent.
 
-  Om meetkundige objecten in de ruimte nauwkeurig te beschrijven,
-  gebruiken we vergelijkingen. Zodra verschillende voorwaarden tegelijk
-  moeten gelden, komen we terecht bij een \textbf{stelsel van vergelijkingen}.
+In de volgende thema's gaan we nieuwe begrippen onderzoeken:
+verbanden in data, functies, nulpunten, tekenverloop, limieten,
+asymptoten en nog veel meer. Daarbij willen we niet telkens moeten
+stoppen omdat een breuk, een macht of een vergelijking in de weg zit.
 
-  Stelsels heb je eerder al bestudeerd. In dit thema leren we ze daarom
-  niet opnieuw vanaf nul. We halen de belangrijkste ideeën en technieken
-  opnieuw naar boven en bekijken vooral waarom ze straks in de
-  ruimtemeetkunde zo belangrijk worden.
+Daarom zetten we eerst je wiskundige gereedschapskist klaar.
+
+In dit thema leer je de technieken uit vorige jaren niet opnieuw van nul.
+Je controleert vooral of je ze nog voldoende \textbf{paraat} beheerst.
+
+Denk bijvoorbeeld aan:
+
+\begin{itemize}
+    \item rekenen met breuken, machten en wortels;
+    \item algebraïsche uitdrukkingen vereenvoudigen en ontbinden;
+    \item vergelijkingen, ongelijkheden en formules omvormen;
+    \item rekenen met procenten, verhoudingen en eenheden;
+    \item werken met rechten en coördinaten;
+    \item Pythagoras en basisgoniometrie gebruiken.
+\end{itemize}
+
+\begin{opmerking}
+Je hoeft niet alles opnieuw uitgebreid te oefenen.
+
+Bij elk onderdeel krijg je een korte zelfcheck.
+Kun je die vlot, correct en zonder veel hulp oplossen, dan is dat
+gereedschap voldoende scherp en kun je verder.
+
+Maak je nog fouten of twijfel je over je aanpak, dan gebruik je de
+bijhorende oefeningen om dat onderdeel gericht bij te werken.
+\end{opmerking}
+
+Maar parate kennis betekent meer dan een verzameling regels onthouden.
+
+Wanneer je later een probleem krijgt, staat er meestal niet bij:
+
+\begin{center}
+\emph{``Gebruik nu Pythagoras.''}
+\end{center}
+
+Je moet zelf kunnen herkennen welk gereedschap bruikbaar is.
+Daarom oefenen we in dit thema ook op:
+
+\[
+\boxed{
+\text{herkennen}
+\;\longrightarrow\;
+\text{kiezen}
+\;\longrightarrow\;
+\text{uitvoeren}
+\;\longrightarrow\;
+\text{controleren}
+}
+\]
+
+Aan het einde van het thema combineren we verschillende technieken
+in één probleem. Zo maken we de overstap van losse rekenvaardigheden
+naar het echte wiskundige probleemoplossen dat je in het vijfde jaar
+steeds vaker nodig zult hebben.
+\end{themaintro}
+
+
+
+
+  \FVDchapterpair{Thema1-Parate-kennis/Parate-kennis}
+  {Thema1-Parate-kennis/Parate-kennis-oefeningen}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% THEMA 2
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\FVDpart{Van werkelijkheid naar wiskunde — en terug}
+
+\FVDthemeopening{../images/banners/Analyse_thema_werkelijkheid.png}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% BEGIN AUTO THEME OVERVIEW
+\begin{hoofdstukoverzicht}
+  \FVDthemechaptertile{1}{Van werkelijkheid naar wiskunde --- en terug}
+\end{hoofdstukoverzicht}
+% END AUTO THEME OVERVIEW
+
+\begin{themaintro}{Waarom beginnen we bij de werkelijkheid?}
+
+  Wiskunde lijkt op het eerste gezicht vaak te beginnen met getallen,
+  formules en grafieken. In de wetenschappen loopt de weg meestal
+  andersom.
+
+  We vertrekken van een \textbf{vraag over de werkelijkheid}.
+  We meten grootheden, verzamelen gegevens en zoeken naar patronen.
+  Pas daarna proberen we die patronen met wiskunde te beschrijven.
+
+  Een tabel met meetwaarden kan bijvoorbeeld suggereren dat twee
+  grootheden met elkaar samenhangen. Een grafiek kan het gedrag van
+  dat verband zichtbaar maken. Een formule kan vervolgens toelaten
+  om waarden te berekenen of voorspellingen te maken.
+
+  In dit thema onderzoeken we daarom eerst hoe de brug tussen
+  werkelijkheid en wiskunde wordt gebouwd.
 
   We besteden aandacht aan:
 
   \begin{itemize}
-    \item de betekenis van een oplossing van een stelsel;
-    \item het oplossen van lineaire stelsels;
-    \item eliminatie en de methode van Gauss--Jordan;
-    \item stelsels met één, geen of oneindig veel oplossingen;
-    \item vrije onbekenden en parameters;
-    \item de meetkundige betekenis van oplossingsverzamelingen.
+
+    \item grootheden, meetwaarden, variabelen en eenheden;
+
+    \item gegevens voorstellen met tabellen en grafieken;
+
+    \item patronen en verbanden herkennen;
+
+    \item de stap van een werkelijke situatie naar een wiskundige
+          beschrijving: \textbf{mathematiseren};
+
+    \item wiskundige resultaten opnieuw betekenis geven in de
+          oorspronkelijke situatie: \textbf{demathematiseren};
+
+    \item wiskundige modellen en de aannames waarop ze gebaseerd zijn;
+
+    \item interpoleren, extrapoleren en de grenzen van voorspellingen;
+
+    \item kritisch omgaan met grafieken, gegevens en conclusies;
+
+    \item duidelijke wiskundige notatie en afspraken.
+
   \end{itemize}
 
-  Vooral dat laatste wordt belangrijk.
+  Daarbij ontdekken we meteen een belangrijk principe dat doorheen
+  de volledige cursus zal terugkeren: een wiskundig model is
+  \textbf{niet de werkelijkheid zelf}. Het is een vereenvoudigde
+  beschrijving waarmee we bepaalde vragen over die werkelijkheid
+  proberen te beantwoorden.
 
-  Twee vergelijkingen kunnen bijvoorbeeld twee rechten beschrijven.
-  Hun gemeenschappelijke oplossingen vertellen dan hoe die rechten
-  ten opzichte van elkaar liggen.
+  Daarom eindigt een wiskundig probleem ook niet wanneer de
+  berekening klaar is. We moeten terugkeren naar de oorspronkelijke
+  situatie en ons afvragen of het resultaat betekenisvol en
+  redelijk is.
 
-  In drie dimensies ontstaat hetzelfde idee bij rechten en vlakken.
-  Een algebraïsch probleem krijgt zo een meetkundige betekenis.
+  Zo ontstaat een manier van werken die we later opnieuw zullen
+  gebruiken bij gegevens, functies, limieten, afgeleiden, integralen
+  en andere wiskundige modellen:
+
+  \[
+    \text{werkelijkheid}
+    \longrightarrow
+    \text{gegevens}
+    \longrightarrow
+    \text{wiskundig model}
+    \longrightarrow
+    \text{analyse}
+    \longrightarrow
+    \text{interpretatie}.
+  \]
 
   \begin{center}
-    \textbf{Hoe vertelt een stelsel ons waar meetkundige objecten elkaar ontmoeten?}
+
+    \textbf{Hoe gebruiken we wiskunde om van waarnemingen
+    tot betrouwbare uitspraken over de werkelijkheid te komen?}
+
   \end{center}
 
 \end{themaintro}
 
+\FVDchapterpair
+  {Thema2-Modelleren/Werkelijkheid-terug}
+  {}
+
+
+%------Thema 3--------------------%
+
+
+
+
+\FVDpart{Verbanden onderzoeken met data}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% BEGIN AUTO THEME OVERVIEW
+\begin{hoofdstukoverzicht}
+  \FVDthemechaptertile{1}{Van data naar puntenwolk}
+  \FVDthemechaptertile{2}{Correlatie --- Hoe sterk is het lineaire verband?}
+  \FVDthemechaptertile{3}{Lineaire regressie --- Van data naar model}
+  \FVDthemechaptertile{4}{Samenhang is nog geen oorzaak}
+\end{hoofdstukoverzicht}
+% END AUTO THEME OVERVIEW
+
+\begin{themaintro}{Van gegevens naar een verantwoorde conclusie}
+
+  In wetenschappen verzamelen we voortdurend gegevens.
+
+  We meten bijvoorbeeld temperatuur en energieverbruik,
+  concentratie en absorbantie, instraling en elektrisch vermogen,
+  of twee kenmerken van een groep personen.
+
+  Een tabel met meetwaarden is echter nog geen antwoord.
+
+  We willen ontdekken of er in die gegevens een \textbf{verband} zit,
+  hoe sterk dat verband is en of we het met een wiskundig model
+  kunnen beschrijven.
+
+  In dit thema bouwen we die analyse stap voor stap op.
+
+  We beginnen met gekoppelde gegevens en stellen ze voor in een
+  \textbf{spreidingsdiagram}. Zo wordt een mogelijk verband zichtbaar
+  en leren we kijken naar richting, vorm, sterkte en bijzonderheden
+  in een puntenwolk.
+
+  Wanneer het verband ongeveer lineair is, gebruiken we vervolgens
+  de \textbf{correlatiecoëfficiënt} om de richting en sterkte van
+  die lineaire samenhang nauwkeuriger te beschrijven.
+
+  Daarna gaan we een stap verder.
+  Met \textbf{lineaire regressie} bouwen we uit de gegevens een
+  wiskundig model:
+
+  \[
+    \hat y=ax+b.
+  \]
+
+  Zo'n model laat ons toe om het globale patroon samen te vatten,
+  parameters in hun context te interpreteren en voorspellingen te
+  maken.
+
+  Maar een berekening of model is nooit het einde van het verhaal.
+
+  Een sterke correlatie betekent bijvoorbeeld niet automatisch dat
+  de ene grootheid de andere veroorzaakt. Ook voorspellingen buiten
+  het gebied waarin gemeten werd, kunnen misleidend zijn.
+
+  Daarom leren we voortdurend kritisch terugkeren naar de
+  oorspronkelijke situatie:
+
+  \[
+  \important{
+    \text{werkelijkheid}
+    \longrightarrow
+    \text{gegevens}
+    \longrightarrow
+    \text{verband}
+    \longrightarrow
+    \text{model}
+    \longrightarrow
+    \text{conclusie}
+    \longrightarrow
+    \text{werkelijkheid}
+  }
+  \]
+
+  Doorheen het thema onderzoeken we dus niet alleen
+  \emph{hoe} we gegevens wiskundig analyseren, maar vooral ook
+  \emph{wat we uit die analyse werkelijk mogen besluiten}.
+
+  \begin{center}
+
+    \textbf{Hoe maken we van een verzameling gegevens
+    een wiskundig onderbouwde én wetenschappelijk verantwoorde conclusie?}
+
+  \end{center}
+
+\end{themaintro}
 
 \FVDchapterpair
-  {Thema1-Algebra-naar-ruimte/Stelsels}
-  {Thema1-Algebra-naar-ruimte/Oefeningen-Stelsels}
-  
+  {Thema3-Verbanden/Van-data-naar-puntenwolk}
+  {Thema3-Verbanden/Van-data-naar-puntenwolk-oefeningen}
+
 \FVDchapterpair
-  {Thema1-Algebra-naar-ruimte/Toepassingen-Stelsels}
-  {Thema1-Algebra-naar-ruimte/Oefeningen-Toepassingen-Stelsels}
+  {Thema3-Verbanden/Correlatie}
+  {Thema3-Verbanden/Correlatie-oefeningen}
 
+\FVDchapterpair
+  {Thema3-Verbanden/Lineaire-regressie}
+  {Thema3-Verbanden/Lineaire-regressie-oefeningen}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% THEMA 2 — VECTORIEN IN DE RUIMTE
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\FVDchapterpair
+  {Thema3-Verbanden/Samenhang-oorzaak}
+  {Thema3-Verbanden/Samenhang-oorzaak-oefeningen}
 
-\FVDpart{Vectoren in de ruimte}
+\FVDpart{Van relatie naar functie}
 
-%\FVDthemeopening{../images/banners/thema2-vectoren.png}
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% THEMA 3 — RECHTEN EN VLAKKEN
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -231,13 +482,8 @@ BEGIN AUTO THEME OVERVIEW
 \end{hoofdstukoverzicht}
 % END AUTO THEME OVERVIEW
 
-\FVDpart{Rechten en vlakken}
+\FVDpart{Het gedrag van functies beschrijven}
 
-%\FVDthemeopening{../images/banners/thema3-rechten-en-vlakken.png}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% THEMA 4 — POSITIE EN SNIJGEDRAG
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -259,24 +505,8 @@ BEGIN AUTO THEME OVERVIEW
 \end{hoofdstukoverzicht}
 % END AUTO THEME OVERVIEW
 
-\FVDpart{Positie en snijgedrag}
+\FVDpart{Functies in verschillende vormen}
 
-%\FVDthemeopening{../images/banners/thema4-positie-en-snijgedrag.png}
-
-
-
-
-
-
-
-
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% THEMA 5 — METEN IN DE RUIMTE
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -298,9 +528,7 @@ BEGIN AUTO THEME OVERVIEW
 \end{hoofdstukoverzicht}
 % END AUTO THEME OVERVIEW
 
-\FVDpart{Meten in de ruimte}
-
-%\FVDthemeopening{../images/banners/thema5-meten-in-de-ruimte.png}
+\FVDpart{Vergelijkingen door een functiebril}
 
 
 
@@ -313,6 +541,86 @@ BEGIN AUTO THEME OVERVIEW
 
 
 
+
+
+
+
+% BEGIN AUTO THEME OVERVIEW
+\begin{hoofdstukoverzicht}
+  \FVDthemeoverviewempty
+\end{hoofdstukoverzicht}
+% END AUTO THEME OVERVIEW
+
+\FVDpart{Wat gebeurt er dichtbij een punt?}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% BEGIN AUTO THEME OVERVIEW
+\begin{hoofdstukoverzicht}
+  \FVDthemeoverviewempty
+\end{hoofdstukoverzicht}
+% END AUTO THEME OVERVIEW
+
+\FVDpart{Gedrag op oneindig en asymptoten}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% BEGIN AUTO THEME OVERVIEW
+\begin{hoofdstukoverzicht}
+  \FVDthemeoverviewempty
+\end{hoofdstukoverzicht}
+% END AUTO THEME OVERVIEW
+
+\FVDpart{Continuïteit en limieten}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% BEGIN AUTO THEME OVERVIEW
+\begin{hoofdstukoverzicht}
+  \FVDthemeoverviewempty
+\end{hoofdstukoverzicht}
+% END AUTO THEME OVERVIEW
+
+\FVDpart{Functies analyseren in context}
 
 \end{document}
 

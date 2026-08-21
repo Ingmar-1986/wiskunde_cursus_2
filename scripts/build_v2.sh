@@ -179,7 +179,32 @@ build_module() {
         --force \
         --compile html \
         "$index_tex"
+    build_activity_htmls() {
+    local module_dir="$1"
 
+    echo
+    echo "────────────────────────────────────────"
+    echo "Ximera activity-HTML's genereren"
+    echo "────────────────────────────────────────"
+
+    while IFS= read -r -d '' tex_file; do
+        echo
+        echo "  HTML bouwen: $tex_file"
+
+        xmlatex bake \
+            --force \
+            --compile html \
+            "$tex_file" || return 1
+
+    done < <(
+        find "$module_dir" \
+            -type f \
+            -name '*.tex' \
+            ! -name 'index*.tex' \
+            ! -name '*.tmp.tex' \
+            -print0
+    )
+}
 
            # --------------------------------------------------------
     # 5. PDF — theorie + oefeningen

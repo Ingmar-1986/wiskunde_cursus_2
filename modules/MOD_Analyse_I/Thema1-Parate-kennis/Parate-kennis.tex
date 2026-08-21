@@ -1,0 +1,271 @@
+\documentclass{ximera}
+\input{../../../preamble.tex}
+\input{../../../Opmaak.tex}
+\addPrintStyle{../../..}
+\title{Parate kennis --- Je wiskundige gereedschapskist}
+\author{Ingmar Herreman}
+\begin{abstract}
+In dit hoofdstuk brengen we de wiskundige technieken die je uit vorige jaren kent opnieuw op scherp.
+Dit is geen hoofdstuk waarin we alles van nul herbeginnen, maar je wiskundige gereedschapskist.
+Wat je al vlot beheerst, hoef je niet opnieuw uitgebreid te oefenen. Waar een zelfcheck moeilijk loopt,
+oefen je gericht bij. Doorheen de rest van de cursus verwachten we dat je deze technieken zelfstandig
+kunt herkennen, inzetten en controleren.
+\end{abstract}
+\begin{document}
+\fvdchapterdata{1}{Verbanden, functies en gedrag}{2}
+\maketitle
+
+\begin{voorkennis}
+\item De leerstof wiskunde uit de tweede graad.
+\item Basisrekenvaardigheid met gehele en rationale getallen.
+\item Elementaire algebra en meetkunde.
+\end{voorkennis}
+
+\begin{leerdoelen}
+\item Je rekent vlot met getallen, breuken, machten en wortels.
+\item Je gebruikt wetenschappelijke notatie, verhoudingen en procentuele verandering.
+\item Je vereenvoudigt en ontbindt algebraïsche uitdrukkingen.
+\item Je lost vergelijkingen en ongelijkheden op en vormt formules om.
+\item Je rekent correct met eenheden.
+\item Je bepaalt de richtingscoëfficiënt en een vergelijking van een rechte.
+\item Je gebruikt coördinaten, Pythagoras en basisgoniometrie.
+\item Je kiest zelfstandig geschikt wiskundig gereedschap en controleert je resultaat.
+\end{leerdoelen}
+
+\FVDsection{Je wiskundige gereedschapskist}
+Dit thema is bewust compact. De oefeningen met \textbf{\ESS} vormen het minimumtraject.
+Beheers je een zelfcheck vlot, dan kun je verder; maak je fouten, dan oefen je dat onderdeel gericht bij.
+
+\FVDsection{Rekenen met getallen}
+\FVDsubsection{Rekenvolgorde en breuken}
+\[
+\boxed{\text{haakjes}\to\text{machten en wortels}\to\text{vermenigvuldigen en delen}\to\text{optellen en aftrekken}}
+\]
+Voor $b,d\neq0$:
+\[
+\frac ab+\frac cd=\frac{ad+bc}{bd},\qquad
+\frac ab\cdot\frac cd=\frac{ac}{bd},\qquad
+\frac{\frac ab}{\frac cd}=\frac ab\cdot\frac dc.
+\]
+\begin{opmerking}
+Je mag alleen factoren schrappen, geen termen. Maak bij numerieke berekeningen geregeld eerst een ruwe schatting.
+\end{opmerking}
+\begin{oefening}[Zelfcheck: rekenen]{\oefB\ESS}
+\begin{question}$7-2(3-5)=\answer{11}$.\end{question}
+\begin{question}$\frac34+\frac56=\answer{\frac{19}{12}}$.\end{question}
+\begin{question}$\frac56:\frac{10}{9}=\answer{\frac34}$.\end{question}
+\end{oefening}
+
+\FVDsection{Machten, wortels en wetenschappelijke notatie}
+\[
+a^ma^n=a^{m+n},\quad \frac{a^m}{a^n}=a^{m-n},\quad
+(a^m)^n=a^{mn},\quad a^{-n}=\frac1{a^n},\quad a^0=1.
+\]
+\[
+\sqrt{a^2}=|a|,\qquad \sqrt{72}=6\sqrt2.
+\]
+Een getal in wetenschappelijke notatie heeft de vorm $a\cdot10^n$ met $1\leq|a|<10$.
+\[
+0{,}0000032=3{,}2\cdot10^{-6},\qquad
+\frac{6\cdot10^8}{2\cdot10^{-3}}=3\cdot10^{11}.
+\]
+\begin{oefening}[Zelfcheck: machten en wortels]{\oefB\ESS}
+\begin{question}$\frac{x^7}{x^3}=\answer{x^4}$.\end{question}
+\begin{question}$\sqrt{50}=\answer{5\sqrt2}$.\end{question}
+\begin{question}$0{,}00042=\answer{4.2}\cdot10^{\answer{-4}}$.\end{question}
+\end{oefening}
+
+\FVDsection{Procenten, verhoudingen en verandering}
+Van een oude waarde $O$ naar een nieuwe waarde $N$:
+\[
+\text{relatieve verandering}=\frac{N-O}{O},\qquad
+\text{procentuele verandering}=\frac{N-O}{O}\cdot100\%.
+\]
+\begin{voorbeeld}
+Van $80$ naar $92$ is een stijging van $12$, dus $\frac{12}{80}=0{,}15=15\%$.
+\end{voorbeeld}
+\begin{oefening}[Zelfcheck: relatieve verandering]{\oefB\ESS}
+Een hoeveelheid stijgt van $250$ naar $290$.
+\begin{question}De absolute stijging is $\answer{40}$.\end{question}
+\begin{question}De procentuele stijging is $\answer{16}\%$.\end{question}
+\end{oefening}
+
+\FVDsection{Algebraïsch rekenen}
+\[
+a(b+c)=ab+ac,
+\]
+\[
+(a+b)^2=a^2+2ab+b^2,\quad
+(a-b)^2=a^2-2ab+b^2,\quad
+(a-b)(a+b)=a^2-b^2.
+\]
+Je moet deze regels in beide richtingen herkennen. Ontbinden betekent een som of verschil als product schrijven.
+\[
+6x^2-15x=3x(2x-5),\qquad x^2-9=(x-3)(x+3).
+\]
+\begin{oefening}[Zelfcheck: algebra]{\oefB\ESS}
+\begin{question}$(2x-3)^2=\answer{4x^2-12x+9}$.\end{question}
+\begin{question}$5x^2-20x=\answer{5x(x-4)}$.\end{question}
+\begin{question}$x^2-49=\answer{(x-7)(x+7)}$.\end{question}
+\end{oefening}
+
+\FVDsection{Vergelijkingen, ongelijkheden en formules}
+Een uitdrukking, identiteit en vergelijking zijn verschillende objecten:
+\[
+3x+2,\qquad (a+b)^2=a^2+2ab+b^2,\qquad 3x+2=11.
+\]
+\FVDsubsection{Formules omvormen}
+In wetenschappen is de onbekende niet altijd $x$. Uit
+\[
+E_k=\frac12mv^2
+\]
+volgt voor een niet-negatieve snelheid:
+\[
+v=\sqrt{\frac{2E_k}{m}}.
+\]
+\begin{oefening}[Formules omvormen]{\oefB\ESS}
+Gegeven $v=\frac{s}{t}$.
+\begin{question}Maak $s$ vrij: $s=\answer{vt}$.\end{question}
+\begin{question}Maak $t$ vrij: $t=\answer{\frac{s}{v}}$.\end{question}
+\end{oefening}
+
+\FVDsubsection{Ongelijkheden en intervalnotatie}
+Bij vermenigvuldigen of delen door een negatief getal keert het ongelijkheidsteken om.
+\[
+-2x<6\iff x>-3\iff x\in]-3,+\infty[.
+\]
+We gebruiken $[a,b]$, $]a,b[$, $[a,b[$ en $]a,b]$. Oneindig is nooit inbegrepen.
+\begin{oefening}[Zelfcheck: ongelijkheden]{\oefB\ESS}
+\begin{question}$3x-4\leq8\iff x\leq\answer{4}$.\end{question}
+\begin{question}
+Welke notatie hoort bij $x>2$?
+\begin{multipleChoice}
+\choice{$[2,+\infty[$}\choice[correct]{$]2,+\infty[$}\choice{$]-\infty,2[$}
+\end{multipleChoice}
+\end{question}
+\end{oefening}
+
+\FVDsection{Eenheden en grootheden}
+\[
+72\,\mathrm{km/h}
+=72\cdot\frac{1000\,\mathrm m}{3600\,\mathrm s}
+=20\,\mathrm{m/s}.
+\]
+Let op bij oppervlakte en volume:
+\[
+1\,\mathrm{cm^2}=10^{-4}\,\mathrm{m^2},\qquad
+1\,\mathrm{cm^3}=10^{-6}\,\mathrm{m^3}.
+\]
+Eenheden zijn ook een controle-instrument: een snelheid hoort bijvoorbeeld een eenheid als $\mathrm{m/s}$ te hebben.
+\begin{oefening}[Zelfcheck: eenheden]{\oefB\ESS}
+\begin{question}$36\,\mathrm{km/h}=\answer{10}\,\mathrm{m/s}$.\end{question}
+\begin{question}$1\,\mathrm{cm^2}=10^{\answer{-4}}\,\mathrm{m^2}$.\end{question}
+\end{oefening}
+
+\FVDsection{Rechten en coördinaten}
+Voor $A(x_1,y_1)$ en $B(x_2,y_2)$ met $x_1\neq x_2$:
+\[
+m=\frac{y_2-y_1}{x_2-x_1}.
+\]
+Een niet-verticale rechte kan geschreven worden als
+\[
+y=mx+q.
+\]
+Het midden van $[AB]$ is
+\[
+M\left(\frac{x_1+x_2}{2},\frac{y_1+y_2}{2}\right).
+\]
+\begin{oefening}[Zelfcheck: rechten]{\oefB\ESS}
+Gegeven $A(2,1)$ en $B(6,9)$.
+\begin{question}$m=\answer{2}$.\end{question}
+\begin{question}$M(\answer{4},\answer{5})$.\end{question}
+\end{oefening}
+
+\FVDsection{Pythagoras en basisgoniometrie}
+In een rechthoekige driehoek:
+\[
+a^2+b^2=c^2,
+\]
+waarbij $c$ de schuine zijde is.
+Voor twee punten volgt daaruit:
+\[
+|AB|=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}.
+\]
+Voor een scherpe hoek $\alpha$:
+\[
+\sin\alpha=\frac{\text{overstaande}}{\text{schuine}},\quad
+\cos\alpha=\frac{\text{aanliggende}}{\text{schuine}},\quad
+\tan\alpha=\frac{\text{overstaande}}{\text{aanliggende}}.
+\]
+\begin{oefening}[Zelfcheck: Pythagoras en goniometrie]{\oefB\ESS}
+\begin{question}Rechthoekszijden $5$ en $12$: $c=\answer{13}$.\end{question}
+\begin{question}Afstand tussen $(0,0)$ en $(3,4)$: $\answer{5}$.\end{question}
+\begin{question}Overstaande zijde $3$, aanliggende zijde $4$: $\tan\alpha=\answer{\frac34}$.\end{question}
+\end{oefening}
+
+\FVDsection{Kan dit kloppen?}
+Controleer na een berekening minstens: teken, ordegrootte, eenheid en voorwaarden.
+\begin{oefening}[Fouten opsporen]{\oefU\ESS}
+\begin{question}
+Een leerling vindt $72\,\mathrm{km/h}=200\,\mathrm{m/s}$.
+\begin{multipleChoice}
+\choice{Dit kan kloppen.}
+\choice[correct]{Dit is onredelijk; de ordegrootte klopt niet.}
+\choice{Eenheden mogen niet omgezet worden.}
+\end{multipleChoice}
+\end{question}
+\begin{question}
+Een leerling schrijft $\sqrt{50}=25\sqrt2$.
+\begin{multipleChoice}
+\choice[correct]{$\sqrt{50}$ ligt tussen $7$ en $8$, dus dit kan niet kloppen.}
+\choice{Een wortel mag nooit vereenvoudigd worden.}
+\end{multipleChoice}
+\end{question}
+\end{oefening}
+
+\FVDsection{Welk gereedschap heb je nodig?}
+Bij een echt probleem staat niet vermeld welke techniek je moet gebruiken.
+\[
+\boxed{\text{gegeven}\to\text{gevraagd}\to\text{verband}\to\text{gereedschap}\to\text{controle}}
+\]
+\begin{oefening}[Kies je gereedschap]{\oefU\ESS}
+\begin{question}
+Een ladder van $5\,\mathrm m$ staat tegen een muur; de voet staat $3\,\mathrm m$ van de muur.
+\begin{multipleChoice}
+\choice{procentrekening}\choice[correct]{Pythagoras}\choice{wetenschappelijke notatie}
+\end{multipleChoice}
+\end{question}
+\begin{question}
+In $E=\frac12mv^2$ zijn $E$ en $m$ gekend en $v$ wordt gevraagd.
+\begin{multipleChoice}
+\choice{richtingscoëfficiënt}\choice[correct]{formule omvormen}\choice{procentrekening}
+\end{multipleChoice}
+\end{question}
+\end{oefening}
+
+\FVDsection{Synthese: één probleem, meerdere gereedschappen}
+\begin{oefening}[Een dronevlucht analyseren]{\oefU\ESS}
+Een drone beweegt van $A(0,0)$ naar $B(120,50)$, coördinaten in meter, in $10\,\mathrm s$.
+\begin{question}Welke techniek bepaalt de rechte afstand?
+\begin{multipleChoice}\choice{procentrekening}\choice[correct]{Pythagoras}\choice{ongelijkheid}\end{multipleChoice}
+\end{question}
+\begin{question}$|AB|=\answer{130}\,\mathrm m$.\end{question}
+\begin{question}Met $v=s/t$: $v=\answer{13}\,\mathrm{m/s}$.\end{question}
+\begin{question}$13\,\mathrm{m/s}=\answer{46.8}\,\mathrm{km/h}$.\end{question}
+\begin{question}
+Een tweede vlucht heeft $15\,\mathrm{m/s}$. De procentuele stijging t.o.v. $13\,\mathrm{m/s}$ is afgerond
+$\answer{15.4}\%$.
+\end{question}
+\end{oefening}
+
+\FVDsection{Essentiële oefeningen}
+De oefeningen met \textbf{\ESS} vormen het minimumtraject. Ze controleren rekenen en breuken,
+machten en wortels, wetenschappelijke notatie, procentuele verandering, algebra, formules omvormen,
+ongelijkheden en intervalnotatie, eenheden, rechten, Pythagoras en goniometrie, controlevaardigheid en
+het zelfstandig kiezen en combineren van gereedschappen.
+
+\FVDsection{En nu?}
+Je gereedschapskist staat opnieuw klaar. In het volgende thema gebruiken we ze bij meetgegevens,
+spreidingsdiagrammen, correlatie en regressie.
+
+\end{document}

@@ -5,54 +5,44 @@
 \addPrintStyle{../..}
 
 
-\fvdtitle{Van data naar functies — verbanden herkennen en gedrag onderzoeken}
+\fvdtitle{Ruimte in beeld}
 \author{Ingmar Herreman}
 
 \begin{abstract}
+  In deze module onderzoeken we hoe punten, richtingen, rechten en vlakken
+  in de ruimte wiskundig beschreven kunnen worden.
 
-  In deze module leggen we de basis voor het onderzoeken van verbanden en functies.
+  We starten met een korte opfrissing van stelsels van lineaire vergelijkingen.
+  Die vormen een belangrijke brug tussen algebra en meetkunde:
+  een stelsel beschrijft niet alleen vergelijkingen, maar ook de onderlinge
+  ligging van meetkundige objecten.
 
-  We starten met een korte herhaling van belangrijke reken- en algebraïsche
-  vaardigheden die we doorheen de verdere cursus nodig hebben.
+  Daarna bouwen we de vectorrekening in de ruimte op. Vectoren laten toe
+  om richting, verplaatsing en loodrechte stand nauwkeurig te beschrijven.
+  Met behulp van vectoren stellen we vervolgens vergelijkingen van rechten
+  en vlakken op en onderzoeken we hoe deze objecten ten opzichte van elkaar liggen.
 
-  Daarna onderzoeken we verbanden tussen grootheden aan de hand van gegevens.
-  Met spreidingsdiagrammen, correlatie en lineaire regressie leren we patronen
-  herkennen en modellen beoordelen. Daarbij besteden we bijzondere aandacht
-  aan het verschil tussen samenhang en causaliteit.
+  Ten slotte gebruiken we deze technieken om afstanden en hoeken in de ruimte
+  te berekenen.
 
-  Vervolgens maken we de overstap van relaties naar functies.
-  We bouwen de taal op waarmee we functies kunnen beschrijven en onderzoeken:
-  domein en bereik, nulwaarden, tekenverloop, stijgen en dalen, extrema,
-  symmetrie en verschillende voorstellingsvormen.
-
-  Grafieken gebruiken we niet alleen om functies te visualiseren, maar ook
-  om vergelijkingen en ongelijkheden op te lossen en om het gedrag van
-  functies te onderzoeken.
-
-  Ten slotte bestuderen we wat er gebeurt wanneer een veranderlijke een punt
-  nadert of onbegrensd groot wordt. Zo ontstaan de begrippen limiet,
-  continuïteit en asymptotisch gedrag.
-
-  Verbanden en functies vormen een centrale taal van de wiskunde.
-  Dezelfde ideeën gebruiken we in onder andere fysica, chemie, biologie,
-  data-analyse, engineering en andere wetenschappen om verschijnselen
-  te beschrijven, modellen op te stellen en voorspellingen te maken.
-
-\end{abstract}  
+  Ruimtemeetkunde verbindt algebra, meetkunde en vectorrekening.
+  Dezelfde ideeën spelen bovendien een belangrijke rol in onder andere
+  mechanica, fysica, engineering, computergraphics en driedimensionale modellering.
+\end{abstract}
 
 
 % ============================================================
 % MODULEGEGEVENS
 % ============================================================
 
-\def\fvdmodulenummer{1}
-\def\fvdmoduletitel{Van data naar functies — verbanden herkennen en gedrag onderzoeken}
-\def\fvdmodulebeeld{../images/banners/analyse_I.png}
+\def\fvdmodulenummer{2}
+\def\fvdmoduletitel{Ruimte in beeld}
+\def\fvdmodulebeeld{../images/banners/ruimtemeetkunde.png}
 \def\fvdschoolembleem{../images/banners/logo_bellevue.png}
 \def\fvdschoollogo{../images/banners/logo_bellevue.png}
 \renewcommand{\fvdschoolnaam}{Campus Bellevue Izegem}
 
-\def\fvdklas{5 Wetenschappen-wiskunde}
+\def\fvdklas{6 Wetenschappen-wiskunde}
 \def\fvdschooljaar{2026--2027}
 \def\fvdmodulevariant{THEORIE}
 \def\fvdmodulesubtitel{}
@@ -131,7 +121,7 @@
 %% THEMA 1 — VAN ALGEBRA NAAR RUIMTE
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\FVDpart{Van werkelijkheid naar wiskunde — en terug}
+\FVDpart{Van algebra naar ruimte}
 
 \FVDthemeopening{../images/banners/ruimte_thema1_algebra.png}
 
@@ -149,10 +139,11 @@ BEGIN AUTO THEME OVERVIEW
 
 
 
+
 % BEGIN AUTO THEME OVERVIEW
 \begin{hoofdstukoverzicht}
-  \FVDthemechaptertile{1}{Stelsels herbekeken: rang en oplossingsverzamelingen}
-  \FVDthemechaptertile{2}{Stelsels aan het werk}
+  \FVDthemechaptertile{1}{Stelsels}
+  \FVDthemechaptertile{2}{Toepassingen Stelsels}
 \end{hoofdstukoverzicht}
 % END AUTO THEME OVERVIEW
 
@@ -197,26 +188,136 @@ BEGIN AUTO THEME OVERVIEW
 \end{themaintro}
 
 
+\FVDchapterpair
+  {Thema1-Algebra-naar-ruimte/Stelsels}
+  {Thema1-Algebra-naar-ruimte/Oefeningen-Stelsels}
+  
+\FVDchapterpair
+  {Thema1-Algebra-naar-ruimte/Toepassingen-Stelsels}
+  {Thema1-Algebra-naar-ruimte/Oefeningen-Toepassingen-Stelsels}
 
 
-\FVDpart{Parate kennis — Het gereedschap dat je nodig hebt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% THEMA 2 — VECTORIEN IN DE RUIMTE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\FVDpart{Verbanden onderzoeken met data}
+\FVDpart{Vectoren in de ruimte}
 
-\FVDpart{Van relatie naar functie}
+%\FVDthemeopening{../images/banners/thema2-vectoren.png}
 
-\FVDpart{Het gedrag van functies beschrijven}
 
-\FVDpart{Functies in verschillende vormen}
 
-\FVDpart{Vergelijkingen door een functiebril}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% THEMA 3 — RECHTEN EN VLAKKEN
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\FVDpart{Wat gebeurt er dichtbij een punt?}
 
-\FVDpart{Gedrag op oneindig en asymptoten}
 
-\FVDpart{Continuïteit en limieten}
 
-\FVDpart{Functies analyseren in context}
+
+
+
+
+
+
+
+
+
+
+
+% BEGIN AUTO THEME OVERVIEW
+\begin{hoofdstukoverzicht}
+  \FVDthemeoverviewempty
+\end{hoofdstukoverzicht}
+% END AUTO THEME OVERVIEW
+
+\FVDpart{Rechten en vlakken}
+
+%\FVDthemeopening{../images/banners/thema3-rechten-en-vlakken.png}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% THEMA 4 — POSITIE EN SNIJGEDRAG
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% BEGIN AUTO THEME OVERVIEW
+\begin{hoofdstukoverzicht}
+  \FVDthemeoverviewempty
+\end{hoofdstukoverzicht}
+% END AUTO THEME OVERVIEW
+
+\FVDpart{Positie en snijgedrag}
+
+%\FVDthemeopening{../images/banners/thema4-positie-en-snijgedrag.png}
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% THEMA 5 — METEN IN DE RUIMTE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% BEGIN AUTO THEME OVERVIEW
+\begin{hoofdstukoverzicht}
+  \FVDthemeoverviewempty
+\end{hoofdstukoverzicht}
+% END AUTO THEME OVERVIEW
+
+\FVDpart{Meten in de ruimte}
+
+%\FVDthemeopening{../images/banners/thema5-meten-in-de-ruimte.png}
+
+
+
+
+
+
+
+
+
+
+
+
 
 \end{document}
+
+% BEGIN AUTO THEME OVERVIEW
+\begin{hoofdstukoverzicht}
+  \FVDthemeoverviewempty
+\end{hoofdstukoverzicht}
+% END AUTO THEME OVERVIEW

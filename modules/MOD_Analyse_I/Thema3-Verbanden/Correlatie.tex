@@ -1,0 +1,637 @@
+\documentclass{ximera}
+
+\input{../../../preamble.tex}
+\input{../../../Opmaak.tex}
+\addPrintStyle{../../..}
+
+\title{Correlatie --- Hoe sterk is het lineaire verband?}
+\author{Ingmar Herreman}
+
+\begin{abstract}
+In het vorige hoofdstuk leerden we een puntenwolk systematisch lezen:
+we onderzochten de richting, de vorm, de sterkte en bijzondere
+kenmerken van het patroon.
+
+Wanneer een verband ongeveer lineair is, willen we die visuele
+beschrijving nauwkeuriger maken. Daarvoor gebruiken we de
+\textbf{correlatiecoëfficiënt} $r$.
+
+De correlatiecoëfficiënt vat twee eigenschappen van een lineair
+verband samen: de \textbf{richting} en de \textbf{sterkte}.
+Maar één getal vertelt nooit het volledige verhaal. Daarom leren we
+$r$ steeds samen met het spreidingsdiagram en de context interpreteren.
+
+We onderzoeken ook situaties waarin $r$ misleidend kan zijn:
+niet-lineaire verbanden, uitschieters en datasets met een bijzondere
+structuur. Zo leren we niet alleen een correlatiecoëfficiënt aflezen,
+maar vooral beoordelen wat die coëfficiënt wel en niet over de
+gegevens vertelt.
+\end{abstract}
+
+\begin{document}
+
+% FVD_CHAPTER_DATA_START
+% Automatisch gegenereerd uit index.tex.
+% Niet handmatig aanpassen.
+\fvdchapterdata{3}{Verbanden onderzoeken met data}{2}
+% FVD_CHAPTER_DATA_END
+
+\maketitle
+
+\begin{voorkennis}
+  \item Je weet wat gekoppelde numerieke gegevens zijn.
+  \item Je kan een spreidingsdiagram maken en lezen.
+  \item Je kan de richting, vorm en visuele sterkte van een puntenwolk beschrijven.
+  \item Je kan een ongeveer lineair verband onderscheiden van een duidelijk niet-lineair verband.
+  \item Je kan uitschieters en clusters herkennen.
+\end{voorkennis}
+
+\begin{leerdoelen}
+  \item Je kan uitleggen waarom een visuele beoordeling van een lineair verband niet altijd volstaat.
+  \item Je kent het bereik $-1\leq r\leq 1$ van de correlatiecoëfficiënt.
+  \item Je kan het teken van $r$ koppelen aan de richting van een lineair verband.
+  \item Je kan $|r|$ koppelen aan de sterkte van een lineair verband.
+  \item Je kan een correlatiecoëfficiënt steeds samen met een spreidingsdiagram interpreteren.
+  \item Je kan uitleggen waarom $r\approx 0$ niet noodzakelijk betekent dat er geen verband bestaat.
+  \item Je kan onderzoeken hoe een uitschieter de correlatiecoëfficiënt kan beïnvloeden.
+  \item Je kan met ICT de correlatiecoëfficiënt van een dataset bepalen.
+  \item Je kan op basis van puntenwolk, correlatiecoëfficiënt en context een onderbouwde conclusie formuleren.
+\end{leerdoelen}
+
+
+% ============================================================
+\FVDsection{Van kijken naar meten}
+% ============================================================
+
+In het vorige hoofdstuk beschreven we een puntenwolk met woorden.
+
+Bijvoorbeeld:
+
+\begin{quote}
+De punten vertonen een sterk positief en ongeveer lineair verband.
+\end{quote}
+
+Zo'n beschrijving is nuttig, maar bevat ook een subjectief element.
+Wat de ene leerling ``sterk'' noemt, kan een andere leerling
+``matig sterk'' noemen.
+
+Wanneer een puntenwolk ongeveer lineair is, willen we daarom een
+numerieke maat voor de richting en de sterkte van dat lineaire verband.
+
+\begin{opmerking}
+De volgorde blijft belangrijk:
+
+\[
+\important{
+\text{puntenwolk bekijken}
+\longrightarrow
+\text{vorm beoordelen}
+\longrightarrow
+\text{correlatie interpreteren}
+}
+\]
+
+We berekenen dus niet blind een getal. Eerst onderzoeken we of een
+lineaire beschrijving van de gegevens zinvol lijkt.
+\end{opmerking}
+
+
+% ============================================================
+\FVDsection{De correlatiecoëfficiënt}
+% ============================================================
+
+\begin{definitie}
+De \textbf{correlatiecoëfficiënt} $r$ is een getal dat de
+\textbf{richting} en de \textbf{sterkte van het lineaire verband}
+tussen twee numerieke grootheden beschrijft.
+
+Voor $r$ geldt steeds
+
+\[
+\boxed{-1\leq r\leq 1}.
+\]
+\end{definitie}
+
+De correlatiecoëfficiënt combineert dus twee soorten informatie:
+
+\[
+\important{
+\text{teken van }r
+\longrightarrow
+\text{richting}
+}
+\]
+
+en
+
+\[
+\important{
+|r|
+\longrightarrow
+\text{sterkte van het lineaire verband}
+}
+\]
+
+
+% ------------------------------------------------------------
+\FVDsubsection{Het teken van r}
+% ------------------------------------------------------------
+
+Wanneer
+
+\[
+r>0,
+\]
+
+is de lineaire samenhang \textbf{positief}: grotere waarden van de ene
+grootheid gaan doorgaans samen met grotere waarden van de andere.
+
+Wanneer
+
+\[
+r<0,
+\]
+
+is de lineaire samenhang \textbf{negatief}: grotere waarden van de ene
+grootheid gaan doorgaans samen met kleinere waarden van de andere.
+
+Het teken zegt niets over de sterkte.
+
+Zo kunnen
+
+\[
+r=0{,}20
+\qquad\text{en}\qquad
+r=0{,}92
+\]
+
+beide positief zijn, terwijl het tweede lineaire verband veel sterker is.
+
+
+% ------------------------------------------------------------
+\FVDsubsection{De absolute waarde van r}
+% ------------------------------------------------------------
+
+Voor de sterkte kijken we naar
+
+\[
+|r|.
+\]
+
+Hoe dichter $|r|$ bij $1$ ligt, hoe dichter de punten bij een rechte
+band liggen.
+
+Hoe dichter $|r|$ bij $0$ ligt, hoe zwakker de \textbf{lineaire}
+samenhang.
+
+\[
+\begin{array}{c|c}
+|r| & \text{globale interpretatie}\\ \hline
+\text{dicht bij }1 & \text{sterk lineair verband}\\
+\text{dicht bij }0 & \text{zwak lineair verband}
+\end{array}
+\]
+
+\begin{opmerking}
+Er bestaan conventies die woorden zoals ``zwak'', ``matig'' en
+``sterk'' aan vaste intervallen voor $|r|$ koppelen.
+
+We behandelen zulke grenzen niet als natuurwetten. De betekenis van
+een correlatie hangt ook af van de context, het aantal waarnemingen,
+de kwaliteit van de gegevens en de vorm van de puntenwolk.
+\end{opmerking}
+
+
+% ============================================================
+\FVDsection{De bijzondere waarden}
+% ============================================================
+
+\FVDsubsection{Perfect positieve lineaire samenhang}
+
+Als alle punten exact op een stijgende rechte liggen, dan
+
+\[
+r=1.
+\]
+
+\begin{opmerking}
+$r=1$ betekent niet dat de richtingscoëfficiënt van die rechte gelijk
+is aan $1$.
+
+Het betekent dat de punten exact op \emph{een} stijgende rechte liggen.
+\end{opmerking}
+
+
+\FVDsubsection{Perfect negatieve lineaire samenhang}
+
+Als alle punten exact op een dalende rechte liggen, dan
+
+\[
+r=-1.
+\]
+
+Ook hier zegt $-1$ niets over de numerieke helling van de rechte.
+Het geeft aan dat de lineaire samenhang perfect negatief is.
+
+
+\FVDsubsection{Wat betekent r=0?}
+
+Wanneer
+
+\[
+r=0,
+\]
+
+is er geen lineaire samenhang in de gegevens zoals die door $r$ wordt
+gemeten.
+
+Maar daaruit volgt niet:
+
+\[
+\text{``er bestaat geen enkel verband.''}
+\]
+
+Een duidelijke U-vormige puntenwolk kan bijvoorbeeld een sterk
+niet-lineair verband vertonen terwijl $r$ ongeveer nul is.
+
+\begin{opmerking}
+Dit is één van de belangrijkste interpretatieregels van dit hoofdstuk:
+
+\[
+\important{
+r\approx 0
+\quad\not\Rightarrow\quad
+\text{geen verband}
+}
+\]
+
+Wel:
+
+\[
+\important{
+r\approx 0
+\quad\Rightarrow\quad
+\text{weinig of geen lineaire samenhang volgens }r
+}
+\]
+\end{opmerking}
+
+
+% ============================================================
+\FVDsection{Puntenwolk en r horen samen}
+% ============================================================
+
+De correlatiecoëfficiënt is een samenvatting. Bij een samenvatting gaat
+altijd informatie verloren.
+
+Daarom bekijken we nooit alleen $r$.
+
+\begin{voorbeeld}[Vier mogelijke conclusies]
+Stel dat vier datasets de volgende correlatiecoëfficiënten hebben:
+
+\[
+r_A=0{,}94,\qquad
+r_B=-0{,}91,\qquad
+r_C=0{,}18,\qquad
+r_D=-0{,}35.
+\]
+
+Dan kunnen we voorlopig zeggen:
+
+\begin{itemize}
+  \item dataset $A$: sterke positieve lineaire samenhang;
+  \item dataset $B$: sterke negatieve lineaire samenhang;
+  \item dataset $C$: zwakke positieve lineaire samenhang;
+  \item dataset $D$: eerder zwakke negatieve lineaire samenhang.
+\end{itemize}
+
+Maar vóór een definitieve conclusie bekijken we ook de puntenwolken.
+Misschien is er een uitschieter, een krom patroon of een opsplitsing in
+clusters.
+\end{voorbeeld}
+
+
+\begin{oefening}[Lees r correct]{\oefB \ESS}
+\begin{question}
+Wat vertelt $r=-0{,}88$?
+
+\begin{multipleChoice}
+  \choice{Een sterk positief lineair verband.}
+  \choice[correct]{Een sterk negatief lineair verband.}
+  \choice{Een zwak negatief lineair verband.}
+  \choice{Een sterk niet-lineair verband.}
+\end{multipleChoice}
+\end{question}
+
+\begin{question}
+Welke correlatie is lineair het sterkst?
+
+\[
+r_1=-0{,}93,\qquad r_2=0{,}81,\qquad r_3=0{,}42
+\]
+
+\begin{multipleChoice}
+  \choice[correct]{$r_1$}
+  \choice{$r_2$}
+  \choice{$r_3$}
+\end{multipleChoice}
+\end{question}
+
+\begin{question}
+Waarom vergelijk je daarvoor de absolute waarden?
+
+\begin{oplossing}
+Omdat het teken de richting aangeeft. De sterkte van de lineaire
+samenhang wordt beschreven door de grootte van $|r|$.
+\end{oplossing}
+\end{question}
+\end{oefening}
+
+
+% ============================================================
+\FVDsection{Wat r niet ziet}
+% ============================================================
+
+Een correlatiecoëfficiënt kan correct berekend zijn en toch een
+onvolledig beeld geven.
+
+Daarom onderzoeken we drie belangrijke valkuilen.
+
+
+% ------------------------------------------------------------
+\FVDsubsection{Niet-lineaire verbanden}
+% ------------------------------------------------------------
+
+Beschouw opnieuw een U-vormig verband zoals
+
+\[
+y\approx x^2.
+\]
+
+Voor negatieve $x$ daalt $y$ wanneer $x$ toeneemt.
+Voor positieve $x$ stijgt $y$ wanneer $x$ toeneemt.
+
+Over de volledige dataset kunnen die twee richtingen elkaar in de
+lineaire correlatie grotendeels opheffen.
+
+Toch is het patroon duidelijk.
+
+\begin{opmerking}
+Een lage waarde van $|r|$ kan dus twee heel verschillende situaties
+verbergen:
+
+\begin{enumerate}
+  \item er is werkelijk nauwelijks een patroon;
+  \item er is een duidelijk patroon, maar het is niet lineair.
+\end{enumerate}
+
+Alleen de puntenwolk laat ons dat onderscheid zien.
+\end{opmerking}
+
+
+% ------------------------------------------------------------
+\FVDsubsection{Uitschieters}
+% ------------------------------------------------------------
+
+Een uitzonderlijk punt kan $r$ sterk beïnvloeden.
+
+Soms maakt één punt een lineair verband schijnbaar sterker.
+In andere datasets maakt één punt een bestaand lineair verband juist
+veel zwakker.
+
+Daarom vragen we bij een uitschieter:
+
+\begin{itemize}
+  \item is het punt correct gemeten en ingevoerd?
+  \item hoort het bij dezelfde populatie of experimentele situatie?
+  \item hoe verandert de puntenwolk als we het punt onderzoeken?
+  \item hoe verandert $r$?
+\end{itemize}
+
+\begin{opmerking}
+Een uitschieter verwijderen omdat hij ``niet mooi past'' is geen
+verantwoorde statistische werkwijze.
+\end{opmerking}
+
+
+% ------------------------------------------------------------
+\FVDsubsection{Clusters}
+% ------------------------------------------------------------
+
+Ook clusters kunnen een globale correlatie misleidend maken.
+
+Stel dat gegevens van twee verschillende materialen samen in één
+dataset staan. Binnen elk materiaal kan nauwelijks een verband bestaan,
+terwijl de twee groepen samen toch een duidelijke globale richting
+lijken te vormen.
+
+Daarom blijft de structuur van de puntenwolk belangrijk.
+
+
+% ============================================================
+\FVDsection{Correlatie bepalen met ICT}
+% ============================================================
+
+Voor realistische datasets gebruiken we ICT om $r$ te bepalen.
+
+Het doel is niet om een lange rekenprocedure uit het hoofd uit te
+voeren, maar om de uitvoer correct te interpreteren.
+
+Een goede werkwijze is:
+
+\begin{enumerate}
+  \item controleer de gekoppelde gegevens;
+  \item maak eerst een spreidingsdiagram;
+  \item beoordeel of het verband ongeveer lineair lijkt;
+  \item laat ICT de correlatiecoëfficiënt $r$ bepalen;
+  \item interpreteer teken en grootte van $r$;
+  \item vergelijk die interpretatie met de puntenwolk;
+  \item formuleer een conclusie in de context.
+\end{enumerate}
+
+\begin{opmerking}
+Een antwoord zoals
+
+\[
+r=0{,}87
+\]
+
+is geen volledige analyse.
+
+Een betere conclusie is bijvoorbeeld:
+
+\begin{quote}
+De puntenwolk vertoont een sterk positief en ongeveer lineair verband.
+Dat wordt ondersteund door $r=0{,}87$. In deze dataset gaan grotere
+waarden van $x$ doorgaans samen met grotere waarden van $y$.
+\end{quote}
+\end{opmerking}
+
+
+% ============================================================
+\FVDsection{Correlatie is nog geen causaliteit}
+% ============================================================
+
+Een grote waarde van $|r|$ zegt dat twee grootheden sterk
+\textbf{lineair samenhangen} in de dataset.
+
+Ze zegt niet waarom dat verband bestaat.
+
+Dus zelfs bij
+
+\[
+|r|\approx 1
+\]
+
+mogen we niet automatisch besluiten dat de ene grootheid de andere
+veroorzaakt.
+
+\begin{voorbeeld}[Temperatuur en ijsverkoop]
+Stel dat temperatuur en ijsverkoop sterk positief gecorreleerd zijn.
+
+Dat betekent dat warme dagen in de onderzochte gegevens doorgaans
+samengaan met een hogere ijsverkoop.
+
+De correlatiecoëfficiënt vertelt ons echter niet op zichzelf welke
+causale verklaring correct is. Daarvoor hebben we kennis van de context
+en eventueel verder onderzoek nodig.
+\end{voorbeeld}
+
+In een later hoofdstuk onderzoeken we dit onderscheid uitgebreid.
+
+
+% ============================================================
+\FVDsection{Een volledige correlatieanalyse}
+% ============================================================
+
+Wanneer je een nieuwe dataset krijgt, gebruik je voortaan deze
+strategie:
+
+\begin{enumerate}
+  \item \textbf{Context:} welke twee numerieke grootheden worden onderzocht?
+  \item \textbf{Puntenwolk:} wat zie je qua richting, vorm, sterkte en bijzonderheden?
+  \item \textbf{Lineariteit:} is een lineaire beschrijving redelijk?
+  \item \textbf{Correlatie:} bepaal $r$ met ICT.
+  \item \textbf{Interpretatie:} wat vertellen teken en $|r|$?
+  \item \textbf{Controle:} past die numerieke samenvatting bij de puntenwolk?
+  \item \textbf{Conclusie:} formuleer een contextgebonden besluit zonder causaliteit te veronderstellen.
+\end{enumerate}
+
+\begin{oefening}[Van getal naar conclusie]{\oefU \ESS}
+Een onderzoek naar de buitentemperatuur $T$ en het dagelijkse
+elektriciteitsverbruik $E$ van een koelinstallatie levert een
+ongeveer lineaire stijgende puntenwolk en
+
+\[
+r=0{,}91.
+\]
+
+\begin{question}
+Wat zegt het teken van $r$?
+
+\begin{oplossing}
+Het verband is positief: hogere temperaturen gaan in deze dataset
+doorgaans samen met een hoger elektriciteitsverbruik.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Wat zegt $|r|$?
+
+\begin{oplossing}
+Omdat $|r|=0{,}91$ dicht bij $1$ ligt, is de lineaire samenhang sterk.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Formuleer een volledige conclusie.
+
+\begin{oplossing}
+De puntenwolk en $r=0{,}91$ wijzen op een sterk positief en ongeveer
+lineair verband tussen buitentemperatuur en elektriciteitsverbruik van
+de koelinstallatie. Binnen deze dataset gaan hogere temperaturen
+doorgaans samen met een hoger verbruik. Uit correlatie alleen volgt
+nog geen bewijs van causaliteit.
+\end{oplossing}
+\end{question}
+\end{oefening}
+
+
+% ============================================================
+\FVDsection{Samengevat}
+% ============================================================
+
+De correlatiecoëfficiënt $r$ beschrijft de richting en de sterkte van
+een \textbf{lineair} verband.
+
+\[
+\boxed{-1\leq r\leq 1}
+\]
+
+Het teken geeft de richting:
+
+\[
+r>0
+\Rightarrow
+\text{positieve lineaire samenhang},
+\]
+
+\[
+r<0
+\Rightarrow
+\text{negatieve lineaire samenhang}.
+\]
+
+De absolute waarde geeft informatie over de sterkte:
+
+\[
+|r|\text{ dicht bij }1
+\Rightarrow
+\text{sterke lineaire samenhang},
+\]
+
+\[
+|r|\text{ dicht bij }0
+\Rightarrow
+\text{zwakke lineaire samenhang}.
+\]
+
+Maar:
+
+\[
+\important{
+r\approx0
+\not\Rightarrow
+\text{geen enkel verband}
+}
+\]
+
+en
+
+\[
+\important{
+\text{correlatie}
+\not\Rightarrow
+\text{causaliteit}
+}
+\]
+
+Daarom gebruiken we altijd:
+
+\[
+\boxed{
+\text{puntenwolk}
++
+r
++
+\text{context}
+\longrightarrow
+\text{conclusie}
+}
+\]
+
+In het volgende hoofdstuk zetten we een volgende stap:
+wanneer het verband voldoende lineair is, proberen we het met een
+\textbf{lineair model} te beschrijven.
+
+\end{document}
