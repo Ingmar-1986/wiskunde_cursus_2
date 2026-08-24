@@ -1,0 +1,1916 @@
+\documentclass{ximera}
+
+\input{../../../preamble.tex}
+\input{../../../Opmaak.tex}
+\addPrintStyle{../../..}
+
+\title{Vallen en werpen}
+\author{Ingmar Herreman}
+
+\begin{abstract}
+Waarom valt een muntstuk sneller dan een los blad papier, maar niet
+sneller dan datzelfde papier wanneer luchtweerstand geen rol speelt?
+Waarom is de snelheid van een omhoog geworpen bal op het hoogste punt
+nul, terwijl zijn versnelling daar niet nul is?
+
+In dit hoofdstuk passen we de algemene kinematica uit het vorige
+hoofdstuk toe op bewegingen onder invloed van de zwaartekracht.
+We vertrekken van waarnemingen en maken vervolgens een fysisch model:
+de vrije val. Daarbij maken we scherp onderscheid tussen een werkelijke
+valbeweging en het geïdealiseerde model waarin andere krachten dan de
+zwaartekracht worden verwaarloosd.
+
+We analyseren vrije val en verticale worp met positie-, snelheids- en
+versnellingsfuncties. We verbinden functievoorschriften met grafieken,
+afgeleiden, de oppervlaktemethode en bepaalde integralen. Bij elk
+probleem besteden we bijzondere aandacht aan het gekozen
+referentiestelsel en de tekenconventie.
+
+Zo gebruiken we dezelfde wiskundige structuur om een voorwerp dat
+wordt losgelaten, omhoog geworpen of naar beneden geworpen te
+beschrijven. Tegelijk leren we kritisch beoordelen wanneer het
+vrije-valmodel bruikbaar is en wanneer de werkelijkheid een rijker
+model vereist.
+\end{abstract}
+
+\begin{document}
+
+% FVD_CHAPTER_DATA_START
+% Automatisch gegenereerd uit index.tex.
+% Niet handmatig aanpassen.
+\fvdchapterdata{1}{Beweging en kracht}{3}
+% FVD_CHAPTER_DATA_END
+
+\maketitle
+
+
+% ============================================================
+% VOORKENNIS EN LEERDOELEN
+% ============================================================
+
+\begin{voorkennis}
+  \item Je kan een rechtlijnige beweging beschrijven met $x(t)$, $v(t)$ en $a(t)$.
+  \item Je kan snelheid bepalen als afgeleide van de plaatsfunctie.
+  \item Je kan versnelling bepalen als afgeleide van de snelheidsfunctie.
+  \item Je kan een EVRB analyseren met
+        $v=v_0+at$ en
+        $x=x_0+v_0t+\frac12at^2$.
+  \item Je kan verplaatsing bepalen als georiënteerde oppervlakte onder een $v(t)$-grafiek.
+  \item Je kan snelheidsverschil bepalen als georiënteerde oppervlakte onder een $a(t)$-grafiek.
+  \item Je kan bepaalde integralen gebruiken om verplaatsing en snelheidsverschil te bepalen.
+  \item Je kan een oorsprong en positieve richting kiezen en consequent met tekens werken.
+\end{voorkennis}
+
+\begin{leerdoelen}
+  \item Je kan valbeweging en vrije val van elkaar onderscheiden.
+  \item Je kan uitleggen onder welke voorwaarden het vrije-valmodel bruikbaar is.
+  \item Je kan de valversnelling $\vec g$ fysisch interpreteren en het teken van $g_y$ bepalen uit een gekozen assenstelsel.
+  \item Je kan verklaren waarom de massa in het ideale vrije-valmodel niet voorkomt in de bewegingsvergelijkingen.
+  \item Je kan een vrije val zonder beginsnelheid analyseren met $y(t)$, $v_y(t)$ en $a_y(t)$.
+  \item Je kan een verticale worp omhoog of omlaag analyseren met $y(t)$, $v_y(t)$ en $a_y(t)$.
+  \item Je kan de grafieken van positie, snelheid en versnelling bij vrije val en verticale worp schetsen, analyseren en kwantificeren.
+  \item Je kan het hoogste punt van een verticale worp correct interpreteren: $v_y=0$ maar $a_y\neq0$.
+  \item Je kan verplaatsingen bij valbewegingen bepalen met de oppervlaktemethode en met bepaalde integralen.
+  \item Je kan een valsituatie mathematiseren door een schets, referentiestelsel, gegevens en geschikt model te kiezen.
+  \item Je kan resultaten kritisch beoordelen en de beperkingen van het model zonder luchtweerstand aangeven.
+  \item Je kan gegevens of videobeelden van een valbeweging gebruiken om het model van een EVRB te onderzoeken.
+\end{leerdoelen}
+
+
+% ============================================================
+% 1 OPENING
+% ============================================================
+
+\FVDsection{Wat bepaalt hoe een voorwerp valt?}
+
+Laat van dezelfde hoogte tegelijk een tennisbal en een pingpongbal
+vallen. Herhaal het experiment met een muntstuk en een los blad papier.
+
+Wat verwacht je?
+
+In het dagelijkse leven lijkt het vanzelfsprekend dat sommige
+voorwerpen sneller vallen dan andere. Een muntstuk bereikt de grond
+duidelijk eerder dan een los blad papier. Daaruit besluiten dat
+``zwaardere voorwerpen sneller vallen'' is echter te snel.
+
+Voer een tweede proef uit. Leg het blad papier op het muntstuk en laat
+beide samen vallen. Het papier kan nu vrijwel tegelijk met het
+muntstuk de grond bereiken.
+
+Er is dus meer aan de hand dan alleen massa.
+
+\begin{oefening}[Voorspel voor je rekent]{\oefB\ESS}
+
+Beantwoord de vragen vóór je verdere theorie leest.
+
+\begin{question}
+Welke van twee bollen met dezelfde vorm maar verschillende massa
+verwacht je in vacuüm eerst op de grond?
+\end{question}
+
+\begin{question}
+Waarom kan een los blad papier in lucht veel trager vallen dan een
+muntstuk?
+\end{question}
+
+\begin{question}
+Welke variabele zou je in een experiment veranderen om het effect van
+luchtweerstand zichtbaar te maken?
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 2 VALBEWEGING EN VRIJE VAL
+% ============================================================
+
+\FVDsection{Valbeweging en vrije val zijn niet hetzelfde}
+
+Een \textbf{valbeweging} is een beweging waarbij een voorwerp onder
+invloed van de zwaartekracht naar beneden beweegt. In een werkelijke
+situatie kunnen daarnaast andere krachten optreden, vooral
+luchtweerstand.
+
+Een blad papier dat door de lucht naar beneden dwarrelt, voert dus een
+valbeweging uit, maar zijn versnelling is niet voortdurend gelijk aan
+de valversnelling.
+
+Voor veel problemen gebruiken we een eenvoudiger model.
+
+\begin{definitie}[Vrije val]
+
+Bij een \textbf{vrije val} beschrijven we een voorwerp nadat het is
+losgelaten of geworpen terwijl we aannemen dat alleen de zwaartekracht
+de beweging beïnvloedt.
+
+Dicht bij het aardoppervlak behandelen we de valversnelling daarbij
+als constant.
+
+\end{definitie}
+
+In dit hoofdstuk betekent ``vrije val'' dus niet noodzakelijk
+``vallen vanuit rust''. Ook een bal die verticaal omhoog wordt geworpen,
+bevindt zich na het loslaten in vrije val wanneer we luchtweerstand
+verwaarlozen.
+
+\begin{opmerking}
+
+Het woord \emph{vrij} verwijst naar het model waarin alleen de
+zwaartekracht werkzaam is. Een voorwerp kan dus omhoog bewegen en
+toch in vrije val zijn.
+
+\end{opmerking}
+
+
+\FVDsubsection{Werkelijkheid en model}
+
+We gebruiken het schema
+
+\[
+\boxed{
+\text{werkelijke beweging}
+\longrightarrow
+\text{aannames}
+\longrightarrow
+\text{vrije-valmodel}
+}
+\]
+
+met als belangrijke aannames:
+
+\begin{itemize}
+  \item de luchtweerstand is verwaarloosbaar;
+  \item de beweging vindt plaats dicht genoeg bij het aardoppervlak;
+  \item de verandering van $g$ over de beschouwde hoogte is verwaarloosbaar;
+  \item het voorwerp kan voor de beweging als puntmassa worden behandeld.
+\end{itemize}
+
+Onder die voorwaarden is de verticale versnelling constant en is de
+beweging een EVRB.
+
+
+\begin{oefening}[Vrije val of niet?]{\oefB\ESS}
+
+Beoordeel of het vrije-valmodel waarschijnlijk bruikbaar is. Motiveer.
+
+\begin{question}
+Een kleine stalen kogel valt $1,0\,\mathrm{m}$ in een klaslokaal.
+\end{question}
+
+\begin{question}
+Een open valscherm daalt naar de grond.
+\end{question}
+
+\begin{question}
+Een verfrommeld blad papier valt van een tafel.
+\end{question}
+
+\begin{question}
+Een veertje valt door een vacuümbuis.
+\end{question}
+
+\begin{question}
+Een regendruppel valt vanuit een wolk tot op de grond.
+\end{question}
+
+\end{oefening}
+
+
+\begin{oefening}[Een model bekritiseren]{\oefU\ESS}
+
+Een leerling gebruikt voor een valschermspringer die van
+$2000\,\mathrm{m}$ hoogte springt gedurende de volledige beweging het
+model
+
+\[
+a=-9,81\,\mathrm{m/s^2}.
+\]
+
+\begin{question}
+Welke belangrijke aanname maakt de leerling?
+\end{question}
+
+\begin{question}
+Waarom wordt die aanname na verloop van tijd steeds minder realistisch?
+\end{question}
+
+\begin{question}
+Wat verwacht je dat er met de versnelling gebeurt wanneer de
+luchtweerstand belangrijk wordt?
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 3 VALVERSNELLING
+% ============================================================
+
+\FVDsection{De valversnelling}
+
+Dicht bij het aardoppervlak is de grootte van de valversnelling
+ongeveer
+
+\[
+\boxed{
+g=9,81\,\mathrm{m/s^2}.
+}
+\]
+
+De vector $\vec g$ is naar het middelpunt van de aarde gericht.
+
+De waarde $9,81\,\mathrm{m/s^2}$ is de \textbf{grootte} van de
+valversnelling en is daarom positief. Het teken van de component van
+de versnelling hangt af van de gekozen positieve richting.
+
+\begin{opmerking}
+
+Maak onderscheid tussen
+
+\[
+g=9,81\,\mathrm{m/s^2}
+\]
+
+als grootte van de valversnelling en bijvoorbeeld
+
+\[
+a_y=-g=-9,81\,\mathrm{m/s^2}
+\]
+
+wanneer de positieve $y$-richting omhoog is gekozen.
+
+\end{opmerking}
+
+
+\FVDsubsection{Waarom valt massa weg uit het model?}
+
+In het ideale model is de zwaartekracht op een voorwerp dicht bij het
+aardoppervlak
+
+\[
+F_z=mg.
+\]
+
+Volgens de tweede wet van Newton:
+
+\[
+F_{\mathrm{res}}=ma.
+\]
+
+Wanneer de zwaartekracht de enige kracht is:
+
+\[
+ma=mg.
+\]
+
+Voor $m\neq0$ volgt:
+
+\[
+\boxed{a=g}
+\]
+
+in grootte.
+
+De massa valt dus uit de vergelijking. Dat verklaart waarom twee
+voorwerpen met verschillende massa in hetzelfde zwaarteveld dezelfde
+valversnelling hebben wanneer andere krachten verwaarloosbaar zijn.
+
+\begin{opmerking}
+
+Dit is een verbinding met de dynamica: de kinematica beschrijft
+\emph{hoe} het voorwerp beweegt; de tweede wet van Newton verklaart
+\emph{waarom} de versnelling in dit model onafhankelijk is van de
+massa.
+
+\end{opmerking}
+
+
+\begin{oefening}[Zwaar of licht?]{\oefU\ESS}
+
+Twee massieve bollen hebben dezelfde vorm en afmetingen. Bol B heeft
+een tweemaal zo grote massa als bol A. Ze worden in vacuüm gelijktijdig
+van dezelfde hoogte losgelaten.
+
+\begin{question}
+Vergelijk de zwaartekrachten op beide bollen.
+\end{question}
+
+\begin{question}
+Vergelijk hun versnellingen.
+\end{question}
+
+\begin{question}
+Bereiken ze de grond op hetzelfde tijdstip? Verklaar met de tweede
+wet van Newton.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 4 TEKENCONVENTIE
+% ============================================================
+
+\FVDsection{Eerst kiezen, dan rekenen}
+
+Veel fouten bij valbewegingen zijn geen rekenfouten maar
+\textbf{tekenfouten}. Daarom kiezen we vóór elke berekening:
+
+\begin{enumerate}
+  \item een oorsprong;
+  \item een positieve richting;
+  \item een symbool voor de verticale positie.
+\end{enumerate}
+
+We gebruiken meestal de $y$-as.
+
+
+\FVDsubsection{Omhoog positief}
+
+Kiezen we omhoog als positieve richting, dan geldt altijd:
+
+\[
+\boxed{a_y=-g.}
+\]
+
+Een voorwerp dat omhoog beweegt heeft
+
+\[
+v_y>0,
+\]
+
+een voorwerp dat naar beneden beweegt heeft
+
+\[
+v_y<0.
+\]
+
+
+\FVDsubsection{Naar beneden positief}
+
+Kiezen we naar beneden als positieve richting, dan:
+
+\[
+\boxed{a_y=+g.}
+\]
+
+Een vallend voorwerp heeft dan een positieve snelheid.
+
+Beide keuzes zijn correct. Alleen de tekens verschillen.
+
+\begin{eigenschap}[Consequentie is belangrijker dan de keuze]
+
+Een fysisch antwoord mag niet afhangen van de gekozen positieve
+richting. De tussenresultaten kunnen andere tekens hebben, maar
+meetbare grootheden zoals valtijd en de grootte van de impactsnelheid
+moeten dezelfde zijn.
+
+\end{eigenschap}
+
+
+\begin{oefening}[Tekencheck]{\oefB\ESS}
+
+Kies de positieve $y$-richting omhoog.
+
+Geef het teken van $v_y$ en $a_y$ voor:
+
+\begin{question}
+een bal die omhoog beweegt na te zijn geworpen;
+\end{question}
+
+\begin{question}
+dezelfde bal op het hoogste punt;
+\end{question}
+
+\begin{question}
+dezelfde bal tijdens het dalen.
+\end{question}
+
+\end{oefening}
+
+
+\begin{oefening}[Twee assenstelsels, één fysica]{\oefU}
+
+Een steen wordt vanuit rust van een hoogte $h$ losgelaten.
+
+Analyseer dezelfde beweging tweemaal:
+
+\begin{question}
+met omhoog als positieve richting;
+\end{question}
+
+\begin{question}
+met naar beneden als positieve richting.
+\end{question}
+
+Vergelijk de tekens van positie, verplaatsing, snelheid en versnelling.
+Leg uit waarom de berekende valtijd dezelfde moet zijn.
+
+\end{oefening}
+
+
+% ============================================================
+% 5 VRIJE VAL UIT RUST
+% ============================================================
+
+\FVDsection{Vrije val zonder beginsnelheid}
+
+We kiezen in deze sectie de positieve $y$-richting omhoog.
+
+Een voorwerp wordt op tijdstip $t=0$ losgelaten vanaf hoogte $y_0$.
+
+Dan:
+
+\[
+v_{y,0}=0
+\]
+
+en
+
+\[
+a_y=-g.
+\]
+
+De algemene EVRB-vergelijkingen uit het vorige hoofdstuk worden:
+
+\[
+v_y(t)=v_{y,0}+a_yt
+\]
+
+en
+
+\[
+y(t)=y_0+v_{y,0}t+\frac12a_yt^2.
+\]
+
+Dus:
+
+\[
+\boxed{
+v_y(t)=-gt
+}
+\]
+
+en
+
+\[
+\boxed{
+y(t)=y_0-\frac12gt^2.
+}
+\]
+
+De verplaatsing na tijd $t$ is:
+
+\[
+\boxed{
+\Delta y=-\frac12gt^2.
+}
+\]
+
+De grootte van de snelheid is:
+
+\[
+\boxed{
+|v_y|=gt.
+}
+\]
+
+
+\FVDsubsection{De drie grafieken}
+
+Bij vrije val uit rust met omhoog positief:
+
+\begin{itemize}
+  \item $a_y(t)=-g$ is een horizontale rechte onder de tijdas;
+  \item $v_y(t)=-gt$ is een dalende rechte door de oorsprong;
+  \item $y(t)=y_0-\frac12gt^2$ is een dalende parabool.
+\end{itemize}
+
+De drie grafieken zijn niet onafhankelijk:
+
+\[
+\boxed{
+v_y(t)=y'(t),
+\qquad
+a_y(t)=v_y'(t)=y''(t).
+}
+\]
+
+
+\begin{voorbeeld}[Een steen van een klif]
+
+Een steen wordt van een klif losgelaten en raakt
+$1,80\,\mathrm{s}$ later het water. Verwaarloos luchtweerstand.
+
+We kiezen omhoog positief en nemen het wateroppervlak als $y=0$.
+
+De hoogte van de klif volgt uit:
+
+\[
+0=y_0-\frac12g(1,80)^2.
+\]
+
+Dus:
+
+\[
+y_0
+=
+\frac12\cdot9,81\cdot(1,80)^2
+\approx15,9\,\mathrm{m}.
+\]
+
+De snelheid bij het raken van het water:
+
+\[
+v_y(1,80)
+=
+-9,81\cdot1,80
+\approx-17,7\,\mathrm{m/s}.
+\]
+
+Het minteken betekent dat de snelheid naar beneden gericht is.
+De grootte van de impactsnelheid is:
+
+\[
+\boxed{|v_y|\approx17,7\,\mathrm{m/s}.}
+\]
+
+\end{voorbeeld}
+
+
+\begin{oefening}[Vrije val uit rust]{\oefB\ESS}
+
+Een kleine metalen bol wordt van $20,0\,\mathrm{m}$ hoogte losgelaten.
+Verwaarloos luchtweerstand.
+
+\begin{question}
+Maak een schets en kies een assenstelsel.
+\end{question}
+
+\begin{question}
+Stel $y(t)$ en $v_y(t)$ op.
+\end{question}
+
+\begin{question}
+Bepaal de valtijd.
+\end{question}
+
+\begin{question}
+Bepaal de snelheid vlak vóór het raken van de grond.
+\end{question}
+
+\begin{question}
+Interpreteer het teken van de snelheid.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 6 OPPERVLAKTE EN INTEGRAAL
+% ============================================================
+
+\FVDsection{Vrije val in het $v(t)$- en $a(t)$-diagram}
+
+Hoofdstuk 2 gaf ons twee krachtige verbanden:
+
+\[
+\Delta y
+=
+\int_{t_1}^{t_2}v_y(t)\,dt
+\]
+
+en
+
+\[
+\Delta v_y
+=
+\int_{t_1}^{t_2}a_y(t)\,dt.
+\]
+
+Bij vrije val worden deze relaties bijzonder overzichtelijk.
+
+
+\FVDsubsection{Van versnelling naar snelheid}
+
+Met omhoog positief is:
+
+\[
+a_y=-g.
+\]
+
+De $a(t)$-grafiek vormt over een interval $\Delta t$ een rechthoek
+onder de tijdas.
+
+De georiënteerde oppervlakte is:
+
+\[
+\Delta v_y=-g\Delta t.
+\]
+
+Analytisch:
+
+\[
+\Delta v_y
+=
+\int_{t_1}^{t_2}-g\,dt
+=
+-g(t_2-t_1).
+\]
+
+
+\FVDsubsection{Van snelheid naar verplaatsing}
+
+Bij een val uit rust is:
+
+\[
+v_y(t)=-gt.
+\]
+
+De $v(t)$-grafiek vormt een driehoek onder de tijdas. Over $[0,t]$:
+
+\[
+\Delta y
+=
+-\frac12\cdot t\cdot gt
+=
+-\frac12gt^2.
+\]
+
+Met een integraal:
+
+\[
+\Delta y
+=
+\int_0^t -g\tau\,d\tau
+=
+-\frac12gt^2.
+\]
+
+De bewegingsvergelijking, de oppervlaktemethode en de integraal geven
+dus exact dezelfde fysische relatie.
+
+
+\begin{eigenschap}[Drie talen, één beweging]
+
+Voor vrije val kunnen we dezelfde beweging analyseren met:
+
+\[
+\boxed{
+\text{bewegingsvergelijkingen}
+\quad\longleftrightarrow\quad
+\text{grafiek en oppervlakte}
+\quad\longleftrightarrow\quad
+\text{bepaalde integraal}.
+}
+\]
+
+Een sterke analyse kan tussen deze voorstellingen schakelen.
+
+\end{eigenschap}
+
+
+\begin{oefening}[Dezelfde val op drie manieren]{\oefU\ESS}
+
+Een voorwerp wordt vanuit rust losgelaten en valt gedurende
+$2,00\,\mathrm{s}$. Kies omhoog positief.
+
+\begin{question}
+Bepaal de snelheidsverandering met de oppervlakte onder de
+$a(t)$-grafiek.
+\end{question}
+
+\begin{question}
+Bepaal de verplaatsing met de oppervlakte onder de $v(t)$-grafiek.
+\end{question}
+
+\begin{question}
+Controleer beide resultaten met bepaalde integralen.
+\end{question}
+
+\begin{question}
+Controleer de verplaatsing ten slotte met de EVRB-formule.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 7 VERTICALE WORP
+% ============================================================
+
+\FVDsection{Verticale worp}
+
+Een voorwerp wordt verticaal omhoog of omlaag geworpen. Zodra het
+voorwerp de hand verlaat en we luchtweerstand verwaarlozen, werkt in
+ons model alleen de zwaartekracht.
+
+De beweging is opnieuw een EVRB, maar nu is de beginsnelheid in het
+algemeen niet nul.
+
+Met omhoog positief:
+
+\[
+\boxed{a_y=-g}
+\]
+
+en dus:
+
+\[
+\boxed{
+v_y(t)=v_{y,0}-gt
+}
+\]
+
+en
+
+\[
+\boxed{
+y(t)=y_0+v_{y,0}t-\frac12gt^2.
+}
+\]
+
+Deze twee functies beschrijven zowel een worp omhoog als een worp
+omlaag. Het teken van $v_{y,0}$ bepaalt de aanvankelijke
+bewegingsrichting.
+
+
+\FVDsubsection{Worp omhoog}
+
+Bij een worp omhoog:
+
+\[
+v_{y,0}>0.
+\]
+
+Tijdens het stijgen:
+
+\[
+v_y>0,
+\qquad
+a_y<0.
+\]
+
+Snelheid en versnelling hebben tegengestelde tekens, dus de grootte
+van de snelheid neemt af.
+
+
+\FVDsubsection{Het hoogste punt}
+
+Op het hoogste punt geldt:
+
+\[
+\boxed{v_y=0.}
+\]
+
+Maar:
+
+\[
+\boxed{a_y=-g.}
+\]
+
+De versnelling is daar dus niet nul.
+
+\begin{opmerking}
+
+``Het voorwerp staat op het hoogste punt even stil'' mag niet worden
+verward met ``er is geen versnelling''.
+
+De snelheid is op dat ene ogenblik nul. De snelheid verandert echter
+nog steeds met $-9,81\,\mathrm{m/s}$ per seconde.
+
+\end{opmerking}
+
+
+\FVDsubsection{Tijdens het dalen}
+
+Na het hoogste punt:
+
+\[
+v_y<0,
+\qquad
+a_y<0.
+\]
+
+Snelheid en versnelling hebben nu hetzelfde teken. Daarom neemt de
+grootte van de snelheid toe.
+
+
+\begin{oefening}[Stijgen, hoogste punt, dalen]{\oefB\ESS}
+
+Een bal wordt verticaal omhoog geworpen. Omhoog is positief.
+
+Vul voor elke fase het teken van $v_y$ en $a_y$ in en vermeld of
+$|v_y|$ toeneemt, afneemt of ogenblikkelijk nul is.
+
+\[
+\begin{array}{c|c|c|c}
+\text{fase} & v_y & a_y & |v_y|\\ \hline
+\text{stijgen} & & &\\
+\text{hoogste punt} & & &\\
+\text{dalen} & & &
+\end{array}
+\]
+
+\end{oefening}
+
+
+\begin{oefening}[Misconcepten]{\oefU\ESS}
+
+Beoordeel elke uitspraak. Verbeter ze indien nodig.
+
+\begin{question}
+Tijdens het stijgen is de versnelling positief omdat de bal omhoog beweegt.
+\end{question}
+
+\begin{question}
+Op het hoogste punt zijn snelheid en versnelling beide nul.
+\end{question}
+
+\begin{question}
+Tijdens het dalen is de versnelling negatief wanneer omhoog positief gekozen is.
+\end{question}
+
+\begin{question}
+Een negatieve snelheid betekent dat het voorwerp vertraagt.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 8 HOOGSTE PUNT
+% ============================================================
+
+\FVDsection{Het hoogste punt kwantificeren}
+
+Een bal wordt vanaf hoogte $y_0$ omhoog geworpen met beginsnelheid
+$v_0>0$. We kiezen omhoog positief.
+
+
+\FVDsubsection{Tijd tot het hoogste punt}
+
+Op het hoogste punt:
+
+\[
+v_y=0.
+\]
+
+Uit
+
+\[
+v_y(t)=v_0-gt
+\]
+
+volgt:
+
+\[
+0=v_0-gt_{\max}.
+\]
+
+Dus:
+
+\[
+\boxed{
+t_{\max}=\frac{v_0}{g}.
+}
+\]
+
+
+\FVDsubsection{Hoogtewinst}
+
+We kunnen de hoogtewinst bepalen door $t_{\max}$ in de plaatsfunctie
+in te vullen. Een tweede methode gebruikt het $v(t)$-diagram.
+
+Tijdens het stijgen vormt het gebied onder de $v(t)$-grafiek een
+driehoek:
+
+\[
+\Delta y_{\max}
+=
+\frac12 v_0t_{\max}.
+\]
+
+Met
+
+\[
+t_{\max}=\frac{v_0}{g}
+\]
+
+krijgen we:
+
+\[
+\boxed{
+\Delta y_{\max}
+=
+\frac{v_0^2}{2g}.
+}
+\]
+
+Dus:
+
+\[
+\boxed{
+y_{\max}
+=
+y_0+\frac{v_0^2}{2g}.
+}
+\]
+
+Deze relatie maakt onmiddellijk zichtbaar dat de hoogtewinst
+evenredig is met het \textbf{kwadraat} van de beginsnelheid.
+
+
+\begin{voorbeeld}[Een bal omhoog werpen]
+
+Een bal verlaat een hand op
+
+\[
+y_0=1,50\,\mathrm{m}
+\]
+
+met
+
+\[
+v_0=13,0\,\mathrm{m/s}.
+\]
+
+De tijd tot het hoogste punt is:
+
+\[
+t_{\max}
+=
+\frac{13,0}{9,81}
+\approx1,33\,\mathrm{s}.
+\]
+
+De hoogtewinst:
+
+\[
+\Delta y_{\max}
+=
+\frac{13,0^2}{2\cdot9,81}
+\approx8,61\,\mathrm{m}.
+\]
+
+Dus:
+
+\[
+y_{\max}
+\approx
+1,50+8,61
+=
+10,1\,\mathrm{m}.
+\]
+
+\end{voorbeeld}
+
+
+\begin{oefening}[Dubbele beginsnelheid]{\oefU\ESS}
+
+Bal A en bal B worden vanaf dezelfde hoogte verticaal omhoog geworpen.
+De beginsnelheid van B is tweemaal die van A:
+
+\[
+v_{0,B}=2v_{0,A}.
+\]
+
+\begin{question}
+Vergelijk de tijden tot het hoogste punt.
+\end{question}
+
+\begin{question}
+Vergelijk de hoogtewinsten.
+\end{question}
+
+\begin{question}
+Verklaar waarom een dubbele beginsnelheid niet leidt tot een dubbele
+hoogtewinst.
+\end{question}
+
+\end{oefening}
+
+
+\begin{oefening}[Algemeen verband afleiden]{\oefG}
+
+Leid zonder de plaatsfunctie te gebruiken de formule
+
+\[
+\Delta y_{\max}=\frac{v_0^2}{2g}
+\]
+
+af uit het $v(t)$-diagram en de oppervlaktemethode.
+
+Geef daarna aan hoe dezelfde formule met een bepaalde integraal kan
+worden verkregen.
+
+\end{oefening}
+
+
+% ============================================================
+% 9 SYMMETRIE
+% ============================================================
+
+\FVDsection{Omhoog en omlaag: een bijzondere symmetrie}
+
+Wanneer een voorwerp omhoog wordt geworpen en later terugkeert naar
+\textbf{dezelfde hoogte}, ontstaat in het ideale model een belangrijke
+symmetrie.
+
+Stel dat het voorwerp vanaf $y_0$ wordt geworpen met snelheid $v_0$.
+
+Op dezelfde hoogte tijdens het dalen geldt:
+
+\[
+v_y=-v_0.
+\]
+
+De richting is omgekeerd, maar de grootte is dezelfde:
+
+\[
+|v_y|=v_0.
+\]
+
+Ook de tijd omhoog is gelijk aan de tijd terug naar dezelfde hoogte:
+
+\[
+t_{\mathrm{terug}}=2t_{\max}.
+\]
+
+\begin{opmerking}
+
+Deze symmetrie geldt alleen wanneer we dezelfde begin- en eindhoogte
+vergelijken en het model zonder luchtweerstand gebruiken.
+
+Wanneer het voorwerp op een andere hoogte landt, mag je de totale
+bewegingstijd niet zomaar verdubbelen.
+
+\end{opmerking}
+
+
+\begin{oefening}[Wat is symmetrisch?]{\oefU\ESS}
+
+Een bal wordt vanaf een balkon omhoog geworpen en landt uiteindelijk
+op de straat, die lager ligt dan het balkon.
+
+Beoordeel:
+
+\begin{question}
+Is de tijd van loslaten tot het hoogste punt gelijk aan de tijd van
+het hoogste punt tot de straat?
+\end{question}
+
+\begin{question}
+Is de snelheid bij het opnieuw passeren van de balkonhoogte gelijk
+aan de beginsnelheid?
+\end{question}
+
+\begin{question}
+Is de \emph{grootte} van die snelheid gelijk aan de beginsnelheid?
+\end{question}
+
+Motiveer telkens.
+
+\end{oefening}
+
+
+% ============================================================
+% 10 GRAFIEKEN
+% ============================================================
+
+\FVDsection{De drie grafieken analyseren}
+
+Voor een verticale worp omhoog met omhoog positief:
+
+\[
+y(t)=y_0+v_0t-\frac12gt^2,
+\]
+
+\[
+v_y(t)=v_0-gt,
+\]
+
+\[
+a_y(t)=-g.
+\]
+
+
+\FVDsubsection{De $y(t)$-grafiek}
+
+De plaatsfunctie is een neerwaarts geopende parabool.
+
+\begin{itemize}
+  \item De beginwaarde is $y_0$.
+  \item Tijdens het stijgen neemt $y$ toe.
+  \item Op het hoogste punt heeft $y(t)$ een maximum.
+  \item De raaklijn is daar horizontaal omdat $v_y=0$.
+  \item Daarna neemt $y$ af.
+\end{itemize}
+
+
+\FVDsubsection{De $v(t)$-grafiek}
+
+De snelheidsfunctie is een dalende rechte met richtingscoëfficiënt
+
+\[
+-g.
+\]
+
+\begin{itemize}
+  \item $v_y>0$ tijdens het stijgen;
+  \item $v_y=0$ op het hoogste punt;
+  \item $v_y<0$ tijdens het dalen.
+\end{itemize}
+
+
+\FVDsubsection{De $a(t)$-grafiek}
+
+De versnelling is voortdurend:
+
+\[
+a_y=-g.
+\]
+
+De grafiek is dus een horizontale rechte onder de tijdas.
+
+
+\begin{oefening}[Van één grafiek naar drie]{\oefU\ESS}
+
+Een $v(t)$-grafiek van een verticale worp is een rechte die start bij
+
+\[
+v(0)=18\,\mathrm{m/s}
+\]
+
+en een richtingscoëfficiënt
+
+\[
+-9,81\,\mathrm{m/s^2}
+\]
+
+heeft.
+
+\begin{question}
+Bepaal het tijdstip van het hoogste punt.
+\end{question}
+
+\begin{question}
+Schets de bijbehorende $a(t)$-grafiek.
+\end{question}
+
+\begin{question}
+Schets kwalitatief de $y(t)$-grafiek.
+\end{question}
+
+\begin{question}
+Duid op alle grafieken hetzelfde hoogste punt aan.
+\end{question}
+
+\begin{question}
+Leg uit welke grafische eigenschap op elke grafiek met dat punt
+overeenkomt.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 11 VERTICAAL OMLAAG
+% ============================================================
+
+\FVDsection{Verticaal naar beneden werpen}
+
+Een verticale worp hoeft niet omhoog gericht te zijn.
+
+Kiezen we omhoog positief en werpen we een voorwerp naar beneden, dan:
+
+\[
+v_{y,0}<0
+\]
+
+en nog steeds:
+
+\[
+a_y=-g.
+\]
+
+Dus:
+
+\[
+v_y(t)=v_{y,0}-gt.
+\]
+
+Snelheid en versnelling zijn vanaf het begin beide negatief. De grootte
+van de snelheid neemt daarom toe.
+
+
+\begin{oefening}[Steen naar beneden]{\oefB\ESS}
+
+Vanop een platform $30,0\,\mathrm{m}$ boven de grond wordt een steen
+verticaal naar beneden geworpen met een beginsnelheid van
+$4,00\,\mathrm{m/s}$.
+
+Kies omhoog positief en de grond als oorsprong.
+
+\begin{question}
+Noteer $y_0$, $v_{y,0}$ en $a_y$ met correct teken.
+\end{question}
+
+\begin{question}
+Stel $y(t)$ en $v_y(t)$ op.
+\end{question}
+
+\begin{question}
+Bepaal wanneer de steen de grond bereikt.
+\end{question}
+
+\begin{question}
+Bepaal de impactsnelheid.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 12 PROBLEEMOPLOSSEN
+% ============================================================
+
+\FVDsection{Valproblemen systematisch oplossen}
+
+Bij vrije val en verticale worp zijn de formules meestal niet het
+moeilijkste onderdeel. De grootste uitdaging is de situatie correct
+mathematiseren.
+
+Gebruik daarom deze aanpak:
+
+\begin{enumerate}
+  \item \textbf{Schets de situatie.}
+  \item \textbf{Kies oorsprong en positieve richting.}
+  \item \textbf{Noteer de beginvoorwaarden:} $y_0$, $v_{y,0}$ en $a_y$.
+  \item \textbf{Noteer de gezochte grootheid.}
+  \item \textbf{Vertaal bijzondere gebeurtenissen:}
+        hoogste punt $\Rightarrow v_y=0$,
+        grond $\Rightarrow y=y_{\mathrm{grond}}$, enzovoort.
+  \item \textbf{Kies een methode:} bewegingsvergelijking, grafiek,
+        oppervlaktemethode of integraal.
+  \item \textbf{Los op en selecteer fysisch zinvolle oplossingen.}
+  \item \textbf{Controleer teken, eenheid en grootteorde.}
+  \item \textbf{Interpreteer het antwoord in woorden.}
+\end{enumerate}
+
+
+\begin{voorbeeld}[Een tennisbal vanuit een raam]
+
+Vanuit een raam op $8,00\,\mathrm{m}$ boven de grond wordt een
+tennisbal verticaal omhoog geworpen. De bal raakt na
+$2,00\,\mathrm{s}$ de grond. Welke beginsnelheid had de bal?
+
+We kiezen de grond als $y=0$ en omhoog positief.
+
+\[
+y_0=8,00\,\mathrm{m},
+\qquad
+y(2,00)=0,
+\qquad
+a_y=-9,81\,\mathrm{m/s^2}.
+\]
+
+Uit
+
+\[
+y(t)=y_0+v_0t-\frac12gt^2
+\]
+
+volgt:
+
+\[
+0
+=
+8,00+2,00v_0
+-\frac12\cdot9,81\cdot(2,00)^2.
+\]
+
+Dus:
+
+\[
+2,00v_0=11,62
+\]
+
+en:
+
+\[
+\boxed{
+v_0\approx5,81\,\mathrm{m/s}.
+}
+\]
+
+Het positieve teken bevestigt dat de bal aanvankelijk omhoog werd
+geworpen.
+
+\end{voorbeeld}
+
+
+\begin{oefening}[Van raam naar straat]{\oefU\ESS}
+
+Een bal wordt vanaf $12,0\,\mathrm{m}$ boven de grond verticaal omhoog
+geworpen met $v_0=8,00\,\mathrm{m/s}$.
+
+\begin{question}
+Maak een schets en stel $y(t)$ en $v_y(t)$ op.
+\end{question}
+
+\begin{question}
+Bepaal de maximale hoogte boven de grond.
+\end{question}
+
+\begin{question}
+Bepaal wanneer de bal de grond raakt.
+\end{question}
+
+\begin{question}
+Bij het oplossen van $y(t)=0$ ontstaan algebraïsch twee oplossingen.
+Bespreek welke oplossingen fysisch betekenisvol zijn.
+\end{question}
+
+\begin{question}
+Bepaal de snelheid bij impact.
+\end{question}
+
+\end{oefening}
+
+
+\begin{oefening}[De baksteen]{\oefU\ESS}
+
+Een bouwvakker werpt een baksteen verticaal omhoog vanaf
+$1,50\,\mathrm{m}$ boven de grond. Een metselaar wil de steen op een
+stelling op $4,00\,\mathrm{m}$ hoogte kunnen opvangen.
+
+\begin{question}
+Welke minimale beginsnelheid is nodig om die hoogte te bereiken?
+\end{question}
+
+\begin{question}
+Welke bijzondere voorwaarde geldt bij de minimale beginsnelheid op
+$4,00\,\mathrm{m}$ hoogte?
+\end{question}
+
+\begin{question}
+Leg uit waarom een grotere beginsnelheid tot twee mogelijke
+passagetijdstippen op $4,00\,\mathrm{m}$ kan leiden.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 13 MODEL EN LUCHTWEERSTAND
+% ============================================================
+
+\FVDsection{Wanneer faalt het vrije-valmodel?}
+
+De vergelijkingen
+
+\[
+a_y=-g,
+\qquad
+v_y=v_0-gt,
+\qquad
+y=y_0+v_0t-\frac12gt^2
+\]
+
+zijn krachtig, maar niet universeel.
+
+In lucht werkt naast de zwaartekracht ook luchtweerstand. Die hangt
+onder andere af van vorm, oppervlakte, snelheid en eigenschappen van
+de lucht.
+
+Daardoor is de resulterende kracht niet meer constant en is de
+versnelling niet noodzakelijk gelijk aan $-g$.
+
+
+\FVDsubsection{Eindsnelheid}
+
+Bij een vallend voorwerp kan de luchtweerstand toenemen wanneer de
+snelheid groter wordt.
+
+Wanneer de luchtweerstand uiteindelijk even groot is als de
+zwaartekracht:
+
+\[
+F_{\mathrm{res}}=0.
+\]
+
+Dan:
+
+\[
+a=0
+\]
+
+en verandert de snelheid niet meer. Het voorwerp beweegt dan met een
+\textbf{eindsnelheid}.
+
+Dit gedrag kan niet worden beschreven door het eenvoudige
+vrije-valmodel met constante versnelling $g$.
+
+
+\begin{oefening}[Waarom is de voorspelling onrealistisch?]{\oefU\ESS}
+
+Een model zonder luchtweerstand voorspelt voor een persoon die vanuit
+rust $2000\,\mathrm{m}$ valt:
+
+\[
+|v|=\sqrt{2gh}.
+\]
+
+\begin{question}
+Bereken de voorspelde snelheid.
+\end{question}
+
+\begin{question}
+Zet het resultaat om naar $\mathrm{km/h}$.
+\end{question}
+
+\begin{question}
+Waarom moet je voorzichtig zijn met de fysische interpretatie van
+dit resultaat?
+\end{question}
+
+\begin{question}
+Welke ontbrekende kracht maakt het model bij zo'n beweging
+onvoldoende?
+\end{question}
+
+\end{oefening}
+
+
+\begin{oefening}[Papier als modeltest]{\oefG}
+
+Ontwerp een eenvoudig experiment met een blad papier waarmee je
+aantoont dat vorm en luchtweerstand een belangrijke rol kunnen spelen.
+
+Beschrijf:
+
+\begin{question}
+welke grootheid je verandert;
+\end{question}
+
+\begin{question}
+welke grootheden je zoveel mogelijk constant houdt;
+\end{question}
+
+\begin{question}
+welke waarneming je verwacht;
+\end{question}
+
+\begin{question}
+waarom het resultaat geen tegenspraak vormt met het vrije-valmodel.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 14 DATA EN ICT
+% ============================================================
+
+\FVDsection{Een valbeweging onderzoeken met data}
+
+Het leerplan vraagt niet alleen dat je formules toepast. Je moet ook
+verbanden tussen positie, snelheid en versnelling kunnen analyseren.
+
+Een videoanalyse is daarvoor bijzonder geschikt.
+
+Film bijvoorbeeld een kleine bal die over een beperkte hoogte valt.
+Bepaal met een videoanalysetool op opeenvolgende tijdstippen de
+verticale positie.
+
+Je krijgt meetpunten:
+
+\[
+(t_i,y_i).
+\]
+
+Voor vrije val verwachten we een kwadratisch model:
+
+\[
+y(t)=y_0+v_0t-\frac12gt^2.
+\]
+
+Bij loslaten uit rust:
+
+\[
+v_0\approx0.
+\]
+
+Uit het kwadratische model kunnen we door afleiden een lineaire
+snelheidsfunctie en een constante versnellingsfunctie reconstrueren.
+
+
+\begin{oefening}[Videoanalyse van een vallende bal]{\oefU\ESS}
+
+Registreer of gebruik een gegeven video van een kleine bal die wordt
+losgelaten.
+
+\begin{question}
+Kies een oorsprong en positieve richting en noteer die expliciet.
+\end{question}
+
+\begin{question}
+Maak een tabel met $t$ en $y$.
+\end{question}
+
+\begin{question}
+Maak een spreidingsdiagram van $y$ als functie van $t$.
+\end{question}
+
+\begin{question}
+Bepaal met ICT een kwadratisch model
+\[
+y(t)=At^2+Bt+C.
+\]
+\end{question}
+
+\begin{question}
+Interpreteer $A$, $B$ en $C$ fysisch.
+\end{question}
+
+\begin{question}
+Bepaal uit het model $v_y(t)$ en $a_y(t)$.
+\end{question}
+
+\begin{question}
+Vergelijk de experimenteel gevonden versnelling met
+$9,81\,\mathrm{m/s^2}$.
+\end{question}
+
+\begin{question}
+Bespreek mogelijke oorzaken van een verschil.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 15 GEINTEGREERDE OEFENINGEN
+% ============================================================
+
+\FVDsection{Geïntegreerde oefeningen}
+
+\begin{oefening}[Een voetbal verticaal omhoog]{\oefB\ESS}
+
+Een voetbal wordt vanaf de grond verticaal omhoog getrapt met
+
+\[
+v_0=15,0\,\mathrm{m/s}.
+\]
+
+Verwaarloos luchtweerstand.
+
+\begin{question}
+Stel $y(t)$, $v_y(t)$ en $a_y(t)$ op.
+\end{question}
+
+\begin{question}
+Bepaal wanneer de bal zijn hoogste punt bereikt.
+\end{question}
+
+\begin{question}
+Bepaal de maximale hoogte.
+\end{question}
+
+\begin{question}
+Bepaal wanneer de bal opnieuw de grond bereikt.
+\end{question}
+
+\begin{question}
+Bepaal de snelheid vlak vóór het bereiken van de grond.
+\end{question}
+
+\begin{question}
+Schets de drie bewegingsgrafieken.
+\end{question}
+
+\end{oefening}
+
+
+\begin{oefening}[Een onbekende beginsnelheid]{\oefU\ESS}
+
+Een bal wordt vanaf $2,00\,\mathrm{m}$ hoogte verticaal omhoog
+geworpen. Hij bereikt een maximale hoogte van $7,00\,\mathrm{m}$.
+
+\begin{question}
+Bepaal de beginsnelheid.
+\end{question}
+
+\begin{question}
+Bepaal de tijd tot het hoogste punt.
+\end{question}
+
+\begin{question}
+Bepaal de totale tijd tot de bal de grond bereikt.
+\end{question}
+
+\begin{question}
+Leg uit waarom je voor de laatste vraag de stijgtijd niet zomaar mag
+verdubbelen.
+\end{question}
+
+\end{oefening}
+
+
+\begin{oefening}[Grafiek zonder formule]{\oefU\ESS}
+
+Van een verticale worp is alleen het volgende bekend:
+
+\begin{itemize}
+  \item $v_y(0)=19,62\,\mathrm{m/s}$;
+  \item de $v(t)$-grafiek is een rechte met helling
+        $-9,81\,\mathrm{m/s^2}$;
+  \item $y(0)=1,00\,\mathrm{m}$.
+\end{itemize}
+
+\begin{question}
+Bepaal grafisch of met de oppervlaktemethode de hoogtewinst tot het
+hoogste punt.
+\end{question}
+
+\begin{question}
+Bepaal de maximale hoogte.
+\end{question}
+
+\begin{question}
+Controleer met een integraal.
+\end{question}
+
+\begin{question}
+Stel daarna pas de plaatsfunctie op.
+\end{question}
+
+\end{oefening}
+
+
+\begin{oefening}[Twee bollen]{\oefG}
+
+Vanaf dezelfde hoogte wordt bol A losgelaten. Op hetzelfde tijdstip
+wordt bol B verticaal naar beneden geworpen.
+
+Beide bollen bewegen volgens het ideale vrije-valmodel.
+
+\begin{question}
+Vergelijk hun versnellingen.
+\end{question}
+
+\begin{question}
+Stel voor beide bollen een snelheidsfunctie op.
+\end{question}
+
+\begin{question}
+Onderzoek hoe het snelheidsverschil tussen beide bollen in de tijd
+verandert.
+\end{question}
+
+\begin{question}
+Onderzoek hoe hun onderlinge afstand in de tijd verandert.
+\end{question}
+
+\begin{question}
+Formuleer een algemene conclusie en verklaar die fysisch.
+\end{question}
+
+\end{oefening}
+
+
+\begin{oefening}[Foutenanalyse]{\oefU\ESS}
+
+Een leerling lost een verticale worp op met omhoog positief:
+
+\[
+v_0=12,0\,\mathrm{m/s}.
+\]
+
+Hij schrijft:
+
+\[
+v(t)=12,0+9,81t
+\]
+
+en zegt:
+
+\begin{quote}
+``De bal gaat omhoog, dus $g$ moet positief zijn.''
+\end{quote}
+
+\begin{question}
+Identificeer de fout.
+\end{question}
+
+\begin{question}
+Schrijf de correcte snelheidsfunctie.
+\end{question}
+
+\begin{question}
+Leg uit waarom de richting van de snelheid niet bepaalt welk teken de
+versnelling heeft.
+\end{question}
+
+\end{oefening}
+
+
+\begin{oefening}[Een model vergelijken met data]{\oefG}
+
+Een sensor levert voor een vallend voorwerp meetgegevens op. Een
+leerling vindt via regressie:
+
+\[
+y(t)=2,01-0,08t-4,72t^2.
+\]
+
+De positieve richting is omhoog.
+
+\begin{question}
+Bepaal de gemodelleerde beginsnelheid.
+\end{question}
+
+\begin{question}
+Bepaal de gemodelleerde versnelling.
+\end{question}
+
+\begin{question}
+Vergelijk deze versnelling met de theoretische waarde $-g$.
+\end{question}
+
+\begin{question}
+Geef minstens drie mogelijke verklaringen voor het verschil.
+\end{question}
+
+\begin{question}
+Beoordeel welke extra informatie je nodig hebt om te besluiten of
+luchtweerstand de belangrijkste oorzaak is.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 16 SAMENVATTING
+% ============================================================
+
+\FVDsection{Wat hebben we opgebouwd?}
+
+Een werkelijke valbeweging kan beïnvloed worden door verschillende
+krachten. In het vrije-valmodel verwaarlozen we andere krachten dan
+de zwaartekracht.
+
+Dicht bij het aardoppervlak:
+
+\[
+g\approx9,81\,\mathrm{m/s^2}.
+\]
+
+Met omhoog positief:
+
+\[
+\boxed{a_y=-g.}
+\]
+
+Voor een verticale beweging met beginvoorwaarden $y_0$ en $v_0$:
+
+\[
+\boxed{
+v_y(t)=v_0-gt
+}
+\]
+
+en
+
+\[
+\boxed{
+y(t)=y_0+v_0t-\frac12gt^2.
+}
+\]
+
+Bij loslaten uit rust:
+
+\[
+v_0=0.
+\]
+
+Bij een verticale worp omhoog:
+
+\[
+v_0>0.
+\]
+
+Op het hoogste punt:
+
+\[
+\boxed{
+v_y=0
+\qquad\text{maar}\qquad
+a_y=-g.
+}
+\]
+
+Voor een worp omhoog:
+
+\[
+\boxed{
+t_{\max}=\frac{v_0}{g}
+}
+\]
+
+en:
+
+\[
+\boxed{
+\Delta y_{\max}=\frac{v_0^2}{2g}.
+}
+\]
+
+De relaties uit hoofdstuk 2 blijven volledig geldig:
+
+\[
+\boxed{
+v_y(t)=y'(t),
+\qquad
+a_y(t)=v_y'(t)
+}
+\]
+
+en:
+
+\[
+\boxed{
+\Delta y=\int v_y(t)\,dt,
+\qquad
+\Delta v_y=\int a_y(t)\,dt.
+}
+\]
+
+De georiënteerde oppervlakten onder de $v(t)$- en $a(t)$-grafieken
+geven respectievelijk verplaatsing en snelheidsverschil.
+
+
+
+
+% ============================================================
+% 18 VOORUITBLIK
+% ============================================================
+
+\FVDsection{Vooruitblik}
+
+Tot nu toe bewoog het voorwerp langs één verticale rechte.
+
+Maar wat gebeurt er wanneer een bal horizontaal wordt weggeschoten?
+De zwaartekracht versnelt hem verticaal, terwijl hij tegelijk
+horizontaal beweegt.
+
+Dan volstaat één coördinaat niet meer.
+
+In het volgende hoofdstuk breiden we onze beschrijving uit naar
+bewegingen in twee dimensies. We onderzoeken hoe onafhankelijke
+bewegingscomponenten samen één baan vormen en gebruiken dat inzicht
+om de horizontale worp te analyseren.
+
+\end{document}

@@ -1,0 +1,2956 @@
+\documentclass{ximera}
+
+\input{../../../preamble.tex}
+\input{../../../Opmaak.tex}
+\addPrintStyle{../../..}
+
+\title{Elektrische kracht: aantrekken en afstoten}
+\author{Ingmar Herreman}
+
+\begin{abstract}
+
+  Een ballon die na het wrijven aan een muur blijft hangen, haren die
+  rechtop gaan staan, een kleine schok bij het aanraken van een metalen
+  deurklink en een bliksemflits tijdens een onweersbui lijken op het
+  eerste gezicht heel verschillende verschijnselen.
+
+  Toch hebben ze iets gemeen: elektrische lading.
+
+  In dit hoofdstuk onderzoeken we eerst hoe elektrische lading zich
+  manifesteert. We bekijken hoe positieve en negatieve lading
+  samenhangen met de atomaire structuur van materie en onderzoeken hoe
+  lading kan worden overgedragen of herverdeeld.
+
+  Daarbij maken we onderscheid tussen geleiders en isolatoren en
+  bestuderen we elektrostatische influentie en aarding.
+
+  Vervolgens onderzoeken we de krachtwerking tussen elektrische
+  ladingen. Met de wet van Coulomb kunnen we de elektrische kracht
+  kwantitatief beschrijven. We analyseren hoe deze kracht afhangt van
+  de grootte van de ladingen en van hun onderlinge afstand.
+
+  De wiskundige vorm van de wet van Coulomb zal opvallend vertrouwd
+  lijken. In het vorige hoofdstuk vonden we voor gravitatie immers ook
+  een inverse-kwadratenwet.
+
+  Ten slotte onderzoeken we situaties waarin meerdere ladingen tegelijk
+  een kracht uitoefenen. Omdat elektrische kracht een vector is, moeten
+  we daarbij krachten vectorieel combineren.
+
+  Zo maken we opnieuw de stap van waarnemen naar verklaren en van
+  verklaren naar voorspellen.
+
+\end{abstract}
+
+\begin{document}
+
+% FVD_CHAPTER_DATA_START
+% Wordt automatisch aangepast vanuit index.tex
+\fvdchapterdata{2}{Krachten op afstand}{2}
+% FVD_CHAPTER_DATA_END
+
+\maketitle
+
+
+% ============================================================
+% VOORKENNIS
+% ============================================================
+
+\begin{voorkennis}
+  \item Je kent de bouw van een atoom met protonen, neutronen en
+        elektronen.
+  \item Je kan krachten als vectoren voorstellen.
+  \item Je kent de drie wetten van Newton.
+  \item Je kan meerdere krachten vectorieel combineren.
+  \item Je kan werken met machten van tien en wetenschappelijke notatie.
+  \item Je kan SI-eenheden en voorvoegsels correct gebruiken.
+  \item Je kent het begrip omgekeerd kwadratisch verband uit het
+        hoofdstuk over gravitatie.
+\end{voorkennis}
+
+
+% ============================================================
+% LEERDOELEN
+% ============================================================
+
+\begin{leerdoelen}
+  \item Je kan positieve, negatieve en neutrale voorwerpen
+        microscopisch verklaren.
+  \item Je kan elektrische lading correct voorstellen met het symbool
+        $q$ of $Q$ en de eenheid coulomb.
+  \item Je kan de elementaire lading gebruiken om het aantal
+        overgedragen elektronen te bepalen.
+  \item Je kan het behoud van elektrische lading toepassen.
+  \item Je kan verklaren hoe voorwerpen elektrisch geladen kunnen
+        worden.
+  \item Je kan geleiders en isolatoren onderscheiden vanuit hun
+        atomaire structuur.
+  \item Je kan elektrostatische influentie verklaren.
+  \item Je kan aantrekking en afstoting tussen geladen voorwerpen
+        analyseren.
+  \item Je kan de wet van Coulomb interpreteren en toepassen.
+  \item Je kan de elektrische kracht vectorieel voorstellen.
+  \item Je kan Newton III toepassen op elektrische wisselwerkingen.
+  \item Je kan analyseren hoe de Coulombkracht verandert wanneer
+        ladingen of afstand veranderen.
+  \item Je kan elektrische krachten van meerdere puntladingen
+        vectorieel combineren.
+  \item Je kan overeenkomsten en verschillen tussen gravitatiekracht
+        en elektrische kracht uitleggen.
+  \item Je kan elektrostatische verschijnselen in technologische en
+        alledaagse situaties verklaren.
+\end{leerdoelen}
+
+
+% ============================================================
+% 1. ELEKTRICITEIT ZONDER STROOM
+% ============================================================
+
+\FVDsection{Elektriciteit zonder elektrische stroom}
+
+Elektriciteit associëren we vaak met stopcontacten, batterijen,
+elektrische schakelingen en toestellen.
+
+Maar elektrische verschijnselen kunnen ook optreden zonder dat er een
+blijvende elektrische stroom door een schakeling loopt.
+
+Denk bijvoorbeeld aan:
+
+\begin{itemize}
+  \item haren die rechtop gaan staan wanneer je een trui uittrekt;
+  \item een plastic kam die papiersnippers aantrekt;
+  \item een ballon die na het wrijven aan een muur blijft hangen;
+  \item een kleine vonk wanneer je een metalen deurklink aanraakt;
+  \item bliksem tijdens een onweersbui.
+\end{itemize}
+
+Deze verschijnselen noemen we \textbf{elektrostatische verschijnselen}.
+
+Ze hebben te maken met elektrische ladingen en met de krachten die
+elektrische ladingen op elkaar uitoefenen.
+
+
+% ============================================================
+% 2. EXPERIMENT
+% ============================================================
+
+\FVDsection{Een eerste experiment}
+
+Neem een kunststofstaaf en breng die in de buurt van enkele kleine
+papiersnippers.
+
+Zonder verdere behandeling gebeurt er meestal weinig.
+
+Wrijf de staaf vervolgens met een geschikte doek en breng ze opnieuw
+in de buurt van de papiersnippers.
+
+De snippers worden nu aangetrokken.
+
+Er is blijkbaar iets veranderd aan de staaf.
+
+
+\begin{opmerking}
+
+We zeggen dat de staaf door het wrijven in een
+\textbf{elektrisch geladen toestand} is gebracht.
+
+Het wrijven heeft geen elektrische lading uit het niets gemaakt.
+Het heeft reeds aanwezige elektrische ladingen verplaatst.
+
+\end{opmerking}
+
+
+Dat onderscheid zal verderop belangrijk worden.
+
+
+% ============================================================
+% 3. TWEE SOORTEN LADING
+% ============================================================
+
+\FVDsection{Twee soorten elektrische lading}
+
+We kunnen het experiment uitbreiden.
+
+Hang een geladen kunststofstaaf vrij op en breng een tweede, op
+dezelfde manier geladen staaf in de buurt.
+
+We stellen vast dat beide staven elkaar afstoten.
+
+Gebruiken we twee verschillende materialen die op geschikte wijze
+geladen werden, dan kunnen de staven elkaar juist aantrekken.
+
+Uit zulke experimenten blijkt dat er twee soorten elektrische lading
+bestaan.
+
+We noemen ze:
+
+\[
+\boxed{\text{positieve lading}}
+\]
+
+en
+
+\[
+\boxed{\text{negatieve lading}}.
+\]
+
+
+Voor de krachtwerking geldt:
+
+\[
+\boxed{
+\text{gelijknamige ladingen stoten elkaar af}
+}
+\]
+
+en
+
+\[
+\boxed{
+\text{tegengestelde ladingen trekken elkaar aan}.
+}
+\]
+
+
+Schematisch:
+
+\[
++\qquad+\qquad\Rightarrow\qquad\text{afstoting}
+\]
+
+\[
+-\qquad-\qquad\Rightarrow\qquad\text{afstoting}
+\]
+
+\[
++\qquad-\qquad\Rightarrow\qquad\text{aantrekking}.
+\]
+
+
+Hier zien we meteen een fundamenteel verschil met gravitatie.
+
+Bij gravitatie tussen gewone massa's vonden we alleen aantrekking.
+
+Bij elektrische interacties zijn zowel aantrekking als afstoting
+mogelijk.
+
+
+% ============================================================
+% 4. WAT IS ELEKTRISCHE LADING?
+% ============================================================
+
+\FVDsection{Elektrische lading}
+
+Elektrische lading is een fundamentele eigenschap van materie.
+
+We stellen elektrische lading meestal voor door:
+
+\[
+q
+\qquad\text{of}\qquad
+Q.
+\]
+
+De SI-eenheid van elektrische lading is de \textbf{coulomb}:
+
+\[
+\boxed{
+[q]=\mathrm C.
+}
+\]
+
+
+Eén coulomb is voor elektrostatische verschijnselen een grote
+hoeveelheid lading. Daarom gebruiken we vaak kleinere eenheden:
+
+\[
+1\,\mathrm{mC}=10^{-3}\,\mathrm C,
+\]
+
+\[
+1\,\mathrm{\mu C}=10^{-6}\,\mathrm C,
+\]
+
+\[
+1\,\mathrm{nC}=10^{-9}\,\mathrm C,
+\]
+
+\[
+1\,\mathrm{pC}=10^{-12}\,\mathrm C.
+\]
+
+
+\begin{oefening}[Voorvoegsels]{\oefB\ESS}
+
+Zet om naar coulomb.
+
+\begin{enumerate}
+  \item $4{,}5\,\mathrm{\mu C}$
+  \item $28\,\mathrm{nC}$
+  \item $0{,}75\,\mathrm{mC}$
+  \item $350\,\mathrm{pC}$
+\end{enumerate}
+
+\end{oefening}
+
+
+% ============================================================
+% 5. ATOMAIRE OORSPRONG
+% ============================================================
+
+\FVDsection{Waar komt elektrische lading vandaan?}
+
+Om elektrostatische verschijnselen te begrijpen moeten we naar de
+atomaire structuur van materie kijken.
+
+Een atoom bestaat uit:
+
+\begin{itemize}
+  \item protonen;
+  \item neutronen;
+  \item elektronen.
+\end{itemize}
+
+Protonen en neutronen bevinden zich in de kern.
+
+Elektronen bevinden zich rondom de kern.
+
+
+De elektrische eigenschappen zijn:
+
+\[
+\begin{array}{c|c}
+\text{deeltje} & \text{elektrische lading}\\
+\hline
+\text{proton} & +e\\
+\text{elektron} & -e\\
+\text{neutron} & 0
+\end{array}
+\]
+
+
+De grootte van de lading van één proton of elektron noemen we de
+\textbf{elementaire lading}:
+
+\[
+\boxed{
+e=1{,}602\times10^{-19}\,\mathrm C.
+}
+\]
+
+Dus:
+
+\[
+q_p=+e
+\]
+
+en
+
+\[
+q_e=-e.
+\]
+
+
+% ============================================================
+% 6. NEUTRAAL, POSITIEF EN NEGATIEF
+% ============================================================
+
+\FVDsection{Wanneer is een voorwerp geladen?}
+
+Een neutraal atoom bevat evenveel protonen als elektronen.
+
+De totale positieve lading is dan even groot als de totale negatieve
+lading.
+
+Daardoor is:
+
+\[
+\boxed{q_\mathrm{netto}=0.}
+\]
+
+
+Een voorwerp wordt negatief geladen wanneer het een overschot aan
+elektronen heeft.
+
+Een voorwerp wordt positief geladen wanneer het een tekort aan
+elektronen heeft.
+
+
+\begin{center}
+\[
+\boxed{
+\begin{array}{c|c}
+\text{toestand} & \text{microscopische betekenis}\\
+\hline
+\text{neutraal}
+&
+N_p=N_e
+\\[1mm]
+\text{positief geladen}
+&
+N_p>N_e
+\\[1mm]
+\text{negatief geladen}
+&
+N_e>N_p
+\end{array}
+}
+\]
+\end{center}
+
+
+\begin{opmerking}
+
+Bij gewone elektrostatische processen zijn het voornamelijk
+\textbf{elektronen} die van het ene voorwerp naar het andere bewegen.
+
+Wanneer een voorwerp positief geladen wordt, betekent dit dus meestal
+niet dat het extra protonen heeft opgenomen.
+
+Het heeft elektronen afgestaan.
+
+\end{opmerking}
+
+
+% ============================================================
+% 7. IONEN
+% ============================================================
+
+\FVDsection{Ionen}
+
+Wanneer een atoom elektronen verliest of opneemt, is het niet langer
+elektrisch neutraal.
+
+Zo'n geladen atoom noemen we een \textbf{ion}.
+
+Een atoom dat één of meerdere elektronen verliest, wordt positief
+geladen.
+
+Een atoom dat één of meerdere elektronen opneemt, wordt negatief
+geladen.
+
+
+\begin{oefening}[Lithium]{\oefB}
+
+Een neutraal lithiumatoom bevat drie protonen.
+
+\begin{enumerate}
+  \item Hoeveel elektronen bevat het neutrale atoom?
+  \item Het atoom staat één elektron af. Wat is het teken van de
+        resulterende lading?
+  \item Hoe groot is die lading?
+\end{enumerate}
+
+\end{oefening}
+
+
+% ============================================================
+% 8. KWANTISATIE VAN LADING
+% ============================================================
+
+\FVDsection{Elektrische lading komt in pakketjes}
+
+Omdat elektronen een vaste elementaire lading hebben, kan de netto
+lading van een voorwerp niet zomaar elke willekeurige waarde aannemen.
+
+Voor een voorwerp dat een netto aantal $n$ elementaire ladingen heeft,
+geldt:
+
+\[
+\boxed{
+q=ne.
+}
+\]
+
+Hierbij is $n$ een geheel getal wanneer we het teken in $n$ opnemen.
+
+Voor de grootte van de lading kunnen we schrijven:
+
+\[
+\boxed{
+|q|=Ne
+}
+\]
+
+met $N$ het aantal overtollige of ontbrekende elektronen.
+
+
+Dit noemen we de \textbf{kwantisatie van elektrische lading}.
+
+
+\begin{voorbeeld}[Hoeveel elektronen?]
+
+Een voorwerp heeft een lading
+
+\[
+q=-3{,}20\times10^{-6}\,\mathrm C.
+\]
+
+Het minteken vertelt ons dat er een overschot aan elektronen is.
+
+Het aantal extra elektronen is:
+
+\[
+N=\frac{|q|}{e}.
+\]
+
+Dus:
+
+\[
+N=
+\frac{3{,}20\times10^{-6}}
+{1{,}602\times10^{-19}}.
+\]
+
+Daaruit volgt ongeveer:
+
+\[
+\boxed{
+N=2{,}00\times10^{13}.
+}
+\]
+
+Een lading van enkele microcoulomb komt dus al overeen met een enorm
+aantal elektronen.
+
+\end{voorbeeld}
+
+
+\begin{oefening}[Een coulomb]{\oefB\ESS}
+
+Hoeveel elektronen zijn nodig om een netto lading met grootte
+
+\[
+1{,}00\,\mathrm C
+\]
+
+te verkrijgen?
+
+\end{oefening}
+
+
+\begin{oefening}[Mogelijke lading?]{\oefU\ESS}
+
+Een leerling beweert dat een klein voorwerp een netto lading heeft van
+
+\[
+q=2{,}50\times10^{-19}\,\mathrm C.
+\]
+
+Onderzoek met het model van gekwantiseerde lading of deze waarde
+mogelijk is.
+
+\end{oefening}
+
+
+% ============================================================
+% 9. BEHOUD VAN LADING
+% ============================================================
+
+\FVDsection{Elektrische lading wordt niet gemaakt door wrijving}
+
+Wanneer we twee materialen over elkaar wrijven, zeggen we soms
+informeel dat we ``lading opwekken''.
+
+Dat is misleidend.
+
+De elektrische lading was al aanwezig in de materie.
+
+Door het wrijven kunnen elektronen van het ene materiaal naar het
+andere worden overgedragen.
+
+Het ene voorwerp krijgt daardoor een elektronenoverschot.
+
+Het andere krijgt een even groot elektronentekort.
+
+
+Voor een geïsoleerd systeem geldt het behoud van elektrische lading:
+
+\[
+\boxed{
+Q_\mathrm{voor}=Q_\mathrm{na}.
+}
+\]
+
+
+\begin{opmerking}
+
+Elektrische lading kan binnen een systeem worden verplaatst of
+gescheiden.
+
+De totale elektrische lading van een geïsoleerd systeem blijft
+behouden.
+
+\end{opmerking}
+
+
+\begin{oefening}[Ladingsoverdracht]{\oefU\ESS}
+
+Twee aanvankelijk neutrale voorwerpen worden tegen elkaar gewreven.
+
+Na afloop heeft voorwerp A een lading
+
+\[
+q_A=-4{,}0\,\mathrm{nC}.
+\]
+
+Neem aan dat het systeem elektrisch geïsoleerd is.
+
+\begin{enumerate}
+  \item Welke lading heeft voorwerp B?
+  \item Welk voorwerp heeft elektronen opgenomen?
+  \item Hoeveel elektronen zijn ongeveer overgedragen?
+\end{enumerate}
+
+\end{oefening}
+
+
+% ============================================================
+% 10. LADEN DOOR WRIJVING
+% ============================================================
+
+\FVDsection{Laden door wrijving}
+
+Bij contact tussen verschillende materialen kunnen elektronen worden
+overgedragen.
+
+Door wrijving wordt het contact tussen de oppervlakken sterk vergroot
+en wordt ladingsscheiding vaak duidelijk waarneembaar.
+
+Wanneer materiaal A elektronen overdraagt aan materiaal B:
+
+\[
+A\longrightarrow A^+,
+\]
+
+\[
+B\longrightarrow B^-.
+\]
+
+Het is dus niet de wrijving zelf die nieuwe lading creëert.
+
+De wrijving helpt bestaande ladingen te scheiden.
+
+
+% ============================================================
+% 11. LADEN DOOR CONTACT
+% ============================================================
+
+\FVDsection{Laden door contact}
+
+Een geladen voorwerp kan ook lading overdragen door rechtstreeks
+contact met een ander voorwerp.
+
+Stel dat een negatief geladen metalen bol een neutrale metalen bol
+aanraakt.
+
+Omdat elektronen zich in metaal gemakkelijk kunnen verplaatsen, kunnen
+een aantal overtollige elektronen zich over beide bollen verdelen.
+
+Na het contact kunnen beide bollen negatief geladen zijn.
+
+De totale lading blijft daarbij behouden.
+
+
+% ============================================================
+% 12. GELEIDERS EN ISOLATOREN
+% ============================================================
+
+\FVDsection{Waarom beweegt lading in sommige materialen gemakkelijker?}
+
+Niet elk materiaal reageert op dezelfde manier op elektrische lading.
+
+We onderscheiden twee belangrijke groepen.
+
+
+\begin{definitie}[Geleider]
+
+Een \textbf{geleider} is een materiaal waarin elektrische ladingen zich
+gemakkelijk door het materiaal kunnen verplaatsen.
+
+\end{definitie}
+
+
+\begin{definitie}[Isolator]
+
+Een \textbf{isolator} is een materiaal waarin elektrische ladingen zich
+niet gemakkelijk over grote afstanden door het materiaal kunnen
+verplaatsen.
+
+\end{definitie}
+
+
+Metalen zijn goede geleiders.
+
+Voorbeelden van isolatoren zijn onder andere glas, droge lucht en veel
+kunststoffen.
+
+
+% ============================================================
+% 13. ATOMAIRE VERKLARING GELEIDER
+% ============================================================
+
+\FVDsection{Een microscopisch model van een metalen geleider}
+
+In een metaal zijn sommige buitenste elektronen relatief zwak aan één
+specifiek atoom gebonden.
+
+We kunnen een metaal vereenvoudigd voorstellen als een rooster van
+positieve ionen waarin elektronen zich relatief vrij kunnen bewegen.
+
+Deze mobiele elektronen noemen we vaak \textbf{vrije elektronen} of
+\textbf{geleidingselektronen}.
+
+Wanneer ergens op een metalen voorwerp een overschot aan elektronen
+wordt aangebracht, kunnen deze elektronen zich over het voorwerp
+herverdelen.
+
+Bij een isolator zijn de relevante elektronen veel sterker lokaal
+gebonden.
+
+Een aangebrachte lading blijft daardoor veel meer in de buurt van de
+plaats waar ze werd aangebracht.
+
+
+\begin{oefening}[Geleider of isolator?]{\oefB\ESS}
+
+Leg voor elk van de volgende uitspraken uit of ze past bij een
+geleider of een isolator.
+
+\begin{enumerate}
+  \item Overtollige elektronen kunnen zich gemakkelijk herverdelen.
+  \item Een aangebrachte lading blijft grotendeels lokaal.
+  \item Het materiaal bevat mobiele ladingsdragers.
+  \item Het materiaal wordt gebruikt om een elektrische draad van de
+        omgeving af te schermen.
+\end{enumerate}
+
+\end{oefening}
+
+
+% ============================================================
+% 14. INFLUENTIE
+% ============================================================
+
+\FVDsection{Ladingen beïnvloeden elkaar zonder contact}
+
+Breng een positief geladen voorwerp in de buurt van een neutrale
+metalen geleider.
+
+De twee voorwerpen raken elkaar niet.
+
+Toch gebeurt er iets in de geleider.
+
+De vrije elektronen worden door de positieve externe lading
+aangetrokken.
+
+Ze verplaatsen zich naar de zijde die het dichtst bij de positieve
+lading ligt.
+
+Aan die kant ontstaat een elektronenoverschot.
+
+Aan de andere kant ontstaat een elektronentekort.
+
+De geleider als geheel kan nog steeds neutraal zijn, maar de ladingen
+zijn niet langer gelijkmatig verdeeld.
+
+Dit noemen we \textbf{elektrostatische influentie}.
+
+
+\begin{definitie}[Elektrostatische influentie]
+
+Elektrostatische influentie is de herverdeling van elektrische lading
+in een voorwerp onder invloed van een nabijgelegen elektrische lading,
+zonder rechtstreeks contact met die externe lading.
+
+\end{definitie}
+
+
+% ============================================================
+% 15. AANTREKKING VAN EEN NEUTRAAL VOORWERP
+% ============================================================
+
+\FVDsection{Kan een geladen voorwerp een neutraal voorwerp aantrekken?}
+
+Ja.
+
+Dat is een belangrijke nuance.
+
+``Neutraal'' betekent:
+
+\[
+Q_\mathrm{netto}=0.
+\]
+
+Het betekent niet dat het voorwerp geen positieve en negatieve
+ladingen bevat.
+
+Wanneer een geladen voorwerp in de buurt komt, kunnen de ladingen in
+het neutrale voorwerp enigszins verschuiven of polariseren.
+
+De tegengestelde lading bevindt zich gemiddeld dichter bij de externe
+lading dan de gelijknamige lading.
+
+Omdat elektrische kracht sterk afhangt van de afstand, kan daardoor
+een netto aantrekkingskracht ontstaan.
+
+
+\begin{opmerking}
+
+Uit het feit dat twee voorwerpen elkaar aantrekken, mag je dus niet
+automatisch besluiten dat ze tegengesteld geladen zijn.
+
+Eén van beide kan elektrisch neutraal zijn.
+
+Afstoting is in dat opzicht een sterkere aanwijzing voor de tekens van
+de ladingen.
+
+\end{opmerking}
+
+
+\begin{oefening}[Een geladen kam]{\oefU\ESS}
+
+Een negatief geladen plastic kam trekt neutrale papiersnippers aan.
+
+Een leerling zegt:
+
+``De papiersnippers moeten dus positief geladen zijn.''
+
+Analyseer deze uitspraak en geef een betere verklaring.
+
+\end{oefening}
+
+
+% ============================================================
+% 16. AARDING
+% ============================================================
+
+\FVDsection{Aarding}
+
+De aarde is zo groot dat ze in veel elektrostatische situaties als een
+enorm reservoir van elektrische lading kan worden beschouwd.
+
+Wanneer een geleider elektrisch met de aarde verbonden wordt, kunnen
+elektronen van of naar de aarde bewegen.
+
+Dit noemen we \textbf{aarding}.
+
+Aarding kan daardoor worden gebruikt om ongewenste ladingsophoping te
+verminderen of om een voorwerp via influentie te laden.
+
+
+% ============================================================
+% 17. LADEN DOOR INFLUENTIE
+% ============================================================
+
+\FVDsection{Laden zonder aanraken}
+
+Een geleider kan zelfs een netto lading krijgen zonder rechtstreeks
+contact met het geladen voorwerp dat de ladingsscheiding veroorzaakt.
+
+Een mogelijke procedure is:
+
+\begin{enumerate}
+  \item breng een geladen voorwerp dicht bij een neutrale geleider;
+  \item de vrije elektronen in de geleider herverdelen zich;
+  \item verbind de geleider tijdelijk met de aarde;
+  \item elektronen kunnen naar of vanuit de aarde bewegen;
+  \item verbreek eerst de aardverbinding;
+  \item verwijder daarna het externe geladen voorwerp.
+\end{enumerate}
+
+De geleider kan dan netto geladen achterblijven.
+
+Dit is laden door \textbf{influentialading}.
+
+
+% ============================================================
+% 18. STEM: STATISCHE ELEKTRICITEIT
+% ============================================================
+
+\FVDsection{STEM-toepassing: wanneer wordt statische elektriciteit gevaarlijk?}
+
+Een kleine elektrostatische vonk is thuis meestal alleen vervelend.
+
+In een industriële omgeving kan dezelfde fysica echter ernstige
+gevolgen hebben.
+
+Bij het verpompen van brandstoffen, het transporteren van poeders of
+het bewegen van kunststofbanden kunnen door contact en wrijving
+ladingen gescheiden worden.
+
+Wanneer die lading niet voldoende kan wegstromen, kan een groot
+potentiaalverschil ontstaan.
+
+Een ontlading kan dan een vonk veroorzaken.
+
+In een omgeving met brandbare dampen of fijn stof kan zo'n vonk een
+ontsteking veroorzaken.
+
+Daarom worden in industriële installaties onder andere:
+
+\begin{itemize}
+  \item geleidende verbindingen gebruikt;
+  \item metalen onderdelen met elkaar verbonden;
+  \item installaties geaard;
+  \item ongewenste ladingsophopingen vermeden.
+\end{itemize}
+
+
+Dit is een mooi voorbeeld van hoe een fundamenteel fysisch concept
+rechtstreeks samenhangt met veiligheid en engineering.
+
+
+% ============================================================
+% 19. VAN KWALITATIEF NAAR KWANTITATIEF
+% ============================================================
+
+\FVDsection{Hoe groot is de elektrische kracht?}
+
+Tot nu toe konden we kwalitatief voorspellen of twee ladingen elkaar
+aantrekken of afstoten.
+
+Maar fysica wil meer.
+
+We willen ook voorspellen:
+
+\begin{center}
+\textit{hoe groot is de kracht?}
+\end{center}
+
+Daarvoor gebruiken we de \textbf{wet van Coulomb}.
+
+
+% ============================================================
+% 20. PUNTLADINGMODEL
+% ============================================================
+
+\FVDsection{Het puntladingmodel}
+
+Net zoals we bij gravitatie massa's soms als puntmassa's modelleerden,
+kunnen we geladen voorwerpen soms als \textbf{puntladingen}
+beschouwen.
+
+Een puntlading is een ideaal model waarbij we de afmetingen van het
+geladen voorwerp verwaarlozen ten opzichte van de afstanden in het
+probleem.
+
+Dat model is niet altijd geldig.
+
+Voor uitgebreide geladen voorwerpen met een complexe ladingsverdeling
+kan de situatie veel ingewikkelder worden.
+
+
+% ============================================================
+% 21. WET VAN COULOMB
+% ============================================================
+
+\FVDsection{De wet van Coulomb}
+
+Beschouw twee puntladingen $Q_1$ en $Q_2$ op onderlinge afstand $r$.
+
+De grootte van de elektrische kracht tussen beide ladingen wordt
+gegeven door:
+
+
+\begin{definitie}[Wet van Coulomb]
+
+\[
+\boxed{
+F_e
+=
+k\frac{|Q_1Q_2|}{r^2}.
+}
+\]
+
+Hierin is:
+
+\[
+F_e=\text{grootte van de elektrische kracht},
+\]
+
+\[
+Q_1,Q_2=\text{elektrische ladingen},
+\]
+
+\[
+r=\text{afstand tussen de puntladingen},
+\]
+
+en in vacuüm:
+
+\[
+\boxed{
+k\approx8{,}99\times10^9\,
+\frac{\mathrm{N\,m^2}}{\mathrm{C^2}}.
+}
+\]
+
+\end{definitie}
+
+
+De absolute waarde in
+
+\[
+|Q_1Q_2|
+\]
+
+zorgt ervoor dat de formule een positieve \textbf{grootte} voor de
+kracht oplevert.
+
+Het teken van de ladingen gebruiken we afzonderlijk om te bepalen of
+de kracht aantrekkend of afstotend is.
+
+
+% ============================================================
+% 22. DE KRACHT ALS VECTOR
+% ============================================================
+
+\FVDsection{De elektrische kracht is een vector}
+
+De wet van Coulomb geeft de grootte van de kracht.
+
+Maar kracht is een vector.
+
+We moeten dus ook richting en zin bepalen.
+
+Voor twee puntladingen ligt de richting van de elektrische kracht langs
+de verbindingslijn tussen beide ladingen.
+
+
+Bij gelijknamige ladingen:
+
+\[
++\quad\longleftarrow
+\qquad
+\longrightarrow\quad+
+\]
+
+of:
+
+\[
+-\quad\longleftarrow
+\qquad
+\longrightarrow\quad-
+\]
+
+De ladingen stoten elkaar af.
+
+
+Bij tegengestelde ladingen:
+
+\[
++\quad\longrightarrow
+\qquad
+\longleftarrow\quad-
+\]
+
+De ladingen trekken elkaar aan.
+
+
+Gebruik daarom bij elk Coulombprobleem twee afzonderlijke vragen:
+
+\[
+\boxed{\text{Hoe groot is de kracht?}}
+\]
+
+en:
+
+\[
+\boxed{\text{In welke richting en zin werkt de kracht?}}
+\]
+
+
+% ============================================================
+% 23. NEWTON III
+% ============================================================
+
+\FVDsection{Welke lading oefent de grootste kracht uit?}
+
+Stel:
+
+\[
+Q_1=+1\,\mathrm{\mu C}
+\]
+
+en:
+
+\[
+Q_2=-10\,\mathrm{\mu C}.
+\]
+
+Omdat $|Q_2|$ tienmaal groter is dan $|Q_1|$, zou je kunnen denken dat
+$Q_2$ een grotere kracht op $Q_1$ uitoefent.
+
+Dat is fout.
+
+Volgens Newton III:
+
+\[
+\boxed{
+\vec F_{1\rightarrow2}
+=
+-\vec F_{2\rightarrow1}.
+}
+\]
+
+De krachten hebben:
+
+\begin{itemize}
+  \item dezelfde grootte;
+  \item dezelfde richting;
+  \item tegengestelde zin;
+  \item een verschillend aangrijpingspunt.
+\end{itemize}
+
+
+De wet van Coulomb bevestigt dat:
+
+\[
+F_e
+=
+k\frac{|Q_1Q_2|}{r^2}.
+\]
+
+Het product
+
+\[
+|Q_1Q_2|
+\]
+
+is voor beide krachten hetzelfde.
+
+
+\begin{oefening}[Newton III]{\oefU\ESS}
+
+Twee puntladingen zijn:
+
+\[
+Q_1=+2{,}0\,\mathrm{\mu C}
+\]
+
+en:
+
+\[
+Q_2=-8{,}0\,\mathrm{\mu C}.
+\]
+
+Een leerling zegt:
+
+``De lading van $-8{,}0\,\mathrm{\mu C}$ trekt viermaal harder aan de
+andere lading.''
+
+Analyseer de uitspraak.
+
+\end{oefening}
+
+
+% ============================================================
+% 24. EENHEDENCONTROLE
+% ============================================================
+
+\FVDsection{Eenheden controleren}
+
+Uit
+
+\[
+F_e=k\frac{|Q_1Q_2|}{r^2}
+\]
+
+volgt:
+
+\[
+[F_e]
+=
+\frac{\mathrm{N\,m^2}}{\mathrm{C^2}}
+\frac{\mathrm{C^2}}{\mathrm{m^2}}.
+\]
+
+Dus:
+
+\[
+\boxed{
+[F_e]=\mathrm N.
+}
+\]
+
+Ook hier vormen eenheden een krachtig controle-instrument.
+
+
+% ============================================================
+% 25. VOORBEELD COULOMB
+% ============================================================
+
+\FVDsection{Een eerste Coulombberekening}
+
+\begin{voorbeeld}[Twee tegengestelde ladingen]
+
+Twee puntladingen zijn:
+
+\[
+Q_1=+2{,}0\,\mathrm{\mu C}
+\]
+
+en:
+
+\[
+Q_2=-3{,}0\,\mathrm{\mu C}.
+\]
+
+De afstand tussen beide bedraagt:
+
+\[
+r=0{,}20\,\mathrm m.
+\]
+
+We zoeken eerst de grootte van de elektrische kracht:
+
+\[
+F_e
+=
+k\frac{|Q_1Q_2|}{r^2}.
+\]
+
+Zet de ladingen om naar coulomb:
+
+\[
+Q_1=2{,}0\times10^{-6}\,\mathrm C,
+\]
+
+\[
+Q_2=-3{,}0\times10^{-6}\,\mathrm C.
+\]
+
+Invullen geeft:
+
+\[
+F_e
+=
+8{,}99\times10^9
+\frac{
+(2{,}0\times10^{-6})
+(3{,}0\times10^{-6})
+}{
+(0{,}20)^2
+}.
+\]
+
+Dus:
+
+\[
+\boxed{
+F_e\approx1{,}35\,\mathrm N.
+}
+\]
+
+Omdat de ladingen tegengesteld zijn, is de kracht
+\textbf{aantrekkend}.
+
+De krachtvector op elke lading wijst dus naar de andere lading.
+
+\end{voorbeeld}
+
+
+% ============================================================
+% 26. SYSTEMATISCHE AANPAK
+% ============================================================
+
+\FVDsection{Een Coulombprobleem systematisch oplossen}
+
+Bij eenvoudige oefeningen lijkt rechtstreeks invullen aantrekkelijk.
+
+Bij meerdere ladingen werkt dat niet meer betrouwbaar.
+
+Gebruik daarom steeds dezelfde aanpak:
+
+\[
+\boxed{
+\begin{array}{c}
+\text{maak een schets}
+\\
+\downarrow
+\\
+\text{noteer gegeven en gevraagd}
+\\
+\downarrow
+\\
+\text{zet alle grootheden om naar SI-eenheden}
+\\
+\downarrow
+\\
+\text{bepaal aantrekking of afstoting}
+\\
+\downarrow
+\\
+\text{teken de krachtvector(en)}
+\\
+\downarrow
+\\
+\text{bereken de grootte(n)}
+\\
+\downarrow
+\\
+\text{combineer vectorieel indien nodig}
+\\
+\downarrow
+\\
+\text{controleer eenheid en grootteorde}
+\\
+\downarrow
+\\
+\text{interpreteer het antwoord}
+\end{array}
+}
+\]
+
+
+Deze volgorde voorkomt een veel voorkomende fout:
+
+\begin{center}
+eerst rekenen en pas daarna proberen te bedenken in welke richting de
+kracht werkt.
+\end{center}
+
+
+Bij vectorproblemen moet de fysische analyse juist \textbf{voor} de
+berekening gebeuren.
+
+
+% ============================================================
+% 27. INVLOED VAN DE LADINGEN
+% ============================================================
+
+\FVDsection{Hoe beïnvloedt de grootte van de lading de kracht?}
+
+Uit:
+
+\[
+F_e
+=
+k\frac{|Q_1Q_2|}{r^2}
+\]
+
+volgt bij constante afstand:
+
+\[
+\boxed{
+F_e\propto |Q_1Q_2|.
+}
+\]
+
+Wanneer één lading verdubbelt:
+
+\[
+Q_1\rightarrow2Q_1,
+\]
+
+dan:
+
+\[
+F_e\rightarrow2F_e.
+\]
+
+Wanneer beide ladingen verdubbelen:
+
+\[
+Q_1\rightarrow2Q_1,
+\qquad
+Q_2\rightarrow2Q_2,
+\]
+
+dan:
+
+\[
+F_e\rightarrow4F_e.
+\]
+
+
+\begin{oefening}[Redeneren met verhoudingen]{\oefB\ESS}
+
+Twee puntladingen oefenen een kracht met grootte $F$ op elkaar uit.
+
+Bepaal de nieuwe kracht wanneer:
+
+\begin{enumerate}
+  \item $|Q_1|$ driemaal zo groot wordt;
+  \item beide ladingen tweemaal zo groot worden;
+  \item $|Q_1|$ halveert en $|Q_2|$ verdubbelt;
+  \item beide ladingen gehalveerd worden.
+\end{enumerate}
+
+Bereken niet opnieuw met de constante $k$.
+
+\end{oefening}
+
+
+% ============================================================
+% 28. INVERSE-KWADRATENWET
+% ============================================================
+
+\FVDsection{De invloed van de afstand}
+
+Uit de wet van Coulomb volgt:
+
+\[
+\boxed{
+F_e\propto\frac{1}{r^2}.
+}
+\]
+
+Ook de elektrische kracht volgt dus een
+\textbf{inverse-kwadratenwet}.
+
+Als:
+
+\[
+r\rightarrow2r,
+\]
+
+dan:
+
+\[
+F_e\rightarrow\frac14F_e.
+\]
+
+Als:
+
+\[
+r\rightarrow3r,
+\]
+
+dan:
+
+\[
+F_e\rightarrow\frac19F_e.
+\]
+
+Als:
+
+\[
+r\rightarrow\frac r2,
+\]
+
+dan:
+
+\[
+F_e\rightarrow4F_e.
+\]
+
+
+\begin{center}
+\[
+\boxed{
+\begin{array}{c|c}
+\text{afstand} & \text{elektrische kracht}\\
+\hline
+r & F_e\\
+2r & F_e/4\\
+3r & F_e/9\\
+4r & F_e/16\\
+r/2 & 4F_e
+\end{array}
+}
+\]
+\end{center}
+
+
+\begin{oefening}[Afstand]{\oefB\ESS}
+
+Twee ladingen oefenen een elektrische kracht $F$ op elkaar uit.
+
+Bepaal de nieuwe kracht wanneer de afstand:
+
+\begin{enumerate}
+  \item tweemaal zo groot wordt;
+  \item vijfmaal zo groot wordt;
+  \item driemaal zo klein wordt.
+\end{enumerate}
+
+\end{oefening}
+
+
+% ============================================================
+% 29. FUNCTIE EN GRAFIEK
+% ============================================================
+
+\FVDsection{De Coulombkracht als functie}
+
+Voor twee vaste ladingen kunnen we schrijven:
+
+\[
+F_e(r)=\frac{C}{r^2},
+\]
+
+waarbij:
+
+\[
+C=k|Q_1Q_2|.
+\]
+
+De elektrische kracht neemt dus niet lineair af met de afstand.
+
+Dat is belangrijk.
+
+Een verdubbeling van de afstand betekent niet een halvering van de
+kracht, maar:
+
+\[
+\boxed{
+F_e(2r)=\frac14F_e(r).
+}
+\]
+
+
+Wiskundig geldt:
+
+\[
+\lim_{r\rightarrow\infty}F_e(r)=0.
+\]
+
+De kracht wordt dus steeds kleiner wanneer de afstand toeneemt.
+
+
+\begin{oefening}[Een verkeerde grafiek]{\oefU\ESS}
+
+Een leerling tekent de Coulombkracht als functie van de afstand als
+een dalende rechte.
+
+Analyseer waarom die grafiek niet overeenkomt met:
+
+\[
+F_e(r)=\frac{C}{r^2}.
+\]
+
+Geef minstens twee eigenschappen waaraan een correcte grafiek moet
+voldoen.
+
+\end{oefening}
+
+
+% ============================================================
+% 30. COMBINATIE VAN VERANDERINGEN
+% ============================================================
+
+\FVDsection{Meerdere veranderingen tegelijk}
+
+Bij analyseren moeten we verschillende effecten kunnen combineren.
+
+Stel bijvoorbeeld:
+
+\[
+Q_1'=2Q_1,
+\]
+
+\[
+Q_2'=3Q_2,
+\]
+
+en:
+
+\[
+r'=2r.
+\]
+
+Dan:
+
+\[
+F_e'
+=
+k\frac{|(2Q_1)(3Q_2)|}{(2r)^2}.
+\]
+
+Dus:
+
+\[
+F_e'
+=
+\frac{6}{4}
+k\frac{|Q_1Q_2|}{r^2}.
+\]
+
+Daarom:
+
+\[
+\boxed{
+F_e'=\frac32F_e.
+}
+\]
+
+
+\begin{oefening}[Analyse zonder getallen]{\oefU\ESS}
+
+Twee ladingen oefenen aanvankelijk een kracht $F$ op elkaar uit.
+
+Daarna wordt:
+
+\[
+Q_1'=4Q_1,
+\qquad
+Q_2'=\frac12Q_2,
+\qquad
+r'=3r.
+\]
+
+Bepaal:
+
+\[
+\frac{F_e'}{F_e}.
+\]
+
+Werk met verhoudingen en gebruik geen numerieke waarde voor $k$.
+
+\end{oefening}
+
+
+% ============================================================
+% 31. OMGEKEERDE PROBLEMEN
+% ============================================================
+
+\FVDsection{Niet altijd is de kracht gevraagd}
+
+De wet van Coulomb kan ook gebruikt worden wanneer een lading of een
+afstand onbekend is.
+
+Uit:
+
+\[
+F_e=k\frac{|Q_1Q_2|}{r^2}
+\]
+
+kunnen we bijvoorbeeld $r$ bepalen:
+
+\[
+r^2=
+k\frac{|Q_1Q_2|}{F_e}.
+\]
+
+Dus:
+
+\[
+\boxed{
+r=
+\sqrt{
+k\frac{|Q_1Q_2|}{F_e}
+}.
+}
+\]
+
+
+Wanneer beide ladingen dezelfde grootte $Q$ hebben:
+
+\[
+F_e=k\frac{Q^2}{r^2},
+\]
+
+zodat:
+
+\[
+\boxed{
+Q=r\sqrt{\frac{F_e}{k}}.
+}
+\]
+
+
+\begin{oefening}[Twee gelijke ladingen]{\oefB\ESS}
+
+Twee gelijke ladingen bevinden zich op een afstand van
+
+\[
+10{,}0\,\mathrm{cm}
+\]
+
+en stoten elkaar af met een kracht van:
+
+\[
+0{,}100\,\mathrm N.
+\]
+
+Bereken de grootte van elke lading.
+
+\end{oefening}
+
+
+% ============================================================
+% 32. PROTON EN ELEKTRON
+% ============================================================
+
+\FVDsection{Elektrische kracht op atomaire schaal}
+
+Beschouw een proton en een elektron.
+
+Hun ladingen zijn:
+
+\[
+q_p=+e
+\]
+
+en:
+
+\[
+q_e=-e.
+\]
+
+De grootte van de elektrische kracht tussen beide is:
+
+\[
+F_e
+=
+k\frac{e^2}{r^2}.
+\]
+
+Op atomaire afstanden kan deze kracht, ondanks de zeer kleine
+ladingen, fysisch zeer belangrijk zijn.
+
+Dat komt doordat de afstand $r$ eveneens extreem klein is.
+
+
+\begin{oefening}[Proton en elektron]{\oefB}
+
+Een proton en elektron bevinden zich op een onderlinge afstand:
+
+\[
+r=5{,}0\times10^{-11}\,\mathrm m.
+\]
+
+Bereken de grootte van de elektrische kracht tussen beide.
+
+Bepaal ook of de kracht aantrekkend of afstotend is.
+
+\end{oefening}
+
+
+% ============================================================
+% 33. VERGELIJKING MET GRAVITATIE
+% ============================================================
+
+\FVDsection{Coulomb en Newton: een opvallende overeenkomst}
+
+In het vorige hoofdstuk vonden we:
+
+\[
+\boxed{
+F_g
+=
+G\frac{m_1m_2}{r^2}.
+}
+\]
+
+Nu vinden we:
+
+\[
+\boxed{
+F_e
+=
+k\frac{|Q_1Q_2|}{r^2}.
+}
+\]
+
+De wiskundige structuur is opvallend gelijkaardig.
+
+
+\begin{center}
+\[
+\boxed{
+\begin{array}{c|c}
+\text{gravitatie} & \text{elektrische interactie}\\
+\hline
+m & Q\\[1mm]
+G & k\\[1mm]
+F_g=G\dfrac{m_1m_2}{r^2}
+&
+F_e=k\dfrac{|Q_1Q_2|}{r^2}\\[3mm]
+\text{inverse-kwadratenwet}
+&
+\text{inverse-kwadratenwet}\\[1mm]
+\text{aantrekkend}
+&
+\text{aantrekkend of afstotend}
+\end{array}
+}
+\]
+\end{center}
+
+
+Er is echter een fundamenteel verschil.
+
+Voor gewone materie kennen we positieve massa, waardoor gravitatie
+aantrekkend is.
+
+Elektrische lading bestaat in twee tekens.
+
+Daarom kan de elektrische wisselwerking aantrekken of afstoten.
+
+
+% ============================================================
+% 34. HOEVEEL STERKER?
+% ============================================================
+
+\FVDsection{Elektriciteit versus gravitatie op deeltjesniveau}
+
+We kunnen voor een proton en een elektron zowel de elektrische als de
+gravitationele kracht bekijken.
+
+Elektrisch:
+
+\[
+F_e
+=
+k\frac{e^2}{r^2}.
+\]
+
+Gravitationeel:
+
+\[
+F_g
+=
+G\frac{m_pm_e}{r^2}.
+\]
+
+Neem de verhouding:
+
+\[
+\frac{F_e}{F_g}
+=
+\frac{
+k\dfrac{e^2}{r^2}
+}{
+G\dfrac{m_pm_e}{r^2}
+}.
+\]
+
+De afstand valt weg:
+
+\[
+\boxed{
+\frac{F_e}{F_g}
+=
+\frac{ke^2}{Gm_pm_e}.
+}
+\]
+
+De verhouding is dus onafhankelijk van de onderlinge afstand.
+
+
+\begin{oefening}[Twee fundamentele krachten]{\oefG}
+
+Gebruik:
+
+\[
+k=8{,}99\times10^9\,
+\frac{\mathrm{N\,m^2}}{\mathrm{C^2}},
+\]
+
+\[
+e=1{,}602\times10^{-19}\,\mathrm C,
+\]
+
+\[
+G=6{,}674\times10^{-11}\,
+\frac{\mathrm{N\,m^2}}{\mathrm{kg^2}},
+\]
+
+\[
+m_p=1{,}673\times10^{-27}\,\mathrm{kg},
+\]
+
+\[
+m_e=9{,}109\times10^{-31}\,\mathrm{kg}.
+\]
+
+Bereken:
+
+\[
+\frac{F_e}{F_g}.
+\]
+
+Interpreteer de grootteorde van je resultaat.
+
+Leg ook uit waarom de afstand niet nodig is om deze verhouding te
+berekenen.
+
+\end{oefening}
+
+
+% ============================================================
+% 35. MEERDERE LADINGEN
+% ============================================================
+
+\FVDsection{Wat als er meer dan twee ladingen zijn?}
+
+De wet van Coulomb beschrijft de kracht tussen twee puntladingen.
+
+Maar een lading kan tegelijk krachten ondervinden van meerdere andere
+ladingen.
+
+Elke bronlading veroorzaakt afzonderlijk een elektrische kracht.
+
+De resulterende elektrische kracht vinden we door de afzonderlijke
+krachtvectoren op te tellen:
+
+\[
+\boxed{
+\vec F_\mathrm{res}
+=
+\vec F_1+\vec F_2+\vec F_3+\cdots
+}
+\]
+
+Dit noemen we het \textbf{superpositiebeginsel}.
+
+
+% ============================================================
+% 36. DRIE LADINGEN OP EEN RECHTE
+% ============================================================
+
+\FVDsection{Superpositie op één rechte}
+
+Beschouw drie ladingen op één rechte:
+
+\[
+Q_1
+\qquad
+Q_2
+\qquad
+Q_3.
+\]
+
+We willen bijvoorbeeld de resulterende kracht op $Q_3$ bepalen.
+
+Dan onderzoeken we afzonderlijk:
+
+\[
+\vec F_{1\rightarrow3}
+\]
+
+en:
+
+\[
+\vec F_{2\rightarrow3}.
+\]
+
+Daarna:
+
+\[
+\boxed{
+\vec F_{\mathrm{res},3}
+=
+\vec F_{1\rightarrow3}
++
+\vec F_{2\rightarrow3}.
+}
+\]
+
+
+Het belangrijkste deel van de oplossing gebeurt vóór de berekening:
+
+\begin{enumerate}
+  \item bepaal voor elke interactie aantrekking of afstoting;
+  \item teken elke krachtvector op de juiste lading;
+  \item bepaal voor elke kracht de correcte afstand;
+  \item bereken pas daarna de groottes;
+  \item tel de krachten vectorieel op.
+\end{enumerate}
+
+
+% ============================================================
+% 37. VOORBEELD DRIE LADINGEN
+% ============================================================
+
+\begin{voorbeeld}[Drie ladingen op één rechte]
+
+Drie puntladingen liggen op één rechte.
+
+\[
+Q_1=-5{,}00\,\mathrm{\mu C},
+\]
+
+\[
+Q_2=+10{,}0\,\mathrm{\mu C},
+\]
+
+\[
+Q_3=-5{,}00\,\mathrm{\mu C}.
+\]
+
+De afstanden zijn:
+
+\[
+r_{12}=5{,}00\,\mathrm{cm},
+\]
+
+\[
+r_{23}=2{,}50\,\mathrm{cm}.
+\]
+
+We zoeken de resulterende kracht op $Q_3$.
+
+Eerst bepalen we:
+
+\[
+r_{13}=r_{12}+r_{23}.
+\]
+
+Dus:
+
+\[
+r_{13}=7{,}50\,\mathrm{cm}.
+\]
+
+Omdat $Q_1$ en $Q_3$ beide negatief zijn, stoot $Q_1$ de lading
+$Q_3$ af.
+
+Omdat $Q_2$ positief is en $Q_3$ negatief, trekt $Q_2$ de lading
+$Q_3$ aan.
+
+De twee krachten hebben dus tegengestelde zin.
+
+We berekenen afzonderlijk:
+
+\[
+F_{1\rightarrow3}
+=
+k\frac{|Q_1Q_3|}{r_{13}^2}
+\]
+
+en:
+
+\[
+F_{2\rightarrow3}
+=
+k\frac{|Q_2Q_3|}{r_{23}^2}.
+\]
+
+Daarna combineren we beide krachten met hun correcte zin.
+
+Het teken van de ladingen wordt dus niet gebruikt om een negatieve
+kracht uit de formule te laten verschijnen.
+
+De tekens worden gebruikt om de \textbf{richting en zin} van de
+krachtvectoren te bepalen.
+
+\end{voorbeeld}
+
+
+% ============================================================
+% 38. TWEE DIMENSIES
+% ============================================================
+
+\FVDsection{Elektrische krachten in twee dimensies}
+
+Wanneer de ladingen niet op één rechte liggen, volstaat optellen of
+aftrekken van de groottes niet.
+
+We moeten de krachten werkelijk als vectoren behandelen.
+
+Stel dat:
+
+\[
+\vec F_1
+\]
+
+en:
+
+\[
+\vec F_2
+\]
+
+onder een hoek op elkaar staan.
+
+Dan geldt nog steeds:
+
+\[
+\vec F_\mathrm{res}
+=
+\vec F_1+\vec F_2.
+\]
+
+We kunnen de krachten ontbinden in componenten:
+
+\[
+F_x=\sum_i F_{i,x},
+\]
+
+\[
+F_y=\sum_i F_{i,y}.
+\]
+
+Daaruit:
+
+\[
+\boxed{
+F_\mathrm{res}
+=
+\sqrt{F_x^2+F_y^2}.
+}
+\]
+
+De richting volgt bijvoorbeeld uit:
+
+\[
+\boxed{
+\tan\theta=\frac{F_y}{F_x},
+}
+\]
+
+waarbij we bij het bepalen van de hoek steeds rekening houden met het
+juiste kwadrant.
+
+
+% ============================================================
+% 39. SYMMETRIE
+% ============================================================
+
+\FVDsection{Gebruik symmetrie voordat je rekent}
+
+Bij sommige configuraties kunnen we veel werk besparen door eerst naar
+de geometrie te kijken.
+
+Stel dat twee gelijke ladingen symmetrisch ten opzichte van een derde
+lading liggen.
+
+Dan kunnen bepaalde componenten van de krachten elkaar opheffen,
+terwijl andere componenten elkaar versterken.
+
+Een goede fysicus begint daarom niet altijd met een formule.
+
+Soms is de eerste vraag:
+
+\begin{center}
+\textit{Welke symmetrie zit in deze situatie?}
+\end{center}
+
+
+\begin{oefening}[Symmetrische configuratie]{\oefU\ESS}
+
+Twee gelijke positieve ladingen $Q$ bevinden zich symmetrisch links en
+rechts van een positieve testlading $q$.
+
+De afstanden tot $q$ zijn gelijk.
+
+\begin{enumerate}
+  \item Teken beide krachtvectoren op $q$.
+  \item Vergelijk hun groottes.
+  \item Bepaal de resulterende kracht.
+  \item Leg uit waarom hiervoor geen numerieke berekening nodig is.
+\end{enumerate}
+
+\end{oefening}
+
+
+% ============================================================
+% 40. OEFENINGENBUNDEL
+% ============================================================
+
+\FVDsection{Oefeningen}
+
+
+% ------------------------------------------------------------
+% BASIS
+% ------------------------------------------------------------
+
+\FVDsubsection{Basis}
+
+
+\begin{oefening}[Soorten lading]{\oefB}
+
+Bepaal voor elke combinatie of er aantrekking of afstoting optreedt.
+
+\begin{enumerate}
+  \item $Q_1>0$ en $Q_2>0$
+  \item $Q_1<0$ en $Q_2<0$
+  \item $Q_1>0$ en $Q_2<0$
+  \item $Q_1<0$ en $Q_2>0$
+\end{enumerate}
+
+\end{oefening}
+
+
+\begin{oefening}[Elektronenoverschot]{\oefB\ESS}
+
+Een voorwerp heeft een lading:
+
+\[
+q=-8{,}01\times10^{-9}\,\mathrm C.
+\]
+
+\begin{enumerate}
+  \item Heeft het voorwerp een tekort of overschot aan elektronen?
+  \item Bereken hoeveel elektronen daarmee overeenkomen.
+\end{enumerate}
+
+\end{oefening}
+
+
+\begin{oefening}[Elektronentekort]{\oefB\ESS}
+
+Een metalen bol heeft een positieve lading:
+
+\[
+q=+4{,}80\,\mathrm{nC}.
+\]
+
+\begin{enumerate}
+  \item Heeft de bol elektronen opgenomen of afgestaan?
+  \item Bereken het aantal ontbrekende elektronen.
+\end{enumerate}
+
+\end{oefening}
+
+
+\begin{oefening}[Coulombkracht]{\oefB\ESS}
+
+Twee puntladingen:
+
+\[
+Q_1=+4{,}0\,\mathrm{\mu C}
+\]
+
+en:
+
+\[
+Q_2=-6{,}0\,\mathrm{\mu C}
+\]
+
+bevinden zich op een afstand:
+
+\[
+r=0{,}30\,\mathrm m.
+\]
+
+\begin{enumerate}
+  \item Bereken de grootte van de elektrische kracht.
+  \item Is de kracht aantrekkend of afstotend?
+  \item Teken beide krachtvectoren.
+\end{enumerate}
+
+\end{oefening}
+
+
+\begin{oefening}[Afstand verdriedubbelen]{\oefB\ESS}
+
+Twee ladingen oefenen een elektrische kracht met grootte $F$ op elkaar
+uit.
+
+De afstand wordt verdrievoudigd terwijl de ladingen gelijk blijven.
+
+Bepaal de nieuwe kracht in functie van $F$.
+
+\end{oefening}
+
+
+\begin{oefening}[Onbekende lading]{\oefB\ESS}
+
+Twee identieke puntladingen bevinden zich op:
+
+\[
+r=1{,}00\,\mathrm m
+\]
+
+van elkaar en oefenen een kracht uit van:
+
+\[
+F_e=1{,}00\,\mathrm N.
+\]
+
+Bereken de grootte van elke lading.
+
+\end{oefening}
+
+
+% ------------------------------------------------------------
+% VERDIEPING
+% ------------------------------------------------------------
+
+\FVDsubsection{Verdieping}
+
+
+\begin{oefening}[Wat kan je besluiten?]{\oefU\ESS}
+
+Twee kleine voorwerpen trekken elkaar aan.
+
+Een leerling besluit:
+
+``De ene lading is positief en de andere negatief.''
+
+Is die conclusie noodzakelijk juist?
+
+Bespreek minstens twee mogelijke situaties die tot aantrekking kunnen
+leiden.
+
+\end{oefening}
+
+
+\begin{oefening}[Veranderde situatie]{\oefU\ESS}
+
+Twee puntladingen oefenen een kracht $F$ op elkaar uit.
+
+Vervolgens:
+
+\[
+Q_1'=3Q_1,
+\]
+
+\[
+Q_2'=2Q_2,
+\]
+
+en:
+
+\[
+r'=\frac32r.
+\]
+
+Bepaal:
+
+\[
+\frac{F_e'}{F_e}.
+\]
+
+\end{oefening}
+
+
+\begin{oefening}[Van kracht naar afstand]{\oefU\ESS}
+
+Twee puntladingen hebben groottes:
+
+\[
+|Q_1|=2{,}0\,\mathrm{\mu C}
+\]
+
+en:
+
+\[
+|Q_2|=5{,}0\,\mathrm{\mu C}.
+\]
+
+De grootte van de kracht tussen beide is:
+
+\[
+F_e=0{,}50\,\mathrm N.
+\]
+
+Bereken de onderlinge afstand.
+
+Kan je uit deze gegevens alleen bepalen of de kracht aantrekkend of
+afstotend is? Verklaar.
+
+\end{oefening}
+
+
+\begin{oefening}[Drie ladingen op een rechte]{\oefU\ESS}
+
+Drie puntladingen liggen op de $x$-as.
+
+\[
+Q_1=+2{,}0\,\mathrm{\mu C},
+\]
+
+\[
+Q_2=-3{,}0\,\mathrm{\mu C},
+\]
+
+\[
+Q_3=+4{,}0\,\mathrm{\mu C}.
+\]
+
+Hun posities zijn:
+
+\[
+x_1=0,
+\qquad
+x_2=0{,}20\,\mathrm m,
+\qquad
+x_3=0{,}50\,\mathrm m.
+\]
+
+Bepaal de resulterende elektrische kracht op $Q_2$.
+
+Werk systematisch:
+
+\begin{enumerate}
+  \item maak een schets;
+  \item teken de afzonderlijke krachtvectoren;
+  \item bepaal de correcte afstanden;
+  \item bereken de groottes;
+  \item bepaal de resulterende kracht met richting en zin.
+\end{enumerate}
+
+\end{oefening}
+
+
+\begin{oefening}[Fout zoeken]{\oefU\ESS}
+
+Een leerling berekent:
+
+\[
+F_e
+=
+8{,}99\times10^9
+\frac{
+(-2{,}0\times10^{-6})
+(+5{,}0\times10^{-6})
+}{
+(0{,}10)^2
+}
+\]
+
+en vindt:
+
+\[
+F_e=-8{,}99\,\mathrm N.
+\]
+
+Daarna schrijft de leerling:
+
+``De elektrische kracht heeft dus een negatieve grootte.''
+
+Analyseer de redenering.
+
+Geef aan:
+
+\begin{enumerate}
+  \item wat de fout is;
+  \item hoe de grootte correct wordt berekend;
+  \item welke informatie de tekens van de ladingen wel geven.
+\end{enumerate}
+
+\end{oefening}
+
+
+% ------------------------------------------------------------
+% GEVORDERD
+% ------------------------------------------------------------
+
+\FVDsubsection{Gevorderd}
+
+
+\begin{oefening}[Evenwicht tussen twee ladingen]{\oefG}
+
+Twee positieve puntladingen:
+
+\[
+Q_1=Q
+\]
+
+en:
+
+\[
+Q_2=4Q
+\]
+
+bevinden zich op afstand $d$ van elkaar.
+
+We zoeken op de verbindingslijn een punt waar een positieve
+testlading $q$ een resulterende elektrische kracht nul zou
+ondervinden.
+
+Noem de afstand van dit punt tot $Q_1$ gelijk aan $x$.
+
+\begin{enumerate}
+  \item Leg uit waarom het gezochte punt tussen beide ladingen moet
+        liggen.
+  \item Teken de twee krachtvectoren op $q$.
+  \item Stel een vergelijking op voor $x$.
+  \item Los de vergelijking op.
+  \item Leg fysisch uit waarom het punt dichter bij de kleinste
+        bronlading ligt.
+\end{enumerate}
+
+\end{oefening}
+
+
+\begin{oefening}[Een driehoek van ladingen]{\oefG}
+
+Drie puntladingen bevinden zich op de hoekpunten van een rechthoekige
+driehoek.
+
+\[
+Q_1=+2{,}0\,\mathrm{\mu C},
+\qquad
+Q_2=+3{,}0\,\mathrm{\mu C},
+\qquad
+Q_3=-4{,}0\,\mathrm{\mu C}.
+\]
+
+De rechthoekszijden hebben lengtes:
+
+\[
+0{,}30\,\mathrm m
+\]
+
+en:
+
+\[
+0{,}40\,\mathrm m.
+\]
+
+Kies zelf een duidelijke plaatsing van de ladingen op een
+coördinatenstelsel.
+
+Bepaal vervolgens de resulterende elektrische kracht op $Q_3$.
+
+Je oplossing moet minstens bevatten:
+
+\begin{itemize}
+  \item een schets;
+  \item de afzonderlijke krachtvectoren;
+  \item de gebruikte afstanden;
+  \item de componenten;
+  \item de grootte van de resulterende kracht;
+  \item de richting en zin.
+\end{itemize}
+
+\end{oefening}
+
+
+\begin{oefening}[Ontwerp een configuratie]{\oefG}
+
+Je beschikt over drie puntladingen:
+
+\[
++Q,\qquad +Q,\qquad -q.
+\]
+
+Ontwerp een symmetrische configuratie waarbij de resulterende
+elektrische kracht op de negatieve lading langs één vooraf gekozen as
+ligt.
+
+\begin{enumerate}
+  \item Teken je configuratie.
+  \item Verklaar welke krachtcomponenten elkaar opheffen.
+  \item Verklaar welke componenten elkaar versterken.
+  \item Stel een formule op voor de grootte van de resulterende kracht.
+\end{enumerate}
+
+\end{oefening}
+
+
+\begin{oefening}[Modelkritiek]{\oefG}
+
+De wet van Coulomb wordt in dit hoofdstuk gebruikt voor puntladingen.
+
+Een leerling wil dezelfde formule rechtstreeks gebruiken voor twee
+grote, onregelmatig gevormde geladen voorwerpen die zeer dicht bij
+elkaar staan.
+
+Beoordeel deze aanpak.
+
+Bespreek:
+
+\begin{enumerate}
+  \item welke aanname achter het puntladingmodel zit;
+  \item waarom die aanname hier problematisch kan zijn;
+  \item welke informatie over de ladingsverdeling relevant zou kunnen
+        worden;
+  \item waarom een model bruikbaar kan zijn zonder universeel geldig te
+        zijn.
+\end{enumerate}
+
+\end{oefening}
+
+
+% ============================================================
+% 41. ICT-ONDERZOEK
+% ============================================================
+
+\FVDsection{Onderzoeken met ICT}
+
+Gebruik een grafische rekenmachine, GeoGebra, Desmos of een
+spreadsheet om de functie:
+
+\[
+F_e(r)
+=
+k\frac{|Q_1Q_2|}{r^2}
+\]
+
+te onderzoeken.
+
+Neem bijvoorbeeld:
+
+\[
+Q_1=2{,}0\,\mathrm{\mu C}
+\]
+
+en:
+
+\[
+Q_2=3{,}0\,\mathrm{\mu C}.
+\]
+
+Onderzoek voor verschillende waarden van $r$:
+
+\begin{enumerate}
+  \item hoe de kracht verandert wanneer de afstand verdubbelt;
+  \item hoe de kracht verandert wanneer de afstand verdrievoudigt;
+  \item bij welke afstand de kracht nog een kwart van haar
+        oorspronkelijke waarde bedraagt;
+  \item waarom een lineair model niet geschikt is;
+  \item hoe je uit de grafiek het inverse-kwadratenkarakter kunt
+        herkennen.
+\end{enumerate}
+
+
+Herhaal eventueel voor andere waarden van $Q_1$ en $Q_2$.
+
+Onderzoek welke eigenschappen van de grafiek veranderen en welke
+hetzelfde blijven.
+
+
+% ============================================================
+% 42. MISCONCEPTIES
+% ============================================================
+
+\FVDsection{Veelvoorkomende denkfouten}
+
+\begin{itemize}
+
+  \item \textbf{``Wrijving maakt elektrische lading.''}
+
+  Nee. Bij gewone elektrostatische processen worden bestaande
+  elektrische ladingen gescheiden of verplaatst.
+
+  \item \textbf{``Een positief geladen voorwerp heeft extra protonen
+  gekregen.''}
+
+  Meestal niet. In gewone vaste stoffen ontstaat positieve lading
+  doorgaans door een tekort aan elektronen.
+
+  \item \textbf{``Een neutraal voorwerp bevat geen lading.''}
+
+  Nee. Het bevat positieve en negatieve ladingen, maar de netto lading
+  is nul.
+
+  \item \textbf{``Als twee voorwerpen elkaar aantrekken, moeten ze
+  tegengesteld geladen zijn.''}
+
+  Niet noodzakelijk. Een geladen voorwerp kan door ladingsherverdeling
+  of polarisatie ook een neutraal voorwerp aantrekken.
+
+  \item \textbf{``Een grotere lading oefent een grotere kracht uit op
+  een kleinere lading dan omgekeerd.''}
+
+  Nee. Volgens Newton III zijn de twee interactiekrachten even groot en
+  tegengesteld gericht.
+
+  \item \textbf{``Als de afstand verdubbelt, halveert de kracht.''}
+
+  Nee. Volgens de inverse-kwadratenwet wordt de kracht viermaal kleiner.
+
+  \item \textbf{``Een negatief antwoord uit de Coulombformule betekent
+  een negatieve krachtgrootte.''}
+
+  Nee. De grootte van een kracht is niet negatief. Gebruik
+  $|Q_1Q_2|$ voor de grootte en bepaal richting en zin afzonderlijk.
+
+  \item \textbf{``Bij drie ladingen tel je gewoon alle
+  krachtgroottes op.''}
+
+  Nee. Krachten zijn vectoren en moeten vectorieel worden gecombineerd.
+
+\end{itemize}
+
+
+% ============================================================
+% 43. SAMENVATTING
+% ============================================================
+
+\FVDsection{Samenvatting}
+
+
+\FVDsubsection{Elektrische lading}
+
+Elektrische lading wordt voorgesteld door:
+
+\[
+q
+\qquad\text{of}\qquad
+Q.
+\]
+
+De SI-eenheid is:
+
+\[
+\boxed{
+[q]=\mathrm C.
+}
+\]
+
+
+Er bestaan positieve en negatieve elektrische ladingen.
+
+Gelijknamige ladingen stoten elkaar af.
+
+Tegengestelde ladingen trekken elkaar aan.
+
+
+\FVDsubsection{Elementaire lading}
+
+\[
+\boxed{
+e=1{,}602\times10^{-19}\,\mathrm C.
+}
+\]
+
+Voor de grootte van een gekwantiseerde lading:
+
+\[
+\boxed{
+|q|=Ne.
+}
+\]
+
+
+\FVDsubsection{Ladingsbehoud}
+
+Voor een elektrisch geïsoleerd systeem:
+
+\[
+\boxed{
+Q_\mathrm{voor}=Q_\mathrm{na}.
+}
+\]
+
+
+\FVDsubsection{Geleiders en isolatoren}
+
+In een geleider kunnen relevante ladingsdragers zich gemakkelijk
+verplaatsen.
+
+In een isolator blijven ladingen veel sterker lokaal gebonden.
+
+
+\FVDsubsection{Influente werking}
+
+Een geladen voorwerp kan zonder contact een herverdeling van lading in
+een ander voorwerp veroorzaken.
+
+Dit noemen we elektrostatische influentie.
+
+
+\FVDsubsection{Wet van Coulomb}
+
+Voor twee puntladingen:
+
+\[
+\boxed{
+F_e
+=
+k\frac{|Q_1Q_2|}{r^2}.
+}
+\]
+
+met:
+
+\[
+\boxed{
+k\approx8{,}99\times10^9\,
+\frac{\mathrm{N\,m^2}}{\mathrm{C^2}}.
+}
+\]
+
+
+\FVDsubsection{Afhankelijkheden}
+
+\[
+\boxed{
+F_e\propto |Q_1Q_2|
+}
+\]
+
+en:
+
+\[
+\boxed{
+F_e\propto\frac1{r^2}.
+}
+\]
+
+
+\FVDsubsection{Newton III}
+
+\[
+\boxed{
+\vec F_{1\rightarrow2}
+=
+-\vec F_{2\rightarrow1}.
+}
+\]
+
+
+\FVDsubsection{Superpositie}
+
+Wanneer meerdere ladingen krachten uitoefenen:
+
+\[
+\boxed{
+\vec F_\mathrm{res}
+=
+\sum_i\vec F_i.
+}
+\]
+
+
+% ============================================================
+% 44. WAT MOET JE ZEKER BEHEERSEN?
+% ============================================================
+
+\FVDsection{Wat moet je zeker beheersen?}
+
+Om dit onderdeel op het vereiste niveau te beheersen, volstaat het
+niet dat je alleen getallen in de wet van Coulomb kunt invullen.
+
+Je moet zeker kunnen:
+
+\begin{itemize}
+
+  \item positieve, negatieve en neutrale lading microscopisch
+        verklaren;
+
+  \item werken met coulomb, microcoulomb en nanocoulomb;
+
+  \item de elementaire lading gebruiken;
+
+  \item het behoud van elektrische lading toepassen;
+
+  \item verklaren wat er gebeurt bij laden door wrijving en contact;
+
+  \item het verschil tussen geleiders en isolatoren verklaren vanuit
+        de beweeglijkheid van elektrische ladingen;
+
+  \item elektrostatische influentie verklaren;
+
+  \item uitleggen waarom een geladen voorwerp een neutraal voorwerp kan
+        aantrekken;
+
+  \item aantrekking en afstoting correct bepalen;
+
+  \item de wet van Coulomb toepassen:
+
+        \[
+        F_e=k\frac{|Q_1Q_2|}{r^2};
+        \]
+
+  \item elektrische krachtvectoren correct tekenen;
+
+  \item Newton III toepassen op elektrische interacties;
+
+  \item analyseren hoe de kracht verandert wanneer $Q_1$, $Q_2$ of
+        $r$ verandert;
+
+  \item het inverse-kwadratenverband herkennen in een formule, tabel of
+        grafiek;
+
+  \item een onbekende lading of afstand uit de wet van Coulomb bepalen;
+
+  \item in situaties met meerdere ladingen de afzonderlijke
+        krachtvectoren bepalen en vectorieel combineren;
+
+  \item overeenkomsten en verschillen tussen gravitatie en elektrische
+        kracht uitleggen;
+
+  \item je resultaat controleren op eenheid, grootteorde, richting en
+        fysische betekenis.
+
+\end{itemize}
+
+De oefeningen met de essentieel-markering vormen samen de minimale
+oefenset die je moet beheersen.
+
+Let daarbij op: sommige essentiële oefeningen behoren tot
+\oefU. Dat is bewust zo. Het vereiste beheersingsniveau vraagt meer dan
+alleen standaardberekeningen.
+
+
+% ============================================================
+% 45. VOORUITBLIK
+% ============================================================
+
+\FVDsection{Vooruitblik: van kracht naar veld}
+
+We hebben nu twee fundamentele wisselwerkingen onderzocht.
+
+Bij gravitatie:
+
+\[
+F_g
+=
+G\frac{Mm}{r^2}.
+\]
+
+Bij elektriciteit:
+
+\[
+F_e
+=
+k\frac{|Qq|}{r^2}.
+\]
+
+Bij gravitatie hebben we nog een belangrijke stap gezet.
+
+We beschreven niet alleen de kracht tussen twee massa's.
+
+We zeiden dat een massa $M$ de ruimte rondom zich beïnvloedt door een
+gravitatieveld:
+
+\[
+M
+\longrightarrow
+\vec g
+\longrightarrow
+\vec F_g.
+\]
+
+Daarbij:
+
+\[
+\vec F_g=m\vec g.
+\]
+
+Dat roept een voor de hand liggende vraag op.
+
+Kunnen we hetzelfde doen bij elektrische lading?
+
+Kunnen we de ruimte rond een bronlading $Q$ beschrijven zonder eerst
+een tweede lading te kiezen?
+
+Het antwoord is ja.
+
+We zullen een nieuwe vectoriële grootheid invoeren:
+
+\[
+\boxed{\vec E}
+\]
+
+het \textbf{elektrische veld}.
+
+Dan ontstaat de parallel:
+
+\[
+\boxed{
+\begin{array}{ccc}
+M & \longrightarrow & \vec g
+\\
+Q & \longrightarrow & \vec E
+\end{array}
+}
+\]
+
+en:
+
+\[
+\boxed{
+\begin{array}{ccc}
+\vec F_g &=&m\vec g
+\\[1mm]
+\vec F_e&=&q\vec E.
+\end{array}
+}
+\]
+
+In het volgende hoofdstuk onderzoeken we hoe zo'n elektrisch veld eruit
+ziet, hoe verschillende ladingen samen een veld vormen en hoe we met
+veldlijnen de onzichtbare elektrische invloed in de ruimte zichtbaar
+kunnen maken.
+
+\end{document}

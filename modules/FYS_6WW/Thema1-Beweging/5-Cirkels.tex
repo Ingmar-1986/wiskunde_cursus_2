@@ -1,0 +1,1578 @@
+\documentclass{ximera}
+
+\input{../../../preamble.tex}
+\input{../../../Opmaak.tex}
+\addPrintStyle{../../..}
+
+\title{In cirkels bewegen}
+\author{Ingmar Herreman}
+
+\begin{abstract}
+Een voorwerp kan versnellen zonder sneller of trager te gaan. Dat klinkt
+vreemd, maar precies dat gebeurt bij een eenparige cirkelbeweging:
+de grootte van de snelheid blijft constant, terwijl de richting van de
+snelheidsvector voortdurend verandert.
+
+In dit hoofdstuk onderzoeken we periodieke bewegingen en bouwen we de
+eenparige cirkelbeweging systematisch op. We verbinden periode en
+frequentie met hoekpositie en hoeksnelheid en onderzoeken hoe de
+baansnelheid afhangt van de straal en de hoeksnelheid.
+
+Daarna staat de centrale vraag van het hoofdstuk centraal: waarom is er
+bij een eenparige cirkelbeweging toch een versnelling? Via de verandering
+van de snelheidsvector komen we tot de centripetale versnelling. We
+onderzoeken de verbanden tussen straal, periode, hoeksnelheid,
+baansnelheid en centripetale versnelling zowel theoretisch als
+experimenteel.
+
+De cirkelbeweging vormt zo een belangrijke schakel tussen kinematica en
+dynamica. In het volgende hoofdstuk onderzoeken we welke resulterende
+kracht nodig is om zo'n versnelling te veroorzaken.
+\end{abstract}
+
+\begin{document}
+
+% FVD_CHAPTER_DATA_START
+% Automatisch gegenereerd uit index.tex.
+% Niet handmatig aanpassen.
+\fvdchapterdata{1}{Beweging en kracht}{5}
+% FVD_CHAPTER_DATA_END
+
+\maketitle
+
+% ============================================================
+% 1 VOORKENNIS EN LEERDOELEN
+% ============================================================
+
+\begin{voorkennis}
+  \item Je kan een beweging beschrijven met positie, snelheid en versnelling.
+  \item Je weet dat snelheid en versnelling vectoriële grootheden zijn.
+  \item Je kan vectoren tekenen, vergelijken en ontbinden.
+  \item Je kent de omtrek van een cirkel: $2\pi r$.
+  \item Je kan werken met graden en radialen.
+  \item Je kan recht evenredige, omgekeerd evenredige en kwadratische
+        verbanden herkennen en interpreteren.
+\end{voorkennis}
+
+\begin{leerdoelen}
+  \item Je kan periode en frequentie van een periodieke beweging bepalen
+        en interpreteren.
+  \item Je kan hoekverplaatsing en hoeksnelheid gebruiken om een rotatie
+        te beschrijven.
+  \item Je kan het verband tussen $T$, $f$ en $\omega$ analyseren en
+        kwantificeren.
+  \item Je kan het onderscheid tussen hoeksnelheid en baansnelheid uitleggen.
+  \item Je kan het verband $v=r\omega$ analyseren en toepassen.
+  \item Je kan positie- en snelheidsvectoren bij een eenparige
+        cirkelbeweging tekenen en interpreteren.
+  \item Je kan verklaren waarom een eenparige cirkelbeweging een versnelde
+        beweging is.
+  \item Je kan de richting en grootte van de centripetale versnelling
+        bepalen.
+  \item Je kan de verbanden tussen $r$, $T$, $f$, $\omega$, $v$ en $a_c$
+        combineren om nieuwe situaties te analyseren.
+  \item Je kan experimentele gegevens over een cirkelbeweging verwerken,
+        verbanden onderzoeken en conclusies formuleren.
+\end{leerdoelen}
+
+
+% ============================================================
+% 2 OPENING
+% ============================================================
+
+\FVDsection{Versnellen zonder sneller te gaan?}
+
+Een auto rijdt met constante snelheid door een bocht. Een satelliet
+beweegt bijna met constante snelheid rond de aarde. Een punt op de rand
+van een draaiende schijf legt elke seconde evenveel afstand af.
+
+Zijn deze bewegingen onversneld?
+
+Bij een rechtlijnige beweging zou een constante snelheid betekenen dat
+de snelheidsvector constant is. In een cirkel verandert echter
+voortdurend de \emph{richting} van de snelheid.
+
+\begin{oefening}[Voorspel vóór je rekent]{\oefB\ESS}
+
+Een fietser rijdt met een constante snelheidsgrootte van
+$6,0\,\mathrm{m/s}$ door een cirkelvormige bocht.
+
+\begin{question}
+Is de grootte van zijn snelheid constant?
+\end{question}
+
+\begin{question}
+Is zijn snelheidsvector constant? Motiveer.
+\end{question}
+
+\begin{question}
+Verwacht je dat zijn versnelling nul is? Noteer eerst je intuïtieve
+antwoord.
+\end{question}
+
+\begin{question}
+In welke richting zou een eventuele versnelling volgens jou wijzen?
+\end{question}
+
+Bewaar je antwoorden. We keren er later naar terug.
+
+\end{oefening}
+
+
+% ============================================================
+% 3 PERIODIEKE BEWEGING
+% ============================================================
+
+\FVDsection{Periodieke bewegingen}
+
+Veel bewegingen herhalen zich: een wiel draait rond, een ventilator
+roteert, de aarde draait om haar as en een punt op een draaimolen keert
+steeds opnieuw naar dezelfde positie terug.
+
+\begin{definitie}
+Een \textbf{periodieke beweging} is een beweging die zich na gelijke
+tijdsintervallen herhaalt.
+\end{definitie}
+
+Eén volledige herhaling noemen we een \textbf{cyclus}.
+
+
+\FVDsubsection{Periode}
+
+De \textbf{periode} $T$ is de tijdsduur van één volledige cyclus.
+
+\[
+\boxed{T=\frac{\Delta t}{N}}
+\]
+
+waarbij $N$ het aantal volledige cycli is.
+
+De SI-eenheid is de seconde:
+
+\[
+[T]=\mathrm{s}.
+\]
+
+
+\FVDsubsection{Frequentie}
+
+De \textbf{frequentie} $f$ is het aantal volledige cycli per seconde:
+
+\[
+\boxed{f=\frac{N}{\Delta t}}.
+\]
+
+De SI-eenheid is hertz:
+
+\[
+[f]=\mathrm{Hz}=\mathrm{s^{-1}}.
+\]
+
+Omdat periode en frequentie elkaars inverse zijn:
+
+\[
+\boxed{f=\frac1T}
+\qquad\text{en}\qquad
+\boxed{T=\frac1f}.
+\]
+
+
+\begin{voorbeeld}[Een draaiend wiel]
+
+Een wiel maakt $45$ omwentelingen in $30,0\,\mathrm{s}$.
+
+\[
+f=\frac{45}{30,0}=1,50\,\mathrm{Hz}.
+\]
+
+De periode is:
+
+\[
+T=\frac1{1,50}=0,667\,\mathrm{s}.
+\]
+
+Elke omwenteling duurt dus ongeveer $0,667\,\mathrm{s}$.
+
+\end{voorbeeld}
+
+
+\begin{oefening}[Periode en frequentie]{\oefB\ESS}
+
+Een laboratoriumrotor maakt $1800$ omwentelingen per minuut.
+
+\begin{question}
+Bepaal de frequentie in hertz.
+\end{question}
+
+\begin{question}
+Bepaal de periode.
+\end{question}
+
+\begin{question}
+Hoeveel omwentelingen maakt de rotor in $2,50\,\mathrm{s}$?
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 4 EENPARIGE CIRKELBEWEGING
+% ============================================================
+
+\FVDsection{De eenparige cirkelbeweging}
+
+\begin{definitie}
+Bij een \textbf{eenparige cirkelbeweging} (ECB) beweegt een punt langs
+een cirkelbaan met een constante \emph{grootte} van de baansnelheid.
+\end{definitie}
+
+Het woord \emph{eenparig} betekent hier dus niet dat de
+snelheidsvector constant is.
+
+\[
+|\vec v|=\text{constant},
+\]
+
+maar de richting van $\vec v$ verandert voortdurend.
+
+Dat onderscheid wordt de kern van dit hoofdstuk.
+
+
+\FVDsubsection{Hoekpositie}
+
+De positie op de cirkel kunnen we beschrijven met een hoek $\theta$.
+
+Voor een booglengte $s$ op een cirkel met straal $r$ geldt, als
+$\theta$ in radialen wordt uitgedrukt:
+
+\[
+\boxed{s=r\theta}.
+\]
+
+Eén volledige omwenteling komt overeen met:
+
+\[
+\boxed{2\pi\ \mathrm{rad}=360^\circ}.
+\]
+
+
+\FVDsubsection{Hoeksnelheid}
+
+De gemiddelde hoeksnelheid is:
+
+\[
+\omega_{\mathrm{gem}}
+=
+\frac{\Delta\theta}{\Delta t}.
+\]
+
+Bij een ECB is de hoeksnelheid constant:
+
+\[
+\boxed{\omega=\frac{\Delta\theta}{\Delta t}}.
+\]
+
+De eenheid is:
+
+\[
+[\omega]=\mathrm{rad/s}.
+\]
+
+Tijdens één periode verandert de hoek met $2\pi$ rad. Daarom:
+
+\[
+\omega
+=
+\frac{2\pi}{T}.
+\]
+
+Met $f=1/T$ volgt ook:
+
+\[
+\boxed{
+\omega=\frac{2\pi}{T}=2\pi f.
+}
+\]
+
+
+\begin{oefening}[Van periode naar hoeksnelheid]{\oefB\ESS}
+
+Een draaimolen maakt één omwenteling in $8,0\,\mathrm{s}$.
+
+\begin{question}
+Bepaal $T$.
+\end{question}
+
+\begin{question}
+Bepaal $f$.
+\end{question}
+
+\begin{question}
+Bepaal $\omega$.
+\end{question}
+
+\begin{question}
+Welke hoek, in radialen en in graden, doorloopt de draaimolen in
+$3,0\,\mathrm{s}$?
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 5 BAANSNELHEID
+% ============================================================
+
+\FVDsection{Van hoeksnelheid naar baansnelheid}
+
+Tijdens één volledige omwenteling legt een punt op afstand $r$ van het
+middelpunt een afstand
+
+\[
+2\pi r
+\]
+
+af in een tijd $T$.
+
+Daarom is de grootte van de baansnelheid:
+
+\[
+v=\frac{2\pi r}{T}.
+\]
+
+Omdat
+
+\[
+\omega=\frac{2\pi}{T},
+\]
+
+vinden we:
+
+\[
+\boxed{v=r\omega}.
+\]
+
+Dit is een fundamenteel verband.
+
+
+\FVDsubsection{Zelfde hoeksnelheid, andere baansnelheid}
+
+Denk aan twee punten op dezelfde stijve draaiende schijf.
+
+Beide punten maken in dezelfde tijd dezelfde hoekverplaatsing. Ze
+hebben dus dezelfde $\omega$, $T$ en $f$.
+
+Het punt verder van het middelpunt legt in diezelfde tijd echter een
+grotere booglengte af. Daarom is zijn baansnelheid groter.
+
+Bij constante $\omega$:
+
+\[
+\boxed{v\sim r}.
+\]
+
+
+\begin{oefening}[Twee punten op één schijf]{\oefU\ESS}
+
+Een schijf draait met constante hoeksnelheid. Punt A ligt op
+$r_A=0,10\,\mathrm{m}$ van het middelpunt en punt B op
+$r_B=0,30\,\mathrm{m}$.
+
+\begin{question}
+Vergelijk $T_A$ en $T_B$.
+\end{question}
+
+\begin{question}
+Vergelijk $f_A$ en $f_B$.
+\end{question}
+
+\begin{question}
+Vergelijk $\omega_A$ en $\omega_B$.
+\end{question}
+
+\begin{question}
+Bepaal de verhouding $\dfrac{v_B}{v_A}$ zonder een concrete
+hoeksnelheid te kiezen.
+\end{question}
+
+\begin{question}
+Leg het resultaat uit vanuit de afgelegde booglengte.
+\end{question}
+
+\end{oefening}
+
+
+\begin{voorbeeld}[Een punt op een draaiende schijf]
+
+Een schijf draait met $f=2,50\,\mathrm{Hz}$. Een punt bevindt zich
+$0,20\,\mathrm{m}$ van het middelpunt.
+
+Eerst:
+
+\[
+\omega=2\pi f
+=2\pi\cdot2,50
+\approx15,7\,\mathrm{rad/s}.
+\]
+
+Daarna:
+
+\[
+v=r\omega
+=0,20\cdot15,7
+\approx3,14\,\mathrm{m/s}.
+\]
+
+\end{voorbeeld}
+
+
+\begin{oefening}[CD-speler]{\oefB}
+
+Een punt op een draaiende schijf bevindt zich op
+$5,0\,\mathrm{cm}$ van het middelpunt. De schijf draait met
+$300\,\mathrm{omw/min}$.
+
+\begin{question}
+Zet de rotatiesnelheid om naar hertz.
+\end{question}
+
+\begin{question}
+Bepaal de hoeksnelheid.
+\end{question}
+
+\begin{question}
+Bepaal de baansnelheid van het punt.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 6 POSITIEVECTOR EN SNELHEIDSVECTOR
+% ============================================================
+
+\FVDsection{De vectoriële beschrijving}
+
+We kiezen het middelpunt van de cirkel als oorsprong.
+
+De positievector $\vec r$ wijst van het middelpunt naar het bewegende
+punt. Zijn grootte is constant:
+
+\[
+|\vec r|=r.
+\]
+
+Maar zijn richting verandert voortdurend.
+
+
+\FVDsubsection{De snelheidsvector}
+
+De snelheidsvector is op elk punt \textbf{raaklijnig aan de cirkel}.
+
+Daarom geldt:
+
+\[
+\boxed{\vec v\perp\vec r}.
+\]
+
+Bij een ECB blijft:
+
+\[
+|\vec v|=v
+\]
+
+constant, maar $\vec v$ zelf niet.
+
+\begin{opmerking}
+Een constante \emph{snelheidsgrootte} is niet hetzelfde als een
+constante \emph{snelheidsvector}. Een vector is pas constant wanneer
+zowel zijn grootte als zijn richting constant zijn.
+\end{opmerking}
+
+
+\begin{oefening}[Vectoren tekenen]{\oefU\ESS}
+
+Teken een cirkel en kies vier punten die telkens een kwart omwenteling
+van elkaar verwijderd zijn.
+
+\begin{question}
+Teken in elk punt de positievector $\vec r$.
+\end{question}
+
+\begin{question}
+Teken in elk punt de snelheidsvector $\vec v$ voor een beweging tegen
+de wijzers van de klok in.
+\end{question}
+
+\begin{question}
+Wat kan je zeggen over de grootte van de vier snelheidsvectoren?
+\end{question}
+
+\begin{question}
+Wat kan je zeggen over hun richting?
+\end{question}
+
+\begin{question}
+Waarom kan de versnelling dus niet nul zijn?
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 7 WAAROM VERSNELLING?
+% ============================================================
+
+\FVDsection{Waarom is een ECB een versnelde beweging?}
+
+Versnelling beschrijft de verandering van de snelheidsvector:
+
+\[
+\vec a
+=
+\frac{\Delta\vec v}{\Delta t}
+\]
+
+voor een gemiddeld tijdsinterval, en ogenblikkelijk als limiet voor
+$\Delta t\to0$.
+
+Bij een ECB verandert de grootte van $\vec v$ niet, maar wel zijn
+richting. Daardoor is:
+
+\[
+\boxed{\vec a\neq\vec 0}.
+\]
+
+
+\FVDsubsection{De verandering van de snelheidsvector}
+
+Beschouw twee nabije punten op de cirkel. De snelheidsvectoren
+$\vec v_1$ en $\vec v_2$ hebben dezelfde grootte maar een iets andere
+richting.
+
+De verandering is:
+
+\[
+\Delta\vec v
+=
+\vec v_2-\vec v_1.
+\]
+
+Wanneer de twee punten steeds dichter bij elkaar komen, wijst
+$\Delta\vec v$ steeds meer naar het middelpunt van de cirkel.
+
+In de limiet geldt daarom:
+
+\[
+\boxed{
+\vec a_c\ \text{wijst naar het middelpunt}.
+}
+\]
+
+We noemen dit de \textbf{centripetale versnelling}.
+
+``Centripetaal'' betekent letterlijk: naar het centrum gericht.
+
+
+\begin{oefening}[Misconceptie: constante snelheid]{\oefU\ESS}
+
+Een leerling zegt:
+
+\begin{quote}
+``De auto rijdt met constante snelheid door de ronde bocht. Volgens
+$a=\Delta v/\Delta t$ is zijn versnelling dus nul.''
+\end{quote}
+
+Analyseer deze redenering.
+
+\begin{question}
+Welk onderscheid maakt de leerling niet?
+\end{question}
+
+\begin{question}
+Welke eigenschap van $\vec v$ verandert?
+\end{question}
+
+\begin{question}
+Teken twee snelheidsvectoren en construeer grafisch
+$\Delta\vec v$.
+\end{question}
+
+\begin{question}
+Formuleer een verbeterde redenering.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 8 AFLEIDING CENTRIPETALE VERSNELLING
+% ============================================================
+
+\FVDsection{De grootte van de centripetale versnelling}
+
+We willen nu niet alleen de richting, maar ook de grootte van de
+versnelling bepalen.
+
+Tijdens een klein tijdsinterval $\Delta t$ verplaatst het voorwerp zich
+over een kleine boog. Voor voldoende kleine $\Delta t$ geldt:
+
+\[
+\Delta s\approx v\Delta t.
+\]
+
+De positievector draait daarbij over een kleine hoek $\Delta\theta$.
+Omdat
+
+\[
+\Delta s=r\Delta\theta,
+\]
+
+volgt:
+
+\[
+\Delta\theta
+\approx
+\frac{v\Delta t}{r}.
+\]
+
+De snelheidsvector draait over dezelfde hoek $\Delta\theta$. Voor een
+kleine hoek is de grootte van de verandering van de snelheidsvector:
+
+\[
+|\Delta\vec v|
+\approx
+v\Delta\theta.
+\]
+
+Dus:
+
+\[
+|\Delta\vec v|
+\approx
+v\frac{v\Delta t}{r}
+=
+\frac{v^2}{r}\Delta t.
+\]
+
+Delen door $\Delta t$ en de limiet nemen geeft:
+
+\[
+\boxed{
+a_c=\frac{v^2}{r}.
+}
+\]
+
+
+\FVDsubsection{Andere vormen}
+
+Met
+
+\[
+v=r\omega
+\]
+
+vinden we:
+
+\[
+a_c
+=
+\frac{(r\omega)^2}{r}
+=
+r\omega^2.
+\]
+
+Dus:
+
+\[
+\boxed{
+a_c=r\omega^2.
+}
+\]
+
+Met
+
+\[
+\omega=\frac{2\pi}{T}
+\]
+
+volgt:
+
+\[
+\boxed{
+a_c=\frac{4\pi^2r}{T^2}.
+}
+\]
+
+En omdat $f=1/T$:
+
+\[
+\boxed{
+a_c=4\pi^2rf^2.
+}
+\]
+
+Deze formules beschrijven hetzelfde fysische verband in verschillende
+vormen.
+
+
+\begin{eigenschap}[Eenparige cirkelbeweging]
+
+Voor een ECB:
+
+\[
+\boxed{
+v=r\omega
+}
+\]
+
+en:
+
+\[
+\boxed{
+a_c=\frac{v^2}{r}=r\omega^2
+=\frac{4\pi^2r}{T^2}=4\pi^2rf^2.
+}
+\]
+
+De vector $\vec a_c$ is steeds naar het middelpunt gericht.
+
+\end{eigenschap}
+
+
+\begin{opmerking}
+Bij een ECB is de \emph{grootte} $a_c$ constant wanneer $r$ en $v$
+constant zijn. De versnellingsvector $\vec a_c$ is echter niet constant,
+want zijn richting verandert voortdurend.
+\end{opmerking}
+
+
+% ============================================================
+% 9 VERBANDEN ANALYSEREN
+% ============================================================
+
+\FVDsection{Niet memoriseren, maar verbanden zien}
+
+Het leerdoel vraagt meer dan formules invullen. We moeten kunnen
+analyseren hoe een verandering van één grootheid andere grootheden
+beïnvloedt.
+
+Uit
+
+\[
+v=r\omega
+\]
+
+volgt bij constante $\omega$:
+
+\[
+v\sim r.
+\]
+
+Uit
+
+\[
+a_c=r\omega^2
+\]
+
+volgt bij constante $\omega$:
+
+\[
+a_c\sim r.
+\]
+
+Maar uit
+
+\[
+a_c=\frac{v^2}{r}
+\]
+
+volgt bij constante $r$:
+
+\[
+a_c\sim v^2.
+\]
+
+En uit
+
+\[
+a_c=\frac{4\pi^2r}{T^2}
+\]
+
+volgt bij constante $r$:
+
+\[
+a_c\sim\frac1{T^2}.
+\]
+
+De voorwaarde ``wat blijft constant?'' is dus essentieel.
+
+
+\begin{oefening}[Wat gebeurt er als...?]{\oefU\ESS}
+
+Beantwoord zonder eerst concrete getallen te kiezen.
+
+\begin{question}
+Bij constante straal verdubbelt de baansnelheid. Met welke factor
+verandert $a_c$?
+\end{question}
+
+\begin{question}
+Bij constante hoeksnelheid verdubbelt de straal. Met welke factor
+veranderen $v$ en $a_c$?
+\end{question}
+
+\begin{question}
+Bij constante straal halveert de periode. Met welke factor veranderen
+$\omega$, $v$ en $a_c$?
+\end{question}
+
+\begin{question}
+Bij constante baansnelheid verdubbelt de straal. Met welke factor
+verandert $a_c$?
+\end{question}
+
+Motiveer elk antwoord vanuit een geschikt verband.
+
+\end{oefening}
+
+
+\begin{oefening}[De valkuil van ``de straal verdubbelt'']{\oefG}
+
+Twee leerlingen bespreken wat er met de centripetale versnelling gebeurt
+als de straal wordt verdubbeld.
+
+Leerling A zegt:
+
+\[
+a_c=\frac{v^2}{r}
+\quad\Rightarrow\quad
+a_c\text{ halveert.}
+\]
+
+Leerling B zegt:
+
+\[
+a_c=r\omega^2
+\quad\Rightarrow\quad
+a_c\text{ verdubbelt.}
+\]
+
+\begin{question}
+Kunnen beide redeneringen correct zijn?
+\end{question}
+
+\begin{question}
+Welke impliciete voorwaarde gebruikt leerling A?
+\end{question}
+
+\begin{question}
+Welke impliciete voorwaarde gebruikt leerling B?
+\end{question}
+
+\begin{question}
+Formuleer een algemene les die je hieruit trekt bij het analyseren van
+fysische formules.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 10 VOORBEELDEN
+% ============================================================
+
+\FVDsection{Toepassingen}
+
+\begin{voorbeeld}[Een draaimolen]
+
+Een zitje bevindt zich op $r=4,0\,\mathrm{m}$ van de draaias. De
+draaimolen maakt één omwenteling in $6,0\,\mathrm{s}$.
+
+\[
+\omega
+=
+\frac{2\pi}{6,0}
+\approx1,05\,\mathrm{rad/s}.
+\]
+
+De baansnelheid:
+
+\[
+v=r\omega
+=
+4,0\cdot1,05
+\approx4,19\,\mathrm{m/s}.
+\]
+
+De centripetale versnelling:
+
+\[
+a_c
+=
+\frac{v^2}{r}
+\approx
+\frac{4,19^2}{4,0}
+\approx4,39\,\mathrm{m/s^2}.
+\]
+
+De versnelling wijst op elk moment naar de draaias.
+
+\end{voorbeeld}
+
+
+\begin{oefening}[Hamerwerpen]{\oefB\ESS}
+
+Een hamer beweegt vlak vóór het loslaten ongeveer in een cirkel met
+straal $1,20\,\mathrm{m}$. De atleet maakt $5,0$ omwentelingen in
+$2,0\,\mathrm{s}$.
+
+\begin{question}
+Bepaal de frequentie.
+\end{question}
+
+\begin{question}
+Bepaal de periode.
+\end{question}
+
+\begin{question}
+Bepaal de hoeksnelheid.
+\end{question}
+
+\begin{question}
+Bepaal de baansnelheid.
+\end{question}
+
+\begin{question}
+Bepaal de centripetale versnelling vlak vóór het loslaten.
+\end{question}
+
+\begin{question}
+In welke richting beweegt de hamer onmiddellijk nadat hij wordt
+losgelaten? Verklaar vanuit de snelheidsvector.
+\end{question}
+
+\end{oefening}
+
+
+\begin{oefening}[Een bocht]{\oefU\ESS}
+
+Een auto rijdt met constante snelheidsgrootte
+$72\,\mathrm{km/h}$ door een cirkelvormige bocht met straal
+$50\,\mathrm{m}$.
+
+\begin{question}
+Zet de snelheid om naar $\mathrm{m/s}$.
+\end{question}
+
+\begin{question}
+Bepaal de centripetale versnelling.
+\end{question}
+
+\begin{question}
+Schets $\vec v$ en $\vec a_c$ op drie verschillende punten van de
+bocht.
+\end{question}
+
+\begin{question}
+De bestuurder verdubbelt zijn snelheid terwijl de bochtstraal gelijk
+blijft. Hoe verandert $a_c$?
+\end{question}
+
+\begin{question}
+Waarom is de laatste conclusie verkeerskundig belangrijk?
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 11 AARDE EN RUIMTE
+% ============================================================
+
+\FVDsection{Van de aarde tot satellieten}
+
+Cirkelbeweging speelt een centrale rol in de astronomie.
+
+Een punt op de evenaar beweegt door de aardrotatie ongeveer langs een
+cirkel. Een satelliet in een bijna cirkelvormige baan beweegt eveneens
+voortdurend met een versnelling naar het middelpunt van zijn baan.
+
+Bij een satelliet is de relevante straal niet de \emph{hoogte} boven
+het aardoppervlak, maar de afstand tot het middelpunt van de aarde:
+
+\[
+\boxed{
+r=R_{\mathrm{aarde}}+h.
+}
+\]
+
+Dat onderscheid is essentieel bij het mathematiseren.
+
+
+\begin{oefening}[Een punt op de evenaar]{\oefU}
+
+Neem voor de straal van de aarde:
+
+\[
+R_{\mathrm{aarde}}=6,37\times10^6\,\mathrm{m}
+\]
+
+en voor de rotatieperiode ongeveer $24,0\,\mathrm{h}$.
+
+\begin{question}
+Bepaal de hoeksnelheid van de aardrotatie.
+\end{question}
+
+\begin{question}
+Bepaal de baansnelheid van een punt op de evenaar.
+\end{question}
+
+\begin{question}
+Bepaal de centripetale versnelling van dat punt.
+\end{question}
+
+\begin{question}
+Vergelijk deze versnelling met $g=9,81\,\mathrm{m/s^2}$.
+\end{question}
+
+\end{oefening}
+
+
+\begin{oefening}[Satelliet: lees de straal correct]{\oefU\ESS}
+
+Een satelliet bevindt zich $400\,\mathrm{km}$ boven het aardoppervlak.
+Neem:
+
+\[
+R_{\mathrm{aarde}}=6,37\times10^6\,\mathrm{m}.
+\]
+
+De omlooptijd bedraagt $92,0\,\mathrm{min}$.
+
+\begin{question}
+Bepaal de straal van de cirkelbaan.
+\end{question}
+
+\begin{question}
+Bepaal de hoeksnelheid.
+\end{question}
+
+\begin{question}
+Bepaal de baansnelheid.
+\end{question}
+
+\begin{question}
+Bepaal de centripetale versnelling.
+\end{question}
+
+\begin{question}
+Waarom zou het fout zijn om $400\,\mathrm{km}$ als $r$ te gebruiken?
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 12 PROBLEEMOPLOSSEN
+% ============================================================
+
+\FVDsection{Cirkelproblemen systematisch aanpakken}
+
+Een formularium helpt alleen wanneer je eerst begrijpt welke grootheden
+gegeven zijn en welke omstandigheden gelden.
+
+Een bruikbare aanpak is:
+
+\begin{enumerate}
+  \item Maak een schets van de cirkelbaan.
+  \item Duid het middelpunt en de straal aan.
+  \item Noteer de gegeven grootheden met eenheden.
+  \item Zet omwentelingen per minuut, uren, centimeters enzovoort eerst
+        om naar geschikte SI-eenheden.
+  \item Bepaal welke grootheden constant zijn.
+  \item Kies het verband dat de gegeven en gezochte grootheden rechtstreeks
+        met elkaar verbindt.
+  \item Bereken en controleer de eenheid.
+  \item Controleer de grootteorde.
+  \item Interpreteer het antwoord fysisch, inclusief de richting wanneer
+        het om een vector gaat.
+\end{enumerate}
+
+
+\begin{oefening}[Achterwaarts ontwerpen]{\oefG}
+
+Een testopstelling moet een centripetale versnelling van
+$3,0g$ produceren op een afstand van $0,75\,\mathrm{m}$ van de draaias.
+
+Neem:
+
+\[
+g=9,81\,\mathrm{m/s^2}.
+\]
+
+\begin{question}
+Bepaal de vereiste hoeksnelheid.
+\end{question}
+
+\begin{question}
+Bepaal de vereiste frequentie.
+\end{question}
+
+\begin{question}
+Druk het resultaat uit in omwentelingen per minuut.
+\end{question}
+
+\begin{question}
+Bepaal de baansnelheid op $0,75\,\mathrm{m}$ van de as.
+\end{question}
+
+\begin{question}
+Wat gebeurt er met $a_c$ voor een punt op $0,25\,\mathrm{m}$ van de
+as als de hele opstelling met dezelfde $\omega$ draait?
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 13 LABO
+% ============================================================
+
+
+
+
+
+
+% ============================================================
+% 15 MISCONCEPTIES
+% ============================================================
+
+\FVDsection{Veelgemaakte denkfouten}
+
+\begin{opmerking}[Misconceptie 1: ``eenparig'' betekent $a=0$]
+
+Bij een ECB is de \emph{grootte} van de snelheid constant, maar de
+richting verandert. Daarom is de versnelling niet nul.
+
+\end{opmerking}
+
+\begin{opmerking}[Misconceptie 2: $\vec a_c$ wijst in de bewegingsrichting]
+
+De snelheidsvector is raaklijnig aan de baan. De centripetale
+versnellingsvector staat daar loodrecht op en wijst naar het middelpunt.
+
+\end{opmerking}
+
+\begin{opmerking}[Misconceptie 3: centripetale versnelling is een extra soort beweging]
+
+``Centripetaal'' beschrijft de richting van de versnelling. In het
+volgende hoofdstuk onderzoeken we welke resulterende kracht deze
+versnelling veroorzaakt.
+
+\end{opmerking}
+
+\begin{opmerking}[Misconceptie 4: $a_c$ is een constante vector]
+
+Bij een ECB kan de grootte $a_c$ constant zijn, maar de vector
+$\vec a_c$ verandert voortdurend van richting.
+
+\end{opmerking}
+
+
+\begin{oefening}[Vind de fout]{\oefU\ESS}
+
+Beoordeel telkens de uitspraak en verbeter ze indien nodig.
+
+\begin{question}
+``Bij een ECB is de snelheid constant.''
+\end{question}
+
+\begin{question}
+``Omdat $v$ constant is, is $a=0$.''
+\end{question}
+
+\begin{question}
+``De centripetale versnelling is raaklijnig aan de cirkel.''
+\end{question}
+
+\begin{question}
+``Als de baansnelheid verdubbelt bij dezelfde straal, verdubbelt ook
+$a_c$.''
+\end{question}
+
+\begin{question}
+``Twee punten op dezelfde stijve draaiende schijf hebben dezelfde
+baansnelheid.''
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 16 GEINTEGREERDE OEFENINGEN
+% ============================================================
+
+\FVDsection{Geïntegreerde oefeningen}
+
+\begin{oefening}[Van gegevens naar model]{\oefU\ESS}
+
+Een punt beweegt eenparig op een cirkel met straal
+$0,80\,\mathrm{m}$. Het maakt $12$ omwentelingen in $15,0\,\mathrm{s}$.
+
+\begin{question}
+Bepaal $f$ en $T$.
+\end{question}
+
+\begin{question}
+Bepaal $\omega$.
+\end{question}
+
+\begin{question}
+Bepaal $v$.
+\end{question}
+
+\begin{question}
+Bepaal $a_c$.
+\end{question}
+
+\begin{question}
+Schets op één gekozen punt $\vec r$, $\vec v$ en $\vec a_c$.
+\end{question}
+
+\begin{question}
+Hoe veranderen $v$ en $a_c$ als de frequentie verdubbelt terwijl de
+straal gelijk blijft?
+\end{question}
+
+\end{oefening}
+
+
+\begin{oefening}[Twee draaimolens vergelijken]{\oefU\ESS}
+
+Draaimolen A heeft straal $r_A=3,0\,\mathrm{m}$ en periode
+$T_A=6,0\,\mathrm{s}$.
+
+Draaimolen B heeft straal $r_B=6,0\,\mathrm{m}$ en periode
+$T_B=12,0\,\mathrm{s}$.
+
+\begin{question}
+Vergelijk hun hoeksnelheden.
+\end{question}
+
+\begin{question}
+Vergelijk de baansnelheden aan de rand.
+\end{question}
+
+\begin{question}
+Vergelijk de centripetale versnellingen aan de rand.
+\end{question}
+
+\begin{question}
+Welke vergelijking zou je fout kunnen beantwoorden als je alleen naar
+de grotere straal van B kijkt? Leg uit.
+\end{question}
+
+\end{oefening}
+
+
+\begin{oefening}[Technisch ontwerp]{\oefG}
+
+Een laboratoriumcentrifuge moet op een straal van
+$0,12\,\mathrm{m}$ een centripetale versnelling van minstens
+$500g$ bereiken.
+
+\begin{question}
+Bepaal de minimale hoeksnelheid.
+\end{question}
+
+\begin{question}
+Bepaal de minimale frequentie.
+\end{question}
+
+\begin{question}
+Druk de rotatiesnelheid uit in omwentelingen per minuut.
+\end{question}
+
+\begin{question}
+Een monsterhouder wordt verplaatst naar $0,08\,\mathrm{m}$ van de as,
+zonder de rotatiesnelheid te veranderen. Bepaal de nieuwe $a_c$.
+\end{question}
+
+\begin{question}
+Welke parameter zou je moeten aanpassen om op de kleinere straal toch
+$500g$ te behouden?
+\end{question}
+
+\end{oefening}
+
+
+\begin{oefening}[Redeneren met een grafiek]{\oefG}
+
+Een experiment levert bij constante straal een bijna rechte grafiek op
+wanneer $a_c$ wordt uitgezet tegen $f^2$.
+
+\begin{question}
+Toon vanuit de theorie waarom dit verwacht wordt.
+\end{question}
+
+\begin{question}
+Wat stelt de helling van de grafiek voor?
+\end{question}
+
+\begin{question}
+Hoe kan je uit die helling de straal van de cirkelbaan bepalen?
+\end{question}
+
+\begin{question}
+Wat zou een duidelijk niet-nul snijpunt met de verticale as kunnen
+betekenen voor het experiment of het meetmodel?
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 17 VERDIEPING WISKUNDIGE BESCHRIJVING
+% ============================================================
+
+\FVDsection{Verdieping: de cirkelbeweging als functie van de tijd}
+
+Voor sterke leerlingen kunnen we de vectoriële beschrijving nog verder
+uitwerken.
+
+Kies een cirkel met middelpunt in de oorsprong en straal $r$. Als het
+punt bij $t=0$ op de positieve $x$-as start en tegenwijzerzin beweegt,
+dan is:
+
+\[
+\theta(t)=\omega t.
+\]
+
+De coördinaten zijn:
+
+\[
+\boxed{
+x(t)=r\cos(\omega t)
+}
+\]
+
+en:
+
+\[
+\boxed{
+y(t)=r\sin(\omega t).
+}
+\]
+
+De positievector is:
+
+\[
+\boxed{
+\vec r(t)
+=
+r\cos(\omega t)\,\vec e_x
++
+r\sin(\omega t)\,\vec e_y.
+}
+\]
+
+Afleiden geeft:
+
+\[
+\vec v(t)
+=
+-r\omega\sin(\omega t)\,\vec e_x
++
+r\omega\cos(\omega t)\,\vec e_y.
+\]
+
+De grootte is:
+
+\[
+|\vec v|
+=
+r\omega
+\sqrt{\sin^2(\omega t)+\cos^2(\omega t)}
+=
+r\omega.
+\]
+
+Nogmaals afleiden:
+
+\[
+\vec a(t)
+=
+-r\omega^2\cos(\omega t)\,\vec e_x
+-
+r\omega^2\sin(\omega t)\,\vec e_y.
+\]
+
+Dus:
+
+\[
+\boxed{
+\vec a(t)=-\omega^2\vec r(t).
+}
+\]
+
+Dit resultaat maakt onmiddellijk zichtbaar dat de versnelling tegengesteld
+gericht is aan de positievector: naar het middelpunt.
+
+Bovendien:
+
+\[
+|\vec a|
+=
+\omega^2r
+=
+a_c.
+\]
+
+
+\begin{oefening}[Vectorieel bewijzen]{\oefG}
+
+Vertrek van:
+
+\[
+\vec r(t)
+=
+r\cos(\omega t)\,\vec e_x
++
+r\sin(\omega t)\,\vec e_y.
+\]
+
+\begin{question}
+Bepaal $\vec v(t)$ door af te leiden.
+\end{question}
+
+\begin{question}
+Toon aan dat $|\vec v|=r\omega$.
+\end{question}
+
+\begin{question}
+Bepaal $\vec a(t)$.
+\end{question}
+
+\begin{question}
+Toon aan dat $\vec a=-\omega^2\vec r$.
+\end{question}
+
+\begin{question}
+Leg uit waarom dit zowel de grootte als de richting van de
+centripetale versnelling bewijst.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 18 SAMENVATTING
+% ============================================================
+
+\FVDsection{Wat hebben we opgebouwd?}
+
+Voor een periodieke beweging:
+
+\[
+\boxed{
+f=\frac1T
+}
+\]
+
+Voor een ECB:
+
+\[
+\boxed{
+\omega=\frac{2\pi}{T}=2\pi f
+}
+\]
+
+De baansnelheid:
+
+\[
+\boxed{
+v=r\omega=\frac{2\pi r}{T}
+}
+\]
+
+De snelheidsvector is raaklijnig aan de cirkel:
+
+\[
+\boxed{
+\vec v\perp\vec r.
+}
+\]
+
+Hoewel $|\vec v|$ constant is, verandert $\vec v$ voortdurend van
+richting. Daarom is er een versnelling.
+
+De centripetale versnelling wijst naar het middelpunt:
+
+\[
+\boxed{
+\vec a_c\ \text{naar het centrum}
+}
+\]
+
+en haar grootte is:
+
+\[
+\boxed{
+a_c=\frac{v^2}{r}
+}
+\]
+
+of equivalent:
+
+\[
+\boxed{textb
+a_c=r\omega^2
+=\frac{4\pi^2r}{T^2}
+=4\pi^2rf^2.
+}
+\]
+
+Bij het analyseren van deze verbanden moet je altijd expliciet aangeven
+welke grootheden constant worden gehouden.
+
+
+
+
+
+% ============================================================
+% 20 VOORUITBLIK
+% ============================================================
+
+\FVDsection{Vooruitblik: wat houdt het voorwerp op de cirkel?}
+
+We weten nu wat nodig is voor een cirkelbeweging:
+
+\[
+\vec a_c
+\]
+
+moet naar het middelpunt gericht zijn.
+
+Maar we hebben nog niet verklaard \emph{waardoor} die versnelling
+ontstaat.
+
+Bij een auto in een bocht, een steen aan een touw, een satelliet rond
+de aarde en een passagier in een draaimolen zijn verschillende
+fysische krachten actief.
+
+In het volgende hoofdstuk verschuift de vraag daarom van
+
+\[
+\boxed{\text{Hoe beweegt het voorwerp?}}
+\]
+
+naar
+
+\[
+\boxed{\text{Waarom verandert zijn beweging?}}
+\]
+
+Daarvoor hebben we de wetten van Newton nodig.
+
+\end{document}

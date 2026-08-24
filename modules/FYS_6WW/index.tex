@@ -1,0 +1,334 @@
+\documentclass{xourse}
+
+
+\input{../../preamble.tex}
+\input{../../Opmaak.tex}
+\addPrintStyle{../..}
+
+
+\fvdtitle{Van krachten tot kwanta}
+\author{Ingmar Herreman}
+
+
+\begin{abstract}
+
+  In deze cursus bouwen we verder op de fysica uit het vijfde jaar en
+  onderzoeken we hoe krachten, energie, trillingen, golven en licht met
+  elkaar samenhangen.
+
+  We starten vanuit de klassieke mechanica. We bestuderen krachten,
+  evenwicht, arbeid en energie en onderzoeken hoe fysische systemen
+  beschreven en voorspeld kunnen worden met behulp van modellen en
+  wiskundige verbanden.
+
+  Vervolgens richten we ons op trillingen en golven. Vanuit harmonische
+  trillingen bouwen we stap voor stap het golfmodel op. We onderzoeken hoe
+  golven zich voortplanten en bestuderen verschijnselen zoals reflectie,
+  breking, interferentie, diffractie, resonantie en het Dopplereffect.
+  Geluid vormt daarbij een belangrijke toepassing.
+
+  Daarna passen we het golfmodel toe op licht. We onderzoeken licht zowel
+  met het stralenmodel als met het golfmodel en bestuderen onder andere
+  reflectie, breking, lenzen, beeldvorming en elektromagnetische golven.
+
+  Ten slotte verkennen we de grenzen van de klassieke fysica. Aan de hand
+  van enkele ideeën uit de moderne fysica onderzoeken we hoe concepten uit
+  de kwantumfysica en de relativiteitstheorie ons beeld van materie,
+  straling, ruimte en tijd hebben veranderd.
+
+  Doorheen de cursus gebruiken we wiskunde als taal om fysische
+  verschijnselen te beschrijven en te modelleren. Vectoren, functies,
+  goniometrie, afgeleiden en integralen krijgen zo een concrete fysische
+  betekenis. Experimenten, gegevensanalyse en probleemoplossend denken
+  helpen ons om modellen kritisch te toetsen aan de werkelijkheid.
+
+  Fysica wordt zo geen verzameling afzonderlijke formules, maar een
+  samenhangend geheel van ideeën waarmee we de natuur kunnen beschrijven,
+  verklaren en voorspellen.
+
+\end{abstract} 
+
+
+% ============================================================
+% MODULEGEGEVENS
+% ============================================================
+
+\def\fvdmodulenummer{1}
+\def\fvdmoduletitel{Van krachten tot kwanta}
+\def\fvdmodulebeeld{../images/banners/fysica6.png}
+\def\fvdschoolembleem{../images/banners/logo_bellevue.png}
+\def\fvdschoollogo{../images/banners/logo_bellevue.png}
+\renewcommand{\fvdschoolnaam}{Campus Bellevue Izegem}
+\def\vaknaam{Fysica}
+
+\def\fvdklas{6 Wetenschappen-wiskunde}
+\def\fvdschooljaar{2026--2027}
+\def\fvdmodulevariant{                             }
+\def\fvdmodulesubtitel{}
+
+
+
+% ============================================================
+% THEORIE + BIJHORENDE OEFENINGEN
+%
+% HTML:
+%   theorie + oefeningen
+%
+% PDF:
+%   alleen theorie
+% ============================================================
+
+\newcommand{\FVDchapterpair}[2]{%
+  \ifdefined\HCode
+
+    % ONLINE: theorie
+    \activity{#1}%
+
+    % ONLINE: oefeningen, indien aanwezig
+    \if\relax\detokenize{#2}\relax
+    \else
+      \activity{#2}%
+    \fi
+
+  \else
+
+    % PDF: alleen theorie
+    \activity{#1}%
+
+  \fi
+}
+
+
+\begin{document}
+
+
+\FVDmodulecover
+
+
+
+% ============================================================
+% UITLEG BIJ DE MODULE — ALLEEN PDF
+% ============================================================
+
+\ifdefined\HCode
+  % HTML: niets
+\else
+  \input{../Hoe_werkt_module.tex}
+\fi
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% MODULE-OPENING
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\ifdefined\HCode
+  % Website: gebruik de gewone Ximera-titelpagina.
+  \maketitle
+\else
+  % PDF: gebruik de automatisch gegenereerde module-opening.
+  \IfFileExists{module-opening.generated.tex}{%
+    \input{module-opening.generated.tex}%
+  }{%
+    \PackageWarning{FVD}{Automatische module-opening ontbreekt}%
+    \maketitle
+  }%
+\fi
+
+
+\FVDpart{Beweging en kracht — Van beweging beschrijven tot energie begrijpen}
+
+\FVDthemeopening{../images/banners/fysica_beweging.png}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% BEGIN AUTO THEME OVERVIEW
+\begin{hoofdstukoverzicht}
+  \FVDthemechaptertile{1}{Een beweging beschrijven}
+  \FVDthemechaptertile{2}{Snelheid en versnelling}
+  \FVDthemechaptertile{3}{Vallen en werpen}
+  \FVDthemechaptertile{4}{Bewegen in twee dimensies}
+  \FVDthemechaptertile{5}{In cirkels bewegen}
+  \FVDthemechaptertile{6}{Kracht en beweging}
+  \FVDthemechaptertile{7}{Bewegen onder invloed van velden}
+  \FVDthemechaptertile{8}{Arbeid en energie}
+  \FVDthemechaptertile{9}{Formuleoverzicht Thema 1}
+  \FVDthemechaptertile{10}{Parate kennis}
+\end{hoofdstukoverzicht}
+% END AUTO THEME OVERVIEW
+
+\begin{themaintro}{}
+
+  Beweging is overal. Een bal vliegt door de lucht, een auto versnelt,
+  een satelliet beweegt rond de aarde en een voorwerp komt tot stilstand
+  wanneer het wordt afgeremd. Maar hoe kunnen we zulke bewegingen
+  nauwkeurig beschrijven en voorspellen?
+
+  In dit thema beginnen we met de kinematica: de studie van beweging
+  zonder ons meteen af te vragen waardoor die beweging veroorzaakt wordt.
+  We beschrijven de positie van een voorwerp als functie van de tijd en
+  onderzoeken snelheid en versnelling. Grafieken en wiskundige modellen
+  helpen ons om verschillende soorten beweging te analyseren.
+
+  Daarna stellen we een nieuwe vraag: waarom verandert een beweging?
+  Met de wetten van Newton onderzoeken we het verband tussen kracht,
+  massa en versnelling. We leren krachten vectorieel voorstellen en
+  combineren en gebruiken deze ideeën om bewegingen in uiteenlopende
+  situaties te verklaren en te voorspellen.
+
+  Ook beweging langs een cirkel vraagt bijzondere aandacht. Hoewel de
+  grootte van de snelheid constant kan blijven, verandert de
+  snelheidsvector voortdurend van richting. We onderzoeken welke
+  versnelling en welke resulterende kracht daarvoor nodig zijn.
+
+  Ten slotte bekijken we beweging vanuit een ander perspectief.
+  Met arbeid en energie kunnen we veel mechanische problemen beschrijven
+  zonder de beweging op ieder ogenblik afzonderlijk te onderzoeken.
+  We bestuderen energieomzettingen en onderzoeken ook wat arbeid betekent
+  wanneer een kracht niet constant is.
+
+  Doorheen het thema verbinden we fysica voortdurend met wiskunde.
+  Functies en grafieken beschrijven beweging, afgeleiden verbinden
+  positie, snelheid en versnelling en integralen krijgen een concrete
+  betekenis bij onder andere verplaatsing en arbeid.
+
+  Zo bouwen we stap voor stap een samenhangend model van de mechanica:
+  van het beschrijven van beweging naar het verklaren ervan, en van
+  krachten naar energie.
+
+\end{themaintro}
+
+
+\FVDchapterpair{Thema1-Beweging/1-Beweging}
+{}
+\FVDchapterpair{Thema1-Beweging/2-ERVB}
+{}
+\FVDchapterpair{Thema1-Beweging/3-Vallen_werpen}
+{}
+\FVDchapterpair{Thema1-Beweging/4-2D-beweging}
+{}
+
+\FVDchapterpair{Thema1-Beweging/5-Cirkels}
+{}
+\FVDchapterpair{Thema1-Beweging/6-Kracht}
+{}
+\FVDchapterpair{Thema1-Beweging/7-Kracht_cirkel}
+{}
+\FVDchapterpair{Thema1-Beweging/8-Arbeid-Energie}
+{}
+\FVDchapterpair{Thema1-Beweging/9-Formules}
+{}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% THEMA 2
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\FVDpart{Alles trilt — Van trilling tot golf}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% BEGIN AUTO THEME OVERVIEW
+\begin{hoofdstukoverzicht}
+  \FVDthemeoverviewempty
+\end{hoofdstukoverzicht}
+% END AUTO THEME OVERVIEW
+
+\FVDpart{Licht in beeld — Van lichtstraal tot elektromagnetische golf}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% BEGIN AUTO THEME OVERVIEW
+\begin{hoofdstukoverzicht}
+  \FVDthemeoverviewempty
+\end{hoofdstukoverzicht}
+% END AUTO THEME OVERVIEW
+
+\FVDpart{Voorbij het klassieke — Van klassieke fysica tot kwanta en relativiteit}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
+% BEGIN AUTO THEME OVERVIEW
+\begin{hoofdstukoverzicht}
+  \FVDthemeoverviewempty
+\end{hoofdstukoverzicht}
+% END AUTO THEME OVERVIEW

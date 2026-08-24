@@ -1,0 +1,2738 @@
+\documentclass{ximera}
+
+\input{../../../preamble.tex}
+\input{../../../Opmaak.tex}
+\addPrintStyle{../../..}
+
+\title{Gravitatie: aantrekking op afstand}
+\author{Ingmar Herreman}
+
+\begin{abstract}
+Waarom valt een appel naar de aarde? Waarom blijft de maan in de buurt
+van de aarde? En waarom bewegen planeten rond de zon?
+
+Op het eerste gezicht lijken dit verschillende verschijnselen. Newton
+zag echter dat ze met dezelfde fundamentele wisselwerking kunnen worden
+verklaard: gravitatie.
+
+In dit hoofdstuk onderzoeken we hoe elke massa andere massa's aantrekt.
+We bouwen de vertrouwde zwaartekracht nabij het aardoppervlak uit tot
+een universele krachtwet die geldt voor appels, mensen, planeten,
+sterren en satellieten.
+
+Daarna maken we een belangrijke conceptuele stap. In plaats van alleen
+te vragen welke kracht twee massa's op elkaar uitoefenen, beschrijven
+we hoe een massa de ruimte rondom zich beïnvloedt. Zo ontstaat het
+begrip gravitatieveld.
+
+We onderzoeken hoe gravitatiekracht en gravitatieveld afhangen van
+massa en afstand, leren veldlijnen interpreteren en gebruiken het
+superpositiebeginsel wanneer meerdere massa's tegelijk een invloed
+uitoefenen.
+
+Ten slotte passen we het gravitatiemodel toe op satellieten. Daarmee
+ontdekken we dat vallen en rond een planeet bewegen veel nauwer met
+elkaar verbonden zijn dan je misschien zou verwachten.
+
+Gravitatie vormt bovendien onze eerste kennismaking met een veldkracht.
+In de volgende hoofdstukken zullen we ontdekken dat elektrische
+interacties een opvallend gelijkaardige wiskundige structuur hebben.
+\end{abstract}
+
+\begin{document}
+
+% FVD_CHAPTER_DATA_START
+% Wordt automatisch aangepast vanuit index.tex
+\fvdchapterdata{2}{Krachten op afstand}{1}
+% FVD_CHAPTER_DATA_END
+
+\maketitle
+
+
+% ============================================================
+% VOORKENNIS EN LEERDOELEN
+% ============================================================
+
+\begin{voorkennis}
+  \item Je kan krachten als vectoren voorstellen.
+  \item Je kent de drie wetten van Newton.
+  \item Je kan eenvoudige resulterende krachten bepalen.
+  \item Je begrijpt het verschil tussen massa en kracht.
+  \item Je kan werken met machten van tien en wetenschappelijke notatie.
+  \item Je kan een formule omvormen en grootheden met SI-eenheden gebruiken.
+  \item Je kan een omgekeerd evenredig verband interpreteren.
+\end{voorkennis}
+
+\begin{leerdoelen}
+  \item Je kan gravitatie beschrijven als een universele wisselwerking
+        tussen massa's.
+  \item Je kan de algemene gravitatiewet interpreteren en gebruiken.
+  \item Je kan analyseren hoe de gravitatiekracht verandert wanneer
+        massa of afstand verandert.
+  \item Je kan de richting en zin van gravitatiekrachten bepalen.
+  \item Je kan Newton III toepassen op gravitationele interacties.
+  \item Je kan onderscheid maken tussen massa, gewicht en gravitatiekracht.
+  \item Je kan het begrip gravitatieveld uitleggen.
+  \item Je kan de gravitatieveldsterkte berekenen met
+        $g=GM/r^2$.
+  \item Je kan gravitatieveldlijnen tekenen en interpreteren.
+  \item Je kan het verband tussen $F_g=mg$ en de algemene gravitatiewet
+        verklaren.
+  \item Je kan onderzoeken hoe $g$ verandert met de afstand tot een
+        hemellichaam.
+  \item Je kan eenvoudige situaties met meerdere gravitatiebronnen
+        analyseren via superpositie.
+  \item Je kan het verband tussen gravitatiekracht en de centripetale
+        versnelling van een satelliet gebruiken.
+  \item Je kan overeenkomsten tussen het gravitatieveld en het
+        elektrische veld herkennen.
+\end{leerdoelen}
+
+
+% ============================================================
+% 1. DE APPEL EN DE MAAN
+% ============================================================
+
+\FVDsection{De appel en de maan}
+
+Laat je een voorwerp los, dan valt het naar de aarde.
+
+Dat lijkt vanzelfsprekend. We hebben zelfs al geleerd om de kracht
+waarmee de aarde een voorwerp aantrekt nabij haar oppervlak te
+schrijven als
+
+\[
+\vec F_g = m\vec g.
+\]
+
+Maar deze eenvoudige formule roept nieuwe vragen op.
+
+Waarom trekt de aarde eigenlijk aan een voorwerp?
+
+Werkt die aantrekkingskracht alleen vlak bij het aardoppervlak?
+
+Verdwijnt ze wanneer we hoog genoeg boven de aarde komen?
+
+En wat gebeurt er met de maan?
+
+De maan valt niet op het aardoppervlak, maar ze verdwijnt ook niet
+rechtlijnig de ruimte in. Ze blijft rond de aarde bewegen.
+
+Newton kwam tot een revolutionair inzicht:
+
+\begin{center}
+\textit{de kracht die een appel naar de aarde doet vallen en de kracht
+die de maan in haar baan houdt, behoren tot dezelfde fysische
+wisselwerking.}
+\end{center}
+
+Die wisselwerking noemen we \textbf{gravitatie}.
+
+
+\begin{definitie}[Gravitatie]
+
+\textbf{Gravitatie} is de universele aantrekkende wisselwerking tussen
+voorwerpen met massa.
+
+\end{definitie}
+
+
+Het woord \emph{universeel} is belangrijk.
+
+Dezelfde fysische wet beschrijft de interactie tussen:
+
+\begin{itemize}
+  \item een leerling en de aarde;
+  \item de aarde en de maan;
+  \item de zon en de aarde;
+  \item twee sterren;
+  \item twee kleine voorwerpen in een laboratorium.
+\end{itemize}
+
+Het verschil tussen deze situaties zit niet in de aard van de
+wisselwerking, maar in de betrokken massa's en afstanden.
+
+
+% ============================================================
+% 2. VAN ZWAARTEKRACHT NAAR GRAVITATIE
+% ============================================================
+
+\FVDsection{Van zwaartekracht naar gravitatie}
+
+In de buurt van het aardoppervlak gebruiken we meestal
+
+\[
+F_g = mg.
+\]
+
+Met
+
+\[
+g\approx 9{,}81\,\mathrm{N/kg}.
+\]
+
+Dat werkt uitstekend zolang we ons dicht genoeg bij het aardoppervlak
+bevinden.
+
+Maar $g$ is niet overal in het heelal gelijk aan
+$9{,}81\,\mathrm{N/kg}$.
+
+Op de maan is $g$ veel kleiner.
+
+Op Jupiter is $g$ anders.
+
+En zelfs boven het aardoppervlak neemt $g$ geleidelijk af.
+
+We hebben daarom een algemenere wet nodig.
+
+
+% ============================================================
+% 3. ALGEMENE GRAVITATIEWET
+% ============================================================
+
+\FVDsection{De algemene gravitatiewet van Newton}
+
+Newton stelde dat twee massa's elkaar aantrekken met een kracht die:
+
+\begin{itemize}
+  \item groter wordt wanneer één van de massa's groter wordt;
+  \item groter wordt wanneer beide massa's groter worden;
+  \item kleiner wordt wanneer de afstand tussen beide massa's groter
+        wordt.
+\end{itemize}
+
+Meer precies geldt:
+
+
+\begin{definitie}[Algemene gravitatiewet]
+
+Twee puntmassa's $m_1$ en $m_2$ op een onderlinge afstand $r$
+trekken elkaar aan met een gravitatiekracht waarvan de grootte gegeven
+wordt door
+
+\[
+\boxed{
+F_g
+=
+G\frac{m_1m_2}{r^2}.
+}
+\]
+
+Hierbij is
+
+\[
+G
+=
+6{,}674\times10^{-11}
+\,
+\mathrm{\frac{N\,m^2}{kg^2}}
+\]
+
+de universele gravitatieconstante.
+
+\end{definitie}
+
+
+We kunnen de formule lezen als een fysisch verhaal:
+
+\[
+\boxed{
+F_g
+\propto
+m_1m_2
+}
+\]
+
+en
+
+\[
+\boxed{
+F_g
+\propto
+\frac{1}{r^2}.
+}
+\]
+
+
+\FVDsubsection{Wat betekent $r$?}
+
+Een belangrijke valkuil is de betekenis van de afstand $r$.
+
+Bij bolvormige hemellichamen gebruiken we de afstand tussen hun
+\textbf{massamiddelpunten}.
+
+Dus niet:
+
+\begin{center}
+de afstand tussen de oppervlakken,
+\end{center}
+
+maar:
+
+\[
+\boxed{
+r=\text{afstand tussen de massamiddelpunten}.
+}
+\]
+
+
+Wanneer een voorwerp zich op hoogte $h$ boven het aardoppervlak
+bevindt, is de afstand tot het middelpunt van de aarde dus:
+
+\[
+\boxed{
+r=R_\mathrm{A}+h.
+}
+\]
+
+Niet:
+
+\[
+r=h.
+\]
+
+
+\begin{opmerking}
+
+Voor bolsymmetrische massa's mogen we voor punten buiten de bol doen
+alsof de volledige massa geconcentreerd is in het middelpunt.
+
+Dat maakt de puntmassabenadering bijzonder bruikbaar voor planeten en
+sterren.
+
+\end{opmerking}
+
+
+% ============================================================
+% 4. EENHEDENCONTROLE
+% ============================================================
+
+\FVDsection{Eenheden als controle-instrument}
+
+De eenheid van $G$ lijkt op het eerste gezicht ingewikkeld:
+
+\[
+[G]
+=
+\mathrm{\frac{N\,m^2}{kg^2}}.
+\]
+
+Maar precies die eenheid zorgt ervoor dat de gravitatiewet een kracht
+oplevert.
+
+Uit
+
+\[
+F_g
+=
+G\frac{m_1m_2}{r^2}
+\]
+
+volgt voor de eenheden:
+
+\[
+[F_g]
+=
+\mathrm{
+\frac{N\,m^2}{kg^2}
+\frac{kg\cdot kg}{m^2}
+}.
+\]
+
+Dus:
+
+\[
+\boxed{
+[F_g]=\mathrm N.
+}
+\]
+
+Eenheden zijn daarom meer dan administratie. Ze vormen een eerste
+controle op een fysische berekening.
+
+
+% ============================================================
+% 5. EERSTE BEREKENING
+% ============================================================
+
+\FVDsection{Hoe groot is gravitatie tussen gewone voorwerpen?}
+
+De gravitatieconstante is zeer klein:
+
+\[
+G
+=
+6{,}674\times10^{-11}
+\,
+\mathrm{\frac{N\,m^2}{kg^2}}.
+\]
+
+Daarom is gravitatie tussen gewone voorwerpen meestal nauwelijks
+merkbaar.
+
+
+\begin{voorbeeld}[Twee leerlingen]
+
+Twee leerlingen met massa's
+
+\[
+m_1=60\,\mathrm{kg}
+\]
+
+en
+
+\[
+m_2=70\,\mathrm{kg}
+\]
+
+bevinden zich met hun massamiddelpunten ongeveer
+
+\[
+r=1{,}0\,\mathrm m
+\]
+
+van elkaar.
+
+De gravitatiekracht is
+
+\[
+F_g
+=
+G\frac{m_1m_2}{r^2}.
+\]
+
+Invullen geeft:
+
+\[
+F_g
+=
+6{,}674\times10^{-11}
+\frac{60\cdot70}{1{,}0^2}.
+\]
+
+Dus:
+
+\[
+F_g
+\approx
+2{,}8\times10^{-7}\,\mathrm N.
+\]
+
+Dat is extreem klein.
+
+We merken de gravitatie tussen de leerlingen daarom niet.
+
+De gravitatiekracht van de aarde op elke leerling is daarentegen wel
+groot, omdat de aarde een enorme massa heeft.
+
+\end{voorbeeld}
+
+
+% ============================================================
+% 6. PROBLEEMOPLOSSEN
+% ============================================================
+
+\FVDsection{Een gravitatieprobleem systematisch oplossen}
+
+Bij een berekening is het verleidelijk onmiddellijk getallen in een
+formule in te vullen.
+
+Bij eenvoudige oefeningen lukt dat soms. Bij moeilijkere problemen
+leidt het snel tot fouten.
+
+Gebruik daarom een vaste aanpak.
+
+
+\begin{center}
+\[
+\boxed{
+\begin{array}{c}
+\text{situatie begrijpen}
+\\
+\downarrow
+\\
+\text{schets maken}
+\\
+\downarrow
+\\
+\text{gegeven en gevraagd noteren}
+\\
+\downarrow
+\\
+\text{afstand }r\text{ correct bepalen}
+\\
+\downarrow
+\\
+\text{model kiezen}
+\\
+\downarrow
+\\
+\text{berekenen}
+\\
+\downarrow
+\\
+\text{eenheid en grootteorde controleren}
+\\
+\downarrow
+\\
+\text{antwoord fysisch interpreteren}
+\end{array}
+}
+\]
+\end{center}
+
+
+Bij gravitatie is vooral de stap
+
+\[
+\boxed{\text{bepaal }r}
+\]
+
+belangrijk.
+
+Vraag jezelf steeds af:
+
+\begin{center}
+\textit{Welke afstand hoort werkelijk in de gravitatiewet?}
+\end{center}
+
+
+% ============================================================
+% 7. OEFENING BASIS
+% ============================================================
+
+\begin{oefening}[Twee massa's]{\oefB\ESS}
+
+Twee bolvormige voorwerpen hebben massa's
+
+\[
+m_1=5{,}0\,\mathrm{kg}
+\qquad\text{en}\qquad
+m_2=8{,}0\,\mathrm{kg}.
+\]
+
+Hun middelpunten bevinden zich op
+
+\[
+r=0{,}50\,\mathrm m
+\]
+
+van elkaar.
+
+\begin{question}
+Welke formule gebruik je om de gravitatiekracht te bepalen?
+\end{question}
+
+\begin{question}
+Bereken de grootte van de gravitatiekracht.
+\end{question}
+
+\begin{question}
+In welke richting werkt de kracht op $m_1$?
+\end{question}
+
+\begin{question}
+In welke richting werkt de kracht op $m_2$?
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 8. GRAVITATIE IS VECTORIEEL
+% ============================================================
+
+\FVDsection{De gravitatiekracht is een vector}
+
+De formule
+
+\[
+F_g
+=
+G\frac{m_1m_2}{r^2}
+\]
+
+geeft alleen de \textbf{grootte} van de gravitatiekracht.
+
+Maar kracht is een vector.
+
+We moeten dus ook richting en zin kennen.
+
+De gravitatiekracht werkt steeds langs de verbindingslijn tussen beide
+massamiddelpunten en is steeds aantrekkend.
+
+Voor twee massa's $m_1$ en $m_2$ geldt daarom schematisch:
+
+\[
+m_1
+\quad
+\longrightarrow
+\qquad
+\longleftarrow
+\quad
+m_2
+\]
+
+Elke massa wordt naar de andere massa toe getrokken.
+
+
+\begin{opmerking}
+
+Bij gravitatie tussen gewone positieve massa's bestaat geen
+gravitationele afstoting.
+
+Dat wordt later een belangrijk verschil met elektrische krachten.
+
+\end{opmerking}
+
+
+% ============================================================
+% 9. NEWTON III
+% ============================================================
+
+\FVDsection{Wie trekt het hardst?}
+
+Stel dat de aarde een appel aantrekt.
+
+Welke kracht is groter?
+
+De kracht van de aarde op de appel?
+
+Of de kracht van de appel op de aarde?
+
+Uit het vorige thema kennen we Newton III:
+
+\[
+\boxed{
+\vec F_{A\rightarrow B}
+=
+-\vec F_{B\rightarrow A}.
+}
+\]
+
+Dus:
+
+\[
+\boxed{
+\vec F_{\mathrm{aarde}\rightarrow\mathrm{appel}}
+=
+-
+\vec F_{\mathrm{appel}\rightarrow\mathrm{aarde}}.
+}
+\]
+
+De krachten zijn exact even groot.
+
+Dat lijkt misschien vreemd omdat de aarde zoveel zwaarder is.
+
+
+\FVDsubsection{Waarom versnelt de appel dan zoveel meer?}
+
+Newton II geeft:
+
+\[
+\vec a=\frac{\sum\vec F}{m}.
+\]
+
+De appel en de aarde ondervinden even grote interactiekrachten, maar hun
+massa's verschillen enorm.
+
+Voor de appel:
+
+\[
+a_\mathrm{appel}
+=
+\frac{F_g}{m_\mathrm{appel}}.
+\]
+
+Voor de aarde:
+
+\[
+a_\mathrm{aarde}
+=
+\frac{F_g}{M_\mathrm{aarde}}.
+\]
+
+Omdat
+
+\[
+M_\mathrm{aarde}
+\gg
+m_\mathrm{appel},
+\]
+
+geldt:
+
+\[
+a_\mathrm{aarde}
+\ll
+a_\mathrm{appel}.
+\]
+
+
+\begin{opmerking}
+
+De aarde trekt niet harder aan de appel dan de appel aan de aarde.
+
+De krachten zijn even groot.
+
+Het verschil in bewegingsverandering ontstaat door het enorme verschil
+in massa.
+
+\end{opmerking}
+
+
+\begin{oefening}[De aarde en jij]{\oefU\ESS}
+
+Je staat stil op het aardoppervlak.
+
+Een leerling beweert:
+
+\begin{center}
+``De aarde trekt veel harder aan mij dan ik aan de aarde trek,
+want de aarde heeft een veel grotere massa.''
+\end{center}
+
+Analyseer deze uitspraak.
+
+Gebruik in je antwoord zowel Newton II als Newton III.
+
+\end{oefening}
+
+
+% ============================================================
+% 10. INVLOED VAN DE MASSA
+% ============================================================
+
+\FVDsection{Hoe beïnvloeden de massa's de gravitatiekracht?}
+
+Uit
+
+\[
+F_g
+=
+G\frac{m_1m_2}{r^2}
+\]
+
+volgt bij constante afstand:
+
+\[
+F_g\propto m_1m_2.
+\]
+
+Dat betekent bijvoorbeeld:
+
+\[
+m_1\rightarrow2m_1
+\quad\Longrightarrow\quad
+F_g\rightarrow2F_g.
+\]
+
+Als beide massa's verdubbelen:
+
+\[
+m_1\rightarrow2m_1,
+\qquad
+m_2\rightarrow2m_2,
+\]
+
+dan:
+
+\[
+F_g'
+=
+G\frac{(2m_1)(2m_2)}{r^2}
+=
+4F_g.
+\]
+
+Dus:
+
+\[
+\boxed{
+\text{beide massa's verdubbelen}
+\Rightarrow
+F_g\text{ wordt viermaal zo groot}.
+}
+\]
+
+
+\begin{oefening}[Redeneren zonder rekenen]{\oefB\ESS}
+
+Een gravitatiekracht heeft oorspronkelijk grootte $F$.
+
+Bepaal de nieuwe kracht in functie van $F$.
+
+\begin{enumerate}
+  \item Alleen $m_1$ wordt driemaal zo groot.
+  \item Beide massa's worden tweemaal zo groot.
+  \item $m_1$ wordt gehalveerd en $m_2$ verdubbeld.
+  \item Beide massa's worden gehalveerd.
+\end{enumerate}
+
+Gebruik verhoudingen. Bereken de kracht niet opnieuw vanaf nul.
+
+\end{oefening}
+
+
+% ============================================================
+% 11. INVERSE KWADRATENWET
+% ============================================================
+
+\FVDsection{De afstand telt dubbel}
+
+De afstand heeft een bijzondere invloed:
+
+\[
+F_g
+\propto
+\frac{1}{r^2}.
+\]
+
+We noemen dit een \textbf{inverse-kwadratenwet}.
+
+
+Als de afstand verdubbelt:
+
+\[
+r\rightarrow2r,
+\]
+
+dan:
+
+\[
+F_g'
+=
+G\frac{m_1m_2}{(2r)^2}
+=
+\frac14F_g.
+\]
+
+Dus:
+
+\[
+\boxed{
+r\rightarrow2r
+\quad\Longrightarrow\quad
+F_g\rightarrow\frac14F_g.
+}
+\]
+
+
+Als de afstand verdrievoudigt:
+
+\[
+r\rightarrow3r,
+\]
+
+dan:
+
+\[
+F_g'
+=
+\frac19F_g.
+\]
+
+
+Als de afstand halveert:
+
+\[
+r\rightarrow\frac r2,
+\]
+
+dan:
+
+\[
+F_g'
+=
+4F_g.
+\]
+
+
+\begin{center}
+\[
+\boxed{
+\begin{array}{c|c}
+\text{afstand} & \text{gravitatiekracht}\\
+\hline
+r & F_g\\
+2r & F_g/4\\
+3r & F_g/9\\
+4r & F_g/16\\
+r/2 & 4F_g
+\end{array}
+}
+\]
+\end{center}
+
+
+% ============================================================
+% 12. GRAFISCHE BETEKENIS
+% ============================================================
+
+\FVDsection{Gravitatiekracht als functie van de afstand}
+
+Voor vaste massa's kunnen we schrijven:
+
+\[
+F_g(r)
+=
+\frac{C}{r^2},
+\]
+
+waarbij
+
+\[
+C=Gm_1m_2.
+\]
+
+De kracht neemt dus sterk af wanneer $r$ groter wordt.
+
+Maar let op:
+
+\[
+F_g(r)
+\]
+
+wordt nooit exact nul voor een eindige afstand.
+
+Wiskundig geldt:
+
+\[
+\lim_{r\rightarrow\infty}F_g(r)=0.
+\]
+
+De gravitatie-interactie wordt dus steeds zwakker, maar heeft in het
+ideale model geen scherpe grens waar ze plots verdwijnt.
+
+
+\begin{oefening}[Afstand analyseren]{\oefU\ESS}
+
+Twee massa's oefenen op afstand $r$ een gravitatiekracht $F$ op elkaar
+uit.
+
+Bepaal de nieuwe kracht wanneer de afstand:
+
+\begin{enumerate}
+  \item $2r$ wordt;
+  \item $5r$ wordt;
+  \item $r/3$ wordt;
+  \item $0{,}8r$ wordt.
+\end{enumerate}
+
+Leg telkens uit hoe je tot je antwoord komt.
+
+\end{oefening}
+
+
+\begin{oefening}[Combineren van veranderingen]{\oefU\ESS}
+
+Twee massa's oefenen een gravitatiekracht $F$ op elkaar uit.
+
+Daarna wordt:
+
+\[
+m_1'=2m_1,
+\qquad
+m_2'=3m_2,
+\qquad
+r'=2r.
+\]
+
+Bepaal zonder de oorspronkelijke waarden van de massa's of afstand te
+kennen de verhouding
+
+\[
+\frac{F_g'}{F_g}.
+\]
+
+\end{oefening}
+
+
+% ============================================================
+% 13. VAN KRACHT NAAR VELD
+% ============================================================
+
+\FVDsection{Hoe weet een massa dat er een andere massa is?}
+
+De gravitatiewet vertelt ons welke kracht twee massa's op elkaar
+uitoefenen.
+
+Maar we kunnen de situatie ook op een andere manier beschrijven.
+
+Neem de aarde.
+
+Zelfs wanneer we nog geen tweede massa kiezen, kunnen we zeggen dat de
+aarde de ruimte rondom zich fysisch beïnvloedt.
+
+Plaatsen we ergens in die ruimte een massa, dan ondervindt die een
+gravitatiekracht.
+
+Om die invloed van de aarde op de ruimte te beschrijven voeren we het
+begrip \textbf{gravitatieveld} in.
+
+
+\begin{definitie}[Gravitatieveld]
+
+Een massa veroorzaakt in de ruimte rondom zich een
+\textbf{gravitatieveld}.
+
+De gravitatieveldvector $\vec g$ in een punt wordt gedefinieerd als de
+gravitatiekracht per eenheid massa die een kleine testmassa in dat punt
+zou ondervinden:
+
+\[
+\boxed{
+\vec g
+=
+\frac{\vec F_g}{m}.
+}
+\]
+
+\end{definitie}
+
+
+Dit is een belangrijke conceptuele overgang:
+
+\[
+\boxed{
+\text{bronmassa}
+\longrightarrow
+\text{gravitatieveld}
+\longrightarrow
+\text{kracht op een massa}.
+}
+\]
+
+
+% ============================================================
+% 14. EENHEID VAN g
+% ============================================================
+
+\FVDsection{De eenheid van gravitatieveldsterkte}
+
+Uit
+
+\[
+\vec g
+=
+\frac{\vec F_g}{m}
+\]
+
+volgt:
+
+\[
+[g]
+=
+\mathrm{\frac{N}{kg}}.
+\]
+
+Dus:
+
+\[
+\boxed{
+[g]=\mathrm{N/kg}.
+}
+\]
+
+
+Maar uit Newton II:
+
+\[
+\vec F=m\vec a
+\]
+
+volgt:
+
+\[
+\vec a=\frac{\vec F}{m}.
+\]
+
+Daarom is:
+
+\[
+1\,\mathrm{\frac{N}{kg}}
+=
+1\,\mathrm{\frac{m}{s^2}}.
+\]
+
+We kunnen $g$ dus op twee manieren interpreteren:
+
+\[
+\boxed{
+g=\text{gravitatiekracht per kilogram}
+}
+\]
+
+en
+
+\[
+\boxed{
+g=\text{versnelling van een vrij vallende testmassa}.
+}
+\]
+
+
+\begin{opmerking}
+
+De twee eenheden
+
+\[
+\mathrm{N/kg}
+\qquad\text{en}\qquad
+\mathrm{m/s^2}
+\]
+
+zijn dimensioneel gelijkwaardig, maar benadrukken een andere
+interpretatie.
+
+Bij een \textbf{veld} gebruiken we vaak $\mathrm{N/kg}$.
+
+Bij een \textbf{versnelling} gebruiken we meestal $\mathrm{m/s^2}$.
+
+\end{opmerking}
+
+
+% ============================================================
+% 15. GRAVITATIEVELD VAN EEN MASSA
+% ============================================================
+
+\FVDsection{Het gravitatieveld van een bolvormige massa}
+
+Beschouw een bronmassa $M$ en een testmassa $m$ op afstand $r$.
+
+Volgens de gravitatiewet:
+
+\[
+F_g
+=
+G\frac{Mm}{r^2}.
+\]
+
+Volgens de definitie van gravitatieveldsterkte:
+
+\[
+g
+=
+\frac{F_g}{m}.
+\]
+
+Invullen geeft:
+
+\[
+g
+=
+\frac{1}{m}
+G\frac{Mm}{r^2}.
+\]
+
+De testmassa valt weg:
+
+\[
+\boxed{
+g
+=
+G\frac{M}{r^2}.
+}
+\]
+
+
+Dit resultaat is fundamenteel.
+
+De gravitatieveldsterkte wordt bepaald door:
+
+\begin{itemize}
+  \item de bronmassa $M$;
+  \item de afstand $r$ tot de bronmassa.
+\end{itemize}
+
+Ze hangt niet af van de massa van het voorwerp waarmee we het veld
+onderzoeken.
+
+
+\begin{opmerking}
+
+\[
+\boxed{
+g
+=
+G\frac{M}{r^2}
+}
+\]
+
+beschrijft het veld dat door de bronmassa $M$ wordt veroorzaakt.
+
+Een testmassa $m$ die zich in dat veld bevindt, ondervindt vervolgens:
+
+\[
+\boxed{
+\vec F_g=m\vec g.
+}
+\]
+
+\end{opmerking}
+
+
+% ============================================================
+% 16. WAAROM VALLEN MASSA'S EVEN SNEL?
+% ============================================================
+
+\FVDsection{Waarom hangt de valversnelling niet van de massa af?}
+
+Een zwaarder voorwerp ondervindt een grotere gravitatiekracht:
+
+\[
+F_g
+=
+G\frac{Mm}{r^2}.
+\]
+
+Je zou daardoor kunnen verwachten dat een zwaarder voorwerp ook sneller
+valt.
+
+Maar volgens Newton II:
+
+\[
+a=\frac{F_g}{m}.
+\]
+
+Invullen geeft:
+
+\[
+a
+=
+\frac{1}{m}
+G\frac{Mm}{r^2}.
+\]
+
+De massa $m$ van het vallende voorwerp valt weg:
+
+\[
+\boxed{
+a
+=
+G\frac{M}{r^2}
+=
+g.
+}
+\]
+
+Dus in hetzelfde gravitatieveld krijgen alle voorwerpen dezelfde
+valversnelling, zolang andere krachten zoals luchtweerstand
+verwaarloosbaar zijn.
+
+
+\begin{oefening}[Hamer en veer]{\oefU\ESS}
+
+Op de maan laat een astronaut tegelijk een hamer en een veer los.
+
+Er is praktisch geen atmosfeer.
+
+\begin{question}
+Welk voorwerp ondervindt de grootste gravitatiekracht?
+\end{question}
+
+\begin{question}
+Welk voorwerp heeft de grootste valversnelling?
+\end{question}
+
+\begin{question}
+Verklaar waarom beide antwoorden niet met elkaar in tegenspraak zijn.
+Gebruik zowel de gravitatiewet als Newton II.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 17. g AAN HET AARDOPPERVLAK
+% ============================================================
+
+\FVDsection{Waar komt $9{,}81\,\mathrm{N/kg}$ vandaan?}
+
+In eerdere fysica gebruikten we:
+
+\[
+g\approx9{,}81\,\mathrm{N/kg}.
+\]
+
+Nu kunnen we begrijpen waar die waarde vandaan komt.
+
+Aan het aardoppervlak geldt ongeveer:
+
+\[
+r=R_\mathrm A.
+\]
+
+Dus:
+
+\[
+g
+=
+G\frac{M_\mathrm A}{R_\mathrm A^2}.
+\]
+
+Met ongeveer:
+
+\[
+M_\mathrm A
+=
+5{,}97\times10^{24}\,\mathrm{kg}
+\]
+
+en:
+
+\[
+R_\mathrm A
+=
+6{,}37\times10^6\,\mathrm m
+\]
+
+vinden we:
+
+\[
+g
+=
+6{,}674\times10^{-11}
+\frac{5{,}97\times10^{24}}
+{(6{,}37\times10^6)^2}.
+\]
+
+Dit geeft ongeveer:
+
+\[
+\boxed{
+g\approx9{,}81\,\mathrm{N/kg}.
+}
+\]
+
+De bekende waarde van $g$ is dus geen losstaande natuurconstante.
+
+Ze volgt uit:
+
+\[
+\boxed{
+G,\quad M_\mathrm A,\quad R_\mathrm A.
+}
+\]
+
+
+% ============================================================
+% 18. Fg = mg EN DE ALGEMENE WET
+% ============================================================
+
+\FVDsection{Hoe hangen $F_g=mg$ en de gravitatiewet samen?}
+
+Nabij het aardoppervlak schrijven we:
+
+\[
+F_g=mg.
+\]
+
+De algemene gravitatiewet geeft:
+
+\[
+F_g
+=
+G\frac{M_\mathrm A m}{r^2}.
+\]
+
+Omdat:
+
+\[
+g
+=
+G\frac{M_\mathrm A}{r^2},
+\]
+
+volgt onmiddellijk:
+
+\[
+F_g=mg.
+\]
+
+Dus:
+
+\[
+\boxed{
+F_g=mg
+}
+\]
+
+is geen concurrerende wet.
+
+Het is de praktische vorm van de gravitatiewet wanneer het lokale
+gravitatieveld bekend is.
+
+
+% ============================================================
+% 19. MASSA EN GEWICHT
+% ============================================================
+
+\FVDsection{Massa is niet hetzelfde als gewicht}
+
+In dagelijkse taal gebruiken we ``massa'' en ``gewicht'' vaak alsof
+ze hetzelfde betekenen.
+
+In fysica moeten we ze onderscheiden.
+
+\textbf{Massa} is een eigenschap van een voorwerp.
+
+Ze wordt uitgedrukt in:
+
+\[
+\mathrm{kg}.
+\]
+
+De gravitatiekracht op dat voorwerp is een kracht:
+
+\[
+F_g=mg
+\]
+
+en wordt uitgedrukt in:
+
+\[
+\mathrm N.
+\]
+
+
+Een astronaut met massa
+
+\[
+80\,\mathrm{kg}
+\]
+
+heeft zowel op aarde als op de maan dezelfde massa.
+
+Maar de gravitatieveldsterkte op de maan is kleiner.
+
+Daardoor is ook de gravitatiekracht op de astronaut kleiner.
+
+
+\begin{oefening}[Aarde en maan]{\oefB\ESS}
+
+Een astronaut heeft massa
+
+\[
+m=75\,\mathrm{kg}.
+\]
+
+Neem:
+
+\[
+g_\mathrm A=9{,}81\,\mathrm{N/kg}
+\]
+
+en:
+
+\[
+g_\mathrm M=1{,}62\,\mathrm{N/kg}.
+\]
+
+\begin{question}
+Wat is de massa van de astronaut op aarde?
+\end{question}
+
+\begin{question}
+Wat is zijn massa op de maan?
+\end{question}
+
+\begin{question}
+Bereken de gravitatiekracht op de astronaut op aarde.
+\end{question}
+
+\begin{question}
+Bereken de gravitatiekracht op de astronaut op de maan.
+\end{question}
+
+\begin{question}
+Leg in woorden uit wat verandert en wat niet verandert.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 20. HOOGTE
+% ============================================================
+
+\FVDsection{Hoe verandert $g$ met de hoogte?}
+
+Op hoogte $h$ boven het aardoppervlak is de afstand tot het middelpunt
+van de aarde:
+
+\[
+r=R_\mathrm A+h.
+\]
+
+Daarom:
+
+\[
+\boxed{
+g(h)
+=
+G\frac{M_\mathrm A}{(R_\mathrm A+h)^2}.
+}
+\]
+
+
+Hieruit volgt onmiddellijk dat $g$ afneemt met de hoogte.
+
+Maar opnieuw volgens een inverse-kwadratenwet.
+
+
+\begin{voorbeeld}[Op één aardstraal hoogte]
+
+Stel dat een satelliet zich op hoogte
+
+\[
+h=R_\mathrm A
+\]
+
+boven het aardoppervlak bevindt.
+
+Dan is zijn afstand tot het aardmiddelpunt:
+
+\[
+r=R_\mathrm A+h
+=
+2R_\mathrm A.
+\]
+
+Daarom:
+
+\[
+g
+=
+G\frac{M_\mathrm A}{(2R_\mathrm A)^2}.
+\]
+
+Dus:
+
+\[
+g
+=
+\frac14
+G\frac{M_\mathrm A}{R_\mathrm A^2}.
+\]
+
+Bijgevolg:
+
+\[
+\boxed{
+g=\frac14g_0.
+}
+\]
+
+Let op: op een hoogte van één aardstraal is $g$ dus niet nul.
+
+Het is nog steeds een kwart van de waarde aan het aardoppervlak.
+
+\end{voorbeeld}
+
+
+\begin{oefening}[Hoe hoog?]{\oefU\ESS}
+
+Op welke hoogte boven het aardoppervlak is de gravitatieveldsterkte
+gelijk aan
+
+\[
+\frac14g_0?
+\]
+
+Werk eerst symbolisch en leg duidelijk uit waarom de gezochte hoogte
+niet gelijk is aan $2R_\mathrm A$.
+
+\end{oefening}
+
+
+% ============================================================
+% 21. VELDLIJNEN
+% ============================================================
+
+\FVDsection{Een onzichtbaar veld zichtbaar maken}
+
+Een gravitatieveld kunnen we niet rechtstreeks zien.
+
+Om de structuur van een veld voor te stellen gebruiken we
+\textbf{veldlijnen}.
+
+
+\begin{definitie}[Gravitatieveldlijn]
+
+Een gravitatieveldlijn is een denkbeeldige lijn waarvan de raaklijn in
+elk punt de richting van de gravitatieveldvector aangeeft.
+
+\end{definitie}
+
+
+Rond een bolvormige massa zijn de veldlijnen radiaal gericht naar het
+middelpunt.
+
+Dat komt doordat gravitatie aantrekkend is.
+
+
+\begin{opmerking}
+
+Uit een veldlijnenpatroon kunnen we twee soorten informatie halen:
+
+\begin{itemize}
+  \item de \textbf{richting en zin} van $\vec g$ worden aangegeven door
+        de richting van de veldlijnen;
+  \item waar de veldlijnen dichter bij elkaar liggen, stellen we een
+        \textbf{sterker veld} voor.
+\end{itemize}
+
+\end{opmerking}
+
+
+Omdat:
+
+\[
+g\propto\frac1{r^2},
+\]
+
+neemt de veldsterkte af naarmate we verder van de bronmassa komen.
+
+
+% ============================================================
+% 22. KRACHT OF VELD?
+% ============================================================
+
+\FVDsection{Gravitatiekracht of gravitatieveld?}
+
+De begrippen worden gemakkelijk door elkaar gehaald.
+
+Het verschil is fundamenteel.
+
+
+\begin{center}
+\[
+\boxed{
+\begin{array}{c|c}
+\text{gravitatieveld} & \text{gravitatiekracht}\\
+\hline
+\vec g & \vec F_g\\[1mm]
+\mathrm{N/kg} & \mathrm N\\[1mm]
+\text{eigenschap van een punt in de ruimte}
+&
+\text{kracht op een gekozen massa}\\[1mm]
+g=G\dfrac{M}{r^2}
+&
+F_g=G\dfrac{Mm}{r^2}\\[3mm]
+&
+\vec F_g=m\vec g
+\end{array}
+}
+\]
+\end{center}
+
+
+De bronmassa $M$ veroorzaakt een veld.
+
+Een massa $m$ die in dat veld wordt geplaatst, ondervindt een kracht.
+
+Dus:
+
+\[
+\boxed{
+M
+\longrightarrow
+\vec g
+\longrightarrow
+\vec F_g\text{ op }m.
+}
+\]
+
+
+\begin{oefening}[Kracht of veld?]{\oefB\ESS}
+
+Geef telkens aan of de uitspraak betrekking heeft op $\vec F_g$ of
+$\vec g$.
+
+\begin{enumerate}
+  \item De eenheid is $\mathrm N$.
+  \item De eenheid is $\mathrm{N/kg}$.
+  \item De grootheid beschrijft de invloed van de aarde in een punt in
+        de ruimte.
+  \item De grootheid hangt af van de massa van het voorwerp dat in het
+        veld wordt geplaatst.
+  \item De grootheid is nabij het aardoppervlak ongeveer
+        $9{,}81\,\mathrm{N/kg}$.
+\end{enumerate}
+
+\end{oefening}
+
+
+% ============================================================
+% 23. SUPERPOSITIE
+% ============================================================
+
+\FVDsection{Wanneer meerdere massa's aantrekken}
+
+Tot nu toe bekeken we meestal één bronmassa.
+
+In werkelijkheid kan een voorwerp tegelijkertijd door verschillende
+massa's worden aangetrokken.
+
+De aarde ondervindt bijvoorbeeld gravitatie van de zon, de maan en alle
+andere hemellichamen.
+
+Omdat kracht een vector is, geldt het superpositiebeginsel:
+
+\[
+\boxed{
+\vec F_{g,\mathrm{res}}
+=
+\vec F_{g,1}
++
+\vec F_{g,2}
++\cdots
+}
+\]
+
+
+Voor gravitatievelden geldt analoog:
+
+\[
+\boxed{
+\vec g_\mathrm{res}
+=
+\vec g_1
++
+\vec g_2
++\cdots
+}
+\]
+
+
+Dit is vectoriële optelling.
+
+We mogen dus niet zomaar de groottes van alle veldsterktes optellen.
+
+
+\begin{voorbeeld}[Tussen twee gelijke massa's]
+
+Twee identieke bolvormige massa's bevinden zich op een zekere afstand
+van elkaar.
+
+Beschouw exact het midden tussen beide massa's.
+
+De eerste massa veroorzaakt daar een gravitatieveld naar links.
+
+De tweede massa veroorzaakt daar een even groot gravitatieveld naar
+rechts.
+
+Dus:
+
+\[
+\vec g_1=-\vec g_2.
+\]
+
+Daarom:
+
+\[
+\boxed{
+\vec g_\mathrm{res}=\vec0.
+}
+\]
+
+Er zijn daar dus wel twee gravitatievelden aanwezig, maar hun
+vectoriële som is nul.
+
+\end{voorbeeld}
+
+
+\begin{oefening}[Nulveld]{\oefU\ESS}
+
+Twee gelijke sterren bevinden zich op afstand $d$ van elkaar.
+
+\begin{question}
+Waar op de verbindingslijn ligt een punt waar het resulterende
+gravitatieveld nul is?
+\end{question}
+
+\begin{question}
+Betekent $\vec g_\mathrm{res}=\vec0$ dat geen van beide sterren daar
+een gravitatieveld veroorzaakt?
+\end{question}
+
+\begin{question}
+Wat verandert er wanneer de massa van één ster groter wordt?
+Redeneer kwalitatief waar het nulpunt dan zal liggen.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 24. SATELLIET
+% ============================================================
+
+\FVDsection{Waarom valt een satelliet niet op de aarde?}
+
+Een satelliet in een baan rond de aarde wordt voortdurend door de aarde
+aangetrokken.
+
+Er werkt dus een gravitatiekracht naar het middelpunt van de aarde.
+
+Toch bereikt de satelliet het aardoppervlak niet.
+
+Hoe kan dat?
+
+Het antwoord is dat een satelliet eigenlijk voortdurend
+\textbf{valt}.
+
+Maar terwijl hij naar de aarde valt, beweegt hij ook voldoende snel
+zijwaarts.
+
+De kromming van zijn baan volgt daardoor de kromming van de aarde.
+
+
+% ============================================================
+% 25. GRAVITATIE ALS CENTRIPETALE KRACHT
+% ============================================================
+
+\FVDsection{Gravitatie houdt een satelliet in zijn baan}
+
+Voor een satelliet in een cirkelvormige baan is een naar het middelpunt
+gerichte versnelling nodig.
+
+De centripetale versnelling is:
+
+\[
+\boxed{
+a_c=\frac{v^2}{r}.
+}
+\]
+
+Volgens Newton II is daarvoor een resulterende kracht nodig:
+
+\[
+F_\mathrm{res}=ma_c.
+\]
+
+Bij een ideale cirkelbaan rond een planeet levert de gravitatiekracht
+die centripetale kracht.
+
+Dus:
+
+\[
+\boxed{
+F_g=F_c.
+}
+\]
+
+Daarom:
+
+\[
+G\frac{Mm}{r^2}
+=
+m\frac{v^2}{r}.
+\]
+
+De satellietmassa $m$ valt weg:
+
+\[
+G\frac{M}{r^2}
+=
+\frac{v^2}{r}.
+\]
+
+Dus:
+
+\[
+\boxed{
+v
+=
+\sqrt{\frac{GM}{r}}.
+}
+\]
+
+
+Dit resultaat vertelt ons iets opmerkelijks:
+
+\begin{center}
+de baansnelheid van een satelliet in een ideale cirkelbaan hangt niet
+af van de massa van de satelliet.
+\end{center}
+
+
+Omdat:
+
+\[
+g(r)=\frac{GM}{r^2},
+\]
+
+kunnen we ook schrijven:
+
+\[
+\boxed{
+g(r)=a_c.
+}
+\]
+
+De gravitatieveldsterkte op de baan is dus precies de centripetale
+versnelling die nodig is om de satelliet op die cirkelbaan te houden.
+
+
+\begin{opmerking}
+
+Een satelliet is niet ``buiten de zwaartekracht''.
+
+Integendeel:
+
+\[
+\boxed{
+\text{zonder gravitatie zou de satelliet de cirkelbaan verlaten.}
+}
+\]
+
+Gravitatie is juist de oorzaak van de voortdurende richtingsverandering
+van de snelheidsvector.
+
+\end{opmerking}
+
+
+% ============================================================
+% 26. GEWICHTLOOSHEID
+% ============================================================
+
+\FVDsection{Waarom lijken astronauten gewichtloos?}
+
+Astronauten in een ruimtestation lijken gewichtloos.
+
+Dat betekent niet dat daar geen gravitatieveld meer is.
+
+Een ruimtestation in een lage baan rond de aarde bevindt zich nog
+steeds in een aanzienlijk gravitatieveld.
+
+Astronaut en ruimtestation vallen echter samen rond de aarde.
+
+Ze hebben vrijwel dezelfde gravitatieversnelling.
+
+Daardoor hoeft de vloer van het ruimtestation de astronaut niet op
+dezelfde manier te ondersteunen als een vloer op aarde.
+
+De toestand die de astronaut ervaart is dus beter te begrijpen als
+\textbf{voortdurende vrije val} dan als ``geen zwaartekracht''.
+
+
+\begin{oefening}[Een satelliet]{\oefU\ESS}
+
+Een satelliet beweegt in een cirkelvormige baan rond de aarde.
+
+\begin{question}
+Welke kracht levert de centripetale kracht?
+\end{question}
+
+\begin{question}
+In welke richting wijst de gravitatiekracht?
+\end{question}
+
+\begin{question}
+In welke richting wijst de centripetale versnelling?
+\end{question}
+
+\begin{question}
+Stel de vergelijking op waarmee je de baansnelheid kunt bepalen.
+\end{question}
+
+\begin{question}
+Waarom verdwijnt de satellietmassa uit de uiteindelijke formule voor
+$v$?
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 27. EEN ANALYSE VAN DE BAANSNELHEID
+% ============================================================
+
+\FVDsection{Wat gebeurt er met de baansnelheid op grotere hoogte?}
+
+Voor een cirkelbaan vonden we:
+
+\[
+v
+=
+\sqrt{\frac{GM}{r}}.
+\]
+
+Voor dezelfde planeet zijn $G$ en $M$ constant.
+
+Dus:
+
+\[
+v\propto\frac{1}{\sqrt r}.
+\]
+
+Een satelliet in een hogere cirkelbaan heeft daarom een kleinere
+baansnelheid dan een satelliet in een lagere cirkelbaan.
+
+Dat kan aanvankelijk verrassend lijken.
+
+Een grotere baan betekent niet automatisch een grotere snelheid.
+
+Het gravitatieveld is op grotere afstand zwakker en de vereiste
+centripetale versnelling is daardoor kleiner.
+
+
+\begin{oefening}[Twee satellieten]{\oefU\ESS}
+
+Satelliet A beweegt in een cirkelbaan met straal $r$.
+
+Satelliet B beweegt rond dezelfde planeet in een cirkelbaan met straal
+
+\[
+4r.
+\]
+
+Zonder numerieke gegevens te gebruiken:
+
+\begin{enumerate}
+  \item vergelijk de gravitatieveldsterktes $g_A$ en $g_B$;
+  \item vergelijk de baansnelheden $v_A$ en $v_B$;
+  \item leg uit waarom beide resultaten fysisch samenhangen.
+\end{enumerate}
+
+\end{oefening}
+
+
+% ============================================================
+% 28. OEFENINGENBUNDEL
+% ============================================================
+
+\FVDsection{Oefeningen}
+
+
+% ------------------------------------------------------------
+% BASIS
+% ------------------------------------------------------------
+
+\FVDsubsection{Basis}
+
+
+\begin{oefening}[Twee bowlingballen]{\oefB}
+
+Twee bowlingballen hebben elk een massa van
+
+\[
+7{,}0\,\mathrm{kg}.
+\]
+
+De afstand tussen hun massamiddelpunten is
+
+\[
+0{,}50\,\mathrm m.
+\]
+
+Bereken de gravitatiekracht die ze op elkaar uitoefenen.
+
+Vergelijk de grootteorde met een kracht van $1\,\mathrm N$.
+
+\end{oefening}
+
+
+\begin{oefening}[Mens en hond]{\oefB}
+
+Een persoon van $70\,\mathrm{kg}$ staat op $1{,}5\,\mathrm m$ van een
+hond van $25\,\mathrm{kg}$.
+
+Benader beide als puntmassa's.
+
+Bereken de grootte van hun onderlinge gravitatiekracht.
+
+\end{oefening}
+
+
+\begin{oefening}[De juiste afstand]{\oefB\ESS}
+
+Een satelliet bevindt zich op hoogte $h$ boven het aardoppervlak.
+
+Welke afstand moet in
+
+\[
+F_g=G\frac{Mm}{r^2}
+\]
+
+worden gebruikt?
+
+Kies uit:
+
+\[
+r=h,
+\qquad
+r=R_\mathrm A,
+\qquad
+r=R_\mathrm A+h.
+\]
+
+Verklaar je keuze.
+
+\end{oefening}
+
+
+\begin{oefening}[Gravitatieveld]{\oefB\ESS}
+
+Een bolvormige planeet heeft massa $M$.
+
+Een punt $P$ bevindt zich op afstand $r$ van het middelpunt.
+
+\begin{enumerate}
+  \item Schrijf de formule voor $g$ in $P$.
+  \item Wat gebeurt er met $g$ wanneer $M$ verdubbelt?
+  \item Wat gebeurt er met $g$ wanneer $r$ verdubbelt?
+  \item Welke richting heeft $\vec g$?
+\end{enumerate}
+
+\end{oefening}
+
+
+% ------------------------------------------------------------
+% VERDIEPING
+% ------------------------------------------------------------
+
+\FVDsubsection{Verdieping}
+
+
+\begin{oefening}[Een onbekende planeet]{\oefU\ESS}
+
+Een planeet heeft tweemaal de massa van de aarde en tweemaal de straal
+van de aarde:
+
+\[
+M_P=2M_\mathrm A,
+\qquad
+R_P=2R_\mathrm A.
+\]
+
+Bepaal de gravitatieveldsterkte aan het oppervlak van de planeet in
+functie van $g_\mathrm A$.
+
+Werk met verhoudingen en vermijd onnodige numerieke berekeningen.
+
+\end{oefening}
+
+
+\begin{oefening}[Zelfde massa, kleinere planeet]{\oefU\ESS}
+
+Een fictieve planeet heeft dezelfde massa als de aarde, maar slechts
+de helft van de aardstraal.
+
+\begin{enumerate}
+  \item Hoe groot is $g$ aan het oppervlak ten opzichte van
+        $g_\mathrm A$?
+  \item Hoe groot is de gravitatiekracht op een astronaut van
+        $80\,\mathrm{kg}$ ten opzichte van die op aarde?
+  \item Verandert de massa van de astronaut?
+\end{enumerate}
+
+\end{oefening}
+
+
+\begin{oefening}[Een fout analyseren]{\oefU\ESS}
+
+Een leerling schrijft:
+
+\[
+g(h)
+=
+G\frac{M_\mathrm A}{h^2}.
+\]
+
+De leerling beweert dat deze formule de gravitatieveldsterkte op hoogte
+$h$ boven het aardoppervlak geeft.
+
+Analyseer de fout en geef de correcte formule.
+
+Leg ook uit waarom de fout vooral voor kleine hoogtes tot absurde
+resultaten leidt.
+
+\end{oefening}
+
+
+\begin{oefening}[Waar is $g$ viermaal kleiner?]{\oefU\ESS}
+
+Bepaal op welke afstand van het middelpunt van de aarde de
+gravitatieveldsterkte gelijk is aan:
+
+\[
+\frac14g_0.
+\]
+
+Bepaal vervolgens de overeenkomstige hoogte boven het aardoppervlak.
+
+\end{oefening}
+
+
+\begin{oefening}[Gravitatie en Newton III]{\oefU\ESS}
+
+De zon trekt de aarde aan.
+
+\begin{enumerate}
+  \item Oefent de aarde ook een gravitatiekracht uit op de zon?
+  \item Vergelijk de groottes van beide krachten.
+  \item Vergelijk kwalitatief de versnellingen van aarde en zon die door
+        deze onderlinge interactie ontstaan.
+  \item Verklaar waarom ``de zon trekt harder aan de aarde'' fysisch
+        geen correcte formulering is.
+\end{enumerate}
+
+\end{oefening}
+
+
+% ------------------------------------------------------------
+% GEVORDERD
+% ------------------------------------------------------------
+
+\FVDsubsection{Gevorderd}
+
+
+\begin{oefening}[Waar ligt het nulpunt?]{\oefG}
+
+Twee massa's $M$ en $4M$ bevinden zich op een afstand $d$ van elkaar.
+
+Er bestaat tussen beide massa's een punt waar het resulterende
+gravitatieveld nul is.
+
+Noem de afstand van dit punt tot massa $M$ gelijk aan $x$.
+
+\begin{enumerate}
+  \item Maak een schets van beide gravitatieveldvectoren in het gezochte
+        punt.
+  \item Stel een vergelijking op voor $x$.
+  \item Los de vergelijking op.
+  \item Leg uit waarom het nulpunt dichter bij de kleinste massa ligt.
+\end{enumerate}
+
+\end{oefening}
+
+
+\begin{oefening}[Een planeet ontdekken]{\oefG}
+
+Astronomen ontdekken een bolvormige planeet.
+
+Aan het oppervlak meten ze:
+
+\[
+g=12{,}0\,\mathrm{N/kg}.
+\]
+
+Uit astronomische waarnemingen bepalen ze de straal:
+
+\[
+R=8{,}0\times10^6\,\mathrm m.
+\]
+
+Gebruik
+
+\[
+g=G\frac{M}{R^2}
+\]
+
+om de massa van de planeet te bepalen.
+
+Controleer vervolgens:
+
+\begin{enumerate}
+  \item de eenheid van je antwoord;
+  \item de grootteorde;
+  \item of een grotere straal bij dezelfde gemeten $g$ een grotere of
+        kleinere planeetmassa zou vereisen.
+\end{enumerate}
+
+\end{oefening}
+
+
+\begin{oefening}[Satellietbaan analyseren]{\oefG}
+
+Een satelliet beweegt in een ideale cirkelbaan rond een planeet met
+massa $M$.
+
+Vertrek uitsluitend van:
+
+\[
+F_g
+=
+G\frac{Mm}{r^2}
+\]
+
+en
+
+\[
+a_c
+=
+\frac{v^2}{r}.
+\]
+
+\begin{enumerate}
+  \item Leid de formule voor de baansnelheid af.
+  \item Onderzoek hoe $v$ verandert wanneer $r$ viermaal zo groot wordt.
+  \item Leg uit waarom de satellietmassa niet in de formule voorkomt.
+  \item Voorspel kwalitatief wat er met de omlooptijd gebeurt wanneer
+        de baanstraal groter wordt.
+\end{enumerate}
+
+\end{oefening}
+
+
+\begin{oefening}[Modelkritiek]{\oefG}
+
+Bij veel berekeningen behandelen we de aarde als een bolvormige massa
+waarvan de volledige massa in het middelpunt geconcentreerd lijkt.
+
+Onderzoek kritisch dit model.
+
+Bespreek minstens:
+
+\begin{enumerate}
+  \item waarom het model voor veel satellietberekeningen bruikbaar is;
+  \item waarom de echte aarde niet perfect aan het model voldoet;
+  \item welke gevolgen lokale verschillen in massaverdeling kunnen
+        hebben;
+  \item waarom een fysisch model bruikbaar kan zijn zonder de
+        werkelijkheid perfect weer te geven.
+\end{enumerate}
+
+\end{oefening}
+
+
+% ============================================================
+% 29. ICT / ONDERZOEK
+% ============================================================
+
+\FVDsection{Onderzoeken met ICT}
+
+De inverse-kwadratenwet leent zich uitstekend voor een digitale
+verkenning.
+
+Neem bijvoorbeeld:
+
+\[
+g(r)
+=
+G\frac{M_\mathrm A}{r^2}.
+\]
+
+Maak met GeoGebra, Desmos of een spreadsheet een grafiek van $g$ als
+functie van $r$ voor:
+
+\[
+r\geq R_\mathrm A.
+\]
+
+Onderzoek vervolgens:
+
+\begin{enumerate}
+  \item hoe snel $g$ vlak boven het aardoppervlak verandert;
+  \item op welke afstand $g$ halveert;
+  \item op welke afstand $g$ nog $10\%$ van de waarde aan het
+        aardoppervlak bedraagt;
+  \item waarom de grafiek de horizontale as nadert maar niet snijdt.
+\end{enumerate}
+
+Vergelijk daarna eventueel met een tweede hemellichaam.
+
+Zo gebruik je een wiskundige functie als model voor een fysische
+werkelijkheid.
+
+
+% ============================================================
+% 30. MISCONCEPTIES
+% ============================================================
+
+\FVDsection{Veelvoorkomende denkfouten}
+
+\begin{itemize}
+
+  \item \textbf{``Alleen de aarde oefent gravitatie uit.''}
+
+  Nee. Elke massa oefent gravitatie uit op andere massa's.
+
+  \item \textbf{``De aarde trekt harder aan jou dan jij aan de aarde.''}
+
+  Nee. Volgens Newton III zijn de twee interactiekrachten even groot.
+
+  \item \textbf{``Een satelliet bevindt zich buiten de zwaartekracht.''}
+
+  Nee. De gravitatiekracht zorgt juist voor de centripetale versnelling
+  van de satelliet.
+
+  \item \textbf{``Op grotere hoogte verdwijnt gravitatie.''}
+
+  Nee. Ze neemt af volgens een inverse-kwadratenwet.
+
+  \item \textbf{``In $F_g=Gm_1m_2/r^2$ is $r$ de afstand tussen de
+  oppervlakken.''}
+
+  Nee. Voor bolvormige massa's gebruiken we de afstand tussen de
+  massamiddelpunten.
+
+  \item \textbf{``Een zwaarder voorwerp valt sneller omdat de
+  gravitatiekracht groter is.''}
+
+  De kracht is inderdaad groter, maar de massa die versneld moet worden
+  is in dezelfde verhouding groter. Zonder luchtweerstand is de
+  valversnelling onafhankelijk van de testmassa.
+
+  \item \textbf{``$g$ is overal gelijk aan $9{,}81\,\mathrm{N/kg}$.''}
+
+  Nee. Die waarde geldt bij benadering nabij het aardoppervlak.
+
+  \item \textbf{``$g$ en $F_g$ zijn hetzelfde.''}
+
+  Nee.
+  \[
+  \vec g
+  \]
+  beschrijft het gravitatieveld, terwijl
+  \[
+  \vec F_g=m\vec g
+  \]
+  de kracht op een massa in dat veld beschrijft.
+
+\end{itemize}
+
+
+% ============================================================
+% 31. SAMENVATTING
+% ============================================================
+
+\FVDsection{Samenvatting}
+
+
+\FVDsubsection*{Universele gravitatie}
+
+Elke twee massa's trekken elkaar aan:
+
+\[
+\boxed{
+F_g
+=
+G\frac{m_1m_2}{r^2}.
+}
+\]
+
+met
+
+\[
+\boxed{
+G
+=
+6{,}674\times10^{-11}
+\,
+\mathrm{\frac{N\,m^2}{kg^2}}.
+}
+\]
+
+De afstand $r$ is bij bolvormige massa's de afstand tussen de
+massamiddelpunten.
+
+
+\FVDsubsection*{Afhankelijkheid}
+
+\[
+\boxed{
+F_g\propto m_1m_2
+}
+\]
+
+en
+
+\[
+\boxed{
+F_g\propto\frac1{r^2}.
+}
+\]
+
+
+\FVDsubsection*{Newton III}
+
+Voor twee massa's:
+
+\[
+\boxed{
+\vec F_{1\rightarrow2}
+=
+-\vec F_{2\rightarrow1}.
+}
+\]
+
+
+\FVDsubsection*{Gravitatieveld}
+
+\[
+\boxed{
+\vec g
+=
+\frac{\vec F_g}{m}.
+}
+\]
+
+Voor een bolvormige bronmassa $M$:
+
+\[
+\boxed{
+g
+=
+G\frac{M}{r^2}.
+}
+\]
+
+Een massa $m$ in het veld ondervindt:
+
+\[
+\boxed{
+\vec F_g=m\vec g.
+}
+\]
+
+
+\FVDsubsection*{Aan het aardoppervlak}
+
+\[
+\boxed{
+g_0
+=
+G\frac{M_\mathrm A}{R_\mathrm A^2}
+\approx
+9{,}81\,\mathrm{N/kg}.
+}
+\]
+
+
+\FVDsubsection*{Op hoogte $h$}
+
+\[
+\boxed{
+g(h)
+=
+G\frac{M_\mathrm A}{(R_\mathrm A+h)^2}.
+}
+\]
+
+
+\FVDsubsection*{Superpositie}
+
+\[
+\boxed{
+\vec F_{g,\mathrm{res}}
+=
+\sum_i\vec F_{g,i}
+}
+\]
+
+en
+
+\[
+\boxed{
+\vec g_\mathrm{res}
+=
+\sum_i\vec g_i.
+}
+\]
+
+
+\FVDsubsection*{Satelliet in een cirkelbaan}
+
+De gravitatiekracht levert de centripetale kracht:
+
+\[
+\boxed{
+F_g=F_c.
+}
+\]
+
+Dus:
+
+\[
+G\frac{Mm}{r^2}
+=
+m\frac{v^2}{r}.
+\]
+
+Daaruit:
+
+\[
+\boxed{
+v
+=
+\sqrt{\frac{GM}{r}}.
+}
+\]
+
+en:
+
+\[
+\boxed{
+g(r)=a_c.
+}
+\]
+
+
+% ============================================================
+% 32. WAT MOET JE ZEKER BEHEERSEN?
+% ============================================================
+
+\FVDsection{Wat moet je zeker beheersen?}
+
+Je moet niet alleen formules kunnen invullen.
+
+Je moet gravitatie kunnen \textbf{analyseren en kwantificeren}.
+
+Dat betekent dat je zeker moet kunnen:
+
+\begin{itemize}
+
+  \item de algemene gravitatiewet interpreteren en toepassen;
+
+  \item de correcte afstand $r$ herkennen;
+
+  \item richting en zin van een gravitatiekracht bepalen;
+
+  \item Newton III toepassen op twee gravitationeel interagerende
+        massa's;
+
+  \item zonder volledig opnieuw te rekenen voorspellen wat met
+        $F_g$ gebeurt wanneer massa's of afstand veranderen;
+
+  \item het inverse-kwadratenverband herkennen en gebruiken;
+
+  \item het verschil tussen gravitatiekracht en gravitatieveld
+        uitleggen;
+
+  \item werken met
+        \[
+        g=G\frac{M}{r^2};
+        \]
+
+  \item uitleggen waarom
+        \[
+        F_g=mg
+        \]
+        volgt uit de algemene gravitatiewet;
+
+  \item massa en gravitatiekracht van elkaar onderscheiden;
+
+  \item analyseren hoe $g$ met de hoogte verandert;
+
+  \item gravitatieveldlijnen interpreteren;
+
+  \item gravitatievelden vectorieel combineren in eenvoudige
+        situaties;
+
+  \item het verband
+        \[
+        F_g=F_c
+        \]
+        bij een satelliet in een cirkelbaan gebruiken;
+
+  \item een fysisch resultaat controleren op eenheid, grootteorde en
+        betekenis.
+
+\end{itemize}
+
+De oefeningen met de essentieel-markering vormen samen de minimale
+oefenset die je hiervoor moet beheersen.
+
+
+% ============================================================
+% 33. VOORUITBLIK: VAN MASSA NAAR LADING
+% ============================================================
+
+\FVDsection{Vooruitblik: is gravitatie uniek?}
+
+We hebben een opmerkelijke structuur ontdekt.
+
+Een massa $M$ veroorzaakt een veld:
+
+\[
+M
+\longrightarrow
+\vec g.
+\]
+
+Een andere massa $m$ die in dat veld wordt geplaatst, ondervindt een
+kracht:
+
+\[
+\vec F_g=m\vec g.
+\]
+
+Voor een bolvormige bronmassa geldt:
+
+\[
+g
+=
+G\frac{M}{r^2}.
+\]
+
+En voor twee massa's:
+
+\[
+F_g
+=
+G\frac{m_1m_2}{r^2}.
+\]
+
+
+Binnenkort zullen we een tweede interactie ontmoeten.
+
+Daarbij vervangen we massa door elektrische lading.
+
+We zullen dan een wet vinden van de vorm:
+
+\[
+F_e
+=
+k\frac{|q_1q_2|}{r^2}.
+\]
+
+En ook daar zullen we een veld invoeren:
+
+\[
+\vec E.
+\]
+
+
+De overeenkomst kunnen we al zichtbaar maken:
+
+\[
+\boxed{
+\begin{array}{ccc}
+\text{gravitatie} & & \text{elektriciteit}\\[1mm]
+M & \longleftrightarrow & Q\\
+\vec g & \longleftrightarrow & \vec E\\
+m\vec g & \longleftrightarrow & q\vec E\\
+G\dfrac{Mm}{r^2}
+&
+\longleftrightarrow
+&
+k\dfrac{|Qq|}{r^2}
+\end{array}
+}
+\]
+
+
+Maar er is een fundamenteel verschil.
+
+Massa's trekken elkaar aan.
+
+Elektrische ladingen kunnen elkaar:
+
+\[
+\boxed{
+\text{aantrekken}
+\qquad\text{of}\qquad
+\text{afstoten}.
+}
+\]
+
+Dat verschil zal ervoor zorgen dat elektrische velden nog rijkere
+structuren kunnen vormen dan het gravitatieveld dat we hier hebben
+bestudeerd.
+
+\end{document}

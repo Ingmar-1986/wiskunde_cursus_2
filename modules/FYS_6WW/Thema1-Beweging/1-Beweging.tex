@@ -1,0 +1,1412 @@
+\documentclass{ximera}
+
+\input{../../../preamble.tex}
+\input{../../../Opmaak.tex}
+\addPrintStyle{../../..}
+
+\title{Een beweging beschrijven}
+\author{Ingmar Herreman}
+
+\begin{abstract}
+Beweging is overal: een fietser rijdt door het verkeer, een sprinter
+vertrekt uit de startblokken, een trein rijdt een station binnen en
+een satelliet beweegt rond de aarde.
+
+In dit hoofdstuk bouwen we de taal op waarmee we zulke bewegingen
+nauwkeurig kunnen beschrijven. We onderzoeken wat we bedoelen met
+rust en beweging, kiezen een geschikt referentiestelsel en leren hoe
+een werkelijk voorwerp kan worden vereenvoudigd tot een fysisch model.
+
+Daarna beschrijven we de positie van een voorwerp en maken we
+onderscheid tussen afgelegde weg en verplaatsing. We stellen
+bewegingen voor met woorden, tabellen, grafieken en
+functievoorschriften en onderzoeken hoe deze verschillende
+voorstellingen met elkaar samenhangen.
+
+Zo maken we de overgang van een waargenomen beweging naar een
+wiskundig model. Dat vormt de basis voor de volgende hoofdstukken,
+waarin we snelheid en versnelling gebruiken om bewegingen steeds
+nauwkeuriger te analyseren.
+\end{abstract}
+
+\begin{document}
+
+% FVD_CHAPTER_DATA_START
+% Automatisch gegenereerd uit index.tex.
+% Niet handmatig aanpassen.
+\fvdchapterdata{1}{Beweging en kracht}{1}
+% FVD_CHAPTER_DATA_END
+
+\maketitle
+
+
+% ============================================================
+% VOORKENNIS EN LEERDOELEN
+% ============================================================
+
+\begin{voorkennis}
+  \item Je kan een eenvoudige rechtlijnige beweging beschrijven.
+  \item Je kan informatie aflezen uit een tabel en een grafiek.
+  \item Je kent het verschil tussen een scalaire grootheid en een vector.
+  \item Je kan met positieve en negatieve getallen werken.
+  \item Je kan een eenvoudig functievoorschrift gebruiken om functiewaarden te berekenen.
+\end{voorkennis}
+
+\begin{leerdoelen}
+  \item Je kan uitleggen waarom rust en beweging afhangen van het gekozen referentiestelsel.
+  \item Je kan een beweging beschrijven met behulp van een referentiestelsel, positie en tijd.
+  \item Je kan uitleggen wat het puntmassamodel inhoudt en beoordelen wanneer dat model bruikbaar is.
+  \item Je kan baan, positie, afgelegde weg en verplaatsing van elkaar onderscheiden.
+  \item Je kan bij een rechtlijnige beweging correct werken met positieve en negatieve posities en verplaatsingen.
+  \item Je kan positie en verplaatsing vectorieel voorstellen en interpreteren.
+  \item Je kan een beweging voorstellen met woorden, een tabel, een grafiek en een functievoorschrift.
+  \item Je kan informatie uit een positie-tijddiagram aflezen en fysisch interpreteren.
+  \item Je kan uitleggen waarom een meetreeks en een wiskundig model niet hetzelfde zijn.
+  \item Je kan tussen verschillende voorstellingen van dezelfde beweging schakelen.
+\end{leerdoelen}
+
+
+% ============================================================
+% 1 WAAROM?
+% ============================================================
+
+\FVDsection{Waarom leer je dit?}
+
+Een auto die optrekt aan een verkeerslicht, een regendruppel die valt,
+een voetbal die door de lucht vliegt en de aarde die rond de zon
+beweegt: het zijn allemaal voorbeelden van beweging.
+
+Op het eerste gezicht lijken deze bewegingen sterk van elkaar te
+verschillen. Toch proberen we ze in de fysica met dezelfde begrippen
+en wiskundige modellen te beschrijven.
+
+De tak van de fysica die beweging en de oorzaken ervan bestudeert,
+noemen we de \textbf{mechanica}.
+
+Binnen de mechanica maken we een belangrijk onderscheid.
+
+\begin{definitie}[Kinematica]
+
+De \textbf{kinematica} beschrijft hoe een voorwerp beweegt zonder
+de oorzaken van die beweging te onderzoeken.
+
+\end{definitie}
+
+\begin{definitie}[Dynamica]
+
+De \textbf{dynamica} onderzoekt het verband tussen een beweging en
+de krachten die deze beweging veroorzaken of veranderen.
+
+\end{definitie}
+
+Bij de kinematica stellen we bijvoorbeeld vragen als:
+
+\begin{itemize}
+  \item Waar bevindt een voorwerp zich?
+  \item Welke baan volgt het?
+  \item Hoe verandert zijn positie met de tijd?
+  \item Hoe snel beweegt het?
+  \item Verandert die snelheid?
+\end{itemize}
+
+Bij de dynamica stellen we uiteindelijk een andere vraag:
+
+\begin{center}
+\textit{Waarom beweegt het voorwerp op die manier?}
+\end{center}
+
+In dit hoofdstuk houden we ons voorlopig bezig met de eerste vraag.
+We willen eerst leren hoe we een beweging nauwkeurig kunnen
+\emph{beschrijven}.
+
+\begin{opmerking}
+
+De klassieke mechanica beschrijft zeer veel bewegingen uit onze
+dagelijkse omgeving uitstekend. Ze is echter geen theorie die in
+alle omstandigheden geldig is.
+
+Later in deze cursus ontdekken we dat bij zeer hoge snelheden en op
+zeer kleine schaal andere fysische modellen nodig zijn.
+
+\end{opmerking}
+
+
+% ============================================================
+% 2 RUST EN BEWEGING
+% ============================================================
+
+\FVDsection{Rust en beweging}
+
+Stel dat je in een trein zit die met constante snelheid door een
+station rijdt. Op het tafeltje voor je ligt een boek.
+
+Ten opzichte van het tafeltje verandert de positie van het boek
+niet. We zeggen dat het boek \textbf{in rust is ten opzichte van de
+trein}.
+
+Voor iemand die op het perron staat, beweegt datzelfde boek echter
+samen met de trein voorbij.
+
+Hetzelfde voorwerp kan dus tegelijkertijd in rust zijn ten opzichte
+van het ene voorwerp en bewegen ten opzichte van een ander voorwerp.
+
+De uitspraak
+
+\begin{center}
+``Het boek beweegt.''
+\end{center}
+
+is daarom onvolledig.
+
+We moeten vermelden \emph{ten opzichte waarvan} we de beweging
+beschrijven.
+
+
+\FVDsubsection{Het referentiestelsel}
+
+\begin{definitie}[Referentiestelsel]
+
+Een \textbf{referentiestelsel} is het stelsel ten opzichte waarvan
+we de positie en de beweging van een voorwerp beschrijven.
+
+\end{definitie}
+
+Bij bewegingen dicht bij het aardoppervlak kiezen we vaak een
+referentiestelsel dat vast verbonden is met de aarde.
+
+\begin{eigenschap}[Relatief karakter van beweging]
+
+Rust en beweging zijn relatieve begrippen.
+
+Een voorwerp kan in rust zijn ten opzichte van het ene
+referentiestelsel en tegelijk bewegen ten opzichte van een ander
+referentiestelsel.
+
+\end{eigenschap}
+
+
+\begin{oefening}[Wie beweegt?]{\oefB\ESS}
+
+Een leerling zit in een bus die langs een bushalte rijdt.
+
+\begin{question}
+Is de leerling in rust of in beweging ten opzichte van zijn stoel?
+\end{question}
+
+\begin{question}
+Is de leerling in rust of in beweging ten opzichte van de bushalte?
+\end{question}
+
+\begin{question}
+Is de buschauffeur in rust of in beweging ten opzichte van de leerling?
+\end{question}
+
+\begin{question}
+Leg uit waarom de uitspraak
+``de leerling beweegt''
+zonder verdere informatie onvolledig is.
+\end{question}
+
+\end{oefening}
+
+
+\begin{oefening}[Twee treinen]{\oefU}
+
+Twee treinen rijden op evenwijdige sporen met dezelfde snelheid in
+dezelfde richting.
+
+Een reiziger in trein A kijkt naar een reiziger in trein B.
+
+\begin{question}
+Beschrijf de beweging van de reiziger in trein B ten opzichte van
+trein A.
+\end{question}
+
+\begin{question}
+Beschrijf dezelfde beweging ten opzichte van het station.
+\end{question}
+
+\begin{question}
+Leg uit waarom beide beschrijvingen tegelijk correct kunnen zijn.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 3 MODEL
+% ============================================================
+
+\FVDsection{Van werkelijkheid naar model}
+
+Werkelijke voorwerpen zijn vaak ingewikkeld.
+
+Een auto heeft een bepaalde lengte en breedte. Zijn wielen draaien,
+de motor bevat bewegende onderdelen en tijdens het rijden kunnen
+verschillende delen van de auto verschillende bewegingen uitvoeren.
+
+Wanneer we alleen willen onderzoeken hoe de auto zich langs een weg
+verplaatst, hebben we al die details meestal niet nodig.
+
+In de fysica vereenvoudigen we de werkelijkheid daarom met
+\textbf{modellen}.
+
+\[
+\boxed{
+\text{werkelijkheid}
+\longrightarrow
+\text{vereenvoudiging}
+\longrightarrow
+\text{fysisch model}
+}
+\]
+
+
+\FVDsubsection{Het puntmassamodel}
+
+Bij veel bewegingsproblemen stellen we een volledig voorwerp voor
+door één enkel punt.
+
+\begin{definitie}[Puntmassa]
+
+Een \textbf{puntmassa} is een model waarbij we de afmetingen en de
+vorm van een voorwerp verwaarlozen en de massa in één punt
+geconcentreerd denken.
+
+\end{definitie}
+
+Dat betekent uiteraard niet dat het werkelijke voorwerp letterlijk
+een punt is.
+
+We kiezen het model omdat bepaalde eigenschappen van het voorwerp
+voor onze onderzoeksvraag niet belangrijk zijn.
+
+\begin{voorbeeld}[Een trein als puntmassa]
+
+We willen bepalen hoe lang een trein nodig heeft om van Brussel naar
+Gent te rijden.
+
+Voor deze vraag kunnen we de trein meestal als puntmassa beschouwen.
+Zijn lengte speelt nauwelijks een rol in het model.
+
+Stellen we daarentegen de vraag wanneer de \emph{volledige} trein
+een tunnel heeft verlaten, dan is de lengte van de trein wel
+belangrijk.
+
+Hetzelfde fysische systeem kan dus voor de ene onderzoeksvraag wel
+en voor de andere niet als puntmassa worden gemodelleerd.
+
+\end{voorbeeld}
+
+\begin{opmerking}
+
+Een fysisch model is een vereenvoudigde voorstelling van de
+werkelijkheid.
+
+De centrale vraag is niet of het model ``echt'' is, maar of de
+vereenvoudigingen verantwoord zijn voor de onderzoeksvraag die we
+willen beantwoorden.
+
+\end{opmerking}
+
+
+\begin{oefening}[Is een puntmassa geschikt?]{\oefB\ESS}
+
+Geef aan of het puntmassamodel geschikt is. Motiveer telkens.
+
+\begin{question}
+We bepalen de tijd die een vliegtuig nodig heeft om van Brussel naar
+New York te vliegen.
+\end{question}
+
+\begin{question}
+We onderzoeken of een vrachtwagen onder een lage brug kan rijden.
+\end{question}
+
+\begin{question}
+We bestuderen de baan van de aarde rond de zon.
+\end{question}
+
+\begin{question}
+We bepalen hoe lang een sprinter over $100\,\mathrm{m}$ doet.
+\end{question}
+
+\end{oefening}
+
+
+\begin{oefening}[Grenzen van een model]{\oefU\ESS}
+
+Beschouw een satelliet die rond de aarde beweegt.
+
+\begin{question}
+Formuleer een onderzoeksvraag waarbij je de satelliet redelijk als
+puntmassa kunt beschouwen.
+\end{question}
+
+\begin{question}
+Formuleer een onderzoeksvraag waarbij het puntmassamodel onvoldoende is.
+\end{question}
+
+\begin{question}
+Leg uit welke informatie in het tweede geval door het puntmassamodel
+verloren gaat.
+\end{question}
+
+\end{oefening}
+
+
+\begin{oefening}[De turner]{\oefG}
+
+Een turner voert tijdens een sprong een salto uit.
+
+Een leerling zegt:
+
+\begin{quote}
+``We kunnen de turner gewoon als een puntmassa beschouwen.''
+\end{quote}
+
+Een andere leerling zegt:
+
+\begin{quote}
+``Dat kan niet, want een turner heeft geen verwaarloosbare afmetingen.''
+\end{quote}
+
+Beoordeel beide uitspraken. Leg uit waarom het antwoord afhangt van
+de onderzoeksvraag.
+
+\end{oefening}
+
+
+% ============================================================
+% 4 BAAN
+% ============================================================
+
+\FVDsection{De baan van een beweging}
+
+Tijdens een beweging neemt een puntmassa achtereenvolgens
+verschillende posities in.
+
+De verzameling van die opeenvolgende posities vormt de baan.
+
+\begin{definitie}[Baan]
+
+De \textbf{baan} of het \textbf{traject} van een bewegend voorwerp
+is de verzameling posities die het voorwerp tijdens zijn beweging
+inneemt.
+
+\end{definitie}
+
+
+\FVDsubsection{Rechtlijnige beweging}
+
+Bij een \textbf{rechtlijnige beweging} is de baan een rechte.
+
+Voorbeelden zijn:
+
+\begin{itemize}
+  \item een lift die verticaal beweegt;
+  \item een trein op een recht stuk spoor;
+  \item een voorwerp dat verticaal valt wanneer horizontale effecten
+        verwaarloosbaar zijn.
+\end{itemize}
+
+
+\FVDsubsection{Kromlijnige beweging}
+
+Bij een \textbf{kromlijnige beweging} is de baan een kromme.
+
+Een geworpen basketbal volgt bijvoorbeeld een kromlijnige baan.
+
+
+\FVDsubsection{Cirkelbeweging}
+
+Een bijzonder geval van een kromlijnige beweging is de
+\textbf{cirkelbeweging}. De baan is dan een cirkel.
+
+Voorbeelden zijn:
+
+\begin{itemize}
+  \item een zitje van een reuzenrad;
+  \item een punt op de rand van een draaiend fietswiel;
+  \item de tip van een draaiende ventilator.
+\end{itemize}
+
+We beperken ons hier tot het herkennen van de baan. Later zullen we
+de cirkelbeweging kwantitatief analyseren.
+
+
+\begin{oefening}[Welke baan?]{\oefB}
+
+Classificeer de baan als rechtlijnig, kromlijnig of cirkelvormig.
+
+\begin{question}
+Een lift beweegt van de benedenverdieping naar de zesde verdieping.
+\end{question}
+
+\begin{question}
+Een voetbal wordt schuin omhoog geschoten.
+\end{question}
+
+\begin{question}
+Een punt op de rand van een draaiende fietswielband.
+\end{question}
+
+\begin{question}
+Een trein rijdt door een lang recht stuk spoor.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 5 POSITIE
+% ============================================================
+
+\FVDsection{Waar bevindt een voorwerp zich?}
+
+Om een beweging nauwkeurig te beschrijven, moeten we kunnen aangeven
+waar het bewegende voorwerp zich bevindt.
+
+Voor een rechtlijnige beweging kiezen we een coördinaatas.
+
+We leggen vast:
+
+\begin{itemize}
+  \item een oorsprong;
+  \item een positieve richting;
+  \item een eenheid.
+\end{itemize}
+
+Voor een beweging langs de $x$-as beschrijven we de positie met de
+coördinaat $x$.
+
+De positie op tijdstip $t$ noteren we als
+
+\[
+\boxed{x(t)}.
+\]
+
+De SI-eenheid van positie is meter:
+
+\[
+[x]=\mathrm{m}.
+\]
+
+
+\FVDsubsection{Een positie kan negatief zijn}
+
+Stel dat we de positieve $x$-richting naar rechts kiezen.
+
+Een voorwerp rechts van de oorsprong kan bijvoorbeeld de positie
+
+\[
+x=+5\,\mathrm{m}
+\]
+
+hebben.
+
+Een voorwerp links van de oorsprong kan bijvoorbeeld de positie
+
+\[
+x=-3\,\mathrm{m}
+\]
+
+hebben.
+
+Een negatieve positie is dus perfect mogelijk.
+
+Het minteken vertelt aan welke kant van de oorsprong het voorwerp
+zich bevindt volgens de gekozen positieve richting.
+
+\begin{opmerking}
+
+Een positie is geen afgelegde afstand.
+
+De positie is een coördinaat binnen een gekozen referentiestelsel en
+kan daarom positief, nul of negatief zijn.
+
+\end{opmerking}
+
+
+\begin{oefening}[Positie, weg of verplaatsing?]{\oefB\ESS}
+
+Beoordeel de volgende uitspraken als mogelijk of onmogelijk.
+Motiveer telkens.
+
+\begin{question}
+De positie van een voorwerp is $-30\,\mathrm{m}$.
+\end{question}
+
+\begin{question}
+De afgelegde weg van een voorwerp is $-30\,\mathrm{m}$.
+\end{question}
+
+\begin{question}
+De verplaatsing van een voorwerp is $-30\,\mathrm{m}$.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 6 WEG EN VERPLAATSING
+% ============================================================
+
+\FVDsection{Afgelegde weg en verplaatsing}
+
+De begrippen \textbf{afgelegde weg} en \textbf{verplaatsing} worden
+in het dagelijks taalgebruik soms door elkaar gebruikt. In de fysica
+betekenen ze iets verschillends.
+
+Beschouw een persoon die start op
+
+\[
+x_A=10\,\mathrm{m},
+\]
+
+vervolgens naar
+
+\[
+x_B=50\,\mathrm{m}
+\]
+
+loopt en daarna terugkeert naar
+
+\[
+x_C=30\,\mathrm{m}.
+\]
+
+
+\FVDsubsection{Afgelegde weg}
+
+Tijdens het eerste deel van de beweging legt de persoon af:
+
+\[
+50-10=40\,\mathrm{m}.
+\]
+
+Tijdens het tweede deel:
+
+\[
+50-30=20\,\mathrm{m}.
+\]
+
+De totale afgelegde weg bedraagt dus:
+
+\[
+\Delta s=40+20=60\,\mathrm{m}.
+\]
+
+\begin{definitie}[Afgelegde weg]
+
+De \textbf{afgelegde weg} is de totale lengte van het traject dat
+een voorwerp tijdens een beweging doorloopt.
+
+\end{definitie}
+
+De afgelegde weg is niet negatief:
+
+\[
+\boxed{\Delta s\geq0}.
+\]
+
+
+\FVDsubsection{Verplaatsing}
+
+Voor de verplaatsing kijken we alleen naar de begin- en eindpositie.
+
+\[
+\Delta x=x_C-x_A.
+\]
+
+Dus:
+
+\[
+\Delta x=30-10=20\,\mathrm{m}.
+\]
+
+\begin{definitie}[Verplaatsing]
+
+De \textbf{verplaatsing} bij een rechtlijnige beweging is het
+verschil tussen de eindpositie en de beginpositie:
+
+\[
+\boxed{
+\Delta x=x_{\mathrm{eind}}-x_{\mathrm{begin}}.
+}
+\]
+
+\end{definitie}
+
+Een verplaatsing kan positief, nul of negatief zijn.
+
+
+\FVDsubsection{Vergelijk beide grootheden}
+
+In ons voorbeeld vonden we:
+
+\[
+\Delta s=60\,\mathrm{m}
+\]
+
+maar:
+
+\[
+\Delta x=20\,\mathrm{m}.
+\]
+
+De afgelegde weg houdt rekening met het volledige traject.
+De verplaatsing vergelijkt alleen begin- en eindpositie.
+
+Daarom geldt bij een rechtlijnige beweging:
+
+\[
+\boxed{
+|\Delta x|\leq\Delta s.
+}
+\]
+
+De gelijkheid geldt wanneer het voorwerp tijdens het beschouwde
+tijdinterval niet van bewegingsrichting verandert.
+
+\begin{voorbeeld}[Een ronde op de atletiekpiste]
+
+Een hardloper loopt één volledige ronde van $400\,\mathrm{m}$ en
+eindigt opnieuw op zijn startplaats.
+
+Dan is
+
+\[
+\Delta s=400\,\mathrm{m},
+\]
+
+maar
+
+\[
+\Delta x=0.
+\]
+
+De hardloper heeft dus wel degelijk bewogen, hoewel zijn verplaatsing
+nul is.
+
+\end{voorbeeld}
+
+
+\begin{oefening}[Een robot op een rechte]{\oefB\ESS}
+
+Een robot start op $x=-2,0\,\mathrm{m}$, rijdt naar
+$x=7,0\,\mathrm{m}$ en keert daarna terug naar
+$x=3,0\,\mathrm{m}$.
+
+\begin{question}
+Bepaal de eindpositie.
+\end{question}
+
+\begin{question}
+Bepaal de totale afgelegde weg.
+\end{question}
+
+\begin{question}
+Bepaal de verplaatsing.
+\end{question}
+
+\end{oefening}
+
+
+\begin{oefening}[Nul verplaatsing]{\oefU\ESS}
+
+Een leerling beweert:
+
+\begin{quote}
+``Als de verplaatsing nul is, heeft het voorwerp niet bewogen.''
+\end{quote}
+
+\begin{question}
+Geef een concreet tegenvoorbeeld.
+\end{question}
+
+\begin{question}
+Leg uit waarom de uitspraak fout is.
+\end{question}
+
+\end{oefening}
+
+
+\begin{oefening}[Kan de verplaatsing groter zijn?]{\oefU}
+
+Kan de grootte van de verplaatsing ooit groter zijn dan de afgelegde
+weg?
+
+Formuleer een argument voor je antwoord.
+
+\end{oefening}
+
+
+% ============================================================
+% 7 VECTOR
+% ============================================================
+
+\FVDsection{Positie en verplaatsing als vector}
+
+Voor een beweging langs één rechte volstaat één coördinaat $x$.
+Bewegingen in de werkelijkheid zijn echter vaak twee- of
+driedimensionaal.
+
+Daarom zullen we bewegingen later vectorieel beschrijven.
+
+\begin{definitie}[Positievector]
+
+De \textbf{positievector}
+
+\[
+\vec r(t)
+\]
+
+loopt van de oorsprong van het gekozen coördinatenstelsel naar de
+positie van het voorwerp op tijdstip $t$.
+
+\end{definitie}
+
+In twee dimensies kunnen we schrijven:
+
+\[
+\boxed{
+\vec r(t)=x(t)\vec e_x+y(t)\vec e_y.
+}
+\]
+
+Hierin zijn $x(t)$ en $y(t)$ de componenten van de positievector.
+
+
+\FVDsubsection{Verplaatsingsvector}
+
+De verplaatsing tussen twee tijdstippen $t_1$ en $t_2$ is:
+
+\[
+\boxed{
+\Delta\vec r
+=
+\vec r(t_2)-\vec r(t_1).
+}
+\]
+
+Voor een beweging langs de $x$-as reduceert dit tot:
+
+\[
+\Delta x=x(t_2)-x(t_1).
+\]
+
+\begin{opmerking}
+
+De vectoriële beschrijving lijkt voor een zuiver rechtlijnige
+beweging misschien omslachtig. Ze wordt echter onmisbaar wanneer we
+later bewegingen in twee dimensies onderzoeken.
+
+Daar zullen ook de snelheids- en versnellingsvector een centrale rol
+spelen.
+
+\end{opmerking}
+
+
+\begin{oefening}[Verplaatsingsvector]{\oefB}
+
+Een drone bevindt zich achtereenvolgens op
+
+\[
+\vec r_1=
+\begin{pmatrix}
+2\\
+3
+\end{pmatrix}\mathrm{m}
+\]
+
+en
+
+\[
+\vec r_2=
+\begin{pmatrix}
+7\\
+1
+\end{pmatrix}\mathrm{m}.
+\]
+
+Bepaal
+
+\[
+\Delta\vec r=\vec r_2-\vec r_1.
+\]
+
+\end{oefening}
+
+
+\begin{oefening}[Traject of verplaatsing?]{\oefU\ESS}
+
+Een wandelaar beweegt in een vlak van punt $A$ naar punt $B$.
+
+\begin{question}
+Leg uit waarom de verplaatsingsvector alleen afhangt van $A$ en $B$.
+\end{question}
+
+\begin{question}
+Leg uit waarom de afgelegde weg wel afhangt van het gevolgde traject.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 8 TIJD
+% ============================================================
+
+\FVDsection{Beweging betekent verandering in de tijd}
+
+Een positie alleen is onvoldoende om een beweging te beschrijven.
+
+Stel dat twee auto's dezelfde verplaatsing maken. De ene auto doet
+daar $5\,\mathrm{s}$ over en de andere $20\,\mathrm{s}$.
+
+De begin- en eindpositie kunnen dezelfde zijn, maar de beweging is
+duidelijk niet dezelfde.
+
+We moeten daarom ook vastleggen \emph{wanneer} een voorwerp een
+bepaalde positie inneemt.
+
+De positie wordt een functie van de tijd:
+
+\[
+\boxed{x=x(t)}
+\]
+
+of korter:
+
+\[
+\boxed{x(t)}.
+\]
+
+De onafhankelijke veranderlijke is de tijd $t$.
+De afhankelijke veranderlijke is de positie $x$.
+
+
+% ============================================================
+% 9 REPRESENTATIES
+% ============================================================
+
+\FVDsection{Een beweging op verschillende manieren voorstellen}
+
+Eenzelfde beweging kan op verschillende manieren worden beschreven.
+
+\[
+\boxed{
+\text{situatie}
+\longleftrightarrow
+\text{tabel}
+\longleftrightarrow
+\text{grafiek}
+\longleftrightarrow
+\text{functievoorschrift}
+}
+\]
+
+Deze voorstellingen beschrijven dezelfde fysische beweging, maar
+maken verschillende eigenschappen zichtbaar.
+
+
+\FVDsubsection{Een beweging in een tabel}
+
+Beschouw de volgende meetgegevens:
+
+\[
+\begin{array}{c|ccccc}
+t\;(\mathrm{s}) & 0 & 1 & 2 & 3 & 4\\ \hline
+x\;(\mathrm{m}) & 5 & 8 & 11 & 14 & 17
+\end{array}
+\]
+
+Uit de tabel lezen we bijvoorbeeld af dat het voorwerp op
+
+\[
+t=2\,\mathrm{s}
+\]
+
+de positie
+
+\[
+x=11\,\mathrm{m}
+\]
+
+inneemt.
+
+
+\FVDsubsection{Een positie-tijddiagram}
+
+Dezelfde meetgegevens kunnen we voorstellen in een grafiek.
+
+Op de horizontale as plaatsen we de tijd $t$ en op de verticale as
+de positie $x$.
+
+Zo ontstaat een \textbf{positie-tijddiagram} of een
+\textbf{$x(t)$-diagram}.
+
+\begin{opmerking}
+
+Een $x(t)$-grafiek is niet de baan van het voorwerp.
+
+De horizontale as stelt de tijd voor, niet een tweede
+plaatscoördinaat.
+
+\end{opmerking}
+
+Een rechte of kromme in een positie-tijddiagram moet dus worden
+geïnterpreteerd als een verband tussen positie en tijd.
+
+
+\begin{oefening}[Grafiek of baan?]{\oefU\ESS}
+
+Een leerling bekijkt een $x(t)$-grafiek die een parabool vormt en zegt:
+
+\begin{quote}
+``Het voorwerp beweegt dus langs een parabolische baan.''
+\end{quote}
+
+\begin{question}
+Is die conclusie correct?
+\end{question}
+
+\begin{question}
+Leg nauwkeurig uit wat de grafiek wel en niet voorstelt.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 10 PLAATSFUNCTIE
+% ============================================================
+
+\FVDsection{De plaatsfunctie}
+
+Wanneer we het verband tussen positie en tijd met een functie kunnen
+beschrijven, krijgen we een wiskundig model van de beweging.
+
+\begin{definitie}[Plaatsfunctie]
+
+Een \textbf{plaatsfunctie} of \textbf{bewegingsvergelijking}
+beschrijft de positie van een voorwerp als functie van de tijd.
+
+Voor een rechtlijnige beweging schrijven we:
+
+\[
+\boxed{x=x(t).}
+\]
+
+\end{definitie}
+
+
+\begin{voorbeeld}[Een eenvoudige plaatsfunctie]
+
+Beschouw:
+
+\[
+x(t)=2,0+3,0t,
+\]
+
+waarbij $x$ in meter en $t$ in seconde wordt uitgedrukt.
+
+Op het begintijdstip:
+
+\[
+x(0)=2,0\,\mathrm{m}.
+\]
+
+Na $4,0\,\mathrm{s}$:
+
+\[
+x(4,0)
+=
+2,0+3,0\cdot4,0
+=
+14,0\,\mathrm{m}.
+\]
+
+Het getal $2,0$ vertelt ons dus de beginpositie.
+
+De factor $3,0$ zegt iets over hoe snel de positie verandert.
+De precieze fysische betekenis daarvan onderzoeken we in het
+volgende hoofdstuk.
+
+\end{voorbeeld}
+
+
+\begin{oefening}[Werken met een plaatsfunctie]{\oefB\ESS}
+
+Een bewegend voorwerp wordt beschreven door
+
+\[
+x(t)=5,0-2,0t,
+\]
+
+met $x$ in meter en $t$ in seconde.
+
+\begin{question}
+Bepaal $x(0)$.
+\end{question}
+
+\begin{question}
+Bepaal $x(2,0)$.
+\end{question}
+
+\begin{question}
+Bepaal $x(4,0)$.
+\end{question}
+
+\begin{question}
+Bepaal de verplaatsing tussen $t=1,0\,\mathrm{s}$ en
+$t=4,0\,\mathrm{s}$.
+\end{question}
+
+\begin{question}
+Beschrijf in woorden wat je aan de waarden van $x(t)$ opmerkt.
+\end{question}
+
+\end{oefening}
+
+
+\begin{oefening}[Van tabel naar model]{\oefU\ESS}
+
+Van een beweging zijn de volgende gegevens bekend:
+
+\[
+\begin{array}{c|ccccc}
+t\;(\mathrm{s}) & 0 & 2 & 4 & 6 & 8\\ \hline
+x\;(\mathrm{m}) & -3 & 1 & 5 & 9 & 13
+\end{array}
+\]
+
+\begin{question}
+Stel de gegevens grafisch voor.
+\end{question}
+
+\begin{question}
+Zoek een functievoorschrift dat bij de gegevens past.
+\end{question}
+
+\begin{question}
+Welke fysische betekenis heeft de constante term?
+\end{question}
+
+\begin{question}
+Gebruik je model om de positie op $t=5\,\mathrm{s}$ te voorspellen.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 11 MODELLEREN
+% ============================================================
+
+\FVDsection{Van meetgegevens naar een model}
+
+In een echt experiment krijgen we meestal niet onmiddellijk een
+functievoorschrift.
+
+We meten eerst waarden:
+
+\[
+(t_1,x_1),\quad
+(t_2,x_2),\quad
+(t_3,x_3),\quad\ldots
+\]
+
+Die meetgegevens kunnen we in een tabel plaatsen en vervolgens
+grafisch voorstellen.
+
+Daarna zoeken we een functie die het waargenomen verband zo goed
+mogelijk beschrijft.
+
+\[
+\boxed{
+\text{werkelijke beweging}
+\longrightarrow
+\text{metingen}
+\longrightarrow
+\text{grafiek}
+\longrightarrow
+\text{wiskundig model}
+}
+\]
+
+\begin{opmerking}
+
+Meetgegevens en een wiskundig model zijn niet hetzelfde.
+
+Meetpunten zijn experimentele waarnemingen. Een functievoorschrift
+is een vereenvoudigd model waarmee we proberen het patroon in die
+gegevens te beschrijven.
+
+\end{opmerking}
+
+
+\FVDsubsection{Voorbeeld: een sprint analyseren}
+
+Bij een sprint kunnen tussentijden worden gemeten op verschillende
+posities.
+
+We verzamelen bijvoorbeeld gegevens van de vorm:
+
+\[
+\begin{array}{c|cccccc}
+t\;(\mathrm{s}) & t_0&t_1&t_2&t_3&t_4&t_5\\ \hline
+x\;(\mathrm{m}) & 0&20&40&60&80&100
+\end{array}
+\]
+
+en stellen de punten $(t,x)$ grafisch voor.
+
+Met een digitaal hulpmiddel kunnen we vervolgens onderzoeken welk
+type functie de meetgegevens voldoende goed beschrijft.
+
+Het gevonden functievoorschrift is geen exacte ``wet'' voor de
+sprinter. Het is een model van de gemeten beweging binnen het
+onderzochte tijdsinterval.
+
+
+\begin{oefening}[Een beweging modelleren met ICT]{\oefU\ESS}
+
+Je krijgt een tabel met gemeten posities van een bewegend voorwerp.
+
+\begin{question}
+Maak met een grafisch hulpmiddel een spreidingsdiagram van $x$ als
+functie van $t$.
+\end{question}
+
+\begin{question}
+Beschrijf het patroon in de meetpunten.
+\end{question}
+
+\begin{question}
+Zoek een geschikt wiskundig model.
+\end{question}
+
+\begin{question}
+Vergelijk enkele waarden die het model voorspelt met de oorspronkelijke
+meetgegevens.
+\end{question}
+
+\begin{question}
+Geef minstens één reden waarom een wiskundig model nooit volledig
+samenvalt met de werkelijke beweging.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 12 INTERPRETEREN
+% ============================================================
+
+\FVDsection{Een bewegingsgrafiek interpreteren}
+
+Een grafiek is meer dan een afbeelding van een formule.
+
+Uit een positie-tijddiagram kunnen we rechtstreeks fysische
+informatie halen.
+
+We kunnen bijvoorbeeld onderzoeken:
+
+\begin{itemize}
+  \item waar een voorwerp zich op een bepaald tijdstip bevindt;
+  \item wanneer het voorwerp de oorsprong passeert;
+  \item wanneer het zich links of rechts van de oorsprong bevindt;
+  \item wat de verplaatsing tussen twee tijdstippen is;
+  \item of het voorwerp op verschillende tijdstippen dezelfde
+        positie inneemt.
+\end{itemize}
+
+
+\begin{oefening}[Een plaatsfunctie onderzoeken]{\oefU\ESS}
+
+Voor een bewegend voorwerp geldt:
+
+\[
+x(t)
+=
+-1,20t^3
++4,50t^2
+-4,00t
++2,00,
+\]
+
+waarbij $x$ in meter en $t$ in seconde wordt uitgedrukt.
+
+Onderzoek de beweging voor $t\geq0$.
+
+\begin{question}
+Maak een grafiek van $x(t)$ met een geschikt digitaal hulpmiddel.
+\end{question}
+
+\begin{question}
+Bepaal de beginpositie.
+\end{question}
+
+\begin{question}
+Bepaal de positie op $t=1,0\,\mathrm{s}$ en $t=2,0\,\mathrm{s}$.
+\end{question}
+
+\begin{question}
+Onderzoek wanneer het voorwerp de oorsprong passeert.
+\end{question}
+
+\begin{question}
+Bepaal de verplaatsing tussen $t=0$ en $t=2,0\,\mathrm{s}$.
+\end{question}
+
+\begin{question}
+Zoek, indien mogelijk, twee verschillende tijdstippen waarop het
+voorwerp dezelfde positie inneemt.
+\end{question}
+
+\begin{question}
+Leg uit waarom de positie alleen nog niet volledig vertelt hoe snel
+het voorwerp beweegt.
+\end{question}
+
+\end{oefening}
+
+
+\begin{oefening}[Ontwerp zelf een beweging]{\oefG}
+
+Ontwerp zelf een plaatsfunctie $x(t)$ van een voorwerp dat:
+
+\begin{itemize}
+  \item start rechts van de oorsprong;
+  \item op een later tijdstip de oorsprong passeert;
+  \item daarna opnieuw terugkeert naar zijn beginpositie.
+\end{itemize}
+
+\begin{question}
+Geef een mogelijk functievoorschrift.
+\end{question}
+
+\begin{question}
+Maak een grafiek van je model.
+\end{question}
+
+\begin{question}
+Toon aan dat je model aan de drie voorwaarden voldoet.
+\end{question}
+
+\begin{question}
+Zijn er verschillende antwoorden mogelijk? Verklaar.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 13 SAMENVATTING
+% ============================================================
+
+\FVDsection{Wat hebben we opgebouwd?}
+
+We begonnen dit hoofdstuk met een werkelijke beweging.
+
+Om die beweging fysisch te beschrijven, hebben we stap voor stap een
+model opgebouwd:
+
+\[
+\boxed{
+\text{werkelijke beweging}
+\longrightarrow
+\text{puntmassa}
+\longrightarrow
+\text{referentiestelsel}
+\longrightarrow
+\text{positie}
+\longrightarrow
+x(t)
+}
+\]
+
+We leerden dat rust en beweging afhangen van het gekozen
+referentiestelsel.
+
+We maakten onderscheid tussen de afgelegde weg
+
+\[
+\Delta s
+\]
+
+en de verplaatsing
+
+\[
+\Delta x=x_{\mathrm{eind}}-x_{\mathrm{begin}}.
+\]
+
+Voor bewegingen in meerdere dimensies introduceerden we de
+positievector
+
+\[
+\vec r(t)
+\]
+
+en de verplaatsingsvector
+
+\[
+\Delta\vec r.
+\]
+
+Ten slotte beschreven we een beweging met tabellen, grafieken en
+functievoorschriften:
+
+\[
+\boxed{
+\text{tabel}
+\longleftrightarrow
+\text{grafiek}
+\longleftrightarrow
+\text{functie}
+}
+\]
+
+Deze verschillende voorstellingen vormen samen een krachtige taal om
+bewegingen te beschrijven en te modelleren.
+
+
+% ============================================================
+% 14 VOORUITBLIK
+% ============================================================
+
+\FVDsection{Vooruitblik: hoe snel verandert de positie?}
+
+Stel dat twee auto's vertrekken op dezelfde positie en na een rit
+dezelfde eindpositie bereiken.
+
+De eerste auto doet daar $10\,\mathrm{s}$ over en de tweede
+$25\,\mathrm{s}$.
+
+Hun verplaatsing kan dezelfde zijn, maar hun beweging is duidelijk
+niet dezelfde.
+
+Alleen weten \emph{waar} een voorwerp zich bevindt, is dus niet
+voldoende.
+
+We willen ook weten:
+
+\begin{center}
+\textbf{Hoe snel verandert de positie?}
+\end{center}
+
+Wiskundig betekent dit dat we willen onderzoeken hoe de functie
+$x(t)$ verandert wanneer de tijd verandert.
+
+Dat brengt ons in het volgende hoofdstuk bij een nieuwe fysische
+grootheid:
+
+\[
+\boxed{\text{snelheid}}
+\]
+
+
+
+\end{document}
