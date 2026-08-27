@@ -7,482 +7,7089 @@
 \title{Oefeningen --- Parate kennis}
 \author{Ingmar Herreman}
 
-\begin{abstract}
-Deze oefeningenbundel hoort bij het thema \emph{Parate kennis --- Je wiskundige gereedschapskist}.
-De bundel is bewust ruimer dan het minimumtraject. Oefeningen met ESS moet je
-zeker beheersen. De overige oefeningen gebruik je om gericht te oefenen, te verdiepen of jezelf
-extra uit te dagen.
-\end{abstract}
+\tikzset{
+  fvd axis/.style={
+    ->,
+    line width=1.4pt,
+    color=fvddark,
+    line cap=round
+  },
+  fvd tick/.style={
+    line width=0.8pt,
+    color=fvddark
+  },
+  fvd guide/.style={
+    dashed,
+    line width=0.8pt,
+    color=fvdcyan
+  },
+  fvd label/.style={
+    fill=fvdmagenta,
+    text=white,
+    rounded corners=2pt,
+    inner xsep=6pt,
+    inner ysep=3pt,
+    font=\small\bfseries
+  },
+  fvd panel/.style={
+    fill=fvdcyan!6,
+    rounded corners=3pt
+  }
+}
 
 \begin{document}
-\fvdchapterdata{1}{Verbanden, functies en gedrag}{2}
+
+\fvdchapterdata{1}{Verbanden, functies en gedrag}{1}
 \maketitle
 
-\FVDsection{Hoe gebruik je deze bundel?}
 
-Werk niet noodzakelijk van de eerste tot de laatste oefening.
-Start per onderdeel met de oefeningen aangeduid met \ESS.
-Lukt dat vlot en zonder hulp, dan is de basis voor dat onderdeel voldoende paraat.
-Maak je fouten, kies dan extra \oefB-oefeningen. De \oefU-oefeningen vragen meer inzicht,
-combinatie of interpretatie. De \oefG-oefeningen zijn uitdagender en zijn geen onderdeel van
-het minimumtraject.
 
-% ============================================================
 \FVDsection{Rekenen met getallen en breuken}
 
 \begin{oefening}[Rekenvolgorde]{\oefB\ESS}
-Bereken exact.
-\begin{enumerate}
-\item $18-3(2+4)$
-\item $5+2^3\cdot3-7$
-\item $4(7-3)-2(5+1)$
-\item $\dfrac{24}{3\cdot2}+5$
-\item $3-[2-4(1-3)]$
-\item $\dfrac{2^4-4}{3}+1$
-\end{enumerate}
-\end{oefening}
+    \\
+    
+    Bereken exact. Let goed op de volgorde van de bewerkingen.
+    
+    \begin{multicols}{2}
+    
+    \begin{question}
+    $18-3(2+4)=\answer{0}$
+    
+    \begin{oplossing}
+    \[
+    18-3(2+4)
+    =18-3\cdot6
+    =18-18
+    =0.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    \begin{question}
+    $5+2^3\cdot3-7=\answer{22}$
+    
+    \begin{oplossing}
+    \[
+    5+2^3\cdot3-7
+    =5+8\cdot3-7
+    =5+24-7
+    =22.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    \begin{question}
+    $4(7-3)-2(5+1)=\answer{4}$
+    
+    \begin{oplossing}
+    \[
+    4(7-3)-2(5+1)
+    =4\cdot4-2\cdot6
+    =16-12
+    =4.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    \begin{question}
+    $\dfrac{24}{3\cdot2}+5=\answer{9}$
+    
+    \begin{oplossing}
+    \[
+    \dfrac{24}{3\cdot2}+5
+    =\dfrac{24}{6}+5
+    =4+5
+    =9.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    \begin{question}
+    $3-[2-4(1-3)]=\answer{-7}$
+    
+    \begin{oplossing}
+    \[
+    3-[2-4(1-3)]
+    =3-[2-4(-2)]
+    =3-[2+8]
+    =3-10
+    =-7.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    \begin{question}
+    $\dfrac{2^4-4}{3}+1=\answer{5}$
+    
+    \begin{oplossing}
+    \[
+    \dfrac{2^4-4}{3}+1
+    =\dfrac{16-4}{3}+1
+    =\dfrac{12}{3}+1
+    =5.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    \begin{question}
+    $7+3(5-2)^2=\answer{34}$
+    
+    \begin{oplossing}
+    \[
+    7+3(5-2)^2
+    =7+3\cdot3^2
+    =7+27
+    =34.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    \begin{question}
+    $\dfrac{48}{2(3+1)}=\answer{6}$
+    
+    \begin{oplossing}
+    \[
+    \dfrac{48}{2(3+1)}
+    =\dfrac{48}{8}
+    =6.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    \begin{question}
+    $6-2[3-(5-8)]=\answer{-6}$
+    
+    \begin{oplossing}
+    \[
+    6-2[3-(5-8)]
+    =6-2[3-(-3)]
+    =6-12
+    =-6.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    \begin{question}
+    $\dfrac{3^2+7}{2^2}=\answer{4}$
+    
+    \begin{oplossing}
+    \[
+    \dfrac{3^2+7}{2^2}
+    =\dfrac{9+7}{4}
+    =4.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    \begin{question}
+    $20-2^2(3+1)+5=\answer{9}$
+    
+    \begin{oplossing}
+    \[
+    20-2^2(3+1)+5
+    =20-4\cdot4+5
+    =9.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    \begin{question}
+    $2\left[5-3(2-4)\right]-6=\answer{16}$
+    
+    \begin{oplossing}
+    \[
+    2\left[5-3(2-4)\right]-6
+    =2[5-3(-2)]-6
+    =2\cdot11-6
+    =16.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    \end{multicols}
+    
+    \end{oefening}
 
-\begin{oefening}[Breuken]{\oefB\ESS}
-Werk uit en vereenvoudig.
-\begin{enumerate}
-\item $\dfrac34+\dfrac56$
-\item $\dfrac78-\dfrac13$
-\item $\dfrac5{12}+\dfrac7{18}$
-\item $\dfrac23\cdot\dfrac9{10}$
-\item $\dfrac56:\dfrac{10}{9}$
-\item $\dfrac{3x}{5}+\dfrac{2x}{3}$
-\item $\dfrac{4x}{9}\cdot\dfrac{3}{2x^2}$
-\item $\dfrac{x^2-4}{x^2+2x}$
-\item $\dfrac{x^2-9}{x^2-6x+9}$
-\end{enumerate}
-Vermeld bij algebraïsche breuken ook de uitgesloten waarden.
-\end{oefening}
+    \begin{oefening}[Breuken]{\oefB\ESS}
+        \\
+        
+        Werk uit en vereenvoudig.
+        
+        \begin{multicols}{2}
+        
+        \begin{question}
+        $\dfrac34+\dfrac56=\answer{\dfrac{19}{12}}$
+        
+        \begin{oplossing}
+        \[
+        \dfrac34+\dfrac56
+        =\dfrac9{12}+\dfrac{10}{12}
+        =\dfrac{19}{12}.
+        \]
+        \end{oplossing}
+        \end{question}
+        
+        
+        \begin{question}
+        $\dfrac78-\dfrac13=\answer{\dfrac{13}{24}}$
+        
+        \begin{oplossing}
+        \[
+        \dfrac78-\dfrac13
+        =\dfrac{21}{24}-\dfrac8{24}
+        =\dfrac{13}{24}.
+        \]
+        \end{oplossing}
+        \end{question}
+        
+        
+        \begin{question}
+        $\dfrac5{12}+\dfrac7{18}=\answer{\dfrac{29}{36}}$
+        
+        \begin{oplossing}
+        \[
+        \dfrac5{12}+\dfrac7{18}
+        =\dfrac{15}{36}+\dfrac{14}{36}
+        =\dfrac{29}{36}.
+        \]
+        \end{oplossing}
+        \end{question}
+        
+        
+        \begin{question}
+        $\dfrac{11}{15}-\dfrac7{20}=\answer{\dfrac{23}{60}}$
+        
+        \begin{oplossing}
+        \[
+        \dfrac{11}{15}-\dfrac7{20}
+        =\dfrac{44}{60}-\dfrac{21}{60}
+        =\dfrac{23}{60}.
+        \]
+        \end{oplossing}
+        \end{question}
+        
+        
+        \begin{question}
+        $\dfrac23\cdot\dfrac9{10}=\answer{\dfrac35}$
+        
+        \begin{oplossing}
+        \[
+        \dfrac23\cdot\dfrac9{10}
+        =\dfrac{18}{30}
+        =\dfrac35.
+        \]
+        \end{oplossing}
+        \end{question}
+        
+        
+        \begin{question}
+        $\dfrac56:\dfrac{10}{9}=\answer{\dfrac34}$
+        
+        \begin{oplossing}
+        Delen door een breuk betekent vermenigvuldigen met het omgekeerde:
+        \[
+        \dfrac56:\dfrac{10}{9}
+        =\dfrac56\cdot\dfrac9{10}
+        =\dfrac{45}{60}
+        =\dfrac34.
+        \]
+        \end{oplossing}
+        \end{question}
+        
+        
+        \begin{question}
+        $\dfrac{14}{15}\cdot\dfrac{25}{21}
+        =\answer{\dfrac{10}{9}}$
+        
+        \begin{oplossing}
+        We vereenvoudigen vóór het vermenigvuldigen:
+        \[
+        \dfrac{14}{15}\cdot\dfrac{25}{21}
+        =\dfrac{2}{3}\cdot\dfrac{5}{3}
+        =\dfrac{10}{9}.
+        \]
+        \end{oplossing}
+        \end{question}
+        
+        
+        \begin{question}
+        $\dfrac{7}{12}:\dfrac{14}{9}
+        =\answer{\dfrac38}$
+        
+        \begin{oplossing}
+        \[
+        \dfrac{7}{12}:\dfrac{14}{9}
+        =\dfrac{7}{12}\cdot\dfrac9{14}
+        =\dfrac{63}{168}
+        =\dfrac38.
+        \]
+        \end{oplossing}
+        \end{question}
+        
+        
+        \begin{question}
+        $\dfrac{3x}{5}+\dfrac{2x}{3}
+        =\answer{\dfrac{19x}{15}}$
+        
+        \begin{oplossing}
+        \[
+        \dfrac{3x}{5}+\dfrac{2x}{3}
+        =\dfrac{9x}{15}+\dfrac{10x}{15}
+        =\dfrac{19x}{15}.
+        \]
+        \end{oplossing}
+        \end{question}
+        
+        
+        \begin{question}
+        $\dfrac{5a}{8}-\dfrac{a}{6}
+        =\answer{\dfrac{11a}{24}}$
+        
+        \begin{oplossing}
+        \[
+        \dfrac{5a}{8}-\dfrac{a}{6}
+        =\dfrac{15a}{24}-\dfrac{4a}{24}
+        =\dfrac{11a}{24}.
+        \]
+        \end{oplossing}
+        \end{question}
+        
+        
+        \begin{question}
+        $\dfrac{4x}{9}\cdot\dfrac{3}{2x^2}
+        =\answer{\dfrac{2}{3x}}$
+        
+        \begin{oplossing}
+        Omdat $x$ in een noemer voorkomt, geldt $x\neq0$.
+        \[
+        \dfrac{4x}{9}\cdot\dfrac{3}{2x^2}
+        =\dfrac{12x}{18x^2}
+        =\dfrac{2}{3x}.
+        \]
+        \end{oplossing}
+        \end{question}
+        
+        
+        \begin{question}
+        $\dfrac{6x^2}{5}\cdot\dfrac{10}{9x}
+        =\answer{\dfrac{4x}{3}}$
+        
+        \begin{oplossing}
+        Voor $x\neq0$:
+        \[
+        \dfrac{6x^2}{5}\cdot\dfrac{10}{9x}
+        =\dfrac{60x^2}{45x}
+        =\dfrac{4x}{3}.
+        \]
+        \end{oplossing}
+        \end{question}
+        
+        
+        \begin{question}
+        $\dfrac{x^2-4}{x^2+2x}
+        =\answer{\dfrac{x-2}{x}}$
+        
+        \begin{oplossing}
+        De oorspronkelijke noemer is $x(x+2)$, dus
+        \[
+        x\neq0
+        \qquad\text{en}\qquad
+        x\neq-2.
+        \]
+        Verder:
+        \[
+        \dfrac{x^2-4}{x^2+2x}
+        =\dfrac{(x-2)(x+2)}{x(x+2)}
+        =\dfrac{x-2}{x}.
+        \]
+        \end{oplossing}
+        \end{question}
+        
+        
+        \begin{question}
+        $\dfrac{x^2-9}{x^2-6x+9}
+        =\answer{\dfrac{x+3}{x-3}}$
+        
+        \begin{oplossing}
+        De oorspronkelijke noemer is $(x-3)^2$, dus
+        \[
+        x\neq3.
+        \]
+        Verder:
+        \[
+        \dfrac{x^2-9}{x^2-6x+9}
+        =\dfrac{(x-3)(x+3)}{(x-3)^2}
+        =\dfrac{x+3}{x-3}.
+        \]
+        \end{oplossing}
+        \end{question}
+        
+        
+        \begin{question}
+        $\dfrac{x^2-16}{x^2-4x}
+        =\answer{\dfrac{x+4}{x}}$
+        
+        \begin{oplossing}
+        De oorspronkelijke noemer is $x(x-4)$, dus
+        \[
+        x\neq0
+        \qquad\text{en}\qquad
+        x\neq4.
+        \]
+        Verder:
+        \[
+        \dfrac{x^2-16}{x^2-4x}
+        =\dfrac{(x-4)(x+4)}{x(x-4)}
+        =\dfrac{x+4}{x}.
+        \]
+        \end{oplossing}
+        \end{question}
+        
+        
+        \begin{question}
+        $\dfrac{2x^2+6x}{4x}
+        =\answer{\dfrac{x+3}{2}}$
+        
+        \begin{oplossing}
+        Voor $x\neq0$:
+        \[
+        \dfrac{2x^2+6x}{4x}
+        =\dfrac{2x(x+3)}{4x}
+        =\dfrac{x+3}{2}.
+        \]
+        \end{oplossing}
+        \end{question}
+        
+        \end{multicols}
+        
+        \end{oefening}
 
-\begin{oefening}[Gemengde breuken]{\oefB}
-Werk zo ver mogelijk uit.
-\begin{enumerate}
-\item $\dfrac1x+\dfrac1{x+1}$
-\item $\dfrac{x}{x+2}+\dfrac3{x+2}$
-\item $\dfrac2{x-1}-\dfrac5{x+1}$
-\item $\dfrac{x^2+5x+6}{x+2}$
-\item $\dfrac{2x^2-8}{x+2}$
-\item $\dfrac{\frac{12}{5}}{3}$
-\item $\dfrac{\frac{x^2-4}{x}}{x+2}$
-\end{enumerate}
-\end{oefening}
+        \begin{oefening}[Gemengde breuken]{\oefB}
+            \\
+            
+            Werk zo ver mogelijk uit.
+            
+            \begin{multicols}{2}
+            
+            \begin{question}
+            $\dfrac1x+\dfrac1{x+1}
+            =\answer{\dfrac{2x+1}{x(x+1)}}$
+            
+            \begin{oplossing}
+            Met $x\neq0,-1$:
+            \[
+            \dfrac1x+\dfrac1{x+1}
+            =\dfrac{x+1+x}{x(x+1)}
+            =\dfrac{2x+1}{x(x+1)}.
+            \]
+            \end{oplossing}
+            \end{question}
+            
+            
+            \begin{question}
+            $\dfrac{x}{x+2}+\dfrac3{x+2}
+            =\answer{\dfrac{x+3}{x+2}}$
+            
+            \begin{oplossing}
+            Voor $x\neq-2$:
+            \[
+            \dfrac{x}{x+2}+\dfrac3{x+2}
+            =\dfrac{x+3}{x+2}.
+            \]
+            \end{oplossing}
+            \end{question}
+            
+            
+            \begin{question}
+            $\dfrac2{x-1}-\dfrac5{x+1}
+            =\answer{\dfrac{-3x+7}{x^2-1}}$
+            
+            \begin{oplossing}
+            Voor $x\neq1,-1$:
+            \[
+            \dfrac2{x-1}-\dfrac5{x+1}
+            =\dfrac{2(x+1)-5(x-1)}{(x-1)(x+1)}
+            \]
+            \[
+            =\dfrac{2x+2-5x+5}{x^2-1}
+            =\dfrac{-3x+7}{x^2-1}.
+            \]
+            \end{oplossing}
+            \end{question}
+            
+            
+            \begin{question}
+            $\dfrac3x+\dfrac2{x-2}
+            =\answer{\dfrac{5x-6}{x(x-2)}}$
+            
+            \begin{oplossing}
+            Voor $x\neq0,2$:
+            \[
+            \dfrac3x+\dfrac2{x-2}
+            =\dfrac{3(x-2)+2x}{x(x-2)}
+            \]
+            \[
+            =\dfrac{3x-6+2x}{x(x-2)}
+            =\dfrac{5x-6}{x(x-2)}.
+            \]
+            \end{oplossing}
+            \end{question}
+            
+            
+            \begin{question}
+            $\dfrac4{x+1}-\dfrac1{x-1}
+            =\answer{\dfrac{3x-5}{x^2-1}}$
+            
+            \begin{oplossing}
+            Voor $x\neq-1,1$:
+            \[
+            \dfrac4{x+1}-\dfrac1{x-1}
+            =\dfrac{4(x-1)-(x+1)}{(x+1)(x-1)}
+            \]
+            \[
+            =\dfrac{4x-4-x-1}{x^2-1}
+            =\dfrac{3x-5}{x^2-1}.
+            \]
+            \end{oplossing}
+            \end{question}
+            
+            
+            \begin{question}
+            $\dfrac{x^2+5x+6}{x+2}
+            =\answer{x+3}$
+            
+            \begin{oplossing}
+            Voor $x\neq-2$:
+            \[
+            \dfrac{x^2+5x+6}{x+2}
+            =\dfrac{(x+2)(x+3)}{x+2}
+            =x+3.
+            \]
+            \end{oplossing}
+            \end{question}
+            
+            
+            \begin{question}
+            $\dfrac{2x^2-8}{x+2}
+            =\answer{2x-4}$
+            
+            \begin{oplossing}
+            Voor $x\neq-2$:
+            \[
+            \dfrac{2x^2-8}{x+2}
+            =\dfrac{2(x^2-4)}{x+2}
+            \]
+            \[
+            =\dfrac{2(x-2)(x+2)}{x+2}
+            =2(x-2)
+            =2x-4.
+            \]
+            \end{oplossing}
+            \end{question}
+            
+            
+            \begin{question}
+            $\dfrac{x^2-x-6}{x-3}
+            =\answer{x+2}$
+            
+            \begin{oplossing}
+            Voor $x\neq3$:
+            \[
+            \dfrac{x^2-x-6}{x-3}
+            =\dfrac{(x-3)(x+2)}{x-3}
+            =x+2.
+            \]
+            \end{oplossing}
+            \end{question}
+            
+            
+            \begin{question}
+            $\dfrac{x^2-9}{x+3}
+            =\answer{x-3}$
+            
+            \begin{oplossing}
+            Voor $x\neq-3$:
+            \[
+            \dfrac{x^2-9}{x+3}
+            =\dfrac{(x-3)(x+3)}{x+3}
+            =x-3.
+            \]
+            \end{oplossing}
+            \end{question}
+            
+            
+            \begin{question}
+            $\dfrac{3x^2+6x}{6x}
+            =\answer{\dfrac{x+2}{2}}$
+            
+            \begin{oplossing}
+            Voor $x\neq0$:
+            \[
+            \dfrac{3x^2+6x}{6x}
+            =\dfrac{3x(x+2)}{6x}
+            =\dfrac{x+2}{2}.
+            \]
+            \end{oplossing}
+            \end{question}
+            
+            
+            \begin{question}
+            $\dfrac{\frac{12}{5}}{3}
+            =\answer{\dfrac45}$
+            
+            \begin{oplossing}
+            \[
+            \dfrac{\frac{12}{5}}{3}
+            =\dfrac{12}{5}\cdot\dfrac13
+            =\dfrac45.
+            \]
+            \end{oplossing}
+            \end{question}
+            
+            
+            \begin{question}
+            $\dfrac{\frac34}{\frac56}
+            =\answer{\dfrac9{10}}$
+            
+            \begin{oplossing}
+            \[
+            \dfrac{\frac34}{\frac56}
+            =\dfrac34:\dfrac56
+            =\dfrac34\cdot\dfrac65
+            =\dfrac{18}{20}
+            =\dfrac9{10}.
+            \]
+            \end{oplossing}
+            \end{question}
+            
+            
+            \begin{question}
+            $\dfrac{\frac{2x}{3}}{\frac{x}{4}}
+            =\answer{\dfrac83}$
+            
+            \begin{oplossing}
+            Voor $x\neq0$:
+            \[
+            \dfrac{\frac{2x}{3}}{\frac{x}{4}}
+            =\dfrac{2x}{3}\cdot\dfrac4x
+            =\dfrac83.
+            \]
+            \end{oplossing}
+            \end{question}
+            
+            
+            \begin{question}
+            $\dfrac{\frac{x^2-4}{x}}{x+2}
+            =\answer{\dfrac{x-2}{x}}$
+            
+            \begin{oplossing}
+            Voor $x\neq0,-2$:
+            \[
+            \dfrac{\frac{x^2-4}{x}}{x+2}
+            =\dfrac{x^2-4}{x(x+2)}
+            \]
+            \[
+            =\dfrac{(x-2)(x+2)}{x(x+2)}
+            =\dfrac{x-2}{x}.
+            \]
+            \end{oplossing}
+            \end{question}
+            
+            
+            \begin{question}
+            $\dfrac{\frac{x^2-1}{x}}{x-1}
+            =\answer{\dfrac{x+1}{x}}$
+            
+            \begin{oplossing}
+            Voor $x\neq0,1$:
+            \[
+            \dfrac{\frac{x^2-1}{x}}{x-1}
+            =\dfrac{x^2-1}{x(x-1)}
+            \]
+            \[
+            =\dfrac{(x-1)(x+1)}{x(x-1)}
+            =\dfrac{x+1}{x}.
+            \]
+            \end{oplossing}
+            \end{question}
+            
+            
+            \begin{question}
+            $\dfrac{\frac{2x^2+4x}{3x}}{x+2}
+            =\answer{\dfrac23}$
+            
+            \begin{oplossing}
+            Voor $x\neq0,-2$:
+            \[
+            \dfrac{\frac{2x^2+4x}{3x}}{x+2}
+            =\dfrac{2x(x+2)}{3x(x+2)}
+            =\dfrac23.
+            \]
+            \end{oplossing}
+            \end{question}
+            
+            \end{multicols}
+            
+            \end{oefening}
 
-\begin{oefening}[Slim rekenen en schatten]{\oefU\ESS}
-Geef eerst zonder rekenmachine een redelijke schatting. Bereken daarna nauwkeurig.
-\begin{enumerate}
-\item $\dfrac{198\cdot4{,}9}{10{,}2}$
-\item $19{,}8^2$
-\item $\dfrac{0{,}049\cdot201}{0{,}99}$
-\item Een leerling vindt voor $\dfrac{603}{19{,}8}$ de uitkomst $3{,}05$. Leg uit waarom je zonder herberekenen al weet dat dit fout is.
-\end{enumerate}
-\end{oefening}
+            \begin{oefening}[Slim rekenen en schatten]{\oefU\ESS}
+                \\
+                
+                Geef eerst zonder rekenmachine een redelijke schatting. Bereken daarna nauwkeurig.
+                
+                \begin{multicols}{2}
+                
+                \begin{question}
+                $\dfrac{198\cdot4{,}9}{10{,}2}\approx\answer{95.12}$
+                
+                \begin{oplossing}
+                We schatten eerst:
+                \[
+                \dfrac{200\cdot5}{10}\approx100.
+                \]
+                
+                Nauwkeuriger:
+                \[
+                \dfrac{198\cdot4{,}9}{10{,}2}
+                =\dfrac{970{,}2}{10{,}2}
+                \approx95{,}12.
+                \]
+                
+                De uitkomst ligt inderdaad in de buurt van onze schatting.
+                \end{oplossing}
+                \end{question}
+                
+                
+                \begin{question}
+                $19{,}8^2=\answer{392.04}$
+                
+                \begin{oplossing}
+                Omdat $19{,}8\approx20$, verwachten we ongeveer
+                \[
+                20^2=400.
+                \]
+                
+                Nauwkeurig:
+                \[
+                19{,}8^2
+                =(20-0{,}2)^2
+                =400-8+0{,}04
+                =392{,}04.
+                \]
+                \end{oplossing}
+                \end{question}
+                
+                
+                \begin{question}
+                $\dfrac{0{,}049\cdot201}{0{,}99}\approx\answer{9.95}$
+                
+                \begin{oplossing}
+                We schatten:
+                \[
+                \dfrac{0{,}05\cdot200}{1}\approx10.
+                \]
+                
+                Nauwkeuriger:
+                \[
+                \dfrac{0{,}049\cdot201}{0{,}99}
+                =\dfrac{9{,}849}{0{,}99}
+                \approx9{,}95.
+                \]
+                \end{oplossing}
+                \end{question}
+                
+                
+                \begin{question}
+                $\dfrac{49{,}8\cdot20{,}1}{10{,}2}\approx\answer{98.15}$
+                
+                \begin{oplossing}
+                We schatten:
+                \[
+                \dfrac{50\cdot20}{10}\approx100.
+                \]
+                
+                Nauwkeuriger:
+                \[
+                \dfrac{49{,}8\cdot20{,}1}{10{,}2}
+                =\dfrac{1000{,}98}{10{,}2}
+                \approx98{,}14.
+                \]
+                
+                Dit ligt dicht bij de geschatte waarde $100$.
+                \end{oplossing}
+                \end{question}
+                
+                
+                \begin{question}
+                $5{,}02\cdot19{,}9\approx\answer{99.90}$
+                
+                \begin{oplossing}
+                We schatten:
+                \[
+                5{,}02\cdot19{,}9
+                \approx5\cdot20
+                =100.
+                \]
+                
+                Nauwkeuriger:
+                \[
+                5{,}02\cdot19{,}9
+                =99{,}898
+                \approx99{,}90.
+                \]
+                \end{oplossing}
+                \end{question}
+                
+                
+                \begin{question}
+                $\dfrac{399}{8{,}1}\approx\answer{49.26}$
+                
+                \begin{oplossing}
+                We schatten:
+                \[
+                \dfrac{400}{8}=50.
+                \]
+                
+                Nauwkeuriger:
+                \[
+                \dfrac{399}{8{,}1}
+                \approx49{,}26.
+                \]
+                
+                De nauwkeurige waarde ligt dus zoals verwacht dicht bij $50$.
+                \end{oplossing}
+                \end{question}
+                
+                
+                \begin{question}
+                $29{,}9^2\approx\answer{894.01}$
+                
+                \begin{oplossing}
+                Omdat $29{,}9\approx30$, verwachten we ongeveer
+                \[
+                30^2=900.
+                \]
+                
+                Nauwkeurig:
+                \[
+                29{,}9^2
+                =(30-0{,}1)^2
+                =900-6+0{,}01
+                =894{,}01.
+                \]
+                \end{oplossing}
+                \end{question}
+                
+                
+                \begin{question}
+                $\dfrac{1002\cdot0{,}098}{2{,}01}\approx\answer{48.86}$
+                
+                \begin{oplossing}
+                We schatten:
+                \[
+                \dfrac{1000\cdot0{,}1}{2}
+                =50.
+                \]
+                
+                Nauwkeuriger:
+                \[
+                \dfrac{1002\cdot0{,}098}{2{,}01}
+                =\dfrac{98{,}196}{2{,}01}
+                \approx48{,}85.
+                \]
+                
+                Dit is goed verenigbaar met onze schatting.
+                \end{oplossing}
+                \end{question}
+                
+                
+                \begin{question}
+                Een leerling vindt voor
+                \[
+                \dfrac{603}{19{,}8}
+                \]
+                de uitkomst $3{,}05$.
+                
+                Leg uit waarom je zonder herberekenen al weet dat dit fout is.
+                
+                \begin{oplossing}
+                We schatten:
+                \[
+                603\approx600
+                \qquad\text{en}\qquad
+                19{,}8\approx20.
+                \]
+                
+                Dus
+                \[
+                \dfrac{603}{19{,}8}
+                \approx
+                \dfrac{600}{20}
+                =30.
+                \]
+                
+                Een uitkomst rond $3$ kan dus niet kloppen. Ze is ongeveer een factor $10$ te klein.
+                \end{oplossing}
+                \end{question}
+                
+                
+                \begin{question}
+                Een leerling berekent
+                \[
+                49{,}7\cdot20{,}2=10039{,}4.
+                \]
+                
+                Leg zonder de vermenigvuldiging opnieuw uit te voeren uit waarom dit antwoord fout is.
+                
+                \begin{oplossing}
+                We schatten:
+                \[
+                49{,}7\approx50
+                \qquad\text{en}\qquad
+                20{,}2\approx20.
+                \]
+                
+                Daarom verwachten we
+                \[
+                50\cdot20=1000.
+                \]
+                
+                Een antwoord rond $10\,000$ is dus ongeveer een factor $10$ te groot.
+                \end{oplossing}
+                \end{question}
+                
+                
+                \begin{question}
+                Een leerling vindt
+                \[
+                \sqrt{398}=199.
+                \]
+                
+                Leg met een schatting uit waarom dit onmogelijk is.
+                
+                \begin{oplossing}
+                Omdat
+                \[
+                398\approx400
+                \]
+                en
+                \[
+                \sqrt{400}=20,
+                \]
+                moet $\sqrt{398}$ iets kleiner zijn dan $20$.
+                
+                Een uitkomst van $199$ kan dus onmogelijk correct zijn.
+                \end{oplossing}
+                \end{question}
+                
+                
+                \begin{question}
+                Een leerling berekent
+                \[
+                \dfrac{0{,}51\cdot198}{10{,}1}
+                \]
+                en krijgt als resultaat $0{,}999$.
+                
+                Onderzoek met een schatting of dit resultaat aannemelijk is.
+                
+                \begin{oplossing}
+                We schatten:
+                \[
+                0{,}51\approx0{,}5,
+                \qquad
+                198\approx200,
+                \qquad
+                10{,}1\approx10.
+                \]
+                
+                Dus
+                \[
+                \dfrac{0{,}51\cdot198}{10{,}1}
+                \approx
+                \dfrac{0{,}5\cdot200}{10}
+                =\dfrac{100}{10}
+                =10.
+                \]
+                
+                Een resultaat rond $1$ is daarom niet aannemelijk. Het antwoord is ongeveer een factor $10$ te klein.
+                \end{oplossing}
+                \end{question}
+                
+                \end{multicols}
+                
+                \end{oefening}
+
 
 % ============================================================
+
 \FVDsection{Machten, wortels en wetenschappelijke notatie}
 
 \begin{oefening}[Machten]{\oefB\ESS}
-Vereenvoudig en werk negatieve exponenten weg.
-\begin{enumerate}
-\item $x^4x^7$
-\item $a^3b^2\cdot a^5b$
-\item $\dfrac{x^9}{x^4}$
-\item $(2x^3)^4$
-\item $(3a^{-2}b^3)^2$
-\item $\dfrac{12x^5y^{-2}}{4x^2y}$
-\item $(2a^2b^{-1})^{-2}$
-\item $\dfrac{5x^{-3}}{10x^2}$
-\end{enumerate}
-\end{oefening}
+    \\
+    
+    Vereenvoudig en werk negatieve exponenten weg.
+    
+    \begin{multicols}{2}
+    
+    \begin{question}
+    $x^4x^7=\answer{x^{11}}$
+    
+    \begin{oplossing}
+    \[
+    x^4x^7=x^{4+7}=x^{11}.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $a^3b^2\cdot a^5b=\answer{a^8b^3}$
+    
+    \begin{oplossing}
+    \[
+    a^3b^2\cdot a^5b
+    =a^{3+5}b^{2+1}
+    =a^8b^3.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $\dfrac{x^9}{x^4}=\answer{x^5}$
+    
+    \begin{oplossing}
+    Voor $x\neq0$:
+    \[
+    \dfrac{x^9}{x^4}
+    =x^{9-4}
+    =x^5.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $\dfrac{a^7b^5}{a^3b^2}
+    =\answer{a^4b^3}$
+    
+    \begin{oplossing}
+    Voor $a\neq0$ en $b\neq0$:
+    \[
+    \dfrac{a^7b^5}{a^3b^2}
+    =a^{7-3}b^{5-2}
+    =a^4b^3.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $(2x^3)^4=\answer{16x^{12}}$
+    
+    \begin{oplossing}
+    \[
+    (2x^3)^4
+    =2^4(x^3)^4
+    =16x^{12}.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $(3a^2b)^3=\answer{27a^6b^3}$
+    
+    \begin{oplossing}
+    \[
+    (3a^2b)^3
+    =3^3(a^2)^3b^3
+    =27a^6b^3.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $(x^3)^4x^2=\answer{x^{14}}$
+    
+    \begin{oplossing}
+    \[
+    (x^3)^4x^2
+    =x^{12}x^2
+    =x^{14}.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $\dfrac{(x^3)^4}{x^5}
+    =\answer{x^7}$
+    
+    \begin{oplossing}
+    Voor $x\neq0$:
+    \[
+    \dfrac{(x^3)^4}{x^5}
+    =\dfrac{x^{12}}{x^5}
+    =x^{12-5}
+    =x^7.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $x^{-4}=\answer{\dfrac1{x^4}}$
+    
+    \begin{oplossing}
+    Voor $x\neq0$:
+    \[
+    x^{-4}
+    =\dfrac1{x^4}.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $3a^{-2}b^4
+    =\answer{\dfrac{3b^4}{a^2}}$
+    
+    \begin{oplossing}
+    Voor $a\neq0$:
+    \[
+    3a^{-2}b^4
+    =3\dfrac1{a^2}b^4
+    =\dfrac{3b^4}{a^2}.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $(3a^{-2}b^3)^2
+    =\answer{\dfrac{9b^6}{a^4}}$
+    
+    \begin{oplossing}
+    Voor $a\neq0$:
+    \[
+    (3a^{-2}b^3)^2
+    =3^2a^{-4}b^6
+    =9a^{-4}b^6
+    =\dfrac{9b^6}{a^4}.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $\dfrac{12x^5y^{-2}}{4x^2y}
+    =\answer{\dfrac{3x^3}{y^3}}$
+    
+    \begin{oplossing}
+    Voor $x\neq0$ en $y\neq0$:
+    \[
+    \dfrac{12x^5y^{-2}}{4x^2y}
+    =3x^{5-2}y^{-2-1}
+    \]
+    \[
+    =3x^3y^{-3}
+    =\dfrac{3x^3}{y^3}.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $\dfrac{6a^{-2}b^5}{3ab^2}
+    =\answer{\dfrac{2b^3}{a^3}}$
+    
+    \begin{oplossing}
+    Voor $a\neq0$ en $b\neq0$:
+    \[
+    \dfrac{6a^{-2}b^5}{3ab^2}
+    =2a^{-2-1}b^{5-2}
+    \]
+    \[
+    =2a^{-3}b^3
+    =\dfrac{2b^3}{a^3}.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $(2a^2b^{-1})^{-2}
+    =\answer{\dfrac{b^2}{4a^4}}$
+    
+    \begin{oplossing}
+    Voor $a\neq0$ en $b\neq0$:
+    \[
+    (2a^2b^{-1})^{-2}
+    =2^{-2}a^{-4}b^2
+    =\dfrac{b^2}{4a^4}.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $\dfrac{5x^{-3}}{10x^2}
+    =\answer{\dfrac{1}{2x^5}}$
+    
+    \begin{oplossing}
+    Voor $x\neq0$:
+    \[
+    \dfrac{5x^{-3}}{10x^2}
+    =\dfrac12x^{-3-2}
+    =\dfrac12x^{-5}
+    =\dfrac{1}{2x^5}.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $\dfrac{(2x^{-2}y^3)^2}{4xy^{-1}}
+    =\answer{\dfrac{y^7}{x^5}}$
+    
+    \begin{oplossing}
+    Voor $x\neq0$ en $y\neq0$:
+    \[
+    \dfrac{(2x^{-2}y^3)^2}{4xy^{-1}}
+    =\dfrac{4x^{-4}y^6}{4xy^{-1}}
+    \]
+    \[
+    =x^{-5}y^7
+    =\dfrac{y^7}{x^5}.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    \end{multicols}
+    
+    \end{oefening}
 
-\begin{oefening}[Wortels]{\oefB\ESS}
-Vereenvoudig zo ver mogelijk.
-\begin{enumerate}
-\item $\sqrt{50}$
-\item $\sqrt{108}$
-\item $3\sqrt8+2\sqrt{18}$
-\item $5\sqrt{12}-\sqrt{75}$
-\item $\sqrt6\cdot\sqrt{24}$
-\item $(\sqrt7-2)(\sqrt7+2)$
-\item $2\sqrt{45}-3\sqrt{20}+\sqrt{80}$
-\item $(\sqrt5+\sqrt2)^2$
-\end{enumerate}
-\end{oefening}
+    \begin{oefening}[Wortels]{\oefB\ESS}
+        \\
+        
+        Vereenvoudig zo ver mogelijk.
+        
+        \begin{multicols}{2}
+        
+        \begin{question}
+        $\sqrt{50}=\answer{5\sqrt2}$
+        
+        \begin{oplossing}
+        \[
+        \sqrt{50}
+        =\sqrt{25\cdot2}
+        =5\sqrt2.
+        \]
+        \end{oplossing}
+        \end{question}
+        
+        
+        \begin{question}
+        $\sqrt{108}=\answer{6\sqrt3}$
+        
+        \begin{oplossing}
+        \[
+        \sqrt{108}
+        =\sqrt{36\cdot3}
+        =6\sqrt3.
+        \]
+        \end{oplossing}
+        \end{question}
+        
+        
+        \begin{question}
+        $\sqrt{72}=\answer{6\sqrt2}$
+        
+        \begin{oplossing}
+        \[
+        \sqrt{72}
+        =\sqrt{36\cdot2}
+        =6\sqrt2.
+        \]
+        \end{oplossing}
+        \end{question}
+        
+        
+        \begin{question}
+        $\sqrt{200}=\answer{10\sqrt2}$
+        
+        \begin{oplossing}
+        \[
+        \sqrt{200}
+        =\sqrt{100\cdot2}
+        =10\sqrt2.
+        \]
+        \end{oplossing}
+        \end{question}
+        
+        
+        \begin{question}
+        $3\sqrt8+2\sqrt{18}=\answer{12\sqrt2}$
+        
+        \begin{oplossing}
+        \[
+        3\sqrt8+2\sqrt{18}
+        =3(2\sqrt2)+2(3\sqrt2)
+        \]
+        \[
+        =6\sqrt2+6\sqrt2
+        =12\sqrt2.
+        \]
+        \end{oplossing}
+        \end{question}
+        
+        
+        \begin{question}
+        $5\sqrt{12}-\sqrt{75}=\answer{5\sqrt3}$
+        
+        \begin{oplossing}
+        \[
+        5\sqrt{12}-\sqrt{75}
+        =5(2\sqrt3)-5\sqrt3
+        \]
+        \[
+        =10\sqrt3-5\sqrt3
+        =5\sqrt3.
+        \]
+        \end{oplossing}
+        \end{question}
+        
+        
+        \begin{question}
+        $4\sqrt{27}+\sqrt{48}=\answer{16\sqrt3}$
+        
+        \begin{oplossing}
+        \[
+        4\sqrt{27}+\sqrt{48}
+        =4(3\sqrt3)+4\sqrt3
+        \]
+        \[
+        =12\sqrt3+4\sqrt3
+        =16\sqrt3.
+        \]
+        \end{oplossing}
+        \end{question}
+        
+        
+        \begin{question}
+        $3\sqrt{32}-2\sqrt8=\answer{8\sqrt2}$
+        
+        \begin{oplossing}
+        \[
+        3\sqrt{32}-2\sqrt8
+        =3(4\sqrt2)-2(2\sqrt2)
+        \]
+        \[
+        =12\sqrt2-4\sqrt2
+        =8\sqrt2.
+        \]
+        \end{oplossing}
+        \end{question}
+        
+        
+        \begin{question}
+        $\sqrt6\cdot\sqrt{24}=\answer{12}$
+        
+        \begin{oplossing}
+        \[
+        \sqrt6\cdot\sqrt{24}
+        =\sqrt{144}
+        =12.
+        \]
+        \end{oplossing}
+        \end{question}
+        
+        
+        \begin{question}
+        $\sqrt{15}\cdot\sqrt{60}=\answer{30}$
+        
+        \begin{oplossing}
+        \[
+        \sqrt{15}\cdot\sqrt{60}
+        =\sqrt{900}
+        =30.
+        \]
+        \end{oplossing}
+        \end{question}
+        
+        
+        \begin{question}
+        $\dfrac{\sqrt{72}}{\sqrt2}=\answer{6}$
+        
+        \begin{oplossing}
+        \[
+        \dfrac{\sqrt{72}}{\sqrt2}
+        =\sqrt{\dfrac{72}{2}}
+        =\sqrt{36}
+        =6.
+        \]
+        \end{oplossing}
+        \end{question}
+        
+        
+        \begin{question}
+        $(\sqrt7-2)(\sqrt7+2)=\answer{3}$
+        
+        \begin{oplossing}
+        We herkennen een verschil van twee kwadraten:
+        \[
+        (\sqrt7-2)(\sqrt7+2)
+        =(\sqrt7)^2-2^2
+        \]
+        \[
+        =7-4
+        =3.
+        \]
+        \end{oplossing}
+        \end{question}
+        
+        
+        \begin{question}
+        $2\sqrt{45}-3\sqrt{20}+\sqrt{80}
+        =\answer{4\sqrt5}$
+        
+        \begin{oplossing}
+        \[
+        2\sqrt{45}-3\sqrt{20}+\sqrt{80}
+        \]
+        \[
+        =2(3\sqrt5)-3(2\sqrt5)+4\sqrt5
+        \]
+        \[
+        =6\sqrt5-6\sqrt5+4\sqrt5
+        =4\sqrt5.
+        \]
+        \end{oplossing}
+        \end{question}
+        
+        
+        \begin{question}
+        $(\sqrt5+\sqrt2)^2
+        =\answer{7+2\sqrt{10}}$
+        
+        \begin{oplossing}
+        \[
+        (\sqrt5+\sqrt2)^2
+        =(\sqrt5)^2+2\sqrt5\sqrt2+(\sqrt2)^2
+        \]
+        \[
+        =5+2\sqrt{10}+2
+        =7+2\sqrt{10}.
+        \]
+        \end{oplossing}
+        \end{question}
+        
+        
+        \begin{question}
+        $(\sqrt6-\sqrt2)^2
+        =\answer{8-4\sqrt3}$
+        
+        \begin{oplossing}
+        \[
+        (\sqrt6-\sqrt2)^2
+        =6-2\sqrt6\sqrt2+2
+        \]
+        \[
+        =8-2\sqrt{12}
+        =8-4\sqrt3.
+        \]
+        \end{oplossing}
+        \end{question}
+        
+        
+        \begin{question}
+        $(2\sqrt3+\sqrt5)(2\sqrt3-\sqrt5)
+        =\answer{7}$
+        
+        \begin{oplossing}
+        We herkennen een verschil van twee kwadraten:
+        \[
+        (2\sqrt3+\sqrt5)(2\sqrt3-\sqrt5)
+        \]
+        \[
+        =(2\sqrt3)^2-(\sqrt5)^2
+        =12-5
+        =7.
+        \]
+        \end{oplossing}
+        \end{question}
+        
+        \end{multicols}
+        
+        \end{oefening}
 
-\begin{oefening}[Exact of benaderd?]{\oefU}
-Geef telkens aan of een exact antwoord of een decimale benadering het meest geschikt is. Motiveer kort.
-\begin{enumerate}
-\item De diagonaal van een vierkant met zijde $1$.
-\item De lengte van een kabel die je in een winkel moet bestellen.
-\item De oppervlakte van een cirkel met straal $3$ in een algebraïsche berekening.
-\item Een experimenteel gemeten tijdsduur.
-\end{enumerate}
-\end{oefening}
 
-\begin{oefening}[Wetenschappelijke notatie]{\oefB\ESS}
-Schrijf in wetenschappelijke notatie of als gewoon decimaal getal.
-\begin{enumerate}
-\item $0{,}000\,0042$
-\item $73\,500\,000$
-\item $6{,}02\cdot10^{23}$
-\item $3{,}4\cdot10^{-7}$
-\item $(3\cdot10^5)(4\cdot10^{-8})$
-\item $\dfrac{6\cdot10^8}{2\cdot10^{-3}}$
-\item $\dfrac{9{,}6\cdot10^{-12}}{3{,}2\cdot10^4}$
-\end{enumerate}
-\end{oefening}
 
-\begin{oefening}[Ordegrootte in de wetenschappen]{\oefU}
-Een bacterie is ongeveer $2\cdot10^{-6}\,\mathrm m$ lang en een menselijke haar ongeveer
-$7\cdot10^{-5}\,\mathrm m$ dik.
-\begin{enumerate}
-\item Hoeveel keer groter is de dikte van de haar dan de lengte van de bacterie?
-\item Geef de ordegrootte van beide lengtes.
-\item Leg uit waarom wetenschappelijke notatie hier handiger is dan decimale schrijfwijze.
-\end{enumerate}
-\end{oefening}
+        \begin{oefening}[Wetenschappelijke notatie]{\oefB\ESS}
+            \\
+            
+            Schrijf in wetenschappelijke notatie of als gewoon decimaal getal.
+            Voer de bewerkingen uit zonder rekenmachine en schrijf het eindresultaat steeds in correcte wetenschappelijke notatie.
+            
+            \begin{multicols}{2}
+            
+            \begin{question}
+            $0{,}000\,0042=\answer{4.2\cdot10^{-6}}$
+            
+            \begin{oplossing}
+            We verplaatsen de komma $6$ plaatsen naar rechts:
+            \[
+            0{,}000\,0042
+            =4{,}2\cdot10^{-6}.
+            \]
+            \end{oplossing}
+            \end{question}
+            
+            
+            \begin{question}
+            $73\,500\,000=\answer{7.35\cdot10^7}$
+            
+            \begin{oplossing}
+            We verplaatsen de komma $7$ plaatsen naar links:
+            \[
+            73\,500\,000
+            =7{,}35\cdot10^7.
+            \]
+            \end{oplossing}
+            \end{question}
+            
+            
+            \begin{question}
+            $0{,}000\,000\,081
+            =\answer{8.1\cdot10^{-8}}$
+            
+            \begin{oplossing}
+            \[
+            0{,}000\,000\,081
+            =8{,}1\cdot10^{-8}.
+            \]
+            \end{oplossing}
+            \end{question}
+            
+            
+            \begin{question}
+            $425\,000\,000\,000
+            =\answer{4.25\cdot10^{11}}$
+            
+            \begin{oplossing}
+            \[
+            425\,000\,000\,000
+            =4{,}25\cdot10^{11}.
+            \]
+            \end{oplossing}
+            \end{question}
+            
+            
+            \begin{question}
+            $6{,}02\cdot10^{8}
+            =\answer{602000000}$
+            
+            \begin{oplossing}
+            We verplaatsen de komma $8$ plaatsen naar rechts:
+            \[
+            6{,}02\cdot10^8
+            =602\,000\,000.
+            \]
+            \end{oplossing}
+            \end{question}
+            
+            
+            \begin{question}
+            $3{,}4\cdot10^{-7}
+            =\answer{0.00000034}$
+            
+            \begin{oplossing}
+            We verplaatsen de komma $7$ plaatsen naar links:
+            \[
+            3{,}4\cdot10^{-7}
+            =0{,}000\,000\,34.
+            \]
+            \end{oplossing}
+            \end{question}
+            
+            
+            \begin{question}
+            $8{,}25\cdot10^5
+            =\answer{825000}$
+            
+            \begin{oplossing}
+            \[
+            8{,}25\cdot10^5
+            =825\,000.
+            \]
+            \end{oplossing}
+            \end{question}
+            
+            
+            \begin{question}
+            $7{,}1\cdot10^{-5}
+            =\answer{0.000071}$
+            
+            \begin{oplossing}
+            \[
+            7{,}1\cdot10^{-5}
+            =0{,}000\,071.
+            \]
+            \end{oplossing}
+            \end{question}
+            
+            
+            \begin{question}
+            $(3\cdot10^5)(4\cdot10^{-8})
+            =\answer{1.2\cdot10^{-2}}$
+            
+            \begin{oplossing}
+            We vermenigvuldigen de getallen en tellen de exponenten op:
+            \[
+            (3\cdot10^5)(4\cdot10^{-8})
+            =12\cdot10^{-3}.
+            \]
+            Dit is nog geen correcte wetenschappelijke notatie:
+            \[
+            12\cdot10^{-3}
+            =1{,}2\cdot10^{-2}.
+            \]
+            \end{oplossing}
+            \end{question}
+            
+            
+            \begin{question}
+            $(2{,}5\cdot10^4)(3\cdot10^6)
+            =\answer{7.5\cdot10^{10}}$
+            
+            \begin{oplossing}
+            \[
+            (2{,}5\cdot10^4)(3\cdot10^6)
+            =(2{,}5\cdot3)\cdot10^{4+6}
+            \]
+            \[
+            =7{,}5\cdot10^{10}.
+            \]
+            \end{oplossing}
+            \end{question}
+            
+            
+            \begin{question}
+            $(6\cdot10^{-3})(5\cdot10^{-4})
+            =\answer{3\cdot10^{-6}}$
+            
+            \begin{oplossing}
+            \[
+            (6\cdot10^{-3})(5\cdot10^{-4})
+            =30\cdot10^{-7}.
+            \]
+            We herschrijven:
+            \[
+            30\cdot10^{-7}
+            =3\cdot10^{-6}.
+            \]
+            \end{oplossing}
+            \end{question}
+            
+            
+            \begin{question}
+            $\dfrac{6\cdot10^8}{2\cdot10^{-3}}
+            =\answer{3\cdot10^{11}}$
+            
+            \begin{oplossing}
+            We delen de getallen en trekken de exponenten af:
+            \[
+            \dfrac{6\cdot10^8}{2\cdot10^{-3}}
+            =\dfrac62\cdot10^{8-(-3)}
+            \]
+            \[
+            =3\cdot10^{11}.
+            \]
+            \end{oplossing}
+            \end{question}
+            
+            
+            \begin{question}
+            $\dfrac{9{,}6\cdot10^{-12}}
+            {3{,}2\cdot10^4}
+            =\answer{3\cdot10^{-16}}$
+            
+            \begin{oplossing}
+            \[
+            \dfrac{9{,}6\cdot10^{-12}}
+            {3{,}2\cdot10^4}
+            =\dfrac{9{,}6}{3{,}2}\cdot10^{-12-4}
+            \]
+            \[
+            =3\cdot10^{-16}.
+            \]
+            \end{oplossing}
+            \end{question}
+            
+            
+            \begin{question}
+            $\dfrac{8{,}4\cdot10^7}
+            {2{,}1\cdot10^3}
+            =\answer{4\cdot10^4}$
+            
+            \begin{oplossing}
+            \[
+            \dfrac{8{,}4\cdot10^7}
+            {2{,}1\cdot10^3}
+            =\dfrac{8{,}4}{2{,}1}\cdot10^{7-3}
+            \]
+            \[
+            =4\cdot10^4.
+            \]
+            \end{oplossing}
+            \end{question}
+            
+            
+            \begin{question}
+            $\dfrac{3\cdot10^{-4}}
+            {6\cdot10^2}
+            =\answer{5\cdot10^{-7}}$
+            
+            \begin{oplossing}
+            \[
+            \dfrac{3\cdot10^{-4}}
+            {6\cdot10^2}
+            =0{,}5\cdot10^{-6}.
+            \]
+            Dit is nog geen correcte wetenschappelijke notatie:
+            \[
+            0{,}5\cdot10^{-6}
+            =5\cdot10^{-7}.
+            \]
+            \end{oplossing}
+            \end{question}
+            
+            
+            \begin{question}
+            $\dfrac{(4\cdot10^6)(3\cdot10^{-2})}
+            {2\cdot10^3}
+            =\answer{6\cdot10^1}$
+            
+            \begin{oplossing}
+            Eerst werken we de teller uit:
+            \[
+            (4\cdot10^6)(3\cdot10^{-2})
+            =12\cdot10^4.
+            \]
+            Daarna delen we:
+            \[
+            \dfrac{12\cdot10^4}{2\cdot10^3}
+            =6\cdot10^{4-3}
+            =6\cdot10^1.
+            \]
+            \end{oplossing}
+            \end{question}
+            
+            \end{multicols}
+            
+            \end{oefening}
+
+            \begin{oefening}[Ordegrootte in de wetenschappen]{\oefU}
+                \\
+                
+                Bij deze oefening bedoelen we met de \emph{ordegrootte} de macht van $10$
+                die het dichtst bij de gegeven waarde ligt.
+                
+                Een bacterie is ongeveer $2\cdot10^{-6}\,\mathrm m$ lang en een menselijke haar
+                ongeveer $7\cdot10^{-5}\,\mathrm m$ dik.
+                
+                \begin{multicols}{2}
+                
+                \begin{question}
+                Hoeveel keer groter is de dikte van de haar dan de lengte van de bacterie?
+                
+                Antwoord: $\answer{35}$ keer.
+                
+                \begin{oplossing}
+                We vergelijken beide lengtes:
+                \[
+                \dfrac{7\cdot10^{-5}}{2\cdot10^{-6}}
+                =\dfrac72\cdot10^{-5-(-6)}
+                \]
+                \[
+                =3{,}5\cdot10
+                =35.
+                \]
+                
+                De haar is dus ongeveer $35$ keer dikker dan de bacterie lang is.
+                \end{oplossing}
+                \end{question}
+                
+                
+                \begin{question}
+                Wat is de ordegrootte van de lengte van de bacterie?
+                
+                \[
+                \answer{10^{-6}}\,\mathrm m
+                \]
+                
+                \begin{oplossing}
+                De lengte is
+                \[
+                2\cdot10^{-6}\,\mathrm m.
+                \]
+                
+                Deze waarde ligt dichter bij
+                \[
+                10^{-6}\,\mathrm m
+                \]
+                dan bij $10^{-5}\,\mathrm m$.
+                
+                De ordegrootte is dus
+                \[
+                10^{-6}\,\mathrm m.
+                \]
+                \end{oplossing}
+                \end{question}
+                
+                
+                \begin{question}
+                Wat is de ordegrootte van de dikte van de haar?
+                
+                \[
+                \answer{10^{-4}}\,\mathrm m
+                \]
+                
+                \begin{oplossing}
+                De dikte is
+                \[
+                7\cdot10^{-5}\,\mathrm m.
+                \]
+                
+                Deze waarde ligt dichter bij
+                \[
+                10^{-4}\,\mathrm m
+                \]
+                dan bij $10^{-5}\,\mathrm m$.
+                
+                De ordegrootte is dus
+                \[
+                10^{-4}\,\mathrm m.
+                \]
+                \end{oplossing}
+                \end{question}
+                
+                
+                \begin{question}
+                Hoeveel ordes van grootte verschillen de bacterie en de haar?
+                
+                Antwoord: $\answer{2}$ ordes van grootte.
+                
+                \begin{oplossing}
+                De ordegroottes zijn
+                \[
+                10^{-6}\,\mathrm m
+                \qquad\text{en}\qquad
+                10^{-4}\,\mathrm m.
+                \]
+                
+                Het verschil tussen de exponenten is
+                \[
+                -4-(-6)=2.
+                \]
+                
+                Ze verschillen dus twee ordes van grootte.
+                \end{oplossing}
+                \end{question}
+                
+                
+                \begin{question}
+                Een virus heeft een diameter van ongeveer
+                \[
+                1{,}0\cdot10^{-7}\,\mathrm m.
+                \]
+                
+                Hoeveel keer langer is de bacterie dan de diameter van het virus?
+                
+                Antwoord: $\answer{20}$ keer.
+                
+                \begin{oplossing}
+                \[
+                \dfrac{2\cdot10^{-6}}{1{,}0\cdot10^{-7}}
+                =2\cdot10
+                =20.
+                \]
+                
+                De bacterie is dus ongeveer $20$ keer langer.
+                \end{oplossing}
+                \end{question}
+                
+                
+                \begin{question}
+                Een menselijke rode bloedcel heeft een diameter van ongeveer
+                \[
+                8\cdot10^{-6}\,\mathrm m.
+                \]
+                
+                Hoeveel keer groter is die diameter dan de lengte van de bacterie?
+                
+                Antwoord: $\answer{4}$ keer.
+                
+                \begin{oplossing}
+                \[
+                \dfrac{8\cdot10^{-6}}{2\cdot10^{-6}}
+                =\dfrac82\cdot10^0
+                =4.
+                \]
+                
+                De diameter van de rode bloedcel is dus ongeveer $4$ keer groter.
+                \end{oplossing}
+                \end{question}
+                
+                
+                \begin{question}
+                Een stofdeeltje heeft een diameter van ongeveer
+                \[
+                3\cdot10^{-4}\,\mathrm m.
+                \]
+                
+                Hoeveel keer groter is dit dan de lengte van de bacterie?
+                
+                Antwoord: $\answer{150}$ keer.
+                
+                \begin{oplossing}
+                \[
+                \dfrac{3\cdot10^{-4}}{2\cdot10^{-6}}
+                =\dfrac32\cdot10^2
+                \]
+                \[
+                =1{,}5\cdot100
+                =150.
+                \]
+                \end{oplossing}
+                \end{question}
+                
+                
+                \begin{question}
+                De afstand van de aarde tot de zon is ongeveer
+                \[
+                1{,}5\cdot10^{11}\,\mathrm m.
+                \]
+                
+                Wat is de ordegrootte van deze afstand?
+                
+                \[
+                \answer{10^{11}}\,\mathrm m
+                \]
+                
+                \begin{oplossing}
+                De waarde
+                \[
+                1{,}5\cdot10^{11}
+                \]
+                ligt dichter bij $10^{11}$ dan bij $10^{12}$.
+                
+                De ordegrootte is dus
+                \[
+                10^{11}\,\mathrm m.
+                \]
+                \end{oplossing}
+                \end{question}
+                
+                
+                \begin{question}
+                Een cel heeft een typische afmeting van
+                \[
+                1\cdot10^{-5}\,\mathrm m,
+                \]
+                terwijl een molecule een typische afmeting van
+                \[
+                1\cdot10^{-9}\,\mathrm m
+                \]
+                heeft.
+                
+                Hoeveel keer groter is de typische afmeting van de cel?
+                
+                \[
+                \answer{10000}
+                \]
+                
+                \begin{oplossing}
+                \[
+                \dfrac{10^{-5}}{10^{-9}}
+                =10^{-5-(-9)}
+                =10^4
+                =10\,000.
+                \]
+                
+                De cel is op deze schaal dus ongeveer $10\,000$ keer groter.
+                \end{oplossing}
+                \end{question}
+                
+                
+                \begin{question}
+                Hoeveel ordes van grootte verschillen de typische afmetingen van de cel
+                en de molecule uit de vorige vraag?
+                
+                Antwoord: $\answer{4}$ ordes van grootte.
+                
+                \begin{oplossing}
+                De exponenten zijn $-5$ en $-9$.
+                
+                Hun verschil is
+                \[
+                -5-(-9)=4.
+                \]
+                
+                De afmetingen verschillen dus vier ordes van grootte.
+                \end{oplossing}
+                \end{question}
+                
+                
+                \begin{question}
+                Een leerling zegt:
+                
+                ``Een grootheid die $3$ ordes van grootte groter is, is $3$ keer zo groot.''
+                
+                Is deze uitspraak correct? Leg uit.
+                
+                \begin{oplossing}
+                Nee.
+                
+                Eén orde van grootte komt overeen met een factor $10$.
+                Drie ordes van grootte komen dus overeen met
+                \[
+                10^3=1000.
+                \]
+                
+                Een grootheid die drie ordes van grootte groter is, is dus ongeveer
+                $1000$ keer zo groot, niet $3$ keer zo groot.
+                \end{oplossing}
+                \end{question}
+                
+                
+                \begin{question}
+                Leg uit waarom wetenschappelijke notatie bijzonder geschikt is om
+                zeer grote en zeer kleine wetenschappelijke grootheden te vergelijken.
+                
+                \begin{oplossing}
+                In wetenschappelijke notatie
+                \[
+                a\cdot10^n
+                \]
+                maakt de exponent $n$ onmiddellijk zichtbaar op welke schaal een
+                grootheid ligt.
+                
+                Daardoor kun je snel ordegroottes vergelijken en zie je bijvoorbeeld
+                onmiddellijk dat $10^{-9}$ veel kleiner is dan $10^{-5}$.
+                
+                Ook producten, quotiënten en verhoudingen zijn eenvoudiger te berekenen
+                omdat je rechtstreeks met de machten van $10$ kunt rekenen.
+                \end{oplossing}
+                \end{question}
+                
+                \end{multicols}
+                
+                \end{oefening}
+
 
 % ============================================================
+
 \FVDsection{Procenten, verhoudingen en verandering}
 
 \begin{oefening}[Procentuele verandering]{\oefB\ESS}
-Bereken telkens de absolute en procentuele verandering.
-\begin{enumerate}
-\item $80\to92$
-\item $250\to215$
-\item $1{,}20\to1{,}38$
-\item $640\to800$
-\end{enumerate}
-\end{oefening}
+    \\
+    
+    Bereken telkens de absolute en procentuele verandering.
+    
+    \begin{multicols}{2}
+    
+    \begin{question}
+    $80\to92$: absolute verandering $=\answer{12}$; procentuele verandering $=\answer{15}\%$.
+    
+    \begin{oplossing}
+    De absolute verandering is
+    \[
+    92-80=12.
+    \]
+    
+    De procentuele verandering is
+    \[
+    \dfrac{12}{80}\cdot100\%=15\%.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $250\to215$: absolute verandering $=\answer{-35}$; procentuele verandering $=\answer{-14}\%$.
+    
+    \begin{oplossing}
+    \[
+    215-250=-35.
+    \]
+    
+    Dus
+    \[
+    \dfrac{-35}{250}\cdot100\%=-14\%.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $1{,}20\to1{,}38$: absolute verandering $=\answer{0.18}$; procentuele verandering $=\answer{15}\%$.
+    
+    \begin{oplossing}
+    \[
+    1{,}38-1{,}20=0{,}18.
+    \]
+    
+    Dus
+    \[
+    \dfrac{0{,}18}{1{,}20}\cdot100\%=15\%.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $640\to800$: absolute verandering $=\answer{160}$; procentuele verandering $=\answer{25}\%$.
+    
+    \begin{oplossing}
+    \[
+    800-640=160.
+    \]
+    
+    Dus
+    \[
+    \dfrac{160}{640}\cdot100\%=25\%.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $150\to180$: absolute verandering $=\answer{30}$; procentuele verandering $=\answer{20}\%$.
+    
+    \begin{oplossing}
+    \[
+    180-150=30.
+    \]
+    
+    Dus
+    \[
+    \dfrac{30}{150}\cdot100\%=20\%.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $400\to340$: absolute verandering $=\answer{-60}$; procentuele verandering $=\answer{-15}\%$.
+    
+    \begin{oplossing}
+    \[
+    340-400=-60.
+    \]
+    
+    Dus
+    \[
+    \dfrac{-60}{400}\cdot100\%=-15\%.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $2{,}50\to2{,}75$: absolute verandering $=\answer{0.25}$; procentuele verandering $=\answer{10}\%$.
+    
+    \begin{oplossing}
+    \[
+    2{,}75-2{,}50=0{,}25.
+    \]
+    
+    Dus
+    \[
+    \dfrac{0{,}25}{2{,}50}\cdot100\%=10\%.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $1200\to900$: absolute verandering $=\answer{-300}$; procentuele verandering $=\answer{-25}\%$.
+    
+    \begin{oplossing}
+    \[
+    900-1200=-300.
+    \]
+    
+    Dus
+    \[
+    \dfrac{-300}{1200}\cdot100\%=-25\%.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $48\to60$: absolute verandering $=\answer{12}$; procentuele verandering $=\answer{25}\%$.
+    
+    \begin{oplossing}
+    \[
+    60-48=12.
+    \]
+    
+    Dus
+    \[
+    \dfrac{12}{48}\cdot100\%=25\%.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $75\to60$: absolute verandering $=\answer{-15}$; procentuele verandering $=\answer{-20}\%$.
+    
+    \begin{oplossing}
+    \[
+    60-75=-15.
+    \]
+    
+    Dus
+    \[
+    \dfrac{-15}{75}\cdot100\%=-20\%.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $0{,}80\to1{,}00$: absolute verandering $=\answer{0.20}$; procentuele verandering $=\answer{25}\%$.
+    
+    \begin{oplossing}
+    \[
+    1{,}00-0{,}80=0{,}20.
+    \]
+    
+    Dus
+    \[
+    \dfrac{0{,}20}{0{,}80}\cdot100\%=25\%.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $1{,}50\to1{,}20$: absolute verandering $=\answer{-0.30}$; procentuele verandering $=\answer{-20}\%$.
+    
+    \begin{oplossing}
+    \[
+    1{,}20-1{,}50=-0{,}30.
+    \]
+    
+    Dus
+    \[
+    \dfrac{-0{,}30}{1{,}50}\cdot100\%=-20\%.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    \end{multicols}
+    
+    \end{oefening}
+    
+    
+    
+    \begin{oefening}[Verhoudingen]{\oefB}
+    \\
+    
+    Bereken telkens de gevraagde verhouding of grootheid.
+    
+    \begin{multicols}{2}
+    
+    \begin{question}
+    Een oplossing bevat $18\,\mathrm g$ stof in $300\,\mathrm g$ oplossing.
+    
+    Welk percentage is dat? $\answer{6}\%$
+    
+    \begin{oplossing}
+    \[
+    \dfrac{18}{300}\cdot100\%=6\%.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    Een oplossing bevat $24\,\mathrm g$ zout in $400\,\mathrm g$ oplossing.
+    
+    Welk percentage is dat? $\answer{6}\%$
+    
+    \begin{oplossing}
+    \[
+    \dfrac{24}{400}\cdot100\%=6\%.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    Op een kaart met schaal $1:25\,000$ is een afstand $7{,}2\,\mathrm{cm}$.
+    
+    Hoe groot is de werkelijke afstand? $\answer{1800}\,\mathrm m$
+    
+    \begin{oplossing}
+    \[
+    7{,}2\cdot25\,000
+    =180\,000\,\mathrm{cm}.
+    \]
+    
+    Omdat $100\,\mathrm{cm}=1\,\mathrm m$:
+    \[
+    180\,000\,\mathrm{cm}
+    =1\,800\,\mathrm m
+    =1{,}8\,\mathrm{km}.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    Op een kaart met schaal $1:50\,000$ is een afstand $4{,}6\,\mathrm{cm}$.
+    
+    Hoe groot is de werkelijke afstand? $\answer{2300}\,\mathrm m$
+    
+    \begin{oplossing}
+    \[
+    4{,}6\cdot50\,000
+    =230\,000\,\mathrm{cm}.
+    \]
+    
+    Dus
+    \[
+    230\,000\,\mathrm{cm}
+    =2\,300\,\mathrm m
+    =2{,}3\,\mathrm{km}.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    Een recept voor $4$ personen gebruikt $350\,\mathrm g$ bloem.
+    
+    Hoeveel is nodig voor $7$ personen? $\answer{612.5}\,\mathrm g$
+    
+    \begin{oplossing}
+    De hoeveelheid wordt vermenigvuldigd met
+    \[
+    \dfrac74.
+    \]
+    
+    Dus
+    \[
+    350\cdot\dfrac74
+    =612{,}5\,\mathrm g.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    Voor $6$ personen is $450\,\mathrm g$ rijst nodig.
+    
+    Hoeveel rijst is nodig voor $10$ personen? $\answer{750}\,\mathrm g$
+    
+    \begin{oplossing}
+    \[
+    450\cdot\dfrac{10}{6}
+    =750\,\mathrm g.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    Een sensor geeft $2{,}4\,\mathrm V$ bij een bepaalde toestand en $3{,}0\,\mathrm V$ bij een tweede.
+    
+    Met welke factor is de spanning veranderd? $\answer{1.25}$
+    
+    \begin{oplossing}
+    \[
+    \dfrac{3{,}0}{2{,}4}=1{,}25.
+    \]
+    
+    De spanning is dus met factor $1{,}25$ vermenigvuldigd.
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    Een massa neemt toe van $12\,\mathrm g$ tot $18\,\mathrm g$.
+    
+    Met welke factor is de massa veranderd? $\answer{1.5}$
+    
+    \begin{oplossing}
+    \[
+    \dfrac{18}{12}=1{,}5.
+    \]
+    
+    De massa is dus met factor $1{,}5$ vermenigvuldigd.
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    Een modelauto is gebouwd op schaal $1:20$.
+    De echte auto is $4{,}6\,\mathrm m$ lang.
+    
+    Hoe lang is het model? $\answer{23}\,\mathrm{cm}$
+    
+    \begin{oplossing}
+    We zetten eerst om:
+    \[
+    4{,}6\,\mathrm m=460\,\mathrm{cm}.
+    \]
+    
+    Op schaal $1:20$:
+    \[
+    \dfrac{460}{20}=23\,\mathrm{cm}.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $5\,\mathrm L$ van een vloeistof heeft een massa van $4\,\mathrm{kg}$.
+    
+    Welke massa heeft $8\,\mathrm L$ bij dezelfde verhouding? $\answer{6.4}\,\mathrm{kg}$
+    
+    \begin{oplossing}
+    Per liter is de massa
+    \[
+    \dfrac45=0{,}8\,\mathrm{kg}.
+    \]
+    
+    Voor $8\,\mathrm L$:
+    \[
+    8\cdot0{,}8
+    =6{,}4\,\mathrm{kg}.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    \end{multicols}
+    
+    \end{oefening}
+    
+    
+    
+    \begin{oefening}[Twee keer twintig procent]{\oefU\ESS}
+    \\
+    
+    Een toestel kost €500. De prijs stijgt eerst met $20\%$ en daalt daarna met $20\%$.
+    
+    \begin{multicols}{2}
+    
+    \begin{question}
+    Bereken de prijs na de stijging van $20\%$.
+    
+    €$\answer{600}$
+    
+    \begin{oplossing}
+    Een stijging met $20\%$ komt overeen met groeifactor
+    \[
+    1+\dfrac{20}{100}=1{,}20.
+    \]
+    
+    Dus
+    \[
+    500\cdot1{,}20
+    =600.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    Bereken de uiteindelijke prijs na de daaropvolgende daling van $20\%$.
+    
+    €$\answer{480}$
+    
+    \begin{oplossing}
+    Een daling met $20\%$ komt overeen met groeifactor
+    \[
+    1-\dfrac{20}{100}=0{,}80.
+    \]
+    
+    Dus
+    \[
+    600\cdot0{,}80
+    =480.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    Met welke totale factor is de oorspronkelijke prijs vermenigvuldigd?
+    
+    $\answer{0.96}$
+    
+    \begin{oplossing}
+    De twee opeenvolgende groeifactoren zijn
+    \[
+    1{,}20
+    \qquad\text{en}\qquad
+    0{,}80.
+    \]
+    
+    De totale factor is
+    \[
+    1{,}20\cdot0{,}80
+    =0{,}96.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    Wat is de totale procentuele verandering ten opzichte van de oorspronkelijke prijs?
+    
+    $\answer{-4}\%$
+    
+    \begin{oplossing}
+    De totale groeifactor is
+    \[
+    0{,}96.
+    \]
+    
+    Daarom is de procentuele verandering
+    \[
+    (0{,}96-1)\cdot100\%
+    =-4\%.
+    \]
+    
+    De prijs is uiteindelijk dus $4\%$ lager.
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    Leg uit waarom de prijs niet opnieuw €500 bedraagt.
+    
+    \begin{oplossing}
+    De stijging en de daling worden niet op hetzelfde bedrag berekend.
+    
+    De stijging bedraagt
+    \[
+    20\%\text{ van }500=100,
+    \]
+    terwijl de daling bedraagt
+    \[
+    20\%\text{ van }600=120.
+    \]
+    
+    Dezelfde procentuele stijging en daling heffen elkaar dus niet op.
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    Welke procentuele daling na de stijging is nodig om exact bij €500 uit te komen?
+    
+    $\answer{16.6666667}\%$
+    
+    \begin{oplossing}
+    Na de stijging kost het toestel €600.
+    
+    Om terug te keren naar €500 moet de prijs met €100 dalen. Ten opzichte van €600 is dat
+    \[
+    \dfrac{100}{600}\cdot100\%
+    =16\tfrac23\%.
+    \]
+    
+    Er is dus een daling van
+    \[
+    16\tfrac23\%
+    \]
+    nodig.
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    Een andere prijs stijgt eerst met $10\%$ en daarna nog eens met $10\%$.
+    
+    Met welke totale factor wordt de prijs vermenigvuldigd?
+    
+    $\answer{1.21}$
+    
+    \begin{oplossing}
+    Elke stijging met $10\%$ heeft groeifactor $1{,}10$.
+    
+    Dus
+    \[
+    1{,}10\cdot1{,}10
+    =1{,}21.
+    \]
+    
+    De totale groeifactor is $1{,}21$.
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    Met hoeveel procent is de prijs uit de vorige vraag in totaal gestegen?
+    
+    $\answer{21}\%$
+    
+    \begin{oplossing}
+    De totale groeifactor is
+    \[
+    1{,}21.
+    \]
+    
+    Daarom is de totale procentuele stijging
+    \[
+    (1{,}21-1)\cdot100\%
+    =21\%.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    Een hoeveelheid daalt eerst met $10\%$ en stijgt daarna met $10\%$.
+    
+    Is de eindwaarde groter dan, kleiner dan of gelijk aan de beginwaarde? Bereken de totale procentuele verandering.
+    
+    \begin{oplossing}
+    De totale groeifactor is
+    \[
+    0{,}90\cdot1{,}10
+    =0{,}99.
+    \]
+    
+    Dus
+    \[
+    (0{,}99-1)\cdot100\%
+    =-1\%.
+    \]
+    
+    De eindwaarde is dus $1\%$ kleiner dan de beginwaarde.
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    Een leerling beweert:
+    
+    ``Een stijging met $p\%$ gevolgd door een daling met $p\%$ brengt je altijd terug naar de beginwaarde.''
+    
+    Is deze uitspraak correct? Verklaar algemeen.
+    
+    \begin{oplossing}
+    Nee.
+    
+    Een stijging met $p\%$ heeft groeifactor
+    \[
+    1+\dfrac{p}{100},
+    \]
+    en een daling met $p\%$ heeft groeifactor
+    \[
+    1-\dfrac{p}{100}.
+    \]
+    
+    De totale factor is
+    \[
+    \left(1+\dfrac{p}{100}\right)
+    \left(1-\dfrac{p}{100}\right).
+    \]
+    
+    Met het verschil van twee kwadraten:
+    \[
+    1-\left(\dfrac{p}{100}\right)^2.
+    \]
+    
+    Voor $p\neq0$ is deze factor kleiner dan $1$.
+    
+    De eindwaarde is dus kleiner dan de beginwaarde.
+    \end{oplossing}
+    \end{question}
+    
+    \end{multicols}
+    
+    \end{oefening}
 
-\begin{oefening}[Verhoudingen]{\oefB}
-\begin{enumerate}
-\item Een oplossing bevat $18\,\mathrm g$ stof in $300\,\mathrm g$ oplossing. Welk percentage is dat?
-\item Op een kaart met schaal $1:25\,000$ is een afstand $7{,}2\,\mathrm{cm}$. Hoe groot is de werkelijke afstand?
-\item Een recept voor $4$ personen gebruikt $350\,\mathrm g$ bloem. Hoeveel is nodig voor $7$ personen?
-\item Een sensor geeft $2{,}4\,\mathrm V$ bij een bepaalde toestand en $3{,}0\,\mathrm V$ bij een tweede. Met welke factor is de spanning veranderd?
-\end{enumerate}
-\end{oefening}
-
-\begin{oefening}[Twee keer twintig procent]{\oefU\ESS}
-Een toestel kost €500. De prijs stijgt eerst met $20\%$ en daalt daarna met $20\%$.
-\begin{enumerate}
-\item Bereken de uiteindelijke prijs.
-\item Leg uit waarom de prijs niet opnieuw €500 bedraagt.
-\item Welke procentuele daling na de stijging zou wel nodig zijn om exact bij €500 uit te komen?
-\end{enumerate}
-\end{oefening}
 
 % ============================================================
+
 \FVDsection{Algebraïsch rekenen}
 
 \begin{oefening}[Uitwerken]{\oefB\ESS}
-Werk uit en vereenvoudig.
-\begin{enumerate}
-\item $3x(2x-5)$
-\item $(x+4)(x-3)$
-\item $(2x-3)^2$
-\item $(3a+2b)^2$
-\item $(5x-2)(5x+2)$
-\item $2(x-3)-4(1-2x)$
-\end{enumerate}
-\end{oefening}
+    \\
+    
+    Werk uit en vereenvoudig.
+    
+    \begin{multicols}{2}
+    
+    \begin{question}
+    $3x(2x-5)=\answer{6x^2-15x}$
+    
+    \begin{oplossing}
+    \[
+    3x(2x-5)=6x^2-15x.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $(x+4)(x-3)=\answer{x^2+x-12}$
+    
+    \begin{oplossing}
+    \[
+    (x+4)(x-3)
+    =x^2-3x+4x-12
+    =x^2+x-12.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $(2x-3)^2=\answer{4x^2-12x+9}$
+    
+    \begin{oplossing}
+    \[
+    (2x-3)^2
+    =(2x)^2-2\cdot2x\cdot3+3^2
+    =4x^2-12x+9.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $(3a+2b)^2=\answer{9a^2+12ab+4b^2}$
+    
+    \begin{oplossing}
+    \[
+    (3a+2b)^2
+    =9a^2+12ab+4b^2.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $(5x-2)(5x+2)=\answer{25x^2-4}$
+    
+    \begin{oplossing}
+    We herkennen een verschil van twee kwadraten:
+    \[
+    (5x-2)(5x+2)
+    =(5x)^2-2^2
+    =25x^2-4.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $2(x-3)-4(1-2x)=\answer{10x-10}$
+    
+    \begin{oplossing}
+    \[
+    2(x-3)-4(1-2x)
+    =2x-6-4+8x
+    =10x-10.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $5x(3x+2)=\answer{15x^2+10x}$
+    
+    \begin{oplossing}
+    \[
+    5x(3x+2)
+    =15x^2+10x.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $(x-5)(x+2)=\answer{x^2-3x-10}$
+    
+    \begin{oplossing}
+    \[
+    (x-5)(x+2)
+    =x^2+2x-5x-10
+    =x^2-3x-10.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $(3x+4)^2=\answer{9x^2+24x+16}$
+    
+    \begin{oplossing}
+    \[
+    (3x+4)^2
+    =9x^2+24x+16.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $(2a-5b)^2=\answer{4a^2-20ab+25b^2}$
+    
+    \begin{oplossing}
+    \[
+    (2a-5b)^2
+    =4a^2-20ab+25b^2.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $(4x-3)(4x+3)=\answer{16x^2-9}$
+    
+    \begin{oplossing}
+    \[
+    (4x-3)(4x+3)
+    =(4x)^2-3^2
+    =16x^2-9.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $3(2x-1)-2(x+4)=\answer{4x-11}$
+    
+    \begin{oplossing}
+    \[
+    3(2x-1)-2(x+4)
+    =6x-3-2x-8
+    =4x-11.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $(2x+1)(x-4)=\answer{2x^2-7x-4}$
+    
+    \begin{oplossing}
+    \[
+    (2x+1)(x-4)
+    =2x^2-8x+x-4
+    =2x^2-7x-4.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $(3a-2b)(a+4b)=\answer{3a^2+10ab-8b^2}$
+    
+    \begin{oplossing}
+    \[
+    (3a-2b)(a+4b)
+    =3a^2+12ab-2ab-8b^2
+    \]
+    \[
+    =3a^2+10ab-8b^2.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $2(x+3)^2=\answer{2x^2+12x+18}$
+    
+    \begin{oplossing}
+    \[
+    2(x+3)^2
+    =2(x^2+6x+9)
+    =2x^2+12x+18.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $(x-2)^2-(x+2)^2=\answer{-8x}$
+    
+    \begin{oplossing}
+    \[
+    (x-2)^2-(x+2)^2
+    \]
+    \[
+    =(x^2-4x+4)-(x^2+4x+4)
+    =-8x.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    \end{multicols}
+    
+    \end{oefening}
+    
+    
+    
+    \begin{oefening}[Ontbinden]{\oefB\ESS}
+    \\
+    
+    Ontbind zo ver mogelijk.
+    
+    \begin{multicols}{2}
+    
+    \begin{question}
+    $5x^2-20x=\answer{5x(x-4)}$
+    
+    \begin{oplossing}
+    We nemen de gemeenschappelijke factor $5x$ buiten haakjes:
+    \[
+    5x^2-20x
+    =5x(x-4).
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $x^2-49=\answer{(x-7)(x+7)}$
+    
+    \begin{oplossing}
+    We herkennen een verschil van twee kwadraten:
+    \[
+    x^2-49
+    =x^2-7^2
+    =(x-7)(x+7).
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $9x^2+30xy+25y^2=\answer{(3x+5y)^2}$
+    
+    \begin{oplossing}
+    We herkennen een volkomen kwadraat:
+    \[
+    9x^2+30xy+25y^2
+    =(3x+5y)^2.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $9x^2-36x+36=\answer{9(x-2)^2}$
+    
+    \begin{oplossing}
+    Eerst nemen we $9$ buiten haakjes:
+    \[
+    9x^2-36x+36
+    =9(x^2-4x+4)
+    \]
+    \[
+    =9(x-2)^2.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $18a^3+60a^2b+50ab^2=\answer{2a(3a+5b)^2}$
+    
+    \begin{oplossing}
+    We nemen eerst $2a$ buiten haakjes:
+    \[
+    18a^3+60a^2b+50ab^2
+    \]
+    \[
+    =2a(9a^2+30ab+25b^2)
+    =2a(3a+5b)^2.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $x^4-2x^3+x^2=\answer{x^2(x-1)^2}$
+    
+    \begin{oplossing}
+    We nemen eerst $x^2$ buiten haakjes:
+    \[
+    x^4-2x^3+x^2
+    =x^2(x^2-2x+1)
+    \]
+    \[
+    =x^2(x-1)^2.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $6x^2-7x-3=\answer{(3x+1)(2x-3)}$
+    
+    \begin{oplossing}
+    We zoeken twee factoren:
+    \[
+    6x^2-7x-3
+    =(3x+1)(2x-3).
+    \]
+    
+    Controle:
+    \[
+    (3x+1)(2x-3)
+    =6x^2-9x+2x-3
+    =6x^2-7x-3.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $2a^4-a^3-a^2=\answer{a^2(2a+1)(a-1)}$
+    
+    \begin{oplossing}
+    \[
+    2a^4-a^3-a^2
+    =a^2(2a^2-a-1).
+    \]
+    
+    Verder:
+    \[
+    2a^2-a-1
+    =(2a+1)(a-1).
+    \]
+    
+    Dus
+    \[
+    2a^4-a^3-a^2
+    =a^2(2a+1)(a-1).
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $12x^3-18x^2=\answer{6x^2(2x-3)}$
+    
+    \begin{oplossing}
+    De grootste gemeenschappelijke factor is $6x^2$:
+    \[
+    12x^3-18x^2
+    =6x^2(2x-3).
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $4x^2-81=\answer{(2x-9)(2x+9)}$
+    
+    \begin{oplossing}
+    \[
+    4x^2-81
+    =(2x)^2-9^2
+    =(2x-9)(2x+9).
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $x^2+10x+25=\answer{(x+5)^2}$
+    
+    \begin{oplossing}
+    \[
+    x^2+10x+25
+    =x^2+2\cdot5x+5^2
+    =(x+5)^2.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $4x^2-12x+9=\answer{(2x-3)^2}$
+    
+    \begin{oplossing}
+    \[
+    4x^2-12x+9
+    =(2x)^2-2\cdot2x\cdot3+3^2
+    =(2x-3)^2.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $3x^2+12x=\answer{3x(x+4)}$
+    
+    \begin{oplossing}
+    \[
+    3x^2+12x
+    =3x(x+4).
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $2x^2+7x+3=\answer{(2x+1)(x+3)}$
+    
+    \begin{oplossing}
+    \[
+    2x^2+7x+3
+    =(2x+1)(x+3).
+    \]
+    
+    Controle:
+    \[
+    (2x+1)(x+3)
+    =2x^2+6x+x+3.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $6x^2+x-2=\answer{(3x+2)(2x-1)}$
+    
+    \begin{oplossing}
+    \[
+    6x^2+x-2
+    =(3x+2)(2x-1).
+    \]
+    
+    Controle:
+    \[
+    (3x+2)(2x-1)
+    =6x^2-3x+4x-2.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $3x^3-12x=\answer{3x(x-2)(x+2)}$
+    
+    \begin{oplossing}
+    We nemen eerst $3x$ buiten haakjes:
+    \[
+    3x^3-12x
+    =3x(x^2-4).
+    \]
+    
+    Daarna gebruiken we het verschil van twee kwadraten:
+    \[
+    x^2-4=(x-2)(x+2).
+    \]
+    
+    Dus
+    \[
+    3x^3-12x
+    =3x(x-2)(x+2).
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    \end{multicols}
+    
+    \end{oefening}
+    
+    
+    
+    \begin{oefening}[Structuur herkennen]{\oefU\ESS}
+    \\
+    
+    Zonder onmiddellijk uit te werken: geef de meest geschikte eerste stap en werk daarna volledig af.
+    
+    \begin{multicols}{2}
+    
+    \begin{question}
+    $25x^2-4=\answer{(5x-2)(5x+2)}$
+    
+    \begin{oplossing}
+    De meest geschikte eerste stap is het herkennen van een verschil van twee kwadraten:
+    \[
+    25x^2-4
+    =(5x)^2-2^2.
+    \]
+    
+    Dus
+    \[
+    25x^2-4
+    =(5x-2)(5x+2).
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $4x^2+12x+9=\answer{(2x+3)^2}$
+    
+    \begin{oplossing}
+    We herkennen een volkomen kwadraat:
+    \[
+    4x^2+12x+9
+    =(2x)^2+2\cdot2x\cdot3+3^2.
+    \]
+    
+    Dus
+    \[
+    4x^2+12x+9
+    =(2x+3)^2.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $6x^3-15x^2+9x=\answer{3x(2x-3)(x-1)}$
+    
+    \begin{oplossing}
+    De beste eerste stap is de gemeenschappelijke factor $3x$ buiten haakjes nemen:
+    \[
+    6x^3-15x^2+9x
+    =3x(2x^2-5x+3).
+    \]
+    
+    Daarna:
+    \[
+    2x^2-5x+3
+    =(2x-3)(x-1).
+    \]
+    
+    Dus
+    \[
+    6x^3-15x^2+9x
+    =3x(2x-3)(x-1).
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $(x+2)(x^2+1)+(x+2)(x+1)
+    =\answer{(x+2)(x^2+x+2)}$
+    
+    \begin{oplossing}
+    We herkennen de gemeenschappelijke factor $(x+2)$:
+    \[
+    (x+2)(x^2+1)+(x+2)(x+1)
+    \]
+    \[
+    =(x+2)\bigl[(x^2+1)+(x+1)\bigr].
+    \]
+    
+    Dus
+    \[
+    =(x+2)(x^2+x+2).
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $a^6+2a^4+a^2=\answer{a^2(a^2+1)^2}$
+    
+    \begin{oplossing}
+    Neem eerst $a^2$ buiten haakjes:
+    \[
+    a^6+2a^4+a^2
+    =a^2(a^4+2a^2+1).
+    \]
+    
+    Daarna herkennen we een volkomen kwadraat:
+    \[
+    a^4+2a^2+1
+    =(a^2+1)^2.
+    \]
+    
+    Dus
+    \[
+    a^6+2a^4+a^2
+    =a^2(a^2+1)^2.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $9x^3-36x=\answer{9x(x-2)(x+2)}$
+    
+    \begin{oplossing}
+    Neem eerst $9x$ buiten haakjes:
+    \[
+    9x^3-36x
+    =9x(x^2-4).
+    \]
+    
+    Daarna herkennen we een verschil van twee kwadraten:
+    \[
+    x^2-4=(x-2)(x+2).
+    \]
+    
+    Dus
+    \[
+    9x^3-36x
+    =9x(x-2)(x+2).
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $16a^2-24ab+9b^2
+    =\answer{(4a-3b)^2}$
+    
+    \begin{oplossing}
+    We herkennen een volkomen kwadraat:
+    \[
+    16a^2-24ab+9b^2
+    \]
+    \[
+    =(4a)^2-2\cdot4a\cdot3b+(3b)^2.
+    \]
+    
+    Dus
+    \[
+    16a^2-24ab+9b^2
+    =(4a-3b)^2.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $2x(x-3)+5(x-3)
+    =\answer{(x-3)(2x+5)}$
+    
+    \begin{oplossing}
+    De gemeenschappelijke factor is $(x-3)$:
+    \[
+    2x(x-3)+5(x-3)
+    \]
+    \[
+    =(x-3)(2x+5).
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $x^4-16=\answer{(x-2)(x+2)(x^2+4)}$
+    
+    \begin{oplossing}
+    We herkennen eerst een verschil van twee kwadraten:
+    \[
+    x^4-16
+    =(x^2)^2-4^2
+    \]
+    \[
+    =(x^2-4)(x^2+4).
+    \]
+    
+    De eerste factor kan nog verder:
+    \[
+    x^2-4=(x-2)(x+2).
+    \]
+    
+    Dus
+    \[
+    x^4-16
+    =(x-2)(x+2)(x^2+4).
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $4x^3+12x^2+9x
+    =\answer{x(2x+3)^2}$
+    
+    \begin{oplossing}
+    Neem eerst $x$ buiten haakjes:
+    \[
+    4x^3+12x^2+9x
+    =x(4x^2+12x+9).
+    \]
+    
+    Daarna herkennen we
+    \[
+    4x^2+12x+9=(2x+3)^2.
+    \]
+    
+    Dus
+    \[
+    4x^3+12x^2+9x
+    =x(2x+3)^2.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $(x-1)(2x+3)-(x-1)(x-4)
+    =\answer{(x-1)(x+7)}$
+    
+    \begin{oplossing}
+    We nemen eerst de gemeenschappelijke factor $(x-1)$:
+    \[
+    (x-1)\bigl[(2x+3)-(x-4)\bigr].
+    \]
+    
+    Binnen de haakjes:
+    \[
+    2x+3-x+4=x+7.
+    \]
+    
+    Dus
+    \[
+    (x-1)(2x+3)-(x-1)(x-4)
+    =(x-1)(x+7).
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    $3x^4-27x^2
+    =\answer{3x^2(x-3)(x+3)}$
+    
+    \begin{oplossing}
+    Neem eerst $3x^2$ buiten haakjes:
+    \[
+    3x^4-27x^2
+    =3x^2(x^2-9).
+    \]
+    
+    Daarna:
+    \[
+    x^2-9=(x-3)(x+3).
+    \]
+    
+    Dus
+    \[
+    3x^4-27x^2
+    =3x^2(x-3)(x+3).
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    \end{multicols}
+    
+    \end{oefening}
 
-\begin{oefening}[Ontbinden]{\oefB\ESS}
-Ontbind zo ver mogelijk.
-\begin{enumerate}
-\item $5x^2-20x$
-\item $x^2-49$
-\item $9x^2+30xy+25y^2$
-\item $9x^2-36x+36$
-\item $18a^3+60a^2b+50ab^2$
-\item $x^4-2x^3+x^2$
-\item $16x^2-x-2$
-\item $2a^4-a^3-a^2$
-\end{enumerate}
-\end{oefening}
+% ============================================================
 
-\begin{oefening}[Structuur herkennen]{\oefU\ESS}
-Zonder onmiddellijk uit te werken: geef de meest geschikte eerste stap en werk daarna volledig af.
-\begin{enumerate}
-\item $25x^2-4$
-\item $4x^2+12x+9$
-\item $6x^3-15x^2+9x$
-\item $(x+2)(x^2+1)+(x+2)(x+1)$
-\item $a^6+2a^4+a^2$
-\end{enumerate}
-\end{oefening}
+\FVDsection{Vergelijkingen, formules en ongelijkheden}
 
-\begin{oefening}[Een fout analyseren]{\oefU}
-Een leerling schrijft
+% ============================================================
+
+\begin{oefening}[Vergelijkingen]{\oefB\ESS}
+\\
+
+Los op en controleer waar zinvol.
+
+\begin{multicols}{2}
+
+\begin{question}
+$3x-5=16\quad\Rightarrow\quad x=\answer{7}$
+
+\begin{oplossing}
 \[
-(x+3)^2=x^2+9.
+3x-5=16
+\Rightarrow3x=21
+\Rightarrow x=7.
 \]
-\begin{enumerate}
-\item Leg precies uit wat ontbreekt.
-\item Geef een numerieke controle waarmee je de fout zichtbaar maakt.
-\item Geef het correcte resultaat.
-\end{enumerate}
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$4(2x-3)=5x+9\quad\Rightarrow\quad x=\answer{7}$
+
+\begin{oplossing}
+\[
+8x-12=5x+9
+\Rightarrow3x=21
+\Rightarrow x=7.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$5x+8=3x+20\quad\Rightarrow\quad x=\answer{6}$
+
+\begin{oplossing}
+\[
+5x+8=3x+20
+\Rightarrow2x=12
+\Rightarrow x=6.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$3(2x+1)-4=x+12\quad\Rightarrow\quad x=\answer{\frac{13}{5}}$
+
+\begin{oplossing}
+\[
+6x+3-4=x+12
+\]
+\[
+6x-1=x+12
+\Rightarrow5x=13
+\Rightarrow x=\frac{13}{5}.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$\dfrac{x-2}{3}+\dfrac{x+1}{2}=5
+\quad\Rightarrow\quad
+x=\answer{\dfrac{31}{5}}$
+
+\begin{oplossing}
+We vermenigvuldigen met $6$:
+\[
+2(x-2)+3(x+1)=30.
+\]
+
+Dus
+\[
+2x-4+3x+3=30
+\]
+\[
+5x-1=30
+\Rightarrow5x=31
+\Rightarrow x=\dfrac{31}{5}.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$\dfrac{2x+1}{4}-\dfrac{x-3}{2}=2
+\quad\Rightarrow\quad
+x=\answer{3}$
+
+\begin{oplossing}
+Vermenigvuldig met $4$:
+\[
+2x+1-2(x-3)=8.
+\]
+
+Dus
+\[
+2x+1-2x+6=8,
+\]
+wat geeft
+\[
+7=8.
+\]
+
+Deze vergelijking heeft dus geen oplossing.
+
+\textbf{Opmerking:} deze opgave moet aangepast worden als een unieke oplossing gewenst is.
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$(x-3)(x+2)=0
+\quad\Rightarrow\quad
+x=\answer{3}\ \text{of}\ x=\answer{-2}$
+
+\begin{oplossing}
+Een product is nul als minstens één factor nul is:
+\[
+x-3=0
+\quad\text{of}\quad
+x+2=0.
+\]
+
+Dus
+\[
+x=3
+\quad\text{of}\quad
+x=-2.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$x^2-9=0
+\quad\Rightarrow\quad
+x=\answer{3}\ \text{of}\ x=\answer{-3}$
+
+\begin{oplossing}
+\[
+x^2-9
+=(x-3)(x+3).
+\]
+
+Dus
+\[
+(x-3)(x+3)=0,
+\]
+en bijgevolg
+\[
+x=3
+\quad\text{of}\quad
+x=-3.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$x^2-5x+6=0
+\quad\Rightarrow\quad
+x=\answer{2}\ \text{of}\ x=\answer{3}$
+
+\begin{oplossing}
+\[
+x^2-5x+6
+=(x-2)(x-3).
+\]
+
+Dus
+\[
+x=2
+\quad\text{of}\quad
+x=3.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$x^2+x-12=0
+\quad\Rightarrow\quad
+x=\answer{3}\ \text{of}\ x=\answer{-4}$
+
+\begin{oplossing}
+\[
+x^2+x-12
+=(x+4)(x-3).
+\]
+
+Dus
+\[
+x=-4
+\quad\text{of}\quad
+x=3.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$2x^2-8=0
+\quad\Rightarrow\quad
+x=\answer{2}\ \text{of}\ x=\answer{-2}$
+
+\begin{oplossing}
+\[
+2x^2-8=0
+\Rightarrow
+x^2-4=0.
+\]
+
+Dus
+\[
+(x-2)(x+2)=0,
+\]
+en daarom
+\[
+x=2
+\quad\text{of}\quad
+x=-2.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$(2x-1)(x+5)=0
+\quad\Rightarrow\quad
+x=\answer{\frac12}\ \text{of}\ x=\answer{-5}$
+
+\begin{oplossing}
+\[
+2x-1=0
+\quad\text{of}\quad
+x+5=0.
+\]
+
+Dus
+\[
+x=\frac12
+\quad\text{of}\quad
+x=-5.
+\]
+\end{oplossing}
+\end{question}
+
+\end{multicols}
+
 \end{oefening}
 
 % ============================================================
-\FVDsection{Vergelijkingen, formules en ongelijkheden}
-
-\begin{oefening}[Vergelijkingen]{\oefB\ESS}
-Los op en controleer waar zinvol.
-\begin{enumerate}
-\item $3x-5=16$
-\item $4(2x-3)=5x+9$
-\item $\dfrac{x-2}{3}+\dfrac{x+1}{2}=5$
-\item $(x-3)(x+2)=0$
-\item $x^2-9=0$
-\item $x^2-5x+6=0$
-\end{enumerate}
-\end{oefening}
 
 \begin{oefening}[Formules omvormen]{\oefB\ESS}
+\\
+
 Maak de gevraagde grootheid vrij.
-\begin{enumerate}
-\item $v=\dfrac{s}{t}$ naar $s$ en naar $t$.
-\item $F=ma$ naar $m$ en naar $a$.
-\item $U=RI$ naar $R$ en naar $I$.
-\item $A=\pi r^2$ naar $r$.
-\item $E_k=\dfrac12mv^2$ naar $v$.
-\item $\rho=\dfrac{m}{V}$ naar $V$.
-\end{enumerate}
+
+\begin{multicols}{2}
+
+\begin{question}
+$v=\dfrac{s}{t}$ naar $s$ en naar $t$.
+
+\begin{oplossing}
+\[
+s=vt,
+\qquad
+t=\dfrac{s}{v}.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$F=ma$ naar $m$ en naar $a$.
+
+\begin{oplossing}
+\[
+m=\dfrac{F}{a},
+\qquad
+a=\dfrac{F}{m}.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$U=RI$ naar $R$ en naar $I$.
+
+\begin{oplossing}
+\[
+R=\dfrac{U}{I},
+\qquad
+I=\dfrac{U}{R}.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$P=\dfrac{E}{t}$ naar $E$ en naar $t$.
+
+\begin{oplossing}
+\[
+E=Pt,
+\qquad
+t=\dfrac{E}{P}.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$\rho=\dfrac{m}{V}$ naar $m$ en naar $V$.
+
+\begin{oplossing}
+\[
+m=\rho V,
+\qquad
+V=\dfrac{m}{\rho}.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$p=\dfrac{F}{A}$ naar $F$ en naar $A$.
+
+\begin{oplossing}
+\[
+F=pA,
+\qquad
+A=\dfrac{F}{p}.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$A=\pi r^2$ naar $r$.
+
+\begin{oplossing}
+\[
+r^2=\dfrac{A}{\pi}.
+\]
+
+Dus
+\[
+r=\sqrt{\dfrac{A}{\pi}},
+\]
+waarbij $r\geq0$.
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$E_k=\dfrac12mv^2$ naar $v$.
+
+\begin{oplossing}
+\[
+2E_k=mv^2
+\]
+\[
+v^2=\dfrac{2E_k}{m}.
+\]
+
+Voor de grootte van de snelheid:
+\[
+v=\sqrt{\dfrac{2E_k}{m}}.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$E_k=\dfrac12mv^2$ naar $m$.
+
+\begin{oplossing}
+\[
+2E_k=mv^2
+\]
+dus
+\[
+m=\dfrac{2E_k}{v^2}.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$E_p=mgh$ naar $h$.
+
+\begin{oplossing}
+\[
+E_p=mgh
+\]
+dus
+\[
+h=\dfrac{E_p}{mg}.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$Q=mc\Delta T$ naar $\Delta T$.
+
+\begin{oplossing}
+\[
+\Delta T
+=\dfrac{Q}{mc}.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$f=\dfrac1T$ naar $T$.
+
+\begin{oplossing}
+\[
+f=\dfrac1T
+\]
+dus
+\[
+T=\dfrac1f.
+\]
+\end{oplossing}
+\end{question}
+
+\end{multicols}
+
 \end{oefening}
 
+% ============================================================
+
 \begin{oefening}[Formules in context]{\oefU\ESS}
+\\
+
 De periode van een eenvoudige slinger wordt gemodelleerd door
 \[
 T=2\pi\sqrt{\frac{\ell}{g}}.
 \]
-\begin{enumerate}
-\item Maak $\ell$ vrij.
-\item Bereken $\ell$ als $T=2{,}0\,\mathrm s$ en $g=9{,}81\,\mathrm{m/s^2}$.
-\item Controleer de eenheid van je resultaat.
-\end{enumerate}
+
+\begin{multicols}{2}
+
+\begin{question}
+Maak $\ell$ vrij.
+
+\begin{oplossing}
+\[
+T=2\pi\sqrt{\frac{\ell}{g}}
+\]
+\[
+\frac{T}{2\pi}
+=\sqrt{\frac{\ell}{g}}.
+\]
+
+Kwadrateren geeft
+\[
+\frac{T^2}{4\pi^2}
+=\frac{\ell}{g}.
+\]
+
+Dus
+\[
+\ell=\frac{gT^2}{4\pi^2}.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Bereken $\ell$ als $T=2{,}0\,\mathrm s$ en
+$g=9{,}81\,\mathrm{m/s^2}$.
+
+\[
+\ell\approx\answer{0.994}\,\mathrm m
+\]
+
+\begin{oplossing}
+\[
+\ell
+=\frac{9{,}81\cdot(2{,}0)^2}{4\pi^2}
+\]
+\[
+=\frac{39{,}24}{4\pi^2}
+\approx0{,}994\,\mathrm m.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Controleer de eenheid van het resultaat.
+
+\begin{oplossing}
+Uit
+\[
+\ell=\frac{gT^2}{4\pi^2}
+\]
+volgt voor de eenheden:
+\[
+\frac{\mathrm m}{\mathrm s^2}
+\cdot\mathrm s^2
+=\mathrm m.
+\]
+
+Dat is correct voor een lengte.
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Wat gebeurt er met de periode $T$ als de lengte $\ell$ vier keer zo groot wordt?
+
+\begin{oplossing}
+Uit
+\[
+T=2\pi\sqrt{\frac{\ell}{g}}
+\]
+volgt dat $T$ evenredig is met $\sqrt{\ell}$.
+
+Als
+\[
+\ell\to4\ell,
+\]
+dan
+\[
+T\to\sqrt4\,T=2T.
+\]
+
+De periode verdubbelt.
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Wat gebeurt er met $T$ als $g$ vier keer zo groot wordt?
+
+\begin{oplossing}
+Omdat
+\[
+T\propto\frac1{\sqrt g},
+\]
+geldt bij
+\[
+g\to4g:
+\]
+\[
+T\to\frac{T}{\sqrt4}
+=\frac T2.
+\]
+
+De periode halveert.
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Een slinger heeft lengte $1{,}00\,\mathrm m$.
+Bereken de periode bij $g=9{,}81\,\mathrm{m/s^2}$.
+
+\[
+T\approx\answer{2.01}\,\mathrm s
+\]
+
+\begin{oplossing}
+\[
+T
+=2\pi\sqrt{\frac{1{,}00}{9{,}81}}
+\approx2{,}01\,\mathrm s.
+\]
+\end{oplossing}
+\end{question}
+
+\end{multicols}
+
 \end{oefening}
+
+% ============================================================
 
 \begin{oefening}[Eerstegraadsongelijkheden]{\oefB\ESS}
+\\
+
 Los op en noteer de oplossing met intervalnotatie.
-\begin{enumerate}
-\item $2x+3<11$
-\item $5-3x\leq14$
-\item $4(x-2)>2x+6$
-\item $\dfrac{x-1}{3}\geq2$
-\item $-4x+7>19$
-\item $2(3x-1)\leq4x+10$
-\end{enumerate}
+
+\begin{multicols}{2}
+
+\begin{question}
+$2x+3<11$.
+
+\begin{oplossing}
+\[
+2x<8
+\Rightarrow x<4.
+\]
+
+Dus
+\[
+x\in]-\infty,4[.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$5-3x\leq14$.
+
+\begin{oplossing}
+\[
+-3x\leq9.
+\]
+
+Delen door $-3$ keert het teken om:
+\[
+x\geq-3.
+\]
+
+Dus
+\[
+x\in[-3,+\infty[.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$4(x-2)>2x+6$.
+
+\begin{oplossing}
+\[
+4x-8>2x+6
+\]
+\[
+2x>14
+\Rightarrow x>7.
+\]
+
+Dus
+\[
+x\in]7,+\infty[.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$\dfrac{x-1}{3}\geq2$.
+
+\begin{oplossing}
+\[
+x-1\geq6
+\Rightarrow x\geq7.
+\]
+
+Dus
+\[
+x\in[7,+\infty[.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$-4x+7>19$.
+
+\begin{oplossing}
+\[
+-4x>12.
+\]
+
+Delen door $-4$ geeft
+\[
+x<-3.
+\]
+
+Dus
+\[
+x\in]-\infty,-3[.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$2(3x-1)\leq4x+10$.
+
+\begin{oplossing}
+\[
+6x-2\leq4x+10
+\]
+\[
+2x\leq12
+\Rightarrow x\leq6.
+\]
+
+Dus
+\[
+x\in]-\infty,6].
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$3x+5\geq2x-4$.
+
+\begin{oplossing}
+\[
+x\geq-9.
+\]
+
+Dus
+\[
+x\in[-9,+\infty[.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$7-2x<3$.
+
+\begin{oplossing}
+\[
+-2x<-4.
+\]
+
+Delen door $-2$ keert het teken om:
+\[
+x>2.
+\]
+
+Dus
+\[
+x\in]2,+\infty[.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$5(x+1)-3\leq2x+11$.
+
+\begin{oplossing}
+\[
+5x+5-3\leq2x+11
+\]
+\[
+5x+2\leq2x+11
+\]
+\[
+3x\leq9
+\Rightarrow x\leq3.
+\]
+
+Dus
+\[
+x\in]-\infty,3].
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$\dfrac{2x+3}{5}>1$.
+
+\begin{oplossing}
+\[
+2x+3>5
+\]
+\[
+2x>2
+\Rightarrow x>1.
+\]
+
+Dus
+\[
+x\in]1,+\infty[.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$3-2(x-1)\geq7$.
+
+\begin{oplossing}
+\[
+3-2x+2\geq7
+\]
+\[
+5-2x\geq7
+\]
+\[
+-2x\geq2.
+\]
+
+Delen door $-2$:
+\[
+x\leq-1.
+\]
+
+Dus
+\[
+x\in]-\infty,-1].
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$4x-5<2(x+3)$.
+
+\begin{oplossing}
+\[
+4x-5<2x+6
+\]
+\[
+2x<11
+\Rightarrow
+x<\frac{11}{2}.
+\]
+
+Dus
+\[
+x\in]-\infty,\frac{11}{2}[.
+\]
+\end{oplossing}
+\end{question}
+
+\end{multicols}
+
 \end{oefening}
+
+% ============================================================
 
 \begin{oefening}[Tekenschema's]{\oefU\ESS}
+\\
+
 Los op met een tekenschema en gebruik de notatie $]\,[$ voor open intervallen.
-\begin{enumerate}
-\item $(x-2)(x+4)>0$
-\item $x^2-9\leq0$
-\item $x^2-5x+6\geq0$
-\item $-x^2+4x>0$
-\item $(2x-3)(x+2)>0$
-\item $x(x-2)(x+1)\geq0$
-\end{enumerate}
+
+\begin{multicols}{2}
+
+\begin{question}
+$(x-2)(x+4)>0$.
+
+\begin{oplossing}
+De nulpunten zijn
+\[
+x=-4
+\qquad\text{en}\qquad
+x=2.
+\]
+
+Het product is positief buiten de nulpunten:
+\[
+x\in]-\infty,-4[\cup]2,+\infty[.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$x^2-9\leq0$.
+
+\begin{oplossing}
+\[
+x^2-9=(x-3)(x+3).
+\]
+
+De uitdrukking is niet-positief tussen de nulpunten:
+\[
+x\in[-3,3].
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$x^2-5x+6\geq0$.
+
+\begin{oplossing}
+\[
+x^2-5x+6
+=(x-2)(x-3).
+\]
+
+Dus
+\[
+x\in]-\infty,2]\cup[3,+\infty[.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$-x^2+4x>0$.
+
+\begin{oplossing}
+\[
+-x^2+4x=x(4-x).
+\]
+
+De nulpunten zijn $0$ en $4$.
+
+Dus
+\[
+x\in]0,4[.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$(2x-3)(x+2)>0$.
+
+\begin{oplossing}
+De nulpunten zijn
+\[
+x=-2
+\qquad\text{en}\qquad
+x=\frac32.
+\]
+
+Dus
+\[
+x\in]-\infty,-2[
+\cup
+]\frac32,+\infty[.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$x(x-2)(x+1)\geq0$.
+
+\begin{oplossing}
+De nulpunten zijn
+\[
+-1,\quad0,\quad2.
+\]
+
+Het teken wisselt bij elk enkel nulpunt.
+
+Dus
+\[
+x\in[-1,0]\cup[2,+\infty[.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$(x+3)(x-1)\leq0$.
+
+\begin{oplossing}
+De nulpunten zijn
+\[
+-3
+\qquad\text{en}\qquad
+1.
+\]
+
+Het product is niet-positief tussen de nulpunten:
+\[
+x\in[-3,1].
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$(x-5)(x+1)\geq0$.
+
+\begin{oplossing}
+De nulpunten zijn
+\[
+-1
+\qquad\text{en}\qquad
+5.
+\]
+
+Dus
+\[
+x\in]-\infty,-1]\cup[5,+\infty[.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$2x^2+x-3<0$.
+
+\begin{oplossing}
+We ontbinden:
+\[
+2x^2+x-3
+=(2x+3)(x-1).
+\]
+
+De nulpunten zijn
+\[
+-\frac32
+\qquad\text{en}\qquad
+1.
+\]
+
+De uitdrukking is negatief tussen de nulpunten:
+\[
+x\in]-\frac32,1[.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$x^2+x-6>0$.
+
+\begin{oplossing}
+\[
+x^2+x-6
+=(x+3)(x-2).
+\]
+
+Dus
+\[
+x\in]-\infty,-3[
+\cup
+]2,+\infty[.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$x(x-1)(x+2)<0$.
+
+\begin{oplossing}
+De nulpunten zijn
+\[
+-2,\quad0,\quad1.
+\]
+
+Voor grote positieve $x$ is het product positief.
+Omdat alle nulpunten enkel zijn, wisselt het teken telkens.
+
+Dus
+\[
+x\in]-\infty,-2[
+\cup
+]0,1[.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$(x-2)^2(x+1)\geq0$.
+
+\begin{oplossing}
+De nulpunten zijn
+\[
+x=-1
+\qquad\text{en}\qquad
+x=2.
+\]
+
+Het nulpunt $x=2$ is dubbel, dus daar wisselt het teken niet.
+
+Omdat
+\[
+(x-2)^2\geq0,
+\]
+wordt het teken bepaald door $x+1$.
+
+Dus
+\[
+x\in[-1,+\infty[.
+\]
+\end{oplossing}
+\end{question}
+
+\end{multicols}
+
 \end{oefening}
+
+% ============================================================
 
 \begin{oefening}[Intervallen lezen]{\oefB}
+\\
+
 Schrijf als ongelijkheid of als interval.
-\begin{enumerate}
-\item $x\in]-3,5]$
-\item $x\leq4$
-\item $-2<x<7$
-\item $x\in]-\infty,1[\cup[6,+\infty[$
-\item $x\neq3$
-\end{enumerate}
+
+\begin{multicols}{2}
+
+\begin{question}
+$x\in]-3,5]$.
+
+\begin{oplossing}
+\[
+-3<x\leq5.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$x\leq4$.
+
+\begin{oplossing}
+\[
+x\in]-\infty,4].
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$-2<x<7$.
+
+\begin{oplossing}
+\[
+x\in]-2,7[.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$x\in]-\infty,1[\cup[6,+\infty[$.
+
+\begin{oplossing}
+\[
+x<1
+\quad\text{of}\quad
+x\geq6.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$x\neq3$.
+
+\begin{oplossing}
+\[
+x\in]-\infty,3[
+\cup
+]3,+\infty[.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$x\in[-4,2[$.
+
+\begin{oplossing}
+\[
+-4\leq x<2.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$x>5$.
+
+\begin{oplossing}
+\[
+x\in]5,+\infty[.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$-1\leq x\leq8$.
+
+\begin{oplossing}
+\[
+x\in[-1,8].
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$x<0\quad\text{of}\quad x\geq4$.
+
+\begin{oplossing}
+\[
+x\in]-\infty,0[
+\cup
+[4,+\infty[.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$x\in]-5,+\infty[$.
+
+\begin{oplossing}
+\[
+x>-5.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$x\geq2\quad\text{en}\quad x<9$.
+
+\begin{oplossing}
+\[
+x\in[2,9[.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$x\in]-\infty,-2]\cup]4,+\infty[$.
+
+\begin{oplossing}
+\[
+x\leq-2
+\quad\text{of}\quad
+x>4.
+\]
+\end{oplossing}
+\end{question}
+
+\end{multicols}
+
 \end{oefening}
+
+
+
 
 % ============================================================
-\FVDsection{Eenheden en grootheden}
 
-\begin{oefening}[Eenheden omzetten]{\oefB\ESS}
-Zet om.
-\begin{enumerate}
-\item $72\,\mathrm{km/h}$ naar $\mathrm{m/s}$
-\item $15\,\mathrm{m/s}$ naar $\mathrm{km/h}$
-\item $3{,}5\,\mathrm{cm^2}$ naar $\mathrm{m^2}$
-\item $250\,\mathrm{cm^3}$ naar $\mathrm{m^3}$
-\item $2{,}4\,\mathrm{g/cm^3}$ naar $\mathrm{kg/m^3}$
-\item $5{,}0\,\mathrm{kJ}$ naar $\mathrm J$
-\end{enumerate}
-\end{oefening}
-
-\begin{oefening}[Dimensie als foutendetector]{\oefU\ESS}
-Beoordeel elk resultaat. Leg uit welke fout je op basis van de eenheid of dimensie kunt vermoeden.
-\begin{enumerate}
-\item Een snelheid wordt gerapporteerd als $18\,\mathrm{m^2/s}$.
-\item Een oppervlakte van $35\,\mathrm{cm^2}$ wordt omgezet naar $0{,}35\,\mathrm{m^2}$.
-\item Uit $s=vt$ met $v=4\,\mathrm{m/s}$ en $t=5\,\mathrm s$ volgt $s=20\,\mathrm m$.
-\item Uit $E=Pt$ met $P$ in watt en $t$ in seconde volgt een energie in joule.
-\end{enumerate}
-\end{oefening}
-
-% ============================================================
 \FVDsection{Rechten en coördinaten}
 
+\FVDsection{Rechten en coördinaten}
+
+% ============================================================
+
 \begin{oefening}[Vergelijking van een rechte]{\oefB\ESS}
+\\
+
 Stel telkens een vergelijking van de rechte op.
-\begin{enumerate}
-\item rico $4$ en snijpunt met de $y$-as $-1$
-\item door $P(2,5)$ met rico $3$
-\item door $P(-1,4)$ met rico $-2$
-\item door $P(0,3)$ en $Q(2,7)$
-\item door $P(1,-2)$ en $Q(4,4)$
-\item horizontaal door $P(3,-4)$
-\item verticaal door $P(-5,2)$
-\end{enumerate}
-\end{oefening}
 
-\begin{oefening}[Midden en afstand]{\oefB\ESS}
-Bepaal telkens het midden en de afstand tussen de punten.
-\begin{enumerate}
-\item $A(0,0)$ en $B(3,4)$
-\item $A(-2,1)$ en $B(4,9)$
-\item $A(5,-3)$ en $B(-1,-3)$
-\item $A(-4,-2)$ en $B(2,6)$
-\end{enumerate}
-Laat wortels exact staan wanneer dat zinvol is.
-\end{oefening}
+\begin{multicols}{2}
 
-\begin{oefening}[Rechte als model]{\oefU\ESS}
-Een experiment levert de meetpunten $(2,7)$ en $(8,25)$ op.
-\begin{enumerate}
-\item Stel de vergelijking op van de rechte door beide punten.
-\item Interpreteer de richtingscoëfficiënt als verandering van $y$ per eenheid $x$.
-\item Voorspel $y$ voor $x=10$.
-\item Waarom moet je voorzichtig zijn wanneer je dezelfde rechte gebruikt voor $x=1000$?
-\end{enumerate}
+% ------------------------------------------------------------
+% Uit gegeven informatie
+% ------------------------------------------------------------
+
+\begin{question}
+rico $4$ en snijpunt met de $y$-as $-1$.
+
+\begin{oplossing}
+In de vorm
+\[
+y=mx+q
+\]
+is
+\[
+m=4
+\qquad\text{en}\qquad
+q=-1.
+\]
+
+Dus
+\[
+\boxed{y=4x-1}.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+door $P(2,5)$ met rico $3$.
+
+\begin{oplossing}
+Gebruik de punt-richtingsvorm:
+\[
+y-5=3(x-2).
+\]
+
+Dus
+\[
+y-5=3x-6
+\]
+en
+\[
+\boxed{y=3x-1}.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+door $P(-1,4)$ met rico $-2$.
+
+\begin{oplossing}
+\[
+y-4=-2(x+1).
+\]
+
+Dus
+\[
+y-4=-2x-2
+\]
+en
+\[
+\boxed{y=-2x+2}.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+door $P(0,3)$ en $Q(2,7)$.
+
+\begin{oplossing}
+De rico is
+\[
+m=\frac{7-3}{2-0}=2.
+\]
+
+Omdat $P(0,3)$ op de $y$-as ligt:
+\[
+q=3.
+\]
+
+Dus
+\[
+\boxed{y=2x+3}.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+door $P(1,-2)$ en $Q(4,4)$.
+
+\begin{oplossing}
+De rico is
+\[
+m=\frac{4-(-2)}{4-1}
+=\frac63
+=2.
+\]
+
+Met $P(1,-2)$:
+\[
+-2=2\cdot1+q.
+\]
+
+Dus
+\[
+q=-4.
+\]
+
+Daarom
+\[
+\boxed{y=2x-4}.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+horizontaal door $P(3,-4)$.
+
+\begin{oplossing}
+Een horizontale rechte heeft overal dezelfde $y$-coördinaat.
+
+Dus
+\[
+\boxed{y=-4}.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+verticaal door $P(-5,2)$.
+
+\begin{oplossing}
+Een verticale rechte heeft overal dezelfde $x$-coördinaat.
+
+Dus
+\[
+\boxed{x=-5}.
+\]
+
+Deze rechte kan niet geschreven worden in de vorm $y=mx+q$.
+\end{oplossing}
+\end{question}
+
+
+% ------------------------------------------------------------
+% Uit een grafiek
+% ------------------------------------------------------------
+
+\begin{question}
+
+Bepaal de vergelijking van de getekende rechte.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.52]
+
+\draw[step=1,gray!20,very thin] (-3.5,-3.5) grid (3.5,4.5);
+
+\draw[fvd axis] (-3.5,0) -- (3.7,0) node[right] {$x$};
+\draw[fvd axis] (0,-3.5) -- (0,4.7) node[above] {$y$};
+
+\foreach \x in {-3,-2,-1,1,2,3}
+  \draw[fvd tick] (\x,0.10) -- (\x,-0.10)
+  node[below] {\small $\x$};
+
+\foreach \y in {-3,-2,-1,1,2,3,4}
+  \draw[fvd tick] (0.10,\y) -- (-0.10,\y)
+  node[left] {\small $\y$};
+
+\draw[fvdcyan,very thick]
+  (-2,-3) -- (1.5,4);
+
+\fill[fvdmagenta] (0,1) circle (2.5pt);
+\fill[fvdmagenta] (1,3) circle (2.5pt);
+
+\end{tikzpicture}
+\end{center}
+
+\[
+y=\answer{2x+1}
+\]
+
+\begin{oplossing}
+We lezen af:
+\[
+q=1.
+\]
+
+Met de punten $(0,1)$ en $(1,3)$:
+\[
+m=\frac{3-1}{1-0}=2.
+\]
+
+Dus
+\[
+\boxed{y=2x+1}.
+\]
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+Bepaal de vergelijking van de getekende rechte.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.52]
+
+\draw[step=1,gray!20,very thin] (-3.5,-4.5) grid (3.5,3.5);
+
+\draw[fvd axis] (-3.5,0) -- (3.7,0) node[right] {$x$};
+\draw[fvd axis] (0,-4.5) -- (0,3.7) node[above] {$y$};
+
+\foreach \x in {-3,-2,-1,1,2,3}
+  \draw[fvd tick] (\x,0.10) -- (\x,-0.10)
+  node[below] {\small $\x$};
+
+\foreach \y in {-4,-3,-2,-1,1,2,3}
+  \draw[fvd tick] (0.10,\y) -- (-0.10,\y)
+  node[left] {\small $\y$};
+
+\draw[fvdcyan,very thick]
+  (-3,2) -- (3,-4);
+
+\fill[fvdmagenta] (0,-1) circle (2.5pt);
+\fill[fvdmagenta] (1,-2) circle (2.5pt);
+
+\end{tikzpicture}
+\end{center}
+
+\[
+y=\answer{-x-1}
+\]
+
+\begin{oplossing}
+We lezen af:
+\[
+q=-1.
+\]
+
+Met $(0,-1)$ en $(1,-2)$:
+\[
+m=\frac{-2-(-1)}{1-0}=-1.
+\]
+
+Dus
+\[
+\boxed{y=-x-1}.
+\]
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+Bepaal de vergelijking van de getekende rechte.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.52]
+
+\draw[step=1,gray!20,very thin] (-4.5,-3.5) grid (4.5,4.5);
+
+\draw[fvd axis] (-4.5,0) -- (4.7,0) node[right] {$x$};
+\draw[fvd axis] (0,-3.5) -- (0,4.7) node[above] {$y$};
+
+\foreach \x in {-4,-3,-2,-1,1,2,3,4}
+  \draw[fvd tick] (\x,0.10) -- (\x,-0.10)
+  node[below] {\small $\x$};
+
+\foreach \y in {-3,-2,-1,1,2,3,4}
+  \draw[fvd tick] (0.10,\y) -- (-0.10,\y)
+  node[left] {\small $\y$};
+
+\draw[fvdcyan,very thick]
+  (-4,-1) -- (4,3);
+
+\fill[fvdmagenta] (0,1) circle (2.5pt);
+\fill[fvdmagenta] (2,2) circle (2.5pt);
+
+\end{tikzpicture}
+\end{center}
+
+\[
+y=\answer{\frac12x+1}
+\]
+
+\begin{oplossing}
+We lezen
+\[
+q=1.
+\]
+
+Als $x$ met $2$ toeneemt, neemt $y$ met $1$ toe.
+
+Dus
+\[
+m=\frac12.
+\]
+
+Daarom
+\[
+\boxed{y=\frac12x+1}.
+\]
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+Bepaal de vergelijking van de getekende rechte.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.52]
+
+\draw[step=1,gray!20,very thin] (-3.5,-4.5) grid (3.5,4.5);
+
+\draw[fvd axis] (-3.5,0) -- (3.7,0) node[right] {$x$};
+\draw[fvd axis] (0,-4.5) -- (0,4.7) node[above] {$y$};
+
+\foreach \x in {-3,-2,-1,1,2,3}
+  \draw[fvd tick] (\x,0.10) -- (\x,-0.10)
+  node[below] {\small $\x$};
+
+\foreach \y in {-4,-3,-2,-1,1,2,3,4}
+  \draw[fvd tick] (0.10,\y) -- (-0.10,\y)
+  node[left] {\small $\y$};
+
+\draw[fvdcyan,very thick]
+  (-3,4) -- (1,-4);
+
+\fill[fvdmagenta] (0,-2) circle (2.5pt);
+\fill[fvdmagenta] (-1,0) circle (2.5pt);
+
+\end{tikzpicture}
+\end{center}
+
+\[
+y=\answer{-2x-2}
+\]
+
+\begin{oplossing}
+We lezen af:
+\[
+q=-2.
+\]
+
+Met $(-1,0)$ en $(0,-2)$:
+\[
+m=\frac{-2-0}{0-(-1)}
+=-2.
+\]
+
+Dus
+\[
+\boxed{y=-2x-2}.
+\]
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+Bepaal de vergelijking van de getekende rechte.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.52]
+
+\draw[step=1,gray!20,very thin] (-3.5,-3.5) grid (3.5,4.5);
+
+\draw[fvd axis] (-3.5,0) -- (3.7,0) node[right] {$x$};
+\draw[fvd axis] (0,-3.5) -- (0,4.7) node[above] {$y$};
+
+\foreach \x in {-3,-2,-1,1,2,3}
+  \draw[fvd tick] (\x,0.10) -- (\x,-0.10)
+  node[below] {\small $\x$};
+
+\foreach \y in {-3,-2,-1,1,2,3,4}
+  \draw[fvd tick] (0.10,\y) -- (-0.10,\y)
+  node[left] {\small $\y$};
+
+\draw[fvdcyan,very thick]
+  (-3,3) -- (3,3);
+
+\end{tikzpicture}
+\end{center}
+
+\[
+y=\answer{3}
+\]
+
+\begin{oplossing}
+De rechte is horizontaal.
+
+Elke punt heeft $y$-coördinaat $3$.
+
+Dus
+\[
+\boxed{y=3}.
+\]
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+Bepaal de vergelijking van de getekende rechte.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.52]
+
+\draw[step=1,gray!20,very thin] (-4.5,-3.5) grid (4.5,3.5);
+
+\draw[fvd axis] (-4.5,0) -- (4.7,0) node[right] {$x$};
+\draw[fvd axis] (0,-3.5) -- (0,3.7) node[above] {$y$};
+
+\foreach \x in {-4,-3,-2,-1,1,2,3,4}
+  \draw[fvd tick] (\x,0.10) -- (\x,-0.10)
+  node[below] {\small $\x$};
+
+\foreach \y in {-3,-2,-1,1,2,3}
+  \draw[fvd tick] (0.10,\y) -- (-0.10,\y)
+  node[left] {\small $\y$};
+
+\draw[fvdcyan,very thick]
+  (-2,-3.5) -- (-2,3.5);
+
+\end{tikzpicture}
+\end{center}
+
+Geef de vergelijking van de rechte.
+
+\begin{oplossing}
+De rechte is verticaal.
+
+Elke punt heeft $x$-coördinaat $-2$.
+
+Dus
+\[
+\boxed{x=-2}.
+\]
+
+Deze rechte heeft geen richtingscoëfficiënt en kan niet geschreven worden als
+\[
+y=mx+q.
+\]
+\end{oplossing}
+
+\end{question}
+
+\end{multicols}
+
 \end{oefening}
 
 % ============================================================
+
+\begin{oefening}[Midden en afstand]{\oefB\ESS}
+\\
+
+Bepaal telkens het midden en de afstand tussen de punten.
+Laat wortels exact staan wanneer dat zinvol is.
+
+\begin{multicols}{2}
+
+\begin{question}
+$A(0,0)$ en $B(3,4)$.
+
+\begin{oplossing}
+Het midden is
+\[
+M\left(
+\frac{0+3}{2},
+\frac{0+4}{2}
+\right)
+=
+\left(\frac32,2\right).
+\]
+
+De afstand is
+\[
+|AB|
+=\sqrt{3^2+4^2}
+=5.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$A(-2,1)$ en $B(4,9)$.
+
+\begin{oplossing}
+\[
+M=
+\left(
+\frac{-2+4}{2},
+\frac{1+9}{2}
+\right)
+=(1,5).
+\]
+
+De afstand is
+\[
+|AB|
+=\sqrt{6^2+8^2}
+=10.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$A(5,-3)$ en $B(-1,-3)$.
+
+\begin{oplossing}
+\[
+M=
+\left(
+\frac{5+(-1)}2,
+\frac{-3+(-3)}2
+\right)
+=(2,-3).
+\]
+
+De punten hebben dezelfde $y$-coördinaat:
+\[
+|AB|
+=|5-(-1)|
+=6.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$A(-4,-2)$ en $B(2,6)$.
+
+\begin{oplossing}
+\[
+M=
+\left(
+\frac{-4+2}{2},
+\frac{-2+6}{2}
+\right)
+=(-1,2).
+\]
+
+De afstand is
+\[
+|AB|
+=\sqrt{6^2+8^2}
+=10.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$A(1,2)$ en $B(7,4)$.
+
+\begin{oplossing}
+\[
+M=
+\left(
+\frac{1+7}{2},
+\frac{2+4}{2}
+\right)
+=(4,3).
+\]
+
+De afstand is
+\[
+|AB|
+=\sqrt{6^2+2^2}
+=\sqrt{40}
+=2\sqrt{10}.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$A(-3,5)$ en $B(1,-1)$.
+
+\begin{oplossing}
+\[
+M=
+\left(
+\frac{-3+1}{2},
+\frac{5+(-1)}{2}
+\right)
+=(-1,2).
+\]
+
+De afstand is
+\[
+|AB|
+=\sqrt{4^2+(-6)^2}
+=\sqrt{52}
+=2\sqrt{13}.
+\]
+\end{oplossing}
+\end{question}
+
+\end{multicols}
+
+\end{oefening}
+
+% ============================================================
+
+\begin{oefening}[Rechte als model]{\oefU\ESS}
+\\
+
+Een experiment levert de meetpunten $(2,7)$ en $(8,25)$ op.
+
+\begin{multicols}{2}
+
+\begin{question}
+Stel de vergelijking op van de rechte door beide punten.
+
+\begin{oplossing}
+De rico is
+\[
+m=\frac{25-7}{8-2}
+=\frac{18}{6}
+=3.
+\]
+
+Met $(2,7)$:
+\[
+7=3\cdot2+q.
+\]
+
+Dus
+\[
+q=1.
+\]
+
+Het model is
+\[
+\boxed{y=3x+1}.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Interpreteer de richtingscoëfficiënt als verandering van $y$ per eenheid $x$.
+
+\begin{oplossing}
+De richtingscoëfficiënt is
+\[
+m=3.
+\]
+
+Als $x$ met $1$ eenheid toeneemt, voorspelt het model dat $y$ met $3$ eenheden toeneemt.
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Interpreteer het getal $1$ in het voorschrift
+\[
+y=3x+1.
+\]
+
+\begin{oplossing}
+Het getal $1$ is het snijpunt met de $y$-as.
+
+Volgens het model geldt dus
+\[
+y=1
+\]
+wanneer
+\[
+x=0.
+\]
+
+In een concrete toepassing moet nagegaan worden of die extrapolatie naar $x=0$ ook inhoudelijk zinvol is.
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Voorspel $y$ voor $x=10$.
+
+\[
+y=\answer{31}
+\]
+
+\begin{oplossing}
+\[
+y=3\cdot10+1
+=31.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Voor welke waarde van $x$ voorspelt het model $y=40$?
+
+\[
+x=\answer{13}
+\]
+
+\begin{oplossing}
+\[
+40=3x+1
+\]
+\[
+39=3x
+\]
+dus
+\[
+x=13.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Waarom moet je voorzichtig zijn wanneer je dezelfde rechte gebruikt voor $x=1000$?
+
+\begin{oplossing}
+De meetpunten liggen slechts tussen
+\[
+x=2
+\qquad\text{en}\qquad
+x=8.
+\]
+
+De waarde $x=1000$ ligt daar zeer ver buiten.
+
+Dit is een sterke extrapolatie. Er is geen garantie dat het werkelijke verband buiten het gemeten gebied lineair blijft.
+\end{oplossing}
+\end{question}
+
+\end{multicols}
+
+\end{oefening}
+
+
+% ============================================================
+
 \FVDsection{Pythagoras en basisgoniometrie}
 
 \begin{oefening}[Pythagoras]{\oefB\ESS}
-Bereken de ontbrekende zijde.
-\begin{enumerate}
-\item Rechthoekszijden $6$ en $8$.
-\item Schuine zijde $13$ en één rechthoekszijde $5$.
-\item Rechthoekszijden $7$ en $11$.
-\item Een rechthoek heeft lengte $12$ en breedte $5$. Bereken de diagonaal.
-\end{enumerate}
-\end{oefening}
+    \\
+    
+    Bereken de ontbrekende zijde.
+    
+    \begin{multicols}{2}
+    
+    \begin{question}
+    
+    \begin{center}
+    \begin{tikzpicture}[scale=0.65]
+    \coordinate (A) at (0,0);
+    \coordinate (B) at (3,0);
+    \coordinate (C) at (0,2.25);
+    
+    \draw[very thick] (A)--(B)--(C)--cycle;
+    
+    \draw (0.35,0) -- (0.35,0.35) -- (0,0.35);
+    
+    \node[below] at ($(A)!0.5!(B)$) {$8$};
+    \node[left] at ($(A)!0.5!(C)$) {$6$};
+    \node[above right] at ($(B)!0.5!(C)$) {$c$};
+    \end{tikzpicture}
+    \end{center}
+    
+    Bereken $c$:
+    \[
+    c=\answer{10}.
+    \]
+    
+    \begin{oplossing}
+    Volgens Pythagoras:
+    \[
+    c^2=6^2+8^2.
+    \]
+    
+    Dus
+    \[
+    c=\sqrt{36+64}
+    =\sqrt{100}
+    =10.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    
+    \begin{center}
+    \begin{tikzpicture}[scale=0.65]
+    \coordinate (A) at (0,0);
+    \coordinate (B) at (3,0);
+    \coordinate (C) at (0,2.2);
+    
+    \draw[very thick] (A)--(B)--(C)--cycle;
+    
+    \draw (0.35,0) -- (0.35,0.35) -- (0,0.35);
+    
+    \node[left] at ($(A)!0.5!(C)$) {$5$};
+    \node[above right] at ($(B)!0.5!(C)$) {$13$};
+    \node[below] at ($(A)!0.5!(B)$) {$b$};
+    \end{tikzpicture}
+    \end{center}
+    
+    Bereken $b$:
+    \[
+    b=\answer{12}.
+    \]
+    
+    \begin{oplossing}
+    De schuine zijde is $13$:
+    \[
+    b^2+5^2=13^2.
+    \]
+    
+    Dus
+    \[
+    b^2=169-25=144
+    \]
+    en
+    \[
+    b=12.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    
+    \begin{center}
+    \begin{tikzpicture}[scale=0.65]
+    \coordinate (A) at (0,0);
+    \coordinate (B) at (3.2,0);
+    \coordinate (C) at (0,2);
+    
+    \draw[very thick] (A)--(B)--(C)--cycle;
+    
+    \draw (0.35,0) -- (0.35,0.35) -- (0,0.35);
+    
+    \node[below] at ($(A)!0.5!(B)$) {$11$};
+    \node[left] at ($(A)!0.5!(C)$) {$7$};
+    \node[above right] at ($(B)!0.5!(C)$) {$c$};
+    \end{tikzpicture}
+    \end{center}
+    
+    Bereken $c$:
+    \[
+    c=\answer{\sqrt{170}}.
+    \]
+    
+    \begin{oplossing}
+    \[
+    c=\sqrt{7^2+11^2}
+    =\sqrt{49+121}
+    =\sqrt{170}.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    
+    \begin{center}
+    \begin{tikzpicture}[scale=0.55]
+    \draw[very thick] (0,0) rectangle (4,2);
+    \draw[very thick] (0,0)--(4,2);
+    
+    \node[below] at (2,0) {$12$};
+    \node[left] at (0,1) {$5$};
+    \node[above left] at (2,1) {$d$};
+    \end{tikzpicture}
+    \end{center}
+    
+    Bereken de diagonaal:
+    \[
+    d=\answer{13}.
+    \]
+    
+    \begin{oplossing}
+    De diagonaal vormt samen met de zijden een rechthoekige driehoek:
+    \[
+    d=\sqrt{12^2+5^2}
+    =\sqrt{169}
+    =13.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    \end{multicols}
+    
+    \end{oefening}
+    
+    
+    % ============================================================
+    
+    \begin{oefening}[Sinus, cosinus en tangens]{\oefB\ESS}
+    \\
+    
+    Gebruik de getekende rechthoekige driehoek.
+    
+    \begin{multicols}{2}
+    
+    \begin{question}
+    
+    \begin{center}
+    \begin{tikzpicture}[scale=0.65]
+    \coordinate (A) at (0,0);
+    \coordinate (B) at (3,0);
+    \coordinate (C) at (0,2.25);
+    
+    \draw[very thick] (A)--(B)--(C)--cycle;
+    \draw (0.35,0) -- (0.35,0.35) -- (0,0.35);
+    
+    \node[below] at ($(A)!0.5!(B)$) {$6$};
+    \node[above right] at ($(B)!0.5!(C)$) {$10$};
+    
+    \draw (2.5,0) arc[start angle=180,end angle=143,radius=0.5];
+    \node at (2.35,0.35) {$\alpha$};
+    \end{tikzpicture}
+    \end{center}
+    
+    Bereken:
+    \[
+    \cos\alpha=\answer{\dfrac35}.
+    \]
+    
+    \begin{oplossing}
+    De zijde $6$ is aanliggend aan $\alpha$ en $10$ is de schuine zijde:
+    \[
+    \cos\alpha
+    =\frac{\text{aanliggende}}{\text{schuine}}
+    =\frac6{10}
+    =\frac35.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    
+    \begin{center}
+    \begin{tikzpicture}[scale=0.65]
+    \coordinate (A) at (0,0);
+    \coordinate (B) at (3,0);
+    \coordinate (C) at (0,2.25);
+    
+    \draw[very thick] (A)--(B)--(C)--cycle;
+    \draw (0.35,0) -- (0.35,0.35) -- (0,0.35);
+    
+    \node[below] at ($(A)!0.5!(B)$) {$12$};
+    \node[left] at ($(A)!0.5!(C)$) {$9$};
+    
+    \draw (2.5,0) arc[start angle=180,end angle=143,radius=0.5];
+    \node at (2.35,0.35) {$\alpha$};
+    \end{tikzpicture}
+    \end{center}
+    
+    Bereken:
+    \[
+    \tan\alpha=\answer{\dfrac34}.
+    \]
+    
+    \begin{oplossing}
+    Ten opzichte van $\alpha$ is $9$ de overstaande zijde en $12$ de aanliggende zijde:
+    \[
+    \tan\alpha
+    =\frac9{12}
+    =\frac34.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    
+    \begin{center}
+    \begin{tikzpicture}[scale=0.65]
+    \coordinate (A) at (0,0);
+    \coordinate (B) at (3,0);
+    \coordinate (C) at (0,2.25);
+    
+    \draw[very thick] (A)--(B)--(C)--cycle;
+    \draw (0.35,0) -- (0.35,0.35) -- (0,0.35);
+    
+    \node[above right] at ($(B)!0.5!(C)$) {$20$};
+    \node[left] at ($(A)!0.5!(C)$) {$x$};
+    
+    \draw (2.5,0) arc[start angle=180,end angle=143,radius=0.5];
+    \node at (2.35,0.35) {$\alpha$};
+    
+    \node at (1.6,1.7) {$\sin\alpha=\frac35$};
+    \end{tikzpicture}
+    \end{center}
+    
+    Bereken de overstaande zijde:
+    \[
+    x=\answer{12}.
+    \]
+    
+    \begin{oplossing}
+    \[
+    \sin\alpha
+    =\frac{\text{overstaande}}{\text{schuine}}
+    =\frac{x}{20}.
+    \]
+    
+    Dus
+    \[
+    \frac{x}{20}
+    =\frac35
+    \]
+    en
+    \[
+    x=12.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    
+    \begin{center}
+    \begin{tikzpicture}[scale=0.65]
+    \coordinate (A) at (0,0);
+    \coordinate (B) at (3,0);
+    \coordinate (C) at (0,2.25);
+    
+    \draw[very thick] (A)--(B)--(C)--cycle;
+    \draw (0.35,0) -- (0.35,0.35) -- (0,0.35);
+    
+    \node[below] at ($(A)!0.5!(B)$) {$15$};
+    \node[left] at ($(A)!0.5!(C)$) {$x$};
+    
+    \draw (2.5,0) arc[start angle=180,end angle=143,radius=0.5];
+    \node at (2.35,0.35) {$\alpha$};
+    
+    \node at (1.6,1.7) {$\tan\alpha=\frac43$};
+    \end{tikzpicture}
+    \end{center}
+    
+    Bereken de overstaande zijde:
+    \[
+    x=\answer{20}.
+    \]
+    
+    \begin{oplossing}
+    \[
+    \tan\alpha
+    =\frac{x}{15}
+    =\frac43.
+    \]
+    
+    Dus
+    \[
+    x=15\cdot\frac43
+    =20.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    
+    \begin{center}
+    \begin{tikzpicture}[scale=0.65]
+    \coordinate (A) at (0,0);
+    \coordinate (B) at (3,0);
+    \coordinate (C) at (0,1.6);
+    
+    \draw[very thick] (A)--(B)--(C)--cycle;
+    \draw (0.35,0) -- (0.35,0.35) -- (0,0.35);
+    
+    \node[below] at ($(A)!0.5!(B)$) {$15$};
+    \node[left] at ($(A)!0.5!(C)$) {$8$};
+    
+    \draw (2.5,0) arc[start angle=180,end angle=152,radius=0.5];
+    \node at (2.35,0.3) {$\alpha$};
+    \end{tikzpicture}
+    \end{center}
+    
+    Bepaal de kleinste scherpe hoek.
+    
+    \begin{oplossing}
+    De kleinste hoek ligt tegenover de kortste rechthoekszijde.
+    
+    Dus
+    \[
+    \tan\alpha=\frac8{15}.
+    \]
+    
+    Daarom
+    \[
+    \alpha
+    =\arctan\left(\frac8{15}\right)
+    \approx28{,}1^\circ.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    \end{multicols}
+    
+    \end{oefening}
+    
+    
+    % ============================================================
+    
+    \begin{oefening}[STEM: hellingshoek]{\oefU\ESS}
+    \\
+    
+    Een helling stijgt $1{,}8\,\mathrm m$ over een horizontale afstand van $12\,\mathrm m$.
+    
+    \begin{center}
+    \begin{tikzpicture}[scale=0.62]
+    
+    \coordinate (A) at (0,0);
+    \coordinate (B) at (5,0);
+    \coordinate (C) at (5,1.5);
+    
+    \draw[very thick] (A)--(B)--(C)--cycle;
+    
+    \draw (4.65,0) -- (4.65,0.35) -- (5,0.35);
+    
+    \node[below] at ($(A)!0.5!(B)$) {$12\,\mathrm m$};
+    \node[right] at ($(B)!0.5!(C)$) {$1{,}8\,\mathrm m$};
+    \node[above left] at ($(A)!0.5!(C)$) {$L$};
+    
+    \draw (0.8,0) arc[start angle=0,end angle=16.7,radius=0.8];
+    \node at (1.05,0.2) {$\alpha$};
+    
+    \end{tikzpicture}
+    \end{center}
+    
+    \begin{multicols}{2}
+    
+    \begin{question}
+    Bereken de lengte van de helling.
+    
+    \[
+    L\approx\answer{12.13}\,\mathrm m
+    \]
+    
+    \begin{oplossing}
+    Met Pythagoras:
+    \[
+    L=\sqrt{12^2+1{,}8^2}
+    \]
+    \[
+    =\sqrt{147{,}24}
+    \approx12{,}13\,\mathrm m.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    Bereken de hellingshoek met de horizontale.
+    
+    \begin{oplossing}
+    \[
+    \tan\alpha
+    =\frac{1{,}8}{12}
+    =0{,}15.
+    \]
+    
+    Dus
+    \[
+    \alpha
+    =\arctan(0{,}15)
+    \approx8{,}53^\circ.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    De helling wordt beschreven als ``$15\%$''.
+    
+    Onderzoek hoe dat percentage verband houdt met de driehoek.
+    
+    \begin{oplossing}
+    Een hellingspercentage is
+    \[
+    \frac{\text{verticale stijging}}
+    {\text{horizontale afstand}}
+    \cdot100\%.
+    \]
+    
+    Hier:
+    \[
+    \frac{1{,}8}{12}\cdot100\%
+    =15\%.
+    \]
+    
+    Omdat
+    \[
+    \tan\alpha
+    =\frac{\text{verticale stijging}}
+    {\text{horizontale afstand}},
+    \]
+    geldt
+    \[
+    15\%=100\tan\alpha.
+    \]
+    
+    Het hellingspercentage is dus niet gelijk aan de hoek in graden.
+    \end{oplossing}
+    \end{question}
+    
+    \end{multicols}
+    
+    \end{oefening}
+    
+    
+    % ============================================================
+    
+    \begin{oefening}[Afstand zonder formule uit het hoofd]{\oefU}
+    \\
+    
+    De punten zijn $A(-3,4)$ en $B(5,-2)$.
+    
+    \begin{center}
+    \begin{tikzpicture}[scale=0.48]
+    
+    \draw[step=1,gray!20,very thin] (-4.5,-3.5) grid (6.5,5.5);
+    
+    \draw[fvd axis] (-4.5,0) -- (6.7,0) node[right] {$x$};
+    \draw[fvd axis] (0,-3.5) -- (0,5.7) node[above] {$y$};
+    
+    \foreach \x in {-4,-3,-2,-1,1,2,3,4,5,6}
+      \draw[fvd tick] (\x,0.10) -- (\x,-0.10)
+      node[below] {\small $\x$};
+    
+    \foreach \y in {-3,-2,-1,1,2,3,4,5}
+      \draw[fvd tick] (0.10,\y) -- (-0.10,\y)
+      node[left] {\small $\y$};
+    
+    \coordinate (A) at (-3,4);
+    \coordinate (B) at (5,-2);
+    \coordinate (C) at (5,4);
+    
+    \draw[very thick] (A)--(B);
+    \draw[dashed] (A)--(C)--(B);
+    
+    \fill[fvdmagenta] (A) circle (2.5pt);
+    \fill[fvdmagenta] (B) circle (2.5pt);
+    
+    \node[above left] at (A) {$A(-3,4)$};
+    \node[below right] at (B) {$B(5,-2)$};
+    
+    \node[above] at ($(A)!0.5!(C)$) {$\Delta x=8$};
+    \node[right] at ($(C)!0.5!(B)$) {$|\Delta y|=6$};
+    
+    \end{tikzpicture}
+    \end{center}
+    
+    \begin{multicols}{2}
+    
+    \begin{question}
+    Bepaal de horizontale en verticale verschillen.
+    
+    \begin{oplossing}
+    Horizontaal:
+    \[
+    \Delta x
+    =5-(-3)
+    =8.
+    \]
+    
+    Verticaal:
+    \[
+    \Delta y
+    =-2-4
+    =-6.
+    \]
+    
+    Voor de lengte van de verticale rechthoekszijde gebruiken we
+    \[
+    |\Delta y|=6.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    Leid met Pythagoras de afstand $|AB|$ af.
+    
+    \begin{oplossing}
+    De horizontale en verticale verschillen vormen rechthoekszijden van lengtes $8$ en $6$.
+    
+    Dus
+    \[
+    |AB|
+    =\sqrt{8^2+6^2}
+    \]
+    \[
+    =\sqrt{64+36}
+    =\sqrt{100}
+    =10.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    Vergelijk je afleiding met de algemene afstandsformule.
+    
+    \begin{oplossing}
+    Voor twee punten
+    \[
+    A(x_A,y_A)
+    \qquad\text{en}\qquad
+    B(x_B,y_B)
+    \]
+    zijn de rechthoekszijden
+    \[
+    x_B-x_A
+    \qquad\text{en}\qquad
+    y_B-y_A.
+    \]
+    
+    Pythagoras geeft daarom
+    \[
+    |AB|
+    =
+    \sqrt{(x_B-x_A)^2+(y_B-y_A)^2}.
+    \]
+    
+    De afstandsformule is dus rechtstreeks afgeleid uit de stelling van Pythagoras.
+    \end{oplossing}
+    \end{question}
+    
+    \end{multicols}
+    
+    \end{oefening}
 
-\begin{oefening}[Sinus, cosinus en tangens]{\oefB\ESS}
-\begin{enumerate}
-\item Schuine zijde $10$, aanliggende zijde bij $\alpha$ gelijk aan $6$: bepaal $\cos\alpha$.
-\item Overstaande zijde $9$, aanliggende zijde $12$: bepaal $\tan\alpha$.
-\item $\sin\alpha=\frac35$ en de schuine zijde is $20$: bepaal de overstaande zijde.
-\item $\tan\alpha=\frac43$ en de aanliggende zijde is $15$: bepaal de overstaande zijde.
-\item Een rechthoekige driehoek heeft rechthoekszijden $8$ en $15$. Bepaal de kleinste scherpe hoek.
-\end{enumerate}
-\end{oefening}
 
-\begin{oefening}[STEM: hellingshoek]{\oefU\ESS}
-Een helling stijgt $1{,}8\,\mathrm m$ over een horizontale afstand van $12\,\mathrm m$.
-\begin{enumerate}
-\item Bereken de lengte van de helling.
-\item Bereken de hellingshoek met de horizontale.
-\item De helling wordt beschreven als ``$15\%$''. Onderzoek hoe dat percentage verband houdt met je driehoek.
-\end{enumerate}
-\end{oefening}
 
-\begin{oefening}[Afstand zonder formule uit het hoofd]{\oefU}
-De punten zijn $A(-3,4)$ en $B(5,-2)$.
-\begin{enumerate}
-\item Teken schematisch de horizontale en verticale verschillen.
-\item Leid met Pythagoras de afstand $|AB|$ af.
-\item Vergelijk je afleiding met de algemene afstandsformule.
-\end{enumerate}
-\end{oefening}
 
-% ============================================================
-\FVDsection{Welk gereedschap heb je nodig?}
+    \FVDsection{Gevorderde uitdagingen}
 
-\begin{oefening}[Kies eerst, reken daarna]{\oefU\ESS}
-Schrijf bij elk probleem eerst op welk gereedschap je kiest. Los daarna op.
-\begin{enumerate}
-\item Een zwemclub huurt een bus. De vaste kost is €180 en per leerling komt €12 bij. Stel $K(x)$ op en bepaal voor hoeveel leerlingen de kost kleiner is dan €600.
-\item Een rechthoekige tuin heeft breedte $x$ meter en lengte $2x+3$ meter. Stel $O(x)$ op. Voor welke $x$ is de omtrek $66$ meter?
-\item Een taxi rekent €4 opstapgeld en €2,50 per kilometer. Voor welke afstanden is de prijs hoogstens €31,50?
-\item Een kostfunctie verloopt lineair. Na $10$ minuten is de kost €140 en na $25$ minuten €320. Stel het voorschrift op en bereken de kost na $21$ minuten.
-\end{enumerate}
-\end{oefening}
-
-\begin{oefening}[Combineren]{\oefU\ESS}
-Een drone vliegt in een rechte lijn van $A(0,0)$ naar $B(120,50)$, met coördinaten in meter.
-De vlucht duurt $10\,\mathrm s$.
-\begin{enumerate}
-\item Bereken de afgelegde rechte afstand.
-\item Bereken de gemiddelde grootte van de snelheid in $\mathrm{m/s}$.
-\item Zet die snelheid om naar $\mathrm{km/h}$.
-\item Een tweede vlucht verloopt gemiddeld aan $15\,\mathrm{m/s}$. Bereken de procentuele toename.
-\item Noteer bij elke stap welk wiskundig gereedschap je gebruikte.
-\end{enumerate}
-\end{oefening}
-
-\begin{oefening}[Van formule naar betekenis]{\oefU}
-De kinetische energie is
-\[
-E_k=\frac12mv^2.
-\]
-Voor een voorwerp met massa $0{,}80\,\mathrm{kg}$ wordt $E_k=90\,\mathrm J$ gemeten.
-\begin{enumerate}
-\item Bereken de snelheid.
-\item Een leerling vindt $v=225\,\mathrm{m/s}$. Geef twee manieren om te controleren dat dit niet klopt.
-\item Wat gebeurt er met $E_k$ als de snelheid verdubbelt? Leg uit zonder nieuwe getallen te kiezen.
-\end{enumerate}
-\end{oefening}
-
-% ============================================================
-\FVDsection{Gevorderde uitdagingen}
-
-\begin{oefening}[Een parameterprobleem]{\oefG}
-Voor
-\[
-f_a(x)=ax+4
-\]
-gaat de grafiek door het punt $P(3,10)$.
-\begin{enumerate}
-\item Bepaal $a$.
-\item Bepaal het snijpunt met de $x$-as.
-\item Voor welke $x$ geldt $f_a(x)>0$?
-\item Interpreteer je antwoord grafisch.
-\end{enumerate}
-\end{oefening}
-
-\begin{oefening}[Ontwerpen met voorwaarden]{\oefG}
-Een rechthoekig zonnepaneel heeft oppervlakte $1{,}80\,\mathrm{m^2}$.
-De lengte is $0{,}60\,\mathrm m$ groter dan de breedte.
-\begin{enumerate}
-\item Stel een vergelijking op voor de breedte.
-\item Bepaal de afmetingen.
-\item Bereken de diagonaal.
-\item Een transportkist laat maximaal een diagonaal van $1{,}75\,\mathrm m$ toe. Past het paneel? Motiveer.
-\end{enumerate}
-\end{oefening}
-
-\begin{oefening}[Model kritisch beoordelen]{\oefG}
-Een sensor wordt tussen twee kalibratiepunten lineair gemodelleerd:
-\[
-(0,0{,}20)\qquad\text{en}\qquad(100,4{,}80).
-\]
-\begin{enumerate}
-\item Stel het lineaire model op.
-\item Bereken de voorspelde sensorwaarde bij invoer $60$.
-\item Bereken welke invoer hoort bij sensorwaarde $3{,}00$.
-\item Het model voorspelt ook een waarde bij invoer $1000$. Bereken die waarde, maar bespreek vervolgens waarom de berekening niet automatisch een betrouwbare fysische voorspelling is.
-\end{enumerate}
-\end{oefening}
+    % ============================================================
+    
+    \begin{oefening}[Een parameterprobleem]{\oefG}
+    \\
+    
+    Voor
+    \[
+    f_a(x)=ax+4
+    \]
+    gaat de grafiek door het punt $P(3,10)$.
+    
+    \begin{multicols}{2}
+    
+    \begin{question}
+    Bepaal $a$: $a=\answer{2}$.
+    
+    \begin{oplossing}
+    Omdat $P(3,10)$ op de grafiek ligt:
+    \[
+    10=3a+4
+    \]
+    \[
+    3a=6
+    \]
+    dus
+    \[
+    a=2.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    Bepaal het snijpunt met de $x$-as.
+    
+    \begin{oplossing}
+    Met $a=2$ is
+    \[
+    f_a(x)=2x+4.
+    \]
+    
+    Voor het snijpunt met de $x$-as geldt
+    \[
+    2x+4=0.
+    \]
+    
+    Dus
+    \[
+    x=-2.
+    \]
+    
+    Het snijpunt is
+    \[
+    \boxed{(-2,0)}.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    Voor welke $x$ geldt $f_a(x)>0$?
+    
+    \begin{oplossing}
+    \[
+    2x+4>0
+    \]
+    \[
+    2x>-4
+    \]
+    dus
+    \[
+    x>-2.
+    \]
+    
+    Daarom
+    \[
+    x\in]-2,+\infty[.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    Interpreteer je antwoord grafisch.
+    
+    \begin{oplossing}
+    De rechte snijdt de $x$-as bij
+    \[
+    x=-2.
+    \]
+    
+    Rechts van dit snijpunt ligt de grafiek boven de $x$-as. Daar geldt dus
+    \[
+    f_a(x)>0.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    Voor welke waarde van $x$ geldt
+    \[
+    f_a(x)=3x-1?
+    \]
+    
+    \[
+    x=\answer{5}
+    \]
+    
+    \begin{oplossing}
+    Omdat $a=2$:
+    \[
+    2x+4=3x-1.
+    \]
+    
+    Dus
+    \[
+    x=5.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    Bepaal een waarde van $b$ zodat de rechte
+    \[
+    g(x)=bx-2
+    \]
+    evenwijdig is met $f_a$.
+    
+    \[
+    b=\answer{2}
+    \]
+    
+    \begin{oplossing}
+    Evenwijdige rechten hebben dezelfde richtingscoëfficiënt.
+    
+    Omdat
+    \[
+    f_a(x)=2x+4,
+    \]
+    moet
+    \[
+    b=2.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    Bestaat er een waarde van $b$ waarvoor
+    \[
+    g(x)=bx-2
+    \]
+    dezelfde rechte is als $f_a$? Motiveer.
+    
+    \begin{oplossing}
+    Nee.
+    
+    Om dezelfde rechte te krijgen, moeten zowel de richtingscoëfficiënt als het snijpunt met de $y$-as gelijk zijn.
+    
+    Voor $f_a$ geldt
+    \[
+    f_a(x)=2x+4,
+    \]
+    terwijl bij $g$ het snijpunt met de $y$-as steeds $-2$ is.
+    
+    Omdat
+    \[
+    4\neq-2,
+    \]
+    kunnen de twee rechten nooit samenvallen.
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    Beschouw nu opnieuw
+    \[
+    f_a(x)=ax+4
+    \]
+    zonder de voorwaarde $P(3,10)$.
+    
+    Voor welke waarden van $a$ is $f_a$ stijgend, dalend of constant?
+    
+    \begin{oplossing}
+    De richtingscoëfficiënt is $a$.
+    
+    Dus:
+    
+    \[
+    a>0
+    \quad\Rightarrow\quad
+    f_a \text{ is stijgend},
+    \]
+    
+    \[
+    a<0
+    \quad\Rightarrow\quad
+    f_a \text{ is dalend},
+    \]
+    
+    \[
+    a=0
+    \quad\Rightarrow\quad
+    f_a \text{ is constant}.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    \end{multicols}
+    
+    \end{oefening}
+    
+    % ============================================================
+    
+    \begin{oefening}[Ontwerpen met voorwaarden]{\oefG}
+    \\
+    
+    Een rechthoekig zonnepaneel heeft oppervlakte $1{,}80\,\mathrm{m^2}$.
+    
+    De lengte is $0{,}60\,\mathrm m$ groter dan de breedte.
+    
+    \begin{center}
+    \begin{tikzpicture}[scale=0.9]
+    \draw[very thick] (0,0) rectangle (4.2,2.5);
+    
+    \node[below] at (2.1,0) {$x+0{,}60$};
+    \node[left] at (0,1.25) {$x$};
+    
+    \draw[dashed] (0,0)--(4.2,2.5);
+    \node[above left] at (2.2,1.35) {$d$};
+    \end{tikzpicture}
+    \end{center}
+    
+    \begin{multicols}{2}
+    
+    \begin{question}
+    Stel een vergelijking op voor de breedte.
+    
+    \begin{oplossing}
+    Noem de breedte
+    \[
+    x\,\mathrm m.
+    \]
+    
+    Dan is de lengte
+    \[
+    x+0{,}60.
+    \]
+    
+    Uit de oppervlaktevoorwaarde volgt
+    \[
+    x(x+0{,}60)=1{,}80.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    Bepaal de afmetingen.
+    
+    \begin{oplossing}
+    \[
+    x^2+0{,}60x-1{,}80=0.
+    \]
+    
+    Met de nulpuntenformule:
+    \[
+    x=
+    \frac{-0{,}60\pm\sqrt{0{,}36+7{,}20}}{2}
+    \]
+    \[
+    =
+    \frac{-0{,}60\pm\sqrt{7{,}56}}{2}.
+    \]
+    
+    Alleen de positieve oplossing is fysisch zinvol:
+    \[
+    x\approx1{,}0748\,\mathrm m.
+    \]
+    
+    De lengte is
+    \[
+    x+0{,}60
+    \approx1{,}6748\,\mathrm m.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    Bereken de diagonaal.
+    
+    \begin{oplossing}
+    \[
+    d
+    =
+    \sqrt{x^2+(x+0{,}60)^2}.
+    \]
+    
+    Invullen geeft
+    \[
+    d
+    \approx
+    \sqrt{1{,}0748^2+1{,}6748^2}
+    \]
+    \[
+    \approx1{,}990\,\mathrm m.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    Een transportkist laat maximaal een diagonaal van
+    $1{,}75\,\mathrm m$ toe.
+    
+    Past het paneel? Motiveer.
+    
+    \begin{oplossing}
+    Nee.
+    
+    De diagonaal is ongeveer
+    \[
+    1{,}99\,\mathrm m,
+    \]
+    en dus groter dan
+    \[
+    1{,}75\,\mathrm m.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    Hoeveel procent groter is de diagonaal dan de maximale toegelaten diagonaal?
+    
+    \begin{oplossing}
+    Het verschil is ongeveer
+    \[
+    1{,}990-1{,}75
+    =0{,}240\,\mathrm m.
+    \]
+    
+    Relatief ten opzichte van de maximale toegelaten diagonaal:
+    \[
+    \frac{0{,}240}{1{,}75}\cdot100\%
+    \approx13{,}7\%.
+    \]
+    
+    De diagonaal is dus ongeveer $13{,}7\%$ te groot.
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    De fabrikant kan de lengte en breedte aanpassen, maar de oppervlakte moet
+    $1{,}80\,\mathrm{m^2}$ blijven.
+    
+    Welke vorm geeft bij vaste oppervlakte de kleinste diagonaal?
+    
+    \begin{oplossing}
+    Noem de zijden $x$ en $y$.
+    
+    Omdat
+    \[
+    xy=1{,}80,
+    \]
+    is
+    \[
+    y=\frac{1{,}80}{x}.
+    \]
+    
+    Voor de diagonaal:
+    \[
+    d^2=x^2+y^2
+    =x^2+\frac{1{,}80^2}{x^2}.
+    \]
+    
+    Bij vaste oppervlakte is deze som minimaal wanneer
+    \[
+    x=y.
+    \]
+    
+    De rechthoek moet dus een vierkant zijn.
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    Bereken de zijde en de minimale diagonaal van dat vierkante paneel.
+    
+    \begin{oplossing}
+    Voor een vierkant met oppervlakte $1{,}80\,\mathrm{m^2}$:
+    \[
+    x^2=1{,}80.
+    \]
+    
+    Dus
+    \[
+    x=\sqrt{1{,}80}
+    \approx1{,}342\,\mathrm m.
+    \]
+    
+    De diagonaal is
+    \[
+    d=x\sqrt2
+    \]
+    dus
+    \[
+    d=\sqrt{1{,}80}\sqrt2
+    =\sqrt{3{,}60}
+    \approx1{,}897\,\mathrm m.
+    \]
+    
+    Ook dit is nog groter dan $1{,}75\,\mathrm m$.
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    Kan er überhaupt een rechthoekig paneel met oppervlakte
+    $1{,}80\,\mathrm{m^2}$ in een kist met maximale diagonaal
+    $1{,}75\,\mathrm m$ passen?
+    
+    \begin{oplossing}
+    Nee.
+    
+    De kleinste mogelijke diagonaal bij vaste oppervlakte ontstaat bij een vierkant.
+    
+    Die minimale diagonaal is
+    \[
+    d_{\min}\approx1{,}897\,\mathrm m.
+    \]
+    
+    Omdat
+    \[
+    1{,}897>1{,}75,
+    \]
+    kan geen enkele rechthoek met oppervlakte $1{,}80\,\mathrm{m^2}$ voldoen.
+    \end{oplossing}
+    \end{question}
+    
+    \end{multicols}
+    
+    \end{oefening}
+    
+    % ============================================================
+    
+    \begin{oefening}[Model kritisch beoordelen]{\oefG}
+    \\
+    
+    Een sensor wordt tussen twee kalibratiepunten lineair gemodelleerd:
+    \[
+    (0,0{,}20)
+    \qquad\text{en}\qquad
+    (100,4{,}80).
+    \]
+    
+    \begin{multicols}{2}
+    
+    \begin{question}
+    Stel het lineaire model op.
+    
+    \begin{oplossing}
+    De rico is
+    \[
+    m=
+    \frac{4{,}80-0{,}20}{100-0}
+    =\frac{4{,}60}{100}
+    =0{,}046.
+    \]
+    
+    Omdat de sensorwaarde bij invoer $0$ gelijk is aan $0{,}20$:
+    \[
+    \boxed{y=0{,}046x+0{,}20}.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    Bereken de voorspelde sensorwaarde bij invoer $60$.
+    
+    \[
+    \answer{2.96}
+    \]
+    
+    \begin{oplossing}
+    \[
+    y(60)
+    =0{,}046\cdot60+0{,}20
+    =2{,}96.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    Bereken welke invoer hoort bij sensorwaarde $3{,}00$.
+    
+    \[
+    x\approx\answer{60.87}
+    \]
+    
+    \begin{oplossing}
+    \[
+    3{,}00
+    =0{,}046x+0{,}20
+    \]
+    \[
+    2{,}80
+    =0{,}046x
+    \]
+    dus
+    \[
+    x\approx60{,}87.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    Interpreteer de richtingscoëfficiënt $0{,}046$ in de context.
+    
+    \begin{oplossing}
+    Voor elke toename van de invoer met $1$ eenheid voorspelt het lineaire model dat de sensorwaarde gemiddeld met
+    \[
+    0{,}046
+    \]
+    toeneemt.
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    Interpreteer het getal $0{,}20$.
+    
+    \begin{oplossing}
+    Volgens het model is
+    \[
+    y(0)=0{,}20.
+    \]
+    
+    De sensor geeft dus bij nul invoer nog een uitgangswaarde van $0{,}20$.
+    
+    Dat kan bijvoorbeeld overeenkomen met een offset in de sensor.
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    Het model voorspelt ook een waarde bij invoer $1000$.
+    
+    Bereken die waarde.
+    
+    \begin{oplossing}
+    \[
+    y(1000)
+    =0{,}046\cdot1000+0{,}20
+    =46{,}20.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    Leg uit waarom de vorige waarde niet automatisch een betrouwbare fysische voorspelling is.
+    
+    \begin{oplossing}
+    De kalibratie gebeurde slechts tussen invoer $0$ en $100$.
+    
+    Bij invoer $1000$ extrapoleren we zeer ver buiten het gekalibreerde gebied.
+    
+    Een echte sensor kan daar bijvoorbeeld:
+    \begin{itemize}
+    \item verzadigen;
+    \item niet-lineair worden;
+    \item beschadigd raken;
+    \item buiten zijn meetbereik vallen.
+    \end{itemize}
+    
+    De waarde $46{,}20$ is dus wel een correcte uitkomst van het lineaire model, maar niet noodzakelijk een betrouwbare voorspelling van de echte sensor.
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    Bij invoer $80$ wordt experimenteel een sensorwaarde $3{,}70$ gemeten.
+    
+    Bereken de voorspelling van het model en de absolute afwijking.
+    
+    \begin{oplossing}
+    Het model voorspelt
+    \[
+    y(80)
+    =0{,}046\cdot80+0{,}20
+    =3{,}88.
+    \]
+    
+    De absolute afwijking is
+    \[
+    |3{,}70-3{,}88|
+    =0{,}18.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    Bereken de relatieve afwijking van de gemeten waarde ten opzichte van de modelvoorspelling.
+    
+    \begin{oplossing}
+    De absolute afwijking is
+    \[
+    0{,}18.
+    \]
+    
+    Relatief ten opzichte van de voorspelling:
+    \[
+    \frac{0{,}18}{3{,}88}\cdot100\%
+    \approx4{,}64\%.
+    \]
+    
+    De meting wijkt dus ongeveer $4{,}6\%$ af van de modelvoorspelling.
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    Een tweede kalibratiemeting bij invoer $50$ geeft $2{,}40$.
+    
+    Onderzoek of dit punt exact op het lineaire model ligt.
+    
+    \begin{oplossing}
+    Volgens het model:
+    \[
+    y(50)
+    =0{,}046\cdot50+0{,}20
+    =2{,}50.
+    \]
+    
+    De gemeten waarde is
+    \[
+    2{,}40.
+    \]
+    
+    Het punt ligt dus niet exact op het model.
+    
+    Het verschil bedraagt
+    \[
+    0{,}10.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    Wat zou je met meerdere kalibratiepunten doen in plaats van zomaar een rechte door twee punten te trekken?
+    
+    \begin{oplossing}
+    Met meerdere meetpunten is het meestal beter om een regressiemodel te bepalen.
+    
+    Bij een ongeveer lineair verband kan men een lineaire regressie gebruiken waarbij de rechte zo goed mogelijk bij alle meetpunten aansluit.
+    
+    Daarbij kan men ook de residuen onderzoeken om na te gaan of een lineair model werkelijk geschikt is.
+    \end{oplossing}
+    \end{question}
+    
+    \end{multicols}
+    
+    \end{oefening}
+    
+    % ============================================================
+    
+    \begin{oefening}[Twee modellen vergelijken]{\oefG}
+    \\
+    
+    Twee lineaire modellen beschrijven de temperatuur $T$ van twee processen als functie van de tijd $t$:
+    
+    \[
+    T_1(t)=18+2{,}4t
+    \]
+    en
+    \[
+    T_2(t)=30+1{,}2t.
+    \]
+    
+    De tijd $t$ wordt uitgedrukt in minuten en de temperatuur in $^\circ\mathrm C$.
+    
+    \begin{multicols}{2}
+    
+    \begin{question}
+    Interpreteer de beginwaarden van beide modellen.
+    
+    \begin{oplossing}
+    Bij $t=0$:
+    \[
+    T_1(0)=18
+    \]
+    en
+    \[
+    T_2(0)=30.
+    \]
+    
+    Proces $1$ start dus bij $18^\circ\mathrm C$ en proces $2$ bij $30^\circ\mathrm C$.
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    Interpreteer de richtingscoëfficiënten.
+    
+    \begin{oplossing}
+    Voor proces $1$ stijgt de temperatuur met
+    \[
+    2{,}4^\circ\mathrm C
+    \]
+    per minuut.
+    
+    Voor proces $2$ stijgt de temperatuur met
+    \[
+    1{,}2^\circ\mathrm C
+    \]
+    per minuut.
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    Na hoeveel minuten zijn beide temperaturen gelijk?
+    
+    \[
+    t=\answer{10}
+    \]
+    
+    \begin{oplossing}
+    We lossen
+    \[
+    18+2{,}4t
+    =
+    30+1{,}2t
+    \]
+    op.
+    
+    Dus
+    \[
+    1{,}2t=12
+    \]
+    en
+    \[
+    t=10.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    Welke temperatuur hebben beide processen op dat ogenblik?
+    
+    \[
+    T=\answer{42}
+    \]
+    
+    \begin{oplossing}
+    \[
+    T_1(10)
+    =18+2{,}4\cdot10
+    =42.
+    \]
+    
+    Dus beide processen hebben dan temperatuur
+    \[
+    42^\circ\mathrm C.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    Voor welke tijden is proces $1$ warmer dan proces $2$?
+    
+    \begin{oplossing}
+    We lossen
+    \[
+    18+2{,}4t
+    >
+    30+1{,}2t
+    \]
+    op.
+    
+    Dus
+    \[
+    1{,}2t>12
+    \]
+    en
+    \[
+    t>10.
+    \]
+    
+    Proces $1$ is dus warmer na $10$ minuten.
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    Leg uit hoe je de vorige antwoorden grafisch zou herkennen.
+    
+    \begin{oplossing}
+    Het tijdstip waarop beide temperaturen gelijk zijn, is de $t$-coördinaat van het snijpunt van beide rechten.
+    
+    Voor
+    \[
+    t>10
+    \]
+    ligt de grafiek van $T_1$ boven de grafiek van $T_2$.
+    \end{oplossing}
+    \end{question}
+    
+    \end{multicols}
+    
+    \end{oefening}
+    
+    % ============================================================
+    
+    \begin{oefening}[Van gegevens naar model]{\oefG}
+    \\
+    
+    Tijdens een experiment wordt de afstand $s$ van een bewegend voorwerp gemeten.
+    
+    \[
+    \begin{array}{c|cccc}
+    t\;(\mathrm s) & 1 & 3 & 5 & 7\\
+    \hline
+    s\;(\mathrm m) & 4{,}1 & 8{,}2 & 12{,}0 & 16{,}3
+    \end{array}
+    \]
+    
+    \begin{multicols}{2}
+    
+    \begin{question}
+    Onderzoek of de gegevens exact lineair zijn.
+    
+    \begin{oplossing}
+    Bij gelijke tijdsstappen van $2\,\mathrm s$ zijn de verschillen in afstand:
+    \[
+    8{,}2-4{,}1=4{,}1,
+    \]
+    \[
+    12{,}0-8{,}2=3{,}8,
+    \]
+    \[
+    16{,}3-12{,}0=4{,}3.
+    \]
+    
+    De verschillen zijn niet exact gelijk.
+    
+    De gegevens zijn dus niet exact lineair.
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    Leg uit waarom een lineair model toch redelijk kan zijn.
+    
+    \begin{oplossing}
+    De verschillen liggen allemaal dicht bij $4\,\mathrm m$ per $2\,\mathrm s$.
+    
+    De afwijkingen kunnen veroorzaakt worden door meetonzekerheid.
+    
+    Een lineair model kan daarom een redelijke benadering zijn.
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    Schat de gemiddelde snelheid uit de eerste en laatste meting.
+    
+    \begin{oplossing}
+    \[
+    v_{\mathrm{gem}}
+    =
+    \frac{16{,}3-4{,}1}{7-1}
+    \]
+    \[
+    =
+    \frac{12{,}2}{6}
+    \approx2{,}03\,\mathrm{m/s}.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    Stel met de eerste en laatste meting een lineair model
+    \[
+    s(t)=vt+s_0
+    \]
+    op.
+    
+    \begin{oplossing}
+    De rico is
+    \[
+    v
+    =
+    \frac{16{,}3-4{,}1}{7-1}
+    \approx2{,}033.
+    \]
+    
+    Met $(1,4{,}1)$:
+    \[
+    4{,}1
+    =
+    2{,}033\cdot1+s_0.
+    \]
+    
+    Dus
+    \[
+    s_0\approx2{,}067.
+    \]
+    
+    Een mogelijk model is
+    \[
+    \boxed{s(t)\approx2{,}033t+2{,}067}.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    Bereken met dit model de voorspelde afstand bij $t=5\,\mathrm s$ en vergelijk met de meting.
+    
+    \begin{oplossing}
+    Volgens het model:
+    \[
+    s(5)
+    \approx2{,}033\cdot5+2{,}067
+    \]
+    \[
+    \approx12{,}23\,\mathrm m.
+    \]
+    
+    De gemeten waarde is
+    \[
+    12{,}0\,\mathrm m.
+    \]
+    
+    Het verschil is dus ongeveer
+    \[
+    0{,}23\,\mathrm m.
+    \]
+    \end{oplossing}
+    \end{question}
+    
+    
+    \begin{question}
+    Waarom is een model dat exact door alle meetpunten gaat niet noodzakelijk beter?
+    
+    \begin{oplossing}
+    Meetgegevens bevatten meestal meetonzekerheid en toevallige afwijkingen.
+    
+    Een model dat exact door elk meetpunt gaat, kan daardoor vooral de meetruis beschrijven in plaats van het onderliggende fysische verband.
+    
+    Een eenvoudiger model dat de algemene trend goed weergeeft, kan wetenschappelijk betekenisvoller zijn.
+    \end{oplossing}
+    \end{question}
+    
+    \end{multicols}
+    
+    \end{oefening}
 
 
 \end{document}
