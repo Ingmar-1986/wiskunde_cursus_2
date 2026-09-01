@@ -1,0 +1,1432 @@
+<!DOCTYPE html> 
+<html lang='en-US' xml:lang='en-US'> 
+<head> <title>Arbeid en energie</title> 
+<meta charset='utf-8' /> 
+<meta content='TeX4ht (https://tug.org/tex4ht/)' name='generator' /> 
+<meta content='width=device-width,initial-scale=1' name='viewport' /> 
+<link href='\aa:CssFile ' rel='stylesheet' type='text/css' /> 
+<meta content='8-Arbeid-Energie.online.tex' name='src' /> 
+<script>window.MathJax = { tex: { tags: "ams", }, }; </script> 
+<script async='async' id='MathJax-script' src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js' type='text/javascript'></script>  
+<meta content='Ingmar Herreman' name='author' /> 
+<meta content='version 2.5.1' name='ximera' /> 
+<link href='https://ximera.osu.edu/public/stylesheets/standalone.css' media='screen' rel='stylesheet' /> 
+<script async='' src='https://ximera.osu.edu/public/javascripts/standalone.min.js' type='text/javascript'></script> 
+</head><body> 
+<div class='preamble'>
+</div>
+<style> .activity-body pre { white-space: pre; background-color: lightgray; } .xmyoutube { aspect-ratio: 16/9; min-width: 75%; } .image-environment img { width: unset; } </style> 
+
+<div class='maketitle'></div>
+<!-- l. 51 --><p class='noindent'></p><section class='learning-box learning-box--prior'> <div class='learning-box__header'> <span class='learning-box__icon'> </span><span class='learning-box__title'>Voorkennis</span> </div> <div class='learning-box__content'> 
+<p></p>     
+<ul class='itemize1'>
+<li class='itemize'>Je kan krachten tekenen, ontbinden en de resulterende kracht bepalen.
+</li>
+<li class='itemize'>Je kan het scalair product interpreteren via de hoek tussen vectoren.
+</li>
+<li class='itemize'>Je kent kinetische, gravitationele en elastische energie uit eerdere leerstof.
+</li>
+<li class='itemize'>Je kan eenvoudige energieomzettingen beschrijven.
+</li>
+<li class='itemize'>Je kan oppervlakten van rechthoeken, driehoeken en trapezia berekenen.
+</li>
+<li class='itemize'>Je kent de bepaalde integraal als georiënteerde oppervlakte.
+</li>
+<li class='itemize'>Je kan Newton II toepassen en snelheidsveranderingen analyseren.</li></ul>
+<!-- l. 59 --><p class='noindent'></p></div> </section> 
+<p></p><!-- l. 61 --><p class='noindent'></p><section class='learning-box learning-box--goals'> <div class='learning-box__header'> <span class='learning-box__icon'> </span><span class='learning-box__title'>Leerdoelen</span> </div> <div class='learning-box__content'> 
+<p></p>     
+<ul class='itemize1'>
+<li class='itemize'>Je    kan    arbeid    fysisch    interpreteren    als    energieoverdracht    of
+energieomzetting.
+                                                                  
+
+                                                                  
+</li>
+<li class='itemize'>Je kan arbeid van een constante kracht berekenen met <span class='mathjax-inline'>\(W=F\Delta r\cos \theta \)</span>.
+</li>
+<li class='itemize'>Je kan positieve, negatieve en nul-arbeid fysisch interpreteren.
+</li>
+<li class='itemize'>Je kan arbeid bepalen uit een <span class='mathjax-inline'>\(F_x(x)\)</span>-grafiek met de oppervlaktemethode.
+</li>
+<li class='itemize'>Je kan arbeid bij een niet-constante kracht bepalen met een bepaalde
+integraal.
+</li>
+<li class='itemize'>Je kan het arbeid-energietheorema gebruiken en interpreteren.
+</li>
+<li class='itemize'>Je kan conservatieve en niet-conservatieve krachten onderscheiden.
+</li>
+<li class='itemize'>Je  kan  potentiële  energie  verbinden  met  arbeid  van  een  conservatieve
+kracht.
+</li>
+<li class='itemize'>Je  kan  energieomzettingen  analyseren  met  behoud  van  mechanische
+energie wanneer het model dit toelaat.
+</li>
+<li class='itemize'>Je kan energiedissipatie analyseren wanneer niet-conservatieve krachten
+werken.
+</li>
+<li class='itemize'>Je   kan   arbeid-   en   energieproblemen   systematisch   mathematiseren,
+oplossen en fysisch interpreteren.</li></ul>
+                                                                  
+
+                                                                  
+<!-- l. 76 --><p class='noindent'></p></div> </section> 
+<p><a id='x1-2r1'></a>
+</p><p></p><!-- l. 80 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>1</div><div class='fvd-section-bar__title'>Van kracht naar energie</div></div>
+<p></p><!-- l. 83 --><p class='noindent'>In de mechanica kunnen we een beweging op verschillende manieren onderzoeken.
+</p><!-- l. 85 --><p class='noindent'>Met Newton II kijken we naar de krachten:
+</p>
+<div class='mathjax-block'>\[ \sum \vec F=m\vec a. \]</div>
+<!-- l. 91 --><p class='noindent'>Daarmee kunnen we bepalen hoe de snelheid op elk moment verandert.
+</p><!-- l. 93 --><p class='noindent'>Maar soms interesseert ons vooral het verschil tussen een begin- en eindtoestand. Hoe
+snel rijdt een wagen na het remmen? Hoe hoog geraakt een voorwerp? Hoeveel
+energie moet een motor leveren? Hoeveel energie gaat door wrijving over in interne
+energie?
+</p><!-- l. 98 --><p class='noindent'>Dan is een energiebeschrijving vaak efficiënter.
+</p>
+<div class='center'>
+<!-- l. 100 --><p class='noindent'>
+</p>
+<div class='mathjax-block'>\[ \boxed { \text {kracht over een verplaatsing} \longrightarrow \text {arbeid} \longrightarrow \text {verandering van energie} } \]</div></div>
+<p><a id='x1-3r1'></a>
+</p><!-- l. 112 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 112 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 112 --><p class='noindent'>Oefening 1
+</p><!-- l. 112 --><p class='noindent'>— Arbeid in het dagelijks leven en in fysica
+</p><!-- l. 112 --><p class='noindent'></p></div>
+<p></p><!-- l. 112 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 112 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span></div>
+<p></p><!-- l. 112 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 114 --><p class='noindent'>Beoordeel telkens of de genoemde kracht mechanische arbeid verricht op het
+beschouwde voorwerp.
+</p>     
+<ol class='enumerate1'>
+<li class='enumerate' id='x1-5x1'>Je duwt een slede vooruit en de slede verplaatst zich.
+                                                                  
+
+                                                                  
+</li>
+<li class='enumerate' id='x1-7x2'>Je duwt hard tegen een kast, maar de kast blijft staan.
+</li>
+<li class='enumerate' id='x1-9x3'>Je houdt een zware halter onbeweeglijk boven je hoofd.
+</li>
+<li class='enumerate' id='x1-11x4'>Een bloempot valt naar beneden.
+</li>
+<li class='enumerate' id='x1-13x5'>Je rekt een veer uit.
+</li>
+<li class='enumerate' id='x1-15x6'>De normaalkracht werkt op een kist die horizontaal over een vlak schuift.</li></ol>
+<!-- l. 126 --><p class='noindent'>Motiveer telkens vanuit kracht én verplaatsing.
+</p></div>
+<p></p><!-- l. 128 --><p class='noindent'></p></div>
+<p></p><!-- l. 128 --><p class='noindent'></p></section>
+<p><a id='x1-16r2'></a>
+</p><p></p><!-- l. 132 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>2</div><div class='fvd-section-bar__title'>Arbeid van een constante kracht</div></div>
+<p></p><!-- l. 135 --><p class='noindent'>Beschouw eerst een constante kracht die evenwijdig en gelijkgericht is met de
+verplaatsing. Dan geldt:
+</p>
+<div class='mathjax-block'>\[ \boxed {W=F\Delta r.} \]</div>
+<!-- l. 142 --><p class='noindent'>De SI-eenheid van arbeid is de joule:
+</p>
+<div class='mathjax-block'>\[ \boxed {1\,\mathrm J=1\,\mathrm {N\,m}.} \]</div>
+<!-- l. 148 --><p class='noindent'>Arbeid is geen vector maar een scalaire grootheid.
+</p><!-- l. 151 --><p class='noindent'></p><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span></div><div class='fvd-remark__content'>Dat een kracht op een voorwerp werkt, betekent niet automatisch dat
+die kracht arbeid verricht. Er moet een verplaatsing zijn én de kracht moet een
+component hebben in de richting van die verplaatsing. </div></section>
+                                                                  
+
+                                                                  
+<p><a id='x1-17r2'></a>
+</p><p></p><!-- l. 156 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 156 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 156 --><p class='noindent'>Oefening 2
+</p><!-- l. 156 --><p class='noindent'>— Constante kracht
+</p><!-- l. 156 --><p class='noindent'></p></div>
+<p></p><!-- l. 156 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 156 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span></div>
+<p></p><!-- l. 156 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 158 --><p class='noindent'>Een karretje wordt over <span class='mathjax-inline'>\(6{,}0\,\mathrm m\)</span> voortgetrokken door een constante horizontale kracht van
+<span class='mathjax-inline'>\(35\,\mathrm N\)</span>.
+</p>
+<div class='problem-environment question' id='problem1' numbered=' ' role='article' titletext=' Question'>  Bereken de arbeid van de trekkracht.    </div>
+<div class='problem-environment question' id='problem2' numbered=' ' role='article' titletext=' Question'>  Hoe verandert de arbeid als dezelfde kracht over een dubbele afstand werkt?
+</div>
+<div class='problem-environment question' id='problem3' numbered=' ' role='article' titletext=' Question'>  Welke energie-eenheid is equivalent met <span class='mathjax-inline'>\(\mathrm {N\,m}\)</span>?    </div>
+</div>
+<!-- l. 173 --><p class='noindent'></p></div>
+<p></p><!-- l. 173 --><p class='noindent'></p></section>
+<p><a id='x1-18r3'></a>
+</p><p></p><!-- l. 177 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>3</div><div class='fvd-section-bar__title'>Wanneer kracht en verplaatsing niet evenwijdig zijn</div></div>
+<p></p><!-- l. 180 --><p class='noindent'>Een trekkracht staat vaak onder een hoek met de verplaatsing. Denk aan een
+reiskoffer of slee die met een schuin touw wordt voortgetrokken.
+</p><!-- l. 183 --><p class='noindent'>Alleen de component van de kracht in de richting van de verplaatsing draagt bij tot
+de arbeid.
+</p><!-- l. 186 --><p class='noindent'>Als <span class='mathjax-inline'>\(\theta \)</span> de hoek is tussen <span class='mathjax-inline'>\(\vec F\)</span> en <span class='mathjax-inline'>\(\Delta \vec r\)</span>, dan:
+</p>
+<div class='mathjax-block'>\[ F_\parallel =F\cos \theta . \]</div>
+<!-- l. 192 --><p class='noindent'>Daarom:
+</p>
+<div class='mathjax-block'>\[ W=F_\parallel \Delta r \]</div>
+<!-- l. 198 --><p class='noindent'>en dus:
+</p>
+<div class='mathjax-block'>\[ \boxed { W=F\Delta r\cos \theta . } \]</div>
+<!-- l. 206 --><p class='noindent'>Dit is precies het scalair product:
+                                                                  
+
+                                                                  
+</p>
+<div class='mathjax-block'>\[ \boxed { W=\vec F\cdot \Delta \vec r. } \]</div>
+<!-- l. 214 --><p class='noindent'>De formule bevat dus zowel de grootte van de kracht en verplaatsing als hun
+onderlinge richting.
+<a id='x1-19r1'></a>
+</p><!-- l. 218 --><p class='noindent'></p><div class='fvd-subsection'>
+<p></p><!-- l. 218 --><p class='noindent'></p><div class='fvd-subsection__row'>
+<p></p><!-- l. 218 --><p class='noindent'></p><div class='fvd-subsection__number'>3.1</div>
+<p></p><!-- l. 218 --><p class='noindent'></p><div class='fvd-subsection__title'>Het teken van arbeid</div>
+<p></p><!-- l. 218 --><p class='noindent'></p></div>
+<p></p><!-- l. 218 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
+<p></p><!-- l. 218 --><p class='noindent'></p></div>
+<p></p><!-- l. 220 --><p class='noindent'>Uit de cosinus volgt onmiddellijk:
+</p>
+<div class='mathjax-block'>\[ 0^\circ \leq \theta &lt;90^\circ \quad \Rightarrow \quad W&gt;0, \]</div>
+<div class='mathjax-block'>\[ \theta =90^\circ \quad \Rightarrow \quad W=0, \]</div>
+<div class='mathjax-block'>\[ 90^\circ &lt;\theta \leq 180^\circ \quad \Rightarrow \quad W&lt;0. \]</div>
+<!-- l. 240 --><p class='noindent'>Positieve arbeid betekent dat de betrokken kracht energie toevoegt aan de
+bewegingsvorm die we onderzoeken. Negatieve arbeid betekent dat de kracht daar
+energie aan onttrekt.
+</p><!-- l. 245 --><p class='noindent'></p><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span></div><div class='fvd-remark__content'>“Negatieve arbeid” betekent niet dat er “negatieve energie” bestaat.
+Het teken geeft de richting van de energieoverdracht aan binnen het gekozen model.
+</div></section>
+<p><a id='x1-20r3'></a>
+</p><p></p><!-- l. 251 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 251 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 251 --><p class='noindent'>Oefening 3
+</p><!-- l. 251 --><p class='noindent'>— Kracht onder een hoek
+</p><!-- l. 251 --><p class='noindent'></p></div>
+<p></p><!-- l. 251 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 251 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 251 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 253 --><p class='noindent'>Een persoon trekt een koffer met een constante kracht van <span class='mathjax-inline'>\(200\,\mathrm N\)</span> over <span class='mathjax-inline'>\(100\,\mathrm m\)</span>. De trekkracht
+maakt een hoek van <span class='mathjax-inline'>\(30^\circ \)</span> met de horizontale verplaatsing.
+</p>
+                                                                  
+
+                                                                  
+<div class='problem-environment question' id='problem4' numbered=' ' role='article' titletext=' Question'>  Bereken de component van de trekkracht in de bewegingsrichting.    </div>
+<div class='problem-environment question' id='problem5' numbered=' ' role='article' titletext=' Question'>  Bereken de arbeid van de trekkracht.    </div>
+<div class='problem-environment question' id='problem6' numbered=' ' role='article' titletext=' Question'>  Welke component van de trekkracht verricht in dit model geen arbeid? Waarom?
+</div>
+</div>
+<!-- l. 270 --><p class='noindent'></p></div>
+<p></p><!-- l. 270 --><p class='noindent'></p></section>
+<p><a id='x1-21r4'></a>
+</p><p></p><!-- l. 273 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 273 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 273 --><p class='noindent'>Oefening 4
+</p><!-- l. 273 --><p class='noindent'>— Positief, negatief of nul?
+</p><!-- l. 273 --><p class='noindent'></p></div>
+<p></p><!-- l. 273 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 273 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 273 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 275 --><p class='noindent'>Een kist schuift naar rechts over een horizontale vloer. Op de kist werken
+zwaartekracht, normaalkracht, een trekkracht schuin naar rechtsboven en
+wrijvingskracht.
+</p>
+<div class='problem-environment question' id='problem7' numbered=' ' role='article' titletext=' Question'>  Maak een vrijlichaamsdiagram.    </div>
+<div class='problem-environment question' id='problem8' numbered=' ' role='article' titletext=' Question'>  Bepaal voor elke kracht of haar arbeid positief, negatief of nul is.    </div>
+<div class='problem-environment question' id='problem9' numbered=' ' role='article' titletext=' Question'>  Kan een kracht groot zijn en toch geen arbeid verrichten? Gebruik deze situatie om
+je antwoord te motiveren.    </div>
+<div class='problem-environment question' id='problem10' numbered=' ' role='article' titletext=' Question'>  Waarom is het onvoldoende om alleen naar de richting van de kracht te kijken?
+</div>
+</div>
+<!-- l. 296 --><p class='noindent'></p></div>
+<p></p><!-- l. 296 --><p class='noindent'></p></section>
+<p><a id='x1-22r4'></a>
+</p><p></p><!-- l. 300 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>4</div><div class='fvd-section-bar__title'>Arbeid uit een kracht-plaatsgrafiek</div></div>
+<p></p><!-- l. 303 --><p class='noindent'>De formule
+</p>
+<div class='mathjax-block'>\[ W=F_x\Delta x \]</div>
+<!-- l. 309 --><p class='noindent'>heeft een belangrijke grafische betekenis.
+                                                                  
+
+                                                                  
+</p><!-- l. 311 --><p class='noindent'>Stel dat een constante krachtcomponent <span class='mathjax-inline'>\(F_x\)</span> wordt uitgezet als functie van de plaats <span class='mathjax-inline'>\(x\)</span>.
+Tussen <span class='mathjax-inline'>\(x_1\)</span> en <span class='mathjax-inline'>\(x_2\)</span> ontstaat onder de grafiek een rechthoek.
+</p><!-- l. 314 --><p class='noindent'>De oppervlakte is:
+</p>
+<div class='mathjax-block'>\[ F_x(x_2-x_1). \]</div>
+<!-- l. 320 --><p class='noindent'>Dat is precies de arbeid:
+</p>
+<div class='mathjax-block'>\[ \boxed { W=\text {georiënteerde oppervlakte tussen de }F_x(x)\text {-grafiek en de }x\text {-as}. } \]</div>
+<!-- l. 328 --><p class='noindent'>Deze interpretatie is veel algemener dan de formule voor een constante kracht.
+<a id='x1-23r1'></a>
+</p><!-- l. 331 --><p class='noindent'></p><div class='fvd-subsection'>
+<p></p><!-- l. 331 --><p class='noindent'></p><div class='fvd-subsection__row'>
+<p></p><!-- l. 331 --><p class='noindent'></p><div class='fvd-subsection__number'>4.1</div>
+<p></p><!-- l. 331 --><p class='noindent'></p><div class='fvd-subsection__title'>De oppervlaktemethode</div>
+<p></p><!-- l. 331 --><p class='noindent'></p></div>
+<p></p><!-- l. 331 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
+<p></p><!-- l. 331 --><p class='noindent'></p></div>
+<p></p><!-- l. 333 --><p class='noindent'>Voor eenvoudige, stukgewijs lineaire grafieken hoeven we niet onmiddellijk
+een integraal te berekenen. We verdelen het gebied in gekende meetkundige
+figuren.
+</p><!-- l. 337 --><p class='noindent'>Voor een rechthoek:
+</p>
+<div class='mathjax-block'>\[ W=bh. \]</div>
+<!-- l. 343 --><p class='noindent'>Voor een driehoek:
+</p>
+<div class='mathjax-block'>\[ W=\frac 12bh. \]</div>
+<!-- l. 349 --><p class='noindent'>Voor een trapezium:
+</p>
+<div class='mathjax-block'>\[ W=\frac {h_1+h_2}{2}b. \]</div>
+<!-- l. 355 --><p class='noindent'>Hierbij stelt de horizontale afmeting een verplaatsing voor en de verticale afmeting
+een krachtcomponent.
+</p><!-- l. 358 --><p class='noindent'>Controle van de eenheid:
+</p>
+<div class='mathjax-block'>\[ \mathrm {N\,m}=\mathrm J. \]</div>
+<p><a id='x1-24r5'></a>
+</p><!-- l. 365 --><p class='noindent'></p><section class='fvd-exercise'>
+                                                                  
+
+                                                                  
+<p></p><!-- l. 365 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 365 --><p class='noindent'>Oefening 5
+</p><!-- l. 365 --><p class='noindent'>— Oppervlaktemethode: rechthoek en driehoek
+</p><!-- l. 365 --><p class='noindent'></p></div>
+<p></p><!-- l. 365 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 365 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 365 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 367 --><p class='noindent'>De krachtcomponent <span class='mathjax-inline'>\(F_x\)</span> op een voorwerp verloopt als volgt:
+</p>     
+<ul class='itemize1'>
+<li class='itemize'>van <span class='mathjax-inline'>\(x=0\)</span> tot <span class='mathjax-inline'>\(x=4\,\mathrm m\)</span>: <span class='mathjax-inline'>\(F_x=6\,\mathrm N\)</span>;
+</li>
+<li class='itemize'>van <span class='mathjax-inline'>\(x=4\)</span> tot <span class='mathjax-inline'>\(x=8\,\mathrm m\)</span>: <span class='mathjax-inline'>\(F_x\)</span> daalt lineair van <span class='mathjax-inline'>\(6\,\mathrm N\)</span> tot <span class='mathjax-inline'>\(0\,\mathrm N\)</span>.</li></ul>
+<div class='problem-environment question' id='problem11' numbered=' ' role='article' titletext=' Question'>  Schets de <span class='mathjax-inline'>\(F_x(x)\)</span>-grafiek.    </div>
+<div class='problem-environment question' id='problem12' numbered=' ' role='article' titletext=' Question'>  Bereken de arbeid van <span class='mathjax-inline'>\(0\)</span> tot <span class='mathjax-inline'>\(4\,\mathrm m\)</span> als oppervlakte van een rechthoek.    </div>
+<div class='problem-environment question' id='problem13' numbered=' ' role='article' titletext=' Question'>  Bereken de arbeid van <span class='mathjax-inline'>\(4\)</span> tot <span class='mathjax-inline'>\(8\,\mathrm m\)</span> als oppervlakte van een driehoek.    </div>
+<div class='problem-environment question' id='problem14' numbered=' ' role='article' titletext=' Question'>  Bepaal de totale arbeid.    </div>
+</div>
+<!-- l. 391 --><p class='noindent'></p></div>
+<p></p><!-- l. 391 --><p class='noindent'></p></section>
+<p><a id='x1-25r2'></a>
+</p><p></p><!-- l. 394 --><p class='noindent'></p><div class='fvd-subsection'>
+<p></p><!-- l. 394 --><p class='noindent'></p><div class='fvd-subsection__row'>
+<p></p><!-- l. 394 --><p class='noindent'></p><div class='fvd-subsection__number'>4.2</div>
+<p></p><!-- l. 394 --><p class='noindent'></p><div class='fvd-subsection__title'>Oppervlakte onder de as</div>
+<p></p><!-- l. 394 --><p class='noindent'></p></div>
+<p></p><!-- l. 394 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
+<p></p><!-- l. 394 --><p class='noindent'></p></div>
+<p></p><!-- l. 396 --><p class='noindent'>Wanneer <span class='mathjax-inline'>\(F_x&lt;0\)</span> terwijl de positieve <span class='mathjax-inline'>\(x\)</span>-richting als bewegingsrichting is gekozen, ligt de
+grafiek onder de <span class='mathjax-inline'>\(x\)</span>-as. Die oppervlakte telt negatief mee.
+</p><!-- l. 399 --><p class='noindent'>We spreken daarom nauwkeuriger van een <strong>georiënteerde oppervlakte</strong>.
+                                                                  
+
+                                                                  
+<a id='x1-26r6'></a>
+</p><!-- l. 401 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 401 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 401 --><p class='noindent'>Oefening 6
+</p><!-- l. 401 --><p class='noindent'>— Georiënteerde oppervlakte
+</p><!-- l. 401 --><p class='noindent'></p></div>
+<p></p><!-- l. 401 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 401 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 401 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 403 --><p class='noindent'>Een krachtcomponent is:
+</p>
+<div class='mathjax-block'>\[ F_x= \begin {cases} 4\,\mathrm N, &amp; 0\leq x&lt;3\,\mathrm m,\\ -2\,\mathrm N, &amp; 3\leq x\leq 7\,\mathrm m. \end {cases} \]</div>
+<div class='problem-environment question' id='problem15' numbered=' ' role='article' titletext=' Question'>  Schets de grafiek.    </div>
+<div class='problem-environment question' id='problem16' numbered=' ' role='article' titletext=' Question'>  Bereken de positieve oppervlakte.    </div>
+<div class='problem-environment question' id='problem17' numbered=' ' role='article' titletext=' Question'>  Bereken de negatieve bijdrage.    </div>
+<div class='problem-environment question' id='problem18' numbered=' ' role='article' titletext=' Question'>  Bepaal de netto arbeid.    </div>
+<div class='problem-environment question' id='problem19' numbered=' ' role='article' titletext=' Question'>  Leg uit waarom “totale oppervlakte” zonder teken hier tot een fout antwoord kan
+leiden.    </div>
+</div>
+<!-- l. 434 --><p class='noindent'></p></div>
+<p></p><!-- l. 434 --><p class='noindent'></p></section>
+<p><a id='x1-27r5'></a>
+</p><p></p><!-- l. 438 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>5</div><div class='fvd-section-bar__title'>Niet-constante kracht: van oppervlakte naar integraal</div></div>
+<p></p><!-- l. 441 --><p class='noindent'>In veel realistische situaties verandert een kracht voortdurend met de plaats. Dan
+bestaat de oppervlakte onder de <span class='mathjax-inline'>\(F_x(x)\)</span>-grafiek niet uit één eenvoudige meetkundige
+figuur.
+</p><!-- l. 445 --><p class='noindent'>De bepaalde integraal veralgemeent precies de oppervlaktemethode:
+</p>
+<div class='mathjax-block'>\[ \boxed { W_{x_1\rightarrow x_2} = \int _{x_1}^{x_2}F_x(x)\,dx. } \]</div>
+<!-- l. 455 --><p class='noindent'>De integraal is hier geen los wiskundig trucje. Ze drukt hetzelfde fysische idee uit als
+de oppervlakteberekeningen uit de vorige paragraaf.
+</p>
+<div class='center'>
+<!-- l. 458 --><p class='noindent'>
+                                                                  
+
+                                                                  
+</p>
+<div class='mathjax-block'>\[ \boxed { \text {oppervlaktemethode} \longrightarrow \text {bepaalde integraal} } \]</div></div>
+<!-- l. 468 --><p class='noindent'>Als <span class='mathjax-inline'>\(F_x\)</span> constant is:
+</p>
+<div class='mathjax-block'>\[ W=\int _{x_1}^{x_2}F_x\,dx =F_x(x_2-x_1), \]</div>
+<!-- l. 475 --><p class='noindent'>zodat de bekende formule terug verschijnt.
+<a id='x1-28r7'></a>
+</p><!-- l. 478 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 478 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 478 --><p class='noindent'>Oefening 7
+</p><!-- l. 478 --><p class='noindent'>— Een lineair veranderende kracht
+</p><!-- l. 478 --><p class='noindent'></p></div>
+<p></p><!-- l. 478 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 478 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 478 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 480 --><p class='noindent'>Een krachtcomponent wordt beschreven door:
+</p>
+<div class='mathjax-block'>\[ F_x(x)=3x+2 \]</div>
+<!-- l. 486 --><p class='noindent'>met <span class='mathjax-inline'>\(F_x\)</span> in newton en <span class='mathjax-inline'>\(x\)</span> in meter. Het voorwerp beweegt van <span class='mathjax-inline'>\(x=0\)</span> tot <span class='mathjax-inline'>\(x=4\,\mathrm m\)</span>.
+</p>
+<div class='problem-environment question' id='problem20' numbered=' ' role='article' titletext=' Question'>  Schets de grafiek.    </div>
+<div class='problem-environment question' id='problem21' numbered=' ' role='article' titletext=' Question'>  Bereken de arbeid eerst met de oppervlaktemethode.    </div>
+<div class='problem-environment question' id='problem22' numbered=' ' role='article' titletext=' Question'>  Bereken dezelfde arbeid met: <div class='mathjax-block'>\[ W=\int _0^4(3x+2)\,dx. \]</div>    </div>
+<div class='problem-environment question' id='problem23' numbered=' ' role='article' titletext=' Question'>  Vergelijk beide resultaten en verklaar waarom ze gelijk moeten zijn.    </div>
+</div>
+<!-- l. 508 --><p class='noindent'></p></div>
+<p></p><!-- l. 508 --><p class='noindent'></p></section>
+<p><a id='x1-29r8'></a>
+</p><p></p><!-- l. 511 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 511 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 511 --><p class='noindent'>Oefening 8
+</p><!-- l. 511 --><p class='noindent'>— Een niet-lineaire kracht
+</p><!-- l. 511 --><p class='noindent'></p></div>
+                                                                  
+
+                                                                  
+<p></p><!-- l. 511 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 511 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 511 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 513 --><p class='noindent'>Voor een krachtcomponent geldt:
+</p>
+<div class='mathjax-block'>\[ F_x(x)=2x^2+1. \]</div>
+<!-- l. 519 --><p class='noindent'>Een voorwerp beweegt van <span class='mathjax-inline'>\(x=1\,\mathrm m\)</span> naar <span class='mathjax-inline'>\(x=3\,\mathrm m\)</span>.
+</p>
+<div class='problem-environment question' id='problem24' numbered=' ' role='article' titletext=' Question'>  Waarom is een eenvoudige driehoek- of trapeziumformule hier niet exact?
+</div>
+<div class='problem-environment question' id='problem25' numbered=' ' role='article' titletext=' Question'>  Stel de bepaalde integraal voor de arbeid op.    </div>
+<div class='problem-environment question' id='problem26' numbered=' ' role='article' titletext=' Question'>  Bereken de arbeid.    </div>
+<div class='problem-environment question' id='problem27' numbered=' ' role='article' titletext=' Question'>  Controleer de eenheid van je resultaat.    </div>
+</div>
+<!-- l. 537 --><p class='noindent'></p></div>
+<p></p><!-- l. 537 --><p class='noindent'></p></section>
+<p><a id='x1-30r6'></a>
+</p><p></p><!-- l. 541 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>6</div><div class='fvd-section-bar__title'>De veerkracht: een belangrijke variabele kracht</div></div>
+<p></p><!-- l. 544 --><p class='noindent'>Voor een ideale veer geldt de wet van Hooke:
+</p>
+<div class='mathjax-block'>\[ \boxed { F_{\mathrm {veer}}=-kx. } \]</div>
+<!-- l. 552 --><p class='noindent'>Hierbij is <span class='mathjax-inline'>\(x\)</span> de uitwijking ten opzichte van de evenwichts- of ongerekte toestand. De
+constante <span class='mathjax-inline'>\(k\)</span> is de veerconstante.
+</p><!-- l. 555 --><p class='noindent'>Het minteken toont dat de veerkracht een terugroepkracht is: ze is tegengesteld
+gericht aan de uitwijking.
+</p><!-- l. 558 --><p class='noindent'>Let goed op de betekenis van <span class='mathjax-inline'>\(x\)</span>. Als een veer een rustlengte <span class='mathjax-inline'>\(L_0\)</span> heeft en een lengte <span class='mathjax-inline'>\(L\)</span>, dan
+is:
+</p>
+<div class='mathjax-block'>\[ x=L-L_0. \]</div>
+<!-- l. 565 --><p class='noindent'>We integreren dus over de <em>uitwijking</em>, niet automatisch over de absolute lengte van de
+veer.
+<a id='x1-31r1'></a>
+</p><!-- l. 569 --><p class='noindent'></p><div class='fvd-subsection'>
+<p></p><!-- l. 569 --><p class='noindent'></p><div class='fvd-subsection__row'>
+<p></p><!-- l. 569 --><p class='noindent'></p><div class='fvd-subsection__number'>6.1</div>
+<p></p><!-- l. 569 --><p class='noindent'></p><div class='fvd-subsection__title'>Arbeid van de veerkracht</div>
+                                                                  
+
+                                                                  
+<p></p><!-- l. 569 --><p class='noindent'></p></div>
+<p></p><!-- l. 569 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
+<p></p><!-- l. 569 --><p class='noindent'></p></div>
+<p></p><!-- l. 571 --><p class='noindent'>De arbeid van de veerkracht bij een verandering van <span class='mathjax-inline'>\(x_1\)</span> naar <span class='mathjax-inline'>\(x_2\)</span> is:
+</p>
+<div class='mathjax-block'>\[ W_{\mathrm {veer}} = \int _{x_1}^{x_2}-kx\,dx. \]</div>
+<!-- l. 579 --><p class='noindent'>Dus:
+</p>
+<div class='mathjax-block'>\[ \boxed { W_{\mathrm {veer}} = -\frac 12k(x_2^2-x_1^2). } \]</div>
+<!-- l. 589 --><p class='noindent'>Bij het uitrekken van <span class='mathjax-inline'>\(0\)</span> tot <span class='mathjax-inline'>\(x&gt;0\)</span>:
+</p>
+<div class='mathjax-block'>\[ W_{\mathrm {veer}}=-\frac 12kx^2. \]</div>
+<!-- l. 595 --><p class='noindent'>De externe kracht die de veer langzaam uitrekt, verricht in het ideale quasistatische
+geval positieve arbeid:
+</p>
+<div class='mathjax-block'>\[ W_{\mathrm {ext}}=+\frac 12kx^2. \]</div>
+<p><a id='x1-32r9'></a>
+</p><!-- l. 603 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 603 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 603 --><p class='noindent'>Oefening 9
+</p><!-- l. 603 --><p class='noindent'>— Veer: grafiek, oppervlakte en integraal
+</p><!-- l. 603 --><p class='noindent'></p></div>
+<p></p><!-- l. 603 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 603 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 603 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 605 --><p class='noindent'>Een ideale veer heeft:
+</p>
+<div class='mathjax-block'>\[ k=240\,\mathrm {\frac Nm}. \]</div>
+<!-- l. 611 --><p class='noindent'>Ze wordt vanuit haar ongerekte toestand uitgerekt tot:
+</p>
+<div class='mathjax-block'>\[ x=0{,}050\,\mathrm m. \]</div>
+<div class='problem-environment question' id='problem28' numbered=' ' role='article' titletext=' Question'>  Schets <span class='mathjax-inline'>\(F_{\mathrm {veer}}(x)\)</span>.    </div>
+<div class='problem-environment question' id='problem29' numbered=' ' role='article' titletext=' Question'>  Bepaal de arbeid van de veerkracht met de oppervlaktemethode.    </div>
+<div class='problem-environment question' id='problem30' numbered=' ' role='article' titletext=' Question'>  Controleer het resultaat met een bepaalde integraal.    </div>
+<div class='problem-environment question' id='problem31' numbered=' ' role='article' titletext=' Question'>  Bepaal de arbeid van een externe kracht wanneer de veer zeer langzaam wordt
+                                                                  
+
+                                                                  
+uitgerekt.    </div>
+<div class='problem-environment question' id='problem32' numbered=' ' role='article' titletext=' Question'>  Waarom hebben beide arbeidsgrootheden een tegengesteld teken?    </div>
+</div>
+<!-- l. 638 --><p class='noindent'></p></div>
+<p></p><!-- l. 638 --><p class='noindent'></p></section>
+<p><a id='x1-33r7'></a>
+</p><p></p><!-- l. 642 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>7</div><div class='fvd-section-bar__title'>Kinetische energie</div></div>
+<p></p><!-- l. 645 --><p class='noindent'>Een bewegend voorwerp bezit kinetische energie:
+</p>
+<div class='mathjax-block'>\[ \boxed { E_k=\frac 12mv^2. } \]</div>
+<!-- l. 653 --><p class='noindent'>De kinetische energie hangt af van de massa en van het kwadraat van de
+snelheid.
+</p><!-- l. 656 --><p class='noindent'>Daarom:
+</p>
+<div class='mathjax-block'>\[ v\rightarrow 2v \quad \Rightarrow \quad E_k\rightarrow 4E_k. \]</div>
+<!-- l. 664 --><p class='noindent'>En:
+</p>
+<div class='mathjax-block'>\[ m\rightarrow 2m \quad \Rightarrow \quad E_k\rightarrow 2E_k. \]</div>
+<!-- l. 672 --><p class='noindent'>Omdat <span class='mathjax-inline'>\(v^2\geq 0\)</span> is:
+</p>
+<div class='mathjax-block'>\[ E_k\geq 0. \]</div>
+<p><a id='x1-34r10'></a>
+</p><!-- l. 679 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 679 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 679 --><p class='noindent'>Oefening 10
+</p><!-- l. 679 --><p class='noindent'>— Snelheid telt kwadratisch
+</p><!-- l. 679 --><p class='noindent'></p></div>
+<p></p><!-- l. 679 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 679 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span></div>
+<p></p><!-- l. 679 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 681 --><p class='noindent'>Een wagen rijdt eerst met snelheid <span class='mathjax-inline'>\(v\)</span> en daarna met snelheid <span class='mathjax-inline'>\(2v\)</span>. De massa blijft
+constant.
+</p>
+<div class='problem-environment question' id='problem33' numbered=' ' role='article' titletext=' Question'>  Met welke factor verandert de kinetische energie?    </div>
+<div class='problem-environment question' id='problem34' numbered=' ' role='article' titletext=' Question'>  Waarom is de uitspraak “dubbele snelheid betekent dubbele kinetische energie”
+                                                                  
+
+                                                                  
+fout?    </div>
+<div class='problem-environment question' id='problem35' numbered=' ' role='article' titletext=' Question'>  Wat betekent dit kwalitatief voor de energie die bij een noodstop moet worden
+omgezet?    </div>
+</div>
+<!-- l. 698 --><p class='noindent'></p></div>
+<p></p><!-- l. 698 --><p class='noindent'></p></section>
+<p><a id='x1-35r8'></a>
+</p><p></p><!-- l. 702 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>8</div><div class='fvd-section-bar__title'>Het arbeid-energietheorema</div></div>
+<p></p><!-- l. 705 --><p class='noindent'>De arbeid van alle krachten samen is gelijk aan de verandering van de kinetische
+energie:
+</p>
+<div class='mathjax-block'>\[ \boxed { W_{\mathrm {res}} = \Delta E_k. } \]</div>
+<!-- l. 716 --><p class='noindent'>Dus:
+</p>
+<div class='mathjax-block'>\[ \boxed { W_{\mathrm {res}} = \frac 12mv_e^2-\frac 12mv_b^2. } \]</div>
+<!-- l. 726 --><p class='noindent'>Dit is het <strong>arbeid-energietheorema</strong>.
+</p><!-- l. 728 --><p class='noindent'>Het woord “res” is belangrijk. We mogen ofwel de arbeid van de resulterende kracht
+bepalen, ofwel de arbeid van alle afzonderlijke krachten optellen:
+</p>
+<div class='mathjax-block'>\[ W_{\mathrm {res}} = \sum _i W_i. \]</div>
+<!-- l. 737 --><p class='noindent'>Als:
+</p>
+<div class='mathjax-block'>\[ W_{\mathrm {res}}&gt;0, \]</div>
+<!-- l. 743 --><p class='noindent'>dan neemt de kinetische energie toe.
+</p><!-- l. 745 --><p class='noindent'>Als:
+</p>
+<div class='mathjax-block'>\[ W_{\mathrm {res}}&lt;0, \]</div>
+<!-- l. 751 --><p class='noindent'>dan neemt de kinetische energie af.
+</p><!-- l. 753 --><p class='noindent'>Als:
+</p>
+<div class='mathjax-block'>\[ W_{\mathrm {res}}=0, \]</div>
+<!-- l. 759 --><p class='noindent'>dan blijft de kinetische energie constant.
+<a id='x1-36r1'></a>
+</p><!-- l. 762 --><p class='noindent'></p><div class='fvd-subsection'>
+<p></p><!-- l. 762 --><p class='noindent'></p><div class='fvd-subsection__row'>
+<p></p><!-- l. 762 --><p class='noindent'></p><div class='fvd-subsection__number'>8.1</div>
+                                                                  
+
+                                                                  
+<p></p><!-- l. 762 --><p class='noindent'></p><div class='fvd-subsection__title'>Waarom werkt het?</div>
+<p></p><!-- l. 762 --><p class='noindent'></p></div>
+<p></p><!-- l. 762 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
+<p></p><!-- l. 762 --><p class='noindent'></p></div>
+<p></p><!-- l. 764 --><p class='noindent'>In één dimensie:
+</p>
+<div class='mathjax-block'>\[ F_{\mathrm {res}}=ma. \]</div>
+<!-- l. 770 --><p class='noindent'>Met:
+</p>
+<div class='mathjax-block'>\[ a=\frac {dv}{dt} \qquad \text {en}\qquad v=\frac {dx}{dt} \]</div>
+<!-- l. 778 --><p class='noindent'>kunnen we schrijven:
+</p>
+<div class='mathjax-block'>\[ a = \frac {dv}{dt} = \frac {dv}{dx}\frac {dx}{dt} = v\frac {dv}{dx}. \]</div>
+<!-- l. 790 --><p class='noindent'>Daarom:
+</p>
+<div class='mathjax-block'>\[ F_{\mathrm {res}} = mv\frac {dv}{dx}. \]</div>
+<!-- l. 798 --><p class='noindent'>Vermenigvuldigen met <span class='mathjax-inline'>\(dx\)</span>:
+</p>
+<div class='mathjax-block'>\[ F_{\mathrm {res}}\,dx=m v\,dv. \]</div>
+<!-- l. 804 --><p class='noindent'>Integreren tussen begin- en eindtoestand:
+</p>
+<div class='mathjax-block'>\[ \int _{x_b}^{x_e}F_{\mathrm {res}}\,dx = \int _{v_b}^{v_e}mv\,dv. \]</div>
+<!-- l. 812 --><p class='noindent'>Dus:
+</p>
+<div class='mathjax-block'>\[ W_{\mathrm {res}} = \left [\frac 12mv^2\right ]_{v_b}^{v_e} \]</div>
+<!-- l. 820 --><p class='noindent'>en:
+</p>
+<div class='mathjax-block'>\[ \boxed { W_{\mathrm {res}}=\Delta E_k. } \]</div>
+<!-- l. 828 --><p class='noindent'>Deze afleiding toont een diepe verbinding tussen Newtons bewegingswet en de
+energiebeschrijving.
+<a id='x1-37r11'></a>
+</p><!-- l. 832 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 832 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 832 --><p class='noindent'>Oefening 11
+</p><!-- l. 832 --><p class='noindent'>— Versnellen via arbeid
+                                                                  
+
+                                                                  
+</p><!-- l. 832 --><p class='noindent'></p></div>
+<p></p><!-- l. 832 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 832 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 832 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 834 --><p class='noindent'>Een auto met massa <span class='mathjax-inline'>\(1000\,\mathrm {kg}\)</span> rijdt aanvankelijk <span class='mathjax-inline'>\(3{,}0\,\mathrm {m/s}\)</span>. Een constante resulterende kracht van <span class='mathjax-inline'>\(4000\,\mathrm N\)</span>
+werkt over een afstand van <span class='mathjax-inline'>\(5{,}0\,\mathrm m\)</span> in de bewegingsrichting.
+</p>
+<div class='problem-environment question' id='problem36' numbered=' ' role='article' titletext=' Question'>  Bereken de arbeid van de resulterende kracht.    </div>
+<div class='problem-environment question' id='problem37' numbered=' ' role='article' titletext=' Question'>  Gebruik het arbeid-energietheorema om de eindsnelheid te bepalen.    </div>
+<div class='problem-environment question' id='problem38' numbered=' ' role='article' titletext=' Question'>  Welke alternatieve methode met Newton II en kinematica zou eveneens mogelijk
+zijn?    </div>
+<div class='problem-environment question' id='problem39' numbered=' ' role='article' titletext=' Question'>  Welke methode vind je hier het kortst? Motiveer.    </div>
+</div>
+<!-- l. 856 --><p class='noindent'></p></div>
+<p></p><!-- l. 856 --><p class='noindent'></p></section>
+<p><a id='x1-38r12'></a>
+</p><p></p><!-- l. 859 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 859 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 859 --><p class='noindent'>Oefening 12
+</p><!-- l. 859 --><p class='noindent'>— Remweg
+</p><!-- l. 859 --><p class='noindent'></p></div>
+<p></p><!-- l. 859 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 859 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 859 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 861 --><p class='noindent'>Een voertuig wordt geremd door een ongeveer constante resulterende remkracht.
+</p>
+<div class='problem-environment question' id='problem40' numbered=' ' role='article' titletext=' Question'>  Gebruik het arbeid-energietheorema om aan te tonen dat, bij dezelfde massa en
+dezelfde remkracht, <div class='mathjax-block'>\[ d_{\mathrm {rem}}\sim v_0^2. \]</div>    </div>
+<div class='problem-environment question' id='problem41' numbered=' ' role='article' titletext=' Question'>  Wat gebeurt er met de remweg als de beginsnelheid verdubbelt?    </div>
+<div class='problem-environment question' id='problem42' numbered=' ' role='article' titletext=' Question'>  Waarom is dit resultaat relevant voor verkeersveiligheid?    </div>
+<div class='problem-environment question' id='problem43' numbered=' ' role='article' titletext=' Question'>  Welke vereenvoudigingen bevat het model?    </div>
+</div>
+<!-- l. 883 --><p class='noindent'></p></div>
+<p></p><!-- l. 883 --><p class='noindent'></p></section>
+                                                                  
+
+                                                                  
+<p><a id='x1-39r9'></a>
+</p><p></p><!-- l. 887 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>9</div><div class='fvd-section-bar__title'>Conservatieve krachten</div></div>
+<p></p><!-- l. 890 --><p class='noindent'>Bij sommige krachten hangt de verrichte arbeid tussen twee punten alleen af van
+begin- en eindpunt, niet van het gevolgde pad.
+</p><!-- l. 893 --><p class='noindent'>Zo’n kracht noemen we <strong>conservatief</strong>.
+</p><!-- l. 895 --><p class='noindent'>Voor een conservatieve kracht kunnen we een potentiële energie definiëren:
+</p>
+<div class='mathjax-block'>\[ \boxed { W_{\mathrm {cons}}=-\Delta E_p. } \]</div>
+<!-- l. 903 --><p class='noindent'>Dus:
+</p>
+<div class='mathjax-block'>\[ W_{\mathrm {cons}} = E_{p,b}-E_{p,e}. \]</div>
+<!-- l. 911 --><p class='noindent'>Voorbeelden die we in deze cursus gebruiken zijn:
+</p>     
+<ul class='itemize1'>
+<li class='itemize'>gravitatiekracht;
+</li>
+<li class='itemize'>zwaartekracht in de nabij-aardebenadering;
+</li>
+<li class='itemize'>ideale veerkracht.</li></ul>
+<p><a id='x1-40r1'></a>
+</p><!-- l. 920 --><p class='noindent'></p><div class='fvd-subsection'>
+<p></p><!-- l. 920 --><p class='noindent'></p><div class='fvd-subsection__row'>
+<p></p><!-- l. 920 --><p class='noindent'></p><div class='fvd-subsection__number'>9.1</div>
+<p></p><!-- l. 920 --><p class='noindent'></p><div class='fvd-subsection__title'>Niet-conservatieve krachten</div>
+<p></p><!-- l. 920 --><p class='noindent'></p></div>
+<p></p><!-- l. 920 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
+<p></p><!-- l. 920 --><p class='noindent'></p></div>
+<p></p><!-- l. 922 --><p class='noindent'>Bij niet-conservatieve krachten hangt de arbeid in het algemeen wel af van het
+gevolgde pad of treedt overdracht naar andere energievormen op.
+</p><!-- l. 925 --><p class='noindent'>Wrijving is het belangrijkste mechanische voorbeeld in deze cursus.
+</p><!-- l. 927 --><p class='noindent'>Mechanische energie hoeft dan niet behouden te blijven.
+                                                                  
+
+                                                                  
+</p><!-- l. 929 --><p class='noindent'>Dat betekent niet dat energie “verdwijnt”. Ze wordt bijvoorbeeld omgezet in interne
+energie van voorwerp en omgeving.
+<a id='x1-41r13'></a>
+</p><!-- l. 933 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 933 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 933 --><p class='noindent'>Oefening 13
+</p><!-- l. 933 --><p class='noindent'>— Conservatief of niet?
+</p><!-- l. 933 --><p class='noindent'></p></div>
+<p></p><!-- l. 933 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 933 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 933 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 935 --><p class='noindent'>Beschouw gravitatiekracht, ideale veerkracht en kinetische wrijvingskracht.
+</p>
+<div class='problem-environment question' id='problem44' numbered=' ' role='article' titletext=' Question'>  Welke krachten modelleren we als conservatief?    </div>
+<div class='problem-environment question' id='problem45' numbered=' ' role='article' titletext=' Question'>  Voor welke krachten kunnen we in deze context een potentiële energie definiëren?
+</div>
+<div class='problem-environment question' id='problem46' numbered=' ' role='article' titletext=' Question'>  Waarom leidt wrijving vaak tot een afname van de mechanische energie?
+</div>
+<div class='problem-environment question' id='problem47' numbered=' ' role='article' titletext=' Question'>  Is de totale energie daarom niet behouden? Leg zorgvuldig uit.    </div>
+</div>
+<!-- l. 954 --><p class='noindent'></p></div>
+<p></p><!-- l. 954 --><p class='noindent'></p></section>
+<p><a id='x1-42r10'></a>
+</p><p></p><!-- l. 958 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>10</div><div class='fvd-section-bar__title'>Zwaarte-energie nabij het aardoppervlak</div></div>
+<p></p><!-- l. 961 --><p class='noindent'>Nabij het aardoppervlak behandelen we het gravitatieveld vaak als homogeen:
+</p>
+<div class='mathjax-block'>\[ g\approx \text {constant}. \]</div>
+<!-- l. 967 --><p class='noindent'>Kies de positieve <span class='mathjax-inline'>\(y\)</span>-richting omhoog. De zwaartekracht is dan:
+</p>
+<div class='mathjax-block'>\[ F_{g,y}=-mg. \]</div>
+<!-- l. 973 --><p class='noindent'>Voor een verplaatsing van <span class='mathjax-inline'>\(y_1\)</span> naar <span class='mathjax-inline'>\(y_2\)</span>:
+</p>
+<div class='mathjax-block'>\[ W_g = \int _{y_1}^{y_2}-mg\,dy = -mg(y_2-y_1). \]</div>
+<!-- l. 983 --><p class='noindent'>Omdat:
+</p>
+                                                                  
+
+                                                                  
+<div class='mathjax-block'>\[ W_g=-\Delta E_{p,g}, \]</div>
+<!-- l. 989 --><p class='noindent'>volgt:
+</p>
+<div class='mathjax-block'>\[ \Delta E_{p,g}=mg(y_2-y_1). \]</div>
+<!-- l. 995 --><p class='noindent'>Als we een referentieniveau <span class='mathjax-inline'>\(h=0\)</span> kiezen:
+</p>
+<div class='mathjax-block'>\[ \boxed { E_{p,g}=mgh. } \]</div>
+<!-- l. 1003 --><p class='noindent'>De absolute waarde hangt af van de gekozen nulhoogte; energieverschillen zijn fysisch
+relevant.
+<a id='x1-43r14'></a>
+</p><!-- l. 1007 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 1007 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 1007 --><p class='noindent'>Oefening 14
+</p><!-- l. 1007 --><p class='noindent'>— De nulhoogte kiezen
+</p><!-- l. 1007 --><p class='noindent'></p></div>
+<p></p><!-- l. 1007 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 1007 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span></div>
+<p></p><!-- l. 1007 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 1009 --><p class='noindent'>Een boek met massa <span class='mathjax-inline'>\(1{,}5\,\mathrm {kg}\)</span> ligt op een tafel van <span class='mathjax-inline'>\(0{,}80\,\mathrm m\)</span> hoog.
+</p>
+<div class='problem-environment question' id='problem48' numbered=' ' role='article' titletext=' Question'>  Bereken de potentiële zwaarte-energie als de vloer het nulniveau is.    </div>
+<div class='problem-environment question' id='problem49' numbered=' ' role='article' titletext=' Question'>  Welke waarde krijg je als het tafelblad als nulniveau wordt gekozen?    </div>
+<div class='problem-environment question' id='problem50' numbered=' ' role='article' titletext=' Question'>  Verandert de arbeid van de zwaartekracht wanneer het boek van de tafel op de
+vloer valt door die andere keuze? Verklaar.    </div>
+</div>
+<!-- l. 1025 --><p class='noindent'></p></div>
+<p></p><!-- l. 1025 --><p class='noindent'></p></section>
+<p><a id='x1-44r11'></a>
+</p><p></p><!-- l. 1029 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>11</div><div class='fvd-section-bar__title'>Elastische potentiële energie</div></div>
+<p></p><!-- l. 1032 --><p class='noindent'>We vonden voor de arbeid van een ideale veerkracht:
+</p>
+<div class='mathjax-block'>\[ W_{\mathrm {veer}} = -\frac 12k(x_2^2-x_1^2). \]</div>
+<!-- l. 1040 --><p class='noindent'>Voor een conservatieve kracht:
+</p>
+<div class='mathjax-block'>\[ W_{\mathrm {veer}}=-\Delta E_{p,\mathrm {el}}. \]</div>
+                                                                  
+
+                                                                  
+<!-- l. 1046 --><p class='noindent'>Dus:
+</p>
+<div class='mathjax-block'>\[ \Delta E_{p,\mathrm {el}} = \frac 12k(x_2^2-x_1^2). \]</div>
+<!-- l. 1054 --><p class='noindent'>Met de ongerekte toestand als referentie:
+</p>
+<div class='mathjax-block'>\[ \boxed { E_{p,\mathrm {el}}=\frac 12kx^2. } \]</div>
+<!-- l. 1062 --><p class='noindent'>Dit resultaat is dus niet zomaar een formule om te onthouden: het volgt uit de
+oppervlakte onder de kracht-plaatsgrafiek.
+<a id='x1-45r15'></a>
+</p><!-- l. 1066 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 1066 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 1066 --><p class='noindent'>Oefening 15
+</p><!-- l. 1066 --><p class='noindent'>— Van <span class='mathjax-inline'>\(F(x)\)</span> naar energie
+</p><!-- l. 1066 --><p class='noindent'></p></div>
+<p></p><!-- l. 1066 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 1066 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 1066 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 1068 --><p class='noindent'>Een ideale veer heeft veerconstante <span class='mathjax-inline'>\(k\)</span>.
+</p>
+<div class='problem-environment question' id='problem51' numbered=' ' role='article' titletext=' Question'>  Schets de grootte van de externe kracht die nodig is om de veer zeer langzaam van <span class='mathjax-inline'>\(x=0\)</span>
+tot <span class='mathjax-inline'>\(x=X\)</span> uit te rekken.    </div>
+<div class='problem-environment question' id='problem52' numbered=' ' role='article' titletext=' Question'>  Gebruik de oppervlakte van de driehoek om de externe arbeid te bepalen.
+</div>
+<div class='problem-environment question' id='problem53' numbered=' ' role='article' titletext=' Question'>  Toon zo aan dat: <div class='mathjax-block'>\[ E_{p,\mathrm {el}}=\frac 12kX^2. \]</div>    </div>
+<div class='problem-environment question' id='problem54' numbered=' ' role='article' titletext=' Question'>  Welke wiskundige methode geeft hetzelfde resultaat voor een willekeurige
+krachtfunctie?    </div>
+</div>
+<!-- l. 1091 --><p class='noindent'></p></div>
+<p></p><!-- l. 1091 --><p class='noindent'></p></section>
+<p><a id='x1-46r12'></a>
+</p><p></p><!-- l. 1095 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>12</div><div class='fvd-section-bar__title'>Mechanische energie</div></div>
+<p></p><!-- l. 1098 --><p class='noindent'>De mechanische energie van een systeem is de som van kinetische en relevante
+potentiële energieën:
+</p>
+<div class='mathjax-block'>\[ \boxed { E_m=E_k+E_p. } \]</div>
+<!-- l. 1107 --><p class='noindent'>Wanneer alleen conservatieve krachten arbeid verrichten:
+                                                                  
+
+                                                                  
+</p>
+<div class='mathjax-block'>\[ \boxed { E_{m,b}=E_{m,e}. } \]</div>
+<!-- l. 1115 --><p class='noindent'>Of:
+</p>
+<div class='mathjax-block'>\[ \boxed { E_k+E_p=\text {constant}. } \]</div>
+<!-- l. 1123 --><p class='noindent'>Energie kan voortdurend van vorm veranderen terwijl de totale mechanische energie
+constant blijft.
+<a id='x1-47r16'></a>
+</p><!-- l. 1127 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 1127 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 1127 --><p class='noindent'>Oefening 16
+</p><!-- l. 1127 --><p class='noindent'>— Vallen met energie
+</p><!-- l. 1127 --><p class='noindent'></p></div>
+<p></p><!-- l. 1127 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 1127 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 1127 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 1129 --><p class='noindent'>Een voorwerp wordt vanuit rust losgelaten op hoogte <span class='mathjax-inline'>\(h\)</span>. Verwaarloos luchtweerstand.
+</p>
+<div class='problem-environment question' id='problem55' numbered=' ' role='article' titletext=' Question'>  Kies het grondniveau als nulniveau en schrijf de mechanische energie bij het
+loslaten.    </div>
+<div class='problem-environment question' id='problem56' numbered=' ' role='article' titletext=' Question'>  Schrijf de mechanische energie vlak voor het bereiken van de grond.    </div>
+<div class='problem-environment question' id='problem57' numbered=' ' role='article' titletext=' Question'>  Leid daaruit af: <div class='mathjax-block'>\[ v=\sqrt {2gh}. \]</div>    </div>
+<div class='problem-environment question' id='problem58' numbered=' ' role='article' titletext=' Question'>  Vergelijk deze methode met de kinematische aanpak uit het hoofdstuk vrije val.
+</div>
+</div>
+<!-- l. 1152 --><p class='noindent'></p></div>
+<p></p><!-- l. 1152 --><p class='noindent'></p></section>
+<p><a id='x1-48r17'></a>
+</p><p></p><!-- l. 1155 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 1155 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 1155 --><p class='noindent'>Oefening 17
+</p><!-- l. 1155 --><p class='noindent'>— Veer lanceert een karretje
+</p><!-- l. 1155 --><p class='noindent'></p></div>
+<p></p><!-- l. 1155 --><p class='noindent'></p><div class='fvd-exercise__body'>
+                                                                  
+
+                                                                  
+<p></p><!-- l. 1155 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 1155 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 1157 --><p class='noindent'>Een karretje met massa <span class='mathjax-inline'>\(m\)</span> staat op een horizontaal wrijvingsloos spoor tegen een
+ingedrukte veer met veerconstante <span class='mathjax-inline'>\(k\)</span>. De indrukking is <span class='mathjax-inline'>\(x\)</span>.
+</p>
+<div class='problem-environment question' id='problem59' numbered=' ' role='article' titletext=' Question'>  Welke energievorm is aanvankelijk aanwezig?    </div>
+<div class='problem-environment question' id='problem60' numbered=' ' role='article' titletext=' Question'>  Welke energievorm bezit het karretje wanneer de veer haar evenwichtsstand
+bereikt?    </div>
+<div class='problem-environment question' id='problem61' numbered=' ' role='article' titletext=' Question'>  Leid een formule af voor de snelheid: <div class='mathjax-block'>\[ v=x\sqrt {\frac {k}{m}}. \]</div>    </div>
+<div class='problem-environment question' id='problem62' numbered=' ' role='article' titletext=' Question'>  Wat gebeurt er met <span class='mathjax-inline'>\(v\)</span> als de indrukking verdubbelt?    </div>
+</div>
+<!-- l. 1180 --><p class='noindent'></p></div>
+<p></p><!-- l. 1180 --><p class='noindent'></p></section>
+<p><a id='x1-49r13'></a>
+</p><p></p><!-- l. 1184 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>13</div><div class='fvd-section-bar__title'>Niet-conservatieve arbeid en energiedissipatie</div></div>
+<p></p><!-- l. 1187 --><p class='noindent'>Als niet-conservatieve krachten arbeid verrichten, is de mechanische energie in het
+algemeen niet constant.
+</p><!-- l. 1190 --><p class='noindent'>We kunnen schrijven:
+</p>
+<div class='mathjax-block'>\[ \boxed { W_{\mathrm {nc}}=\Delta E_m } \]</div>
+<!-- l. 1198 --><p class='noindent'>wanneer <span class='mathjax-inline'>\(W_{\mathrm {nc}}\)</span> de arbeid van de niet-conservatieve krachten op het gekozen mechanische
+systeem voorstelt.
+</p><!-- l. 1201 --><p class='noindent'>Bij kinetische wrijving is die arbeid vaak negatief:
+</p>
+<div class='mathjax-block'>\[ W_w=-F_w d \]</div>
+<!-- l. 1207 --><p class='noindent'>voor een constante wrijvingskracht tegengesteld aan de beweging.
+</p><!-- l. 1209 --><p class='noindent'>De “verdwenen” mechanische energie verschijnt als andere energievormen,
+bijvoorbeeld interne energie.
+<a id='x1-50r18'></a>
+</p><!-- l. 1213 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 1213 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 1213 --><p class='noindent'>Oefening 18
+</p><!-- l. 1213 --><p class='noindent'>— Glijden met wrijving
+</p><!-- l. 1213 --><p class='noindent'></p></div>
+<p></p><!-- l. 1213 --><p class='noindent'></p><div class='fvd-exercise__body'>
+                                                                  
+
+                                                                  
+<p></p><!-- l. 1213 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 1213 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 1215 --><p class='noindent'>Een blok met massa <span class='mathjax-inline'>\(m\)</span> vertrekt vanuit rust van hoogte <span class='mathjax-inline'>\(h\)</span> en glijdt naar beneden. Door
+wrijving wordt een hoeveelheid mechanische energie <span class='mathjax-inline'>\(E_{\mathrm {diss}}\)</span> gedissipeerd.
+</p>
+<div class='problem-environment question' id='problem63' numbered=' ' role='article' titletext=' Question'>  Stel een energiebalans op.    </div>
+<div class='problem-environment question' id='problem64' numbered=' ' role='article' titletext=' Question'>  Leid een uitdrukking af voor de snelheid onderaan.    </div>
+<div class='problem-environment question' id='problem65' numbered=' ' role='article' titletext=' Question'>  Vergelijk met het wrijvingsloze geval.    </div>
+<div class='problem-environment question' id='problem66' numbered=' ' role='article' titletext=' Question'>  Waarom is het fysisch misleidend om te zeggen dat de energie door wrijving
+“verloren” is?    </div>
+</div>
+<!-- l. 1236 --><p class='noindent'></p></div>
+<p></p><!-- l. 1236 --><p class='noindent'></p></section>
+<p><a id='x1-51r14'></a>
+</p><p></p><!-- l. 1240 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>14</div><div class='fvd-section-bar__title'>Wanneer gebruik je Newton en wanneer energie?</div></div>
+<p></p><!-- l. 1243 --><p class='noindent'>Beide methoden beschrijven dezelfde fysica, maar beantwoorden vaak andere vragen
+efficiënt.
+</p><!-- l. 1246 --><p class='noindent'>Gebruik een krachtenaanpak wanneer je bijvoorbeeld de versnelling, richting van de
+versnelling of tijdsontwikkeling nodig hebt.
+</p><!-- l. 1249 --><p class='noindent'>Gebruik een energieaanpak wanneer vooral begin- en eindtoestand belangrijk zijn en
+het gevolgde tijdsverloop niet nodig is.
+</p><!-- l. 1252 --><p class='noindent'>Soms moet je beide combineren.
+<a id='x1-52r19'></a>
+</p><!-- l. 1254 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 1254 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 1254 --><p class='noindent'>Oefening 19
+</p><!-- l. 1254 --><p class='noindent'>— Kies een methode
+</p><!-- l. 1254 --><p class='noindent'></p></div>
+<p></p><!-- l. 1254 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 1254 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 1254 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 1256 --><p class='noindent'>Geef voor elke vraag aan of een aanpak via Newton/kinematica, via energie, of een
+combinatie het meest efficiënt lijkt. Motiveer.
+</p>     
+<ol class='enumerate1'>
+                                                                  
+
+                                                                  
+<li class='enumerate' id='x1-54x1'>Bepaal de snelheid van een vallend voorwerp na een hoogteverschil <span class='mathjax-inline'>\(h\)</span>.
+</li>
+<li class='enumerate' id='x1-56x2'>Bepaal de normaalkracht op een auto in het laagste punt van een verticale
+cirkelbaan.
+</li>
+<li class='enumerate' id='x1-58x3'>Bepaal hoe ver een blok met beginsnelheid <span class='mathjax-inline'>\(v_0\)</span> over een ruw vlak schuift voor
+het stopt.
+</li>
+<li class='enumerate' id='x1-60x4'>Bepaal de versnelling van een blok op een hellend vlak.
+</li>
+<li class='enumerate' id='x1-62x5'>Bepaal de maximale hoogte van een karretje op een wrijvingsloze baan.</li></ol>
+</div>
+<!-- l. 1269 --><p class='noindent'></p></div>
+<p></p><!-- l. 1269 --><p class='noindent'></p></section>
+<p><a id='x1-63r15'></a>
+</p><p></p><!-- l. 1273 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>15</div><div class='fvd-section-bar__title'>Algemene gravitatie-energie</div></div>
+<p></p><!-- l. 1276 --><p class='noindent'>In H7 gebruikten we:
+</p>
+<div class='mathjax-block'>\[ F_g=G\frac {Mm}{r^2}. \]</div>
+<!-- l. 1282 --><p class='noindent'>Voor satellieten verandert <span class='mathjax-inline'>\(r\)</span> aanzienlijk. De nabij-aardeformule
+</p>
+<div class='mathjax-block'>\[ E_{p,g}=mgh \]</div>
+<!-- l. 1288 --><p class='noindent'>is dan geen geschikte algemene beschrijving.
+</p><!-- l. 1290 --><p class='noindent'>We kiezen de gravitatiepotentiële energie gelijk aan nul op oneindig grote
+afstand:
+</p>
+<div class='mathjax-block'>\[ E_{p,g}(\infty )=0. \]</div>
+                                                                  
+
+                                                                  
+<!-- l. 1297 --><p class='noindent'>Voor de gravitatiekracht volgt dan:
+</p>
+<div class='mathjax-block'>\[ \boxed { E_{p,g}(r)=-\frac {GMm}{r}. } \]</div>
+<!-- l. 1305 --><p class='noindent'>De negatieve waarde heeft een duidelijke betekenis: een massa op eindige afstand
+bevindt zich in een gebonden toestand ten opzichte van het gekozen nulniveau op
+oneindig.
+<a id='x1-64r1'></a>
+</p><!-- l. 1310 --><p class='noindent'></p><div class='fvd-subsection'>
+<p></p><!-- l. 1310 --><p class='noindent'></p><div class='fvd-subsection__row'>
+<p></p><!-- l. 1310 --><p class='noindent'></p><div class='fvd-subsection__number'>15.1</div>
+<p></p><!-- l. 1310 --><p class='noindent'></p><div class='fvd-subsection__title'>Waarom een minteken?</div>
+<p></p><!-- l. 1310 --><p class='noindent'></p></div>
+<p></p><!-- l. 1310 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
+<p></p><!-- l. 1310 --><p class='noindent'></p></div>
+<p></p><!-- l. 1312 --><p class='noindent'>Om een massa vanuit een eindige afstand <span class='mathjax-inline'>\(r\)</span> tot oneindig te brengen zonder
+eindsnelheid, moet van buitenaf positieve arbeid worden geleverd.
+</p><!-- l. 1315 --><p class='noindent'>De potentiële energie stijgt daarbij van:
+</p>
+<div class='mathjax-block'>\[ -\frac {GMm}{r} \]</div>
+<!-- l. 1321 --><p class='noindent'>naar:
+</p>
+<div class='mathjax-block'>\[ 0. \]</div>
+<!-- l. 1327 --><p class='noindent'>Daarom is de gravitatiepotentiële energie op eindige afstand negatief bij deze
+conventie.
+<a id='x1-65r20'></a>
+</p><!-- l. 1331 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 1331 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 1331 --><p class='noindent'>Oefening 20
+</p><!-- l. 1331 --><p class='noindent'>— Van dichtbij naar ver weg
+</p><!-- l. 1331 --><p class='noindent'></p></div>
+<p></p><!-- l. 1331 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 1331 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span></div>
+<p></p><!-- l. 1331 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 1333 --><p class='noindent'>Een satelliet wordt van een cirkelbaan met straal <span class='mathjax-inline'>\(r_1\)</span> naar een grotere afstand <span class='mathjax-inline'>\(r_2&gt;r_1\)</span>
+gebracht.
+</p>
+                                                                  
+
+                                                                  
+<div class='problem-environment question' id='problem67' numbered=' ' role='article' titletext=' Question'>  Vergelijk <span class='mathjax-inline'>\(E_{p,g}(r_1)\)</span> en <span class='mathjax-inline'>\(E_{p,g}(r_2)\)</span>.    </div>
+<div class='problem-environment question' id='problem68' numbered=' ' role='article' titletext=' Question'>  Welke waarde ligt dichter bij nul?    </div>
+<div class='problem-environment question' id='problem69' numbered=' ' role='article' titletext=' Question'>  Waarom betekent “grotere potentiële gravitatie-energie” hier niet noodzakelijk een
+positief getal?    </div>
+</div>
+<!-- l. 1349 --><p class='noindent'></p></div>
+<p></p><!-- l. 1349 --><p class='noindent'></p></section>
+<p><a id='x1-66r16'></a>
+</p><p></p><!-- l. 1353 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>16</div><div class='fvd-section-bar__title'>Satellieten opnieuw bekeken: nu met energie</div></div>
+<p></p><!-- l. 1356 --><p class='noindent'>Voor een satelliet in een ideale cirkelbaan vonden we in H7:
+</p>
+<div class='mathjax-block'>\[ v^2=\frac {GM}{r}. \]</div>
+<!-- l. 1362 --><p class='noindent'>De kinetische energie is dus:
+</p>
+<div class='mathjax-block'>\[ E_k = \frac 12mv^2 = \frac 12m\frac {GM}{r}. \]</div>
+<!-- l. 1372 --><p class='noindent'>Daarom:
+</p>
+<div class='mathjax-block'>\[ \boxed { E_k=\frac {GMm}{2r}. } \]</div>
+<!-- l. 1380 --><p class='noindent'>De gravitatiepotentiële energie is:
+</p>
+<div class='mathjax-block'>\[ \boxed { E_{p,g}=-\frac {GMm}{r}. } \]</div>
+<!-- l. 1388 --><p class='noindent'>De totale mechanische energie wordt:
+</p>
+<div class='mathjax-block'>\[ E_m=E_k+E_{p,g}. \]</div>
+<!-- l. 1394 --><p class='noindent'>Dus:
+</p>
+<div class='mathjax-block'>\[ \boxed { E_m=-\frac {GMm}{2r}. } \]</div>
+<!-- l. 1402 --><p class='noindent'>Voor een ideale cirkelbaan geldt bijgevolg:
+</p>
+<div class='mathjax-block'>\[ \boxed { E_{p,g}=-2E_k } \]</div>
+<!-- l. 1410 --><p class='noindent'>en:
+</p>
+<div class='mathjax-block'>\[ \boxed { E_m=-E_k. } \]</div>
+<p><a id='x1-67r21'></a>
+</p><!-- l. 1419 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 1419 --><p class='noindent'></p><div class='fvd-exercise__title'>
+                                                                  
+
+                                                                  
+<p></p><!-- l. 1419 --><p class='noindent'>Oefening 21
+</p><!-- l. 1419 --><p class='noindent'>— Een hogere cirkelbaan
+</p><!-- l. 1419 --><p class='noindent'></p></div>
+<p></p><!-- l. 1419 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 1419 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--g'>G</span></div>
+<p></p><!-- l. 1419 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 1421 --><p class='noindent'>Een satelliet wordt van een cirkelbaan met straal <span class='mathjax-inline'>\(r\)</span> naar een cirkelbaan met straal <span class='mathjax-inline'>\(4r\)</span>
+gebracht.
+</p>
+<div class='problem-environment question' id='problem70' numbered=' ' role='article' titletext=' Question'>  Met welke factor verandert de baansnelheid?    </div>
+<div class='problem-environment question' id='problem71' numbered=' ' role='article' titletext=' Question'>  Met welke factor verandert de kinetische energie?    </div>
+<div class='problem-environment question' id='problem72' numbered=' ' role='article' titletext=' Question'>  Vergelijk de gravitatiepotentiële energie van beide banen.    </div>
+<div class='problem-environment question' id='problem73' numbered=' ' role='article' titletext=' Question'>  Vergelijk de totale mechanische energie.    </div>
+<div class='problem-environment question' id='problem74' numbered=' ' role='article' titletext=' Question'>  Moet netto energie worden toegevoerd of afgevoerd om de satelliet naar de hogere
+cirkelbaan te brengen? Motiveer vanuit <span class='mathjax-inline'>\(E_m\)</span>.    </div>
+</div>
+<!-- l. 1445 --><p class='noindent'></p></div>
+<p></p><!-- l. 1445 --><p class='noindent'></p></section>
+<p><a id='x1-68r17'></a>
+</p><p></p><!-- l. 1449 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>17</div><div class='fvd-section-bar__title'>Gevorderd: ontsnappen aan een gravitatieveld</div></div>
+<p></p><!-- l. 1452 --><p class='noindent'>Hoe groot moet de beginsnelheid aan het oppervlak van een planeet minstens zijn
+zodat een voorwerp in het ideale model oneindig ver kan raken zonder nog kinetische
+energie over te houden?
+</p><!-- l. 1456 --><p class='noindent'>We verwaarlozen atmosfeer, rotatie en andere hemellichamen.
+</p><!-- l. 1458 --><p class='noindent'>Aan het oppervlak:
+</p>
+<div class='mathjax-block'>\[ E_{m,b} = \frac 12mv_{\mathrm {esc}}^2-\frac {GMm}{R}. \]</div>
+<!-- l. 1466 --><p class='noindent'>In de grenssituatie op oneindig:
+</p>
+<div class='mathjax-block'>\[ E_{m,e}=0. \]</div>
+<!-- l. 1472 --><p class='noindent'>Behoud van mechanische energie geeft:
+</p>
+<div class='mathjax-block'>\[ \frac 12mv_{\mathrm {esc}}^2-\frac {GMm}{R}=0. \]</div>
+<!-- l. 1478 --><p class='noindent'>Dus:
+</p>
+                                                                  
+
+                                                                  
+<div class='mathjax-block'>\[ \boxed { v_{\mathrm {esc}} = \sqrt {\frac {2GM}{R}}. } \]</div>
+<!-- l. 1488 --><p class='noindent'>De massa van het ontsnappende voorwerp valt opnieuw weg.
+<a id='x1-69r22'></a>
+</p><!-- l. 1490 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 1490 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 1490 --><p class='noindent'>Oefening 22
+</p><!-- l. 1490 --><p class='noindent'>— Ontsnappingssnelheid
+</p><!-- l. 1490 --><p class='noindent'></p></div>
+<p></p><!-- l. 1490 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 1490 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--g'>G</span></div>
+<p></p><!-- l. 1490 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p>
+<div class='problem-environment question' id='problem75' numbered=' ' role='article' titletext=' Question'>  Leid de formule voor <span class='mathjax-inline'>\(v_{\mathrm {esc}}\)</span> zelfstandig af vanuit energiebehoud.    </div>
+<div class='problem-environment question' id='problem76' numbered=' ' role='article' titletext=' Question'>  Vergelijk met de cirkelbaansnelheid vlak boven het oppervlak: <div class='mathjax-block'>\[ v_{\mathrm {baan}}=\sqrt {\frac {GM}{R}}. \]</div>    </div>
+<div class='problem-environment question' id='problem77' numbered=' ' role='article' titletext=' Question'>  Toon aan: <div class='mathjax-block'>\[ v_{\mathrm {esc}}=\sqrt 2\,v_{\mathrm {baan}}. \]</div>    </div>
+<div class='problem-environment question' id='problem78' numbered=' ' role='article' titletext=' Question'>  Waarom is ontsnappingssnelheid in dit ideale model onafhankelijk van de massa
+van het gelanceerde voorwerp?    </div>
+<div class='problem-environment question' id='problem79' numbered=' ' role='article' titletext=' Question'>  Welke belangrijke realistische effecten zijn niet in dit model opgenomen?
+</div>
+</div>
+<!-- l. 1519 --><p class='noindent'></p></div>
+<p></p><!-- l. 1519 --><p class='noindent'></p></section>
+<p><a id='x1-70r18'></a>
+</p><p></p><!-- l. 1523 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>18</div><div class='fvd-section-bar__title'>Een krachtgrafiek als volledig energieprobleem</div></div>
+<p></p><!-- l. 1526 --><p class='noindent'>Een <span class='mathjax-inline'>\(F_x(x)\)</span>-grafiek kan rechtstreeks vertellen hoe de kinetische energie verandert:
+</p>
+<div class='mathjax-block'>\[ \Delta E_k = W_{\mathrm {res}} = \int _{x_1}^{x_2}F_{\mathrm {res},x}(x)\,dx. \]</div>
+<!-- l. 1537 --><p class='noindent'>Dit maakt een grafiek tot veel meer dan een afbeelding van de kracht. De
+georiënteerde oppervlakte bevat informatie over de verandering van de beweging.
+<a id='x1-71r23'></a>
+</p><!-- l. 1542 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 1542 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 1542 --><p class='noindent'>Oefening 23
+</p><!-- l. 1542 --><p class='noindent'>— Van grafiek naar snelheid
+</p><!-- l. 1542 --><p class='noindent'></p></div>
+                                                                  
+
+                                                                  
+<p></p><!-- l. 1542 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 1542 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 1542 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 1544 --><p class='noindent'>Een voorwerp met massa <span class='mathjax-inline'>\(2{,}0\,\mathrm {kg}\)</span> beweegt bij <span class='mathjax-inline'>\(x=0\)</span> met <span class='mathjax-inline'>\(3{,}0\,\mathrm {m/s}\)</span>. De resulterende kracht verloopt als
+volgt:
+</p>     
+<ul class='itemize1'>
+<li class='itemize'>van <span class='mathjax-inline'>\(0\)</span> tot <span class='mathjax-inline'>\(2\,\mathrm m\)</span> stijgt <span class='mathjax-inline'>\(F_x\)</span> lineair van <span class='mathjax-inline'>\(0\)</span> tot <span class='mathjax-inline'>\(6\,\mathrm N\)</span>;
+</li>
+<li class='itemize'>van <span class='mathjax-inline'>\(2\)</span> tot <span class='mathjax-inline'>\(5\,\mathrm m\)</span> blijft <span class='mathjax-inline'>\(F_x=6\,\mathrm N\)</span>;
+</li>
+<li class='itemize'>van <span class='mathjax-inline'>\(5\)</span> tot <span class='mathjax-inline'>\(7\,\mathrm m\)</span> daalt <span class='mathjax-inline'>\(F_x\)</span> lineair tot <span class='mathjax-inline'>\(0\)</span>.</li></ul>
+<div class='problem-environment question' id='problem80' numbered=' ' role='article' titletext=' Question'>  Schets de <span class='mathjax-inline'>\(F_x(x)\)</span>-grafiek.    </div>
+<div class='problem-environment question' id='problem81' numbered=' ' role='article' titletext=' Question'>  Bepaal met de oppervlaktemethode de totale arbeid.    </div>
+<div class='problem-environment question' id='problem82' numbered=' ' role='article' titletext=' Question'>  Bereken de kinetische energie bij <span class='mathjax-inline'>\(x=7\,\mathrm m\)</span>.    </div>
+<div class='problem-environment question' id='problem83' numbered=' ' role='article' titletext=' Question'>  Bereken de snelheid daar.    </div>
+<div class='problem-environment question' id='problem84' numbered=' ' role='article' titletext=' Question'>  Waarom hoefde je de tijdsduur van de beweging nergens te kennen?    </div>
+</div>
+<!-- l. 1574 --><p class='noindent'></p></div>
+<p></p><!-- l. 1574 --><p class='noindent'></p></section>
+<p><a id='x1-72r24'></a>
+</p><p></p><!-- l. 1577 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 1577 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 1577 --><p class='noindent'>Oefening 24
+</p><!-- l. 1577 --><p class='noindent'>— Een kracht die van teken verandert
+</p><!-- l. 1577 --><p class='noindent'></p></div>
+<p></p><!-- l. 1577 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 1577 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--g'>G</span></div>
+<p></p><!-- l. 1577 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 1579 --><p class='noindent'>De resulterende kracht op een deeltje is:
+                                                                  
+
+                                                                  
+</p>
+<div class='mathjax-block'>\[ F_x(x)=6-2x \]</div>
+<!-- l. 1585 --><p class='noindent'>voor <span class='mathjax-inline'>\(0\leq x\leq 5\,\mathrm m\)</span>.
+</p>
+<div class='problem-environment question' id='problem85' numbered=' ' role='article' titletext=' Question'>  Op welke plaats verandert de kracht van teken?    </div>
+<div class='problem-environment question' id='problem86' numbered=' ' role='article' titletext=' Question'>  Bepaal de arbeid van <span class='mathjax-inline'>\(x=0\)</span> tot dat punt met een oppervlakte.    </div>
+<div class='problem-environment question' id='problem87' numbered=' ' role='article' titletext=' Question'>  Bepaal de arbeid over het volledige interval met een bepaalde integraal.
+</div>
+<div class='problem-environment question' id='problem88' numbered=' ' role='article' titletext=' Question'>  Kan de kinetische energie op een deel van het traject toenemen en later afnemen?
+Leg uit vanuit het teken van <span class='mathjax-inline'>\(F_x\)</span>.    </div>
+<div class='problem-environment question' id='problem89' numbered=' ' role='article' titletext=' Question'>  Waarom is het teken van de lokale kracht niet hetzelfde als het teken van de totale
+arbeid over een volledig traject?    </div>
+</div>
+<!-- l. 1609 --><p class='noindent'></p></div>
+<p></p><!-- l. 1609 --><p class='noindent'></p></section>
+<p><a id='x1-73r19'></a>
+</p><p></p><!-- l. 1613 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>19</div><div class='fvd-section-bar__title'>Problemen oplossen met energie</div></div>
+<p></p><!-- l. 1616 --><p class='noindent'>Gebruik bij een energieprobleem een vaste strategie.
+</p>     
+<ol class='enumerate1'>
+<li class='enumerate' id='x1-75x1'><strong>Kies het systeem.</strong> Welke objecten behoren tot het systeem?
+</li>
+<li class='enumerate' id='x1-77x2'><strong>Kies begin- en eindtoestand.</strong>
+</li>
+<li class='enumerate' id='x1-79x3'><strong>Maak een schets.</strong>
+</li>
+<li class='enumerate' id='x1-81x4'><strong>Inventariseer relevante energievormen.</strong>
+</li>
+                                                                  
+
+                                                                  
+<li class='enumerate' id='x1-83x5'><strong>Bepaal of niet-conservatieve arbeid relevant is.</strong>
+</li>
+<li class='enumerate' id='x1-85x6'><strong>Schrijf eerst symbolisch de energiebalans.</strong>
+</li>
+<li class='enumerate' id='x1-87x7'><strong>Vul pas daarna waarden in.</strong>
+</li>
+<li class='enumerate' id='x1-89x8'><strong>Controleer eenheden en grootteorde.</strong>
+</li>
+<li class='enumerate' id='x1-91x9'><strong>Interpreteer het resultaat.</strong></li></ol>
+<!-- l. 1630 --><p class='noindent'>Een energietabel kan helpen:
+</p>
+<div class='mathjax-block'>\[ \begin {array}{c|c|c} &amp;\text {begin}&amp;\text {einde}\\ \hline E_k&amp;\cdots&amp; \cdots \\ E_{p,g}&amp;\cdots&amp; \cdots \\ E_{p,\mathrm {el}}&amp;\cdots&amp; \cdots \end {array} \]</div>
+<p><a id='x1-92r25'></a>
+</p><!-- l. 1642 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 1642 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 1642 --><p class='noindent'>Oefening 25
+</p><!-- l. 1642 --><p class='noindent'>— Achtbaan zonder motor
+</p><!-- l. 1642 --><p class='noindent'></p></div>
+<p></p><!-- l. 1642 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 1642 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 1642 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 1644 --><p class='noindent'>Een karretje vertrekt vanuit rust op hoogte <span class='mathjax-inline'>\(h_1\)</span> en bereikt later hoogte <span class='mathjax-inline'>\(h_2&lt;h_1\)</span>. Verwaarloos
+eerst wrijving.
+</p>
+<div class='problem-environment question' id='problem90' numbered=' ' role='article' titletext=' Question'>  Maak een energietabel.    </div>
+<div class='problem-environment question' id='problem91' numbered=' ' role='article' titletext=' Question'>  Leid een formule af voor de snelheid op hoogte <span class='mathjax-inline'>\(h_2\)</span>.    </div>
+                                                                  
+
+                                                                  
+<div class='problem-environment question' id='problem92' numbered=' ' role='article' titletext=' Question'>  Welke massa-afhankelijkheid blijft in het eindresultaat over?    </div>
+<div class='problem-environment question' id='problem93' numbered=' ' role='article' titletext=' Question'>  Herhaal de energiebalans wanneer onderweg een hoeveelheid <span class='mathjax-inline'>\(E_{\mathrm {diss}}\)</span> wordt gedissipeerd.
+</div>
+</div>
+<!-- l. 1664 --><p class='noindent'></p></div>
+<p></p><!-- l. 1664 --><p class='noindent'></p></section>
+<p><a id='x1-93r20'></a>
+</p><p></p><!-- l. 1668 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>20</div><div class='fvd-section-bar__title'>STEM-context: regeneratief remmen</div></div>
+<p></p><!-- l. 1671 --><p class='noindent'>Bij klassieke wrijvingsremmen wordt een groot deel van de kinetische energie omgezet
+in interne energie van remmen en omgeving.
+</p><!-- l. 1674 --><p class='noindent'>Bij regeneratief remmen kan een elektromotor als generator werken en een deel
+van de kinetische energie omzetten in elektrische energie die opnieuw wordt
+opgeslagen.
+</p><!-- l. 1678 --><p class='noindent'>Een eenvoudig energiemodel is:
+</p>
+<div class='mathjax-block'>\[ E_{\mathrm {terug}}=\eta \,\Delta E_k, \]</div>
+<!-- l. 1684 --><p class='noindent'>waar <span class='mathjax-inline'>\(0\leq \eta \leq 1\)</span> het rendement van de terugwinning voorstelt.
+<a id='x1-94r26'></a>
+</p><!-- l. 1687 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 1687 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 1687 --><p class='noindent'>Oefening 26
+</p><!-- l. 1687 --><p class='noindent'>— Energie terugwinnen
+</p><!-- l. 1687 --><p class='noindent'></p></div>
+<p></p><!-- l. 1687 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 1687 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span></div>
+<p></p><!-- l. 1687 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 1689 --><p class='noindent'>Een elektrisch voertuig met massa <span class='mathjax-inline'>\(1600\,\mathrm {kg}\)</span> vertraagt van <span class='mathjax-inline'>\(20\,\mathrm {m/s}\)</span> tot <span class='mathjax-inline'>\(5{,}0\,\mathrm {m/s}\)</span>. Van de afname van de
+kinetische energie kan <span class='mathjax-inline'>\(65\%\)</span> elektrisch worden teruggewonnen.
+</p>
+<div class='problem-environment question' id='problem94' numbered=' ' role='article' titletext=' Question'>  Bereken de afname van de kinetische energie.    </div>
+<div class='problem-environment question' id='problem95' numbered=' ' role='article' titletext=' Question'>  Bereken hoeveel energie wordt teruggewonnen.    </div>
+<div class='problem-environment question' id='problem96' numbered=' ' role='article' titletext=' Question'>  Waar blijft de rest van de energie?    </div>
+<div class='problem-environment question' id='problem97' numbered=' ' role='article' titletext=' Question'>  Waarom kan een echt regeneratief remsysteem nooit alle kinetische energie opnieuw
+als bruikbare elektrische energie opslaan?    </div>
+</div>
+                                                                  
+
+                                                                  
+<!-- l. 1710 --><p class='noindent'></p></div>
+<p></p><!-- l. 1710 --><p class='noindent'></p></section>
+<p><a id='x1-95r21'></a>
+</p><p></p><!-- l. 1714 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>21</div><div class='fvd-section-bar__title'>STEM-context: botsing met een meteoor</div></div>
+<p></p><!-- l. 1717 --><p class='noindent'>Bij zeer hoge snelheden kan de kinetische energie enorm zijn door het kwadratische
+snelheidsverband.
+<a id='x1-96r27'></a>
+</p><!-- l. 1720 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 1720 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 1720 --><p class='noindent'>Oefening 27
+</p><!-- l. 1720 --><p class='noindent'>— Barringerkrater
+</p><!-- l. 1720 --><p class='noindent'></p></div>
+<p></p><!-- l. 1720 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 1720 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span></div>
+<p></p><!-- l. 1720 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 1722 --><p class='noindent'>Een meteoor heeft vóór de inslag naar schatting een massa van <span class='mathjax-inline'>\(65\,\mathrm {ton}\)</span> en een snelheid van
+<span class='mathjax-inline'>\(15\,\mathrm {km/s}\)</span>.
+</p>
+<div class='problem-environment question' id='problem98' numbered=' ' role='article' titletext=' Question'>  Zet beide grootheden om naar SI-eenheden.    </div>
+<div class='problem-environment question' id='problem99' numbered=' ' role='article' titletext=' Question'>  Bereken de kinetische energie vlak vóór de inslag.    </div>
+<div class='problem-environment question' id='problem100' numbered=' ' role='article' titletext=' Question'>  Waarom kan die energie na de inslag niet eenvoudig volledig als kinetische energie
+van één object worden teruggevonden?    </div>
+<div class='problem-environment question' id='problem101' numbered=' ' role='article' titletext=' Question'>  Noem minstens drie mogelijke energievormen of processen waarin de oorspronkelijke
+kinetische energie terechtkomt.    </div>
+</div>
+<!-- l. 1743 --><p class='noindent'></p></div>
+<p></p><!-- l. 1743 --><p class='noindent'></p></section>
+<p><a id='x1-97r22'></a>
+</p><p></p><!-- l. 1747 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>22</div><div class='fvd-section-bar__title'>ICT: arbeid numeriek benaderen</div></div>
+<p></p><!-- l. 1750 --><p class='noindent'>Niet elke krachtfunctie heeft een eenvoudige primitieve die leerlingen meteen kunnen
+gebruiken. Experimentele gegevens bestaan bovendien vaak uit een tabel van gemeten
+waarden.
+</p><!-- l. 1754 --><p class='noindent'>Dan kunnen we de arbeid numeriek benaderen.
+</p><!-- l. 1756 --><p class='noindent'>Bij meetpunten:
+</p>
+<div class='mathjax-block'>\[ (x_0,F_0),(x_1,F_1),\ldots ,(x_n,F_n) \]</div>
+                                                                  
+
+                                                                  
+<!-- l. 1762 --><p class='noindent'>kan een trapeziumbenadering worden gebruikt:
+</p>
+<div class='mathjax-block'>\[ \boxed { W\approx \sum _{i=0}^{n-1} \frac {F_i+F_{i+1}}{2}(x_{i+1}-x_i). } \]</div>
+<!-- l. 1772 --><p class='noindent'>Dit is de discrete versie van hetzelfde oppervlakte-idee.
+<a id='x1-98r28'></a>
+</p><!-- l. 1775 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 1775 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 1775 --><p class='noindent'>Oefening 28
+</p><!-- l. 1775 --><p class='noindent'>— Arbeid uit meetgegevens
+</p><!-- l. 1775 --><p class='noindent'></p></div>
+<p></p><!-- l. 1775 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 1775 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span></div>
+<p></p><!-- l. 1775 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 1777 --><p class='noindent'>Bij een trekproef worden kracht en verplaatsing gemeten:
+</p>
+<div class='mathjax-block'>\[ \begin {array}{c|ccccc} x\,(\mathrm m)&amp;0&amp;0{,}10&amp;0{,}20&amp;0{,}30&amp;0{,}40\\ \hline F\,(\mathrm N)&amp;0&amp;18&amp;35&amp;49&amp;60 \end {array} \]</div>
+<div class='problem-environment question' id='problem102' numbered=' ' role='article' titletext=' Question'>  Maak met ICT een spreidingsdiagram van <span class='mathjax-inline'>\(F\)</span> tegen <span class='mathjax-inline'>\(x\)</span>.    </div>
+<div class='problem-environment question' id='problem103' numbered=' ' role='article' titletext=' Question'>  Benader de arbeid met trapezia.    </div>
+<div class='problem-environment question' id='problem104' numbered=' ' role='article' titletext=' Question'>  Welke fysische betekenis heeft de oppervlakte onder de gemeten grafiek?
+</div>
+<div class='problem-environment question' id='problem105' numbered=' ' role='article' titletext=' Question'>  Waarom is een numerieke methode hier natuurlijker dan zomaar een functievoorschrift
+te verzinnen?    </div>
+</div>
+<!-- l. 1803 --><p class='noindent'></p></div>
+<p></p><!-- l. 1803 --><p class='noindent'></p></section>
+<p><a id='x1-99r23'></a>
+</p><p></p><!-- l. 1807 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>23</div><div class='fvd-section-bar__title'>Geïntegreerde analyse</div></div>
+<p><a id='x1-100r29'></a>
+</p><p></p><!-- l. 1810 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 1810 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 1810 --><p class='noindent'>Oefening 29
+</p><!-- l. 1810 --><p class='noindent'>— Kist op een helling
+</p><!-- l. 1810 --><p class='noindent'></p></div>
+<p></p><!-- l. 1810 --><p class='noindent'></p><div class='fvd-exercise__body'>
+                                                                  
+
+                                                                  
+<p></p><!-- l. 1810 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 1810 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 1812 --><p class='noindent'>Een kist glijdt vanuit rust een helling af over afstand <span class='mathjax-inline'>\(s\)</span>. De hellingshoek is <span class='mathjax-inline'>\(\alpha \)</span> en de
+kinetische wrijvingscoëfficiënt is <span class='mathjax-inline'>\(\mu _k\)</span>.
+</p>
+<div class='problem-environment question' id='problem106' numbered=' ' role='article' titletext=' Question'>  Maak een vrijlichaamsdiagram.    </div>
+<div class='problem-environment question' id='problem107' numbered=' ' role='article' titletext=' Question'>  Bepaal de arbeid van de zwaartekracht.    </div>
+<div class='problem-environment question' id='problem108' numbered=' ' role='article' titletext=' Question'>  Bepaal de arbeid van de normaalkracht.    </div>
+<div class='problem-environment question' id='problem109' numbered=' ' role='article' titletext=' Question'>  Bepaal de arbeid van de wrijvingskracht.    </div>
+<div class='problem-environment question' id='problem110' numbered=' ' role='article' titletext=' Question'>  Gebruik het arbeid-energietheorema om een formule voor de eindsnelheid af te
+leiden.    </div>
+<div class='problem-environment question' id='problem111' numbered=' ' role='article' titletext=' Question'>  Controleer of je resultaat overeenkomt met wat je via Newton II en kinematica zou
+vinden.    </div>
+</div>
+<!-- l. 1841 --><p class='noindent'></p></div>
+<p></p><!-- l. 1841 --><p class='noindent'></p></section>
+<p><a id='x1-101r30'></a>
+</p><p></p><!-- l. 1844 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 1844 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 1844 --><p class='noindent'>Oefening 30
+</p><!-- l. 1844 --><p class='noindent'>— Welke informatie ontbreekt?
+</p><!-- l. 1844 --><p class='noindent'></p></div>
+<p></p><!-- l. 1844 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 1844 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--g'>G</span></div>
+<p></p><!-- l. 1844 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 1846 --><p class='noindent'>Een grafiek toont de resulterende kracht <span class='mathjax-inline'>\(F_x(x)\)</span> op een voorwerp. De oppervlakte tussen <span class='mathjax-inline'>\(x_1\)</span> en
+<span class='mathjax-inline'>\(x_2\)</span> bedraagt <span class='mathjax-inline'>\(40\,\mathrm J\)</span>.
+</p><!-- l. 1849 --><p class='noindent'>Een leerling besluit:
+</p>     
+<blockquote class='quote'>
+<!-- l. 1852 --><p class='noindent'>“De snelheid bij <span class='mathjax-inline'>\(x_2\)</span> is dus <span class='mathjax-inline'>\(40\,\mathrm {m/s}\)</span>.”</p></blockquote>
+<div class='problem-environment question' id='problem112' numbered=' ' role='article' titletext=' Question'>  Welke fysische grootheid stelt <span class='mathjax-inline'>\(40\,\mathrm J\)</span> werkelijk voor?    </div>
+<div class='problem-environment question' id='problem113' numbered=' ' role='article' titletext=' Question'>  Welke bijkomende gegevens zijn minstens nodig om de eindsnelheid te bepalen?
+</div>
+                                                                  
+
+                                                                  
+<div class='problem-environment question' id='problem114' numbered=' ' role='article' titletext=' Question'>  Stel een algemene formule voor <span class='mathjax-inline'>\(v_2\)</span> op in functie van <span class='mathjax-inline'>\(W\)</span>, <span class='mathjax-inline'>\(m\)</span> en <span class='mathjax-inline'>\(v_1\)</span>.    </div>
+<div class='problem-environment question' id='problem115' numbered=' ' role='article' titletext=' Question'>  Onder welke voorwaarde bestaat binnen dit klassieke model een reële eindsnelheid?
+</div>
+</div>
+<!-- l. 1872 --><p class='noindent'></p></div>
+<p></p><!-- l. 1872 --><p class='noindent'></p></section>
+<p><a id='x1-102r24'></a>
+</p><p></p><!-- l. 1876 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>24</div><div class='fvd-section-bar__title'>Veelvoorkomende denkfouten</div></div>
+<p></p>     
+<ul class='itemize1'>
+<li class='itemize'><strong>“Er werkt een kracht, dus er is arbeid.”</strong><br class='newline' />Niet noodzakelijk. Zonder verplaatsing of bij een kracht loodrecht op de
+verplaatsing is de arbeid nul.
+</li>
+<li class='itemize'><strong>“Arbeid is altijd positief.”</strong><br class='newline' />Nee. Arbeid is een scalaire grootheid met teken.
+</li>
+<li class='itemize'><strong>“De oppervlakte onder een <span class='mathjax-inline'>\(F(x)\)</span>-grafiek is altijd positief.”</strong><br class='newline' />Nee. Gebieden onder de <span class='mathjax-inline'>\(x\)</span>-as leveren negatieve arbeid.
+</li>
+<li class='itemize'><strong>“<span class='mathjax-inline'>\(mgh\)</span> is altijd de gravitatiepotentiële energie.”</strong><br class='newline' />Nee. <span class='mathjax-inline'>\(mgh\)</span> is een lokale benadering voor een ongeveer homogeen gravitatieveld.
+</li>
+<li class='itemize'><strong>“Wrijving vernietigt energie.”</strong><br class='newline' />Nee.  Mechanische  energie  kan  afnemen  terwijl  totale  energie  wordt
+omgezet in andere vormen.
+</li>
+<li class='itemize'><strong>“Als de kinetische energie constant is, werken er geen krachten.”</strong><br class='newline' />Niet  noodzakelijk.  Bij  een  cirkelbeweging  kan  een  resulterende  kracht
+loodrecht  op  de  snelheid  staan  en  de  richting  veranderen  zonder  de
+snelheidsgrootte te veranderen.</li></ul>
+                                                                  
+
+                                                                  
+<p><a id='x1-103r31'></a>
+</p><!-- l. 1906 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 1906 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 1906 --><p class='noindent'>Oefening 31
+</p><!-- l. 1906 --><p class='noindent'>— Misconcepties ontleden
+</p><!-- l. 1906 --><p class='noindent'></p></div>
+<p></p><!-- l. 1906 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 1906 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 1906 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 1908 --><p class='noindent'>Kies drie uitspraken uit de lijst hierboven.
+</p><!-- l. 1910 --><p class='noindent'>Voor elke uitspraak:
+</p>
+<div class='problem-environment question' id='problem116' numbered=' ' role='article' titletext=' Question'>  geef een concreet tegenvoorbeeld;    </div>
+<div class='problem-environment question' id='problem117' numbered=' ' role='article' titletext=' Question'>  noem de relevante formule of wet;    </div>
+<div class='problem-environment question' id='problem118' numbered=' ' role='article' titletext=' Question'>  formuleer een fysisch correcte vervangende uitspraak.    </div>
+</div>
+<!-- l. 1924 --><p class='noindent'></p></div>
+<p></p><!-- l. 1924 --><p class='noindent'></p></section>
+<p><a id='x1-104r25'></a>
+</p><p></p><!-- l. 1928 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>25</div><div class='fvd-section-bar__title'>Samenvatting</div></div>
+<p></p><!-- l. 1931 --><p class='noindent'>Voor een constante kracht:
+</p>
+<div class='mathjax-block'>\[ \boxed { W=\vec F\cdot \Delta \vec r =F\Delta r\cos \theta . } \]</div>
+<!-- l. 1940 --><p class='noindent'>Voor een veranderlijke kracht in één dimensie:
+</p>
+<div class='mathjax-block'>\[ \boxed { W=\int _{x_1}^{x_2}F_x(x)\,dx. } \]</div>
+<!-- l. 1948 --><p class='noindent'>Grafisch is arbeid de georiënteerde oppervlakte onder de kracht-plaatsgrafiek.
+</p><!-- l. 1951 --><p class='noindent'>Kinetische energie:
+</p>
+<div class='mathjax-block'>\[ \boxed { E_k=\frac 12mv^2. } \]</div>
+<!-- l. 1959 --><p class='noindent'>Arbeid-energietheorema:
+</p>
+<div class='mathjax-block'>\[ \boxed { W_{\mathrm {res}}=\Delta E_k. } \]</div>
+<!-- l. 1967 --><p class='noindent'>Voor een conservatieve kracht:
+                                                                  
+
+                                                                  
+</p>
+<div class='mathjax-block'>\[ \boxed { W_{\mathrm {cons}}=-\Delta E_p. } \]</div>
+<!-- l. 1975 --><p class='noindent'>Nabij het aardoppervlak:
+</p>
+<div class='mathjax-block'>\[ \boxed { E_{p,g}=mgh. } \]</div>
+<!-- l. 1983 --><p class='noindent'>Voor een ideale veer:
+</p>
+<div class='mathjax-block'>\[ \boxed { E_{p,\mathrm {el}}=\frac 12kx^2. } \]</div>
+<!-- l. 1991 --><p class='noindent'>Mechanische energie:
+</p>
+<div class='mathjax-block'>\[ \boxed { E_m=E_k+E_p. } \]</div>
+<!-- l. 1999 --><p class='noindent'>Wanneer alleen conservatieve krachten arbeid verrichten:
+</p>
+<div class='mathjax-block'>\[ \boxed { E_m=\text {constant}. } \]</div>
+<!-- l. 2007 --><p class='noindent'>Algemene gravitatiepotentiële energie:
+</p>
+<div class='mathjax-block'>\[ \boxed { E_{p,g}(r)=-\frac {GMm}{r}. } \]</div>
+<!-- l. 2015 --><p class='noindent'>Voor een ideale satelliet in een cirkelbaan:
+</p>
+<div class='mathjax-block'>\[ \boxed { E_m=-\frac {GMm}{2r}. } \]</div>
+<p><a id='x1-105r26'></a>
+</p><!-- l. 2027 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>26</div><div class='fvd-section-bar__title'>Vooruitblik: van energie naar trillingen</div></div>
+<p></p><!-- l. 2030 --><p class='noindent'>Een massa aan een veer bezit tijdens haar beweging afwisselend kinetische en
+elastische potentiële energie.
+</p><!-- l. 2033 --><p class='noindent'>In de uiterste stand is de snelheid nul en is de elastische energie maximaal. In de
+evenwichtsstand is de snelheid maximaal.
+</p><!-- l. 2036 --><p class='noindent'>Dezelfde veer waarvoor we in dit hoofdstuk vonden:
+</p>
+<div class='mathjax-block'>\[ F=-kx \]</div>
+<!-- l. 2042 --><p class='noindent'>zal in het volgende thema leiden tot:
+</p>
+<div class='mathjax-block'>\[ a=-\frac {k}{m}x. \]</div>
+<!-- l. 2048 --><p class='noindent'>Daarmee verschijnt een nieuw bewegingspatroon: de harmonische trilling.
+</p>
+<div class='center'>
+<!-- l. 2050 --><p class='noindent'>
+                                                                  
+
+                                                                  
+</p>
+<div class='mathjax-block'>\[ \boxed { \text {arbeid en energie} \longrightarrow \text {trillingen} \longrightarrow \text {golven}. } \]</div></div>
+                                                                  
+
+                                                                  
+</body> 
+ 
+</html>
+                                                                  
+
+

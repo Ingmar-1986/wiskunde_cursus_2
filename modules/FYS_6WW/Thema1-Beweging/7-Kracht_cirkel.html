@@ -1,0 +1,1901 @@
+<!DOCTYPE html> 
+<html lang='en-US' xml:lang='en-US'> 
+<head> <title>Bewegen onder invloed van velden</title> 
+<meta charset='utf-8' /> 
+<meta content='TeX4ht (https://tug.org/tex4ht/)' name='generator' /> 
+<meta content='width=device-width,initial-scale=1' name='viewport' /> 
+<link href='\aa:CssFile ' rel='stylesheet' type='text/css' /> 
+<meta content='7-Kracht_cirkel.online.tex' name='src' /> 
+<script>window.MathJax = { tex: { tags: "ams", }, }; </script> 
+<script async='async' id='MathJax-script' src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js' type='text/javascript'></script>  
+<meta content='Ingmar Herreman' name='author' /> 
+<meta content='version 2.5.1' name='ximera' /> 
+<link href='https://ximera.osu.edu/public/stylesheets/standalone.css' media='screen' rel='stylesheet' /> 
+<script async='' src='https://ximera.osu.edu/public/javascripts/standalone.min.js' type='text/javascript'></script> 
+</head><body> 
+<div class='preamble'><script type='math/tex'>\newenvironment {prompt}{}{}
+\newcommand {\accordion }[0]{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\xmDefaultPreamble }[0]{xmPreamble.tex}
+\newcommand {\xmDefaultPrintstyle }[0]{xmPrintstyle.sty}
+\newcommand {\multirowsetup }[0]{\raggedright }
+\newcommand {\textscale  }[2]{\leavevmode \begingroup \relscale {#1}#2\endgroup }
+\newcommand {\headrulewidth }[0]{0.4pt}
+\newcommand {\footrulewidth }[0]{0pt}
+\newcommand {\headruleskip }[0]{0pt}
+\newcommand {\footruleskip }[0]{.3\normalbaselineskip }
+\newcommand {\plainheadrulewidth }[0]{0pt}
+\newcommand {\plainfootrulewidth }[0]{0pt}
+\newcommand {\officialeuro  }[0]{{\fontencoding {U}\fontfamily {eurosym}\selectfont {}e}}
+\newcommand {\eurobars  }[0]{{\fontencoding {U}\fontfamily {eurosym}\selectfont {}A}}
+\newcommand {\eurobarsnarrow  }[0]{{\fontencoding {U}\fontfamily {eurosym}\selectfont {}B}}
+\newcommand {\eurobarswide  }[0]{{\fontencoding {U}\fontfamily {eurosym}\selectfont {}C}}
+\newcommand {\p }[0]{}
+\newcommand {\captionnewline }[0]{\\\relax }
+\newcommand {\memcaptioninfo }[4]{}
+\newcommand {\captiongroup }[0]{\setcaptiontype }
+\newcommand {\LTcaptype }[0]{table}
+\newcommand {\showtodonotes }[0]{disable}
+\newcommand {\todo }[1]{\typeout {TODO #1}}
+\newcommand {\tcbpkgprefix }[0]{}
+\newcommand {\blue }[1]{{\color {blue}#1}}
+\newcommand {\red }[1]{{\color {red}#1}}
+\newcommand {\CancelColor }[0]{\color {xmaccent!50!black}}
+\newcommand {\important }[1]{\ensuremath {\colorbox {orange}{$#1$}}}
+\newcommand {\pdfnl }[0]{}
+\newcommand {\handoutnl }[0]{}
+\newcommand {\importantcell }[1]{\ensuremath {#1}}
+\newcommand {\xmPlotsColor }[0]{ \pgfplotsset { plot1/.style={darkgray,no marks,samples=100}, plot2/.style={lightgray,no marks,samples=100}, plotresult/.style={blue,no marks,samples=100}, plotblue/.style={blue,no marks,samples=100}, plotred/.style={red,no marks,samples=100}, plotgreen/.style={green,no marks,samples=100}, plotpurple/.style={purple,no marks,samples=100} } }
+\newcommand {\xmPlotsBlackWhite }[0]{ \pgfplotsset { plot1/.style={black,loosely dashed,no marks,samples=100}, plot2/.style={black,loosely dotted,no marks,samples=100}, plotresult/.style={black,no marks,samples=100}, plotblue/.style={black,no marks,samples=100}, plotred/.style={black,dotted,no marks,samples=100}, plotgreen/.style={black,dashed,no marks,samples=100}, plotpurple/.style={black,dashdotted,no marks,samples=100} } }
+\newcommand {\xmPlotsColorAndStyle }[0]{ \pgfplotsset { plot1/.style={darkgray,no marks,samples=100}, plot2/.style={lightgray,no marks,samples=100}, plotresult/.style={blue,no marks,samples=100}, plotblue/.style={xmblue,no marks,samples=100}, plotred/.style={xmred,dashed,thick,no marks,samples=100}, plotgreen/.style={xmgreen,dotted,very thick,no marks,samples=100}, plotpurple/.style={purple,no marks,samples=100} } }
+\newcommand {\geqnoslant }[0]{\geq }
+\newcommand {\geq }[0]{\geqslant }
+\newcommand {\leqnoslant }[0]{\leq }
+\newcommand {\leq }[0]{\leqslant }
+\newcommand {\emph }[1]{\textit {#1}}
+\newcommand {\ds }[0]{\displaystyle }
+\newcommand {\ts }[0]{\textstyle }
+\newcommand {\bron }[1]{\begin {scriptsize} \emph {#1} \end {scriptsize}}
+\newcommand {\R }[0]{\ensuremath {\mathbb {R}}}
+\newcommand {\Rnul }[0]{\ensuremath {\mathbb {R}_0}}
+\newcommand {\Reen }[0]{\ensuremath {\mathbb {R}\setminus \{1\}}}
+\newcommand {\Rnuleen }[0]{\ensuremath {\mathbb {R}\setminus \{0,1\}}}
+\newcommand {\Rplus }[0]{\ensuremath {\mathbb {R}^+}}
+\newcommand {\Rmin }[0]{\ensuremath {\mathbb {R}^-}}
+\newcommand {\Rnulplus }[0]{\ensuremath {\mathbb {R}_0^+}}
+\newcommand {\Rnulmin }[0]{\ensuremath {\mathbb {R}_0^-}}
+\newcommand {\Rnuleenplus }[0]{\ensuremath {\mathbb {R}^+\setminus \{0,1\}}}
+\newcommand {\N }[0]{\ensuremath {\mathbb {N}}}
+\newcommand {\Nnul }[0]{\ensuremath {\mathbb {N}_0}}
+\newcommand {\Z }[0]{\ensuremath {\mathbb {Z}}}
+\newcommand {\Znul }[0]{\ensuremath {\mathbb {Z}_0}}
+\newcommand {\Zplus }[0]{\ensuremath {\mathbb {Z}^+}}
+\newcommand {\Zmin }[0]{\ensuremath {\mathbb {Z}^-}}
+\newcommand {\Znulplus }[0]{\ensuremath {\mathbb {Z}_0^+}}
+\newcommand {\Znulmin }[0]{\ensuremath {\mathbb {Z}_0^-}}
+\newcommand {\C }[0]{\ensuremath {\mathbb {C}}}
+\newcommand {\Cnul }[0]{\ensuremath {\mathbb {C}_0}}
+\newcommand {\Cplus }[0]{\ensuremath {\mathbb {C}^+}}
+\newcommand {\Cmin }[0]{\ensuremath {\mathbb {C}^-}}
+\newcommand {\Cnulplus }[0]{\ensuremath {\mathbb {C}_0^+}}
+\newcommand {\Cnulmin }[0]{\ensuremath {\mathbb {C}_0^-}}
+\newcommand {\Q }[0]{\ensuremath {\mathbb {Q}}}
+\newcommand {\Qnul }[0]{\ensuremath {\mathbb {Q}_0}}
+\newcommand {\Qplus }[0]{\ensuremath {\mathbb {Q}^+}}
+\newcommand {\Qmin }[0]{\ensuremath {\mathbb {Q}^-}}
+\newcommand {\Qnulplus }[0]{\ensuremath {\mathbb {Q}_0^+}}
+\newcommand {\Qnulmin }[0]{\ensuremath {\mathbb {Q}_0^-}}
+\newcommand {\perdef }[0]{\overset {\mathrm {def}}{=}}
+\newcommand {\pernot }[0]{\overset {\mathrm {notatie}}{=}}
+\newcommand {\perinderdaad }[0]{\overset {!}{=}}
+\newcommand {\perhaps }[0]{\overset {?}{=}}
+\newcommand {\degree }[0]{^\circ }
+\DeclareMathOperator {\dom }{dom}
+\DeclareMathOperator {\codom }{codom}
+\DeclareMathOperator {\bld }{bld}
+\DeclareMathOperator {\graf }{graf}
+\DeclareMathOperator {\rico }{rico}
+\DeclareMathOperator {\co }{co}
+\DeclareMathOperator {\gr }{gr}
+\DeclareMathOperator {\bgsin }{bgsin}
+\DeclareMathOperator {\bgcos }{bgcos}
+\DeclareMathOperator {\bgtan }{bgtan}
+\DeclareMathOperator {\bgcot }{bgcot}
+\DeclareMathOperator {\bgsinh }{bgsinh}
+\DeclareMathOperator {\bgcosh }{bgcosh}
+\DeclareMathOperator {\bgtanh }{bgtanh}
+\DeclareMathOperator {\bgcoth }{bgcoth}
+\newcommand {\d }[0]{\mathrm {d}}
+\newcommand {\dx }[0]{\d x}
+\newcommand {\dd }[1]{\frac {\mathrm {d}}{\mathrm {d}#1}}
+\newcommand {\ddx }[0]{\dd {x}}
+\newcommand {\afg }[1]{{#1}'}
+\newcommand {\xmshortabstract }[0]{}
+\newcommand {\xmopje }[1]{\iftoggle {showxmopje}{#1}{}}
+\newcommand {\xmcolorbox }[2]{ \HCode {\Hnewline <div class="xmcolorbox">\Hnewline }#2\HCode {\Hnewline </div>\Hnewline } }
+\newcommand {\xmopmerking }[1]{ \HCode {\Hnewline <div class="xmopmerking">\Hnewline }#1\HCode {\Hnewline </div>\Hnewline } }
+\newcommand {\proofname }[0]{Bewijs}
+\newcommand {\xmonlineChoice }[1]{\pdfOnly {\wordchoicegiventrue }\wordChoice {#1}\pdfOnly {\wordchoicegivenfalse }}
+\newcommand {\onlineChoice }[1]{\pdfOnly {\wordchoicegiventrue }\wordChoice {#1}\pdfOnly {\wordchoicegivenfalse }}
+\newcommand {\TJa }[0]{\nlentext { Ja }{ Yes }}
+\newcommand {\TNee }[0]{\nlentext { Nee }{ No }}
+\newcommand {\TJuist }[0]{\nlentext { Juist }{ True }}
+\newcommand {\TFout }[0]{\nlentext { Fout }{ False }}
+\newcommand {\choiceTrue }[0]{{\wordChoice {\choice [correct]{\TJuist }\choice {\TFout }}}}
+\newcommand {\choiceFalse }[0]{{\wordChoice {\choice {\TJuist }\choice [correct]{\TFout }}}}
+\newcommand {\choiceYes }[0]{{\wordChoice {\choice [correct]{\TJa }\choice {\TNee }}}}
+\newcommand {\choiceNo }[0]{{\wordChoice {\choice {\TJa }\choice [correct]{\TNee }}}}
+\newcommand {\choiceminimumverticalsize }[0]{\vphantom {$\tfrac {2}{2}$}}
+\newcommand {\setchoicedefanswer }[0]{ \ifdefined \HCode \else \let \inlinechoice \inlinechoicedefanswer \fi }
+\newcommand {\xmsection }[0]{\subsection }
+\newcommand {\xmsubsection }[0]{\subsubsection }
+\newcommand {\activitychapter }[1]{ \typeout {ACTIVITYCHAPTER #1} \chapterstyle \activity {#1} }
+\newcommand {\activitysection }[1]{ \typeout {ACTIVITYSECTION #1} \sectionstyle \activity {#1} }
+\newcommand {\practicesection }[1]{ \typeout {PRACTICESECTION #1} \sectionstyle \activity {#1} }
+\newcommand {\hypertarget }[1]{\HCode {<a class="ximera-label" id="#1"></a>}}
+\newcommand {\hyperlink }[2]{\HCode {<a class="reference reference-keeptext" href="\##1">}#2\HCode {</a>}}
+\newcommand {\figurename }[0]{Figuur}
+\newcommand {\tablename }[0]{Tabel}
+\newcommand {\printFull }[0]{ \hintstrue \handoutfalse \toggletrue {showonline} }
+\newcommand {\nl }[0]{}
+\newcommand {\basicOnly }[0]{}
+\newcommand {\basicSkip }[0]{}
+\newcommand {\tab }[0]{\quad }
+\newcommand {\instructorNotes }[0]{\setbox 0\vbox \bgroup }
+\newcommand {\nlen }[2]{#1}
+\newcommand {\nlentext }[2]{\text {#1}}
+\newcommand {\nlentextbf }[2]{\textbf {#1}}
+\newcommand {\TWaar }[0]{\nlentext { Waar }{ True }}
+\newcommand {\TOnwaar }[0]{\nlentext { Vals }{ False }}
+\newcommand {\Ten }[0]{\nlentext { en }{ and }}
+\newcommand {\Tof }[0]{\nlentext { of }{ or }}
+\newcommand {\Tdus }[0]{\nlentext { dus }{ so }}
+\newcommand {\Tendus }[0]{\nlentext { en dus }{ and thus }}
+\newcommand {\Tvooralle }[0]{\nlentext { voor alle }{ for all }}
+\newcommand {\Took }[0]{\nlentext { ook }{ also }}
+\newcommand {\Tals }[0]{\nlentext { als }{ when }}
+\newcommand {\Twant }[0]{\nlentext { want }{ as }}
+\newcommand {\Tmaal }[0]{\nlentext { maal }{ times }}
+\newcommand {\Toptellen }[0]{\nlentext { optellen }{ add }}
+\newcommand {\Tde }[0]{\nlentext { de }{ the }}
+\newcommand {\Thet }[0]{\nlentext { het }{ the }}
+\newcommand {\Tis }[0]{\nlentext { is }{ is }}
+\newcommand {\Tmet }[0]{\nlentext { met }{ where }}
+\newcommand {\Tnooit }[0]{\nlentext { nooit }{ never }}
+\newcommand {\Tmaar }[0]{\nlentext { maar }{ but }}
+\newcommand {\Tniet }[0]{\nlentext { niet }{ not }}
+\newcommand {\Tuit }[0]{\nlentext { uit }{ from }}
+\newcommand {\Ttov }[0]{\nlentext { t.o.v. }{ w.r.t. }}
+\newcommand {\Tzodat }[0]{\nlentext { zodat }{ such that }}
+\newcommand {\Tdeth }[0]{\nlentext {de }{th }}
+\newcommand {\Tomdat }[0]{\nlentext {omdat }{because }}
+\newcommand {\fvdschoollogo }[0]{}
+\newcommand {\fvdschoollogobreedte }[0]{0.65\textwidth }
+\newcommand {\fvdschoolnaam }[0]{}
+\newcommand {\fvdschooljaar }[0]{}
+\newcommand {\fvdklas }[0]{}
+\newcommand {\fvdleerkracht }[0]{}
+\newcommand {\fvdmodulenummer }[0]{1}
+\newcommand {\fvdmoduletitel }[0]{}
+\newcommand {\fvdmodulebeeld }[0]{}
+\newcommand {\fvdmodulevariant }[0]{}
+\newcommand {\fvdmodulesubtitel }[0]{}
+\newcommand {\fvdtitletext }[0]{}
+\newcommand {\fvdtitle }[1]{\gdef \fvdtitletext {#1}\title {#1}}
+\newcommand {\voorkennisicon }[0]{\begin {tikzpicture}[ baseline=-0.6ex, line cap=round, line join=round ] \par \fill [fvdcyanicon] (0,0) circle (0.38cm); \par \draw [ fvdcyan, line width=0.7pt ] (-0.22,0.14) .. controls (-0.10,0.19) and (-0.04,0.17) .. (0,0.10) -- (0,-0.19) .. controls (-0.08,-0.13) and (-0.15,-0.12) .. (-0.22,-0.15) -- cycle; \par \draw [ fvdcyan, line width=0.7pt ] (0.22,0.14) .. controls (0.10,0.19) and (0.04,0.17) .. (0,0.10) -- (0,-0.19) .. controls (0.08,-0.13) and (0.15,-0.12) .. (0.22,-0.15) -- cycle; \par \end {tikzpicture}}
+\newcommand {\leerdoelenicon }[0]{\begin {tikzpicture}[ baseline=-0.6ex, line cap=round, line join=round ] \par \fill [fvdmagentaicon] (0,0) circle (0.38cm); \par \draw [ fvdmagenta, line width=0.7pt ] (0,0) circle (0.20cm); \par \draw [ fvdmagenta, line width=0.7pt ] (0,0) circle (0.10cm); \par \fill [fvdmagenta] (0,0) circle (0.025cm); \par \draw [ fvdmagenta, line width=0.7pt ] (0.05,0.05) -- (0.25,0.25); \par \draw [ fvdmagenta, line width=0.7pt ] (0.18,0.25) -- (0.25,0.25) -- (0.25,0.18); \par \end {tikzpicture}}
+\newcommand {\fvdboxtitle }[3]{\par \noindent #1\hspace {2.5mm}{\large \bfseries \color {#2}#3}\par \vspace {1.5mm}{\color {#2}\hrule height 0.4pt}\vspace {2mm}}
+\newcommand {\voorkennis }[0]{\ifdefined \HCode \par \HCode {<section class="learning-box learning-box--prior"> <div class="learning-box__header"> <span class="learning-box__icon"></span> <span class="learning-box__title">Voorkennis</span> </div> <div class="learning-box__content"> }\par \begin {itemize} \par \else \par \begin {tcolorbox}[ enhanced, breakable, frame hidden, colback=fvdcyanlight, coltext=fvdnavy, borderline west={1.8pt}{0pt}{fvdcyan}, sharp corners, boxrule=0pt, left=5mm, right=5mm, top=3.5mm, bottom=3.5mm, before skip=4mm, after skip=4mm ] \par \fvdboxtitle {\voorkennisicon } {fvdcyan} {Voorkennis} \par \begin {itemize}[ leftmargin=6mm, itemsep=1.5mm, topsep=0mm, parsep=0pt ] \par \fi }
+\newcommand {\leerdoelen }[0]{\ifdefined \HCode \par \HCode {<section class="learning-box learning-box--goals"> <div class="learning-box__header"> <span class="learning-box__icon"></span> <span class="learning-box__title">Leerdoelen</span> </div> <div class="learning-box__content"> }\par \begin {itemize} \par \else \par \begin {tcolorbox}[ enhanced, breakable, frame hidden, colback=fvdmagentalight, coltext=fvdnavy, borderline west={1.8pt}{0pt}{fvdmagenta}, sharp corners, boxrule=0pt, left=5mm, right=5mm, top=3.5mm, bottom=3.5mm, before skip=4mm, after skip=4mm ] \par \fvdboxtitle {\leerdoelenicon } {fvdmagenta} {Leerdoelen} \par \begin {itemize}[ leftmargin=6mm, itemsep=1.5mm, topsep=0mm, parsep=0pt ] \par \fi }
+\newcommand {\fvdchapterdata }[3]{\par \par \ifdefined \HCode \else \clearpage \fi \par \par \gdef \fvdstandalonethemenumber {#1}\gdef \fvdstandalonetheme {#2}\par \setcounter {part}{#1}\setcounter {titlenumber}{\numexpr #3-1\relax }\par \par \setcounter {fvdsection}{0}\setcounter {fvdsubsection}{0}\setcounter {fvdoefening}{0}}
+\newcommand {\fvdcurrentthemetitle }[0]{}
+\newcommand {\FVDpart }[1]{}
+\newcommand {\FVDpart }[1]{\refstepcounter {fvdtheme}\setcounter {fvdsection}{0}\gdef \fvdcurrentthemetitle {#1}\part {#1}}
+\newcommand {\FVDthemeopening }[1]{\begin {center} \includegraphics [width=\textwidth ]{#1} \end {center} }
+\newcommand {\thefvdsection }[0]{\arabic {fvdsection}}
+\newcommand {\thefvdsubsection }[0]{\thefvdsection .\arabic {fvdsubsection}}
+\newcommand {\FVDsection }[1]{}
+\newcommand {\FVDsubsection }[1]{}
+\newcommand {\FVDsection }[1]{\refstepcounter {fvdsection}\par \HCode {<div class="fvd-section-bar">}\HCode {<div class="fvd-section-bar__number">}\thefvdsection \HCode {</div>}\HCode {<div class="fvd-section-bar__title">}#1\HCode {</div>}\HCode {</div>}}
+\newcommand {\FVDsubsection }[1]{\refstepcounter {fvdsubsection}\par \HCode {<div class="fvd-subsection">}\par \HCode {<div class="fvd-subsection__row">}\par \HCode {<div class="fvd-subsection__number">}\thefvdsection .\arabic {fvdsubsection}\HCode {</div>}\par \HCode {<div class="fvd-subsection__title">}#1\HCode {</div>}\par \HCode {</div>}\par \HCode {<div class="fvd-subsection__line"></div>}\par \HCode {</div>}}
+\newcommand {\themaintro }[1]{\par \bigskip \noindent \begin {minipage}{\textwidth } \textbf {\large #1} \par \smallskip }
+\newcommand {\FVDthemechaptertile }[2]{}
+\newcommand {\FVDthemechaptertile }[2]{\HCode {<div class="fvd-theme-chapter-tile">}\HCode {<span class="fvd-theme-chapter-tile__number">}#1\HCode {</span>}\HCode {<span class="fvd-theme-chapter-tile__title">}#2\HCode {</span>}\HCode {</div>}}
+\newcommand {\FVDthemeoverviewempty }[0]{\emph {Voor dit thema zijn nog geen hoofdstukken toegevoegd.}}
+\newcommand {\hoofdstukoverzicht }[0]{\HCode {<section class="fvd-theme-overview">}\HCode {<h2 class="fvd-theme-overview__title">}Overzicht van de hoofdstukken\HCode {</h2>}\HCode {<div class="fvd-theme-overview__grid">}}
+\newcommand {\FVDResetExamples }[0]{\setcounter {fvdexample}{0}}
+\newcommand {\FVDExampleOptionalTitle }[1]{\if \relax \detokenize {#1}\relax \else \space ---\space #1\fi }
+\newcommand {\FVDbeginExercises }[0]{}
+\newcommand {\FVDendExercises }[0]{}
+\newcommand {\FVDwidebegin }[0]{}
+\newcommand {\FVDwideend }[0]{}
+\newcommand {\FVDResetExercises }[0]{\setcounter {fvdoefening}{0}}
+\newcommand {\oefB }[0]{}
+\newcommand {\oefU }[0]{}
+\newcommand {\oefG }[0]{}
+\newcommand {\ESS }[0]{}
+\newcommand {\oefB }[0]{\HCode {<span class="fvd-exercise-chip fvd-exercise-chip--b">B</span>}}
+\newcommand {\oefU }[0]{\HCode {<span class="fvd-exercise-chip fvd-exercise-chip--u">U</span>}}
+\newcommand {\oefG }[0]{\HCode {<span class="fvd-exercise-chip fvd-exercise-chip--g">G</span>}}
+\newcommand {\ESS }[0]{\HCode {<span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span>}}
+\newcommand {\FVDmodulecover }[0]{}
+\newcommand {\ESSinline }[0]{\tikz [baseline=-0.6ex]{\node [ fill=fvdEssBg, text=fvdEssText, rounded corners=1.5mm, minimum width=9mm, minimum height=5.5mm, inner sep=0pt, font=\sffamily \bfseries \scriptsize ] {$\blacklozenge $}; }}
+\newcommand {\oefBinline }[0]{\tikz [baseline=-0.6ex]{\node [ fill=fvdBasisBg, text=fvdBasisText, rounded corners=1.5mm, minimum width=9mm, minimum height=5.5mm, inner sep=0pt, font=\sffamily \bfseries \scriptsize ] {B}; }}
+\newcommand {\oefUinline }[0]{\tikz [baseline=-0.6ex]{\node [ fill=fvdVerdiepingBg, text=fvdVerdiepingText, rounded corners=1.5mm, minimum width=9mm, minimum height=5.5mm, inner sep=0pt, font=\sffamily \bfseries \scriptsize ] {U}; }}
+\newcommand {\oefGinline }[0]{\tikz [baseline=-0.6ex]{\node [ fill=fvdGevorderdBg, text=fvdGevorderdText, rounded corners=1.5mm, minimum width=9mm, minimum height=5.5mm, inner sep=0pt, font=\sffamily \bfseries \scriptsize ] {G}; }}
+\newcommand {\FVDNumberLine }[2]{\draw [fvd axis] (#1-0.6,0) -- (#2+0.6,0); \par \foreach \x in {#1,...,#2}{\draw [fvd tick] (\x ,0.13) -- (\x ,-0.13); \par \ifnum \x =0 \node [ below=3pt, text=fvdmagenta, font=\small \bfseries ] at (\x ,0) {0}; \else \node [ below=3pt, text=fvddark, font=\small ] at (\x ,0) {\x }; \fi }}
+\newcommand {\FVDPoint }[1]{\fill [fvdmagenta] (#1,0) circle (2.2pt); }
+\newcommand {\FVDPointCyan }[1]{\fill [fvdcyan] (#1,0) circle (2.2pt); }
+\newcommand {\FVDLabeledPoint }[2]{\fill [fvdmagenta] (#1,0) circle (2.2pt); \par \node [ fvd label, above=7pt ] at (#1,0) {#2}; }
+\newcommand {\FVDGuideUp }[2]{\draw [fvd guide] (#1,0.08) -- (#1,#2); }
+\newcommand {\FVDMoveLeft }[3]{\draw [ ->, line width=1.4pt, color=fvdcyan ] (#1,0.52) to[bend left=28] (#2,0.52); \par \node [ fill=white, draw=fvdcyan!40, text=fvddark, rounded corners=2pt, inner xsep=5pt, inner ysep=2pt, font=\small ] at (#2+1.5,1.15) {#3}; \par \FVDGuideUp {#1}{0.50} \FVDGuideUp {#2}{0.50} }
+\newcommand {\FVDMoveRight }[3]{\draw [ ->, line width=1.4pt, color=fvdcyan ] (#1,0.52) to[bend left=28] (#2,0.52); \par \node [ fill=white, draw=fvdcyan!40, text=fvddark, rounded corners=2pt, inner xsep=5pt, inner ysep=2pt, font=\small ] at (#1+2.0,1.15) {#3}; \par \FVDGuideUp {#1}{0.50} \FVDGuideUp {#2}{0.50} }
+\newcommand {\FVDPixelPlayer }[0]{\fill [fvddark] (0,4) rectangle (4,8); \par \fill [fvdcyan] (0.8,5.7) rectangle (1.7,6.6); \fill [fvdcyan] (2.8,5.7) rectangle (3.7,6.6); \par \fill [white] (1.05,5.95) rectangle (1.45,6.35); \fill [white] (3.05,5.95) rectangle (3.45,6.35); \par \fill [fvdmagenta] (1,1.5) rectangle (3.5,4); \par \fill [fvdcyan] (0,2.3) rectangle (1,3.8); \fill [fvdcyan] (3.5,2.3) rectangle (4.5,3.8); \par \fill [fvddark] (1,0) rectangle (1.9,1.5); \fill [fvddark] (2.6,0) rectangle (3.5,1.5); }
+\newcommand {\FVDPixelController }[0]{\fill [fvddark] (1,2) rectangle (11,7); \fill [fvddark] (0,3) rectangle (12,6); \fill [fvddark] (2,1) rectangle (4,3); \fill [fvddark] (8,1) rectangle (10,3); \par \fill [white] (1.5,2.5) rectangle (10.5,6.5); \fill [fvdcyan] (1.5,6.0) rectangle (10.5,6.5); \par \fill [fvddark] (2.2,4.1) rectangle (5.0,4.9); \fill [fvddark] (3.2,3.1) rectangle (4.0,5.9); \par \fill [fvdmagenta] (8.0,4.8) circle (0.42); \fill [fvdmagenta] (9.2,3.7) circle (0.42); \fill [fvdcyan] (6.9,3.7) circle (0.42); \fill [fvdcyan] (8.0,2.8) circle (0.42); \par \fill [fvddark] (5.2,4.15) rectangle (5.9,4.45); \fill [fvddark] (6.2,4.15) rectangle (6.9,4.45); }
+\newcommand {\FVDStartPositionFigure }[3]{\begin {center} \begin {tikzpicture}[ x=0.85cm, y=1cm, line cap=round, line join=round ] \par \par \FVDNumberLine {#1}{#2} \par \draw [fvd guide] (#3,0.08) -- (#3,0.70); \par \begin {scope}[shift={(#3-0.18,0.76)},scale=0.055] \FVDPixelPlayer \end {scope} \par \node [ fvd label ] at (#3,1.42) {startpositie \(#3\)}; \par \node [ anchor=east, text=fvdmagenta, font=\small \bfseries ] at (-0.35,-1) {negatieve richting}; \par \node [ anchor=west, text=fvdcyan, font=\small \bfseries ] at (0.35,-1) {positieve richting}; \par \end {tikzpicture} \end {center} }
+\newcommand {\FVDMovementLeftFigure }[5]{\begin {center} \begin {tikzpicture}[ x=0.85cm, y=1cm, line cap=round, line join=round ] \par (#1-0.8,-0.72) rectangle (#2+0.8,1.72); \par \FVDNumberLine {#1}{#2} \par \FVDPoint {#3} \FVDPointCyan {#4} \FVDMoveLeft {#3}{#4}{#5} \par \end {tikzpicture} \end {center} }
+\newcommand {\FVDMovementRightFigure }[5]{\begin {center} \begin {tikzpicture}[ x=0.85cm, y=1cm, line cap=round, line join=round ] \par \fill [fvdcyan!6] (#1-0.8,-0.72) rectangle (#2+0.8,1.72); \par \FVDNumberLine {#1}{#2} \par \FVDPoint {#3} \FVDPointCyan {#4} \FVDMoveRight {#3}{#4}{#5} \par \end {tikzpicture} \end {center} }
+\newcommand {\FVDCoordinatePlane }[4]{\draw [ step=1cm, color=fvdcyan!18, line width=0.35pt ] (#1,#3) grid (#2,#4); \par \draw [fvd axis] (#1,0) -- (#2+0.35,0) node[ below left=2pt, text=fvddark ] {\(x\)}; \par \draw [fvd axis] (0,#3) -- (0,#4+0.35) node[ below left=2pt, text=fvddark ] {\(y\)}; \par \foreach \x in {#1,...,#2}{\ifnum \x =0 \else \draw [fvd tick] (\x ,0.10) -- (\x ,-0.10); \node [ below=2pt, text=fvddark, font=\scriptsize ] at (\x ,0) {\x }; \fi } \par \foreach \y in {#3,...,#4}{\ifnum \y =0 \else \draw [fvd tick] (0.10,\y ) -- (-0.10,\y ); \node [ left=2pt, text=fvddark, font=\scriptsize ] at (0,\y ) {\y }; \fi } \par \node [ below left=2pt, text=fvdmagenta, font=\scriptsize \bfseries ] at (0,0) {0}; }
+\newcommand {\FVDCoordinatePoint }[3]{\draw [fvd guide] (#1,0) -- (#1,#2); \draw [fvd guide] (0,#2) -- (#1,#2); \par \fill [fvdmagenta] (#1,#2) circle (2.2pt); \par \node [ fvd label, above right=3pt ] at (#1,#2) {\(#3\)}; }
+\newcommand {\luastring }[1]{"\luatexluaescapestring {#1}"}
+\newcommand {\luastringO }[1]{\luastring {\unexpanded \expandafter {#1}}}
+\newcommand {\luastringN }[1]{\luastring {\unexpanded {#1}}}
+\newcommand {\RestoreMathJaxEnvironment }[1]{\expandafter \let \csname #1\expandafter \endcsname \csname mathjax-#1\endcsname \expandafter \let \csname end#1\expandafter \endcsname \csname mathjax-end#1\endcsname }
+\newcommand {\DeclareMicrotypeVariants }[1]{}
+\newcommand {\DeclareMicrotypeAlias }[2]{}
+\newcommand {\LoadMicrotypeFile }[1]{}
+\newcommand {\DeclareMicrotypeFilePrefix }[1]{}
+\newcommand {\DeclareMicrotypeBabelHook }[2]{}
+\newcommand {\microtypesetup }[1]{}
+\newcommand {\microtypecontext }[1]{}
+\newcommand {\textmicrotypecontext }[2]{#2}
+\newcommand {\leftprotrusion }[1]{#1}
+\newcommand {\rightprotrusion }[1]{#1}
+\newcommand {\noprotrusionifhmode }[0]{}
+\newcommand {\lsstyle }[0]{}
+\newcommand {\lslig }[1]{#1}
+\newcommand {\maketitle }[0]{}
+\newcommand {\problem }[0]{ }
+\newcommand {\exercise }[0]{ }
+\newcommand {\question }[0]{ }
+\newcommand {\exploration }[0]{ }
+\newcommand {\ConfigureTheoremEnv }[1]{\renewenvironment {#1}[1][]{\refstepcounter {problem}\ifthenelse {\equal {###1}{}}{}{\HCode {<span class="theorem-like-title">}###1\HCode {</span>}}}{} \ConfigureEnv {#1}{\stepcounter {identification}\ifvmode \IgnorePar \fi \EndP \HCode {<div class="theorem-like problem-environment #1" id="problem\arabic {identification}" titletext=" \GetTranslation {#1}">}}{\ifvmode \IgnorePar \fi \EndP \HCode {</div>}\IgnoreIndent }{}{}}
+\newcommand {\xmalt }[1]{\ifvmode \IgnorePar \fi \EndP \HCode {<details><summary>Show Alt Text</summary>} #1 \HCode {</details>}}
+\newcommand {\dialogue }[0]{\begin {description}}
+\newcommand {\foldable }[0]{\stepcounter {identification}\ifvmode \IgnorePar \fi \EndP \HCode {<div id="foldable\arabic {identification}" class="foldable">}}
+\newcommand {\unfoldable }[1]{\HCode {<span class="unfoldable">}#1\HCode {</span>}}
+\newcommand {\selectAll }[0]{\refstepcounter {problem}}
+\newcommand {\freeResponse }[0]{\refstepcounter {problem}}
+\newcommand {\javascript }[0]{\NoFonts }
+\newcommand {\sageCell }[0]{\NoFonts }
+\newcommand {\sageOutput }[0]{\NoFonts }
+\newcommand {\sagesilent }[0]{\NoFonts }
+\newcommand {\ungraded }[0]{\ifvmode \IgnorePar \fi \EndP \HCode {<div class="ungraded">}\IgnoreIndent }
+\newcommand {\accordion }[0]{\ifvmode \IgnorePar \fi \EndP \HCode {<div class="accordion">} }
+\newcommand {\expandable }[2]{\stepcounter {identification}\ifvmode \IgnorePar \fi \EndP \HCode {<div class="accordion">\Hnewline }\HCode {<h3 class="#1">}#2\HCode {</h3>\Hnewline }\HCode {<div id="accordion-item\arabic {identification}" class="accordion-item #1-content">\Hnewline } }
+\newcommand {\paragraph }[1]{\HCode {<span class="paragraphHead">}#1\HCode {</span>}\par \IgnorePar }
+\newcommand {\subparagraph }[1]{\HCode {<span class="subparagraphHead">}#1\HCode {</span>}\par \IgnorePar }
+\newcommand {\outcome }[1]{\HCode {<span class="learning-outcome">#1</span>} }
+\newcommand {\javascriptCode }[0]{\NoFonts }
+\newcommand {\GetTranslation }[1]{#1}
+\newcommand {\ref }[1]{\HCode {<a class="reference" href="\##1">#1</a>}}</script></div>
+<style> .activity-body pre { white-space: pre; background-color: lightgray; } .xmyoutube { aspect-ratio: 16/9; min-width: 75%; } .image-environment img { width: unset; } </style> 
+
+<div class='maketitle'></div>
+<!--  l. 54  --><section class='learning-box learning-box--prior'> <div class='learning-box__header'> <span class='learning-box__icon'> </span><span class='learning-box__title'>Voorkennis</span> </div> <div class='learning-box__content'> 
+     
+<ul class='itemize1'>
+<li class='itemize'>Je kan de wetten van Newton gebruiken, in het bijzonder <span class='mathjax-inline'>\(\sum \vec F=m\vec a\)</span>.
+</li>
+<li class='itemize'>Je kan een vrijlichaamsdiagram maken en krachten vectorieel analyseren.
+</li>
+<li class='itemize'>Je kent bij een eenparige cirkelbeweging <span class='mathjax-inline'>\(v=\omega r\)</span> en <span class='mathjax-inline'>\(a_c=v^2/r=\omega ^2r\)</span>.
+</li>
+<li class='itemize'>Je kent uit eerdere leerstof de begrippen gravitatieveld, elektrisch veld en
+magnetisch veld.
+</li>
+<li class='itemize'>Je kent de gravitatiekracht, elektrische kracht en magnetische kracht op
+een bewegende lading.
+</li>
+<li class='itemize'>Je kan bewegingen in één en twee dimensies analyseren.
+</li>
+<li class='itemize'>Je kan evenredigheden en machtsverbanden interpreteren.</li></ul>
+<!--  l. 66  --></div> </section> 
+<!--  l. 68  --><section class='learning-box learning-box--goals'> <div class='learning-box__header'> <span class='learning-box__icon'> </span><span class='learning-box__title'>Leerdoelen</span> </div> <div class='learning-box__content'> 
+     
+<ul class='itemize1'>
+<li class='itemize'>Je  kan  Newtons  gravitatiewet  en  het  gravitatieveld  analyseren  en
+kwantificeren.
+                                                                  
+
+                                                                  
+</li>
+<li class='itemize'>Je kan het onderscheid maken tussen afstand tot een planeetmiddelpunt,
+baanstraal en hoogte boven het oppervlak.
+</li>
+<li class='itemize'>Je kan het verband tussen gravitatiekracht en centripetale versnelling van
+een satelliet verklaren en gebruiken.
+</li>
+<li class='itemize'>Je kan voor een cirkelvormige satellietbaan de baansnelheid en omlooptijd
+afleiden, interpreteren en berekenen.
+</li>
+<li class='itemize'>Je kan het verband <span class='mathjax-inline'>\(T^2\sim r^3\)</span> analyseren.
+</li>
+<li class='itemize'>Je kan uitleggen waarom astronauten in een baan om de aarde gewichtloos
+lijken zonder dat de gravitatie daar nul is.
+</li>
+<li class='itemize'>Je kan de beweging van een geladen deeltje in een homogeen elektrisch
+veld analyseren.
+</li>
+<li class='itemize'>Je kan de magnetische kracht op een bewegende lading koppelen aan een
+cirkelbeweging wanneer <span class='mathjax-inline'>\(\vec v\perp \vec B\)</span>.
+</li>
+<li class='itemize'>Je  kan  overeenkomsten  en  verschillen  tussen  gravitatie-,  elektrische  en
+magnetische krachtwerking analyseren.
+</li>
+<li class='itemize'>Je kan nieuwe veldproblemen systematisch mathematiseren vanuit veld,
+kracht, Newton II en kinematica.</li></ul>
+                                                                  
+
+                                                                  
+<!--  l. 88  --></div> </section> 
+<p><a id='x1-2r1'></a>
+</p><!--  l. 95  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>1</div><div class='fvd-section-bar__title'>Eén mechanica, verschillende velden</div></div>
+<!--  l. 97  --><p class='noindent'>Een appel valt naar de aarde. Een kunstmaan beweegt rond de aarde. Een elektron
+wordt versneld tussen twee geladen platen. Een ion buigt af in een magnetisch
+veld.
+</p><!--  l. 101  --><p class='noindent'>Op het eerste gezicht lijken dit vier totaal verschillende verschijnselen. Toch kunnen
+we ze met dezelfde denkwijze onderzoeken.
+</p><!--  l. 104  --><p class='noindent'>Een veld bepaalt welke kracht een geschikt systeem in een bepaald punt ondervindt.
+Die kracht bepaalt volgens Newton II de versnelling, en de versnelling bepaalt hoe de
+snelheid verandert:
+</p>
+<div class='mathjax-block'>\[ \boxed { \text {veld} \longrightarrow \text {kracht} \longrightarrow \text {versnelling} \longrightarrow \text {beweging}. } \]</div>
+<!--  l. 120  --><p class='noindent'>Dit hoofdstuk is daarom geen verzameling nieuwe formules. Het is een synthese van
+begrippen die we eerder afzonderlijk leerden gebruiken.
+<a id='x1-3r1'></a>
+</p><!--  l. 124  --><section class='fvd-exercise'>
+<!--  l. 124  --><div class='fvd-exercise__title'>
+<!--  l. 124  --><p class='noindent'>Oefening 1
+</p><!--  l. 124  --><p class='noindent'>— Vier bewegingen, één denkwijze
+</p><!--  l. 124  --></div>
+<!--  l. 124  --><div class='fvd-exercise__body'>
+<!--  l. 124  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<!--  l. 124  --><div class='fvd-exercise__content'>
+<!--  l. 126  --><p class='noindent'>Beschouw de volgende situaties:
+</p>     
+<ol class='enumerate1'>
+<li class='enumerate' id='x1-5x1'>een steen valt in vacuüm nabij het aardoppervlak;
+</li>
+<li class='enumerate' id='x1-7x2'>een satelliet beweegt in een cirkelbaan rond de aarde;
+</li>
+<li class='enumerate' id='x1-9x3'>een positief geladen deeltje vertrekt uit rust in een homogeen elektrisch
+veld;
+</li>
+<li class='enumerate' id='x1-11x4'>een   positief   geladen   deeltje   beweegt   loodrecht   op   een   homogeen
+magnetisch veld.</li></ol>
+<div class='problem-environment question' id='problem1' numbered=' ' role='article' titletext=' Question'>  Geef voor elke situatie aan welke kracht de beweging beïnvloedt.    </div>
+<div class='problem-environment question' id='problem2' numbered=' ' role='article' titletext=' Question'>  Voorspel voor elke situatie of de grootte van de snelheid constant kan blijven.
+</div>
+<div class='problem-environment question' id='problem3' numbered=' ' role='article' titletext=' Question'>  Voorspel voor elke situatie of de richting van de snelheid verandert.    </div>
+<div class='problem-environment question' id='problem4' numbered=' ' role='article' titletext=' Question'>  Welke twee situaties verwacht je met een cirkelbeweging te kunnen verbinden?
+</div>
+<!--  l. 155  --><p class='noindent'>Bewaar je antwoorden. Aan het einde van het hoofdstuk keren we naar deze
+vergelijking terug.
+</p></div>
+<!--  l. 158  --></div>
+<!--  l. 158  --></section>
+<p><a id='x1-12r2'></a>
+</p><!--  l. 165  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>2</div><div class='fvd-section-bar__title'>Gravitatie opnieuw geactiveerd</div></div>
+<!--  l. 167  --><p class='noindent'>Alle massa’s trekken elkaar gravitatieel aan. Voor twee puntmassa’s <span class='mathjax-inline'>\(m_1\)</span> en <span class='mathjax-inline'>\(m_2\)</span> op
+onderlinge afstand <span class='mathjax-inline'>\(r\)</span> geldt voor de grootte van de gravitatiekracht:
+</p>
+<div class='mathjax-block'>\[ \boxed { F_g=G\frac {m_1m_2}{r^2}. } \]</div>
+<!--  l. 177  --><p class='noindent'>Hierbij is
+</p>
+<div class='mathjax-block'>\[ G\approx 6{,}67\cdot 10^{-11}\, \mathrm {\frac {N\,m^2}{kg^2}} \]</div>
+<!--  l. 184  --><p class='noindent'>de gravitatieconstante.
+</p><!--  l. 186  --><p class='noindent'>Voor een bolsymmetrisch hemellichaam mogen we, buiten het hemellichaam, de
+massa voor de gravitatieberekening behandelen alsof ze in het middelpunt
+geconcentreerd is.
+</p><!--  l. 191  --><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span></div><div class='fvd-remark__content'>De afstand <span class='mathjax-inline'>\(r\)</span> in de gravitatiewet is dus niet de hoogte boven het
+oppervlak. Ze is de afstand tussen de massamiddelpunten. </div></section>
+<p><a id='x1-13r1'></a>
+</p><!--  l. 196  --><div class='fvd-subsection'>
+<!--  l. 196  --><div class='fvd-subsection__row'>
+                                                                  
+
+                                                                  
+<!--  l. 196  --><div class='fvd-subsection__number'>2.1</div>
+<!--  l. 196  --><div class='fvd-subsection__title'>Een inverse-kwadratenwet</div>
+<!--  l. 196  --></div>
+<!--  l. 196  --><div class='fvd-subsection__line'></div>
+<!--  l. 196  --></div>
+<!--  l. 198  --><p class='noindent'>Als de massa’s constant blijven:
+</p>
+<div class='mathjax-block'>\[ F_g\sim \frac 1{r^2}. \]</div>
+<!--  l. 204  --><p class='noindent'>Dus:
+</p>
+<div class='mathjax-block'>\[ r\rightarrow 2r \quad \Longrightarrow \quad F_g\rightarrow \frac 14F_g, \]</div>
+<!--  l. 212  --><p class='noindent'>en:
+</p>
+<div class='mathjax-block'>\[ r\rightarrow 3r \quad \Longrightarrow \quad F_g\rightarrow \frac 19F_g. \]</div>
+<!--  l. 220  --><p class='noindent'>Het verband is niet lineair.
+<a id='x1-14r2'></a>
+</p><!--  l. 223  --><section class='fvd-exercise'>
+<!--  l. 223  --><div class='fvd-exercise__title'>
+<!--  l. 223  --><p class='noindent'>Oefening 2
+</p><!--  l. 223  --><p class='noindent'>— Redeneren met de gravitatiewet
+</p><!--  l. 223  --></div>
+<!--  l. 223  --><div class='fvd-exercise__body'>
+<!--  l. 223  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<!--  l. 223  --><div class='fvd-exercise__content'>
+<!--  l. 225  --><p class='noindent'>Twee puntmassa’s oefenen een gravitatiekracht <span class='mathjax-inline'>\(F\)</span> op elkaar uit.
+</p>
+<div class='problem-environment question' id='problem5' numbered=' ' role='article' titletext=' Question'>  Hoe groot wordt de kracht als één massa verdubbelt en de andere grootheden
+gelijk blijven?    </div>
+<div class='problem-environment question' id='problem6' numbered=' ' role='article' titletext=' Question'>  Hoe groot wordt de kracht als beide massa’s verdubbelen?    </div>
+<div class='problem-environment question' id='problem7' numbered=' ' role='article' titletext=' Question'>  Hoe groot wordt de kracht als de afstand tussen de massa’s verdubbelt?
+</div>
+<div class='problem-environment question' id='problem8' numbered=' ' role='article' titletext=' Question'>  Met welke factor moet de afstand veranderen om de kracht viermaal zo klein te
+maken?    </div>
+</div>
+<!--  l. 245  --></div>
+                                                                  
+
+                                                                  
+<!--  l. 245  --></section>
+<p><a id='x1-15r3'></a>
+</p><!--  l. 252  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>3</div><div class='fvd-section-bar__title'>Het gravitatieveld</div></div>
+<!--  l. 254  --><p class='noindent'>In plaats van voor elke mogelijke proefmassa opnieuw de gravitatiekracht te
+berekenen, beschrijven we de ruimte rond een massa met een veld.
+</p><!--  l. 258  --><section class='fvd-definition'><div class='fvd-definition__title'><span class='fvd-definition__label'>DEFINITIE</span></div><div class='fvd-definition__content'>De <strong>gravitatieveldsterkte</strong> <span class='mathjax-inline'>\(\vec g\)</span> in een punt is de gravitatiekracht per
+eenheid proefmassa:
+
+<div class='mathjax-block'>\[ \boxed { \vec g=\frac {\vec F_g}{m}. } \]</div> </div></section>
+<!--  l. 268  --><p class='noindent'>Voor een bolsymmetrische bronmassa <span class='mathjax-inline'>\(M\)</span>:
+</p>
+<div class='mathjax-block'>\[ F_g=G\frac {Mm}{r^2}. \]</div>
+<!--  l. 274  --><p class='noindent'>Delen door <span class='mathjax-inline'>\(m\)</span> geeft:
+</p>
+<div class='mathjax-block'>\[ \boxed { g(r)=G\frac {M}{r^2}. } \]</div>
+<!--  l. 282  --><p class='noindent'>De vector <span class='mathjax-inline'>\(\vec g\)</span> wijst naar het middelpunt van de aantrekkende massa.
+</p><!--  l. 284  --><p class='noindent'>De eenheden
+</p>
+<div class='mathjax-block'>\[ \mathrm {\frac {N}{kg}} \]</div>
+<!--  l. 290  --><p class='noindent'>en
+</p>
+<div class='mathjax-block'>\[ \mathrm {\frac {m}{s^2}} \]</div>
+<!--  l. 296  --><p class='noindent'>zijn voor de gravitatieveldsterkte equivalent.
+<a id='x1-16r1'></a>
+</p><!--  l. 299  --><div class='fvd-subsection'>
+<!--  l. 299  --><div class='fvd-subsection__row'>
+<!--  l. 299  --><div class='fvd-subsection__number'>3.1</div>
+<!--  l. 299  --><div class='fvd-subsection__title'>Waarom is <span class='mathjax-inline'>\(g\)</span> nabij de aarde ongeveer constant?</div>
+<!--  l. 299  --></div>
+<!--  l. 299  --><div class='fvd-subsection__line'></div>
+<!--  l. 299  --></div>
+<!--  l. 301  --><p class='noindent'>Op het aardoppervlak:
+</p>
+<div class='mathjax-block'>\[ g_0=G\frac {M_A}{R_A^2}. \]</div>
+<!--  l. 307  --><p class='noindent'>Op hoogte <span class='mathjax-inline'>\(h\)</span> boven het aardoppervlak:
+</p>
+                                                                  
+
+                                                                  
+<div class='mathjax-block'>\[ r=R_A+h \]</div>
+<!--  l. 313  --><p class='noindent'>en dus:
+</p>
+<div class='mathjax-block'>\[ \boxed { g(h)=G\frac {M_A}{(R_A+h)^2}. } \]</div>
+<!--  l. 321  --><p class='noindent'>Voor hoogtes die zeer klein zijn tegenover <span class='mathjax-inline'>\(R_A\)</span> verandert <span class='mathjax-inline'>\(r\)</span> relatief weinig. Daarom mogen
+we in veel val- en worpproblemen nabij het aardoppervlak <span class='mathjax-inline'>\(g\)</span> als ongeveer constant
+beschouwen.
+</p><!--  l. 325  --><p class='noindent'>Voor satellieten op grote hoogte mag dat niet zomaar.
+<a id='x1-17r3'></a>
+</p><!--  l. 328  --><section class='fvd-exercise'>
+<!--  l. 328  --><div class='fvd-exercise__title'>
+<!--  l. 328  --><p class='noindent'>Oefening 3
+</p><!--  l. 328  --><p class='noindent'>— Hoogte is geen baanstraal
+</p><!--  l. 328  --></div>
+<!--  l. 328  --><div class='fvd-exercise__body'>
+<!--  l. 328  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<!--  l. 328  --><div class='fvd-exercise__content'>
+<!--  l. 330  --><p class='noindent'>Een satelliet bevindt zich op hoogte <span class='mathjax-inline'>\(h\)</span> boven een planeet met straal <span class='mathjax-inline'>\(R\)</span>.
+</p>
+<div class='problem-environment question' id='problem9' numbered=' ' role='article' titletext=' Question'>  Welke afstand moet in <div class='mathjax-block'>\[ g=G\frac {M}{r^2} \]</div> worden gebruikt?    </div>
+<div class='problem-environment question' id='problem10' numbered=' ' role='article' titletext=' Question'>  Schrijf <span class='mathjax-inline'>\(g\)</span> als functie van <span class='mathjax-inline'>\(R\)</span> en <span class='mathjax-inline'>\(h\)</span>.    </div>
+<div class='problem-environment question' id='problem11' numbered=' ' role='article' titletext=' Question'>  Een satelliet bevindt zich op hoogte <span class='mathjax-inline'>\(h=R\)</span>. Hoe groot is daar de gravitatieveldsterkte als
+fractie van de veldsterkte aan het oppervlak?    </div>
+</div>
+<!--  l. 350  --></div>
+<!--  l. 350  --></section>
+<p><a id='x1-18r4'></a>
+</p><!--  l. 353  --><section class='fvd-exercise'>
+<!--  l. 353  --><div class='fvd-exercise__title'>
+<!--  l. 353  --><p class='noindent'>Oefening 4
+</p><!--  l. 353  --><p class='noindent'>— Een grafiek van <span class='mathjax-inline'>\(g(r)\)</span>
+</p><!--  l. 353  --></div>
+<!--  l. 353  --><div class='fvd-exercise__body'>
+<!--  l. 353  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+                                                                  
+
+                                                                  
+<!--  l. 353  --><div class='fvd-exercise__content'>
+<!--  l. 355  --><p class='noindent'>Voor punten buiten een bolsymmetrische planeet geldt:
+</p>
+<div class='mathjax-block'>\[ g(r)=G\frac {M}{r^2}. \]</div>
+<div class='problem-environment question' id='problem12' numbered=' ' role='article' titletext=' Question'>  Beschrijf het functietype en het gedrag van <span class='mathjax-inline'>\(g(r)\)</span> voor <span class='mathjax-inline'>\(r&gt;R\)</span>.    </div>
+<div class='problem-environment question' id='problem13' numbered=' ' role='article' titletext=' Question'>  Wat gebeurt er met <span class='mathjax-inline'>\(g\)</span> als <span class='mathjax-inline'>\(r\)</span> zeer groot wordt?    </div>
+<div class='problem-environment question' id='problem14' numbered=' ' role='article' titletext=' Question'>  Is <span class='mathjax-inline'>\(g(r)\)</span> lineair dalend? Motiveer wiskundig.    </div>
+<div class='problem-environment question' id='problem15' numbered=' ' role='article' titletext=' Question'>  Welke grafiek zou je kunnen maken om het inverse-kwadratenverband te
+lineariseren?    </div>
+</div>
+<!--  l. 378  --></div>
+<!--  l. 378  --></section>
+<p><a id='x1-19r4'></a>
+</p><!--  l. 385  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>4</div><div class='fvd-section-bar__title'>Van vallende steen naar satelliet</div></div>
+<!--  l. 387  --><p class='noindent'>Stel je een voorwerp voor dat vanaf een zeer hoge berg horizontaal wordt
+weggeschoten.
+</p><!--  l. 390  --><p class='noindent'>Bij een kleine beginsnelheid valt het voorwerp naar de aarde en raakt het
+oppervlak.
+</p><!--  l. 393  --><p class='noindent'>Bij een grotere beginsnelheid legt het tijdens zijn val een grotere horizontale afstand
+af.
+</p><!--  l. 396  --><p class='noindent'>In het ideale gedachte-experiment kan de beginsnelheid zo groot worden dat het
+aardoppervlak door zijn kromming even snel “wegvalt” als het voorwerp naar de
+aarde valt. Het voorwerp blijft dan voortdurend vallen, maar bereikt de aarde
+niet.
+</p><!--  l. 401  --><p class='noindent'>Dat is de essentie van een baanbeweging.
+</p>
+<div class='center'>
+<!--  l. 403  -->
+<div class='mathjax-block'>\[ \boxed { \text {een satelliet in een baan is voortdurend in vrije val}. } \]</div></div>
+<!--  l. 411  --><p class='noindent'>De gravitatiekracht verdwijnt dus niet. Integendeel: ze is precies de kracht die de
+baan voortdurend doet afbuigen.
+<a id='x1-20r5'></a>
+</p><!--  l. 415  --><section class='fvd-exercise'>
+<!--  l. 415  --><div class='fvd-exercise__title'>
+                                                                  
+
+                                                                  
+<!--  l. 415  --><p class='noindent'>Oefening 5
+</p><!--  l. 415  --><p class='noindent'>— Een hardnekkige misconceptie
+</p><!--  l. 415  --></div>
+<!--  l. 415  --><div class='fvd-exercise__body'>
+<!--  l. 415  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<!--  l. 415  --><div class='fvd-exercise__content'>
+<!--  l. 417  --><p class='noindent'>Een leerling zegt:
+</p>     
+<blockquote class='quote'>
+<!--  l. 420  --><p class='noindent'>“Een satelliet blijft in de ruimte omdat daar bijna geen zwaartekracht
+meer is.”</p></blockquote>
+<div class='problem-environment question' id='problem16' numbered=' ' role='article' titletext=' Question'>  Waarom kan die uitspraak niet verklaren waarom de satelliet een cirkelbaan volgt?
+</div>
+<div class='problem-environment question' id='problem17' numbered=' ' role='article' titletext=' Question'>  Wat zou er volgens Newton I gebeuren als de resulterende kracht werkelijk nul was?
+</div>
+<div class='problem-environment question' id='problem18' numbered=' ' role='article' titletext=' Question'>  Welke richting heeft de versnelling van een satelliet in een cirkelbaan?
+</div>
+<div class='problem-environment question' id='problem19' numbered=' ' role='article' titletext=' Question'>  Welke kracht kan die versnelling veroorzaken?    </div>
+</div>
+<!--  l. 443  --></div>
+<!--  l. 443  --></section>
+<p><a id='x1-21r5'></a>
+</p><!--  l. 450  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>5</div><div class='fvd-section-bar__title'>Gravitatie als radiale resultante</div></div>
+<!--  l. 452  --><p class='noindent'>Beschouw een satelliet met massa <span class='mathjax-inline'>\(m\)</span> in een cirkelbaan met straal <span class='mathjax-inline'>\(r\)</span> rond een planeet met
+massa <span class='mathjax-inline'>\(M\)</span>.
+</p><!--  l. 455  --><p class='noindent'>In het ideale model verwaarlozen we andere krachten.
+</p><!--  l. 457  --><p class='noindent'>De enige kracht op de satelliet is dan de gravitatiekracht:
+</p>
+<div class='mathjax-block'>\[ F_g=G\frac {Mm}{r^2}. \]</div>
+<!--  l. 463  --><p class='noindent'>De satelliet voert een cirkelbeweging uit, dus:
+</p>
+<div class='mathjax-block'>\[ a_c=\frac {v^2}{r}. \]</div>
+<!--  l. 469  --><p class='noindent'>Volgens Newton II in de radiale richting:
+</p>
+<div class='mathjax-block'>\[ \sum F_r=ma_c. \]</div>
+                                                                  
+
+                                                                  
+<!--  l. 475  --><p class='noindent'>Omdat de gravitatiekracht de volledige radiale resultante levert:
+</p>
+<div class='mathjax-block'>\[ G\frac {Mm}{r^2} = m\frac {v^2}{r}. \]</div>
+<!--  l. 483  --><p class='noindent'>Dit is de centrale vergelijking voor een ideale cirkelvormige satellietbaan.
+</p><!--  l. 487  --><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span></div><div class='fvd-remark__content'>We tekenen in het vrijlichaamsdiagram alleen <span class='mathjax-inline'>\(\vec F_g\)</span>. We tekenen niet nog
+een extra “centripetale kracht”. De gravitatiekracht <em>is</em> hier de radiale resultante.
+</div></section>
+<p><a id='x1-22r6'></a>
+</p><!--  l. 497  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>6</div><div class='fvd-section-bar__title'>De baansnelheid afleiden</div></div>
+<!--  l. 499  --><p class='noindent'>Vertrek van:
+</p>
+<div class='mathjax-block'>\[ G\frac {Mm}{r^2} = m\frac {v^2}{r}. \]</div>
+<!--  l. 507  --><p class='noindent'>De satellietmassa <span class='mathjax-inline'>\(m\)</span> valt weg:
+</p>
+<div class='mathjax-block'>\[ G\frac {M}{r^2} = \frac {v^2}{r}. \]</div>
+<!--  l. 515  --><p class='noindent'>Vermenigvuldig met <span class='mathjax-inline'>\(r\)</span>:
+</p>
+<div class='mathjax-block'>\[ \frac {GM}{r}=v^2. \]</div>
+<!--  l. 521  --><p class='noindent'>Dus:
+</p>
+<div class='mathjax-block'>\[ \boxed { v_{\mathrm {baan}} = \sqrt {\frac {GM}{r}}. } \]</div>
+<!--  l. 531  --><p class='noindent'>Deze formule vertelt meer dan alleen hoe we een getal berekenen.
+</p><!--  l. 533  --><p class='noindent'>Bij een gegeven centrale massa <span class='mathjax-inline'>\(M\)</span>:
+</p>
+<div class='mathjax-block'>\[ \boxed { v_{\mathrm {baan}}\sim \frac 1{\sqrt r}. } \]</div>
+<!--  l. 541  --><p class='noindent'>Een satelliet in een grotere cirkelbaan beweegt dus trager.
+<a id='x1-23r1'></a>
+</p><!--  l. 544  --><div class='fvd-subsection'>
+<!--  l. 544  --><div class='fvd-subsection__row'>
+<!--  l. 544  --><div class='fvd-subsection__number'>6.1</div>
+<!--  l. 544  --><div class='fvd-subsection__title'>Waarom verdwijnt de satellietmassa?</div>
+<!--  l. 544  --></div>
+<!--  l. 544  --><div class='fvd-subsection__line'></div>
+<!--  l. 544  --></div>
+<!--  l. 546  --><p class='noindent'>Een zwaardere satelliet ondervindt een grotere gravitatiekracht:
+</p>
+                                                                  
+
+                                                                  
+<div class='mathjax-block'>\[ F_g\sim m. \]</div>
+<!--  l. 552  --><p class='noindent'>Maar volgens Newton II is ook meer kracht nodig om dezelfde versnelling aan een
+grotere massa te geven:
+</p>
+<div class='mathjax-block'>\[ F=ma. \]</div>
+<!--  l. 559  --><p class='noindent'>De factor <span class='mathjax-inline'>\(m\)</span> verschijnt aan beide kanten en valt weg.
+</p><!--  l. 561  --><p class='noindent'>Dat is dezelfde diepe eigenschap die we bij vrije val nabij het aardoppervlak
+zagen.
+<a id='x1-24r6'></a>
+</p><!--  l. 565  --><section class='fvd-exercise'>
+<!--  l. 565  --><div class='fvd-exercise__title'>
+<!--  l. 565  --><p class='noindent'>Oefening 6
+</p><!--  l. 565  --><p class='noindent'>— Baansnelheid analyseren
+</p><!--  l. 565  --></div>
+<!--  l. 565  --><div class='fvd-exercise__body'>
+<!--  l. 565  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<!--  l. 565  --><div class='fvd-exercise__content'>
+<!--  l. 567  --><p class='noindent'>Twee satellieten bewegen in cirkelbanen rond dezelfde planeet. Voor de tweede
+satelliet geldt:
+</p>
+<div class='mathjax-block'>\[ r_2=4r_1. \]</div>
+<div class='problem-environment question' id='problem20' numbered=' ' role='article' titletext=' Question'>  Bepaal zonder getallen de verhouding <span class='mathjax-inline'>\(v_2/v_1\)</span>.    </div>
+<div class='problem-environment question' id='problem21' numbered=' ' role='article' titletext=' Question'>  Welke satelliet beweegt sneller?    </div>
+<div class='problem-environment question' id='problem22' numbered=' ' role='article' titletext=' Question'>  Hangt je antwoord af van de massa’s van de satellieten?    </div>
+<div class='problem-environment question' id='problem23' numbered=' ' role='article' titletext=' Question'>  Leg uit waarom de uitspraak “een hogere satelliet moet sneller bewegen om niet te
+vallen” fout is voor ideale cirkelbanen.    </div>
+</div>
+<!--  l. 591  --></div>
+<!--  l. 591  --></section>
+<p><a id='x1-25r7'></a>
+</p><!--  l. 594  --><section class='fvd-exercise'>
+<!--  l. 594  --><div class='fvd-exercise__title'>
+<!--  l. 594  --><p class='noindent'>Oefening 7
+</p><!--  l. 594  --><p class='noindent'>— Satelliet rond de aarde
+</p><!--  l. 594  --></div>
+                                                                  
+
+                                                                  
+<!--  l. 594  --><div class='fvd-exercise__body'>
+<!--  l. 594  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<!--  l. 594  --><div class='fvd-exercise__content'>
+<!--  l. 596  --><p class='noindent'>Gebruik:
+</p>
+<div class='mathjax-block'>\[ M_A=5{,}97\cdot 10^{24}\,\mathrm {kg}, \qquad R_A=6{,}37\cdot 10^6\,\mathrm m. \]</div>
+<!--  l. 604  --><p class='noindent'>Een satelliet beweegt op hoogte
+</p>
+<div class='mathjax-block'>\[ h=400\,\mathrm {km} \]</div>
+<!--  l. 610  --><p class='noindent'>in een ideale cirkelbaan.
+</p>
+<div class='problem-environment question' id='problem24' numbered=' ' role='article' titletext=' Question'>  Bepaal de baanstraal <span class='mathjax-inline'>\(r\)</span>.    </div>
+<div class='problem-environment question' id='problem25' numbered=' ' role='article' titletext=' Question'>  Bereken de baansnelheid.    </div>
+<div class='problem-environment question' id='problem26' numbered=' ' role='article' titletext=' Question'>  Vergelijk <span class='mathjax-inline'>\(g\)</span> op die hoogte met <span class='mathjax-inline'>\(g\)</span> aan het aardoppervlak.    </div>
+<div class='problem-environment question' id='problem27' numbered=' ' role='article' titletext=' Question'>  Leg op basis van je resultaat uit waarom “geen zwaartekracht” geen goede
+verklaring is voor gewichtloosheid in een lage baan om de aarde.    </div>
+</div>
+<!--  l. 629  --></div>
+<!--  l. 629  --></section>
+<p><a id='x1-26r7'></a>
+</p><!--  l. 636  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>7</div><div class='fvd-section-bar__title'>De omlooptijd</div></div>
+<!--  l. 638  --><p class='noindent'>Voor een eenparige cirkelbeweging is:
+</p>
+<div class='mathjax-block'>\[ v=\frac {2\pi r}{T}. \]</div>
+<!--  l. 644  --><p class='noindent'>Voor een satelliet in een ideale cirkelbaan vonden we:
+</p>
+<div class='mathjax-block'>\[ v=\sqrt {\frac {GM}{r}}. \]</div>
+<!--  l. 650  --><p class='noindent'>We stellen beide uitdrukkingen gelijk:
+</p>
+<div class='mathjax-block'>\[ \frac {2\pi r}{T} = \sqrt {\frac {GM}{r}}. \]</div>
+<!--  l. 658  --><p class='noindent'>Na herschikken:
+</p>
+<div class='mathjax-block'>\[ \boxed { T = 2\pi \sqrt {\frac {r^3}{GM}}. } \]</div>
+<!--  l. 668  --><p class='noindent'>Voor eenzelfde centrale massa <span class='mathjax-inline'>\(M\)</span>:
+</p>
+                                                                  
+
+                                                                  
+<div class='mathjax-block'>\[ \boxed { T\sim r^{3/2}. } \]</div>
+<!--  l. 676  --><p class='noindent'>Een satelliet in een grotere baan heeft dus een langere omlooptijd.
+<a id='x1-27r8'></a>
+</p><!--  l. 679  --><section class='fvd-exercise'>
+<!--  l. 679  --><div class='fvd-exercise__title'>
+<!--  l. 679  --><p class='noindent'>Oefening 8
+</p><!--  l. 679  --><p class='noindent'>— Verhoudingen zonder rekenmachine
+</p><!--  l. 679  --></div>
+<!--  l. 679  --><div class='fvd-exercise__body'>
+<!--  l. 679  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<!--  l. 679  --><div class='fvd-exercise__content'>
+<!--  l. 681  --><p class='noindent'>Twee satellieten bewegen rond dezelfde planeet in ideale cirkelbanen.
+</p>
+<div class='mathjax-block'>\[ r_2=4r_1. \]</div>
+<div class='problem-environment question' id='problem28' numbered=' ' role='article' titletext=' Question'>  Bepaal <span class='mathjax-inline'>\(T_2/T_1\)</span>.    </div>
+<div class='problem-environment question' id='problem29' numbered=' ' role='article' titletext=' Question'>  Bepaal opnieuw <span class='mathjax-inline'>\(v_2/v_1\)</span>.    </div>
+<div class='problem-environment question' id='problem30' numbered=' ' role='article' titletext=' Question'>  Leg uit waarom een grotere baan tegelijk een kleinere baansnelheid en een grotere
+omlooptijd oplevert.    </div>
+</div>
+<!--  l. 700  --></div>
+<!--  l. 700  --></section>
+<p><a id='x1-28r8'></a>
+</p><!--  l. 707  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>8</div><div class='fvd-section-bar__title'>Keplers derde wet verschijnt uit Newton</div></div>
+<!--  l. 709  --><p class='noindent'>Kwadrateren van
+</p>
+<div class='mathjax-block'>\[ T = 2\pi \sqrt {\frac {r^3}{GM}} \]</div>
+<!--  l. 717  --><p class='noindent'>geeft:
+</p>
+<div class='mathjax-block'>\[ \boxed { T^2 = \frac {4\pi ^2}{GM}r^3. } \]</div>
+<!--  l. 727  --><p class='noindent'>Voor objecten die rond dezelfde centrale massa bewegen, is
+</p>
+<div class='mathjax-block'>\[ \frac {4\pi ^2}{GM} \]</div>
+<!--  l. 733  --><p class='noindent'>constant. Dus:
+</p>
+<div class='mathjax-block'>\[ \boxed { T^2\sim r^3. } \]</div>
+                                                                  
+
+                                                                  
+<!--  l. 741  --><p class='noindent'>Dit is de vorm van Keplers derde wet voor cirkelbanen.
+</p><!--  l. 743  --><p class='noindent'>Het verband is didactisch belangrijk omdat het laat zien dat een empirisch patroon
+in planeetbewegingen verklaard kan worden vanuit Newtons dynamica en
+gravitatiewet.
+<a id='x1-29r1'></a>
+</p><!--  l. 748  --><div class='fvd-subsection'>
+<!--  l. 748  --><div class='fvd-subsection__row'>
+<!--  l. 748  --><div class='fvd-subsection__number'>8.1</div>
+<!--  l. 748  --><div class='fvd-subsection__title'>Lineariseren</div>
+<!--  l. 748  --></div>
+<!--  l. 748  --><div class='fvd-subsection__line'></div>
+<!--  l. 748  --></div>
+<!--  l. 750  --><p class='noindent'>Een grafiek van <span class='mathjax-inline'>\(T\)</span> tegen <span class='mathjax-inline'>\(r\)</span> is niet lineair.
+</p><!--  l. 752  --><p class='noindent'>Maar:
+</p>
+<div class='mathjax-block'>\[ T^2 = \left (\frac {4\pi ^2}{GM}\right )r^3. \]</div>
+<!--  l. 760  --><p class='noindent'>Een grafiek van <span class='mathjax-inline'>\(T^2\)</span> tegen <span class='mathjax-inline'>\(r^3\)</span> hoort dus een rechte door de oorsprong te geven met
+richtingscoëfficiënt:
+</p>
+<div class='mathjax-block'>\[ \boxed { a=\frac {4\pi ^2}{GM}. } \]</div>
+<!--  l. 769  --><p class='noindent'>Uit de helling kunnen we zelfs de massa van het centrale hemellichaam bepalen:
+</p>
+<div class='mathjax-block'>\[ \boxed { M=\frac {4\pi ^2}{Ga}. } \]</div>
+<p><a id='x1-30r9'></a>
+</p><!--  l. 779  --><section class='fvd-exercise'>
+<!--  l. 779  --><div class='fvd-exercise__title'>
+<!--  l. 779  --><p class='noindent'>Oefening 9
+</p><!--  l. 779  --><p class='noindent'>— Een planeet wegen zonder weegschaal
+</p><!--  l. 779  --></div>
+<!--  l. 779  --><div class='fvd-exercise__body'>
+<!--  l. 779  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--g'>G</span></div>
+<!--  l. 779  --><div class='fvd-exercise__content'>
+<!--  l. 781  --><p class='noindent'>Van verschillende manen rond dezelfde planeet zijn de baanstraal <span class='mathjax-inline'>\(r\)</span> en omlooptijd <span class='mathjax-inline'>\(T\)</span>
+bekend.
+</p>
+                                                                  
+
+                                                                  
+<div class='problem-environment question' id='problem31' numbered=' ' role='article' titletext=' Question'>  Welke twee grootheden zet je tegen elkaar uit om volgens het cirkelbaanmodel een
+rechte te verwachten?    </div>
+<div class='problem-environment question' id='problem32' numbered=' ' role='article' titletext=' Question'>  Wat is de fysische betekenis van de helling van die rechte?    </div>
+<div class='problem-environment question' id='problem33' numbered=' ' role='article' titletext=' Question'>  Leid een formule af waarmee je uit de helling de massa van de planeet kan bepalen.
+</div>
+<div class='problem-environment question' id='problem34' numbered=' ' role='article' titletext=' Question'>  Waarom is dit een voorbeeld van indirect meten?    </div>
+<div class='problem-environment question' id='problem35' numbered=' ' role='article' titletext=' Question'>  Welke aannames van het model kunnen bij echte gegevens afwijkingen veroorzaken?
+</div>
+</div>
+<!--  l. 807  --></div>
+<!--  l. 807  --></section>
+<p><a id='x1-31r9'></a>
+</p><!--  l. 814  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>9</div><div class='fvd-section-bar__title'>Een satelliet die boven hetzelfde punt blijft</div></div>
+<!--  l. 816  --><p class='noindent'>Communicatie- en weersatellieten kunnen zo worden geplaatst dat ze voor een
+waarnemer op aarde boven ongeveer hetzelfde punt aan de hemel blijven.
+</p><!--  l. 820  --><p class='noindent'>Zo’n satelliet noemen we <strong>geostationair</strong>.
+</p><!--  l. 822  --><p class='noindent'>Daarvoor volstaat niet alleen een bepaalde omlooptijd. De baan moet ook geschikt
+georiënteerd zijn.
+</p><!--  l. 825  --><p class='noindent'>Voor een geostationaire satelliet geldt in het ideale model onder meer:
+</p>     
+<ul class='itemize1'>
+<li class='itemize'>de baan is cirkelvormig;
+</li>
+<li class='itemize'>de baan ligt in het vlak van de evenaar;
+</li>
+<li class='itemize'>de satelliet beweegt in dezelfde draairichting als de aarde;
+</li>
+<li class='itemize'>de  omlooptijd  komt  overeen  met  de  rotatieperiode  van  de  aarde  ten
+opzichte van de sterren.</li></ul>
+<!--  l. 835  --><p class='noindent'>Uit
+</p>
+                                                                  
+
+                                                                  
+<div class='mathjax-block'>\[ T^2=\frac {4\pi ^2}{GM_A}r^3 \]</div>
+<!--  l. 841  --><p class='noindent'>volgt:
+</p>
+<div class='mathjax-block'>\[ \boxed { r = \sqrt [3]{\frac {GM_AT^2}{4\pi ^2}}. } \]</div>
+<!--  l. 851  --><p class='noindent'>Dit is de afstand tot het aardmiddelpunt.
+</p><!--  l. 853  --><p class='noindent'>De hoogte boven het aardoppervlak is:
+</p>
+<div class='mathjax-block'>\[ \boxed { h=r-R_A. } \]</div>
+<p><a id='x1-32r10'></a>
+</p><!--  l. 862  --><section class='fvd-exercise'>
+<!--  l. 862  --><div class='fvd-exercise__title'>
+<!--  l. 862  --><p class='noindent'>Oefening 10
+</p><!--  l. 862  --><p class='noindent'>— Geostationaire baan
+</p><!--  l. 862  --></div>
+<!--  l. 862  --><div class='fvd-exercise__body'>
+<!--  l. 862  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<!--  l. 862  --><div class='fvd-exercise__content'>
+<!--  l. 864  --><p class='noindent'>Neem voor een eerste berekening:
+</p>
+<div class='mathjax-block'>\[ T=23\,\mathrm h\,56\,\mathrm {min}, \]</div>
+<div class='mathjax-block'>\[ M_A=5{,}97\cdot 10^{24}\,\mathrm {kg}, \qquad R_A=6{,}37\cdot 10^6\,\mathrm m. \]</div>
+<div class='problem-environment question' id='problem36' numbered=' ' role='article' titletext=' Question'>  Zet de periode om naar SI-eenheden.    </div>
+<div class='problem-environment question' id='problem37' numbered=' ' role='article' titletext=' Question'>  Bereken de vereiste baanstraal.    </div>
+<div class='problem-environment question' id='problem38' numbered=' ' role='article' titletext=' Question'>  Bereken de hoogte boven het aardoppervlak.    </div>
+<div class='problem-environment question' id='problem39' numbered=' ' role='article' titletext=' Question'>  Bereken de baansnelheid.    </div>
+<div class='problem-environment question' id='problem40' numbered=' ' role='article' titletext=' Question'>  Waarom zou een satelliet met dezelfde periode maar in een polaire baan niet
+geostationair zijn?    </div>
+</div>
+<!--  l. 897  --></div>
+<!--  l. 897  --></section>
+<p><a id='x1-33r10'></a>
+</p><!--  l. 904  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>10</div><div class='fvd-section-bar__title'>Gewichtloosheid is geen afwezigheid van gravitatie</div></div>
+<!--  l. 906  --><p class='noindent'>Astronauten in een ruimtestation lijken gewichtloos. Toch is het gravitatieveld in een
+lage aardbaan nog aanzienlijk.
+                                                                  
+
+                                                                  
+</p><!--  l. 909  --><p class='noindent'>De verklaring is dat ruimtestation en astronaut samen vrijwel dezelfde vrije val
+uitvoeren.
+</p><!--  l. 912  --><p class='noindent'>Als een astronaut los in het station zweeft, oefent de vloer geen ondersteunende
+normaalkracht op de astronaut uit.
+</p><!--  l. 915  --><p class='noindent'>Dat is wat het gevoel van gewichtloosheid veroorzaakt.
+</p><!--  l. 918  --><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span></div><div class='fvd-remark__content'>De term “gewicht” wordt in verschillende contexten verschillend
+gebruikt. In dit hoofdstuk is het belangrijk onderscheid te maken tussen de
+gravitatiekracht <span class='mathjax-inline'>\(F_g\)</span> en de contactkracht die bijvoorbeeld een weegschaal meet.
+</div></section>
+<p><a id='x1-34r11'></a>
+</p><!--  l. 925  --><section class='fvd-exercise'>
+<!--  l. 925  --><div class='fvd-exercise__title'>
+<!--  l. 925  --><p class='noindent'>Oefening 11
+</p><!--  l. 925  --><p class='noindent'>— Wat meet een weegschaal?
+</p><!--  l. 925  --></div>
+<!--  l. 925  --><div class='fvd-exercise__body'>
+<!--  l. 925  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<!--  l. 925  --><div class='fvd-exercise__content'>
+<!--  l. 927  --><p class='noindent'>Vergelijk een persoon:
+</p>     
+<ol class='enumerate1'>
+<li class='enumerate' id='x1-36x1'>stilstaand op de aarde;
+</li>
+<li class='enumerate' id='x1-38x2'>in een lift in vrije val;
+</li>
+<li class='enumerate' id='x1-40x3'>zwevend in een ruimtestation in een cirkelbaan.</li></ol>
+<div class='problem-environment question' id='problem41' numbered=' ' role='article' titletext=' Question'>  Is de gravitatiekracht in elk van de drie situaties noodzakelijk nul?    </div>
+<div class='problem-environment question' id='problem42' numbered=' ' role='article' titletext=' Question'>  Wanneer kan de normaalkracht van een weegschaal nul zijn?    </div>
+<div class='problem-environment question' id='problem43' numbered=' ' role='article' titletext=' Question'>  Leg uit waarom “gewichtloos” niet hetzelfde hoeft te betekenen als “zonder
+gravitatiekracht”.    </div>
+                                                                  
+
+                                                                  
+</div>
+<!--  l. 948  --></div>
+<!--  l. 948  --></section>
+<p><a id='x1-41r11'></a>
+</p><!--  l. 955  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>11</div><div class='fvd-section-bar__title'>Hoe goed is ons satellietmodel?</div></div>
+<!--  l. 957  --><p class='noindent'>We hebben tot nu toe vaak aangenomen dat:
+</p>     
+<ul class='itemize1'>
+<li class='itemize'>de centrale massa bolsymmetrisch is;
+</li>
+<li class='itemize'>de satelliet als puntmassa kan worden behandeld;
+</li>
+<li class='itemize'>de baan perfect cirkelvormig is;
+</li>
+<li class='itemize'>alleen de gravitatiekracht van één centrale massa belangrijk is;
+</li>
+<li class='itemize'>luchtweerstand verwaarloosbaar is.</li></ul>
+<!--  l. 967  --><p class='noindent'>Echte banen kunnen elliptisch zijn en worden beïnvloed door andere hemellichamen,
+de niet-perfecte bolsymmetrie van de aarde en, in lage banen, een kleine
+atmosferische weerstand.
+</p><!--  l. 971  --><p class='noindent'>Een model is dus geen kopie van de werkelijkheid. Het is een doelgerichte
+vereenvoudiging.
+<a id='x1-42r12'></a>
+</p><!--  l. 975  --><section class='fvd-exercise'>
+<!--  l. 975  --><div class='fvd-exercise__title'>
+<!--  l. 975  --><p class='noindent'>Oefening 12
+</p><!--  l. 975  --><p class='noindent'>— Model of werkelijkheid?
+</p><!--  l. 975  --></div>
+<!--  l. 975  --><div class='fvd-exercise__body'>
+                                                                  
+
+                                                                  
+<!--  l. 975  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--g'>G</span></div>
+<!--  l. 975  --><div class='fvd-exercise__content'>
+<!--  l. 977  --><p class='noindent'>Een zeer lage satellietbaan wordt met het ideale cirkelbaanmodel beschreven.
+</p>
+<div class='problem-environment question' id='problem44' numbered=' ' role='article' titletext=' Question'>  Welke kracht ontbreekt mogelijk in het model?    </div>
+<div class='problem-environment question' id='problem45' numbered=' ' role='article' titletext=' Question'>  Verwacht je dat de mechanische energie van de satelliet in werkelijkheid perfect
+constant blijft wanneer die kracht niet verwaarloosbaar is? Motiveer kwalitatief.
+</div>
+<div class='problem-environment question' id='problem46' numbered=' ' role='article' titletext=' Question'>  Waarom kan een model toch nuttig zijn wanneer het niet alle details van de
+werkelijkheid bevat?    </div>
+</div>
+<!--  l. 995  --></div>
+<!--  l. 995  --></section>
+<p><a id='x1-43r12'></a>
+</p><!--  l. 1002  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>12</div><div class='fvd-section-bar__title'>Transfer: bewegen in een elektrisch veld</div></div>
+<!--  l. 1004  --><p class='noindent'>Gravitatie is niet het enige veld dat een kracht kan veroorzaken.
+</p><!--  l. 1006  --><p class='noindent'>Voor een lading <span class='mathjax-inline'>\(q\)</span> in een elektrisch veld geldt:
+</p>
+<div class='mathjax-block'>\[ \boxed { \vec F_E=q\vec E. } \]</div>
+<!--  l. 1014  --><p class='noindent'>Voor een positieve lading heeft <span class='mathjax-inline'>\(\vec F_E\)</span> dezelfde richting en zin als <span class='mathjax-inline'>\(\vec E\)</span>.
+</p><!--  l. 1017  --><p class='noindent'>Voor een negatieve lading is de zin tegengesteld.
+<a id='x1-44r1'></a>
+</p><!--  l. 1020  --><div class='fvd-subsection'>
+<!--  l. 1020  --><div class='fvd-subsection__row'>
+<!--  l. 1020  --><div class='fvd-subsection__number'>12.1</div>
+<!--  l. 1020  --><div class='fvd-subsection__title'>Newton II toepassen</div>
+<!--  l. 1020  --></div>
+<!--  l. 1020  --><div class='fvd-subsection__line'></div>
+<!--  l. 1020  --></div>
+<!--  l. 1022  --><p class='noindent'>Als de elektrische kracht de enige relevante kracht is:
+</p>
+<div class='mathjax-block'>\[ m\vec a=q\vec E. \]</div>
+<!--  l. 1028  --><p class='noindent'>Dus:
+</p>
+<div class='mathjax-block'>\[ \boxed { \vec a=\frac qm\vec E. } \]</div>
+                                                                  
+
+                                                                  
+<!--  l. 1036  --><p class='noindent'>In een <strong>homogeen</strong> elektrisch veld is <span class='mathjax-inline'>\(\vec E\)</span> constant. Voor een deeltje met constante massa
+en lading is dan ook <span class='mathjax-inline'>\(\vec a\)</span> constant.
+</p><!--  l. 1039  --><p class='noindent'>We herkennen dus opnieuw een EVRB, maar nu veroorzaakt door een elektrische
+kracht.
+<a id='x1-45r13'></a>
+</p><!--  l. 1043  --><section class='fvd-exercise'>
+<!--  l. 1043  --><div class='fvd-exercise__title'>
+<!--  l. 1043  --><p class='noindent'>Oefening 13
+</p><!--  l. 1043  --><p class='noindent'>— Positief of negatief?
+</p><!--  l. 1043  --></div>
+<!--  l. 1043  --><div class='fvd-exercise__body'>
+<!--  l. 1043  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span></div>
+<!--  l. 1043  --><div class='fvd-exercise__content'>
+<!--  l. 1045  --><p class='noindent'>Een geladen deeltje wordt vanuit rust losgelaten in een homogeen elektrisch veld dat
+naar rechts wijst.
+</p>
+<div class='problem-environment question' id='problem47' numbered=' ' role='article' titletext=' Question'>  In welke richting versnelt een positief deeltje?    </div>
+<div class='problem-environment question' id='problem48' numbered=' ' role='article' titletext=' Question'>  In welke richting versnelt een negatief deeltje?    </div>
+<div class='problem-environment question' id='problem49' numbered=' ' role='article' titletext=' Question'>  Waarom moet het teken van <span class='mathjax-inline'>\(q\)</span> behouden blijven in de vectoriële vergelijking <div class='mathjax-block'>\[ \vec a=\frac qm\vec E? \]</div>
+</div>
+</div>
+<!--  l. 1064  --></div>
+<!--  l. 1064  --></section>
+<p><a id='x1-46r13'></a>
+</p><!--  l. 1071  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>13</div><div class='fvd-section-bar__title'>Gravitatieveld en elektrisch veld vergelijken</div></div>
+<!--  l. 1073  --><p class='noindent'>De twee veldconcepten vertonen een opvallende structuur.
+</p><!--  l. 1075  --><p class='noindent'>Voor gravitatie:
+</p>
+<div class='mathjax-block'>\[ \vec F_g=m\vec g. \]</div>
+<!--  l. 1081  --><p class='noindent'>Voor elektriciteit:
+</p>
+<div class='mathjax-block'>\[ \vec F_E=q\vec E. \]</div>
+<!--  l. 1087  --><p class='noindent'>In beide gevallen is er:
+</p>
+<div class='mathjax-block'>\[ \boxed { \text {eigenschap van het deeltje} \times \text {veldsterkte} = \text {kracht}. } \]</div>
+                                                                  
+
+                                                                  
+<!--  l. 1099  --><p class='noindent'>Maar er zijn ook belangrijke verschillen.
+</p><!--  l. 1101  --><p class='noindent'>Massa is in de klassieke mechanica positief en gravitatie tussen gewone massa’s is
+aantrekkend.
+</p><!--  l. 1104  --><p class='noindent'>Elektrische lading kan positief of negatief zijn. Daardoor kan de elektrische kracht in
+de zin van <span class='mathjax-inline'>\(\vec E\)</span> of in de tegengestelde zin werken.
+<a id='x1-47r14'></a>
+</p><!--  l. 1109  --><section class='fvd-exercise'>
+<!--  l. 1109  --><div class='fvd-exercise__title'>
+<!--  l. 1109  --><p class='noindent'>Oefening 14
+</p><!--  l. 1109  --><p class='noindent'>— Analogie met grenzen
+</p><!--  l. 1109  --></div>
+<!--  l. 1109  --><div class='fvd-exercise__body'>
+<!--  l. 1109  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<!--  l. 1109  --><div class='fvd-exercise__content'>
+<!--  l. 1111  --><p class='noindent'>Vergelijk:
+</p>
+<div class='mathjax-block'>\[ \vec F_g=m\vec g \]</div>
+<!--  l. 1117  --><p class='noindent'>en
+</p>
+<div class='mathjax-block'>\[ \vec F_E=q\vec E. \]</div>
+<div class='problem-environment question' id='problem50' numbered=' ' role='article' titletext=' Question'>  Welke rol speelt <span class='mathjax-inline'>\(m\)</span> in de eerste vergelijking?    </div>
+<div class='problem-environment question' id='problem51' numbered=' ' role='article' titletext=' Question'>  Welke rol speelt <span class='mathjax-inline'>\(q\)</span> in de tweede?    </div>
+<div class='problem-environment question' id='problem52' numbered=' ' role='article' titletext=' Question'>  Waarom vallen verschillende massa’s in hetzelfde ideale gravitatieveld met dezelfde
+versnelling?    </div>
+<div class='problem-environment question' id='problem53' numbered=' ' role='article' titletext=' Question'>  Waarom hoeven twee deeltjes met verschillende <span class='mathjax-inline'>\(q/m\)</span>-verhouding in hetzelfde elektrische
+veld niet dezelfde versnelling te hebben?    </div>
+<div class='problem-environment question' id='problem54' numbered=' ' role='article' titletext=' Question'>  Waarom is een analogie nuttig, maar nooit een bewijs dat twee verschijnselen
+fysisch identiek zijn?    </div>
+</div>
+<!--  l. 1146  --></div>
+<!--  l. 1146  --></section>
+<p><a id='x1-48r14'></a>
+</p><!--  l. 1153  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>14</div><div class='fvd-section-bar__title'>Een geladen deeltje tussen evenwijdige platen</div></div>
+<!--  l. 1155  --><p class='noindent'>Beschouw een positief geladen deeltje dat horizontaal een gebied met een homogeen
+verticaal elektrisch veld binnenkomt.
+                                                                  
+
+                                                                  
+</p><!--  l. 1158  --><p class='noindent'>Kies:
+</p>
+<div class='mathjax-block'>\[ \vec v_0=v_0\vec e_x \]</div>
+<!--  l. 1164  --><p class='noindent'>en een elektrisch veld in de positieve <span class='mathjax-inline'>\(y\)</span>-richting.
+</p><!--  l. 1166  --><p class='noindent'>Dan:
+</p>
+<div class='mathjax-block'>\[ F_x=0 \]</div>
+<!--  l. 1172  --><p class='noindent'>en dus:
+</p>
+<div class='mathjax-block'>\[ a_x=0. \]</div>
+<!--  l. 1178  --><p class='noindent'>Horizontaal:
+</p>
+<div class='mathjax-block'>\[ \boxed { x(t)=x_0+v_0t. } \]</div>
+<!--  l. 1186  --><p class='noindent'>Verticaal:
+</p>
+<div class='mathjax-block'>\[ F_y=qE \]</div>
+<!--  l. 1192  --><p class='noindent'>en:
+</p>
+<div class='mathjax-block'>\[ a_y=\frac {qE}{m}. \]</div>
+<!--  l. 1198  --><p class='noindent'>Als <span class='mathjax-inline'>\(v_{y,0}=0\)</span>:
+</p>
+<div class='mathjax-block'>\[ \boxed { y(t) = y_0+\frac 12\frac {qE}{m}t^2. } \]</div>
+<!--  l. 1208  --><p class='noindent'>De beweging is dus de samenstelling van:
+</p>     
+<ul class='itemize1'>
+<li class='itemize'>een eenparige horizontale beweging;
+</li>
+<li class='itemize'>een eenparig versnelde verticale beweging.</li></ul>
+<!--  l. 1215  --><p class='noindent'>Dat is wiskundig dezelfde structuur als de horizontale worp in een homogeen
+gravitatieveld.
+<a id='x1-49r1'></a>
+</p><!--  l. 1219  --><div class='fvd-subsection'>
+<!--  l. 1219  --><div class='fvd-subsection__row'>
+                                                                  
+
+                                                                  
+<!--  l. 1219  --><div class='fvd-subsection__number'>14.1</div>
+<!--  l. 1219  --><div class='fvd-subsection__title'>De baanvergelijking</div>
+<!--  l. 1219  --></div>
+<!--  l. 1219  --><div class='fvd-subsection__line'></div>
+<!--  l. 1219  --></div>
+<!--  l. 1221  --><p class='noindent'>Uit:
+</p>
+<div class='mathjax-block'>\[ x-x_0=v_0t \]</div>
+<!--  l. 1227  --><p class='noindent'>volgt:
+</p>
+<div class='mathjax-block'>\[ t=\frac {x-x_0}{v_0}. \]</div>
+<!--  l. 1233  --><p class='noindent'>Invullen in de verticale bewegingsvergelijking geeft:
+</p>
+<div class='mathjax-block'>\[ y-y_0 = \frac 12\frac {qE}{m} \left (\frac {x-x_0}{v_0}\right )^2. \]</div>
+<!--  l. 1242  --><p class='noindent'>Dus:
+</p>
+<div class='mathjax-block'>\[ \boxed { y(x) = y_0+ \frac {qE}{2mv_0^2}(x-x_0)^2. } \]</div>
+<!--  l. 1253  --><p class='noindent'>Binnen het gebied met homogeen elektrisch veld is de baan dus parabolisch.
+<a id='x1-50r15'></a>
+</p><!--  l. 1257  --><section class='fvd-exercise'>
+<!--  l. 1257  --><div class='fvd-exercise__title'>
+<!--  l. 1257  --><p class='noindent'>Oefening 15
+</p><!--  l. 1257  --><p class='noindent'>— Elektrische afbuiging
+</p><!--  l. 1257  --></div>
+<!--  l. 1257  --><div class='fvd-exercise__body'>
+<!--  l. 1257  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span></div>
+<!--  l. 1257  --><div class='fvd-exercise__content'>
+<!--  l. 1259  --><p class='noindent'>Een positief geladen deeltje komt horizontaal met snelheid <span class='mathjax-inline'>\(v_0\)</span> een homogeen elektrisch
+veld binnen. Het veld wijst verticaal omhoog.
+</p>
+<div class='problem-environment question' id='problem55' numbered=' ' role='article' titletext=' Question'>  Maak een krachten- en bewegingsanalyse per component.    </div>
+<div class='problem-environment question' id='problem56' numbered=' ' role='article' titletext=' Question'>  Leid <span class='mathjax-inline'>\(a_y=qE/m\)</span> af.    </div>
+<div class='problem-environment question' id='problem57' numbered=' ' role='article' titletext=' Question'>  Stel <span class='mathjax-inline'>\(x(t)\)</span> en <span class='mathjax-inline'>\(y(t)\)</span> op voor <span class='mathjax-inline'>\(x_0=y_0=0\)</span> en <span class='mathjax-inline'>\(v_{y,0}=0\)</span>.    </div>
+<div class='problem-environment question' id='problem58' numbered=' ' role='article' titletext=' Question'>  Elimineer <span class='mathjax-inline'>\(t\)</span> en leid de baanvergelijking af.    </div>
+                                                                  
+
+                                                                  
+<div class='problem-environment question' id='problem59' numbered=' ' role='article' titletext=' Question'>  Wat verandert er aan de baan wanneer <span class='mathjax-inline'>\(q\)</span> negatief is?    </div>
+<div class='problem-environment question' id='problem60' numbered=' ' role='article' titletext=' Question'>  Wat gebeurt er met de afbuiging wanneer <span class='mathjax-inline'>\(v_0\)</span> groter wordt? Interpreteer de factor <span class='mathjax-inline'>\(1/v_0^2\)</span>.
+</div>
+</div>
+<!--  l. 1287  --></div>
+<!--  l. 1287  --></section>
+<p><a id='x1-51r15'></a>
+</p><!--  l. 1294  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>15</div><div class='fvd-section-bar__title'>Bewegen in een magnetisch veld</div></div>
+<!--  l. 1296  --><p class='noindent'>Een bewegende elektrische lading kan in een magnetisch veld een magnetische kracht
+ondervinden.
+</p><!--  l. 1299  --><p class='noindent'>Voor de grootte geldt:
+</p>
+<div class='mathjax-block'>\[ \boxed { F_B=|q|vB\sin \alpha , } \]</div>
+<!--  l. 1307  --><p class='noindent'>waar <span class='mathjax-inline'>\(\alpha \)</span> de hoek is tussen <span class='mathjax-inline'>\(\vec v\)</span> en <span class='mathjax-inline'>\(\vec B\)</span>.
+</p><!--  l. 1309  --><p class='noindent'>De magnetische kracht staat loodrecht op zowel de snelheid als het magnetisch
+veld.
+<a id='x1-52r1'></a>
+</p><!--  l. 1313  --><div class='fvd-subsection'>
+<!--  l. 1313  --><div class='fvd-subsection__row'>
+<!--  l. 1313  --><div class='fvd-subsection__number'>15.1</div>
+<!--  l. 1313  --><div class='fvd-subsection__title'>Drie bijzondere gevallen</div>
+<!--  l. 1313  --></div>
+<!--  l. 1313  --><div class='fvd-subsection__line'></div>
+<!--  l. 1313  --></div>
+<!--  l. 1315  --><p class='noindent'>Als:
+</p>
+<div class='mathjax-block'>\[ \alpha =0^\circ \quad \text {of}\quad 180^\circ , \]</div>
+<!--  l. 1323  --><p class='noindent'>dan:
+</p>
+<div class='mathjax-block'>\[ F_B=0. \]</div>
+<!--  l. 1329  --><p class='noindent'>Als:
+</p>
+<div class='mathjax-block'>\[ \alpha =90^\circ , \]</div>
+<!--  l. 1335  --><p class='noindent'>dan is de kracht maximaal:
+</p>
+                                                                  
+
+                                                                  
+<div class='mathjax-block'>\[ \boxed { F_B=|q|vB. } \]</div>
+<!--  l. 1343  --><p class='noindent'>Het geval <span class='mathjax-inline'>\(\vec v\perp \vec B\)</span> is bijzonder interessant, omdat de kracht dan voortdurend loodrecht op de
+snelheid kan staan.
+<a id='x1-53r16'></a>
+</p><!--  l. 1347  --><section class='fvd-exercise'>
+<!--  l. 1347  --><div class='fvd-exercise__title'>
+<!--  l. 1347  --><p class='noindent'>Oefening 16
+</p><!--  l. 1347  --><p class='noindent'>— Eerst richting, dan grootte
+</p><!--  l. 1347  --></div>
+<!--  l. 1347  --><div class='fvd-exercise__body'>
+<!--  l. 1347  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span></div>
+<!--  l. 1347  --><div class='fvd-exercise__content'>
+<!--  l. 1349  --><p class='noindent'>Een geladen deeltje beweegt in een homogeen magnetisch veld.
+</p>
+<div class='problem-environment question' id='problem61' numbered=' ' role='article' titletext=' Question'>  Hoe groot is de magnetische kracht als het deeltje evenwijdig aan <span class='mathjax-inline'>\(\vec B\)</span> beweegt?
+</div>
+<div class='problem-environment question' id='problem62' numbered=' ' role='article' titletext=' Question'>  Hoe groot is de magnetische kracht als het deeltje loodrecht op <span class='mathjax-inline'>\(\vec B\)</span> beweegt?
+</div>
+<div class='problem-environment question' id='problem63' numbered=' ' role='article' titletext=' Question'>  Waarom kan een stilstaande lading door een zuiver magnetisch veld niet worden
+versneld?    </div>
+</div>
+<!--  l. 1366  --></div>
+<!--  l. 1366  --></section>
+<p><a id='x1-54r16'></a>
+</p><!--  l. 1373  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>16</div><div class='fvd-section-bar__title'>Wanneer magnetisme een cirkelbaan maakt</div></div>
+<!--  l. 1375  --><p class='noindent'>Beschouw een geladen deeltje dat met snelheid <span class='mathjax-inline'>\(\vec v\)</span> loodrecht op een homogeen
+magnetisch veld <span class='mathjax-inline'>\(\vec B\)</span> beweegt.
+</p><!--  l. 1378  --><p class='noindent'>Dan is:
+</p>
+<div class='mathjax-block'>\[ F_B=|q|vB. \]</div>
+<!--  l. 1384  --><p class='noindent'>De kracht staat op elk moment loodrecht op <span class='mathjax-inline'>\(\vec v\)</span>. Ze verandert dus de richting van de
+snelheidsvector.
+</p><!--  l. 1387  --><p class='noindent'>Wanneer het magnetische veld homogeen is en er geen andere relevante krachten zijn,
+levert de magnetische kracht de radiale resultante:
+</p>
+<div class='mathjax-block'>\[ F_B=ma_c. \]</div>
+                                                                  
+
+                                                                  
+<!--  l. 1394  --><p class='noindent'>Dus:
+</p>
+<div class='mathjax-block'>\[ |q|vB = m\frac {v^2}{r}. \]</div>
+<!--  l. 1402  --><p class='noindent'>Voor <span class='mathjax-inline'>\(v\neq 0\)</span>:
+</p>
+<div class='mathjax-block'>\[ |q|B = m\frac vr. \]</div>
+<!--  l. 1410  --><p class='noindent'>Daaruit:
+</p>
+<div class='mathjax-block'>\[ \boxed { r=\frac {mv}{|q|B}. } \]</div>
+<!--  l. 1418  --><p class='noindent'>Dit is een krachtige relatie: de kromming van de baan bevat informatie over massa,
+lading, snelheid en magnetische veldsterkte.
+<a id='x1-55r1'></a>
+</p><!--  l. 1422  --><div class='fvd-subsection'>
+<!--  l. 1422  --><div class='fvd-subsection__row'>
+<!--  l. 1422  --><div class='fvd-subsection__number'>16.1</div>
+<!--  l. 1422  --><div class='fvd-subsection__title'>Wat vertelt de formule?</div>
+<!--  l. 1422  --></div>
+<!--  l. 1422  --><div class='fvd-subsection__line'></div>
+<!--  l. 1422  --></div>
+<!--  l. 1424  --><p class='noindent'>Als de andere grootheden constant blijven:
+</p>
+<div class='mathjax-block'>\[ r\sim m, \]</div>
+<div class='mathjax-block'>\[ r\sim v, \]</div>
+<div class='mathjax-block'>\[ r\sim \frac 1{|q|}, \]</div>
+<!--  l. 1438  --><p class='noindent'>en:
+</p>
+<div class='mathjax-block'>\[ r\sim \frac 1B. \]</div>
+<!--  l. 1444  --><p class='noindent'>Een groter <span class='mathjax-inline'>\(B\)</span> buigt de baan dus sterker af en geeft een kleinere straal.
+</p><!--  l. 1447  --><p class='noindent'>Een sneller deeltje krijgt in hetzelfde veld een grotere baanstraal.
+<a id='x1-56r17'></a>
+</p><!--  l. 1450  --><section class='fvd-exercise'>
+<!--  l. 1450  --><div class='fvd-exercise__title'>
+<!--  l. 1450  --><p class='noindent'>Oefening 17
+</p><!--  l. 1450  --><p class='noindent'>— Verbanden analyseren
+</p><!--  l. 1450  --></div>
+                                                                  
+
+                                                                  
+<!--  l. 1450  --><div class='fvd-exercise__body'>
+<!--  l. 1450  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span></div>
+<!--  l. 1450  --><div class='fvd-exercise__content'>
+<!--  l. 1452  --><p class='noindent'>Een geladen deeltje beweegt loodrecht op een homogeen magnetisch veld.
+</p>
+<div class='problem-environment question' id='problem64' numbered=' ' role='article' titletext=' Question'>  Wat gebeurt er met <span class='mathjax-inline'>\(r\)</span> als <span class='mathjax-inline'>\(v\)</span> verdubbelt?    </div>
+<div class='problem-environment question' id='problem65' numbered=' ' role='article' titletext=' Question'>  Wat gebeurt er met <span class='mathjax-inline'>\(r\)</span> als <span class='mathjax-inline'>\(B\)</span> verdubbelt?    </div>
+<div class='problem-environment question' id='problem66' numbered=' ' role='article' titletext=' Question'>  Wat gebeurt er met <span class='mathjax-inline'>\(r\)</span> als zowel <span class='mathjax-inline'>\(m\)</span> als <span class='mathjax-inline'>\(|q|\)</span> verdubbelen?    </div>
+<div class='problem-environment question' id='problem67' numbered=' ' role='article' titletext=' Question'>  Waarom moet je bij elk antwoord vermelden welke andere grootheden constant
+blijven?    </div>
+</div>
+<!--  l. 1471  --></div>
+<!--  l. 1471  --></section>
+<p><a id='x1-57r17'></a>
+</p><!--  l. 1478  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>17</div><div class='fvd-section-bar__title'>Kan een magnetische kracht de snelheidsgrootte veranderen?</div></div>
+<!--  l. 1480  --><p class='noindent'>Bij <span class='mathjax-inline'>\(\vec v\perp \vec B\)</span> staat de magnetische kracht loodrecht op de snelheid.
+</p><!--  l. 1483  --><p class='noindent'>De kracht verandert daardoor de richting van <span class='mathjax-inline'>\(\vec v\)</span>, maar niet de snelheidsgrootte.
+</p><!--  l. 1486  --><p class='noindent'>Dit is precies wat nodig is voor een eenparige cirkelbeweging:
+</p>
+<div class='mathjax-block'>\[ |\vec v|=\text {constant}, \qquad \vec v\neq \text {constant}. \]</div>
+<!--  l. 1494  --><p class='noindent'>De versnelling is niet nul, want de richting van <span class='mathjax-inline'>\(\vec v\)</span> verandert voortdurend.
+<a id='x1-58r18'></a>
+</p><!--  l. 1497  --><section class='fvd-exercise'>
+<!--  l. 1497  --><div class='fvd-exercise__title'>
+<!--  l. 1497  --><p class='noindent'>Oefening 18
+</p><!--  l. 1497  --><p class='noindent'>— Constante snelheid en toch versnellen
+</p><!--  l. 1497  --></div>
+<!--  l. 1497  --><div class='fvd-exercise__body'>
+<!--  l. 1497  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span></div>
+<!--  l. 1497  --><div class='fvd-exercise__content'>
+<!--  l. 1499  --><p class='noindent'>Een leerling zegt:
+</p>     
+<blockquote class='quote'>
+<!--  l. 1502  --><p class='noindent'>“Als het magnetisch veld de snelheid niet groter maakt, kan het
+                                                                  
+
+                                                                  
+deeltje ook geen versnelling hebben.”</p></blockquote>
+<div class='problem-environment question' id='problem68' numbered=' ' role='article' titletext=' Question'>  Welke verwarring maakt de leerling?    </div>
+<div class='problem-environment question' id='problem69' numbered=' ' role='article' titletext=' Question'>  Welke grootheid blijft constant in een ideale magnetische cirkelbaan?    </div>
+<div class='problem-environment question' id='problem70' numbered=' ' role='article' titletext=' Question'>  Welke grootheid verandert wel voortdurend?    </div>
+<div class='problem-environment question' id='problem71' numbered=' ' role='article' titletext=' Question'>  Leg de link met de eenparige cirkelbeweging uit H5.    </div>
+</div>
+<!--  l. 1522  --></div>
+<!--  l. 1522  --></section>
+<p><a id='x1-59r18'></a>
+</p><!--  l. 1529  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>18</div><div class='fvd-section-bar__title'>Verdieping: de omlooptijd in een magnetisch veld</div></div>
+<!--  l. 1531  --><p class='noindent'>Voor een cirkelbeweging:
+</p>
+<div class='mathjax-block'>\[ T=\frac {2\pi r}{v}. \]</div>
+<!--  l. 1537  --><p class='noindent'>Voor de magnetische cirkelbaan:
+</p>
+<div class='mathjax-block'>\[ r=\frac {mv}{|q|B}. \]</div>
+<!--  l. 1543  --><p class='noindent'>Invullen geeft:
+</p>
+<div class='mathjax-block'>\[ T = \frac {2\pi }{v} \frac {mv}{|q|B}. \]</div>
+<!--  l. 1552  --><p class='noindent'>De snelheid valt weg:
+</p>
+<div class='mathjax-block'>\[ \boxed { T=\frac {2\pi m}{|q|B}. } \]</div>
+<!--  l. 1560  --><p class='noindent'>En dus:
+</p>
+<div class='mathjax-block'>\[ \boxed { \omega =\frac {|q|B}{m}. } \]</div>
+<!--  l. 1568  --><p class='noindent'>Binnen dit niet-relativistische ideale model hangt de omlooptijd dus niet af van de
+snelheid.
+<a id='x1-60r19'></a>
+</p><!--  l. 1572  --><section class='fvd-exercise'>
+<!--  l. 1572  --><div class='fvd-exercise__title'>
+<!--  l. 1572  --><p class='noindent'>Oefening 19
+</p><!--  l. 1572  --><p class='noindent'>— Een verrassend resultaat
+</p><!--  l. 1572  --></div>
+<!--  l. 1572  --><div class='fvd-exercise__body'>
+                                                                  
+
+                                                                  
+<!--  l. 1572  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--g'>G</span></div>
+<!--  l. 1572  --><div class='fvd-exercise__content'>
+<!--  l. 1574  --><p class='noindent'>Twee identieke positief geladen deeltjes bewegen loodrecht op hetzelfde homogene
+magnetische veld.
+</p><!--  l. 1577  --><p class='noindent'>Voor de snelheden geldt:
+</p>
+<div class='mathjax-block'>\[ v_2=3v_1. \]</div>
+<div class='problem-environment question' id='problem72' numbered=' ' role='article' titletext=' Question'>  Bepaal <span class='mathjax-inline'>\(r_2/r_1\)</span>.    </div>
+<div class='problem-environment question' id='problem73' numbered=' ' role='article' titletext=' Question'>  Bepaal <span class='mathjax-inline'>\(T_2/T_1\)</span>.    </div>
+<div class='problem-environment question' id='problem74' numbered=' ' role='article' titletext=' Question'>  Hoe kan het tweede deeltje een grotere cirkel afleggen in dezelfde omlooptijd?
+</div>
+<div class='problem-environment question' id='problem75' numbered=' ' role='article' titletext=' Question'>  Welke aannames liggen aan deze conclusie ten grondslag?    </div>
+</div>
+<!--  l. 1600  --></div>
+<!--  l. 1600  --></section>
+<p><a id='x1-61r19'></a>
+</p><!--  l. 1607  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>19</div><div class='fvd-section-bar__title'>De zin van de afbuiging</div></div>
+<!--  l. 1609  --><p class='noindent'>De formule
+</p>
+<div class='mathjax-block'>\[ r=\frac {mv}{|q|B} \]</div>
+<!--  l. 1615  --><p class='noindent'>bevat <span class='mathjax-inline'>\(|q|\)</span>, omdat de straal positief is.
+</p><!--  l. 1617  --><p class='noindent'>Maar het <strong>teken</strong> van de lading is wel essentieel voor de zin van de magnetische
+kracht.
+</p><!--  l. 1620  --><p class='noindent'>Een positieve en een negatieve lading met dezelfde massa, snelheidsgrootte en <span class='mathjax-inline'>\(|q|\)</span>
+krijgen in hetzelfde magnetische veld een baan met dezelfde straal, maar buigen in
+tegengestelde zin af.
+<a id='x1-62r20'></a>
+</p><!--  l. 1624  --><section class='fvd-exercise'>
+<!--  l. 1624  --><div class='fvd-exercise__title'>
+<!--  l. 1624  --><p class='noindent'>Oefening 20
+</p><!--  l. 1624  --><p class='noindent'>— Zelfde straal, andere zin
+</p><!--  l. 1624  --></div>
+<!--  l. 1624  --><div class='fvd-exercise__body'>
+<!--  l. 1624  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span></div>
+<!--  l. 1624  --><div class='fvd-exercise__content'>
+                                                                  
+
+                                                                  
+<!--  l. 1626  --><p class='noindent'>Een positief en een negatief deeltje hebben dezelfde massa, dezelfde <span class='mathjax-inline'>\(|q|\)</span> en dezelfde
+beginsnelheid. Ze komen loodrecht hetzelfde homogene magnetische veld
+binnen.
+</p>
+<div class='problem-environment question' id='problem76' numbered=' ' role='article' titletext=' Question'>  Vergelijk de grootte van de magnetische krachten.    </div>
+<div class='problem-environment question' id='problem77' numbered=' ' role='article' titletext=' Question'>  Vergelijk de baanstralen.    </div>
+<div class='problem-environment question' id='problem78' numbered=' ' role='article' titletext=' Question'>  Vergelijk de zin van de afbuiging.    </div>
+<div class='problem-environment question' id='problem79' numbered=' ' role='article' titletext=' Question'>  Waarom mag je in de straalformule <span class='mathjax-inline'>\(|q|\)</span> gebruiken, maar niet vergeten dat het teken
+van <span class='mathjax-inline'>\(q\)</span> fysische informatie bevat?    </div>
+</div>
+<!--  l. 1647  --></div>
+<!--  l. 1647  --></section>
+<p><a id='x1-63r20'></a>
+</p><!--  l. 1654  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>20</div><div class='fvd-section-bar__title'>De baan als meetinstrument</div></div>
+<!--  l. 1656  --><p class='noindent'>Uit:
+</p>
+<div class='mathjax-block'>\[ r=\frac {mv}{|q|B} \]</div>
+<!--  l. 1662  --><p class='noindent'>volgt:
+</p>
+<div class='mathjax-block'>\[ \boxed { \frac {m}{|q|} = \frac {Br}{v}. } \]</div>
+<!--  l. 1672  --><p class='noindent'>Een gemeten baanstraal kan dus, als <span class='mathjax-inline'>\(B\)</span> en <span class='mathjax-inline'>\(v\)</span> bekend zijn, informatie geven over de
+verhouding tussen massa en ladingsgrootte.
+</p><!--  l. 1675  --><p class='noindent'>Dat principe ligt aan de basis van technieken waarbij geladen deeltjes worden
+gescheiden of geïdentificeerd op basis van hun beweging in velden.
+<a id='x1-64r21'></a>
+</p><!--  l. 1679  --><section class='fvd-exercise'>
+<!--  l. 1679  --><div class='fvd-exercise__title'>
+<!--  l. 1679  --><p class='noindent'>Oefening 21
+</p><!--  l. 1679  --><p class='noindent'>— Onbekend deeltje
+</p><!--  l. 1679  --></div>
+<!--  l. 1679  --><div class='fvd-exercise__body'>
+<!--  l. 1679  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--g'>G</span></div>
+<!--  l. 1679  --><div class='fvd-exercise__content'>
+<!--  l. 1681  --><p class='noindent'>Een positief geladen deeltje beweegt loodrecht op een homogeen magnetisch veld. De
+grootheden <span class='mathjax-inline'>\(B\)</span>, <span class='mathjax-inline'>\(v\)</span> en <span class='mathjax-inline'>\(r\)</span> worden experimenteel bepaald.
+</p>
+                                                                  
+
+                                                                  
+<div class='problem-environment question' id='problem80' numbered=' ' role='article' titletext=' Question'>  Leid een formule af voor <span class='mathjax-inline'>\(m/|q|\)</span>.    </div>
+<div class='problem-environment question' id='problem81' numbered=' ' role='article' titletext=' Question'>  Welke metingen zijn nodig?    </div>
+<div class='problem-environment question' id='problem82' numbered=' ' role='article' titletext=' Question'>  Als twee deeltjes dezelfde snelheid hebben en in hetzelfde veld een verschillende
+straal beschrijven, wat kan je dan over hun <span class='mathjax-inline'>\(m/|q|\)</span>-verhouding besluiten?    </div>
+<div class='problem-environment question' id='problem83' numbered=' ' role='article' titletext=' Question'>  Waarom kan de baanstraal alleen niet altijd volstaan om een deeltje uniek te
+identificeren?    </div>
+</div>
+<!--  l. 1704  --></div>
+<!--  l. 1704  --></section>
+<p><a id='x1-65r21'></a>
+</p><!--  l. 1711  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>21</div><div class='fvd-section-bar__title'>Gevorderd: elektrische en magnetische kracht samen</div></div>
+<!--  l. 1713  --><p class='noindent'>Velden kunnen tegelijk aanwezig zijn.
+</p><!--  l. 1715  --><p class='noindent'>Stel dat een geladen deeltje door een gebied beweegt waarin een elektrisch en een
+magnetisch veld zo georiënteerd zijn dat de elektrische en magnetische kracht
+tegengestelde zin hebben.
+</p><!--  l. 1719  --><p class='noindent'>Voor een rechtlijnige beweging zonder afbuiging moet:
+</p>
+<div class='mathjax-block'>\[ \sum \vec F=\vec 0. \]</div>
+<!--  l. 1725  --><p class='noindent'>In grootte:
+</p>
+<div class='mathjax-block'>\[ F_E=F_B. \]</div>
+<!--  l. 1731  --><p class='noindent'>Voor loodrechte snelheid en magnetisch veld:
+</p>
+<div class='mathjax-block'>\[ |q|E=|q|vB. \]</div>
+<!--  l. 1737  --><p class='noindent'>Dus:
+</p>
+<div class='mathjax-block'>\[ \boxed { v=\frac EB. } \]</div>
+<!--  l. 1745  --><p class='noindent'>Alleen deeltjes met deze snelheid gaan in het ideale model rechtdoor.
+<a id='x1-66r22'></a>
+</p><!--  l. 1748  --><section class='fvd-exercise'>
+<!--  l. 1748  --><div class='fvd-exercise__title'>
+<!--  l. 1748  --><p class='noindent'>Oefening 22
+</p><!--  l. 1748  --><p class='noindent'>— Snelheidsselector
+</p><!--  l. 1748  --></div>
+<!--  l. 1748  --><div class='fvd-exercise__body'>
+                                                                  
+
+                                                                  
+<!--  l. 1748  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--g'>G</span></div>
+<!--  l. 1748  --><div class='fvd-exercise__content'>
+<!--  l. 1750  --><p class='noindent'>Een bundel geladen deeltjes beweegt door gekruiste homogene elektrische en
+magnetische velden.
+</p>
+<div class='problem-environment question' id='problem84' numbered=' ' role='article' titletext=' Question'>  Leid de voorwaarde <div class='mathjax-block'>\[ v=\frac EB \]</div> af voor een niet-afgebogen deeltje.    </div>
+<div class='problem-environment question' id='problem85' numbered=' ' role='article' titletext=' Question'>  Waarom verdwijnt <span class='mathjax-inline'>\(q\)</span> uit deze formule?    </div>
+<div class='problem-environment question' id='problem86' numbered=' ' role='article' titletext=' Question'>  Wat gebeurt er kwalitatief met een deeltje dat sneller beweegt dan <span class='mathjax-inline'>\(E/B\)</span>, als de twee
+krachten bij <span class='mathjax-inline'>\(v=E/B\)</span> tegengesteld zijn?    </div>
+<div class='problem-environment question' id='problem87' numbered=' ' role='article' titletext=' Question'>  Waarom is dit een voorbeeld van technologie die een fysisch model als
+selectiemechanisme gebruikt?    </div>
+</div>
+<!--  l. 1775  --></div>
+<!--  l. 1775  --></section>
+<p><a id='x1-67r22'></a>
+</p><!--  l. 1782  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>22</div><div class='fvd-section-bar__title'>Drie velden, drie bewegingspatronen</div></div>
+<!--  l. 1784  --><p class='noindent'>We kunnen nu verschillende situaties naast elkaar plaatsen.
+</p>
+<div class='mathjax-block'>\[ \boxed { \vec F_g=m\vec g } \]</div>
+<!--  l. 1792  --><p class='noindent'>in een ongeveer homogeen gravitatieveld geeft:
+</p>
+<div class='mathjax-block'>\[ \vec a=\vec g. \]</div>
+<!--  l. 1798  --><p class='noindent'>Een constante veldvector geeft dus een constante versnelling.
+</p><!--  l. 1800  --><p class='noindent'>Voor een homogeen elektrisch veld:
+</p>
+<div class='mathjax-block'>\[ \boxed { \vec F_E=q\vec E } \]</div>
+<!--  l. 1808  --><p class='noindent'>en:
+</p>
+<div class='mathjax-block'>\[ \boxed { \vec a=\frac qm\vec E. } \]</div>
+<!--  l. 1816  --><p class='noindent'>Ook hier kan de versnelling constant zijn.
+</p><!--  l. 1818  --><p class='noindent'>Voor een magnetisch veld:
+</p>
+<div class='mathjax-block'>\[ \boxed { F_B=|q|vB\sin \alpha . } \]</div>
+<!--  l. 1826  --><p class='noindent'>Bij <span class='mathjax-inline'>\(\vec v\perp \vec B\)</span> staat de kracht voortdurend loodrecht op de snelheid en kan een cirkelbeweging
+ontstaan.
+</p><!--  l. 1829  --><p class='noindent'>Bij een radiaal gravitatieveld rond een bolmassa:
+                                                                  
+
+                                                                  
+</p>
+<div class='mathjax-block'>\[ g(r)=\frac {GM}{r^2}, \]</div>
+<!--  l. 1835  --><p class='noindent'>wijst de kracht naar het centrum. Bij de juiste tangentiële snelheid kan ook daar een
+cirkelbaan ontstaan.
+<a id='x1-68r1'></a>
+</p><!--  l. 1839  --><div class='fvd-subsection'>
+<!--  l. 1839  --><div class='fvd-subsection__row'>
+<!--  l. 1839  --><div class='fvd-subsection__number'>22.1</div>
+<!--  l. 1839  --><div class='fvd-subsection__title'>De structuur achter de formules</div>
+<!--  l. 1839  --></div>
+<!--  l. 1839  --><div class='fvd-subsection__line'></div>
+<!--  l. 1839  --></div>
+<!--  l. 1841  --><p class='noindent'>Het belangrijkste inzicht van dit hoofdstuk is niet één afzonderlijke formule, maar
+een strategie:
+</p>
+<div class='mathjax-block'>\[ \boxed { \begin{array}{c} \text {1. Welk veld is aanwezig?}\\[2mm] \downarrow \\[2mm] \text {2. Welke kracht werkt op het gekozen systeem?}\\[2mm] \downarrow \\[2mm] \text {3. Wat zegt }\sum \vec F=m\vec a\text {?}\\[2mm] \downarrow \\[2mm] \text {4. Welk bewegingsmodel past bij }\vec a\text {?}\\[2mm] \downarrow \\[2mm] \text {5. Wat voorspelt het model?} \end{array} } \]</div>
+<p><a id='x1-69r23'></a>
+</p><!--  l. 1861  --><section class='fvd-exercise'>
+<!--  l. 1861  --><div class='fvd-exercise__title'>
+<!--  l. 1861  --><p class='noindent'>Oefening 23
+</p><!--  l. 1861  --><p class='noindent'>— Herken het bewegingsmodel
+</p><!--  l. 1861  --></div>
+<!--  l. 1861  --><div class='fvd-exercise__body'>
+<!--  l. 1861  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<!--  l. 1861  --><div class='fvd-exercise__content'>
+<!--  l. 1863  --><p class='noindent'>Koppel elk geval aan het meest geschikte ideale bewegingsmodel en motiveer vanuit
+de kracht.
+</p>     
+<ol class='enumerate1'>
+<li class='enumerate' id='x1-71x1'>Een geladen deeltje start uit rust in een homogeen elektrisch veld.
+</li>
+<li class='enumerate' id='x1-73x2'>Een geladen deeltje beweegt evenwijdig aan een homogeen magnetisch veld
+                                                                  
+
+                                                                  
+en er werken geen andere krachten.
+</li>
+<li class='enumerate' id='x1-75x3'>Een geladen deeltje beweegt loodrecht op een homogeen magnetisch veld.
+</li>
+<li class='enumerate' id='x1-77x4'>Een  satelliet  beweegt  met  geschikte  tangentiële  snelheid  rond  een
+bolsymmetrische planeet.
+</li>
+<li class='enumerate' id='x1-79x5'>Een voorwerp wordt horizontaal geworpen nabij het aardoppervlak.</li></ol>
+<!--  l. 1876  --><p class='noindent'>Gebruik waar passend de termen EVRB, ERB, horizontale worp en ECB.
+</p></div>
+<!--  l. 1878  --></div>
+<!--  l. 1878  --></section>
+<p><a id='x1-80r23'></a>
+</p><!--  l. 1885  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>23</div><div class='fvd-section-bar__title'>Een veldprobleem systematisch oplossen</div></div>
+<!--  l. 1887  --><p class='noindent'>Gebruik bij nieuwe problemen niet meteen een formule. Werk vanuit de
+fysica.
+</p>     
+<ol class='enumerate1'>
+<li class='enumerate' id='x1-82x1'><strong>Kies het systeem.</strong> Is het een satelliet, ion, elektron, planeet of ander
+object?
+</li>
+<li class='enumerate' id='x1-84x2'><strong>Identificeer  het  veld.</strong>  Gravitatie,  elektrisch,  magnetisch  of  een
+combinatie?
+</li>
+<li class='enumerate' id='x1-86x3'>     
+<!--  l. 1895  --><p class='noindent'><strong>Bepaal de kracht.</strong> Bijvoorbeeld </p><div class='mathjax-block'>\[ F_g=G\frac {Mm}{r^2}, \quad \vec F_E=q\vec E, \quad F_B=|q|vB\sin \alpha . \]</div>
+                                                                  
+
+                                                                  
+</li>
+<li class='enumerate' id='x1-88x4'>     
+<!--  l. 1904  --><p class='noindent'><strong>Gebruik Newton II.</strong> </p><div class='mathjax-block'>\[ \sum \vec F=m\vec a. \]</div>
+</li>
+<li class='enumerate' id='x1-90x5'><strong>Herken het bewegingsmodel.</strong> Is <span class='mathjax-inline'>\(\vec a\)</span> constant? Staat <span class='mathjax-inline'>\(\vec a\)</span> loodrecht op <span class='mathjax-inline'>\(\vec v\)</span>? Is de
+versnelling radiaal?
+</li>
+<li class='enumerate' id='x1-92x6'>     
+<!--  l. 1911  --><p class='noindent'><strong>Voeg
+de juiste kinematica toe.</strong> Bijvoorbeeld </p><div class='mathjax-block'>\[ a_c=\frac {v^2}{r} \]</div> of de bewegingsvergelijkingen
+bij constante versnelling.
+</li>
+<li class='enumerate' id='x1-94x7'><strong>Los symbolisch op waar dat zinvol is.</strong>
+</li>
+<li class='enumerate' id='x1-96x8'><strong>Controleer dimensies, richting en grootteorde.</strong>
+</li>
+<li class='enumerate' id='x1-98x9'><strong>Interpreteer het resultaat fysisch.</strong></li></ol>
+<p><a id='x1-99r24'></a>
+</p><!--  l. 1927  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>24</div><div class='fvd-section-bar__title'>Geïntegreerde oefeningen</div></div>
+<p><a id='x1-100r24'></a>
+</p><!--  l. 1929  --><section class='fvd-exercise'>
+<!--  l. 1929  --><div class='fvd-exercise__title'>
+<!--  l. 1929  --><p class='noindent'>Oefening 24
+</p><!--  l. 1929  --><p class='noindent'>— Van <span class='mathjax-inline'>\(g\)</span> naar een satellietbaan
+</p><!--  l. 1929  --></div>
+<!--  l. 1929  --><div class='fvd-exercise__body'>
+<!--  l. 1929  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+                                                                  
+
+                                                                  
+<!--  l. 1929  --><div class='fvd-exercise__content'>
+<!--  l. 1931  --><p class='noindent'>Op afstand <span class='mathjax-inline'>\(r\)</span> van het middelpunt van een planeet wordt de gravitatieveldsterkte
+gemeten als <span class='mathjax-inline'>\(g_r\)</span>.
+</p><!--  l. 1934  --><p class='noindent'>Een satelliet beweegt op diezelfde afstand in een ideale cirkelbaan.
+</p>
+<div class='problem-environment question' id='problem88' numbered=' ' role='article' titletext=' Question'>  Toon zonder de massa van de planeet expliciet te gebruiken dat: <div class='mathjax-block'>\[ \boxed { v=\sqrt {g_rr}. } \]</div>    </div>
+<div class='problem-environment question' id='problem89' numbered=' ' role='article' titletext=' Question'>  Leid vervolgens af: <div class='mathjax-block'>\[ \boxed { T=2\pi \sqrt {\frac r{g_r}}. } \]</div>    </div>
+<div class='problem-environment question' id='problem90' numbered=' ' role='article' titletext=' Question'>  Waarom is dit een mooi voorbeeld van het combineren van twee eerder geleerde
+modellen?    </div>
+</div>
+<!--  l. 1959  --></div>
+<!--  l. 1959  --></section>
+<p><a id='x1-101r25'></a>
+</p><!--  l. 1962  --><section class='fvd-exercise'>
+<!--  l. 1962  --><div class='fvd-exercise__title'>
+<!--  l. 1962  --><p class='noindent'>Oefening 25
+</p><!--  l. 1962  --><p class='noindent'>— Een onbekende planeet
+</p><!--  l. 1962  --></div>
+<!--  l. 1962  --><div class='fvd-exercise__body'>
+<!--  l. 1962  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--g'>G</span></div>
+<!--  l. 1962  --><div class='fvd-exercise__content'>
+<!--  l. 1964  --><p class='noindent'>Een maan beweegt in een vrijwel cirkelvormige baan rond een onbekende planeet. De
+baanstraal en omlooptijd zijn gemeten als <span class='mathjax-inline'>\(r\)</span> en <span class='mathjax-inline'>\(T\)</span>.
+</p>
+<div class='problem-environment question' id='problem91' numbered=' ' role='article' titletext=' Question'>  Leid af: <div class='mathjax-block'>\[ \boxed { M=\frac {4\pi ^2r^3}{GT^2}. } \]</div>    </div>
+<div class='problem-environment question' id='problem92' numbered=' ' role='article' titletext=' Question'>  Welke massa verschijnt niet in het eindresultaat?    </div>
+<div class='problem-environment question' id='problem93' numbered=' ' role='article' titletext=' Question'>  Leg uit waarom de baan van een maan informatie bevat over de massa van de
+planeet.    </div>
+<div class='problem-environment question' id='problem94' numbered=' ' role='article' titletext=' Question'>  Welke experimentele grootheden bepalen vooral de onzekerheid op de berekende
+massa?    </div>
+</div>
+<!--  l. 1990  --></div>
+<!--  l. 1990  --></section>
+<p><a id='x1-102r26'></a>
+</p><!--  l. 1993  --><section class='fvd-exercise'>
+                                                                  
+
+                                                                  
+<!--  l. 1993  --><div class='fvd-exercise__title'>
+<!--  l. 1993  --><p class='noindent'>Oefening 26
+</p><!--  l. 1993  --><p class='noindent'>— Elektrisch of gravitatieel?
+</p><!--  l. 1993  --></div>
+<!--  l. 1993  --><div class='fvd-exercise__body'>
+<!--  l. 1993  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span></div>
+<!--  l. 1993  --><div class='fvd-exercise__content'>
+<!--  l. 1995  --><p class='noindent'>Een deeltje beweegt door een gebied waarin een constante kracht naar beneden werkt.
+De baan is parabolisch.
+</p>
+<div class='problem-environment question' id='problem95' numbered=' ' role='article' titletext=' Question'>  Kan je alleen uit de vorm van de baan besluiten dat de kracht gravitatieel is?
+Motiveer.    </div>
+<div class='problem-environment question' id='problem96' numbered=' ' role='article' titletext=' Question'>  Geef een elektrische situatie die wiskundig dezelfde soort baan kan opleveren.
+</div>
+<div class='problem-environment question' id='problem97' numbered=' ' role='article' titletext=' Question'>  Welke bijkomende informatie zou helpen om beide modellen te onderscheiden?
+</div>
+</div>
+<!--  l. 2013  --></div>
+<!--  l. 2013  --></section>
+<p><a id='x1-103r27'></a>
+</p><!--  l. 2016  --><section class='fvd-exercise'>
+<!--  l. 2016  --><div class='fvd-exercise__title'>
+<!--  l. 2016  --><p class='noindent'>Oefening 27
+</p><!--  l. 2016  --><p class='noindent'>— Twee ionen in hetzelfde magneetveld
+</p><!--  l. 2016  --></div>
+<!--  l. 2016  --><div class='fvd-exercise__body'>
+<!--  l. 2016  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--g'>G</span></div>
+<!--  l. 2016  --><div class='fvd-exercise__content'>
+<!--  l. 2018  --><p class='noindent'>Twee positief geladen ionen komen met dezelfde snelheid loodrecht hetzelfde
+homogene magnetische veld binnen.
+</p><!--  l. 2021  --><p class='noindent'>Voor de eerste geldt:
+</p>
+<div class='mathjax-block'>\[ m_1=m,\qquad q_1=e. \]</div>
+<!--  l. 2027  --><p class='noindent'>Voor de tweede:
+</p>
+                                                                  
+
+                                                                  
+<div class='mathjax-block'>\[ m_2=4m,\qquad q_2=2e. \]</div>
+<div class='problem-environment question' id='problem98' numbered=' ' role='article' titletext=' Question'>  Bepaal <span class='mathjax-inline'>\(r_2/r_1\)</span>.    </div>
+<div class='problem-environment question' id='problem99' numbered=' ' role='article' titletext=' Question'>  Bepaal <span class='mathjax-inline'>\(T_2/T_1\)</span>.    </div>
+<div class='problem-environment question' id='problem100' numbered=' ' role='article' titletext=' Question'>  Welke van beide banen is sterker gekromd?    </div>
+<div class='problem-environment question' id='problem101' numbered=' ' role='article' titletext=' Question'>  Welke verhouding <span class='mathjax-inline'>\(m/|q|\)</span> wordt door de baan zichtbaar?    </div>
+</div>
+<!--  l. 2049  --></div>
+<!--  l. 2049  --></section>
+<p><a id='x1-104r28'></a>
+</p><!--  l. 2052  --><section class='fvd-exercise'>
+<!--  l. 2052  --><div class='fvd-exercise__title'>
+<!--  l. 2052  --><p class='noindent'>Oefening 28
+</p><!--  l. 2052  --><p class='noindent'>— Welke uitspraak klopt?
+</p><!--  l. 2052  --></div>
+<!--  l. 2052  --><div class='fvd-exercise__body'>
+<!--  l. 2052  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<!--  l. 2052  --><div class='fvd-exercise__content'>
+<!--  l. 2054  --><p class='noindent'>Beoordeel telkens de uitspraak en verbeter ze indien nodig.
+</p>     
+<ol class='enumerate1'>
+<li class='enumerate' id='x1-106x1'>“Een satelliet is gewichtloos omdat <span class='mathjax-inline'>\(g=0\)</span>.”
+</li>
+<li class='enumerate' id='x1-108x2'>“Centripetale kracht is een extra kracht die naast gravitatie op een satelliet
+werkt.”
+</li>
+<li class='enumerate' id='x1-110x3'>“Een hogere cirkelbaan vraagt een grotere baansnelheid.”
+</li>
+<li class='enumerate' id='x1-112x4'>“Een homogeen elektrisch veld kan een constante versnelling veroorzaken.”
+                                                                  
+
+                                                                  
+</li>
+<li class='enumerate' id='x1-114x5'>“Een magnetische kracht kan bij <span class='mathjax-inline'>\(\vec v\perp \vec B\)</span> de richting van de snelheid veranderen
+zonder de snelheidsgrootte te veranderen.”
+</li>
+<li class='enumerate' id='x1-116x6'>“Als twee deeltjes in hetzelfde magneetveld dezelfde baanstraal hebben,
+moeten ze dezelfde massa hebben.”</li></ol>
+<!--  l. 2069  --><p class='noindent'>Motiveer elk antwoord met een fysisch verband en niet alleen met woorden.
+</p></div>
+<!--  l. 2071  --></div>
+<!--  l. 2071  --></section>
+<p><a id='x1-117r25'></a>
+</p><!--  l. 2078  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>25</div><div class='fvd-section-bar__title'>Onderzoeken met data en ICT</div></div>
+<!--  l. 2080  --><p class='noindent'>Dit hoofdstuk leent zich sterk tot modelleren en gegevensanalyse.
+</p><!--  l. 2082  --><p class='noindent'>Voor satellieten voorspelt het model:
+</p>
+<div class='mathjax-block'>\[ T^2=\frac {4\pi ^2}{GM}r^3. \]</div>
+<!--  l. 2088  --><p class='noindent'>Met echte of gegeven satellietgegevens kan je:
+</p>     
+<ol class='enumerate1'>
+<li class='enumerate' id='x1-119x1'><span class='mathjax-inline'>\(r\)</span> en <span class='mathjax-inline'>\(T\)</span> verzamelen;
+</li>
+<li class='enumerate' id='x1-121x2'><span class='mathjax-inline'>\(r^3\)</span> en <span class='mathjax-inline'>\(T^2\)</span> berekenen;
+</li>
+<li class='enumerate' id='x1-123x3'>een spreidingsdiagram van <span class='mathjax-inline'>\(T^2\)</span> tegen <span class='mathjax-inline'>\(r^3\)</span> maken;
+</li>
+<li class='enumerate' id='x1-125x4'>een lineaire regressie uitvoeren;
+                                                                  
+
+                                                                  
+</li>
+<li class='enumerate' id='x1-127x5'>de helling interpreteren;
+</li>
+<li class='enumerate' id='x1-129x6'>daaruit <span class='mathjax-inline'>\(M\)</span> schatten;
+</li>
+<li class='enumerate' id='x1-131x7'>afwijkingen en meetonzekerheid bespreken.</li></ol>
+<!--  l. 2100  --><p class='noindent'>Zo wordt een theoretische afleiding een toetsbaar model.
+<a id='x1-132r29'></a>
+</p><!--  l. 2103  --><section class='fvd-exercise'>
+<!--  l. 2103  --><div class='fvd-exercise__title'>
+<!--  l. 2103  --><p class='noindent'>Oefening 29
+</p><!--  l. 2103  --><p class='noindent'>— Onderzoeksopdracht: Kepler uit data
+</p><!--  l. 2103  --></div>
+<!--  l. 2103  --><div class='fvd-exercise__body'>
+<!--  l. 2103  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<!--  l. 2103  --><div class='fvd-exercise__content'>
+<!--  l. 2105  --><p class='noindent'>Gebruik een dataset met minstens vier manen of satellieten rond hetzelfde centrale
+hemellichaam.
+</p>
+<div class='problem-environment question' id='problem102' numbered=' ' role='article' titletext=' Question'>  Maak een tabel met <span class='mathjax-inline'>\(r\)</span>, <span class='mathjax-inline'>\(T\)</span>, <span class='mathjax-inline'>\(r^3\)</span> en <span class='mathjax-inline'>\(T^2\)</span>.    </div>
+<div class='problem-environment question' id='problem103' numbered=' ' role='article' titletext=' Question'>  Maak met ICT een grafiek van <span class='mathjax-inline'>\(T^2\)</span> tegen <span class='mathjax-inline'>\(r^3\)</span>.    </div>
+<div class='problem-environment question' id='problem104' numbered=' ' role='article' titletext=' Question'>  Voer een geschikte regressie uit.    </div>
+<div class='problem-environment question' id='problem105' numbered=' ' role='article' titletext=' Question'>  Interpreteer de helling fysisch.    </div>
+<div class='problem-environment question' id='problem106' numbered=' ' role='article' titletext=' Question'>  Gebruik de helling om de massa van het centrale hemellichaam te schatten.
+</div>
+<div class='problem-environment question' id='problem107' numbered=' ' role='article' titletext=' Question'>  Vergelijk met een referentiewaarde en bespreek mogelijke oorzaken van een verschil.
+</div>
+</div>
+<!--  l. 2134  --></div>
+                                                                  
+
+                                                                  
+<!--  l. 2134  --></section>
+<p><a id='x1-133r26'></a>
+</p><!--  l. 2141  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>26</div><div class='fvd-section-bar__title'>Gevorderd: wat als <span class='mathjax-inline'>\(\vec v\)</span> niet loodrecht op <span class='mathjax-inline'>\(\vec B\)</span> staat?</div></div>
+<!--  l. 2143  --><p class='noindent'>Tot nu toe namen we bij de magnetische cirkelbaan:
+</p>
+<div class='mathjax-block'>\[ \vec v\perp \vec B. \]</div>
+<!--  l. 2149  --><p class='noindent'>Bij een algemene invalshoek kunnen we de snelheid ontbinden in:
+</p>
+<div class='mathjax-block'>\[ \vec v=\vec v_\parallel +\vec v_\perp . \]</div>
+<!--  l. 2155  --><p class='noindent'>De component <span class='mathjax-inline'>\(v_\parallel \)</span> veroorzaakt geen magnetische kracht:
+</p>
+<div class='mathjax-block'>\[ F_{B,\parallel }=0. \]</div>
+<!--  l. 2161  --><p class='noindent'>De loodrechte component <span class='mathjax-inline'>\(v_\perp \)</span> veroorzaakt wel een magnetische afbuiging.
+</p><!--  l. 2164  --><p class='noindent'>De combinatie van:
+</p>     
+<ul class='itemize1'>
+<li class='itemize'>een eenparige beweging langs de veldrichting;
+</li>
+<li class='itemize'>een cirkelbeweging loodrecht op de veldrichting</li></ul>
+<!--  l. 2171  --><p class='noindent'>levert een schroefvormige of helicale baan.
+</p><!--  l. 2173  --><p class='noindent'>De straal van de cirkelcomponent is:
+</p>
+<div class='mathjax-block'>\[ \boxed { r=\frac {mv_\perp }{|q|B}. } \]</div>
+<!--  l. 2181  --><p class='noindent'>Dit is een mooi voorbeeld van het onafhankelijk analyseren van vectorcomponenten.
+<a id='x1-134r30'></a>
+</p><!--  l. 2185  --><section class='fvd-exercise'>
+<!--  l. 2185  --><div class='fvd-exercise__title'>
+<!--  l. 2185  --><p class='noindent'>Oefening 30
+</p><!--  l. 2185  --><p class='noindent'>— Helix in een magnetisch veld
+</p><!--  l. 2185  --></div>
+<!--  l. 2185  --><div class='fvd-exercise__body'>
+<!--  l. 2185  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--g'>G</span></div>
+                                                                  
+
+                                                                  
+<!--  l. 2185  --><div class='fvd-exercise__content'>
+<!--  l. 2187  --><p class='noindent'>Een geladen deeltje komt onder een hoek in een homogeen magnetisch veld.
+</p>
+<div class='problem-environment question' id='problem108' numbered=' ' role='article' titletext=' Question'>  Ontbind <span class='mathjax-inline'>\(\vec v\)</span> in <span class='mathjax-inline'>\(v_\parallel \)</span> en <span class='mathjax-inline'>\(v_\perp \)</span>.    </div>
+<div class='problem-environment question' id='problem109' numbered=' ' role='article' titletext=' Question'>  Welke component bepaalt de straal van de baan?    </div>
+<div class='problem-environment question' id='problem110' numbered=' ' role='article' titletext=' Question'>  Welke component bepaalt hoe snel het deeltje langs de veldrichting opschuift?
+</div>
+<div class='problem-environment question' id='problem111' numbered=' ' role='article' titletext=' Question'>  Wat voor baan ontstaat als <span class='mathjax-inline'>\(v_\parallel =0\)</span>?    </div>
+<div class='problem-environment question' id='problem112' numbered=' ' role='article' titletext=' Question'>  Wat voor baan ontstaat als <span class='mathjax-inline'>\(v_\perp =0\)</span>?    </div>
+</div>
+<!--  l. 2210  --></div>
+<!--  l. 2210  --></section>
+<p><a id='x1-135r27'></a>
+</p><!--  l. 2217  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>27</div><div class='fvd-section-bar__title'>Wiskundige verdieping: machtswetten herkennen</div></div>
+<!--  l. 2219  --><p class='noindent'>Verschillende relaties uit dit hoofdstuk zijn machtsverbanden.
+</p><!--  l. 2221  --><p class='noindent'>Voor gravitatie:
+</p>
+<div class='mathjax-block'>\[ g(r)=GM\,r^{-2}. \]</div>
+<!--  l. 2227  --><p class='noindent'>Voor een satelliet:
+</p>
+<div class='mathjax-block'>\[ v(r)=\sqrt {GM}\,r^{-1/2}, \]</div>
+<!--  l. 2233  --><p class='noindent'>en:
+</p>
+<div class='mathjax-block'>\[ T(r)=\frac {2\pi }{\sqrt {GM}}r^{3/2}. \]</div>
+<!--  l. 2239  --><p class='noindent'>De exponent vertelt onmiddellijk hoe gevoelig een grootheid is voor een verandering
+van <span class='mathjax-inline'>\(r\)</span>.
+</p><!--  l. 2242  --><p class='noindent'>Bijvoorbeeld:
+</p>
+<div class='mathjax-block'>\[ r\rightarrow kr \]</div>
+<!--  l. 2248  --><p class='noindent'>geeft:
+</p>
+<div class='mathjax-block'>\[ g\rightarrow k^{-2}g, \]</div>
+<div class='mathjax-block'>\[ v\rightarrow k^{-1/2}v, \]</div>
+<div class='mathjax-block'>\[ T\rightarrow k^{3/2}T. \]</div>
+<p><a id='x1-136r31'></a>
+                                                                  
+
+                                                                  
+</p><!--  l. 2263  --><section class='fvd-exercise'>
+<!--  l. 2263  --><div class='fvd-exercise__title'>
+<!--  l. 2263  --><p class='noindent'>Oefening 31
+</p><!--  l. 2263  --><p class='noindent'>— Eén verandering, drie gevolgen
+</p><!--  l. 2263  --></div>
+<!--  l. 2263  --><div class='fvd-exercise__body'>
+<!--  l. 2263  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--g'>G</span></div>
+<!--  l. 2263  --><div class='fvd-exercise__content'>
+<!--  l. 2265  --><p class='noindent'>Een satelliet verhuist in een ideaal model van een cirkelbaan met straal <span class='mathjax-inline'>\(r\)</span> naar een
+cirkelbaan met straal <span class='mathjax-inline'>\(9r\)</span> rond dezelfde planeet.
+</p><!--  l. 2268  --><p class='noindent'>Vergelijk voor beide banen:
+</p>
+<div class='problem-environment question' id='problem113' numbered=' ' role='article' titletext=' Question'>  de gravitatieveldsterkte;    </div>
+<div class='problem-environment question' id='problem114' numbered=' ' role='article' titletext=' Question'>  de baansnelheid;    </div>
+<div class='problem-environment question' id='problem115' numbered=' ' role='article' titletext=' Question'>  de omlooptijd.    </div>
+<!--  l. 2282  --><p class='noindent'>Los op met de machtsverbanden, zonder de formules telkens volledig numeriek in te
+vullen.
+</p></div>
+<!--  l. 2285  --></div>
+<!--  l. 2285  --></section>
+<p><a id='x1-137r28'></a>
+</p><!--  l. 2292  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>28</div><div class='fvd-section-bar__title'>Vooruitblik: velden en energie</div></div>
+<!--  l. 2294  --><p class='noindent'>Een gravitatieveld kan ook energetisch beschreven worden. In je eerdere
+leerstof ontmoette je mogelijk al gravitatiepotentiaal en gravitatiepotentiële
+energie.
+</p><!--  l. 2298  --><p class='noindent'>Voor grote afstanden is de eenvoudige nabij-aardeformule
+</p>
+<div class='mathjax-block'>\[ E_{p}=mgh \]</div>
+<!--  l. 2304  --><p class='noindent'>niet algemeen genoeg. Dan verschijnt een afstandsafhankelijke gravitatie-energie.
+</p><!--  l. 2307  --><p class='noindent'>We bouwen die energiebeschrijving hier bewust nog niet volledig uit. Ze past
+inhoudelijk beter nadat arbeid en energie in deze cursus systematisch behandeld
+zijn.
+</p><!--  l. 2311  --><p class='noindent'>Dan kunnen we onder andere onderzoeken:
+</p>     
+<ul class='itemize1'>
+                                                                  
+
+                                                                  
+<li class='itemize'>gravitatiepotentiële energie op grote afstand;
+</li>
+<li class='itemize'>arbeid in een gravitatieveld;
+</li>
+<li class='itemize'>totale mechanische energie van banen;
+</li>
+<li class='itemize'>ontsnappingssnelheid.</li></ul>
+<!--  l. 2320  --><p class='noindent'>Zo vermijden we dat kracht-, bewegings- en energiemodellen door elkaar worden
+geïntroduceerd voordat hun eigen betekenis helder is.
+<a id='x1-138r29'></a>
+</p><!--  l. 2328  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>29</div><div class='fvd-section-bar__title'>Samenvatting</div></div>
+<!--  l. 2330  --><p class='noindent'>Voor gravitatie:
+</p>
+<div class='mathjax-block'>\[ \boxed { F_g=G\frac {Mm}{r^2} } \]</div>
+<!--  l. 2338  --><p class='noindent'>en:
+</p>
+<div class='mathjax-block'>\[ \boxed { g(r)=G\frac {M}{r^2}. } \]</div>
+<!--  l. 2346  --><p class='noindent'>Voor een ideale cirkelvormige satellietbaan:
+</p>
+<div class='mathjax-block'>\[ G\frac {Mm}{r^2} = m\frac {v^2}{r}. \]</div>
+<!--  l. 2354  --><p class='noindent'>Daaruit:
+</p>
+<div class='mathjax-block'>\[ \boxed { v_{\mathrm {baan}} = \sqrt {\frac {GM}{r}} } \]</div>
+<!--  l. 2364  --><p class='noindent'>en:
+</p>
+<div class='mathjax-block'>\[ \boxed { T = 2\pi \sqrt {\frac {r^3}{GM}}. } \]</div>
+<!--  l. 2374  --><p class='noindent'>Dus voor dezelfde centrale massa:
+</p>
+<div class='mathjax-block'>\[ \boxed { T^2\sim r^3. } \]</div>
+<!--  l. 2382  --><p class='noindent'>Voor een elektrisch veld:
+</p>
+                                                                  
+
+                                                                  
+<div class='mathjax-block'>\[ \boxed { \vec F_E=q\vec E } \]</div>
+<!--  l. 2390  --><p class='noindent'>en in een homogeen elektrisch veld:
+</p>
+<div class='mathjax-block'>\[ \boxed { \vec a=\frac qm\vec E. } \]</div>
+<!--  l. 2398  --><p class='noindent'>Voor een bewegende lading in een magnetisch veld:
+</p>
+<div class='mathjax-block'>\[ \boxed { F_B=|q|vB\sin \alpha . } \]</div>
+<!--  l. 2406  --><p class='noindent'>Bij <span class='mathjax-inline'>\(\vec v\perp \vec B\)</span> en zonder andere relevante krachten:
+</p>
+<div class='mathjax-block'>\[ |q|vB=m\frac {v^2}{r} \]</div>
+<!--  l. 2412  --><p class='noindent'>en dus:
+</p>
+<div class='mathjax-block'>\[ \boxed { r=\frac {mv}{|q|B}. } \]</div>
+<!--  l. 2420  --><p class='noindent'>Als verdieping:
+</p>
+<div class='mathjax-block'>\[ \boxed { T=\frac {2\pi m}{|q|B}. } \]</div>
+<!--  l. 2428  --><p class='noindent'>Doorheen al deze situaties blijft dezelfde analysekern gelden:
+</p>
+<div class='mathjax-block'>\[ \boxed { \text {veld} \rightarrow \text {kracht} \rightarrow \text {Newton II} \rightarrow \text {versnelling} \rightarrow \text {beweging}. } \]</div>
+<p><a id='x1-139r30'></a>
+</p><!--  l. 2450  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>30</div><div class='fvd-section-bar__title'>Van krachten naar energie</div></div>
+<!--  l. 2452  --><p class='noindent'>We begonnen dit thema met de vraag hoe we beweging kunnen beschrijven. Daarna
+onderzochten we waardoor beweging verandert.
+</p><!--  l. 2455  --><p class='noindent'>In dit hoofdstuk zagen we hoe ver die ideeën reiken. Dezelfde wetten verklaren zowel
+bewegingen op astronomische schaal als de afbuiging van geladen deeltjes.
+</p><!--  l. 2459  --><p class='noindent'>Maar krachten zijn niet de enige taal waarmee we beweging kunnen analyseren.
+</p><!--  l. 2462  --><p class='noindent'>Soms is het veel efficiënter om niet elk moment van de beweging te volgen, maar te
+onderzoeken hoeveel energie wordt overgedragen of omgezet.
+</p><!--  l. 2466  --><p class='noindent'>Daarmee ontstaat de volgende stap:
+</p>
+<div class='mathjax-block'>\[ \boxed { \text {kracht en beweging} \longrightarrow \text {arbeid en energie}. } \]</div>
+                                                                  
+
+                                                                  
+</body> 
+ 
+</html>
+                                                                  
+
+

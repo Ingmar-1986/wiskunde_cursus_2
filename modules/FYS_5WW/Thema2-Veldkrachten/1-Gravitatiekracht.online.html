@@ -1,0 +1,1754 @@
+<!DOCTYPE html> 
+<html lang='en-US' xml:lang='en-US'> 
+<head> <title>Gravitatie: aantrekking op afstand</title> 
+<meta charset='utf-8' /> 
+<meta content='TeX4ht (https://tug.org/tex4ht/)' name='generator' /> 
+<meta content='width=device-width,initial-scale=1' name='viewport' /> 
+<link href='\aa:CssFile ' rel='stylesheet' type='text/css' /> 
+<meta content='1-Gravitatiekracht.online.tex' name='src' /> 
+<script>window.MathJax = { tex: { tags: "ams", }, }; </script> 
+<script async='async' id='MathJax-script' src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js' type='text/javascript'></script>  
+<meta content='Ingmar Herreman' name='author' /> 
+<meta content='version 2.5.1' name='ximera' /> 
+<link href='https://ximera.osu.edu/public/stylesheets/standalone.css' media='screen' rel='stylesheet' /> 
+<script async='' src='https://ximera.osu.edu/public/javascripts/standalone.min.js' type='text/javascript'></script> 
+</head><body> 
+<div class='preamble'>
+</div>
+<style> .activity-body pre { white-space: pre; background-color: lightgray; } .xmyoutube { aspect-ratio: 16/9; min-width: 75%; } .image-environment img { width: unset; } </style> 
+
+<div class='maketitle'></div>
+<!-- l. 56 --><p class='noindent'></p><section class='learning-box learning-box--prior'> <div class='learning-box__header'> <span class='learning-box__icon'> </span><span class='learning-box__title'>Voorkennis</span> </div> <div class='learning-box__content'> 
+<p></p>     
+<ul class='itemize1'>
+<li class='itemize'>Je kan krachten als vectoren voorstellen.
+</li>
+<li class='itemize'>Je kent de drie wetten van Newton.
+</li>
+<li class='itemize'>Je kan eenvoudige resulterende krachten bepalen.
+</li>
+<li class='itemize'>Je begrijpt het verschil tussen massa en kracht.
+</li>
+<li class='itemize'>Je kan werken met machten van tien en wetenschappelijke notatie.
+</li>
+<li class='itemize'>Je kan een formule omvormen en grootheden met SI-eenheden gebruiken.
+</li>
+<li class='itemize'>Je kan een omgekeerd evenredig verband interpreteren.</li></ul>
+<!-- l. 64 --><p class='noindent'></p></div> </section> 
+<p></p><!-- l. 66 --><p class='noindent'></p><section class='learning-box learning-box--goals'> <div class='learning-box__header'> <span class='learning-box__icon'> </span><span class='learning-box__title'>Leerdoelen</span> </div> <div class='learning-box__content'> 
+<p></p>     
+<ul class='itemize1'>
+<li class='itemize'>Je  kan  gravitatie  beschrijven  als  een  universele  wisselwerking  tussen
+massa’s.
+                                                                  
+
+                                                                  
+</li>
+<li class='itemize'>Je kan de algemene gravitatiewet interpreteren en gebruiken.
+</li>
+<li class='itemize'>Je kan analyseren hoe de gravitatiekracht verandert wanneer massa of
+afstand verandert.
+</li>
+<li class='itemize'>Je kan de richting en zin van gravitatiekrachten bepalen.
+</li>
+<li class='itemize'>Je kan Newton III toepassen op gravitationele interacties.
+</li>
+<li class='itemize'>Je kan onderscheid maken tussen massa, gewicht en gravitatiekracht.
+</li>
+<li class='itemize'>Je kan het begrip gravitatieveld uitleggen.
+</li>
+<li class='itemize'>Je kan de gravitatieveldsterkte berekenen met <span class='mathjax-inline'>\(g=GM/r^2\)</span>.
+</li>
+<li class='itemize'>Je kan gravitatieveldlijnen tekenen en interpreteren.
+</li>
+<li class='itemize'>Je kan het verband tussen <span class='mathjax-inline'>\(F_g=mg\)</span> en de algemene gravitatiewet verklaren.
+</li>
+<li class='itemize'>Je kan onderzoeken hoe <span class='mathjax-inline'>\(g\)</span> verandert met de afstand tot een hemellichaam.
+</li>
+<li class='itemize'>Je kan eenvoudige situaties met meerdere gravitatiebronnen analyseren
+via superpositie.
+                                                                  
+
+                                                                  
+</li>
+<li class='itemize'>Je kan het verband tussen gravitatiekracht en de centripetale versnelling
+van een satelliet gebruiken.
+</li>
+<li class='itemize'>Je kan overeenkomsten tussen het gravitatieveld en het elektrische veld
+herkennen.</li></ul>
+<!-- l. 89 --><p class='noindent'></p></div> </section> 
+<p><a id='x1-2r1'></a>
+</p><p></p><!-- l. 96 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>1</div><div class='fvd-section-bar__title'>De appel en de maan</div></div>
+<p></p><!-- l. 98 --><p class='noindent'>Laat je een voorwerp los, dan valt het naar de aarde.
+</p><!-- l. 100 --><p class='noindent'>Dat lijkt vanzelfsprekend. We hebben zelfs al geleerd om de kracht waarmee de aarde
+een voorwerp aantrekt nabij haar oppervlak te schrijven als
+</p>
+<div class='mathjax-block'>\[ \vec F_g = m\vec g. \]</div>
+<!-- l. 108 --><p class='noindent'>Maar deze eenvoudige formule roept nieuwe vragen op.
+</p><!-- l. 110 --><p class='noindent'>Waarom trekt de aarde eigenlijk aan een voorwerp?
+</p><!-- l. 112 --><p class='noindent'>Werkt die aantrekkingskracht alleen vlak bij het aardoppervlak?
+</p><!-- l. 114 --><p class='noindent'>Verdwijnt ze wanneer we hoog genoeg boven de aarde komen?
+</p><!-- l. 116 --><p class='noindent'>En wat gebeurt er met de maan?
+</p><!-- l. 118 --><p class='noindent'>De maan valt niet op het aardoppervlak, maar ze verdwijnt ook niet rechtlijnig de
+ruimte in. Ze blijft rond de aarde bewegen.
+</p><!-- l. 121 --><p class='noindent'>Newton kwam tot een revolutionair inzicht:
+</p>
+<div class='center'>
+<!-- l. 123 --><p class='noindent'>
+</p><!-- l. 126 --><p class='noindent'><em>de kracht die een appel naar de aarde doet vallen en de kracht die de maan in
+haar baan houdt, behoren tot dezelfde fysische wisselwerking.</em></p></div>
+<!-- l. 129 --><p class='noindent'>Die wisselwerking noemen we <strong>gravitatie</strong>.
+</p><!-- l. 132 --><p class='noindent'></p><section class='fvd-definition'><div class='fvd-definition__title'><span class='fvd-definition__label'>DEFINITIE</span><span class='fvd-definition__separator'> — </span><span class='fvd-definition__name'>Gravitatie</span></div><div class='fvd-definition__content'>
+<p></p><!-- l. 134 --><p class='noindent'><strong>Gravitatie</strong> is de universele aantrekkende wisselwerking tussen voorwerpen met
+massa.
+</p></div></section>
+                                                                  
+
+                                                                  
+<p></p><!-- l. 140 --><p class='noindent'>Het woord <em>universeel</em> is belangrijk.
+</p><!-- l. 142 --><p class='noindent'>Dezelfde fysische wet beschrijft de interactie tussen:
+</p>     
+<ul class='itemize1'>
+<li class='itemize'>een leerling en de aarde;
+</li>
+<li class='itemize'>de aarde en de maan;
+</li>
+<li class='itemize'>de zon en de aarde;
+</li>
+<li class='itemize'>twee sterren;
+</li>
+<li class='itemize'>twee kleine voorwerpen in een laboratorium.</li></ul>
+<!-- l. 152 --><p class='noindent'>Het verschil tussen deze situaties zit niet in de aard van de wisselwerking, maar in de
+betrokken massa’s en afstanden.
+<a id='x1-3r2'></a>
+</p><!-- l. 160 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>2</div><div class='fvd-section-bar__title'>Van zwaartekracht naar gravitatie</div></div>
+<p></p><!-- l. 162 --><p class='noindent'>In de buurt van het aardoppervlak gebruiken we meestal
+</p>
+<div class='mathjax-block'>\[ F_g = mg. \]</div>
+<!-- l. 168 --><p class='noindent'>Met
+</p>
+<div class='mathjax-block'>\[ g\approx 9{,}81\,\mathrm {N/kg}. \]</div>
+<!-- l. 174 --><p class='noindent'>Dat werkt uitstekend zolang we ons dicht genoeg bij het aardoppervlak bevinden.
+</p><!-- l. 177 --><p class='noindent'>Maar <span class='mathjax-inline'>\(g\)</span> is niet overal in het heelal gelijk aan <span class='mathjax-inline'>\(9{,}81\,\mathrm {N/kg}\)</span>.
+</p><!-- l. 180 --><p class='noindent'>Op de maan is <span class='mathjax-inline'>\(g\)</span> veel kleiner.
+</p><!-- l. 182 --><p class='noindent'>Op Jupiter is <span class='mathjax-inline'>\(g\)</span> anders.
+</p><!-- l. 184 --><p class='noindent'>En zelfs boven het aardoppervlak neemt <span class='mathjax-inline'>\(g\)</span> geleidelijk af.
+</p><!-- l. 186 --><p class='noindent'>We hebben daarom een algemenere wet nodig.
+                                                                  
+
+                                                                  
+<a id='x1-4r3'></a>
+</p><!-- l. 193 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>3</div><div class='fvd-section-bar__title'>De algemene gravitatiewet van Newton</div></div>
+<p></p><!-- l. 195 --><p class='noindent'>Newton stelde dat twee massa’s elkaar aantrekken met een kracht die:
+</p>     
+<ul class='itemize1'>
+<li class='itemize'>groter wordt wanneer één van de massa’s groter wordt;
+</li>
+<li class='itemize'>groter wordt wanneer beide massa’s groter worden;
+</li>
+<li class='itemize'>kleiner wordt wanneer de afstand tussen beide massa’s groter wordt.</li></ul>
+<!-- l. 204 --><p class='noindent'>Meer precies geldt:
+</p><!-- l. 207 --><p class='noindent'></p><section class='fvd-definition'><div class='fvd-definition__title'><span class='fvd-definition__label'>DEFINITIE</span><span class='fvd-definition__separator'> — </span><span class='fvd-definition__name'>Algemene gravitatiewet</span></div><div class='fvd-definition__content'>
+<p></p><!-- l. 209 --><p class='noindent'>Twee puntmassa’s <span class='mathjax-inline'>\(m_1\)</span> en <span class='mathjax-inline'>\(m_2\)</span> op een onderlinge afstand <span class='mathjax-inline'>\(r\)</span> trekken elkaar aan met een
+gravitatiekracht waarvan de grootte gegeven wordt door
+</p>
+<div class='mathjax-block'>\[ \boxed { F_g = G\frac {m_1m_2}{r^2}. } \]</div>
+<!-- l. 221 --><p class='noindent'>Hierbij is
+</p>
+<div class='mathjax-block'>\[ G = 6{,}674\times 10^{-11} \, \mathrm {\frac {N\,m^2}{kg^2}} \]</div>
+<!-- l. 231 --><p class='noindent'>de universele gravitatieconstante.
+</p></div></section>
+<p></p><!-- l. 236 --><p class='noindent'>We kunnen de formule lezen als een fysisch verhaal:
+</p>
+<div class='mathjax-block'>\[ \boxed { F_g \propto m_1m_2 } \]</div>
+<!-- l. 246 --><p class='noindent'>en
+</p>
+<div class='mathjax-block'>\[ \boxed { F_g \propto \frac {1}{r^2}. } \]</div>
+<p><a id='x1-5r1'></a>
+</p><!-- l. 257 --><p class='noindent'></p><div class='fvd-subsection'>
+<p></p><!-- l. 257 --><p class='noindent'></p><div class='fvd-subsection__row'>
+<p></p><!-- l. 257 --><p class='noindent'></p><div class='fvd-subsection__number'>3.1</div>
+                                                                  
+
+                                                                  
+<p></p><!-- l. 257 --><p class='noindent'></p><div class='fvd-subsection__title'>Wat betekent <span class='mathjax-inline'>\(r\)</span>?</div>
+<p></p><!-- l. 257 --><p class='noindent'></p></div>
+<p></p><!-- l. 257 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
+<p></p><!-- l. 257 --><p class='noindent'></p></div>
+<p></p><!-- l. 259 --><p class='noindent'>Een belangrijke valkuil is de betekenis van de afstand <span class='mathjax-inline'>\(r\)</span>.
+</p><!-- l. 261 --><p class='noindent'>Bij bolvormige hemellichamen gebruiken we de afstand tussen hun
+<strong>massamiddelpunten</strong>.
+</p><!-- l. 264 --><p class='noindent'>Dus niet:
+</p>
+<div class='center'>
+<!-- l. 266 --><p class='noindent'>
+</p><!-- l. 267 --><p class='noindent'>de afstand tussen de oppervlakken,</p></div>
+<!-- l. 270 --><p class='noindent'>maar:
+</p>
+<div class='mathjax-block'>\[ \boxed { r=\text {afstand tussen de massamiddelpunten}. } \]</div>
+<!-- l. 279 --><p class='noindent'>Wanneer een voorwerp zich op hoogte <span class='mathjax-inline'>\(h\)</span> boven het aardoppervlak bevindt, is de
+afstand tot het middelpunt van de aarde dus:
+</p>
+<div class='mathjax-block'>\[ \boxed { r=R_\mathrm {A}+h. } \]</div>
+<!-- l. 288 --><p class='noindent'>Niet:
+</p>
+<div class='mathjax-block'>\[ r=h. \]</div>
+<!-- l. 296 --><p class='noindent'></p><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span></div><div class='fvd-remark__content'>
+<p></p><!-- l. 297 --><p class='noindent'>Voor bolsymmetrische massa’s mogen we voor punten buiten de bol doen alsof de
+volledige massa geconcentreerd is in het middelpunt.
+</p><!-- l. 300 --><p class='noindent'>Dat maakt de puntmassabenadering bijzonder bruikbaar voor planeten en
+sterren.
+</p></div></section>
+<p><a id='x1-6r4'></a>
+</p><p></p><!-- l. 310 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>4</div><div class='fvd-section-bar__title'>Eenheden als controle-instrument</div></div>
+<p></p><!-- l. 312 --><p class='noindent'>De eenheid van <span class='mathjax-inline'>\(G\)</span> lijkt op het eerste gezicht ingewikkeld:
+</p>
+<div class='mathjax-block'>\[ [G] = \mathrm {\frac {N\,m^2}{kg^2}}. \]</div>
+<!-- l. 320 --><p class='noindent'>Maar precies die eenheid zorgt ervoor dat de gravitatiewet een kracht oplevert.
+                                                                  
+
+                                                                  
+</p><!-- l. 323 --><p class='noindent'>Uit
+</p>
+<div class='mathjax-block'>\[ F_g = G\frac {m_1m_2}{r^2} \]</div>
+<!-- l. 331 --><p class='noindent'>volgt voor de eenheden:
+</p>
+<div class='mathjax-block'>\[ [F_g] = \mathrm { \frac {N\,m^2}{kg^2} \frac {kg\cdot kg}{m^2} }. \]</div>
+<!-- l. 342 --><p class='noindent'>Dus:
+</p>
+<div class='mathjax-block'>\[ \boxed { [F_g]=\mathrm N. } \]</div>
+<!-- l. 350 --><p class='noindent'>Eenheden zijn daarom meer dan administratie. Ze vormen een eerste controle op een
+fysische berekening.
+<a id='x1-7r5'></a>
+</p><!-- l. 358 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>5</div><div class='fvd-section-bar__title'>Hoe groot is gravitatie tussen gewone voorwerpen?</div></div>
+<p></p><!-- l. 360 --><p class='noindent'>De gravitatieconstante is zeer klein:
+</p>
+<div class='mathjax-block'>\[ G = 6{,}674\times 10^{-11} \, \mathrm {\frac {N\,m^2}{kg^2}}. \]</div>
+<!-- l. 370 --><p class='noindent'>Daarom is gravitatie tussen gewone voorwerpen meestal nauwelijks merkbaar.
+<a id='x1-8r1'></a>
+</p><!-- l. 374 --><p class='noindent'></p><section class='fvd-example'>
+<p></p><!-- l. 374 --><p class='noindent'></p><div class='fvd-example__title'>Voorbeeld 1<span class='fvd-example__subtitle'> — Twee leerlingen</span></div>
+<p></p><!-- l. 374 --><p class='noindent'></p><div class='fvd-example__content'>
+<p></p><!-- l. 376 --><p class='noindent'>Twee leerlingen met massa’s
+</p>
+<div class='mathjax-block'>\[ m_1=60\,\mathrm {kg} \]</div>
+<!-- l. 382 --><p class='noindent'>en
+</p>
+<div class='mathjax-block'>\[ m_2=70\,\mathrm {kg} \]</div>
+<!-- l. 388 --><p class='noindent'>bevinden zich met hun massamiddelpunten ongeveer
+</p>
+<div class='mathjax-block'>\[ r=1{,}0\,\mathrm m \]</div>
+<!-- l. 394 --><p class='noindent'>van elkaar.
+</p><!-- l. 396 --><p class='noindent'>De gravitatiekracht is
+</p>
+<div class='mathjax-block'>\[ F_g = G\frac {m_1m_2}{r^2}. \]</div>
+<!-- l. 404 --><p class='noindent'>Invullen geeft:
+</p>
+                                                                  
+
+                                                                  
+<div class='mathjax-block'>\[ F_g = 6{,}674\times 10^{-11} \frac {60\cdot 70}{1{,}0^2}. \]</div>
+<!-- l. 413 --><p class='noindent'>Dus:
+</p>
+<div class='mathjax-block'>\[ F_g \approx 2{,}8\times 10^{-7}\,\mathrm N. \]</div>
+<!-- l. 421 --><p class='noindent'>Dat is extreem klein.
+</p><!-- l. 423 --><p class='noindent'>We merken de gravitatie tussen de leerlingen daarom niet.
+</p><!-- l. 425 --><p class='noindent'>De gravitatiekracht van de aarde op elke leerling is daarentegen wel groot, omdat de
+aarde een enorme massa heeft.
+</p></div></section>
+<p><a id='x1-9r6'></a>
+</p><p></p><!-- l. 435 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>6</div><div class='fvd-section-bar__title'>Een gravitatieprobleem systematisch oplossen</div></div>
+<p></p><!-- l. 437 --><p class='noindent'>Bij een berekening is het verleidelijk onmiddellijk getallen in een formule in te
+vullen.
+</p><!-- l. 440 --><p class='noindent'>Bij eenvoudige oefeningen lukt dat soms. Bij moeilijkere problemen leidt het snel tot
+fouten.
+</p><!-- l. 443 --><p class='noindent'>Gebruik daarom een vaste aanpak.
+</p>
+<div class='center'>
+<!-- l. 446 --><p class='noindent'>
+</p>
+<div class='mathjax-block'>\[ \boxed { \begin {array}{c} \text {situatie begrijpen} \\ \downarrow \\ \text {schets maken} \\ \downarrow \\ \text {gegeven en gevraagd noteren} \\ \downarrow \\ \text {afstand }r\text { correct bepalen} \\ \downarrow \\ \text {model kiezen} \\ \downarrow \\ \text {berekenen} \\ \downarrow \\ \text {eenheid en grootteorde controleren} \\ \downarrow \\ \text {antwoord fysisch interpreteren} \end {array} } \]</div></div>
+<!-- l. 485 --><p class='noindent'>Bij gravitatie is vooral de stap
+</p>
+<div class='mathjax-block'>\[ \boxed {\text {bepaal }r} \]</div>
+<!-- l. 491 --><p class='noindent'>belangrijk.
+</p><!-- l. 493 --><p class='noindent'>Vraag jezelf steeds af:
+</p>
+<div class='center'>
+<!-- l. 495 --><p class='noindent'>
+</p><!-- l. 496 --><p class='noindent'><em>Welke afstand hoort werkelijk in de gravitatiewet?</em></p></div>
+<p><a id='x1-10r1'></a>
+</p><!-- l. 504 --><p class='noindent'></p><section class='fvd-exercise'>
+                                                                  
+
+                                                                  
+<p></p><!-- l. 504 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 504 --><p class='noindent'>Oefening 1
+</p><!-- l. 504 --><p class='noindent'>— Twee massa’s
+</p><!-- l. 504 --><p class='noindent'></p></div>
+<p></p><!-- l. 504 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 504 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 504 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 506 --><p class='noindent'>Twee bolvormige voorwerpen hebben massa’s
+</p>
+<div class='mathjax-block'>\[ m_1=5{,}0\,\mathrm {kg} \qquad \text {en}\qquad m_2=8{,}0\,\mathrm {kg}. \]</div>
+<!-- l. 514 --><p class='noindent'>Hun middelpunten bevinden zich op
+</p>
+<div class='mathjax-block'>\[ r=0{,}50\,\mathrm m \]</div>
+<!-- l. 520 --><p class='noindent'>van elkaar.
+</p>
+<div class='problem-environment question' id='problem1' numbered=' ' role='article' titletext=' Question'>  Welke formule gebruik je om de gravitatiekracht te bepalen?    </div>
+<div class='problem-environment question' id='problem2' numbered=' ' role='article' titletext=' Question'>  Bereken de grootte van de gravitatiekracht.    </div>
+<div class='problem-environment question' id='problem3' numbered=' ' role='article' titletext=' Question'>  In welke richting werkt de kracht op <span class='mathjax-inline'>\(m_1\)</span>?    </div>
+<div class='problem-environment question' id='problem4' numbered=' ' role='article' titletext=' Question'>  In welke richting werkt de kracht op <span class='mathjax-inline'>\(m_2\)</span>?    </div>
+</div>
+<!-- l. 538 --><p class='noindent'></p></div>
+<p></p><!-- l. 538 --><p class='noindent'></p></section>
+<p><a id='x1-11r7'></a>
+</p><p></p><!-- l. 545 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>7</div><div class='fvd-section-bar__title'>De gravitatiekracht is een vector</div></div>
+<p></p><!-- l. 547 --><p class='noindent'>De formule
+</p>
+<div class='mathjax-block'>\[ F_g = G\frac {m_1m_2}{r^2} \]</div>
+<!-- l. 555 --><p class='noindent'>geeft alleen de <strong>grootte</strong> van de gravitatiekracht.
+</p><!-- l. 557 --><p class='noindent'>Maar kracht is een vector.
+</p><!-- l. 559 --><p class='noindent'>We moeten dus ook richting en zin kennen.
+</p><!-- l. 561 --><p class='noindent'>De gravitatiekracht werkt steeds langs de verbindingslijn tussen beide
+massamiddelpunten en is steeds aantrekkend.
+</p><!-- l. 564 --><p class='noindent'>Voor twee massa’s <span class='mathjax-inline'>\(m_1\)</span> en <span class='mathjax-inline'>\(m_2\)</span> geldt daarom schematisch:
+</p>
+                                                                  
+
+                                                                  
+<div class='mathjax-block'>\[ m_1 \quad \longrightarrow \qquad \longleftarrow \quad m_2 \]</div>
+<!-- l. 576 --><p class='noindent'>Elke massa wordt naar de andere massa toe getrokken.
+</p><!-- l. 580 --><p class='noindent'></p><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span></div><div class='fvd-remark__content'>
+<p></p><!-- l. 581 --><p class='noindent'>Bij gravitatie tussen gewone positieve massa’s bestaat geen gravitationele
+afstoting.
+</p><!-- l. 584 --><p class='noindent'>Dat wordt later een belangrijk verschil met elektrische krachten.
+</p></div></section>
+<p><a id='x1-12r8'></a>
+</p><p></p><!-- l. 593 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>8</div><div class='fvd-section-bar__title'>Wie trekt het hardst?</div></div>
+<p></p><!-- l. 595 --><p class='noindent'>Stel dat de aarde een appel aantrekt.
+</p><!-- l. 597 --><p class='noindent'>Welke kracht is groter?
+</p><!-- l. 599 --><p class='noindent'>De kracht van de aarde op de appel?
+</p><!-- l. 601 --><p class='noindent'>Of de kracht van de appel op de aarde?
+</p><!-- l. 603 --><p class='noindent'>Uit het vorige thema kennen we Newton III:
+</p>
+<div class='mathjax-block'>\[ \boxed { \vec F_{A\rightarrow B} = -\vec F_{B\rightarrow A}. } \]</div>
+<!-- l. 613 --><p class='noindent'>Dus:
+</p>
+<div class='mathjax-block'>\[ \boxed { \vec F_{\mathrm {aarde}\rightarrow \mathrm {appel}} = - \vec F_{\mathrm {appel}\rightarrow \mathrm {aarde}}. } \]</div>
+<!-- l. 624 --><p class='noindent'>De krachten zijn exact even groot.
+</p><!-- l. 626 --><p class='noindent'>Dat lijkt misschien vreemd omdat de aarde zoveel zwaarder is.
+<a id='x1-13r1'></a>
+</p><!-- l. 629 --><p class='noindent'></p><div class='fvd-subsection'>
+<p></p><!-- l. 629 --><p class='noindent'></p><div class='fvd-subsection__row'>
+<p></p><!-- l. 629 --><p class='noindent'></p><div class='fvd-subsection__number'>8.1</div>
+<p></p><!-- l. 629 --><p class='noindent'></p><div class='fvd-subsection__title'>Waarom versnelt de appel dan zoveel meer?</div>
+<p></p><!-- l. 629 --><p class='noindent'></p></div>
+<p></p><!-- l. 629 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
+<p></p><!-- l. 629 --><p class='noindent'></p></div>
+<p></p><!-- l. 631 --><p class='noindent'>Newton II geeft:
+</p>
+<div class='mathjax-block'>\[ \vec a=\frac {\sum \vec F}{m}. \]</div>
+<!-- l. 637 --><p class='noindent'>De appel en de aarde ondervinden even grote interactiekrachten, maar hun massa’s
+verschillen enorm.
+                                                                  
+
+                                                                  
+</p><!-- l. 640 --><p class='noindent'>Voor de appel:
+</p>
+<div class='mathjax-block'>\[ a_\mathrm {appel} = \frac {F_g}{m_\mathrm {appel}}. \]</div>
+<!-- l. 648 --><p class='noindent'>Voor de aarde:
+</p>
+<div class='mathjax-block'>\[ a_\mathrm {aarde} = \frac {F_g}{M_\mathrm {aarde}}. \]</div>
+<!-- l. 656 --><p class='noindent'>Omdat
+</p>
+<div class='mathjax-block'>\[ M_\mathrm {aarde} \gg m_\mathrm {appel}, \]</div>
+<!-- l. 664 --><p class='noindent'>geldt:
+</p>
+<div class='mathjax-block'>\[ a_\mathrm {aarde} \ll a_\mathrm {appel}. \]</div>
+<!-- l. 674 --><p class='noindent'></p><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span></div><div class='fvd-remark__content'>
+<p></p><!-- l. 675 --><p class='noindent'>De aarde trekt niet harder aan de appel dan de appel aan de aarde.
+</p><!-- l. 677 --><p class='noindent'>De krachten zijn even groot.
+</p><!-- l. 679 --><p class='noindent'>Het verschil in bewegingsverandering ontstaat door het enorme verschil in
+massa.
+</p></div></section>
+<p><a id='x1-14r2'></a>
+</p><p></p><!-- l. 685 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 685 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 685 --><p class='noindent'>Oefening 2
+</p><!-- l. 685 --><p class='noindent'>— De aarde en jij
+</p><!-- l. 685 --><p class='noindent'></p></div>
+<p></p><!-- l. 685 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 685 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 685 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 687 --><p class='noindent'>Je staat stil op het aardoppervlak.
+</p><!-- l. 689 --><p class='noindent'>Een leerling beweert:
+</p>
+<div class='center'>
+<!-- l. 691 --><p class='noindent'>
+</p><!-- l. 692 --><p class='noindent'>“De aarde trekt veel harder aan mij dan ik aan de aarde trek, want de aarde
+heeft een veel grotere massa.”</p></div>
+                                                                  
+
+                                                                  
+<!-- l. 696 --><p class='noindent'>Analyseer deze uitspraak.
+</p><!-- l. 698 --><p class='noindent'>Gebruik in je antwoord zowel Newton II als Newton III.
+</p></div>
+<p></p><!-- l. 700 --><p class='noindent'></p></div>
+<p></p><!-- l. 700 --><p class='noindent'></p></section>
+<p><a id='x1-15r9'></a>
+</p><p></p><!-- l. 707 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>9</div><div class='fvd-section-bar__title'>Hoe beïnvloeden de massa’s de gravitatiekracht?</div></div>
+<p></p><!-- l. 709 --><p class='noindent'>Uit
+</p>
+<div class='mathjax-block'>\[ F_g = G\frac {m_1m_2}{r^2} \]</div>
+<!-- l. 717 --><p class='noindent'>volgt bij constante afstand:
+</p>
+<div class='mathjax-block'>\[ F_g\propto m_1m_2. \]</div>
+<!-- l. 723 --><p class='noindent'>Dat betekent bijvoorbeeld:
+</p>
+<div class='mathjax-block'>\[ m_1\rightarrow 2m_1 \quad \Longrightarrow \quad F_g\rightarrow 2F_g. \]</div>
+<!-- l. 731 --><p class='noindent'>Als beide massa’s verdubbelen:
+</p>
+<div class='mathjax-block'>\[ m_1\rightarrow 2m_1, \qquad m_2\rightarrow 2m_2, \]</div>
+<!-- l. 739 --><p class='noindent'>dan:
+</p>
+<div class='mathjax-block'>\[ F_g' = G\frac {(2m_1)(2m_2)}{r^2} = 4F_g. \]</div>
+<!-- l. 749 --><p class='noindent'>Dus:
+</p>
+<div class='mathjax-block'>\[ \boxed { \text {beide massa's verdubbelen} \Rightarrow F_g\text { wordt viermaal zo groot}. } \]</div>
+<p><a id='x1-16r3'></a>
+</p><!-- l. 760 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 760 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 760 --><p class='noindent'>Oefening 3
+</p><!-- l. 760 --><p class='noindent'>— Redeneren zonder rekenen
+</p><!-- l. 760 --><p class='noindent'></p></div>
+<p></p><!-- l. 760 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 760 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 760 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 762 --><p class='noindent'>Een gravitatiekracht heeft oorspronkelijk grootte <span class='mathjax-inline'>\(F\)</span>.
+                                                                  
+
+                                                                  
+</p><!-- l. 764 --><p class='noindent'>Bepaal de nieuwe kracht in functie van <span class='mathjax-inline'>\(F\)</span>.
+</p>     
+<ol class='enumerate1'>
+<li class='enumerate' id='x1-18x1'>Alleen <span class='mathjax-inline'>\(m_1\)</span> wordt driemaal zo groot.
+</li>
+<li class='enumerate' id='x1-20x2'>Beide massa’s worden tweemaal zo groot.
+</li>
+<li class='enumerate' id='x1-22x3'><span class='mathjax-inline'>\(m_1\)</span> wordt gehalveerd en <span class='mathjax-inline'>\(m_2\)</span> verdubbeld.
+</li>
+<li class='enumerate' id='x1-24x4'>Beide massa’s worden gehalveerd.</li></ol>
+<!-- l. 773 --><p class='noindent'>Gebruik verhoudingen. Bereken de kracht niet opnieuw vanaf nul.
+</p></div>
+<p></p><!-- l. 775 --><p class='noindent'></p></div>
+<p></p><!-- l. 775 --><p class='noindent'></p></section>
+<p><a id='x1-25r10'></a>
+</p><p></p><!-- l. 782 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>10</div><div class='fvd-section-bar__title'>De afstand telt dubbel</div></div>
+<p></p><!-- l. 784 --><p class='noindent'>De afstand heeft een bijzondere invloed:
+</p>
+<div class='mathjax-block'>\[ F_g \propto \frac {1}{r^2}. \]</div>
+<!-- l. 792 --><p class='noindent'>We noemen dit een <strong>inverse-kwadratenwet</strong>.
+</p><!-- l. 795 --><p class='noindent'>Als de afstand verdubbelt:
+</p>
+<div class='mathjax-block'>\[ r\rightarrow 2r, \]</div>
+<!-- l. 801 --><p class='noindent'>dan:
+</p>
+<div class='mathjax-block'>\[ F_g' = G\frac {m_1m_2}{(2r)^2} = \frac 14F_g. \]</div>
+<!-- l. 811 --><p class='noindent'>Dus:
+</p>
+                                                                  
+
+                                                                  
+<div class='mathjax-block'>\[ \boxed { r\rightarrow 2r \quad \Longrightarrow \quad F_g\rightarrow \frac 14F_g. } \]</div>
+<!-- l. 822 --><p class='noindent'>Als de afstand verdrievoudigt:
+</p>
+<div class='mathjax-block'>\[ r\rightarrow 3r, \]</div>
+<!-- l. 828 --><p class='noindent'>dan:
+</p>
+<div class='mathjax-block'>\[ F_g' = \frac 19F_g. \]</div>
+<!-- l. 837 --><p class='noindent'>Als de afstand halveert:
+</p>
+<div class='mathjax-block'>\[ r\rightarrow \frac r2, \]</div>
+<!-- l. 843 --><p class='noindent'>dan:
+</p>
+<div class='mathjax-block'>\[ F_g' = 4F_g. \]</div>
+<div class='center'>
+<!-- l. 852 --><p class='noindent'>
+</p>
+<div class='mathjax-block'>\[ \boxed { \begin {array}{c|c} \text {afstand} &amp; \text {gravitatiekracht}\\ \hline r &amp; F_g\\ 2r &amp; F_g/4\\ 3r &amp; F_g/9\\ 4r &amp; F_g/16\\ r/2 &amp; 4F_g \end {array} } \]</div></div>
+<p><a id='x1-26r11'></a>
+</p><!-- l. 873 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>11</div><div class='fvd-section-bar__title'>Gravitatiekracht als functie van de afstand</div></div>
+<p></p><!-- l. 875 --><p class='noindent'>Voor vaste massa’s kunnen we schrijven:
+</p>
+<div class='mathjax-block'>\[ F_g(r) = \frac {C}{r^2}, \]</div>
+<!-- l. 883 --><p class='noindent'>waarbij
+</p>
+<div class='mathjax-block'>\[ C=Gm_1m_2. \]</div>
+<!-- l. 889 --><p class='noindent'>De kracht neemt dus sterk af wanneer <span class='mathjax-inline'>\(r\)</span> groter wordt.
+</p><!-- l. 891 --><p class='noindent'>Maar let op:
+</p>
+<div class='mathjax-block'>\[ F_g(r) \]</div>
+<!-- l. 897 --><p class='noindent'>wordt nooit exact nul voor een eindige afstand.
+</p><!-- l. 899 --><p class='noindent'>Wiskundig geldt:
+</p>
+<div class='mathjax-block'>\[ \lim _{r\rightarrow \infty }F_g(r)=0. \]</div>
+<!-- l. 905 --><p class='noindent'>De gravitatie-interactie wordt dus steeds zwakker, maar heeft in het ideale model
+                                                                  
+
+                                                                  
+geen scherpe grens waar ze plots verdwijnt.
+<a id='x1-27r4'></a>
+</p><!-- l. 909 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 909 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 909 --><p class='noindent'>Oefening 4
+</p><!-- l. 909 --><p class='noindent'>— Afstand analyseren
+</p><!-- l. 909 --><p class='noindent'></p></div>
+<p></p><!-- l. 909 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 909 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 909 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 911 --><p class='noindent'>Twee massa’s oefenen op afstand <span class='mathjax-inline'>\(r\)</span> een gravitatiekracht <span class='mathjax-inline'>\(F\)</span> op elkaar uit.
+</p><!-- l. 914 --><p class='noindent'>Bepaal de nieuwe kracht wanneer de afstand:
+</p>     
+<ol class='enumerate1'>
+<li class='enumerate' id='x1-29x1'><span class='mathjax-inline'>\(2r\)</span> wordt;
+</li>
+<li class='enumerate' id='x1-31x2'><span class='mathjax-inline'>\(5r\)</span> wordt;
+</li>
+<li class='enumerate' id='x1-33x3'><span class='mathjax-inline'>\(r/3\)</span> wordt;
+</li>
+<li class='enumerate' id='x1-35x4'><span class='mathjax-inline'>\(0{,}8r\)</span> wordt.</li></ol>
+<!-- l. 923 --><p class='noindent'>Leg telkens uit hoe je tot je antwoord komt.
+</p></div>
+<p></p><!-- l. 925 --><p class='noindent'></p></div>
+<p></p><!-- l. 925 --><p class='noindent'></p></section>
+<p><a id='x1-36r5'></a>
+</p><p></p><!-- l. 928 --><p class='noindent'></p><section class='fvd-exercise'>
+                                                                  
+
+                                                                  
+<p></p><!-- l. 928 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 928 --><p class='noindent'>Oefening 5
+</p><!-- l. 928 --><p class='noindent'>— Combineren van veranderingen
+</p><!-- l. 928 --><p class='noindent'></p></div>
+<p></p><!-- l. 928 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 928 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 928 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 930 --><p class='noindent'>Twee massa’s oefenen een gravitatiekracht <span class='mathjax-inline'>\(F\)</span> op elkaar uit.
+</p><!-- l. 932 --><p class='noindent'>Daarna wordt:
+</p>
+<div class='mathjax-block'>\[ m_1'=2m_1, \qquad m_2'=3m_2, \qquad r'=2r. \]</div>
+<!-- l. 942 --><p class='noindent'>Bepaal zonder de oorspronkelijke waarden van de massa’s of afstand te kennen de
+verhouding
+</p>
+<div class='mathjax-block'>\[ \frac {F_g'}{F_g}. \]</div>
+</div>
+<!-- l. 949 --><p class='noindent'></p></div>
+<p></p><!-- l. 949 --><p class='noindent'></p></section>
+<p><a id='x1-37r12'></a>
+</p><p></p><!-- l. 956 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>12</div><div class='fvd-section-bar__title'>Hoe weet een massa dat er een andere massa is?</div></div>
+<p></p><!-- l. 958 --><p class='noindent'>De gravitatiewet vertelt ons welke kracht twee massa’s op elkaar uitoefenen.
+</p><!-- l. 961 --><p class='noindent'>Maar we kunnen de situatie ook op een andere manier beschrijven.
+</p><!-- l. 963 --><p class='noindent'>Neem de aarde.
+</p><!-- l. 965 --><p class='noindent'>Zelfs wanneer we nog geen tweede massa kiezen, kunnen we zeggen dat de aarde de
+ruimte rondom zich fysisch beïnvloedt.
+</p><!-- l. 968 --><p class='noindent'>Plaatsen we ergens in die ruimte een massa, dan ondervindt die een gravitatiekracht.
+</p><!-- l. 971 --><p class='noindent'>Om die invloed van de aarde op de ruimte te beschrijven voeren we het begrip
+<strong>gravitatieveld</strong> in.
+</p><!-- l. 975 --><p class='noindent'></p><section class='fvd-definition'><div class='fvd-definition__title'><span class='fvd-definition__label'>DEFINITIE</span><span class='fvd-definition__separator'> — </span><span class='fvd-definition__name'>Gravitatieveld</span></div><div class='fvd-definition__content'>
+<p></p><!-- l. 977 --><p class='noindent'>Een massa veroorzaakt in de ruimte rondom zich een <strong>gravitatieveld</strong>.
+</p><!-- l. 980 --><p class='noindent'>De gravitatieveldvector <span class='mathjax-inline'>\(\vec g\)</span> in een punt wordt gedefinieerd als de gravitatiekracht per
+eenheid massa die een kleine testmassa in dat punt zou ondervinden:
+</p>
+<div class='mathjax-block'>\[ \boxed { \vec g = \frac {\vec F_g}{m}. } \]</div>
+</div></section>
+                                                                  
+
+                                                                  
+<!-- l. 995 --><p class='noindent'>Dit is een belangrijke conceptuele overgang:
+</p>
+<div class='mathjax-block'>\[ \boxed { \text {bronmassa} \longrightarrow \text {gravitatieveld} \longrightarrow \text {kracht op een massa}. } \]</div>
+<p><a id='x1-38r13'></a>
+</p><!-- l. 1012 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>13</div><div class='fvd-section-bar__title'>De eenheid van gravitatieveldsterkte</div></div>
+<p></p><!-- l. 1014 --><p class='noindent'>Uit
+</p>
+<div class='mathjax-block'>\[ \vec g = \frac {\vec F_g}{m} \]</div>
+<!-- l. 1022 --><p class='noindent'>volgt:
+</p>
+<div class='mathjax-block'>\[ [g] = \mathrm {\frac {N}{kg}}. \]</div>
+<!-- l. 1030 --><p class='noindent'>Dus:
+</p>
+<div class='mathjax-block'>\[ \boxed { [g]=\mathrm {N/kg}. } \]</div>
+<!-- l. 1039 --><p class='noindent'>Maar uit Newton II:
+</p>
+<div class='mathjax-block'>\[ \vec F=m\vec a \]</div>
+<!-- l. 1045 --><p class='noindent'>volgt:
+</p>
+<div class='mathjax-block'>\[ \vec a=\frac {\vec F}{m}. \]</div>
+<!-- l. 1051 --><p class='noindent'>Daarom is:
+</p>
+<div class='mathjax-block'>\[ 1\,\mathrm {\frac {N}{kg}} = 1\,\mathrm {\frac {m}{s^2}}. \]</div>
+<!-- l. 1059 --><p class='noindent'>We kunnen <span class='mathjax-inline'>\(g\)</span> dus op twee manieren interpreteren:
+</p>
+<div class='mathjax-block'>\[ \boxed { g=\text {gravitatiekracht per kilogram} } \]</div>
+<!-- l. 1067 --><p class='noindent'>en
+</p>
+<div class='mathjax-block'>\[ \boxed { g=\text {versnelling van een vrij vallende testmassa}. } \]</div>
+<!-- l. 1077 --><p class='noindent'></p><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span></div><div class='fvd-remark__content'>
+<p></p><!-- l. 1078 --><p class='noindent'>De twee eenheden
+</p>
+<div class='mathjax-block'>\[ \mathrm {N/kg} \qquad \text {en}\qquad \mathrm {m/s^2} \]</div>
+<!-- l. 1086 --><p class='noindent'>zijn dimensioneel gelijkwaardig, maar benadrukken een andere interpretatie.
+</p><!-- l. 1089 --><p class='noindent'>Bij een <strong>veld</strong> gebruiken we vaak <span class='mathjax-inline'>\(\mathrm {N/kg}\)</span>.
+</p><!-- l. 1091 --><p class='noindent'>Bij een <strong>versnelling</strong> gebruiken we meestal <span class='mathjax-inline'>\(\mathrm {m/s^2}\)</span>.
+                                                                  
+
+                                                                  
+</p></div></section>
+<p><a id='x1-39r14'></a>
+</p><p></p><!-- l. 1100 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>14</div><div class='fvd-section-bar__title'>Het gravitatieveld van een bolvormige massa</div></div>
+<p></p><!-- l. 1102 --><p class='noindent'>Beschouw een bronmassa <span class='mathjax-inline'>\(M\)</span> en een testmassa <span class='mathjax-inline'>\(m\)</span> op afstand <span class='mathjax-inline'>\(r\)</span>.
+</p><!-- l. 1104 --><p class='noindent'>Volgens de gravitatiewet:
+</p>
+<div class='mathjax-block'>\[ F_g = G\frac {Mm}{r^2}. \]</div>
+<!-- l. 1112 --><p class='noindent'>Volgens de definitie van gravitatieveldsterkte:
+</p>
+<div class='mathjax-block'>\[ g = \frac {F_g}{m}. \]</div>
+<!-- l. 1120 --><p class='noindent'>Invullen geeft:
+</p>
+<div class='mathjax-block'>\[ g = \frac {1}{m} G\frac {Mm}{r^2}. \]</div>
+<!-- l. 1129 --><p class='noindent'>De testmassa valt weg:
+</p>
+<div class='mathjax-block'>\[ \boxed { g = G\frac {M}{r^2}. } \]</div>
+<!-- l. 1140 --><p class='noindent'>Dit resultaat is fundamenteel.
+</p><!-- l. 1142 --><p class='noindent'>De gravitatieveldsterkte wordt bepaald door:
+</p>     
+<ul class='itemize1'>
+<li class='itemize'>de bronmassa <span class='mathjax-inline'>\(M\)</span>;
+</li>
+<li class='itemize'>de afstand <span class='mathjax-inline'>\(r\)</span> tot de bronmassa.</li></ul>
+<!-- l. 1149 --><p class='noindent'>Ze hangt niet af van de massa van het voorwerp waarmee we het veld onderzoeken.
+</p><!-- l. 1154 --><p class='noindent'></p><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span></div><div class='fvd-remark__content'>
+<p></p>
+<div class='mathjax-block'>\[ \boxed { g = G\frac {M}{r^2} } \]</div>
+<!-- l. 1163 --><p class='noindent'>beschrijft het veld dat door de bronmassa <span class='mathjax-inline'>\(M\)</span> wordt veroorzaakt.
+</p><!-- l. 1165 --><p class='noindent'>Een testmassa <span class='mathjax-inline'>\(m\)</span> die zich in dat veld bevindt, ondervindt vervolgens:
+</p>
+<div class='mathjax-block'>\[ \boxed { \vec F_g=m\vec g. } \]</div>
+</div></section>
+<p><a id='x1-40r15'></a>
+                                                                  
+
+                                                                  
+</p><!-- l. 1180 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>15</div><div class='fvd-section-bar__title'>Waarom hangt de valversnelling niet van de massa af?</div></div>
+<p></p><!-- l. 1182 --><p class='noindent'>Een zwaarder voorwerp ondervindt een grotere gravitatiekracht:
+</p>
+<div class='mathjax-block'>\[ F_g = G\frac {Mm}{r^2}. \]</div>
+<!-- l. 1190 --><p class='noindent'>Je zou daardoor kunnen verwachten dat een zwaarder voorwerp ook sneller
+valt.
+</p><!-- l. 1193 --><p class='noindent'>Maar volgens Newton II:
+</p>
+<div class='mathjax-block'>\[ a=\frac {F_g}{m}. \]</div>
+<!-- l. 1199 --><p class='noindent'>Invullen geeft:
+</p>
+<div class='mathjax-block'>\[ a = \frac {1}{m} G\frac {Mm}{r^2}. \]</div>
+<!-- l. 1208 --><p class='noindent'>De massa <span class='mathjax-inline'>\(m\)</span> van het vallende voorwerp valt weg:
+</p>
+<div class='mathjax-block'>\[ \boxed { a = G\frac {M}{r^2} = g. } \]</div>
+<!-- l. 1220 --><p class='noindent'>Dus in hetzelfde gravitatieveld krijgen alle voorwerpen dezelfde valversnelling, zolang
+andere krachten zoals luchtweerstand verwaarloosbaar zijn.
+<a id='x1-41r6'></a>
+</p><!-- l. 1225 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 1225 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 1225 --><p class='noindent'>Oefening 6
+</p><!-- l. 1225 --><p class='noindent'>— Hamer en veer
+</p><!-- l. 1225 --><p class='noindent'></p></div>
+<p></p><!-- l. 1225 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 1225 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 1225 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 1227 --><p class='noindent'>Op de maan laat een astronaut tegelijk een hamer en een veer los.
+</p><!-- l. 1229 --><p class='noindent'>Er is praktisch geen atmosfeer.
+</p>
+<div class='problem-environment question' id='problem5' numbered=' ' role='article' titletext=' Question'>  Welk voorwerp ondervindt de grootste gravitatiekracht?    </div>
+<div class='problem-environment question' id='problem6' numbered=' ' role='article' titletext=' Question'>  Welk voorwerp heeft de grootste valversnelling?    </div>
+<div class='problem-environment question' id='problem7' numbered=' ' role='article' titletext=' Question'>  Verklaar waarom beide antwoorden niet met elkaar in tegenspraak zijn. Gebruik
+zowel de gravitatiewet als Newton II.    </div>
+</div>
+<!-- l. 1244 --><p class='noindent'></p></div>
+                                                                  
+
+                                                                  
+<p></p><!-- l. 1244 --><p class='noindent'></p></section>
+<p><a id='x1-42r16'></a>
+</p><p></p><!-- l. 1251 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>16</div><div class='fvd-section-bar__title'>Waar komt <span class='mathjax-inline'>\(9{,}81\,\mathrm {N/kg}\)</span> vandaan?</div></div>
+<p></p><!-- l. 1253 --><p class='noindent'>In eerdere fysica gebruikten we:
+</p>
+<div class='mathjax-block'>\[ g\approx 9{,}81\,\mathrm {N/kg}. \]</div>
+<!-- l. 1259 --><p class='noindent'>Nu kunnen we begrijpen waar die waarde vandaan komt.
+</p><!-- l. 1261 --><p class='noindent'>Aan het aardoppervlak geldt ongeveer:
+</p>
+<div class='mathjax-block'>\[ r=R_\mathrm A. \]</div>
+<!-- l. 1267 --><p class='noindent'>Dus:
+</p>
+<div class='mathjax-block'>\[ g = G\frac {M_\mathrm A}{R_\mathrm A^2}. \]</div>
+<!-- l. 1275 --><p class='noindent'>Met ongeveer:
+</p>
+<div class='mathjax-block'>\[ M_\mathrm A = 5{,}97\times 10^{24}\,\mathrm {kg} \]</div>
+<!-- l. 1283 --><p class='noindent'>en:
+</p>
+<div class='mathjax-block'>\[ R_\mathrm A = 6{,}37\times 10^6\,\mathrm m \]</div>
+<!-- l. 1291 --><p class='noindent'>vinden we:
+</p>
+<div class='mathjax-block'>\[ g = 6{,}674\times 10^{-11} \frac {5{,}97\times 10^{24}} {(6{,}37\times 10^6)^2}. \]</div>
+<!-- l. 1301 --><p class='noindent'>Dit geeft ongeveer:
+</p>
+<div class='mathjax-block'>\[ \boxed { g\approx 9{,}81\,\mathrm {N/kg}. } \]</div>
+<!-- l. 1309 --><p class='noindent'>De bekende waarde van <span class='mathjax-inline'>\(g\)</span> is dus geen losstaande natuurconstante.
+</p><!-- l. 1311 --><p class='noindent'>Ze volgt uit:
+</p>
+<div class='mathjax-block'>\[ \boxed { G,\quad M_\mathrm A,\quad R_\mathrm A. } \]</div>
+<p><a id='x1-43r17'></a>
+</p><!-- l. 1324 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>17</div><div class='fvd-section-bar__title'>Hoe hangen <span class='mathjax-inline'>\(F_g=mg\)</span> en de gravitatiewet samen?</div></div>
+<p></p><!-- l. 1326 --><p class='noindent'>Nabij het aardoppervlak schrijven we:
+</p>
+<div class='mathjax-block'>\[ F_g=mg. \]</div>
+<!-- l. 1332 --><p class='noindent'>De algemene gravitatiewet geeft:
+</p>
+                                                                  
+
+                                                                  
+<div class='mathjax-block'>\[ F_g = G\frac {M_\mathrm A m}{r^2}. \]</div>
+<!-- l. 1340 --><p class='noindent'>Omdat:
+</p>
+<div class='mathjax-block'>\[ g = G\frac {M_\mathrm A}{r^2}, \]</div>
+<!-- l. 1348 --><p class='noindent'>volgt onmiddellijk:
+</p>
+<div class='mathjax-block'>\[ F_g=mg. \]</div>
+<!-- l. 1354 --><p class='noindent'>Dus:
+</p>
+<div class='mathjax-block'>\[ \boxed { F_g=mg } \]</div>
+<!-- l. 1362 --><p class='noindent'>is geen concurrerende wet.
+</p><!-- l. 1364 --><p class='noindent'>Het is de praktische vorm van de gravitatiewet wanneer het lokale gravitatieveld
+bekend is.
+<a id='x1-44r18'></a>
+</p><!-- l. 1372 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>18</div><div class='fvd-section-bar__title'>Massa is niet hetzelfde als gewicht</div></div>
+<p></p><!-- l. 1374 --><p class='noindent'>In dagelijkse taal gebruiken we “massa” en “gewicht” vaak alsof ze hetzelfde
+betekenen.
+</p><!-- l. 1377 --><p class='noindent'>In fysica moeten we ze onderscheiden.
+</p><!-- l. 1379 --><p class='noindent'><strong>Massa</strong> is een eigenschap van een voorwerp.
+</p><!-- l. 1381 --><p class='noindent'>Ze wordt uitgedrukt in:
+</p>
+<div class='mathjax-block'>\[ \mathrm {kg}. \]</div>
+<!-- l. 1387 --><p class='noindent'>De gravitatiekracht op dat voorwerp is een kracht:
+</p>
+<div class='mathjax-block'>\[ F_g=mg \]</div>
+<!-- l. 1393 --><p class='noindent'>en wordt uitgedrukt in:
+</p>
+<div class='mathjax-block'>\[ \mathrm N. \]</div>
+<!-- l. 1400 --><p class='noindent'>Een astronaut met massa
+</p>
+<div class='mathjax-block'>\[ 80\,\mathrm {kg} \]</div>
+<!-- l. 1406 --><p class='noindent'>heeft zowel op aarde als op de maan dezelfde massa.
+</p><!-- l. 1408 --><p class='noindent'>Maar de gravitatieveldsterkte op de maan is kleiner.
+</p><!-- l. 1410 --><p class='noindent'>Daardoor is ook de gravitatiekracht op de astronaut kleiner.
+<a id='x1-45r7'></a>
+</p><!-- l. 1413 --><p class='noindent'></p><section class='fvd-exercise'>
+                                                                  
+
+                                                                  
+<p></p><!-- l. 1413 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 1413 --><p class='noindent'>Oefening 7
+</p><!-- l. 1413 --><p class='noindent'>— Aarde en maan
+</p><!-- l. 1413 --><p class='noindent'></p></div>
+<p></p><!-- l. 1413 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 1413 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 1413 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 1415 --><p class='noindent'>Een astronaut heeft massa
+</p>
+<div class='mathjax-block'>\[ m=75\,\mathrm {kg}. \]</div>
+<!-- l. 1421 --><p class='noindent'>Neem:
+</p>
+<div class='mathjax-block'>\[ g_\mathrm A=9{,}81\,\mathrm {N/kg} \]</div>
+<!-- l. 1427 --><p class='noindent'>en:
+</p>
+<div class='mathjax-block'>\[ g_\mathrm M=1{,}62\,\mathrm {N/kg}. \]</div>
+<div class='problem-environment question' id='problem8' numbered=' ' role='article' titletext=' Question'>  Wat is de massa van de astronaut op aarde?    </div>
+<div class='problem-environment question' id='problem9' numbered=' ' role='article' titletext=' Question'>  Wat is zijn massa op de maan?    </div>
+<div class='problem-environment question' id='problem10' numbered=' ' role='article' titletext=' Question'>  Bereken de gravitatiekracht op de astronaut op aarde.    </div>
+<div class='problem-environment question' id='problem11' numbered=' ' role='article' titletext=' Question'>  Bereken de gravitatiekracht op de astronaut op de maan.    </div>
+<div class='problem-environment question' id='problem12' numbered=' ' role='article' titletext=' Question'>  Leg in woorden uit wat verandert en wat niet verandert.    </div>
+</div>
+<!-- l. 1453 --><p class='noindent'></p></div>
+<p></p><!-- l. 1453 --><p class='noindent'></p></section>
+<p><a id='x1-46r19'></a>
+</p><p></p><!-- l. 1460 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>19</div><div class='fvd-section-bar__title'>Hoe verandert <span class='mathjax-inline'>\(g\)</span> met de hoogte?</div></div>
+<p></p><!-- l. 1462 --><p class='noindent'>Op hoogte <span class='mathjax-inline'>\(h\)</span> boven het aardoppervlak is de afstand tot het middelpunt van de
+aarde:
+</p>
+<div class='mathjax-block'>\[ r=R_\mathrm A+h. \]</div>
+<!-- l. 1469 --><p class='noindent'>Daarom:
+</p>
+<div class='mathjax-block'>\[ \boxed { g(h) = G\frac {M_\mathrm A}{(R_\mathrm A+h)^2}. } \]</div>
+<!-- l. 1480 --><p class='noindent'>Hieruit volgt onmiddellijk dat <span class='mathjax-inline'>\(g\)</span> afneemt met de hoogte.
+                                                                  
+
+                                                                  
+</p><!-- l. 1482 --><p class='noindent'>Maar opnieuw volgens een inverse-kwadratenwet.
+<a id='x1-47r2'></a>
+</p><!-- l. 1485 --><p class='noindent'></p><section class='fvd-example'>
+<p></p><!-- l. 1485 --><p class='noindent'></p><div class='fvd-example__title'>Voorbeeld 2<span class='fvd-example__subtitle'> — Op één aardstraal hoogte</span></div>
+<p></p><!-- l. 1485 --><p class='noindent'></p><div class='fvd-example__content'>
+<p></p><!-- l. 1487 --><p class='noindent'>Stel dat een satelliet zich op hoogte
+</p>
+<div class='mathjax-block'>\[ h=R_\mathrm A \]</div>
+<!-- l. 1493 --><p class='noindent'>boven het aardoppervlak bevindt.
+</p><!-- l. 1495 --><p class='noindent'>Dan is zijn afstand tot het aardmiddelpunt:
+</p>
+<div class='mathjax-block'>\[ r=R_\mathrm A+h = 2R_\mathrm A. \]</div>
+<!-- l. 1503 --><p class='noindent'>Daarom:
+</p>
+<div class='mathjax-block'>\[ g = G\frac {M_\mathrm A}{(2R_\mathrm A)^2}. \]</div>
+<!-- l. 1511 --><p class='noindent'>Dus:
+</p>
+<div class='mathjax-block'>\[ g = \frac 14 G\frac {M_\mathrm A}{R_\mathrm A^2}. \]</div>
+<!-- l. 1520 --><p class='noindent'>Bijgevolg:
+</p>
+<div class='mathjax-block'>\[ \boxed { g=\frac 14g_0. } \]</div>
+<!-- l. 1528 --><p class='noindent'>Let op: op een hoogte van één aardstraal is <span class='mathjax-inline'>\(g\)</span> dus niet nul.
+</p><!-- l. 1530 --><p class='noindent'>Het is nog steeds een kwart van de waarde aan het aardoppervlak.
+</p></div></section>
+<p><a id='x1-48r8'></a>
+</p><p></p><!-- l. 1535 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 1535 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 1535 --><p class='noindent'>Oefening 8
+</p><!-- l. 1535 --><p class='noindent'>— Hoe hoog?
+</p><!-- l. 1535 --><p class='noindent'></p></div>
+<p></p><!-- l. 1535 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 1535 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 1535 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 1537 --><p class='noindent'>Op welke hoogte boven het aardoppervlak is de gravitatieveldsterkte gelijk
+aan
+                                                                  
+
+                                                                  
+</p>
+<div class='mathjax-block'>\[ \frac 14g_0? \]</div>
+<!-- l. 1544 --><p class='noindent'>Werk eerst symbolisch en leg duidelijk uit waarom de gezochte hoogte niet gelijk is
+aan <span class='mathjax-inline'>\(2R_\mathrm A\)</span>.
+</p></div>
+<p></p><!-- l. 1547 --><p class='noindent'></p></div>
+<p></p><!-- l. 1547 --><p class='noindent'></p></section>
+<p><a id='x1-49r20'></a>
+</p><p></p><!-- l. 1554 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>20</div><div class='fvd-section-bar__title'>Een onzichtbaar veld zichtbaar maken</div></div>
+<p></p><!-- l. 1556 --><p class='noindent'>Een gravitatieveld kunnen we niet rechtstreeks zien.
+</p><!-- l. 1558 --><p class='noindent'>Om de structuur van een veld voor te stellen gebruiken we <strong>veldlijnen</strong>.
+</p><!-- l. 1562 --><p class='noindent'></p><section class='fvd-definition'><div class='fvd-definition__title'><span class='fvd-definition__label'>DEFINITIE</span><span class='fvd-definition__separator'> — </span><span class='fvd-definition__name'>Gravitatieveldlijn</span></div><div class='fvd-definition__content'>
+<p></p><!-- l. 1564 --><p class='noindent'>Een gravitatieveldlijn is een denkbeeldige lijn waarvan de raaklijn in elk punt de
+richting van de gravitatieveldvector aangeeft.
+</p></div></section>
+<p></p><!-- l. 1570 --><p class='noindent'>Rond een bolvormige massa zijn de veldlijnen radiaal gericht naar het middelpunt.
+</p><!-- l. 1573 --><p class='noindent'>Dat komt doordat gravitatie aantrekkend is.
+</p><!-- l. 1577 --><p class='noindent'></p><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span></div><div class='fvd-remark__content'>
+<p></p><!-- l. 1578 --><p class='noindent'>Uit een veldlijnenpatroon kunnen we twee soorten informatie halen:
+</p>     
+<ul class='itemize1'>
+<li class='itemize'>de <strong>richting en zin</strong> van <span class='mathjax-inline'>\(\vec g\)</span> worden aangegeven door de richting van de
+veldlijnen;
+</li>
+<li class='itemize'>waar de veldlijnen dichter bij elkaar liggen, stellen we een <strong>sterker veld</strong>
+voor.</li></ul>
+</div></section>
+<!-- l. 1590 --><p class='noindent'>Omdat:
+</p>
+<div class='mathjax-block'>\[ g\propto \frac 1{r^2}, \]</div>
+<!-- l. 1596 --><p class='noindent'>neemt de veldsterkte af naarmate we verder van de bronmassa komen.
+<a id='x1-50r21'></a>
+                                                                  
+
+                                                                  
+</p><!-- l. 1603 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>21</div><div class='fvd-section-bar__title'>Gravitatiekracht of gravitatieveld?</div></div>
+<p></p><!-- l. 1605 --><p class='noindent'>De begrippen worden gemakkelijk door elkaar gehaald.
+</p><!-- l. 1607 --><p class='noindent'>Het verschil is fundamenteel.
+</p>
+<div class='center'>
+<!-- l. 1610 --><p class='noindent'>
+</p>
+<div class='mathjax-block'>\[ \boxed { \begin {array}{c|c} \text {gravitatieveld} &amp; \text {gravitatiekracht}\\ \hline \vec g &amp; \vec F_g\\[1mm] \mathrm {N/kg} &amp; \mathrm N\\[1mm] \text {eigenschap van een punt in de ruimte} &amp; \text {kracht op een gekozen massa}\\[1mm] g=G\dfrac {M}{r^2} &amp; F_g=G\dfrac {Mm}{r^2}\\[3mm] &amp; \vec F_g=m\vec g \end {array} } \]</div></div>
+<!-- l. 1632 --><p class='noindent'>De bronmassa <span class='mathjax-inline'>\(M\)</span> veroorzaakt een veld.
+</p><!-- l. 1634 --><p class='noindent'>Een massa <span class='mathjax-inline'>\(m\)</span> die in dat veld wordt geplaatst, ondervindt een kracht.
+</p><!-- l. 1636 --><p class='noindent'>Dus:
+</p>
+<div class='mathjax-block'>\[ \boxed { M \longrightarrow \vec g \longrightarrow \vec F_g\text { op }m. } \]</div>
+<p><a id='x1-51r9'></a>
+</p><!-- l. 1649 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 1649 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 1649 --><p class='noindent'>Oefening 9
+</p><!-- l. 1649 --><p class='noindent'>— Kracht of veld?
+</p><!-- l. 1649 --><p class='noindent'></p></div>
+<p></p><!-- l. 1649 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 1649 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 1649 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 1651 --><p class='noindent'>Geef telkens aan of de uitspraak betrekking heeft op <span class='mathjax-inline'>\(\vec F_g\)</span> of <span class='mathjax-inline'>\(\vec g\)</span>.
+</p>     
+<ol class='enumerate1'>
+<li class='enumerate' id='x1-53x1'>De eenheid is <span class='mathjax-inline'>\(\mathrm N\)</span>.
+</li>
+<li class='enumerate' id='x1-55x2'>De eenheid is <span class='mathjax-inline'>\(\mathrm {N/kg}\)</span>.
+</li>
+                                                                  
+
+                                                                  
+<li class='enumerate' id='x1-57x3'>De grootheid beschrijft de invloed van de aarde in een punt in de ruimte.
+</li>
+<li class='enumerate' id='x1-59x4'>De grootheid hangt af van de massa van het voorwerp dat in het veld
+wordt geplaatst.
+</li>
+<li class='enumerate' id='x1-61x5'>De grootheid is nabij het aardoppervlak ongeveer <span class='mathjax-inline'>\(9{,}81\,\mathrm {N/kg}\)</span>.</li></ol>
+</div>
+<!-- l. 1665 --><p class='noindent'></p></div>
+<p></p><!-- l. 1665 --><p class='noindent'></p></section>
+<p><a id='x1-62r22'></a>
+</p><p></p><!-- l. 1672 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>22</div><div class='fvd-section-bar__title'>Wanneer meerdere massa’s aantrekken</div></div>
+<p></p><!-- l. 1674 --><p class='noindent'>Tot nu toe bekeken we meestal één bronmassa.
+</p><!-- l. 1676 --><p class='noindent'>In werkelijkheid kan een voorwerp tegelijkertijd door verschillende massa’s worden
+aangetrokken.
+</p><!-- l. 1679 --><p class='noindent'>De aarde ondervindt bijvoorbeeld gravitatie van de zon, de maan en alle andere
+hemellichamen.
+</p><!-- l. 1682 --><p class='noindent'>Omdat kracht een vector is, geldt het superpositiebeginsel:
+</p>
+<div class='mathjax-block'>\[ \boxed { \vec F_{g,\mathrm {res}} = \vec F_{g,1} + \vec F_{g,2} +\cdots } \]</div>
+<!-- l. 1696 --><p class='noindent'>Voor gravitatievelden geldt analoog:
+</p>
+<div class='mathjax-block'>\[ \boxed { \vec g_\mathrm {res} = \vec g_1 + \vec g_2 +\cdots } \]</div>
+<!-- l. 1710 --><p class='noindent'>Dit is vectoriële optelling.
+</p><!-- l. 1712 --><p class='noindent'>We mogen dus niet zomaar de groottes van alle veldsterktes optellen.
+<a id='x1-63r3'></a>
+</p><!-- l. 1715 --><p class='noindent'></p><section class='fvd-example'>
+<p></p><!-- l. 1715 --><p class='noindent'></p><div class='fvd-example__title'>Voorbeeld 3<span class='fvd-example__subtitle'> — Tussen twee gelijke massa’s</span></div>
+<p></p><!-- l. 1715 --><p class='noindent'></p><div class='fvd-example__content'>
+<p></p><!-- l. 1717 --><p class='noindent'>Twee identieke bolvormige massa’s bevinden zich op een zekere afstand van
+elkaar.
+                                                                  
+
+                                                                  
+</p><!-- l. 1720 --><p class='noindent'>Beschouw exact het midden tussen beide massa’s.
+</p><!-- l. 1722 --><p class='noindent'>De eerste massa veroorzaakt daar een gravitatieveld naar links.
+</p><!-- l. 1724 --><p class='noindent'>De tweede massa veroorzaakt daar een even groot gravitatieveld naar rechts.
+</p><!-- l. 1727 --><p class='noindent'>Dus:
+</p>
+<div class='mathjax-block'>\[ \vec g_1=-\vec g_2. \]</div>
+<!-- l. 1733 --><p class='noindent'>Daarom:
+</p>
+<div class='mathjax-block'>\[ \boxed { \vec g_\mathrm {res}=\vec 0. } \]</div>
+<!-- l. 1741 --><p class='noindent'>Er zijn daar dus wel twee gravitatievelden aanwezig, maar hun vectoriële som is
+nul.
+</p></div></section>
+<p><a id='x1-64r10'></a>
+</p><p></p><!-- l. 1747 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 1747 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 1747 --><p class='noindent'>Oefening 10
+</p><!-- l. 1747 --><p class='noindent'>— Nulveld
+</p><!-- l. 1747 --><p class='noindent'></p></div>
+<p></p><!-- l. 1747 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 1747 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 1747 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 1749 --><p class='noindent'>Twee gelijke sterren bevinden zich op afstand <span class='mathjax-inline'>\(d\)</span> van elkaar.
+</p>
+<div class='problem-environment question' id='problem13' numbered=' ' role='article' titletext=' Question'>  Waar op de verbindingslijn ligt een punt waar het resulterende gravitatieveld nul
+is?    </div>
+<div class='problem-environment question' id='problem14' numbered=' ' role='article' titletext=' Question'>  Betekent <span class='mathjax-inline'>\(\vec g_\mathrm {res}=\vec 0\)</span> dat geen van beide sterren daar een gravitatieveld veroorzaakt?
+</div>
+<div class='problem-environment question' id='problem15' numbered=' ' role='article' titletext=' Question'>  Wat verandert er wanneer de massa van één ster groter wordt? Redeneer
+kwalitatief waar het nulpunt dan zal liggen.    </div>
+</div>
+<!-- l. 1766 --><p class='noindent'></p></div>
+<p></p><!-- l. 1766 --><p class='noindent'></p></section>
+<p><a id='x1-65r23'></a>
+</p><p></p><!-- l. 1773 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>23</div><div class='fvd-section-bar__title'>Waarom valt een satelliet niet op de aarde?</div></div>
+<p></p><!-- l. 1775 --><p class='noindent'>Een satelliet in een baan rond de aarde wordt voortdurend door de aarde
+                                                                  
+
+                                                                  
+aangetrokken.
+</p><!-- l. 1778 --><p class='noindent'>Er werkt dus een gravitatiekracht naar het middelpunt van de aarde.
+</p><!-- l. 1780 --><p class='noindent'>Toch bereikt de satelliet het aardoppervlak niet.
+</p><!-- l. 1782 --><p class='noindent'>Hoe kan dat?
+</p><!-- l. 1784 --><p class='noindent'>Het antwoord is dat een satelliet eigenlijk voortdurend <strong>valt</strong>.
+</p><!-- l. 1787 --><p class='noindent'>Maar terwijl hij naar de aarde valt, beweegt hij ook voldoende snel zijwaarts.
+</p><!-- l. 1790 --><p class='noindent'>De kromming van zijn baan volgt daardoor de kromming van de aarde.
+<a id='x1-66r24'></a>
+</p><!-- l. 1797 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>24</div><div class='fvd-section-bar__title'>Gravitatie houdt een satelliet in zijn baan</div></div>
+<p></p><!-- l. 1799 --><p class='noindent'>Voor een satelliet in een cirkelvormige baan is een naar het middelpunt gerichte
+versnelling nodig.
+</p><!-- l. 1802 --><p class='noindent'>De centripetale versnelling is:
+</p>
+<div class='mathjax-block'>\[ \boxed { a_c=\frac {v^2}{r}. } \]</div>
+<!-- l. 1810 --><p class='noindent'>Volgens Newton II is daarvoor een resulterende kracht nodig:
+</p>
+<div class='mathjax-block'>\[ F_\mathrm {res}=ma_c. \]</div>
+<!-- l. 1816 --><p class='noindent'>Bij een ideale cirkelbaan rond een planeet levert de gravitatiekracht die centripetale
+kracht.
+</p><!-- l. 1819 --><p class='noindent'>Dus:
+</p>
+<div class='mathjax-block'>\[ \boxed { F_g=F_c. } \]</div>
+<!-- l. 1827 --><p class='noindent'>Daarom:
+</p>
+<div class='mathjax-block'>\[ G\frac {Mm}{r^2} = m\frac {v^2}{r}. \]</div>
+<!-- l. 1835 --><p class='noindent'>De satellietmassa <span class='mathjax-inline'>\(m\)</span> valt weg:
+</p>
+<div class='mathjax-block'>\[ G\frac {M}{r^2} = \frac {v^2}{r}. \]</div>
+<!-- l. 1843 --><p class='noindent'>Dus:
+</p>
+<div class='mathjax-block'>\[ \boxed { v = \sqrt {\frac {GM}{r}}. } \]</div>
+<!-- l. 1854 --><p class='noindent'>Dit resultaat vertelt ons iets opmerkelijks:
+</p>
+<div class='center'>
+<!-- l. 1856 --><p class='noindent'>
+                                                                  
+
+                                                                  
+</p><!-- l. 1857 --><p class='noindent'>de baansnelheid van een satelliet in een ideale cirkelbaan hangt niet af van de
+massa van de satelliet.</p></div>
+<!-- l. 1862 --><p class='noindent'>Omdat:
+</p>
+<div class='mathjax-block'>\[ g(r)=\frac {GM}{r^2}, \]</div>
+<!-- l. 1868 --><p class='noindent'>kunnen we ook schrijven:
+</p>
+<div class='mathjax-block'>\[ \boxed { g(r)=a_c. } \]</div>
+<!-- l. 1876 --><p class='noindent'>De gravitatieveldsterkte op de baan is dus precies de centripetale versnelling die
+nodig is om de satelliet op die cirkelbaan te houden.
+</p><!-- l. 1881 --><p class='noindent'></p><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span></div><div class='fvd-remark__content'>
+<p></p><!-- l. 1882 --><p class='noindent'>Een satelliet is niet “buiten de zwaartekracht”.
+</p><!-- l. 1884 --><p class='noindent'>Integendeel:
+</p>
+<div class='mathjax-block'>\[ \boxed { \text {zonder gravitatie zou de satelliet de cirkelbaan verlaten.} } \]</div>
+<!-- l. 1892 --><p class='noindent'>Gravitatie is juist de oorzaak van de voortdurende richtingsverandering van de
+snelheidsvector.
+</p></div></section>
+<p><a id='x1-67r25'></a>
+</p><p></p><!-- l. 1902 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>25</div><div class='fvd-section-bar__title'>Waarom lijken astronauten gewichtloos?</div></div>
+<p></p><!-- l. 1904 --><p class='noindent'>Astronauten in een ruimtestation lijken gewichtloos.
+</p><!-- l. 1906 --><p class='noindent'>Dat betekent niet dat daar geen gravitatieveld meer is.
+</p><!-- l. 1908 --><p class='noindent'>Een ruimtestation in een lage baan rond de aarde bevindt zich nog steeds in een
+aanzienlijk gravitatieveld.
+</p><!-- l. 1911 --><p class='noindent'>Astronaut en ruimtestation vallen echter samen rond de aarde.
+</p><!-- l. 1913 --><p class='noindent'>Ze hebben vrijwel dezelfde gravitatieversnelling.
+</p><!-- l. 1915 --><p class='noindent'>Daardoor hoeft de vloer van het ruimtestation de astronaut niet op dezelfde manier
+te ondersteunen als een vloer op aarde.
+</p><!-- l. 1918 --><p class='noindent'>De toestand die de astronaut ervaart is dus beter te begrijpen als <strong>voortdurende
+vrije val</strong> dan als “geen zwaartekracht”.
+<a id='x1-68r11'></a>
+</p><!-- l. 1922 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 1922 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 1922 --><p class='noindent'>Oefening 11
+                                                                  
+
+                                                                  
+</p><!-- l. 1922 --><p class='noindent'>— Een satelliet
+</p><!-- l. 1922 --><p class='noindent'></p></div>
+<p></p><!-- l. 1922 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 1922 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 1922 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 1924 --><p class='noindent'>Een satelliet beweegt in een cirkelvormige baan rond de aarde.
+</p>
+<div class='problem-environment question' id='problem16' numbered=' ' role='article' titletext=' Question'>  Welke kracht levert de centripetale kracht?    </div>
+<div class='problem-environment question' id='problem17' numbered=' ' role='article' titletext=' Question'>  In welke richting wijst de gravitatiekracht?    </div>
+<div class='problem-environment question' id='problem18' numbered=' ' role='article' titletext=' Question'>  In welke richting wijst de centripetale versnelling?    </div>
+<div class='problem-environment question' id='problem19' numbered=' ' role='article' titletext=' Question'>  Stel de vergelijking op waarmee je de baansnelheid kunt bepalen.    </div>
+<div class='problem-environment question' id='problem20' numbered=' ' role='article' titletext=' Question'>  Waarom verdwijnt de satellietmassa uit de uiteindelijke formule voor <span class='mathjax-inline'>\(v\)</span>?
+</div>
+</div>
+<!-- l. 1947 --><p class='noindent'></p></div>
+<p></p><!-- l. 1947 --><p class='noindent'></p></section>
+<p><a id='x1-69r26'></a>
+</p><p></p><!-- l. 1954 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>26</div><div class='fvd-section-bar__title'>Wat gebeurt er met de baansnelheid op grotere hoogte?</div></div>
+<p></p><!-- l. 1956 --><p class='noindent'>Voor een cirkelbaan vonden we:
+</p>
+<div class='mathjax-block'>\[ v = \sqrt {\frac {GM}{r}}. \]</div>
+<!-- l. 1964 --><p class='noindent'>Voor dezelfde planeet zijn <span class='mathjax-inline'>\(G\)</span> en <span class='mathjax-inline'>\(M\)</span> constant.
+</p><!-- l. 1966 --><p class='noindent'>Dus:
+</p>
+<div class='mathjax-block'>\[ v\propto \frac {1}{\sqrt r}. \]</div>
+<!-- l. 1972 --><p class='noindent'>Een satelliet in een hogere cirkelbaan heeft daarom een kleinere baansnelheid dan een
+satelliet in een lagere cirkelbaan.
+</p><!-- l. 1975 --><p class='noindent'>Dat kan aanvankelijk verrassend lijken.
+</p><!-- l. 1977 --><p class='noindent'>Een grotere baan betekent niet automatisch een grotere snelheid.
+</p><!-- l. 1979 --><p class='noindent'>Het gravitatieveld is op grotere afstand zwakker en de vereiste centripetale
+versnelling is daardoor kleiner.
+<a id='x1-70r12'></a>
+</p><!-- l. 1983 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 1983 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 1983 --><p class='noindent'>Oefening 12
+                                                                  
+
+                                                                  
+</p><!-- l. 1983 --><p class='noindent'>— Twee satellieten
+</p><!-- l. 1983 --><p class='noindent'></p></div>
+<p></p><!-- l. 1983 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 1983 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 1983 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 1985 --><p class='noindent'>Satelliet A beweegt in een cirkelbaan met straal <span class='mathjax-inline'>\(r\)</span>.
+</p><!-- l. 1987 --><p class='noindent'>Satelliet B beweegt rond dezelfde planeet in een cirkelbaan met straal
+</p>
+<div class='mathjax-block'>\[ 4r. \]</div>
+<!-- l. 1993 --><p class='noindent'>Zonder numerieke gegevens te gebruiken:
+</p>     
+<ol class='enumerate1'>
+<li class='enumerate' id='x1-72x1'>vergelijk de gravitatieveldsterktes <span class='mathjax-inline'>\(g_A\)</span> en <span class='mathjax-inline'>\(g_B\)</span>;
+</li>
+<li class='enumerate' id='x1-74x2'>vergelijk de baansnelheden <span class='mathjax-inline'>\(v_A\)</span> en <span class='mathjax-inline'>\(v_B\)</span>;
+</li>
+<li class='enumerate' id='x1-76x3'>leg uit waarom beide resultaten fysisch samenhangen.</li></ol>
+</div>
+<!-- l. 2001 --><p class='noindent'></p></div>
+<p></p><!-- l. 2001 --><p class='noindent'></p></section>
+<p><a id='x1-77r27'></a>
+</p><p></p><!-- l. 2008 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>27</div><div class='fvd-section-bar__title'>Oefeningen</div></div>
+<p><a id='x1-78r1'></a>
+</p><p></p><!-- l. 2015 --><p class='noindent'></p><div class='fvd-subsection'>
+<p></p><!-- l. 2015 --><p class='noindent'></p><div class='fvd-subsection__row'>
+<p></p><!-- l. 2015 --><p class='noindent'></p><div class='fvd-subsection__number'>27.1</div>
+<p></p><!-- l. 2015 --><p class='noindent'></p><div class='fvd-subsection__title'>Basis</div>
+<p></p><!-- l. 2015 --><p class='noindent'></p></div>
+<p></p><!-- l. 2015 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
+                                                                  
+
+                                                                  
+<p></p><!-- l. 2015 --><p class='noindent'></p></div>
+<p><a id='x1-79r13'></a>
+</p><p></p><!-- l. 2018 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 2018 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 2018 --><p class='noindent'>Oefening 13
+</p><!-- l. 2018 --><p class='noindent'>— Twee bowlingballen
+</p><!-- l. 2018 --><p class='noindent'></p></div>
+<p></p><!-- l. 2018 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 2018 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span></div>
+<p></p><!-- l. 2018 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 2020 --><p class='noindent'>Twee bowlingballen hebben elk een massa van
+</p>
+<div class='mathjax-block'>\[ 7{,}0\,\mathrm {kg}. \]</div>
+<!-- l. 2026 --><p class='noindent'>De afstand tussen hun massamiddelpunten is
+</p>
+<div class='mathjax-block'>\[ 0{,}50\,\mathrm m. \]</div>
+<!-- l. 2032 --><p class='noindent'>Bereken de gravitatiekracht die ze op elkaar uitoefenen.
+</p><!-- l. 2034 --><p class='noindent'>Vergelijk de grootteorde met een kracht van <span class='mathjax-inline'>\(1\,\mathrm N\)</span>.
+</p></div>
+<p></p><!-- l. 2036 --><p class='noindent'></p></div>
+<p></p><!-- l. 2036 --><p class='noindent'></p></section>
+<p><a id='x1-80r14'></a>
+</p><p></p><!-- l. 2039 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 2039 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 2039 --><p class='noindent'>Oefening 14
+</p><!-- l. 2039 --><p class='noindent'>— Mens en hond
+</p><!-- l. 2039 --><p class='noindent'></p></div>
+<p></p><!-- l. 2039 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 2039 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span></div>
+<p></p><!-- l. 2039 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 2041 --><p class='noindent'>Een persoon van <span class='mathjax-inline'>\(70\,\mathrm {kg}\)</span> staat op <span class='mathjax-inline'>\(1{,}5\,\mathrm m\)</span> van een hond van <span class='mathjax-inline'>\(25\,\mathrm {kg}\)</span>.
+</p><!-- l. 2044 --><p class='noindent'>Benader beide als puntmassa’s.
+</p><!-- l. 2046 --><p class='noindent'>Bereken de grootte van hun onderlinge gravitatiekracht.
+                                                                  
+
+                                                                  
+</p></div>
+<p></p><!-- l. 2048 --><p class='noindent'></p></div>
+<p></p><!-- l. 2048 --><p class='noindent'></p></section>
+<p><a id='x1-81r15'></a>
+</p><p></p><!-- l. 2051 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 2051 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 2051 --><p class='noindent'>Oefening 15
+</p><!-- l. 2051 --><p class='noindent'>— De juiste afstand
+</p><!-- l. 2051 --><p class='noindent'></p></div>
+<p></p><!-- l. 2051 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 2051 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 2051 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 2053 --><p class='noindent'>Een satelliet bevindt zich op hoogte <span class='mathjax-inline'>\(h\)</span> boven het aardoppervlak.
+</p><!-- l. 2055 --><p class='noindent'>Welke afstand moet in
+</p>
+<div class='mathjax-block'>\[ F_g=G\frac {Mm}{r^2} \]</div>
+<!-- l. 2061 --><p class='noindent'>worden gebruikt?
+</p><!-- l. 2063 --><p class='noindent'>Kies uit:
+</p>
+<div class='mathjax-block'>\[ r=h, \qquad r=R_\mathrm A, \qquad r=R_\mathrm A+h. \]</div>
+<!-- l. 2073 --><p class='noindent'>Verklaar je keuze.
+</p></div>
+<p></p><!-- l. 2075 --><p class='noindent'></p></div>
+<p></p><!-- l. 2075 --><p class='noindent'></p></section>
+<p><a id='x1-82r16'></a>
+</p><p></p><!-- l. 2078 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 2078 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 2078 --><p class='noindent'>Oefening 16
+</p><!-- l. 2078 --><p class='noindent'>— Gravitatieveld
+</p><!-- l. 2078 --><p class='noindent'></p></div>
+<p></p><!-- l. 2078 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 2078 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 2078 --><p class='noindent'></p><div class='fvd-exercise__content'>
+                                                                  
+
+                                                                  
+<p></p><!-- l. 2080 --><p class='noindent'>Een bolvormige planeet heeft massa <span class='mathjax-inline'>\(M\)</span>.
+</p><!-- l. 2082 --><p class='noindent'>Een punt <span class='mathjax-inline'>\(P\)</span> bevindt zich op afstand <span class='mathjax-inline'>\(r\)</span> van het middelpunt.
+</p>     
+<ol class='enumerate1'>
+<li class='enumerate' id='x1-84x1'>Schrijf de formule voor <span class='mathjax-inline'>\(g\)</span> in <span class='mathjax-inline'>\(P\)</span>.
+</li>
+<li class='enumerate' id='x1-86x2'>Wat gebeurt er met <span class='mathjax-inline'>\(g\)</span> wanneer <span class='mathjax-inline'>\(M\)</span> verdubbelt?
+</li>
+<li class='enumerate' id='x1-88x3'>Wat gebeurt er met <span class='mathjax-inline'>\(g\)</span> wanneer <span class='mathjax-inline'>\(r\)</span> verdubbelt?
+</li>
+<li class='enumerate' id='x1-90x4'>Welke richting heeft <span class='mathjax-inline'>\(\vec g\)</span>?</li></ol>
+</div>
+<!-- l. 2091 --><p class='noindent'></p></div>
+<p></p><!-- l. 2091 --><p class='noindent'></p></section>
+<p><a id='x1-91r2'></a>
+</p><p></p><!-- l. 2098 --><p class='noindent'></p><div class='fvd-subsection'>
+<p></p><!-- l. 2098 --><p class='noindent'></p><div class='fvd-subsection__row'>
+<p></p><!-- l. 2098 --><p class='noindent'></p><div class='fvd-subsection__number'>27.2</div>
+<p></p><!-- l. 2098 --><p class='noindent'></p><div class='fvd-subsection__title'>Verdieping</div>
+<p></p><!-- l. 2098 --><p class='noindent'></p></div>
+<p></p><!-- l. 2098 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
+<p></p><!-- l. 2098 --><p class='noindent'></p></div>
+<p><a id='x1-92r17'></a>
+</p><p></p><!-- l. 2101 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 2101 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 2101 --><p class='noindent'>Oefening 17
+</p><!-- l. 2101 --><p class='noindent'>— Een onbekende planeet
+                                                                  
+
+                                                                  
+</p><!-- l. 2101 --><p class='noindent'></p></div>
+<p></p><!-- l. 2101 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 2101 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 2101 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 2103 --><p class='noindent'>Een planeet heeft tweemaal de massa van de aarde en tweemaal de straal van de
+aarde:
+</p>
+<div class='mathjax-block'>\[ M_P=2M_\mathrm A, \qquad R_P=2R_\mathrm A. \]</div>
+<!-- l. 2112 --><p class='noindent'>Bepaal de gravitatieveldsterkte aan het oppervlak van de planeet in functie van
+<span class='mathjax-inline'>\(g_\mathrm A\)</span>.
+</p><!-- l. 2115 --><p class='noindent'>Werk met verhoudingen en vermijd onnodige numerieke berekeningen.
+</p></div>
+<p></p><!-- l. 2117 --><p class='noindent'></p></div>
+<p></p><!-- l. 2117 --><p class='noindent'></p></section>
+<p><a id='x1-93r18'></a>
+</p><p></p><!-- l. 2120 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 2120 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 2120 --><p class='noindent'>Oefening 18
+</p><!-- l. 2120 --><p class='noindent'>— Zelfde massa, kleinere planeet
+</p><!-- l. 2120 --><p class='noindent'></p></div>
+<p></p><!-- l. 2120 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 2120 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 2120 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 2122 --><p class='noindent'>Een fictieve planeet heeft dezelfde massa als de aarde, maar slechts de helft van de
+aardstraal.
+</p>     
+<ol class='enumerate1'>
+<li class='enumerate' id='x1-95x1'>Hoe groot is <span class='mathjax-inline'>\(g\)</span> aan het oppervlak ten opzichte van <span class='mathjax-inline'>\(g_\mathrm A\)</span>?
+</li>
+<li class='enumerate' id='x1-97x2'>Hoe groot is de gravitatiekracht op een astronaut van <span class='mathjax-inline'>\(80\,\mathrm {kg}\)</span> ten opzichte van
+die op aarde?
+</li>
+                                                                  
+
+                                                                  
+<li class='enumerate' id='x1-99x3'>Verandert de massa van de astronaut?</li></ol>
+</div>
+<!-- l. 2133 --><p class='noindent'></p></div>
+<p></p><!-- l. 2133 --><p class='noindent'></p></section>
+<p><a id='x1-100r19'></a>
+</p><p></p><!-- l. 2136 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 2136 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 2136 --><p class='noindent'>Oefening 19
+</p><!-- l. 2136 --><p class='noindent'>— Een fout analyseren
+</p><!-- l. 2136 --><p class='noindent'></p></div>
+<p></p><!-- l. 2136 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 2136 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 2136 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 2138 --><p class='noindent'>Een leerling schrijft:
+</p>
+<div class='mathjax-block'>\[ g(h) = G\frac {M_\mathrm A}{h^2}. \]</div>
+<!-- l. 2146 --><p class='noindent'>De leerling beweert dat deze formule de gravitatieveldsterkte op hoogte <span class='mathjax-inline'>\(h\)</span> boven het
+aardoppervlak geeft.
+</p><!-- l. 2149 --><p class='noindent'>Analyseer de fout en geef de correcte formule.
+</p><!-- l. 2151 --><p class='noindent'>Leg ook uit waarom de fout vooral voor kleine hoogtes tot absurde resultaten
+leidt.
+</p></div>
+<p></p><!-- l. 2154 --><p class='noindent'></p></div>
+<p></p><!-- l. 2154 --><p class='noindent'></p></section>
+<p><a id='x1-101r20'></a>
+</p><p></p><!-- l. 2157 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 2157 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 2157 --><p class='noindent'>Oefening 20
+</p><!-- l. 2157 --><p class='noindent'>— Waar is <span class='mathjax-inline'>\(g\)</span> viermaal kleiner?
+</p><!-- l. 2157 --><p class='noindent'></p></div>
+<p></p><!-- l. 2157 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 2157 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+                                                                  
+
+                                                                  
+<p></p><!-- l. 2157 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 2159 --><p class='noindent'>Bepaal op welke afstand van het middelpunt van de aarde de gravitatieveldsterkte
+gelijk is aan:
+</p>
+<div class='mathjax-block'>\[ \frac 14g_0. \]</div>
+<!-- l. 2166 --><p class='noindent'>Bepaal vervolgens de overeenkomstige hoogte boven het aardoppervlak.
+</p></div>
+<p></p><!-- l. 2168 --><p class='noindent'></p></div>
+<p></p><!-- l. 2168 --><p class='noindent'></p></section>
+<p><a id='x1-102r21'></a>
+</p><p></p><!-- l. 2171 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 2171 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 2171 --><p class='noindent'>Oefening 21
+</p><!-- l. 2171 --><p class='noindent'>— Gravitatie en Newton III
+</p><!-- l. 2171 --><p class='noindent'></p></div>
+<p></p><!-- l. 2171 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 2171 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 2171 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 2173 --><p class='noindent'>De zon trekt de aarde aan.
+</p>     
+<ol class='enumerate1'>
+<li class='enumerate' id='x1-104x1'>Oefent de aarde ook een gravitatiekracht uit op de zon?
+</li>
+<li class='enumerate' id='x1-106x2'>Vergelijk de groottes van beide krachten.
+</li>
+<li class='enumerate' id='x1-108x3'>Vergelijk  kwalitatief  de  versnellingen  van  aarde  en  zon  die  door  deze
+onderlinge interactie ontstaan.
+</li>
+<li class='enumerate' id='x1-110x4'>Verklaar waarom “de zon trekt harder aan de aarde” fysisch geen correcte
+formulering is.</li></ol>
+</div>
+<!-- l. 2184 --><p class='noindent'></p></div>
+<p></p><!-- l. 2184 --><p class='noindent'></p></section>
+<p><a id='x1-111r3'></a>
+</p><p></p><!-- l. 2191 --><p class='noindent'></p><div class='fvd-subsection'>
+<p></p><!-- l. 2191 --><p class='noindent'></p><div class='fvd-subsection__row'>
+<p></p><!-- l. 2191 --><p class='noindent'></p><div class='fvd-subsection__number'>27.3</div>
+<p></p><!-- l. 2191 --><p class='noindent'></p><div class='fvd-subsection__title'>Gevorderd</div>
+<p></p><!-- l. 2191 --><p class='noindent'></p></div>
+<p></p><!-- l. 2191 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
+<p></p><!-- l. 2191 --><p class='noindent'></p></div>
+<p><a id='x1-112r22'></a>
+</p><p></p><!-- l. 2194 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 2194 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 2194 --><p class='noindent'>Oefening 22
+</p><!-- l. 2194 --><p class='noindent'>— Waar ligt het nulpunt?
+</p><!-- l. 2194 --><p class='noindent'></p></div>
+<p></p><!-- l. 2194 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 2194 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--g'>G</span></div>
+<p></p><!-- l. 2194 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 2196 --><p class='noindent'>Twee massa’s <span class='mathjax-inline'>\(M\)</span> en <span class='mathjax-inline'>\(4M\)</span> bevinden zich op een afstand <span class='mathjax-inline'>\(d\)</span> van elkaar.
+</p><!-- l. 2198 --><p class='noindent'>Er bestaat tussen beide massa’s een punt waar het resulterende gravitatieveld nul
+is.
+</p><!-- l. 2201 --><p class='noindent'>Noem de afstand van dit punt tot massa <span class='mathjax-inline'>\(M\)</span> gelijk aan <span class='mathjax-inline'>\(x\)</span>.
+</p>     
+<ol class='enumerate1'>
+<li class='enumerate' id='x1-114x1'>Maak een schets van beide gravitatieveldvectoren in het gezochte punt.
+</li>
+<li class='enumerate' id='x1-116x2'>Stel een vergelijking op voor <span class='mathjax-inline'>\(x\)</span>.
+                                                                  
+
+                                                                  
+</li>
+<li class='enumerate' id='x1-118x3'>Los de vergelijking op.
+</li>
+<li class='enumerate' id='x1-120x4'>Leg uit waarom het nulpunt dichter bij de kleinste massa ligt.</li></ol>
+</div>
+<!-- l. 2211 --><p class='noindent'></p></div>
+<p></p><!-- l. 2211 --><p class='noindent'></p></section>
+<p><a id='x1-121r23'></a>
+</p><p></p><!-- l. 2214 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 2214 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 2214 --><p class='noindent'>Oefening 23
+</p><!-- l. 2214 --><p class='noindent'>— Een planeet ontdekken
+</p><!-- l. 2214 --><p class='noindent'></p></div>
+<p></p><!-- l. 2214 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 2214 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--g'>G</span></div>
+<p></p><!-- l. 2214 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 2216 --><p class='noindent'>Astronomen ontdekken een bolvormige planeet.
+</p><!-- l. 2218 --><p class='noindent'>Aan het oppervlak meten ze:
+</p>
+<div class='mathjax-block'>\[ g=12{,}0\,\mathrm {N/kg}. \]</div>
+<!-- l. 2224 --><p class='noindent'>Uit astronomische waarnemingen bepalen ze de straal:
+</p>
+<div class='mathjax-block'>\[ R=8{,}0\times 10^6\,\mathrm m. \]</div>
+<!-- l. 2230 --><p class='noindent'>Gebruik
+</p>
+<div class='mathjax-block'>\[ g=G\frac {M}{R^2} \]</div>
+<!-- l. 2236 --><p class='noindent'>om de massa van de planeet te bepalen.
+</p><!-- l. 2238 --><p class='noindent'>Controleer vervolgens:
+</p>     
+<ol class='enumerate1'>
+                                                                  
+
+                                                                  
+<li class='enumerate' id='x1-123x1'>de eenheid van je antwoord;
+</li>
+<li class='enumerate' id='x1-125x2'>de grootteorde;
+</li>
+<li class='enumerate' id='x1-127x3'>of  een  grotere  straal  bij  dezelfde  gemeten  <span class='mathjax-inline'>\(g\)</span>  een  grotere  of  kleinere
+planeetmassa zou vereisen.</li></ol>
+</div>
+<!-- l. 2247 --><p class='noindent'></p></div>
+<p></p><!-- l. 2247 --><p class='noindent'></p></section>
+<p><a id='x1-128r24'></a>
+</p><p></p><!-- l. 2250 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 2250 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 2250 --><p class='noindent'>Oefening 24
+</p><!-- l. 2250 --><p class='noindent'>— Satellietbaan analyseren
+</p><!-- l. 2250 --><p class='noindent'></p></div>
+<p></p><!-- l. 2250 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 2250 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--g'>G</span></div>
+<p></p><!-- l. 2250 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 2252 --><p class='noindent'>Een satelliet beweegt in een ideale cirkelbaan rond een planeet met massa
+<span class='mathjax-inline'>\(M\)</span>.
+</p><!-- l. 2255 --><p class='noindent'>Vertrek uitsluitend van:
+</p>
+<div class='mathjax-block'>\[ F_g = G\frac {Mm}{r^2} \]</div>
+<!-- l. 2263 --><p class='noindent'>en
+</p>
+<div class='mathjax-block'>\[ a_c = \frac {v^2}{r}. \]</div>     
+<ol class='enumerate1'>
+<li class='enumerate' id='x1-130x1'>Leid de formule voor de baansnelheid af.
+                                                                  
+
+                                                                  
+</li>
+<li class='enumerate' id='x1-132x2'>Onderzoek hoe <span class='mathjax-inline'>\(v\)</span> verandert wanneer <span class='mathjax-inline'>\(r\)</span> viermaal zo groot wordt.
+</li>
+<li class='enumerate' id='x1-134x3'>Leg uit waarom de satellietmassa niet in de formule voorkomt.
+</li>
+<li class='enumerate' id='x1-136x4'>Voorspel  kwalitatief  wat  er  met  de  omlooptijd  gebeurt  wanneer  de
+baanstraal groter wordt.</li></ol>
+</div>
+<!-- l. 2279 --><p class='noindent'></p></div>
+<p></p><!-- l. 2279 --><p class='noindent'></p></section>
+<p><a id='x1-137r25'></a>
+</p><p></p><!-- l. 2282 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 2282 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 2282 --><p class='noindent'>Oefening 25
+</p><!-- l. 2282 --><p class='noindent'>— Modelkritiek
+</p><!-- l. 2282 --><p class='noindent'></p></div>
+<p></p><!-- l. 2282 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 2282 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--g'>G</span></div>
+<p></p><!-- l. 2282 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 2284 --><p class='noindent'>Bij veel berekeningen behandelen we de aarde als een bolvormige massa waarvan de
+volledige massa in het middelpunt geconcentreerd lijkt.
+</p><!-- l. 2287 --><p class='noindent'>Onderzoek kritisch dit model.
+</p><!-- l. 2289 --><p class='noindent'>Bespreek minstens:
+</p>     
+<ol class='enumerate1'>
+<li class='enumerate' id='x1-139x1'>waarom het model voor veel satellietberekeningen bruikbaar is;
+</li>
+                                                                  
+
+                                                                  
+<li class='enumerate' id='x1-141x2'>waarom de echte aarde niet perfect aan het model voldoet;
+</li>
+<li class='enumerate' id='x1-143x3'>welke gevolgen lokale verschillen in massaverdeling kunnen hebben;
+</li>
+<li class='enumerate' id='x1-145x4'>waarom  een  fysisch  model  bruikbaar  kan  zijn  zonder  de  werkelijkheid
+perfect weer te geven.</li></ol>
+</div>
+<!-- l. 2300 --><p class='noindent'></p></div>
+<p></p><!-- l. 2300 --><p class='noindent'></p></section>
+<p><a id='x1-146r28'></a>
+</p><p></p><!-- l. 2307 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>28</div><div class='fvd-section-bar__title'>Onderzoeken met ICT</div></div>
+<p></p><!-- l. 2309 --><p class='noindent'>De inverse-kwadratenwet leent zich uitstekend voor een digitale verkenning.
+</p><!-- l. 2312 --><p class='noindent'>Neem bijvoorbeeld:
+</p>
+<div class='mathjax-block'>\[ g(r) = G\frac {M_\mathrm A}{r^2}. \]</div>
+<!-- l. 2320 --><p class='noindent'>Maak met GeoGebra, Desmos of een spreadsheet een grafiek van <span class='mathjax-inline'>\(g\)</span> als functie van <span class='mathjax-inline'>\(r\)</span>
+voor:
+</p>
+<div class='mathjax-block'>\[ r\geq R_\mathrm A. \]</div>
+<!-- l. 2327 --><p class='noindent'>Onderzoek vervolgens:
+</p>     
+<ol class='enumerate1'>
+<li class='enumerate' id='x1-148x1'>hoe snel <span class='mathjax-inline'>\(g\)</span> vlak boven het aardoppervlak verandert;
+</li>
+<li class='enumerate' id='x1-150x2'>op welke afstand <span class='mathjax-inline'>\(g\)</span> halveert;
+</li>
+                                                                  
+
+                                                                  
+<li class='enumerate' id='x1-152x3'>op welke afstand <span class='mathjax-inline'>\(g\)</span> nog <span class='mathjax-inline'>\(10\%\)</span> van de waarde aan het aardoppervlak bedraagt;
+</li>
+<li class='enumerate' id='x1-154x4'>waarom de grafiek de horizontale as nadert maar niet snijdt.</li></ol>
+<!-- l. 2337 --><p class='noindent'>Vergelijk daarna eventueel met een tweede hemellichaam.
+</p><!-- l. 2339 --><p class='noindent'>Zo gebruik je een wiskundige functie als model voor een fysische werkelijkheid.
+<a id='x1-155r29'></a>
+</p><!-- l. 2347 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>29</div><div class='fvd-section-bar__title'>Veelvoorkomende denkfouten</div></div>
+<p></p>     
+<ul class='itemize1'>
+<li class='itemize'>    
+<!-- l. 2351 --><p class='noindent'><strong>“Alleen de aarde oefent gravitatie uit.”</strong>
+</p>     
+<!-- l. 2353 --><p class='noindent'>Nee. Elke massa oefent gravitatie uit op andere massa’s.
+</p>     
+</li>
+<li class='itemize'>    
+<!-- l. 2355 --><p class='noindent'><strong>“De aarde trekt harder aan jou dan jij aan de aarde.”</strong>
+</p>     
+<!-- l. 2357 --><p class='noindent'>Nee. Volgens Newton III zijn de twee interactiekrachten even groot.
+</p>     
+</li>
+<li class='itemize'>    
+<!-- l. 2359 --><p class='noindent'><strong>“Een satelliet bevindt zich buiten de zwaartekracht.”</strong>
+</p>     
+<!-- l. 2361 --><p class='noindent'>Nee. De gravitatiekracht zorgt juist voor de centripetale versnelling van
+de satelliet.
+</p>     
+</li>
+<li class='itemize'>    
+<!-- l. 2364 --><p class='noindent'><strong>“Op grotere hoogte verdwijnt gravitatie.”</strong>
+</p>     
+<!-- l. 2366 --><p class='noindent'>Nee. Ze neemt af volgens een inverse-kwadratenwet.
+</p>     
+</li>
+<li class='itemize'>    
+<!-- l. 2368 --><p class='noindent'><strong>“In <span class='mathjax-inline'>\(F_g=Gm_1m_2/r^2\)</span> is <span class='mathjax-inline'>\(r\)</span> de afstand tussen de oppervlakken.”</strong>
+</p>     
+<!-- l. 2371 --><p class='noindent'>Nee.  Voor  bolvormige  massa’s  gebruiken  we  de  afstand  tussen  de
+massamiddelpunten.
+                                                                  
+
+                                                                  
+</p>     
+</li>
+<li class='itemize'>    
+<!-- l. 2374 --><p class='noindent'><strong>“Een zwaarder voorwerp valt sneller omdat de gravitatiekracht
+groter is.”</strong>
+</p>     
+<!-- l. 2377 --><p class='noindent'>De kracht is inderdaad groter, maar de massa die versneld moet worden is
+in dezelfde verhouding groter. Zonder luchtweerstand is de valversnelling
+onafhankelijk van de testmassa.
+</p>     
+</li>
+<li class='itemize'>    
+<!-- l. 2381 --><p class='noindent'><strong>“<span class='mathjax-inline'>\(g\)</span> is overal gelijk aan <span class='mathjax-inline'>\(9{,}81\,\mathrm {N/kg}\)</span>.”</strong>
+</p>     
+<!-- l. 2383 --><p class='noindent'>Nee. Die waarde geldt bij benadering nabij het aardoppervlak.
+</p>     
+</li>
+<li class='itemize'>    
+<!-- l. 2385 --><p class='noindent'><strong>“<span class='mathjax-inline'>\(g\)</span> en <span class='mathjax-inline'>\(F_g\)</span> zijn hetzelfde.”</strong>
+</p>     
+<!-- l. 2387 --><p class='noindent'>Nee. </p><div class='mathjax-block'>\[ \vec g \]</div> beschrijft het gravitatieveld, terwijl <div class='mathjax-block'>\[ \vec F_g=m\vec g \]</div> de kracht op een massa in dat
+veld beschrijft.
+</li></ul>
+<p><a id='x1-156r30'></a>
+</p><!-- l. 2404 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>30</div><div class='fvd-section-bar__title'>Samenvatting</div></div>
+<p><a id='x1-157r1'></a>
+</p><p></p><!-- l. 2407 --><p class='noindent'></p><div class='fvd-subsection'>
+<p></p><!-- l. 2407 --><p class='noindent'></p><div class='fvd-subsection__row'>
+<p></p><!-- l. 2407 --><p class='noindent'></p><div class='fvd-subsection__number'>30.1</div>
+<p></p><!-- l. 2407 --><p class='noindent'></p><div class='fvd-subsection__title'>*</div>
+<p></p><!-- l. 2407 --><p class='noindent'></p></div>
+<p></p><!-- l. 2407 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
+<p></p><!-- l. 2407 --><p class='noindent'></p></div><p>Universele gravitatie
+</p><p></p><!-- l. 2409 --><p class='noindent'>Elke twee massa’s trekken elkaar aan:
+</p>
+<div class='mathjax-block'>\[ \boxed { F_g = G\frac {m_1m_2}{r^2}. } \]</div>
+<!-- l. 2419 --><p class='noindent'>met
+</p>
+<div class='mathjax-block'>\[ \boxed { G = 6{,}674\times 10^{-11} \, \mathrm {\frac {N\,m^2}{kg^2}}. } \]</div>
+<!-- l. 2431 --><p class='noindent'>De afstand <span class='mathjax-inline'>\(r\)</span> is bij bolvormige massa’s de afstand tussen de massamiddelpunten.
+<a id='x1-158r2'></a>
+</p><!-- l. 2435 --><p class='noindent'></p><div class='fvd-subsection'>
+                                                                  
+
+                                                                  
+<p></p><!-- l. 2435 --><p class='noindent'></p><div class='fvd-subsection__row'>
+<p></p><!-- l. 2435 --><p class='noindent'></p><div class='fvd-subsection__number'>30.2</div>
+<p></p><!-- l. 2435 --><p class='noindent'></p><div class='fvd-subsection__title'>*</div>
+<p></p><!-- l. 2435 --><p class='noindent'></p></div>
+<p></p><!-- l. 2435 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
+<p></p><!-- l. 2435 --><p class='noindent'></p></div><p>Afhankelijkheid
+</p><p></p>
+<div class='mathjax-block'>\[ \boxed { F_g\propto m_1m_2 } \]</div>
+<!-- l. 2443 --><p class='noindent'>en
+</p>
+<div class='mathjax-block'>\[ \boxed { F_g\propto \frac 1{r^2}. } \]</div>
+<p><a id='x1-159r3'></a>
+</p><!-- l. 2452 --><p class='noindent'></p><div class='fvd-subsection'>
+<p></p><!-- l. 2452 --><p class='noindent'></p><div class='fvd-subsection__row'>
+<p></p><!-- l. 2452 --><p class='noindent'></p><div class='fvd-subsection__number'>30.3</div>
+<p></p><!-- l. 2452 --><p class='noindent'></p><div class='fvd-subsection__title'>*</div>
+<p></p><!-- l. 2452 --><p class='noindent'></p></div>
+<p></p><!-- l. 2452 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
+<p></p><!-- l. 2452 --><p class='noindent'></p></div><p>Newton III
+</p><p></p><!-- l. 2454 --><p class='noindent'>Voor twee massa’s:
+</p>
+<div class='mathjax-block'>\[ \boxed { \vec F_{1\rightarrow 2} = -\vec F_{2\rightarrow 1}. } \]</div>
+<p><a id='x1-160r4'></a>
+</p><!-- l. 2465 --><p class='noindent'></p><div class='fvd-subsection'>
+<p></p><!-- l. 2465 --><p class='noindent'></p><div class='fvd-subsection__row'>
+<p></p><!-- l. 2465 --><p class='noindent'></p><div class='fvd-subsection__number'>30.4</div>
+<p></p><!-- l. 2465 --><p class='noindent'></p><div class='fvd-subsection__title'>*</div>
+<p></p><!-- l. 2465 --><p class='noindent'></p></div>
+<p></p><!-- l. 2465 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
+<p></p><!-- l. 2465 --><p class='noindent'></p></div><p>Gravitatieveld
+</p><p></p>
+<div class='mathjax-block'>\[ \boxed { \vec g = \frac {\vec F_g}{m}. } \]</div>
+<!-- l. 2475 --><p class='noindent'>Voor een bolvormige bronmassa <span class='mathjax-inline'>\(M\)</span>:
+</p>
+                                                                  
+
+                                                                  
+<div class='mathjax-block'>\[ \boxed { g = G\frac {M}{r^2}. } \]</div>
+<!-- l. 2485 --><p class='noindent'>Een massa <span class='mathjax-inline'>\(m\)</span> in het veld ondervindt:
+</p>
+<div class='mathjax-block'>\[ \boxed { \vec F_g=m\vec g. } \]</div>
+<p><a id='x1-161r5'></a>
+</p><!-- l. 2494 --><p class='noindent'></p><div class='fvd-subsection'>
+<p></p><!-- l. 2494 --><p class='noindent'></p><div class='fvd-subsection__row'>
+<p></p><!-- l. 2494 --><p class='noindent'></p><div class='fvd-subsection__number'>30.5</div>
+<p></p><!-- l. 2494 --><p class='noindent'></p><div class='fvd-subsection__title'>*</div>
+<p></p><!-- l. 2494 --><p class='noindent'></p></div>
+<p></p><!-- l. 2494 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
+<p></p><!-- l. 2494 --><p class='noindent'></p></div><p>Aan het aardoppervlak
+</p><p></p>
+<div class='mathjax-block'>\[ \boxed { g_0 = G\frac {M_\mathrm A}{R_\mathrm A^2} \approx 9{,}81\,\mathrm {N/kg}. } \]</div>
+<p><a id='x1-162r6'></a>
+</p><!-- l. 2507 --><p class='noindent'></p><div class='fvd-subsection'>
+<p></p><!-- l. 2507 --><p class='noindent'></p><div class='fvd-subsection__row'>
+<p></p><!-- l. 2507 --><p class='noindent'></p><div class='fvd-subsection__number'>30.6</div>
+<p></p><!-- l. 2507 --><p class='noindent'></p><div class='fvd-subsection__title'>*</div>
+<p></p><!-- l. 2507 --><p class='noindent'></p></div>
+<p></p><!-- l. 2507 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
+<p></p><!-- l. 2507 --><p class='noindent'></p></div><p>Op hoogte <span class='mathjax-inline'>\(h\)</span>
+</p><p></p>
+<div class='mathjax-block'>\[ \boxed { g(h) = G\frac {M_\mathrm A}{(R_\mathrm A+h)^2}. } \]</div>
+<p><a id='x1-163r7'></a>
+</p><!-- l. 2518 --><p class='noindent'></p><div class='fvd-subsection'>
+<p></p><!-- l. 2518 --><p class='noindent'></p><div class='fvd-subsection__row'>
+<p></p><!-- l. 2518 --><p class='noindent'></p><div class='fvd-subsection__number'>30.7</div>
+<p></p><!-- l. 2518 --><p class='noindent'></p><div class='fvd-subsection__title'>*</div>
+<p></p><!-- l. 2518 --><p class='noindent'></p></div>
+<p></p><!-- l. 2518 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
+<p></p><!-- l. 2518 --><p class='noindent'></p></div><p>Superpositie
+</p><p></p>
+<div class='mathjax-block'>\[ \boxed { \vec F_{g,\mathrm {res}} = \sum _i\vec F_{g,i} } \]</div>
+                                                                  
+
+                                                                  
+<!-- l. 2528 --><p class='noindent'>en
+</p>
+<div class='mathjax-block'>\[ \boxed { \vec g_\mathrm {res} = \sum _i\vec g_i. } \]</div>
+<p><a id='x1-164r8'></a>
+</p><!-- l. 2539 --><p class='noindent'></p><div class='fvd-subsection'>
+<p></p><!-- l. 2539 --><p class='noindent'></p><div class='fvd-subsection__row'>
+<p></p><!-- l. 2539 --><p class='noindent'></p><div class='fvd-subsection__number'>30.8</div>
+<p></p><!-- l. 2539 --><p class='noindent'></p><div class='fvd-subsection__title'>*</div>
+<p></p><!-- l. 2539 --><p class='noindent'></p></div>
+<p></p><!-- l. 2539 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
+<p></p><!-- l. 2539 --><p class='noindent'></p></div><p>Satelliet in een cirkelbaan
+</p><p></p><!-- l. 2541 --><p class='noindent'>De gravitatiekracht levert de centripetale kracht:
+</p>
+<div class='mathjax-block'>\[ \boxed { F_g=F_c. } \]</div>
+<!-- l. 2549 --><p class='noindent'>Dus:
+</p>
+<div class='mathjax-block'>\[ G\frac {Mm}{r^2} = m\frac {v^2}{r}. \]</div>
+<!-- l. 2557 --><p class='noindent'>Daaruit:
+</p>
+<div class='mathjax-block'>\[ \boxed { v = \sqrt {\frac {GM}{r}}. } \]</div>
+<!-- l. 2567 --><p class='noindent'>en:
+</p>
+<div class='mathjax-block'>\[ \boxed { g(r)=a_c. } \]</div>
+<p><a id='x1-165r31'></a>
+</p><!-- l. 2580 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>31</div><div class='fvd-section-bar__title'>Wat moet je zeker beheersen?</div></div>
+<p></p><!-- l. 2582 --><p class='noindent'>Je moet niet alleen formules kunnen invullen.
+</p><!-- l. 2584 --><p class='noindent'>Je moet gravitatie kunnen <strong>analyseren en kwantificeren</strong>.
+</p><!-- l. 2586 --><p class='noindent'>Dat betekent dat je zeker moet kunnen:
+</p>     
+<ul class='itemize1'>
+<li class='itemize'>de algemene gravitatiewet interpreteren en toepassen;
+</li>
+<li class='itemize'>de correcte afstand <span class='mathjax-inline'>\(r\)</span> herkennen;
+                                                                  
+
+                                                                  
+</li>
+<li class='itemize'>richting en zin van een gravitatiekracht bepalen;
+</li>
+<li class='itemize'>Newton III toepassen op twee gravitationeel interagerende massa’s;
+</li>
+<li class='itemize'>zonder volledig opnieuw te rekenen voorspellen wat met <span class='mathjax-inline'>\(F_g\)</span> gebeurt wanneer
+massa’s of afstand veranderen;
+</li>
+<li class='itemize'>het inverse-kwadratenverband herkennen en gebruiken;
+</li>
+<li class='itemize'>het verschil tussen gravitatiekracht en gravitatieveld uitleggen;
+</li>
+<li class='itemize'>     
+<!-- l. 2607 --><p class='noindent'>werken met </p><div class='mathjax-block'>\[ g=G\frac {M}{r^2}; \]</div>
+</li>     
+<li class='itemize'>
+<!-- l. 2612 --><p class='noindent'>uitleggen waarom </p><div class='mathjax-block'>\[ F_g=mg \]</div> volgt uit de algemene gravitatiewet;
+</li>     
+<li class='itemize'>massa en gravitatiekracht van elkaar onderscheiden;
+</li>
+<li class='itemize'>analyseren hoe <span class='mathjax-inline'>\(g\)</span> met de hoogte verandert;
+</li>
+<li class='itemize'>gravitatieveldlijnen interpreteren;
+</li>
+<li class='itemize'>gravitatievelden vectorieel combineren in eenvoudige situaties;
+                                                                  
+
+                                                                  
+</li>
+<li class='itemize'>     
+<!-- l. 2627 --><p class='noindent'>het verband </p><div class='mathjax-block'>\[ F_g=F_c \]</div> bij een satelliet in een cirkelbaan gebruiken;
+</li>     
+<li class='itemize'>een fysisch resultaat controleren op eenheid, grootteorde en betekenis.
+</li></ul>
+<!-- l. 2638 --><p class='noindent'>De oefeningen met de essentieel-markering vormen samen de minimale oefenset die je
+hiervoor moet beheersen.
+<a id='x1-166r32'></a>
+</p><!-- l. 2646 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>32</div><div class='fvd-section-bar__title'>Vooruitblik: is gravitatie uniek?</div></div>
+<p></p><!-- l. 2648 --><p class='noindent'>We hebben een opmerkelijke structuur ontdekt.
+</p><!-- l. 2650 --><p class='noindent'>Een massa <span class='mathjax-inline'>\(M\)</span> veroorzaakt een veld:
+</p>
+<div class='mathjax-block'>\[ M \longrightarrow \vec g. \]</div>
+<!-- l. 2658 --><p class='noindent'>Een andere massa <span class='mathjax-inline'>\(m\)</span> die in dat veld wordt geplaatst, ondervindt een kracht:
+</p>
+<div class='mathjax-block'>\[ \vec F_g=m\vec g. \]</div>
+<!-- l. 2665 --><p class='noindent'>Voor een bolvormige bronmassa geldt:
+</p>
+<div class='mathjax-block'>\[ g = G\frac {M}{r^2}. \]</div>
+<!-- l. 2673 --><p class='noindent'>En voor twee massa’s:
+</p>
+<div class='mathjax-block'>\[ F_g = G\frac {m_1m_2}{r^2}. \]</div>
+<!-- l. 2682 --><p class='noindent'>Binnenkort zullen we een tweede interactie ontmoeten.
+</p><!-- l. 2684 --><p class='noindent'>Daarbij vervangen we massa door elektrische lading.
+</p><!-- l. 2686 --><p class='noindent'>We zullen dan een wet vinden van de vorm:
+</p>
+<div class='mathjax-block'>\[ F_e = k\frac {|q_1q_2|}{r^2}. \]</div>
+<!-- l. 2694 --><p class='noindent'>En ook daar zullen we een veld invoeren:
+</p>
+<div class='mathjax-block'>\[ \vec E. \]</div>
+<!-- l. 2701 --><p class='noindent'>De overeenkomst kunnen we al zichtbaar maken:
+</p>
+<div class='mathjax-block'>\[ \boxed { \begin {array}{ccc} \text {gravitatie} &amp; &amp; \text {elektriciteit}\\[1mm] M &amp; \longleftrightarrow &amp; Q\\ \vec g &amp; \longleftrightarrow &amp; \vec E\\ m\vec g &amp; \longleftrightarrow &amp; q\vec E\\ G\dfrac {Mm}{r^2} &amp; \longleftrightarrow &amp; k\dfrac {|Qq|}{r^2} \end {array} } \]</div>
+                                                                  
+
+                                                                  
+<!-- l. 2720 --><p class='noindent'>Maar er is een fundamenteel verschil.
+</p><!-- l. 2722 --><p class='noindent'>Massa’s trekken elkaar aan.
+</p><!-- l. 2724 --><p class='noindent'>Elektrische ladingen kunnen elkaar:
+</p>
+<div class='mathjax-block'>\[ \boxed { \text {aantrekken} \qquad \text {of}\qquad \text {afstoten}. } \]</div>
+<!-- l. 2734 --><p class='noindent'>Dat verschil zal ervoor zorgen dat elektrische velden nog rijkere structuren kunnen
+vormen dan het gravitatieveld dat we hier hebben bestudeerd.
+                                                                  
+
+                                                                  
+</p>
+</body> 
+ 
+</html>
+                                                                  
+
+

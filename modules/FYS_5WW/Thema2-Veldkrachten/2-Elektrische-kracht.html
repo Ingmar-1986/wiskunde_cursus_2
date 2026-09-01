@@ -1,0 +1,2283 @@
+<!DOCTYPE html> 
+<html lang='en-US' xml:lang='en-US'> 
+<head> <title>Elektrische kracht: aantrekken en afstoten</title> 
+<meta charset='utf-8' /> 
+<meta content='TeX4ht (https://tug.org/tex4ht/)' name='generator' /> 
+<meta content='width=device-width,initial-scale=1' name='viewport' /> 
+<link href='\aa:CssFile ' rel='stylesheet' type='text/css' /> 
+<meta content='2-Elektrische-kracht.online.tex' name='src' /> 
+<script>window.MathJax = { tex: { tags: "ams", }, }; </script> 
+<script async='async' id='MathJax-script' src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js' type='text/javascript'></script>  
+<meta content='Ingmar Herreman' name='author' /> 
+<meta content='version 2.5.1' name='ximera' /> 
+<link href='https://ximera.osu.edu/public/stylesheets/standalone.css' media='screen' rel='stylesheet' /> 
+<script async='' src='https://ximera.osu.edu/public/javascripts/standalone.min.js' type='text/javascript'></script> 
+</head><body> 
+<div class='preamble'><script type='math/tex'>\newenvironment {prompt}{}{}
+\newcommand {\accordion }[0]{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\xmDefaultPreamble }[0]{xmPreamble.tex}
+\newcommand {\xmDefaultPrintstyle }[0]{xmPrintstyle.sty}
+\newcommand {\multirowsetup }[0]{\raggedright }
+\newcommand {\textscale  }[2]{\leavevmode \begingroup \relscale {#1}#2\endgroup }
+\newcommand {\headrulewidth }[0]{0.4pt}
+\newcommand {\footrulewidth }[0]{0pt}
+\newcommand {\headruleskip }[0]{0pt}
+\newcommand {\footruleskip }[0]{.3\normalbaselineskip }
+\newcommand {\plainheadrulewidth }[0]{0pt}
+\newcommand {\plainfootrulewidth }[0]{0pt}
+\newcommand {\officialeuro  }[0]{{\fontencoding {U}\fontfamily {eurosym}\selectfont {}e}}
+\newcommand {\eurobars  }[0]{{\fontencoding {U}\fontfamily {eurosym}\selectfont {}A}}
+\newcommand {\eurobarsnarrow  }[0]{{\fontencoding {U}\fontfamily {eurosym}\selectfont {}B}}
+\newcommand {\eurobarswide  }[0]{{\fontencoding {U}\fontfamily {eurosym}\selectfont {}C}}
+\newcommand {\p }[0]{}
+\newcommand {\captionnewline }[0]{\\\relax }
+\newcommand {\memcaptioninfo }[4]{}
+\newcommand {\captiongroup }[0]{\setcaptiontype }
+\newcommand {\LTcaptype }[0]{table}
+\newcommand {\showtodonotes }[0]{disable}
+\newcommand {\todo }[1]{\typeout {TODO #1}}
+\newcommand {\tcbpkgprefix }[0]{}
+\newcommand {\blue }[1]{{\color {blue}#1}}
+\newcommand {\red }[1]{{\color {red}#1}}
+\newcommand {\CancelColor }[0]{\color {xmaccent!50!black}}
+\newcommand {\important }[1]{\ensuremath {\colorbox {orange}{$#1$}}}
+\newcommand {\pdfnl }[0]{}
+\newcommand {\handoutnl }[0]{}
+\newcommand {\importantcell }[1]{\ensuremath {#1}}
+\newcommand {\xmPlotsColor }[0]{ \pgfplotsset { plot1/.style={darkgray,no marks,samples=100}, plot2/.style={lightgray,no marks,samples=100}, plotresult/.style={blue,no marks,samples=100}, plotblue/.style={blue,no marks,samples=100}, plotred/.style={red,no marks,samples=100}, plotgreen/.style={green,no marks,samples=100}, plotpurple/.style={purple,no marks,samples=100} } }
+\newcommand {\xmPlotsBlackWhite }[0]{ \pgfplotsset { plot1/.style={black,loosely dashed,no marks,samples=100}, plot2/.style={black,loosely dotted,no marks,samples=100}, plotresult/.style={black,no marks,samples=100}, plotblue/.style={black,no marks,samples=100}, plotred/.style={black,dotted,no marks,samples=100}, plotgreen/.style={black,dashed,no marks,samples=100}, plotpurple/.style={black,dashdotted,no marks,samples=100} } }
+\newcommand {\xmPlotsColorAndStyle }[0]{ \pgfplotsset { plot1/.style={darkgray,no marks,samples=100}, plot2/.style={lightgray,no marks,samples=100}, plotresult/.style={blue,no marks,samples=100}, plotblue/.style={xmblue,no marks,samples=100}, plotred/.style={xmred,dashed,thick,no marks,samples=100}, plotgreen/.style={xmgreen,dotted,very thick,no marks,samples=100}, plotpurple/.style={purple,no marks,samples=100} } }
+\newcommand {\geqnoslant }[0]{\geq }
+\newcommand {\geq }[0]{\geqslant }
+\newcommand {\leqnoslant }[0]{\leq }
+\newcommand {\leq }[0]{\leqslant }
+\newcommand {\emph }[1]{\textit {#1}}
+\newcommand {\ds }[0]{\displaystyle }
+\newcommand {\ts }[0]{\textstyle }
+\newcommand {\bron }[1]{\begin {scriptsize} \emph {#1} \end {scriptsize}}
+\newcommand {\R }[0]{\ensuremath {\mathbb {R}}}
+\newcommand {\Rnul }[0]{\ensuremath {\mathbb {R}_0}}
+\newcommand {\Reen }[0]{\ensuremath {\mathbb {R}\setminus \{1\}}}
+\newcommand {\Rnuleen }[0]{\ensuremath {\mathbb {R}\setminus \{0,1\}}}
+\newcommand {\Rplus }[0]{\ensuremath {\mathbb {R}^+}}
+\newcommand {\Rmin }[0]{\ensuremath {\mathbb {R}^-}}
+\newcommand {\Rnulplus }[0]{\ensuremath {\mathbb {R}_0^+}}
+\newcommand {\Rnulmin }[0]{\ensuremath {\mathbb {R}_0^-}}
+\newcommand {\Rnuleenplus }[0]{\ensuremath {\mathbb {R}^+\setminus \{0,1\}}}
+\newcommand {\N }[0]{\ensuremath {\mathbb {N}}}
+\newcommand {\Nnul }[0]{\ensuremath {\mathbb {N}_0}}
+\newcommand {\Z }[0]{\ensuremath {\mathbb {Z}}}
+\newcommand {\Znul }[0]{\ensuremath {\mathbb {Z}_0}}
+\newcommand {\Zplus }[0]{\ensuremath {\mathbb {Z}^+}}
+\newcommand {\Zmin }[0]{\ensuremath {\mathbb {Z}^-}}
+\newcommand {\Znulplus }[0]{\ensuremath {\mathbb {Z}_0^+}}
+\newcommand {\Znulmin }[0]{\ensuremath {\mathbb {Z}_0^-}}
+\newcommand {\C }[0]{\ensuremath {\mathbb {C}}}
+\newcommand {\Cnul }[0]{\ensuremath {\mathbb {C}_0}}
+\newcommand {\Cplus }[0]{\ensuremath {\mathbb {C}^+}}
+\newcommand {\Cmin }[0]{\ensuremath {\mathbb {C}^-}}
+\newcommand {\Cnulplus }[0]{\ensuremath {\mathbb {C}_0^+}}
+\newcommand {\Cnulmin }[0]{\ensuremath {\mathbb {C}_0^-}}
+\newcommand {\Q }[0]{\ensuremath {\mathbb {Q}}}
+\newcommand {\Qnul }[0]{\ensuremath {\mathbb {Q}_0}}
+\newcommand {\Qplus }[0]{\ensuremath {\mathbb {Q}^+}}
+\newcommand {\Qmin }[0]{\ensuremath {\mathbb {Q}^-}}
+\newcommand {\Qnulplus }[0]{\ensuremath {\mathbb {Q}_0^+}}
+\newcommand {\Qnulmin }[0]{\ensuremath {\mathbb {Q}_0^-}}
+\newcommand {\perdef }[0]{\overset {\mathrm {def}}{=}}
+\newcommand {\pernot }[0]{\overset {\mathrm {notatie}}{=}}
+\newcommand {\perinderdaad }[0]{\overset {!}{=}}
+\newcommand {\perhaps }[0]{\overset {?}{=}}
+\newcommand {\degree }[0]{^\circ }
+\DeclareMathOperator {\dom }{dom}
+\DeclareMathOperator {\codom }{codom}
+\DeclareMathOperator {\bld }{bld}
+\DeclareMathOperator {\graf }{graf}
+\DeclareMathOperator {\rico }{rico}
+\DeclareMathOperator {\co }{co}
+\DeclareMathOperator {\gr }{gr}
+\DeclareMathOperator {\bgsin }{bgsin}
+\DeclareMathOperator {\bgcos }{bgcos}
+\DeclareMathOperator {\bgtan }{bgtan}
+\DeclareMathOperator {\bgcot }{bgcot}
+\DeclareMathOperator {\bgsinh }{bgsinh}
+\DeclareMathOperator {\bgcosh }{bgcosh}
+\DeclareMathOperator {\bgtanh }{bgtanh}
+\DeclareMathOperator {\bgcoth }{bgcoth}
+\newcommand {\d }[0]{\mathrm {d}}
+\newcommand {\dx }[0]{\d x}
+\newcommand {\dd }[1]{\frac {\mathrm {d}}{\mathrm {d}#1}}
+\newcommand {\ddx }[0]{\dd {x}}
+\newcommand {\afg }[1]{{#1}'}
+\newcommand {\xmshortabstract }[0]{}
+\newcommand {\xmopje }[1]{\iftoggle {showxmopje}{#1}{}}
+\newcommand {\xmcolorbox }[2]{ \HCode {\Hnewline <div class="xmcolorbox">\Hnewline }#2\HCode {\Hnewline </div>\Hnewline } }
+\newcommand {\xmopmerking }[1]{ \HCode {\Hnewline <div class="xmopmerking">\Hnewline }#1\HCode {\Hnewline </div>\Hnewline } }
+\newcommand {\proofname }[0]{Bewijs}
+\newcommand {\xmonlineChoice }[1]{\pdfOnly {\wordchoicegiventrue }\wordChoice {#1}\pdfOnly {\wordchoicegivenfalse }}
+\newcommand {\onlineChoice }[1]{\pdfOnly {\wordchoicegiventrue }\wordChoice {#1}\pdfOnly {\wordchoicegivenfalse }}
+\newcommand {\TJa }[0]{\nlentext { Ja }{ Yes }}
+\newcommand {\TNee }[0]{\nlentext { Nee }{ No }}
+\newcommand {\TJuist }[0]{\nlentext { Juist }{ True }}
+\newcommand {\TFout }[0]{\nlentext { Fout }{ False }}
+\newcommand {\choiceTrue }[0]{{\wordChoice {\choice [correct]{\TJuist }\choice {\TFout }}}}
+\newcommand {\choiceFalse }[0]{{\wordChoice {\choice {\TJuist }\choice [correct]{\TFout }}}}
+\newcommand {\choiceYes }[0]{{\wordChoice {\choice [correct]{\TJa }\choice {\TNee }}}}
+\newcommand {\choiceNo }[0]{{\wordChoice {\choice {\TJa }\choice [correct]{\TNee }}}}
+\newcommand {\choiceminimumverticalsize }[0]{\vphantom {$\tfrac {2}{2}$}}
+\newcommand {\setchoicedefanswer }[0]{ \ifdefined \HCode \else \let \inlinechoice \inlinechoicedefanswer \fi }
+\newcommand {\xmsection }[0]{\subsection }
+\newcommand {\xmsubsection }[0]{\subsubsection }
+\newcommand {\activitychapter }[1]{ \typeout {ACTIVITYCHAPTER #1} \chapterstyle \activity {#1} }
+\newcommand {\activitysection }[1]{ \typeout {ACTIVITYSECTION #1} \sectionstyle \activity {#1} }
+\newcommand {\practicesection }[1]{ \typeout {PRACTICESECTION #1} \sectionstyle \activity {#1} }
+\newcommand {\hypertarget }[1]{\HCode {<a class="ximera-label" id="#1"></a>}}
+\newcommand {\hyperlink }[2]{\HCode {<a class="reference reference-keeptext" href="\##1">}#2\HCode {</a>}}
+\newcommand {\figurename }[0]{Figuur}
+\newcommand {\tablename }[0]{Tabel}
+\newcommand {\printFull }[0]{ \hintstrue \handoutfalse \toggletrue {showonline} }
+\newcommand {\nl }[0]{}
+\newcommand {\basicOnly }[0]{}
+\newcommand {\basicSkip }[0]{}
+\newcommand {\tab }[0]{\quad }
+\newcommand {\instructorNotes }[0]{\setbox 0\vbox \bgroup }
+\newcommand {\nlen }[2]{#1}
+\newcommand {\nlentext }[2]{\text {#1}}
+\newcommand {\nlentextbf }[2]{\textbf {#1}}
+\newcommand {\TWaar }[0]{\nlentext { Waar }{ True }}
+\newcommand {\TOnwaar }[0]{\nlentext { Vals }{ False }}
+\newcommand {\Ten }[0]{\nlentext { en }{ and }}
+\newcommand {\Tof }[0]{\nlentext { of }{ or }}
+\newcommand {\Tdus }[0]{\nlentext { dus }{ so }}
+\newcommand {\Tendus }[0]{\nlentext { en dus }{ and thus }}
+\newcommand {\Tvooralle }[0]{\nlentext { voor alle }{ for all }}
+\newcommand {\Took }[0]{\nlentext { ook }{ also }}
+\newcommand {\Tals }[0]{\nlentext { als }{ when }}
+\newcommand {\Twant }[0]{\nlentext { want }{ as }}
+\newcommand {\Tmaal }[0]{\nlentext { maal }{ times }}
+\newcommand {\Toptellen }[0]{\nlentext { optellen }{ add }}
+\newcommand {\Tde }[0]{\nlentext { de }{ the }}
+\newcommand {\Thet }[0]{\nlentext { het }{ the }}
+\newcommand {\Tis }[0]{\nlentext { is }{ is }}
+\newcommand {\Tmet }[0]{\nlentext { met }{ where }}
+\newcommand {\Tnooit }[0]{\nlentext { nooit }{ never }}
+\newcommand {\Tmaar }[0]{\nlentext { maar }{ but }}
+\newcommand {\Tniet }[0]{\nlentext { niet }{ not }}
+\newcommand {\Tuit }[0]{\nlentext { uit }{ from }}
+\newcommand {\Ttov }[0]{\nlentext { t.o.v. }{ w.r.t. }}
+\newcommand {\Tzodat }[0]{\nlentext { zodat }{ such that }}
+\newcommand {\Tdeth }[0]{\nlentext {de }{th }}
+\newcommand {\Tomdat }[0]{\nlentext {omdat }{because }}
+\newcommand {\fvdschoollogo }[0]{}
+\newcommand {\fvdschoollogobreedte }[0]{0.65\textwidth }
+\newcommand {\fvdschoolnaam }[0]{}
+\newcommand {\fvdschooljaar }[0]{}
+\newcommand {\fvdklas }[0]{}
+\newcommand {\fvdleerkracht }[0]{}
+\newcommand {\fvdmodulenummer }[0]{1}
+\newcommand {\fvdmoduletitel }[0]{}
+\newcommand {\fvdmodulebeeld }[0]{}
+\newcommand {\fvdmodulevariant }[0]{}
+\newcommand {\fvdmodulesubtitel }[0]{}
+\newcommand {\fvdtitletext }[0]{}
+\newcommand {\fvdtitle }[1]{\gdef \fvdtitletext {#1}\title {#1}}
+\newcommand {\voorkennisicon }[0]{\begin {tikzpicture}[ baseline=-0.6ex, line cap=round, line join=round ] \par \fill [fvdcyanicon] (0,0) circle (0.38cm); \par \draw [ fvdcyan, line width=0.7pt ] (-0.22,0.14) .. controls (-0.10,0.19) and (-0.04,0.17) .. (0,0.10) -- (0,-0.19) .. controls (-0.08,-0.13) and (-0.15,-0.12) .. (-0.22,-0.15) -- cycle; \par \draw [ fvdcyan, line width=0.7pt ] (0.22,0.14) .. controls (0.10,0.19) and (0.04,0.17) .. (0,0.10) -- (0,-0.19) .. controls (0.08,-0.13) and (0.15,-0.12) .. (0.22,-0.15) -- cycle; \par \end {tikzpicture}}
+\newcommand {\leerdoelenicon }[0]{\begin {tikzpicture}[ baseline=-0.6ex, line cap=round, line join=round ] \par \fill [fvdmagentaicon] (0,0) circle (0.38cm); \par \draw [ fvdmagenta, line width=0.7pt ] (0,0) circle (0.20cm); \par \draw [ fvdmagenta, line width=0.7pt ] (0,0) circle (0.10cm); \par \fill [fvdmagenta] (0,0) circle (0.025cm); \par \draw [ fvdmagenta, line width=0.7pt ] (0.05,0.05) -- (0.25,0.25); \par \draw [ fvdmagenta, line width=0.7pt ] (0.18,0.25) -- (0.25,0.25) -- (0.25,0.18); \par \end {tikzpicture}}
+\newcommand {\fvdboxtitle }[3]{\par \noindent #1\hspace {2.5mm}{\large \bfseries \color {#2}#3}\par \vspace {1.5mm}{\color {#2}\hrule height 0.4pt}\vspace {2mm}}
+\newcommand {\voorkennis }[0]{\ifdefined \HCode \par \HCode {<section class="learning-box learning-box--prior"> <div class="learning-box__header"> <span class="learning-box__icon"></span> <span class="learning-box__title">Voorkennis</span> </div> <div class="learning-box__content"> }\par \begin {itemize} \par \else \par \begin {tcolorbox}[ enhanced, breakable, frame hidden, colback=fvdcyanlight, coltext=fvdnavy, borderline west={1.8pt}{0pt}{fvdcyan}, sharp corners, boxrule=0pt, left=5mm, right=5mm, top=3.5mm, bottom=3.5mm, before skip=4mm, after skip=4mm ] \par \fvdboxtitle {\voorkennisicon } {fvdcyan} {Voorkennis} \par \begin {itemize}[ leftmargin=6mm, itemsep=1.5mm, topsep=0mm, parsep=0pt ] \par \fi }
+\newcommand {\leerdoelen }[0]{\ifdefined \HCode \par \HCode {<section class="learning-box learning-box--goals"> <div class="learning-box__header"> <span class="learning-box__icon"></span> <span class="learning-box__title">Leerdoelen</span> </div> <div class="learning-box__content"> }\par \begin {itemize} \par \else \par \begin {tcolorbox}[ enhanced, breakable, frame hidden, colback=fvdmagentalight, coltext=fvdnavy, borderline west={1.8pt}{0pt}{fvdmagenta}, sharp corners, boxrule=0pt, left=5mm, right=5mm, top=3.5mm, bottom=3.5mm, before skip=4mm, after skip=4mm ] \par \fvdboxtitle {\leerdoelenicon } {fvdmagenta} {Leerdoelen} \par \begin {itemize}[ leftmargin=6mm, itemsep=1.5mm, topsep=0mm, parsep=0pt ] \par \fi }
+\newcommand {\fvdchapterdata }[3]{\par \par \ifdefined \HCode \else \clearpage \fi \par \par \gdef \fvdstandalonethemenumber {#1}\gdef \fvdstandalonetheme {#2}\par \setcounter {part}{#1}\setcounter {titlenumber}{\numexpr #3-1\relax }\par \par \setcounter {fvdsection}{0}\setcounter {fvdsubsection}{0}\setcounter {fvdoefening}{0}}
+\newcommand {\fvdcurrentthemetitle }[0]{}
+\newcommand {\FVDpart }[1]{}
+\newcommand {\FVDpart }[1]{\refstepcounter {fvdtheme}\setcounter {fvdsection}{0}\gdef \fvdcurrentthemetitle {#1}\part {#1}}
+\newcommand {\FVDthemeopening }[1]{\begin {center} \includegraphics [width=\textwidth ]{#1} \end {center} }
+\newcommand {\thefvdsection }[0]{\arabic {fvdsection}}
+\newcommand {\thefvdsubsection }[0]{\thefvdsection .\arabic {fvdsubsection}}
+\newcommand {\FVDsection }[1]{}
+\newcommand {\FVDsubsection }[1]{}
+\newcommand {\FVDsection }[1]{\refstepcounter {fvdsection}\par \HCode {<div class="fvd-section-bar">}\HCode {<div class="fvd-section-bar__number">}\thefvdsection \HCode {</div>}\HCode {<div class="fvd-section-bar__title">}#1\HCode {</div>}\HCode {</div>}}
+\newcommand {\FVDsubsection }[1]{\refstepcounter {fvdsubsection}\par \HCode {<div class="fvd-subsection">}\par \HCode {<div class="fvd-subsection__row">}\par \HCode {<div class="fvd-subsection__number">}\thefvdsection .\arabic {fvdsubsection}\HCode {</div>}\par \HCode {<div class="fvd-subsection__title">}#1\HCode {</div>}\par \HCode {</div>}\par \HCode {<div class="fvd-subsection__line"></div>}\par \HCode {</div>}}
+\newcommand {\themaintro }[1]{\par \bigskip \noindent \begin {minipage}{\textwidth } \textbf {\large #1} \par \smallskip }
+\newcommand {\FVDthemechaptertile }[2]{}
+\newcommand {\FVDthemechaptertile }[2]{\HCode {<div class="fvd-theme-chapter-tile">}\HCode {<span class="fvd-theme-chapter-tile__number">}#1\HCode {</span>}\HCode {<span class="fvd-theme-chapter-tile__title">}#2\HCode {</span>}\HCode {</div>}}
+\newcommand {\FVDthemeoverviewempty }[0]{\emph {Voor dit thema zijn nog geen hoofdstukken toegevoegd.}}
+\newcommand {\hoofdstukoverzicht }[0]{\HCode {<section class="fvd-theme-overview">}\HCode {<h2 class="fvd-theme-overview__title">}Overzicht van de hoofdstukken\HCode {</h2>}\HCode {<div class="fvd-theme-overview__grid">}}
+\newcommand {\FVDResetExamples }[0]{\setcounter {fvdexample}{0}}
+\newcommand {\FVDExampleOptionalTitle }[1]{\if \relax \detokenize {#1}\relax \else \space ---\space #1\fi }
+\newcommand {\FVDbeginExercises }[0]{}
+\newcommand {\FVDendExercises }[0]{}
+\newcommand {\FVDwidebegin }[0]{}
+\newcommand {\FVDwideend }[0]{}
+\newcommand {\FVDResetExercises }[0]{\setcounter {fvdoefening}{0}}
+\newcommand {\oefB }[0]{}
+\newcommand {\oefU }[0]{}
+\newcommand {\oefG }[0]{}
+\newcommand {\ESS }[0]{}
+\newcommand {\oefB }[0]{\HCode {<span class="fvd-exercise-chip fvd-exercise-chip--b">B</span>}}
+\newcommand {\oefU }[0]{\HCode {<span class="fvd-exercise-chip fvd-exercise-chip--u">U</span>}}
+\newcommand {\oefG }[0]{\HCode {<span class="fvd-exercise-chip fvd-exercise-chip--g">G</span>}}
+\newcommand {\ESS }[0]{\HCode {<span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span>}}
+\newcommand {\FVDmodulecover }[0]{}
+\newcommand {\ESSinline }[0]{\tikz [baseline=-0.6ex]{\node [ fill=fvdEssBg, text=fvdEssText, rounded corners=1.5mm, minimum width=9mm, minimum height=5.5mm, inner sep=0pt, font=\sffamily \bfseries \scriptsize ] {$\blacklozenge $}; }}
+\newcommand {\oefBinline }[0]{\tikz [baseline=-0.6ex]{\node [ fill=fvdBasisBg, text=fvdBasisText, rounded corners=1.5mm, minimum width=9mm, minimum height=5.5mm, inner sep=0pt, font=\sffamily \bfseries \scriptsize ] {B}; }}
+\newcommand {\oefUinline }[0]{\tikz [baseline=-0.6ex]{\node [ fill=fvdVerdiepingBg, text=fvdVerdiepingText, rounded corners=1.5mm, minimum width=9mm, minimum height=5.5mm, inner sep=0pt, font=\sffamily \bfseries \scriptsize ] {U}; }}
+\newcommand {\oefGinline }[0]{\tikz [baseline=-0.6ex]{\node [ fill=fvdGevorderdBg, text=fvdGevorderdText, rounded corners=1.5mm, minimum width=9mm, minimum height=5.5mm, inner sep=0pt, font=\sffamily \bfseries \scriptsize ] {G}; }}
+\newcommand {\FVDNumberLine }[2]{\draw [fvd axis] (#1-0.6,0) -- (#2+0.6,0); \par \foreach \x in {#1,...,#2}{\draw [fvd tick] (\x ,0.13) -- (\x ,-0.13); \par \ifnum \x =0 \node [ below=3pt, text=fvdmagenta, font=\small \bfseries ] at (\x ,0) {0}; \else \node [ below=3pt, text=fvddark, font=\small ] at (\x ,0) {\x }; \fi }}
+\newcommand {\FVDPoint }[1]{\fill [fvdmagenta] (#1,0) circle (2.2pt); }
+\newcommand {\FVDPointCyan }[1]{\fill [fvdcyan] (#1,0) circle (2.2pt); }
+\newcommand {\FVDLabeledPoint }[2]{\fill [fvdmagenta] (#1,0) circle (2.2pt); \par \node [ fvd label, above=7pt ] at (#1,0) {#2}; }
+\newcommand {\FVDGuideUp }[2]{\draw [fvd guide] (#1,0.08) -- (#1,#2); }
+\newcommand {\FVDMoveLeft }[3]{\draw [ ->, line width=1.4pt, color=fvdcyan ] (#1,0.52) to[bend left=28] (#2,0.52); \par \node [ fill=white, draw=fvdcyan!40, text=fvddark, rounded corners=2pt, inner xsep=5pt, inner ysep=2pt, font=\small ] at (#2+1.5,1.15) {#3}; \par \FVDGuideUp {#1}{0.50} \FVDGuideUp {#2}{0.50} }
+\newcommand {\FVDMoveRight }[3]{\draw [ ->, line width=1.4pt, color=fvdcyan ] (#1,0.52) to[bend left=28] (#2,0.52); \par \node [ fill=white, draw=fvdcyan!40, text=fvddark, rounded corners=2pt, inner xsep=5pt, inner ysep=2pt, font=\small ] at (#1+2.0,1.15) {#3}; \par \FVDGuideUp {#1}{0.50} \FVDGuideUp {#2}{0.50} }
+\newcommand {\FVDPixelPlayer }[0]{\fill [fvddark] (0,4) rectangle (4,8); \par \fill [fvdcyan] (0.8,5.7) rectangle (1.7,6.6); \fill [fvdcyan] (2.8,5.7) rectangle (3.7,6.6); \par \fill [white] (1.05,5.95) rectangle (1.45,6.35); \fill [white] (3.05,5.95) rectangle (3.45,6.35); \par \fill [fvdmagenta] (1,1.5) rectangle (3.5,4); \par \fill [fvdcyan] (0,2.3) rectangle (1,3.8); \fill [fvdcyan] (3.5,2.3) rectangle (4.5,3.8); \par \fill [fvddark] (1,0) rectangle (1.9,1.5); \fill [fvddark] (2.6,0) rectangle (3.5,1.5); }
+\newcommand {\FVDPixelController }[0]{\fill [fvddark] (1,2) rectangle (11,7); \fill [fvddark] (0,3) rectangle (12,6); \fill [fvddark] (2,1) rectangle (4,3); \fill [fvddark] (8,1) rectangle (10,3); \par \fill [white] (1.5,2.5) rectangle (10.5,6.5); \fill [fvdcyan] (1.5,6.0) rectangle (10.5,6.5); \par \fill [fvddark] (2.2,4.1) rectangle (5.0,4.9); \fill [fvddark] (3.2,3.1) rectangle (4.0,5.9); \par \fill [fvdmagenta] (8.0,4.8) circle (0.42); \fill [fvdmagenta] (9.2,3.7) circle (0.42); \fill [fvdcyan] (6.9,3.7) circle (0.42); \fill [fvdcyan] (8.0,2.8) circle (0.42); \par \fill [fvddark] (5.2,4.15) rectangle (5.9,4.45); \fill [fvddark] (6.2,4.15) rectangle (6.9,4.45); }
+\newcommand {\FVDStartPositionFigure }[3]{\begin {center} \begin {tikzpicture}[ x=0.85cm, y=1cm, line cap=round, line join=round ] \par \par \FVDNumberLine {#1}{#2} \par \draw [fvd guide] (#3,0.08) -- (#3,0.70); \par \begin {scope}[shift={(#3-0.18,0.76)},scale=0.055] \FVDPixelPlayer \end {scope} \par \node [ fvd label ] at (#3,1.42) {startpositie \(#3\)}; \par \node [ anchor=east, text=fvdmagenta, font=\small \bfseries ] at (-0.35,-1) {negatieve richting}; \par \node [ anchor=west, text=fvdcyan, font=\small \bfseries ] at (0.35,-1) {positieve richting}; \par \end {tikzpicture} \end {center} }
+\newcommand {\FVDMovementLeftFigure }[5]{\begin {center} \begin {tikzpicture}[ x=0.85cm, y=1cm, line cap=round, line join=round ] \par (#1-0.8,-0.72) rectangle (#2+0.8,1.72); \par \FVDNumberLine {#1}{#2} \par \FVDPoint {#3} \FVDPointCyan {#4} \FVDMoveLeft {#3}{#4}{#5} \par \end {tikzpicture} \end {center} }
+\newcommand {\FVDMovementRightFigure }[5]{\begin {center} \begin {tikzpicture}[ x=0.85cm, y=1cm, line cap=round, line join=round ] \par \fill [fvdcyan!6] (#1-0.8,-0.72) rectangle (#2+0.8,1.72); \par \FVDNumberLine {#1}{#2} \par \FVDPoint {#3} \FVDPointCyan {#4} \FVDMoveRight {#3}{#4}{#5} \par \end {tikzpicture} \end {center} }
+\newcommand {\FVDCoordinatePlane }[4]{\draw [ step=1cm, color=fvdcyan!18, line width=0.35pt ] (#1,#3) grid (#2,#4); \par \draw [fvd axis] (#1,0) -- (#2+0.35,0) node[ below left=2pt, text=fvddark ] {\(x\)}; \par \draw [fvd axis] (0,#3) -- (0,#4+0.35) node[ below left=2pt, text=fvddark ] {\(y\)}; \par \foreach \x in {#1,...,#2}{\ifnum \x =0 \else \draw [fvd tick] (\x ,0.10) -- (\x ,-0.10); \node [ below=2pt, text=fvddark, font=\scriptsize ] at (\x ,0) {\x }; \fi } \par \foreach \y in {#3,...,#4}{\ifnum \y =0 \else \draw [fvd tick] (0.10,\y ) -- (-0.10,\y ); \node [ left=2pt, text=fvddark, font=\scriptsize ] at (0,\y ) {\y }; \fi } \par \node [ below left=2pt, text=fvdmagenta, font=\scriptsize \bfseries ] at (0,0) {0}; }
+\newcommand {\FVDCoordinatePoint }[3]{\draw [fvd guide] (#1,0) -- (#1,#2); \draw [fvd guide] (0,#2) -- (#1,#2); \par \fill [fvdmagenta] (#1,#2) circle (2.2pt); \par \node [ fvd label, above right=3pt ] at (#1,#2) {\(#3\)}; }
+\newcommand {\luastring }[1]{"\luatexluaescapestring {#1}"}
+\newcommand {\luastringO }[1]{\luastring {\unexpanded \expandafter {#1}}}
+\newcommand {\luastringN }[1]{\luastring {\unexpanded {#1}}}
+\newcommand {\RestoreMathJaxEnvironment }[1]{\expandafter \let \csname #1\expandafter \endcsname \csname mathjax-#1\endcsname \expandafter \let \csname end#1\expandafter \endcsname \csname mathjax-end#1\endcsname }
+\newcommand {\DeclareMicrotypeVariants }[1]{}
+\newcommand {\DeclareMicrotypeAlias }[2]{}
+\newcommand {\LoadMicrotypeFile }[1]{}
+\newcommand {\DeclareMicrotypeFilePrefix }[1]{}
+\newcommand {\DeclareMicrotypeBabelHook }[2]{}
+\newcommand {\microtypesetup }[1]{}
+\newcommand {\microtypecontext }[1]{}
+\newcommand {\textmicrotypecontext }[2]{#2}
+\newcommand {\leftprotrusion }[1]{#1}
+\newcommand {\rightprotrusion }[1]{#1}
+\newcommand {\noprotrusionifhmode }[0]{}
+\newcommand {\lsstyle }[0]{}
+\newcommand {\lslig }[1]{#1}
+\newcommand {\maketitle }[0]{}
+\newcommand {\problem }[0]{ }
+\newcommand {\exercise }[0]{ }
+\newcommand {\question }[0]{ }
+\newcommand {\exploration }[0]{ }
+\newcommand {\ConfigureTheoremEnv }[1]{\renewenvironment {#1}[1][]{\refstepcounter {problem}\ifthenelse {\equal {###1}{}}{}{\HCode {<span class="theorem-like-title">}###1\HCode {</span>}}}{} \ConfigureEnv {#1}{\stepcounter {identification}\ifvmode \IgnorePar \fi \EndP \HCode {<div class="theorem-like problem-environment #1" id="problem\arabic {identification}" titletext=" \GetTranslation {#1}">}}{\ifvmode \IgnorePar \fi \EndP \HCode {</div>}\IgnoreIndent }{}{}}
+\newcommand {\xmalt }[1]{\ifvmode \IgnorePar \fi \EndP \HCode {<details><summary>Show Alt Text</summary>} #1 \HCode {</details>}}
+\newcommand {\dialogue }[0]{\begin {description}}
+\newcommand {\foldable }[0]{\stepcounter {identification}\ifvmode \IgnorePar \fi \EndP \HCode {<div id="foldable\arabic {identification}" class="foldable">}}
+\newcommand {\unfoldable }[1]{\HCode {<span class="unfoldable">}#1\HCode {</span>}}
+\newcommand {\selectAll }[0]{\refstepcounter {problem}}
+\newcommand {\freeResponse }[0]{\refstepcounter {problem}}
+\newcommand {\javascript }[0]{\NoFonts }
+\newcommand {\sageCell }[0]{\NoFonts }
+\newcommand {\sageOutput }[0]{\NoFonts }
+\newcommand {\sagesilent }[0]{\NoFonts }
+\newcommand {\ungraded }[0]{\ifvmode \IgnorePar \fi \EndP \HCode {<div class="ungraded">}\IgnoreIndent }
+\newcommand {\accordion }[0]{\ifvmode \IgnorePar \fi \EndP \HCode {<div class="accordion">} }
+\newcommand {\expandable }[2]{\stepcounter {identification}\ifvmode \IgnorePar \fi \EndP \HCode {<div class="accordion">\Hnewline }\HCode {<h3 class="#1">}#2\HCode {</h3>\Hnewline }\HCode {<div id="accordion-item\arabic {identification}" class="accordion-item #1-content">\Hnewline } }
+\newcommand {\paragraph }[1]{\HCode {<span class="paragraphHead">}#1\HCode {</span>}\par \IgnorePar }
+\newcommand {\subparagraph }[1]{\HCode {<span class="subparagraphHead">}#1\HCode {</span>}\par \IgnorePar }
+\newcommand {\outcome }[1]{\HCode {<span class="learning-outcome">#1</span>} }
+\newcommand {\javascriptCode }[0]{\NoFonts }
+\newcommand {\GetTranslation }[1]{#1}
+\newcommand {\ref }[1]{\HCode {<a class="reference" href="\##1">#1</a>}}</script></div>
+<style> .activity-body pre { white-space: pre; background-color: lightgray; } .xmyoutube { aspect-ratio: 16/9; min-width: 75%; } .image-environment img { width: unset; } </style> 
+
+<div class='maketitle'></div>
+<!--  l. 59  --><section class='learning-box learning-box--prior'> <div class='learning-box__header'> <span class='learning-box__icon'> </span><span class='learning-box__title'>Voorkennis</span> </div> <div class='learning-box__content'> 
+     
+<ul class='itemize1'>
+<li class='itemize'>Je kent de bouw van een atoom met protonen, neutronen en elektronen.
+</li>
+<li class='itemize'>Je kan krachten als vectoren voorstellen.
+</li>
+<li class='itemize'>Je kent de drie wetten van Newton.
+</li>
+<li class='itemize'>Je kan meerdere krachten vectorieel combineren.
+</li>
+<li class='itemize'>Je kan werken met machten van tien en wetenschappelijke notatie.
+</li>
+<li class='itemize'>Je kan SI-eenheden en voorvoegsels correct gebruiken.
+</li>
+<li class='itemize'>Je kent het begrip omgekeerd kwadratisch verband uit het hoofdstuk over
+gravitatie.</li></ul>
+<!--  l. 69  --></div> </section> 
+<!--  l. 76  --><section class='learning-box learning-box--goals'> <div class='learning-box__header'> <span class='learning-box__icon'> </span><span class='learning-box__title'>Leerdoelen</span> </div> <div class='learning-box__content'> 
+     
+<ul class='itemize1'>
+<li class='itemize'>Je  kan  positieve,  negatieve  en  neutrale  voorwerpen  microscopisch
+verklaren.
+                                                                  
+
+                                                                  
+</li>
+<li class='itemize'>Je kan elektrische lading correct voorstellen met het symbool <span class='mathjax-inline'>\(q\)</span> of <span class='mathjax-inline'>\(Q\)</span> en de
+eenheid coulomb.
+</li>
+<li class='itemize'>Je  kan  de  elementaire  lading  gebruiken  om  het  aantal  overgedragen
+elektronen te bepalen.
+</li>
+<li class='itemize'>Je kan het behoud van elektrische lading toepassen.
+</li>
+<li class='itemize'>Je kan verklaren hoe voorwerpen elektrisch geladen kunnen worden.
+</li>
+<li class='itemize'>Je  kan  geleiders  en  isolatoren  onderscheiden  vanuit  hun  atomaire
+structuur.
+</li>
+<li class='itemize'>Je kan elektrostatische influentie verklaren.
+</li>
+<li class='itemize'>Je kan aantrekking en afstoting tussen geladen voorwerpen analyseren.
+</li>
+<li class='itemize'>Je kan de wet van Coulomb interpreteren en toepassen.
+</li>
+<li class='itemize'>Je kan de elektrische kracht vectorieel voorstellen.
+</li>
+<li class='itemize'>Je kan Newton III toepassen op elektrische wisselwerkingen.
+</li>
+<li class='itemize'>Je kan analyseren hoe de Coulombkracht verandert wanneer ladingen of
+afstand veranderen.
+                                                                  
+
+                                                                  
+</li>
+<li class='itemize'>Je   kan   elektrische   krachten   van   meerdere   puntladingen   vectorieel
+combineren.
+</li>
+<li class='itemize'>Je kan overeenkomsten en verschillen tussen gravitatiekracht en elektrische
+kracht uitleggen.
+</li>
+<li class='itemize'>Je  kan  elektrostatische  verschijnselen  in  technologische  en  alledaagse
+situaties verklaren.</li></ul>
+<!--  l. 102  --></div> </section> 
+<p><a id='x1-2r1'></a>
+</p><!--  l. 109  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>1</div><div class='fvd-section-bar__title'>Elektriciteit zonder elektrische stroom</div></div>
+<!--  l. 111  --><p class='noindent'>Elektriciteit associëren we vaak met stopcontacten, batterijen, elektrische
+schakelingen en toestellen.
+</p><!--  l. 114  --><p class='noindent'>Maar elektrische verschijnselen kunnen ook optreden zonder dat er een blijvende
+elektrische stroom door een schakeling loopt.
+</p><!--  l. 117  --><p class='noindent'>Denk bijvoorbeeld aan:
+</p>     
+<ul class='itemize1'>
+<li class='itemize'>haren die rechtop gaan staan wanneer je een trui uittrekt;
+</li>
+<li class='itemize'>een plastic kam die papiersnippers aantrekt;
+</li>
+<li class='itemize'>een ballon die na het wrijven aan een muur blijft hangen;
+</li>
+<li class='itemize'>een kleine vonk wanneer je een metalen deurklink aanraakt;
+</li>
+<li class='itemize'>bliksem tijdens een onweersbui.</li></ul>
+                                                                  
+
+                                                                  
+<!--  l. 127  --><p class='noindent'>Deze verschijnselen noemen we <strong>elektrostatische verschijnselen</strong>.
+</p><!--  l. 129  --><p class='noindent'>Ze hebben te maken met elektrische ladingen en met de krachten die elektrische
+ladingen op elkaar uitoefenen.
+<a id='x1-3r2'></a>
+</p><!--  l. 137  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>2</div><div class='fvd-section-bar__title'>Een eerste experiment</div></div>
+<!--  l. 139  --><p class='noindent'>Neem een kunststofstaaf en breng die in de buurt van enkele kleine papiersnippers.
+</p><!--  l. 142  --><p class='noindent'>Zonder verdere behandeling gebeurt er meestal weinig.
+</p><!--  l. 144  --><p class='noindent'>Wrijf de staaf vervolgens met een geschikte doek en breng ze opnieuw in de buurt van
+de papiersnippers.
+</p><!--  l. 147  --><p class='noindent'>De snippers worden nu aangetrokken.
+</p><!--  l. 149  --><p class='noindent'>Er is blijkbaar iets veranderd aan de staaf.
+</p><!--  l. 153  --><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span></div><div class='fvd-remark__content'>
+<!--  l. 154  --><p class='noindent'>We zeggen dat de staaf door het wrijven in een <strong>elektrisch geladen toestand</strong> is
+gebracht.
+</p><!--  l. 157  --><p class='noindent'>Het wrijven heeft geen elektrische lading uit het niets gemaakt. Het heeft reeds
+aanwezige elektrische ladingen verplaatst.
+</p></div></section>
+<!--  l. 163  --><p class='noindent'>Dat onderscheid zal verderop belangrijk worden.
+<a id='x1-4r3'></a>
+</p><!--  l. 170  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>3</div><div class='fvd-section-bar__title'>Twee soorten elektrische lading</div></div>
+<!--  l. 172  --><p class='noindent'>We kunnen het experiment uitbreiden.
+</p><!--  l. 174  --><p class='noindent'>Hang een geladen kunststofstaaf vrij op en breng een tweede, op dezelfde manier
+geladen staaf in de buurt.
+</p><!--  l. 177  --><p class='noindent'>We stellen vast dat beide staven elkaar afstoten.
+</p><!--  l. 179  --><p class='noindent'>Gebruiken we twee verschillende materialen die op geschikte wijze geladen werden,
+dan kunnen de staven elkaar juist aantrekken.
+</p><!--  l. 182  --><p class='noindent'>Uit zulke experimenten blijkt dat er twee soorten elektrische lading bestaan.
+</p><!--  l. 185  --><p class='noindent'>We noemen ze:
+</p>
+<div class='mathjax-block'>\[ \boxed {\text {positieve lading}} \]</div>
+<!--  l. 191  --><p class='noindent'>en
+</p>
+<div class='mathjax-block'>\[ \boxed {\text {negatieve lading}}. \]</div>
+<!--  l. 198  --><p class='noindent'>Voor de krachtwerking geldt:
+</p>
+<div class='mathjax-block'>\[ \boxed { \text {gelijknamige ladingen stoten elkaar af} } \]</div>
+                                                                  
+
+                                                                  
+<!--  l. 206  --><p class='noindent'>en
+</p>
+<div class='mathjax-block'>\[ \boxed { \text {tegengestelde ladingen trekken elkaar aan}. } \]</div>
+<!--  l. 215  --><p class='noindent'>Schematisch:
+</p>
+<div class='mathjax-block'>\[ +\qquad +\qquad \Rightarrow \qquad \text {afstoting} \]</div>
+<div class='mathjax-block'>\[ -\qquad -\qquad \Rightarrow \qquad \text {afstoting} \]</div>
+<div class='mathjax-block'>\[ +\qquad -\qquad \Rightarrow \qquad \text {aantrekking}. \]</div>
+<!--  l. 230  --><p class='noindent'>Hier zien we meteen een fundamenteel verschil met gravitatie.
+</p><!--  l. 232  --><p class='noindent'>Bij gravitatie tussen gewone massa’s vonden we alleen aantrekking.
+</p><!--  l. 234  --><p class='noindent'>Bij elektrische interacties zijn zowel aantrekking als afstoting mogelijk.
+<a id='x1-5r4'></a>
+</p><!--  l. 242  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>4</div><div class='fvd-section-bar__title'>Elektrische lading</div></div>
+<!--  l. 244  --><p class='noindent'>Elektrische lading is een fundamentele eigenschap van materie.
+</p><!--  l. 246  --><p class='noindent'>We stellen elektrische lading meestal voor door:
+</p>
+<div class='mathjax-block'>\[ q \qquad \text {of}\qquad Q. \]</div>
+<!--  l. 254  --><p class='noindent'>De SI-eenheid van elektrische lading is de <strong>coulomb</strong>:
+</p>
+<div class='mathjax-block'>\[ \boxed { [q]=\mathrm C. } \]</div>
+<!--  l. 263  --><p class='noindent'>Eén coulomb is voor elektrostatische verschijnselen een grote hoeveelheid lading.
+Daarom gebruiken we vaak kleinere eenheden:
+</p>
+<div class='mathjax-block'>\[ 1\,\mathrm {mC}=10^{-3}\,\mathrm C, \]</div>
+<div class='mathjax-block'>\[ 1\,\mathrm {\mu C}=10^{-6}\,\mathrm C, \]</div>
+<div class='mathjax-block'>\[ 1\,\mathrm {nC}=10^{-9}\,\mathrm C, \]</div>
+<div class='mathjax-block'>\[ 1\,\mathrm {pC}=10^{-12}\,\mathrm C. \]</div>
+<p><a id='x1-6r1'></a>
+</p><!--  l. 283  --><section class='fvd-exercise'>
+<!--  l. 283  --><div class='fvd-exercise__title'>
+<!--  l. 283  --><p class='noindent'>Oefening 1
+</p><!--  l. 283  --><p class='noindent'>— Voorvoegsels
+</p><!--  l. 283  --></div>
+<!--  l. 283  --><div class='fvd-exercise__body'>
+<!--  l. 283  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+                                                                  
+
+                                                                  
+<!--  l. 283  --><div class='fvd-exercise__content'>
+<!--  l. 285  --><p class='noindent'>Zet om naar coulomb.
+</p>     
+<ol class='enumerate1'>
+<li class='enumerate' id='x1-8x1'><span class='mathjax-inline'>\(4{,}5\,\mathrm {\mu C}\)</span>
+</li>
+<li class='enumerate' id='x1-10x2'><span class='mathjax-inline'>\(28\,\mathrm {nC}\)</span>
+</li>
+<li class='enumerate' id='x1-12x3'><span class='mathjax-inline'>\(0{,}75\,\mathrm {mC}\)</span>
+</li>
+<li class='enumerate' id='x1-14x4'><span class='mathjax-inline'>\(350\,\mathrm {pC}\)</span></li></ol>
+</div>
+<!--  l. 294  --></div>
+<!--  l. 294  --></section>
+<p><a id='x1-15r5'></a>
+</p><!--  l. 301  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>5</div><div class='fvd-section-bar__title'>Waar komt elektrische lading vandaan?</div></div>
+<!--  l. 303  --><p class='noindent'>Om elektrostatische verschijnselen te begrijpen moeten we naar de atomaire
+structuur van materie kijken.
+</p><!--  l. 306  --><p class='noindent'>Een atoom bestaat uit:
+</p>     
+<ul class='itemize1'>
+<li class='itemize'>protonen;
+</li>
+<li class='itemize'>neutronen;
+                                                                  
+
+                                                                  
+</li>
+<li class='itemize'>elektronen.</li></ul>
+<!--  l. 314  --><p class='noindent'>Protonen en neutronen bevinden zich in de kern.
+</p><!--  l. 316  --><p class='noindent'>Elektronen bevinden zich rondom de kern.
+</p><!--  l. 319  --><p class='noindent'>De elektrische eigenschappen zijn:
+</p>
+<div class='mathjax-block'>\[ \begin{array}{c|c} \text {deeltje} &amp; \text {elektrische lading}\\ \hline \text {proton} &amp; +e\\ \text {elektron} &amp; -e\\ \text {neutron} &amp; 0 \end{array} \]</div>
+<!--  l. 332  --><p class='noindent'>De grootte van de lading van één proton of elektron noemen we de <strong>elementaire
+lading</strong>:
+</p>
+<div class='mathjax-block'>\[ \boxed { e=1{,}602\times 10^{-19}\,\mathrm C. } \]</div>
+<!--  l. 341  --><p class='noindent'>Dus:
+</p>
+<div class='mathjax-block'>\[ q_p=+e \]</div>
+<!--  l. 347  --><p class='noindent'>en
+</p>
+<div class='mathjax-block'>\[ q_e=-e. \]</div>
+<p><a id='x1-16r6'></a>
+</p><!--  l. 358  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>6</div><div class='fvd-section-bar__title'>Wanneer is een voorwerp geladen?</div></div>
+<!--  l. 360  --><p class='noindent'>Een neutraal atoom bevat evenveel protonen als elektronen.
+</p><!--  l. 362  --><p class='noindent'>De totale positieve lading is dan even groot als de totale negatieve lading.
+</p><!--  l. 365  --><p class='noindent'>Daardoor is:
+</p>
+<div class='mathjax-block'>\[ \boxed {q_\mathrm {netto}=0.} \]</div>
+<!--  l. 372  --><p class='noindent'>Een voorwerp wordt negatief geladen wanneer het een overschot aan elektronen
+heeft.
+</p><!--  l. 375  --><p class='noindent'>Een voorwerp wordt positief geladen wanneer het een tekort aan elektronen
+heeft.
+</p>
+<div class='center'>
+<!--  l. 379  -->
+<div class='mathjax-block'>\[ \boxed { \begin{array}{c|c} \text {toestand} &amp; \text {microscopische betekenis}\\ \hline \text {neutraal} &amp; N_p=N_e \\[1mm] \text {positief geladen} &amp; N_p&gt;N_e \\[1mm] \text {negatief geladen} &amp; N_e&gt;N_p \end{array} } \]</div></div>
+                                                                  
+
+                                                                  
+<!--  l. 403  --><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span></div><div class='fvd-remark__content'>
+<!--  l. 404  --><p class='noindent'>Bij gewone elektrostatische processen zijn het voornamelijk <strong>elektronen</strong> die van het
+ene voorwerp naar het andere bewegen.
+</p><!--  l. 407  --><p class='noindent'>Wanneer een voorwerp positief geladen wordt, betekent dit dus meestal niet dat het
+extra protonen heeft opgenomen.
+</p><!--  l. 410  --><p class='noindent'>Het heeft elektronen afgestaan.
+</p></div></section>
+<p><a id='x1-17r7'></a>
+</p><!--  l. 419  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>7</div><div class='fvd-section-bar__title'>Ionen</div></div>
+<!--  l. 421  --><p class='noindent'>Wanneer een atoom elektronen verliest of opneemt, is het niet langer elektrisch
+neutraal.
+</p><!--  l. 424  --><p class='noindent'>Zo’n geladen atoom noemen we een <strong>ion</strong>.
+</p><!--  l. 426  --><p class='noindent'>Een atoom dat één of meerdere elektronen verliest, wordt positief geladen.
+</p><!--  l. 429  --><p class='noindent'>Een atoom dat één of meerdere elektronen opneemt, wordt negatief geladen.
+<a id='x1-18r2'></a>
+</p><!--  l. 433  --><section class='fvd-exercise'>
+<!--  l. 433  --><div class='fvd-exercise__title'>
+<!--  l. 433  --><p class='noindent'>Oefening 2
+</p><!--  l. 433  --><p class='noindent'>— Lithium
+</p><!--  l. 433  --></div>
+<!--  l. 433  --><div class='fvd-exercise__body'>
+<!--  l. 433  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span></div>
+<!--  l. 433  --><div class='fvd-exercise__content'>
+<!--  l. 435  --><p class='noindent'>Een neutraal lithiumatoom bevat drie protonen.
+</p>     
+<ol class='enumerate1'>
+<li class='enumerate' id='x1-20x1'>Hoeveel elektronen bevat het neutrale atoom?
+</li>
+<li class='enumerate' id='x1-22x2'>Het atoom staat één elektron af. Wat is het teken van de resulterende
+lading?
+</li>
+                                                                  
+
+                                                                  
+<li class='enumerate' id='x1-24x3'>Hoe groot is die lading?</li></ol>
+</div>
+<!--  l. 444  --></div>
+<!--  l. 444  --></section>
+<p><a id='x1-25r8'></a>
+</p><!--  l. 451  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>8</div><div class='fvd-section-bar__title'>Elektrische lading komt in pakketjes</div></div>
+<!--  l. 453  --><p class='noindent'>Omdat elektronen een vaste elementaire lading hebben, kan de netto lading van een
+voorwerp niet zomaar elke willekeurige waarde aannemen.
+</p><!--  l. 456  --><p class='noindent'>Voor een voorwerp dat een netto aantal <span class='mathjax-inline'>\(n\)</span> elementaire ladingen heeft, geldt:
+</p>
+<div class='mathjax-block'>\[ \boxed { q=ne. } \]</div>
+<!--  l. 465  --><p class='noindent'>Hierbij is <span class='mathjax-inline'>\(n\)</span> een geheel getal wanneer we het teken in <span class='mathjax-inline'>\(n\)</span> opnemen.
+</p><!--  l. 467  --><p class='noindent'>Voor de grootte van de lading kunnen we schrijven:
+</p>
+<div class='mathjax-block'>\[ \boxed { |q|=Ne } \]</div>
+<!--  l. 475  --><p class='noindent'>met <span class='mathjax-inline'>\(N\)</span> het aantal overtollige of ontbrekende elektronen.
+</p><!--  l. 478  --><p class='noindent'>Dit noemen we de <strong>kwantisatie van elektrische lading</strong>.
+<a id='x1-26r1'></a>
+</p><!--  l. 481  --><section class='fvd-example'>
+<!--  l. 481  --><div class='fvd-example__title'>Voorbeeld 1<span class='fvd-example__subtitle'> — Hoeveel elektronen?</span></div>
+<!--  l. 481  --><div class='fvd-example__content'>
+<!--  l. 483  --><p class='noindent'>Een voorwerp heeft een lading
+</p>
+<div class='mathjax-block'>\[ q=-3{,}20\times 10^{-6}\,\mathrm C. \]</div>
+<!--  l. 489  --><p class='noindent'>Het minteken vertelt ons dat er een overschot aan elektronen is.
+</p><!--  l. 491  --><p class='noindent'>Het aantal extra elektronen is:
+</p>
+<div class='mathjax-block'>\[ N=\frac {|q|}{e}. \]</div>
+<!--  l. 497  --><p class='noindent'>Dus:
+</p>
+<div class='mathjax-block'>\[ N= \frac {3{,}20\times 10^{-6}} {1{,}602\times 10^{-19}}. \]</div>
+<!--  l. 505  --><p class='noindent'>Daaruit volgt ongeveer:
+</p>
+<div class='mathjax-block'>\[ \boxed { N=2{,}00\times 10^{13}. } \]</div>
+                                                                  
+
+                                                                  
+<!--  l. 513  --><p class='noindent'>Een lading van enkele microcoulomb komt dus al overeen met een enorm aantal
+elektronen.
+</p></div></section>
+<p><a id='x1-27r3'></a>
+</p><!--  l. 519  --><section class='fvd-exercise'>
+<!--  l. 519  --><div class='fvd-exercise__title'>
+<!--  l. 519  --><p class='noindent'>Oefening 3
+</p><!--  l. 519  --><p class='noindent'>— Een coulomb
+</p><!--  l. 519  --></div>
+<!--  l. 519  --><div class='fvd-exercise__body'>
+<!--  l. 519  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<!--  l. 519  --><div class='fvd-exercise__content'>
+<!--  l. 521  --><p class='noindent'>Hoeveel elektronen zijn nodig om een netto lading met grootte
+</p>
+<div class='mathjax-block'>\[ 1{,}00\,\mathrm C \]</div>
+<!--  l. 527  --><p class='noindent'>te verkrijgen?
+</p></div>
+<!--  l. 529  --></div>
+<!--  l. 529  --></section>
+<p><a id='x1-28r4'></a>
+</p><!--  l. 532  --><section class='fvd-exercise'>
+<!--  l. 532  --><div class='fvd-exercise__title'>
+<!--  l. 532  --><p class='noindent'>Oefening 4
+</p><!--  l. 532  --><p class='noindent'>— Mogelijke lading?
+</p><!--  l. 532  --></div>
+<!--  l. 532  --><div class='fvd-exercise__body'>
+<!--  l. 532  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<!--  l. 532  --><div class='fvd-exercise__content'>
+<!--  l. 534  --><p class='noindent'>Een leerling beweert dat een klein voorwerp een netto lading heeft van
+</p>
+<div class='mathjax-block'>\[ q=2{,}50\times 10^{-19}\,\mathrm C. \]</div>
+<!--  l. 540  --><p class='noindent'>Onderzoek met het model van gekwantiseerde lading of deze waarde mogelijk
+is.
+</p></div>
+                                                                  
+
+                                                                  
+<!--  l. 543  --></div>
+<!--  l. 543  --></section>
+<p><a id='x1-29r9'></a>
+</p><!--  l. 550  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>9</div><div class='fvd-section-bar__title'>Elektrische lading wordt niet gemaakt door wrijving</div></div>
+<!--  l. 552  --><p class='noindent'>Wanneer we twee materialen over elkaar wrijven, zeggen we soms informeel dat we
+“lading opwekken”.
+</p><!--  l. 555  --><p class='noindent'>Dat is misleidend.
+</p><!--  l. 557  --><p class='noindent'>De elektrische lading was al aanwezig in de materie.
+</p><!--  l. 559  --><p class='noindent'>Door het wrijven kunnen elektronen van het ene materiaal naar het andere worden
+overgedragen.
+</p><!--  l. 562  --><p class='noindent'>Het ene voorwerp krijgt daardoor een elektronenoverschot.
+</p><!--  l. 564  --><p class='noindent'>Het andere krijgt een even groot elektronentekort.
+</p><!--  l. 567  --><p class='noindent'>Voor een geïsoleerd systeem geldt het behoud van elektrische lading:
+</p>
+<div class='mathjax-block'>\[ \boxed { Q_\mathrm {voor}=Q_\mathrm {na}. } \]</div>
+<!--  l. 577  --><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span></div><div class='fvd-remark__content'>
+<!--  l. 578  --><p class='noindent'>Elektrische lading kan binnen een systeem worden verplaatst of gescheiden.
+</p><!--  l. 581  --><p class='noindent'>De totale elektrische lading van een geïsoleerd systeem blijft behouden.
+</p></div></section>
+<p><a id='x1-30r5'></a>
+</p><!--  l. 587  --><section class='fvd-exercise'>
+<!--  l. 587  --><div class='fvd-exercise__title'>
+<!--  l. 587  --><p class='noindent'>Oefening 5
+</p><!--  l. 587  --><p class='noindent'>— Ladingsoverdracht
+</p><!--  l. 587  --></div>
+<!--  l. 587  --><div class='fvd-exercise__body'>
+<!--  l. 587  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<!--  l. 587  --><div class='fvd-exercise__content'>
+<!--  l. 589  --><p class='noindent'>Twee aanvankelijk neutrale voorwerpen worden tegen elkaar gewreven.
+</p><!--  l. 591  --><p class='noindent'>Na afloop heeft voorwerp A een lading
+</p>
+<div class='mathjax-block'>\[ q_A=-4{,}0\,\mathrm {nC}. \]</div>
+<!--  l. 597  --><p class='noindent'>Neem aan dat het systeem elektrisch geïsoleerd is.
+</p>     
+<ol class='enumerate1'>
+                                                                  
+
+                                                                  
+<li class='enumerate' id='x1-32x1'>Welke lading heeft voorwerp B?
+</li>
+<li class='enumerate' id='x1-34x2'>Welk voorwerp heeft elektronen opgenomen?
+</li>
+<li class='enumerate' id='x1-36x3'>Hoeveel elektronen zijn ongeveer overgedragen?</li></ol>
+</div>
+<!--  l. 605  --></div>
+<!--  l. 605  --></section>
+<p><a id='x1-37r10'></a>
+</p><!--  l. 612  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>10</div><div class='fvd-section-bar__title'>Laden door wrijving</div></div>
+<!--  l. 614  --><p class='noindent'>Bij contact tussen verschillende materialen kunnen elektronen worden overgedragen.
+</p><!--  l. 617  --><p class='noindent'>Door wrijving wordt het contact tussen de oppervlakken sterk vergroot en wordt
+ladingsscheiding vaak duidelijk waarneembaar.
+</p><!--  l. 620  --><p class='noindent'>Wanneer materiaal A elektronen overdraagt aan materiaal B:
+</p>
+<div class='mathjax-block'>\[ A\longrightarrow A^+, \]</div>
+<div class='mathjax-block'>\[ B\longrightarrow B^-. \]</div>
+<!--  l. 630  --><p class='noindent'>Het is dus niet de wrijving zelf die nieuwe lading creëert.
+</p><!--  l. 632  --><p class='noindent'>De wrijving helpt bestaande ladingen te scheiden.
+<a id='x1-38r11'></a>
+</p><!--  l. 639  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>11</div><div class='fvd-section-bar__title'>Laden door contact</div></div>
+<!--  l. 641  --><p class='noindent'>Een geladen voorwerp kan ook lading overdragen door rechtstreeks contact met een
+ander voorwerp.
+</p><!--  l. 644  --><p class='noindent'>Stel dat een negatief geladen metalen bol een neutrale metalen bol aanraakt.
+</p><!--  l. 647  --><p class='noindent'>Omdat elektronen zich in metaal gemakkelijk kunnen verplaatsen, kunnen een aantal
+overtollige elektronen zich over beide bollen verdelen.
+</p><!--  l. 650  --><p class='noindent'>Na het contact kunnen beide bollen negatief geladen zijn.
+</p><!--  l. 652  --><p class='noindent'>De totale lading blijft daarbij behouden.
+<a id='x1-39r12'></a>
+                                                                  
+
+                                                                  
+</p><!--  l. 659  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>12</div><div class='fvd-section-bar__title'>Waarom beweegt lading in sommige materialen gemakkelijker?</div></div>
+<!--  l. 661  --><p class='noindent'>Niet elk materiaal reageert op dezelfde manier op elektrische lading.
+</p><!--  l. 663  --><p class='noindent'>We onderscheiden twee belangrijke groepen.
+</p><!--  l. 666  --><section class='fvd-definition'><div class='fvd-definition__title'><span class='fvd-definition__label'>DEFINITIE</span><span class='fvd-definition__separator'> — </span><span class='fvd-definition__name'>Geleider</span></div><div class='fvd-definition__content'>
+<!--  l. 668  --><p class='noindent'>Een <strong>geleider</strong> is een materiaal waarin elektrische ladingen zich gemakkelijk door het
+materiaal kunnen verplaatsen.
+</p></div></section>
+<!--  l. 674  --><section class='fvd-definition'><div class='fvd-definition__title'><span class='fvd-definition__label'>DEFINITIE</span><span class='fvd-definition__separator'> — </span><span class='fvd-definition__name'>Isolator</span></div><div class='fvd-definition__content'>
+<!--  l. 676  --><p class='noindent'>Een <strong>isolator</strong> is een materiaal waarin elektrische ladingen zich niet gemakkelijk over
+grote afstanden door het materiaal kunnen verplaatsen.
+</p></div></section>
+<!--  l. 683  --><p class='noindent'>Metalen zijn goede geleiders.
+</p><!--  l. 685  --><p class='noindent'>Voorbeelden van isolatoren zijn onder andere glas, droge lucht en veel kunststoffen.
+<a id='x1-40r13'></a>
+</p><!--  l. 693  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>13</div><div class='fvd-section-bar__title'>Een microscopisch model van een metalen geleider</div></div>
+<!--  l. 695  --><p class='noindent'>In een metaal zijn sommige buitenste elektronen relatief zwak aan één specifiek
+atoom gebonden.
+</p><!--  l. 698  --><p class='noindent'>We kunnen een metaal vereenvoudigd voorstellen als een rooster van positieve ionen
+waarin elektronen zich relatief vrij kunnen bewegen.
+</p><!--  l. 701  --><p class='noindent'>Deze mobiele elektronen noemen we vaak <strong>vrije elektronen</strong> of <strong>geleidingselektronen</strong>.
+</p><!--  l. 704  --><p class='noindent'>Wanneer ergens op een metalen voorwerp een overschot aan elektronen wordt
+aangebracht, kunnen deze elektronen zich over het voorwerp herverdelen.
+</p><!--  l. 708  --><p class='noindent'>Bij een isolator zijn de relevante elektronen veel sterker lokaal gebonden.
+</p><!--  l. 711  --><p class='noindent'>Een aangebrachte lading blijft daardoor veel meer in de buurt van de plaats waar ze
+werd aangebracht.
+<a id='x1-41r6'></a>
+</p><!--  l. 715  --><section class='fvd-exercise'>
+<!--  l. 715  --><div class='fvd-exercise__title'>
+<!--  l. 715  --><p class='noindent'>Oefening 6
+</p><!--  l. 715  --><p class='noindent'>— Geleider of isolator?
+</p><!--  l. 715  --></div>
+<!--  l. 715  --><div class='fvd-exercise__body'>
+<!--  l. 715  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<!--  l. 715  --><div class='fvd-exercise__content'>
+<!--  l. 717  --><p class='noindent'>Leg voor elk van de volgende uitspraken uit of ze past bij een geleider of een
+                                                                  
+
+                                                                  
+isolator.
+</p>     
+<ol class='enumerate1'>
+<li class='enumerate' id='x1-43x1'>Overtollige elektronen kunnen zich gemakkelijk herverdelen.
+</li>
+<li class='enumerate' id='x1-45x2'>Een aangebrachte lading blijft grotendeels lokaal.
+</li>
+<li class='enumerate' id='x1-47x3'>Het materiaal bevat mobiele ladingsdragers.
+</li>
+<li class='enumerate' id='x1-49x4'>Het materiaal wordt gebruikt om een elektrische draad van de omgeving
+af te schermen.</li></ol>
+</div>
+<!--  l. 728  --></div>
+<!--  l. 728  --></section>
+<p><a id='x1-50r14'></a>
+</p><!--  l. 735  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>14</div><div class='fvd-section-bar__title'>Ladingen beïnvloeden elkaar zonder contact</div></div>
+<!--  l. 737  --><p class='noindent'>Breng een positief geladen voorwerp in de buurt van een neutrale metalen
+geleider.
+</p><!--  l. 740  --><p class='noindent'>De twee voorwerpen raken elkaar niet.
+</p><!--  l. 742  --><p class='noindent'>Toch gebeurt er iets in de geleider.
+</p><!--  l. 744  --><p class='noindent'>De vrije elektronen worden door de positieve externe lading aangetrokken.
+</p><!--  l. 747  --><p class='noindent'>Ze verplaatsen zich naar de zijde die het dichtst bij de positieve lading ligt.
+</p><!--  l. 750  --><p class='noindent'>Aan die kant ontstaat een elektronenoverschot.
+</p><!--  l. 752  --><p class='noindent'>Aan de andere kant ontstaat een elektronentekort.
+</p><!--  l. 754  --><p class='noindent'>De geleider als geheel kan nog steeds neutraal zijn, maar de ladingen zijn niet langer
+gelijkmatig verdeeld.
+</p><!--  l. 757  --><p class='noindent'>Dit noemen we <strong>elektrostatische influentie</strong>.
+</p><!--  l. 760  --><section class='fvd-definition'><div class='fvd-definition__title'><span class='fvd-definition__label'>DEFINITIE</span><span class='fvd-definition__separator'> — </span><span class='fvd-definition__name'>Elektrostatische influentie</span></div><div class='fvd-definition__content'>
+                                                                  
+
+                                                                  
+<!--  l. 762  --><p class='noindent'>Elektrostatische influentie is de herverdeling van elektrische lading in een voorwerp
+onder invloed van een nabijgelegen elektrische lading, zonder rechtstreeks contact met
+die externe lading.
+</p></div></section>
+<p><a id='x1-51r15'></a>
+</p><!--  l. 773  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>15</div><div class='fvd-section-bar__title'>Kan een geladen voorwerp een neutraal voorwerp aantrekken?</div></div>
+<!--  l. 775  --><p class='noindent'>Ja.
+</p><!--  l. 777  --><p class='noindent'>Dat is een belangrijke nuance.
+</p><!--  l. 779  --><p class='noindent'>“Neutraal” betekent:
+</p>
+<div class='mathjax-block'>\[ Q_\mathrm {netto}=0. \]</div>
+<!--  l. 785  --><p class='noindent'>Het betekent niet dat het voorwerp geen positieve en negatieve ladingen
+bevat.
+</p><!--  l. 788  --><p class='noindent'>Wanneer een geladen voorwerp in de buurt komt, kunnen de ladingen in het neutrale
+voorwerp enigszins verschuiven of polariseren.
+</p><!--  l. 791  --><p class='noindent'>De tegengestelde lading bevindt zich gemiddeld dichter bij de externe lading dan de
+gelijknamige lading.
+</p><!--  l. 794  --><p class='noindent'>Omdat elektrische kracht sterk afhangt van de afstand, kan daardoor een netto
+aantrekkingskracht ontstaan.
+</p><!--  l. 799  --><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span></div><div class='fvd-remark__content'>
+<!--  l. 800  --><p class='noindent'>Uit het feit dat twee voorwerpen elkaar aantrekken, mag je dus niet automatisch
+besluiten dat ze tegengesteld geladen zijn.
+</p><!--  l. 803  --><p class='noindent'>Eén van beide kan elektrisch neutraal zijn.
+</p><!--  l. 805  --><p class='noindent'>Afstoting is in dat opzicht een sterkere aanwijzing voor de tekens van de
+ladingen.
+</p></div></section>
+<p><a id='x1-52r7'></a>
+</p><!--  l. 811  --><section class='fvd-exercise'>
+<!--  l. 811  --><div class='fvd-exercise__title'>
+<!--  l. 811  --><p class='noindent'>Oefening 7
+</p><!--  l. 811  --><p class='noindent'>— Een geladen kam
+</p><!--  l. 811  --></div>
+<!--  l. 811  --><div class='fvd-exercise__body'>
+<!--  l. 811  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<!--  l. 811  --><div class='fvd-exercise__content'>
+<!--  l. 813  --><p class='noindent'>Een negatief geladen plastic kam trekt neutrale papiersnippers aan.
+                                                                  
+
+                                                                  
+</p><!--  l. 815  --><p class='noindent'>Een leerling zegt:
+</p><!--  l. 817  --><p class='noindent'>“De papiersnippers moeten dus positief geladen zijn.”
+</p><!--  l. 819  --><p class='noindent'>Analyseer deze uitspraak en geef een betere verklaring.
+</p></div>
+<!--  l. 821  --></div>
+<!--  l. 821  --></section>
+<p><a id='x1-53r16'></a>
+</p><!--  l. 828  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>16</div><div class='fvd-section-bar__title'>Aarding</div></div>
+<!--  l. 830  --><p class='noindent'>De aarde is zo groot dat ze in veel elektrostatische situaties als een enorm reservoir
+van elektrische lading kan worden beschouwd.
+</p><!--  l. 833  --><p class='noindent'>Wanneer een geleider elektrisch met de aarde verbonden wordt, kunnen elektronen
+van of naar de aarde bewegen.
+</p><!--  l. 836  --><p class='noindent'>Dit noemen we <strong>aarding</strong>.
+</p><!--  l. 838  --><p class='noindent'>Aarding kan daardoor worden gebruikt om ongewenste ladingsophoping te
+verminderen of om een voorwerp via influentie te laden.
+<a id='x1-54r17'></a>
+</p><!--  l. 846  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>17</div><div class='fvd-section-bar__title'>Laden zonder aanraken</div></div>
+<!--  l. 848  --><p class='noindent'>Een geleider kan zelfs een netto lading krijgen zonder rechtstreeks contact met het
+geladen voorwerp dat de ladingsscheiding veroorzaakt.
+</p><!--  l. 851  --><p class='noindent'>Een mogelijke procedure is:
+</p>     
+<ol class='enumerate1'>
+<li class='enumerate' id='x1-56x1'>breng een geladen voorwerp dicht bij een neutrale geleider;
+</li>
+<li class='enumerate' id='x1-58x2'>de vrije elektronen in de geleider herverdelen zich;
+</li>
+<li class='enumerate' id='x1-60x3'>verbind de geleider tijdelijk met de aarde;
+</li>
+<li class='enumerate' id='x1-62x4'>elektronen kunnen naar of vanuit de aarde bewegen;
+                                                                  
+
+                                                                  
+</li>
+<li class='enumerate' id='x1-64x5'>verbreek eerst de aardverbinding;
+</li>
+<li class='enumerate' id='x1-66x6'>verwijder daarna het externe geladen voorwerp.</li></ol>
+<!--  l. 862  --><p class='noindent'>De geleider kan dan netto geladen achterblijven.
+</p><!--  l. 864  --><p class='noindent'>Dit is laden door <strong>influentialading</strong>.
+<a id='x1-67r18'></a>
+</p><!--  l. 871  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>18</div><div class='fvd-section-bar__title'>STEM-toepassing: wanneer wordt statische elektriciteit gevaarlijk?</div></div>
+<!--  l. 873  --><p class='noindent'>Een kleine elektrostatische vonk is thuis meestal alleen vervelend.
+</p><!--  l. 875  --><p class='noindent'>In een industriële omgeving kan dezelfde fysica echter ernstige gevolgen
+hebben.
+</p><!--  l. 878  --><p class='noindent'>Bij het verpompen van brandstoffen, het transporteren van poeders of het bewegen
+van kunststofbanden kunnen door contact en wrijving ladingen gescheiden
+worden.
+</p><!--  l. 882  --><p class='noindent'>Wanneer die lading niet voldoende kan wegstromen, kan een groot potentiaalverschil
+ontstaan.
+</p><!--  l. 885  --><p class='noindent'>Een ontlading kan dan een vonk veroorzaken.
+</p><!--  l. 887  --><p class='noindent'>In een omgeving met brandbare dampen of fijn stof kan zo’n vonk een ontsteking
+veroorzaken.
+</p><!--  l. 890  --><p class='noindent'>Daarom worden in industriële installaties onder andere:
+</p>     
+<ul class='itemize1'>
+<li class='itemize'>geleidende verbindingen gebruikt;
+</li>
+<li class='itemize'>metalen onderdelen met elkaar verbonden;
+</li>
+<li class='itemize'>installaties geaard;
+</li>
+<li class='itemize'>ongewenste ladingsophopingen vermeden.</li></ul>
+<!--  l. 900  --><p class='noindent'>Dit is een mooi voorbeeld van hoe een fundamenteel fysisch concept rechtstreeks
+samenhangt met veiligheid en engineering.
+<a id='x1-68r19'></a>
+</p><!--  l. 908  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>19</div><div class='fvd-section-bar__title'>Hoe groot is de elektrische kracht?</div></div>
+<!--  l. 910  --><p class='noindent'>Tot nu toe konden we kwalitatief voorspellen of twee ladingen elkaar aantrekken of
+afstoten.
+</p><!--  l. 913  --><p class='noindent'>Maar fysica wil meer.
+</p><!--  l. 915  --><p class='noindent'>We willen ook voorspellen:
+</p>
+<div class='center'>
+<!--  l. 917  --><!--  l. 918  --><p class='noindent'><em>hoe groot is de kracht?</em></p></div>
+<!--  l. 921  --><p class='noindent'>Daarvoor gebruiken we de <strong>wet van Coulomb</strong>.
+<a id='x1-69r20'></a>
+</p><!--  l. 928  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>20</div><div class='fvd-section-bar__title'>Het puntladingmodel</div></div>
+<!--  l. 930  --><p class='noindent'>Net zoals we bij gravitatie massa’s soms als puntmassa’s modelleerden, kunnen we
+geladen voorwerpen soms als <strong>puntladingen</strong> beschouwen.
+</p><!--  l. 934  --><p class='noindent'>Een puntlading is een ideaal model waarbij we de afmetingen van het geladen
+voorwerp verwaarlozen ten opzichte van de afstanden in het probleem.
+</p><!--  l. 938  --><p class='noindent'>Dat model is niet altijd geldig.
+</p><!--  l. 940  --><p class='noindent'>Voor uitgebreide geladen voorwerpen met een complexe ladingsverdeling kan de
+situatie veel ingewikkelder worden.
+<a id='x1-70r21'></a>
+</p><!--  l. 948  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>21</div><div class='fvd-section-bar__title'>De wet van Coulomb</div></div>
+<!--  l. 950  --><p class='noindent'>Beschouw twee puntladingen <span class='mathjax-inline'>\(Q_1\)</span> en <span class='mathjax-inline'>\(Q_2\)</span> op onderlinge afstand <span class='mathjax-inline'>\(r\)</span>.
+</p><!--  l. 952  --><p class='noindent'>De grootte van de elektrische kracht tussen beide ladingen wordt gegeven
+door:
+</p><!--  l. 956  --><section class='fvd-definition'><div class='fvd-definition__title'><span class='fvd-definition__label'>DEFINITIE</span><span class='fvd-definition__separator'> — </span><span class='fvd-definition__name'>Wet van Coulomb</span></div><div class='fvd-definition__content'>
+
+<div class='mathjax-block'>\[ \boxed { F_e = k\frac {|Q_1Q_2|}{r^2}. } \]</div>
+<!--  l. 966  --><p class='noindent'>Hierin is:
+</p>
+<div class='mathjax-block'>\[ F_e=\text {grootte van de elektrische kracht}, \]</div>
+                                                                  
+
+                                                                  
+<div class='mathjax-block'>\[ Q_1,Q_2=\text {elektrische ladingen}, \]</div>
+<div class='mathjax-block'>\[ r=\text {afstand tussen de puntladingen}, \]</div>
+<!--  l. 980  --><p class='noindent'>en in vacuüm:
+</p>
+<div class='mathjax-block'>\[ \boxed { k\approx 8{,}99\times 10^9\, \frac {\mathrm {N\,m^2}}{\mathrm {C^2}}. } \]</div>
+</div></section>
+<!--  l. 992  --><p class='noindent'>De absolute waarde in
+</p>
+<div class='mathjax-block'>\[ |Q_1Q_2| \]</div>
+<!--  l. 998  --><p class='noindent'>zorgt ervoor dat de formule een positieve <strong>grootte</strong> voor de kracht oplevert.
+</p><!--  l. 1001  --><p class='noindent'>Het teken van de ladingen gebruiken we afzonderlijk om te bepalen of de kracht
+aantrekkend of afstotend is.
+<a id='x1-71r22'></a>
+</p><!--  l. 1009  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>22</div><div class='fvd-section-bar__title'>De elektrische kracht is een vector</div></div>
+<!--  l. 1011  --><p class='noindent'>De wet van Coulomb geeft de grootte van de kracht.
+</p><!--  l. 1013  --><p class='noindent'>Maar kracht is een vector.
+</p><!--  l. 1015  --><p class='noindent'>We moeten dus ook richting en zin bepalen.
+</p><!--  l. 1017  --><p class='noindent'>Voor twee puntladingen ligt de richting van de elektrische kracht langs de
+verbindingslijn tussen beide ladingen.
+</p><!--  l. 1021  --><p class='noindent'>Bij gelijknamige ladingen:
+</p>
+<div class='mathjax-block'>\[ +\quad \longleftarrow \qquad \longrightarrow \quad + \]</div>
+<!--  l. 1029  --><p class='noindent'>of:
+</p>
+<div class='mathjax-block'>\[ -\quad \longleftarrow \qquad \longrightarrow \quad - \]</div>
+<!--  l. 1037  --><p class='noindent'>De ladingen stoten elkaar af.
+</p><!--  l. 1040  --><p class='noindent'>Bij tegengestelde ladingen:
+</p>
+<div class='mathjax-block'>\[ +\quad \longrightarrow \qquad \longleftarrow \quad - \]</div>
+<!--  l. 1048  --><p class='noindent'>De ladingen trekken elkaar aan.
+</p><!--  l. 1051  --><p class='noindent'>Gebruik daarom bij elk Coulombprobleem twee afzonderlijke vragen:
+</p>
+<div class='mathjax-block'>\[ \boxed {\text {Hoe groot is de kracht?}} \]</div>
+<!--  l. 1057  --><p class='noindent'>en:
+</p>
+                                                                  
+
+                                                                  
+<div class='mathjax-block'>\[ \boxed {\text {In welke richting en zin werkt de kracht?}} \]</div>
+<p><a id='x1-72r23'></a>
+</p><!--  l. 1068  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>23</div><div class='fvd-section-bar__title'>Welke lading oefent de grootste kracht uit?</div></div>
+<!--  l. 1070  --><p class='noindent'>Stel:
+</p>
+<div class='mathjax-block'>\[ Q_1=+1\,\mathrm {\mu C} \]</div>
+<!--  l. 1076  --><p class='noindent'>en:
+</p>
+<div class='mathjax-block'>\[ Q_2=-10\,\mathrm {\mu C}. \]</div>
+<!--  l. 1082  --><p class='noindent'>Omdat <span class='mathjax-inline'>\(|Q_2|\)</span> tienmaal groter is dan <span class='mathjax-inline'>\(|Q_1|\)</span>, zou je kunnen denken dat <span class='mathjax-inline'>\(Q_2\)</span> een grotere kracht op <span class='mathjax-inline'>\(Q_1\)</span>
+uitoefent.
+</p><!--  l. 1085  --><p class='noindent'>Dat is fout.
+</p><!--  l. 1087  --><p class='noindent'>Volgens Newton III:
+</p>
+<div class='mathjax-block'>\[ \boxed { \vec F_{1\rightarrow 2} = -\vec F_{2\rightarrow 1}. } \]</div>
+<!--  l. 1097  --><p class='noindent'>De krachten hebben:
+</p>     
+<ul class='itemize1'>
+<li class='itemize'>dezelfde grootte;
+</li>
+<li class='itemize'>dezelfde richting;
+</li>
+<li class='itemize'>tegengestelde zin;
+</li>
+<li class='itemize'>een verschillend aangrijpingspunt.</li></ul>
+<!--  l. 1107  --><p class='noindent'>De wet van Coulomb bevestigt dat:
+</p>
+<div class='mathjax-block'>\[ F_e = k\frac {|Q_1Q_2|}{r^2}. \]</div>
+<!--  l. 1115  --><p class='noindent'>Het product
+</p>
+<div class='mathjax-block'>\[ |Q_1Q_2| \]</div>
+                                                                  
+
+                                                                  
+<!--  l. 1121  --><p class='noindent'>is voor beide krachten hetzelfde.
+<a id='x1-73r8'></a>
+</p><!--  l. 1124  --><section class='fvd-exercise'>
+<!--  l. 1124  --><div class='fvd-exercise__title'>
+<!--  l. 1124  --><p class='noindent'>Oefening 8
+</p><!--  l. 1124  --><p class='noindent'>— Newton III
+</p><!--  l. 1124  --></div>
+<!--  l. 1124  --><div class='fvd-exercise__body'>
+<!--  l. 1124  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<!--  l. 1124  --><div class='fvd-exercise__content'>
+<!--  l. 1126  --><p class='noindent'>Twee puntladingen zijn:
+</p>
+<div class='mathjax-block'>\[ Q_1=+2{,}0\,\mathrm {\mu C} \]</div>
+<!--  l. 1132  --><p class='noindent'>en:
+</p>
+<div class='mathjax-block'>\[ Q_2=-8{,}0\,\mathrm {\mu C}. \]</div>
+<!--  l. 1138  --><p class='noindent'>Een leerling zegt:
+</p><!--  l. 1140  --><p class='noindent'>“De lading van <span class='mathjax-inline'>\(-8{,}0\,\mathrm {\mu C}\)</span> trekt viermaal harder aan de andere lading.”
+</p><!--  l. 1143  --><p class='noindent'>Analyseer de uitspraak.
+</p></div>
+<!--  l. 1145  --></div>
+<!--  l. 1145  --></section>
+<p><a id='x1-74r24'></a>
+</p><!--  l. 1152  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>24</div><div class='fvd-section-bar__title'>Eenheden controleren</div></div>
+<!--  l. 1154  --><p class='noindent'>Uit
+</p>
+<div class='mathjax-block'>\[ F_e=k\frac {|Q_1Q_2|}{r^2} \]</div>
+<!--  l. 1160  --><p class='noindent'>volgt:
+</p>
+<div class='mathjax-block'>\[ [F_e] = \frac {\mathrm {N\,m^2}}{\mathrm {C^2}} \frac {\mathrm {C^2}}{\mathrm {m^2}}. \]</div>
+<!--  l. 1169  --><p class='noindent'>Dus:
+</p>
+<div class='mathjax-block'>\[ \boxed { [F_e]=\mathrm N. } \]</div>
+<!--  l. 1177  --><p class='noindent'>Ook hier vormen eenheden een krachtig controle-instrument.
+<a id='x1-75r25'></a>
+                                                                  
+
+                                                                  
+</p><!--  l. 1184  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>25</div><div class='fvd-section-bar__title'>Een eerste Coulombberekening</div></div>
+<p><a id='x1-76r2'></a>
+</p><!--  l. 1186  --><section class='fvd-example'>
+<!--  l. 1186  --><div class='fvd-example__title'>Voorbeeld 2<span class='fvd-example__subtitle'> — Twee tegengestelde ladingen</span></div>
+<!--  l. 1186  --><div class='fvd-example__content'>
+<!--  l. 1188  --><p class='noindent'>Twee puntladingen zijn:
+</p>
+<div class='mathjax-block'>\[ Q_1=+2{,}0\,\mathrm {\mu C} \]</div>
+<!--  l. 1194  --><p class='noindent'>en:
+</p>
+<div class='mathjax-block'>\[ Q_2=-3{,}0\,\mathrm {\mu C}. \]</div>
+<!--  l. 1200  --><p class='noindent'>De afstand tussen beide bedraagt:
+</p>
+<div class='mathjax-block'>\[ r=0{,}20\,\mathrm m. \]</div>
+<!--  l. 1206  --><p class='noindent'>We zoeken eerst de grootte van de elektrische kracht:
+</p>
+<div class='mathjax-block'>\[ F_e = k\frac {|Q_1Q_2|}{r^2}. \]</div>
+<!--  l. 1214  --><p class='noindent'>Zet de ladingen om naar coulomb:
+</p>
+<div class='mathjax-block'>\[ Q_1=2{,}0\times 10^{-6}\,\mathrm C, \]</div>
+<div class='mathjax-block'>\[ Q_2=-3{,}0\times 10^{-6}\,\mathrm C. \]</div>
+<!--  l. 1224  --><p class='noindent'>Invullen geeft:
+</p>
+<div class='mathjax-block'>\[ F_e = 8{,}99\times 10^9 \frac { (2{,}0\times 10^{-6}) (3{,}0\times 10^{-6}) }{ (0{,}20)^2 }. \]</div>
+<!--  l. 1238  --><p class='noindent'>Dus:
+</p>
+<div class='mathjax-block'>\[ \boxed { F_e\approx 1{,}35\,\mathrm N. } \]</div>
+<!--  l. 1246  --><p class='noindent'>Omdat de ladingen tegengesteld zijn, is de kracht <strong>aantrekkend</strong>.
+</p><!--  l. 1249  --><p class='noindent'>De krachtvector op elke lading wijst dus naar de andere lading.
+</p></div></section>
+<p><a id='x1-77r26'></a>
+</p><!--  l. 1258  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>26</div><div class='fvd-section-bar__title'>Een Coulombprobleem systematisch oplossen</div></div>
+<!--  l. 1260  --><p class='noindent'>Bij eenvoudige oefeningen lijkt rechtstreeks invullen aantrekkelijk.
+</p><!--  l. 1262  --><p class='noindent'>Bij meerdere ladingen werkt dat niet meer betrouwbaar.
+</p><!--  l. 1264  --><p class='noindent'>Gebruik daarom steeds dezelfde aanpak:
+                                                                  
+
+                                                                  
+</p>
+<div class='mathjax-block'>\[ \boxed { \begin{array}{c} \text {maak een schets} \\ \downarrow \\ \text {noteer gegeven en gevraagd} \\ \downarrow \\ \text {zet alle grootheden om naar SI-eenheden} \\ \downarrow \\ \text {bepaal aantrekking of afstoting} \\ \downarrow \\ \text {teken de krachtvector(en)} \\ \downarrow \\ \text {bereken de grootte(n)} \\ \downarrow \\ \text {combineer vectorieel indien nodig} \\ \downarrow \\ \text {controleer eenheid en grootteorde} \\ \downarrow \\ \text {interpreteer het antwoord} \end{array} } \]</div>
+<!--  l. 1307  --><p class='noindent'>Deze volgorde voorkomt een veel voorkomende fout:
+</p>
+<div class='center'>
+<!--  l. 1309  --><!--  l. 1310  --><p class='noindent'>eerst rekenen en pas daarna proberen te bedenken in welke richting de kracht
+werkt.</p></div>
+<!--  l. 1315  --><p class='noindent'>Bij vectorproblemen moet de fysische analyse juist <strong>voor</strong> de berekening gebeuren.
+<a id='x1-78r27'></a>
+</p><!--  l. 1323  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>27</div><div class='fvd-section-bar__title'>Hoe beïnvloedt de grootte van de lading de kracht?</div></div>
+<!--  l. 1325  --><p class='noindent'>Uit:
+</p>
+<div class='mathjax-block'>\[ F_e = k\frac {|Q_1Q_2|}{r^2} \]</div>
+<!--  l. 1333  --><p class='noindent'>volgt bij constante afstand:
+</p>
+<div class='mathjax-block'>\[ \boxed { F_e\propto |Q_1Q_2|. } \]</div>
+<!--  l. 1341  --><p class='noindent'>Wanneer één lading verdubbelt:
+</p>
+<div class='mathjax-block'>\[ Q_1\rightarrow 2Q_1, \]</div>
+<!--  l. 1347  --><p class='noindent'>dan:
+</p>
+<div class='mathjax-block'>\[ F_e\rightarrow 2F_e. \]</div>
+<!--  l. 1353  --><p class='noindent'>Wanneer beide ladingen verdubbelen:
+</p>
+<div class='mathjax-block'>\[ Q_1\rightarrow 2Q_1, \qquad Q_2\rightarrow 2Q_2, \]</div>
+<!--  l. 1361  --><p class='noindent'>dan:
+</p>
+<div class='mathjax-block'>\[ F_e\rightarrow 4F_e. \]</div>
+<p><a id='x1-79r9'></a>
+</p><!--  l. 1368  --><section class='fvd-exercise'>
+<!--  l. 1368  --><div class='fvd-exercise__title'>
+<!--  l. 1368  --><p class='noindent'>Oefening 9
+</p><!--  l. 1368  --><p class='noindent'>— Redeneren met verhoudingen
+                                                                  
+
+                                                                  
+</p><!--  l. 1368  --></div>
+<!--  l. 1368  --><div class='fvd-exercise__body'>
+<!--  l. 1368  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<!--  l. 1368  --><div class='fvd-exercise__content'>
+<!--  l. 1370  --><p class='noindent'>Twee puntladingen oefenen een kracht met grootte <span class='mathjax-inline'>\(F\)</span> op elkaar uit.
+</p><!--  l. 1372  --><p class='noindent'>Bepaal de nieuwe kracht wanneer:
+</p>     
+<ol class='enumerate1'>
+<li class='enumerate' id='x1-81x1'><span class='mathjax-inline'>\(|Q_1|\)</span> driemaal zo groot wordt;
+</li>
+<li class='enumerate' id='x1-83x2'>beide ladingen tweemaal zo groot worden;
+</li>
+<li class='enumerate' id='x1-85x3'><span class='mathjax-inline'>\(|Q_1|\)</span> halveert en <span class='mathjax-inline'>\(|Q_2|\)</span> verdubbelt;
+</li>
+<li class='enumerate' id='x1-87x4'>beide ladingen gehalveerd worden.</li></ol>
+<!--  l. 1381  --><p class='noindent'>Bereken niet opnieuw met de constante <span class='mathjax-inline'>\(k\)</span>.
+</p></div>
+<!--  l. 1383  --></div>
+<!--  l. 1383  --></section>
+<p><a id='x1-88r28'></a>
+</p><!--  l. 1390  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>28</div><div class='fvd-section-bar__title'>De invloed van de afstand</div></div>
+<!--  l. 1392  --><p class='noindent'>Uit de wet van Coulomb volgt:
+</p>
+<div class='mathjax-block'>\[ \boxed { F_e\propto \frac {1}{r^2}. } \]</div>
+<!--  l. 1400  --><p class='noindent'>Ook de elektrische kracht volgt dus een <strong>inverse-kwadratenwet</strong>.
+</p><!--  l. 1403  --><p class='noindent'>Als:
+</p>
+                                                                  
+
+                                                                  
+<div class='mathjax-block'>\[ r\rightarrow 2r, \]</div>
+<!--  l. 1409  --><p class='noindent'>dan:
+</p>
+<div class='mathjax-block'>\[ F_e\rightarrow \frac 14F_e. \]</div>
+<!--  l. 1415  --><p class='noindent'>Als:
+</p>
+<div class='mathjax-block'>\[ r\rightarrow 3r, \]</div>
+<!--  l. 1421  --><p class='noindent'>dan:
+</p>
+<div class='mathjax-block'>\[ F_e\rightarrow \frac 19F_e. \]</div>
+<!--  l. 1427  --><p class='noindent'>Als:
+</p>
+<div class='mathjax-block'>\[ r\rightarrow \frac r2, \]</div>
+<!--  l. 1433  --><p class='noindent'>dan:
+</p>
+<div class='mathjax-block'>\[ F_e\rightarrow 4F_e. \]</div>
+<div class='center'>
+<!--  l. 1440  -->
+<div class='mathjax-block'>\[ \boxed { \begin{array}{c|c} \text {afstand} &amp; \text {elektrische kracht}\\ \hline r &amp; F_e\\ 2r &amp; F_e/4\\ 3r &amp; F_e/9\\ 4r &amp; F_e/16\\ r/2 &amp; 4F_e \end{array} } \]</div></div>
+<p><a id='x1-89r10'></a>
+</p><!--  l. 1457  --><section class='fvd-exercise'>
+<!--  l. 1457  --><div class='fvd-exercise__title'>
+<!--  l. 1457  --><p class='noindent'>Oefening 10
+</p><!--  l. 1457  --><p class='noindent'>— Afstand
+</p><!--  l. 1457  --></div>
+<!--  l. 1457  --><div class='fvd-exercise__body'>
+<!--  l. 1457  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<!--  l. 1457  --><div class='fvd-exercise__content'>
+<!--  l. 1459  --><p class='noindent'>Twee ladingen oefenen een elektrische kracht <span class='mathjax-inline'>\(F\)</span> op elkaar uit.
+</p><!--  l. 1461  --><p class='noindent'>Bepaal de nieuwe kracht wanneer de afstand:
+</p>     
+<ol class='enumerate1'>
+                                                                  
+
+                                                                  
+<li class='enumerate' id='x1-91x1'>tweemaal zo groot wordt;
+</li>
+<li class='enumerate' id='x1-93x2'>vijfmaal zo groot wordt;
+</li>
+<li class='enumerate' id='x1-95x3'>driemaal zo klein wordt.</li></ol>
+</div>
+<!--  l. 1469  --></div>
+<!--  l. 1469  --></section>
+<p><a id='x1-96r29'></a>
+</p><!--  l. 1476  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>29</div><div class='fvd-section-bar__title'>De Coulombkracht als functie</div></div>
+<!--  l. 1478  --><p class='noindent'>Voor twee vaste ladingen kunnen we schrijven:
+</p>
+<div class='mathjax-block'>\[ F_e(r)=\frac {C}{r^2}, \]</div>
+<!--  l. 1484  --><p class='noindent'>waarbij:
+</p>
+<div class='mathjax-block'>\[ C=k|Q_1Q_2|. \]</div>
+<!--  l. 1490  --><p class='noindent'>De elektrische kracht neemt dus niet lineair af met de afstand.
+</p><!--  l. 1492  --><p class='noindent'>Dat is belangrijk.
+</p><!--  l. 1494  --><p class='noindent'>Een verdubbeling van de afstand betekent niet een halvering van de kracht,
+maar:
+</p>
+<div class='mathjax-block'>\[ \boxed { F_e(2r)=\frac 14F_e(r). } \]</div>
+<!--  l. 1504  --><p class='noindent'>Wiskundig geldt:
+</p>
+<div class='mathjax-block'>\[ \lim _{r\rightarrow \infty }F_e(r)=0. \]</div>
+<!--  l. 1510  --><p class='noindent'>De kracht wordt dus steeds kleiner wanneer de afstand toeneemt.
+<a id='x1-97r11'></a>
+</p><!--  l. 1513  --><section class='fvd-exercise'>
+<!--  l. 1513  --><div class='fvd-exercise__title'>
+<!--  l. 1513  --><p class='noindent'>Oefening 11
+                                                                  
+
+                                                                  
+</p><!--  l. 1513  --><p class='noindent'>— Een verkeerde grafiek
+</p><!--  l. 1513  --></div>
+<!--  l. 1513  --><div class='fvd-exercise__body'>
+<!--  l. 1513  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<!--  l. 1513  --><div class='fvd-exercise__content'>
+<!--  l. 1515  --><p class='noindent'>Een leerling tekent de Coulombkracht als functie van de afstand als een dalende
+rechte.
+</p><!--  l. 1518  --><p class='noindent'>Analyseer waarom die grafiek niet overeenkomt met:
+</p>
+<div class='mathjax-block'>\[ F_e(r)=\frac {C}{r^2}. \]</div>
+<!--  l. 1524  --><p class='noindent'>Geef minstens twee eigenschappen waaraan een correcte grafiek moet voldoen.
+</p></div>
+<!--  l. 1527  --></div>
+<!--  l. 1527  --></section>
+<p><a id='x1-98r30'></a>
+</p><!--  l. 1534  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>30</div><div class='fvd-section-bar__title'>Meerdere veranderingen tegelijk</div></div>
+<!--  l. 1536  --><p class='noindent'>Bij analyseren moeten we verschillende effecten kunnen combineren.
+</p><!--  l. 1538  --><p class='noindent'>Stel bijvoorbeeld:
+</p>
+<div class='mathjax-block'>\[ Q_1'=2Q_1, \]</div>
+<div class='mathjax-block'>\[ Q_2'=3Q_2, \]</div>
+<!--  l. 1548  --><p class='noindent'>en:
+</p>
+<div class='mathjax-block'>\[ r'=2r. \]</div>
+<!--  l. 1554  --><p class='noindent'>Dan:
+</p>
+<div class='mathjax-block'>\[ F_e' = k\frac {|(2Q_1)(3Q_2)|}{(2r)^2}. \]</div>
+<!--  l. 1562  --><p class='noindent'>Dus:
+</p>
+<div class='mathjax-block'>\[ F_e' = \frac {6}{4} k\frac {|Q_1Q_2|}{r^2}. \]</div>
+<!--  l. 1571  --><p class='noindent'>Daarom:
+</p>
+<div class='mathjax-block'>\[ \boxed { F_e'=\frac 32F_e. } \]</div>
+<p><a id='x1-99r12'></a>
+</p><!--  l. 1580  --><section class='fvd-exercise'>
+                                                                  
+
+                                                                  
+<!--  l. 1580  --><div class='fvd-exercise__title'>
+<!--  l. 1580  --><p class='noindent'>Oefening 12
+</p><!--  l. 1580  --><p class='noindent'>— Analyse zonder getallen
+</p><!--  l. 1580  --></div>
+<!--  l. 1580  --><div class='fvd-exercise__body'>
+<!--  l. 1580  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<!--  l. 1580  --><div class='fvd-exercise__content'>
+<!--  l. 1582  --><p class='noindent'>Twee ladingen oefenen aanvankelijk een kracht <span class='mathjax-inline'>\(F\)</span> op elkaar uit.
+</p><!--  l. 1584  --><p class='noindent'>Daarna wordt:
+</p>
+<div class='mathjax-block'>\[ Q_1'=4Q_1, \qquad Q_2'=\frac 12Q_2, \qquad r'=3r. \]</div>
+<!--  l. 1594  --><p class='noindent'>Bepaal:
+</p>
+<div class='mathjax-block'>\[ \frac {F_e'}{F_e}. \]</div>
+<!--  l. 1600  --><p class='noindent'>Werk met verhoudingen en gebruik geen numerieke waarde voor <span class='mathjax-inline'>\(k\)</span>.
+</p></div>
+<!--  l. 1602  --></div>
+<!--  l. 1602  --></section>
+<p><a id='x1-100r31'></a>
+</p><!--  l. 1609  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>31</div><div class='fvd-section-bar__title'>Niet altijd is de kracht gevraagd</div></div>
+<!--  l. 1611  --><p class='noindent'>De wet van Coulomb kan ook gebruikt worden wanneer een lading of een afstand
+onbekend is.
+</p><!--  l. 1614  --><p class='noindent'>Uit:
+</p>
+<div class='mathjax-block'>\[ F_e=k\frac {|Q_1Q_2|}{r^2} \]</div>
+<!--  l. 1620  --><p class='noindent'>kunnen we bijvoorbeeld <span class='mathjax-inline'>\(r\)</span> bepalen:
+</p>
+<div class='mathjax-block'>\[ r^2= k\frac {|Q_1Q_2|}{F_e}. \]</div>
+<!--  l. 1627  --><p class='noindent'>Dus:
+</p>
+<div class='mathjax-block'>\[ \boxed { r= \sqrt { k\frac {|Q_1Q_2|}{F_e} }. } \]</div>
+<!--  l. 1639  --><p class='noindent'>Wanneer beide ladingen dezelfde grootte <span class='mathjax-inline'>\(Q\)</span> hebben:
+</p>
+<div class='mathjax-block'>\[ F_e=k\frac {Q^2}{r^2}, \]</div>
+<!--  l. 1645  --><p class='noindent'>zodat:
+                                                                  
+
+                                                                  
+</p>
+<div class='mathjax-block'>\[ \boxed { Q=r\sqrt {\frac {F_e}{k}}. } \]</div>
+<p><a id='x1-101r13'></a>
+</p><!--  l. 1654  --><section class='fvd-exercise'>
+<!--  l. 1654  --><div class='fvd-exercise__title'>
+<!--  l. 1654  --><p class='noindent'>Oefening 13
+</p><!--  l. 1654  --><p class='noindent'>— Twee gelijke ladingen
+</p><!--  l. 1654  --></div>
+<!--  l. 1654  --><div class='fvd-exercise__body'>
+<!--  l. 1654  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<!--  l. 1654  --><div class='fvd-exercise__content'>
+<!--  l. 1656  --><p class='noindent'>Twee gelijke ladingen bevinden zich op een afstand van
+</p>
+<div class='mathjax-block'>\[ 10{,}0\,\mathrm {cm} \]</div>
+<!--  l. 1662  --><p class='noindent'>en stoten elkaar af met een kracht van:
+</p>
+<div class='mathjax-block'>\[ 0{,}100\,\mathrm N. \]</div>
+<!--  l. 1668  --><p class='noindent'>Bereken de grootte van elke lading.
+</p></div>
+<!--  l. 1670  --></div>
+<!--  l. 1670  --></section>
+<p><a id='x1-102r32'></a>
+</p><!--  l. 1677  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>32</div><div class='fvd-section-bar__title'>Elektrische kracht op atomaire schaal</div></div>
+<!--  l. 1679  --><p class='noindent'>Beschouw een proton en een elektron.
+</p><!--  l. 1681  --><p class='noindent'>Hun ladingen zijn:
+</p>
+<div class='mathjax-block'>\[ q_p=+e \]</div>
+<!--  l. 1687  --><p class='noindent'>en:
+</p>
+<div class='mathjax-block'>\[ q_e=-e. \]</div>
+<!--  l. 1693  --><p class='noindent'>De grootte van de elektrische kracht tussen beide is:
+</p>
+<div class='mathjax-block'>\[ F_e = k\frac {e^2}{r^2}. \]</div>
+<!--  l. 1701  --><p class='noindent'>Op atomaire afstanden kan deze kracht, ondanks de zeer kleine ladingen, fysisch zeer
+belangrijk zijn.
+                                                                  
+
+                                                                  
+</p><!--  l. 1704  --><p class='noindent'>Dat komt doordat de afstand <span class='mathjax-inline'>\(r\)</span> eveneens extreem klein is.
+<a id='x1-103r14'></a>
+</p><!--  l. 1707  --><section class='fvd-exercise'>
+<!--  l. 1707  --><div class='fvd-exercise__title'>
+<!--  l. 1707  --><p class='noindent'>Oefening 14
+</p><!--  l. 1707  --><p class='noindent'>— Proton en elektron
+</p><!--  l. 1707  --></div>
+<!--  l. 1707  --><div class='fvd-exercise__body'>
+<!--  l. 1707  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span></div>
+<!--  l. 1707  --><div class='fvd-exercise__content'>
+<!--  l. 1709  --><p class='noindent'>Een proton en elektron bevinden zich op een onderlinge afstand:
+</p>
+<div class='mathjax-block'>\[ r=5{,}0\times 10^{-11}\,\mathrm m. \]</div>
+<!--  l. 1715  --><p class='noindent'>Bereken de grootte van de elektrische kracht tussen beide.
+</p><!--  l. 1717  --><p class='noindent'>Bepaal ook of de kracht aantrekkend of afstotend is.
+</p></div>
+<!--  l. 1719  --></div>
+<!--  l. 1719  --></section>
+<p><a id='x1-104r33'></a>
+</p><!--  l. 1726  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>33</div><div class='fvd-section-bar__title'>Coulomb en Newton: een opvallende overeenkomst</div></div>
+<!--  l. 1728  --><p class='noindent'>In het vorige hoofdstuk vonden we:
+</p>
+<div class='mathjax-block'>\[ \boxed { F_g = G\frac {m_1m_2}{r^2}. } \]</div>
+<!--  l. 1738  --><p class='noindent'>Nu vinden we:
+</p>
+<div class='mathjax-block'>\[ \boxed { F_e = k\frac {|Q_1Q_2|}{r^2}. } \]</div>
+<!--  l. 1748  --><p class='noindent'>De wiskundige structuur is opvallend gelijkaardig.
+</p>
+<div class='center'>
+<!--  l. 1751  -->
+<div class='mathjax-block'>\[ \boxed { \begin{array}{c|c} \text {gravitatie} &amp; \text {elektrische interactie}\\ \hline m &amp; Q\\[1mm] G &amp; k\\[1mm] F_g=G\dfrac {m_1m_2}{r^2} &amp; F_e=k\dfrac {|Q_1Q_2|}{r^2}\\[3mm] \text {inverse-kwadratenwet} &amp; \text {inverse-kwadratenwet}\\[1mm] \text {aantrekkend} &amp; \text {aantrekkend of afstotend} \end{array} } \]</div></div>
+<!--  l. 1774  --><p class='noindent'>Er is echter een fundamenteel verschil.
+                                                                  
+
+                                                                  
+</p><!--  l. 1776  --><p class='noindent'>Voor gewone materie kennen we positieve massa, waardoor gravitatie aantrekkend
+is.
+</p><!--  l. 1779  --><p class='noindent'>Elektrische lading bestaat in twee tekens.
+</p><!--  l. 1781  --><p class='noindent'>Daarom kan de elektrische wisselwerking aantrekken of afstoten.
+<a id='x1-105r34'></a>
+</p><!--  l. 1788  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>34</div><div class='fvd-section-bar__title'>Elektriciteit versus gravitatie op deeltjesniveau</div></div>
+<!--  l. 1790  --><p class='noindent'>We kunnen voor een proton en een elektron zowel de elektrische als de gravitationele
+kracht bekijken.
+</p><!--  l. 1793  --><p class='noindent'>Elektrisch:
+</p>
+<div class='mathjax-block'>\[ F_e = k\frac {e^2}{r^2}. \]</div>
+<!--  l. 1801  --><p class='noindent'>Gravitationeel:
+</p>
+<div class='mathjax-block'>\[ F_g = G\frac {m_pm_e}{r^2}. \]</div>
+<!--  l. 1809  --><p class='noindent'>Neem de verhouding:
+</p>
+<div class='mathjax-block'>\[ \frac {F_e}{F_g} = \frac { k\dfrac {e^2}{r^2} }{ G\dfrac {m_pm_e}{r^2} }. \]</div>
+<!--  l. 1821  --><p class='noindent'>De afstand valt weg:
+</p>
+<div class='mathjax-block'>\[ \boxed { \frac {F_e}{F_g} = \frac {ke^2}{Gm_pm_e}. } \]</div>
+<!--  l. 1831  --><p class='noindent'>De verhouding is dus onafhankelijk van de onderlinge afstand.
+<a id='x1-106r15'></a>
+</p><!--  l. 1834  --><section class='fvd-exercise'>
+<!--  l. 1834  --><div class='fvd-exercise__title'>
+<!--  l. 1834  --><p class='noindent'>Oefening 15
+</p><!--  l. 1834  --><p class='noindent'>— Twee fundamentele krachten
+</p><!--  l. 1834  --></div>
+<!--  l. 1834  --><div class='fvd-exercise__body'>
+<!--  l. 1834  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--g'>G</span></div>
+<!--  l. 1834  --><div class='fvd-exercise__content'>
+<!--  l. 1836  --><p class='noindent'>Gebruik:
+</p>
+<div class='mathjax-block'>\[ k=8{,}99\times 10^9\, \frac {\mathrm {N\,m^2}}{\mathrm {C^2}}, \]</div>
+<div class='mathjax-block'>\[ e=1{,}602\times 10^{-19}\,\mathrm C, \]</div>
+<div class='mathjax-block'>\[ G=6{,}674\times 10^{-11}\, \frac {\mathrm {N\,m^2}}{\mathrm {kg^2}}, \]</div>
+                                                                  
+
+                                                                  
+<div class='mathjax-block'>\[ m_p=1{,}673\times 10^{-27}\,\mathrm {kg}, \]</div>
+<div class='mathjax-block'>\[ m_e=9{,}109\times 10^{-31}\,\mathrm {kg}. \]</div>
+<!--  l. 1860  --><p class='noindent'>Bereken:
+</p>
+<div class='mathjax-block'>\[ \frac {F_e}{F_g}. \]</div>
+<!--  l. 1866  --><p class='noindent'>Interpreteer de grootteorde van je resultaat.
+</p><!--  l. 1868  --><p class='noindent'>Leg ook uit waarom de afstand niet nodig is om deze verhouding te berekenen.
+</p></div>
+<!--  l. 1871  --></div>
+<!--  l. 1871  --></section>
+<p><a id='x1-107r35'></a>
+</p><!--  l. 1878  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>35</div><div class='fvd-section-bar__title'>Wat als er meer dan twee ladingen zijn?</div></div>
+<!--  l. 1880  --><p class='noindent'>De wet van Coulomb beschrijft de kracht tussen twee puntladingen.
+</p><!--  l. 1882  --><p class='noindent'>Maar een lading kan tegelijk krachten ondervinden van meerdere andere
+ladingen.
+</p><!--  l. 1885  --><p class='noindent'>Elke bronlading veroorzaakt afzonderlijk een elektrische kracht.
+</p><!--  l. 1887  --><p class='noindent'>De resulterende elektrische kracht vinden we door de afzonderlijke krachtvectoren op
+te tellen:
+</p>
+<div class='mathjax-block'>\[ \boxed { \vec F_\mathrm {res} = \vec F_1+\vec F_2+\vec F_3+\cdots } \]</div>
+<!--  l. 1898  --><p class='noindent'>Dit noemen we het <strong>superpositiebeginsel</strong>.
+<a id='x1-108r36'></a>
+</p><!--  l. 1905  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>36</div><div class='fvd-section-bar__title'>Superpositie op één rechte</div></div>
+<!--  l. 1907  --><p class='noindent'>Beschouw drie ladingen op één rechte:
+</p>
+<div class='mathjax-block'>\[ Q_1 \qquad Q_2 \qquad Q_3. \]</div>
+<!--  l. 1917  --><p class='noindent'>We willen bijvoorbeeld de resulterende kracht op <span class='mathjax-inline'>\(Q_3\)</span> bepalen.
+</p><!--  l. 1919  --><p class='noindent'>Dan onderzoeken we afzonderlijk:
+</p>
+<div class='mathjax-block'>\[ \vec F_{1\rightarrow 3} \]</div>
+<!--  l. 1925  --><p class='noindent'>en:
+</p>
+<div class='mathjax-block'>\[ \vec F_{2\rightarrow 3}. \]</div>
+<!--  l. 1931  --><p class='noindent'>Daarna:
+</p>
+                                                                  
+
+                                                                  
+<div class='mathjax-block'>\[ \boxed { \vec F_{\mathrm {res},3} = \vec F_{1\rightarrow 3} + \vec F_{2\rightarrow 3}. } \]</div>
+<!--  l. 1944  --><p class='noindent'>Het belangrijkste deel van de oplossing gebeurt vóór de berekening:
+</p>     
+<ol class='enumerate1'>
+<li class='enumerate' id='x1-110x1'>bepaal voor elke interactie aantrekking of afstoting;
+</li>
+<li class='enumerate' id='x1-112x2'>teken elke krachtvector op de juiste lading;
+</li>
+<li class='enumerate' id='x1-114x3'>bepaal voor elke kracht de correcte afstand;
+</li>
+<li class='enumerate' id='x1-116x4'>bereken pas daarna de groottes;
+</li>
+<li class='enumerate' id='x1-118x5'>tel de krachten vectorieel op.</li></ol>
+<p><a id='x1-119r3'></a>
+</p><!--  l. 1959  --><section class='fvd-example'>
+<!--  l. 1959  --><div class='fvd-example__title'>Voorbeeld 3<span class='fvd-example__subtitle'> — Drie ladingen op één rechte</span></div>
+<!--  l. 1959  --><div class='fvd-example__content'>
+<!--  l. 1961  --><p class='noindent'>Drie puntladingen liggen op één rechte.
+</p>
+<div class='mathjax-block'>\[ Q_1=-5{,}00\,\mathrm {\mu C}, \]</div>
+<div class='mathjax-block'>\[ Q_2=+10{,}0\,\mathrm {\mu C}, \]</div>
+<div class='mathjax-block'>\[ Q_3=-5{,}00\,\mathrm {\mu C}. \]</div>
+<!--  l. 1975  --><p class='noindent'>De afstanden zijn:
+</p>
+<div class='mathjax-block'>\[ r_{12}=5{,}00\,\mathrm {cm}, \]</div>
+<div class='mathjax-block'>\[ r_{23}=2{,}50\,\mathrm {cm}. \]</div>
+                                                                  
+
+                                                                  
+<!--  l. 1985  --><p class='noindent'>We zoeken de resulterende kracht op <span class='mathjax-inline'>\(Q_3\)</span>.
+</p><!--  l. 1987  --><p class='noindent'>Eerst bepalen we:
+</p>
+<div class='mathjax-block'>\[ r_{13}=r_{12}+r_{23}. \]</div>
+<!--  l. 1993  --><p class='noindent'>Dus:
+</p>
+<div class='mathjax-block'>\[ r_{13}=7{,}50\,\mathrm {cm}. \]</div>
+<!--  l. 1999  --><p class='noindent'>Omdat <span class='mathjax-inline'>\(Q_1\)</span> en <span class='mathjax-inline'>\(Q_3\)</span> beide negatief zijn, stoot <span class='mathjax-inline'>\(Q_1\)</span> de lading <span class='mathjax-inline'>\(Q_3\)</span> af.
+</p><!--  l. 2002  --><p class='noindent'>Omdat <span class='mathjax-inline'>\(Q_2\)</span> positief is en <span class='mathjax-inline'>\(Q_3\)</span> negatief, trekt <span class='mathjax-inline'>\(Q_2\)</span> de lading <span class='mathjax-inline'>\(Q_3\)</span> aan.
+</p><!--  l. 2005  --><p class='noindent'>De twee krachten hebben dus tegengestelde zin.
+</p><!--  l. 2007  --><p class='noindent'>We berekenen afzonderlijk:
+</p>
+<div class='mathjax-block'>\[ F_{1\rightarrow 3} = k\frac {|Q_1Q_3|}{r_{13}^2} \]</div>
+<!--  l. 2015  --><p class='noindent'>en:
+</p>
+<div class='mathjax-block'>\[ F_{2\rightarrow 3} = k\frac {|Q_2Q_3|}{r_{23}^2}. \]</div>
+<!--  l. 2023  --><p class='noindent'>Daarna combineren we beide krachten met hun correcte zin.
+</p><!--  l. 2025  --><p class='noindent'>Het teken van de ladingen wordt dus niet gebruikt om een negatieve kracht uit de
+formule te laten verschijnen.
+</p><!--  l. 2028  --><p class='noindent'>De tekens worden gebruikt om de <strong>richting en zin</strong> van de krachtvectoren te
+bepalen.
+</p></div></section>
+<p><a id='x1-120r37'></a>
+</p><!--  l. 2038  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>37</div><div class='fvd-section-bar__title'>Elektrische krachten in twee dimensies</div></div>
+<!--  l. 2040  --><p class='noindent'>Wanneer de ladingen niet op één rechte liggen, volstaat optellen of aftrekken van de
+groottes niet.
+</p><!--  l. 2043  --><p class='noindent'>We moeten de krachten werkelijk als vectoren behandelen.
+</p><!--  l. 2045  --><p class='noindent'>Stel dat:
+</p>
+<div class='mathjax-block'>\[ \vec F_1 \]</div>
+<!--  l. 2051  --><p class='noindent'>en:
+</p>
+<div class='mathjax-block'>\[ \vec F_2 \]</div>
+<!--  l. 2057  --><p class='noindent'>onder een hoek op elkaar staan.
+</p><!--  l. 2059  --><p class='noindent'>Dan geldt nog steeds:
+</p>
+                                                                  
+
+                                                                  
+<div class='mathjax-block'>\[ \vec F_\mathrm {res} = \vec F_1+\vec F_2. \]</div>
+<!--  l. 2067  --><p class='noindent'>We kunnen de krachten ontbinden in componenten:
+</p>
+<div class='mathjax-block'>\[ F_x=\sum _i F_{i,x}, \]</div>
+<div class='mathjax-block'>\[ F_y=\sum _i F_{i,y}. \]</div>
+<!--  l. 2077  --><p class='noindent'>Daaruit:
+</p>
+<div class='mathjax-block'>\[ \boxed { F_\mathrm {res} = \sqrt {F_x^2+F_y^2}. } \]</div>
+<!--  l. 2087  --><p class='noindent'>De richting volgt bijvoorbeeld uit:
+</p>
+<div class='mathjax-block'>\[ \boxed { \tan \theta =\frac {F_y}{F_x}, } \]</div>
+<!--  l. 2095  --><p class='noindent'>waarbij we bij het bepalen van de hoek steeds rekening houden met het juiste
+kwadrant.
+<a id='x1-121r38'></a>
+</p><!--  l. 2103  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>38</div><div class='fvd-section-bar__title'>Gebruik symmetrie voordat je rekent</div></div>
+<!--  l. 2105  --><p class='noindent'>Bij sommige configuraties kunnen we veel werk besparen door eerst naar de
+geometrie te kijken.
+</p><!--  l. 2108  --><p class='noindent'>Stel dat twee gelijke ladingen symmetrisch ten opzichte van een derde lading
+liggen.
+</p><!--  l. 2111  --><p class='noindent'>Dan kunnen bepaalde componenten van de krachten elkaar opheffen, terwijl andere
+componenten elkaar versterken.
+</p><!--  l. 2114  --><p class='noindent'>Een goede fysicus begint daarom niet altijd met een formule.
+</p><!--  l. 2116  --><p class='noindent'>Soms is de eerste vraag:
+</p>
+<div class='center'>
+<!--  l. 2118  --><!--  l. 2119  --><p class='noindent'><em>Welke symmetrie zit in deze situatie?</em></p></div>
+<p><a id='x1-122r16'></a>
+</p><!--  l. 2123  --><section class='fvd-exercise'>
+<!--  l. 2123  --><div class='fvd-exercise__title'>
+<!--  l. 2123  --><p class='noindent'>Oefening 16
+</p><!--  l. 2123  --><p class='noindent'>— Symmetrische configuratie
+</p><!--  l. 2123  --></div>
+<!--  l. 2123  --><div class='fvd-exercise__body'>
+                                                                  
+
+                                                                  
+<!--  l. 2123  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<!--  l. 2123  --><div class='fvd-exercise__content'>
+<!--  l. 2125  --><p class='noindent'>Twee gelijke positieve ladingen <span class='mathjax-inline'>\(Q\)</span> bevinden zich symmetrisch links en rechts van een
+positieve testlading <span class='mathjax-inline'>\(q\)</span>.
+</p><!--  l. 2128  --><p class='noindent'>De afstanden tot <span class='mathjax-inline'>\(q\)</span> zijn gelijk.
+</p>     
+<ol class='enumerate1'>
+<li class='enumerate' id='x1-124x1'>Teken beide krachtvectoren op <span class='mathjax-inline'>\(q\)</span>.
+</li>
+<li class='enumerate' id='x1-126x2'>Vergelijk hun groottes.
+</li>
+<li class='enumerate' id='x1-128x3'>Bepaal de resulterende kracht.
+</li>
+<li class='enumerate' id='x1-130x4'>Leg uit waarom hiervoor geen numerieke berekening nodig is.</li></ol>
+</div>
+<!--  l. 2137  --></div>
+<!--  l. 2137  --></section>
+<p><a id='x1-131r39'></a>
+</p><!--  l. 2144  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>39</div><div class='fvd-section-bar__title'>Oefeningen</div></div>
+<p><a id='x1-132r1'></a>
+</p><!--  l. 2151  --><div class='fvd-subsection'>
+<!--  l. 2151  --><div class='fvd-subsection__row'>
+<!--  l. 2151  --><div class='fvd-subsection__number'>39.1</div>
+<!--  l. 2151  --><div class='fvd-subsection__title'>Basis</div>
+<!--  l. 2151  --></div>
+<!--  l. 2151  --><div class='fvd-subsection__line'></div>
+<!--  l. 2151  --></div>
+<p><a id='x1-133r17'></a>
+                                                                  
+
+                                                                  
+</p><!--  l. 2154  --><section class='fvd-exercise'>
+<!--  l. 2154  --><div class='fvd-exercise__title'>
+<!--  l. 2154  --><p class='noindent'>Oefening 17
+</p><!--  l. 2154  --><p class='noindent'>— Soorten lading
+</p><!--  l. 2154  --></div>
+<!--  l. 2154  --><div class='fvd-exercise__body'>
+<!--  l. 2154  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span></div>
+<!--  l. 2154  --><div class='fvd-exercise__content'>
+<!--  l. 2156  --><p class='noindent'>Bepaal voor elke combinatie of er aantrekking of afstoting optreedt.
+</p>     
+<ol class='enumerate1'>
+<li class='enumerate' id='x1-135x1'><span class='mathjax-inline'>\(Q_1&gt;0\)</span> en <span class='mathjax-inline'>\(Q_2&gt;0\)</span>
+</li>
+<li class='enumerate' id='x1-137x2'><span class='mathjax-inline'>\(Q_1&lt;0\)</span> en <span class='mathjax-inline'>\(Q_2&lt;0\)</span>
+</li>
+<li class='enumerate' id='x1-139x3'><span class='mathjax-inline'>\(Q_1&gt;0\)</span> en <span class='mathjax-inline'>\(Q_2&lt;0\)</span>
+</li>
+<li class='enumerate' id='x1-141x4'><span class='mathjax-inline'>\(Q_1&lt;0\)</span> en <span class='mathjax-inline'>\(Q_2&gt;0\)</span></li></ol>
+</div>
+<!--  l. 2165  --></div>
+<!--  l. 2165  --></section>
+<p><a id='x1-142r18'></a>
+</p><!--  l. 2168  --><section class='fvd-exercise'>
+<!--  l. 2168  --><div class='fvd-exercise__title'>
+<!--  l. 2168  --><p class='noindent'>Oefening 18
+</p><!--  l. 2168  --><p class='noindent'>— Elektronenoverschot
+</p><!--  l. 2168  --></div>
+                                                                  
+
+                                                                  
+<!--  l. 2168  --><div class='fvd-exercise__body'>
+<!--  l. 2168  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<!--  l. 2168  --><div class='fvd-exercise__content'>
+<!--  l. 2170  --><p class='noindent'>Een voorwerp heeft een lading:
+</p>
+<div class='mathjax-block'>\[ q=-8{,}01\times 10^{-9}\,\mathrm C. \]</div>     
+<ol class='enumerate1'>
+<li class='enumerate' id='x1-144x1'>Heeft het voorwerp een tekort of overschot aan elektronen?
+</li>
+<li class='enumerate' id='x1-146x2'>Bereken hoeveel elektronen daarmee overeenkomen.</li></ol>
+</div>
+<!--  l. 2181  --></div>
+<!--  l. 2181  --></section>
+<p><a id='x1-147r19'></a>
+</p><!--  l. 2184  --><section class='fvd-exercise'>
+<!--  l. 2184  --><div class='fvd-exercise__title'>
+<!--  l. 2184  --><p class='noindent'>Oefening 19
+</p><!--  l. 2184  --><p class='noindent'>— Elektronentekort
+</p><!--  l. 2184  --></div>
+<!--  l. 2184  --><div class='fvd-exercise__body'>
+<!--  l. 2184  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<!--  l. 2184  --><div class='fvd-exercise__content'>
+<!--  l. 2186  --><p class='noindent'>Een metalen bol heeft een positieve lading:
+</p>
+<div class='mathjax-block'>\[ q=+4{,}80\,\mathrm {nC}. \]</div>     
+<ol class='enumerate1'>
+<li class='enumerate' id='x1-149x1'>Heeft de bol elektronen opgenomen of afgestaan?
+                                                                  
+
+                                                                  
+</li>
+<li class='enumerate' id='x1-151x2'>Bereken het aantal ontbrekende elektronen.</li></ol>
+</div>
+<!--  l. 2197  --></div>
+<!--  l. 2197  --></section>
+<p><a id='x1-152r20'></a>
+</p><!--  l. 2200  --><section class='fvd-exercise'>
+<!--  l. 2200  --><div class='fvd-exercise__title'>
+<!--  l. 2200  --><p class='noindent'>Oefening 20
+</p><!--  l. 2200  --><p class='noindent'>— Coulombkracht
+</p><!--  l. 2200  --></div>
+<!--  l. 2200  --><div class='fvd-exercise__body'>
+<!--  l. 2200  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<!--  l. 2200  --><div class='fvd-exercise__content'>
+<!--  l. 2202  --><p class='noindent'>Twee puntladingen:
+</p>
+<div class='mathjax-block'>\[ Q_1=+4{,}0\,\mathrm {\mu C} \]</div>
+<!--  l. 2208  --><p class='noindent'>en:
+</p>
+<div class='mathjax-block'>\[ Q_2=-6{,}0\,\mathrm {\mu C} \]</div>
+<!--  l. 2214  --><p class='noindent'>bevinden zich op een afstand:
+</p>
+<div class='mathjax-block'>\[ r=0{,}30\,\mathrm m. \]</div>     
+<ol class='enumerate1'>
+<li class='enumerate' id='x1-154x1'>Bereken de grootte van de elektrische kracht.
+</li>
+<li class='enumerate' id='x1-156x2'>Is de kracht aantrekkend of afstotend?
+</li>
+                                                                  
+
+                                                                  
+<li class='enumerate' id='x1-158x3'>Teken beide krachtvectoren.</li></ol>
+</div>
+<!--  l. 2226  --></div>
+<!--  l. 2226  --></section>
+<p><a id='x1-159r21'></a>
+</p><!--  l. 2229  --><section class='fvd-exercise'>
+<!--  l. 2229  --><div class='fvd-exercise__title'>
+<!--  l. 2229  --><p class='noindent'>Oefening 21
+</p><!--  l. 2229  --><p class='noindent'>— Afstand verdriedubbelen
+</p><!--  l. 2229  --></div>
+<!--  l. 2229  --><div class='fvd-exercise__body'>
+<!--  l. 2229  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<!--  l. 2229  --><div class='fvd-exercise__content'>
+<!--  l. 2231  --><p class='noindent'>Twee ladingen oefenen een elektrische kracht met grootte <span class='mathjax-inline'>\(F\)</span> op elkaar uit.
+</p><!--  l. 2234  --><p class='noindent'>De afstand wordt verdrievoudigd terwijl de ladingen gelijk blijven.
+</p><!--  l. 2236  --><p class='noindent'>Bepaal de nieuwe kracht in functie van <span class='mathjax-inline'>\(F\)</span>.
+</p></div>
+<!--  l. 2238  --></div>
+<!--  l. 2238  --></section>
+<p><a id='x1-160r22'></a>
+</p><!--  l. 2241  --><section class='fvd-exercise'>
+<!--  l. 2241  --><div class='fvd-exercise__title'>
+<!--  l. 2241  --><p class='noindent'>Oefening 22
+</p><!--  l. 2241  --><p class='noindent'>— Onbekende lading
+</p><!--  l. 2241  --></div>
+<!--  l. 2241  --><div class='fvd-exercise__body'>
+<!--  l. 2241  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<!--  l. 2241  --><div class='fvd-exercise__content'>
+<!--  l. 2243  --><p class='noindent'>Twee identieke puntladingen bevinden zich op:
+</p>
+<div class='mathjax-block'>\[ r=1{,}00\,\mathrm m \]</div>
+<!--  l. 2249  --><p class='noindent'>van elkaar en oefenen een kracht uit van:
+                                                                  
+
+                                                                  
+</p>
+<div class='mathjax-block'>\[ F_e=1{,}00\,\mathrm N. \]</div>
+<!--  l. 2255  --><p class='noindent'>Bereken de grootte van elke lading.
+</p></div>
+<!--  l. 2257  --></div>
+<!--  l. 2257  --></section>
+<p><a id='x1-161r2'></a>
+</p><!--  l. 2264  --><div class='fvd-subsection'>
+<!--  l. 2264  --><div class='fvd-subsection__row'>
+<!--  l. 2264  --><div class='fvd-subsection__number'>39.2</div>
+<!--  l. 2264  --><div class='fvd-subsection__title'>Verdieping</div>
+<!--  l. 2264  --></div>
+<!--  l. 2264  --><div class='fvd-subsection__line'></div>
+<!--  l. 2264  --></div>
+<p><a id='x1-162r23'></a>
+</p><!--  l. 2267  --><section class='fvd-exercise'>
+<!--  l. 2267  --><div class='fvd-exercise__title'>
+<!--  l. 2267  --><p class='noindent'>Oefening 23
+</p><!--  l. 2267  --><p class='noindent'>— Wat kan je besluiten?
+</p><!--  l. 2267  --></div>
+<!--  l. 2267  --><div class='fvd-exercise__body'>
+<!--  l. 2267  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<!--  l. 2267  --><div class='fvd-exercise__content'>
+<!--  l. 2269  --><p class='noindent'>Twee kleine voorwerpen trekken elkaar aan.
+</p><!--  l. 2271  --><p class='noindent'>Een leerling besluit:
+</p><!--  l. 2273  --><p class='noindent'>“De ene lading is positief en de andere negatief.”
+</p><!--  l. 2275  --><p class='noindent'>Is die conclusie noodzakelijk juist?
+</p><!--  l. 2277  --><p class='noindent'>Bespreek minstens twee mogelijke situaties die tot aantrekking kunnen leiden.
+</p></div>
+<!--  l. 2280  --></div>
+<!--  l. 2280  --></section>
+<p><a id='x1-163r24'></a>
+</p><!--  l. 2283  --><section class='fvd-exercise'>
+                                                                  
+
+                                                                  
+<!--  l. 2283  --><div class='fvd-exercise__title'>
+<!--  l. 2283  --><p class='noindent'>Oefening 24
+</p><!--  l. 2283  --><p class='noindent'>— Veranderde situatie
+</p><!--  l. 2283  --></div>
+<!--  l. 2283  --><div class='fvd-exercise__body'>
+<!--  l. 2283  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<!--  l. 2283  --><div class='fvd-exercise__content'>
+<!--  l. 2285  --><p class='noindent'>Twee puntladingen oefenen een kracht <span class='mathjax-inline'>\(F\)</span> op elkaar uit.
+</p><!--  l. 2287  --><p class='noindent'>Vervolgens:
+</p>
+<div class='mathjax-block'>\[ Q_1'=3Q_1, \]</div>
+<div class='mathjax-block'>\[ Q_2'=2Q_2, \]</div>
+<!--  l. 2297  --><p class='noindent'>en:
+</p>
+<div class='mathjax-block'>\[ r'=\frac 32r. \]</div>
+<!--  l. 2303  --><p class='noindent'>Bepaal:
+</p>
+<div class='mathjax-block'>\[ \frac {F_e'}{F_e}. \]</div>
+</div>
+<!--  l. 2309  --></div>
+<!--  l. 2309  --></section>
+<p><a id='x1-164r25'></a>
+</p><!--  l. 2312  --><section class='fvd-exercise'>
+<!--  l. 2312  --><div class='fvd-exercise__title'>
+<!--  l. 2312  --><p class='noindent'>Oefening 25
+</p><!--  l. 2312  --><p class='noindent'>— Van kracht naar afstand
+</p><!--  l. 2312  --></div>
+<!--  l. 2312  --><div class='fvd-exercise__body'>
+<!--  l. 2312  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<!--  l. 2312  --><div class='fvd-exercise__content'>
+<!--  l. 2314  --><p class='noindent'>Twee puntladingen hebben groottes:
+</p>
+<div class='mathjax-block'>\[ |Q_1|=2{,}0\,\mathrm {\mu C} \]</div>
+<!--  l. 2320  --><p class='noindent'>en:
+                                                                  
+
+                                                                  
+</p>
+<div class='mathjax-block'>\[ |Q_2|=5{,}0\,\mathrm {\mu C}. \]</div>
+<!--  l. 2326  --><p class='noindent'>De grootte van de kracht tussen beide is:
+</p>
+<div class='mathjax-block'>\[ F_e=0{,}50\,\mathrm N. \]</div>
+<!--  l. 2332  --><p class='noindent'>Bereken de onderlinge afstand.
+</p><!--  l. 2334  --><p class='noindent'>Kan je uit deze gegevens alleen bepalen of de kracht aantrekkend of afstotend is?
+Verklaar.
+</p></div>
+<!--  l. 2337  --></div>
+<!--  l. 2337  --></section>
+<p><a id='x1-165r26'></a>
+</p><!--  l. 2340  --><section class='fvd-exercise'>
+<!--  l. 2340  --><div class='fvd-exercise__title'>
+<!--  l. 2340  --><p class='noindent'>Oefening 26
+</p><!--  l. 2340  --><p class='noindent'>— Drie ladingen op een rechte
+</p><!--  l. 2340  --></div>
+<!--  l. 2340  --><div class='fvd-exercise__body'>
+<!--  l. 2340  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<!--  l. 2340  --><div class='fvd-exercise__content'>
+<!--  l. 2342  --><p class='noindent'>Drie puntladingen liggen op de <span class='mathjax-inline'>\(x\)</span>-as.
+</p>
+<div class='mathjax-block'>\[ Q_1=+2{,}0\,\mathrm {\mu C}, \]</div>
+<div class='mathjax-block'>\[ Q_2=-3{,}0\,\mathrm {\mu C}, \]</div>
+<div class='mathjax-block'>\[ Q_3=+4{,}0\,\mathrm {\mu C}. \]</div>
+<!--  l. 2356  --><p class='noindent'>Hun posities zijn:
+</p>
+<div class='mathjax-block'>\[ x_1=0, \qquad x_2=0{,}20\,\mathrm m, \qquad x_3=0{,}50\,\mathrm m. \]</div>
+<!--  l. 2366  --><p class='noindent'>Bepaal de resulterende elektrische kracht op <span class='mathjax-inline'>\(Q_2\)</span>.
+</p><!--  l. 2368  --><p class='noindent'>Werk systematisch:
+</p>     
+<ol class='enumerate1'>
+<li class='enumerate' id='x1-167x1'>maak een schets;
+                                                                  
+
+                                                                  
+</li>
+<li class='enumerate' id='x1-169x2'>teken de afzonderlijke krachtvectoren;
+</li>
+<li class='enumerate' id='x1-171x3'>bepaal de correcte afstanden;
+</li>
+<li class='enumerate' id='x1-173x4'>bereken de groottes;
+</li>
+<li class='enumerate' id='x1-175x5'>bepaal de resulterende kracht met richting en zin.</li></ol>
+</div>
+<!--  l. 2378  --></div>
+<!--  l. 2378  --></section>
+<p><a id='x1-176r27'></a>
+</p><!--  l. 2381  --><section class='fvd-exercise'>
+<!--  l. 2381  --><div class='fvd-exercise__title'>
+<!--  l. 2381  --><p class='noindent'>Oefening 27
+</p><!--  l. 2381  --><p class='noindent'>— Fout zoeken
+</p><!--  l. 2381  --></div>
+<!--  l. 2381  --><div class='fvd-exercise__body'>
+<!--  l. 2381  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<!--  l. 2381  --><div class='fvd-exercise__content'>
+<!--  l. 2383  --><p class='noindent'>Een leerling berekent:
+</p>
+<div class='mathjax-block'>\[ F_e = 8{,}99\times 10^9 \frac { (-2{,}0\times 10^{-6}) (+5{,}0\times 10^{-6}) }{ (0{,}10)^2 } \]</div>
+<!--  l. 2397  --><p class='noindent'>en vindt:
+</p>
+<div class='mathjax-block'>\[ F_e=-8{,}99\,\mathrm N. \]</div>
+<!--  l. 2403  --><p class='noindent'>Daarna schrijft de leerling:
+                                                                  
+
+                                                                  
+</p><!--  l. 2405  --><p class='noindent'>“De elektrische kracht heeft dus een negatieve grootte.”
+</p><!--  l. 2407  --><p class='noindent'>Analyseer de redenering.
+</p><!--  l. 2409  --><p class='noindent'>Geef aan:
+</p>     
+<ol class='enumerate1'>
+<li class='enumerate' id='x1-178x1'>wat de fout is;
+</li>
+<li class='enumerate' id='x1-180x2'>hoe de grootte correct wordt berekend;
+</li>
+<li class='enumerate' id='x1-182x3'>welke informatie de tekens van de ladingen wel geven.</li></ol>
+</div>
+<!--  l. 2417  --></div>
+<!--  l. 2417  --></section>
+<p><a id='x1-183r3'></a>
+</p><!--  l. 2424  --><div class='fvd-subsection'>
+<!--  l. 2424  --><div class='fvd-subsection__row'>
+<!--  l. 2424  --><div class='fvd-subsection__number'>39.3</div>
+<!--  l. 2424  --><div class='fvd-subsection__title'>Gevorderd</div>
+<!--  l. 2424  --></div>
+<!--  l. 2424  --><div class='fvd-subsection__line'></div>
+<!--  l. 2424  --></div>
+<p><a id='x1-184r28'></a>
+</p><!--  l. 2427  --><section class='fvd-exercise'>
+<!--  l. 2427  --><div class='fvd-exercise__title'>
+<!--  l. 2427  --><p class='noindent'>Oefening 28
+</p><!--  l. 2427  --><p class='noindent'>— Evenwicht tussen twee ladingen
+</p><!--  l. 2427  --></div>
+<!--  l. 2427  --><div class='fvd-exercise__body'>
+<!--  l. 2427  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--g'>G</span></div>
+                                                                  
+
+                                                                  
+<!--  l. 2427  --><div class='fvd-exercise__content'>
+<!--  l. 2429  --><p class='noindent'>Twee positieve puntladingen:
+</p>
+<div class='mathjax-block'>\[ Q_1=Q \]</div>
+<!--  l. 2435  --><p class='noindent'>en:
+</p>
+<div class='mathjax-block'>\[ Q_2=4Q \]</div>
+<!--  l. 2441  --><p class='noindent'>bevinden zich op afstand <span class='mathjax-inline'>\(d\)</span> van elkaar.
+</p><!--  l. 2443  --><p class='noindent'>We zoeken op de verbindingslijn een punt waar een positieve testlading <span class='mathjax-inline'>\(q\)</span> een
+resulterende elektrische kracht nul zou ondervinden.
+</p><!--  l. 2447  --><p class='noindent'>Noem de afstand van dit punt tot <span class='mathjax-inline'>\(Q_1\)</span> gelijk aan <span class='mathjax-inline'>\(x\)</span>.
+</p>     
+<ol class='enumerate1'>
+<li class='enumerate' id='x1-186x1'>Leg uit waarom het gezochte punt tussen beide ladingen moet liggen.
+</li>
+<li class='enumerate' id='x1-188x2'>Teken de twee krachtvectoren op <span class='mathjax-inline'>\(q\)</span>.
+</li>
+<li class='enumerate' id='x1-190x3'>Stel een vergelijking op voor <span class='mathjax-inline'>\(x\)</span>.
+</li>
+<li class='enumerate' id='x1-192x4'>Los de vergelijking op.
+</li>
+<li class='enumerate' id='x1-194x5'>Leg fysisch uit waarom het punt dichter bij de kleinste bronlading ligt.</li></ol>
+</div>
+<!--  l. 2459  --></div>
+<!--  l. 2459  --></section>
+<p><a id='x1-195r29'></a>
+                                                                  
+
+                                                                  
+</p><!--  l. 2462  --><section class='fvd-exercise'>
+<!--  l. 2462  --><div class='fvd-exercise__title'>
+<!--  l. 2462  --><p class='noindent'>Oefening 29
+</p><!--  l. 2462  --><p class='noindent'>— Een driehoek van ladingen
+</p><!--  l. 2462  --></div>
+<!--  l. 2462  --><div class='fvd-exercise__body'>
+<!--  l. 2462  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--g'>G</span></div>
+<!--  l. 2462  --><div class='fvd-exercise__content'>
+<!--  l. 2464  --><p class='noindent'>Drie puntladingen bevinden zich op de hoekpunten van een rechthoekige
+driehoek.
+</p>
+<div class='mathjax-block'>\[ Q_1=+2{,}0\,\mathrm {\mu C}, \qquad Q_2=+3{,}0\,\mathrm {\mu C}, \qquad Q_3=-4{,}0\,\mathrm {\mu C}. \]</div>
+<!--  l. 2475  --><p class='noindent'>De rechthoekszijden hebben lengtes:
+</p>
+<div class='mathjax-block'>\[ 0{,}30\,\mathrm m \]</div>
+<!--  l. 2481  --><p class='noindent'>en:
+</p>
+<div class='mathjax-block'>\[ 0{,}40\,\mathrm m. \]</div>
+<!--  l. 2487  --><p class='noindent'>Kies zelf een duidelijke plaatsing van de ladingen op een coördinatenstelsel.
+</p><!--  l. 2490  --><p class='noindent'>Bepaal vervolgens de resulterende elektrische kracht op <span class='mathjax-inline'>\(Q_3\)</span>.
+</p><!--  l. 2492  --><p class='noindent'>Je oplossing moet minstens bevatten:
+</p>     
+<ul class='itemize1'>
+<li class='itemize'>een schets;
+</li>
+<li class='itemize'>de afzonderlijke krachtvectoren;
+</li>
+<li class='itemize'>de gebruikte afstanden;
+</li>
+<li class='itemize'>de componenten;
+                                                                  
+
+                                                                  
+</li>
+<li class='itemize'>de grootte van de resulterende kracht;
+</li>
+<li class='itemize'>de richting en zin.</li></ul>
+</div>
+<!--  l. 2503  --></div>
+<!--  l. 2503  --></section>
+<p><a id='x1-196r30'></a>
+</p><!--  l. 2506  --><section class='fvd-exercise'>
+<!--  l. 2506  --><div class='fvd-exercise__title'>
+<!--  l. 2506  --><p class='noindent'>Oefening 30
+</p><!--  l. 2506  --><p class='noindent'>— Ontwerp een configuratie
+</p><!--  l. 2506  --></div>
+<!--  l. 2506  --><div class='fvd-exercise__body'>
+<!--  l. 2506  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--g'>G</span></div>
+<!--  l. 2506  --><div class='fvd-exercise__content'>
+<!--  l. 2508  --><p class='noindent'>Je beschikt over drie puntladingen:
+</p>
+<div class='mathjax-block'>\[ +Q,\qquad +Q,\qquad -q. \]</div>
+<!--  l. 2514  --><p class='noindent'>Ontwerp een symmetrische configuratie waarbij de resulterende elektrische kracht op
+de negatieve lading langs één vooraf gekozen as ligt.
+</p>     
+<ol class='enumerate1'>
+<li class='enumerate' id='x1-198x1'>Teken je configuratie.
+</li>
+<li class='enumerate' id='x1-200x2'>Verklaar welke krachtcomponenten elkaar opheffen.
+</li>
+<li class='enumerate' id='x1-202x3'>Verklaar welke componenten elkaar versterken.
+                                                                  
+
+                                                                  
+</li>
+<li class='enumerate' id='x1-204x4'>Stel een formule op voor de grootte van de resulterende kracht.</li></ol>
+</div>
+<!--  l. 2525  --></div>
+<!--  l. 2525  --></section>
+<p><a id='x1-205r31'></a>
+</p><!--  l. 2528  --><section class='fvd-exercise'>
+<!--  l. 2528  --><div class='fvd-exercise__title'>
+<!--  l. 2528  --><p class='noindent'>Oefening 31
+</p><!--  l. 2528  --><p class='noindent'>— Modelkritiek
+</p><!--  l. 2528  --></div>
+<!--  l. 2528  --><div class='fvd-exercise__body'>
+<!--  l. 2528  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--g'>G</span></div>
+<!--  l. 2528  --><div class='fvd-exercise__content'>
+<!--  l. 2530  --><p class='noindent'>De wet van Coulomb wordt in dit hoofdstuk gebruikt voor puntladingen.
+</p><!--  l. 2532  --><p class='noindent'>Een leerling wil dezelfde formule rechtstreeks gebruiken voor twee grote, onregelmatig
+gevormde geladen voorwerpen die zeer dicht bij elkaar staan.
+</p><!--  l. 2536  --><p class='noindent'>Beoordeel deze aanpak.
+</p><!--  l. 2538  --><p class='noindent'>Bespreek:
+</p>     
+<ol class='enumerate1'>
+<li class='enumerate' id='x1-207x1'>welke aanname achter het puntladingmodel zit;
+</li>
+<li class='enumerate' id='x1-209x2'>waarom die aanname hier problematisch kan zijn;
+</li>
+<li class='enumerate' id='x1-211x3'>welke informatie over de ladingsverdeling relevant zou kunnen worden;
+</li>
+                                                                  
+
+                                                                  
+<li class='enumerate' id='x1-213x4'>waarom een model bruikbaar kan zijn zonder universeel geldig te zijn.</li></ol>
+</div>
+<!--  l. 2549  --></div>
+<!--  l. 2549  --></section>
+<p><a id='x1-214r40'></a>
+</p><!--  l. 2556  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>40</div><div class='fvd-section-bar__title'>Onderzoeken met ICT</div></div>
+<!--  l. 2558  --><p class='noindent'>Gebruik een grafische rekenmachine, GeoGebra, Desmos of een spreadsheet om de
+functie:
+</p>
+<div class='mathjax-block'>\[ F_e(r) = k\frac {|Q_1Q_2|}{r^2} \]</div>
+<!--  l. 2567  --><p class='noindent'>te onderzoeken.
+</p><!--  l. 2569  --><p class='noindent'>Neem bijvoorbeeld:
+</p>
+<div class='mathjax-block'>\[ Q_1=2{,}0\,\mathrm {\mu C} \]</div>
+<!--  l. 2575  --><p class='noindent'>en:
+</p>
+<div class='mathjax-block'>\[ Q_2=3{,}0\,\mathrm {\mu C}. \]</div>
+<!--  l. 2581  --><p class='noindent'>Onderzoek voor verschillende waarden van <span class='mathjax-inline'>\(r\)</span>:
+</p>     
+<ol class='enumerate1'>
+<li class='enumerate' id='x1-216x1'>hoe de kracht verandert wanneer de afstand verdubbelt;
+</li>
+<li class='enumerate' id='x1-218x2'>hoe de kracht verandert wanneer de afstand verdrievoudigt;
+</li>
+<li class='enumerate' id='x1-220x3'>bij welke afstand de kracht nog een kwart van haar oorspronkelijke waarde
+bedraagt;
+</li>
+<li class='enumerate' id='x1-222x4'>waarom een lineair model niet geschikt is;
+                                                                  
+
+                                                                  
+</li>
+<li class='enumerate' id='x1-224x5'>hoe je uit de grafiek het inverse-kwadratenkarakter kunt herkennen.</li></ol>
+<!--  l. 2594  --><p class='noindent'>Herhaal eventueel voor andere waarden van <span class='mathjax-inline'>\(Q_1\)</span> en <span class='mathjax-inline'>\(Q_2\)</span>.
+</p><!--  l. 2596  --><p class='noindent'>Onderzoek welke eigenschappen van de grafiek veranderen en welke hetzelfde
+blijven.
+<a id='x1-225r41'></a>
+</p><!--  l. 2604  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>41</div><div class='fvd-section-bar__title'>Veelvoorkomende denkfouten</div></div>
+     
+<ul class='itemize1'>
+<li class='itemize'>    
+<!--  l. 2608  --><p class='noindent'><strong>“Wrijving maakt elektrische lading.”</strong>
+</p>     
+<!--  l. 2610  --><p class='noindent'>Nee. Bij gewone elektrostatische processen worden bestaande elektrische
+ladingen gescheiden of verplaatst.
+</p>     
+</li>
+<li class='itemize'>    
+<!--  l. 2613  --><p class='noindent'><strong>“Een positief geladen voorwerp heeft extra protonen gekregen.”</strong>
+</p>     
+<!--  l. 2616  --><p class='noindent'>Meestal niet. In gewone vaste stoffen ontstaat positieve lading doorgaans
+door een tekort aan elektronen.
+</p>     
+</li>
+<li class='itemize'>    
+<!--  l. 2619  --><p class='noindent'><strong>“Een neutraal voorwerp bevat geen lading.”</strong>
+</p>     
+<!--  l. 2621  --><p class='noindent'>Nee. Het bevat positieve en negatieve ladingen, maar de netto lading is
+nul.
+</p>     
+</li>
+<li class='itemize'>    
+<!--  l. 2624  --><p class='noindent'><strong>“Als twee voorwerpen elkaar aantrekken, moeten ze tegengesteld
+geladen zijn.”</strong>
+</p>     
+<!--  l. 2627  --><p class='noindent'>Niet noodzakelijk. Een geladen voorwerp kan door ladingsherverdeling of
+polarisatie ook een neutraal voorwerp aantrekken.
+</p>     
+</li>
+<li class='itemize'>    
+<!--  l. 2630  --><p class='noindent'><strong>“Een grotere lading oefent een grotere kracht uit op een kleinere
+lading dan omgekeerd.”</strong>
+</p>     
+<!--  l. 2633  --><p class='noindent'>Nee. Volgens Newton III zijn de twee interactiekrachten even groot en
+tegengesteld gericht.
+                                                                  
+
+                                                                  
+</p>     
+</li>
+<li class='itemize'>    
+<!--  l. 2636  --><p class='noindent'><strong>“Als de afstand verdubbelt, halveert de kracht.”</strong>
+</p>     
+<!--  l. 2638  --><p class='noindent'>Nee. Volgens de inverse-kwadratenwet wordt de kracht viermaal kleiner.
+</p>     
+</li>
+<li class='itemize'>    
+<!--  l. 2640  --><p class='noindent'><strong>“Een  negatief  antwoord  uit  de  Coulombformule  betekent  een
+negatieve krachtgrootte.”</strong>
+</p>     
+<!--  l. 2643  --><p class='noindent'>Nee. De grootte van een kracht is niet negatief. Gebruik <span class='mathjax-inline'>\(|Q_1Q_2|\)</span> voor de grootte
+en bepaal richting en zin afzonderlijk.
+</p>     
+</li>
+<li class='itemize'>    
+<!--  l. 2646  --><p class='noindent'><strong>“Bij drie ladingen tel je gewoon alle krachtgroottes op.”</strong>
+</p>     
+<!--  l. 2649  --><p class='noindent'>Nee. Krachten zijn vectoren en moeten vectorieel worden gecombineerd.
+</p>     
+</li></ul>
+<p><a id='x1-226r42'></a>
+</p><!--  l. 2658  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>42</div><div class='fvd-section-bar__title'>Samenvatting</div></div>
+<p><a id='x1-227r1'></a>
+</p><!--  l. 2661  --><div class='fvd-subsection'>
+<!--  l. 2661  --><div class='fvd-subsection__row'>
+<!--  l. 2661  --><div class='fvd-subsection__number'>42.1</div>
+<!--  l. 2661  --><div class='fvd-subsection__title'>Elektrische lading</div>
+<!--  l. 2661  --></div>
+<!--  l. 2661  --><div class='fvd-subsection__line'></div>
+<!--  l. 2661  --></div>
+<!--  l. 2663  --><p class='noindent'>Elektrische lading wordt voorgesteld door:
+</p>
+<div class='mathjax-block'>\[ q \qquad \text {of}\qquad Q. \]</div>
+<!--  l. 2671  --><p class='noindent'>De SI-eenheid is:
+</p>
+<div class='mathjax-block'>\[ \boxed { [q]=\mathrm C. } \]</div>
+<!--  l. 2680  --><p class='noindent'>Er bestaan positieve en negatieve elektrische ladingen.
+</p><!--  l. 2682  --><p class='noindent'>Gelijknamige ladingen stoten elkaar af.
+</p><!--  l. 2684  --><p class='noindent'>Tegengestelde ladingen trekken elkaar aan.
+                                                                  
+
+                                                                  
+<a id='x1-228r2'></a>
+</p><!--  l. 2687  --><div class='fvd-subsection'>
+<!--  l. 2687  --><div class='fvd-subsection__row'>
+<!--  l. 2687  --><div class='fvd-subsection__number'>42.2</div>
+<!--  l. 2687  --><div class='fvd-subsection__title'>Elementaire lading</div>
+<!--  l. 2687  --></div>
+<!--  l. 2687  --><div class='fvd-subsection__line'></div>
+<!--  l. 2687  --></div>
+
+<div class='mathjax-block'>\[ \boxed { e=1{,}602\times 10^{-19}\,\mathrm C. } \]</div>
+<!--  l. 2695  --><p class='noindent'>Voor de grootte van een gekwantiseerde lading:
+</p>
+<div class='mathjax-block'>\[ \boxed { |q|=Ne. } \]</div>
+<p><a id='x1-229r3'></a>
+</p><!--  l. 2704  --><div class='fvd-subsection'>
+<!--  l. 2704  --><div class='fvd-subsection__row'>
+<!--  l. 2704  --><div class='fvd-subsection__number'>42.3</div>
+<!--  l. 2704  --><div class='fvd-subsection__title'>Ladingsbehoud</div>
+<!--  l. 2704  --></div>
+<!--  l. 2704  --><div class='fvd-subsection__line'></div>
+<!--  l. 2704  --></div>
+<!--  l. 2706  --><p class='noindent'>Voor een elektrisch geïsoleerd systeem:
+</p>
+<div class='mathjax-block'>\[ \boxed { Q_\mathrm {voor}=Q_\mathrm {na}. } \]</div>
+<p><a id='x1-230r4'></a>
+</p><!--  l. 2715  --><div class='fvd-subsection'>
+<!--  l. 2715  --><div class='fvd-subsection__row'>
+<!--  l. 2715  --><div class='fvd-subsection__number'>42.4</div>
+<!--  l. 2715  --><div class='fvd-subsection__title'>Geleiders en isolatoren</div>
+<!--  l. 2715  --></div>
+<!--  l. 2715  --><div class='fvd-subsection__line'></div>
+<!--  l. 2715  --></div>
+<!--  l. 2717  --><p class='noindent'>In een geleider kunnen relevante ladingsdragers zich gemakkelijk verplaatsen.
+</p><!--  l. 2720  --><p class='noindent'>In een isolator blijven ladingen veel sterker lokaal gebonden.
+                                                                  
+
+                                                                  
+<a id='x1-231r5'></a>
+</p><!--  l. 2723  --><div class='fvd-subsection'>
+<!--  l. 2723  --><div class='fvd-subsection__row'>
+<!--  l. 2723  --><div class='fvd-subsection__number'>42.5</div>
+<!--  l. 2723  --><div class='fvd-subsection__title'>Influente werking</div>
+<!--  l. 2723  --></div>
+<!--  l. 2723  --><div class='fvd-subsection__line'></div>
+<!--  l. 2723  --></div>
+<!--  l. 2725  --><p class='noindent'>Een geladen voorwerp kan zonder contact een herverdeling van lading in een ander
+voorwerp veroorzaken.
+</p><!--  l. 2728  --><p class='noindent'>Dit noemen we elektrostatische influentie.
+<a id='x1-232r6'></a>
+</p><!--  l. 2731  --><div class='fvd-subsection'>
+<!--  l. 2731  --><div class='fvd-subsection__row'>
+<!--  l. 2731  --><div class='fvd-subsection__number'>42.6</div>
+<!--  l. 2731  --><div class='fvd-subsection__title'>Wet van Coulomb</div>
+<!--  l. 2731  --></div>
+<!--  l. 2731  --><div class='fvd-subsection__line'></div>
+<!--  l. 2731  --></div>
+<!--  l. 2733  --><p class='noindent'>Voor twee puntladingen:
+</p>
+<div class='mathjax-block'>\[ \boxed { F_e = k\frac {|Q_1Q_2|}{r^2}. } \]</div>
+<!--  l. 2743  --><p class='noindent'>met:
+</p>
+<div class='mathjax-block'>\[ \boxed { k\approx 8{,}99\times 10^9\, \frac {\mathrm {N\,m^2}}{\mathrm {C^2}}. } \]</div>
+<p><a id='x1-233r7'></a>
+</p><!--  l. 2753  --><div class='fvd-subsection'>
+<!--  l. 2753  --><div class='fvd-subsection__row'>
+<!--  l. 2753  --><div class='fvd-subsection__number'>42.7</div>
+<!--  l. 2753  --><div class='fvd-subsection__title'>Afhankelijkheden</div>
+<!--  l. 2753  --></div>
+<!--  l. 2753  --><div class='fvd-subsection__line'></div>
+<!--  l. 2753  --></div>
+
+                                                                  
+
+                                                                  
+<div class='mathjax-block'>\[ \boxed { F_e\propto |Q_1Q_2| } \]</div>
+<!--  l. 2761  --><p class='noindent'>en:
+</p>
+<div class='mathjax-block'>\[ \boxed { F_e\propto \frac 1{r^2}. } \]</div>
+<p><a id='x1-234r8'></a>
+</p><!--  l. 2770  --><div class='fvd-subsection'>
+<!--  l. 2770  --><div class='fvd-subsection__row'>
+<!--  l. 2770  --><div class='fvd-subsection__number'>42.8</div>
+<!--  l. 2770  --><div class='fvd-subsection__title'>Newton III</div>
+<!--  l. 2770  --></div>
+<!--  l. 2770  --><div class='fvd-subsection__line'></div>
+<!--  l. 2770  --></div>
+
+<div class='mathjax-block'>\[ \boxed { \vec F_{1\rightarrow 2} = -\vec F_{2\rightarrow 1}. } \]</div>
+<p><a id='x1-235r9'></a>
+</p><!--  l. 2781  --><div class='fvd-subsection'>
+<!--  l. 2781  --><div class='fvd-subsection__row'>
+<!--  l. 2781  --><div class='fvd-subsection__number'>42.9</div>
+<!--  l. 2781  --><div class='fvd-subsection__title'>Superpositie</div>
+<!--  l. 2781  --></div>
+<!--  l. 2781  --><div class='fvd-subsection__line'></div>
+<!--  l. 2781  --></div>
+<!--  l. 2783  --><p class='noindent'>Wanneer meerdere ladingen krachten uitoefenen:
+</p>
+<div class='mathjax-block'>\[ \boxed { \vec F_\mathrm {res} = \sum _i\vec F_i. } \]</div>
+<p><a id='x1-236r43'></a>
+</p><!--  l. 2798  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>43</div><div class='fvd-section-bar__title'>Wat moet je zeker beheersen?</div></div>
+<!--  l. 2800  --><p class='noindent'>Om dit onderdeel op het vereiste niveau te beheersen, volstaat het niet dat je alleen
+getallen in de wet van Coulomb kunt invullen.
+</p><!--  l. 2803  --><p class='noindent'>Je moet zeker kunnen:
+</p>     
+<ul class='itemize1'>
+<li class='itemize'>positieve, negatieve en neutrale lading microscopisch verklaren;
+</li>
+                                                                  
+
+                                                                  
+<li class='itemize'>werken met coulomb, microcoulomb en nanocoulomb;
+</li>
+<li class='itemize'>de elementaire lading gebruiken;
+</li>
+<li class='itemize'>het behoud van elektrische lading toepassen;
+</li>
+<li class='itemize'>verklaren wat er gebeurt bij laden door wrijving en contact;
+</li>
+<li class='itemize'>het   verschil   tussen   geleiders   en   isolatoren   verklaren   vanuit   de
+beweeglijkheid van elektrische ladingen;
+</li>
+<li class='itemize'>elektrostatische influentie verklaren;
+</li>
+<li class='itemize'>uitleggen  waarom  een  geladen  voorwerp  een  neutraal  voorwerp  kan
+aantrekken;
+</li>
+<li class='itemize'>aantrekking en afstoting correct bepalen;
+</li>
+<li class='itemize'>     
+<!--  l. 2828  --><p class='noindent'>de wet van Coulomb toepassen:
+</p>     
+<div class='mathjax-block'>\[ F_e=k\frac {|Q_1Q_2|}{r^2}; \]</div>
+</li>     
+<li class='itemize'>elektrische krachtvectoren correct tekenen;
+</li>
+<li class='itemize'>Newton III toepassen op elektrische interacties;
+                                                                  
+
+                                                                  
+</li>
+<li class='itemize'>analyseren hoe de kracht verandert wanneer <span class='mathjax-inline'>\(Q_1\)</span>, <span class='mathjax-inline'>\(Q_2\)</span> of <span class='mathjax-inline'>\(r\)</span> verandert;
+</li>
+<li class='itemize'>het inverse-kwadratenverband herkennen in een formule, tabel of grafiek;
+</li>
+<li class='itemize'>een onbekende lading of afstand uit de wet van Coulomb bepalen;
+</li>
+<li class='itemize'>in situaties met meerdere ladingen de afzonderlijke krachtvectoren bepalen
+en vectorieel combineren;
+</li>
+<li class='itemize'>overeenkomsten  en  verschillen  tussen  gravitatie  en  elektrische  kracht
+uitleggen;
+</li>
+<li class='itemize'>je  resultaat  controleren  op  eenheid,  grootteorde,  richting  en  fysische
+betekenis.
+</li></ul>
+<!--  l. 2857  --><p class='noindent'>De oefeningen met de essentieel-markering vormen samen de minimale oefenset die je
+moet beheersen.
+</p><!--  l. 2860  --><p class='noindent'>Let daarbij op: sommige essentiële oefeningen behoren tot <span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span>. Dat is bewust zo. Het
+vereiste beheersingsniveau vraagt meer dan alleen standaardberekeningen.
+<a id='x1-237r44'></a>
+</p><!--  l. 2869  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>44</div><div class='fvd-section-bar__title'>Vooruitblik: van kracht naar veld</div></div>
+<!--  l. 2871  --><p class='noindent'>We hebben nu twee fundamentele wisselwerkingen onderzocht.
+</p><!--  l. 2873  --><p class='noindent'>Bij gravitatie:
+</p>
+<div class='mathjax-block'>\[ F_g = G\frac {Mm}{r^2}. \]</div>
+<!--  l. 2881  --><p class='noindent'>Bij elektriciteit:
+</p>
+<div class='mathjax-block'>\[ F_e = k\frac {|Qq|}{r^2}. \]</div>
+                                                                  
+
+                                                                  
+<!--  l. 2889  --><p class='noindent'>Bij gravitatie hebben we nog een belangrijke stap gezet.
+</p><!--  l. 2891  --><p class='noindent'>We beschreven niet alleen de kracht tussen twee massa’s.
+</p><!--  l. 2893  --><p class='noindent'>We zeiden dat een massa <span class='mathjax-inline'>\(M\)</span> de ruimte rondom zich beïnvloedt door een gravitatieveld:
+</p>
+<div class='mathjax-block'>\[ M \longrightarrow \vec g \longrightarrow \vec F_g. \]</div>
+<!--  l. 2904  --><p class='noindent'>Daarbij:
+</p>
+<div class='mathjax-block'>\[ \vec F_g=m\vec g. \]</div>
+<!--  l. 2910  --><p class='noindent'>Dat roept een voor de hand liggende vraag op.
+</p><!--  l. 2912  --><p class='noindent'>Kunnen we hetzelfde doen bij elektrische lading?
+</p><!--  l. 2914  --><p class='noindent'>Kunnen we de ruimte rond een bronlading <span class='mathjax-inline'>\(Q\)</span> beschrijven zonder eerst een tweede
+lading te kiezen?
+</p><!--  l. 2917  --><p class='noindent'>Het antwoord is ja.
+</p><!--  l. 2919  --><p class='noindent'>We zullen een nieuwe vectoriële grootheid invoeren:
+</p>
+<div class='mathjax-block'>\[ \boxed {\vec E} \]</div>
+<!--  l. 2925  --><p class='noindent'>het <strong>elektrische veld</strong>.
+</p><!--  l. 2927  --><p class='noindent'>Dan ontstaat de parallel:
+</p>
+<div class='mathjax-block'>\[ \boxed { \begin{array}{ccc} M &amp; \longrightarrow &amp; \vec g \\ Q &amp; \longrightarrow &amp; \vec E \end{array} } \]</div>
+<!--  l. 2939  --><p class='noindent'>en:
+</p>
+<div class='mathjax-block'>\[ \boxed { \begin{array}{ccc} \vec F_g &amp;=&amp;m\vec g \\[1mm] \vec F_e&amp;=&amp;q\vec E. \end{array} } \]</div>
+<!--  l. 2951  --><p class='noindent'>In het volgende hoofdstuk onderzoeken we hoe zo’n elektrisch veld eruit ziet, hoe
+verschillende ladingen samen een veld vormen en hoe we met veldlijnen de
+onzichtbare elektrische invloed in de ruimte zichtbaar kunnen maken.
+                                                                  
+
+                                                                  
+</p>
+</body> 
+ 
+</html>
+                                                                  
+
+

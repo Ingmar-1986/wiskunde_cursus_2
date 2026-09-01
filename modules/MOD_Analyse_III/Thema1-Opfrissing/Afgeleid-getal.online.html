@@ -19,17 +19,17 @@
 
  
 <div class='abstract'>
-<!-- l. 132 --><p class='noindent'>In dit hoofdstuk frissen we een centraal idee uit de analyse op: hoe beschrijf je hoe
+<!-- l. 206 --><p class='noindent'>In dit hoofdstuk frissen we een centraal idee uit de analyse op: hoe beschrijf je hoe
 snel een functie verandert?
-</p><!-- l. 132 --><p class='noindent'>We vertrekken van de gemiddelde verandering over een interval en herkennen
+</p><!-- l. 206 --><p class='noindent'>We vertrekken van de gemiddelde verandering over een interval en herkennen
 daarin de helling van een secant. Door het interval steeds kleiner te maken,
 komen we opnieuw bij de ogenblikkelijke verandering, het afgeleid getal en de
 raaklijn.
-</p><!-- l. 132 --><p class='noindent'>Zo leggen we de basis om verderop nieuwe functies en nieuwe afleidingstechnieken te
+</p><!-- l. 206 --><p class='noindent'>Zo leggen we de basis om verderop nieuwe functies en nieuwe afleidingstechnieken te
 onderzoeken.</p> 
 </div>
 <div class='maketitle'></div>
-<!-- l. 141 --><p class='noindent'></p><section class='learning-box learning-box--prior'> <div class='learning-box__header'> <span class='learning-box__icon'> </span><span class='learning-box__title'>Voorkennis</span> </div> <div class='learning-box__content'> 
+<!-- l. 215 --><p class='noindent'></p><section class='learning-box learning-box--prior'> <div class='learning-box__header'> <span class='learning-box__icon'> </span><span class='learning-box__title'>Voorkennis</span> </div> <div class='learning-box__content'> 
 <p></p>     
 <ul class='itemize1'>
 <li class='itemize'>Je kan functiewaarden berekenen.
@@ -43,8 +43,8 @@ onderzoeken.</p>
 <li class='itemize'>Je kent het afgeleid getal en de afgeleide functie.
 </li>
 <li class='itemize'>Je kan eenvoudige veeltermfuncties afleiden.</li></ul>
-<!-- l. 148 --><p class='noindent'></p></div> </section> 
-<p></p><!-- l. 150 --><p class='noindent'></p><section class='learning-box learning-box--goals'> <div class='learning-box__header'> <span class='learning-box__icon'> </span><span class='learning-box__title'>Leerdoelen</span> </div> <div class='learning-box__content'> 
+<!-- l. 222 --><p class='noindent'></p></div> </section> 
+<p></p><!-- l. 224 --><p class='noindent'></p><section class='learning-box learning-box--goals'> <div class='learning-box__header'> <span class='learning-box__icon'> </span><span class='learning-box__title'>Leerdoelen</span> </div> <div class='learning-box__content'> 
 <p></p>
                                                                   
 
@@ -67,132 +67,132 @@ raaklijn.
 <li class='itemize'>Je kan het teken en de eenheid van een afgeleid getal interpreteren.
 </li>
 <li class='itemize'>Je kan uit <span class='mathjax-inline'>\(f(a)\)</span> en <span class='mathjax-inline'>\(f'(a)\)</span> de vergelijking van de raaklijn aan de grafiek in <span class='mathjax-inline'>\(x=a\)</span> bepalen.</li></ul>
-<!-- l. 163 --><p class='noindent'></p></div> </section> 
+<!-- l. 237 --><p class='noindent'></p></div> </section> 
 <p><a id='x1-2r1'></a>
-</p><p></p><!-- l. 172 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>1</div><div class='fvd-section-bar__title'>Waarom leer je dit?</div></div>
-<p></p><!-- l. 174 --><p class='noindent'>In wetenschappen beschrijven functies vaak grootheden die veranderen.
-</p><!-- l. 176 --><p class='noindent'>Een temperatuur stijgt of daalt. De hoeveelheid van een stof verandert tijdens een
+</p><p></p><!-- l. 246 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>1</div><div class='fvd-section-bar__title'>Waarom leer je dit?</div></div>
+<p></p><!-- l. 248 --><p class='noindent'>In wetenschappen beschrijven functies vaak grootheden die veranderen.
+</p><!-- l. 250 --><p class='noindent'>Een temperatuur stijgt of daalt. De hoeveelheid van een stof verandert tijdens een
 reactie. Een populatie groeit. Een elektrische spanning varieert in de tijd. Een
 meetwaarde bereikt een maximum of minimum.
-</p><!-- l. 182 --><p class='noindent'>Een functie vertelt ons welke waarde een grootheid heeft. Maar in veel situaties willen
+</p><!-- l. 256 --><p class='noindent'>Een functie vertelt ons welke waarde een grootheid heeft. Maar in veel situaties willen
 we nog iets anders weten:
 </p>
                                                                   
 
                                                                   
 <div class='center'>
-<!-- l. 185 --><p class='noindent'>
-</p><!-- l. 186 --><p class='noindent'><strong>Hoe verandert die grootheid?</strong></p></div>
-<!-- l. 189 --><p class='noindent'>Daarvoor gebruiken we afgeleiden.
-</p><!-- l. 191 --><p class='noindent'>Je hebt het afgeleid getal en de afgeleide van veeltermfuncties al in het vijfde jaar
+<!-- l. 259 --><p class='noindent'>
+</p><!-- l. 260 --><p class='noindent'><strong>Hoe verandert die grootheid?</strong></p></div>
+<!-- l. 263 --><p class='noindent'>Daarvoor gebruiken we afgeleiden.
+</p><!-- l. 265 --><p class='noindent'>Je hebt het afgeleid getal en de afgeleide van veeltermfuncties al in het vijfde jaar
 bestudeerd. In dit hoofdstuk bouwen we die theorie daarom niet opnieuw volledig
 op.
-</p><!-- l. 195 --><p class='noindent'>We halen vooral de fundamentele verbanden opnieuw naar boven:
+</p><!-- l. 269 --><p class='noindent'>We halen vooral de fundamentele verbanden opnieuw naar boven:
 </p>
 <div class='mathjax-block'>\[ \boxed {\text {gemiddelde verandering}} \longleftrightarrow \boxed {\text {secant}} \]</div>
-<!-- l. 203 --><p class='noindent'>en
+<!-- l. 277 --><p class='noindent'>en
 </p>
 <div class='mathjax-block'>\[ \boxed {\text {ogenblikkelijke verandering}} \longleftrightarrow \boxed {\text {raaklijn}} \longleftrightarrow \boxed {\text {afgeleid getal}}. \]</div>
-<!-- l. 213 --><p class='noindent'>Die verbanden zullen we in de volgende hoofdstukken telkens opnieuw gebruiken
+<!-- l. 287 --><p class='noindent'>Die verbanden zullen we in de volgende hoofdstukken telkens opnieuw gebruiken
 wanneer we afgeleiden van nieuwe soorten functies onderzoeken.
 <a id='x1-3r2'></a>
-</p><!-- l. 223 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>2</div><div class='fvd-section-bar__title'>Gemiddelde verandering</div></div>
+</p><!-- l. 297 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>2</div><div class='fvd-section-bar__title'>Gemiddelde verandering</div></div>
 <p><a id='x1-4r1'></a>
-</p><p></p><!-- l. 225 --><p class='noindent'></p><div class='fvd-subsection'>
-<p></p><!-- l. 225 --><p class='noindent'></p><div class='fvd-subsection__row'>
-<p></p><!-- l. 225 --><p class='noindent'></p><div class='fvd-subsection__number'>2.1</div>
-<p></p><!-- l. 225 --><p class='noindent'></p><div class='fvd-subsection__title'>Verandering over een interval</div>
-<p></p><!-- l. 225 --><p class='noindent'></p></div>
-<p></p><!-- l. 225 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
-<p></p><!-- l. 225 --><p class='noindent'></p></div>
-<p></p><!-- l. 227 --><p class='noindent'>Beschouw een functie <span class='mathjax-inline'>\(f\)</span> en twee waarden <span class='mathjax-inline'>\(a\)</span> en <span class='mathjax-inline'>\(b\)</span>.
-</p><!-- l. 229 --><p class='noindent'>De verandering van de onafhankelijke veranderlijke is
+</p><p></p><!-- l. 299 --><p class='noindent'></p><div class='fvd-subsection'>
+<p></p><!-- l. 299 --><p class='noindent'></p><div class='fvd-subsection__row'>
+<p></p><!-- l. 299 --><p class='noindent'></p><div class='fvd-subsection__number'>2.1</div>
+<p></p><!-- l. 299 --><p class='noindent'></p><div class='fvd-subsection__title'>Verandering over een interval</div>
+<p></p><!-- l. 299 --><p class='noindent'></p></div>
+<p></p><!-- l. 299 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
+<p></p><!-- l. 299 --><p class='noindent'></p></div>
+<p></p><!-- l. 301 --><p class='noindent'>Beschouw een functie <span class='mathjax-inline'>\(f\)</span> en twee waarden <span class='mathjax-inline'>\(a\)</span> en <span class='mathjax-inline'>\(b\)</span>.
+</p><!-- l. 303 --><p class='noindent'>De verandering van de onafhankelijke veranderlijke is
 </p>
 <div class='mathjax-block'>\[ \Delta x=b-a. \]</div>
-<!-- l. 235 --><p class='noindent'>De verandering van de functiewaarde is
+<!-- l. 309 --><p class='noindent'>De verandering van de functiewaarde is
 </p>
 <div class='mathjax-block'>\[ \Delta f=f(b)-f(a). \]</div>
-<!-- l. 241 --><p class='noindent'>Om te weten hoeveel de functiewaarde gemiddeld verandert per eenheid verandering
+<!-- l. 315 --><p class='noindent'>Om te weten hoeveel de functiewaarde gemiddeld verandert per eenheid verandering
 van <span class='mathjax-inline'>\(x\)</span>, vergelijken we beide veranderingen.
                                                                   
 
                                                                   
-</p><!-- l. 244 --><p class='noindent'></p><section class='fvd-definition'><div class='fvd-definition__title'><span class='fvd-definition__label'>DEFINITIE</span><span class='fvd-definition__separator'> — </span><span class='fvd-definition__name'>Differentiequotiënt</span></div><div class='fvd-definition__content'> De <strong>gemiddelde verandering</strong> van een functie <span class='mathjax-inline'>\(f\)</span> over
+</p><!-- l. 318 --><p class='noindent'></p><section class='fvd-definition'><div class='fvd-definition__title'><span class='fvd-definition__label'>DEFINITIE</span><span class='fvd-definition__separator'> — </span><span class='fvd-definition__name'>Differentiequotiënt</span></div><div class='fvd-definition__content'> De <strong>gemiddelde verandering</strong> van een functie <span class='mathjax-inline'>\(f\)</span> over
 het interval <span class='mathjax-inline'>\([a,b]\)</span> is
 <p></p>
 <div class='mathjax-block'>\[ \important { \frac {\Delta f}{\Delta x} = \frac {f(b)-f(a)}{b-a} }. \]</div>
-<!-- l. 256 --><p class='noindent'>Deze verhouding noemen we het <strong>differentiequotiënt</strong>. </p></div></section>
+<!-- l. 330 --><p class='noindent'>Deze verhouding noemen we het <strong>differentiequotiënt</strong>. </p></div></section>
 <p><a id='x1-5r1'></a>
-</p><p></p><!-- l. 261 --><p class='noindent'></p><section class='fvd-example'>
-<p></p><!-- l. 261 --><p class='noindent'></p><div class='fvd-example__title'>Voorbeeld 1</div>
-<p></p><!-- l. 261 --><p class='noindent'></p><div class='fvd-example__content'>
-<p></p><!-- l. 262 --><p class='noindent'>Beschouw
+</p><p></p><!-- l. 335 --><p class='noindent'></p><section class='fvd-example'>
+<p></p><!-- l. 335 --><p class='noindent'></p><div class='fvd-example__title'>Voorbeeld 1</div>
+<p></p><!-- l. 335 --><p class='noindent'></p><div class='fvd-example__content'>
+<p></p><!-- l. 336 --><p class='noindent'>Beschouw
 </p>
 <div class='mathjax-block'>\[ f(x)=-x^2+8x. \]</div>
-<!-- l. 268 --><p class='noindent'>Bepaal de gemiddelde verandering over <span class='mathjax-inline'>\([2,4]\)</span>.
+<!-- l. 342 --><p class='noindent'>Bepaal de gemiddelde verandering over <span class='mathjax-inline'>\([2,4]\)</span>.
 </p>
 <div class='accordion'> 
 <h3 class='xmoplossing'></h3> 
 <div class='accordion-item xmoplossing-content' id='accordion-item1'> 
 
-<!-- l. 272 --><p class='noindent'>We berekenen eerst
+<!-- l. 346 --><p class='noindent'>We berekenen eerst
 </p>
 <div class='mathjax-block'>\[ f(2)=-2^2+8\cdot 2=12 \]</div>
-<!-- l. 278 --><p class='noindent'>en
+<!-- l. 352 --><p class='noindent'>en
 </p>
 <div class='mathjax-block'>\[ f(4)=-4^2+8\cdot 4=16. \]</div>
-<!-- l. 284 --><p class='noindent'>Daarom is
+<!-- l. 358 --><p class='noindent'>Daarom is
 </p>
 <div class='mathjax-block'>\[ \frac {f(4)-f(2)}{4-2} = \frac {16-12}{2} = 2. \]</div>
-<!-- l. 294 --><p class='noindent'>De functiewaarde neemt tussen <span class='mathjax-inline'>\(x=2\)</span> en <span class='mathjax-inline'>\(x=4\)</span> <strong>gemiddeld met <span class='mathjax-inline'>\(2\)</span> eenheden toe per eenheid
+<!-- l. 368 --><p class='noindent'>De functiewaarde neemt tussen <span class='mathjax-inline'>\(x=2\)</span> en <span class='mathjax-inline'>\(x=4\)</span> <strong>gemiddeld met <span class='mathjax-inline'>\(2\)</span> eenheden toe per eenheid
 toename van <span class='mathjax-inline'>\(x\)</span></strong>.
 </p></div> 
 </div> 
 
 </div></section>
 <p><a id='x1-6r1'></a>
-</p><p></p><!-- l. 302 --><p class='noindent'></p><section class='fvd-exercise'>
-<p></p><!-- l. 302 --><p class='noindent'></p><div class='fvd-exercise__title'>
-<p></p><!-- l. 302 --><p class='noindent'>Oefening 1
-</p><!-- l. 302 --><p class='noindent'>— Gemiddelde verandering
-</p><!-- l. 302 --><p class='noindent'></p></div>
-<p></p><!-- l. 302 --><p class='noindent'></p><div class='fvd-exercise__body'>
+</p><p></p><!-- l. 376 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 376 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 376 --><p class='noindent'>Oefening 1
+</p><!-- l. 376 --><p class='noindent'>— Gemiddelde verandering
+</p><!-- l. 376 --><p class='noindent'></p></div>
+<p></p><!-- l. 376 --><p class='noindent'></p><div class='fvd-exercise__body'>
                                                                   
 
                                                                   
-<p></p><!-- l. 302 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
-<p></p><!-- l. 302 --><p class='noindent'></p><div class='fvd-exercise__content'>
-<p></p><!-- l. 304 --><p class='noindent'>Voor een functie <span class='mathjax-inline'>\(f\)</span> geldt
+<p></p><!-- l. 376 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 376 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 378 --><p class='noindent'>Voor een functie <span class='mathjax-inline'>\(f\)</span> geldt
 </p>
 <div class='mathjax-block'>\[ f(3)=7 \qquad \text {en}\qquad f(8)=2. \]</div>
-<!-- l. 312 --><p class='noindent'>Bereken de gemiddelde verandering over <span class='mathjax-inline'>\([3,8]\)</span>.
+<!-- l. 386 --><p class='noindent'>Bereken de gemiddelde verandering over <span class='mathjax-inline'>\([3,8]\)</span>.
 </p>
 <div class='mathjax-block'>\[ \frac {f(8)-f(3)}{8-3} = \answer {-1}. \]</div>
-<!-- l. 320 --><p class='noindent'>Welke interpretatie is correct?
+<!-- l. 394 --><p class='noindent'>Welke interpretatie is correct?
 </p>
 <div class='multiple-choice' id='problem2' titletext=' Multiple Choice'><span class='choice  ' id='choice1'>De functie daalt overal met precies <span class='mathjax-inline'>\(1\)</span>.</span> <span class='choice correct ' id='choice2'>Tussen <span class='mathjax-inline'>\(x=3\)</span> en <span class='mathjax-inline'>\(x=8\)</span> neemt de functiewaarde
 gemiddeld met <span class='mathjax-inline'>\(1\)</span> af per eenheid toename van <span class='mathjax-inline'>\(x\)</span>.</span> <span class='choice  ' id='choice3'>De functiewaarde is gelijk aan <span class='mathjax-inline'>\(-1\)</span>.</span> <span class='choice  ' id='choice4'>Elke raaklijn aan de grafiek heeft richtingscoëfficiënt <span class='mathjax-inline'>\(-1\)</span>.</span> </div>
 </div>
-<!-- l. 330 --><p class='noindent'></p></div>
-<p></p><!-- l. 330 --><p class='noindent'></p></section>
+<!-- l. 404 --><p class='noindent'></p></div>
+<p></p><!-- l. 404 --><p class='noindent'></p></section>
 <p><a id='x1-7r2'></a>
-</p><p></p><!-- l. 337 --><p class='noindent'></p><div class='fvd-subsection'>
-<p></p><!-- l. 337 --><p class='noindent'></p><div class='fvd-subsection__row'>
-<p></p><!-- l. 337 --><p class='noindent'></p><div class='fvd-subsection__number'>2.2</div>
-<p></p><!-- l. 337 --><p class='noindent'></p><div class='fvd-subsection__title'>Meetkundige betekenis</div>
-<p></p><!-- l. 337 --><p class='noindent'></p></div>
-<p></p><!-- l. 337 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
-<p></p><!-- l. 337 --><p class='noindent'></p></div>
-<p></p><!-- l. 339 --><p class='noindent'>Beschouw de punten
+</p><p></p><!-- l. 411 --><p class='noindent'></p><div class='fvd-subsection'>
+<p></p><!-- l. 411 --><p class='noindent'></p><div class='fvd-subsection__row'>
+<p></p><!-- l. 411 --><p class='noindent'></p><div class='fvd-subsection__number'>2.2</div>
+<p></p><!-- l. 411 --><p class='noindent'></p><div class='fvd-subsection__title'>Meetkundige betekenis</div>
+<p></p><!-- l. 411 --><p class='noindent'></p></div>
+<p></p><!-- l. 411 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
+<p></p><!-- l. 411 --><p class='noindent'></p></div>
+<p></p><!-- l. 413 --><p class='noindent'>Beschouw de punten
 </p>
 <div class='mathjax-block'>\[ A(a,f(a)) \qquad \text {en}\qquad B(b,f(b)) \]</div>
-<!-- l. 347 --><p class='noindent'>op de grafiek van <span class='mathjax-inline'>\(f\)</span>.
-</p><!-- l. 349 --><p class='noindent'>De rechte door <span class='mathjax-inline'>\(A\)</span> en <span class='mathjax-inline'>\(B\)</span> is een <strong>secant</strong>.
-</p><!-- l. 351 --><p class='noindent'>De richtingscoëfficiënt van deze secant is
+<!-- l. 421 --><p class='noindent'>op de grafiek van <span class='mathjax-inline'>\(f\)</span>.
+</p><!-- l. 423 --><p class='noindent'>De rechte door <span class='mathjax-inline'>\(A\)</span> en <span class='mathjax-inline'>\(B\)</span> is een <strong>secant</strong>.
+</p><!-- l. 425 --><p class='noindent'>De richtingscoëfficiënt van deze secant is
 </p>
 <div class='mathjax-block'>\[ \operatorname {rico}(AB) = \frac {f(b)-f(a)}{b-a}. \]</div>
-<!-- l. 359 --><p class='noindent'>Dat is precies het differentiequotiënt.
-</p><!-- l. 361 --><p class='noindent'></p><section class='fvd-definition'><div class='fvd-definition__title'><span class='fvd-definition__label'>DEFINITIE</span></div><div class='fvd-definition__content'> Het differentiequotiënt is de <strong>richtingscoëfficiënt van de secant</strong> door
+<!-- l. 433 --><p class='noindent'>Dat is precies het differentiequotiënt.
+</p><!-- l. 435 --><p class='noindent'></p><section class='fvd-definition'><div class='fvd-definition__title'><span class='fvd-definition__label'>DEFINITIE</span></div><div class='fvd-definition__content'> Het differentiequotiënt is de <strong>richtingscoëfficiënt van de secant</strong> door
 de twee overeenkomstige punten van de grafiek.
                                                                   
 
@@ -200,30 +200,30 @@ de twee overeenkomstige punten van de grafiek.
 <p></p>
 <div class='mathjax-block'>\[ \important { \text {gemiddelde verandering} \longleftrightarrow \text {richtingscoëfficiënt van een secant} } \]</div> </div></section>
 <p><a id='x1-8r3'></a>
-</p><!-- l. 380 --><p class='noindent'></p><div class='fvd-subsection'>
-<p></p><!-- l. 380 --><p class='noindent'></p><div class='fvd-subsection__row'>
-<p></p><!-- l. 380 --><p class='noindent'></p><div class='fvd-subsection__number'>2.3</div>
-<p></p><!-- l. 380 --><p class='noindent'></p><div class='fvd-subsection__title'>Eenheden</div>
-<p></p><!-- l. 380 --><p class='noindent'></p></div>
-<p></p><!-- l. 380 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
-<p></p><!-- l. 380 --><p class='noindent'></p></div>
-<p></p><!-- l. 382 --><p class='noindent'>Bij toepassingen heeft een differentiequotiënt meestal ook een eenheid.
-</p><!-- l. 384 --><p class='noindent'>Stel bijvoorbeeld dat <span class='mathjax-inline'>\(T(t)\)</span> de temperatuur in graden Celsius voorstelt op tijdstip <span class='mathjax-inline'>\(t\)</span>,
+</p><!-- l. 454 --><p class='noindent'></p><div class='fvd-subsection'>
+<p></p><!-- l. 454 --><p class='noindent'></p><div class='fvd-subsection__row'>
+<p></p><!-- l. 454 --><p class='noindent'></p><div class='fvd-subsection__number'>2.3</div>
+<p></p><!-- l. 454 --><p class='noindent'></p><div class='fvd-subsection__title'>Eenheden</div>
+<p></p><!-- l. 454 --><p class='noindent'></p></div>
+<p></p><!-- l. 454 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
+<p></p><!-- l. 454 --><p class='noindent'></p></div>
+<p></p><!-- l. 456 --><p class='noindent'>Bij toepassingen heeft een differentiequotiënt meestal ook een eenheid.
+</p><!-- l. 458 --><p class='noindent'>Stel bijvoorbeeld dat <span class='mathjax-inline'>\(T(t)\)</span> de temperatuur in graden Celsius voorstelt op tijdstip <span class='mathjax-inline'>\(t\)</span>,
 uitgedrukt in seconden.
-</p><!-- l. 387 --><p class='noindent'>Dan heeft
+</p><!-- l. 461 --><p class='noindent'>Dan heeft
 </p>
 <div class='mathjax-block'>\[ \frac {\Delta T}{\Delta t} \]</div>
-<!-- l. 393 --><p class='noindent'>als eenheid
+<!-- l. 467 --><p class='noindent'>als eenheid
 </p>
 <div class='mathjax-block'>\[ \frac {^\circ \mathrm {C}}{\mathrm {s}}. \]</div>
-<!-- l. 399 --><p class='noindent'>Als
+<!-- l. 473 --><p class='noindent'>Als
 </p>
 <div class='mathjax-block'>\[ \frac {\Delta T}{\Delta t}=-0,8, \]</div>
-<!-- l. 405 --><p class='noindent'>dan betekent dit dat de temperatuur over het onderzochte interval <strong>gemiddeld met <span class='mathjax-inline'>\(0,8~^\circ \mathrm {C}\)</span>
+<!-- l. 479 --><p class='noindent'>dan betekent dit dat de temperatuur over het onderzochte interval <strong>gemiddeld met <span class='mathjax-inline'>\(0,8~^\circ \mathrm {C}\)</span>
 per seconde afneemt</strong>.
-</p><!-- l. 409 --><p class='noindent'></p><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span></div><div class='fvd-remark__content'>Bij een toepassing is een getal alleen meestal geen volledig
+</p><!-- l. 483 --><p class='noindent'></p><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span></div><div class='fvd-remark__content'>Bij een toepassing is een getal alleen meestal geen volledig
 antwoord.
-<p></p><!-- l. 411 --><p class='noindent'>Vermeld indien mogelijk:
+<p></p><!-- l. 485 --><p class='noindent'>Vermeld indien mogelijk:
 </p>     
 <ul class='itemize1'>
 <li class='itemize'>welke grootheid verandert;
@@ -240,169 +240,169 @@ antwoord.
 <li class='itemize'>over welk interval de uitspraak geldt.</li></ul>
 </div></section>
 <p><a id='x1-9r3'></a>
-</p><!-- l. 427 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>3</div><div class='fvd-section-bar__title'>Van gemiddelde naar ogenblikkelijke verandering</div></div>
+</p><!-- l. 501 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>3</div><div class='fvd-section-bar__title'>Van gemiddelde naar ogenblikkelijke verandering</div></div>
 <p><a id='x1-10r1'></a>
-</p><p></p><!-- l. 429 --><p class='noindent'></p><div class='fvd-subsection'>
-<p></p><!-- l. 429 --><p class='noindent'></p><div class='fvd-subsection__row'>
-<p></p><!-- l. 429 --><p class='noindent'></p><div class='fvd-subsection__number'>3.1</div>
-<p></p><!-- l. 429 --><p class='noindent'></p><div class='fvd-subsection__title'>Het interval steeds kleiner maken</div>
-<p></p><!-- l. 429 --><p class='noindent'></p></div>
-<p></p><!-- l. 429 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
-<p></p><!-- l. 429 --><p class='noindent'></p></div>
-<p></p><!-- l. 431 --><p class='noindent'>We kiezen een vast punt
+</p><p></p><!-- l. 503 --><p class='noindent'></p><div class='fvd-subsection'>
+<p></p><!-- l. 503 --><p class='noindent'></p><div class='fvd-subsection__row'>
+<p></p><!-- l. 503 --><p class='noindent'></p><div class='fvd-subsection__number'>3.1</div>
+<p></p><!-- l. 503 --><p class='noindent'></p><div class='fvd-subsection__title'>Het interval steeds kleiner maken</div>
+<p></p><!-- l. 503 --><p class='noindent'></p></div>
+<p></p><!-- l. 503 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
+<p></p><!-- l. 503 --><p class='noindent'></p></div>
+<p></p><!-- l. 505 --><p class='noindent'>We kiezen een vast punt
 </p>
 <div class='mathjax-block'>\[ A(a,f(a)) \]</div>
-<!-- l. 437 --><p class='noindent'>op de grafiek van <span class='mathjax-inline'>\(f\)</span>.
-</p><!-- l. 439 --><p class='noindent'>Daarnaast nemen we een tweede punt
+<!-- l. 511 --><p class='noindent'>op de grafiek van <span class='mathjax-inline'>\(f\)</span>.
+</p><!-- l. 513 --><p class='noindent'>Daarnaast nemen we een tweede punt
 </p>
 <div class='mathjax-block'>\[ B(F,f(x)). \]</div>
-<!-- l. 445 --><p class='noindent'>Voor <span class='mathjax-inline'>\(x\neq a\)</span> heeft de secant <span class='mathjax-inline'>\(AB\)</span> richtingscoëfficiënt
+<!-- l. 519 --><p class='noindent'>Voor <span class='mathjax-inline'>\(x\neq a\)</span> heeft de secant <span class='mathjax-inline'>\(AB\)</span> richtingscoëfficiënt
 </p>
 <div class='mathjax-block'>\[ \frac {f(x)-f(a)}{x-a}. \]</div>
-<!-- l. 451 --><p class='noindent'>Nu laten we <span class='mathjax-inline'>\(x\)</span> steeds dichter bij <span class='mathjax-inline'>\(a\)</span> komen:
+<!-- l. 525 --><p class='noindent'>Nu laten we <span class='mathjax-inline'>\(x\)</span> steeds dichter bij <span class='mathjax-inline'>\(a\)</span> komen:
 </p>
 <div class='mathjax-block'>\[ x\to a. \]</div>
-<!-- l. 457 --><p class='noindent'>Het punt <span class='mathjax-inline'>\(B\)</span> nadert dan tot <span class='mathjax-inline'>\(A\)</span>.
-</p><!-- l. 459 --><p class='noindent'>De secant door <span class='mathjax-inline'>\(A\)</span> en <span class='mathjax-inline'>\(B\)</span> nadert naar de raaklijn aan de grafiek in <span class='mathjax-inline'>\(A\)</span>.
+<!-- l. 531 --><p class='noindent'>Het punt <span class='mathjax-inline'>\(B\)</span> nadert dan tot <span class='mathjax-inline'>\(A\)</span>.
+</p><!-- l. 533 --><p class='noindent'>De secant door <span class='mathjax-inline'>\(A\)</span> en <span class='mathjax-inline'>\(B\)</span> nadert naar de raaklijn aan de grafiek in <span class='mathjax-inline'>\(A\)</span>.
                                                                   
 
                                                                   
-</p><!-- l. 462 --><p class='noindent'>We onderzoeken daarom
+</p><!-- l. 536 --><p class='noindent'>We onderzoeken daarom
 </p>
 <div class='mathjax-block'>\[ \lim _{x\to a} \frac {f(x)-f(a)}{x-a}. \]</div>
-<!-- l. 469 --><p class='noindent'>Deze limiet beschrijft niet langer een gemiddelde verandering over een interval, maar
+<!-- l. 543 --><p class='noindent'>Deze limiet beschrijft niet langer een gemiddelde verandering over een interval, maar
 de <strong>ogenblikkelijke verandering</strong> bij <span class='mathjax-inline'>\(x=a\)</span>.
 <a id='x1-11r4'></a>
-</p><!-- l. 478 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>4</div><div class='fvd-section-bar__title'>Het afgeleid getal</div></div>
-<p></p><!-- l. 480 --><p class='noindent'></p><section class='fvd-definition'><div class='fvd-definition__title'><span class='fvd-definition__label'>DEFINITIE</span><span class='fvd-definition__separator'> — </span><span class='fvd-definition__name'>Afgeleid getal</span></div><div class='fvd-definition__content'> Als de limiet
+</p><!-- l. 552 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>4</div><div class='fvd-section-bar__title'>Het afgeleid getal</div></div>
+<p></p><!-- l. 554 --><p class='noindent'></p><section class='fvd-definition'><div class='fvd-definition__title'><span class='fvd-definition__label'>DEFINITIE</span><span class='fvd-definition__separator'> — </span><span class='fvd-definition__name'>Afgeleid getal</span></div><div class='fvd-definition__content'> Als de limiet
 <p></p>
 <div class='mathjax-block'>\[ \lim _{x\to a} \frac {f(x)-f(a)}{x-a} \]</div>
-<!-- l. 488 --><p class='noindent'>bestaat en een reëel getal is, dan is <span class='mathjax-inline'>\(f\)</span> <strong>afleidbaar in <span class='mathjax-inline'>\(a\)</span></strong>.
-</p><!-- l. 491 --><p class='noindent'>Het <strong>afgeleid getal van <span class='mathjax-inline'>\(f\)</span> in <span class='mathjax-inline'>\(a\)</span></strong> is
+<!-- l. 562 --><p class='noindent'>bestaat en een reëel getal is, dan is <span class='mathjax-inline'>\(f\)</span> <strong>afleidbaar in <span class='mathjax-inline'>\(a\)</span></strong>.
+</p><!-- l. 565 --><p class='noindent'>Het <strong>afgeleid getal van <span class='mathjax-inline'>\(f\)</span> in <span class='mathjax-inline'>\(a\)</span></strong> is
 </p>
 <div class='mathjax-block'>\[ \important { f'(a) = \lim _{x\to a} \frac {f(x)-f(a)}{x-a} }. \]</div> </div></section>
-<!-- l. 503 --><p class='noindent'>We kunnen dezelfde definitie schrijven met
+<!-- l. 577 --><p class='noindent'>We kunnen dezelfde definitie schrijven met
 </p>
 <div class='mathjax-block'>\[ x=a+h. \]</div>
-<!-- l. 509 --><p class='noindent'>Wanneer <span class='mathjax-inline'>\(x\to a\)</span>, geldt <span class='mathjax-inline'>\(h\to 0\)</span>.
-</p><!-- l. 511 --><p class='noindent'>Daarom is ook
+<!-- l. 583 --><p class='noindent'>Wanneer <span class='mathjax-inline'>\(x\to a\)</span>, geldt <span class='mathjax-inline'>\(h\to 0\)</span>.
+</p><!-- l. 585 --><p class='noindent'>Daarom is ook
 </p>
 <div class='mathjax-block'>\[ \important { f'(a) = \lim _{h\to 0} \frac {f(a+h)-f(a)}{h} }. \]</div>
 <p><a id='x1-12r1'></a>
-</p><!-- l. 523 --><p class='noindent'></p><div class='fvd-subsection'>
-<p></p><!-- l. 523 --><p class='noindent'></p><div class='fvd-subsection__row'>
-<p></p><!-- l. 523 --><p class='noindent'></p><div class='fvd-subsection__number'>4.1</div>
-<p></p><!-- l. 523 --><p class='noindent'></p><div class='fvd-subsection__title'>Een voorbeeld met de definitie</div>
-<p></p><!-- l. 523 --><p class='noindent'></p></div>
-<p></p><!-- l. 523 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
-<p></p><!-- l. 523 --><p class='noindent'></p></div>
+</p><!-- l. 597 --><p class='noindent'></p><div class='fvd-subsection'>
+<p></p><!-- l. 597 --><p class='noindent'></p><div class='fvd-subsection__row'>
+<p></p><!-- l. 597 --><p class='noindent'></p><div class='fvd-subsection__number'>4.1</div>
+<p></p><!-- l. 597 --><p class='noindent'></p><div class='fvd-subsection__title'>Een voorbeeld met de definitie</div>
+<p></p><!-- l. 597 --><p class='noindent'></p></div>
+<p></p><!-- l. 597 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
+<p></p><!-- l. 597 --><p class='noindent'></p></div>
 <p><a id='x1-13r2'></a>
-</p><p></p><!-- l. 526 --><p class='noindent'></p><section class='fvd-example'>
-<p></p><!-- l. 526 --><p class='noindent'></p><div class='fvd-example__title'>Voorbeeld 2</div>
-<p></p><!-- l. 526 --><p class='noindent'></p><div class='fvd-example__content'>
-<p></p><!-- l. 527 --><p class='noindent'>Gegeven is
+</p><p></p><!-- l. 600 --><p class='noindent'></p><section class='fvd-example'>
+<p></p><!-- l. 600 --><p class='noindent'></p><div class='fvd-example__title'>Voorbeeld 2</div>
+<p></p><!-- l. 600 --><p class='noindent'></p><div class='fvd-example__content'>
+<p></p><!-- l. 601 --><p class='noindent'>Gegeven is
 </p>
                                                                   
 
                                                                   
 <div class='mathjax-block'>\[ f(x)=x^2+2x. \]</div>
-<!-- l. 533 --><p class='noindent'>Bepaal <span class='mathjax-inline'>\(f'(1)\)</span> met de definitie.
+<!-- l. 607 --><p class='noindent'>Bepaal <span class='mathjax-inline'>\(f'(1)\)</span> met de definitie.
 </p>
 <div class='accordion'> 
 <h3 class='xmoplossing'></h3> 
 <div class='accordion-item xmoplossing-content' id='accordion-item3'> 
 
-<!-- l. 537 --><p class='noindent'>We gebruiken
+<!-- l. 611 --><p class='noindent'>We gebruiken
 </p>
 <div class='mathjax-block'>\[ f'(1) = \lim _{x\to 1} \frac {f(x)-f(1)}{x-1}. \]</div>
-<!-- l. 546 --><p class='noindent'>Omdat
+<!-- l. 620 --><p class='noindent'>Omdat
 </p>
 <div class='mathjax-block'>\[ f(1)=3, \]</div>
-<!-- l. 552 --><p class='noindent'>volgt
+<!-- l. 626 --><p class='noindent'>volgt
 </p>
 <div class='mathjax-env mathjax-align*'>\begin{align*} f'(1) &amp;= \lim _{x\to 1} \frac {x^2+2x-3}{x-1} \\ &amp;= \lim _{x\to 1} \frac {(x-1)(x+3)}{x-1} \\ &amp;= \lim _{x\to 1}(x+3) \\ &amp;=4. \end{align*}</div>
-<!-- l. 570 --><p class='noindent'>Dus
+<!-- l. 644 --><p class='noindent'>Dus
 </p>
 <div class='mathjax-block'>\[ \boxed {f'(1)=4}. \]</div>
 </div> 
 </div> 
 
 </div></section>
-<!-- l. 580 --><p class='noindent'>De berekening is slechts één deel van het antwoord.
-</p><!-- l. 582 --><p class='noindent'>De waarde
+<!-- l. 654 --><p class='noindent'>De berekening is slechts één deel van het antwoord.
+</p><!-- l. 656 --><p class='noindent'>De waarde
 </p>
 <div class='mathjax-block'>\[ f'(1)=4 \]</div>
-<!-- l. 588 --><p class='noindent'>betekent ook dat de ogenblikkelijke verandering van <span class='mathjax-inline'>\(f\)</span> bij <span class='mathjax-inline'>\(x=1\)</span> gelijk is aan <span class='mathjax-inline'>\(4\)</span>.
+<!-- l. 662 --><p class='noindent'>betekent ook dat de ogenblikkelijke verandering van <span class='mathjax-inline'>\(f\)</span> bij <span class='mathjax-inline'>\(x=1\)</span> gelijk is aan <span class='mathjax-inline'>\(4\)</span>.
 <a id='x1-14r5'></a>
-</p><!-- l. 596 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>5</div><div class='fvd-section-bar__title'>De afgeleide en de raaklijn</div></div>
+</p><!-- l. 670 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>5</div><div class='fvd-section-bar__title'>De afgeleide en de raaklijn</div></div>
 <p><a id='x1-15r1'></a>
-</p><p></p><!-- l. 598 --><p class='noindent'></p><div class='fvd-subsection'>
-<p></p><!-- l. 598 --><p class='noindent'></p><div class='fvd-subsection__row'>
-<p></p><!-- l. 598 --><p class='noindent'></p><div class='fvd-subsection__number'>5.1</div>
-<p></p><!-- l. 598 --><p class='noindent'></p><div class='fvd-subsection__title'>Meetkundige betekenis</div>
-<p></p><!-- l. 598 --><p class='noindent'></p></div>
-<p></p><!-- l. 598 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
-<p></p><!-- l. 598 --><p class='noindent'></p></div>
-<p></p><!-- l. 600 --><p class='noindent'>De overgang van secant naar raaklijn geeft onmiddellijk de meetkundige betekenis
+</p><p></p><!-- l. 672 --><p class='noindent'></p><div class='fvd-subsection'>
+<p></p><!-- l. 672 --><p class='noindent'></p><div class='fvd-subsection__row'>
+<p></p><!-- l. 672 --><p class='noindent'></p><div class='fvd-subsection__number'>5.1</div>
+<p></p><!-- l. 672 --><p class='noindent'></p><div class='fvd-subsection__title'>Meetkundige betekenis</div>
+<p></p><!-- l. 672 --><p class='noindent'></p></div>
+<p></p><!-- l. 672 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
+<p></p><!-- l. 672 --><p class='noindent'></p></div>
+<p></p><!-- l. 674 --><p class='noindent'>De overgang van secant naar raaklijn geeft onmiddellijk de meetkundige betekenis
 van het afgeleid getal.
                                                                   
 
                                                                   
-</p><!-- l. 603 --><p class='noindent'></p><section class='fvd-definition'><div class='fvd-definition__title'><span class='fvd-definition__label'>DEFINITIE</span><span class='fvd-definition__separator'> — </span><span class='fvd-definition__name'>Betekenis afgeleid getal</span></div><div class='fvd-definition__content'> Het afgeleid getal <span class='mathjax-inline'>\(f'(a)\)</span> is de <strong>richtingscoëfficiënt
+</p><!-- l. 677 --><p class='noindent'></p><section class='fvd-definition'><div class='fvd-definition__title'><span class='fvd-definition__label'>DEFINITIE</span><span class='fvd-definition__separator'> — </span><span class='fvd-definition__name'>Betekenis afgeleid getal</span></div><div class='fvd-definition__content'> Het afgeleid getal <span class='mathjax-inline'>\(f'(a)\)</span> is de <strong>richtingscoëfficiënt
 van de raaklijn</strong> aan de grafiek van <span class='mathjax-inline'>\(f\)</span> in het punt
 <p></p>
 <div class='mathjax-block'>\[ P(a,f(a)). \]</div>
-<!-- l. 612 --><p class='noindent'>Dus
+<!-- l. 686 --><p class='noindent'>Dus
 </p>
 <div class='mathjax-block'>\[ \important { f'(a)=\operatorname {rico}(t) } \]</div>
-<!-- l. 620 --><p class='noindent'>waarbij <span class='mathjax-inline'>\(t\)</span> de raaklijn is in <span class='mathjax-inline'>\(P\)</span>. </p></div></section>
+<!-- l. 694 --><p class='noindent'>waarbij <span class='mathjax-inline'>\(t\)</span> de raaklijn is in <span class='mathjax-inline'>\(P\)</span>. </p></div></section>
 <p><a id='x1-16r2'></a>
-</p><p></p><!-- l. 624 --><p class='noindent'></p><div class='fvd-subsection'>
-<p></p><!-- l. 624 --><p class='noindent'></p><div class='fvd-subsection__row'>
-<p></p><!-- l. 624 --><p class='noindent'></p><div class='fvd-subsection__number'>5.2</div>
-<p></p><!-- l. 624 --><p class='noindent'></p><div class='fvd-subsection__title'>Wat vertelt het teken?</div>
-<p></p><!-- l. 624 --><p class='noindent'></p></div>
-<p></p><!-- l. 624 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
-<p></p><!-- l. 624 --><p class='noindent'></p></div>
-<p></p><!-- l. 626 --><p class='noindent'>Als
+</p><p></p><!-- l. 698 --><p class='noindent'></p><div class='fvd-subsection'>
+<p></p><!-- l. 698 --><p class='noindent'></p><div class='fvd-subsection__row'>
+<p></p><!-- l. 698 --><p class='noindent'></p><div class='fvd-subsection__number'>5.2</div>
+<p></p><!-- l. 698 --><p class='noindent'></p><div class='fvd-subsection__title'>Wat vertelt het teken?</div>
+<p></p><!-- l. 698 --><p class='noindent'></p></div>
+<p></p><!-- l. 698 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
+<p></p><!-- l. 698 --><p class='noindent'></p></div>
+<p></p><!-- l. 700 --><p class='noindent'>Als
 </p>
 <div class='mathjax-block'>\[ f'(a)&gt;0, \]</div>
-<!-- l. 632 --><p class='noindent'>heeft de raaklijn een positieve richtingscoëfficiënt.
-</p><!-- l. 634 --><p class='noindent'>Als
+<!-- l. 706 --><p class='noindent'>heeft de raaklijn een positieve richtingscoëfficiënt.
+</p><!-- l. 708 --><p class='noindent'>Als
 </p>
 <div class='mathjax-block'>\[ f'(a)&lt;0, \]</div>
-<!-- l. 640 --><p class='noindent'>heeft de raaklijn een negatieve richtingscoëfficiënt.
-</p><!-- l. 642 --><p class='noindent'>Als
+<!-- l. 714 --><p class='noindent'>heeft de raaklijn een negatieve richtingscoëfficiënt.
+</p><!-- l. 716 --><p class='noindent'>Als
 </p>
 <div class='mathjax-block'>\[ f'(a)=0, \]</div>
-<!-- l. 648 --><p class='noindent'>is de raaklijn horizontaal.
+<!-- l. 722 --><p class='noindent'>is de raaklijn horizontaal.
 </p>
 <div class='theorem-like problem-environment remark' id='problem4' titletext=' remark'><a id='x1-17r1'></a>Uit
 <div class='mathjax-block'>\[ f'(a)=0 \]</div>
-<!-- l. 657 --><p class='noindent'>mag je niet onmiddellijk besluiten dat <span class='mathjax-inline'>\(f\)</span> in <span class='mathjax-inline'>\(a\)</span> een maximum of minimum bereikt.
-</p><!-- l. 660 --><p class='noindent'>Een horizontale raaklijn is op zichzelf onvoldoende om een extremum te besluiten.
+<!-- l. 731 --><p class='noindent'>mag je niet onmiddellijk besluiten dat <span class='mathjax-inline'>\(f\)</span> in <span class='mathjax-inline'>\(a\)</span> een maximum of minimum bereikt.
+</p><!-- l. 734 --><p class='noindent'>Een horizontale raaklijn is op zichzelf onvoldoende om een extremum te besluiten.
 </p></div>
 <p><a id='x1-18r6'></a>
                                                                   
 
                                                                   
-</p><!-- l. 669 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>6</div><div class='fvd-section-bar__title'>Een afgeleid getal interpreteren</div></div>
-<p></p><!-- l. 671 --><p class='noindent'>Bij een toepassing moeten we opnieuw rekening houden met de betekenis en de
+</p><!-- l. 743 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>6</div><div class='fvd-section-bar__title'>Een afgeleid getal interpreteren</div></div>
+<p></p><!-- l. 745 --><p class='noindent'>Bij een toepassing moeten we opnieuw rekening houden met de betekenis en de
 eenheden van de grootheden.
-</p><!-- l. 674 --><p class='noindent'>Stel dat <span class='mathjax-inline'>\(Q(t)\)</span> een hoeveelheid in milligram voorstelt en dat <span class='mathjax-inline'>\(t\)</span> in uren wordt uitgedrukt.
-</p><!-- l. 677 --><p class='noindent'>Als
+</p><!-- l. 748 --><p class='noindent'>Stel dat <span class='mathjax-inline'>\(Q(t)\)</span> een hoeveelheid in milligram voorstelt en dat <span class='mathjax-inline'>\(t\)</span> in uren wordt uitgedrukt.
+</p><!-- l. 751 --><p class='noindent'>Als
 </p>
 <div class='mathjax-block'>\[ Q'(4)=-2,5, \]</div>
-<!-- l. 683 --><p class='noindent'>dan heeft de afgeleide als eenheid
+<!-- l. 757 --><p class='noindent'>dan heeft de afgeleide als eenheid
 </p>
 <div class='mathjax-block'>\[ \frac {\mathrm {mg}}{\mathrm {uur}}. \]</div>
-<!-- l. 689 --><p class='noindent'>Een volledige interpretatie is:
+<!-- l. 763 --><p class='noindent'>Een volledige interpretatie is:
 </p>
 <div class='center'>
-<!-- l. 691 --><p class='noindent'>
-</p><!-- l. 692 --><p class='noindent'>Op het tijdstip <span class='mathjax-inline'>\(t=4\)</span> uur neemt de hoeveelheid <span class='mathjax-inline'>\(Q\)</span> ogenblikkelijk af met <span class='mathjax-inline'>\(2,5\)</span> milligram per
+<!-- l. 765 --><p class='noindent'>
+</p><!-- l. 766 --><p class='noindent'>Op het tijdstip <span class='mathjax-inline'>\(t=4\)</span> uur neemt de hoeveelheid <span class='mathjax-inline'>\(Q\)</span> ogenblikkelijk af met <span class='mathjax-inline'>\(2,5\)</span> milligram per
 uur.</p></div>
-<!-- l. 696 --><p class='noindent'>Bij een interpretatie stellen we dus drie vragen:
+<!-- l. 770 --><p class='noindent'>Bij een interpretatie stellen we dus drie vragen:
 </p>     
 <ol class='enumerate1'>
 <li class='enumerate' id='x1-20x1'><strong>Waar?</strong> Bij welke invoerwaarde?
@@ -411,22 +411,22 @@ uur.</p></div>
 </li>
 <li class='enumerate' id='x1-24x3'><strong>Hoe sterk?</strong> Met welke waarde en welke eenheid?</li></ol>
 <p><a id='x1-25r2'></a>
-</p><!-- l. 706 --><p class='noindent'></p><section class='fvd-exercise'>
-<p></p><!-- l. 706 --><p class='noindent'></p><div class='fvd-exercise__title'>
-<p></p><!-- l. 706 --><p class='noindent'>Oefening 2
+</p><!-- l. 780 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 780 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 780 --><p class='noindent'>Oefening 2
                                                                   
 
                                                                   
-</p><!-- l. 706 --><p class='noindent'></p></div>
-<p></p><!-- l. 706 --><p class='noindent'></p><div class='fvd-exercise__body'>
-<p></p><!-- l. 706 --><p class='noindent'></p><div class='fvd-exercise__meta'>
-<p></p><!-- l. 706 --><p class='noindent'></p></div>
-<p></p><!-- l. 706 --><p class='noindent'></p><div class='fvd-exercise__content'>De functie <span class='mathjax-inline'>\(C(t)\)</span> beschrijft een concentratie in <span class='mathjax-inline'>\(\mathrm {mg/L}\)</span>, waarbij <span class='mathjax-inline'>\(t\)</span> wordt uitgedrukt in
+</p><!-- l. 780 --><p class='noindent'></p></div>
+<p></p><!-- l. 780 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 780 --><p class='noindent'></p><div class='fvd-exercise__meta'>
+<p></p><!-- l. 780 --><p class='noindent'></p></div>
+<p></p><!-- l. 780 --><p class='noindent'></p><div class='fvd-exercise__content'>De functie <span class='mathjax-inline'>\(C(t)\)</span> beschrijft een concentratie in <span class='mathjax-inline'>\(\mathrm {mg/L}\)</span>, waarbij <span class='mathjax-inline'>\(t\)</span> wordt uitgedrukt in
 minuten.
-<p></p><!-- l. 710 --><p class='noindent'>Er geldt
+<p></p><!-- l. 784 --><p class='noindent'>Er geldt
 </p>
 <div class='mathjax-block'>\[ C'(12)=-0,30. \]</div>
-<!-- l. 716 --><p class='noindent'>Welke interpretatie is correct?
+<!-- l. 790 --><p class='noindent'>Welke interpretatie is correct?
 </p>
 <div class='multiple-choice' id='problem5' titletext=' Multiple Choice'>
 <span class='choice  ' id='choice5'> Na <span class='mathjax-inline'>\(12\)</span> minuten bedraagt de concentratie <span class='mathjax-inline'>\(-0,30~\mathrm {mg/L}\)</span>. </span>
@@ -437,21 +437,21 @@ minuten.
 <span class='choice  ' id='choice8'> Na <span class='mathjax-inline'>\(12\)</span> minuten is de concentratie nul. </span>
 </div>
 </div>
-<!-- l. 741 --><p class='noindent'></p></div>
-<p></p><!-- l. 741 --><p class='noindent'></p></section>
+<!-- l. 815 --><p class='noindent'></p></div>
+<p></p><!-- l. 815 --><p class='noindent'></p></section>
 <p><a id='x1-26r7'></a>
-</p><p></p><!-- l. 748 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>7</div><div class='fvd-section-bar__title'>De vergelijking van de raaklijn</div></div>
-<p></p><!-- l. 750 --><p class='noindent'>De raaklijn aan de grafiek in
+</p><p></p><!-- l. 822 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>7</div><div class='fvd-section-bar__title'>De vergelijking van de raaklijn</div></div>
+<p></p><!-- l. 824 --><p class='noindent'>De raaklijn aan de grafiek in
 </p>
 <div class='mathjax-block'>\[ P(a,f(a)) \]</div>
-<!-- l. 756 --><p class='noindent'>heeft richtingscoëfficiënt
+<!-- l. 830 --><p class='noindent'>heeft richtingscoëfficiënt
 </p>
 <div class='mathjax-block'>\[ f'(a). \]</div>
-<!-- l. 762 --><p class='noindent'>Een rechte met richtingscoëfficiënt <span class='mathjax-inline'>\(m\)</span> door een punt <span class='mathjax-inline'>\((x_1,y_1)\)</span> heeft vergelijking
+<!-- l. 836 --><p class='noindent'>Een rechte met richtingscoëfficiënt <span class='mathjax-inline'>\(m\)</span> door een punt <span class='mathjax-inline'>\((x_1,y_1)\)</span> heeft vergelijking
 </p>
 <div class='mathjax-block'>\[ y-y_1=m(x-x_1). \]</div>
-<!-- l. 769 --><p class='noindent'>Daaruit volgt:
-</p><!-- l. 771 --><p class='noindent'></p><section class='fvd-definition'><div class='fvd-definition__title'><span class='fvd-definition__label'>DEFINITIE</span><span class='fvd-definition__separator'> — </span><span class='fvd-definition__name'>De raaklijn</span></div><div class='fvd-definition__content'> De raaklijn aan de grafiek van <span class='mathjax-inline'>\(f\)</span> in het punt <span class='mathjax-inline'>\(P(a,f(a))\)</span> heeft
+<!-- l. 843 --><p class='noindent'>Daaruit volgt:
+</p><!-- l. 845 --><p class='noindent'></p><section class='fvd-definition'><div class='fvd-definition__title'><span class='fvd-definition__label'>DEFINITIE</span><span class='fvd-definition__separator'> — </span><span class='fvd-definition__name'>De raaklijn</span></div><div class='fvd-definition__content'> De raaklijn aan de grafiek van <span class='mathjax-inline'>\(f\)</span> in het punt <span class='mathjax-inline'>\(P(a,f(a))\)</span> heeft
                                                                   
 
                                                                   
@@ -459,156 +459,156 @@ vergelijking
 <p></p>
 <div class='mathjax-block'>\[ \important { y-f(a)=f'(a)(x-a) }. \]</div> </div></section>
 <p><a id='x1-27r3'></a>
-</p><!-- l. 784 --><p class='noindent'></p><section class='fvd-example'>
-<p></p><!-- l. 784 --><p class='noindent'></p><div class='fvd-example__title'>Voorbeeld 3</div>
-<p></p><!-- l. 784 --><p class='noindent'></p><div class='fvd-example__content'>
-<p></p><!-- l. 785 --><p class='noindent'>Gegeven is
+</p><!-- l. 858 --><p class='noindent'></p><section class='fvd-example'>
+<p></p><!-- l. 858 --><p class='noindent'></p><div class='fvd-example__title'>Voorbeeld 3</div>
+<p></p><!-- l. 858 --><p class='noindent'></p><div class='fvd-example__content'>
+<p></p><!-- l. 859 --><p class='noindent'>Gegeven is
 </p>
 <div class='mathjax-block'>\[ f(x)=x^2+2x. \]</div>
-<!-- l. 791 --><p class='noindent'>We weten dat
+<!-- l. 865 --><p class='noindent'>We weten dat
 </p>
 <div class='mathjax-block'>\[ f(1)=3 \qquad \text {en}\qquad f'(1)=4. \]</div>
-<!-- l. 799 --><p class='noindent'>De raaklijn bij <span class='mathjax-inline'>\(x=1\)</span> heeft dus vergelijking
+<!-- l. 873 --><p class='noindent'>De raaklijn bij <span class='mathjax-inline'>\(x=1\)</span> heeft dus vergelijking
 </p>
 <div class='mathjax-env mathjax-align*'>\begin{align*} y-3 &amp;= 4(x-1) \\ y-3 &amp;= 4x-4 \\ y &amp;= 4x-1. \end{align*}</div>
-<!-- l. 809 --><p class='noindent'>Dus
+<!-- l. 883 --><p class='noindent'>Dus
 </p>
 <div class='mathjax-block'>\[ \boxed {y=4x-1}. \]</div>
 </div></section>
 <p><a id='x1-28r3'></a>
-</p><!-- l. 818 --><p class='noindent'></p><section class='fvd-exercise'>
-<p></p><!-- l. 818 --><p class='noindent'></p><div class='fvd-exercise__title'>
-<p></p><!-- l. 818 --><p class='noindent'>Oefening 3
-</p><!-- l. 818 --><p class='noindent'></p></div>
-<p></p><!-- l. 818 --><p class='noindent'></p><div class='fvd-exercise__body'>
-<p></p><!-- l. 818 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
-<p></p><!-- l. 818 --><p class='noindent'></p><div class='fvd-exercise__content'>
-<p></p><!-- l. 820 --><p class='noindent'>Voor een functie <span class='mathjax-inline'>\(f\)</span> geldt
+</p><!-- l. 892 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 892 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 892 --><p class='noindent'>Oefening 3
+</p><!-- l. 892 --><p class='noindent'></p></div>
+<p></p><!-- l. 892 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 892 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 892 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 894 --><p class='noindent'>Voor een functie <span class='mathjax-inline'>\(f\)</span> geldt
 </p>
 <div class='mathjax-block'>\[ f(2)=5 \qquad \text {en}\qquad f'(2)=-3. \]</div>
-<!-- l. 828 --><p class='noindent'>Vul aan.
-</p><!-- l. 830 --><p class='noindent'>De raaklijn gaat door
+<!-- l. 902 --><p class='noindent'>Vul aan.
+</p><!-- l. 904 --><p class='noindent'>De raaklijn gaat door
 </p>
 <div class='mathjax-block'>\[ P=(\answer {2},\answer {5}) \]</div>
                                                                   
 
                                                                   
-<!-- l. 836 --><p class='noindent'>en heeft richtingscoëfficiënt
+<!-- l. 910 --><p class='noindent'>en heeft richtingscoëfficiënt
 </p>
 <div class='mathjax-block'>\[ \answer {-3}. \]</div>
-<!-- l. 842 --><p class='noindent'>De vergelijking is
+<!-- l. 916 --><p class='noindent'>De vergelijking is
 </p>
 <div class='mathjax-block'>\[ y-5=-3(x-2), \]</div>
-<!-- l. 848 --><p class='noindent'>dus
+<!-- l. 922 --><p class='noindent'>dus
 </p>
 <div class='mathjax-block'>\[ y=\answer {-3}x+\answer {11}. \]</div>
 </div>
-<!-- l. 854 --><p class='noindent'></p></div>
-<p></p><!-- l. 854 --><p class='noindent'></p></section>
+<!-- l. 928 --><p class='noindent'></p></div>
+<p></p><!-- l. 928 --><p class='noindent'></p></section>
 <p><a id='x1-29r8'></a>
-</p><p></p><!-- l. 861 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>8</div><div class='fvd-section-bar__title'>De verbanden opnieuw samenbrengen</div></div>
-<p></p><!-- l. 863 --><p class='noindent'>De belangrijkste begrippen uit dit hoofdstuk kunnen we in twee ketens samenvatten.
-</p><!-- l. 866 --><p class='noindent'>Voor twee verschillende punten:
+</p><p></p><!-- l. 935 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>8</div><div class='fvd-section-bar__title'>De verbanden opnieuw samenbrengen</div></div>
+<p></p><!-- l. 937 --><p class='noindent'>De belangrijkste begrippen uit dit hoofdstuk kunnen we in twee ketens samenvatten.
+</p><!-- l. 940 --><p class='noindent'>Voor twee verschillende punten:
 </p>
 <div class='mathjax-block'>\[ \important { \text {differentiequotiënt} \longleftrightarrow \text {gemiddelde verandering} \longleftrightarrow \text {secant} } \]</div>
-<!-- l. 878 --><p class='noindent'>Voor één punt:
+<!-- l. 952 --><p class='noindent'>Voor één punt:
 </p>
 <div class='mathjax-block'>\[ \important { \text {afgeleid getal} \longleftrightarrow \text {ogenblikkelijke verandering} \longleftrightarrow \text {raaklijn} } \]</div>
-<!-- l. 890 --><p class='noindent'>De overgang tussen beide gebeurt door een limiet:
+<!-- l. 964 --><p class='noindent'>De overgang tussen beide gebeurt door een limiet:
 </p>
 <div class='mathjax-block'>\[ \boxed { f'(a) = \lim _{x\to a} \frac {f(x)-f(a)}{x-a} }. \]</div>
 <p><a id='x1-30r1'></a>
-</p><!-- l. 902 --><p class='noindent'></p><div class='fvd-subsection'>
-<p></p><!-- l. 902 --><p class='noindent'></p><div class='fvd-subsection__row'>
-<p></p><!-- l. 902 --><p class='noindent'></p><div class='fvd-subsection__number'>8.1</div>
-<p></p><!-- l. 902 --><p class='noindent'></p><div class='fvd-subsection__title'>Drie talen van de afgeleide</div>
-<p></p><!-- l. 902 --><p class='noindent'></p></div>
-<p></p><!-- l. 902 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
-<p></p><!-- l. 902 --><p class='noindent'></p></div>
-<p></p><!-- l. 904 --><p class='noindent'>Eenzelfde uitspraak over een afgeleide kunnen we op verschillende manieren
+</p><!-- l. 976 --><p class='noindent'></p><div class='fvd-subsection'>
+<p></p><!-- l. 976 --><p class='noindent'></p><div class='fvd-subsection__row'>
+<p></p><!-- l. 976 --><p class='noindent'></p><div class='fvd-subsection__number'>8.1</div>
+<p></p><!-- l. 976 --><p class='noindent'></p><div class='fvd-subsection__title'>Drie talen van de afgeleide</div>
+<p></p><!-- l. 976 --><p class='noindent'></p></div>
+<p></p><!-- l. 976 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
+<p></p><!-- l. 976 --><p class='noindent'></p></div>
+<p></p><!-- l. 978 --><p class='noindent'>Eenzelfde uitspraak over een afgeleide kunnen we op verschillende manieren
 formuleren.
 </p>
                                                                   
 
                                                                   
 <div class='center'>
-<!-- l. 907 --><p class='noindent'>
+<!-- l. 981 --><p class='noindent'>
 </p>
-<div class='tabular'> <table class='tabular' id='TBL-1'><colgroup id='TBL-1-1g'><col id='TBL-1-1' /></colgroup><colgroup id='TBL-1-2g'><col id='TBL-1-2' /></colgroup><tr id='TBL-1-1-' style='vertical-align:baseline;'><td class='td11' id='TBL-1-1-1' style='white-space:normal; text-align:left;'> <!-- l. 909 --><p class='noindent'><strong>Algebraïsch</strong>        </p></td>
-                     <td class='td11' id='TBL-1-1-2' style='white-space:normal; text-align:left;'> <!-- l. 911 --><p class='noindent'><span class='mathjax-inline'>\(f'(a)\)</span> is de limiet van de differentiequotiënten.            </p></td>
-</tr><tr class='vspace' style='font-size:5.69054pt'><td></td><td></td></tr><tr id='TBL-1-2-' style='vertical-align:baseline;'><td class='td11' id='TBL-1-2-1' style='white-space:normal; text-align:left;'> <!-- l. 914 --><p class='noindent'><strong>Meetkundig</strong>         </p></td>
-                     <td class='td11' id='TBL-1-2-2' style='white-space:normal; text-align:left;'> <!-- l. 916 --><p class='noindent'><span class='mathjax-inline'>\(f'(a)\)</span> is de richtingscoëfficiënt van de raaklijn bij <span class='mathjax-inline'>\(x=a\)</span>.      </p></td>
-</tr><tr class='vspace' style='font-size:5.69054pt'><td></td><td></td></tr><tr id='TBL-1-3-' style='vertical-align:baseline;'><td class='td11' id='TBL-1-3-1' style='white-space:normal; text-align:left;'> <!-- l. 919 --><p class='noindent'><strong>In context</strong>           </p></td><td class='td11' id='TBL-1-3-2' style='white-space:normal; text-align:left;'> <!-- l. 921 --><p class='noindent'><span class='mathjax-inline'>\(f'(a)\)</span> beschrijft de ogenblikkelijke verandering van de 
+<div class='tabular'> <table class='tabular' id='TBL-1'><colgroup id='TBL-1-1g'><col id='TBL-1-1' /></colgroup><colgroup id='TBL-1-2g'><col id='TBL-1-2' /></colgroup><tr id='TBL-1-1-' style='vertical-align:baseline;'><td class='td11' id='TBL-1-1-1' style='white-space:normal; text-align:left;'> <!-- l. 983 --><p class='noindent'><strong>Algebraïsch</strong>        </p></td>
+                     <td class='td11' id='TBL-1-1-2' style='white-space:normal; text-align:left;'> <!-- l. 985 --><p class='noindent'><span class='mathjax-inline'>\(f'(a)\)</span> is de limiet van de differentiequotiënten.            </p></td>
+</tr><tr class='vspace' style='font-size:5.69054pt'><td></td><td></td></tr><tr id='TBL-1-2-' style='vertical-align:baseline;'><td class='td11' id='TBL-1-2-1' style='white-space:normal; text-align:left;'> <!-- l. 988 --><p class='noindent'><strong>Meetkundig</strong>         </p></td>
+                     <td class='td11' id='TBL-1-2-2' style='white-space:normal; text-align:left;'> <!-- l. 990 --><p class='noindent'><span class='mathjax-inline'>\(f'(a)\)</span> is de richtingscoëfficiënt van de raaklijn bij <span class='mathjax-inline'>\(x=a\)</span>.      </p></td>
+</tr><tr class='vspace' style='font-size:5.69054pt'><td></td><td></td></tr><tr id='TBL-1-3-' style='vertical-align:baseline;'><td class='td11' id='TBL-1-3-1' style='white-space:normal; text-align:left;'> <!-- l. 993 --><p class='noindent'><strong>In context</strong>           </p></td><td class='td11' id='TBL-1-3-2' style='white-space:normal; text-align:left;'> <!-- l. 995 --><p class='noindent'><span class='mathjax-inline'>\(f'(a)\)</span> beschrijft de ogenblikkelijke verandering van de 
 afhankelijke grootheid bij <span class='mathjax-inline'>\(x=a\)</span>.                               </p></td>
 </tr></table>                                                                  </div></div>
-<!-- l. 926 --><p class='noindent'>Bij analyse moet je tussen deze drie voorstellingen kunnen schakelen.
+<!-- l. 1000 --><p class='noindent'>Bij analyse moet je tussen deze drie voorstellingen kunnen schakelen.
 <a id='x1-31r9'></a>
-</p><!-- l. 933 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>9</div><div class='fvd-section-bar__title'>Veelgemaakte denkfouten</div></div>
+</p><!-- l. 1007 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>9</div><div class='fvd-section-bar__title'>Veelgemaakte denkfouten</div></div>
 <p></p>
 <div class='theorem-like problem-environment remark' id='problem6' titletext=' remark'><a id='x1-32r2'></a><strong>Gemiddelde en ogenblikkelijke verandering verwarren</strong>
 <div class='mathjax-block'>\[ \frac {f(b)-f(a)}{b-a} \]</div>
-<!-- l. 942 --><p class='noindent'>beschrijft een verandering over een interval.
+<!-- l. 1016 --><p class='noindent'>beschrijft een verandering over een interval.
 </p>
 <div class='mathjax-block'>\[ f'(a) \]</div>
-<!-- l. 948 --><p class='noindent'>beschrijft een ogenblikkelijke verandering bij één invoerwaarde. </p></div>
+<!-- l. 1022 --><p class='noindent'>beschrijft een ogenblikkelijke verandering bij één invoerwaarde. </p></div>
 <div class='theorem-like problem-environment remark' id='problem7' titletext=' remark'><a id='x1-33r3'></a><strong>De afgeleide verwarren met de functiewaarde</strong>
 <div class='mathjax-block'>\[ f(a) \]</div>
-<!-- l. 959 --><p class='noindent'>vertelt waar het punt op de grafiek ligt.
+<!-- l. 1033 --><p class='noindent'>vertelt waar het punt op de grafiek ligt.
 </p>
 <div class='mathjax-block'>\[ f'(a) \]</div>
-<!-- l. 965 --><p class='noindent'>vertelt hoe de grafiek daar ogenblikkelijk verandert. </p></div>
+<!-- l. 1039 --><p class='noindent'>vertelt hoe de grafiek daar ogenblikkelijk verandert. </p></div>
 <div class='theorem-like problem-environment remark' id='problem8' titletext=' remark'><a id='x1-34r4'></a><strong>Uit <span class='mathjax-inline'>\(f'(a)=0\)</span> onmiddellijk een extremum besluiten</strong>
-<!-- l. 972 --><p class='noindent'>Een horizontale raaklijn is niet noodzakelijk een maximum of minimum. Het verloop
+<!-- l. 1046 --><p class='noindent'>Een horizontale raaklijn is niet noodzakelijk een maximum of minimum. Het verloop
 rond het punt moet eveneens onderzocht worden. </p></div>
 <p><a id='x1-35r10'></a>
-</p><!-- l. 981 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>10</div><div class='fvd-section-bar__title'>Kun je alles verbinden?</div></div>
+</p><!-- l. 1055 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>10</div><div class='fvd-section-bar__title'>Kun je alles verbinden?</div></div>
 <p><a id='x1-36r4'></a>
-</p><p></p><!-- l. 984 --><p class='noindent'></p><section class='fvd-exercise'>
-<p></p><!-- l. 984 --><p class='noindent'></p><div class='fvd-exercise__title'>
-<p></p><!-- l. 984 --><p class='noindent'>Oefening 4
-</p><!-- l. 984 --><p class='noindent'></p></div>
-<p></p><!-- l. 984 --><p class='noindent'></p><div class='fvd-exercise__body'>
-<p></p><!-- l. 984 --><p class='noindent'></p><div class='fvd-exercise__meta'>
+</p><p></p><!-- l. 1058 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 1058 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 1058 --><p class='noindent'>Oefening 4
+</p><!-- l. 1058 --><p class='noindent'></p></div>
+<p></p><!-- l. 1058 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 1058 --><p class='noindent'></p><div class='fvd-exercise__meta'>
                                                                   
 
                                                                   
-<p></p><!-- l. 984 --><p class='noindent'></p></div>
-<p></p><!-- l. 984 --><p class='noindent'></p><div class='fvd-exercise__content'>Van een functie <span class='mathjax-inline'>\(f\)</span> weten we dat
+<p></p><!-- l. 1058 --><p class='noindent'></p></div>
+<p></p><!-- l. 1058 --><p class='noindent'></p><div class='fvd-exercise__content'>Van een functie <span class='mathjax-inline'>\(f\)</span> weten we dat
 <p></p>
 <div class='mathjax-block'>\[ f(2)=7 \qquad \text {en}\qquad f'(2)=-3. \]</div>
 <div class='problem-environment question' id='problem9' numbered=' ' role='article' titletext=' Question'>
-<!-- l. 995 --><p class='noindent'>Door welk punt gaat de raaklijn?
+<!-- l. 1069 --><p class='noindent'>Door welk punt gaat de raaklijn?
 </p>
 <div class='mathjax-block'>\[ P=(\answer {2},\answer {7}). \]</div>
 </div>
 <div class='problem-environment question' id='problem10' numbered=' ' role='article' titletext=' Question'>
-<!-- l. 1005 --><p class='noindent'>Wat is de richtingscoëfficiënt van de raaklijn?
+<!-- l. 1079 --><p class='noindent'>Wat is de richtingscoëfficiënt van de raaklijn?
 </p>
 <div class='mathjax-block'>\[ \operatorname {rico}(t)=\answer {-3}. \]</div>
 </div>
 <div class='problem-environment question' id='problem11' numbered=' ' role='article' titletext=' Question'>
-<!-- l. 1015 --><p class='noindent'>Hoe verloopt de raaklijn van links naar rechts?
+<!-- l. 1089 --><p class='noindent'>Hoe verloopt de raaklijn van links naar rechts?
 </p>
 <div class='multiple-choice' id='problem12' titletext=' Multiple Choice'><span class='choice  ' id='choice9'>Ze stijgt. </span><span class='choice correct ' id='choice10'>Ze daalt. </span><span class='choice  ' id='choice11'>Ze is horizontaal.</span> </div>
 </div>
 <div class='problem-environment question' id='problem13' numbered=' ' role='article' titletext=' Question'>
-<!-- l. 1027 --><p class='noindent'>Bepaal de vergelijking van de raaklijn.
+<!-- l. 1101 --><p class='noindent'>Bepaal de vergelijking van de raaklijn.
 </p>
 <div class='mathjax-block'>\[ y-7=-3(x-2), \]</div>
-<!-- l. 1033 --><p class='noindent'>dus
+<!-- l. 1107 --><p class='noindent'>dus
 </p>
 <div class='mathjax-block'>\[ y=\answer {-3}x+\answer {13}. \]</div>
 </div>
 <div class='problem-environment question' id='problem14' numbered=' ' role='article' titletext=' Question'>
-<!-- l. 1043 --><p class='noindent'>Een leerling beweert:
+<!-- l. 1117 --><p class='noindent'>Een leerling beweert:
 </p>
 <div class='center'>
-<!-- l. 1045 --><p class='noindent'>
-</p><!-- l. 1046 --><p class='noindent'>“Omdat <span class='mathjax-inline'>\(f'(2)=-3\)</span>, geldt noodzakelijk <span class='mathjax-inline'>\(f(3)=4\)</span>.”</p></div>
+<!-- l. 1119 --><p class='noindent'>
+</p><!-- l. 1120 --><p class='noindent'>“Omdat <span class='mathjax-inline'>\(f'(2)=-3\)</span>, geldt noodzakelijk <span class='mathjax-inline'>\(f(3)=4\)</span>.”</p></div>
                                                                   
 
                                                                   
-<!-- l. 1049 --><p class='noindent'>Is dat correct?
+<!-- l. 1123 --><p class='noindent'>Is dat correct?
 </p>
 <div class='multiple-choice' id='problem15' titletext=' Multiple Choice'>
 <span class='choice  ' id='choice12'> Ja, want <span class='mathjax-inline'>\(7-3=4\)</span>. </span>
@@ -617,28 +617,28 @@ functie over het volledige interval <span class='mathjax-inline'>\([2,3]\)</span
 </div>
 </div>
 </div>
-<!-- l. 1067 --><p class='noindent'></p></div>
-<p></p><!-- l. 1067 --><p class='noindent'></p></section>
+<!-- l. 1141 --><p class='noindent'></p></div>
+<p></p><!-- l. 1141 --><p class='noindent'></p></section>
 <p><a id='x1-37r11'></a>
-</p><p></p><!-- l. 1074 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>11</div><div class='fvd-section-bar__title'>Samengevat</div></div>
-<p></p><!-- l. 1076 --><p class='noindent'>Over een interval <span class='mathjax-inline'>\([a,b]\)</span> gebruiken we het differentiequotiënt
+</p><p></p><!-- l. 1148 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>11</div><div class='fvd-section-bar__title'>Samengevat</div></div>
+<p></p><!-- l. 1150 --><p class='noindent'>Over een interval <span class='mathjax-inline'>\([a,b]\)</span> gebruiken we het differentiequotiënt
 </p>
 <div class='mathjax-block'>\[ \boxed { \frac {f(b)-f(a)}{b-a} }. \]</div>
-<!-- l. 1084 --><p class='noindent'>Dit beschrijft de gemiddelde verandering en is de richtingscoëfficiënt van een
+<!-- l. 1158 --><p class='noindent'>Dit beschrijft de gemiddelde verandering en is de richtingscoëfficiënt van een
 secant.
-</p><!-- l. 1087 --><p class='noindent'>Bij één punt gebruiken we het afgeleid getal
+</p><!-- l. 1161 --><p class='noindent'>Bij één punt gebruiken we het afgeleid getal
 </p>
 <div class='mathjax-block'>\[ \boxed { f'(a) = \lim _{x\to a} \frac {f(x)-f(a)}{x-a} }. \]</div>
-<!-- l. 1098 --><p class='noindent'>Dit beschrijft de ogenblikkelijke verandering en is de richtingscoëfficiënt van de
+<!-- l. 1172 --><p class='noindent'>Dit beschrijft de ogenblikkelijke verandering en is de richtingscoëfficiënt van de
 raaklijn bij <span class='mathjax-inline'>\(x=a\)</span>.
-</p><!-- l. 1101 --><p class='noindent'>De vergelijking van die raaklijn is
+</p><!-- l. 1175 --><p class='noindent'>De vergelijking van die raaklijn is
 </p>
 <div class='mathjax-block'>\[ \boxed { y-f(a)=f'(a)(x-a) }. \]</div>
-<!-- l. 1109 --><p class='noindent'>Bij toepassingen interpreteren we een afgeleid getal altijd in functie van de
+<!-- l. 1183 --><p class='noindent'>Bij toepassingen interpreteren we een afgeleid getal altijd in functie van de
 grootheden, het teken en de eenheden.
 <a id='x1-38r12'></a>
-</p><!-- l. 1117 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>12</div><div class='fvd-section-bar__title'>Wat moet je zeker beheersen?</div></div>
-<p></p><!-- l. 1119 --><p class='noindent'>Na deze korte opfrissing moet je zelfstandig:
+</p><!-- l. 1191 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>12</div><div class='fvd-section-bar__title'>Wat moet je zeker beheersen?</div></div>
+<p></p><!-- l. 1193 --><p class='noindent'>Na deze korte opfrissing moet je zelfstandig:
 </p>     
 <ul class='itemize1'>
 <li class='itemize'>een differentiequotiënt berekenen en interpreteren;
@@ -660,7 +660,7 @@ teken en eenheid;
 <li class='itemize'>uit <span class='mathjax-inline'>\(f(a)\)</span> en <span class='mathjax-inline'>\(f'(a)\)</span> de vergelijking van een raaklijn bepalen;
 </li>
 <li class='itemize'>uitleggen waarom <span class='mathjax-inline'>\(f'(a)=0\)</span> op zichzelf nog geen extremum bewijst.</li></ul>
-<!-- l. 1134 --><p class='noindent'>Dit is de noodzakelijke basis voor de volgende hoofdstukken, waarin we deze ideeën
+<!-- l. 1208 --><p class='noindent'>Dit is de noodzakelijke basis voor de volgende hoofdstukken, waarin we deze ideeën
 toepassen op nieuwe functieklassen en nieuwe afleidingsregels.
                                                                   
 

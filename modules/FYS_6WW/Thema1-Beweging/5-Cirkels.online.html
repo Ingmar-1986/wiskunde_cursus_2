@@ -1,0 +1,1035 @@
+<!DOCTYPE html> 
+<html lang='en-US' xml:lang='en-US'> 
+<head> <title>In cirkels bewegen</title> 
+<meta charset='utf-8' /> 
+<meta content='TeX4ht (https://tug.org/tex4ht/)' name='generator' /> 
+<meta content='width=device-width,initial-scale=1' name='viewport' /> 
+<link href='\aa:CssFile ' rel='stylesheet' type='text/css' /> 
+<meta content='5-Cirkels.online.tex' name='src' /> 
+<script>window.MathJax = { tex: { tags: "ams", }, }; </script> 
+<script async='async' id='MathJax-script' src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js' type='text/javascript'></script>  
+<meta content='Ingmar Herreman' name='author' /> 
+<meta content='version 2.5.1' name='ximera' /> 
+<link href='https://ximera.osu.edu/public/stylesheets/standalone.css' media='screen' rel='stylesheet' /> 
+<script async='' src='https://ximera.osu.edu/public/javascripts/standalone.min.js' type='text/javascript'></script> 
+</head><body> 
+<div class='preamble'>
+</div>
+<style> .activity-body pre { white-space: pre; background-color: lightgray; } .xmyoutube { aspect-ratio: 16/9; min-width: 75%; } .image-environment img { width: unset; } </style> 
+
+<div class='maketitle'></div>
+<!-- l. 47 --><p class='noindent'></p><section class='learning-box learning-box--prior'> <div class='learning-box__header'> <span class='learning-box__icon'> </span><span class='learning-box__title'>Voorkennis</span> </div> <div class='learning-box__content'> 
+<p></p>     
+<ul class='itemize1'>
+<li class='itemize'>Je kan een beweging beschrijven met positie, snelheid en versnelling.
+</li>
+<li class='itemize'>Je weet dat snelheid en versnelling vectoriële grootheden zijn.
+</li>
+<li class='itemize'>Je kan vectoren tekenen, vergelijken en ontbinden.
+</li>
+<li class='itemize'>Je kent de omtrek van een cirkel: <span class='mathjax-inline'>\(2\pi r\)</span>.
+</li>
+<li class='itemize'>Je kan werken met graden en radialen.
+</li>
+<li class='itemize'>Je kan recht evenredige, omgekeerd evenredige en kwadratische verbanden
+herkennen en interpreteren.</li></ul>
+<!-- l. 55 --><p class='noindent'></p></div> </section> 
+<p></p><!-- l. 57 --><p class='noindent'></p><section class='learning-box learning-box--goals'> <div class='learning-box__header'> <span class='learning-box__icon'> </span><span class='learning-box__title'>Leerdoelen</span> </div> <div class='learning-box__content'> 
+<p></p>     
+<ul class='itemize1'>
+<li class='itemize'>Je  kan  periode  en  frequentie  van  een  periodieke  beweging  bepalen  en
+interpreteren.
+</li>
+<li class='itemize'>Je  kan  hoekverplaatsing  en  hoeksnelheid  gebruiken  om  een  rotatie  te
+beschrijven.
+                                                                  
+
+                                                                  
+</li>
+<li class='itemize'>Je kan het verband tussen <span class='mathjax-inline'>\(T\)</span>, <span class='mathjax-inline'>\(f\)</span> en <span class='mathjax-inline'>\(\omega \)</span> analyseren en kwantificeren.
+</li>
+<li class='itemize'>Je kan het onderscheid tussen hoeksnelheid en baansnelheid uitleggen.
+</li>
+<li class='itemize'>Je kan het verband <span class='mathjax-inline'>\(v=r\omega \)</span> analyseren en toepassen.
+</li>
+<li class='itemize'>Je  kan  positie-  en  snelheidsvectoren  bij  een  eenparige  cirkelbeweging
+tekenen en interpreteren.
+</li>
+<li class='itemize'>Je  kan  verklaren  waarom  een  eenparige  cirkelbeweging  een  versnelde
+beweging is.
+</li>
+<li class='itemize'>Je kan de richting en grootte van de centripetale versnelling bepalen.
+</li>
+<li class='itemize'>Je kan de verbanden tussen <span class='mathjax-inline'>\(r\)</span>, <span class='mathjax-inline'>\(T\)</span>, <span class='mathjax-inline'>\(f\)</span>, <span class='mathjax-inline'>\(\omega \)</span>, <span class='mathjax-inline'>\(v\)</span> en <span class='mathjax-inline'>\(a_c\)</span> combineren om nieuwe situaties te
+analyseren.
+</li>
+<li class='itemize'>Je  kan  experimentele  gegevens  over  een  cirkelbeweging  verwerken,
+verbanden onderzoeken en conclusies formuleren.</li></ul>
+<!-- l. 76 --><p class='noindent'></p></div> </section> 
+<p><a id='x1-2r1'></a>
+</p><p></p><!-- l. 83 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>1</div><div class='fvd-section-bar__title'>Versnellen zonder sneller te gaan?</div></div>
+<p></p><!-- l. 85 --><p class='noindent'>Een auto rijdt met constante snelheid door een bocht. Een satelliet beweegt bijna
+met constante snelheid rond de aarde. Een punt op de rand van een draaiende schijf
+legt elke seconde evenveel afstand af.
+</p><!-- l. 89 --><p class='noindent'>Zijn deze bewegingen onversneld?
+                                                                  
+
+                                                                  
+</p><!-- l. 91 --><p class='noindent'>Bij een rechtlijnige beweging zou een constante snelheid betekenen dat de
+snelheidsvector constant is. In een cirkel verandert echter voortdurend de <em>richting</em>
+van de snelheid.
+<a id='x1-3r1'></a>
+</p><!-- l. 95 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 95 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 95 --><p class='noindent'>Oefening 1
+</p><!-- l. 95 --><p class='noindent'>— Voorspel vóór je rekent
+</p><!-- l. 95 --><p class='noindent'></p></div>
+<p></p><!-- l. 95 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 95 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 95 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 97 --><p class='noindent'>Een fietser rijdt met een constante snelheidsgrootte van <span class='mathjax-inline'>\(6,0\,\mathrm {m/s}\)</span> door een cirkelvormige
+bocht.
+</p>
+<div class='problem-environment question' id='problem1' numbered=' ' role='article' titletext=' Question'>  Is de grootte van zijn snelheid constant?    </div>
+<div class='problem-environment question' id='problem2' numbered=' ' role='article' titletext=' Question'>  Is zijn snelheidsvector constant? Motiveer.    </div>
+<div class='problem-environment question' id='problem3' numbered=' ' role='article' titletext=' Question'>  Verwacht je dat zijn versnelling nul is? Noteer eerst je intuïtieve antwoord.
+</div>
+<div class='problem-environment question' id='problem4' numbered=' ' role='article' titletext=' Question'>  In welke richting zou een eventuele versnelling volgens jou wijzen?    </div>
+<!-- l. 117 --><p class='noindent'>Bewaar je antwoorden. We keren er later naar terug.
+</p></div>
+<p></p><!-- l. 119 --><p class='noindent'></p></div>
+<p></p><!-- l. 119 --><p class='noindent'></p></section>
+<p><a id='x1-4r2'></a>
+</p><p></p><!-- l. 126 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>2</div><div class='fvd-section-bar__title'>Periodieke bewegingen</div></div>
+<p></p><!-- l. 128 --><p class='noindent'>Veel bewegingen herhalen zich: een wiel draait rond, een ventilator roteert, de aarde
+draait om haar as en een punt op een draaimolen keert steeds opnieuw naar dezelfde
+positie terug.
+</p><!-- l. 133 --><p class='noindent'></p><section class='fvd-definition'><div class='fvd-definition__title'><span class='fvd-definition__label'>DEFINITIE</span></div><div class='fvd-definition__content'>Een <strong>periodieke beweging</strong> is een beweging die zich na gelijke
+tijdsintervallen herhaalt. </div></section>
+<p></p><!-- l. 137 --><p class='noindent'>Eén volledige herhaling noemen we een <strong>cyclus</strong>.
+<a id='x1-5r1'></a>
+</p><!-- l. 140 --><p class='noindent'></p><div class='fvd-subsection'>
+<p></p><!-- l. 140 --><p class='noindent'></p><div class='fvd-subsection__row'>
+<p></p><!-- l. 140 --><p class='noindent'></p><div class='fvd-subsection__number'>2.1</div>
+                                                                  
+
+                                                                  
+<p></p><!-- l. 140 --><p class='noindent'></p><div class='fvd-subsection__title'>Periode</div>
+<p></p><!-- l. 140 --><p class='noindent'></p></div>
+<p></p><!-- l. 140 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
+<p></p><!-- l. 140 --><p class='noindent'></p></div>
+<p></p><!-- l. 142 --><p class='noindent'>De <strong>periode</strong> <span class='mathjax-inline'>\(T\)</span> is de tijdsduur van één volledige cyclus.
+</p>
+<div class='mathjax-block'>\[ \boxed {T=\frac {\Delta t}{N}} \]</div>
+<!-- l. 148 --><p class='noindent'>waarbij <span class='mathjax-inline'>\(N\)</span> het aantal volledige cycli is.
+</p><!-- l. 150 --><p class='noindent'>De SI-eenheid is de seconde:
+</p>
+<div class='mathjax-block'>\[ [T]=\mathrm {s}. \]</div>
+<p><a id='x1-6r2'></a>
+</p><!-- l. 157 --><p class='noindent'></p><div class='fvd-subsection'>
+<p></p><!-- l. 157 --><p class='noindent'></p><div class='fvd-subsection__row'>
+<p></p><!-- l. 157 --><p class='noindent'></p><div class='fvd-subsection__number'>2.2</div>
+<p></p><!-- l. 157 --><p class='noindent'></p><div class='fvd-subsection__title'>Frequentie</div>
+<p></p><!-- l. 157 --><p class='noindent'></p></div>
+<p></p><!-- l. 157 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
+<p></p><!-- l. 157 --><p class='noindent'></p></div>
+<p></p><!-- l. 159 --><p class='noindent'>De <strong>frequentie</strong> <span class='mathjax-inline'>\(f\)</span> is het aantal volledige cycli per seconde:
+</p>
+<div class='mathjax-block'>\[ \boxed {f=\frac {N}{\Delta t}}. \]</div>
+<!-- l. 165 --><p class='noindent'>De SI-eenheid is hertz:
+</p>
+<div class='mathjax-block'>\[ [f]=\mathrm {Hz}=\mathrm {s^{-1}}. \]</div>
+<!-- l. 171 --><p class='noindent'>Omdat periode en frequentie elkaars inverse zijn:
+</p>
+<div class='mathjax-block'>\[ \boxed {f=\frac 1T} \qquad \text {en}\qquad \boxed {T=\frac 1f}. \]</div>
+<p><a id='x1-7r1'></a>
+</p><!-- l. 180 --><p class='noindent'></p><section class='fvd-example'>
+<p></p><!-- l. 180 --><p class='noindent'></p><div class='fvd-example__title'>Voorbeeld 1<span class='fvd-example__subtitle'> — Een draaiend wiel</span></div>
+<p></p><!-- l. 180 --><p class='noindent'></p><div class='fvd-example__content'>
+<p></p><!-- l. 182 --><p class='noindent'>Een wiel maakt <span class='mathjax-inline'>\(45\)</span> omwentelingen in <span class='mathjax-inline'>\(30,0\,\mathrm {s}\)</span>.
+</p>
+<div class='mathjax-block'>\[ f=\frac {45}{30,0}=1,50\,\mathrm {Hz}. \]</div>
+                                                                  
+
+                                                                  
+<!-- l. 188 --><p class='noindent'>De periode is:
+</p>
+<div class='mathjax-block'>\[ T=\frac 1{1,50}=0,667\,\mathrm {s}. \]</div>
+<!-- l. 194 --><p class='noindent'>Elke omwenteling duurt dus ongeveer <span class='mathjax-inline'>\(0,667\,\mathrm {s}\)</span>.
+</p></div></section>
+<p><a id='x1-8r2'></a>
+</p><p></p><!-- l. 199 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 199 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 199 --><p class='noindent'>Oefening 2
+</p><!-- l. 199 --><p class='noindent'>— Periode en frequentie
+</p><!-- l. 199 --><p class='noindent'></p></div>
+<p></p><!-- l. 199 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 199 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 199 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 201 --><p class='noindent'>Een laboratoriumrotor maakt <span class='mathjax-inline'>\(1800\)</span> omwentelingen per minuut.
+</p>
+<div class='problem-environment question' id='problem5' numbered=' ' role='article' titletext=' Question'>  Bepaal de frequentie in hertz.    </div>
+<div class='problem-environment question' id='problem6' numbered=' ' role='article' titletext=' Question'>  Bepaal de periode.    </div>
+<div class='problem-environment question' id='problem7' numbered=' ' role='article' titletext=' Question'>  Hoeveel omwentelingen maakt de rotor in <span class='mathjax-inline'>\(2,50\,\mathrm {s}\)</span>?    </div>
+</div>
+<!-- l. 215 --><p class='noindent'></p></div>
+<p></p><!-- l. 215 --><p class='noindent'></p></section>
+<p><a id='x1-9r3'></a>
+</p><p></p><!-- l. 222 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>3</div><div class='fvd-section-bar__title'>De eenparige cirkelbeweging</div></div>
+<p></p><!-- l. 225 --><p class='noindent'></p><section class='fvd-definition'><div class='fvd-definition__title'><span class='fvd-definition__label'>DEFINITIE</span></div><div class='fvd-definition__content'>Bij een <strong>eenparige cirkelbeweging</strong> (ECB) beweegt een punt langs een
+cirkelbaan met een constante <em>grootte</em> van de baansnelheid. </div></section>
+<p></p><!-- l. 229 --><p class='noindent'>Het woord <em>eenparig</em> betekent hier dus niet dat de snelheidsvector constant
+is.
+</p>
+<div class='mathjax-block'>\[ |\vec v|=\text {constant}, \]</div>
+<!-- l. 236 --><p class='noindent'>maar de richting van <span class='mathjax-inline'>\(\vec v\)</span> verandert voortdurend.
+</p><!-- l. 238 --><p class='noindent'>Dat onderscheid wordt de kern van dit hoofdstuk.
+<a id='x1-10r1'></a>
+</p><!-- l. 241 --><p class='noindent'></p><div class='fvd-subsection'>
+<p></p><!-- l. 241 --><p class='noindent'></p><div class='fvd-subsection__row'>
+                                                                  
+
+                                                                  
+<p></p><!-- l. 241 --><p class='noindent'></p><div class='fvd-subsection__number'>3.1</div>
+<p></p><!-- l. 241 --><p class='noindent'></p><div class='fvd-subsection__title'>Hoekpositie</div>
+<p></p><!-- l. 241 --><p class='noindent'></p></div>
+<p></p><!-- l. 241 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
+<p></p><!-- l. 241 --><p class='noindent'></p></div>
+<p></p><!-- l. 243 --><p class='noindent'>De positie op de cirkel kunnen we beschrijven met een hoek <span class='mathjax-inline'>\(\theta \)</span>.
+</p><!-- l. 245 --><p class='noindent'>Voor een booglengte <span class='mathjax-inline'>\(s\)</span> op een cirkel met straal <span class='mathjax-inline'>\(r\)</span> geldt, als <span class='mathjax-inline'>\(\theta \)</span> in radialen wordt
+uitgedrukt:
+</p>
+<div class='mathjax-block'>\[ \boxed {s=r\theta }. \]</div>
+<!-- l. 252 --><p class='noindent'>Eén volledige omwenteling komt overeen met:
+</p>
+<div class='mathjax-block'>\[ \boxed {2\pi \ \mathrm {rad}=360^\circ }. \]</div>
+<p><a id='x1-11r2'></a>
+</p><!-- l. 259 --><p class='noindent'></p><div class='fvd-subsection'>
+<p></p><!-- l. 259 --><p class='noindent'></p><div class='fvd-subsection__row'>
+<p></p><!-- l. 259 --><p class='noindent'></p><div class='fvd-subsection__number'>3.2</div>
+<p></p><!-- l. 259 --><p class='noindent'></p><div class='fvd-subsection__title'>Hoeksnelheid</div>
+<p></p><!-- l. 259 --><p class='noindent'></p></div>
+<p></p><!-- l. 259 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
+<p></p><!-- l. 259 --><p class='noindent'></p></div>
+<p></p><!-- l. 261 --><p class='noindent'>De gemiddelde hoeksnelheid is:
+</p>
+<div class='mathjax-block'>\[ \omega _{\mathrm {gem}} = \frac {\Delta \theta }{\Delta t}. \]</div>
+<!-- l. 269 --><p class='noindent'>Bij een ECB is de hoeksnelheid constant:
+</p>
+<div class='mathjax-block'>\[ \boxed {\omega =\frac {\Delta \theta }{\Delta t}}. \]</div>
+<!-- l. 275 --><p class='noindent'>De eenheid is:
+</p>
+<div class='mathjax-block'>\[ [\omega ]=\mathrm {rad/s}. \]</div>
+<!-- l. 281 --><p class='noindent'>Tijdens één periode verandert de hoek met <span class='mathjax-inline'>\(2\pi \)</span> rad. Daarom:
+</p>
+<div class='mathjax-block'>\[ \omega = \frac {2\pi }{T}. \]</div>
+<!-- l. 289 --><p class='noindent'>Met <span class='mathjax-inline'>\(f=1/T\)</span> volgt ook:
+</p>
+                                                                  
+
+                                                                  
+<div class='mathjax-block'>\[ \boxed { \omega =\frac {2\pi }{T}=2\pi f. } \]</div>
+<p><a id='x1-12r3'></a>
+</p><!-- l. 298 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 298 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 298 --><p class='noindent'>Oefening 3
+</p><!-- l. 298 --><p class='noindent'>— Van periode naar hoeksnelheid
+</p><!-- l. 298 --><p class='noindent'></p></div>
+<p></p><!-- l. 298 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 298 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 298 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 300 --><p class='noindent'>Een draaimolen maakt één omwenteling in <span class='mathjax-inline'>\(8,0\,\mathrm {s}\)</span>.
+</p>
+<div class='problem-environment question' id='problem8' numbered=' ' role='article' titletext=' Question'>  Bepaal <span class='mathjax-inline'>\(T\)</span>.    </div>
+<div class='problem-environment question' id='problem9' numbered=' ' role='article' titletext=' Question'>  Bepaal <span class='mathjax-inline'>\(f\)</span>.    </div>
+<div class='problem-environment question' id='problem10' numbered=' ' role='article' titletext=' Question'>  Bepaal <span class='mathjax-inline'>\(\omega \)</span>.    </div>
+<div class='problem-environment question' id='problem11' numbered=' ' role='article' titletext=' Question'>  Welke hoek, in radialen en in graden, doorloopt de draaimolen in <span class='mathjax-inline'>\(3,0\,\mathrm {s}\)</span>?    </div>
+</div>
+<!-- l. 319 --><p class='noindent'></p></div>
+<p></p><!-- l. 319 --><p class='noindent'></p></section>
+<p><a id='x1-13r4'></a>
+</p><p></p><!-- l. 326 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>4</div><div class='fvd-section-bar__title'>Van hoeksnelheid naar baansnelheid</div></div>
+<p></p><!-- l. 328 --><p class='noindent'>Tijdens één volledige omwenteling legt een punt op afstand <span class='mathjax-inline'>\(r\)</span> van het middelpunt een
+afstand
+</p>
+<div class='mathjax-block'>\[ 2\pi r \]</div>
+<!-- l. 335 --><p class='noindent'>af in een tijd <span class='mathjax-inline'>\(T\)</span>.
+</p><!-- l. 337 --><p class='noindent'>Daarom is de grootte van de baansnelheid:
+</p>
+<div class='mathjax-block'>\[ v=\frac {2\pi r}{T}. \]</div>
+<!-- l. 343 --><p class='noindent'>Omdat
+</p>
+<div class='mathjax-block'>\[ \omega =\frac {2\pi }{T}, \]</div>
+<!-- l. 349 --><p class='noindent'>vinden we:
+</p>
+<div class='mathjax-block'>\[ \boxed {v=r\omega }. \]</div>
+                                                                  
+
+                                                                  
+<!-- l. 355 --><p class='noindent'>Dit is een fundamenteel verband.
+<a id='x1-14r1'></a>
+</p><!-- l. 358 --><p class='noindent'></p><div class='fvd-subsection'>
+<p></p><!-- l. 358 --><p class='noindent'></p><div class='fvd-subsection__row'>
+<p></p><!-- l. 358 --><p class='noindent'></p><div class='fvd-subsection__number'>4.1</div>
+<p></p><!-- l. 358 --><p class='noindent'></p><div class='fvd-subsection__title'>Zelfde hoeksnelheid, andere baansnelheid</div>
+<p></p><!-- l. 358 --><p class='noindent'></p></div>
+<p></p><!-- l. 358 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
+<p></p><!-- l. 358 --><p class='noindent'></p></div>
+<p></p><!-- l. 360 --><p class='noindent'>Denk aan twee punten op dezelfde stijve draaiende schijf.
+</p><!-- l. 362 --><p class='noindent'>Beide punten maken in dezelfde tijd dezelfde hoekverplaatsing. Ze hebben dus
+dezelfde <span class='mathjax-inline'>\(\omega \)</span>, <span class='mathjax-inline'>\(T\)</span> en <span class='mathjax-inline'>\(f\)</span>.
+</p><!-- l. 365 --><p class='noindent'>Het punt verder van het middelpunt legt in diezelfde tijd echter een grotere
+booglengte af. Daarom is zijn baansnelheid groter.
+</p><!-- l. 368 --><p class='noindent'>Bij constante <span class='mathjax-inline'>\(\omega \)</span>:
+</p>
+<div class='mathjax-block'>\[ \boxed {v\sim r}. \]</div>
+<p><a id='x1-15r4'></a>
+</p><!-- l. 375 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 375 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 375 --><p class='noindent'>Oefening 4
+</p><!-- l. 375 --><p class='noindent'>— Twee punten op één schijf
+</p><!-- l. 375 --><p class='noindent'></p></div>
+<p></p><!-- l. 375 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 375 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 375 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 377 --><p class='noindent'>Een schijf draait met constante hoeksnelheid. Punt A ligt op <span class='mathjax-inline'>\(r_A=0,10\,\mathrm {m}\)</span> van het middelpunt en
+punt B op <span class='mathjax-inline'>\(r_B=0,30\,\mathrm {m}\)</span>.
+</p>
+<div class='problem-environment question' id='problem12' numbered=' ' role='article' titletext=' Question'>  Vergelijk <span class='mathjax-inline'>\(T_A\)</span> en <span class='mathjax-inline'>\(T_B\)</span>.    </div>
+<div class='problem-environment question' id='problem13' numbered=' ' role='article' titletext=' Question'>  Vergelijk <span class='mathjax-inline'>\(f_A\)</span> en <span class='mathjax-inline'>\(f_B\)</span>.    </div>
+<div class='problem-environment question' id='problem14' numbered=' ' role='article' titletext=' Question'>  Vergelijk <span class='mathjax-inline'>\(\omega _A\)</span> en <span class='mathjax-inline'>\(\omega _B\)</span>.    </div>
+<div class='problem-environment question' id='problem15' numbered=' ' role='article' titletext=' Question'>  Bepaal de verhouding <span class='mathjax-inline'>\(\dfrac {v_B}{v_A}\)</span> zonder een concrete hoeksnelheid te kiezen.    </div>
+<div class='problem-environment question' id='problem16' numbered=' ' role='article' titletext=' Question'>  Leg het resultaat uit vanuit de afgelegde booglengte.    </div>
+                                                                  
+
+                                                                  
+</div>
+<!-- l. 402 --><p class='noindent'></p></div>
+<p></p><!-- l. 402 --><p class='noindent'></p></section>
+<p><a id='x1-16r2'></a>
+</p><p></p><!-- l. 405 --><p class='noindent'></p><section class='fvd-example'>
+<p></p><!-- l. 405 --><p class='noindent'></p><div class='fvd-example__title'>Voorbeeld 2<span class='fvd-example__subtitle'> — Een punt op een draaiende schijf</span></div>
+<p></p><!-- l. 405 --><p class='noindent'></p><div class='fvd-example__content'>
+<p></p><!-- l. 407 --><p class='noindent'>Een schijf draait met <span class='mathjax-inline'>\(f=2,50\,\mathrm {Hz}\)</span>. Een punt bevindt zich <span class='mathjax-inline'>\(0,20\,\mathrm {m}\)</span> van het middelpunt.
+</p><!-- l. 410 --><p class='noindent'>Eerst:
+</p>
+<div class='mathjax-block'>\[ \omega =2\pi f =2\pi \cdot 2,50 \approx 15,7\,\mathrm {rad/s}. \]</div>
+<!-- l. 418 --><p class='noindent'>Daarna:
+</p>
+<div class='mathjax-block'>\[ v=r\omega =0,20\cdot 15,7 \approx 3,14\,\mathrm {m/s}. \]</div>
+</div></section>
+<p><a id='x1-17r5'></a>
+</p><!-- l. 429 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 429 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 429 --><p class='noindent'>Oefening 5
+</p><!-- l. 429 --><p class='noindent'>— CD-speler
+</p><!-- l. 429 --><p class='noindent'></p></div>
+<p></p><!-- l. 429 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 429 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span></div>
+<p></p><!-- l. 429 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 431 --><p class='noindent'>Een punt op een draaiende schijf bevindt zich op <span class='mathjax-inline'>\(5,0\,\mathrm {cm}\)</span> van het middelpunt. De schijf
+draait met <span class='mathjax-inline'>\(300\,\mathrm {omw/min}\)</span>.
+</p>
+<div class='problem-environment question' id='problem17' numbered=' ' role='article' titletext=' Question'>  Zet de rotatiesnelheid om naar hertz.    </div>
+<div class='problem-environment question' id='problem18' numbered=' ' role='article' titletext=' Question'>  Bepaal de hoeksnelheid.    </div>
+<div class='problem-environment question' id='problem19' numbered=' ' role='article' titletext=' Question'>  Bepaal de baansnelheid van het punt.    </div>
+</div>
+<!-- l. 447 --><p class='noindent'></p></div>
+<p></p><!-- l. 447 --><p class='noindent'></p></section>
+<p><a id='x1-18r5'></a>
+                                                                  
+
+                                                                  
+</p><p></p><!-- l. 454 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>5</div><div class='fvd-section-bar__title'>De vectoriële beschrijving</div></div>
+<p></p><!-- l. 456 --><p class='noindent'>We kiezen het middelpunt van de cirkel als oorsprong.
+</p><!-- l. 458 --><p class='noindent'>De positievector <span class='mathjax-inline'>\(\vec r\)</span> wijst van het middelpunt naar het bewegende punt. Zijn grootte is
+constant:
+</p>
+<div class='mathjax-block'>\[ |\vec r|=r. \]</div>
+<!-- l. 465 --><p class='noindent'>Maar zijn richting verandert voortdurend.
+<a id='x1-19r1'></a>
+</p><!-- l. 468 --><p class='noindent'></p><div class='fvd-subsection'>
+<p></p><!-- l. 468 --><p class='noindent'></p><div class='fvd-subsection__row'>
+<p></p><!-- l. 468 --><p class='noindent'></p><div class='fvd-subsection__number'>5.1</div>
+<p></p><!-- l. 468 --><p class='noindent'></p><div class='fvd-subsection__title'>De snelheidsvector</div>
+<p></p><!-- l. 468 --><p class='noindent'></p></div>
+<p></p><!-- l. 468 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
+<p></p><!-- l. 468 --><p class='noindent'></p></div>
+<p></p><!-- l. 470 --><p class='noindent'>De snelheidsvector is op elk punt <strong>raaklijnig aan de cirkel</strong>.
+</p><!-- l. 472 --><p class='noindent'>Daarom geldt:
+</p>
+<div class='mathjax-block'>\[ \boxed {\vec v\perp \vec r}. \]</div>
+<!-- l. 478 --><p class='noindent'>Bij een ECB blijft:
+</p>
+<div class='mathjax-block'>\[ |\vec v|=v \]</div>
+<!-- l. 484 --><p class='noindent'>constant, maar <span class='mathjax-inline'>\(\vec v\)</span> zelf niet.
+</p><!-- l. 487 --><p class='noindent'></p><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span></div><div class='fvd-remark__content'>Een constante <em>snelheidsgrootte</em> is niet hetzelfde als een constante
+<em>snelheidsvector</em>. Een vector is pas constant wanneer zowel zijn grootte als zijn
+richting constant zijn. </div></section>
+<p><a id='x1-20r6'></a>
+</p><p></p><!-- l. 493 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 493 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 493 --><p class='noindent'>Oefening 6
+</p><!-- l. 493 --><p class='noindent'>— Vectoren tekenen
+</p><!-- l. 493 --><p class='noindent'></p></div>
+<p></p><!-- l. 493 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 493 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 493 --><p class='noindent'></p><div class='fvd-exercise__content'>
+                                                                  
+
+                                                                  
+<p></p><!-- l. 495 --><p class='noindent'>Teken een cirkel en kies vier punten die telkens een kwart omwenteling van elkaar
+verwijderd zijn.
+</p>
+<div class='problem-environment question' id='problem20' numbered=' ' role='article' titletext=' Question'>  Teken in elk punt de positievector <span class='mathjax-inline'>\(\vec r\)</span>.    </div>
+<div class='problem-environment question' id='problem21' numbered=' ' role='article' titletext=' Question'>  Teken in elk punt de snelheidsvector <span class='mathjax-inline'>\(\vec v\)</span> voor een beweging tegen de wijzers van de
+klok in.    </div>
+<div class='problem-environment question' id='problem22' numbered=' ' role='article' titletext=' Question'>  Wat kan je zeggen over de grootte van de vier snelheidsvectoren?    </div>
+<div class='problem-environment question' id='problem23' numbered=' ' role='article' titletext=' Question'>  Wat kan je zeggen over hun richting?    </div>
+<div class='problem-environment question' id='problem24' numbered=' ' role='article' titletext=' Question'>  Waarom kan de versnelling dus niet nul zijn?    </div>
+</div>
+<!-- l. 519 --><p class='noindent'></p></div>
+<p></p><!-- l. 519 --><p class='noindent'></p></section>
+<p><a id='x1-21r6'></a>
+</p><p></p><!-- l. 526 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>6</div><div class='fvd-section-bar__title'>Waarom is een ECB een versnelde beweging?</div></div>
+<p></p><!-- l. 528 --><p class='noindent'>Versnelling beschrijft de verandering van de snelheidsvector:
+</p>
+<div class='mathjax-block'>\[ \vec a = \frac {\Delta \vec v}{\Delta t} \]</div>
+<!-- l. 536 --><p class='noindent'>voor een gemiddeld tijdsinterval, en ogenblikkelijk als limiet voor <span class='mathjax-inline'>\(\Delta t\to 0\)</span>.
+</p><!-- l. 539 --><p class='noindent'>Bij een ECB verandert de grootte van <span class='mathjax-inline'>\(\vec v\)</span> niet, maar wel zijn richting. Daardoor
+is:
+</p>
+<div class='mathjax-block'>\[ \boxed {\vec a\neq \vec 0}. \]</div>
+<p><a id='x1-22r1'></a>
+</p><!-- l. 547 --><p class='noindent'></p><div class='fvd-subsection'>
+<p></p><!-- l. 547 --><p class='noindent'></p><div class='fvd-subsection__row'>
+<p></p><!-- l. 547 --><p class='noindent'></p><div class='fvd-subsection__number'>6.1</div>
+<p></p><!-- l. 547 --><p class='noindent'></p><div class='fvd-subsection__title'>De verandering van de snelheidsvector</div>
+<p></p><!-- l. 547 --><p class='noindent'></p></div>
+<p></p><!-- l. 547 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
+<p></p><!-- l. 547 --><p class='noindent'></p></div>
+<p></p><!-- l. 549 --><p class='noindent'>Beschouw twee nabije punten op de cirkel. De snelheidsvectoren <span class='mathjax-inline'>\(\vec v_1\)</span> en <span class='mathjax-inline'>\(\vec v_2\)</span> hebben dezelfde
+grootte maar een iets andere richting.
+</p><!-- l. 553 --><p class='noindent'>De verandering is:
+</p>
+<div class='mathjax-block'>\[ \Delta \vec v = \vec v_2-\vec v_1. \]</div>
+                                                                  
+
+                                                                  
+<!-- l. 561 --><p class='noindent'>Wanneer de twee punten steeds dichter bij elkaar komen, wijst <span class='mathjax-inline'>\(\Delta \vec v\)</span> steeds meer naar het
+middelpunt van de cirkel.
+</p><!-- l. 564 --><p class='noindent'>In de limiet geldt daarom:
+</p>
+<div class='mathjax-block'>\[ \boxed { \vec a_c\ \text {wijst naar het middelpunt}. } \]</div>
+<!-- l. 572 --><p class='noindent'>We noemen dit de <strong>centripetale versnelling</strong>.
+</p><!-- l. 574 --><p class='noindent'>“Centripetaal” betekent letterlijk: naar het centrum gericht.
+<a id='x1-23r7'></a>
+</p><!-- l. 577 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 577 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 577 --><p class='noindent'>Oefening 7
+</p><!-- l. 577 --><p class='noindent'>— Misconceptie: constante snelheid
+</p><!-- l. 577 --><p class='noindent'></p></div>
+<p></p><!-- l. 577 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 577 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 577 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 579 --><p class='noindent'>Een leerling zegt:
+</p>     
+<blockquote class='quote'>
+<!-- l. 582 --><p class='noindent'>“De auto rijdt met constante snelheid door de ronde bocht. Volgens
+<span class='mathjax-inline'>\(a=\Delta v/\Delta t\)</span> is zijn versnelling dus nul.”</p></blockquote>
+<!-- l. 586 --><p class='noindent'>Analyseer deze redenering.
+</p>
+<div class='problem-environment question' id='problem25' numbered=' ' role='article' titletext=' Question'>  Welk onderscheid maakt de leerling niet?    </div>
+<div class='problem-environment question' id='problem26' numbered=' ' role='article' titletext=' Question'>  Welke eigenschap van <span class='mathjax-inline'>\(\vec v\)</span> verandert?    </div>
+<div class='problem-environment question' id='problem27' numbered=' ' role='article' titletext=' Question'>  Teken twee snelheidsvectoren en construeer grafisch <span class='mathjax-inline'>\(\Delta \vec v\)</span>.    </div>
+<div class='problem-environment question' id='problem28' numbered=' ' role='article' titletext=' Question'>  Formuleer een verbeterde redenering.    </div>
+</div>
+<!-- l. 605 --><p class='noindent'></p></div>
+<p></p><!-- l. 605 --><p class='noindent'></p></section>
+<p><a id='x1-24r7'></a>
+</p><p></p><!-- l. 612 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>7</div><div class='fvd-section-bar__title'>De grootte van de centripetale versnelling</div></div>
+<p></p><!-- l. 614 --><p class='noindent'>We willen nu niet alleen de richting, maar ook de grootte van de versnelling
+bepalen.
+                                                                  
+
+                                                                  
+</p><!-- l. 617 --><p class='noindent'>Tijdens een klein tijdsinterval <span class='mathjax-inline'>\(\Delta t\)</span> verplaatst het voorwerp zich over een kleine boog.
+Voor voldoende kleine <span class='mathjax-inline'>\(\Delta t\)</span> geldt:
+</p>
+<div class='mathjax-block'>\[ \Delta s\approx v\Delta t. \]</div>
+<!-- l. 624 --><p class='noindent'>De positievector draait daarbij over een kleine hoek <span class='mathjax-inline'>\(\Delta \theta \)</span>. Omdat
+</p>
+<div class='mathjax-block'>\[ \Delta s=r\Delta \theta , \]</div>
+<!-- l. 631 --><p class='noindent'>volgt:
+</p>
+<div class='mathjax-block'>\[ \Delta \theta \approx \frac {v\Delta t}{r}. \]</div>
+<!-- l. 639 --><p class='noindent'>De snelheidsvector draait over dezelfde hoek <span class='mathjax-inline'>\(\Delta \theta \)</span>. Voor een kleine hoek is de grootte van
+de verandering van de snelheidsvector:
+</p>
+<div class='mathjax-block'>\[ |\Delta \vec v| \approx v\Delta \theta . \]</div>
+<!-- l. 648 --><p class='noindent'>Dus:
+</p>
+<div class='mathjax-block'>\[ |\Delta \vec v| \approx v\frac {v\Delta t}{r} = \frac {v^2}{r}\Delta t. \]</div>
+<!-- l. 658 --><p class='noindent'>Delen door <span class='mathjax-inline'>\(\Delta t\)</span> en de limiet nemen geeft:
+</p>
+<div class='mathjax-block'>\[ \boxed { a_c=\frac {v^2}{r}. } \]</div>
+<p><a id='x1-25r1'></a>
+</p><!-- l. 667 --><p class='noindent'></p><div class='fvd-subsection'>
+<p></p><!-- l. 667 --><p class='noindent'></p><div class='fvd-subsection__row'>
+<p></p><!-- l. 667 --><p class='noindent'></p><div class='fvd-subsection__number'>7.1</div>
+<p></p><!-- l. 667 --><p class='noindent'></p><div class='fvd-subsection__title'>Andere vormen</div>
+<p></p><!-- l. 667 --><p class='noindent'></p></div>
+<p></p><!-- l. 667 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
+<p></p><!-- l. 667 --><p class='noindent'></p></div>
+<p></p><!-- l. 669 --><p class='noindent'>Met
+</p>
+<div class='mathjax-block'>\[ v=r\omega \]</div>
+<!-- l. 675 --><p class='noindent'>vinden we:
+</p>
+<div class='mathjax-block'>\[ a_c = \frac {(r\omega )^2}{r} = r\omega ^2. \]</div>
+<!-- l. 685 --><p class='noindent'>Dus:
+</p>
+                                                                  
+
+                                                                  
+<div class='mathjax-block'>\[ \boxed { a_c=r\omega ^2. } \]</div>
+<!-- l. 693 --><p class='noindent'>Met
+</p>
+<div class='mathjax-block'>\[ \omega =\frac {2\pi }{T} \]</div>
+<!-- l. 699 --><p class='noindent'>volgt:
+</p>
+<div class='mathjax-block'>\[ \boxed { a_c=\frac {4\pi ^2r}{T^2}. } \]</div>
+<!-- l. 707 --><p class='noindent'>En omdat <span class='mathjax-inline'>\(f=1/T\)</span>:
+</p>
+<div class='mathjax-block'>\[ \boxed { a_c=4\pi ^2rf^2. } \]</div>
+<!-- l. 715 --><p class='noindent'>Deze formules beschrijven hetzelfde fysische verband in verschillende vormen.
+</p><!-- l. 719 --><p class='noindent'></p><section class='fvd-property'><div class='fvd-property__title'><span class='fvd-property__label'>EIGENSCHAP</span><span class='fvd-property__separator'> — </span><span class='fvd-property__name'>Eenparige cirkelbeweging</span></div><div class='fvd-property__content'>
+<p></p><!-- l. 721 --><p class='noindent'>Voor een ECB:
+</p>
+<div class='mathjax-block'>\[ \boxed { v=r\omega } \]</div>
+<!-- l. 729 --><p class='noindent'>en:
+</p>
+<div class='mathjax-block'>\[ \boxed { a_c=\frac {v^2}{r}=r\omega ^2 =\frac {4\pi ^2r}{T^2}=4\pi ^2rf^2. } \]</div>
+<!-- l. 738 --><p class='noindent'>De vector <span class='mathjax-inline'>\(\vec a_c\)</span> is steeds naar het middelpunt gericht.
+</p></div></section>
+<p></p><!-- l. 744 --><p class='noindent'></p><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span></div><div class='fvd-remark__content'>Bij een ECB is de <em>grootte</em> <span class='mathjax-inline'>\(a_c\)</span> constant wanneer <span class='mathjax-inline'>\(r\)</span> en <span class='mathjax-inline'>\(v\)</span> constant zijn. De
+versnellingsvector <span class='mathjax-inline'>\(\vec a_c\)</span> is echter niet constant, want zijn richting verandert voortdurend.
+</div></section>
+<p><a id='x1-26r8'></a>
+</p><p></p><!-- l. 754 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>8</div><div class='fvd-section-bar__title'>Niet memoriseren, maar verbanden zien</div></div>
+<p></p><!-- l. 756 --><p class='noindent'>Het leerdoel vraagt meer dan formules invullen. We moeten kunnen analyseren hoe
+een verandering van één grootheid andere grootheden beïnvloedt.
+</p><!-- l. 760 --><p class='noindent'>Uit
+</p>
+<div class='mathjax-block'>\[ v=r\omega \]</div>
+<!-- l. 766 --><p class='noindent'>volgt bij constante <span class='mathjax-inline'>\(\omega \)</span>:
+</p>
+<div class='mathjax-block'>\[ v\sim r. \]</div>
+<!-- l. 772 --><p class='noindent'>Uit
+</p>
+<div class='mathjax-block'>\[ a_c=r\omega ^2 \]</div>
+                                                                  
+
+                                                                  
+<!-- l. 778 --><p class='noindent'>volgt bij constante <span class='mathjax-inline'>\(\omega \)</span>:
+</p>
+<div class='mathjax-block'>\[ a_c\sim r. \]</div>
+<!-- l. 784 --><p class='noindent'>Maar uit
+</p>
+<div class='mathjax-block'>\[ a_c=\frac {v^2}{r} \]</div>
+<!-- l. 790 --><p class='noindent'>volgt bij constante <span class='mathjax-inline'>\(r\)</span>:
+</p>
+<div class='mathjax-block'>\[ a_c\sim v^2. \]</div>
+<!-- l. 796 --><p class='noindent'>En uit
+</p>
+<div class='mathjax-block'>\[ a_c=\frac {4\pi ^2r}{T^2} \]</div>
+<!-- l. 802 --><p class='noindent'>volgt bij constante <span class='mathjax-inline'>\(r\)</span>:
+</p>
+<div class='mathjax-block'>\[ a_c\sim \frac 1{T^2}. \]</div>
+<!-- l. 808 --><p class='noindent'>De voorwaarde “wat blijft constant?” is dus essentieel.
+<a id='x1-27r8'></a>
+</p><!-- l. 811 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 811 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 811 --><p class='noindent'>Oefening 8
+</p><!-- l. 811 --><p class='noindent'>— Wat gebeurt er als...?
+</p><!-- l. 811 --><p class='noindent'></p></div>
+<p></p><!-- l. 811 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 811 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 811 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 813 --><p class='noindent'>Beantwoord zonder eerst concrete getallen te kiezen.
+</p>
+<div class='problem-environment question' id='problem29' numbered=' ' role='article' titletext=' Question'>  Bij constante straal verdubbelt de baansnelheid. Met welke factor verandert <span class='mathjax-inline'>\(a_c\)</span>?
+</div>
+<div class='problem-environment question' id='problem30' numbered=' ' role='article' titletext=' Question'>  Bij constante hoeksnelheid verdubbelt de straal. Met welke factor veranderen <span class='mathjax-inline'>\(v\)</span> en <span class='mathjax-inline'>\(a_c\)</span>?
+</div>
+<div class='problem-environment question' id='problem31' numbered=' ' role='article' titletext=' Question'>  Bij constante straal halveert de periode. Met welke factor veranderen <span class='mathjax-inline'>\(\omega \)</span>, <span class='mathjax-inline'>\(v\)</span> en <span class='mathjax-inline'>\(a_c\)</span>?
+</div>
+<div class='problem-environment question' id='problem32' numbered=' ' role='article' titletext=' Question'>  Bij constante baansnelheid verdubbelt de straal. Met welke factor verandert <span class='mathjax-inline'>\(a_c\)</span>?
+</div>
+<!-- l. 835 --><p class='noindent'>Motiveer elk antwoord vanuit een geschikt verband.
+                                                                  
+
+                                                                  
+</p></div>
+<p></p><!-- l. 837 --><p class='noindent'></p></div>
+<p></p><!-- l. 837 --><p class='noindent'></p></section>
+<p><a id='x1-28r9'></a>
+</p><p></p><!-- l. 840 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 840 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 840 --><p class='noindent'>Oefening 9
+</p><!-- l. 840 --><p class='noindent'>— De valkuil van “de straal verdubbelt”
+</p><!-- l. 840 --><p class='noindent'></p></div>
+<p></p><!-- l. 840 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 840 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--g'>G</span></div>
+<p></p><!-- l. 840 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 842 --><p class='noindent'>Twee leerlingen bespreken wat er met de centripetale versnelling gebeurt als de straal
+wordt verdubbeld.
+</p><!-- l. 845 --><p class='noindent'>Leerling A zegt:
+</p>
+<div class='mathjax-block'>\[ a_c=\frac {v^2}{r} \quad \Rightarrow \quad a_c\text { halveert.} \]</div>
+<!-- l. 853 --><p class='noindent'>Leerling B zegt:
+</p>
+<div class='mathjax-block'>\[ a_c=r\omega ^2 \quad \Rightarrow \quad a_c\text { verdubbelt.} \]</div>
+<div class='problem-environment question' id='problem33' numbered=' ' role='article' titletext=' Question'>  Kunnen beide redeneringen correct zijn?    </div>
+<div class='problem-environment question' id='problem34' numbered=' ' role='article' titletext=' Question'>  Welke impliciete voorwaarde gebruikt leerling A?    </div>
+<div class='problem-environment question' id='problem35' numbered=' ' role='article' titletext=' Question'>  Welke impliciete voorwaarde gebruikt leerling B?    </div>
+<div class='problem-environment question' id='problem36' numbered=' ' role='article' titletext=' Question'>  Formuleer een algemene les die je hieruit trekt bij het analyseren van fysische
+formules.    </div>
+</div>
+<!-- l. 878 --><p class='noindent'></p></div>
+<p></p><!-- l. 878 --><p class='noindent'></p></section>
+<p><a id='x1-29r9'></a>
+</p><p></p><!-- l. 885 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>9</div><div class='fvd-section-bar__title'>Toepassingen</div></div>
+<p><a id='x1-30r3'></a>
+</p><p></p><!-- l. 887 --><p class='noindent'></p><section class='fvd-example'>
+<p></p><!-- l. 887 --><p class='noindent'></p><div class='fvd-example__title'>Voorbeeld 3<span class='fvd-example__subtitle'> — Een draaimolen</span></div>
+<p></p><!-- l. 887 --><p class='noindent'></p><div class='fvd-example__content'>
+                                                                  
+
+                                                                  
+<p></p><!-- l. 889 --><p class='noindent'>Een zitje bevindt zich op <span class='mathjax-inline'>\(r=4,0\,\mathrm {m}\)</span> van de draaias. De draaimolen maakt één omwenteling in
+<span class='mathjax-inline'>\(6,0\,\mathrm {s}\)</span>.
+</p>
+<div class='mathjax-block'>\[ \omega = \frac {2\pi }{6,0} \approx 1,05\,\mathrm {rad/s}. \]</div>
+<!-- l. 899 --><p class='noindent'>De baansnelheid:
+</p>
+<div class='mathjax-block'>\[ v=r\omega = 4,0\cdot 1,05 \approx 4,19\,\mathrm {m/s}. \]</div>
+<!-- l. 908 --><p class='noindent'>De centripetale versnelling:
+</p>
+<div class='mathjax-block'>\[ a_c = \frac {v^2}{r} \approx \frac {4,19^2}{4,0} \approx 4,39\,\mathrm {m/s^2}. \]</div>
+<!-- l. 919 --><p class='noindent'>De versnelling wijst op elk moment naar de draaias.
+</p></div></section>
+<p><a id='x1-31r10'></a>
+</p><p></p><!-- l. 924 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 924 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 924 --><p class='noindent'>Oefening 10
+</p><!-- l. 924 --><p class='noindent'>— Hamerwerpen
+</p><!-- l. 924 --><p class='noindent'></p></div>
+<p></p><!-- l. 924 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 924 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 924 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 926 --><p class='noindent'>Een hamer beweegt vlak vóór het loslaten ongeveer in een cirkel met straal <span class='mathjax-inline'>\(1,20\,\mathrm {m}\)</span>. De
+atleet maakt <span class='mathjax-inline'>\(5,0\)</span> omwentelingen in <span class='mathjax-inline'>\(2,0\,\mathrm {s}\)</span>.
+</p>
+<div class='problem-environment question' id='problem37' numbered=' ' role='article' titletext=' Question'>  Bepaal de frequentie.    </div>
+<div class='problem-environment question' id='problem38' numbered=' ' role='article' titletext=' Question'>  Bepaal de periode.    </div>
+<div class='problem-environment question' id='problem39' numbered=' ' role='article' titletext=' Question'>  Bepaal de hoeksnelheid.    </div>
+<div class='problem-environment question' id='problem40' numbered=' ' role='article' titletext=' Question'>  Bepaal de baansnelheid.    </div>
+<div class='problem-environment question' id='problem41' numbered=' ' role='article' titletext=' Question'>  Bepaal de centripetale versnelling vlak vóór het loslaten.    </div>
+<div class='problem-environment question' id='problem42' numbered=' ' role='article' titletext=' Question'>  In welke richting beweegt de hamer onmiddellijk nadat hij wordt losgelaten?
+Verklaar vanuit de snelheidsvector.    </div>
+</div>
+<!-- l. 955 --><p class='noindent'></p></div>
+<p></p><!-- l. 955 --><p class='noindent'></p></section>
+<p><a id='x1-32r11'></a>
+                                                                  
+
+                                                                  
+</p><p></p><!-- l. 958 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 958 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 958 --><p class='noindent'>Oefening 11
+</p><!-- l. 958 --><p class='noindent'>— Een bocht
+</p><!-- l. 958 --><p class='noindent'></p></div>
+<p></p><!-- l. 958 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 958 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 958 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 960 --><p class='noindent'>Een auto rijdt met constante snelheidsgrootte <span class='mathjax-inline'>\(72\,\mathrm {km/h}\)</span> door een cirkelvormige bocht met
+straal <span class='mathjax-inline'>\(50\,\mathrm {m}\)</span>.
+</p>
+<div class='problem-environment question' id='problem43' numbered=' ' role='article' titletext=' Question'>  Zet de snelheid om naar <span class='mathjax-inline'>\(\mathrm {m/s}\)</span>.    </div>
+<div class='problem-environment question' id='problem44' numbered=' ' role='article' titletext=' Question'>  Bepaal de centripetale versnelling.    </div>
+<div class='problem-environment question' id='problem45' numbered=' ' role='article' titletext=' Question'>  Schets <span class='mathjax-inline'>\(\vec v\)</span> en <span class='mathjax-inline'>\(\vec a_c\)</span> op drie verschillende punten van de bocht.    </div>
+<div class='problem-environment question' id='problem46' numbered=' ' role='article' titletext=' Question'>  De bestuurder verdubbelt zijn snelheid terwijl de bochtstraal gelijk blijft. Hoe
+verandert <span class='mathjax-inline'>\(a_c\)</span>?    </div>
+<div class='problem-environment question' id='problem47' numbered=' ' role='article' titletext=' Question'>  Waarom is de laatste conclusie verkeerskundig belangrijk?    </div>
+</div>
+<!-- l. 986 --><p class='noindent'></p></div>
+<p></p><!-- l. 986 --><p class='noindent'></p></section>
+<p><a id='x1-33r10'></a>
+</p><p></p><!-- l. 993 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>10</div><div class='fvd-section-bar__title'>Van de aarde tot satellieten</div></div>
+<p></p><!-- l. 995 --><p class='noindent'>Cirkelbeweging speelt een centrale rol in de astronomie.
+</p><!-- l. 997 --><p class='noindent'>Een punt op de evenaar beweegt door de aardrotatie ongeveer langs een cirkel. Een
+satelliet in een bijna cirkelvormige baan beweegt eveneens voortdurend met een
+versnelling naar het middelpunt van zijn baan.
+</p><!-- l. 1001 --><p class='noindent'>Bij een satelliet is de relevante straal niet de <em>hoogte</em> boven het aardoppervlak, maar
+de afstand tot het middelpunt van de aarde:
+</p>
+<div class='mathjax-block'>\[ \boxed { r=R_{\mathrm {aarde}}+h. } \]</div>
+<!-- l. 1010 --><p class='noindent'>Dat onderscheid is essentieel bij het mathematiseren.
+<a id='x1-34r12'></a>
+</p><!-- l. 1013 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 1013 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 1013 --><p class='noindent'>Oefening 12
+                                                                  
+
+                                                                  
+</p><!-- l. 1013 --><p class='noindent'>— Een punt op de evenaar
+</p><!-- l. 1013 --><p class='noindent'></p></div>
+<p></p><!-- l. 1013 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 1013 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span></div>
+<p></p><!-- l. 1013 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 1015 --><p class='noindent'>Neem voor de straal van de aarde:
+</p>
+<div class='mathjax-block'>\[ R_{\mathrm {aarde}}=6,37\times 10^6\,\mathrm {m} \]</div>
+<!-- l. 1021 --><p class='noindent'>en voor de rotatieperiode ongeveer <span class='mathjax-inline'>\(24,0\,\mathrm {h}\)</span>.
+</p>
+<div class='problem-environment question' id='problem48' numbered=' ' role='article' titletext=' Question'>  Bepaal de hoeksnelheid van de aardrotatie.    </div>
+<div class='problem-environment question' id='problem49' numbered=' ' role='article' titletext=' Question'>  Bepaal de baansnelheid van een punt op de evenaar.    </div>
+<div class='problem-environment question' id='problem50' numbered=' ' role='article' titletext=' Question'>  Bepaal de centripetale versnelling van dat punt.    </div>
+<div class='problem-environment question' id='problem51' numbered=' ' role='article' titletext=' Question'>  Vergelijk deze versnelling met <span class='mathjax-inline'>\(g=9,81\,\mathrm {m/s^2}\)</span>.    </div>
+</div>
+<!-- l. 1039 --><p class='noindent'></p></div>
+<p></p><!-- l. 1039 --><p class='noindent'></p></section>
+<p><a id='x1-35r13'></a>
+</p><p></p><!-- l. 1042 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 1042 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 1042 --><p class='noindent'>Oefening 13
+</p><!-- l. 1042 --><p class='noindent'>— Satelliet: lees de straal correct
+</p><!-- l. 1042 --><p class='noindent'></p></div>
+<p></p><!-- l. 1042 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 1042 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 1042 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 1044 --><p class='noindent'>Een satelliet bevindt zich <span class='mathjax-inline'>\(400\,\mathrm {km}\)</span> boven het aardoppervlak. Neem:
+</p>
+<div class='mathjax-block'>\[ R_{\mathrm {aarde}}=6,37\times 10^6\,\mathrm {m}. \]</div>
+<!-- l. 1051 --><p class='noindent'>De omlooptijd bedraagt <span class='mathjax-inline'>\(92,0\,\mathrm {min}\)</span>.
+</p>
+<div class='problem-environment question' id='problem52' numbered=' ' role='article' titletext=' Question'>  Bepaal de straal van de cirkelbaan.    </div>
+<div class='problem-environment question' id='problem53' numbered=' ' role='article' titletext=' Question'>  Bepaal de hoeksnelheid.    </div>
+<div class='problem-environment question' id='problem54' numbered=' ' role='article' titletext=' Question'>  Bepaal de baansnelheid.    </div>
+                                                                  
+
+                                                                  
+<div class='problem-environment question' id='problem55' numbered=' ' role='article' titletext=' Question'>  Bepaal de centripetale versnelling.    </div>
+<div class='problem-environment question' id='problem56' numbered=' ' role='article' titletext=' Question'>  Waarom zou het fout zijn om <span class='mathjax-inline'>\(400\,\mathrm {km}\)</span> als <span class='mathjax-inline'>\(r\)</span> te gebruiken?    </div>
+</div>
+<!-- l. 1073 --><p class='noindent'></p></div>
+<p></p><!-- l. 1073 --><p class='noindent'></p></section>
+<p><a id='x1-36r11'></a>
+</p><p></p><!-- l. 1080 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>11</div><div class='fvd-section-bar__title'>Cirkelproblemen systematisch aanpakken</div></div>
+<p></p><!-- l. 1082 --><p class='noindent'>Een formularium helpt alleen wanneer je eerst begrijpt welke grootheden gegeven zijn
+en welke omstandigheden gelden.
+</p><!-- l. 1085 --><p class='noindent'>Een bruikbare aanpak is:
+</p>     
+<ol class='enumerate1'>
+<li class='enumerate' id='x1-38x1'>Maak een schets van de cirkelbaan.
+</li>
+<li class='enumerate' id='x1-40x2'>Duid het middelpunt en de straal aan.
+</li>
+<li class='enumerate' id='x1-42x3'>Noteer de gegeven grootheden met eenheden.
+</li>
+<li class='enumerate' id='x1-44x4'>Zet omwentelingen per minuut, uren, centimeters enzovoort eerst om naar
+geschikte SI-eenheden.
+</li>
+<li class='enumerate' id='x1-46x5'>Bepaal welke grootheden constant zijn.
+</li>
+<li class='enumerate' id='x1-48x6'>Kies het verband dat de gegeven en gezochte grootheden rechtstreeks met
+elkaar verbindt.
+                                                                  
+
+                                                                  
+</li>
+<li class='enumerate' id='x1-50x7'>Bereken en controleer de eenheid.
+</li>
+<li class='enumerate' id='x1-52x8'>Controleer de grootteorde.
+</li>
+<li class='enumerate' id='x1-54x9'>Interpreteer het antwoord fysisch, inclusief de richting wanneer het om een
+vector gaat.</li></ol>
+<p><a id='x1-55r14'></a>
+</p><!-- l. 1103 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 1103 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 1103 --><p class='noindent'>Oefening 14
+</p><!-- l. 1103 --><p class='noindent'>— Achterwaarts ontwerpen
+</p><!-- l. 1103 --><p class='noindent'></p></div>
+<p></p><!-- l. 1103 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 1103 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--g'>G</span></div>
+<p></p><!-- l. 1103 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 1105 --><p class='noindent'>Een testopstelling moet een centripetale versnelling van <span class='mathjax-inline'>\(3,0g\)</span> produceren op een afstand
+van <span class='mathjax-inline'>\(0,75\,\mathrm {m}\)</span> van de draaias.
+</p><!-- l. 1108 --><p class='noindent'>Neem:
+</p>
+<div class='mathjax-block'>\[ g=9,81\,\mathrm {m/s^2}. \]</div>
+<div class='problem-environment question' id='problem57' numbered=' ' role='article' titletext=' Question'>  Bepaal de vereiste hoeksnelheid.    </div>
+<div class='problem-environment question' id='problem58' numbered=' ' role='article' titletext=' Question'>  Bepaal de vereiste frequentie.    </div>
+<div class='problem-environment question' id='problem59' numbered=' ' role='article' titletext=' Question'>  Druk het resultaat uit in omwentelingen per minuut.    </div>
+<div class='problem-environment question' id='problem60' numbered=' ' role='article' titletext=' Question'>  Bepaal de baansnelheid op <span class='mathjax-inline'>\(0,75\,\mathrm {m}\)</span> van de as.    </div>
+<div class='problem-environment question' id='problem61' numbered=' ' role='article' titletext=' Question'>  Wat gebeurt er met <span class='mathjax-inline'>\(a_c\)</span> voor een punt op <span class='mathjax-inline'>\(0,25\,\mathrm {m}\)</span> van de as als de hele opstelling met dezelfde
+<span class='mathjax-inline'>\(\omega \)</span> draait?    </div>
+</div>
+<!-- l. 1135 --><p class='noindent'></p></div>
+                                                                  
+
+                                                                  
+<p></p><!-- l. 1135 --><p class='noindent'></p></section>
+<p><a id='x1-56r12'></a>
+</p><p></p><!-- l. 1151 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>12</div><div class='fvd-section-bar__title'>Veelgemaakte denkfouten</div></div>
+<p></p><!-- l. 1153 --><p class='noindent'></p><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span><span class='fvd-remark__separator'> — </span><span class='fvd-remark__subtitle'>Misconceptie 1: “eenparig” betekent <span class='mathjax-inline'>\(a=0\)</span></span></div><div class='fvd-remark__content'>
+<p></p><!-- l. 1155 --><p class='noindent'>Bij een ECB is de <em>grootte</em> van de snelheid constant, maar de richting verandert.
+Daarom is de versnelling niet nul.
+</p></div></section>
+<p></p><!-- l. 1160 --><p class='noindent'></p><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span><span class='fvd-remark__separator'> — </span><span class='fvd-remark__subtitle'>Misconceptie 2: <span class='mathjax-inline'>\(\vec a_c\)</span> wijst in de bewegingsrichting</span></div><div class='fvd-remark__content'>
+<p></p><!-- l. 1162 --><p class='noindent'>De snelheidsvector is raaklijnig aan de baan. De centripetale versnellingsvector staat
+daar loodrecht op en wijst naar het middelpunt.
+</p></div></section>
+<p></p><!-- l. 1167 --><p class='noindent'></p><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span><span class='fvd-remark__separator'> — </span><span class='fvd-remark__subtitle'>Misconceptie 3: centripetale versnelling is een extra soort
+beweging</span></div><div class='fvd-remark__content'>
+<p></p><!-- l. 1169 --><p class='noindent'>“Centripetaal” beschrijft de richting van de versnelling. In het volgende hoofdstuk
+onderzoeken we welke resulterende kracht deze versnelling veroorzaakt.
+</p></div></section>
+<p></p><!-- l. 1175 --><p class='noindent'></p><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span><span class='fvd-remark__separator'> — </span><span class='fvd-remark__subtitle'>Misconceptie 4: <span class='mathjax-inline'>\(a_c\)</span> is een constante vector</span></div><div class='fvd-remark__content'>
+<p></p><!-- l. 1177 --><p class='noindent'>Bij een ECB kan de grootte <span class='mathjax-inline'>\(a_c\)</span> constant zijn, maar de vector <span class='mathjax-inline'>\(\vec a_c\)</span> verandert voortdurend
+van richting.
+</p></div></section>
+<p><a id='x1-57r15'></a>
+</p><p></p><!-- l. 1183 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 1183 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 1183 --><p class='noindent'>Oefening 15
+</p><!-- l. 1183 --><p class='noindent'>— Vind de fout
+</p><!-- l. 1183 --><p class='noindent'></p></div>
+<p></p><!-- l. 1183 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 1183 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 1183 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 1185 --><p class='noindent'>Beoordeel telkens de uitspraak en verbeter ze indien nodig.
+</p>
+<div class='problem-environment question' id='problem62' numbered=' ' role='article' titletext=' Question'>  “Bij een ECB is de snelheid constant.”    </div>
+<div class='problem-environment question' id='problem63' numbered=' ' role='article' titletext=' Question'>  “Omdat <span class='mathjax-inline'>\(v\)</span> constant is, is <span class='mathjax-inline'>\(a=0\)</span>.”    </div>
+<div class='problem-environment question' id='problem64' numbered=' ' role='article' titletext=' Question'>  “De centripetale versnelling is raaklijnig aan de cirkel.”    </div>
+<div class='problem-environment question' id='problem65' numbered=' ' role='article' titletext=' Question'>  “Als de baansnelheid verdubbelt bij dezelfde straal, verdubbelt ook <span class='mathjax-inline'>\(a_c\)</span>.”
+                                                                  
+
+                                                                  
+</div>
+<div class='problem-environment question' id='problem66' numbered=' ' role='article' titletext=' Question'>  “Twee punten op dezelfde stijve draaiende schijf hebben dezelfde baansnelheid.”
+</div>
+</div>
+<!-- l. 1209 --><p class='noindent'></p></div>
+<p></p><!-- l. 1209 --><p class='noindent'></p></section>
+<p><a id='x1-58r13'></a>
+</p><p></p><!-- l. 1216 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>13</div><div class='fvd-section-bar__title'>Geïntegreerde oefeningen</div></div>
+<p><a id='x1-59r16'></a>
+</p><p></p><!-- l. 1218 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 1218 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 1218 --><p class='noindent'>Oefening 16
+</p><!-- l. 1218 --><p class='noindent'>— Van gegevens naar model
+</p><!-- l. 1218 --><p class='noindent'></p></div>
+<p></p><!-- l. 1218 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 1218 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 1218 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 1220 --><p class='noindent'>Een punt beweegt eenparig op een cirkel met straal <span class='mathjax-inline'>\(0,80\,\mathrm {m}\)</span>. Het maakt <span class='mathjax-inline'>\(12\)</span> omwentelingen in
+<span class='mathjax-inline'>\(15,0\,\mathrm {s}\)</span>.
+</p>
+<div class='problem-environment question' id='problem67' numbered=' ' role='article' titletext=' Question'>  Bepaal <span class='mathjax-inline'>\(f\)</span> en <span class='mathjax-inline'>\(T\)</span>.    </div>
+<div class='problem-environment question' id='problem68' numbered=' ' role='article' titletext=' Question'>  Bepaal <span class='mathjax-inline'>\(\omega \)</span>.    </div>
+<div class='problem-environment question' id='problem69' numbered=' ' role='article' titletext=' Question'>  Bepaal <span class='mathjax-inline'>\(v\)</span>.    </div>
+<div class='problem-environment question' id='problem70' numbered=' ' role='article' titletext=' Question'>  Bepaal <span class='mathjax-inline'>\(a_c\)</span>.    </div>
+<div class='problem-environment question' id='problem71' numbered=' ' role='article' titletext=' Question'>  Schets op één gekozen punt <span class='mathjax-inline'>\(\vec r\)</span>, <span class='mathjax-inline'>\(\vec v\)</span> en <span class='mathjax-inline'>\(\vec a_c\)</span>.    </div>
+<div class='problem-environment question' id='problem72' numbered=' ' role='article' titletext=' Question'>  Hoe veranderen <span class='mathjax-inline'>\(v\)</span> en <span class='mathjax-inline'>\(a_c\)</span> als de frequentie verdubbelt terwijl de straal gelijk blijft?
+</div>
+</div>
+<!-- l. 1248 --><p class='noindent'></p></div>
+<p></p><!-- l. 1248 --><p class='noindent'></p></section>
+<p><a id='x1-60r17'></a>
+</p><p></p><!-- l. 1251 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 1251 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 1251 --><p class='noindent'>Oefening 17
+                                                                  
+
+                                                                  
+</p><!-- l. 1251 --><p class='noindent'>— Twee draaimolens vergelijken
+</p><!-- l. 1251 --><p class='noindent'></p></div>
+<p></p><!-- l. 1251 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 1251 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 1251 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 1253 --><p class='noindent'>Draaimolen A heeft straal <span class='mathjax-inline'>\(r_A=3,0\,\mathrm {m}\)</span> en periode <span class='mathjax-inline'>\(T_A=6,0\,\mathrm {s}\)</span>.
+</p><!-- l. 1256 --><p class='noindent'>Draaimolen B heeft straal <span class='mathjax-inline'>\(r_B=6,0\,\mathrm {m}\)</span> en periode <span class='mathjax-inline'>\(T_B=12,0\,\mathrm {s}\)</span>.
+</p>
+<div class='problem-environment question' id='problem73' numbered=' ' role='article' titletext=' Question'>  Vergelijk hun hoeksnelheden.    </div>
+<div class='problem-environment question' id='problem74' numbered=' ' role='article' titletext=' Question'>  Vergelijk de baansnelheden aan de rand.    </div>
+<div class='problem-environment question' id='problem75' numbered=' ' role='article' titletext=' Question'>  Vergelijk de centripetale versnellingen aan de rand.    </div>
+<div class='problem-environment question' id='problem76' numbered=' ' role='article' titletext=' Question'>  Welke vergelijking zou je fout kunnen beantwoorden als je alleen naar de grotere
+straal van B kijkt? Leg uit.    </div>
+</div>
+<!-- l. 1276 --><p class='noindent'></p></div>
+<p></p><!-- l. 1276 --><p class='noindent'></p></section>
+<p><a id='x1-61r18'></a>
+</p><p></p><!-- l. 1279 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 1279 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 1279 --><p class='noindent'>Oefening 18
+</p><!-- l. 1279 --><p class='noindent'>— Technisch ontwerp
+</p><!-- l. 1279 --><p class='noindent'></p></div>
+<p></p><!-- l. 1279 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 1279 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--g'>G</span></div>
+<p></p><!-- l. 1279 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 1281 --><p class='noindent'>Een laboratoriumcentrifuge moet op een straal van <span class='mathjax-inline'>\(0,12\,\mathrm {m}\)</span> een centripetale versnelling van
+minstens <span class='mathjax-inline'>\(500g\)</span> bereiken.
+</p>
+<div class='problem-environment question' id='problem77' numbered=' ' role='article' titletext=' Question'>  Bepaal de minimale hoeksnelheid.    </div>
+<div class='problem-environment question' id='problem78' numbered=' ' role='article' titletext=' Question'>  Bepaal de minimale frequentie.    </div>
+<div class='problem-environment question' id='problem79' numbered=' ' role='article' titletext=' Question'>  Druk de rotatiesnelheid uit in omwentelingen per minuut.    </div>
+<div class='problem-environment question' id='problem80' numbered=' ' role='article' titletext=' Question'>  Een monsterhouder wordt verplaatst naar <span class='mathjax-inline'>\(0,08\,\mathrm {m}\)</span> van de as, zonder de rotatiesnelheid te
+veranderen. Bepaal de nieuwe <span class='mathjax-inline'>\(a_c\)</span>.    </div>
+<div class='problem-environment question' id='problem81' numbered=' ' role='article' titletext=' Question'>  Welke parameter zou je moeten aanpassen om op de kleinere straal toch <span class='mathjax-inline'>\(500g\)</span> te
+                                                                  
+
+                                                                  
+behouden?    </div>
+</div>
+<!-- l. 1307 --><p class='noindent'></p></div>
+<p></p><!-- l. 1307 --><p class='noindent'></p></section>
+<p><a id='x1-62r19'></a>
+</p><p></p><!-- l. 1310 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 1310 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 1310 --><p class='noindent'>Oefening 19
+</p><!-- l. 1310 --><p class='noindent'>— Redeneren met een grafiek
+</p><!-- l. 1310 --><p class='noindent'></p></div>
+<p></p><!-- l. 1310 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 1310 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--g'>G</span></div>
+<p></p><!-- l. 1310 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 1312 --><p class='noindent'>Een experiment levert bij constante straal een bijna rechte grafiek op wanneer <span class='mathjax-inline'>\(a_c\)</span> wordt
+uitgezet tegen <span class='mathjax-inline'>\(f^2\)</span>.
+</p>
+<div class='problem-environment question' id='problem82' numbered=' ' role='article' titletext=' Question'>  Toon vanuit de theorie waarom dit verwacht wordt.    </div>
+<div class='problem-environment question' id='problem83' numbered=' ' role='article' titletext=' Question'>  Wat stelt de helling van de grafiek voor?    </div>
+<div class='problem-environment question' id='problem84' numbered=' ' role='article' titletext=' Question'>  Hoe kan je uit die helling de straal van de cirkelbaan bepalen?    </div>
+<div class='problem-environment question' id='problem85' numbered=' ' role='article' titletext=' Question'>  Wat zou een duidelijk niet-nul snijpunt met de verticale as kunnen betekenen voor
+het experiment of het meetmodel?    </div>
+</div>
+<!-- l. 1332 --><p class='noindent'></p></div>
+<p></p><!-- l. 1332 --><p class='noindent'></p></section>
+<p><a id='x1-63r14'></a>
+</p><p></p><!-- l. 1339 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>14</div><div class='fvd-section-bar__title'>Verdieping: de cirkelbeweging als functie van de tijd</div></div>
+<p></p><!-- l. 1341 --><p class='noindent'>Voor sterke leerlingen kunnen we de vectoriële beschrijving nog verder uitwerken.
+</p><!-- l. 1344 --><p class='noindent'>Kies een cirkel met middelpunt in de oorsprong en straal <span class='mathjax-inline'>\(r\)</span>. Als het punt bij <span class='mathjax-inline'>\(t=0\)</span> op de
+positieve <span class='mathjax-inline'>\(x\)</span>-as start en tegenwijzerzin beweegt, dan is:
+</p>
+<div class='mathjax-block'>\[ \theta (t)=\omega t. \]</div>
+<!-- l. 1352 --><p class='noindent'>De coördinaten zijn:
+</p>
+<div class='mathjax-block'>\[ \boxed { x(t)=r\cos (\omega t) } \]</div>
+<!-- l. 1360 --><p class='noindent'>en:
+                                                                  
+
+                                                                  
+</p>
+<div class='mathjax-block'>\[ \boxed { y(t)=r\sin (\omega t). } \]</div>
+<!-- l. 1368 --><p class='noindent'>De positievector is:
+</p>
+<div class='mathjax-block'>\[ \boxed { \vec r(t) = r\cos (\omega t)\,\vec e_x + r\sin (\omega t)\,\vec e_y. } \]</div>
+<!-- l. 1380 --><p class='noindent'>Afleiden geeft:
+</p>
+<div class='mathjax-block'>\[ \vec v(t) = -r\omega \sin (\omega t)\,\vec e_x + r\omega \cos (\omega t)\,\vec e_y. \]</div>
+<!-- l. 1390 --><p class='noindent'>De grootte is:
+</p>
+<div class='mathjax-block'>\[ |\vec v| = r\omega \sqrt {\sin ^2(\omega t)+\cos ^2(\omega t)} = r\omega . \]</div>
+<!-- l. 1401 --><p class='noindent'>Nogmaals afleiden:
+</p>
+<div class='mathjax-block'>\[ \vec a(t) = -r\omega ^2\cos (\omega t)\,\vec e_x - r\omega ^2\sin (\omega t)\,\vec e_y. \]</div>
+<!-- l. 1411 --><p class='noindent'>Dus:
+</p>
+<div class='mathjax-block'>\[ \boxed { \vec a(t)=-\omega ^2\vec r(t). } \]</div>
+<!-- l. 1419 --><p class='noindent'>Dit resultaat maakt onmiddellijk zichtbaar dat de versnelling tegengesteld gericht is
+aan de positievector: naar het middelpunt.
+</p><!-- l. 1422 --><p class='noindent'>Bovendien:
+</p>
+<div class='mathjax-block'>\[ |\vec a| = \omega ^2r = a_c. \]</div>
+<p><a id='x1-64r20'></a>
+</p><!-- l. 1433 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 1433 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 1433 --><p class='noindent'>Oefening 20
+</p><!-- l. 1433 --><p class='noindent'>— Vectorieel bewijzen
+</p><!-- l. 1433 --><p class='noindent'></p></div>
+<p></p><!-- l. 1433 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 1433 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--g'>G</span></div>
+<p></p><!-- l. 1433 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 1435 --><p class='noindent'>Vertrek van:
+</p>
+<div class='mathjax-block'>\[ \vec r(t) = r\cos (\omega t)\,\vec e_x + r\sin (\omega t)\,\vec e_y. \]</div>
+<div class='problem-environment question' id='problem86' numbered=' ' role='article' titletext=' Question'>  Bepaal <span class='mathjax-inline'>\(\vec v(t)\)</span> door af te leiden.    </div>
+                                                                  
+
+                                                                  
+<div class='problem-environment question' id='problem87' numbered=' ' role='article' titletext=' Question'>  Toon aan dat <span class='mathjax-inline'>\(|\vec v|=r\omega \)</span>.    </div>
+<div class='problem-environment question' id='problem88' numbered=' ' role='article' titletext=' Question'>  Bepaal <span class='mathjax-inline'>\(\vec a(t)\)</span>.    </div>
+<div class='problem-environment question' id='problem89' numbered=' ' role='article' titletext=' Question'>  Toon aan dat <span class='mathjax-inline'>\(\vec a=-\omega ^2\vec r\)</span>.    </div>
+<div class='problem-environment question' id='problem90' numbered=' ' role='article' titletext=' Question'>  Leg uit waarom dit zowel de grootte als de richting van de centripetale versnelling
+bewijst.    </div>
+</div>
+<!-- l. 1466 --><p class='noindent'></p></div>
+<p></p><!-- l. 1466 --><p class='noindent'></p></section>
+<p><a id='x1-65r15'></a>
+</p><p></p><!-- l. 1473 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>15</div><div class='fvd-section-bar__title'>Wat hebben we opgebouwd?</div></div>
+<p></p><!-- l. 1475 --><p class='noindent'>Voor een periodieke beweging:
+</p>
+<div class='mathjax-block'>\[ \boxed { f=\frac 1T } \]</div>
+<!-- l. 1483 --><p class='noindent'>Voor een ECB:
+</p>
+<div class='mathjax-block'>\[ \boxed { \omega =\frac {2\pi }{T}=2\pi f } \]</div>
+<!-- l. 1491 --><p class='noindent'>De baansnelheid:
+</p>
+<div class='mathjax-block'>\[ \boxed { v=r\omega =\frac {2\pi r}{T} } \]</div>
+<!-- l. 1499 --><p class='noindent'>De snelheidsvector is raaklijnig aan de cirkel:
+</p>
+<div class='mathjax-block'>\[ \boxed { \vec v\perp \vec r. } \]</div>
+<!-- l. 1507 --><p class='noindent'>Hoewel <span class='mathjax-inline'>\(|\vec v|\)</span> constant is, verandert <span class='mathjax-inline'>\(\vec v\)</span> voortdurend van richting. Daarom is er een
+versnelling.
+</p><!-- l. 1510 --><p class='noindent'>De centripetale versnelling wijst naar het middelpunt:
+</p>
+<div class='mathjax-block'>\[ \boxed { \vec a_c\ \text {naar het centrum} } \]</div>
+<!-- l. 1518 --><p class='noindent'>en haar grootte is:
+</p>
+<div class='mathjax-block'>\[ \boxed { a_c=\frac {v^2}{r} } \]</div>
+<!-- l. 1526 --><p class='noindent'>of equivalent:
+</p>
+<div class='mathjax-block'>\[ \boxed {textb a_c=r\omega ^2 =\frac {4\pi ^2r}{T^2} =4\pi ^2rf^2. } \]</div>
+<!-- l. 1536 --><p class='noindent'>Bij het analyseren van deze verbanden moet je altijd expliciet aangeven welke
+grootheden constant worden gehouden.
+<a id='x1-66r16'></a>
+                                                                  
+
+                                                                  
+</p><!-- l. 1547 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>16</div><div class='fvd-section-bar__title'>Vooruitblik: wat houdt het voorwerp op de cirkel?</div></div>
+<p></p><!-- l. 1549 --><p class='noindent'>We weten nu wat nodig is voor een cirkelbeweging:
+</p>
+<div class='mathjax-block'>\[ \vec a_c \]</div>
+<!-- l. 1555 --><p class='noindent'>moet naar het middelpunt gericht zijn.
+</p><!-- l. 1557 --><p class='noindent'>Maar we hebben nog niet verklaard <em>waardoor</em> die versnelling ontstaat.
+</p><!-- l. 1560 --><p class='noindent'>Bij een auto in een bocht, een steen aan een touw, een satelliet rond de
+aarde en een passagier in een draaimolen zijn verschillende fysische krachten
+actief.
+</p><!-- l. 1564 --><p class='noindent'>In het volgende hoofdstuk verschuift de vraag daarom van
+</p>
+<div class='mathjax-block'>\[ \boxed {\text {Hoe beweegt het voorwerp?}} \]</div>
+<!-- l. 1570 --><p class='noindent'>naar
+</p>
+<div class='mathjax-block'>\[ \boxed {\text {Waarom verandert zijn beweging?}} \]</div>
+<!-- l. 1576 --><p class='noindent'>Daarvoor hebben we de wetten van Newton nodig.
+                                                                  
+
+                                                                  
+</p>
+</body> 
+ 
+</html>
+                                                                  
+
+

@@ -1,0 +1,524 @@
+<!DOCTYPE html> 
+<html lang='en-US' xml:lang='en-US'> 
+<head> <title>Lineaire regressie — Van data naar model</title> 
+<meta charset='utf-8' /> 
+<meta content='TeX4ht (https://tug.org/tex4ht/)' name='generator' /> 
+<meta content='width=device-width,initial-scale=1' name='viewport' /> 
+<link href='\aa:CssFile ' rel='stylesheet' type='text/css' /> 
+<meta content='Lineaire-regressie.online.tex' name='src' /> 
+<script>window.MathJax = { tex: { tags: "ams", }, }; </script> 
+<script async='async' id='MathJax-script' src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js' type='text/javascript'></script>  
+<meta content='Ingmar Herreman' name='author' /> 
+<meta content='version 2.5.1' name='ximera' /> 
+<link href='https://ximera.osu.edu/public/stylesheets/standalone.css' media='screen' rel='stylesheet' /> 
+<script async='' src='https://ximera.osu.edu/public/javascripts/standalone.min.js' type='text/javascript'></script> 
+</head><body> 
+<div class='preamble'>
+</div>
+<style> .activity-body pre { white-space: pre; background-color: lightgray; } .xmyoutube { aspect-ratio: 16/9; min-width: 75%; } .image-environment img { width: unset; } </style> 
+
+<div class='maketitle'></div>
+<!-- l. 46 --><p class='noindent'></p><section class='learning-box learning-box--prior'> <div class='learning-box__header'> <span class='learning-box__icon'> </span><span class='learning-box__title'>Voorkennis</span> </div> <div class='learning-box__content'> 
+<p></p>     
+<ul class='itemize1'>
+<li class='itemize'>Je weet wat gekoppelde numerieke gegevens zijn.
+</li>
+<li class='itemize'>Je kan een spreidingsdiagram maken en systematisch analyseren.
+</li>
+<li class='itemize'>Je kan beoordelen of een puntenwolk ongeveer lineair is.
+</li>
+<li class='itemize'>Je kan de correlatiecoëfficiënt <span class='mathjax-inline'>\(r\)</span> bepalen met ICT en interpreteren.
+</li>
+<li class='itemize'>Je kan de betekenis van de richtingscoëfficiënt en het snijpunt met de
+verticale as van een rechte interpreteren.</li></ul>
+<!-- l. 52 --><p class='noindent'></p></div> </section> 
+<p></p><!-- l. 54 --><p class='noindent'></p><section class='learning-box learning-box--goals'> <div class='learning-box__header'> <span class='learning-box__icon'> </span><span class='learning-box__title'>Leerdoelen</span> </div> <div class='learning-box__content'> 
+<p></p>     
+<ul class='itemize1'>
+<li class='itemize'>Je kan uitleggen waarom een trendlijn een puntenwolk kan samenvatten.
+</li>
+<li class='itemize'>Je kan beoordelen of een lineair model zinvol is voor een gegeven dataset.
+</li>
+<li class='itemize'>Je kan met ICT een lineaire regressie uitvoeren.
+                                                                  
+
+                                                                  
+</li>
+<li class='itemize'>Je kan het voorschrift van een regressierechte correct noteren.
+</li>
+<li class='itemize'>Je kan de richtingscoëfficiënt van een regressierechte interpreteren met
+eenheid en context.
+</li>
+<li class='itemize'>Je  kan  het  intercept  interpreteren  en  beoordelen  of  die  interpretatie
+inhoudelijk zinvol is.
+</li>
+<li class='itemize'>Je kan met een regressiemodel voorspellingen maken.
+</li>
+<li class='itemize'>Je kan interpolatie en extrapolatie onderscheiden.
+</li>
+<li class='itemize'>Je kan beoordelen of een voorspelling verantwoord is.
+</li>
+<li class='itemize'>Je kan gemeten en voorspelde waarden vergelijken.
+</li>
+<li class='itemize'>Je   kan   een   lineair   regressiemodel   kritisch   terugkoppelen   naar   de
+werkelijkheid.</li></ul>
+<!-- l. 66 --><p class='noindent'></p></div> </section> 
+<p><a id='x1-2r1'></a>
+</p><p></p><!-- l. 70 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>1</div><div class='fvd-section-bar__title'>Van verband naar model</div></div>
+<p></p><!-- l. 73 --><p class='noindent'>In de vorige hoofdstukken onderzochten we eerst de puntenwolk en daarna de
+correlatiecoëfficiënt.
+</p><!-- l. 76 --><p class='noindent'>Stel dat beide dezelfde boodschap geven:
+</p>
+                                                                  
+
+                                                                  
+<ul class='itemize1'>     
+<li class='itemize'>de punten liggen ongeveer rond een rechte band;
+</li>
+<li class='itemize'>de lineaire correlatie is sterk.</li></ul>
+<!-- l. 83 --><p class='noindent'>Dan ligt een nieuwe vraag voor de hand:
+</p>
+<div class='center'>
+<!-- l. 85 --><p class='noindent'>
+</p><!-- l. 86 --><p class='noindent'><strong>Kunnen we het globale verband met een rechte beschrijven?</strong></p></div>
+<!-- l. 89 --><p class='noindent'>Dat is een stap van <strong>gegevens analyseren</strong> naar <strong>modelleren</strong>.
+</p>
+<div class='mathjax-block'>\[ \important { \text {werkelijkheid} \longrightarrow \text {metingen} \longrightarrow \text {puntenwolk} \longrightarrow \text {wiskundig model} } \]</div>
+<!-- l. 104 --><p class='noindent'>Later keren we ook terug:
+</p>
+<div class='mathjax-block'>\[ \important { \text {wiskundig model} \longrightarrow \text {voorspelling} \longrightarrow \text {interpretatie in de werkelijkheid} } \]</div>
+<!-- l. 117 --><p class='noindent'></p><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span></div><div class='fvd-remark__content'>Een model is bewust eenvoudiger dan de werkelijkheid.
+<p></p><!-- l. 119 --><p class='noindent'>De regressierechte hoeft dus niet door alle meetpunten te gaan. Ze probeert het
+<strong>globale lineaire patroon</strong> van de gegevens samen te vatten. </p></div></section>
+<p><a id='x1-3r2'></a>
+</p><p></p><!-- l. 126 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>2</div><div class='fvd-section-bar__title'>Een trendlijn door een puntenwolk</div></div>
+<p></p><!-- l. 129 --><p class='noindent'>Wanneer een puntenwolk ongeveer lineair is, kunnen we er visueel een rechte
+doorheen tekenen die de algemene richting van de punten volgt.
+</p><!-- l. 133 --><p class='noindent'></p><section class='fvd-definition'><div class='fvd-definition__title'><span class='fvd-definition__label'>DEFINITIE</span></div><div class='fvd-definition__content'>Een <strong>trendlijn</strong> is een lijn die het globale patroon in een dataset zichtbaar
+maakt.
+<p></p><!-- l. 136 --><p class='noindent'>Bij een ongeveer lineair verband gebruiken we een rechte als trendlijn. </p></div></section>
+<p></p><!-- l. 139 --><p class='noindent'>Zo’n rechte moet niet door elk punt gaan. Bij meetgegevens verwachten we juist dat
+punten boven en onder de rechte liggen.
+<a id='x1-4r1'></a>
+</p><!-- l. 142 --><p class='noindent'></p><section class='fvd-example'>
+<p></p><!-- l. 142 --><p class='noindent'></p><div class='fvd-example__title'>Voorbeeld 1<span class='fvd-example__subtitle'> — Temperatuur en energieverbruik</span></div>
+<p></p><!-- l. 142 --><p class='noindent'></p><div class='fvd-example__content'> Stel dat het gasverbruik van een gebouw op koude dagen hoger ligt en de
+puntenwolk ongeveer een dalende rechte band vormt.
+                                                                  
+
+                                                                  
+<p></p><!-- l. 146 --><p class='noindent'>Een dalende trendlijn vat dan de algemene tendens samen:
+</p>
+<div class='mathjax-block'>\[ \text {hogere buitentemperatuur} \quad \longleftrightarrow \quad \text {lager gasverbruik}. \]</div>
+<!-- l. 154 --><p class='noindent'>De lijn beschrijft het patroon, maar voorspelt niet exact hoeveel gas op elke
+afzonderlijke dag wordt verbruikt. </p></div></section>
+<p><a id='x1-5r3'></a>
+</p><p></p><!-- l. 160 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>3</div><div class='fvd-section-bar__title'>Van trendlijn naar lineaire regressie</div></div>
+<p></p><!-- l. 163 --><p class='noindent'>Verschillende leerlingen kunnen met het oog verschillende redelijke trendlijnen
+tekenen. We willen daarom een systematische methode om uit de gegevens één rechte
+te bepalen.
+</p><!-- l. 167 --><p class='noindent'>Dat is het doel van <strong>lineaire regressie</strong>.
+</p><!-- l. 170 --><p class='noindent'></p><section class='fvd-definition'><div class='fvd-definition__title'><span class='fvd-definition__label'>DEFINITIE</span></div><div class='fvd-definition__content'>Bij <strong>lineaire regressie</strong> bepalen we een rechte die het lineaire verband
+tussen twee numerieke grootheden zo goed mogelijk beschrijft.
+<p></p><!-- l. 173 --><p class='noindent'>We schrijven het regressiemodel als
+</p>
+<div class='mathjax-block'>\[ \boxed {\hat y=ax+b}. \]</div>
+<!-- l. 179 --><p class='noindent'>Hierbij is
+</p>
+<div class='mathjax-block'>\[ \hat y \]</div>
+<!-- l. 185 --><p class='noindent'>de door het model <strong>voorspelde</strong> waarde van <span class='mathjax-inline'>\(y\)</span>. </p></div></section>
+<p></p><!-- l. 188 --><p class='noindent'>Het dakje in <span class='mathjax-inline'>\(\hat y\)</span> is betekenisvol.
+</p><!-- l. 190 --><p class='noindent'>De gemeten waarde <span class='mathjax-inline'>\(y\)</span> en de voorspelde waarde <span class='mathjax-inline'>\(\hat y\)</span> zijn immers niet noodzakelijk
+gelijk.
+</p><!-- l. 194 --><p class='noindent'></p><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span></div><div class='fvd-remark__content'>We schrijven dus liever
+<p></p>
+<div class='mathjax-block'>\[ \hat y=ax+b \]</div>
+<!-- l. 200 --><p class='noindent'>dan
+</p>
+<div class='mathjax-block'>\[ y=ax+b, \]</div>
+<!-- l. 206 --><p class='noindent'>om duidelijk te maken dat de rechte een <strong>model</strong> voor de meetgegevens is.
+</p></div></section>
+<p><a id='x1-6r4'></a>
+</p><p></p><!-- l. 212 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>4</div><div class='fvd-section-bar__title'>Waarom precies deze rechte?</div></div>
+<p></p><!-- l. 215 --><p class='noindent'>Voor één puntenwolk kunnen we veel verschillende rechten tekenen. Lineaire regressie
+kiest niet zomaar een “mooie” rechte.
+</p><!-- l. 218 --><p class='noindent'>Voor iedere waarneming vergelijken we de gemeten waarde <span class='mathjax-inline'>\(y_i\)</span> met de door de rechte
+voorspelde waarde <span class='mathjax-inline'>\(\hat y_i\)</span>.
+                                                                  
+
+                                                                  
+</p><!-- l. 221 --><p class='noindent'>Het verticale verschil is
+</p>
+<div class='mathjax-block'>\[ e_i=y_i-\hat y_i. \]</div>
+<!-- l. 228 --><p class='noindent'></p><section class='fvd-definition'><div class='fvd-definition__title'><span class='fvd-definition__label'>DEFINITIE</span></div><div class='fvd-definition__content'>Het verschil
+<p></p>
+<div class='mathjax-block'>\[ \boxed {e_i=y_i-\hat y_i} \]</div>
+<!-- l. 234 --><p class='noindent'>tussen een gemeten waarde en de bijbehorende voorspelde waarde noemen we het
+<strong>residu</strong>. </p></div></section>
+<p></p><!-- l. 238 --><p class='noindent'>De gebruikelijke regressierechte wordt zo gekozen dat de som van de kwadraten van
+deze verticale afwijkingen zo klein mogelijk is:
+</p>
+<div class='mathjax-block'>\[ \sum _{i=1}^{n}(y_i-\hat y_i)^2. \]</div>
+<!-- l. 245 --><p class='noindent'>Deze methode heet de <strong>kleinste-kwadratenmethode</strong>.
+</p><!-- l. 248 --><p class='noindent'></p><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span></div><div class='fvd-remark__content'>Je hoeft de formules waarmee <span class='mathjax-inline'>\(a\)</span> en <span class='mathjax-inline'>\(b\)</span> uit alle gegevens worden berekend
+hier niet uit het hoofd te leren.
+<p></p><!-- l. 251 --><p class='noindent'>ICT voert de berekening uit. Wat je wel moet begrijpen, is wat de gevonden
+rechte betekent en waarom ze een model is voor de volledige puntenwolk.
+</p></div></section>
+<p><a id='x1-7r5'></a>
+</p><p></p><!-- l. 258 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>5</div><div class='fvd-section-bar__title'>Het regressiemodel interpreteren</div></div>
+<p></p><!-- l. 261 --><p class='noindent'>Een regressievergelijking is pas nuttig wanneer we haar terug kunnen vertalen naar
+de context.
+</p><!-- l. 264 --><p class='noindent'>Beschouw
+</p>
+<div class='mathjax-block'>\[ \hat y=ax+b. \]</div>
+<!-- l. 270 --><p class='noindent'>We onderzoeken afzonderlijk <span class='mathjax-inline'>\(a\)</span> en <span class='mathjax-inline'>\(b\)</span>.
+<a id='x1-8r1'></a>
+</p><!-- l. 274 --><p class='noindent'></p><div class='fvd-subsection'>
+<p></p><!-- l. 274 --><p class='noindent'></p><div class='fvd-subsection__row'>
+<p></p><!-- l. 274 --><p class='noindent'></p><div class='fvd-subsection__number'>5.1</div>
+<p></p><!-- l. 274 --><p class='noindent'></p><div class='fvd-subsection__title'>De richtingscoëfficiënt</div>
+<p></p><!-- l. 274 --><p class='noindent'></p></div>
+<p></p><!-- l. 274 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
+<p></p><!-- l. 274 --><p class='noindent'></p></div>
+<p></p><!-- l. 277 --><p class='noindent'>De richtingscoëfficiënt <span class='mathjax-inline'>\(a\)</span> beschrijft hoeveel de voorspelde waarde van <span class='mathjax-inline'>\(y\)</span> gemiddeld
+verandert wanneer <span class='mathjax-inline'>\(x\)</span> met één eenheid toeneemt.
+                                                                  
+
+                                                                  
+</p>
+<div class='mathjax-block'>\[ \boxed { a= \frac {\text {verandering in voorspelde }y} {\text {verandering in }x} } \]</div>
+<!-- l. 288 --><p class='noindent'>De eenheid van <span class='mathjax-inline'>\(a\)</span> is dus
+</p>
+<div class='mathjax-block'>\[ \frac {\text {eenheid van }y} {\text {eenheid van }x}. \]</div>
+<p><a id='x1-9r2'></a>
+</p><!-- l. 295 --><p class='noindent'></p><section class='fvd-example'>
+<p></p><!-- l. 295 --><p class='noindent'></p><div class='fvd-example__title'>Voorbeeld 2<span class='fvd-example__subtitle'> — Temperatuur en gasverbruik</span></div>
+<p></p><!-- l. 295 --><p class='noindent'></p><div class='fvd-example__content'> Stel dat
+<p></p>
+<div class='mathjax-block'>\[ \hat G=-24{,}5T+790, \]</div>
+<!-- l. 302 --><p class='noindent'>waarbij <span class='mathjax-inline'>\(T\)</span> de buitentemperatuur in <span class='mathjax-inline'>\({}^{\circ }\mathrm C\)</span> is en <span class='mathjax-inline'>\(G\)</span> het dagelijkse gasverbruik in <span class='mathjax-inline'>\(\mathrm {kWh}\)</span>.
+</p><!-- l. 305 --><p class='noindent'>Dan heeft de richtingscoëfficiënt de eenheid
+</p>
+<div class='mathjax-block'>\[ \frac {\mathrm {kWh}}{{}^{\circ }\mathrm C}. \]</div>
+<!-- l. 311 --><p class='noindent'>Een stijging van de buitentemperatuur met <span class='mathjax-inline'>\(1\,{}^{\circ }\mathrm C\)</span> gaat volgens het model samen
+met een daling van het voorspelde dagelijkse gasverbruik met ongeveer <span class='mathjax-inline'>\(24{,}5\,\mathrm {kWh}\)</span>.
+</p></div></section>
+<p></p><!-- l. 317 --><p class='noindent'></p><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span></div><div class='fvd-remark__content'>Gebruik bij observationele gegevens voorzichtig taalgebruik.
+<p></p><!-- l. 319 --><p class='noindent'>“Als <span class='mathjax-inline'>\(x\)</span> met één eenheid stijgt, voorspelt het model ...” is veiliger dan automatisch te
+zeggen dat de verandering van <span class='mathjax-inline'>\(x\)</span> de verandering van <span class='mathjax-inline'>\(y\)</span> <em>veroorzaakt</em>. </p></div></section>
+<p><a id='x1-10r2'></a>
+</p><p></p><!-- l. 326 --><p class='noindent'></p><div class='fvd-subsection'>
+<p></p><!-- l. 326 --><p class='noindent'></p><div class='fvd-subsection__row'>
+<p></p><!-- l. 326 --><p class='noindent'></p><div class='fvd-subsection__number'>5.2</div>
+<p></p><!-- l. 326 --><p class='noindent'></p><div class='fvd-subsection__title'>Het intercept</div>
+<p></p><!-- l. 326 --><p class='noindent'></p></div>
+<p></p><!-- l. 326 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
+<p></p><!-- l. 326 --><p class='noindent'></p></div>
+<p></p><!-- l. 329 --><p class='noindent'>Het getal <span class='mathjax-inline'>\(b\)</span> is de voorspelde waarde van <span class='mathjax-inline'>\(y\)</span> voor
+</p>
+<div class='mathjax-block'>\[ x=0. \]</div>
+<!-- l. 335 --><p class='noindent'>Algebraïsch is dat eenvoudig. Inhoudelijk kan het veel subtieler zijn.
+<a id='x1-11r3'></a>
+</p><!-- l. 337 --><p class='noindent'></p><section class='fvd-example'>
+                                                                  
+
+                                                                  
+<p></p><!-- l. 337 --><p class='noindent'></p><div class='fvd-example__title'>Voorbeeld 3<span class='fvd-example__subtitle'> — Leeftijd en lichaamslengte</span></div>
+<p></p><!-- l. 337 --><p class='noindent'></p><div class='fvd-example__content'> Stel dat voor een beperkte leeftijdsgroep een lineair regressiemodel
+<p></p>
+<div class='mathjax-block'>\[ \hat L=5{,}8t+51 \]</div>
+<!-- l. 344 --><p class='noindent'>wordt gevonden.
+</p><!-- l. 346 --><p class='noindent'>Algebraïsch voorspelt het model bij <span class='mathjax-inline'>\(t=0\)</span> een lengte van <span class='mathjax-inline'>\(51\,\mathrm {cm}\)</span>.
+</p><!-- l. 349 --><p class='noindent'>Of die waarde inhoudelijk zinvol geïnterpreteerd mag worden, hangt af van de
+onderzochte populatie en het meetbereik. </p></div></section>
+<p></p><!-- l. 354 --><p class='noindent'></p><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span></div><div class='fvd-remark__content'>Een parameter kan wiskundig perfect bepaald zijn zonder in de
+context een nuttige betekenis te hebben.
+<p></p><!-- l. 357 --><p class='noindent'>Vraag daarom steeds:
+</p>
+<div class='mathjax-block'>\[ \important { \text {Ligt }x=0\text { in of nabij het onderzochte gebied?} } \]</div> </div></section>
+<p><a id='x1-12r1'></a>
+</p><!-- l. 367 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 367 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 367 --><p class='noindent'>Oefening 1
+</p><!-- l. 367 --><p class='noindent'>— Lees het model
+</p><!-- l. 367 --><p class='noindent'></p></div>
+<p></p><!-- l. 367 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 367 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 367 --><p class='noindent'></p><div class='fvd-exercise__content'> Voor een experiment geldt binnen het onderzochte meetbereik
+<p></p>
+<div class='mathjax-block'>\[ \hat y=3{,}4x+12. \]</div>
+<!-- l. 374 --><p class='noindent'><span class='mathjax-inline'>\(x\)</span> wordt gemeten in seconden en <span class='mathjax-inline'>\(y\)</span> in meter.
+</p>
+<div class='problem-environment question' id='problem1' numbered=' ' role='article' titletext=' Question'>  Wat is de eenheid van de richtingscoëfficiënt?
+<div class='multiple-choice' id='problem2' titletext=' Multiple Choice'><span class='choice  ' id='choice1'>m </span><span class='choice  ' id='choice2'>s </span><span class='choice correct ' id='choice3'>m/s </span><span class='choice  ' id='choice4'>s/m</span> </div>    </div>
+<div class='problem-environment question' id='problem3' numbered=' ' role='article' titletext=' Question'>  Interpreteer <span class='mathjax-inline'>\(a=3{,}4\)</span>.
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item4'> 
+ Wanneer <span class='mathjax-inline'>\(x\)</span> met <span class='mathjax-inline'>\(1\,\mathrm {s}\)</span> toeneemt, neemt de door het model voorspelde waarde van <span class='mathjax-inline'>\(y\)</span> toe met <span class='mathjax-inline'>\(3{,}4\,\mathrm {m}\)</span>.
+</div> 
+</div> 
+   </div>
+<div class='problem-environment question' id='problem5' numbered=' ' role='article' titletext=' Question'>  Wat betekent <span class='mathjax-inline'>\(12\)</span> algebraïsch?
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item6'> 
+ Voor <span class='mathjax-inline'>\(x=0\,\mathrm {s}\)</span> voorspelt het model <span class='mathjax-inline'>\(\hat y=12\,\mathrm {m}\)</span>. Of die waarde inhoudelijk betekenisvol is, moet uit de
+context en het meetbereik blijken. </div> 
+</div> 
+     </div> </div>
+<!-- l. 405 --><p class='noindent'></p></div>
+                                                                  
+
+                                                                  
+<p></p><!-- l. 405 --><p class='noindent'></p></section>
+<p><a id='x1-13r6'></a>
+</p><p></p><!-- l. 409 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>6</div><div class='fvd-section-bar__title'>Voorspellen met een regressiemodel</div></div>
+<p></p><!-- l. 412 --><p class='noindent'>Een belangrijk voordeel van een regressiemodel is dat we voor een gegeven waarde
+van <span class='mathjax-inline'>\(x\)</span> een bijbehorende waarde van <span class='mathjax-inline'>\(y\)</span> kunnen <strong>schatten</strong>.
+</p><!-- l. 416 --><p class='noindent'>Stel bijvoorbeeld
+</p>
+<div class='mathjax-block'>\[ \hat P=0{,}158I+3{,}2, \]</div>
+<!-- l. 422 --><p class='noindent'>met <span class='mathjax-inline'>\(I\)</span> de instraling in <span class='mathjax-inline'>\(\mathrm {W/m^2}\)</span> en <span class='mathjax-inline'>\(P\)</span> het elektrisch vermogen in <span class='mathjax-inline'>\(\mathrm W\)</span>.
+</p><!-- l. 425 --><p class='noindent'>Voor
+</p>
+<div class='mathjax-block'>\[ I=600\,\mathrm {W/m^2} \]</div>
+<!-- l. 431 --><p class='noindent'>voorspelt het model
+</p>
+<div class='mathjax-block'>\[ \hat P = 0{,}158\cdot 600+3{,}2 = 98{,}0\,\mathrm W. \]</div>
+<!-- l. 441 --><p class='noindent'>Dit is een modelvoorspelling, geen garantie dat een nieuwe meting exact <span class='mathjax-inline'>\(98{,}0\,\mathrm W\)</span> zal
+opleveren.
+<a id='x1-14r7'></a>
+</p><!-- l. 446 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>7</div><div class='fvd-section-bar__title'>Interpoleren en extrapoleren</div></div>
+<p></p><!-- l. 449 --><p class='noindent'>Niet elke voorspelling met dezelfde regressierechte is even betrouwbaar.
+</p><!-- l. 452 --><p class='noindent'></p><section class='fvd-definition'><div class='fvd-definition__title'><span class='fvd-definition__label'>DEFINITIE</span></div><div class='fvd-definition__content'>Bij <strong>interpolatie</strong> gebruiken we een model om een waarde te schatten
+<strong>binnen het bereik van de waargenomen <span class='mathjax-inline'>\(x\)</span>-waarden</strong>. </div></section>
+<p></p><!-- l. 457 --><p class='noindent'></p><section class='fvd-definition'><div class='fvd-definition__title'><span class='fvd-definition__label'>DEFINITIE</span></div><div class='fvd-definition__content'>Bij <strong>extrapolatie</strong> gebruiken we een model om een waarde te schatten
+<strong>buiten het bereik van de waargenomen <span class='mathjax-inline'>\(x\)</span>-waarden</strong>. </div></section>
+<p><a id='x1-15r4'></a>
+</p><p></p><!-- l. 462 --><p class='noindent'></p><section class='fvd-example'>
+<p></p><!-- l. 462 --><p class='noindent'></p><div class='fvd-example__title'>Voorbeeld 4</div>
+<p></p><!-- l. 462 --><p class='noindent'></p><div class='fvd-example__content'>Als de instraling in de dataset varieerde van
+<p></p>
+<div class='mathjax-block'>\[ 180\,\mathrm {W/m^2} \quad \text {tot}\quad 840\,\mathrm {W/m^2}, \]</div>
+<!-- l. 470 --><p class='noindent'>dan is een voorspelling voor
+</p>
+<div class='mathjax-block'>\[ I=600\,\mathrm {W/m^2} \]</div>
+<!-- l. 476 --><p class='noindent'>interpolatie.
+</p><!-- l. 478 --><p class='noindent'>Een voorspelling voor
+</p>
+                                                                  
+
+                                                                  
+<div class='mathjax-block'>\[ I=1200\,\mathrm {W/m^2} \]</div>
+<!-- l. 484 --><p class='noindent'>is extrapolatie. </p></div></section>
+<p></p><!-- l. 488 --><p class='noindent'></p><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span></div><div class='fvd-remark__content'>Extrapolatie is riskanter omdat we veronderstellen dat het gevonden
+patroon ook buiten het gemeten gebied blijft gelden.
+<p></p><!-- l. 491 --><p class='noindent'>Dat hoeft niet zo te zijn.
+</p><!-- l. 493 --><p class='noindent'>Een model dat in een beperkt interval uitstekend werkt, kan daarbuiten fysisch,
+biologisch of economisch onmogelijk worden. </p></div></section>
+<p><a id='x1-16r8'></a>
+</p><p></p><!-- l. 499 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>8</div><div class='fvd-section-bar__title'>Model en werkelijkheid vergelijken</div></div>
+<p></p><!-- l. 502 --><p class='noindent'>Een regressierechte loopt meestal niet door de meetpunten.
+</p><!-- l. 504 --><p class='noindent'>Voor een meetpunt <span class='mathjax-inline'>\((x_i,y_i)\)</span> voorspelt het model
+</p>
+<div class='mathjax-block'>\[ \hat y_i=ax_i+b. \]</div>
+<!-- l. 510 --><p class='noindent'>Het residu is
+</p>
+<div class='mathjax-block'>\[ e_i=y_i-\hat y_i. \]</div>
+<!-- l. 516 --><p class='noindent'>Daaruit volgt:
+</p>
+<div class='mathjax-block'>\[ e_i&gt;0 \]</div>
+<!-- l. 522 --><p class='noindent'>als het meetpunt boven de regressierechte ligt, en
+</p>
+<div class='mathjax-block'>\[ e_i&lt;0 \]</div>
+<!-- l. 528 --><p class='noindent'>als het meetpunt onder de regressierechte ligt.
+<a id='x1-17r5'></a>
+</p><!-- l. 531 --><p class='noindent'></p><section class='fvd-example'>
+<p></p><!-- l. 531 --><p class='noindent'></p><div class='fvd-example__title'>Voorbeeld 5</div>
+<p></p><!-- l. 531 --><p class='noindent'></p><div class='fvd-example__content'>Een model voorspelt voor een bepaalde waarneming
+<p></p>
+<div class='mathjax-block'>\[ \hat y=72{,}4, \]</div>
+<!-- l. 537 --><p class='noindent'>terwijl werkelijk
+</p>
+<div class='mathjax-block'>\[ y=75{,}1 \]</div>
+<!-- l. 543 --><p class='noindent'>werd gemeten.
+</p><!-- l. 545 --><p class='noindent'>Dan is
+</p>
+<div class='mathjax-block'>\[ e=75{,}1-72{,}4=2{,}7. \]</div>
+                                                                  
+
+                                                                  
+<!-- l. 551 --><p class='noindent'>De gemeten waarde ligt dus <span class='mathjax-inline'>\(2{,}7\)</span> eenheden boven de voorspelde waarde. </p></div></section>
+<p></p><!-- l. 555 --><p class='noindent'></p><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span></div><div class='fvd-remark__content'>Residuen zijn hier vooral een hulpmiddel om na te denken over de
+kwaliteit van een model.
+<p></p><!-- l. 558 --><p class='noindent'>Een systematisch patroon in de afwijkingen kan erop wijzen dat een rechte niet de
+meest geschikte modelvorm is. </p></div></section>
+<p><a id='x1-18r9'></a>
+</p><p></p><!-- l. 564 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>9</div><div class='fvd-section-bar__title'>Wanneer is een lineair model zinvol?</div></div>
+<p></p><!-- l. 567 --><p class='noindent'>Een grote correlatiecoëfficiënt alleen is geen automatische toestemming om een
+regressierechte zonder nadenken te gebruiken.
+</p><!-- l. 570 --><p class='noindent'>We controleren minstens:
+</p>     
+<ol class='enumerate1'>
+<li class='enumerate' id='x1-20x1'>Is de puntenwolk ongeveer lineair?
+</li>
+<li class='enumerate' id='x1-22x2'>Zijn er opvallende uitschieters of clusters?
+</li>
+<li class='enumerate' id='x1-24x3'>Is de context verenigbaar met een lineair model?
+</li>
+<li class='enumerate' id='x1-26x4'>Ligt de gewenste voorspelling binnen of buiten het meetbereik?
+</li>
+<li class='enumerate' id='x1-28x5'>Is de voorspelde waarde inhoudelijk plausibel?</li></ol>
+<p><a id='x1-29r6'></a>
+</p><!-- l. 580 --><p class='noindent'></p><section class='fvd-example'>
+<p></p><!-- l. 580 --><p class='noindent'></p><div class='fvd-example__title'>Voorbeeld 6<span class='fvd-example__subtitle'> — Een biologisch onmogelijke voorspelling</span></div>
+<p></p><!-- l. 580 --><p class='noindent'></p><div class='fvd-example__content'> Stel dat een lineair model de lichaamslengte van jonge kinderen goed beschrijft
+tussen <span class='mathjax-inline'>\(1\)</span> en <span class='mathjax-inline'>\(12\)</span> maanden.
+                                                                  
+
+                                                                  
+<p></p><!-- l. 584 --><p class='noindent'>Wanneer we hetzelfde model tot <span class='mathjax-inline'>\(20\)</span> jaar extrapoleren, kan het een absurde
+lichaamslengte voorspellen.
+</p><!-- l. 587 --><p class='noindent'>De berekening kan algebraïsch correct zijn en toch wetenschappelijk waardeloos.
+</p>
+<div class='mathjax-block'>\[ \important { \text {correct rekenen} \neq \text {correct modelleren} } \]</div> </div></section>
+<p><a id='x1-30r10'></a>
+</p><!-- l. 601 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>10</div><div class='fvd-section-bar__title'>Lineaire regressie met ICT</div></div>
+<p></p><!-- l. 604 --><p class='noindent'>Bij realistische datasets laten we ICT de regressiecoëfficiënten berekenen.
+</p><!-- l. 607 --><p class='noindent'>De volledige werkwijze is:
+</p>     
+<ol class='enumerate1'>
+<li class='enumerate' id='x1-32x1'>bepaal welke twee numerieke grootheden worden onderzocht;
+</li>
+<li class='enumerate' id='x1-34x2'>maak een spreidingsdiagram;
+</li>
+<li class='enumerate' id='x1-36x3'>beschrijf richting, vorm, sterkte en bijzonderheden;
+</li>
+<li class='enumerate' id='x1-38x4'>bepaal de correlatiecoëfficiënt;
+</li>
+<li class='enumerate' id='x1-40x5'>beoordeel of een lineair model zinvol is;
+</li>
+<li class='enumerate' id='x1-42x6'>voer lineaire regressie uit;
+</li>
+<li class='enumerate' id='x1-44x7'>noteer het model als <span class='mathjax-inline'>\(\hat y=ax+b\)</span>;
+                                                                  
+
+                                                                  
+</li>
+<li class='enumerate' id='x1-46x8'>interpreteer <span class='mathjax-inline'>\(a\)</span> en, indien zinvol, <span class='mathjax-inline'>\(b\)</span>;
+</li>
+<li class='enumerate' id='x1-48x9'>gebruik het model eventueel voor een voorspelling;
+</li>
+<li class='enumerate' id='x1-50x10'>beoordeel de voorspelling in de context.</li></ol>
+<!-- l. 623 --><p class='noindent'></p><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span></div><div class='fvd-remark__content'>ICT neemt de berekening over, niet de analyse.
+<p></p><!-- l. 625 --><p class='noindent'>Een software-uitvoer met
+</p>
+<div class='mathjax-block'>\[ a=2{,}417,\qquad b=-5{,}82,\qquad r=0{,}93 \]</div>
+<!-- l. 631 --><p class='noindent'>is pas bruikbaar wanneer je weet wat deze getallen in de concrete situatie betekenen.
+</p></div></section>
+<p><a id='x1-51r11'></a>
+</p><p></p><!-- l. 637 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>11</div><div class='fvd-section-bar__title'>Een volledige modelanalyse</div></div>
+<p></p><!-- l. 640 --><p class='noindent'>We brengen nu de volledige leerlijn samen.
+</p>
+<div class='mathjax-block'>\[ \important { \text {dataset} \rightarrow \text {puntenwolk} \rightarrow \text {correlatie} \rightarrow \text {regressiemodel} \rightarrow \text {voorspelling} \rightarrow \text {kritische interpretatie} } \]</div>
+<p><a id='x1-52r2'></a>
+</p><!-- l. 658 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 658 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 658 --><p class='noindent'>Oefening 2
+</p><!-- l. 658 --><p class='noindent'>— Van gegevens naar model
+</p><!-- l. 658 --><p class='noindent'></p></div>
+<p></p><!-- l. 658 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 658 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 658 --><p class='noindent'></p><div class='fvd-exercise__content'> Een zonnepaneel wordt bij verschillende waarden van de instraling onderzocht. ICT
+levert op basis van de metingen het model
+<p></p>
+<div class='mathjax-block'>\[ \hat P=0{,}158I+3{,}2 \]</div>
+<!-- l. 666 --><p class='noindent'>en
+                                                                  
+
+                                                                  
+</p>
+<div class='mathjax-block'>\[ r=0{,}996. \]</div>
+<!-- l. 672 --><p class='noindent'>De gemeten instraling varieerde van <span class='mathjax-inline'>\(180\,\mathrm {W/m^2}\)</span> tot <span class='mathjax-inline'>\(840\,\mathrm {W/m^2}\)</span>.
+</p>
+<div class='problem-environment question' id='problem7' numbered=' ' role='article' titletext=' Question'>  Wat vertelt <span class='mathjax-inline'>\(r=0{,}996\)</span>?
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item8'> 
+ Er is in de dataset een zeer sterke positieve lineaire samenhang tussen instraling en
+elektrisch vermogen. </div> 
+</div> 
+     </div>
+<div class='problem-environment question' id='problem9' numbered=' ' role='article' titletext=' Question'>  Interpreteer de richtingscoëfficiënt.
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item10'> 
+ Volgens het model neemt het voorspelde elektrische vermogen met ongeveer <span class='mathjax-inline'>\(0{,}158\,\mathrm W\)</span> toe
+wanneer de instraling met <span class='mathjax-inline'>\(1\,\mathrm {W/m^2}\)</span> toeneemt. </div> 
+</div> 
+     </div>
+<div class='problem-environment question' id='problem11' numbered=' ' role='article' titletext=' Question'>  Voorspel het vermogen bij <span class='mathjax-inline'>\(I=500\,\mathrm {W/m^2}\)</span>.
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item12'> 
+ <div class='mathjax-block'>\[ \hat P=0{,}158\cdot 500+3{,}2=82{,}2\,\mathrm W. \]</div> </div> 
+</div> 
+     </div>
+<div class='problem-environment question' id='problem13' numbered=' ' role='article' titletext=' Question'>  Is dit interpolatie of extrapolatie?
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item14'> 
+ Interpolatie, want <span class='mathjax-inline'>\(500\,\mathrm {W/m^2}\)</span> ligt binnen het onderzochte bereik. </div> 
+</div> 
+     </div>
+<div class='problem-environment question' id='problem15' numbered=' ' role='article' titletext=' Question'>  Een leerling gebruikt hetzelfde model bij <span class='mathjax-inline'>\(I=2000\,\mathrm {W/m^2}\)</span>. Wat is het belangrijkste probleem?
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item16'> 
+ Dit is een sterke extrapolatie buiten het onderzochte meetbereik. We weten niet of
+het lineaire patroon daar nog geldig is. De berekende waarde mag daarom niet zonder
+bijkomende argumenten als betrouwbare voorspelling worden beschouwd. </div> 
+</div> 
+     </div>
+</div>
+<!-- l. 724 --><p class='noindent'></p></div>
+<p></p><!-- l. 724 --><p class='noindent'></p></section>
+<p><a id='x1-53r12'></a>
+</p><p></p><!-- l. 728 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>12</div><div class='fvd-section-bar__title'>Samengevat</div></div>
+<p></p><!-- l. 731 --><p class='noindent'>Wanneer een puntenwolk ongeveer lineair is, kunnen we het globale verband
+modelleren met een regressierechte:
+</p>
+<div class='mathjax-block'>\[ \boxed {\hat y=ax+b}. \]</div>
+<!-- l. 738 --><p class='noindent'>De richtingscoëfficiënt <span class='mathjax-inline'>\(a\)</span> beschrijft de verandering van de voorspelde <span class='mathjax-inline'>\(y\)</span>-waarde per
+eenheid verandering van <span class='mathjax-inline'>\(x\)</span>.
+</p><!-- l. 741 --><p class='noindent'>Het intercept <span class='mathjax-inline'>\(b\)</span> is de voorspelde waarde voor <span class='mathjax-inline'>\(x=0\)</span>, maar heeft niet in elke context een
+zinvolle interpretatie.
+</p><!-- l. 744 --><p class='noindent'>Het verschil tussen gemeten en voorspelde waarde noemen we het residu:
+</p>
+<div class='mathjax-block'>\[ \boxed {e=y-\hat y}. \]</div>
+<!-- l. 750 --><p class='noindent'>Bij voorspellingen onderscheiden we:
+</p>
+                                                                  
+
+                                                                  
+<div class='mathjax-block'>\[ \boxed {\text {interpolatie: binnen het meetbereik}} \]</div>
+<!-- l. 756 --><p class='noindent'>en
+</p>
+<div class='mathjax-block'>\[ \boxed {\text {extrapolatie: buiten het meetbereik}}. \]</div>
+<!-- l. 762 --><p class='noindent'>De volledige modelleercyclus is:
+</p>
+<div class='mathjax-block'>\[ \boxed { \text {data} \rightarrow \text {grafiek} \rightarrow \text {model} \rightarrow \text {voorspelling} \rightarrow \text {werkelijkheid} } \]</div>
+<!-- l. 778 --><p class='noindent'>Een regressiemodel is dus geen eindpunt. We moeten altijd opnieuw vragen of het
+resultaat in de werkelijkheid zinvol is.
+                                                                  
+
+                                                                  
+</p>
+</body> 
+ 
+</html>
+                                                                  
+
+

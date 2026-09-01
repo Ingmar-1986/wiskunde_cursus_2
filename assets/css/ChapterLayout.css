@@ -1294,96 +1294,200 @@ body {
 }
 
 /* ==========================================================
-   FVD SECTIES
+   FVD SECTION
    ========================================================== */
 
    .fvd-section-bar {
-    position: relative;
-
-    display: flex;
-    align-items: center;
-    gap: 16px;
+    display: flex !important;
+    align-items: stretch !important;
 
     width: 100%;
+    min-height: 58px;
 
-    margin: 2.2rem 0 1.35rem;
-    padding: 14px 20px;
-
-    border-radius: 14px;
-
-    background: #102538;
-    color: #ffffff;
+    margin: 2.4rem 0 1.5rem;
+    padding: 0 !important;
 
     overflow: hidden;
+
+    background: #102538 !important;
+    border-radius: 14px;
+
+    box-shadow:
+        0 5px 14px rgba(14, 36, 50, 0.10);
 }
 
-/* cyaan accent onderaan */
 
-.fvd-section-bar::after {
-    content: "";
-
-    position: absolute;
-    left: 0;
-    bottom: 0;
-
-    width: 100%;
-    height: 3px;
-
-    background: linear-gradient(
-        90deg,
-        #f20d68 0%,
-        #f20d68 18%,
-        #16b8be 55%,
-        #28d9e8 100%
-    );
-}
-
+/* Nummer */
 
 .fvd-section-bar__number {
-    background: #f20d68;
-    color: white;
-  
-    border-radius: 10px;
-  
-    display: flex;
+    flex: 0 0 82px !important;
+
+    width: 82px !important;
+    min-width: 82px !important;
+    max-width: 82px !important;
+
+    display: flex !important;
     align-items: center;
     justify-content: center;
-  }
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    background: #f20d68 !important;
+    color: #ffffff !important;
+
+    border-radius: 0 !important;
+
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+
+/* Titel */
 
 .fvd-section-bar__title {
-    min-width: 0;
+    flex: 1 1 auto !important;
 
-    color: #ffffff;
+    display: flex !important;
+    align-items: center;
+
+    margin: 0 !important;
+    padding: 0 1.7rem !important;
+
+    background: #102538 !important;
+    color: #ffffff !important;
 
     font-size: 1.35rem;
-    font-weight: 800;
-    line-height: 1.2;
+    font-weight: 700;
+    line-height: 1.25;
 }
 
 
 /* ==========================================================
-   FVD SUBSECTIES
+   FVD SUBSECTION — STRAKKE WEBSTIJL
    ========================================================== */
 
    .fvd-subsection {
-    margin: 1.4rem 0 0.9rem;
-    padding: 10px 16px;
+    width: 100%;
+    margin: 1.8rem 0 1.2rem;
+    padding: 0;
 
-    background: #f4fcfc;
-    border: 1px solid #b8e8eb;
-    border-left: 4px solid #16b8be;
-    border-radius: 10px;
+    background: transparent;
+    border: 0;
 }
 
-.fvd-subsection__number,
-.fvd-subsection__title {
-    color: #102538;
-    font-weight: 700;
-    line-height: 1.3;
+
+/* Nummer + titel in één rij */
+
+.fvd-subsection__row {
+    display: grid;
+    grid-template-columns: 74px minmax(0, 1fr);
+    align-items: center;
+    column-gap: 18px;
+
+    width: 100%;
 }
+
+
+/* Nummerbadge */
 
 .fvd-subsection__number {
-    margin-right: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 68px;
+    height: 42px;
+
+    margin: 0;
+    padding: 0;
+
+    background: #ffffff;
+    color: #f20d68;
+
+    border: 2px solid #f20d68;
+    border-radius: 10px;
+
+    font-family:
+        Inter,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    font-size: 0.95rem;
+    font-weight: 800;
+    line-height: 1;
+
+    box-shadow:
+        0 4px 10px rgba(242, 13, 104, 0.08);
+}
+
+
+/* Titel */
+
+.fvd-subsection__title {
+    margin: 0;
+
+    color: #102538;
+
+    font-family:
+        Inter,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    font-size: 1.08rem;
+    font-weight: 750;
+    line-height: 1.2;
+
+    letter-spacing: -0.01em;
+}
+
+
+/* Lijn — start pas na de nummering */
+
+.fvd-subsection__line {
+    width: calc(100% - 92px);
+    height: 2px;
+
+    margin-top: -3px;
+    margin-left: 92px;
+
+    background: #f20d68;
+
+    border-radius: 999px;
+}
+
+
+/* Mobiel */
+
+@media (max-width: 700px) {
+
+    .fvd-subsection {
+        margin: 1.5rem 0 1rem;
+    }
+
+    .fvd-subsection__row {
+        grid-template-columns: 62px minmax(0, 1fr);
+        column-gap: 14px;
+    }
+
+    .fvd-subsection__number {
+        width: 58px;
+        height: 38px;
+
+        font-size: 0.9rem;
+    }
+
+    .fvd-subsection__title {
+        font-size: 1rem;
+    }
+
+    .fvd-subsection__line {
+        width: calc(100% - 76px);
+        margin-left: 76px;
+        margin-top: -2px;
+    }
 }
 
 .fvd-definition {

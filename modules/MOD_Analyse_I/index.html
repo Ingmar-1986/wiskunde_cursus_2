@@ -1,509 +1,663 @@
-<!DOCTYPE html> 
-<html lang='en-US' xml:lang='en-US'> 
-<head> <title>Van data naar functies — verbanden herkennen en gedrag onderzoeken</title> 
-<meta charset='utf-8' /> 
-<meta content='TeX4ht (https://tug.org/tex4ht/)' name='generator' /> 
-<meta content='width=device-width,initial-scale=1' name='viewport' /> 
-<link href='\aa:CssFile ' rel='stylesheet' type='text/css' /> 
-<meta content='index.online.tex' name='src' /> 
-<script>window.MathJax = { tex: { tags: "ams", }, }; </script> 
-<script async='async' id='MathJax-script' src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js' type='text/javascript'></script>  
-<meta content='' name='og:image' /> 
-<meta content='xourse' name='description' /> 
-<meta content='Ingmar
-Herreman' name='author' /> 
-<meta content='version 2.5.1' name='ximera' /> 
-<link href='https://ximera.osu.edu/public/stylesheets/standalone.css' media='screen' rel='stylesheet' /> 
-<script src='https://ximera.osu.edu/public/javascripts/standalone.min.js' type='text/javascript'></script> 
-</head><body> 
-<div class='preamble'><script type='math/tex'>\newenvironment {prompt}{}{}
-\newcommand {\accordion }[0]{}
-\newcommand {\ungraded }[0]{}
-\newcommand {\xmDefaultPreamble }[0]{xmPreamble.tex}
-\newcommand {\xmDefaultPrintstyle }[0]{xmPrintstyle.sty}
-\newcommand {\graded }[1]{}
-\newcommand {\multirowsetup }[0]{\raggedright }
-\newcommand {\textscale  }[2]{\leavevmode \begingroup \relscale {#1}#2\endgroup }
-\newcommand {\headrulewidth }[0]{0.4pt}
-\newcommand {\footrulewidth }[0]{0pt}
-\newcommand {\headruleskip }[0]{0pt}
-\newcommand {\footruleskip }[0]{.3\normalbaselineskip }
-\newcommand {\plainheadrulewidth }[0]{0pt}
-\newcommand {\plainfootrulewidth }[0]{0pt}
-\newcommand {\officialeuro  }[0]{{\fontencoding {U}\fontfamily {eurosym}\selectfont {}e}}
-\newcommand {\eurobars  }[0]{{\fontencoding {U}\fontfamily {eurosym}\selectfont {}A}}
-\newcommand {\eurobarsnarrow  }[0]{{\fontencoding {U}\fontfamily {eurosym}\selectfont {}B}}
-\newcommand {\eurobarswide  }[0]{{\fontencoding {U}\fontfamily {eurosym}\selectfont {}C}}
-\newcommand {\p }[0]{}
-\newcommand {\captionnewline }[0]{\\\relax }
-\newcommand {\memcaptioninfo }[4]{}
-\newcommand {\captiongroup }[0]{\setcaptiontype }
-\newcommand {\LTcaptype }[0]{table}
-\newcommand {\showtodonotes }[0]{disable}
-\newcommand {\todo }[1]{\typeout {TODO #1}}
-\newcommand {\tcbpkgprefix }[0]{}
-\newcommand {\blue }[1]{{\color {blue}#1}}
-\newcommand {\red }[1]{{\color {red}#1}}
-\newcommand {\CancelColor }[0]{\color {xmaccent!50!black}}
-\newcommand {\important }[1]{\ensuremath {\colorbox {orange}{$#1$}}}
-\newcommand {\pdfnl }[0]{}
-\newcommand {\handoutnl }[0]{}
-\newcommand {\importantcell }[1]{\ensuremath {#1}}
-\newcommand {\xmPlotsColor }[0]{ \pgfplotsset { plot1/.style={darkgray,no marks,samples=100}, plot2/.style={lightgray,no marks,samples=100}, plotresult/.style={blue,no marks,samples=100}, plotblue/.style={blue,no marks,samples=100}, plotred/.style={red,no marks,samples=100}, plotgreen/.style={green,no marks,samples=100}, plotpurple/.style={purple,no marks,samples=100} } }
-\newcommand {\xmPlotsBlackWhite }[0]{ \pgfplotsset { plot1/.style={black,loosely dashed,no marks,samples=100}, plot2/.style={black,loosely dotted,no marks,samples=100}, plotresult/.style={black,no marks,samples=100}, plotblue/.style={black,no marks,samples=100}, plotred/.style={black,dotted,no marks,samples=100}, plotgreen/.style={black,dashed,no marks,samples=100}, plotpurple/.style={black,dashdotted,no marks,samples=100} } }
-\newcommand {\xmPlotsColorAndStyle }[0]{ \pgfplotsset { plot1/.style={darkgray,no marks,samples=100}, plot2/.style={lightgray,no marks,samples=100}, plotresult/.style={blue,no marks,samples=100}, plotblue/.style={xmblue,no marks,samples=100}, plotred/.style={xmred,dashed,thick,no marks,samples=100}, plotgreen/.style={xmgreen,dotted,very thick,no marks,samples=100}, plotpurple/.style={purple,no marks,samples=100} } }
-\newcommand {\geqnoslant }[0]{\geq }
-\newcommand {\geq }[0]{\geqslant }
-\newcommand {\leqnoslant }[0]{\leq }
-\newcommand {\leq }[0]{\leqslant }
-\newcommand {\emph }[1]{\textit {#1}}
-\newcommand {\ds }[0]{\displaystyle }
-\newcommand {\ts }[0]{\textstyle }
-\newcommand {\bron }[1]{\begin {scriptsize} \emph {#1} \end {scriptsize}}
-\newcommand {\R }[0]{\ensuremath {\mathbb {R}}}
-\newcommand {\Rnul }[0]{\ensuremath {\mathbb {R}_0}}
-\newcommand {\Reen }[0]{\ensuremath {\mathbb {R}\setminus \{1\}}}
-\newcommand {\Rnuleen }[0]{\ensuremath {\mathbb {R}\setminus \{0,1\}}}
-\newcommand {\Rplus }[0]{\ensuremath {\mathbb {R}^+}}
-\newcommand {\Rmin }[0]{\ensuremath {\mathbb {R}^-}}
-\newcommand {\Rnulplus }[0]{\ensuremath {\mathbb {R}_0^+}}
-\newcommand {\Rnulmin }[0]{\ensuremath {\mathbb {R}_0^-}}
-\newcommand {\Rnuleenplus }[0]{\ensuremath {\mathbb {R}^+\setminus \{0,1\}}}
-\newcommand {\N }[0]{\ensuremath {\mathbb {N}}}
-\newcommand {\Nnul }[0]{\ensuremath {\mathbb {N}_0}}
-\newcommand {\Z }[0]{\ensuremath {\mathbb {Z}}}
-\newcommand {\Znul }[0]{\ensuremath {\mathbb {Z}_0}}
-\newcommand {\Zplus }[0]{\ensuremath {\mathbb {Z}^+}}
-\newcommand {\Zmin }[0]{\ensuremath {\mathbb {Z}^-}}
-\newcommand {\Znulplus }[0]{\ensuremath {\mathbb {Z}_0^+}}
-\newcommand {\Znulmin }[0]{\ensuremath {\mathbb {Z}_0^-}}
-\newcommand {\C }[0]{\ensuremath {\mathbb {C}}}
-\newcommand {\Cnul }[0]{\ensuremath {\mathbb {C}_0}}
-\newcommand {\Cplus }[0]{\ensuremath {\mathbb {C}^+}}
-\newcommand {\Cmin }[0]{\ensuremath {\mathbb {C}^-}}
-\newcommand {\Cnulplus }[0]{\ensuremath {\mathbb {C}_0^+}}
-\newcommand {\Cnulmin }[0]{\ensuremath {\mathbb {C}_0^-}}
-\newcommand {\Q }[0]{\ensuremath {\mathbb {Q}}}
-\newcommand {\Qnul }[0]{\ensuremath {\mathbb {Q}_0}}
-\newcommand {\Qplus }[0]{\ensuremath {\mathbb {Q}^+}}
-\newcommand {\Qmin }[0]{\ensuremath {\mathbb {Q}^-}}
-\newcommand {\Qnulplus }[0]{\ensuremath {\mathbb {Q}_0^+}}
-\newcommand {\Qnulmin }[0]{\ensuremath {\mathbb {Q}_0^-}}
-\newcommand {\perdef }[0]{\overset {\mathrm {def}}{=}}
-\newcommand {\pernot }[0]{\overset {\mathrm {notatie}}{=}}
-\newcommand {\perinderdaad }[0]{\overset {!}{=}}
-\newcommand {\perhaps }[0]{\overset {?}{=}}
-\newcommand {\degree }[0]{^\circ }
-\DeclareMathOperator {\dom }{dom}
-\DeclareMathOperator {\codom }{codom}
-\DeclareMathOperator {\bld }{bld}
-\DeclareMathOperator {\graf }{graf}
-\DeclareMathOperator {\rico }{rico}
-\DeclareMathOperator {\co }{co}
-\DeclareMathOperator {\gr }{gr}
-\DeclareMathOperator {\bgsin }{bgsin}
-\DeclareMathOperator {\bgcos }{bgcos}
-\DeclareMathOperator {\bgtan }{bgtan}
-\DeclareMathOperator {\bgcot }{bgcot}
-\DeclareMathOperator {\bgsinh }{bgsinh}
-\DeclareMathOperator {\bgcosh }{bgcosh}
-\DeclareMathOperator {\bgtanh }{bgtanh}
-\DeclareMathOperator {\bgcoth }{bgcoth}
-\newcommand {\d }[0]{\mathrm {d}}
-\newcommand {\dx }[0]{\d x}
-\newcommand {\dd }[1]{\frac {\mathrm {d}}{\mathrm {d}#1}}
-\newcommand {\ddx }[0]{\dd {x}}
-\newcommand {\afg }[1]{{#1}'}
-\newcommand {\xmshortabstract }[0]{}
-\newcommand {\xmopje }[1]{\iftoggle {showxmopje}{#1}{}}
-\newcommand {\xmcolorbox }[2]{ \HCode {\Hnewline <div class="xmcolorbox">\Hnewline }#2\HCode {\Hnewline </div>\Hnewline } }
-\newcommand {\xmopmerking }[1]{ \HCode {\Hnewline <div class="xmopmerking">\Hnewline }#1\HCode {\Hnewline </div>\Hnewline } }
-\newcommand {\proofname }[0]{Bewijs}
-\newcommand {\xmonlineChoice }[1]{\pdfOnly {\wordchoicegiventrue }\wordChoice {#1}\pdfOnly {\wordchoicegivenfalse }}
-\newcommand {\onlineChoice }[1]{\pdfOnly {\wordchoicegiventrue }\wordChoice {#1}\pdfOnly {\wordchoicegivenfalse }}
-\newcommand {\TJa }[0]{\nlentext { Ja }{ Yes }}
-\newcommand {\TNee }[0]{\nlentext { Nee }{ No }}
-\newcommand {\TJuist }[0]{\nlentext { Juist }{ True }}
-\newcommand {\TFout }[0]{\nlentext { Fout }{ False }}
-\newcommand {\choiceTrue }[0]{{\wordChoice {\choice [correct]{\TJuist }\choice {\TFout }}}}
-\newcommand {\choiceFalse }[0]{{\wordChoice {\choice {\TJuist }\choice [correct]{\TFout }}}}
-\newcommand {\choiceYes }[0]{{\wordChoice {\choice [correct]{\TJa }\choice {\TNee }}}}
-\newcommand {\choiceNo }[0]{{\wordChoice {\choice {\TJa }\choice [correct]{\TNee }}}}
-\newcommand {\choiceminimumverticalsize }[0]{\vphantom {$\tfrac {2}{2}$}}
-\newcommand {\setchoicedefanswer }[0]{ \ifdefined \HCode \else \let \inlinechoice \inlinechoicedefanswer \fi }
-\newcommand {\xmsection }[0]{\subsection }
-\newcommand {\xmsubsection }[0]{\subsubsection }
-\newcommand {\activitychapter }[1]{ \typeout {ACTIVITYCHAPTER #1} \chapterstyle \activity {#1} }
-\newcommand {\activitysection }[1]{ \typeout {ACTIVITYSECTION #1} \sectionstyle \activity {#1} }
-\newcommand {\practicesection }[1]{ \typeout {PRACTICESECTION #1} \sectionstyle \activity {#1} }
-\newcommand {\hypertarget }[1]{\HCode {<a class="ximera-label" id="#1"></a>}}
-\newcommand {\hyperlink }[2]{\HCode {<a class="reference reference-keeptext" href="\##1">}#2\HCode {</a>}}
-\newcommand {\figurename }[0]{Figuur}
-\newcommand {\tablename }[0]{Tabel}
-\newcommand {\printFull }[0]{ \hintstrue \handoutfalse \toggletrue {showonline} }
-\newcommand {\nl }[0]{}
-\newcommand {\basicOnly }[0]{}
-\newcommand {\basicSkip }[0]{}
-\newcommand {\tab }[0]{\quad }
-\newcommand {\instructorNotes }[0]{\setbox 0\vbox \bgroup }
-\newcommand {\nlen }[2]{#1}
-\newcommand {\nlentext }[2]{\text {#1}}
-\newcommand {\nlentextbf }[2]{\textbf {#1}}
-\newcommand {\TWaar }[0]{\nlentext { Waar }{ True }}
-\newcommand {\TOnwaar }[0]{\nlentext { Vals }{ False }}
-\newcommand {\Ten }[0]{\nlentext { en }{ and }}
-\newcommand {\Tof }[0]{\nlentext { of }{ or }}
-\newcommand {\Tdus }[0]{\nlentext { dus }{ so }}
-\newcommand {\Tendus }[0]{\nlentext { en dus }{ and thus }}
-\newcommand {\Tvooralle }[0]{\nlentext { voor alle }{ for all }}
-\newcommand {\Took }[0]{\nlentext { ook }{ also }}
-\newcommand {\Tals }[0]{\nlentext { als }{ when }}
-\newcommand {\Twant }[0]{\nlentext { want }{ as }}
-\newcommand {\Tmaal }[0]{\nlentext { maal }{ times }}
-\newcommand {\Toptellen }[0]{\nlentext { optellen }{ add }}
-\newcommand {\Tde }[0]{\nlentext { de }{ the }}
-\newcommand {\Thet }[0]{\nlentext { het }{ the }}
-\newcommand {\Tis }[0]{\nlentext { is }{ is }}
-\newcommand {\Tmet }[0]{\nlentext { met }{ where }}
-\newcommand {\Tnooit }[0]{\nlentext { nooit }{ never }}
-\newcommand {\Tmaar }[0]{\nlentext { maar }{ but }}
-\newcommand {\Tniet }[0]{\nlentext { niet }{ not }}
-\newcommand {\Tuit }[0]{\nlentext { uit }{ from }}
-\newcommand {\Ttov }[0]{\nlentext { t.o.v. }{ w.r.t. }}
-\newcommand {\Tzodat }[0]{\nlentext { zodat }{ such that }}
-\newcommand {\Tdeth }[0]{\nlentext {de }{th }}
-\newcommand {\Tomdat }[0]{\nlentext {omdat }{because }}
-\newcommand {\fvdschoollogo }[0]{}
-\newcommand {\fvdschoollogobreedte }[0]{0.65\textwidth }
-\newcommand {\fvdschoolnaam }[0]{}
-\newcommand {\fvdschooljaar }[0]{}
-\newcommand {\fvdklas }[0]{}
-\newcommand {\fvdleerkracht }[0]{}
-\newcommand {\fvdmodulenummer }[0]{1}
-\newcommand {\fvdmoduletitel }[0]{}
-\newcommand {\fvdmodulebeeld }[0]{}
-\newcommand {\fvdmodulevariant }[0]{}
-\newcommand {\fvdmodulesubtitel }[0]{}
-\newcommand {\fvdtitletext }[0]{}
-\newcommand {\fvdtitle }[1]{\gdef \fvdtitletext {#1}\title {#1}}
-\newcommand {\voorkennisicon }[0]{\begin {tikzpicture}[ baseline=-0.6ex, line cap=round, line join=round ] \par \fill [fvdcyanicon] (0,0) circle (0.38cm); \par \draw [ fvdcyan, line width=0.7pt ] (-0.22,0.14) .. controls (-0.10,0.19) and (-0.04,0.17) .. (0,0.10) -- (0,-0.19) .. controls (-0.08,-0.13) and (-0.15,-0.12) .. (-0.22,-0.15) -- cycle; \par \draw [ fvdcyan, line width=0.7pt ] (0.22,0.14) .. controls (0.10,0.19) and (0.04,0.17) .. (0,0.10) -- (0,-0.19) .. controls (0.08,-0.13) and (0.15,-0.12) .. (0.22,-0.15) -- cycle; \par \end {tikzpicture}}
-\newcommand {\leerdoelenicon }[0]{\begin {tikzpicture}[ baseline=-0.6ex, line cap=round, line join=round ] \par \fill [fvdmagentaicon] (0,0) circle (0.38cm); \par \draw [ fvdmagenta, line width=0.7pt ] (0,0) circle (0.20cm); \par \draw [ fvdmagenta, line width=0.7pt ] (0,0) circle (0.10cm); \par \fill [fvdmagenta] (0,0) circle (0.025cm); \par \draw [ fvdmagenta, line width=0.7pt ] (0.05,0.05) -- (0.25,0.25); \par \draw [ fvdmagenta, line width=0.7pt ] (0.18,0.25) -- (0.25,0.25) -- (0.25,0.18); \par \end {tikzpicture}}
-\newcommand {\fvdboxtitle }[3]{\par \noindent #1\hspace {2.5mm}{\large \bfseries \color {#2}#3}\par \vspace {1.5mm}{\color {#2}\hrule height 0.4pt}\vspace {2mm}}
-\newcommand {\voorkennis }[0]{\ifdefined \HCode \par \HCode {<section class="learning-box learning-box--prior"> <div class="learning-box__header"> <span class="learning-box__icon"></span> <span class="learning-box__title">Voorkennis</span> </div> <div class="learning-box__content"> }\par \begin {itemize} \par \else \par \begin {tcolorbox}[ enhanced, breakable, frame hidden, colback=fvdcyanlight, coltext=fvdnavy, borderline west={1.8pt}{0pt}{fvdcyan}, sharp corners, boxrule=0pt, left=5mm, right=5mm, top=3.5mm, bottom=3.5mm, before skip=4mm, after skip=4mm ] \par \fvdboxtitle {\voorkennisicon } {fvdcyan} {Voorkennis} \par \begin {itemize}[ leftmargin=6mm, itemsep=1.5mm, topsep=0mm, parsep=0pt ] \par \fi }
-\newcommand {\leerdoelen }[0]{\ifdefined \HCode \par \HCode {<section class="learning-box learning-box--goals"> <div class="learning-box__header"> <span class="learning-box__icon"></span> <span class="learning-box__title">Leerdoelen</span> </div> <div class="learning-box__content"> }\par \begin {itemize} \par \else \par \begin {tcolorbox}[ enhanced, breakable, frame hidden, colback=fvdmagentalight, coltext=fvdnavy, borderline west={1.8pt}{0pt}{fvdmagenta}, sharp corners, boxrule=0pt, left=5mm, right=5mm, top=3.5mm, bottom=3.5mm, before skip=4mm, after skip=4mm ] \par \fvdboxtitle {\leerdoelenicon } {fvdmagenta} {Leerdoelen} \par \begin {itemize}[ leftmargin=6mm, itemsep=1.5mm, topsep=0mm, parsep=0pt ] \par \fi }
-\newcommand {\fvdchapterdata }[3]{\par \par \ifdefined \HCode \else \clearpage \fi \par \par \gdef \fvdstandalonethemenumber {#1}\gdef \fvdstandalonetheme {#2}\par \setcounter {part}{#1}\setcounter {titlenumber}{\numexpr #3-1\relax }\par \par \setcounter {fvdsection}{0}\setcounter {fvdsubsection}{0}\setcounter {fvdoefening}{0}}
-\newcommand {\fvdcurrentthemetitle }[0]{}
-\newcommand {\FVDpart }[1]{}
-\newcommand {\FVDpart }[1]{\refstepcounter {fvdtheme}\setcounter {fvdsection}{0}\gdef \fvdcurrentthemetitle {#1}\part {#1}}
-\newcommand {\FVDthemeopening }[1]{\begin {center} \includegraphics [width=\textwidth ]{#1} \end {center} }
-\newcommand {\thefvdsection }[0]{\arabic {fvdsection}}
-\newcommand {\thefvdsubsection }[0]{\thefvdsection .\arabic {fvdsubsection}}
-\newcommand {\FVDsection }[1]{}
-\newcommand {\FVDsubsection }[1]{}
-\newcommand {\FVDsection }[1]{\refstepcounter {fvdsection}\par \HCode {<div class="fvd-section-bar">}\HCode {<div class="fvd-section-bar__number">}\thefvdsection \HCode {</div>}\HCode {<div class="fvd-section-bar__title">}#1\HCode {</div>}\HCode {</div>}}
-\newcommand {\FVDsubsection }[1]{\refstepcounter {fvdsubsection}\par \HCode {<div class="fvd-subsection">}\par \HCode {<div class="fvd-subsection__row">}\par \HCode {<div class="fvd-subsection__number">}\thefvdsection .\arabic {fvdsubsection}\HCode {</div>}\par \HCode {<div class="fvd-subsection__title">}#1\HCode {</div>}\par \HCode {</div>}\par \HCode {<div class="fvd-subsection__line"></div>}\par \HCode {</div>}}
-\newcommand {\themaintro }[1]{\par \bigskip \noindent \begin {minipage}{\textwidth } \textbf {\large #1} \par \smallskip }
-\newcommand {\FVDthemechaptertile }[2]{}
-\newcommand {\FVDthemechaptertile }[2]{\HCode {<div class="fvd-theme-chapter-tile">}\HCode {<span class="fvd-theme-chapter-tile__number">}#1\HCode {</span>}\HCode {<span class="fvd-theme-chapter-tile__title">}#2\HCode {</span>}\HCode {</div>}}
-\newcommand {\FVDthemeoverviewempty }[0]{\emph {Voor dit thema zijn nog geen hoofdstukken toegevoegd.}}
-\newcommand {\hoofdstukoverzicht }[0]{\HCode {<section class="fvd-theme-overview">}\HCode {<h2 class="fvd-theme-overview__title">}Overzicht van de hoofdstukken\HCode {</h2>}\HCode {<div class="fvd-theme-overview__grid">}}
-\newcommand {\FVDResetExamples }[0]{\setcounter {fvdexample}{0}}
-\newcommand {\FVDExampleOptionalTitle }[1]{\if \relax \detokenize {#1}\relax \else \space ---\space #1\fi }
-\newcommand {\FVDbeginExercises }[0]{}
-\newcommand {\FVDendExercises }[0]{}
-\newcommand {\FVDwidebegin }[0]{}
-\newcommand {\FVDwideend }[0]{}
-\newcommand {\FVDResetExercises }[0]{\setcounter {fvdoefening}{0}}
-\newcommand {\oefB }[0]{}
-\newcommand {\oefU }[0]{}
-\newcommand {\oefG }[0]{}
-\newcommand {\ESS }[0]{}
-\newcommand {\oefB }[0]{\HCode {<span class="fvd-exercise-chip fvd-exercise-chip--b">B</span>}}
-\newcommand {\oefU }[0]{\HCode {<span class="fvd-exercise-chip fvd-exercise-chip--u">U</span>}}
-\newcommand {\oefG }[0]{\HCode {<span class="fvd-exercise-chip fvd-exercise-chip--g">G</span>}}
-\newcommand {\ESS }[0]{\HCode {<span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span>}}
-\newcommand {\FVDmodulecover }[0]{}
-\newcommand {\ESSinline }[0]{\tikz [baseline=-0.6ex]{\node [ fill=fvdEssBg, text=fvdEssText, rounded corners=1.5mm, minimum width=9mm, minimum height=5.5mm, inner sep=0pt, font=\sffamily \bfseries \scriptsize ] {$\blacklozenge $}; }}
-\newcommand {\oefBinline }[0]{\tikz [baseline=-0.6ex]{\node [ fill=fvdBasisBg, text=fvdBasisText, rounded corners=1.5mm, minimum width=9mm, minimum height=5.5mm, inner sep=0pt, font=\sffamily \bfseries \scriptsize ] {B}; }}
-\newcommand {\oefUinline }[0]{\tikz [baseline=-0.6ex]{\node [ fill=fvdVerdiepingBg, text=fvdVerdiepingText, rounded corners=1.5mm, minimum width=9mm, minimum height=5.5mm, inner sep=0pt, font=\sffamily \bfseries \scriptsize ] {U}; }}
-\newcommand {\oefGinline }[0]{\tikz [baseline=-0.6ex]{\node [ fill=fvdGevorderdBg, text=fvdGevorderdText, rounded corners=1.5mm, minimum width=9mm, minimum height=5.5mm, inner sep=0pt, font=\sffamily \bfseries \scriptsize ] {G}; }}
-\newcommand {\FVDNumberLine }[2]{\draw [fvd axis] (#1-0.6,0) -- (#2+0.6,0); \par \foreach \x in {#1,...,#2}{\draw [fvd tick] (\x ,0.13) -- (\x ,-0.13); \par \ifnum \x =0 \node [ below=3pt, text=fvdmagenta, font=\small \bfseries ] at (\x ,0) {0}; \else \node [ below=3pt, text=fvddark, font=\small ] at (\x ,0) {\x }; \fi }}
-\newcommand {\FVDPoint }[1]{\fill [fvdmagenta] (#1,0) circle (2.2pt); }
-\newcommand {\FVDPointCyan }[1]{\fill [fvdcyan] (#1,0) circle (2.2pt); }
-\newcommand {\FVDLabeledPoint }[2]{\fill [fvdmagenta] (#1,0) circle (2.2pt); \par \node [ fvd label, above=7pt ] at (#1,0) {#2}; }
-\newcommand {\FVDGuideUp }[2]{\draw [fvd guide] (#1,0.08) -- (#1,#2); }
-\newcommand {\FVDMoveLeft }[3]{\draw [ ->, line width=1.4pt, color=fvdcyan ] (#1,0.52) to[bend left=28] (#2,0.52); \par \node [ fill=white, draw=fvdcyan!40, text=fvddark, rounded corners=2pt, inner xsep=5pt, inner ysep=2pt, font=\small ] at (#2+1.5,1.15) {#3}; \par \FVDGuideUp {#1}{0.50} \FVDGuideUp {#2}{0.50} }
-\newcommand {\FVDMoveRight }[3]{\draw [ ->, line width=1.4pt, color=fvdcyan ] (#1,0.52) to[bend left=28] (#2,0.52); \par \node [ fill=white, draw=fvdcyan!40, text=fvddark, rounded corners=2pt, inner xsep=5pt, inner ysep=2pt, font=\small ] at (#1+2.0,1.15) {#3}; \par \FVDGuideUp {#1}{0.50} \FVDGuideUp {#2}{0.50} }
-\newcommand {\FVDPixelPlayer }[0]{\fill [fvddark] (0,4) rectangle (4,8); \par \fill [fvdcyan] (0.8,5.7) rectangle (1.7,6.6); \fill [fvdcyan] (2.8,5.7) rectangle (3.7,6.6); \par \fill [white] (1.05,5.95) rectangle (1.45,6.35); \fill [white] (3.05,5.95) rectangle (3.45,6.35); \par \fill [fvdmagenta] (1,1.5) rectangle (3.5,4); \par \fill [fvdcyan] (0,2.3) rectangle (1,3.8); \fill [fvdcyan] (3.5,2.3) rectangle (4.5,3.8); \par \fill [fvddark] (1,0) rectangle (1.9,1.5); \fill [fvddark] (2.6,0) rectangle (3.5,1.5); }
-\newcommand {\FVDPixelController }[0]{\fill [fvddark] (1,2) rectangle (11,7); \fill [fvddark] (0,3) rectangle (12,6); \fill [fvddark] (2,1) rectangle (4,3); \fill [fvddark] (8,1) rectangle (10,3); \par \fill [white] (1.5,2.5) rectangle (10.5,6.5); \fill [fvdcyan] (1.5,6.0) rectangle (10.5,6.5); \par \fill [fvddark] (2.2,4.1) rectangle (5.0,4.9); \fill [fvddark] (3.2,3.1) rectangle (4.0,5.9); \par \fill [fvdmagenta] (8.0,4.8) circle (0.42); \fill [fvdmagenta] (9.2,3.7) circle (0.42); \fill [fvdcyan] (6.9,3.7) circle (0.42); \fill [fvdcyan] (8.0,2.8) circle (0.42); \par \fill [fvddark] (5.2,4.15) rectangle (5.9,4.45); \fill [fvddark] (6.2,4.15) rectangle (6.9,4.45); }
-\newcommand {\FVDStartPositionFigure }[3]{\begin {center} \begin {tikzpicture}[ x=0.85cm, y=1cm, line cap=round, line join=round ] \par \par \FVDNumberLine {#1}{#2} \par \draw [fvd guide] (#3,0.08) -- (#3,0.70); \par \begin {scope}[shift={(#3-0.18,0.76)},scale=0.055] \FVDPixelPlayer \end {scope} \par \node [ fvd label ] at (#3,1.42) {startpositie \(#3\)}; \par \node [ anchor=east, text=fvdmagenta, font=\small \bfseries ] at (-0.35,-1) {negatieve richting}; \par \node [ anchor=west, text=fvdcyan, font=\small \bfseries ] at (0.35,-1) {positieve richting}; \par \end {tikzpicture} \end {center} }
-\newcommand {\FVDMovementLeftFigure }[5]{\begin {center} \begin {tikzpicture}[ x=0.85cm, y=1cm, line cap=round, line join=round ] \par (#1-0.8,-0.72) rectangle (#2+0.8,1.72); \par \FVDNumberLine {#1}{#2} \par \FVDPoint {#3} \FVDPointCyan {#4} \FVDMoveLeft {#3}{#4}{#5} \par \end {tikzpicture} \end {center} }
-\newcommand {\FVDMovementRightFigure }[5]{\begin {center} \begin {tikzpicture}[ x=0.85cm, y=1cm, line cap=round, line join=round ] \par \fill [fvdcyan!6] (#1-0.8,-0.72) rectangle (#2+0.8,1.72); \par \FVDNumberLine {#1}{#2} \par \FVDPoint {#3} \FVDPointCyan {#4} \FVDMoveRight {#3}{#4}{#5} \par \end {tikzpicture} \end {center} }
-\newcommand {\FVDCoordinatePlane }[4]{\draw [ step=1cm, color=fvdcyan!18, line width=0.35pt ] (#1,#3) grid (#2,#4); \par \draw [fvd axis] (#1,0) -- (#2+0.35,0) node[ below left=2pt, text=fvddark ] {\(x\)}; \par \draw [fvd axis] (0,#3) -- (0,#4+0.35) node[ below left=2pt, text=fvddark ] {\(y\)}; \par \foreach \x in {#1,...,#2}{\ifnum \x =0 \else \draw [fvd tick] (\x ,0.10) -- (\x ,-0.10); \node [ below=2pt, text=fvddark, font=\scriptsize ] at (\x ,0) {\x }; \fi } \par \foreach \y in {#3,...,#4}{\ifnum \y =0 \else \draw [fvd tick] (0.10,\y ) -- (-0.10,\y ); \node [ left=2pt, text=fvddark, font=\scriptsize ] at (0,\y ) {\y }; \fi } \par \node [ below left=2pt, text=fvdmagenta, font=\scriptsize \bfseries ] at (0,0) {0}; }
-\newcommand {\FVDCoordinatePoint }[3]{\draw [fvd guide] (#1,0) -- (#1,#2); \draw [fvd guide] (0,#2) -- (#1,#2); \par \fill [fvdmagenta] (#1,#2) circle (2.2pt); \par \node [ fvd label, above right=3pt ] at (#1,#2) {\(#3\)}; }
-\newcommand {\fvdschoolnaam }[0]{Campus Bellevue Izegem}
-\newcommand {\FVDchapterpair }[2]{\ifdefined \HCode \par \activity {#1}\par \if \relax \detokenize {#2}\relax \else \activity {#2}\fi \par \else \par \activity {#1}\par \fi }
-\newcommand {\luastring }[1]{"\luatexluaescapestring {#1}"}
-\newcommand {\luastringO }[1]{\luastring {\unexpanded \expandafter {#1}}}
-\newcommand {\luastringN }[1]{\luastring {\unexpanded {#1}}}
-\newcommand {\RestoreMathJaxEnvironment }[1]{\expandafter \let \csname #1\expandafter \endcsname \csname mathjax-#1\endcsname \expandafter \let \csname end#1\expandafter \endcsname \csname mathjax-end#1\endcsname }
-\newcommand {\graded }[1]{\ifvmode \IgnorePar \fi \EndP \HCode {<div class="graded" data-weight="#1">}\IgnoreIndent }
-\newcommand {\DeclareMicrotypeVariants }[1]{}
-\newcommand {\DeclareMicrotypeAlias }[2]{}
-\newcommand {\LoadMicrotypeFile }[1]{}
-\newcommand {\DeclareMicrotypeFilePrefix }[1]{}
-\newcommand {\DeclareMicrotypeBabelHook }[2]{}
-\newcommand {\microtypesetup }[1]{}
-\newcommand {\microtypecontext }[1]{}
-\newcommand {\textmicrotypecontext }[2]{#2}
-\newcommand {\leftprotrusion }[1]{#1}
-\newcommand {\rightprotrusion }[1]{#1}
-\newcommand {\noprotrusionifhmode }[0]{}
-\newcommand {\lsstyle }[0]{}
-\newcommand {\lslig }[1]{#1}
-\newcommand {\maketitle }[0]{}
-\newcommand {\problem }[0]{ }
-\newcommand {\exercise }[0]{ }
-\newcommand {\question }[0]{ }
-\newcommand {\exploration }[0]{ }
-\newcommand {\ConfigureTheoremEnv }[1]{\renewenvironment {#1}[1][]{\refstepcounter {problem}\ifthenelse {\equal {###1}{}}{}{\HCode {<span class="theorem-like-title">}###1\HCode {</span>}}}{} \ConfigureEnv {#1}{\stepcounter {identification}\ifvmode \IgnorePar \fi \EndP \HCode {<div class="theorem-like problem-environment #1" id="problem\arabic {identification}" titletext=" \GetTranslation {#1}">}}{\ifvmode \IgnorePar \fi \EndP \HCode {</div>}\IgnoreIndent }{}{}}
-\newcommand {\xmalt }[1]{\ifvmode \IgnorePar \fi \EndP \HCode {<details><summary>Show Alt Text</summary>} #1 \HCode {</details>}}
-\newcommand {\dialogue }[0]{\begin {description}}
-\newcommand {\foldable }[0]{\stepcounter {identification}\ifvmode \IgnorePar \fi \EndP \HCode {<div id="foldable\arabic {identification}" class="foldable">}}
-\newcommand {\unfoldable }[1]{\HCode {<span class="unfoldable">}#1\HCode {</span>}}
-\newcommand {\selectAll }[0]{\refstepcounter {problem}}
-\newcommand {\freeResponse }[0]{\refstepcounter {problem}}
-\newcommand {\javascript }[0]{\NoFonts }
-\newcommand {\sageCell }[0]{\NoFonts }
-\newcommand {\sageOutput }[0]{\NoFonts }
-\newcommand {\sagesilent }[0]{\NoFonts }
-\newcommand {\ungraded }[0]{\ifvmode \IgnorePar \fi \EndP \HCode {<div class="ungraded">}\IgnoreIndent }
-\newcommand {\accordion }[0]{\ifvmode \IgnorePar \fi \EndP \HCode {<div class="accordion">} }
-\newcommand {\expandable }[2]{\stepcounter {identification}\ifvmode \IgnorePar \fi \EndP \HCode {<div class="accordion">\Hnewline }\HCode {<h3 class="#1">}#2\HCode {</h3>\Hnewline }\HCode {<div id="accordion-item\arabic {identification}" class="accordion-item #1-content">\Hnewline } }
-\newcommand {\paragraph }[1]{\HCode {<span class="paragraphHead">}#1\HCode {</span>}\par \IgnorePar }
-\newcommand {\subparagraph }[1]{\HCode {<span class="subparagraphHead">}#1\HCode {</span>}\par \IgnorePar }
-\newcommand {\outcome }[1]{\HCode {<span class="learning-outcome">#1</span>} }
-\newcommand {\javascriptCode }[0]{\NoFonts }
-\newcommand {\GetTranslation }[1]{#1}
-\newcommand {\ref }[1]{\HCode {<a class="reference" href="\##1">#1</a>}}</script><style type='text/css'>#minipage0{width:100%;}
-#minipage1{width:100%;}
-#minipage2{width:100%;}
-</style></div>
-<style> .activity-body pre { white-space: pre; background-color: lightgray; } .xmyoutube { aspect-ratio: 16/9; min-width: 75%; } .image-environment img { width: unset; } </style> 
+<!DOCTYPE html>
+<html lang="en-US" xml:lang="en-US">
+<head> <title>Van data naar functies — verbanden herkennen en gedrag onderzoeken</title>
+<meta charset="utf-8"/>
+<meta content="TeX4ht (https://tug.org/tex4ht/)" name="generator"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="\aa:CssFile " rel="stylesheet" type="text/css"/>
+<meta content="index.online.tex" name="src"/>
+<script>window.MathJax = { tex: { tags: "ams", }, }; </script>
+<script async="async" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+<meta content="" name="og:image"/>
+<meta content="xourse" name="description"/>
+<meta content="Ingmar
+Herreman" name="author"/>
+<meta content="version 2.5.1" name="ximera"/>
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" media="screen" rel="stylesheet"/>
+<script src="https://ximera.osu.edu/public/javascripts/standalone.min.js" type="text/javascript"></script>
+<link href="../../assets/css/base.css" media="screen" rel="stylesheet"/>
+<link href="../../assets/css/global.css" media="screen" rel="stylesheet"/>
+<link href="../../assets/css/Header_Footer.css" media="screen" rel="stylesheet"/>
+<link href="../../assets/css/ModuleLayout.css" media="screen" rel="stylesheet"/>
+<style id="FVD-COMPACT-COURSE-CARDS">
+.course-theme-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 420px));
+    align-items: start;
+    align-content: start;
+    grid-auto-rows: auto;
+    gap: 1.25rem;
+}
+.course-card {
+    height: auto !important;
+    min-height: 0 !important;
+    align-self: start;
+}
+.course-card-link {
+    display: flex;
+    flex-direction: column;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 1.25rem;
+}
+.course-card-abstract {
+    margin: 0.9rem 0 1.1rem;
+    line-height: 1.55;
+}
+.course-card-footer {
+    margin-top: auto;
+}
+</style>
+<style id="FVD-FOOTER-LAYOUT-FIX">
+.course-footer-clear {
+    display: block;
+    width: 100%;
+    clear: both;
+}
 
-<div class='maketitle'></div>
-<p><a id='x1-2r1'></a>
-</p><h1 class='card part' id='part1'>Parate kennis — Het gereedschap dat je nodig hebt</h1>
-<div class='center'>
-<!--  l. 131  --><!--  l. 131  --><p class='noindent'><img alt='PIC' height='345' src='../images/banners/Analyse_thema_parate.png' width='345' /></p></div>
-<!--  l. 152  --><section class='fvd-theme-overview'><h2 class='fvd-theme-overview__title'>Overzicht van de hoofdstukken</h2><div class='fvd-theme-overview__grid'> <div class='fvd-theme-chapter-tile'><span class='fvd-theme-chapter-tile__number'>1</span><span class='fvd-theme-chapter-tile__title'>Parate kennis — Je wiskundige gereedschapskist</span></div>
-</div></section>
-                                                                  
+body > .site-footer {
+    display: block;
+    width: 100%;
+    max-width: none;
+    clear: both;
+    box-sizing: border-box;
+}
+</style>  <link rel="stylesheet" href="../../assets/css/module-banner.css">
+</head><body>
+<!-- XIMERA-HEADER-START -->
+<!-- =========================================================
+     HEADER.HTML — Wiskunde 7 FVD
+     Plaats dit bestand bijvoorbeeld in:
+     assets/html/Header.html
+     ========================================================= -->
+<header aria-labelledby="fvd-hero-title" class="fvd-hero">
+<div aria-hidden="true" class="fvd-hero__grid"></div>
+<div aria-hidden="true" class="fvd-hero__glow fvd-hero__glow--left"></div>
+<div aria-hidden="true" class="fvd-hero__glow fvd-hero__glow--right"></div>
+<div class="fvd-hero__inner">
+<!-- Groot Athena-logo links -->
+<div class="fvd-hero__brand">
+<img alt="Athena secundair onderwijs" class="fvd-hero__logo" src="/images/banners/logo_athena.png"/>
+</div>
+<div aria-hidden="true" class="fvd-hero__divider"></div>
+<!-- Centrale titel en leerinhouden -->
+<div class="fvd-hero__content">
+<p class="fvd-hero__eyebrow">
+                    Fundamentele Vorming Digitale Creatie
+                </p>
+<h1 class="fvd-hero__title" id="fvd-hero-title">
+<span class="fvd-hero__title-main">Wiskunde</span>
+<span class="fvd-hero__title-accent">7 FVD</span>
+</h1>
+<div aria-hidden="true" class="fvd-hero__pink-line"></div>
+<p class="fvd-hero__subtitle">
+                    Wiskundige inzichten die je nodig hebt om digitale werelden te bouwen.
+                </p>
+<div aria-label="Onderwerpen in deze cursus" class="fvd-hero__chips">
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<rect height="18" rx="2" width="14" x="5" y="3"></rect>
+<path d="M8 7h8M8 11h2M14 11h2M8 15h2M14 15h2M8 18h2M14 18h2"></path>
+</svg>
+                        Basiswiskunde
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M4 17c4-1 4-10 8-10 2 0 2 3 4 3 1 0 2-.4 4-2"></path>
+<path d="M7 20 13 4"></path>
+</svg>
+                        Algebra
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M5 8h14M5 16h14"></path>
+</svg>
+                        Vergelijkingen
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M4 19V5M4 19h16"></path>
+<path d="m7 16 4-5 3 2 4-6"></path>
+</svg>
+                        Functies
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M5 18 18 5"></path>
+<path d="M12 5h6v6"></path>
+</svg>
+                        Vectoren
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="7"></circle>
+<path d="M12 2v20M2 12h20"></path>
+</svg>
+                        Coördinaten
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="m12 3 8 4.5v9L12 21l-8-4.5v-9z"></path>
+<path d="m4 7.5 8 4.5 8-4.5M12 12v9"></path>
+</svg>
+                        3D-meetkunde
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M3 16c3-8 7-8 10 0 2 5 5 4 8-4"></path>
+</svg>
+                        Goniometrie
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M5 18V6M5 18h14"></path>
+<path d="M8 16c1-6 3-9 8-10"></path>
+</svg>
+                        Logaritmen
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="m7 6 10 5-10 5z"></path>
+<path d="m7 10 10 5-10 5"></path>
+</svg>
+                        Transformaties
+                    </span>
+</div>
+</div>
+<!-- Rechterzijde met wiskundige SVG-tekeningen -->
+<div aria-hidden="true" class="fvd-hero__visual">
+<!-- 3D-kubus -->
+<svg class="fvd-visual fvd-visual--cube" viewbox="0 0 310 245">
+<g class="fvd-svg-cyan">
+<path d="M65 72 185 86 245 48 125 34Z"></path>
+<path d="M65 72v110l120 16V86"></path>
+<path d="M185 86 245 48v110l-60 40"></path>
+<path class="fvd-svg-dash" d="M125 34v110M125 144 65 182M125 144l120 14"></path>
+<path d="M125 144 90 210M125 144l88 28M125 144V15"></path>
+<path d="m90 210 11-4-7-9M213 172l-9-7-2 11M125 15l-6 11h12"></path>
+</g>
+<g class="fvd-svg-label">
+<text x="82" y="225">x</text>
+<text x="220" y="180">y</text>
+<text x="132" y="18">z</text>
+</g>
+</svg>
+<!-- Matrix -->
+<svg class="fvd-visual fvd-visual--matrix" viewbox="0 0 220 100">
+<g class="fvd-svg-soft">
+<text x="0" y="58">A =</text>
+<path d="M60 10c-12 18-12 62 0 80M205 10c12 18 12 62 0 80"></path>
+<text x="82" y="36">1</text>
+<text x="123" y="36">2</text>
+<text x="165" y="36">0</text>
+<text x="73" y="61">−1</text>
+<text x="123" y="61">0</text>
+<text x="165" y="61">3</text>
+<text x="82" y="86">2</text>
+<text x="113" y="86">−2</text>
+<text x="165" y="86">1</text>
+</g>
+</svg>
+<!-- Vectoren en rotatie -->
+<svg class="fvd-visual fvd-visual--vectors" viewbox="0 0 260 170">
+<g class="fvd-svg-cyan">
+<path d="M55 138 132 74"></path>
+<path d="m132 74-13 3 8 10"></path>
+<path d="M55 138h125"></path>
+<path d="m180 138-12-6v12"></path>
+<path class="fvd-svg-dash" d="M55 138c24-65 116-95 156-25"></path>
+</g>
+<g class="fvd-svg-pink">
+<path d="M55 138 207 104"></path>
+<path d="m207 104-13-2 5 12"></path>
+<path class="fvd-svg-dash" d="M211 113c17-13 25-5 21 11"></path>
+<path d="m232 124-9-8-2 12"></path>
+</g>
+<g class="fvd-svg-label">
+<text x="38" y="153">O</text>
+<text x="138" y="73">u⃗</text>
+<text x="188" y="98">v⃗</text>
+<text x="141" y="130">x⃗</text>
+<text x="222" y="102">Rθ</text>
+</g>
+</svg>
+<!-- Bézier-curve -->
+<svg class="fvd-visual fvd-visual--bezier" viewbox="0 0 280 110">
+<g class="fvd-svg-soft">
+<path d="M30 82 85 30 190 30 245 82"></path>
+</g>
+<g class="fvd-svg-cyan">
+<path d="M30 82c42-12 55-52 105-52s67 40 110 52"></path>
+</g>
+<g class="fvd-svg-pink">
+<circle cx="30" cy="82" r="4"></circle>
+<circle cx="85" cy="30" r="4"></circle>
+<circle cx="190" cy="30" r="4"></circle>
+<circle cx="245" cy="82" r="4"></circle>
+</g>
+<g class="fvd-svg-label">
+<text x="18" y="102">P₀</text>
+<text x="74" y="20">P₁</text>
+<text x="181" y="20">P₂</text>
+<text x="238" y="102">P₃</text>
+<text x="103" y="79">Bézier-curve</text>
+</g>
+</svg>
+</div>
+</div>
+<div aria-hidden="true" class="fvd-hero__pink-corner"></div>
+</header><!-- XIMERA-HEADER-END -->
 
-                                                                  
-<!--  l. 157  --><div class='minipage' id='minipage0'><!--  l. 157  --><p class='noindent'><strong></strong>
-</p><!--  l. 159  --><p class='noindent'>Wiskunde bouwt voort op wat je al kent.
-</p><!--  l. 161  --><p class='noindent'>In de volgende thema’s gaan we nieuwe begrippen onderzoeken: verbanden in
-data, functies, nulpunten, tekenverloop, limieten, asymptoten en nog veel meer.
-Daarbij willen we niet telkens moeten stoppen omdat een breuk, een macht of
-een vergelijking in de weg zit.
-</p><!--  l. 166  --><p class='noindent'>Daarom zetten we eerst je wiskundige gereedschapskist klaar.
-</p><!--  l. 168  --><p class='noindent'>In dit thema leer je de technieken uit vorige jaren niet opnieuw van nul. Je
-controleert vooral of je ze nog voldoende <strong>paraat</strong> beheerst.
-</p><!--  l. 171  --><p class='noindent'>Denk bijvoorbeeld aan:
-</p>
-     <ul class='itemize1'>
-     <li class='itemize'>rekenen met breuken, machten en wortels;
-     </li>
-     <li class='itemize'>algebraïsche uitdrukkingen vereenvoudigen en ontbinden;
-     </li>
-     <li class='itemize'>vergelijkingen, ongelijkheden en formules omvormen;
-</li>
-<li class='itemize'>rekenen met procenten, verhoudingen en eenheden;
-</li>
-<li class='itemize'>werken met rechten en coördinaten;
-</li>
-<li class='itemize'>Pythagoras en basisgoniometrie gebruiken.</li></ul>
-<!--  l. 184  --><p class='noindent'>Je moet zelf kunnen herkennen welk gereedschap bruikbaar is. Daarom oefenen we in
-dit thema ook op:
-</p>
-<div class='mathjax-block'>\[ \boxed { \text {herkennen} \;\longrightarrow \; \text {kiezen} \;\longrightarrow \; \text {uitvoeren} \;\longrightarrow \; \text {controleren} } \]</div>
-<!--  l. 199  --><p class='noindent'>Aan het einde van het thema combineren we verschillende technieken in één
-probleem. Zo maken we de overstap van losse rekenvaardigheden naar het echte
-wiskundige probleemoplossen dat je in het vijfde jaar steeds vaker nodig zult
-hebben.                                                           </p></div> 
+<!-- MODULE_BANNER_START -->
+<section class="fvd-module-banner">
+    <div class="fvd-module-banner__glow fvd-module-banner__glow--left"></div>
+    <div class="fvd-module-banner__glow fvd-module-banner__glow--right"></div>
+  
+    <div class="fvd-module-banner__grid"></div>
+  
+    <div class="fvd-module-banner__icon" aria-hidden="true">
+      <svg viewBox="0 0 64 64" role="img">
+        <rect x="13" y="7" width="38" height="50" rx="8"></rect>
+        <rect x="19" y="14" width="26" height="10" rx="2"></rect>
+  
+        <circle cx="22" cy="33" r="2.5"></circle>
+        <circle cx="32" cy="33" r="2.5"></circle>
+        <circle cx="42" cy="33" r="2.5"></circle>
+  
+        <circle cx="22" cy="42" r="2.5"></circle>
+        <circle cx="32" cy="42" r="2.5"></circle>
+        <circle cx="42" cy="42" r="2.5"></circle>
+  
+        <circle cx="22" cy="51" r="2.5"></circle>
+        <circle cx="32" cy="51" r="2.5"></circle>
+        <circle cx="42" cy="51" r="2.5"></circle>
+      </svg>
+    </div>
+  
+    <div class="fvd-module-banner__content">
+      <div class="fvd-module-banner__label">
+        Module 1
+      </div>
+  
+      <h1 class="fvd-module-banner__title">
+        Van data naar functies — verbanden herkennen en gedrag onderzoeken
+      </h1>
+  
+      <p class="fvd-module-banner__description">
+        In deze module leggen we de basis voor het onderzoeken van verbanden en functies. We starten met een korte herhaling van belangrijke reken- en algebraïsche vaardigheden die we doorheen de verdere cursus nodig hebben. Daarna onderzoeken we verbanden tussen grootheden aan de hand van gegevens. Met spreidingsdiagrammen, correlatie en lineaire regressie leren we patronen herkennen en modellen beoordelen. Daarbij besteden we bijzondere aandacht aan het verschil tussen samenhang en causaliteit. Vervolgens maken we de overstap van relaties naar functies. We bouwen de taal op waarmee we functies kunnen beschrijven en onderzoeken: domein en bereik, nulwaarden, tekenverloop, stijgen en dalen, extrema, symmetrie en verschillende voorstellingsvormen. Grafieken gebruiken we niet alleen om functies te visualiseren, maar ook om vergelijkingen en ongelijkheden op te lossen en om het gedrag van functies te onderzoeken. Ten slotte bestuderen we wat er gebeurt wanneer een veranderlijke een punt nadert of onbegrensd groot wordt. Zo ontstaan de begrippen limiet, continuïteit en asymptotisch gedrag. Verbanden en functies vormen een centrale taal van de wiskunde. Dezelfde ideeën gebruiken we in onder andere fysica, chemie, biologie, data-analyse, engineering en andere wetenschappen om verschijnselen te beschrijven, modellen op te stellen en voorspellingen te maken.
+      </p>
+  
+      <div class="fvd-module-banner__meta">
+        <div class="fvd-module-banner__meta-item">
+          <span class="fvd-module-banner__meta-icon">◷</span>
+          <span>18 lesuren</span>
+        </div>
+  
+        <div class="fvd-module-banner__divider"></div>
+  
+        <div class="fvd-module-banner__meta-item">
+          <span class="fvd-module-banner__meta-icon">▤</span>
+          <span>3 thema's</span>
+        </div>
+  
+        <div class="fvd-module-banner__divider"></div>
+  
+        <div class="fvd-module-banner__meta-item">
+          <span class="fvd-module-banner__meta-icon">▶</span>
+          <span>Start hier</span>
+        </div>
+      </div>
+    </div>
+  
+    <div class="fvd-module-banner__visual" aria-hidden="true">
+      <div class="fvd-module-banner__symbols">
+        <span>+</span>
+        <span>−</span>
+        <span>×</span>
+        <span>÷</span>
+      </div>
+  
+      <svg class="fvd-module-banner__graph" viewBox="0 0 360 180">
+        <line x1="35" y1="142" x2="335" y2="142"></line>
+        <line x1="92" y1="160" x2="92" y2="20"></line>
+  
+        <path
+          d="M45 140
+             C80 140, 80 72, 125 72
+             C170 72, 165 118, 205 118
+             C245 118, 235 40, 280 40
+             C315 40, 316 94, 335 98">
+        </path>
+      </svg>
+    </div>
+  </section>
+<!-- MODULE_BANNER_END -->
 
-<p><a class='activity card ' data-options='' href='modules/MOD_Analyse_I/Thema1-Parate-kennis/Parate-kennis'>Thema1-Parate-kennis/Parate-kennis</a>
-<a class='activity card ' data-options='' href='modules/MOD_Analyse_I/Thema1-Parate-kennis/Parate-kennis-oefeningen'>Thema1-Parate-kennis/Parate-kennis-oefeningen</a>
-                                                                  
+<style> .activity-body pre { white-space: pre; background-color: lightgray; } .xmyoutube { aspect-ratio: 16/9; min-width: 75%; } .image-environment img { width: unset; } </style>
 
-                                                                  
-<a id='x1-3r2'></a>
-</p><h1 class='card part' id='part2'>Van werkelijkheid naar wiskunde — en terug</h1>
-<div class='center'>
-<!--  l. 217  --><!--  l. 217  --><p class='noindent'><img alt='PIC' height='345' src='../images/banners/Analyse_thema_werkelijkheid.png' width='345' /></p></div>
-<!--  l. 247  --><section class='fvd-theme-overview'><h2 class='fvd-theme-overview__title'>Overzicht van de hoofdstukken</h2><div class='fvd-theme-overview__grid'> <div class='fvd-theme-chapter-tile'><span class='fvd-theme-chapter-tile__number'>1</span><span class='fvd-theme-chapter-tile__title'>Van werkelijkheid naar wiskunde — en terug</span></div>
-</div></section>
-                                                                  
+<p><a id="x1-2r1"></a>
+</p><details class="course-theme" open=""><summary class="course-theme__summary"><span class="course-theme__summary-main"><span class="course-theme__badge">Thema 1</span><span class="course-theme__text"><span class="course-theme__title">Parate kennis — Het gereedschap dat je nodig hebt</span><span class="course-theme__count">2 hoofdstukken</span></span></span><span aria-hidden="true" class="course-theme__chevron">⌄</span></summary><div class="course-theme-cards"><article class="course-card">
+<div class="course-card-link">
+<div class="course-card-header">
+<div class="course-card-number-block">
+<span class="course-card-label">
+                    Hoofdstuk
+                </span>
+<span class="course-card-number">
+                    1
+                </span>
+</div>
+<h3 class="course-card-title">
+                Parate kennis — Je wiskundige gereedschapskist
+            </h3>
+</div>
+<p class="course-card-abstract">
+            In dit hoofdstuk brengen we de wiskundige technieken die je uit vorige jaren kent opnieuw op scherp. We bouwen deze leerstof niet volledig opnieuw op. We verzamelen de technieken die je doorheen de derde graad voortdurend nodig zult hebben: rekenen, algebra, vergelijkingen, formules, eenheden, coördinaten, rechten en meetkunde. Het belangrijkste is niet alleen dat je een techniek kunt uitvoeren. Je moet ook leren herkennen wanneer je ze nodig hebt, je resultaat kunnen controleren en verschillende technieken kunnen combineren in een probleem. Wat je al vlot beheerst, hoef je niet opnieuw uitgebreid te oefenen. Waar een zelfcheck moeilijk loopt, oefen je gericht bij in de oefeningenbundel.
+        </p>
+<div class="course-card-footer">
+<a class="course-card-button" href="Thema1-Parate-kennis/Parate-kennis.html">
+                Hoofdstuk openen →
+            </a>
+</div>
+</div>
+</article><article class="course-card">
+<div class="course-card-link">
+<div class="course-card-header">
+<div class="course-card-number-block">
+<span class="course-card-label">
+                    Hoofdstuk
+                </span>
+<span class="course-card-number">
+                    2
+                </span>
+</div>
+<h3 class="course-card-title">
+                Oefeningen — Parate kennis
+            </h3>
+</div>
+<p class="course-card-abstract">
+            Open dit hoofdstuk om de leerstof, voorbeelden en oefeningen te bekijken.
+        </p>
+<div class="course-card-footer">
+<a class="course-card-button" href="Thema1-Parate-kennis/Parate-kennis-oefeningen.html">
+                Hoofdstuk openen →
+            </a>
+</div>
+</div>
+</article></div></details><details class="course-theme"><summary class="course-theme__summary"><span class="course-theme__summary-main"><span class="course-theme__badge">Thema 2</span><span class="course-theme__text"><span class="course-theme__title">Van werkelijkheid naar wiskunde — en terug</span><span class="course-theme__count">1 hoofdstuk</span></span></span><span aria-hidden="true" class="course-theme__chevron">⌄</span></summary><div class="course-theme-cards"><article class="course-card">
+<div class="course-card-link">
+<div class="course-card-header">
+<div class="course-card-number-block">
+<span class="course-card-label">
+                    Hoofdstuk
+                </span>
+<span class="course-card-number">
+                    1
+                </span>
+</div>
+<h3 class="course-card-title">
+                Van werkelijkheid naar wiskunde — en terug
+            </h3>
+</div>
+<p class="course-card-abstract">
+            Wetenschap begint met vragen over de werkelijkheid. Maar waarnemingen en meetgegevens alleen volstaan meestal niet: we willen patronen herkennen, verbanden beschrijven, voorspellingen maken en conclusies kunnen verantwoorden. In dit hoofdstuk onderzoeken we hoe wiskunde daarbij helpt. We vertrekken van een concrete wetenschappelijke situatie en bouwen geleidelijk de weg op van werkelijkheid naar gegevens, van gegevens naar een wiskundige voorstelling en van daaruit naar een model. Daarbij staat één idee centraal: \[ werkelijkheid wiskunde betekenis in de werkelijkheid \] We leren ook waarom een model nooit de volledige werkelijkheid is, waarom voorspellingen grenzen hebben en waarom correcte notatie, eenheden en duidelijke afspraken noodzakelijk zijn. Deze manier van denken vormt een rode draad doorheen de verdere cursus: waarnemen, verbanden zoeken, mathematiseren, analyseren, controleren, interpreteren en kritisch terugkeren naar de oorspronkelijke situatie.
+        </p>
+<div class="course-card-footer">
+<a class="course-card-button" href="Thema2-Modelleren/Werkelijkheid-terug.html">
+                Hoofdstuk openen →
+            </a>
+</div>
+</div>
+</article></div></details><details class="course-theme"><summary class="course-theme__summary"><span class="course-theme__summary-main"><span class="course-theme__badge">Thema 3</span><span class="course-theme__text"><span class="course-theme__title">Verbanden onderzoeken met data</span><span class="course-theme__count">8 hoofdstukken</span></span></span><span aria-hidden="true" class="course-theme__chevron">⌄</span></summary><div class="course-theme-cards"><article class="course-card">
+<div class="course-card-link">
+<div class="course-card-header">
+<div class="course-card-number-block">
+<span class="course-card-label">
+                    Hoofdstuk
+                </span>
+<span class="course-card-number">
+                    1
+                </span>
+</div>
+<h3 class="course-card-title">
+                Van data naar puntenwolk
+            </h3>
+</div>
+<p class="course-card-abstract">
+            Wanneer twee grootheden samen worden gemeten, ontstaat een nieuwe vraag: hangt de ene grootheid samen met de andere? Een tabel met meetwaarden bevat alle afzonderlijke waarnemingen, maar maakt een patroon niet altijd zichtbaar. Daarom stellen we gekoppelde gegevens voor in een spreidingsdiagram. Elk punt stelt één waarneming voor; alle punten samen vormen een puntenwolk. In dit hoofdstuk leren we zo'n puntenwolk zorgvuldig lezen. We onderzoeken de richting, de vorm en de sterkte van een mogelijk verband en letten op uitschieters en clusters. We rekenen het verband nog niet samen tot één getal en stellen nog geen regressiemodel op. Eerst leren we kijken, beschrijven en argumenteren. Dat vormt de noodzakelijke basis voor correlatie en lineaire regressie in de volgende hoofdstukken.
+        </p>
+<div class="course-card-footer">
+<a class="course-card-button" href="Thema3-Verbanden/Van-data-naar-puntenwolk.html">
+                Hoofdstuk openen →
+            </a>
+</div>
+</div>
+</article><article class="course-card">
+<div class="course-card-link">
+<div class="course-card-header">
+<div class="course-card-number-block">
+<span class="course-card-label">
+                    Hoofdstuk
+                </span>
+<span class="course-card-number">
+                    2
+                </span>
+</div>
+<h3 class="course-card-title">
+                Oefeningen — Van data naar puntenwolk
+            </h3>
+</div>
+<p class="course-card-abstract">
+            Open dit hoofdstuk om de leerstof, voorbeelden en oefeningen te bekijken.
+        </p>
+<div class="course-card-footer">
+<a class="course-card-button" href="Thema3-Verbanden/Van-data-naar-puntenwolk-oefeningen.html">
+                Hoofdstuk openen →
+            </a>
+</div>
+</div>
+</article><article class="course-card">
+<div class="course-card-link">
+<div class="course-card-header">
+<div class="course-card-number-block">
+<span class="course-card-label">
+                    Hoofdstuk
+                </span>
+<span class="course-card-number">
+                    3
+                </span>
+</div>
+<h3 class="course-card-title">
+                Correlatie — Hoe sterk is het lineaire verband?
+            </h3>
+</div>
+<p class="course-card-abstract">
+            In het vorige hoofdstuk leerden we een puntenwolk systematisch lezen: we onderzochten de richting, de vorm, de sterkte en bijzondere kenmerken van het patroon. Wanneer een verband ongeveer lineair is, willen we die visuele beschrijving nauwkeuriger maken. Daarvoor gebruiken we de correlatiecoëfficiënt r. De correlatiecoëfficiënt vat twee eigenschappen van een lineair verband samen: de richting en de sterkte. Maar één getal vertelt nooit het volledige verhaal. Daarom leren we r steeds samen met het spreidingsdiagram en de context interpreteren. We onderzoeken ook situaties waarin r misleidend kan zijn: niet-lineaire verbanden, uitschieters en datasets met een bijzondere structuur. Zo leren we niet alleen een correlatiecoëfficiënt aflezen, maar vooral beoordelen wat die coëfficiënt wel en niet over de gegevens vertelt.
+        </p>
+<div class="course-card-footer">
+<a class="course-card-button" href="Thema3-Verbanden/Correlatie.html">
+                Hoofdstuk openen →
+            </a>
+</div>
+</div>
+</article><article class="course-card">
+<div class="course-card-link">
+<div class="course-card-header">
+<div class="course-card-number-block">
+<span class="course-card-label">
+                    Hoofdstuk
+                </span>
+<span class="course-card-number">
+                    4
+                </span>
+</div>
+<h3 class="course-card-title">
+                Oefeningen — Correlatie
+            </h3>
+</div>
+<p class="course-card-abstract">
+            Open dit hoofdstuk om de leerstof, voorbeelden en oefeningen te bekijken.
+        </p>
+<div class="course-card-footer">
+<a class="course-card-button" href="Thema3-Verbanden/Correlatie-oefeningen.html">
+                Hoofdstuk openen →
+            </a>
+</div>
+</div>
+</article><article class="course-card">
+<div class="course-card-link">
+<div class="course-card-header">
+<div class="course-card-number-block">
+<span class="course-card-label">
+                    Hoofdstuk
+                </span>
+<span class="course-card-number">
+                    5
+                </span>
+</div>
+<h3 class="course-card-title">
+                Lineaire regressie — Van data naar model
+            </h3>
+</div>
+<p class="course-card-abstract">
+            Een spreidingsdiagram maakt een verband zichtbaar en de correlatiecoëfficiënt beschrijft hoe sterk twee grootheden lineair samenhangen. Wanneer de puntenwolk ongeveer lineair is, kunnen we nog een stap verder gaan: we proberen het verband te beschrijven met een rechte. Zo ontstaat een lineair regressiemodel. Dat model laat ons niet alleen het globale patroon samenvatten, maar ook voorspellingen maken en veranderingen interpreteren. In dit hoofdstuk onderzoeken we wat een trendlijn en een regressierechte betekenen, hoe we het voorschrift \[ y=ax+b \] in een concrete context interpreteren en wanneer een voorspelling wel of niet verantwoord is. Daarbij blijft de werkelijkheid centraal staan. Een regressierechte is geen exacte wet en een voorspelling is niet automatisch betrouwbaar. We leren daarom voortdurend heen en weer bewegen tussen data, grafiek, model en werkelijkheid.
+        </p>
+<div class="course-card-footer">
+<a class="course-card-button" href="Thema3-Verbanden/Lineaire-regressie.html">
+                Hoofdstuk openen →
+            </a>
+</div>
+</div>
+</article><article class="course-card">
+<div class="course-card-link">
+<div class="course-card-header">
+<div class="course-card-number-block">
+<span class="course-card-label">
+                    Hoofdstuk
+                </span>
+<span class="course-card-number">
+                    6
+                </span>
+</div>
+<h3 class="course-card-title">
+                Oefeningen — Lineaire regressie
+            </h3>
+</div>
+<p class="course-card-abstract">
+            Open dit hoofdstuk om de leerstof, voorbeelden en oefeningen te bekijken.
+        </p>
+<div class="course-card-footer">
+<a class="course-card-button" href="Thema3-Verbanden/Lineaire-regressie-oefeningen.html">
+                Hoofdstuk openen →
+            </a>
+</div>
+</div>
+</article><article class="course-card">
+<div class="course-card-link">
+<div class="course-card-header">
+<div class="course-card-number-block">
+<span class="course-card-label">
+                    Hoofdstuk
+                </span>
+<span class="course-card-number">
+                    7
+                </span>
+</div>
+<h3 class="course-card-title">
+                Samenhang is nog geen oorzaak
+            </h3>
+</div>
+<p class="course-card-abstract">
+            Een puntenwolk kan een duidelijk patroon vertonen. De correlatiecoëfficiënt kan dicht bij 1 of -1 liggen en een regressiemodel kan de gegevens uitstekend beschrijven. Maar daarmee is nog niet aangetoond dat de ene grootheid de andere veroorzaakt. In dit hoofdstuk onderzoeken we het verschil tussen samenhang en causaliteit. We bekijken hoe een waargenomen samenhang kan ontstaan door een gemeenschappelijke derde variabele, door omgekeerde beïnvloeding, door toeval of door de manier waarop gegevens verzameld werden. We leren daarom niet alleen vragen ``Is er een verband?'', maar ook ``Welke conclusie laten deze gegevens werkelijk toe?'' Zo maken we de volledige beweging van werkelijkheid naar data en wiskundig model — en opnieuw terug naar de werkelijkheid.
+        </p>
+<div class="course-card-footer">
+<a class="course-card-button" href="Thema3-Verbanden/Samenhang-oorzaak.html">
+                Hoofdstuk openen →
+            </a>
+</div>
+</div>
+</article><article class="course-card">
+<div class="course-card-link">
+<div class="course-card-header">
+<div class="course-card-number-block">
+<span class="course-card-label">
+                    Hoofdstuk
+                </span>
+<span class="course-card-number">
+                    8
+                </span>
+</div>
+<h3 class="course-card-title">
+                Oefeningen — Samenhang is nog geen oorzaak
+            </h3>
+</div>
+<p class="course-card-abstract">
+            Open dit hoofdstuk om de leerstof, voorbeelden en oefeningen te bekijken.
+        </p>
+<div class="course-card-footer">
+<a class="course-card-button" href="Thema3-Verbanden/Samenhang-oorzaak-oefeningen.html">
+                Hoofdstuk openen →
+            </a>
+</div>
+</div>
+</article></div></details><details class="course-theme"><summary class="course-theme__summary"><span class="course-theme__summary-main"><span class="course-theme__badge">Thema 4</span><span class="course-theme__text"><span class="course-theme__title">Van relatie naar functie</span><span class="course-theme__count">0 hoofdstukken</span></span></span><span aria-hidden="true" class="course-theme__chevron">⌄</span></summary></details><details class="course-theme"><summary class="course-theme__summary"><span class="course-theme__summary-main"><span class="course-theme__badge">Thema 5</span><span class="course-theme__text"><span class="course-theme__title">Het gedrag van functies beschrijven</span><span class="course-theme__count">0 hoofdstukken</span></span></span><span aria-hidden="true" class="course-theme__chevron">⌄</span></summary></details><details class="course-theme"><summary class="course-theme__summary"><span class="course-theme__summary-main"><span class="course-theme__badge">Thema 6</span><span class="course-theme__text"><span class="course-theme__title">Functies in verschillende vormen</span><span class="course-theme__count">0 hoofdstukken</span></span></span><span aria-hidden="true" class="course-theme__chevron">⌄</span></summary></details><details class="course-theme"><summary class="course-theme__summary"><span class="course-theme__summary-main"><span class="course-theme__badge">Thema 7</span><span class="course-theme__text"><span class="course-theme__title">Vergelijkingen door een functiebril</span><span class="course-theme__count">0 hoofdstukken</span></span></span><span aria-hidden="true" class="course-theme__chevron">⌄</span></summary></details><details class="course-theme"><summary class="course-theme__summary"><span class="course-theme__summary-main"><span class="course-theme__badge">Thema 8</span><span class="course-theme__text"><span class="course-theme__title">Wat gebeurt er dichtbij een punt?</span><span class="course-theme__count">0 hoofdstukken</span></span></span><span aria-hidden="true" class="course-theme__chevron">⌄</span></summary></details><details class="course-theme"><summary class="course-theme__summary"><span class="course-theme__summary-main"><span class="course-theme__badge">Thema 9</span><span class="course-theme__text"><span class="course-theme__title">Gedrag op oneindig en asymptoten</span><span class="course-theme__count">0 hoofdstukken</span></span></span><span aria-hidden="true" class="course-theme__chevron">⌄</span></summary></details><details class="course-theme"><summary class="course-theme__summary"><span class="course-theme__summary-main"><span class="course-theme__badge">Thema 10</span><span class="course-theme__text"><span class="course-theme__title">Continuïteit en limieten</span><span class="course-theme__count">0 hoofdstukken</span></span></span><span aria-hidden="true" class="course-theme__chevron">⌄</span></summary></details><details class="course-theme"><summary class="course-theme__summary"><span class="course-theme__summary-main"><span class="course-theme__badge">Thema 11</span><span class="course-theme__text"><span class="course-theme__title">Functies analyseren in context</span><span class="course-theme__count">0 hoofdstukken</span></span></span><span aria-hidden="true" class="course-theme__chevron">⌄</span></summary></details><!-- XIMERA-FOOTER-START --><footer class="site-footer">
 
-                                                                  
-<!--  l. 252  --><div class='minipage' id='minipage1'><!--  l. 252  --><p class='noindent'><strong>Waarom beginnen we bij de werkelijkheid?</strong>
-</p><!--  l. 254  --><p class='noindent'>Wiskunde lijkt op het eerste gezicht vaak te beginnen met getallen, formules en
-grafieken. In de wetenschappen loopt de weg meestal andersom.
-</p><!--  l. 258  --><p class='noindent'>We vertrekken van een <strong>vraag over de werkelijkheid</strong>. We meten grootheden,
-verzamelen  gegevens  en  zoeken  naar  patronen.  Pas  daarna  proberen  we  die
-patronen met wiskunde te beschrijven.
-</p><!--  l. 262  --><p class='noindent'>Een tabel met meetwaarden kan bijvoorbeeld suggereren dat twee grootheden
-met elkaar samenhangen. Een grafiek kan het gedrag van dat verband zichtbaar
-maken.  Een  formule  kan  vervolgens  toelaten  om  waarden  te  berekenen  of
-voorspellingen te maken.
-</p><!--  l. 267  --><p class='noindent'>In dit thema onderzoeken we daarom eerst hoe de brug tussen werkelijkheid en
-wiskunde wordt gebouwd.
-</p><!--  l. 270  --><p class='noindent'>We besteden aandacht aan:
-</p>
-     <ul class='itemize1'>
-     <li class='itemize'>grootheden, meetwaarden, variabelen en eenheden;
-     </li>
-     <li class='itemize'>gegevens voorstellen met tabellen en grafieken;
-     </li>
-     <li class='itemize'>patronen en verbanden herkennen;
-     </li>
-     <li class='itemize'>de  stap  van  een  werkelijke  situatie  naar  een  wiskundige  beschrijving:
-     <strong>mathematiseren</strong>;
-     </li>
-     <li class='itemize'>wiskundige  resultaten  opnieuw  betekenis  geven  in  de  oorspronkelijke
-     situatie: <strong>demathematiseren</strong>;
-     </li>
-<li class='itemize'>wiskundige modellen en de aannames waarop ze gebaseerd zijn;
-</li>
-<li class='itemize'>interpoleren, extrapoleren en de grenzen van voorspellingen;
-</li>
-<li class='itemize'>kritisch omgaan met grafieken, gegevens en conclusies;
-</li>
-<li class='itemize'>duidelijke wiskundige notatie en afspraken.
-</li></ul>
-<!--  l. 296  --><p class='noindent'>Daarbij ontdekken we meteen een belangrijk principe dat doorheen de volledige
-cursus zal terugkeren: een wiskundig model is <strong>niet de werkelijkheid zelf</strong>. Het is
-een vereenvoudigde beschrijving waarmee we bepaalde vragen over die werkelijkheid
-proberen te beantwoorden.
-</p><!--  l. 302  --><p class='noindent'>Daarom eindigt een wiskundig probleem ook niet wanneer de berekening klaar is. We
-moeten terugkeren naar de oorspronkelijke situatie en ons afvragen of het resultaat
-betekenisvol en redelijk is.
-</p><!--  l. 307  --><p class='noindent'>Zo ontstaat een manier van werken die we later opnieuw zullen gebruiken bij
-gegevens, functies, limieten, afgeleiden, integralen en andere wiskundige
-modellen:
-</p>
-<div class='mathjax-block'>\[ \text {werkelijkheid} \longrightarrow \text {gegevens} \longrightarrow \text {wiskundig model} \longrightarrow \text {analyse} \longrightarrow \text {interpretatie}. \]</div>
-<div class='center'>
-<!--  l. 323  --><!--  l. 326  --><p class='noindent'><strong>Hoe gebruiken we wiskunde om van waarnemingen tot betrouwbare
-uitspraken over de werkelijkheid te komen?</strong>
-</p>
-</div>                                                                  </div> 
+<div class="site-footer__inner">
+<div class="site-footer__quote">
+<span aria-hidden="true" class="site-footer__quote-mark">◈</span>
+<p class="site-footer__quote-text">
+                Think mathematically. Create digitally. Shape the future.
+            </p>
+</div>
 
-                                                                  
-
-                                                                  
-<p><a class='activity card ' data-options='' href='modules/MOD_Analyse_I/Thema2-Modelleren/Werkelijkheid-terug'>Thema2-Modelleren/Werkelijkheid-terug</a>
-<a id='x1-4r3'></a>
-</p><h1 class='card part' id='part3'>Verbanden onderzoeken met data</h1>
-<!--  l. 367  --><section class='fvd-theme-overview'><h2 class='fvd-theme-overview__title'>Overzicht van de hoofdstukken</h2><div class='fvd-theme-overview__grid'> <div class='fvd-theme-chapter-tile'><span class='fvd-theme-chapter-tile__number'>1</span><span class='fvd-theme-chapter-tile__title'>Van data naar puntenwolk</span></div> <div class='fvd-theme-chapter-tile'><span class='fvd-theme-chapter-tile__number'>2</span><span class='fvd-theme-chapter-tile__title'>Correlatie — Hoe sterk
-is het lineaire verband?</span></div> <div class='fvd-theme-chapter-tile'><span class='fvd-theme-chapter-tile__number'>3</span><span class='fvd-theme-chapter-tile__title'>Lineaire regressie — Van data naar model</span></div> <div class='fvd-theme-chapter-tile'><span class='fvd-theme-chapter-tile__number'>4</span><span class='fvd-theme-chapter-tile__title'>Samenhang is
-nog geen oorzaak</span></div> </div></section>
-                                                                  
-
-                                                                  
-<!--  l. 375  --><div class='minipage' id='minipage2'><!--  l. 375  --><p class='noindent'><strong>Van gegevens naar een verantwoorde conclusie</strong>
-</p><!--  l. 377  --><p class='noindent'>In wetenschappen verzamelen we voortdurend gegevens.
-</p><!--  l. 379  --><p class='noindent'>We  meten  bijvoorbeeld  temperatuur  en  energieverbruik,  concentratie  en
-absorbantie, instraling en elektrisch vermogen, of twee kenmerken van een groep
-personen.
-</p><!--  l. 383  --><p class='noindent'>Een tabel met meetwaarden is echter nog geen antwoord.
-</p><!--  l. 385  --><p class='noindent'>We  willen  ontdekken  of  er  in  die  gegevens  een  <strong>verband</strong> zit,  hoe  sterk  dat
-verband is en of we het met een wiskundig model kunnen beschrijven.
-</p><!--  l. 389  --><p class='noindent'>In dit thema bouwen we die analyse stap voor stap op.
-</p><!--  l. 391  --><p class='noindent'>We   beginnen   met   gekoppelde   gegevens   en   stellen   ze   voor   in   een
-<strong>spreidingsdiagram</strong>.  Zo  wordt  een  mogelijk  verband  zichtbaar  en  leren  we
-kijken naar richting, vorm, sterkte en bijzonderheden in een puntenwolk.
-</p><!--  l. 396  --><p class='noindent'>Wanneer  het  verband  ongeveer  lineair  is,  gebruiken  we  vervolgens  de
-<strong>correlatiecoëfficiënt</strong> om de richting en sterkte van die lineaire samenhang
-nauwkeuriger te beschrijven.
-</p><!--  l. 400  --><p class='noindent'>Daarna gaan we een stap verder. Met <strong>lineaire regressie</strong> bouwen we uit de
-gegevens een wiskundig model:
-</p>
-<div class='mathjax-block'>\[ \hat y=ax+b. \]</div>
-<!--  l. 408  --><p class='noindent'>Zo’n model laat ons toe om het globale patroon samen te vatten, parameters in
-hun context te interpreteren en voorspellingen te maken.
-</p><!--  l. 412  --><p class='noindent'>Maar een berekening of model is nooit het einde van het verhaal.
-</p><!--  l. 414  --><p class='noindent'>Een  sterke  correlatie  betekent  bijvoorbeeld  niet  automatisch  dat  de  ene
-grootheid de andere veroorzaakt. Ook voorspellingen buiten het gebied waarin
-gemeten werd, kunnen misleidend zijn.
-</p><!--  l. 418  --><p class='noindent'>Daarom  leren  we  voortdurend  kritisch  terugkeren  naar  de  oorspronkelijke
-situatie:
-</p>
-<div class='mathjax-block'>\[ \important { \text {werkelijkheid} \longrightarrow \text {gegevens} \longrightarrow \text {verband} \longrightarrow \text {model} \longrightarrow \text {conclusie} \longrightarrow \text {werkelijkheid} } \]</div>
-<!--  l. 437  --><p class='noindent'>Doorheen het thema onderzoeken we dus niet alleen <em>hoe</em> we gegevens wiskundig
-analyseren, maar vooral ook <em>wat we uit die analyse werkelijk mogen besluiten</em>.
-</p>
-<div class='center'>
-<!--  l. 441  --><!--  l. 444  --><p class='noindent'><strong>Hoe maken we van een verzameling gegevens een wiskundig
-onderbouwde én wetenschappelijk verantwoorde conclusie?</strong>
-</p>
-</div>                                                                  </div> 
-
-<p><a class='activity card ' data-options='' href='modules/MOD_Analyse_I/Thema3-Verbanden/Van-data-naar-puntenwolk'>Thema3-Verbanden/Van-data-naar-puntenwolk</a>
-<a class='activity card ' data-options='' href='modules/MOD_Analyse_I/Thema3-Verbanden/Van-data-naar-puntenwolk-oefeningen'>Thema3-Verbanden/Van-data-naar-puntenwolk-oefeningen</a>
-<a class='activity card ' data-options='' href='modules/MOD_Analyse_I/Thema3-Verbanden/Correlatie'>Thema3-Verbanden/Correlatie</a>
-<a class='activity card ' data-options='' href='modules/MOD_Analyse_I/Thema3-Verbanden/Correlatie-oefeningen'>Thema3-Verbanden/Correlatie-oefeningen</a>
-                                                                  
-
-                                                                  
-<a class='activity card ' data-options='' href='modules/MOD_Analyse_I/Thema3-Verbanden/Lineaire-regressie'>Thema3-Verbanden/Lineaire-regressie</a>
-<a class='activity card ' data-options='' href='modules/MOD_Analyse_I/Thema3-Verbanden/Lineaire-regressie-oefeningen'>Thema3-Verbanden/Lineaire-regressie-oefeningen</a>
-<a class='activity card ' data-options='' href='modules/MOD_Analyse_I/Thema3-Verbanden/Samenhang-oorzaak'>Thema3-Verbanden/Samenhang-oorzaak</a>
-<a class='activity card ' data-options='' href='modules/MOD_Analyse_I/Thema3-Verbanden/Samenhang-oorzaak-oefeningen'>Thema3-Verbanden/Samenhang-oorzaak-oefeningen</a>
-<a id='x1-5r4'></a>
-</p><h1 class='card part' id='part4'>Van relatie naar functie</h1>
-<!--  l. 491  --><section class='fvd-theme-overview'><h2 class='fvd-theme-overview__title'>Overzicht van de hoofdstukken</h2><div class='fvd-theme-overview__grid'> <em>Voor dit thema zijn nog geen hoofdstukken
-toegevoegd.</em></div></section>
-<a id='x1-6r5'></a>
-
-<h1 class='card part' id='part5'>Het gedrag van functies beschrijven</h1>
-<!--  l. 521  --><section class='fvd-theme-overview'><h2 class='fvd-theme-overview__title'>Overzicht van de hoofdstukken</h2><div class='fvd-theme-overview__grid'> <em>Voor dit thema zijn nog geen hoofdstukken
-toegevoegd.</em></div></section>
-<a id='x1-7r6'></a>
-
-<h1 class='card part' id='part6'>Functies in verschillende vormen</h1>
-<!--  l. 551  --><section class='fvd-theme-overview'><h2 class='fvd-theme-overview__title'>Overzicht van de hoofdstukken</h2><div class='fvd-theme-overview__grid'> <em>Voor dit thema zijn nog geen hoofdstukken
-toegevoegd.</em></div></section>
-<a id='x1-8r7'></a>
-
-<h1 class='card part' id='part7'>Vergelijkingen door een functiebril</h1>
-<!--  l. 581  --><section class='fvd-theme-overview'><h2 class='fvd-theme-overview__title'>Overzicht van de hoofdstukken</h2><div class='fvd-theme-overview__grid'> <em>Voor dit thema zijn nog geen hoofdstukken
-toegevoegd.</em></div></section>
-<a id='x1-9r8'></a>
-
-<h1 class='card part' id='part8'>Wat gebeurt er dichtbij een punt?</h1>
-<!--  l. 611  --><section class='fvd-theme-overview'><h2 class='fvd-theme-overview__title'>Overzicht van de hoofdstukken</h2><div class='fvd-theme-overview__grid'> <em>Voor dit thema zijn nog geen hoofdstukken
-toegevoegd.</em></div></section>
-<a id='x1-10r9'></a>
-
-<h1 class='card part' id='part9'>Gedrag op oneindig en asymptoten</h1>
-<!--  l. 641  --><section class='fvd-theme-overview'><h2 class='fvd-theme-overview__title'>Overzicht van de hoofdstukken</h2><div class='fvd-theme-overview__grid'> <em>Voor dit thema zijn nog geen hoofdstukken
-toegevoegd.</em></div></section>
-<a id='x1-11r10'></a>
-
-<h1 class='card part' id='part10'>Continuïteit en limieten</h1>
-<!--  l. 671  --><section class='fvd-theme-overview'><h2 class='fvd-theme-overview__title'>Overzicht van de hoofdstukken</h2><div class='fvd-theme-overview__grid'> <em>Voor dit thema zijn nog geen hoofdstukken
-toegevoegd.</em></div></section>
-                                                                  
-
-                                                                  
-<a id='x1-12r11'></a>
-
-<h1 class='card part' id='part11'>Functies analyseren in context</h1>
-                                                                  
-
-                                                                  
-</body> 
- 
+<div class="site-footer__grid">
+<section class="site-footer__column">
+<p class="site-footer__eyebrow">
+                    Wiskunde 7 FVD
+                </p>
+<h2 class="site-footer__title">
+                    Fundamentele Vorming Digitale Creatie
+                </h2>
+<p class="site-footer__text">
+                    Wiskundige basis voor programmeren, graphics,
+                    animatie, simulatie en 3D.
+                </p>
+</section>
+<section class="site-footer__column">
+<p class="site-footer__eyebrow">
+                    Ontwikkeling
+                </p>
+<p class="site-footer__name">
+                    Ingmar Herreman
+                </p>
+<p class="site-footer__text">
+                    GO! Athena Campus Bellevue
+                </p>
+<p class="site-footer__text">
+                    Versie 1.0 · 2026
+                </p>
+</section>
+<section class="site-footer__column">
+<p class="site-footer__eyebrow">
+                    Technologie
+                </p>
+<div class="site-footer__tech">
+<span>Ximera</span>
+<span>HTML</span>
+<span>PDF</span>
+<span>GeoGebra</span>
+<span>GitHub</span>
+</div>
+</section>
+</div>
+<div class="site-footer__bottom">
+<span>Gebouwd met Ximera</span>
+<span aria-hidden="true">•</span>
+<span>Voor 7 FVD</span>
+<span aria-hidden="true">•</span>
+<span>© 2026</span>
+</div>
+</div>
+</footer><!-- XIMERA-FOOTER-END --> <script src="../../assets/js/theme-toggle.js"></script>
+</body>
 </html>
