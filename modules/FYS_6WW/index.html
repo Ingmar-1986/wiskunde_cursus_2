@@ -1,364 +1,614 @@
-<!DOCTYPE html> 
-<html lang='en-US' xml:lang='en-US'> 
-<head> <title>Van krachten tot kwanta</title> 
-<meta charset='utf-8' /> 
-<meta content='TeX4ht (https://tug.org/tex4ht/)' name='generator' /> 
-<meta content='width=device-width,initial-scale=1' name='viewport' /> 
-<link href='\aa:CssFile ' rel='stylesheet' type='text/css' /> 
-<meta content='index.online.tex' name='src' /> 
-<script>window.MathJax = { tex: { tags: "ams", }, }; </script> 
-<script async='async' id='MathJax-script' src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js' type='text/javascript'></script>  
-<meta content='' name='og:image' /> 
-<meta content='xourse' name='description' /> 
-<meta content='Ingmar Herreman' name='author' /> 
-<meta content='version 2.5.1' name='ximera' /> 
-<link href='https://ximera.osu.edu/public/stylesheets/standalone.css' media='screen' rel='stylesheet' /> 
-<script src='https://ximera.osu.edu/public/javascripts/standalone.min.js' type='text/javascript'></script> 
-</head><body> 
-<div class='preamble'><script type='math/tex'>\newenvironment {prompt}{}{}
-\newcommand {\accordion }[0]{}
-\newcommand {\ungraded }[0]{}
-\newcommand {\xmDefaultPreamble }[0]{xmPreamble.tex}
-\newcommand {\xmDefaultPrintstyle }[0]{xmPrintstyle.sty}
-\newcommand {\graded }[1]{}
-\newcommand {\multirowsetup }[0]{\raggedright }
-\newcommand {\textscale  }[2]{\leavevmode \begingroup \relscale {#1}#2\endgroup }
-\newcommand {\headrulewidth }[0]{0.4pt}
-\newcommand {\footrulewidth }[0]{0pt}
-\newcommand {\headruleskip }[0]{0pt}
-\newcommand {\footruleskip }[0]{.3\normalbaselineskip }
-\newcommand {\plainheadrulewidth }[0]{0pt}
-\newcommand {\plainfootrulewidth }[0]{0pt}
-\newcommand {\officialeuro  }[0]{{\fontencoding {U}\fontfamily {eurosym}\selectfont {}e}}
-\newcommand {\eurobars  }[0]{{\fontencoding {U}\fontfamily {eurosym}\selectfont {}A}}
-\newcommand {\eurobarsnarrow  }[0]{{\fontencoding {U}\fontfamily {eurosym}\selectfont {}B}}
-\newcommand {\eurobarswide  }[0]{{\fontencoding {U}\fontfamily {eurosym}\selectfont {}C}}
-\newcommand {\p }[0]{}
-\newcommand {\captionnewline }[0]{\\\relax }
-\newcommand {\memcaptioninfo }[4]{}
-\newcommand {\captiongroup }[0]{\setcaptiontype }
-\newcommand {\LTcaptype }[0]{table}
-\newcommand {\showtodonotes }[0]{disable}
-\newcommand {\todo }[1]{\typeout {TODO #1}}
-\newcommand {\tcbpkgprefix }[0]{}
-\newcommand {\blue }[1]{{\color {blue}#1}}
-\newcommand {\red }[1]{{\color {red}#1}}
-\newcommand {\CancelColor }[0]{\color {xmaccent!50!black}}
-\newcommand {\important }[1]{\ensuremath {\colorbox {orange}{$#1$}}}
-\newcommand {\pdfnl }[0]{}
-\newcommand {\handoutnl }[0]{}
-\newcommand {\importantcell }[1]{\ensuremath {#1}}
-\newcommand {\xmPlotsColor }[0]{ \pgfplotsset { plot1/.style={darkgray,no marks,samples=100}, plot2/.style={lightgray,no marks,samples=100}, plotresult/.style={blue,no marks,samples=100}, plotblue/.style={blue,no marks,samples=100}, plotred/.style={red,no marks,samples=100}, plotgreen/.style={green,no marks,samples=100}, plotpurple/.style={purple,no marks,samples=100} } }
-\newcommand {\xmPlotsBlackWhite }[0]{ \pgfplotsset { plot1/.style={black,loosely dashed,no marks,samples=100}, plot2/.style={black,loosely dotted,no marks,samples=100}, plotresult/.style={black,no marks,samples=100}, plotblue/.style={black,no marks,samples=100}, plotred/.style={black,dotted,no marks,samples=100}, plotgreen/.style={black,dashed,no marks,samples=100}, plotpurple/.style={black,dashdotted,no marks,samples=100} } }
-\newcommand {\xmPlotsColorAndStyle }[0]{ \pgfplotsset { plot1/.style={darkgray,no marks,samples=100}, plot2/.style={lightgray,no marks,samples=100}, plotresult/.style={blue,no marks,samples=100}, plotblue/.style={xmblue,no marks,samples=100}, plotred/.style={xmred,dashed,thick,no marks,samples=100}, plotgreen/.style={xmgreen,dotted,very thick,no marks,samples=100}, plotpurple/.style={purple,no marks,samples=100} } }
-\newcommand {\geqnoslant }[0]{\geq }
-\newcommand {\geq }[0]{\geqslant }
-\newcommand {\leqnoslant }[0]{\leq }
-\newcommand {\leq }[0]{\leqslant }
-\newcommand {\emph }[1]{\textit {#1}}
-\newcommand {\ds }[0]{\displaystyle }
-\newcommand {\ts }[0]{\textstyle }
-\newcommand {\bron }[1]{\begin {scriptsize} \emph {#1} \end {scriptsize}}
-\newcommand {\R }[0]{\ensuremath {\mathbb {R}}}
-\newcommand {\Rnul }[0]{\ensuremath {\mathbb {R}_0}}
-\newcommand {\Reen }[0]{\ensuremath {\mathbb {R}\setminus \{1\}}}
-\newcommand {\Rnuleen }[0]{\ensuremath {\mathbb {R}\setminus \{0,1\}}}
-\newcommand {\Rplus }[0]{\ensuremath {\mathbb {R}^+}}
-\newcommand {\Rmin }[0]{\ensuremath {\mathbb {R}^-}}
-\newcommand {\Rnulplus }[0]{\ensuremath {\mathbb {R}_0^+}}
-\newcommand {\Rnulmin }[0]{\ensuremath {\mathbb {R}_0^-}}
-\newcommand {\Rnuleenplus }[0]{\ensuremath {\mathbb {R}^+\setminus \{0,1\}}}
-\newcommand {\N }[0]{\ensuremath {\mathbb {N}}}
-\newcommand {\Nnul }[0]{\ensuremath {\mathbb {N}_0}}
-\newcommand {\Z }[0]{\ensuremath {\mathbb {Z}}}
-\newcommand {\Znul }[0]{\ensuremath {\mathbb {Z}_0}}
-\newcommand {\Zplus }[0]{\ensuremath {\mathbb {Z}^+}}
-\newcommand {\Zmin }[0]{\ensuremath {\mathbb {Z}^-}}
-\newcommand {\Znulplus }[0]{\ensuremath {\mathbb {Z}_0^+}}
-\newcommand {\Znulmin }[0]{\ensuremath {\mathbb {Z}_0^-}}
-\newcommand {\C }[0]{\ensuremath {\mathbb {C}}}
-\newcommand {\Cnul }[0]{\ensuremath {\mathbb {C}_0}}
-\newcommand {\Cplus }[0]{\ensuremath {\mathbb {C}^+}}
-\newcommand {\Cmin }[0]{\ensuremath {\mathbb {C}^-}}
-\newcommand {\Cnulplus }[0]{\ensuremath {\mathbb {C}_0^+}}
-\newcommand {\Cnulmin }[0]{\ensuremath {\mathbb {C}_0^-}}
-\newcommand {\Q }[0]{\ensuremath {\mathbb {Q}}}
-\newcommand {\Qnul }[0]{\ensuremath {\mathbb {Q}_0}}
-\newcommand {\Qplus }[0]{\ensuremath {\mathbb {Q}^+}}
-\newcommand {\Qmin }[0]{\ensuremath {\mathbb {Q}^-}}
-\newcommand {\Qnulplus }[0]{\ensuremath {\mathbb {Q}_0^+}}
-\newcommand {\Qnulmin }[0]{\ensuremath {\mathbb {Q}_0^-}}
-\newcommand {\perdef }[0]{\overset {\mathrm {def}}{=}}
-\newcommand {\pernot }[0]{\overset {\mathrm {notatie}}{=}}
-\newcommand {\perinderdaad }[0]{\overset {!}{=}}
-\newcommand {\perhaps }[0]{\overset {?}{=}}
-\newcommand {\degree }[0]{^\circ }
-\DeclareMathOperator {\dom }{dom}
-\DeclareMathOperator {\codom }{codom}
-\DeclareMathOperator {\bld }{bld}
-\DeclareMathOperator {\graf }{graf}
-\DeclareMathOperator {\rico }{rico}
-\DeclareMathOperator {\co }{co}
-\DeclareMathOperator {\gr }{gr}
-\DeclareMathOperator {\bgsin }{bgsin}
-\DeclareMathOperator {\bgcos }{bgcos}
-\DeclareMathOperator {\bgtan }{bgtan}
-\DeclareMathOperator {\bgcot }{bgcot}
-\DeclareMathOperator {\bgsinh }{bgsinh}
-\DeclareMathOperator {\bgcosh }{bgcosh}
-\DeclareMathOperator {\bgtanh }{bgtanh}
-\DeclareMathOperator {\bgcoth }{bgcoth}
-\newcommand {\d }[0]{\mathrm {d}}
-\newcommand {\dx }[0]{\d x}
-\newcommand {\dd }[1]{\frac {\mathrm {d}}{\mathrm {d}#1}}
-\newcommand {\ddx }[0]{\dd {x}}
-\newcommand {\afg }[1]{{#1}'}
-\newcommand {\xmshortabstract }[0]{}
-\newcommand {\xmopje }[1]{\iftoggle {showxmopje}{#1}{}}
-\newcommand {\xmcolorbox }[2]{ \HCode {\Hnewline <div class="xmcolorbox">\Hnewline }#2\HCode {\Hnewline </div>\Hnewline } }
-\newcommand {\xmopmerking }[1]{ \HCode {\Hnewline <div class="xmopmerking">\Hnewline }#1\HCode {\Hnewline </div>\Hnewline } }
-\newcommand {\proofname }[0]{Bewijs}
-\newcommand {\xmonlineChoice }[1]{\pdfOnly {\wordchoicegiventrue }\wordChoice {#1}\pdfOnly {\wordchoicegivenfalse }}
-\newcommand {\onlineChoice }[1]{\pdfOnly {\wordchoicegiventrue }\wordChoice {#1}\pdfOnly {\wordchoicegivenfalse }}
-\newcommand {\TJa }[0]{\nlentext { Ja }{ Yes }}
-\newcommand {\TNee }[0]{\nlentext { Nee }{ No }}
-\newcommand {\TJuist }[0]{\nlentext { Juist }{ True }}
-\newcommand {\TFout }[0]{\nlentext { Fout }{ False }}
-\newcommand {\choiceTrue }[0]{{\wordChoice {\choice [correct]{\TJuist }\choice {\TFout }}}}
-\newcommand {\choiceFalse }[0]{{\wordChoice {\choice {\TJuist }\choice [correct]{\TFout }}}}
-\newcommand {\choiceYes }[0]{{\wordChoice {\choice [correct]{\TJa }\choice {\TNee }}}}
-\newcommand {\choiceNo }[0]{{\wordChoice {\choice {\TJa }\choice [correct]{\TNee }}}}
-\newcommand {\choiceminimumverticalsize }[0]{\vphantom {$\tfrac {2}{2}$}}
-\newcommand {\setchoicedefanswer }[0]{ \ifdefined \HCode \else \let \inlinechoice \inlinechoicedefanswer \fi }
-\newcommand {\xmsection }[0]{\subsection }
-\newcommand {\xmsubsection }[0]{\subsubsection }
-\newcommand {\activitychapter }[1]{ \typeout {ACTIVITYCHAPTER #1} \chapterstyle \activity {#1} }
-\newcommand {\activitysection }[1]{ \typeout {ACTIVITYSECTION #1} \sectionstyle \activity {#1} }
-\newcommand {\practicesection }[1]{ \typeout {PRACTICESECTION #1} \sectionstyle \activity {#1} }
-\newcommand {\hypertarget }[1]{\HCode {<a class="ximera-label" id="#1"></a>}}
-\newcommand {\hyperlink }[2]{\HCode {<a class="reference reference-keeptext" href="\##1">}#2\HCode {</a>}}
-\newcommand {\figurename }[0]{Figuur}
-\newcommand {\tablename }[0]{Tabel}
-\newcommand {\printFull }[0]{ \hintstrue \handoutfalse \toggletrue {showonline} }
-\newcommand {\nl }[0]{}
-\newcommand {\basicOnly }[0]{}
-\newcommand {\basicSkip }[0]{}
-\newcommand {\tab }[0]{\quad }
-\newcommand {\instructorNotes }[0]{\setbox 0\vbox \bgroup }
-\newcommand {\nlen }[2]{#1}
-\newcommand {\nlentext }[2]{\text {#1}}
-\newcommand {\nlentextbf }[2]{\textbf {#1}}
-\newcommand {\TWaar }[0]{\nlentext { Waar }{ True }}
-\newcommand {\TOnwaar }[0]{\nlentext { Vals }{ False }}
-\newcommand {\Ten }[0]{\nlentext { en }{ and }}
-\newcommand {\Tof }[0]{\nlentext { of }{ or }}
-\newcommand {\Tdus }[0]{\nlentext { dus }{ so }}
-\newcommand {\Tendus }[0]{\nlentext { en dus }{ and thus }}
-\newcommand {\Tvooralle }[0]{\nlentext { voor alle }{ for all }}
-\newcommand {\Took }[0]{\nlentext { ook }{ also }}
-\newcommand {\Tals }[0]{\nlentext { als }{ when }}
-\newcommand {\Twant }[0]{\nlentext { want }{ as }}
-\newcommand {\Tmaal }[0]{\nlentext { maal }{ times }}
-\newcommand {\Toptellen }[0]{\nlentext { optellen }{ add }}
-\newcommand {\Tde }[0]{\nlentext { de }{ the }}
-\newcommand {\Thet }[0]{\nlentext { het }{ the }}
-\newcommand {\Tis }[0]{\nlentext { is }{ is }}
-\newcommand {\Tmet }[0]{\nlentext { met }{ where }}
-\newcommand {\Tnooit }[0]{\nlentext { nooit }{ never }}
-\newcommand {\Tmaar }[0]{\nlentext { maar }{ but }}
-\newcommand {\Tniet }[0]{\nlentext { niet }{ not }}
-\newcommand {\Tuit }[0]{\nlentext { uit }{ from }}
-\newcommand {\Ttov }[0]{\nlentext { t.o.v. }{ w.r.t. }}
-\newcommand {\Tzodat }[0]{\nlentext { zodat }{ such that }}
-\newcommand {\Tdeth }[0]{\nlentext {de }{th }}
-\newcommand {\Tomdat }[0]{\nlentext {omdat }{because }}
-\newcommand {\fvdschoollogo }[0]{}
-\newcommand {\fvdschoollogobreedte }[0]{0.65\textwidth }
-\newcommand {\fvdschoolnaam }[0]{}
-\newcommand {\fvdschooljaar }[0]{}
-\newcommand {\fvdklas }[0]{}
-\newcommand {\fvdleerkracht }[0]{}
-\newcommand {\fvdmodulenummer }[0]{1}
-\newcommand {\fvdmoduletitel }[0]{}
-\newcommand {\fvdmodulebeeld }[0]{}
-\newcommand {\fvdmodulevariant }[0]{}
-\newcommand {\fvdmodulesubtitel }[0]{}
-\newcommand {\fvdtitletext }[0]{}
-\newcommand {\fvdtitle }[1]{\gdef \fvdtitletext {#1}\title {#1}}
-\newcommand {\voorkennisicon }[0]{\begin {tikzpicture}[ baseline=-0.6ex, line cap=round, line join=round ] \par \fill [fvdcyanicon] (0,0) circle (0.38cm); \par \draw [ fvdcyan, line width=0.7pt ] (-0.22,0.14) .. controls (-0.10,0.19) and (-0.04,0.17) .. (0,0.10) -- (0,-0.19) .. controls (-0.08,-0.13) and (-0.15,-0.12) .. (-0.22,-0.15) -- cycle; \par \draw [ fvdcyan, line width=0.7pt ] (0.22,0.14) .. controls (0.10,0.19) and (0.04,0.17) .. (0,0.10) -- (0,-0.19) .. controls (0.08,-0.13) and (0.15,-0.12) .. (0.22,-0.15) -- cycle; \par \end {tikzpicture}}
-\newcommand {\leerdoelenicon }[0]{\begin {tikzpicture}[ baseline=-0.6ex, line cap=round, line join=round ] \par \fill [fvdmagentaicon] (0,0) circle (0.38cm); \par \draw [ fvdmagenta, line width=0.7pt ] (0,0) circle (0.20cm); \par \draw [ fvdmagenta, line width=0.7pt ] (0,0) circle (0.10cm); \par \fill [fvdmagenta] (0,0) circle (0.025cm); \par \draw [ fvdmagenta, line width=0.7pt ] (0.05,0.05) -- (0.25,0.25); \par \draw [ fvdmagenta, line width=0.7pt ] (0.18,0.25) -- (0.25,0.25) -- (0.25,0.18); \par \end {tikzpicture}}
-\newcommand {\fvdboxtitle }[3]{\par \noindent #1\hspace {2.5mm}{\large \bfseries \color {#2}#3}\par \vspace {1.5mm}{\color {#2}\hrule height 0.4pt}\vspace {2mm}}
-\newcommand {\voorkennis }[0]{\ifdefined \HCode \par \HCode {<section class="learning-box learning-box--prior"> <div class="learning-box__header"> <span class="learning-box__icon"></span> <span class="learning-box__title">Voorkennis</span> </div> <div class="learning-box__content"> }\par \begin {itemize} \par \else \par \begin {tcolorbox}[ enhanced, breakable, frame hidden, colback=fvdcyanlight, coltext=fvdnavy, borderline west={1.8pt}{0pt}{fvdcyan}, sharp corners, boxrule=0pt, left=5mm, right=5mm, top=3.5mm, bottom=3.5mm, before skip=4mm, after skip=4mm ] \par \fvdboxtitle {\voorkennisicon } {fvdcyan} {Voorkennis} \par \begin {itemize}[ leftmargin=6mm, itemsep=1.5mm, topsep=0mm, parsep=0pt ] \par \fi }
-\newcommand {\leerdoelen }[0]{\ifdefined \HCode \par \HCode {<section class="learning-box learning-box--goals"> <div class="learning-box__header"> <span class="learning-box__icon"></span> <span class="learning-box__title">Leerdoelen</span> </div> <div class="learning-box__content"> }\par \begin {itemize} \par \else \par \begin {tcolorbox}[ enhanced, breakable, frame hidden, colback=fvdmagentalight, coltext=fvdnavy, borderline west={1.8pt}{0pt}{fvdmagenta}, sharp corners, boxrule=0pt, left=5mm, right=5mm, top=3.5mm, bottom=3.5mm, before skip=4mm, after skip=4mm ] \par \fvdboxtitle {\leerdoelenicon } {fvdmagenta} {Leerdoelen} \par \begin {itemize}[ leftmargin=6mm, itemsep=1.5mm, topsep=0mm, parsep=0pt ] \par \fi }
-\newcommand {\fvdchapterdata }[3]{\par \par \ifdefined \HCode \else \clearpage \fi \par \par \gdef \fvdstandalonethemenumber {#1}\gdef \fvdstandalonetheme {#2}\par \setcounter {part}{#1}\setcounter {titlenumber}{\numexpr #3-1\relax }\par \par \setcounter {fvdsection}{0}\setcounter {fvdsubsection}{0}\setcounter {fvdoefening}{0}}
-\newcommand {\fvdcurrentthemetitle }[0]{}
-\newcommand {\FVDpart }[1]{}
-\newcommand {\FVDpart }[1]{\refstepcounter {fvdtheme}\setcounter {fvdsection}{0}\gdef \fvdcurrentthemetitle {#1}\part {#1}}
-\newcommand {\FVDthemeopening }[1]{\begin {center} \includegraphics [width=\textwidth ]{#1} \end {center} }
-\newcommand {\thefvdsection }[0]{\arabic {fvdsection}}
-\newcommand {\thefvdsubsection }[0]{\thefvdsection .\arabic {fvdsubsection}}
-\newcommand {\FVDsection }[1]{}
-\newcommand {\FVDsubsection }[1]{}
-\newcommand {\FVDsection }[1]{\refstepcounter {fvdsection}\par \HCode {<div class="fvd-section-bar">}\HCode {<div class="fvd-section-bar__number">}\thefvdsection \HCode {</div>}\HCode {<div class="fvd-section-bar__title">}#1\HCode {</div>}\HCode {</div>}}
-\newcommand {\FVDsubsection }[1]{\refstepcounter {fvdsubsection}\par \HCode {<div class="fvd-subsection">}\par \HCode {<div class="fvd-subsection__row">}\par \HCode {<div class="fvd-subsection__number">}\thefvdsection .\arabic {fvdsubsection}\HCode {</div>}\par \HCode {<div class="fvd-subsection__title">}#1\HCode {</div>}\par \HCode {</div>}\par \HCode {<div class="fvd-subsection__line"></div>}\par \HCode {</div>}}
-\newcommand {\themaintro }[1]{\par \bigskip \noindent \begin {minipage}{\textwidth } \textbf {\large #1} \par \smallskip }
-\newcommand {\FVDthemechaptertile }[2]{}
-\newcommand {\FVDthemechaptertile }[2]{\HCode {<div class="fvd-theme-chapter-tile">}\HCode {<span class="fvd-theme-chapter-tile__number">}#1\HCode {</span>}\HCode {<span class="fvd-theme-chapter-tile__title">}#2\HCode {</span>}\HCode {</div>}}
-\newcommand {\FVDthemeoverviewempty }[0]{\emph {Voor dit thema zijn nog geen hoofdstukken toegevoegd.}}
-\newcommand {\hoofdstukoverzicht }[0]{\HCode {<section class="fvd-theme-overview">}\HCode {<h2 class="fvd-theme-overview__title">}Overzicht van de hoofdstukken\HCode {</h2>}\HCode {<div class="fvd-theme-overview__grid">}}
-\newcommand {\FVDResetExamples }[0]{\setcounter {fvdexample}{0}}
-\newcommand {\FVDExampleOptionalTitle }[1]{\if \relax \detokenize {#1}\relax \else \space ---\space #1\fi }
-\newcommand {\FVDbeginExercises }[0]{}
-\newcommand {\FVDendExercises }[0]{}
-\newcommand {\FVDwidebegin }[0]{}
-\newcommand {\FVDwideend }[0]{}
-\newcommand {\FVDResetExercises }[0]{\setcounter {fvdoefening}{0}}
-\newcommand {\oefB }[0]{}
-\newcommand {\oefU }[0]{}
-\newcommand {\oefG }[0]{}
-\newcommand {\ESS }[0]{}
-\newcommand {\oefB }[0]{\HCode {<span class="fvd-exercise-chip fvd-exercise-chip--b">B</span>}}
-\newcommand {\oefU }[0]{\HCode {<span class="fvd-exercise-chip fvd-exercise-chip--u">U</span>}}
-\newcommand {\oefG }[0]{\HCode {<span class="fvd-exercise-chip fvd-exercise-chip--g">G</span>}}
-\newcommand {\ESS }[0]{\HCode {<span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span>}}
-\newcommand {\FVDmodulecover }[0]{}
-\newcommand {\ESSinline }[0]{\tikz [baseline=-0.6ex]{\node [ fill=fvdEssBg, text=fvdEssText, rounded corners=1.5mm, minimum width=9mm, minimum height=5.5mm, inner sep=0pt, font=\sffamily \bfseries \scriptsize ] {$\blacklozenge $}; }}
-\newcommand {\oefBinline }[0]{\tikz [baseline=-0.6ex]{\node [ fill=fvdBasisBg, text=fvdBasisText, rounded corners=1.5mm, minimum width=9mm, minimum height=5.5mm, inner sep=0pt, font=\sffamily \bfseries \scriptsize ] {B}; }}
-\newcommand {\oefUinline }[0]{\tikz [baseline=-0.6ex]{\node [ fill=fvdVerdiepingBg, text=fvdVerdiepingText, rounded corners=1.5mm, minimum width=9mm, minimum height=5.5mm, inner sep=0pt, font=\sffamily \bfseries \scriptsize ] {U}; }}
-\newcommand {\oefGinline }[0]{\tikz [baseline=-0.6ex]{\node [ fill=fvdGevorderdBg, text=fvdGevorderdText, rounded corners=1.5mm, minimum width=9mm, minimum height=5.5mm, inner sep=0pt, font=\sffamily \bfseries \scriptsize ] {G}; }}
-\newcommand {\FVDNumberLine }[2]{\draw [fvd axis] (#1-0.6,0) -- (#2+0.6,0); \par \foreach \x in {#1,...,#2}{\draw [fvd tick] (\x ,0.13) -- (\x ,-0.13); \par \ifnum \x =0 \node [ below=3pt, text=fvdmagenta, font=\small \bfseries ] at (\x ,0) {0}; \else \node [ below=3pt, text=fvddark, font=\small ] at (\x ,0) {\x }; \fi }}
-\newcommand {\FVDPoint }[1]{\fill [fvdmagenta] (#1,0) circle (2.2pt); }
-\newcommand {\FVDPointCyan }[1]{\fill [fvdcyan] (#1,0) circle (2.2pt); }
-\newcommand {\FVDLabeledPoint }[2]{\fill [fvdmagenta] (#1,0) circle (2.2pt); \par \node [ fvd label, above=7pt ] at (#1,0) {#2}; }
-\newcommand {\FVDGuideUp }[2]{\draw [fvd guide] (#1,0.08) -- (#1,#2); }
-\newcommand {\FVDMoveLeft }[3]{\draw [ ->, line width=1.4pt, color=fvdcyan ] (#1,0.52) to[bend left=28] (#2,0.52); \par \node [ fill=white, draw=fvdcyan!40, text=fvddark, rounded corners=2pt, inner xsep=5pt, inner ysep=2pt, font=\small ] at (#2+1.5,1.15) {#3}; \par \FVDGuideUp {#1}{0.50} \FVDGuideUp {#2}{0.50} }
-\newcommand {\FVDMoveRight }[3]{\draw [ ->, line width=1.4pt, color=fvdcyan ] (#1,0.52) to[bend left=28] (#2,0.52); \par \node [ fill=white, draw=fvdcyan!40, text=fvddark, rounded corners=2pt, inner xsep=5pt, inner ysep=2pt, font=\small ] at (#1+2.0,1.15) {#3}; \par \FVDGuideUp {#1}{0.50} \FVDGuideUp {#2}{0.50} }
-\newcommand {\FVDPixelPlayer }[0]{\fill [fvddark] (0,4) rectangle (4,8); \par \fill [fvdcyan] (0.8,5.7) rectangle (1.7,6.6); \fill [fvdcyan] (2.8,5.7) rectangle (3.7,6.6); \par \fill [white] (1.05,5.95) rectangle (1.45,6.35); \fill [white] (3.05,5.95) rectangle (3.45,6.35); \par \fill [fvdmagenta] (1,1.5) rectangle (3.5,4); \par \fill [fvdcyan] (0,2.3) rectangle (1,3.8); \fill [fvdcyan] (3.5,2.3) rectangle (4.5,3.8); \par \fill [fvddark] (1,0) rectangle (1.9,1.5); \fill [fvddark] (2.6,0) rectangle (3.5,1.5); }
-\newcommand {\FVDPixelController }[0]{\fill [fvddark] (1,2) rectangle (11,7); \fill [fvddark] (0,3) rectangle (12,6); \fill [fvddark] (2,1) rectangle (4,3); \fill [fvddark] (8,1) rectangle (10,3); \par \fill [white] (1.5,2.5) rectangle (10.5,6.5); \fill [fvdcyan] (1.5,6.0) rectangle (10.5,6.5); \par \fill [fvddark] (2.2,4.1) rectangle (5.0,4.9); \fill [fvddark] (3.2,3.1) rectangle (4.0,5.9); \par \fill [fvdmagenta] (8.0,4.8) circle (0.42); \fill [fvdmagenta] (9.2,3.7) circle (0.42); \fill [fvdcyan] (6.9,3.7) circle (0.42); \fill [fvdcyan] (8.0,2.8) circle (0.42); \par \fill [fvddark] (5.2,4.15) rectangle (5.9,4.45); \fill [fvddark] (6.2,4.15) rectangle (6.9,4.45); }
-\newcommand {\FVDStartPositionFigure }[3]{\begin {center} \begin {tikzpicture}[ x=0.85cm, y=1cm, line cap=round, line join=round ] \par \par \FVDNumberLine {#1}{#2} \par \draw [fvd guide] (#3,0.08) -- (#3,0.70); \par \begin {scope}[shift={(#3-0.18,0.76)},scale=0.055] \FVDPixelPlayer \end {scope} \par \node [ fvd label ] at (#3,1.42) {startpositie \(#3\)}; \par \node [ anchor=east, text=fvdmagenta, font=\small \bfseries ] at (-0.35,-1) {negatieve richting}; \par \node [ anchor=west, text=fvdcyan, font=\small \bfseries ] at (0.35,-1) {positieve richting}; \par \end {tikzpicture} \end {center} }
-\newcommand {\FVDMovementLeftFigure }[5]{\begin {center} \begin {tikzpicture}[ x=0.85cm, y=1cm, line cap=round, line join=round ] \par (#1-0.8,-0.72) rectangle (#2+0.8,1.72); \par \FVDNumberLine {#1}{#2} \par \FVDPoint {#3} \FVDPointCyan {#4} \FVDMoveLeft {#3}{#4}{#5} \par \end {tikzpicture} \end {center} }
-\newcommand {\FVDMovementRightFigure }[5]{\begin {center} \begin {tikzpicture}[ x=0.85cm, y=1cm, line cap=round, line join=round ] \par \fill [fvdcyan!6] (#1-0.8,-0.72) rectangle (#2+0.8,1.72); \par \FVDNumberLine {#1}{#2} \par \FVDPoint {#3} \FVDPointCyan {#4} \FVDMoveRight {#3}{#4}{#5} \par \end {tikzpicture} \end {center} }
-\newcommand {\FVDCoordinatePlane }[4]{\draw [ step=1cm, color=fvdcyan!18, line width=0.35pt ] (#1,#3) grid (#2,#4); \par \draw [fvd axis] (#1,0) -- (#2+0.35,0) node[ below left=2pt, text=fvddark ] {\(x\)}; \par \draw [fvd axis] (0,#3) -- (0,#4+0.35) node[ below left=2pt, text=fvddark ] {\(y\)}; \par \foreach \x in {#1,...,#2}{\ifnum \x =0 \else \draw [fvd tick] (\x ,0.10) -- (\x ,-0.10); \node [ below=2pt, text=fvddark, font=\scriptsize ] at (\x ,0) {\x }; \fi } \par \foreach \y in {#3,...,#4}{\ifnum \y =0 \else \draw [fvd tick] (0.10,\y ) -- (-0.10,\y ); \node [ left=2pt, text=fvddark, font=\scriptsize ] at (0,\y ) {\y }; \fi } \par \node [ below left=2pt, text=fvdmagenta, font=\scriptsize \bfseries ] at (0,0) {0}; }
-\newcommand {\FVDCoordinatePoint }[3]{\draw [fvd guide] (#1,0) -- (#1,#2); \draw [fvd guide] (0,#2) -- (#1,#2); \par \fill [fvdmagenta] (#1,#2) circle (2.2pt); \par \node [ fvd label, above right=3pt ] at (#1,#2) {\(#3\)}; }
-\newcommand {\fvdschoolnaam }[0]{Campus Bellevue Izegem}
-\newcommand {\FVDchapterpair }[2]{\ifdefined \HCode \par \activity {#1}\par \if \relax \detokenize {#2}\relax \else \activity {#2}\fi \par \else \par \activity {#1}\par \fi }
-\newcommand {\luastring }[1]{"\luatexluaescapestring {#1}"}
-\newcommand {\luastringO }[1]{\luastring {\unexpanded \expandafter {#1}}}
-\newcommand {\luastringN }[1]{\luastring {\unexpanded {#1}}}
-\newcommand {\RestoreMathJaxEnvironment }[1]{\expandafter \let \csname #1\expandafter \endcsname \csname mathjax-#1\endcsname \expandafter \let \csname end#1\expandafter \endcsname \csname mathjax-end#1\endcsname }
-\newcommand {\graded }[1]{\ifvmode \IgnorePar \fi \EndP \HCode {<div class="graded" data-weight="#1">}\IgnoreIndent }
-\newcommand {\DeclareMicrotypeVariants }[1]{}
-\newcommand {\DeclareMicrotypeAlias }[2]{}
-\newcommand {\LoadMicrotypeFile }[1]{}
-\newcommand {\DeclareMicrotypeFilePrefix }[1]{}
-\newcommand {\DeclareMicrotypeBabelHook }[2]{}
-\newcommand {\microtypesetup }[1]{}
-\newcommand {\microtypecontext }[1]{}
-\newcommand {\textmicrotypecontext }[2]{#2}
-\newcommand {\leftprotrusion }[1]{#1}
-\newcommand {\rightprotrusion }[1]{#1}
-\newcommand {\noprotrusionifhmode }[0]{}
-\newcommand {\lsstyle }[0]{}
-\newcommand {\lslig }[1]{#1}
-\newcommand {\maketitle }[0]{}
-\newcommand {\problem }[0]{ }
-\newcommand {\exercise }[0]{ }
-\newcommand {\question }[0]{ }
-\newcommand {\exploration }[0]{ }
-\newcommand {\ConfigureTheoremEnv }[1]{\renewenvironment {#1}[1][]{\refstepcounter {problem}\ifthenelse {\equal {###1}{}}{}{\HCode {<span class="theorem-like-title">}###1\HCode {</span>}}}{} \ConfigureEnv {#1}{\stepcounter {identification}\ifvmode \IgnorePar \fi \EndP \HCode {<div class="theorem-like problem-environment #1" id="problem\arabic {identification}" titletext=" \GetTranslation {#1}">}}{\ifvmode \IgnorePar \fi \EndP \HCode {</div>}\IgnoreIndent }{}{}}
-\newcommand {\xmalt }[1]{\ifvmode \IgnorePar \fi \EndP \HCode {<details><summary>Show Alt Text</summary>} #1 \HCode {</details>}}
-\newcommand {\dialogue }[0]{\begin {description}}
-\newcommand {\foldable }[0]{\stepcounter {identification}\ifvmode \IgnorePar \fi \EndP \HCode {<div id="foldable\arabic {identification}" class="foldable">}}
-\newcommand {\unfoldable }[1]{\HCode {<span class="unfoldable">}#1\HCode {</span>}}
-\newcommand {\selectAll }[0]{\refstepcounter {problem}}
-\newcommand {\freeResponse }[0]{\refstepcounter {problem}}
-\newcommand {\javascript }[0]{\NoFonts }
-\newcommand {\sageCell }[0]{\NoFonts }
-\newcommand {\sageOutput }[0]{\NoFonts }
-\newcommand {\sagesilent }[0]{\NoFonts }
-\newcommand {\ungraded }[0]{\ifvmode \IgnorePar \fi \EndP \HCode {<div class="ungraded">}\IgnoreIndent }
-\newcommand {\accordion }[0]{\ifvmode \IgnorePar \fi \EndP \HCode {<div class="accordion">} }
-\newcommand {\expandable }[2]{\stepcounter {identification}\ifvmode \IgnorePar \fi \EndP \HCode {<div class="accordion">\Hnewline }\HCode {<h3 class="#1">}#2\HCode {</h3>\Hnewline }\HCode {<div id="accordion-item\arabic {identification}" class="accordion-item #1-content">\Hnewline } }
-\newcommand {\paragraph }[1]{\HCode {<span class="paragraphHead">}#1\HCode {</span>}\par \IgnorePar }
-\newcommand {\subparagraph }[1]{\HCode {<span class="subparagraphHead">}#1\HCode {</span>}\par \IgnorePar }
-\newcommand {\outcome }[1]{\HCode {<span class="learning-outcome">#1</span>} }
-\newcommand {\javascriptCode }[0]{\NoFonts }
-\newcommand {\GetTranslation }[1]{#1}
-\newcommand {\ref }[1]{\HCode {<a class="reference" href="\##1">#1</a>}}</script><style type='text/css'>#minipage0{width:100%;}
-</style></div>
-<style> .activity-body pre { white-space: pre; background-color: lightgray; } .xmyoutube { aspect-ratio: 16/9; min-width: 75%; } .image-environment img { width: unset; } </style> 
+<!DOCTYPE html>
+<html lang="en-US" xml:lang="en-US">
+<head> <title>Van krachten tot kwanta</title>
+<meta charset="utf-8"/>
+<meta content="TeX4ht (https://tug.org/tex4ht/)" name="generator"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="\aa:CssFile " rel="stylesheet" type="text/css"/>
+<meta content="index.online.tex" name="src"/>
+<script>window.MathJax = { tex: { tags: "ams", }, }; </script>
+<script async="async" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+<meta content="" name="og:image"/>
+<meta content="xourse" name="description"/>
+<meta content="Ingmar Herreman" name="author"/>
+<meta content="version 2.5.1" name="ximera"/>
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" media="screen" rel="stylesheet"/>
+<script src="https://ximera.osu.edu/public/javascripts/standalone.min.js" type="text/javascript"></script>
+<link href="../../assets/css/base.css" media="screen" rel="stylesheet"/>
+<link href="../../assets/css/global.css" media="screen" rel="stylesheet"/>
+<link href="../../assets/css/Header_Footer.css" media="screen" rel="stylesheet"/>
+<link href="../../assets/css/ModuleLayout.css" media="screen" rel="stylesheet"/>
+<style id="FVD-COMPACT-COURSE-CARDS">
+.course-theme-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 420px));
+    align-items: start;
+    align-content: start;
+    grid-auto-rows: auto;
+    gap: 1.25rem;
+}
+.course-card {
+    height: auto !important;
+    min-height: 0 !important;
+    align-self: start;
+}
+.course-card-link {
+    display: flex;
+    flex-direction: column;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 1.25rem;
+}
+.course-card-abstract {
+    margin: 0.9rem 0 1.1rem;
+    line-height: 1.55;
+}
+.course-card-footer {
+    margin-top: auto;
+}
+</style>
+<style id="FVD-FOOTER-LAYOUT-FIX">
+.course-footer-clear {
+    display: block;
+    width: 100%;
+    clear: both;
+}
 
-<div class='maketitle'></div>
-<p><a id='x1-2r1'></a>
-</p><h1 class='card part' id='part1'>Beweging en kracht — Van beweging beschrijven tot energie begrijpen</h1>
-<div class='center'>
-<!--  l. 140  --><!--  l. 140  --><p class='noindent'><img alt='PIC' height='345' src='../images/banners/fysica_beweging.png' width='345' /></p></div>
-<!--  l. 165  --><section class='fvd-theme-overview'><h2 class='fvd-theme-overview__title'>Overzicht van de hoofdstukken</h2><div class='fvd-theme-overview__grid'> <div class='fvd-theme-chapter-tile'><span class='fvd-theme-chapter-tile__number'>1</span><span class='fvd-theme-chapter-tile__title'>Een beweging beschrijven</span></div> <div class='fvd-theme-chapter-tile'><span class='fvd-theme-chapter-tile__number'>2</span><span class='fvd-theme-chapter-tile__title'>Snelheid en versnelling</span></div>
-<div class='fvd-theme-chapter-tile'><span class='fvd-theme-chapter-tile__number'>3</span><span class='fvd-theme-chapter-tile__title'>Vallen en werpen</span></div> <div class='fvd-theme-chapter-tile'><span class='fvd-theme-chapter-tile__number'>4</span><span class='fvd-theme-chapter-tile__title'>Bewegen in twee dimensies</span></div> <div class='fvd-theme-chapter-tile'><span class='fvd-theme-chapter-tile__number'>5</span><span class='fvd-theme-chapter-tile__title'>In cirkels bewegen</span></div> <div class='fvd-theme-chapter-tile'><span class='fvd-theme-chapter-tile__number'>6</span><span class='fvd-theme-chapter-tile__title'>Kracht en
-beweging</span></div> <div class='fvd-theme-chapter-tile'><span class='fvd-theme-chapter-tile__number'>7</span><span class='fvd-theme-chapter-tile__title'>Bewegen onder invloed van velden</span></div> <div class='fvd-theme-chapter-tile'><span class='fvd-theme-chapter-tile__number'>8</span><span class='fvd-theme-chapter-tile__title'>Arbeid en energie</span></div> <div class='fvd-theme-chapter-tile'><span class='fvd-theme-chapter-tile__number'>9</span><span class='fvd-theme-chapter-tile__title'>Formuleoverzicht
-Thema 1</span></div> <div class='fvd-theme-chapter-tile'><span class='fvd-theme-chapter-tile__number'>10</span><span class='fvd-theme-chapter-tile__title'>Parate kennis</span></div> </div></section>
-                                                                  
+body > .site-footer {
+    display: block;
+    width: 100%;
+    max-width: none;
+    clear: both;
+    box-sizing: border-box;
+}
+</style>  <link rel="stylesheet" href="../../assets/css/module-banner.css">
+</head><body>
+<!-- XIMERA-HEADER-START -->
+<!-- =========================================================
+     HEADER.HTML — Wiskunde 7 FVD
+     Plaats dit bestand bijvoorbeeld in:
+     assets/html/Header.html
+     ========================================================= -->
+<header aria-labelledby="fvd-hero-title" class="fvd-hero">
+<div aria-hidden="true" class="fvd-hero__grid"></div>
+<div aria-hidden="true" class="fvd-hero__glow fvd-hero__glow--left"></div>
+<div aria-hidden="true" class="fvd-hero__glow fvd-hero__glow--right"></div>
+<div class="fvd-hero__inner">
+<!-- Groot Athena-logo links -->
+<div class="fvd-hero__brand">
+<img alt="Athena secundair onderwijs" class="fvd-hero__logo" src="/images/banners/logo_athena.png"/>
+</div>
+<div aria-hidden="true" class="fvd-hero__divider"></div>
+<!-- Centrale titel en leerinhouden -->
+<div class="fvd-hero__content">
+<p class="fvd-hero__eyebrow">
+                    Fundamentele Vorming Digitale Creatie
+                </p>
+<h1 class="fvd-hero__title" id="fvd-hero-title">
+<span class="fvd-hero__title-main">Wiskunde</span>
+<span class="fvd-hero__title-accent">7 FVD</span>
+</h1>
+<div aria-hidden="true" class="fvd-hero__pink-line"></div>
+<p class="fvd-hero__subtitle">
+                    Wiskundige inzichten die je nodig hebt om digitale werelden te bouwen.
+                </p>
+<div aria-label="Onderwerpen in deze cursus" class="fvd-hero__chips">
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<rect height="18" rx="2" width="14" x="5" y="3"></rect>
+<path d="M8 7h8M8 11h2M14 11h2M8 15h2M14 15h2M8 18h2M14 18h2"></path>
+</svg>
+                        Basiswiskunde
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M4 17c4-1 4-10 8-10 2 0 2 3 4 3 1 0 2-.4 4-2"></path>
+<path d="M7 20 13 4"></path>
+</svg>
+                        Algebra
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M5 8h14M5 16h14"></path>
+</svg>
+                        Vergelijkingen
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M4 19V5M4 19h16"></path>
+<path d="m7 16 4-5 3 2 4-6"></path>
+</svg>
+                        Functies
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M5 18 18 5"></path>
+<path d="M12 5h6v6"></path>
+</svg>
+                        Vectoren
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="7"></circle>
+<path d="M12 2v20M2 12h20"></path>
+</svg>
+                        Coördinaten
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="m12 3 8 4.5v9L12 21l-8-4.5v-9z"></path>
+<path d="m4 7.5 8 4.5 8-4.5M12 12v9"></path>
+</svg>
+                        3D-meetkunde
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M3 16c3-8 7-8 10 0 2 5 5 4 8-4"></path>
+</svg>
+                        Goniometrie
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M5 18V6M5 18h14"></path>
+<path d="M8 16c1-6 3-9 8-10"></path>
+</svg>
+                        Logaritmen
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="m7 6 10 5-10 5z"></path>
+<path d="m7 10 10 5-10 5"></path>
+</svg>
+                        Transformaties
+                    </span>
+</div>
+</div>
+<!-- Rechterzijde met wiskundige SVG-tekeningen -->
+<div aria-hidden="true" class="fvd-hero__visual">
+<!-- 3D-kubus -->
+<svg class="fvd-visual fvd-visual--cube" viewbox="0 0 310 245">
+<g class="fvd-svg-cyan">
+<path d="M65 72 185 86 245 48 125 34Z"></path>
+<path d="M65 72v110l120 16V86"></path>
+<path d="M185 86 245 48v110l-60 40"></path>
+<path class="fvd-svg-dash" d="M125 34v110M125 144 65 182M125 144l120 14"></path>
+<path d="M125 144 90 210M125 144l88 28M125 144V15"></path>
+<path d="m90 210 11-4-7-9M213 172l-9-7-2 11M125 15l-6 11h12"></path>
+</g>
+<g class="fvd-svg-label">
+<text x="82" y="225">x</text>
+<text x="220" y="180">y</text>
+<text x="132" y="18">z</text>
+</g>
+</svg>
+<!-- Matrix -->
+<svg class="fvd-visual fvd-visual--matrix" viewbox="0 0 220 100">
+<g class="fvd-svg-soft">
+<text x="0" y="58">A =</text>
+<path d="M60 10c-12 18-12 62 0 80M205 10c12 18 12 62 0 80"></path>
+<text x="82" y="36">1</text>
+<text x="123" y="36">2</text>
+<text x="165" y="36">0</text>
+<text x="73" y="61">−1</text>
+<text x="123" y="61">0</text>
+<text x="165" y="61">3</text>
+<text x="82" y="86">2</text>
+<text x="113" y="86">−2</text>
+<text x="165" y="86">1</text>
+</g>
+</svg>
+<!-- Vectoren en rotatie -->
+<svg class="fvd-visual fvd-visual--vectors" viewbox="0 0 260 170">
+<g class="fvd-svg-cyan">
+<path d="M55 138 132 74"></path>
+<path d="m132 74-13 3 8 10"></path>
+<path d="M55 138h125"></path>
+<path d="m180 138-12-6v12"></path>
+<path class="fvd-svg-dash" d="M55 138c24-65 116-95 156-25"></path>
+</g>
+<g class="fvd-svg-pink">
+<path d="M55 138 207 104"></path>
+<path d="m207 104-13-2 5 12"></path>
+<path class="fvd-svg-dash" d="M211 113c17-13 25-5 21 11"></path>
+<path d="m232 124-9-8-2 12"></path>
+</g>
+<g class="fvd-svg-label">
+<text x="38" y="153">O</text>
+<text x="138" y="73">u⃗</text>
+<text x="188" y="98">v⃗</text>
+<text x="141" y="130">x⃗</text>
+<text x="222" y="102">Rθ</text>
+</g>
+</svg>
+<!-- Bézier-curve -->
+<svg class="fvd-visual fvd-visual--bezier" viewbox="0 0 280 110">
+<g class="fvd-svg-soft">
+<path d="M30 82 85 30 190 30 245 82"></path>
+</g>
+<g class="fvd-svg-cyan">
+<path d="M30 82c42-12 55-52 105-52s67 40 110 52"></path>
+</g>
+<g class="fvd-svg-pink">
+<circle cx="30" cy="82" r="4"></circle>
+<circle cx="85" cy="30" r="4"></circle>
+<circle cx="190" cy="30" r="4"></circle>
+<circle cx="245" cy="82" r="4"></circle>
+</g>
+<g class="fvd-svg-label">
+<text x="18" y="102">P₀</text>
+<text x="74" y="20">P₁</text>
+<text x="181" y="20">P₂</text>
+<text x="238" y="102">P₃</text>
+<text x="103" y="79">Bézier-curve</text>
+</g>
+</svg>
+</div>
+</div>
+<div aria-hidden="true" class="fvd-hero__pink-corner"></div>
+</header><!-- XIMERA-HEADER-END -->
 
-                                                                  
-<!--  l. 179  --><div class='minipage' id='minipage0'><!--  l. 179  --><p class='noindent'><strong></strong>
-</p><!--  l. 181  --><p class='noindent'>Beweging is overal. Een bal vliegt door de lucht, een auto versnelt, een satelliet
-beweegt rond de aarde en een voorwerp komt tot stilstand wanneer het wordt
-afgeremd. Maar hoe kunnen we zulke bewegingen nauwkeurig beschrijven en
-voorspellen?
-</p><!--  l. 186  --><p class='noindent'>In dit thema beginnen we met de kinematica: de studie van beweging zonder ons
-meteen af te vragen waardoor die beweging veroorzaakt wordt. We beschrijven
-de positie van een voorwerp als functie van de tijd en onderzoeken snelheid
-en versnelling. Grafieken en wiskundige modellen helpen ons om verschillende
-soorten beweging te analyseren.
-</p><!--  l. 192  --><p class='noindent'>Daarna  stellen  we  een  nieuwe  vraag:  waarom  verandert  een  beweging?  Met
-de wetten van Newton onderzoeken we het verband tussen kracht, massa en
-versnelling. We leren krachten vectorieel voorstellen en combineren en gebruiken
-deze  ideeën  om  bewegingen  in  uiteenlopende  situaties  te  verklaren  en  te
-voorspellen.
-</p><!--  l. 198  --><p class='noindent'>Ook beweging langs een cirkel vraagt bijzondere aandacht. Hoewel de grootte
-van de snelheid constant kan blijven, verandert de snelheidsvector voortdurend
-van richting. We onderzoeken welke versnelling en welke resulterende kracht
-daarvoor nodig zijn.
-</p><!--  l. 203  --><p class='noindent'>Ten  slotte  bekijken  we  beweging  vanuit  een  ander  perspectief.  Met  arbeid
-en  energie  kunnen  we  veel  mechanische  problemen  beschrijven  zonder  de
-beweging  op  ieder  ogenblik  afzonderlijk  te  onderzoeken.  We  bestuderen
-energieomzettingen en onderzoeken ook wat arbeid betekent wanneer een kracht
-niet constant is.
-</p><!--  l. 209  --><p class='noindent'>Doorheen het thema verbinden we fysica voortdurend met wiskunde. Functies
-en  grafieken  beschrijven  beweging,  afgeleiden  verbinden  positie,  snelheid  en
-versnelling  en  integralen  krijgen  een  concrete  betekenis  bij  onder  andere
-verplaatsing en arbeid.
-</p><!--  l. 214  --><p class='noindent'>Zo bouwen we stap voor stap een samenhangend model van de mechanica: van
-het beschrijven van beweging naar het verklaren ervan, en van krachten naar
-energie.                                                           </p></div> 
+<!-- MODULE_BANNER_START -->
+<section class="fvd-module-banner">
+    <div class="fvd-module-banner__glow fvd-module-banner__glow--left"></div>
+    <div class="fvd-module-banner__glow fvd-module-banner__glow--right"></div>
+  
+    <div class="fvd-module-banner__grid"></div>
+  
+    <div class="fvd-module-banner__icon" aria-hidden="true">
+      <svg viewBox="0 0 64 64" role="img">
+        <rect x="13" y="7" width="38" height="50" rx="8"></rect>
+        <rect x="19" y="14" width="26" height="10" rx="2"></rect>
+  
+        <circle cx="22" cy="33" r="2.5"></circle>
+        <circle cx="32" cy="33" r="2.5"></circle>
+        <circle cx="42" cy="33" r="2.5"></circle>
+  
+        <circle cx="22" cy="42" r="2.5"></circle>
+        <circle cx="32" cy="42" r="2.5"></circle>
+        <circle cx="42" cy="42" r="2.5"></circle>
+  
+        <circle cx="22" cy="51" r="2.5"></circle>
+        <circle cx="32" cy="51" r="2.5"></circle>
+        <circle cx="42" cy="51" r="2.5"></circle>
+      </svg>
+    </div>
+  
+    <div class="fvd-module-banner__content">
+      <div class="fvd-module-banner__label">
+        Module 1
+      </div>
+  
+      <h1 class="fvd-module-banner__title">
+        Van krachten tot kwanta
+      </h1>
+  
+      <p class="fvd-module-banner__description">
+        In deze cursus bouwen we verder op de fysica uit het vijfde jaar en onderzoeken we hoe krachten, energie, trillingen, golven en licht met elkaar samenhangen. We starten vanuit de klassieke mechanica. We bestuderen krachten, evenwicht, arbeid en energie en onderzoeken hoe fysische systemen beschreven en voorspeld kunnen worden met behulp van modellen en wiskundige verbanden. Vervolgens richten we ons op trillingen en golven. Vanuit harmonische trillingen bouwen we stap voor stap het golfmodel op. We onderzoeken hoe golven zich voortplanten en bestuderen verschijnselen zoals reflectie, breking, interferentie, diffractie, resonantie en het Dopplereffect. Geluid vormt daarbij een belangrijke toepassing. Daarna passen we het golfmodel toe op licht. We onderzoeken licht zowel met het stralenmodel als met het golfmodel en bestuderen onder andere reflectie, breking, lenzen, beeldvorming en elektromagnetische golven. Ten slotte verkennen we de grenzen van de klassieke fysica. Aan de hand van enkele ideeën uit de moderne fysica onderzoeken we hoe concepten uit de kwantumfysica en de relativiteitstheorie ons beeld van materie, straling, ruimte en tijd hebben veranderd. Doorheen de cursus gebruiken we wiskunde als taal om fysische verschijnselen te beschrijven en te modelleren. Vectoren, functies, goniometrie, afgeleiden en integralen krijgen zo een concrete fysische betekenis. Experimenten, gegevensanalyse en probleemoplossend denken helpen ons om modellen kritisch te toetsen aan de werkelijkheid. Fysica wordt zo geen verzameling afzonderlijke formules, maar een samenhangend geheel van ideeën waarmee we de natuur kunnen beschrijven, verklaren en voorspellen.
+      </p>
+  
+      <div class="fvd-module-banner__meta">
+        <div class="fvd-module-banner__meta-item">
+          <span class="fvd-module-banner__meta-icon">◷</span>
+          <span>18 lesuren</span>
+        </div>
+  
+        <div class="fvd-module-banner__divider"></div>
+  
+        <div class="fvd-module-banner__meta-item">
+          <span class="fvd-module-banner__meta-icon">▤</span>
+          <span>1 thema's</span>
+        </div>
+  
+        <div class="fvd-module-banner__divider"></div>
+  
+        <div class="fvd-module-banner__meta-item">
+          <span class="fvd-module-banner__meta-icon">▶</span>
+          <span>Start hier</span>
+        </div>
+      </div>
+    </div>
+  
+    <div class="fvd-module-banner__visual" aria-hidden="true">
+      <div class="fvd-module-banner__symbols">
+        <span>+</span>
+        <span>−</span>
+        <span>×</span>
+        <span>÷</span>
+      </div>
+  
+      <svg class="fvd-module-banner__graph" viewBox="0 0 360 180">
+        <line x1="35" y1="142" x2="335" y2="142"></line>
+        <line x1="92" y1="160" x2="92" y2="20"></line>
+  
+        <path
+          d="M45 140
+             C80 140, 80 72, 125 72
+             C170 72, 165 118, 205 118
+             C245 118, 235 40, 280 40
+             C315 40, 316 94, 335 98">
+        </path>
+      </svg>
+    </div>
+  </section>
+<!-- MODULE_BANNER_END -->
 
-<p><a class='activity card ' data-options='' href='modules/FYS_6WW/Thema1-Beweging/1-Beweging'><h2>Een beweging beschrijven</h2>Thema1-Beweging/1-Beweging</a>
-<a class='activity card ' data-options='' href='modules/FYS_6WW/Thema1-Beweging/2-ERVB'><h2>Snelheid en versnelling</h2>Thema1-Beweging/2-ERVB</a>
-<a class='activity card ' data-options='' href='modules/FYS_6WW/Thema1-Beweging/3-Vallen_werpen'>Thema1-Beweging/3-Vallen_werpen</a>
-<a class='activity card ' data-options='' href='modules/FYS_6WW/Thema1-Beweging/4-2D-beweging'>Thema1-Beweging/4-2D-beweging</a>
-<a class='activity card ' data-options='' href='modules/FYS_6WW/Thema1-Beweging/5-Cirkels'><h2>In cirkels bewegen</h2>Thema1-Beweging/5-Cirkels</a>
-<a class='activity card ' data-options='' href='modules/FYS_6WW/Thema1-Beweging/6-Kracht'><h2>Kracht en beweging</h2>Thema1-Beweging/6-Kracht</a>
-<a class='activity card ' data-options='' href='modules/FYS_6WW/Thema1-Beweging/7-Kracht_cirkel'><h2>Bewegen onder invloed van velden</h2>Thema1-Beweging/7-Kracht_cirkel</a>
-<a class='activity card ' data-options='' href='modules/FYS_6WW/Thema1-Beweging/8-Arbeid-Energie'>Thema1-Beweging/8-Arbeid-Energie</a>
-<a class='activity card ' data-options='' href='modules/FYS_6WW/Thema1-Beweging/9-Formules'>Thema1-Beweging/9-Formules</a>
-<a id='x1-3r2'></a>
-</p><h1 class='card part' id='part2'>Alles trilt — Van trilling tot golf</h1>
-                                                                  
+<style> .activity-body pre { white-space: pre; background-color: lightgray; } .xmyoutube { aspect-ratio: 16/9; min-width: 75%; } .image-environment img { width: unset; } </style>
 
-                                                                  
-<!--  l. 272  --><section class='fvd-theme-overview'><h2 class='fvd-theme-overview__title'>Overzicht van de hoofdstukken</h2><div class='fvd-theme-overview__grid'> <em>Voor dit thema zijn nog geen hoofdstukken
-toegevoegd.</em></div></section>
-<a id='x1-4r3'></a>
+<p><a id="x1-2r1"></a>
+</p><details class="course-theme" open=""><summary class="course-theme__summary"><span class="course-theme__summary-main"><span class="course-theme__badge">Thema 1</span><span class="course-theme__text"><span class="course-theme__title">Beweging en kracht — Van beweging beschrijven tot energie begrijpen</span><span class="course-theme__count">9 hoofdstukken</span></span></span><span aria-hidden="true" class="course-theme__chevron">⌄</span></summary><div class="course-theme-cards"><article class="course-card">
+<div class="course-card-link">
+<div class="course-card-header">
+<div class="course-card-number-block">
+<span class="course-card-label">
+                    Hoofdstuk
+                </span>
+<span class="course-card-number">
+                    1
+                </span>
+</div>
+<h3 class="course-card-title">
+                Een beweging beschrijven
+            </h3>
+</div>
+<p class="course-card-abstract">
+            Beweging is overal: een fietser rijdt door het verkeer, een sprinter vertrekt uit de startblokken, een trein rijdt een station binnen en een satelliet beweegt rond de aarde. In dit hoofdstuk bouwen we de taal op waarmee we zulke bewegingen nauwkeurig kunnen beschrijven. We onderzoeken wat we bedoelen met rust en beweging, kiezen een geschikt referentiestelsel en leren hoe een werkelijk voorwerp kan worden vereenvoudigd tot een fysisch model. Daarna beschrijven we de positie van een voorwerp en maken we onderscheid tussen afgelegde weg en verplaatsing. We stellen bewegingen voor met woorden, tabellen, grafieken en functievoorschriften en onderzoeken hoe deze verschillende voorstellingen met elkaar samenhangen. Zo maken we de overgang van een waargenomen beweging naar een wiskundig model. Dat vormt de basis voor de volgende hoofdstukken, waarin we snelheid en versnelling gebruiken om bewegingen steeds nauwkeuriger te analyseren.
+        </p>
+<div class="course-card-footer">
+<a class="course-card-button" href="Thema1-Beweging/1-Beweging.html">
+                Hoofdstuk openen →
+            </a>
+</div>
+</div>
+</article><article class="course-card">
+<div class="course-card-link">
+<div class="course-card-header">
+<div class="course-card-number-block">
+<span class="course-card-label">
+                    Hoofdstuk
+                </span>
+<span class="course-card-number">
+                    2
+                </span>
+</div>
+<h3 class="course-card-title">
+                Snelheid en versnelling
+            </h3>
+</div>
+<p class="course-card-abstract">
+            In het vorige hoofdstuk leerden we een beweging beschrijven met een referentiestelsel, een positie, een tabel, een grafiek en een plaatsfunctie x(t). In dit hoofdstuk stellen we twee nieuwe vragen: hoe snel verandert de positie? en hoe snel verandert de snelheid? We bouwen de begrippen gemiddelde en ogenblikkelijke snelheid en versnelling zorgvuldig op. Daarbij verbinden we de fysica rechtstreeks met de wiskunde: een ogenblikkelijke snelheid ontstaat als limiet van gemiddelde snelheden en wordt berekend met een afgeleide. Op dezelfde manier is de versnelling de afgeleide van de snelheidsfunctie. Daarna keren we de redenering om. Met bepaalde integralen bepalen we uit een snelheidsfunctie de verplaatsing en uit een versnellingsfunctie de verandering van de snelheid. Zo ontstaat één samenhangend netwerk: \[ x(t) v(t) a(t). \] Ten slotte passen we deze ideeën toe op de eenparige rechtlijnige beweging en de eenparig versnelde rechtlijnige beweging. Daarbij gebruiken we drie complementaire methoden: bewegingsvergelijkingen, de praktische oppervlaktemethode in v(t)- en a(t)-diagrammen en bepaalde integralen. Grafieken, functievoorschriften, probleemoplossing en experimentele gegevens worden voortdurend met elkaar verbonden.
+        </p>
+<div class="course-card-footer">
+<a class="course-card-button" href="Thema1-Beweging/2-ERVB.html">
+                Hoofdstuk openen →
+            </a>
+</div>
+</div>
+</article><article class="course-card">
+<div class="course-card-link">
+<div class="course-card-header">
+<div class="course-card-number-block">
+<span class="course-card-label">
+                    Hoofdstuk
+                </span>
+<span class="course-card-number">
+                    3
+                </span>
+</div>
+<h3 class="course-card-title">
+                Vallen en werpen
+            </h3>
+</div>
+<p class="course-card-abstract">
+            Waarom valt een muntstuk sneller dan een los blad papier, maar niet sneller dan datzelfde papier wanneer luchtweerstand geen rol speelt? Waarom is de snelheid van een omhoog geworpen bal op het hoogste punt nul, terwijl zijn versnelling daar niet nul is? In dit hoofdstuk passen we de algemene kinematica uit het vorige hoofdstuk toe op bewegingen onder invloed van de zwaartekracht. We vertrekken van waarnemingen en maken vervolgens een fysisch model: de vrije val. Daarbij maken we scherp onderscheid tussen een werkelijke valbeweging en het geïdealiseerde model waarin andere krachten dan de zwaartekracht worden verwaarloosd. We analyseren vrije val en verticale worp met positie-, snelheids- en versnellingsfuncties. We verbinden functievoorschriften met grafieken, afgeleiden, de oppervlaktemethode en bepaalde integralen. Bij elk probleem besteden we bijzondere aandacht aan het gekozen referentiestelsel en de tekenconventie. Zo gebruiken we dezelfde wiskundige structuur om een voorwerp dat wordt losgelaten, omhoog geworpen of naar beneden geworpen te beschrijven. Tegelijk leren we kritisch beoordelen wanneer het vrije-valmodel bruikbaar is en wanneer de werkelijkheid een rijker model vereist.
+        </p>
+<div class="course-card-footer">
+<a class="course-card-button" href="Thema1-Beweging/3-Vallen_werpen.html">
+                Hoofdstuk openen →
+            </a>
+</div>
+</div>
+</article><article class="course-card">
+<div class="course-card-link">
+<div class="course-card-header">
+<div class="course-card-number-block">
+<span class="course-card-label">
+                    Hoofdstuk
+                </span>
+<span class="course-card-number">
+                    4
+                </span>
+</div>
+<h3 class="course-card-title">
+                Bewegen in twee dimensies
+            </h3>
+</div>
+<p class="course-card-abstract">
+            Tot nu toe beschreven we bewegingen langs één rechte. Veel bewegingen in de werkelijkheid zijn echter tweedimensionaal. Een bal die horizontaal van een tafel wordt weggeschoten, beweegt tegelijk horizontaal én verticaal. In dit hoofdstuk bouwen we daarom de vectoriële beschrijving van beweging verder uit. We beschrijven positie, verplaatsing, snelheid en versnelling met componenten en onderzoeken hoe twee onafhankelijke componentbewegingen samen één baan vormen. De horizontale worp is onze centrale toepassing. Horizontaal voert het voorwerp een eenparige rechtlijnige beweging uit; verticaal een vrije val. Door beide bewegingen samen te brengen kunnen we positie, snelheid, valtijd, dracht en baan analyseren en kwantificeren. We onderzoeken de horizontale worp ook experimenteel en leren kritisch omgaan met het model zonder luchtweerstand. Voor wie verder wil gaan, eindigt het hoofdstuk met een verdieping over de schuine worp. Daar blijkt dat de horizontale worp slechts een bijzonder geval is van een veel algemener model voor projectielbeweging.
+        </p>
+<div class="course-card-footer">
+<a class="course-card-button" href="Thema1-Beweging/4-2D-beweging.html">
+                Hoofdstuk openen →
+            </a>
+</div>
+</div>
+</article><article class="course-card">
+<div class="course-card-link">
+<div class="course-card-header">
+<div class="course-card-number-block">
+<span class="course-card-label">
+                    Hoofdstuk
+                </span>
+<span class="course-card-number">
+                    5
+                </span>
+</div>
+<h3 class="course-card-title">
+                In cirkels bewegen
+            </h3>
+</div>
+<p class="course-card-abstract">
+            Een voorwerp kan versnellen zonder sneller of trager te gaan. Dat klinkt vreemd, maar precies dat gebeurt bij een eenparige cirkelbeweging: de grootte van de snelheid blijft constant, terwijl de richting van de snelheidsvector voortdurend verandert. In dit hoofdstuk onderzoeken we periodieke bewegingen en bouwen we de eenparige cirkelbeweging systematisch op. We verbinden periode en frequentie met hoekpositie en hoeksnelheid en onderzoeken hoe de baansnelheid afhangt van de straal en de hoeksnelheid. Daarna staat de centrale vraag van het hoofdstuk centraal: waarom is er bij een eenparige cirkelbeweging toch een versnelling? Via de verandering van de snelheidsvector komen we tot de centripetale versnelling. We onderzoeken de verbanden tussen straal, periode, hoeksnelheid, baansnelheid en centripetale versnelling zowel theoretisch als experimenteel. De cirkelbeweging vormt zo een belangrijke schakel tussen kinematica en dynamica. In het volgende hoofdstuk onderzoeken we welke resulterende kracht nodig is om zo'n versnelling te veroorzaken.
+        </p>
+<div class="course-card-footer">
+<a class="course-card-button" href="Thema1-Beweging/5-Cirkels.html">
+                Hoofdstuk openen →
+            </a>
+</div>
+</div>
+</article><article class="course-card">
+<div class="course-card-link">
+<div class="course-card-header">
+<div class="course-card-number-block">
+<span class="course-card-label">
+                    Hoofdstuk
+                </span>
+<span class="course-card-number">
+                    6
+                </span>
+</div>
+<h3 class="course-card-title">
+                Kracht en beweging
+            </h3>
+</div>
+<p class="course-card-abstract">
+            In de vorige hoofdstukken beschreven we hoe voorwerpen bewegen. We onderzochten positie, snelheid en versnelling bij rechtlijnige, tweedimensionale en cirkelvormige bewegingen. Nu stellen we een fundamentelere vraag: waarom verandert een beweging? Het antwoord ligt bij krachten. We bouwen de dynamica op vanuit de drie wetten van Newton en leren krachten als vectoren samenstellen. Daarbij staat niet het herkennen van losse formules centraal, maar het analyseren van een volledig systeem: welk voorwerp onderzoeken we, welke krachten werken erop, wat is hun resultante en welke versnelling volgt daaruit? We besteden bijzondere aandacht aan vrijlichaamsdiagrammen, normaalkracht, spankracht en wrijving. We leren ook enkele hardnekkige misconcepties doorzien, zoals het verwarren van een Newton-III-paar met twee krachten die elkaar op één voorwerp opheffen. Ten slotte keren we terug naar de cirkelbeweging. De centripetale versnelling uit het vorige hoofdstuk moet volgens Newton II veroorzaakt worden door een naar binnen gerichte resulterende kracht. Daarmee leggen we de basis voor de latere studie van gravitatie en satellietbeweging.
+        </p>
+<div class="course-card-footer">
+<a class="course-card-button" href="Thema1-Beweging/6-Kracht.html">
+                Hoofdstuk openen →
+            </a>
+</div>
+</div>
+</article><article class="course-card">
+<div class="course-card-link">
+<div class="course-card-header">
+<div class="course-card-number-block">
+<span class="course-card-label">
+                    Hoofdstuk
+                </span>
+<span class="course-card-number">
+                    7
+                </span>
+</div>
+<h3 class="course-card-title">
+                Bewegen onder invloed van velden
+            </h3>
+</div>
+<p class="course-card-abstract">
+            In de vorige hoofdstukken leerden we bewegingen beschrijven en onderzochten we hoe een resulterende kracht volgens de wetten van Newton een beweging verandert. In dit hoofdstuk brengen we die ideeën samen met een begrip dat je al eerder ontmoette: het veld. We starten bij gravitatie. Newtons gravitatiewet en het gravitatieveld worden kort geactiveerd en vervolgens gekoppeld aan de cirkelbeweging. Zo ontdekken we waarom een satelliet voortdurend naar de aarde kan vallen zonder het aardoppervlak te bereiken. Uit de combinatie van gravitatie, Newton II en centripetale versnelling leiden we de baansnelheid en de omlooptijd van een satelliet af. Daarbij verschijnt ook het verband van Kepler op een natuurlijke manier. Daarna maken we transfer naar elektrische en magnetische velden. Een geladen deeltje in een homogeen elektrisch veld ondervindt een constante kracht en vertoont daardoor een beweging die sterk lijkt op een worp in een homogeen gravitatieveld. In een homogeen magnetisch veld kan de magnetische kracht daarentegen voortdurend loodrecht op de snelheid staan en zo een cirkelbaan veroorzaken. Doorheen het hoofdstuk staat één gedachte centraal: \[ veldkracht versnellingbeweging. \] Dezelfde wetten van de mechanica verbinden zo vallende voorwerpen, satellieten en bewegende geladen deeltjes.
+        </p>
+<div class="course-card-footer">
+<a class="course-card-button" href="Thema1-Beweging/7-Kracht_cirkel.html">
+                Hoofdstuk openen →
+            </a>
+</div>
+</div>
+</article><article class="course-card">
+<div class="course-card-link">
+<div class="course-card-header">
+<div class="course-card-number-block">
+<span class="course-card-label">
+                    Hoofdstuk
+                </span>
+<span class="course-card-number">
+                    8
+                </span>
+</div>
+<h3 class="course-card-title">
+                Arbeid en energie
+            </h3>
+</div>
+<p class="course-card-abstract">
+            In de vorige hoofdstukken beschreven we bewegingen en onderzochten we hoe krachten die bewegingen veranderen. In dit hoofdstuk bekijken we dezelfde fysica vanuit een andere invalshoek: energie. We starten met het begrip arbeid. Eerst herhalen we arbeid bij een constante kracht en onderzoeken we welke component van een kracht werkelijk bijdraagt aan een verplaatsing. Daarna lezen we arbeid rechtstreeks af uit een kracht-plaatsgrafiek. Voor eenvoudige grafieken gebruiken we oppervlakten van rechthoeken, driehoeken en trapezia. Wanneer de kracht continu verandert, wordt diezelfde oppervlakte beschreven door een bepaalde integraal. Vervolgens verbinden we arbeid met kinetische energie via het arbeid-energietheorema. We onderzoeken conservatieve en niet-conservatieve krachten en bouwen van daaruit de begrippen potentiële en mechanische energie verder op. Zwaarte-energie nabij het aardoppervlak en elastische energie worden opnieuw bekeken vanuit arbeid. Ten slotte keren we terug naar gravitatie op astronomische schaal. Daar is mgh niet langer voldoende en gebruiken we de algemene gravitatie-energie. Zo kunnen we satellieten nu niet alleen vanuit krachten, maar ook vanuit energie begrijpen. Doorheen het hoofdstuk staat één idee centraal: \[ arbeid is een manier waarop energie wordt overgedragen of omgezet. \] Grafieken, oppervlakten en integralen vormen daarbij de brug tussen wiskunde en fysica.
+        </p>
+<div class="course-card-footer">
+<a class="course-card-button" href="Thema1-Beweging/8-Arbeid-Energie.html">
+                Hoofdstuk openen →
+            </a>
+</div>
+</div>
+</article><article class="course-card">
+<div class="course-card-link">
+<div class="course-card-header">
+<div class="course-card-number-block">
+<span class="course-card-label">
+                    Hoofdstuk
+                </span>
+<span class="course-card-number">
+                    9
+                </span>
+</div>
+<h3 class="course-card-title">
+                Formuleoverzicht Thema 1
+            </h3>
+</div>
+<p class="course-card-abstract">
+            In dit hoofdstuk brengen we de belangrijkste formules en verbanden uit Thema 1 — Beweging en kracht samen. Het overzicht verbindt kinematica, krachten, cirkelbeweging, gravitatie, beweging in velden, arbeid en energie. Daarbij besteden we bijzondere aandacht aan de samenhang tussen de verschillende beschrijvingen van een mechanisch systeem. Dit hoofdstuk is geen nieuwe leerstof en ook geen lijst formules die je zonder nadenken kunt invullen. Het helpt je om bij een fysisch probleem het juiste model, de geschikte formule en een efficiënte oplossingsmethode te kiezen.
+        </p>
+<div class="course-card-footer">
+<a class="course-card-button" href="Thema1-Beweging/9-Formules.html">
+                Hoofdstuk openen →
+            </a>
+</div>
+</div>
+</article></div></details><details class="course-theme"><summary class="course-theme__summary"><span class="course-theme__summary-main"><span class="course-theme__badge">Thema 2</span><span class="course-theme__text"><span class="course-theme__title">Alles trilt — Van trilling tot golf</span><span class="course-theme__count">0 hoofdstukken</span></span></span><span aria-hidden="true" class="course-theme__chevron">⌄</span></summary></details><details class="course-theme"><summary class="course-theme__summary"><span class="course-theme__summary-main"><span class="course-theme__badge">Thema 3</span><span class="course-theme__text"><span class="course-theme__title">Licht in beeld — Van lichtstraal tot elektromagnetische golf</span><span class="course-theme__count">0 hoofdstukken</span></span></span><span aria-hidden="true" class="course-theme__chevron">⌄</span></summary></details><details class="course-theme"><summary class="course-theme__summary"><span class="course-theme__summary-main"><span class="course-theme__badge">Thema 4</span><span class="course-theme__text"><span class="course-theme__title">Voorbij het klassieke — Van klassieke fysica tot kwanta en relativiteit</span><span class="course-theme__count">0 hoofdstukken</span></span></span><span aria-hidden="true" class="course-theme__chevron">⌄</span></summary></details><!-- XIMERA-FOOTER-START --><footer class="site-footer">
 
-<h1 class='card part' id='part3'>Licht in beeld — Van lichtstraal tot elektromagnetische golf</h1>
-<!--  l. 303  --><section class='fvd-theme-overview'><h2 class='fvd-theme-overview__title'>Overzicht van de hoofdstukken</h2><div class='fvd-theme-overview__grid'> <em>Voor dit thema zijn nog geen hoofdstukken
-toegevoegd.</em></div></section>
-<a id='x1-5r4'></a>
+<div class="site-footer__inner">
+<div class="site-footer__quote">
+<span aria-hidden="true" class="site-footer__quote-mark">◈</span>
+<p class="site-footer__quote-text">
+                Think mathematically. Create digitally. Shape the future.
+            </p>
+</div>
 
-<h1 class='card part' id='part4'>Voorbij het klassieke — Van klassieke fysica tot kwanta en relativiteit</h1>
-                                                                  
-
-                                                                  
-</body> 
- 
+<div class="site-footer__grid">
+<section class="site-footer__column">
+<p class="site-footer__eyebrow">
+                    Wiskunde 7 FVD
+                </p>
+<h2 class="site-footer__title">
+                    Fundamentele Vorming Digitale Creatie
+                </h2>
+<p class="site-footer__text">
+                    Wiskundige basis voor programmeren, graphics,
+                    animatie, simulatie en 3D.
+                </p>
+</section>
+<section class="site-footer__column">
+<p class="site-footer__eyebrow">
+                    Ontwikkeling
+                </p>
+<p class="site-footer__name">
+                    Ingmar Herreman
+                </p>
+<p class="site-footer__text">
+                    GO! Athena Campus Bellevue
+                </p>
+<p class="site-footer__text">
+                    Versie 1.0 · 2026
+                </p>
+</section>
+<section class="site-footer__column">
+<p class="site-footer__eyebrow">
+                    Technologie
+                </p>
+<div class="site-footer__tech">
+<span>Ximera</span>
+<span>HTML</span>
+<span>PDF</span>
+<span>GeoGebra</span>
+<span>GitHub</span>
+</div>
+</section>
+</div>
+<div class="site-footer__bottom">
+<span>Gebouwd met Ximera</span>
+<span aria-hidden="true">•</span>
+<span>Voor 7 FVD</span>
+<span aria-hidden="true">•</span>
+<span>© 2026</span>
+</div>
+</div>
+</footer><!-- XIMERA-FOOTER-END --> <script src="../../assets/js/theme-toggle.js"></script>
+</body>
 </html>

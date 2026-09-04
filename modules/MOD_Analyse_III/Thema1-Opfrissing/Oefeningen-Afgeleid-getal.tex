@@ -92,6 +92,12 @@
 
 
 
+
+
+
+
+
+
 \maketitle
 
 \FVDbeginExercises
@@ -137,6 +143,35 @@ Welke meetkundige betekenis heeft dit resultaat?
 \end{multipleChoice}
 \end{question}
 
+\begin{oplossing}
+
+We berekenen eerst de functiewaarden:
+\[
+f(1)=1^2-2\cdot1+3=2,
+\]
+en
+\[
+f(4)=4^2-2\cdot4+3=11.
+\]
+
+De gemiddelde verandering op $[1,4]$ is dus
+\[
+\frac{f(4)-f(1)}{4-1}
+=
+\frac{11-2}{3}
+=
+3.
+\]
+
+Meetkundig is dit de richtingscoëfficiënt van de secant door de punten
+\[
+(1,2)
+\qquad\text{en}\qquad
+(4,11).
+\]
+
+\end{oplossing}
+
 \end{oefening}
 
 
@@ -173,6 +208,38 @@ Leg uit waarom een gemiddelde snelheid niet noodzakelijk gelijk is
 aan de snelheid op elk tijdstip van het onderzochte interval.
 \end{question}
 
+\begin{oplossing}
+
+Tussen $t=1$ en $t=3$ geldt
+\[
+v_{\mathrm{gem}}
+=
+\frac{s(3)-s(1)}{3-1}
+=
+\frac{17-5}{2}
+=
+6\ \mathrm{m/s}.
+\]
+
+De correcte eenheid is dus $\mathrm{m/s}$.
+
+Tussen $t=2$ en $t=4$ krijgen we
+\[
+v_{\mathrm{gem}}
+=
+\frac{s(4)-s(2)}{4-2}
+=
+\frac{26-10}{2}
+=
+8\ \mathrm{m/s}.
+\]
+
+Een gemiddelde snelheid beschrijft de totale positieverandering gedeeld
+door de totale tijdsduur van een interval. Ze zegt niet dat het voorwerp
+op elk afzonderlijk tijdstip van dat interval precies die snelheid heeft.
+
+\end{oplossing}
+
 \end{oefening}
 
 
@@ -192,7 +259,6 @@ We onderzoeken de verandering in de buurt van $x=2$.
 
 \begin{question}
 Bereken
-
 \[
 f(2).
 \]
@@ -200,24 +266,68 @@ f(2).
 
 \begin{question}
 Bereken en vereenvoudig
-
 \[
-\frac{f(2+h)-f(2)}{h}.
+\frac{f(x)-f(2)}{x-2}.
 \]
 \end{question}
 
 \begin{question}
 Bepaal vervolgens
-
 \[
-\lim_{h\to0}
-\frac{f(2+h)-f(2)}{h}.
+\lim_{x\to2}
+\frac{f(x)-f(2)}{x-2}.
 \]
 \end{question}
 
 \begin{question}
 Welke betekenis heeft het gevonden getal?
 \end{question}
+
+\begin{oplossing}
+
+We hebben
+\[
+f(2)=2^2+1=5.
+\]
+
+Volgens de definitie:
+\[
+f'(2)
+=
+\lim_{x\to2}
+\frac{f(x)-f(2)}{x-2}.
+\]
+
+We vereenvoudigen eerst het differentiequotiënt:
+\[
+\begin{aligned}
+\frac{f(x)-f(2)}{x-2}
+&=
+\frac{x^2+1-5}{x-2}\\
+&=
+\frac{x^2-4}{x-2}\\
+&=
+\frac{(x-2)(x+2)}{x-2}\\
+&=
+x+2
+\qquad (x\neq2).
+\end{aligned}
+\]
+
+Daarom
+\[
+f'(2)
+=
+\lim_{x\to2}(x+2)
+=
+\boxed{4}.
+\]
+
+Het getal $4$ is de ogenblikkelijke verandering van $f$ bij $x=2$.
+Meetkundig is het de richtingscoëfficiënt van de raaklijn aan de grafiek
+in het punt met abscis $2$.
+
+\end{oplossing}
 
 \end{oefening}
 
@@ -239,11 +349,51 @@ Bereken vanuit de definitie
 \[
 f'(1)
 =
-\lim_{h\to0}
-\frac{f(1+h)-f(1)}{h}.
+\lim_{x\to1}
+\frac{f(x)-f(1)}{x-1}.
 \]
 
 Werk het differentiequotiënt volledig uit.
+
+\begin{oplossing}
+
+Eerst:
+\[
+f(1)=3\cdot1^2-2\cdot1=1.
+\]
+
+We gebruiken de definitie
+\[
+f'(1)
+=
+\lim_{x\to1}
+\frac{f(x)-f(1)}{x-1}.
+\]
+
+Het differentiequotiënt wordt
+\[
+\begin{aligned}
+\frac{f(x)-f(1)}{x-1}
+&=
+\frac{3x^2-2x-1}{x-1}\\
+&=
+\frac{(x-1)(3x+1)}{x-1}\\
+&=
+3x+1
+\qquad (x\neq1).
+\end{aligned}
+\]
+
+Dus
+\[
+f'(1)
+=
+\lim_{x\to1}(3x+1)
+=
+\boxed{4}.
+\]
+
+\end{oplossing}
 
 \end{oefening}
 
@@ -263,6 +413,23 @@ Duid telkens alle correcte interpretaties van $f'(a)$ aan.
 \choice{De gemiddelde verandering van $f$ op elk interval dat $a$ bevat.}
 \choice[correct]{De limiet van een differentiequotiënt, wanneer die limiet bestaat.}
 \end{selectAll}
+
+\begin{oplossing}
+
+De correcte interpretaties zijn:
+
+\begin{itemize}
+\item $f'(a)$ is de ogenblikkelijke verandering van $f$ in $a$;
+\item $f'(a)$ is de richtingscoëfficiënt van de raaklijn aan de grafiek
+      in $x=a$;
+\item $f'(a)$ is, wanneer de limiet bestaat, de limiet van een
+      differentiequotiënt.
+\end{itemize}
+
+$f'(a)$ is niet hetzelfde als de functiewaarde $f(a)$ en ook niet als de
+gemiddelde verandering op een willekeurig interval rond $a$.
+
+\end{oplossing}
 
 \end{oefening}
 
@@ -292,6 +459,25 @@ De grafiek van $h$ heeft in $x=4$ een horizontale raaklijn.
 
 Wat weet je over $h'(4)$?
 \end{question}
+
+\begin{oplossing}
+
+Een stijgende raaklijn heeft een positieve richtingscoëfficiënt. Dus
+\[
+f'(2)>0.
+\]
+
+Een dalende raaklijn heeft een negatieve richtingscoëfficiënt. Dus
+\[
+g'(-1)<0.
+\]
+
+Een horizontale raaklijn heeft richtingscoëfficiënt nul. Dus
+\[
+h'(4)=0.
+\]
+
+\end{oplossing}
 
 \end{oefening}
 
@@ -326,6 +512,36 @@ Welke richtingscoëfficiënt heeft de raaklijn?
 Bepaal een vergelijking van de raaklijn.
 \end{question}
 
+\begin{oplossing}
+
+Het raakpunt heeft abscis $2$. De bijbehorende functiewaarde is
+\[
+f(2)=2^2-3\cdot2+4=2.
+\]
+
+Het raakpunt is dus
+\[
+P(2,2).
+\]
+
+Omdat
+\[
+f'(2)=1,
+\]
+heeft de raaklijn richtingscoëfficiënt $1$.
+
+Met de punt-richtingsvorm:
+\[
+y-2=1(x-2).
+\]
+
+Dus
+\[
+\boxed{y=x}.
+\]
+
+\end{oplossing}
+
 \end{oefening}
 
 
@@ -354,6 +570,27 @@ Bepaal $f'(3)$.
 Is $f$ in de onmiddellijke omgeving van $x=3$ stijgend of dalend?
 Motiveer.
 \end{question}
+
+\begin{oplossing}
+
+Omdat $P(3,5)$ op de grafiek van $f$ ligt,
+\[
+\boxed{f(3)=5}.
+\]
+
+De raaklijn heeft vergelijking
+\[
+y=-2x+11,
+\]
+en dus richtingscoëfficiënt $-2$. Bijgevolg
+\[
+\boxed{f'(3)=-2}.
+\]
+
+De raaklijn is dalend. De grafiek heeft bij $x=3$ dus een negatieve
+ogenblikkelijke verandering.
+
+\end{oplossing}
 
 \end{oefening}
 
@@ -388,6 +625,34 @@ Leg uit waarom beide grootheden dezelfde eenheid hebben, hoewel hun
 betekenis verschillend is.
 \end{question}
 
+\begin{oplossing}
+
+De teller $h(5)-h(2)$ wordt uitgedrukt in meter en de noemer $5-2$
+in seconde. Daarom heeft
+\[
+\frac{h(5)-h(2)}{5-2}
+\]
+als eenheid
+\[
+\boxed{\mathrm{m/s}}.
+\]
+
+Ook
+\[
+h'(5)
+\]
+heeft als eenheid
+\[
+\boxed{\mathrm{m/s}}.
+\]
+
+Beide grootheden beschrijven een verandering van hoogte per tijdseenheid.
+Het verschil zit in de betekenis: het differentiequotiënt geeft een
+gemiddelde verandering over een interval, terwijl $h'(5)$ de
+ogenblikkelijke verandering bij $t=5$ beschrijft.
+
+\end{oplossing}
+
 \end{oefening}
 
 
@@ -418,6 +683,31 @@ $f'(a)=0$ maar $f$ geen extremum heeft in $a$.
 Wat kun je uit $f'(a)=0$ wél besluiten?
 \end{question}
 
+\begin{oplossing}
+
+De uitspraak is niet altijd juist.
+
+Een eenvoudig tegenvoorbeeld is
+\[
+f(x)=x^3
+\]
+in $a=0$. Daar geldt
+\[
+f'(0)=0,
+\]
+maar de functie blijft zowel links als rechts van $0$ stijgen. Er is dus
+geen maximum of minimum.
+
+Uit
+\[
+f'(a)=0
+\]
+kunnen we wel besluiten dat de raaklijn in $x=a$ horizontaal is.
+Om een extremum te besluiten, moeten we bovendien het verloop of het
+teken van de afgeleide links en rechts van $a$ onderzoeken.
+
+\end{oplossing}
+
 \end{oefening}
 
 
@@ -446,15 +736,15 @@ Vul de tabel aan.
 
 \[
 \begin{array}{c|c}
-h &
-\dfrac{f(1+h)-f(1)}{h}
+x &
+\dfrac{f(x)-f(1)}{x-1}
 \\ \hline
-1 & \\
-0.5 & \\
-0.1 & \\
-0.01 & \\
--0.1 & \\
--0.01 &
+2 & \\
+1.5 & \\
+1.1 & \\
+1.01 & \\
+0.9 & \\
+0.99 &
 \end{array}
 \]
 
@@ -467,8 +757,51 @@ Wat betekent dit getal meetkundig?
 \end{question}
 
 \begin{question}
-Waarom onderzoeken we zowel positieve als negatieve waarden van $h$?
+Waarom onderzoeken we waarden van $x$ zowel links als rechts van $1$?
 \end{question}
+
+\begin{oplossing}
+
+Voor
+\[
+f(x)=x^2
+\]
+geldt
+\[
+\frac{f(x)-f(1)}{x-1}
+=
+\frac{x^2-1}{x-1}
+=
+x+1
+\qquad (x\neq1).
+\]
+
+Daarmee krijgen we:
+\[
+\begin{array}{c|c}
+x & \dfrac{f(x)-f(1)}{x-1}\\ \hline
+2 & 3\\
+1.5 & 2.5\\
+1.1 & 2.1\\
+1.01 & 2.01\\
+0.9 & 1.9\\
+0.99 & 1.99
+\end{array}
+\]
+
+De waarden naderen naar
+\[
+\boxed{2}.
+\]
+
+Meetkundig is dit de richtingscoëfficiënt van de raaklijn aan de grafiek
+in $x=1$.
+
+We onderzoeken waarden van $x$ zowel links als rechts van $1$ omdat we
+willen nagaan of de differentiequotiënten van beide kanten naar hetzelfde
+getal naderen.
+
+\end{oplossing}
 
 \end{oefening}
 
@@ -527,6 +860,34 @@ In welk van de drie punten lijkt de raaklijn het steilst?
 Wat zegt een grotere absolute waarde van $f'(x)$ over de raaklijn?
 \end{question}
 
+\begin{oplossing}
+
+In het punt met abscis $a$ stijgt de grafiek. Daarom
+\[
+f'(a)>0.
+\]
+
+In het punt met abscis $b$ daalt de grafiek. Daarom
+\[
+f'(b)<0.
+\]
+
+In het punt met abscis $c$ stijgt de grafiek opnieuw. Daarom
+\[
+f'(c)>0.
+\]
+
+Op basis van de figuur lijkt de raaklijn in $b$ het steilst.
+
+Hoe groter de absolute waarde
+\[
+|f'(x)|,
+\]
+hoe steiler de raaklijn in dat punt. Het teken van $f'(x)$ bepaalt of die
+raaklijn stijgt of daalt.
+
+\end{oplossing}
+
 \end{oefening}
 
 
@@ -550,12 +911,64 @@ Je mag geen afleidingsregel gebruiken.
 Je oplossing moet dus de volgende keten bevatten:
 
 \[
-\frac{f(2+h)-f(2)}{h}
+\frac{f(x)-f(2)}{x-2}
 \longrightarrow
 f'(2)
 \longrightarrow
 \text{raaklijn}.
 \]
+
+\begin{oplossing}
+
+Eerst bepalen we
+\[
+f(2)=2\cdot2^2-2+1=7.
+\]
+
+Volgens de definitie:
+\[
+f'(2)
+=
+\lim_{x\to2}
+\frac{f(x)-f(2)}{x-2}.
+\]
+
+We vereenvoudigen:
+\[
+\begin{aligned}
+\frac{f(x)-f(2)}{x-2}
+&=
+\frac{2x^2-x+1-7}{x-2}\\
+&=
+\frac{2x^2-x-6}{x-2}\\
+&=
+\frac{(x-2)(2x+3)}{x-2}\\
+&=
+2x+3
+\qquad (x\neq2).
+\end{aligned}
+\]
+
+Daaruit volgt
+\[
+f'(2)
+=
+\lim_{x\to2}(2x+3)
+=
+7.
+\]
+
+De raaklijn gaat door $(2,7)$ en heeft richtingscoëfficiënt $7$:
+\[
+y-7=7(x-2).
+\]
+
+Dus
+\[
+\boxed{y=7x-7}.
+\]
+
+\end{oplossing}
 
 \end{oefening}
 
@@ -575,7 +988,10 @@ s(t)=t^2+2t
 met $s$ in meter en $t$ in seconde.
 
 \begin{question}
-Bereken de gemiddelde snelheid tussen $t=2$ en $t=2+h$.
+Bereken de gemiddelde snelheid tussen $t=2$ en een tijdstip $t\neq2$:
+\[
+\frac{s(t)-s(2)}{t-2}.
+\]
 \end{question}
 
 \begin{question}
@@ -583,12 +999,54 @@ Vereenvoudig je uitdrukking.
 \end{question}
 
 \begin{question}
-Laat $h\to0$ en bepaal de ogenblikkelijke snelheid op $t=2$.
+Laat $t\to2$ en bepaal de ogenblikkelijke snelheid op $t=2$.
 \end{question}
 
 \begin{question}
 Interpreteer je resultaat in een volledige zin met eenheid.
 \end{question}
+
+\begin{oplossing}
+
+We berekenen eerst
+\[
+s(2)=2^2+2\cdot2=8.
+\]
+
+De gemiddelde snelheid tussen $t=2$ en een tijdstip $t\neq2$ is
+\[
+\begin{aligned}
+\frac{s(t)-s(2)}{t-2}
+&=
+\frac{t^2+2t-8}{t-2}\\
+&=
+\frac{(t-2)(t+4)}{t-2}\\
+&=
+t+4.
+\end{aligned}
+\]
+
+Voor $t\to2$ krijgen we
+\[
+s'(2)
+=
+\lim_{t\to2}
+\frac{s(t)-s(2)}{t-2}
+=
+\lim_{t\to2}(t+4)
+=
+\boxed{6}.
+\]
+
+De ogenblikkelijke snelheid op $t=2$ s bedraagt dus
+\[
+\boxed{6\ \mathrm{m/s}}.
+\]
+
+Op het tijdstip $t=2$ s verandert de positie ogenblikkelijk met
+$6$ meter per seconde in de positieve richting.
+
+\end{oplossing}
 
 \end{oefening}
 
@@ -632,6 +1090,31 @@ Kun je hieruit besluiten dat de temperatuur gedurende de volledige
 zesde minuut exact $1.8^\circ\mathrm{C}$ daalt? Verklaar.
 \end{question}
 
+\begin{oplossing}
+
+Het minteken in
+\[
+T'(6)=-1.8
+\]
+betekent dat de temperatuur op dat ogenblik daalt.
+
+De waarde $1.8$ geeft aan hoe snel de temperatuur op dat ogenblik
+verandert: de grootte van de ogenblikkelijke verandering is
+$1.8^\circ\mathrm{C}$ per minuut.
+
+Een volledige interpretatie is:
+
+\[
+\boxed{\text{Na 6 minuten daalt de temperatuur ogenblikkelijk met }
+1.8^\circ\mathrm{C/min}.}
+\]
+
+Hieruit volgt niet dat de temperatuur gedurende een volledige minuut
+exact $1.8^\circ\mathrm{C}$ daalt. $T'(6)$ beschrijft alleen de
+ogenblikkelijke verandering bij $t=6$.
+
+\end{oplossing}
+
 \end{oefening}
 
 
@@ -658,14 +1141,56 @@ Je kent de vergelijking van de raaklijn aan de grafiek in $x=3$.
 \end{question}
 
 \begin{question}
-Je kent voor alle $h\neq0$ de uitdrukking
+Je kent voor alle $x\neq3$ de uitdrukking
 
 \[
-\frac{f(3+h)-f(3)}{h}=5+2h.
+\frac{f(x)-f(3)}{x-3}=2x-1.
 \]
 
 Bepaal in dit geval ook $f'(3)$.
 \end{question}
+
+\begin{oplossing}
+
+\textbf{1. Alleen $f(3)=7$: niet voldoende.}
+
+De functiewaarde vertelt waar het punt op de grafiek ligt, maar niet hoe
+steil de grafiek daar is.
+
+\medskip
+
+\textbf{2. De punten $(2,4)$ en $(4,8)$: niet voldoende.}
+
+Daarmee kunnen we wel de richtingscoëfficiënt van een secant bepalen:
+\[
+\frac{8-4}{4-2}=2.
+\]
+Dit is een gemiddelde verandering en hoeft niet gelijk te zijn aan
+$f'(3)$.
+
+\medskip
+
+\textbf{3. De vergelijking van de raaklijn in $x=3$: voldoende.}
+
+De richtingscoëfficiënt van die raaklijn is precies $f'(3)$.
+
+\medskip
+
+\textbf{4. Het differentiequotiënt is $2x-1$: voldoende.}
+
+We nemen de limiet:
+\[
+f'(3)
+=
+\lim_{x\to3}
+\frac{f(x)-f(3)}{x-3}
+=
+\lim_{x\to3}(2x-1)
+=
+\boxed{5}.
+\]
+
+\end{oplossing}
 
 \end{oefening}
 
@@ -687,11 +1212,11 @@ het afgeleid getal in $x=2$ berekenen en schrijft:
 \[
 f'(2)
 =
-\lim_{h\to0}
-\frac{f(2+h)}{h}
+\lim_{x\to2}
+\frac{f(x)}{x-2}
 =
-\lim_{h\to0}
-\frac{(2+h)^2+3}{h}.
+\lim_{x\to2}
+\frac{x^2+3}{x-2}.
 \]
 
 \begin{question}
@@ -710,6 +1235,50 @@ Bereken vervolgens $f'(2)$ correct.
 Leg uit waarom de term $-f(2)$ essentieel is in het
 differentiequotiënt.
 \end{question}
+
+\begin{oplossing}
+
+De eerste fout zit in het differentiequotiënt. In de teller moet de
+verandering van de functiewaarde staan:
+\[
+f(x)-f(2).
+\]
+
+Omdat
+\[
+f(2)=2^2+3=7,
+\]
+is het correcte differentiequotiënt
+\[
+\frac{f(x)-f(2)}{x-2}
+=
+\frac{x^2+3-7}{x-2}.
+\]
+
+Uitwerken geeft
+\[
+\frac{x^2-4}{x-2}
+=
+\frac{(x-2)(x+2)}{x-2}
+=
+x+2
+\qquad (x\neq2).
+\]
+
+Dus
+\[
+f'(2)
+=
+\lim_{x\to2}(x+2)
+=
+\boxed{4}.
+\]
+
+De term $-f(2)$ is essentieel omdat het differentiequotiënt de
+\emph{verandering} van de functiewaarde meet. Daardoor nadert de teller
+ook naar nul wanneer $x$ naar $2$ nadert.
+
+\end{oplossing}
 
 \end{oefening}
 
@@ -736,6 +1305,60 @@ De raaklijn aan de grafiek in het punt met abscis $x=1$ heeft
 richtingscoëfficiënt $5$.
 
 Bepaal $a$ vanuit de definitie van het afgeleid getal.
+
+\begin{oplossing}
+
+We gebruiken de definitie van het afgeleid getal:
+\[
+f_a'(1)
+=
+\lim_{x\to1}
+\frac{f_a(x)-f_a(1)}{x-1}.
+\]
+
+Voor
+\[
+f_a(x)=x^2+ax
+\]
+geldt
+\[
+f_a(1)=1+a.
+\]
+
+Dus
+\[
+\begin{aligned}
+\frac{f_a(x)-f_a(1)}{x-1}
+&=
+\frac{x^2+ax-(1+a)}{x-1}\\
+&=
+\frac{(x-1)(x+1+a)}{x-1}\\
+&=
+x+1+a
+\qquad (x\neq1).
+\end{aligned}
+\]
+
+Daarom
+\[
+f_a'(1)
+=
+\lim_{x\to1}(x+1+a)
+=
+2+a.
+\]
+
+De richtingscoëfficiënt is gegeven als $5$, dus
+\[
+2+a=5.
+\]
+
+Hieruit volgt
+\[
+\boxed{a=3}.
+\]
+
+\end{oplossing}
 
 \end{oefening}
 
@@ -770,6 +1393,38 @@ Controleer de voorwaarden.
 Leg meetkundig uit hoe twee grafieken in verschillende punten toch
 hetzelfde afgeleid getal kunnen hebben.
 \end{question}
+
+\begin{oplossing}
+
+Een mogelijk voorbeeld is
+\[
+f(x)=3x
+\qquad\text{en}\qquad
+g(x)=3x+1.
+\]
+
+Dan
+\[
+f(2)=6
+\qquad\text{en}\qquad
+g(2)=7,
+\]
+zodat
+\[
+f(2)\neq g(2).
+\]
+
+Beide functies hebben overal richtingscoëfficiënt $3$, dus
+\[
+f'(2)=g'(2)=3.
+\]
+
+Meetkundig betekent dit dat de raaklijnen aan beide grafieken bij
+$x=2$ dezelfde richtingscoëfficiënt hebben. De raaklijnen zijn dus
+evenwijdig, hoewel de punten waarin ze de grafieken raken verschillend
+kunnen liggen.
+
+\end{oplossing}
 
 \end{oefening}
 
@@ -817,6 +1472,55 @@ Waarom kunnen we uit een eindige tabel met meetgegevens in het
 algemeen niet de exacte waarde van $s'(4)$ bewijzen?
 \end{question}
 
+\begin{oplossing}
+
+Met de metingen op $t=4$ en $t=4.1$:
+\[
+v
+\approx
+\frac{8.42-8.00}{4.1-4.0}
+=
+\frac{0.42}{0.1}
+=
+4.2\ \mathrm{m/s}.
+\]
+
+Met de metingen op $t=3.9$ en $t=4$:
+\[
+v
+\approx
+\frac{8.00-7.60}{4.0-3.9}
+=
+\frac{0.40}{0.1}
+=
+4.0\ \mathrm{m/s}.
+\]
+
+Met de punten symmetrisch rond $t=4$:
+\[
+v
+\approx
+\frac{8.42-7.60}{4.1-3.9}
+=
+\frac{0.82}{0.2}
+=
+4.1\ \mathrm{m/s}.
+\]
+
+De derde schatting,
+\[
+\boxed{4.1\ \mathrm{m/s}},
+\]
+is het meest overtuigend, omdat ze meetpunten gebruikt die even ver
+links en rechts van $t=4$ liggen.
+
+Uit een eindige tabel kunnen we in het algemeen de exacte waarde van
+$s'(4)$ niet bewijzen. Voor een exacte afgeleide moeten we weten wat er
+gebeurt wanneer het tijdsverschil willekeurig klein wordt; een eindige
+tabel bevat slechts een beperkt aantal metingen.
+
+\end{oplossing}
+
 \end{oefening}
 
 
@@ -858,14 +1562,49 @@ f'(a)=g'(a)?
 \]
 \end{question}
 
+\begin{oplossing}
+
+De bewering is onwaar.
+
+Neem bijvoorbeeld
+\[
+f(x)=x^2
+\qquad\text{en}\qquad
+g(x)=2x^2
+\]
+en kies $a=0$.
+
+Dan
+\[
+f(0)=g(0)=0
+\]
+en
+\[
+f'(0)=g'(0)=0.
+\]
+
+Toch vallen de grafieken in de buurt van $0$ niet samen, want voor
+$x\neq0$ geldt
+\[
+x^2\neq2x^2.
+\]
+
+Als
+\[
+f(a)=g(a)
+\qquad\text{en}\qquad
+f'(a)=g'(a),
+\]
+dan gaan beide grafieken door hetzelfde punt en hebben ze daar dezelfde
+raaklijn. Dat betekent niet dat hun verdere verloop in de buurt van dat
+punt hetzelfde moet zijn.
+
+\end{oplossing}
+
 \end{oefening}
 
 
-% ============================================================
-% GEMENGDE ZELFTEST
-% ============================================================
 
-\FVDsection{Zelftest}
 
 \begin{oefening}[Alles samen]{\oefU\ESS}
 
@@ -885,7 +1624,7 @@ Bereken $f(3)$.
 Stel het differentiequotiënt
 
 \[
-\frac{f(3+h)-f(3)}{h}
+\frac{f(x)-f(3)}{x-3}
 \]
 
 op en vereenvoudig.
@@ -904,7 +1643,7 @@ Bepaal de vergelijking van de raaklijn in $x=3$.
 \end{question}
 
 \begin{question}
-Neem nu $h=0.1$.
+Neem nu $x=3.1$.
 
 Bereken de richtingscoëfficiënt van de overeenkomstige secant en
 vergelijk die met $f'(3)$.
@@ -913,6 +1652,75 @@ vergelijk die met $f'(3)$.
 \begin{question}
 Leg uit waarom die twee waarden dicht bij elkaar liggen.
 \end{question}
+
+\begin{oplossing}
+
+Eerst:
+\[
+f(3)=3^2-4\cdot3+5=2.
+\]
+
+Volgens de definitie:
+\[
+f'(3)
+=
+\lim_{x\to3}
+\frac{f(x)-f(3)}{x-3}.
+\]
+
+Het differentiequotiënt wordt
+\[
+\begin{aligned}
+\frac{f(x)-f(3)}{x-3}
+&=
+\frac{x^2-4x+5-2}{x-3}\\
+&=
+\frac{x^2-4x+3}{x-3}\\
+&=
+\frac{(x-1)(x-3)}{x-3}\\
+&=
+x-1
+\qquad (x\neq3).
+\end{aligned}
+\]
+
+Daarom
+\[
+f'(3)
+=
+\lim_{x\to3}(x-1)
+=
+\boxed{2}.
+\]
+
+Omdat $f'(3)>0$, heeft de grafiek in $x=3$ een stijgende raaklijn.
+
+Het raakpunt is $(3,2)$ en de richtingscoëfficiënt is $2$. Bijgevolg:
+\[
+y-2=2(x-3),
+\]
+dus
+\[
+\boxed{y=2x-4}.
+\]
+
+Voor $x=3.1$ is de richtingscoëfficiënt van de secant
+\[
+\frac{f(3.1)-f(3)}{3.1-3}
+=
+3.1-1
+=
+2.1.
+\]
+
+Deze waarde ligt dicht bij
+\[
+f'(3)=2,
+\]
+omdat het afgeleid getal de limiet is van de richtingscoëfficiënten van
+de secanten wanneer $x$ naar $3$ nadert.
+
+\end{oplossing}
 
 \end{oefening}
 

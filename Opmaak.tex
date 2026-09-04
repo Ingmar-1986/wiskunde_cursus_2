@@ -365,41 +365,32 @@
 % HOOFDSTUKMETADATA — beschikbaar voor PDF én HTML
 % ============================================================
 
-% Wordt automatisch door inject-chapter-heroes.py
-% na \begin{document} in een hoofdstuk geplaatst:
-%
-% \fvdchapterdata{themanummer}{themanaam}{hoofdstuknummer}
-
 \providecommand{\fvdchapterdata}[3]{%
-
   % ----------------------------------------------------------
   % PDF: elk hoofdstuk op een nieuwe pagina
   % HTML: geen pagebreak
   % ----------------------------------------------------------
-
   \ifdefined\HCode
-    % niets
+    % HTML: niets
   \else
     \clearpage
   \fi
-
+  %
   % ----------------------------------------------------------
   % HOOFDSTUKMETADATA
   % ----------------------------------------------------------
-
   \gdef\fvdstandalonethemenumber{#1}%
   \gdef\fvdstandalonetheme{#2}%
-
   \setcounter{part}{#1}%
   \setcounter{titlenumber}{\numexpr#3-1\relax}%
-
+  %
   % ----------------------------------------------------------
   % NUMMERING PER HOOFDSTUK RESETTEN
   % ----------------------------------------------------------
-
   \setcounter{fvdsection}{0}%
   \setcounter{fvdsubsection}{0}%
   \setcounter{fvdoefening}{0}%
+  \setcounter{fvdexample}{0}%
 }
 
 % ============================================================

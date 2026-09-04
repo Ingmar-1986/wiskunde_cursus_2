@@ -100,6 +100,14 @@ uit informatie over $f'$ en $f''$ leiden we eigenschappen van $f$ af.
 
 
 
+
+
+
+
+
+
+
+
 \maketitle
 
 
@@ -178,89 +186,103 @@ het voorwerp zijn hoogste punt.
 We gebruiken dus informatie over een afgeleide om conclusies te
 trekken over de oorspronkelijke functie.
 
-\begin{opmerking}
-Dat is de belangrijkste denkstap in dit hoofdstuk:
+\FVDsection{Van het teken van \(f'\) naar het verloop van \(f\)}
+\FVDsubsection{De betekenis van de eerste afgeleide}
+Het stijgen of dalen van een grafiek kunnen we eenvoudigweg bepalen uit het teken van de
+eerste afgeleide. 
+\begin{definition}
+	De eerste afgeleide $f'$ van een functie $f$ geeft informatie over het stijgen, dalen en de extrema van $f$
+\end{definition}
 
-\[
-\boxed{
-\text{informatie over }f'
-\quad\Longrightarrow\quad
-\text{informatie over }f
-}
-\]
+\begin{image}
+    \begin{tikzpicture}
 
-en vervolgens
+\begin{axis}[restrict y to domain=-100:100,
+            ylabel={$y$},
+            xlabel={$x$},
+            %axis equal image=true,
+            grid,
+            grid style={gray!50},
+            grid=both,
+        axis y line=center,
+        axis x line=middle, 
+        axis on top=true,
+        xmin=-2.5,
+        xmax=3,
+        ymin=-2,
+        ymax=2.5,
+        ytick={\empty},
+        xtick={\empty},
+        x=2.5cm, y=2cm  ]
+    
+    \addplot[blue,very thick,smooth,samples=1000,domain=-2.5:5.29] {-0.1*(x+2)*(x+1)*(x-0.5)*(x-1)*(x-1.5)*(x-2.5)+0.25};
+     \addplot[violet,dotted,very thick,smooth,samples=1000,domain=-2.5:5.29] {-0.6*x*x*x*x*x+1.25*x*x*x*x+1.7*x*x*x-3.64*x*x+0.1*x+0.96};
+     \legend{$f(x)$,$f'(x)$};
+    \addplot[red,thick,smooth,samples=100,domain=-2.32:-1] {1.94} node[midway,above] {$f'(a_1)=0$};
+    
+    \draw[red,dashed] (axis cs: -1.66,0) -- (axis cs: -1.66,1.94);
+    \node[red,below] at (axis cs: -1.66,0) {$a_1$};
+    \addplot[red,thick,smooth,samples=100,domain=-1.23:-0.23] {-1.22*x-1.17} node[left,below] {$f'(a_2)<0$};
+    \draw[red,dashed] (axis cs: -0.73,0) -- (axis cs: -0.73,-0.28);
+    \node[red,above] at (axis cs: -0.73,0) {$a_2$};
+    \addplot[red,thick,smooth,samples=100,domain=1.34:2.34] {1.1*x-1.49} node[right,above] {$f'(a_3)>0$};
+    \draw[red,dashed] (axis cs: 1.84,0) -- (axis cs: 1.84,0.53);
+    \node[red,below] at (axis cs: 1.84,0) {$a_3$};
+\end{axis}
+\end{tikzpicture}
+\end{image}
+\begin{theorem} \
+	\begin{itemize}
+		\item Als	$Df(a)	>0$		dan	is de grafiek van $f$ \textbf{stijgend} in a.
+		\item Als	$Df(a)	<0$	dan	is	de grafiek van $f$	\textbf{dalend} in a.
+		\item Als	$Df(a)	=0$ dan	bereikt de grafiek van $f$ een	(relatief) extremum in	$a$
+		\begin{enumerate}
+			\item een \textbf{relatief extremum} in $a$, als $Df$ in $a$ van teken verandert.
+			\item een \textbf{buigpunt} in $a$, als $Df$ in $a$ niet van teken verandert.
+		\end{enumerate}	
+\end{itemize}
+\end{theorem}
 
-\[
-\boxed{
-\text{informatie over }f''
-\quad\Longrightarrow\quad
-\text{informatie over de verandering van }f'
-}
-\]
 
-Je moet deze verbanden niet alleen kunnen toepassen, maar ook
-kunnen verklaren.
-\end{opmerking}
+Als we dus het tekenverloop van de eerste afgeleide bepalen, kunnen we
+heel eenvoudig aflezen in welke intervallen de grafiek stijgt of daalt. We bepalen zodus het \textbf{globale} verloop van een functie.
 
-
-% ============================================================
-% 2 TEKEN VAN f'
-% ============================================================
-
-\FVDsection{Van het teken van $f'$ naar het verloop van $f$}
-
-\FVDsubsection{Wat betekent $f'(x)>0$?}
-
-Neem een interval waarop
-
-\[
-f'(x)>0.
-\]
-
-In elk punt van dat interval heeft de grafiek van $f$ een raaklijn
-met positieve richtingscoëfficiënt.
-
-Als $x$ toeneemt, neemt ook $f(x)$ toe.
-
-De functie is daar dus stijgend.
-
-Op dezelfde manier geldt:
-
-\begin{eigenschap}[Teken van de eerste afgeleide]
-
-Op een interval geldt:
-
-\[
-\boxed{
-f'(x)>0
-\quad\Longrightarrow\quad
-f \text{ is stijgend}
-}
-\]
-
-en
-
-\[
-\boxed{
-f'(x)<0
-\quad\Longrightarrow\quad
-f \text{ is dalend}.
-}
-\]
-
-\end{eigenschap}
-
-Dit is een uitspraak over een \emph{interval}.
-
-Eén enkele waarde zoals
-
-\[
-f'(2)>0
-\]
-
-vertelt alleen wat er in de buurt van $x=2$ gebeurt. Daaruit mag je
-niet besluiten dat $f$ op haar volledige domein stijgend is.
+\begin{image}
+            \begin{tikzpicture}
+        
+        \begin{axis}[restrict y to domain=-100:100,
+                    ylabel={$y$},
+                    xlabel={$x$},
+                    %axis equal image=true,
+                    grid,
+                    grid style={gray!50},
+                    grid=both,
+                axis y line=center,
+                axis x line=middle, 
+                axis on top=true,
+                xmin=-8,
+                xmax=4,
+                ymin=-60,
+                ymax=80,
+                ytick={\empty},
+                xtick={\empty},
+                x=1cm, y=0.05cm  ]
+            
+            \addplot[blue,very thick,smooth,samples=1000,domain=-8:3.5,name path=A] {x*x*x+5*x*x-4*x-20};
+            \addplot[red,thick,smooth,samples=500,domain=-8:3.5] {3*x*x+10*x-4};
+            \legend{$f(x)$,$f'(x)$};
+            \addplot[blue,very thick,smooth,samples=1000,domain=-8:3.5,name path=B] {-80};
+            \addplot [teal!30] fill between [of = A and B, soft clip={domain=-8:-3.69}];
+            \addplot [teal!30] fill between [of = A and B, soft clip={domain=0.36:3.5}];
+            \addplot [violet!30] fill between [of = A and B, soft clip={domain=-3.69:0.36}];
+            \node[red!50!black] at (axis cs: -5,-30) {$f'(x)>0$};
+            \node[red!50!black] at (axis cs: 2,-30) {$f'(x)>0$};
+            \node[red!50!black] at (axis cs: -2,-30) {$f'(x)<0$};
+            \draw[black, dashed] (axis cs:-3.69,0) -- (axis cs: -3.69,12.6);
+            \draw[black, dashed] (axis cs:0.36,0) -- (axis cs: 0.36,-20.75);
+        \end{axis}
+        \end{tikzpicture}
+\end{image}
 
 
 % ============================================================
@@ -312,7 +334,7 @@ Op $]2,+\infty[$ is $f$
 % 3 TEKENONDERZOEK
 % ============================================================
 
-\FVDsection{Stijgen en dalen bepalen}
+\FVDsubsection{Stijgen en dalen bepalen}
 
 Om te onderzoeken waar een functie stijgt of daalt, kunnen we dus
 het teken van $f'$ onderzoeken.
@@ -398,11 +420,11 @@ vinden we:
 \[
 \begin{array}{c|ccccc}
 x
-& ]-\infty,-1[
+& 
 & -1
-& ]-1,3[
+& 
 & 3
-& ]3,+\infty[
+& 
 \\ \hline
 f'(x)
 & +
@@ -432,138 +454,95 @@ f \text{ daalt op }]-1,3[.
 }
 \]
 
+\begin{image}
+  \begin{tikzpicture}
+  \begin{axis}[
+      axis lines=middle,
+      xmin=-4.5,
+      xmax=6,
+      ymin=-30,
+      ymax=30,
+      width=12cm,
+      height=8cm,
+      xlabel={$x$},
+      ylabel={$y$},
+      grid=both,
+      grid style={gray!20},
+      xtick={-4,-3,-2,-1,0,1,2,3,4,5},
+      ytick={-30,-20,-10,0,10,20,30},
+      samples=300,
+      domain=-4:5.5,
+      restrict y to domain=-30:30,
+      axis on top=true,
+      clip=false
+  ]
+  
+  % Functie f
+  \addplot[
+      blue,
+      very thick,
+      smooth
+  ]
+  {x^3-3*x^2-9*x+5};
+  
+  % Afgeleide f'
+  \addplot[
+      violet,
+      very thick,
+      dashed,
+      smooth
+  ]
+  {3*x^2-6*x-9};
+  
+  % Nulwaarden van f'
+  \addplot[
+      only marks,
+      mark=*,
+      mark size=2.3pt,
+      violet
+  ]
+  coordinates {(-1,0) (3,0)};
+  
+  % Extrema van f
+  \addplot[
+      only marks,
+      mark=*,
+      mark size=2.3pt,
+      blue
+  ]
+  coordinates {(-1,10) (3,-22)};
+  
+  % Verticale hulplijnen
+  \draw[gray,dashed]
+      (axis cs:-1,-30) -- (axis cs:-1,30);
+  
+  \draw[gray,dashed]
+      (axis cs:3,-30) -- (axis cs:3,30);
+  
+  % Labels
+  \node[above left, blue]
+      at (axis cs:-1,10) {$(-1,10)$};
+  
+  \node[below right, blue]
+      at (axis cs:3,-22) {$(3,-22)$};
+  
+  \node[below left]
+      at (axis cs:-1,0) {$-1$};
+  
+  \node[above right]
+      at (axis cs:3,0) {$3$};
+  
+  \legend{$f(x)$,$f'(x)$}
+  
+  \end{axis}
+  \end{tikzpicture}
+  \end{image}
+
 \end{voorbeeld}
 
 
-% ============================================================
-% 4 STATIONAIRE PUNTEN
-% ============================================================
-
-\FVDsection{Stationaire punten}
-
-De waarden waarvoor
-
-\[
-f'(x)=0
-\]
-
-verdienen bijzondere aandacht.
-
-\begin{definitie}[Stationair punt]
-
-Een punt
-
-\[
-P(a,f(a))
-\]
-
-van de grafiek van een afleidbare functie $f$ heet een
-\textbf{stationair punt} als
-
-\[
-\boxed{f'(a)=0.}
-\]
-
-De raaklijn aan de grafiek is daar horizontaal.
-
-\end{definitie}
-
-Maar een stationair punt is niet noodzakelijk een maximum of minimum.
-
-Dat hebben we in hoofdstuk 1 al aangekondigd.
-
-Vergelijk bijvoorbeeld:
-
-\[
-f(x)=x^2
-\]
-
-en
-
-\[
-g(x)=x^3.
-\]
-
-Voor beide functies geldt:
-
-\[
-f'(0)=0
-\qquad\text{en}\qquad
-g'(0)=0.
-\]
-
-Toch heeft $f$ in $x=0$ een minimum, terwijl $g$ daar geen extremum
-heeft.
-
-We moeten dus onderzoeken wat het teken van de afgeleide
-\emph{voor en na} het stationaire punt doet.
 
 
-% ============================================================
-% 5 EXTREMA
-% ============================================================
-
-\FVDsection{Extrema herkennen met $f'$}
-
-\FVDsubsection{Van stijgen naar dalen}
-
-Stel dat bij $x=a$ het teken van $f'$ verandert als
-
-\[
-+\quad 0\quad -.
-\]
-
-Links van $a$ stijgt $f$.
-
-Rechts van $a$ daalt $f$.
-
-De functie gaat dus eerst omhoog en daarna omlaag.
-
-Daarom heeft $f$ in $x=a$ een lokaal maximum.
-
-\FVDsubsection{Van dalen naar stijgen}
-
-Wanneer het teken verandert als
-
-\[
--\quad 0\quad +,
-\]
-
-daalt $f$ eerst en stijgt ze daarna.
-
-Dan heeft $f$ in $x=a$ een lokaal minimum.
-
-\begin{eigenschap}[Extrema via het teken van $f'$]
-
-Als $f'$ bij $x=a$ van teken verandert, dan geldt:
-
-\[
-\boxed{
-+\;\longrightarrow\;-
-\quad\Rightarrow\quad
-\text{lokaal maximum}
-}
-\]
-
-en
-
-\[
-\boxed{
--\;\longrightarrow\;+
-\quad\Rightarrow\quad
-\text{lokaal minimum}.
-}
-\]
-
-Als $f'(a)=0$ maar $f'$ niet van teken verandert, kunnen we op basis
-daarvan geen lokaal extremum besluiten.
-
-\end{eigenschap}
-
-
-% ============================================================
-% VOORBEELD EXTREMA
-% ============================================================
 
 \begin{voorbeeld}[De extrema volledig bepalen]
 
@@ -578,11 +557,11 @@ We vonden:
 \[
 \begin{array}{c|ccccc}
 x
-& ]-\infty,-1[
+& 
 & -1
-& ]-1,3[
+&
 & 3
-& ]3,+\infty[
+& 
 \\ \hline
 f'(x)
 & +
@@ -614,7 +593,7 @@ f(-1)
 10.
 \]
 
-Het lokale maximumpunt is dus
+Het lokale maximum is dus
 
 \[
 \boxed{(-1,10)}.
@@ -632,7 +611,7 @@ f(3)
 -22.
 \]
 
-Het lokale minimumpunt is
+Het lokale minimum is
 
 \[
 \boxed{(3,-22)}.
@@ -690,69 +669,7 @@ Welke uitspraak over $x=4$ is correct?
 \end{oefening}
 
 
-% ============================================================
-% 6 BELANGRIJKE DENKFOUT
-% ============================================================
 
-\FVDsection{Een nulwaarde van $f'$ is niet genoeg}
-
-Een veelgemaakte redenering is:
-
-\[
-f'(a)=0
-\quad\Rightarrow\quad
-f \text{ heeft een extremum in }a.
-\]
-
-Die redenering is fout.
-
-Neem
-
-\[
-f(x)=x^3.
-\]
-
-Dan
-
-\[
-f'(x)=3x^2
-\]
-
-en dus
-
-\[
-f'(0)=0.
-\]
-
-Maar
-
-\[
-f'(x)>0
-\]
-
-zowel voor $x<0$ als voor $x>0$.
-
-Het tekenverloop is:
-
-\[
-+\quad 0\quad +.
-\]
-
-De functie blijft dus stijgen.
-
-Er is geen maximum en geen minimum.
-
-\begin{opmerking}
-De vergelijking
-
-\[
-f'(x)=0
-\]
-
-levert \emph{kandidaten} voor stationaire extrema.
-
-Daarna moet je onderzoeken wat er met het teken van $f'$ gebeurt.
-\end{opmerking}
 
 
 \begin{oefening}[Is er een extremum?]{\oefU\ESS}
@@ -772,6 +689,63 @@ Omdat $f'(0)=0$, heeft $f$ in $x=0$ een extremum.
 Leg uit waarom deze redenering niet geldig is en geef het correcte
 besluit.
 
+\begin{oplossing}
+
+  We bepalen eerst de afgeleide:
+  
+  \[
+  f'(x)=3x^2.
+  \]
+  
+  Inderdaad,
+  
+  \[
+  f'(0)=0.
+  \]
+  
+  Hieruit volgt dat de grafiek van $f$ in $x=0$ een
+  \textbf{horizontale raaklijn} heeft. Dit is echter niet voldoende
+  om te besluiten dat $f$ daar een extremum heeft.
+  
+  We onderzoeken daarom het teken van $f'$.
+  
+  Omdat
+  
+  \[
+  3x^2>0
+  \]
+  
+  voor elke $x\neq 0$, krijgen we:
+  
+  \[
+  \begin{array}{c|ccc}
+  x
+  & & 0 & \\ \hline
+  f'(x)
+  & + & 0 & +\\
+  f
+  & \nearrow & & \nearrow
+  \end{array}
+  \]
+  
+  De afgeleide verandert in $x=0$ dus niet van teken.
+  De functie stijgt zowel vóór als na $x=0$.
+  
+  Bijgevolg heeft $f$ in $x=0$ \textbf{geen extremum}.
+  
+  \[
+  \boxed{
+  f'(0)=0
+  \text{ betekent niet noodzakelijk dat }f
+  \text{ in }x=0\text{ een extremum heeft.}
+  }
+  \]
+  
+  We kunnen alleen besluiten dat de grafiek daar een horizontale
+  raaklijn heeft.
+  
+  \end{oplossing}
+
 \end{oefening}
 
 
@@ -779,156 +753,106 @@ besluit.
 % 7 TWEEDE AFGELEIDE
 % ============================================================
 
-\FVDsection{Wat vertelt de tweede afgeleide?}
+\FVDsubsection{Wat vertelt de tweede afgeleide?}
 
-Tot nu toe gebruikten we $f'$ om te onderzoeken of $f$ stijgt of
-daalt.
+\begin{definition}
+  Voor een functie $f$ die afleidbaar is in $[a,b]$ geldt dat
+  \begin{itemize}
+      \item de grafiek van $f$ \textbf{hol (convex)} is in $[a,b] \Leftrightarrow f'$ is stijgend in$[a,b]$
+      \item de grafiek van $f$ \textbf{bol (concaaf)} is in $[a,b] \Leftrightarrow f'$ is dalend in$[a,b]$.
+      \item $f$ bereikt een \textbf{buigpunt} in $a$ $\Leftrightarrow f'$ bereikt een relatief extremum in $a$. 
+  \end{itemize}
+  \end{definition}
 
-Maar ook $f'$ zelf kan stijgen of dalen.
+  \begin{theorem} \ \\
+      \begin{itemize}
+          \item Als $f''(x)>0$ voor elke $x\in [a,b]$ dan is de grafiek van $f$ hol in $[a,b]$
+          \item Als $f''(x)<0$ voor elke $x\in [a,b]$ dan is de grafiek van $f$ bol in $[a,b]$
+      \end{itemize}
+  \end{theorem}
 
-Daarover geeft $f''$ informatie.
-
-Herinner je:
-
-\[
-f''=(f')'.
-\]
-
-Dus:
-
-\[
-f''(x)>0
-\]
-
-betekent dat $f'$ stijgt, terwijl
-
-\[
-f''(x)<0
-\]
-
-betekent dat $f'$ daalt.
-
-Dit zegt iets over de manier waarop de hellingen van de grafiek van
-$f$ veranderen.
-
-\begin{eigenschap}[Teken van de tweede afgeleide]
-
-Op een interval geldt:
-
-\[
-\boxed{
-f''(x)>0
-\quad\Longrightarrow\quad
-f' \text{ is stijgend}
-}
-\]
-
-en
-
-\[
-\boxed{
-f''(x)<0
-\quad\Longrightarrow\quad
-f' \text{ is dalend}.
-}
-\]
-
-Daardoor geeft $f''$ informatie over de \textbf{kromming} van de
-grafiek van $f$.
-
-\end{eigenschap}
-
-
-% ============================================================
-% 8 KROMMING
-% ============================================================
-
-\FVDsection{Kromming van de grafiek}
-
-Bekijk eerst een stijgende functie.
-
-Het is mogelijk dat de functie stijgt en tegelijk steeds steiler
-wordt.
-
-Dan neemt $f'$ toe en geldt typisch
-
-\[
-f''>0.
-\]
-
-Maar een stijgende functie kan ook steeds minder steil worden.
-
-Dan neemt $f'$ af en geldt typisch
-
-\[
-f''<0.
-\]
-
-Daarom zijn ``stijgend'' en ``positieve tweede afgeleide'' twee
-verschillende eigenschappen.
-
-\begin{opmerking}
-Verwar de rollen van de twee afgeleiden niet:
-
-\[
-\boxed{
-f'
-\text{ vertelt vooral of }f\text{ stijgt of daalt}
-}
-\]
-
-terwijl
-
-\[
-\boxed{
-f''
-\text{ vertelt hoe de helling van }f\text{ verandert}.
-}
-\]
-
-Een functie kan dus tegelijk stijgend zijn en $f''<0$ hebben.
-\end{opmerking}
-
-
-% ============================================================
-% HOL/BOL
-% ============================================================
-
-\FVDsubsection{Hol en bol}
-
-In deze cursus gebruiken we de volgende terminologie:
-
-\begin{eigenschap}[Kromming]
-
-Op een interval:
-
-\[
-f''(x)>0
-\]
-
-betekent dat de hellingen toenemen.
-
-De grafiek is daar \textbf{hol}.
-
-Wanneer
-
-\[
-f''(x)<0,
-\]
-
-nemen de hellingen af.
-
-De grafiek is daar \textbf{bol}.
-
-\end{eigenschap}
-
-\begin{opmerking}
-De woorden \emph{hol} en \emph{bol} worden in verschillende bronnen
-niet altijd op dezelfde manier gebruikt.
-
-Daarom is het veiliger om bij een redenering ook het teken van
-$f''$ te vermelden.
-\end{opmerking}
+  \begin{center}
+      \begin{tikzpicture}
+  
+          \begin{axis}[restrict y to domain=-100:100,
+                      %ylabel={$y$},
+                      %xlabel={$x$},
+                      %axis equal image=true,
+                      %grid,
+                      %grid style={gray!50},
+                      %grid=both,
+                  %axis y line=center,
+                  %axis x line=middle, 
+                  %axis on top=true,
+                  xmin=-2,
+                  xmax=2,
+                  ymin=-2,
+                  ymax=2,
+                  ytick={\empty},
+                  xtick={\empty},
+                  x=4cm, y=2cm ]
+              
+              \addplot[blue,very thick,smooth,samples=500,domain=-2:0,name path=A] {3*(x+1)*x*(x-1)};
+              \addplot[teal,very thick,smooth,samples=500,domain=0:2,name path=B] {3*(x+1)*x*(x-1)};
+              \addplot[teal,very thick,smooth,samples=500,domain=-2:2,name path=C] {2.1};
+              \addplot[teal,very thick,smooth,samples=500,domain=-2:2,name path=D] {-2.1};
+              \draw[red,fill=red] (axis cs:0,0) circle (0.5 mm) node[above] {Buigpunt};
+               \addplot [teal!30] fill between [of = B and C, soft clip={domain=0.001:2}];
+               \node[teal] at (axis cs: 0.5,0.5) {$f''(x)>0$};
+              \addplot [blue!30] fill between [of = A and D, soft clip={domain=-2:0}];
+              \node[blue] at (axis cs: -0.5,-0.5) {$f''(x)<0$};
+             
+          \end{axis}
+          \end{tikzpicture}
+  \end{center}    
+  De tweede afgeleide geeft aan hoe snel een helling toeneemt of afneemt. Je hebt de volgende 4 situaties:
+  \begin{description}
+      \item [Toenemende stijging] $f'(x)$ is positief en $f''(x)$ is positief.
+      \item [Toenemende daling] $f'(x)$ is negatief en $f''(x)$ is negatief.
+      \item [Afnemende stijging] $f'(x)$ positief en $f''(x)$ is negatief.
+      \item [Afnemende daling] $f'(x)$ is negatief en $f''(x)$ is positief.
+  \end{description}
+  \begin{center}
+          \begin{tikzpicture}
+          
+          \begin{axis}[restrict y to domain=-100:100,
+                      ylabel={$y$},
+                      xlabel={$x$},
+                      %axis equal image=true,
+                      grid,
+                      grid style={gray!50},
+                      grid=both,
+                  axis y line=center,
+                  axis x line=middle, 
+                  axis on top=true,
+                  xmin=-4,
+                  xmax=4,
+                  ymin=-3,
+                  ymax=3,
+                  ytick={-10,-9,...,100},
+                  xtick={-10,-9,...,10},
+                  x=1.5cm, y=1.5cm ]
+              
+              \addplot[blue,very thick,smooth,samples=1000,domain=-8:10,name path=A] {1/16.5*(x+3.5)*x*(x-3.5)};
+              \addplot[red,very thick,smooth,samples=500,domain=-8:10] {0.18*x*x-0.74};
+              \addplot[teal,very thick,smooth,samples=500,domain=-8:10] {0.36*x};
+              \legend{$f(x)$,$f'(x)$,$f''(x)$};
+              \draw[thick,black,dashed] (axis cs:-2,-6) -- (axis cs:-2,6);
+              \draw[thick,black,dashed] (axis cs:2,-6) -- (axis cs:2,6);
+          \end{axis}
+          \end{tikzpicture}
+  \end{center}
+  Er zijn bepaalde punten waarop de grafiek bijvoorbeeld overgaat van toenemende stijging naar afnemende stijging. Zo’n punt wordt \textbf{het buigpunt} genoemd. Omdat je dan
+  overgaat van een positieve $f''(x)$ naar een negatieve $f''(x)$, zit het buigpunt precies daar
+  waar $f''(x)$ gelijk is aan 0.
+  \begin{theorem}
+      We hebben een buigpunt als:
+      \begin{itemize}
+          \item $f$ overgaat van hol naar bol (of andersom).
+          \item $f'$ heeft een maximum of een minimum.
+          \item $f''$ wisselt van teken.
+      \end{itemize}
+  \end{theorem}
 
 
 % ============================================================
@@ -955,114 +879,6 @@ Welke uitspraak volgt daaruit?
 \end{oefening}
 
 
-% ============================================================
-% 9 BUIGPUNT
-% ============================================================
-
-\FVDsection{Buigpunten}
-
-Een buigpunt is een punt waar de aard van de kromming verandert.
-
-\begin{definitie}[Buigpunt]
-
-Een punt van de grafiek van $f$ waar de kromming verandert, noemen
-we een \textbf{buigpunt}.
-
-Bij een tweemaal afleidbare functie onderzoeken we daarvoor het
-teken van $f''$.
-
-\end{definitie}
-
-Wanneer $f''$ bijvoorbeeld verandert als
-
-\[
--\quad 0\quad +,
-\]
-
-verandert de kromming.
-
-Het overeenkomstige punt van de grafiek is dan een buigpunt.
-
-
-% ============================================================
-% DENKFOUT f''
-% ============================================================
-
-\FVDsection{Ook $f''(a)=0$ is niet genoeg}
-
-Er ontstaat nu een situatie die sterk lijkt op die bij extrema.
-
-Voor extrema was
-
-\[
-f'(a)=0
-\]
-
-op zichzelf niet voldoende.
-
-Voor buigpunten is
-
-\[
-f''(a)=0
-\]
-
-op zichzelf evenmin voldoende.
-
-Neem bijvoorbeeld
-
-\[
-f(x)=x^4.
-\]
-
-Dan
-
-\[
-f'(x)=4x^3
-\]
-
-en
-
-\[
-f''(x)=12x^2.
-\]
-
-We hebben inderdaad
-
-\[
-f''(0)=0.
-\]
-
-Maar voor $x\neq0$ geldt
-
-\[
-12x^2>0.
-\]
-
-Het teken van $f''$ is dus:
-
-\[
-+\quad 0\quad +.
-\]
-
-Er is geen verandering van kromming.
-
-Dus is $(0,0)$ geen buigpunt.
-
-\begin{opmerking}
-Ook hier geldt:
-
-\[
-f''(a)=0
-\]
-
-geeft een mogelijke kandidaat, maar je moet onderzoeken of de
-kromming werkelijk verandert.
-\end{opmerking}
-
-
-% ============================================================
-% VOORBEELD BUIGPUNT
-% ============================================================
 
 \begin{voorbeeld}[Een buigpunt bepalen]
 
@@ -1137,9 +953,7 @@ Het buigpunt is dus
 \end{voorbeeld}
 
 
-% ============================================================
-% OEFENING BUIGPUNT
-% ============================================================
+
 
 \begin{oefening}[Buigpunt of niet?]{\oefU\ESS}
 
@@ -1176,72 +990,6 @@ niet voldoende is om te besluiten dat $(0,f(0))$ een buigpunt is.
 \end{oefening}
 
 
-% ============================================================
-% 10 ALLES SAMEN
-% ============================================================
-
-\FVDsection{$f$, $f'$ en $f''$ samen lezen}
-
-We kunnen de belangrijkste verbanden nu samenbrengen.
-
-\[
-\boxed{
-f'(x)>0
-\quad\Longrightarrow\quad
-f \text{ stijgt}
-}
-\]
-
-\[
-\boxed{
-f'(x)<0
-\quad\Longrightarrow\quad
-f \text{ daalt}
-}
-\]
-
-\[
-\boxed{
-f' : +\to-
-\quad\Longrightarrow\quad
-\text{lokaal maximum}
-}
-\]
-
-\[
-\boxed{
-f' : -\to+
-\quad\Longrightarrow\quad
-\text{lokaal minimum}
-}
-\]
-
-en
-
-\[
-\boxed{
-f''(x)>0
-\quad\Longrightarrow\quad
-f' \text{ stijgt}
-}
-\]
-
-\[
-\boxed{
-f''(x)<0
-\quad\Longrightarrow\quad
-f' \text{ daalt}.
-}
-\]
-
-Een tekenwisseling van $f''$ wijst op een verandering van kromming
-en dus op een buigpunt.
-
-
-% ============================================================
-% CONCEPTUELE OEFENING
-% ============================================================
-
 \begin{oefening}[Van $f'$ naar $f$]{\oefU\ESS}
 
 Van een functie $f$ is de volgende informatie over $f'$ bekend:
@@ -1249,11 +997,11 @@ Van een functie $f$ is de volgende informatie over $f'$ bekend:
 \[
 \begin{array}{c|ccccc}
 x
-& ]-\infty,-2[
+& 
 & -2
-& ]-2,3[
+&
 & 3
-& ]3,+\infty[
+& 
 \\ \hline
 f'(x)
 & +
@@ -1275,13 +1023,136 @@ Bepaal de intervallen waarop $f$ daalt.
 \end{question}
 
 \begin{question}
-Classificeer de stationaire punten bij $x=-2$ en $x=3$.
+Welke soort punten  hebben we bij $x=-2$ en $x=3$.
 \end{question}
 
 \begin{question}
 Kun je uit deze gegevens bepalen waar de buigpunten liggen?
 Verantwoord.
 \end{question}
+
+\begin{oplossing}
+
+  Uit het tekenverloop van $f'$ lezen we af:
+  
+  \[
+  \begin{array}{c|ccccc}
+  x
+  &
+  & -2
+  &
+  & 3
+  &
+  \\ \hline
+  f'(x)
+  & +
+  & 0
+  & -
+  & 0
+  & +
+  \\
+  f
+  & \nearrow
+  &
+  & \searrow
+  &
+  & \nearrow
+  \end{array}
+  \]
+  
+  \textbf{1. Waar stijgt $f$?}
+  
+  Een functie stijgt op een interval waar
+  
+  \[
+  f'(x)>0.
+  \]
+  
+  Uit de tabel volgt dat dit het geval is voor $x<-2$ en voor $x>3$.
+  
+  Dus
+  
+  \[
+  \boxed{
+  f \text{ stijgt op }]-\infty,-2[
+  \text{ en } ]3,+\infty[.
+  }
+  \]
+  
+  \textbf{2. Waar daalt $f$?}
+  
+  Een functie daalt op een interval waar
+  
+  \[
+  f'(x)<0.
+  \]
+  
+  Dit is het geval voor
+  
+  \[
+  -2<x<3.
+  \]
+  
+  Dus
+  
+  \[
+  \boxed{
+  f \text{ daalt op }]-2,3[.
+  }
+  \]
+  
+  \textbf{3. Welke soort punten hebben we bij $x=-2$ en $x=3$?}
+  
+  Bij $x=-2$ verandert het teken van $f'$ van positief naar negatief:
+  
+  \[
+  +\longrightarrow-.
+  \]
+  
+  De functie gaat dus over van stijgen naar dalen.
+  Bij $x=-2$ heeft $f$ daarom een \textbf{lokaal maximum}.
+  
+  \[
+  \boxed{x=-2:\text{ lokaal maximum}}
+  \]
+  
+  Bij $x=3$ verandert het teken van $f'$ van negatief naar positief:
+  
+  \[
+  -\longrightarrow+.
+  \]
+  
+  De functie gaat dus over van dalen naar stijgen.
+  Bij $x=3$ heeft $f$ daarom een \textbf{lokaal minimum}.
+  
+  \[
+  \boxed{x=3:\text{ lokaal minimum}}
+  \]
+  
+  De bijbehorende functiewaarden kunnen we niet bepalen, omdat het
+  functievoorschrift van $f$ niet gegeven is.
+  
+  \textbf{4. Kunnen we de buigpunten bepalen?}
+  
+  Nee.
+  
+  Een buigpunt hangt samen met een verandering van de kromming van de
+  grafiek van $f$. Daarvoor moeten we bijkomende informatie hebben over
+  het verloop van $f'$ of over het teken van $f''$.
+  
+  De gegeven tabel vertelt alleen waar $f'$ positief, nul of negatief is.
+  Ze vertelt niet hoe $f'$ binnen die intervallen verandert.
+  
+  Daarom kunnen we uit deze gegevens niet bepalen waar de buigpunten
+  van $f$ liggen.
+  
+  \[
+  \boxed{
+  \text{De ligging van de buigpunten kan niet worden bepaald.}
+  }
+  \]
+  
+  \end{oplossing}
 
 \end{oefening}
 
@@ -1290,7 +1161,7 @@ Verantwoord.
 % 11 FUNCTIEONDERZOEK
 % ============================================================
 
-\FVDsection{Een functie systematisch onderzoeken}
+\FVDsection{Een functie onderzoeken}
 
 Voor een veeltermfunctie kunnen we de informatie nu systematisch
 organiseren.
@@ -1301,11 +1172,7 @@ Een mogelijke werkwijze is:
 
 \item Bepaal $f'(x)$.
 
-\item Los
-\[
-f'(x)=0
-\]
-op.
+\item Los \(f'(x)=0\) op.
 
 \item Onderzoek het teken van $f'$.
 
@@ -1357,16 +1224,14 @@ Bepaal $f'(x)$ en factoriseer zo ver mogelijk.
 \end{question}
 
 \begin{question}
-Bepaal de stationaire punten.
+Bepaal de extrema.
 \end{question}
 
 \begin{question}
 Stel een tekentabel op voor $f'$ en bepaal waar $f$ stijgt en daalt.
 \end{question}
 
-\begin{question}
-Bepaal en classificeer de lokale extrema.
-\end{question}
+
 
 \begin{question}
 Bepaal $f''(x)$.
@@ -1380,6 +1245,369 @@ Onderzoek de kromming van de grafiek en bepaal het buigpunt.
 Vat je resultaten samen in één verloopschema.
 \end{question}
 
+\begin{oplossing}
+
+  We onderzoeken stap voor stap het verloop van
+  
+  \[
+  f(x)=x^3-6x^2+9x+1.
+  \]
+  
+  \textbf{1. Eerste afgeleide}
+  
+  We bepalen de eerste afgeleide:
+  
+  \[
+  f'(x)=3x^2-12x+9.
+  \]
+  
+  We factoriseren:
+  
+  \[
+  f'(x)
+  =3(x^2-4x+3)
+  =3(x-1)(x-3).
+  \]
+  
+  Dus
+  
+  \[
+  \boxed{f'(x)=3(x-1)(x-3).}
+  \]
+  
+  \textbf{2. Extrema}
+  
+  Mogelijke extrema vinden we door
+  
+  \[
+  f'(x)=0
+  \]
+  
+  op te lossen:
+  
+  \[
+  3(x-1)(x-3)=0.
+  \]
+  
+  Dus
+  
+  \[
+  x=1
+  \qquad\text{of}\qquad
+  x=3.
+  \]
+  
+  We berekenen de bijbehorende functiewaarden:
+  
+  \[
+  f(1)=1-6+9+1=5
+  \]
+  
+  en
+  
+  \[
+  f(3)=27-54+27+1=1.
+  \]
+  
+  Uit het tekenonderzoek van $f'$ zal blijken welk soort extrema
+  we in deze punten hebben.
+  
+  \textbf{3. Teken van $f'$ en stijgen en dalen}
+  
+  We gebruiken
+  
+  \[
+  f'(x)=3(x-1)(x-3).
+  \]
+  
+  Dit geeft de tekentabel
+  
+  \[
+  \begin{array}{c|ccccc}
+  x
+  &
+  & 1
+  &
+  & 3
+  &
+  \\ \hline
+  f'(x)
+  & +
+  & 0
+  & -
+  & 0
+  & +
+  \\
+  f
+  & \nearrow
+  &
+  & \searrow
+  &
+  & \nearrow
+  \end{array}
+  \]
+  
+  Daaruit volgt:
+  
+  \[
+  \boxed{
+  f \text{ stijgt op }]-\infty,1[
+  \text{ en } ]3,+\infty[
+  }
+  \]
+  
+  en
+  
+  \[
+  \boxed{
+  f \text{ daalt op }]1,3[.
+  }
+  \]
+  
+  Bij $x=1$ verandert het teken van $f'$ van positief naar negatief:
+  
+  \[
+  +\longrightarrow-.
+  \]
+  
+  De functie gaat daar van stijgen naar dalen. Het punt
+  
+  \[
+  \boxed{(1,5)}
+  \]
+  
+  is dus een \textbf{lokaal maximumpunt}.
+  
+  Bij $x=3$ verandert het teken van $f'$ van negatief naar positief:
+  
+  \[
+  -\longrightarrow+.
+  \]
+  
+  De functie gaat daar van dalen naar stijgen. Het punt
+  
+  \[
+  \boxed{(3,1)}
+  \]
+  
+  is dus een \textbf{lokaal minimumpunt}.
+  
+  \textbf{4. Tweede afgeleide}
+  
+  We leiden $f'$ opnieuw af:
+  
+  \[
+  f''(x)=6x-12.
+  \]
+  
+  Dus
+  
+  \[
+  \boxed{f''(x)=6(x-2).}
+  \]
+  
+  \textbf{5. Kromming en buigpunt}
+  
+  We zoeken eerst waar
+  
+  \[
+  f''(x)=0.
+  \]
+  
+  Dit geeft
+  
+  \[
+  6(x-2)=0
+  \]
+  
+  en dus
+  
+  \[
+  x=2.
+  \]
+  
+  We onderzoeken het teken van $f''$:
+  
+  \[
+  \begin{array}{c|ccc}
+  x
+  & & 2 & \\ \hline
+  f''(x)
+  & - & 0 & +
+  \end{array}
+  \]
+  
+  Voor $x<2$ is
+  
+  \[
+  f''(x)<0,
+  \]
+  
+  en voor $x>2$ is
+  
+  \[
+  f''(x)>0.
+  \]
+  
+  De tweede afgeleide verandert dus van teken bij $x=2$.
+  De grafiek verandert daar van kromming, zodat er een buigpunt is.
+  
+  We berekenen de functiewaarde:
+  
+  \[
+  f(2)=8-24+18+1=3.
+  \]
+  
+  Het buigpunt is bijgevolg
+  
+  \[
+  \boxed{B(2,3).}
+  \]
+  
+  \textbf{6. Verloopschema}
+  
+  We brengen nu alle informatie samen in één verloopschema:
+  
+  \[
+  \begin{array}{c|ccccccccc}
+  x
+  & -\infty & & 1 & & 2 & & 3 & & +\infty
+  \\ \hline
+  f'(x)
+  & & + & 0 & - & & - & 0 & + &
+  \\
+  f''(x)
+  & & - & & - & 0 & + & & + &
+  \\ \hline
+  f(x)
+  & -\infty
+  & \nearrow
+  & 5
+  & \searrow
+  & 3
+  & \searrow
+  & 1
+  & \nearrow
+  & +\infty
+  \end{array}
+  \]
+  
+  Uit het verloopschema lezen we af dat de grafiek:
+  
+  \begin{itemize}
+      \item stijgt tot het lokale maximumpunt $(1,5)$;
+      \item daarna daalt en door het buigpunt $(2,3)$ gaat;
+      \item verder daalt tot het lokale minimumpunt $(3,1)$;
+      \item daarna opnieuw stijgt.
+  \end{itemize}
+  
+  \textbf{7. Grafische controle}
+  
+  We controleren het gevonden verloop op de grafiek van $f$.
+  
+  \begin{image}
+  \begin{tikzpicture}
+  \begin{axis}[
+      axis lines=middle,
+      xmin=-1,
+      xmax=5,
+      ymin=-6,
+      ymax=10,
+      width=12cm,
+      height=8cm,
+      xlabel={$x$},
+      ylabel={$y$},
+      xtick={-1,0,1,2,3,4,5},
+      ytick={-5,0,1,3,5,10},
+      grid=both,
+      grid style={gray!20},
+      samples=300,
+      domain=-1:5,
+      axis on top=true,
+      clip=false
+  ]
+  
+  % Grafiek van f
+  \addplot[
+      blue,
+      very thick,
+      smooth
+  ]
+  {x^3-6*x^2+9*x+1};
+  
+  % Lokaal maximum
+  \addplot[
+      only marks,
+      mark=*,
+      mark size=2.5pt,
+      red
+  ]
+  coordinates {(1,5)};
+  
+  \node[
+      red,
+      above left
+  ]
+  at (axis cs:1,5)
+  {$(1,5)$};
+  
+  % Buigpunt
+  \addplot[
+      only marks,
+      mark=*,
+      mark size=2.5pt,
+      violet
+  ]
+  coordinates {(2,3)};
+  
+  \node[
+      violet,
+      above right
+  ]
+  at (axis cs:2,3)
+  {$B(2,3)$};
+  
+  % Lokaal minimum
+  \addplot[
+      only marks,
+      mark=*,
+      mark size=2.5pt,
+      red
+  ]
+  coordinates {(3,1)};
+  
+  \node[
+      red,
+      below right
+  ]
+  at (axis cs:3,1)
+  {$(3,1)$};
+  
+  % Verticale hulplijnen
+  \draw[gray,dashed]
+      (axis cs:1,0) -- (axis cs:1,5);
+  
+  \draw[gray,dashed]
+      (axis cs:2,0) -- (axis cs:2,3);
+  
+  \draw[gray,dashed]
+      (axis cs:3,0) -- (axis cs:3,1);
+  
+  % Label van de functie
+  \node[blue]
+      at (axis cs:4.25,5.5)
+      {$f$};
+  
+  \end{axis}
+  \end{tikzpicture}
+  \end{image}
+  
+  De grafiek bevestigt het verlooponderzoek:
+  het lokale maximumpunt is $(1,5)$, het buigpunt is $(2,3)$
+  en het lokale minimumpunt is $(3,1)$.
+  
+  \end{oplossing}
+
 \end{oefening}
 
 
@@ -1387,7 +1615,9 @@ Vat je resultaten samen in één verloopschema.
 % 12 WETENSCHAPPELIJKE CONTEXT
 % ============================================================
 
-\FVDsection{Van positie naar snelheid en versnelling}
+\FVDsection{toepassingen}
+
+\FVDsubsection{Van positie naar snelheid en versnelling}
 
 Een bijzonder belangrijke toepassing vinden we in de mechanica.
 
@@ -1476,6 +1706,228 @@ Op welk tijdstip verandert de versnelling van teken?
 Wat betekent dat voor de snelheid?
 \end{question}
 
+\begin{oplossing}
+
+  De positie van het voorwerp wordt gegeven door
+  
+  \[
+  s(t)=t^3-6t^2+9t,
+  \qquad t\geq 0.
+  \]
+  
+  \textbf{1. Bepaal de snelheid $v(t)$.}
+  
+  De snelheid is de afgeleide van de positie naar de tijd:
+  
+  \[
+  v(t)=s'(t).
+  \]
+  
+  Dus
+  
+  \[
+  v(t)=3t^2-12t+9.
+  \]
+  
+  We factoriseren:
+  
+  \[
+  v(t)
+  =3(t^2-4t+3)
+  =3(t-1)(t-3).
+  \]
+  
+  Bijgevolg
+  
+  \[
+  \boxed{v(t)=3(t-1)(t-3)\ \text{m/s}.}
+  \]
+  
+  \textbf{2. Wanneer staat het voorwerp ogenblikkelijk stil?}
+  
+  Het voorwerp staat ogenblikkelijk stil wanneer
+  
+  \[
+  v(t)=0.
+  \]
+  
+  We lossen op:
+  
+  \[
+  3(t-1)(t-3)=0.
+  \]
+  
+  Dus
+  
+  \[
+  t=1
+  \qquad\text{of}\qquad
+  t=3.
+  \]
+  
+  Het voorwerp staat bijgevolg ogenblikkelijk stil na
+  
+  \[
+  \boxed{1\text{ s en }3\text{ s}.}
+  \]
+  
+  \textbf{3. In welke richting beweegt het voorwerp?}
+  
+  De bewegingsrichting wordt bepaald door het teken van de snelheid.
+  
+  We onderzoeken daarom het teken van
+  
+  \[
+  v(t)=3(t-1)(t-3).
+  \]
+  
+  Omdat alleen $t\geq0$ fysisch relevant is, krijgen we:
+  
+  \[
+  \begin{array}{c|ccccccc}
+  t
+  & 0 & & 1 & & 3 & & +\infty
+  \\ \hline
+  v(t)
+  & & + & 0 & - & 0 & + &
+  \end{array}
+  \]
+  
+  Voor
+  
+  \[
+  0\leq t<1
+  \]
+  
+  is $v(t)>0$. Het voorwerp beweegt dus in de
+  \textbf{positieve richting}.
+  
+  Voor
+  
+  \[
+  1<t<3
+  \]
+  
+  is $v(t)<0$. Het voorwerp beweegt dus in de
+  \textbf{negatieve richting}.
+  
+  Voor
+  
+  \[
+  t>3
+  \]
+  
+  is $v(t)>0$. Het voorwerp beweegt opnieuw in de
+  \textbf{positieve richting}.
+  
+  Samengevat:
+  
+  \[
+  \boxed{
+  \begin{aligned}
+  &\text{positieve richting: }[0,1[\ \text{ en }\ ]3,+\infty[,\\
+  &\text{negatieve richting: }]1,3[.
+  \end{aligned}
+  }
+  \]
+  
+  Op $t=1$ en $t=3$ is het voorwerp ogenblikkelijk in rust.
+  
+  \textbf{4. Bepaal de versnelling $a(t)$.}
+  
+  De versnelling is de afgeleide van de snelheid:
+  
+  \[
+  a(t)=v'(t)=s''(t).
+  \]
+  
+  Uit
+  
+  \[
+  v(t)=3t^2-12t+9
+  \]
+  
+  volgt
+  
+  \[
+  \boxed{a(t)=6t-12=6(t-2)\ \text{m/s}^2.}
+  \]
+  
+  \textbf{5. Wanneer verandert de versnelling van teken?}
+  
+  We bepalen eerst wanneer
+  
+  \[
+  a(t)=0.
+  \]
+  
+  Dus
+  
+  \[
+  6(t-2)=0,
+  \]
+  
+  zodat
+  
+  \[
+  \boxed{t=2\text{ s}.}
+  \]
+  
+  Het tekenverloop van $a$ is:
+  
+  \[
+  \begin{array}{c|ccc}
+  t
+  & & 2 & \\ \hline
+  a(t)
+  & - & 0 & +
+  \end{array}
+  \]
+  
+  Voor $0\leq t<2$ is
+  
+  \[
+  a(t)<0.
+  \]
+  
+  Omdat
+  
+  \[
+  a(t)=v'(t),
+  \]
+  
+  betekent dit dat de snelheidsfunctie $v$ daar daalt.
+  
+  Voor $t>2$ is
+  
+  \[
+  a(t)>0,
+  \]
+  
+  zodat de snelheidsfunctie $v$ daar stijgt.
+  
+  Bij $t=2$ bereikt de snelheid dus een minimum.
+  
+  We kunnen deze minimale snelheid berekenen:
+  
+  \[
+  v(2)
+  =3(2-1)(2-3)
+  =-3.
+  \]
+  
+  Dus
+  
+  \[
+  \boxed{v(2)=-3\ \text{m/s}.}
+  \]
+  
+  De versnelling verandert bij $t=2$ van negatief naar positief.
+  De snelheid gaat daar bijgevolg over van dalen naar stijgen en
+  bereikt er haar minimale waarde $-3\ \text{m/s}$.
+  
+  \end{oplossing}
+
 \end{oefening}
 
 
@@ -1483,7 +1935,7 @@ Wat betekent dat voor de snelheid?
 % 13 REDENEREN ZONDER REKENEN
 % ============================================================
 
-\FVDsection{Redeneren zonder voorschrift}
+\FVDsubsection{Redeneren zonder voorschrift}
 
 Bij analyseren krijg je niet altijd een functievoorschrift.
 
@@ -1509,6 +1961,78 @@ Welke beschrijving is correct?
 \end{multipleChoice}
 
 Leg je keuze uit met behulp van de betekenis van $f'$ en $f''$.
+\begin{oplossing}
+
+  We bekijken de twee voorwaarden afzonderlijk.
+  
+  Uit
+  
+  \[
+  f'(x)>0
+  \]
+  
+  op het interval $I$ volgt dat $f$ op dat interval
+  \textbf{stijgend} is.
+  
+  Vervolgens geldt
+  
+  \[
+  f''(x)<0.
+  \]
+  
+  Omdat
+  
+  \[
+  f''=(f')',
+  \]
+  
+  betekent dit dat $f'$ op het interval $I$ afneemt.
+  
+  De richtingscoëfficiënt van de raaklijn wordt dus kleiner:
+  de grafiek blijft stijgen, maar de helling neemt af.
+  
+  Daarom is de correcte uitspraak
+  
+  \[
+  \boxed{
+  \text{$f$ stijgt, maar haar helling neemt af.}
+  }
+  \]
+  
+  Schematisch:
+  
+  \[
+  \boxed{
+  f'(x)>0
+  \quad\Longrightarrow\quad
+  f\text{ stijgt}
+  }
+  \]
+  
+  en
+  
+  \[
+  \boxed{
+  f''(x)<0
+  \quad\Longrightarrow\quad
+  f'\text{ daalt}.
+  }
+  \]
+  
+  Samen geeft dit:
+  
+  \[
+  \boxed{
+  f\nearrow
+  \qquad\text{terwijl}\qquad
+  f'\searrow.
+  }
+  \]
+  
+  De functie stijgt dus nog steeds, maar haar grafiek wordt
+  \textbf{steeds minder steil}.
+  
+  \end{oplossing}
 
 \end{oefening}
 
@@ -1517,7 +2041,7 @@ Leg je keuze uit met behulp van de betekenis van $f'$ en $f''$.
 % 14 OMGEKEERD REDENEREN
 % ============================================================
 
-\FVDsection{Van het gedrag van $f$ naar haar afgeleiden}
+\FVDsubsection{Van het gedrag van $f$ naar haar afgeleiden}
 
 Tot nu toe redeneerden we meestal van de afgeleiden naar de functie.
 
@@ -1567,119 +2091,10 @@ Welke combinatie past daarbij?
 \end{oefening}
 
 
-% ============================================================
-% 15 VEELGEMAAKTE DENKFOUTEN
-% ============================================================
-
-\FVDsection{Veelgemaakte denkfouten}
-
-\begin{opmerking}
-
-\textbf{Denkfout 1}
-
-\[
-f'(a)>0
-\]
-
-betekent niet dat $f$ overal stijgt.
-
-Het zegt iets over de verandering rond $x=a$.
-
-\medskip
-
-\textbf{Denkfout 2}
-
-\[
-f'(a)=0
-\]
-
-betekent niet automatisch dat $f$ een extremum heeft.
-
-Onderzoek het teken van $f'$.
-
-\medskip
-
-\textbf{Denkfout 3}
-
-\[
-f''(a)=0
-\]
-
-betekent niet automatisch dat $f$ een buigpunt heeft.
-
-Onderzoek of de kromming verandert.
-
-\medskip
-
-\textbf{Denkfout 4}
-
-\[
-f''>0
-\]
-
-betekent niet dat $f$ stijgt.
-
-Het betekent dat $f'$ stijgt.
-
-\medskip
-
-\textbf{Denkfout 5}
-
-Een extremum is een \emph{punt} van de grafiek.
-
-Wanneer $x=a$ de extremumplaats is, is
-
-\[
-(a,f(a))
-\]
-
-het bijbehorende extremumpunt.
-
-\end{opmerking}
 
 
-% ============================================================
-% 16 VERBIND ALLES
-% ============================================================
-
-\FVDsection{Kun je alles verbinden?}
-
-\begin{oefening}[Eén functie, drie niveaus]{\oefG}
-
-Een functie $f$ is tweemaal afleidbaar.
-
-Er geldt:
-
-\[
-f'(2)=0,
-\qquad
-f''(2)=0.
-\]
-
-Een leerling beweert:
-
-\begin{quote}
-Bij $x=2$ ligt dus zowel een extremum als een buigpunt.
-\end{quote}
-
-Onderzoek deze uitspraak kritisch.
-
-Leg uit:
-\begin{itemize}
-  \item waarom de gegeven informatie niet voldoende is;
-  \item welke bijkomende informatie over $f'$ nodig is om een extremum
-        te onderzoeken;
-  \item welke bijkomende informatie over $f''$ nodig is om een buigpunt
-        te onderzoeken;
-  \item welke verschillende situaties mogelijk zijn.
-\end{itemize}
-
-\end{oefening}
 
 
-% ============================================================
-% 17 SAMENVATTING
-% ============================================================
 
 \FVDsection{Samengevat}
 
@@ -1752,97 +2167,218 @@ f''
 }
 \]
 
+\begin{oefening}[Eén functie, drie niveaus]{\oefG}
 
-% ============================================================
-% 18 MINIMUMTRAJECT
-% ============================================================
+  Een functie $f$ is tweemaal afleidbaar.
+  
+  Er geldt:
+  
+  \[
+  f'(2)=0,
+  \qquad
+  f''(2)=0.
+  \]
+  
+  Een leerling beweert:
+  
+  \begin{quote}
+  Bij $x=2$ ligt dus zowel een extremum als een buigpunt.
+  \end{quote}
+  
+  Onderzoek deze uitspraak kritisch.
+  
+  Leg uit:
+  \begin{itemize}
+    \item waarom de gegeven informatie niet voldoende is;
+    \item welke bijkomende informatie over $f'$ nodig is om een extremum
+          te onderzoeken;
+    \item welke bijkomende informatie over $f''$ nodig is om een buigpunt
+          te onderzoeken;
+    \item welke verschillende situaties mogelijk zijn.
+  \end{itemize}
 
-\FVDsection{Wat moet je zeker beheersen?}
+  \begin{oplossing}
 
-Na deze opfrissing moet je niet alleen eerste en tweede afgeleiden
-kunnen berekenen.
-
-Je moet informatie uit $f'$ en $f''$ kunnen \textbf{analyseren} en
-vertalen naar eigenschappen van $f$.
-
-Je moet zelfstandig kunnen:
-
-\begin{itemize}
-
-\item uit het teken van $f'$ besluiten waar $f$ stijgt of daalt;
-
-\item met een tekenonderzoek van $f'$ lokale extrema herkennen;
-
-\item uitleggen waarom $f'(a)=0$ niet automatisch een extremum geeft;
-
-\item uit het teken van $f''$ afleiden hoe de hellingen van $f$
-veranderen;
-
-\item een verandering van kromming onderzoeken;
-
-\item uitleggen waarom $f''(a)=0$ niet automatisch een buigpunt geeft;
-
-\item informatie over $f$, $f'$ en $f''$ in beide richtingen met elkaar
-verbinden;
-
-\item deze begrippen betekenisvol interpreteren in een eenvoudige
-wetenschappelijke context.
-
-\end{itemize}
-
-\begin{opmerking}
-De oefeningen met de diamant vormen in dit hoofdstuk het
-minimumtraject.
-
-Concreet zijn dat:
-
-\begin{itemize}
-  \item \textit{Van afgeleide naar verloop};
-  \item \textit{Lees de tekentabel};
-  \item \textit{Is er een extremum?};
-  \item \textit{Wat kun je besluiten uit $f''$?};
-  \item \textit{Buigpunt of niet?};
-  \item \textit{Van $f'$ naar $f$};
-  \item \textit{Volledig verlooponderzoek};
-  \item \textit{Beweging interpreteren};
-  \item \textit{Wat moet waar zijn?};
-  \item \textit{Van functie naar afgeleiden}.
-\end{itemize}
-
-Merk op dat verschillende essentiële oefeningen het label
-\oefU{} dragen. Dat is bewust: het leerplandoel vraagt uiteindelijk
-\emph{analyseren}. Alleen standaardtechnieken uitvoeren is daarvoor
-niet voldoende.
-\end{opmerking}
-
-
-% ============================================================
-% OVERGANG
-% ============================================================
-
-\FVDsection{Van opfrissing naar nieuwe analyse}
-
-We hebben nu de belangrijkste ideeën uit het vijfde jaar opnieuw
-samengebracht:
-
-\[
-\text{verandering}
-\longrightarrow
-\text{afgeleid getal}
-\longrightarrow
-\text{afgeleide functie}
-\longrightarrow
-\text{verloop van een functie}.
-\]
-
-Tot nu toe werkten we vooral met veeltermfuncties waarvoor de
-afgeleiden relatief eenvoudig te bepalen zijn.
-
-In de volgende thema's breiden we onze gereedschapskist uit.
-
-We zullen dezelfde ideeën gebruiken bij andere functieklassen en
-nieuwe afleidingstechnieken. Daardoor wordt het mogelijk om veel
-rijkere functies te analyseren en later ook extremumproblemen
-systematisch aan te pakken.
+    De leerling besluit uit
+    
+    \[
+    f'(2)=0
+    \qquad\text{en}\qquad
+    f''(2)=0
+    \]
+    
+    dat bij $x=2$ zowel een extremum als een buigpunt ligt.
+    
+    Die conclusie is \textbf{niet gerechtvaardigd}.
+    
+    \textbf{1. Wat vertelt $f'(2)=0$?}
+    
+    Uit
+    
+    \[
+    f'(2)=0
+    \]
+    
+    volgt dat de grafiek van $f$ bij $x=2$ een
+    \textbf{horizontale raaklijn} heeft.
+    
+    Dat is op zichzelf niet voldoende om te besluiten dat daar een
+    extremum ligt.
+    
+    Om een extremum te onderzoeken, moeten we nagaan hoe het teken van
+    $f'$ verandert rond $x=2$.
+    
+    Er zijn verschillende mogelijkheden:
+    
+    \[
+    \begin{array}{c|ccc|c}
+    \text{teken van }f'
+    & x<2 & x=2 & x>2 & \text{besluit}\\ \hline
+    & + & 0 & - & \text{lokaal maximum}\\
+    & - & 0 & + & \text{lokaal minimum}\\
+    & + & 0 & + & \text{geen extremum}\\
+    & - & 0 & - & \text{geen extremum}
+    \end{array}
+    \]
+    
+    We hebben dus bijkomende informatie nodig over het
+    \textbf{tekenverloop van $f'$ rond $x=2$}.
+    
+    \[
+    \boxed{
+    f'(2)=0
+    \text{ is op zichzelf niet voldoende om een extremum te besluiten.}
+    }
+    \]
+    
+    \textbf{2. Wat vertelt $f''(2)=0$?}
+    
+    Ook uit
+    
+    \[
+    f''(2)=0
+    \]
+    
+    volgt niet automatisch dat de grafiek van $f$ bij $x=2$
+    een buigpunt heeft.
+    
+    Voor een buigpunt moet de grafiek van $f$ van kromming veranderen.
+    
+    Daarom onderzoeken we het teken van $f''$ aan beide zijden van
+    $x=2$.
+    
+    Als bijvoorbeeld
+    
+    \[
+    \begin{array}{c|ccc}
+    x & x<2 & 2 & x>2\\ \hline
+    f''(x) & - & 0 & +
+    \end{array}
+    \]
+    
+    of
+    
+    \[
+    \begin{array}{c|ccc}
+    x & x<2 & 2 & x>2\\ \hline
+    f''(x) & + & 0 & -
+    \end{array}
+    \]
+    
+    dan verandert $f''$ van teken en verandert de grafiek van kromming.
+    Er is dan een buigpunt bij $x=2$.
+    
+    Als $f''$ daarentegen niet van teken verandert, bijvoorbeeld
+    
+    \[
+    +\quad 0\quad +
+    \]
+    
+    of
+    
+    \[
+    -\quad 0\quad -,
+    \]
+    
+    dan kunnen we op basis daarvan geen buigpunt besluiten.
+    
+    We hebben dus bijkomende informatie nodig over het
+    \textbf{tekenverloop van $f''$ rond $x=2$}.
+    
+    \[
+    \boxed{
+    f''(2)=0
+    \text{ is op zichzelf niet voldoende om een buigpunt te besluiten.}
+    }
+    \]
+    
+    \textbf{3. Welke situaties zijn mogelijk?}
+    
+    Met de gegeven informatie
+    
+    \[
+    f'(2)=0
+    \qquad\text{en}\qquad
+    f''(2)=0
+    \]
+    
+    zijn verschillende situaties mogelijk.
+    
+    \begin{itemize}
+    
+    \item $f'$ verandert van teken en $f''$ verandert van teken:
+    
+    \[
+    \Rightarrow
+    \text{een extremum en een buigpunt.}
+    \]
+    
+    \item $f'$ verandert van teken, maar $f''$ niet:
+    
+    \[
+    \Rightarrow
+    \text{wel een extremum, maar geen buigpunt.}
+    \]
+    
+    \item $f'$ verandert niet van teken, maar $f''$ wel:
+    
+    \[
+    \Rightarrow
+    \text{geen extremum, maar wel een buigpunt met horizontale raaklijn.}
+    \]
+    
+    \item Noch $f'$ noch $f''$ verandert van teken:
+    
+    \[
+    \Rightarrow
+    \text{op basis van deze tekenonderzoeken geen extremum en geen buigpunt.}
+    \]
+    
+    \end{itemize}
+    
+    We kunnen dus uit de twee gegeven gelijkheden alleen besluiten dat
+    
+    \[
+    f'(2)=0
+    \]
+    
+    een horizontale raaklijn oplevert en dat $x=2$ een mogelijke plaats
+    is die verder onderzocht moet worden.
+    
+    De uitspraak van de leerling is daarom onjuist:
+    
+    \[
+    \boxed{
+    f'(2)=0\text{ en }f''(2)=0
+    \text{ volstaan niet om een extremum of buigpunt te besluiten.}
+    }
+    \]
+    
+    Het \textbf{tekenverloop rond $x=2$} geeft de noodzakelijke
+    bijkomende informatie.
+    
+    \end{oplossing}
+  
+  \end{oefening}
 
 \end{document}

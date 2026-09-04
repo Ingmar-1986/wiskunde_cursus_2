@@ -192,12 +192,20 @@
 
 
 
+
+
+
+
+
+
+
+
 \begin{abstract}
 In dit hoofdstuk frissen we een centraal idee uit de analyse op:
 hoe beschrijf je hoe snel een functie verandert?
 
 We vertrekken van de gemiddelde verandering over een interval en
-herkennen daarin de helling van een secant. Door het interval steeds
+herkennen daarin de helling van een snijlijn. Door het interval steeds
 kleiner te maken, komen we opnieuw bij de ogenblikkelijke verandering,
 het afgeleid getal en de raaklijn.
 
@@ -224,7 +232,7 @@ afleidingstechnieken te onderzoeken.
 \begin{leerdoelen}
   \item Je kan een gemiddelde verandering berekenen en interpreteren.
   \item Je kan het differentiequotiënt meetkundig interpreteren
-        als de richtingscoëfficiënt van een secant.
+        als de richtingscoëfficiënt van een snijlijn.
   \item Je kan gemiddelde en ogenblikkelijke verandering onderscheiden.
   \item Je kan het afgeleid getal interpreteren als een limiet
         van differentiequotiënten.
@@ -271,7 +279,7 @@ We halen vooral de fundamentele verbanden opnieuw naar boven:
 \[
 \boxed{\text{gemiddelde verandering}}
 \longleftrightarrow
-\boxed{\text{secant}}
+\boxed{\text{snijlijn}}
 \]
 
 en
@@ -327,6 +335,36 @@ over het interval $[a,b]$ is
 }.
 \]
 
+\begin{image}
+  \begin{tikzpicture}
+    \begin{axis}[
+        axis on top,axis lines=center,
+        xlabel={$x$}, 
+        ylabel={$y$},
+        ymin=-0.7, ymax=4,
+        xmin=-0.5, xmax=3.5,
+        x=3cm,
+        y=1cm,
+        xtick=\empty,
+        ytick=\empty,
+        %grid=both,
+     %xmajorgrids={true}
+        %major grid style={black!50}
+    ] \addplot+[samples=501,very thick,smooth,blue,domain=0:3, no marks] {-2*cos(deg(x))+2};
+    \draw[red,dotted,line width=0.5mm] (axis cs:1.5,{-2*cos(deg(1.5))+2}) -- (axis cs:1.5,0);
+    \draw[teal,dotted,line width=0.5mm] (axis cs:0,{-2*cos(deg(1.5))+2}) -- (axis cs:1.5,{-2*cos(deg(1.5))+2});
+    \node[red] at (axis cs:1.5,-0.4) {\Large{$a$}};
+    \node[teal] at (axis cs:-0.25,{-2*cos(deg(1.5))+2}) {\Large{$f(a)$}};
+    \draw[red,dotted,line width=0.5mm] (axis cs:2.5,{-2*cos(deg(2.5))+2}) -- (axis cs:2.5,0);
+    \draw[teal,dotted,line width=0.5mm] (axis cs:0,{-2*cos(deg(2.5))+2}) -- (axis cs:2.5,{-2*cos(deg(2.5))+2});
+    \node[red] at (axis cs:2.5,-0.4) {\Large{$b$}};
+    \node[teal] at (axis cs:-0.25,{-2*cos(deg(2.5))+2}) {\Large{$f(b)$}};
+    \draw[red,<->] (axis cs:1.5,1) -- (axis cs:2.5,1) node [red,midway,below] {\huge{$\Delta x$}};
+    \draw[teal,<->] (axis cs:1,{-2*cos(deg(1.5))+2}) -- (axis cs:1,{-2*cos(deg(2.5))+2}) node [teal,midway,left] {\huge{$\Delta f(x)$}};
+    \end{axis}
+\end{tikzpicture}
+\end{image}
+
 Deze verhouding noemen we het \textbf{differentiequotiënt}.
 \end{definitie}
 
@@ -342,6 +380,67 @@ f(x)=-x^2+8x.
 Bepaal de gemiddelde verandering over $[2,4]$.
 
 \begin{oplossing}[toon]
+
+  \begin{center}
+    \begin{tikzpicture}
+    \begin{axis}[
+        axis lines=middle,
+        xmin=-0.5, xmax=8.5,
+        ymin=-2, ymax=18,
+        width=11cm,
+        height=7cm,
+        xlabel={$x$},
+        ylabel={$f(x)$},
+        xtick={0,1,...,8},
+        ytick={0,4,8,12,16},
+        grid=major,
+        grid style={gray!20},
+        samples=200,
+        domain=0:8,
+        clip=false
+    ]
+    
+    % Grafiek van de functie
+    \addplot[
+        blue,
+        very thick
+    ]
+    {-x^2+8*x};
+    
+    % Snijlijn door A en B: y = 2x + 8
+    \addplot[
+        magenta,
+        thick,
+        dashed,
+        domain=1:5
+    ]
+    {2*x+8};
+    
+    % Punten A en B
+    \addplot[
+        only marks,
+        mark=*,
+        mark size=2.5pt
+    ]
+    coordinates {(2,12) (4,16)};
+    
+    \node[above left] at (axis cs:2,12) {$A(2,12)$};
+    \node[above right] at (axis cs:4,16) {$B(4,16)$};
+    
+    % Horizontale en verticale verandering
+    \draw[<->, thick]
+        (axis cs:2,10) -- node[below] {$\Delta x=2$} (axis cs:4,10);
+    
+    \draw[<->, thick]
+        (axis cs:4.35,12) -- node[right] {$\Delta f=4$} (axis cs:4.35,16);
+    
+    % Label snijlijn
+    \node[magenta, rotate=17] at (axis cs:5.2,17)
+        {snijlijn door $A$ en $B$};
+    
+    \end{axis}
+    \end{tikzpicture}
+    \end{center}
 
 We berekenen eerst
 
@@ -405,7 +504,7 @@ Welke interpretatie is correct?
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% SECANT
+%% snijlijn
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \FVDsubsection{Meetkundige betekenis}
@@ -420,9 +519,9 @@ B(b,f(b))
 
 op de grafiek van $f$.
 
-De rechte door $A$ en $B$ is een \textbf{secant}.
+De rechte door $A$ en $B$ is een \textbf{snijlijn}.
 
-De richtingscoëfficiënt van deze secant is
+De richtingscoëfficiënt van deze snijlijn is
 
 \[
 \operatorname{rico}(AB)
@@ -434,64 +533,52 @@ Dat is precies het differentiequotiënt.
 
 \begin{definitie}[]
 Het differentiequotiënt is de
-\textbf{richtingscoëfficiënt van de secant}
+\textbf{richtingscoëfficiënt van de snijlijn}
 door de twee overeenkomstige punten van de grafiek.
 
 \[
 \important{
 \text{gemiddelde verandering}
 \longleftrightarrow
-\text{richtingscoëfficiënt van een secant}
+\text{richtingscoëfficiënt van een snijlijn}
 }
 \]
+
+\begin{image}
+  \begin{tikzpicture}[scale=0.75]
+    \begin{axis}[
+        axis on top,axis lines=center,
+        xlabel={$x$}, 
+        ylabel={$y$},
+        ymin=-0.7, ymax=6.2,
+        xmin=-0.5, xmax=6,
+        x=2cm,
+        y=1cm,
+        xtick=\empty,
+        ytick=\empty,
+        %grid=both,
+        %xmajorgrids={true}
+        %major grid style={black!50}
+    ] \addplot+[samples=501,very thick,smooth,blue,domain=0:5, no marks] {-(x-3)*(x-3)+6};
+    \draw[red,dotted,line width=0.5mm] (axis cs:1,0) -- (axis cs:1,2);
+    \draw[teal,dotted,line width=0.5mm] (axis cs:0,2) -- (axis cs:1,2);
+    \node[red] at (axis cs:1,-0.4) {\Large{$a$}};
+    \node[teal] at (axis cs:-0.25,2) {\Large{$f(a)$}};
+    \draw[red,fill=red,thick] (axis cs:1,2) circle (0.1cm) node[orange, anchor=north west]{\Large{$A$}};
+    \draw[red,dotted,line width=0.5mm] (axis cs:4,0) -- (axis cs:4,5);
+    \draw[teal,dotted,line width=0.5mm] (axis cs:0,5) -- (axis cs:4,5);
+    \node[red] at (axis cs:4,-0.4) {\Large{$b$}};
+    \node[teal] at (axis cs:-0.25,5) {\Large{$f(b)$}};
+    \draw[red,fill=red,thick] (axis cs:4,5) circle (0.1cm) node[orange, anchor=north east]{\Large{$B$}};
+    \addplot+[samples=501,very thick,smooth,red,domain=0.5:5, no marks] {x+1};
+    \node[red] at (axis cs: 5.2, 5.2) {\Large{$rico \ AB=\dfrac{\Delta f}{\Delta x}$}};
+    \end{axis}
+\end{tikzpicture}
+\end{image}
 \end{definitie}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% EENHEDEN
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\FVDsubsection{Eenheden}
-
-Bij toepassingen heeft een differentiequotiënt meestal ook een eenheid.
-
-Stel bijvoorbeeld dat $T(t)$ de temperatuur in graden Celsius
-voorstelt op tijdstip $t$, uitgedrukt in seconden.
-
-Dan heeft
-
-\[
-\frac{\Delta T}{\Delta t}
-\]
-
-als eenheid
-
-\[
-\frac{^\circ\mathrm{C}}{\mathrm{s}}.
-\]
-
-Als
-
-\[
-\frac{\Delta T}{\Delta t}=-0,8,
-\]
-
-dan betekent dit dat de temperatuur over het onderzochte interval
-\textbf{gemiddeld met $0,8~^\circ\mathrm{C}$ per seconde afneemt}.
-
-\begin{opmerking}
-Bij een toepassing is een getal alleen meestal geen volledig antwoord.
-
-Vermeld indien mogelijk:
-
-\begin{itemize}
-  \item welke grootheid verandert;
-  \item of de grootheid toeneemt of afneemt;
-  \item hoeveel de grootheid verandert;
-  \item per welke eenheid;
-  \item over welk interval de uitspraak geldt.
-\end{itemize}
-\end{opmerking}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -516,7 +603,7 @@ Daarnaast nemen we een tweede punt
 B(F,f(x)).
 \]
 
-Voor $x\neq a$ heeft de secant $AB$ richtingscoëfficiënt
+Voor $x\neq a$ heeft de snijlijn $AB$ richtingscoëfficiënt
 
 \[
 \frac{f(x)-f(a)}{x-a}.
@@ -529,8 +616,42 @@ x\to a.
 \]
 
 Het punt $B$ nadert dan tot $A$.
-
-De secant door $A$ en $B$ nadert naar de raaklijn aan de grafiek
+\begin{image}[\textwidth]
+  \begin{tikzpicture}
+ \begin{axis}[
+     axis on top,axis lines=center,
+     xlabel={$x$}, 
+     ylabel={$y$},
+     ymin=-0.7, ymax=6.2,
+     xmin=-0.5, xmax=6,
+     x=2cm,
+     y=1cm,
+     xtick=\empty,
+     ytick=\empty,
+     %grid=both,
+     %xmajorgrids={true}
+     %major grid style={black!50}
+ ] \addplot+[samples=501,very thick,smooth,blue,domain=0:5, no marks] {-(x-3)*(x-3)+6};
+ \addplot+[samples=501,very thick,smooth,purple,domain=0:5, no marks] {4*x-2} node[purple] at (axis cs: 1.25,5.5) {{raaklijn $t$}};
+ \draw[red,dotted,line width=0.5mm] (axis cs:1,0) -- (axis cs:1,2);
+ \draw[teal,dotted,line width=0.5mm] (axis cs:0,2) -- (axis cs:1,2);
+ \node[red] at (axis cs:1,-0.4) {\large{$a$}};
+ \node[teal] at (axis cs:-0.25,2) {\large{$f(a)$}};
+ \draw[red,fill=red,thick] (axis cs:1,2) circle (0.1cm) node[orange, anchor=north west]{\large{$A$}};
+ \draw[red,dotted,line width=0.5mm] (axis cs:4,0) -- (axis cs:4,5);
+ \draw[teal,dotted,line width=0.5mm] (axis cs:0,5) -- (axis cs:4,5);
+ \node[red] at (axis cs:4,-0.4) {\large{$x$}};
+ \node[teal] at (axis cs:-0.25,5) {\large{$f(x)$}};
+ \draw[red,fill=red,thick] (axis cs:4,5) circle (0.1cm) node[orange, anchor=north east]{\large{$B$}};
+ \addplot+[samples=501,very thick,smooth,red,domain=0.5:5, no marks] {x+1};
+ \node[red] at (axis cs: 5.2, 5.2) {\large{$rico \ AB=\dfrac{\Delta f}{\Delta x}$}};
+ \draw[teal,->] (axis cs:1,2) -- (axis cs: 4,2) node[teal,midway,below] {\large{$\Delta x=x-a$}};
+ \draw[teal,->] (axis cs:4,2) -- (axis cs: 4,5) node[teal,midway,right] {\large{$\Delta f=f(x)-f(a)$}}
+ ;
+ \end{axis}
+\end{tikzpicture}
+\end{image} 
+De snijlijn door $A$ en $B$ nadert naar de raaklijn aan de grafiek
 in $A$.
 
 We onderzoeken daarom
@@ -594,7 +715,6 @@ f'(a)
 \]
 
 
-\FVDsubsection{Een voorbeeld met de definitie}
 
 \begin{voorbeeld}
 
@@ -663,15 +783,9 @@ betekent ook dat de ogenblikkelijke verandering van $f$
 bij $x=1$ gelijk is aan $4$.
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% RAAKLIJN
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\FVDsection{De afgeleide en de raaklijn}
-
 \FVDsubsection{Meetkundige betekenis}
 
-De overgang van secant naar raaklijn geeft onmiddellijk de
+De overgang van snijlijn naar raaklijn geeft onmiddellijk de
 meetkundige betekenis van het afgeleid getal.
 
 \begin{definitie}[Betekenis afgeleid getal]
@@ -692,6 +806,34 @@ f'(a)=\operatorname{rico}(t)
 \]
 
 waarbij $t$ de raaklijn is in $P$.
+\begin{image}
+  \begin{tikzpicture}
+                      \begin{axis}[
+                          axis on top,axis lines=center,
+                          xlabel={$x$}, 
+                          ylabel={$y$},
+                          ymin=-0.7, ymax=6.2,
+                          xmin=-0.5, xmax=6,
+                          x=2cm,
+                          y=1cm,
+                          xtick=\empty,
+                          ytick=\empty,
+                          %grid=both,
+                          %xmajorgrids={true}
+                          %major grid style={black!50}
+                      ] \addplot+[samples=501,very thick,smooth,blue,domain=0:5, no marks] {-(x-3)*(x-3)+6};
+                      \addplot+[samples=501,very thick,smooth,purple,domain=0:5, no marks] {4*x-2} node[purple] at (axis cs: 1.25,5.5) {\large{raaklijn $t$}};
+                      \draw[red,dotted,line width=0.5mm] (axis cs:1,0) -- (axis cs:1,2);
+                      \draw[teal,dotted,line width=0.5mm] (axis cs:0,2) -- (axis cs:1,2);
+                      \node[red] at (axis cs:1,-0.4) {\Large{$a$}};
+                      \node[teal] at (axis cs:-0.25,2) {\Large{$f(a)$}};
+                      \draw[red,fill=red,thick] (axis cs:1,2) circle (0.1cm) node[orange, anchor=north west]{\Large{$A$}};
+                      \draw[teal,->,very thick] (axis cs:1,2) -- (axis cs: 2,2) node[teal,midway,below] {\large{$+1$}};
+                      \draw[teal,->,very thick] (axis cs:2,2) -- (axis cs: 2,6) node[teal,midway,right] {\large{$f'(a)$}}
+                      ;
+                      \end{axis}
+                  \end{tikzpicture}
+\end{image}
 \end{definitie}
 
 
@@ -721,7 +863,7 @@ f'(a)=0,
 
 is de raaklijn horizontaal.
 
-\begin{remark}
+\begin{opmerking}
 Uit
 
 \[
@@ -733,50 +875,12 @@ een maximum of minimum bereikt.
 
 Een horizontale raaklijn is op zichzelf onvoldoende om een
 extremum te besluiten.
-\end{remark}
+\end{opmerking}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% INTERPRETATIE
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\FVDsection{Een afgeleid getal interpreteren}
-
-Bij een toepassing moeten we opnieuw rekening houden met de betekenis
-en de eenheden van de grootheden.
-
-Stel dat $Q(t)$ een hoeveelheid in milligram voorstelt en dat
-$t$ in uren wordt uitgedrukt.
-
-Als
-
-\[
-Q'(4)=-2,5,
-\]
-
-dan heeft de afgeleide als eenheid
-
-\[
-\frac{\mathrm{mg}}{\mathrm{uur}}.
-\]
-
-Een volledige interpretatie is:
-
-\begin{center}
-Op het tijdstip $t=4$ uur neemt de hoeveelheid $Q$
-ogenblikkelijk af met $2,5$ milligram per uur.
-\end{center}
-
-Bij een interpretatie stellen we dus drie vragen:
-
-\begin{enumerate}
-  \item \textbf{Waar?} Bij welke invoerwaarde?
-  \item \textbf{In welke richting?} Toename, afname of horizontaal?
-  \item \textbf{Hoe sterk?} Met welke waarde en welke eenheid?
-\end{enumerate}
 
 
-\begin{oefening}
+\begin{oefening}[Concentratie verandering]{\oefB \ESS}
 
 De functie $C(t)$ beschrijft een concentratie in $\mathrm{mg/L}$,
 waarbij $t$ wordt uitgedrukt in minuten.
@@ -819,7 +923,7 @@ Na $12$ minuten is de concentratie nul.
 %% RAAKLIJNVERGELIJKING
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\FVDsection{De vergelijking van de raaklijn}
+\FVDsubsection{De vergelijking van de raaklijn}
 
 De raaklijn aan de grafiek in
 
@@ -932,48 +1036,7 @@ y=\answer{-3}x+\answer{11}.
 %% VERBANDEN
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\FVDsection{De verbanden opnieuw samenbrengen}
-
-De belangrijkste begrippen uit dit hoofdstuk kunnen we in twee
-ketens samenvatten.
-
-Voor twee verschillende punten:
-
-\[
-\important{
-\text{differentiequotiënt}
-\longleftrightarrow
-\text{gemiddelde verandering}
-\longleftrightarrow
-\text{secant}
-}
-\]
-
-Voor één punt:
-
-\[
-\important{
-\text{afgeleid getal}
-\longleftrightarrow
-\text{ogenblikkelijke verandering}
-\longleftrightarrow
-\text{raaklijn}
-}
-\]
-
-De overgang tussen beide gebeurt door een limiet:
-
-\[
-\boxed{
-f'(a)
-=
-\lim_{x\to a}
-\frac{f(x)-f(a)}{x-a}
-}.
-\]
-
-
-\FVDsubsection{Drie talen van de afgeleide}
+\FVDsection{Drie talen van de afgeleide}
 
 Eenzelfde uitspraak over een afgeleide kunnen we op verschillende
 manieren formuleren.
@@ -1000,61 +1063,49 @@ afhankelijke grootheid bij $x=a$.
 Bij analyse moet je tussen deze drie voorstellingen kunnen schakelen.
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% DENKFOUTEN
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\FVDsection{Veelgemaakte denkfouten}
 
-\begin{remark}
-\textbf{Gemiddelde en ogenblikkelijke verandering verwarren}
+
+\FVDsection{Samengevat}
+
+Over een interval $[a,b]$ gebruiken we het differentiequotiënt
 
 \[
+\boxed{
 \frac{f(b)-f(a)}{b-a}
+}.
 \]
 
-beschrijft een verandering over een interval.
+Dit beschrijft de gemiddelde verandering en is de
+richtingscoëfficiënt van een snijlijn.
+
+Bij één punt gebruiken we het afgeleid getal
 
 \[
+\boxed{
 f'(a)
+=
+\lim_{x\to a}
+\frac{f(x)-f(a)}{x-a}
+}.
 \]
 
-beschrijft een ogenblikkelijke verandering bij één invoerwaarde.
-\end{remark}
+Dit beschrijft de ogenblikkelijke verandering en is de
+richtingscoëfficiënt van de raaklijn bij $x=a$.
 
-
-\begin{remark}
-\textbf{De afgeleide verwarren met de functiewaarde}
+De vergelijking van die raaklijn is
 
 \[
-f(a)
+\boxed{
+y-f(a)=f'(a)(x-a)
+}.
 \]
 
-vertelt waar het punt op de grafiek ligt.
-
-\[
-f'(a)
-\]
-
-vertelt hoe de grafiek daar ogenblikkelijk verandert.
-\end{remark}
+Bij toepassingen interpreteren we een afgeleid getal altijd
+in functie van de grootheden, het teken en de eenheden.
 
 
-\begin{remark}
-\textbf{Uit $f'(a)=0$ onmiddellijk een extremum besluiten}
-
-Een horizontale raaklijn is niet noodzakelijk een maximum of minimum.
-Het verloop rond het punt moet eveneens onderzocht worden.
-\end{remark}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% SLOTOPDRACHT
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\FVDsection{Kun je alles verbinden?}
-
-\begin{oefening}
+\begin{oefening}[Alle begrippen samen] {\oefB \ESS}
 
 Van een functie $f$ weten we dat
 
@@ -1141,72 +1192,9 @@ $[2,3]$ met precies $3$ afneemt.
 \end{oefening}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% SAMENVATTING
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\FVDsection{Samengevat}
-
-Over een interval $[a,b]$ gebruiken we het differentiequotiënt
-
-\[
-\boxed{
-\frac{f(b)-f(a)}{b-a}
-}.
-\]
-
-Dit beschrijft de gemiddelde verandering en is de
-richtingscoëfficiënt van een secant.
-
-Bij één punt gebruiken we het afgeleid getal
-
-\[
-\boxed{
-f'(a)
-=
-\lim_{x\to a}
-\frac{f(x)-f(a)}{x-a}
-}.
-\]
-
-Dit beschrijft de ogenblikkelijke verandering en is de
-richtingscoëfficiënt van de raaklijn bij $x=a$.
-
-De vergelijking van die raaklijn is
-
-\[
-\boxed{
-y-f(a)=f'(a)(x-a)
-}.
-\]
-
-Bij toepassingen interpreteren we een afgeleid getal altijd
-in functie van de grootheden, het teken en de eenheden.
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% MINIMUMTRAJECT
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\FVDsection{Wat moet je zeker beheersen?}
 
-Na deze korte opfrissing moet je zelfstandig:
-
-\begin{itemize}
-  \item een differentiequotiënt berekenen en interpreteren;
-  \item het verband leggen tussen differentiequotiënt en secant;
-  \item gemiddelde en ogenblikkelijke verandering onderscheiden;
-  \item het afgeleid getal herkennen als een limiet van
-        differentiequotiënten;
-  \item het verband leggen tussen afgeleid getal en raaklijn;
-  \item een afgeleid getal in een wetenschappelijke context
-        interpreteren, met teken en eenheid;
-  \item uit $f(a)$ en $f'(a)$ de vergelijking van een raaklijn bepalen;
-  \item uitleggen waarom $f'(a)=0$ op zichzelf nog geen extremum bewijst.
-\end{itemize}
-
-Dit is de noodzakelijke basis voor de volgende hoofdstukken,
-waarin we deze ideeën toepassen op nieuwe functieklassen en
-nieuwe afleidingsregels.
 
 \end{document}

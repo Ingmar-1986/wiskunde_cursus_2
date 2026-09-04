@@ -35,7 +35,21 @@
 \usepackage{fancyhdr}
 \usepackage{enumitem}
 
+% Tabellen
+
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{colortbl}
+
 \usepackage{eurosym}    % \euro  (€ werkt niet in xake ...?)
+
+% SI-eenheden
+\usepackage{siunitx}
+
+\sisetup{
+    locale = DE,
+    per-mode = symbol
+}
 
 % Nuttig als ook interactieve beamer slides worden voorzien:
 \providecommand{\p}{} % default nothing ; potentially usefull for slides: redefine as \pause
@@ -144,6 +158,7 @@
 
 
 \usetikzlibrary{angles,quotes}
+\usetikzlibrary{arrows.meta}
 
 \usepgfplotslibrary{fillbetween} % bepaalde_integraal
 \usepgfplotslibrary{polar}    % oa voor poolcoordinaten.tex

@@ -41,8 +41,12 @@ waarin we krachten en de wetten van Newton bestuderen.
 % FVD_CHAPTER_DATA_START
 % Automatisch gegenereerd uit index.tex.
 % Niet handmatig aanpassen.
-\fvdchapterdata{1}{Gereedschapskist en Newton}{1}
+\fvdchapterdata{1}{Gereedschapskist en Newton - Van meten en vectoren tot krachten en beweging}{1}
 % FVD_CHAPTER_DATA_END
+
+
+
+
 
 \maketitle
 
@@ -57,7 +61,6 @@ waarin we krachten en de wetten van Newton bestuderen.
   \item Je kent enkele courante SI-eenheden en voorvoegsels.
   \item Je kan eenvoudige formules gebruiken en een onbekende grootheid vrijmaken.
   \item Je kent uit de tweede graad het onderscheid tussen scalaire en vectoriële grootheden.
-  \item Je kan de stelling van Pythagoras en eenvoudige goniometrie gebruiken.
 \end{voorkennis}
 
 \begin{leerdoelen}
@@ -66,15 +69,9 @@ waarin we krachten en de wetten van Newton bestuderen.
   \item Je kan eenheden omzetten en daarbij ook machten van eenheden correct behandelen.
   \item Je kan getallen schrijven en interpreteren in wetenschappelijke notatie.
   \item Je kan meetresultaten met een verantwoord aantal beduidende cijfers rapporteren.
-  \item Je kan het onderscheid uitleggen tussen resolutie, meetnauwkeurigheid en beduidende cijfers.
   \item Je kan scalaire en vectoriële grootheden onderscheiden.
   \item Je kan de grootte, richting en zin van een vector beschrijven.
   \item Je kan vectoren grafisch optellen en ontbinden in componenten.
-  \item Je kan uit vectorcomponenten de grootte en richting van een vector bepalen.
-  \item Je kan bij een eenvoudig experiment onafhankelijke, afhankelijke en controlevariabelen onderscheiden.
-  \item Je kan meetgegevens kritisch beoordelen.
-  \item Je kan een fysische berekening controleren met behulp van eenheden.
-  \item Je kan een fysisch probleem systematisch mathematiseren, oplossen en interpreteren.
 \end{leerdoelen}
 
 
@@ -131,166 +128,1075 @@ hier gebruikt worden. Ze keren in bijna elk volgend hoofdstuk terug.
 
 \FVDsection{Fysische grootheden en eenheden}
 
-Een eigenschap die we kunnen meten of berekenen noemen we een
-\textbf{fysische grootheid}.
+\FVDsubsection{Waarom zijn eenheden belangrijk?}
+    
+    In de fysica draait alles om meten en rekenen. Of je nu krachten bepaalt op een brug, de snelheid van een auto of de energie in een atoom: zonder duidelijke afspraken over \textbf{wat} we meten en \textbf{hoe} we meten, wordt communicatie onmogelijk.
+    
+    Daarom gebruiken we overal ter wereld hetzelfde systeem van eenheden: het \textbf{Internationaal Stelsel van Eenheden (SI)}.
+    
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % THEORIE
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \FVDsubsection{Grootheden en eenheden}
+    
+    \begin{description}
+    \item[\textbf{Een grootheid}] is iets wat je kunt meten of berekenen. Enkele voorbeelden:
+    \begin{itemize}
+        \item lengte
+        \item massa
+        \item tijd
+        \item snelheid
+        \item kracht
+    \end{itemize}
+    
+    \item[\textbf{Een eenheid}] is de maat waarin je die grootheid uitdrukt. Bijvoorbeeld:
+    \begin{itemize}
+        \item meter (m), kilometer (km)
+        \item seconde (s), uur (h)
+        \item kilogram (kg), gram (g)
+        \item meter per seconde (m/s), kilometer per uur (km/h)
+    \end{itemize}
+    \end{description}
+    
+    \FVDsubsection{SI-stelsel: de universele taal van de fysica}
+    
+    Het SI-stelsel maakt internationale communicatie mogelijk. Het bevat:
+    \begin{itemize}
+        \item \textbf{7 basiseenheden} (ook: grondeenheden)
+        \item \textbf{Afgeleide eenheden} opgebouwd uit die basiseenheden
+        \item \textbf{Voorvoegsels} om met grote of kleine getallen te werken
+    \end{itemize}
 
-Voorbeelden zijn:
+\begin{center}
+    \includegraphics[scale=3.2]{../images/Fysica/SI-eenheden.png}
+\end{center}
 
-\begin{itemize}
-  \item lengte;
-  \item tijd;
-  \item massa;
-  \item temperatuur;
-  \item snelheid;
-  \item versnelling;
-  \item kracht;
-  \item energie.
-\end{itemize}
+Het SI-stelsel definieert \textbf{zeven SI-basiseenheden ook wel SI-grondeenheden} genoemd. Dit zijn fundamentele eenheden voor natuurkundige grootheden. 
 
-\begin{definitie}[Fysische grootheid]
-
-Een \textbf{fysische grootheid} is een meetbare of berekenbare
-eigenschap van een voorwerp, systeem of verschijnsel.
-
-\end{definitie}
-
-Iedere grootheid krijgt meestal een symbool.
-
-Bijvoorbeeld:
-
-\[
-\begin{array}{c|c}
-\text{grootheid} & \text{symbool}\\
+Alle andere SI-eenheden zijn producten van machten van \textbf{deze basiseenheden}. \\ \ \\
+%\input{tabel_eenheden.tex}
+\renewcommand{\arraystretch}{1.5}
+\begin{longtable}{|c|c||c|c|c|} 
 \hline
-\text{tijd} & t\\
-\text{massa} & m\\
-\text{lengte} & l\\
-\text{snelheid} & v\\
-\text{versnelling} & a\\
-\text{kracht} & F\\
-\text{energie} & E
-\end{array}
-\]
-
-Een gemeten waarde bestaat uit een getalwaarde en een eenheid.
-
-Bijvoorbeeld:
-
-\[
-l=2{,}35\,\mathrm m.
-\]
-
-Daarin is:
-
-\[
-\boxed{
-\begin{array}{ll}
-l & \text{het grootheidssymbool},\\
-2{,}35 & \text{de getalwaarde},\\
-\mathrm m & \text{de eenheid}.
-\end{array}
-}
-\]
-
-\begin{opmerking}
-
-De uitspraak
-
-\[
-d=12
-\]
-
-is in een fysische context meestal onvolledig.
-
-De uitspraak
-
-\[
-d=12\,\mathrm m
-\]
-
-bevat wel de noodzakelijke informatie over de gebruikte eenheid.
-
-\end{opmerking}
-
-
-% ============================================================
-% 3 SI
-% ============================================================
-
-\FVDsection{Het SI-stelsel}
-
-Wetenschappers moeten meetresultaten met elkaar kunnen vergelijken.
-
-Daarom wordt internationaal gewerkt met het
-\textbf{Internationaal Stelsel van Eenheden}, kortweg het
-\textbf{SI-stelsel}.
-
-Enkele belangrijke SI-basiseenheden zijn:
-
-\[
-\begin{array}{c|c|c}
-\text{grootheid} & \text{symbool} & \text{SI-eenheid}\\
+{\cellcolor{black} \textcolor{white}{\textbf{Grootheid}}}       & {\cellcolor{black} \textcolor{white}{\textbf{Symbool}}}      & {\cellcolor{black} \textcolor{white}{\textbf{Eenheid}}}        & {\cellcolor{black} \textcolor{white}{\textbf{Symbool}}} & {\cellcolor{black} \textcolor{white}{\textbf{Afgeleide eenheden}}}            \\ 
 \hline
-\text{lengte} & l & \mathrm m\\
-\text{massa} & m & \mathrm{kg}\\
-\text{tijd} & t & \mathrm s\\
-\text{temperatuur} & T & \mathrm K\\
-\text{stroomsterkte} & I & \mathrm A\\
-\text{hoeveelheid stof} & n & \mathrm{mol}\\
-\text{lichtsterkte} & I_v & \mathrm{cd}
-\end{array}
-\]
-
-Veel andere fysische eenheden zijn afgeleid van deze basiseenheden.
-
-Voor snelheid:
-
-\[
-v=\frac{\Delta x}{\Delta t}.
-\]
-
-De eenheid wordt:
-
-\[
-[v]
-=
-\frac{\mathrm m}{\mathrm s}
-=
-\mathrm{m/s}.
-\]
-
-Voor versnelling:
-
-\[
-[a]
-=
-\frac{\mathrm{m/s}}{\mathrm s}
-=
-\mathrm{m/s^2}.
-\]
-
-Later zullen we zien dat voor kracht geldt:
-
-\[
-1\,\mathrm N
-=
-1\,\mathrm{kg\,m/s^2}.
-\]
+\hline
+{\cellcolor{orange!80!red}{\textbf{Lengte}}} & \cellcolor{orange!80!red}{\textbf{$l$}} & \cellcolor{orange!80!red}{\textbf{meter}} & \cellcolor{orange!80!red} \textbf{$m $}                                 & \cellcolor{orange!80!red}                             \\ 
+\hline
+Positie                                    & $x$                                      & meter                                     & $m$                                 &                                                        \\ 
+\hline
+Golflengte                                  & $\lambda$                                & meter                                      & $m$                                 & ~                                                          \\ 
+\hline
+\cellcolor{yellow!50!orange}\textbf{Tijd}~                               & \cellcolor{yellow!50!orange}\textbf{$t$}                             & \cellcolor{yellow!50!orange}\textbf{seconde}~                           & \cellcolor{yellow!50!orange}\textbf{$s$}                                 & \cellcolor{yellow!50!orange}                                                          \\ 
+\hline
+\cellcolor{red!80!blue}\textbf{Massa}~                              & \cellcolor{red!80!blue}\textbf{$m$}                             & \cellcolor{red!80!blue}\textbf{kilogram}~                          & \cellcolor{red!80!blue} \textbf{$kg$}                                & \cellcolor{red!80!blue}                                                          \\ 
+\hline
+Oppervlakte                                & $S, A$                                  &                                            & $m^2$                               & ~                                                          \\ 
+\hline
+Volume                                     & $V$                                      &                                            & $m^3$                               & ~                                                          \\ 
+\hline
+Snelheid                                   & $v$                                      &                                            & $\frac{m}{s}$                       & ~                                                          \\ 
+\hline
+Versnelling                                 & $a$                                     &                                          & $\frac{m}{s^2}$                     & ~                                                          \\ 
+\hline
+Kracht                                      & $F$                                      & newton                                     & $N$                                 & $\frac{kg\cdot m}{s^2} $                                   \\ 
+\hline
+Gewicht                                     & $G$                                      & newton                                     & $N$                                 & ~                                                          \\ 
+\hline
+Energie                                     & $E$                                      & joule                                      & $J$                                 & $N\cdot m  = \frac{kg\cdot m^2}{s^2}$                      \\ 
+\hline
+Entropie                                   & $S$                                      & joule                                      & $J$                                 & ~                                                          \\ 
+\hline
+Enthalpie                                   & $H$                                      & joule                                    & $J$                                 & ~                                                          \\ 
+\hline
+Inwendige energie                           & $U$                                      & joule& $J$                                 &                                                           \\ 
+\hline
+Vermogen                                    & $P$                                      & watt                                       & $W$                                 & $\frac{J}{s} = \frac{kg\cdot m^2}{s^3}$                   \\ 
+\hline
+Dichtheid                                  & $\rho$                                  &                                           & $\frac{kg}{m^3}$                    &                                                           \\ 
+\hline
+Druk                                        & $p$                                      & pascal                                    & $Pa$                                & $\frac{N}{m^2} =\frac{kg}{m\cdot s^2}$                     \\ 
+\hline
+\cellcolor{blue!60!green}\textbf{Temperatuur}                       & \cellcolor{blue!60!green}\textbf{$T$}                             & \cellcolor{blue!60!green}\textbf{Kelvin}                            & \cellcolor{blue!60!green}$K$                                 & \cellcolor{blue!60!green}                                                          \\ 
+\hline
+Temperatuur                                & $\theta$                                      & graden Celcius                             & $ ^{\circ} C$                       &                                                          \\ 
+\hline
+\cellcolor{green!65!blue}\textbf{Stroomsterkte}~                      & \cellcolor{green!65!blue}\textbf{$I$}                             & \cellcolor{green!65!blue}\textbf{ampère}                            & \cellcolor{green!65!blue}$A$                                 & \cellcolor{green!65!blue}                                                          \\ 
+\hline
+Spanning                                   & $U$                                      & volt                                       & $V$                                 & $\frac{W}{A}$                                             \\ 
+\hline
+Weerstand                                   & $R$                                      & ohm                                        & $\Omega$                             & $\frac{V}{A}$                                            \\ 
+\hline
+Resistiviteit                              & $\rho$                                      &                                           & $\Omega\cdot m$                     & $\frac{V \cdot m}{A}$  \\ 
+\hline
+Lading~                                      & $Q$                                      & coulomb                                    & $C$                                 & $A\cdot s$                                                \\ 
+\hline
+Magnetische flux                            & $F$                                      & weber                                      & $Wb$                                & $V\cdot s$                                                \\ 
+\hline
+Magnetische inductie                        & $B$                                      & tesla                                      & $T$                                & $\frac{Wb}{m^2}= \frac{V\cdot s}{m^2}$                    \\ 
+\hline
+\cellcolor{blue!50!red}\textbf{Hoeveelheid stof}                  & \cellcolor{blue!50!red}\textbf{$n$}                             & \cellcolor{blue!50!red}\textbf{mol}                              & \cellcolor{blue!50!red}\textbf{$mol$}~                      & \cellcolor{blue!50!red}                                                         \\ 
+\hline
+\cellcolor{red!20!blue}\textbf{Lichtsterkte}                      & \cellcolor{red!20!blue}\textbf{$I$}                             & \cellcolor{red!20!blue}\textbf{candela}                           & \cellcolor{red!20!blue}\textbf{}$cd $                       & \cellcolor{red!20!blue}                                                         \\ 
+\hline
+Frequentie                                 & $f$                                      & hertz                                     & $Hz$                                & $\frac{1}{s}$                         \\ 
+\hline
+Veerconstante                               & $k$                                      &                                           & $\frac{N}{m}$   &                                                         \\ 
+\hline
+Rendement                                 & $\mu$                                    &                                          &                                &                                                          \\
+\hline
+\end{longtable}
+\renewcommand{\arraystretch}{1}
 
 
 \begin{oefening}[Grootheid of eenheid?]{\oefB\ESS}
 
-Geef telkens de grootheid, het grootheidssymbool en de eenheid.
+Geef bij elke situatie:
 
-\begin{enumerate}
-  \item Een experiment duurt $12{,}5\,\mathrm s$.
-  \item Een voorwerp heeft een massa van $2{,}40\,\mathrm{kg}$.
-  \item Een wagen rijdt $25\,\mathrm{m/s}$.
-  \item Op een voorwerp werkt een kracht van $18\,\mathrm N$.
-  \item Een toestel verbruikt $850\,\mathrm J$ energie.
-\end{enumerate}
+\begin{itemize}
+    \item de \textbf{grootheid};
+    \item het \textbf{grootheidssymbool};
+    \item de \textbf{eenheid};
+    \item het \textbf{eenheidssymbool}.
+\end{itemize}
+
+\begin{question}
+Een experiment duurt $12{,}5\,\mathrm{s}$.
+
+\begin{oplossing}
+De gemeten grootheid is de \textbf{tijd}.
+
+\[
+\begin{array}{ll}
+\text{Grootheid:} & \text{tijd} \\
+\text{Grootheidssymbool:} & t \\
+\text{Eenheid:} & \text{seconde} \\
+\text{Eenheidssymbool:} & \mathrm{s}
+\end{array}
+\]
+
+We schrijven:
+
+\[
+t = 12{,}5\,\mathrm{s}.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Een voorwerp heeft een massa van $2{,}40\,\mathrm{kg}$.
+
+\begin{oplossing}
+De gemeten grootheid is de \textbf{massa}.
+
+\[
+\begin{array}{ll}
+\text{Grootheid:} & \text{massa} \\
+\text{Grootheidssymbool:} & m \\
+\text{Eenheid:} & \text{kilogram} \\
+\text{Eenheidssymbool:} & \mathrm{kg}
+\end{array}
+\]
+
+We schrijven:
+
+\[
+m = 2{,}40\,\mathrm{kg}.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Een wagen rijdt met een snelheid van $25\,\mathrm{m/s}$.
+
+\begin{oplossing}
+De gemeten grootheid is de \textbf{snelheid}.
+
+\[
+\begin{array}{ll}
+\text{Grootheid:} & \text{snelheid} \\
+\text{Grootheidssymbool:} & v \\
+\text{Eenheid:} & \text{meter per seconde} \\
+\text{Eenheidssymbool:} & \mathrm{m/s}
+\end{array}
+\]
+
+We schrijven:
+
+\[
+v = 25\,\mathrm{m/s}.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Op een voorwerp werkt een kracht van $18\,\mathrm{N}$.
+
+\begin{oplossing}
+De gemeten grootheid is de \textbf{kracht}.
+
+\[
+\begin{array}{ll}
+\text{Grootheid:} & \text{kracht} \\
+\text{Grootheidssymbool:} & F \\
+\text{Eenheid:} & \text{newton} \\
+\text{Eenheidssymbool:} & \mathrm{N}
+\end{array}
+\]
+
+We schrijven:
+
+\[
+F = 18\,\mathrm{N}.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Een toestel zet tijdens zijn werking $850\,\mathrm{J}$ energie om.
+
+\begin{oplossing}
+De gemeten grootheid is de \textbf{energie}.
+
+\[
+\begin{array}{ll}
+\text{Grootheid:} & \text{energie} \\
+\text{Grootheidssymbool:} & E \\
+\text{Eenheid:} & \text{joule} \\
+\text{Eenheidssymbool:} & \mathrm{J}
+\end{array}
+\]
+
+We schrijven:
+
+\[
+E = 850\,\mathrm{J}.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Een leerling legt tijdens een proef een afstand van
+$4{,}20\,\mathrm{m}$ af.
+
+\begin{oplossing}
+De gemeten grootheid is de \textbf{afstand}.
+
+\[
+\begin{array}{ll}
+\text{Grootheid:} & \text{afstand} \\
+\text{Grootheidssymbool:} & s \\
+\text{Eenheid:} & \text{meter} \\
+\text{Eenheidssymbool:} & \mathrm{m}
+\end{array}
+\]
+
+We schrijven:
+
+\[
+s = 4{,}20\,\mathrm{m}.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+De temperatuur in het lokaal bedraagt $21\,^\circ\mathrm{C}$.
+
+\begin{oplossing}
+De gemeten grootheid is de \textbf{temperatuur}.
+
+\[
+\begin{array}{ll}
+\text{Grootheid:} & \text{temperatuur} \\
+\text{Grootheidssymbool:} & T \\
+\text{Eenheid:} & \text{graad Celsius} \\
+\text{Eenheidssymbool:} & {}^\circ\mathrm{C}
+\end{array}
+\]
+
+In het SI wordt temperatuur uitgedrukt in kelvin, met
+eenheidssymbool $\mathrm{K}$.
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Een elektrisch toestel heeft een vermogen van $60\,\mathrm{W}$.
+
+\begin{oplossing}
+De gemeten grootheid is het \textbf{vermogen}.
+
+\[
+\begin{array}{ll}
+\text{Grootheid:} & \text{vermogen} \\
+\text{Grootheidssymbool:} & P \\
+\text{Eenheid:} & \text{watt} \\
+\text{Eenheidssymbool:} & \mathrm{W}
+\end{array}
+\]
+
+We schrijven:
+
+\[
+P = 60\,\mathrm{W}.
+\]
+\end{oplossing}
+\end{question}
 
 \end{oefening}
+
+
+% ============================================================
+% Oefeningenreeks: eenheden en eenhedenanalyse
+% ============================================================
+
+\begin{oefening}[Klopt de formule?]{\oefB\ESS}
+
+Karlijn en Daan denken na over de snelheid die een voorwerp krijgt als er een kracht op werkt.
+
+Ze stellen de formule op:
+
+\[
+v = F \cdot t
+\]
+
+met:
+
+\begin{itemize}
+    \item $F$ = kracht, uitgedrukt in $\si{\newton}$;
+    \item $t$ = tijdsduur, uitgedrukt in $\si{\second}$;
+    \item $v$ = snelheid, uitgedrukt in $\si{\meter\per\second}$.
+\end{itemize}
+
+\begin{question}
+Toon aan de hand van de eenheden aan dat deze formule niet kan kloppen.
+
+\begin{oplossing}
+We vergelijken de eenheid van het linkerlid met die van het rechterlid.
+
+Voor de snelheid geldt:
+
+\[
+[v] = \si{\meter\per\second}.
+\]
+
+Voor het rechterlid krijgen we:
+
+\[
+[F \cdot t]
+=
+\si{\newton}\cdot\si{\second}.
+\]
+
+We schrijven de newton in SI-basiseenheden:
+
+\[
+\si{\newton}
+=
+\si{\kilogram\meter\per\second\squared}.
+\]
+
+Dus:
+
+\[
+[F \cdot t]
+=
+\si{\kilogram\meter\per\second\squared}
+\cdot
+\si{\second}
+=
+\si{\kilogram\meter\per\second}.
+\]
+
+Dit is niet dezelfde eenheid als
+
+\[
+\si{\meter\per\second}.
+\]
+
+De formule
+
+\[
+v = F \cdot t
+\]
+
+is dus niet homogeen qua eenheden en kan daarom niet correct zijn.
+\end{oplossing}
+\end{question}
+
+
+Later past Karlijn de formule aan:
+
+\[
+v = \frac{F \cdot t}{m},
+\]
+
+waarbij $m$ de massa is, uitgedrukt in $\si{\kilogram}$.
+
+\begin{question}
+Toon aan de hand van de eenheden aan dat deze formule wel homogeen is.
+
+\begin{oplossing}
+We onderzoeken de eenheid van het rechterlid:
+
+\[
+\left[\frac{F \cdot t}{m}\right]
+=
+\frac{\si{\newton}\cdot\si{\second}}
+{\si{\kilogram}}.
+\]
+
+We vervangen de newton door zijn SI-basiseenheden:
+
+\[
+\left[\frac{F \cdot t}{m}\right]
+=
+\frac{
+\si{\kilogram\meter\per\second\squared}
+\cdot
+\si{\second}
+}{
+\si{\kilogram}
+}.
+\]
+
+Vereenvoudigen geeft:
+
+\[
+\left[\frac{F \cdot t}{m}\right]
+=
+\si{\meter\per\second}.
+\]
+
+Dit is precies de eenheid van snelheid:
+
+\[
+[v]
+=
+\si{\meter\per\second}.
+\]
+
+De formule is dus homogeen qua eenheden.
+
+Een correcte eenhedenanalyse bewijst echter niet dat de formule fysisch correct is.
+Ze toont enkel aan dat de formule op basis van de eenheden mogelijk correct kan zijn.
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+
+\begin{oefening}[De eenheid pascal]{\oefB\ESS}
+
+Druk wordt berekend met:
+
+\[
+p = \frac{F}{A},
+\]
+
+waarbij:
+
+\begin{itemize}
+    \item $p$ = druk;
+    \item $F$ = kracht, uitgedrukt in $\si{\newton}$;
+    \item $A$ = oppervlakte, uitgedrukt in $\si{\meter\squared}$.
+\end{itemize}
+
+De eenheid van druk is de pascal ($\si{\pascal}$).
+
+\begin{question}
+Schrijf de eenheid pascal eerst als een combinatie van newton en meter.
+
+\begin{oplossing}
+Uit
+
+\[
+p = \frac{F}{A}
+\]
+
+volgt:
+
+\[
+\si{\pascal}
+=
+\frac{\si{\newton}}{\si{\meter\squared}}.
+\]
+
+Dus:
+
+\[
+\boxed{
+\si{\pascal}
+=
+\si{\newton\per\meter\squared}
+}
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Herleid de eenheid pascal vervolgens volledig tot SI-basiseenheden.
+
+\begin{oplossing}
+We gebruiken:
+
+\[
+\si{\newton}
+=
+\si{\kilogram\meter\per\second\squared}.
+\]
+
+Daarom:
+
+\[
+\si{\pascal}
+=
+\frac{
+\si{\kilogram\meter\per\second\squared}
+}{
+\si{\meter\squared}
+}.
+\]
+
+Na vereenvoudigen volgt:
+
+\[
+\boxed{
+\si{\pascal}
+=
+\si{\kilogram\per\meter\per\second\squared}
+}
+\]
+
+of met machten:
+
+\[
+\boxed{
+\si{\pascal}
+=
+\si{\kilogram\meter^{-1}\second^{-2}}
+}
+\]
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+
+\begin{oefening}[Van joule naar basiseenheden]{\oefB\ESS}
+
+Arbeid kan worden berekend met:
+
+\[
+W = F \cdot s,
+\]
+
+waarbij:
+
+\begin{itemize}
+    \item $W$ = arbeid, uitgedrukt in joule;
+    \item $F$ = kracht, uitgedrukt in newton;
+    \item $s$ = verplaatsing, uitgedrukt in meter.
+\end{itemize}
+
+\begin{question}
+Leid uit deze formule af hoe een joule kan worden geschreven met newton en meter.
+
+\begin{oplossing}
+Uit
+
+\[
+W = F \cdot s
+\]
+
+volgt voor de eenheden:
+
+\[
+\si{\joule}
+=
+\si{\newton}\cdot\si{\meter}.
+\]
+
+Dus:
+
+\[
+\boxed{
+\si{\joule}
+=
+\si{\newton\meter}
+}
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Schrijf de joule volledig in SI-basiseenheden.
+
+\begin{oplossing}
+We gebruiken:
+
+\[
+\si{\newton}
+=
+\si{\kilogram\meter\per\second\squared}.
+\]
+
+Daarom:
+
+\[
+\si{\joule}
+=
+\si{\kilogram\meter\per\second\squared}
+\cdot
+\si{\meter}.
+\]
+
+Dus:
+
+\[
+\boxed{
+\si{\joule}
+=
+\si{\kilogram\meter\squared\per\second\squared}
+}
+\]
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+
+\begin{oefening}[Vermogen en watt]{\oefB}
+
+Vermogen wordt berekend met:
+
+\[
+P = \frac{E}{t},
+\]
+
+waarbij:
+
+\begin{itemize}
+    \item $P$ = vermogen;
+    \item $E$ = energie;
+    \item $t$ = tijd.
+\end{itemize}
+
+De eenheid van vermogen is de watt ($\si{\watt}$).
+
+\begin{question}
+Schrijf de watt als een combinatie van joule en seconde.
+
+\begin{oplossing}
+Uit
+
+\[
+P = \frac{E}{t}
+\]
+
+volgt:
+
+\[
+\boxed{
+\si{\watt}
+=
+\si{\joule\per\second}
+}
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Herleid de watt volledig tot SI-basiseenheden.
+
+\begin{oplossing}
+We weten dat:
+
+\[
+\si{\joule}
+=
+\si{\kilogram\meter\squared\per\second\squared}.
+\]
+
+Daarom:
+
+\[
+\si{\watt}
+=
+\frac{
+\si{\kilogram\meter\squared\per\second\squared}
+}{
+\si{\second}
+}.
+\]
+
+Dus:
+
+\[
+\boxed{
+\si{\watt}
+=
+\si{\kilogram\meter\squared\per\second\cubed}
+}
+\]
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+
+\begin{oefening}[De luchtwrijvingscoëfficiënt]{\oefU}
+
+De grootte van de luchtwrijvingskracht op een auto wordt gegeven door:
+
+\[
+F_{w,l}
+=
+\frac{1}{2}
+\rho C_w A v^2,
+\]
+
+met:
+
+\begin{itemize}
+    \item $F_{w,l}$ = luchtwrijvingskracht, uitgedrukt in $\si{\newton}$;
+    \item $\rho$ = dichtheid van de lucht, uitgedrukt in
+          $\si{\kilogram\per\meter\cubed}$;
+    \item $C_w$ = luchtwrijvingscoëfficiënt;
+    \item $A$ = frontale oppervlakte, uitgedrukt in $\si{\meter\squared}$;
+    \item $v$ = snelheid, uitgedrukt in $\si{\meter\per\second}$.
+\end{itemize}
+
+\begin{question}
+Bepaal de eenheid van het product $\rho A v^2$.
+
+\begin{oplossing}
+We schrijven:
+
+\[
+[\rho A v^2]
+=
+\si{\kilogram\per\meter\cubed}
+\cdot
+\si{\meter\squared}
+\cdot
+\left(
+\si{\meter\per\second}
+\right)^2.
+\]
+
+Dus:
+
+\[
+[\rho A v^2]
+=
+\si{\kilogram\per\meter\cubed}
+\cdot
+\si{\meter\squared}
+\cdot
+\si{\meter\squared\per\second\squared}.
+\]
+
+Vereenvoudigen geeft:
+
+\[
+[\rho A v^2]
+=
+\si{\kilogram\meter\per\second\squared}.
+\]
+
+Dit is gelijk aan:
+
+\[
+\boxed{
+[\rho A v^2] = \si{\newton}
+}
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Bepaal op basis van de formule welke eenheid $C_w$ moet hebben.
+
+\begin{oplossing}
+Het product
+
+\[
+\rho A v^2
+\]
+
+heeft reeds de eenheid newton.
+
+Ook $F_{w,l}$ heeft de eenheid newton.
+
+De factor $\frac{1}{2}$ is eenheidsloos.
+
+Daarom mag $C_w$ geen extra eenheid toevoegen.
+
+Dus:
+
+\[
+\boxed{
+[C_w] = 1
+}
+\]
+
+De luchtwrijvingscoëfficiënt $C_w$ is dus eenheidsloos.
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+
+\begin{oefening}[Welke formule kan kloppen?]{\oefU}
+
+Voor de kinetische energie $E_k$ van een bewegend voorwerp worden vier mogelijke formules voorgesteld:
+
+\[
+\text{A.}\quad E_k = mv
+\]
+
+\[
+\text{B.}\quad E_k = mv^2
+\]
+
+\[
+\text{C.}\quad E_k = \frac{m}{v}
+\]
+
+\[
+\text{D.}\quad E_k = \frac{v^2}{m}
+\]
+
+met:
+
+\[
+[m] = \si{\kilogram}
+\qquad\text{en}\qquad
+[v] = \si{\meter\per\second}.
+\]
+
+\begin{question}
+Onderzoek met een eenhedenanalyse welke van deze formules qua eenheden een energie kan opleveren.
+
+\begin{oplossing}
+De eenheid van energie is:
+
+\[
+[E]
+=
+\si{\joule}
+=
+\si{\kilogram\meter\squared\per\second\squared}.
+\]
+
+Voor formule A:
+
+\[
+[mv]
+=
+\si{\kilogram}
+\cdot
+\si{\meter\per\second}
+=
+\si{\kilogram\meter\per\second}.
+\]
+
+Dit is geen joule.
+
+Voor formule B:
+
+\[
+[mv^2]
+=
+\si{\kilogram}
+\cdot
+\left(
+\si{\meter\per\second}
+\right)^2.
+\]
+
+Dus:
+
+\[
+[mv^2]
+=
+\si{\kilogram\meter\squared\per\second\squared}
+=
+\si{\joule}.
+\]
+
+Formule B heeft dus de juiste eenheid.
+
+De andere twee formules leveren duidelijk een andere combinatie van basiseenheden.
+
+Bijgevolg kan alleen
+
+\[
+\boxed{
+E_k = mv^2
+}
+\]
+
+op basis van de eenheden mogelijk correct zijn.
+
+De eenhedenanalyse kan echter niet bepalen dat de volledige formule in werkelijkheid
+
+\[
+E_k = \frac{1}{2}mv^2
+\]
+
+is, want de factor $\frac{1}{2}$ is eenheidsloos.
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+
+\begin{oefening}[Een onbekende exponent]{\oefG}
+
+De periode $T$ van een slinger hangt af van de lengte $l$ van de slinger en van de valversnelling $g$.
+
+We veronderstellen een formule van de vorm:
+
+\[
+T = C l^a g^b,
+\]
+
+waarbij:
+
+\begin{itemize}
+    \item $C$ een eenheidsloze constante is;
+    \item $a$ en $b$ onbekende exponenten zijn;
+    \item $[T]=\si{\second}$;
+    \item $[l]=\si{\meter}$;
+    \item $[g]=\si{\meter\per\second\squared}$.
+\end{itemize}
+
+\begin{question}
+Schrijf de eenheid van het rechterlid uit in functie van $a$ en $b$.
+
+\begin{oplossing}
+We schrijven:
+
+\[
+[T]
+=
+[l]^a[g]^b.
+\]
+
+Dus:
+
+\[
+\si{\second}
+=
+\si{\meter}^a
+\left(
+\si{\meter\per\second\squared}
+\right)^b.
+\]
+
+Dit wordt:
+
+\[
+\si{\second}
+=
+\si{\meter}^{a+b}
+\si{\second}^{-2b}.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Bepaal de exponenten $a$ en $b$ zodat de formule homogeen is.
+
+\begin{oplossing}
+In het linkerlid geldt:
+
+\[
+\si{\second}
+=
+\si{\meter}^{0}
+\si{\second}^{1}.
+\]
+
+We vergelijken de exponenten.
+
+Voor meter:
+
+\[
+a+b=0.
+\]
+
+Voor seconde:
+
+\[
+-2b=1.
+\]
+
+Daaruit volgt:
+
+\[
+b=-\frac{1}{2}.
+\]
+
+Vervolgens:
+
+\[
+a+b=0
+\]
+
+geeft:
+
+\[
+a=\frac{1}{2}.
+\]
+
+Dus:
+
+\[
+\boxed{
+a=\frac{1}{2}
+\qquad\text{en}\qquad
+b=-\frac{1}{2}
+}
+\]
+
+De formule moet bijgevolg van de vorm zijn:
+
+\[
+T
+=
+C
+\sqrt{\frac{l}{g}}.
+\]
+
+Met een eenhedenanalyse kunnen we de constante $C$ niet bepalen.
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+
+
 
 
 % ============================================================
@@ -310,149 +1216,42 @@ Een atoom heeft een typische grootteorde van ongeveer
 terwijl afstanden in de astronomie vele miljarden meters kunnen
 bedragen.
 
-Daarom gebruiken we \textbf{voorvoegsels}.
-
-\[
-\begin{array}{c|c|c}
-\text{voorvoegsel} & \text{symbool} & \text{factor}\\
+Om grote en kleine getallen makkelijk op te schrijven wordt vaak gebruik gemaakt van voorvoegsels voor een eenheid.  \\
+\begin{center}
+%\input{tabel_voorvoegsels.tex}
+\renewcommand{\arraystretch}{1.5}
+%\begin{table}[h]
+%\centering
+\arrayrulecolor[rgb]{0.565,0.565,0.565}
+\begin{tabular}{|l|l|l|l|l|l|l|} 
 \hline
-\text{tera}  & \mathrm T & 10^{12}\\
-\text{giga}  & \mathrm G & 10^9\\
-\text{mega}  & \mathrm M & 10^6\\
-\text{kilo}  & \mathrm k & 10^3\\
-\text{deci}  & \mathrm d & 10^{-1}\\
-\text{centi} & \mathrm c & 10^{-2}\\
-\text{milli} & \mathrm m & 10^{-3}\\
-\text{micro} & \mu & 10^{-6}\\
-\text{nano}  & \mathrm n & 10^{-9}\\
-\text{pico}  & \mathrm p & 10^{-12}
-\end{array}
-\]
-
-
-\FVDsubsection{Eenheden omzetten}
-
-Beschouw:
-
-\[
-3{,}5\,\mathrm{km}.
-\]
-
-Omdat:
-
-\[
-1\,\mathrm{km}=10^3\,\mathrm m,
-\]
-
-geldt:
-
-\[
-3{,}5\,\mathrm{km}
-=
-3{,}5\cdot10^3\,\mathrm m
-=
-3500\,\mathrm m.
-\]
-
-
-\begin{voorbeeld}[Van kilometer per uur naar meter per seconde]
-
-Een auto rijdt:
-
-\[
-90\,\mathrm{km/h}.
-\]
-
-We gebruiken:
-
-\[
-1\,\mathrm{km}=1000\,\mathrm m
-\]
-
-en:
-
-\[
-1\,\mathrm h=3600\,\mathrm s.
-\]
-
-Dan:
-
-\[
-90\,\mathrm{km/h}
-=
-90\cdot
-\frac{1000\,\mathrm m}{3600\,\mathrm s}.
-\]
-
-Dus:
-
-\[
-\boxed{
-v=25\,\mathrm{m/s}.
-}
-\]
-
-\end{voorbeeld}
-
-
-\FVDsubsection{Opgelet met oppervlakte en volume}
-
-Bij oppervlakte-eenheden moet ook de omzettingsfactor gekwadrateerd
-worden.
-
-Omdat:
-
-\[
-1\,\mathrm{cm}
-=
-10^{-2}\,\mathrm m,
-\]
-
-geldt:
-
-\[
-1\,\mathrm{cm^2}
-=
-(10^{-2}\,\mathrm m)^2.
-\]
-
-Dus:
-
-\[
-\boxed{
-1\,\mathrm{cm^2}
-=
-10^{-4}\,\mathrm{m^2}.
-}
-\]
-
-Voor volume:
-
-\[
-1\,\mathrm{cm^3}
-=
-(10^{-2}\,\mathrm m)^3
-=
-10^{-6}\,\mathrm{m^3}.
-\]
-
-
-\begin{opmerking}
-
-De omzetting
-
-\[
-1\,\mathrm{cm^2}
-=
-10^{-2}\,\mathrm{m^2}
-\]
-
-is fout.
-
-Het voorvoegsel hoort bij de volledige lengteeenheid en wordt dus mee
-gekwadrateerd.
-
-\end{opmerking}
+\multicolumn{7}{|c|}{{\cellcolor{black}}\textcolor{white}{\textbf{Veelvouden}}\textcolor{white}{}\textcolor{white}{}}                  \\ 
+\hline
+\textbf{$10^1$}                                 & \textbf{$da$}                                 & \textbf{deca}                                  &   & {\cellcolor[rgb]{0,0.502,0.502}}\textbf{$10^{-1}$}  & {\cellcolor[rgb]{0,0.502,0.502}}\textbf{$d$} & {\cellcolor[rgb]{0,0.502,0.502}}\textbf{deci}    \\ 
+\hline
+\textbf{$10^2$}                                 & \textbf{$h$}                              & \textbf{hecto}                                 &   & {\cellcolor[rgb]{0,0.502,0.502}}\textbf{$10^{-2}$}  & {\cellcolor[rgb]{0,0.502,0.502}}\textbf{$c$} & {\cellcolor[rgb]{0,0.502,0.502}}\textbf{centi}   \\ 
+\hline
+{\cellcolor[rgb]{0,0.502,0.502}}\textbf{$10^3$} & {\cellcolor[rgb]{0,0.502,0.502}}\textbf{$k$} & {\cellcolor[rgb]{0,0.502,0.502}}\textbf{kilo}  &   & {\cellcolor[rgb]{0,0.502,0.502}}\textbf{}$10^{-3}$ & {\cellcolor[rgb]{0,0.502,0.502}}\textbf{$m$} & {\cellcolor[rgb]{0,0.502,0.502}}\textbf{milli}   \\ 
+\hline
+{\cellcolor[rgb]{0,0.502,0.502}}\textbf{$10^6$}  & {\cellcolor[rgb]{0,0.502,0.502}}\textbf{$M$} & {\cellcolor[rgb]{0,0.502,0.502}}\textbf{mega}  &   & {\cellcolor[rgb]{0,0.502,0.502}}\textbf{}$10^{-6}$ & {\cellcolor[rgb]{0,0.502,0.502}}$\mu$          & {\cellcolor[rgb]{0,0.502,0.502}}\textbf{micro}   \\ 
+\hline
+{\cellcolor[rgb]{0,0.502,0.502}}\textbf{$10^9$} & {\cellcolor[rgb]{0,0.502,0.502}}\textbf{$G$} & {\cellcolor[rgb]{0,0.502,0.502}}\textbf{giga}  &   & {\cellcolor[rgb]{0,0.502,0.502}}\textbf{}$10^{-9}$ & {\cellcolor[rgb]{0,0.502,0.502}}\textbf{$n$}  & {\cellcolor[rgb]{0,0.502,0.502}}\textbf{nano}    \\ 
+\hline
+\textbf{$10^{12}$}                             & \textbf{$T$}                                & \textbf{tera}                                  &   & \textbf{$10^{-12}$  }                              & \textbf{$p$}                                 & \textbf{pico}                                    \\ 
+\hline
+\textbf{$10^{15}$}                             & \textbf{$P$}                                  & \textbf{peta}                                  &   & \textbf{$10^{-15}$}                                  & \textbf{$f$}                                 & \textbf{femto}                                   \\ 
+\hline
+\textbf{$10^{18}$}                               & \textbf{$E$}                                & \textbf{exa}                                   &   & \textbf{$10^{-18}$}                                 & \textbf{$a$}                                  & \textbf{atto}                                    \\ 
+\hline
+\textbf{$10^{21}$}                                & \textbf{$Z$}                                  & \textbf{zetta}                                 &   & \textbf{$10^{-21}$  }                              & \textbf{$z$ }                                & \textbf{zepto}                                   \\ 
+\hline
+\textbf{$10^{24}$}                             & \textbf{$Y$}                                & \textbf{yotta}                                 &   & \textbf{$10^{-24}$}                                 & \textbf{$y$   }                              & \textbf{yocto}                                   \\
+\hline
+\end{tabular}
+\arrayrulecolor{black}
+%\end{table}
+\renewcommand{\arraystretch}{1}
+\end{center}
 
 
 \begin{oefening}[Eenheden omzetten]{\oefB\ESS}
@@ -471,77 +1270,508 @@ Zet om.
 \end{oefening}
 
 
-% ============================================================
-% 5 WETENSCHAPPELIJKE NOTATIE
-% ============================================================
+
+\FVDsection{Waarom zijn beduidende cijfers belangrijk?}
+
+In de fysica werken we voortdurend met meetwaarden. Een meting is echter nooit
+oneindig nauwkeurig. Het aantal cijfers waarmee we een meetwaarde noteren,
+vertelt daarom iets over de nauwkeurigheid van die meting.
+
+Daarnaast komen in de wetenschap vaak zeer grote en zeer kleine getallen voor.
+Denk bijvoorbeeld aan:
+
+\begin{itemize}
+    \item de gemiddelde afstand van de aarde tot de zon:
+    $1{,}496 \cdot 10^{11}\,\si{\meter}$;
+
+    \item de massa van een atomaire massa-eenheid:
+    $1{,}66 \cdot 10^{-27}\,\si{\kilogram}$;
+
+    \item zeer kleine concentraties van stoffen in bloed of lucht.
+\end{itemize}
+
+Om zulke meetwaarden duidelijk en correct weer te geven, gebruiken we onder
+andere:
+
+\begin{itemize}
+    \item \textbf{beduidende cijfers}: om aan te geven welke cijfers in een
+    meetwaarde betekenisvol zijn;
+
+    \item \textbf{wetenschappelijke notatie}: om zeer grote en zeer kleine
+    getallen overzichtelijk te schrijven.
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BEDUIDENDE CIJFERS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\FVDsubsection{Beduidende cijfers}
+
+\begin{definitie}
+De \textbf{beduidende cijfers} van een meetwaarde zijn de cijfers die informatie
+geven over de nauwkeurigheid van die meetwaarde.
+
+De beduidende cijfers beginnen bij het eerste cijfer dat verschillend is van nul.
+\end{definitie}
+
+
+\textbf{Welke cijfers zijn beduidend?}
+
+Bij het bepalen van het aantal beduidende cijfers gebruiken we de volgende regels:
+
+\begin{itemize}
+    \item Alle cijfers verschillend van nul zijn beduidend.
+
+    \item Nullen \textbf{tussen twee beduidende cijfers} zijn ook beduidend.
+
+    \item Nullen \textbf{vooraan} zijn niet beduidend. Ze bepalen alleen de
+    plaats van de komma.
+
+    \item Nullen \textbf{achteraan na de komma} zijn wel beduidend.
+
+    \item Bij gehele getallen met nullen achteraan kan het aantal beduidende
+    cijfers onduidelijk zijn. Wetenschappelijke notatie vermijdt deze
+    dubbelzinnigheid.
+\end{itemize}
+
+
+\begin{voorbeeld}
+
+Beschouw de volgende meetwaarden.
+
+\begin{itemize}
+
+    \item
+    \(
+    0{,}00050846
+    \) \\
+    De nullen voor de $5$ zijn niet beduidend. Het getal bevat dus
+    \textbf{5 beduidende cijfers}.
+
+    \item
+    \(
+    0{,}950
+    \) \\
+    De eerste nul is niet beduidend, maar de laatste nul wel.
+    Het getal bevat dus \textbf{3 beduidende cijfers}.
+
+    \item
+    \(
+    1{,}059
+    \) \\
+    De nul staat tussen andere beduidende cijfers en telt dus mee.
+    Het getal bevat \textbf{4 beduidende cijfers}.
+
+    \item
+    \[
+    0{,}0200
+    \] \\
+    De nullen vóór de $2$ zijn niet beduidend. De twee nullen achter de $2$
+    zijn wel beduidend. Het getal bevat dus \textbf{3 beduidende cijfers}.
+
+\end{itemize}
+
+\end{voorbeeld}
+
+
+\begin{voorbeeld}
+
+Bij een getal zoals
+
+\[
+5000
+\]
+
+is zonder bijkomende informatie niet duidelijk hoeveel nullen werkelijk uit
+een meting afkomstig zijn.
+
+Wetenschappelijke notatie maakt dit duidelijk:
+
+\[
+5 \cdot 10^3
+\]
+
+heeft $1$ beduidend cijfer,
+
+\[
+5{,}0 \cdot 10^3
+\]
+
+heeft $2$ beduidende cijfers,
+
+\[
+5{,}00 \cdot 10^3
+\]
+
+heeft $3$ beduidende cijfers,
+
+en
+
+\[
+5{,}000 \cdot 10^3
+\]
+
+heeft $4$ beduidende cijfers.
+
+\end{voorbeeld}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% AFRONDEN
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\FVDsection{Afronden met beduidende cijfers}
+
+Bij berekeningen met meetwaarden mag het eindresultaat niet nauwkeuriger
+worden weergegeven dan de gebruikte meetwaarden toelaten.
+
+Daarom gebruiken we verschillende afrondregels.
+
+
+\FVDsubsection{Vermenigvuldigen en delen}
+
+Bij een vermenigvuldiging of deling krijgt het resultaat evenveel
+\textbf{beduidende cijfers} als de meetwaarde met het kleinste aantal
+beduidende cijfers.
+
+\begin{voorbeeld}
+
+Bereken:
+
+\[
+2{,}35 \cdot 1{,}2.
+\]
+
+De eerste meetwaarde heeft $3$ beduidende cijfers en de tweede heeft
+$2$ beduidende cijfers.
+
+We berekenen eerst:
+
+\[
+2{,}35 \cdot 1{,}2 = 2{,}82.
+\]
+
+Het resultaat moet worden afgerond op $2$ beduidende cijfers:
+
+\[
+\boxed{2{,}8}
+\]
+
+\end{voorbeeld}
+
+
+\FVDsubsection{Optellen en aftrekken}
+
+Bij optellen en aftrekken kijken we niet naar het aantal beduidende cijfers,
+maar naar de \textbf{plaats van het laatste betrouwbare cijfer}.
+
+In eenvoudige gevallen komt dit overeen met afronden op het kleinste aantal
+decimalen.
+
+\begin{voorbeeld}
+
+Bereken:
+
+\[
+12{,}34 + 2{,}1.
+\]
+
+We vinden:
+
+\[
+12{,}34 + 2{,}1 = 14{,}44.
+\]
+
+De minst nauwkeurige meetwaarde is gegeven tot op één decimaal.
+
+Daarom schrijven we:
+
+\[
+\boxed{14{,}4}
+\]
+
+\end{voorbeeld}
+
+
+\begin{opmerking}
+Rond tussenresultaten bij voorkeur niet te vroeg af.
+
+Bewaar tijdens de berekening voldoende cijfers en rond pas het
+\textbf{eindresultaat} af. Zo vermijd je extra afrondingsfouten.
+\end{opmerking}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% WETENSCHAPPELIJKE NOTATIE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \FVDsection{Wetenschappelijke notatie}
 
-Wetenschappelijke notatie maakt zeer grote en zeer kleine getallen
-overzichtelijk.
-
-De lichtsnelheid is ongeveer:
-
-\[
-300\,000\,000\,\mathrm{m/s}.
-\]
-
-Dat schrijven we als:
+\begin{definitie}
+Een getal staat in \textbf{wetenschappelijke notatie} wanneer het geschreven is
+in de vorm
 
 \[
-3{,}00\cdot10^8\,\mathrm{m/s}.
+a \cdot 10^n,
 \]
 
-De grootteorde van een atoom is ongeveer:
+waarbij:
 
-\[
-0{,}0000000001\,\mathrm m.
-\]
+\begin{itemize}
+    \item $1 \leq |a| < 10$;
+    \item $n$ een geheel getal is.
+\end{itemize}
 
-Dat wordt:
-
-\[
-1\cdot10^{-10}\,\mathrm m.
-\]
-
-
-\begin{definitie}[Wetenschappelijke notatie]
-
-Een getal staat in \textbf{wetenschappelijke notatie} wanneer het
-geschreven wordt als:
-
-\[
-\boxed{
-a\cdot10^n
-}
-\]
-
-met:
-
-\[
-1\leq |a|<10
-\]
-
-en:
-
-\[
-n\in\mathbb Z.
-\]
-
+Er staat dus precies één cijfer verschillend van nul vóór de komma.
 \end{definitie}
 
 
 \begin{voorbeeld}
 
-Schrijf:
+De volgende getallen staan in wetenschappelijke notatie:
+
+\[
+-3{,}568 \cdot 10^{-11},
+\]
+
+\[
+6{,}4 \cdot 10^3,
+\]
+
+\[
+9{,}074 \cdot 10^{-13}.
+\]
+
+\end{voorbeeld}
+
+
+\FVDsubsection{Van gewone notatie naar wetenschappelijke notatie}
+
+Om een getal in wetenschappelijke notatie te schrijven:
+
+\begin{enumerate}
+    \item verplaats je de komma zodat er precies één cijfer verschillend van
+    nul vóór de komma staat;
+
+    \item tel je hoeveel plaatsen de komma werd verplaatst;
+
+    \item gebruik je een positieve exponent wanneer de komma naar links werd
+    verplaatst en een negatieve exponent wanneer de komma naar rechts werd
+    verplaatst.
+\end{enumerate}
+
+
+\begin{voorbeeld}
+
+We schrijven:
+
+\[
+470000
+=
+4{,}7 \cdot 10^5.
+\]
+
+De komma werd vijf plaatsen naar links verplaatst.
+
+Ook:
 
 \[
 0{,}000061
+=
+6{,}1 \cdot 10^{-5}.
 \]
 
-in wetenschappelijke notatie.
+Hier werd de komma vijf plaatsen naar rechts verplaatst.
 
-We verschuiven de komma vijf plaatsen naar rechts:
+\end{voorbeeld}
+
+
+\FVDsubsection{Wetenschappelijke notatie en beduidende cijfers}
+
+Een voordeel van wetenschappelijke notatie is dat het aantal beduidende cijfers
+onmiddellijk zichtbaar wordt.
+
+\begin{voorbeeld}
+
+Vergelijk:
+
+\[
+4{,}7 \cdot 10^5,
+\qquad
+4{,}70 \cdot 10^5,
+\qquad
+4{,}700 \cdot 10^5.
+\]
+
+Deze getallen stellen ongeveer dezelfde grootte voor, maar hebben
+respectievelijk:
+
+\[
+2,\qquad 3,\qquad 4
+\]
+
+beduidende cijfers.
+
+\end{voorbeeld}
+
+
+\FVDsubsection{Enkele natuurkundige voorbeelden}
+
+\begin{voorbeeld}
+
+Enkele zeer grote en zeer kleine natuurkundige grootheden zijn:
+
+\begin{itemize}
+
+    \item massa van de zon:
+    \[
+    m_{\text{zon}}
+    \approx
+    1{,}989 \cdot 10^{30}\,\si{\kilogram};
+    \]
+
+    \item massa van Saturnus:
+    \[
+    m_{\text{Saturnus}}
+    \approx
+    5{,}68 \cdot 10^{26}\,\si{\kilogram};
+    \]
+
+    \item atomaire massa-eenheid:
+    \[
+    1\,\mathrm{u}
+    \approx
+    1{,}66 \cdot 10^{-27}\,\si{\kilogram}.
+    \]
+
+\end{itemize}
+
+Zonder wetenschappelijke notatie zouden zulke getallen veel moeilijker
+leesbaar en vergelijkbaar zijn.
+
+\end{voorbeeld}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% OEFENINGEN
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{oefening}[Beduidende cijfers herkennen]{\oefB\ESS}
+
+Bepaal telkens het aantal beduidende cijfers.
+
+\begin{question}
+\(
+0{,}005700
+\)
+
+\begin{oplossing}
+De nullen vóór de $5$ zijn niet beduidend.
+
+De twee nullen achter de $7$ zijn wel beduidend, omdat ze na de komma staan.
+
+De beduidende cijfers zijn dus:
+
+\[
+5,\;7,\;0,\;0.
+\]
+
+Het getal bevat:
+
+\[
+\boxed{4\text{ beduidende cijfers}}
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+\(
+1{,}20 \cdot 10^3
+\)
+
+\begin{oplossing}
+Bij wetenschappelijke notatie bepalen de cijfers in de factor vóór de macht
+van $10$ het aantal beduidende cijfers.
+
+De cijfers zijn:
+
+\[
+1,\;2,\;0.
+\]
+
+Dus:
+
+\[
+\boxed{3\text{ beduidende cijfers}}
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+\[
+5080
+\]
+
+\begin{oplossing}
+De nul tussen $5$ en $8$ is beduidend.
+
+Voor de laatste nul is zonder bijkomende informatie niet duidelijk of ze
+beduidend is.
+
+De schrijfwijze $5080$ is dus \textbf{dubbelzinnig} wat het aantal
+beduidende cijfers betreft.
+
+Met wetenschappelijke notatie kan men dit verduidelijken. Bijvoorbeeld:
+
+\(
+5{,}08\cdot10^3
+\)
+
+heeft $3$ beduidende cijfers, terwijl
+
+\[
+5{,}080\cdot10^3
+\]
+
+$4$ beduidende cijfers heeft.
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+\(
+3{,}1400
+\)
+
+\begin{oplossing}
+Alle cijfers tellen mee. Ook de twee nullen achteraan zijn beduidend.
+
+Dus:
+
+\[
+\boxed{5\text{ beduidende cijfers}}
+\]
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+
+\begin{oefening}[Wetenschappelijke notatie]{\oefB\ESS}
+
+Schrijf elk getal in wetenschappelijke notatie.
+
+\begin{question}
+\(
+0{,}000061
+\)
+
+\begin{oplossing}
+We verplaatsen de komma vijf plaatsen naar rechts:
 
 \[
 0{,}000061
@@ -552,631 +1782,538 @@ We verschuiven de komma vijf plaatsen naar rechts:
 Dus:
 
 \[
-\boxed{
-6{,}1\cdot10^{-5}
-}
+\boxed{6{,}1\cdot10^{-5}}
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+\(
+470000
+\)
+
+\begin{oplossing}
+We verplaatsen de komma vijf plaatsen naar links:
+
+\[
+470000
+=
+4{,}7\cdot10^5.
 \]
 
-\end{voorbeeld}
+Dus:
+
+\[
+\boxed{4{,}7\cdot10^5}
+\]
+\end{oplossing}
+\end{question}
 
 
-\begin{oefening}[Wetenschappelijke notatie]{\oefB\ESS}
+\begin{question}
+\(
+-0{,}00832
+\)
 
-Schrijf in wetenschappelijke notatie.
+\begin{oplossing}
+We verplaatsen de komma drie plaatsen naar rechts:
 
-\begin{enumerate}
-  \item $470000$
-  \item $0{,}000832$
-  \item $-0{,}00000725$
-  \item $8600000000$
-  \item $0{,}00000000045$
-\end{enumerate}
+\[
+-0{,}00832
+=
+-8{,}32\cdot10^{-3}.
+\]
 
-Schrijf daarna opnieuw in gewone decimale notatie:
+Dus:
 
-\begin{enumerate}
-  \item $3{,}8\cdot10^6$
-  \item $6{,}02\cdot10^{-4}$
-  \item $9{,}1\cdot10^{-9}$
-\end{enumerate}
+\[
+\boxed{-8{,}32\cdot10^{-3}}
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+\(
+1{,}098\cdot10^{-4}
+\)
+
+\begin{oplossing}
+Het getal staat al in wetenschappelijke notatie, want:
+
+\[
+1 \leq 1{,}098 < 10.
+\]
+
+Het antwoord blijft dus:
+
+\[
+\boxed{1{,}098\cdot10^{-4}}
+\]
+\end{oplossing}
+\end{question}
 
 \end{oefening}
 
 
-% ============================================================
-% 6 METEN
-% ============================================================
 
-\FVDsection{Een meting is nooit exact}
+\begin{oefening}[Afronden na een vermenigvuldiging]{\oefB\ESS}
 
-Stel dat we de lengte van een tafel meten en vinden:
+Bereken en rond af op het juiste aantal beduidende cijfers.
 
-\[
-l=1{,}84\,\mathrm m.
-\]
+\begin{question}
+\(
+(2{,}30\cdot10^2)
+\cdot
+(1{,}0\cdot10^{-3})
+\)
 
-Betekent dit dat de tafel exact:
-
-\[
-1{,}840000000000\ldots\,\mathrm m
-\]
-
-lang is?
-
-Nee.
-
-Iedere meting heeft een beperkte nauwkeurigheid.
-
-De kwaliteit van een meetresultaat hangt onder andere af van:
-
-\begin{itemize}
-  \item het gebruikte meetinstrument;
-  \item de resolutie van het meetinstrument;
-  \item de meetmethode;
-  \item de omstandigheden;
-  \item de persoon die meet;
-  \item eventuele systematische afwijkingen.
-\end{itemize}
-
-
-\FVDsubsection{Resolutie}
-
-\begin{definitie}[Resolutie]
-
-De \textbf{resolutie} van een meetinstrument is de kleinste verandering
-van de gemeten grootheid die het instrument kan onderscheiden.
-
-\end{definitie}
-
-Een gewone liniaal met millimeterverdeling heeft bijvoorbeeld een
-andere resolutie dan een schuifmaat.
-
-Een digitaal toestel kan bijvoorbeeld tonen:
+\begin{oplossing}
+De eerste factor bevat $3$ beduidende cijfers:
 
 \[
-12{,}37\,\mathrm V.
+2{,}30.
 \]
 
-De laatste weergegeven positie geeft informatie over de resolutie van
-het toestel.
-
-
-\begin{opmerking}
-
-Meer cijfers op een digitaal scherm betekenen niet automatisch dat het
-meetresultaat ook werkelijk nauwkeuriger is.
-
-Ook kalibratie, meetmethode en experimentele omstandigheden kunnen de
-betrouwbaarheid beperken.
-
-\end{opmerking}
-
-
-% ============================================================
-% 7 BEDUIDENDE CIJFERS
-% ============================================================
-
-\FVDsection{Beduidende cijfers}
-
-Wanneer we een meetresultaat noteren, moeten de cijfers overeenkomen
-met de nauwkeurigheid die we werkelijk kunnen verantwoorden.
-
-Daarom gebruiken we het begrip \textbf{beduidende cijfers}.
-
-
-\begin{definitie}[Beduidende cijfers]
-
-De \textbf{beduidende cijfers} van een meetwaarde zijn de cijfers die
-informatie dragen over de gerapporteerde waarde en haar nauwkeurigheid.
-
-\end{definitie}
-
-Beschouw:
+De tweede factor bevat $2$ beduidende cijfers:
 
 \[
-12{,}4\,\mathrm{cm}.
+1{,}0.
 \]
 
-Dit getal bevat drie beduidende cijfers:
+Het resultaat moet dus worden weergegeven met $2$ beduidende cijfers.
 
-\[
-1,\qquad 2,\qquad 4.
-\]
-
-
-\FVDsubsection{Praktische regels}
-
-\begin{enumerate}
-
-  \item Alle cijfers van $1$ tot en met $9$ zijn beduidend.
-
-  Bijvoorbeeld:
-
-  \[
-  37{,}2
-  \]
-
-  heeft drie beduidende cijfers.
-
-  \item Nullen tussen andere beduidende cijfers zijn beduidend.
-
-  Bijvoorbeeld:
-
-  \[
-  4{,}007
-  \]
-
-  heeft vier beduidende cijfers.
-
-  \item Nullen vóór het eerste niet-nulcijfer zijn niet beduidend.
-
-  Bijvoorbeeld:
-
-  \[
-  0{,}00450
-  \]
-
-  heeft drie beduidende cijfers:
-
-  \[
-  4,\quad5,\quad0.
-  \]
-
-  \item Nullen achter de komma en na een niet-nulcijfer kunnen wel
-  beduidend zijn.
-
-  Bijvoorbeeld:
-
-  \[
-  2{,}300
-  \]
-
-  heeft vier beduidende cijfers.
-
-\end{enumerate}
-
-
-\FVDsubsection{Waarom wetenschappelijke notatie helpt}
-
-Bij een getal zoals:
-
-\[
-5000
-\]
-
-is zonder verdere context niet altijd duidelijk hoeveel beduidende
-cijfers bedoeld zijn.
-
-Wetenschappelijke notatie maakt dat ondubbelzinnig.
-
-\[
-5\cdot10^3
-\]
-
-heeft één beduidend cijfer.
-
-\[
-5{,}0\cdot10^3
-\]
-
-heeft twee beduidende cijfers.
-
-\[
-5{,}000\cdot10^3
-\]
-
-heeft vier beduidende cijfers.
-
-
-\begin{opmerking}
-
-Wetenschappelijke notatie geeft dus niet alleen de grootteorde van een
-getal weer. Ze kan ook duidelijk maken met hoeveel beduidende cijfers
-een meetwaarde wordt gerapporteerd.
-
-\end{opmerking}
-
-
-\begin{oefening}[Beduidende cijfers herkennen]{\oefB\ESS}
-
-Bepaal het aantal beduidende cijfers.
-
-\begin{enumerate}
-  \item $0{,}00450$
-  \item $2{,}030$
-  \item $6{,}00\cdot10^4$
-  \item $0{,}0000700$
-  \item $1{,}0050$
-\end{enumerate}
-
-\end{oefening}
-
-
-% ============================================================
-% 8 REKENEN MET MEETWAARDEN
-% ============================================================
-
-\FVDsection{Rekenen met meetwaarden}
-
-Een rekenmachine kan veel cijfers produceren.
-
-Dat betekent niet dat al die cijfers fysisch betekenisvol zijn.
-
-
-\begin{voorbeeld}[Een gemiddelde snelheid]
-
-Een voorwerp legt:
-
-\[
-s=12{,}4\,\mathrm m
-\]
-
-af in:
-
-\[
-t=3{,}2\,\mathrm s.
-\]
-
-De rekenmachine geeft:
-
-\[
-v
-=
-\frac{12{,}4}{3{,}2}
-=
-3{,}875\,\mathrm{m/s}.
-\]
-
-De tijd is gegeven met twee beduidende cijfers.
-
-Een verantwoord gerapporteerd resultaat is daarom:
-
-\[
-\boxed{
-v=3{,}9\,\mathrm{m/s}.
-}
-\]
-
-Het resultaat:
-
-\[
-3{,}875000000\,\mathrm{m/s}
-\]
-
-suggereert een nauwkeurigheid die de oorspronkelijke metingen niet
-hebben.
-
-\end{voorbeeld}
-
-
-\FVDsubsection{Vermenigvuldigen en delen}
-
-Bij vermenigvuldigen en delen wordt een resultaat in deze cursus
-doorgaans gerapporteerd met evenveel beduidende cijfers als de
-meetwaarde met het kleinste aantal beduidende cijfers.
-
-
-\begin{voorbeeld}
-
-Bereken:
+We berekenen:
 
 \[
 (2{,}30\cdot10^2)
-(1{,}0\cdot10^{-3}).
+\cdot
+(1{,}0\cdot10^{-3})
+=
+2{,}30\cdot10^{-1}.
 \]
 
-We vinden:
+Afronden op $2$ beduidende cijfers geeft:
 
 \[
-0{,}230.
+\boxed{2{,}3\cdot10^{-1}}
 \]
 
-De factor:
+of:
 
 \[
-1{,}0\cdot10^{-3}
+\boxed{0{,}23}.
+\]
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+
+\begin{oefening}[Dichtheid van een stof]{\oefB\ESS}
+
+Een laborant meet een massa van
+
+\(
+m=0{,}00450\,\si{\kilogram}
+\)
+
+en een volume van
+
+\(
+V=1{,}20\cdot10^{-3}\,\si{\meter\cubed}.
+\)
+
+De dichtheid wordt berekend met:
+
+\[
+\rho=\frac{m}{V}.
 \]
 
-heeft twee beduidende cijfers.
+\begin{question}
+Hoeveel beduidende cijfers bevatten de gemeten massa en het gemeten volume?
 
-Daarom rapporteren we:
+\begin{oplossing}
+Voor de massa:
+
+\[
+0{,}00450
+\]
+
+zijn de nullen vóór de $4$ niet beduidend. De laatste nul is wel beduidend.
+
+De massa heeft dus:
+
+\[
+\boxed{3\text{ beduidende cijfers}}.
+\]
+
+Het volume
+
+\[
+1{,}20\cdot10^{-3}
+\]
+
+heeft eveneens:
+
+\[
+\boxed{3\text{ beduidende cijfers}}.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Bereken de dichtheid en geef het resultaat in
+$\si{\kilogram\per\meter\cubed}$ met het juiste aantal beduidende cijfers.
+
+\begin{oplossing}
+We gebruiken:
+
+\[
+\rho=\frac{m}{V}.
+\]
+
+Invullen geeft:
+
+\[
+\rho
+=
+\frac{0{,}00450}
+{1{,}20\cdot10^{-3}}.
+\]
+
+Daaruit volgt:
+
+\[
+\rho=3{,}75\,\si{\kilogram\per\meter\cubed}.
+\]
+
+Beide meetwaarden bevatten $3$ beduidende cijfers. Daarom moet ook het
+eindresultaat $3$ beduidende cijfers bevatten.
+
+Dus:
 
 \[
 \boxed{
-0{,}23.
+\rho=3{,}75\,\si{\kilogram\per\meter\cubed}
 }
 \]
+\end{oplossing}
+\end{question}
 
-\end{voorbeeld}
+\end{oefening}
 
 
-\FVDsubsection{Optellen en aftrekken}
 
-Bij optellen en aftrekken kijken we niet naar het aantal beduidende
-cijfers, maar naar de plaats van het laatste betrouwbare cijfer.
+\begin{oefening}[Wat is er fout?]{\oefB}
 
-Bijvoorbeeld:
+Een leerling schrijft het getal
 
 \[
-12{,}35+1{,}2=13{,}55.
+36\cdot10^2
 \]
 
-De tweede meetwaarde is slechts tot op één decimaal gegeven.
+en beweert dat dit wetenschappelijke notatie is.
+
+\begin{question}
+Leg uit waarom deze schrijfwijze geen correcte wetenschappelijke notatie is.
+
+\begin{oplossing}
+Bij wetenschappelijke notatie moet de factor vóór de macht van $10$
+in absolute waarde minstens $1$ en kleiner dan $10$ zijn.
+
+Hier is de factor:
+
+\[
+36.
+\]
+
+Omdat:
+
+\[
+36>10,
+\]
+
+is dit geen correcte wetenschappelijke notatie.
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Schrijf het getal correct in wetenschappelijke notatie.
+
+\begin{oplossing}
+We schrijven:
+
+\[
+36=3{,}6\cdot10.
+\]
+
+Dus:
+
+\[
+36\cdot10^2
+=
+3{,}6\cdot10\cdot10^2
+=
+3{,}6\cdot10^3.
+\]
 
 Daarom:
 
 \[
-\boxed{
-13{,}6.
-}
+\boxed{3{,}6\cdot10^3}
 \]
-
-
-\begin{oefening}[Te veel cijfers]{\oefU\ESS}
-
-Een leerling meet:
-
-\[
-l=12{,}4\,\mathrm{cm}
-\]
-
-en:
-
-\[
-b=3{,}2\,\mathrm{cm}.
-\]
-
-Hij berekent:
-
-\[
-A=39{,}680000\,\mathrm{cm^2}.
-\]
-
-\begin{question}
-Leg uit waarom deze notatie fysisch misleidend is.
-\end{question}
-
-\begin{question}
-Bereken een verantwoord gerapporteerde waarde van de oppervlakte.
-\end{question}
-
-\begin{question}
-Schrijf het resultaat ook in wetenschappelijke notatie zodat het aantal
-beduidende cijfers ondubbelzinnig is.
+\end{oplossing}
 \end{question}
 
 \end{oefening}
 
 
-\begin{oefening}[Een meetresultaat beoordelen]{\oefU\ESS}
 
-Een leerling schrijft in een practicumverslag:
+\begin{oefening}[Optellen met meetwaarden]{\oefU}
 
-\begin{quote}
-De lengte van een metalen staaf is
-$12{,}3478291\,\mathrm{cm}$.
-De lengte werd gemeten met een gewone schoolliniaal met
-millimeterverdeling.
-\end{quote}
+Tijdens een proef worden drie lengtes gemeten:
 
-Analyseer deze rapportering.
+\[
+l_1=12{,}35\,\si{\centi\meter},
+\]
+
+\[
+l_2=3{,}2\,\si{\centi\meter},
+\]
+
+\[
+l_3=0{,}846\,\si{\centi\meter}.
+\]
 
 \begin{question}
-Wat is problematisch aan het opgegeven aantal cijfers?
+Bereken de totale lengte.
+
+\begin{oplossing}
+We berekenen eerst zonder af te ronden:
+
+\[
+l
+=
+12{,}35+3{,}2+0{,}846
+=
+16{,}396\,\si{\centi\meter}.
+\]
+\end{oplossing}
 \end{question}
 
-\begin{question}
-Waarom kan een rekenmachine of digitaal document geen extra
-meetnauwkeurigheid creëren?
-\end{question}
 
 \begin{question}
-Hoe zou je het resultaat realistischer rapporteren?
+Rond het resultaat correct af.
+
+\begin{oplossing}
+Bij optellen kijken we naar de plaats van het laatste betrouwbare cijfer.
+
+De meetwaarde
+
+\[
+3{,}2\,\si{\centi\meter}
+\]
+
+is slechts gegeven tot op één decimaal.
+
+Daarom moet het eindresultaat eveneens tot op één decimaal worden weergegeven:
+
+\[
+16{,}396\,\si{\centi\meter}
+\approx
+\boxed{16{,}4\,\si{\centi\meter}}.
+\]
+\end{oplossing}
 \end{question}
 
 \end{oefening}
 
 
-% ============================================================
-% 9 EXPERIMENTEREN
-% ============================================================
 
-\FVDsection{Van meten naar onderzoeken}
+\begin{oefening}[Een meetresultaat interpreteren]{\oefU}
 
-Meten is geen doel op zich.
+Twee leerlingen meten dezelfde lengte.
 
-Een fysicus meet om een vraag over de werkelijkheid te beantwoorden.
-
-Bijvoorbeeld:
-
-\begin{center}
-\textit{Hoe verandert de uitrekking van een veer wanneer de kracht
-op de veer toeneemt?}
-\end{center}
-
-Dat is een vraag die we experimenteel kunnen onderzoeken.
-
-
-\FVDsubsection{Onderzoeksvraag}
-
-Een goede experimentele onderzoeksvraag bevat meestal meetbare
-grootheden.
-
-Bijvoorbeeld:
+Leerling A noteert:
 
 \[
-\boxed{
-\text{Hoe hangt de uitrekking }x
-\text{ af van de aangelegde kracht }F?
-}
+l=2{,}4\,\si{\meter}.
 \]
 
-
-\FVDsubsection{Hypothese}
-
-\begin{definitie}[Hypothese]
-
-Een \textbf{hypothese} is een toetsbare verwachting over het resultaat
-van een onderzoek.
-
-\end{definitie}
-
-Bijvoorbeeld:
-
-\begin{quote}
-Als de kracht op de veer toeneemt, dan verwachten we dat de uitrekking
-toeneemt.
-\end{quote}
-
-
-\FVDsubsection{Variabelen}
-
-In een gecontroleerd experiment onderscheiden we verschillende soorten
-variabelen.
-
-\begin{definitie}[Onafhankelijke variabele]
-
-De \textbf{onafhankelijke variabele} is de grootheid die de onderzoeker
-doelbewust verandert.
-
-\end{definitie}
-
-\begin{definitie}[Afhankelijke variabele]
-
-De \textbf{afhankelijke variabele} is de grootheid waarvan onderzocht
-wordt hoe ze reageert op de verandering van de onafhankelijke
-variabele.
-
-\end{definitie}
-
-\begin{definitie}[Controlevariabelen]
-
-\textbf{Controlevariabelen} zijn andere relevante factoren die tijdens
-het experiment zoveel mogelijk constant gehouden worden.
-
-\end{definitie}
-
-
-\begin{voorbeeld}[Een veer onderzoeken]
-
-We onderzoeken hoe de uitrekking van één bepaalde veer afhangt van
-de aangelegde kracht.
-
-Dan kan gelden:
+Leerling B noteert:
 
 \[
-\begin{array}{ll}
-\text{onafhankelijke variabele} & F,\\
-\text{afhankelijke variabele} & x,\\
-\text{controlevariabelen} &
-\text{dezelfde veer, meetmethode, opstelling, \ldots}
-\end{array}
-\]
-
-\end{voorbeeld}
-
-
-\FVDsubsection{Een mogelijke onderzoekscyclus}
-
-Een wetenschappelijk onderzoek verloopt niet altijd exact lineair,
-maar volgende stappen vormen een bruikbaar kader:
-
-\[
-\boxed{
-\begin{array}{c}
-\text{waarneming of probleem}\\
-\downarrow\\
-\text{onderzoeksvraag}\\
-\downarrow\\
-\text{hypothese}\\
-\downarrow\\
-\text{onderzoeksplan}\\
-\downarrow\\
-\text{metingen}\\
-\downarrow\\
-\text{gegevens verwerken}\\
-\downarrow\\
-\text{besluit}\\
-\downarrow\\
-\text{reflectie}
-\end{array}
-}
-\]
-
-Meetgegevens kunnen worden weergegeven met:
-
-\begin{itemize}
-  \item tabellen;
-  \item grafieken;
-  \item functievoorschriften;
-  \item trendlijnen;
-  \item numerieke of grafische modellen.
-\end{itemize}
-
-
-\FVDsubsection{Kritisch omgaan met meetgegevens}
-
-Na een experiment vragen we niet alleen:
-
-\begin{center}
-\textit{Wat is het antwoord?}
-\end{center}
-
-We vragen ook:
-
-\begin{itemize}
-  \item Zijn er voldoende metingen uitgevoerd?
-  \item Zijn de meetwaarden reproduceerbaar?
-  \item Zijn er uitschieters?
-  \item Is het meetinstrument voldoende nauwkeurig?
-  \item Zijn relevante controlevariabelen constant gehouden?
-  \item Past het gekozen model bij de meetgegevens?
-  \item Welke beperkingen heeft het experiment?
-\end{itemize}
-
-
-\begin{opmerking}
-
-Een afwijkend meetpunt mag niet zomaar verwijderd worden omdat het
-niet mooi bij de andere meetpunten past.
-
-Er moet eerst onderzocht worden of er een inhoudelijke reden is om
-dat meetpunt als onbetrouwbaar te beschouwen.
-
-\end{opmerking}
-
-
-\begin{oefening}[Een opvallend meetpunt]{\oefU\ESS}
-
-Een leerling meet vijf keer de tijd die een karretje nodig heeft om
-dezelfde afstand af te leggen.
-
-\[
-\begin{array}{c|ccccc}
-\text{meting} & 1 & 2 & 3 & 4 & 5\\
-\hline
-t\,(\mathrm s) & 2{,}41 & 2{,}39 & 2{,}40 & 3{,}12 & 2{,}42
-\end{array}
+l=2{,}400\,\si{\meter}.
 \]
 
 \begin{question}
-Welke meetwaarde valt op?
+Hebben beide meetwaarden hetzelfde aantal beduidende cijfers?
+
+\begin{oplossing}
+Nee.
+
+De meetwaarde
+
+\[
+2{,}4\,\si{\meter}
+\]
+
+heeft:
+
+\[
+\boxed{2\text{ beduidende cijfers}}.
+\]
+
+De meetwaarde
+
+\[
+2{,}400\,\si{\meter}
+\]
+
+heeft:
+
+\[
+\boxed{4\text{ beduidende cijfers}}.
+\]
+\end{oplossing}
 \end{question}
 
-\begin{question}
-Mag die meetwaarde onmiddellijk worden verwijderd?
-\end{question}
 
 \begin{question}
-Geef minstens twee mogelijke verklaringen voor de afwijking.
-\end{question}
+Wat vertelt dit verschil over de gerapporteerde nauwkeurigheid van beide
+metingen?
 
-\begin{question}
-Welke bijkomende informatie zou je willen hebben voordat je beslist
-hoe je met de meetwaarde omgaat?
+\begin{oplossing}
+De notatie
+
+\[
+2{,}400\,\si{\meter}
+\]
+
+geeft aan dat de meting nauwkeuriger werd gerapporteerd dan
+
+\[
+2{,}4\,\si{\meter}.
+\]
+
+De nullen achter de komma zijn dus niet overbodig. Ze bevatten informatie
+over de precisie waarmee de meetwaarde wordt weergegeven.
+\end{oplossing}
 \end{question}
 
 \end{oefening}
+
+
+
+\begin{oefening}[Een volledige berekening beoordelen]{\oefG}
+
+Een leerling berekent een snelheid uit:
+
+\[
+s=125{,}0\,\si{\meter}
+\]
+
+en
+
+\[
+t=9{,}8\,\si{\second}.
+\]
+
+De leerling schrijft:
+
+\[
+v
+=
+\frac{125{,}0}{9{,}8}
+=
+12{,}75510204\,\si{\meter\per\second}.
+\]
+
+\begin{question}
+Is de berekening zelf correct?
+
+\begin{oplossing}
+Ja. De numerieke deling is correct:
+
+\[
+\frac{125{,}0}{9{,}8}
+\approx
+12{,}75510204.
+\]
+
+Het probleem zit niet in de berekening, maar in de manier waarop het
+eindresultaat wordt weergegeven.
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Waarom is het opgegeven eindresultaat niet correct genoteerd?
+
+\begin{oplossing}
+De afstand
+
+\[
+125{,}0
+\]
+
+heeft $4$ beduidende cijfers.
+
+De tijd
+
+\[
+9{,}8
+\]
+
+heeft slechts $2$ beduidende cijfers.
+
+Bij een deling moet het resultaat evenveel beduidende cijfers hebben als de
+meetwaarde met het kleinste aantal beduidende cijfers.
+
+Het eindresultaat mag dus slechts $2$ beduidende cijfers bevatten.
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Geef het resultaat met het correcte aantal beduidende cijfers.
+
+\begin{oplossing}
+We ronden
+
+\[
+12{,}75510204
+\]
+
+af op $2$ beduidende cijfers:
+
+\[
+\boxed{
+v=13\,\si{\meter\per\second}
+}
+\]
+
+Om het aantal beduidende cijfers explicieter zichtbaar te maken, kunnen we
+dit ook schrijven als:
+
+\[
+\boxed{
+v=1{,}3\cdot10^1\,\si{\meter\per\second}
+}
+\]
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+
+
 
 
 % ============================================================
@@ -1185,1482 +2322,1347 @@ hoe je met de meetwaarde omgaat?
 
 \FVDsection{Niet alles past in één getal}
 
-Stel dat iemand zegt:
+In de fysica is een getal met een eenheid niet altijd voldoende om een
+situatie volledig te beschrijven.
+
+Stel dat een drone in een 2D-game een volgend checkpoint moet bereiken.
+
+\begin{voorbeeld}[Een drone op weg naar een checkpoint]
+
+Lotte zegt:
 
 \begin{center}
-``Een drone moet zich $20\,\mathrm m$ verplaatsen.''
+``Het volgende checkpoint ligt $20\,\si{\meter}$ van de drone.''
 \end{center}
 
-Is dat voldoende informatie om de drone naar zijn bestemming te sturen?
+\begin{question}
+Waarom bevat deze uitspraak onvoldoende informatie om de drone naar het
+checkpoint te sturen?
 
-Nee.
+\begin{oplossing}
+We kennen alleen de \textbf{afstand} tot het checkpoint.
 
-We weten hoe groot de verplaatsing moet zijn, maar niet in welke
-richting.
+De uitspraak
 
-De uitspraak:
+\[
+20\,\si{\meter}
+\]
+
+vertelt niet in welke richting de drone moet vliegen.
+
+Het checkpoint kan bijvoorbeeld ten noorden, zuiden, oosten of in een
+schuine richting van de drone liggen.
+
+De gegeven informatie is dus onvoldoende om de beweging volledig te bepalen.
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Welke bijkomende informatie is nodig om de drone wel correct naar het
+checkpoint te sturen?
+
+\begin{oplossing}
+Naast de grootte van de verplaatsing hebben we ook een
+\textbf{richting en zin} nodig.
+
+Bijvoorbeeld:
 
 \begin{center}
-``$20\,\mathrm m$ naar het oosten''
+``$20\,\si{\meter}$ naar het noordoosten.''
 \end{center}
 
-bevat meer informatie.
+Deze uitspraak bevat voldoende informatie om de gewenste verplaatsing te
+beschrijven.
+\end{oplossing}
+\end{question}
 
-Daarmee komen we bij het onderscheid tussen scalaire en vectoriële
-grootheden.
 
+\begin{question}
+Welke van de volgende grootheden hebben behalve een grootte ook een richting
+en zin nodig?
+
+\begin{selectAll}
+
+\begin{multicols}{3}
+
+\choice[correct]{Snelheid}
+
+\choice[correct]{Versnelling}
+
+\choice[correct]{Kracht}
+
+\choice{Lengte}
+
+\choice{Massa}
+
+\choice{Temperatuur}
+
+\choice{Volume}
+
+\choice[correct]{Verplaatsing}
+
+\choice[correct]{Elektrisch veld}
+
+\end{multicols}
+
+\end{selectAll}
+
+\begin{oplossing}
+De vectoriële grootheden zijn:
+
+\begin{itemize}
+    \item snelheid;
+    \item versnelling;
+    \item kracht;
+    \item verplaatsing;
+    \item elektrisch veld.
+\end{itemize}
+
+Deze grootheden worden niet alleen door hun grootte bepaald, maar ook door
+hun richting en zin.
+
+Lengte, massa, temperatuur en volume zijn scalaire grootheden.
+\end{oplossing}
+\end{question}
+
+\end{voorbeeld}
+
+
+We komen zo tot twee belangrijke soorten fysische grootheden:
+
+\begin{itemize}
+    \item \textbf{scalaire grootheden};
+    \item \textbf{vectoriële grootheden}.
+\end{itemize}
+
+
+% ============================================================
+% SCALAIRE GROOTHEDEN
+% ============================================================
+
+\FVDsection{Scalaire en vectoriële grootheden}
+
+\FVDsubsection{Scalaire grootheden}
 
 \begin{definitie}[Scalaire grootheid]
 
 Een \textbf{scalaire grootheid} wordt volledig beschreven door een
-grootte, uitgedrukt met een getalwaarde en eenheid.
+\textbf{grootte}.
+
+Een meetwaarde van een scalaire grootheid bestaat doorgaans uit een
+\textbf{getalwaarde en eenheid}.
 
 \end{definitie}
 
-Voorbeelden zijn:
+
+\begin{voorbeeld}
+
+Voorbeelden van scalaire grootheden zijn:
 
 \[
-m=5{,}0\,\mathrm{kg},
+m = 5{,}0\,\si{\kilogram},
 \]
 
 \[
-T=293\,\mathrm K,
+T = 293\,\si{\kelvin},
 \]
 
 \[
-E=120\,\mathrm J.
+E = 120\,\si{\joule}.
 \]
 
+Ook tijd, volume, dichtheid en afstand zijn scalaire grootheden.
+
+\end{voorbeeld}
+
+
+Een scalaire grootheid vertelt dus \textbf{hoeveel}, maar bevat geen
+informatie over een richting.
+
+
+% ============================================================
+% VECTORIELE GROOTHEDEN
+% ============================================================
+
+\FVDsubsection{Vectoriële grootheden}
 
 \begin{definitie}[Vectoriële grootheid]
 
-Een \textbf{vectoriële grootheid} heeft naast een grootte ook een
-richting en een zin.
+Een \textbf{vectoriële grootheid} wordt bepaald door:
+
+\begin{itemize}
+    \item de \textbf{grootte};
+    \item de \textbf{richting};
+    \item de \textbf{zin}.
+\end{itemize}
 
 \end{definitie}
 
-We stellen vectoriële grootheden bijvoorbeeld voor als:
+
+Voorbeelden van vectoriële grootheden zijn:
 
 \[
-\vec v,
+\vec{v},
 \qquad
-\vec a,
+\vec{a},
 \qquad
-\vec F.
+\vec{F},
+\qquad
+\vec{E}.
 \]
 
-De grootte van een vector schrijven we als:
+Hierbij stellen deze symbolen respectievelijk snelheid, versnelling, kracht
+en elektrisch veld voor.
+
+
+De grootte of norm van een vector schrijven we bijvoorbeeld als:
 
 \[
-|\vec v|
+|\vec{v}|.
 \]
 
-of, wanneer er geen verwarring mogelijk is, eenvoudig als:
+Wanneer er geen verwarring mogelijk is, wordt voor de grootte van de
+snelheidsvector vaak eenvoudig
 
 \[
-v.
+v
 \]
+
+geschreven.
 
 
 \begin{opmerking}
 
-Bij sommige fysische vectoren, in het bijzonder krachten, kan ook het
-aangrijpingspunt fysisch belangrijk zijn.
+Bij sommige fysische vectoren is ook de plaats waar de vector aangrijpt
+belangrijk.
 
-Dat aangrijpingspunt is echter geen algemene extra eigenschap van een
+Bij een \textbf{kracht} kan bijvoorbeeld het aangrijpingspunt een verschil
+maken voor het effect van de kracht.
+
+Het aangrijpingspunt is echter geen algemene extra eigenschap van een
 abstracte wiskundige vector.
 
 \end{opmerking}
 
 
-\begin{oefening}[Scalair of vectorieel?]{\oefB\ESS}
-
-Bepaal telkens of de grootheid scalair of vectorieel is.
-
-\begin{enumerate}
-  \item massa;
-  \item kracht;
-  \item energie;
-  \item snelheid;
-  \item temperatuur;
-  \item versnelling;
-  \item volume;
-  \item elektrisch veld;
-  \item tijd;
-  \item verplaatsing.
-\end{enumerate}
-
-\end{oefening}
-
-
 % ============================================================
-% 11 VECTOR VOORSTELLEN
+% VOORSTELLING VAN EEN VECTOR
 % ============================================================
 
-\FVDsection{Een vector voorstellen}
+\FVDsection{Voorstelling van een vector}
 
-Een vector wordt grafisch voorgesteld door een pijl.
+Een vector wordt grafisch voorgesteld door een \textbf{gerichte pijl}.
 
-Daarbij stellen we voor:
+\begin{itemize}
+    \item De \textbf{lengte van de pijl} stelt de grootte van de vector voor.
+    \item De \textbf{drager} van de pijl bepaalt de richting.
+    \item De \textbf{pijlpunt} bepaalt de zin.
+\end{itemize}
 
-\[
-\boxed{
-\text{grootte, richting en zin}
-}
-\]
-
-De lengte van de pijl stelt de grootte voor.
-
-De ligging van de pijl bepaalt de richting.
-
-De pijlpunt bepaalt de zin.
+Bij een kracht kan het beginpunt van de pijl bovendien het aangrijpingspunt
+voorstellen.
 
 
-\begin{voorbeeld}[Een snelheidsvector]
+\begin{voorbeeld}[Snelheidsvector van een auto]
 
-Een wagen rijdt met een snelheid van:
+Een auto rijdt met een snelheid van
 
 \[
-72\,\mathrm{km/h}
+60\,\si{\kilo\meter\per\hour}
 \]
 
-naar het noordoosten.
+in noordoostelijke richting.
 
-We schrijven de snelheid als:
-
-\[
-\vec v.
-\]
-
-De grootte is:
-
-\[
-|\vec v|
-=
-72\,\mathrm{km/h}.
-\]
-
-Om de snelheid volledig te beschrijven moet ook de richting en zin
-worden aangegeven.
-
-\end{voorbeeld}
-
-
-\FVDsubsection{Schaal bij een vectortekening}
-
-Bij een vectortekening kan een schaal worden gebruikt.
-
-Bijvoorbeeld:
-
-\[
-1\,\mathrm{cm}
-\longleftrightarrow
-10\,\mathrm N.
-\]
-
-Een kracht van:
-
-\[
-40\,\mathrm N
-\]
-
-wordt dan voorgesteld door een pijl van:
-
-\[
-4\,\mathrm{cm}.
-\]
-
-
-% ============================================================
-% 12 VECTOR OPTELLEN
-% ============================================================
-
-\FVDsection{Vectoren optellen}
-
-Bij scalaire grootheden volstaat gewone algebra vaak.
-
-Bij vectoren moeten ook richting en zin worden meegenomen.
-
-
-\FVDsubsection{Dezelfde richting en dezelfde zin}
-
-Twee vectoren in dezelfde richting en zin versterken elkaar.
-
-Als:
-
-\[
-F_1=3\,\mathrm N
-\]
-
-en:
-
-\[
-F_2=5\,\mathrm N
-\]
-
-beide naar rechts wijzen, dan:
-
-\[
-F_{\mathrm{res}}
-=
-3+5
-=
-8\,\mathrm N.
-\]
-
-Dus:
-
-\[
-\boxed{
-F_{\mathrm{res}}
-=
-8\,\mathrm N
-\text{ naar rechts}.
-}
-\]
-
-
-\FVDsubsection{Dezelfde richting, tegengestelde zin}
-
-Stel:
-
-\[
-F_1=8\,\mathrm N
-\]
-
-naar rechts en:
-
-\[
-F_2=3\,\mathrm N
-\]
-
-naar links.
-
-De resulterende kracht is:
-
-\[
-\boxed{
-F_{\mathrm{res}}
-=
-5\,\mathrm N
-\text{ naar rechts}.
-}
-\]
-
-
-\FVDsubsection{De kop-staartmethode}
-
-Voor vectoren met verschillende richtingen kunnen we de
-\textbf{kop-staartmethode} gebruiken.
-
-We verschuiven een vector evenwijdig zodat zijn beginpunt samenvalt
-met het eindpunt van de vorige vector.
-
-De resultante loopt van het beginpunt van de eerste vector naar het
-eindpunt van de laatste vector.
-
-Symbolisch:
-
-\[
-\boxed{
-\vec A+\vec B=\vec R.
-}
-\]
-
-
-\begin{oefening}[Kan je vectoren gewoon optellen?]{\oefU\ESS}
-
-Een leerling beweert:
+We kunnen deze snelheid voorstellen met een vector.
 
 \begin{center}
-``De grootte van $\vec A+\vec B$ is altijd gelijk aan $A+B$.''
+\begin{tikzpicture}[scale=0.85]
+
+    % assen
+    \draw[->] (-0.3,0) -- (4.3,0);
+    \draw[->] (0,-0.3) -- (0,4.3);
+
+    % vector
+    \draw[-latex, very thick] (0,0) -- (3,3);
+
+    % label
+    \node at (3.3,3.25) {$\vec{v}$};
+
+    % hoek
+    \draw (0.8,0) arc[start angle=0,end angle=45,radius=0.8];
+    \node at (1.2,0.35) {$45^\circ$};
+
+    % grootte
+    \node at (2.35,1.65) {$60\,\si{\kilo\meter\per\hour}$};
+
+\end{tikzpicture}
 \end{center}
 
-Onderzoek deze uitspraak.
-
-\begin{question}
-Geef een situatie waarin de uitspraak klopt.
-\end{question}
-
-\begin{question}
-Geef een situatie waarin de uitspraak niet klopt.
-\end{question}
-
-\begin{question}
-Leg met een vectorschets uit waarom de richting van de vectoren
-belangrijk is.
-\end{question}
-
-\end{oefening}
-
-
-% ============================================================
-% 13 COMPONENTEN
-% ============================================================
-
-\FVDsection{Een vector ontbinden}
-
-Een vector kunnen we ontbinden in loodrechte componenten.
-
-In twee dimensies:
-
-\[
-\boxed{
-\vec A
-=
-\vec A_x+\vec A_y.
-}
-\]
-
-Als een vector $\vec A$ een hoek $\alpha$ maakt met de positieve
-$x$-as, dan geldt:
-
-\[
-\boxed{
-A_x=A\cos\alpha
-}
-\]
-
-en:
-
-\[
-\boxed{
-A_y=A\sin\alpha.
-}
-\]
-
-
-\begin{voorbeeld}[Een kracht ontbinden]
-
-Een kracht heeft grootte:
-
-\[
-F=100\,\mathrm N
-\]
-
-en maakt een hoek van:
-
-\[
-30^\circ
-\]
-
-met de horizontale.
-
-De horizontale component is:
-
-\[
-F_x
-=
-F\cos30^\circ.
-\]
-
-Dus:
-
-\[
-F_x
-=
-100\cos30^\circ
-\approx
-86{,}6\,\mathrm N.
-\]
-
-De verticale component is:
-
-\[
-F_y
-=
-F\sin30^\circ.
-\]
-
-Dus:
-
-\[
-F_y
-=
-100\sin30^\circ
-=
-50{,}0\,\mathrm N.
-\]
-
-Daarmee hebben we de oorspronkelijke kracht vervangen door twee
-loodrechte componenten:
-
-\[
-\boxed{
-\vec F=\vec F_x+\vec F_y.
-}
-\]
-
-\end{voorbeeld}
-
-
-\begin{opmerking}
-
-Het ontbinden van vectoren is geen doel op zich.
-
-Het is een techniek die fysische problemen eenvoudiger maakt omdat
-we effecten in verschillende richtingen afzonderlijk kunnen
-onderzoeken.
-
-In het volgende hoofdstuk zullen we dit voortdurend gebruiken bij
-de wetten van Newton.
-
-\end{opmerking}
-
-
-\begin{oefening}[Vectorcomponenten]{\oefB\ESS}
-
-Een kracht van:
-
-\[
-40\,\mathrm N
-\]
-
-maakt een hoek van:
-
-\[
-60^\circ
-\]
-
-met de positieve horizontale as.
-
-\begin{question}
-Bereken de horizontale component.
-\end{question}
-
-\begin{question}
-Bereken de verticale component.
-\end{question}
-
-\begin{question}
-Maak een verzorgde vectorschets.
-\end{question}
-
-\end{oefening}
-
-
-% ============================================================
-% 14 TERUG VAN COMPONENTEN
-% ============================================================
-
-\FVDsection{Van componenten naar grootte en richting}
-
-Wanneer de loodrechte componenten gekend zijn, kunnen we de grootte van
-de oorspronkelijke vector terugvinden met de stelling van Pythagoras:
-
-\[
-\boxed{
-A
-=
-\sqrt{A_x^2+A_y^2}.
-}
-\]
-
-De richting kan worden bepaald met:
-
-\[
-\boxed{
-\tan\alpha
-=
-\frac{A_y}{A_x}.
-}
-\]
-
-
-\begin{voorbeeld}
-
-Een vector heeft componenten:
-
-\[
-A_x=6{,}0
-\]
-
-en:
-
-\[
-A_y=8{,}0.
-\]
-
-De grootte is:
-
-\[
-A
-=
-\sqrt{6{,}0^2+8{,}0^2}.
-\]
-
-Dus:
-
-\[
-\boxed{
-A=10.
-}
-\]
-
-Voor de hoek:
-
-\[
-\tan\alpha
-=
-\frac{8}{6}.
-\]
-
-Daaruit:
-
-\[
-\alpha
-\approx
-53^\circ.
-\]
-
-\end{voorbeeld}
-
-
-\begin{opmerking}
-
-Let bij het berekenen van een hoek altijd op het kwadrant waarin de
-vector ligt.
-
-Alleen:
-
-\[
-\tan^{-1}
-\left(
-\frac{A_y}{A_x}
-\right)
-\]
-
-berekenen is niet altijd voldoende om de fysisch juiste richting te
-vinden.
-
-Maak daarom altijd eerst een schets.
-
-\end{opmerking}
-
-
-\begin{oefening}[Van componenten naar vector]{\oefB\ESS}
-
-Een vector heeft componenten:
-
-\[
-A_x=-3{,}0
-\]
-
-en:
-
-\[
-A_y=4{,}0.
-\]
-
-\begin{question}
-Schets de vector in een assenstelsel.
-\end{question}
-
-\begin{question}
-In welk kwadrant ligt de vector?
-\end{question}
-
-\begin{question}
-Bereken de grootte.
-\end{question}
-
-\begin{question}
-Bepaal de richting ten opzichte van de positieve $x$-as.
-\end{question}
-
-\end{oefening}
-
-
-% ============================================================
-% 15 GEÏNTEGREERDE VECTOROEFENING
-% ============================================================
-
-\FVDsection{Afstand en verplaatsing zijn niet hetzelfde}
-
-Vectoren laten ons onderscheid maken tussen grootheden die op het
-eerste gezicht sterk op elkaar lijken.
-
-
-\begin{voorbeeld}[Een reddingsdrone]
-
-Een reddingsdrone vliegt eerst:
-
-\[
-120\,\mathrm m
-\]
-
-naar het oosten en daarna:
-
-\[
-50\,\mathrm m
-\]
-
-naar het noorden.
-
-De afgelegde afstand is:
-
-\[
-s
-=
-120+50
-=
-170\,\mathrm m.
-\]
-
-Afstand is hier een scalaire grootheid.
-
-De verplaatsingsvector heeft componenten:
-
-\[
-\Delta x
-=
-120\,\mathrm m,
-\]
-
-\[
-\Delta y
-=
-50\,\mathrm m.
-\]
-
-De grootte van de verplaatsing is:
-
-\[
-|\Delta\vec r|
-=
-\sqrt{120^2+50^2}.
-\]
-
-Dus:
-
-\[
-\boxed{
-|\Delta\vec r|
-=
-130\,\mathrm m.
-}
-\]
-
-Voor de richting:
-
-\[
-\tan\alpha
-=
-\frac{50}{120}.
-\]
-
-Daaruit:
-
-\[
-\alpha
-\approx
-22{,}6^\circ.
-\]
-
-De verplaatsing is dus ongeveer:
-
-\[
-\boxed{
-23^\circ
-\text{ ten noorden van het oosten}.
-}
-\]
-
-\end{voorbeeld}
-
-
-\begin{oefening}[Robotroute]{\oefU\ESS}
-
-Een robot rijdt eerst:
-
-\[
-6{,}0\,\mathrm m
-\]
-
-naar het oosten en daarna:
-
-\[
-8{,}0\,\mathrm m
-\]
-
-naar het noorden.
-
-\begin{question}
-Bereken de afgelegde afstand.
-\end{question}
-
-\begin{question}
-Bereken de grootte van de verplaatsing.
-\end{question}
-
-\begin{question}
-Bepaal de richting van de verplaatsing.
-\end{question}
-
-\begin{question}
-Leg uit waarom afstand en grootte van de verplaatsing verschillend
-zijn.
-\end{question}
-
-\begin{question}
-Welke grootheid is scalair en welke vectorieel?
-\end{question}
-
-\end{oefening}
-
-
-% ============================================================
-% 16 DIMENSIONELE CONTROLE
-% ============================================================
-
-\FVDsection{Eenheden als controlemiddel}
-
-Eenheden zijn niet alleen een toevoeging achter een antwoord.
-
-Ze kunnen helpen om fouten te vinden.
-
-Stel dat iemand schrijft:
-
-\[
-v=\frac{s}{t^2}.
-\]
-
-De eenheid van het rechterlid is:
-
-\[
-\frac{\mathrm m}{\mathrm{s^2}}
-=
-\mathrm{m/s^2}.
-\]
-
-Dat is de eenheid van een versnelling en niet van een snelheid.
-
-De formule kan dus onmogelijk een correcte formule voor snelheid zijn.
-
-
-\begin{definitie}[Dimensionele consistentie]
-
-Een fysische vergelijking is \textbf{dimensioneel consistent} wanneer
-de dimensies van beide leden met elkaar overeenstemmen.
-
-\end{definitie}
-
-
-\begin{voorbeeld}
-
-Controleer:
-
-\[
-s=vt.
-\]
-
-Rechts vinden we:
-
-\[
-[v][t]
-=
-\mathrm{m/s}\cdot\mathrm s.
-\]
-
-Dus:
-
-\[
-[v][t]
-=
-\mathrm m.
-\]
-
-Dat komt overeen met de eenheid van $s$.
-
-De vergelijking is dimensioneel consistent.
-
-\end{voorbeeld}
-
-
-\begin{opmerking}
-
-Dimensionele consistentie bewijst niet dat een formule fysisch juist
-is.
-
-Een dimensioneel inconsistente formule kan echter wel onmiddellijk
-worden verworpen.
-
-\end{opmerking}
-
-
-\begin{oefening}[Controleer de eenheden]{\oefU\ESS}
-
-Onderzoek of de volgende formules dimensioneel mogelijk zijn.
-
-\begin{enumerate}
-  \item
-  \[
-  v=at
-  \]
-
-  \item
-  \[
-  s=vt
-  \]
-
-  \item
-  \[
-  s=at
-  \]
-
-  \item
-  \[
-  E=Fs
-  \]
-
-  waarbij $[F]=\mathrm N$ en $[s]=\mathrm m$.
-
-\end{enumerate}
-
-Leg telkens je redenering uit.
-
-\end{oefening}
-
-
-% ============================================================
-% 17 PROBLEEMOPLOSSEN
-% ============================================================
-
-\FVDsection{Een fysisch probleem systematisch aanpakken}
-
-Een fysisch probleem oplossen is meer dan een formule zoeken waarin
-de juiste letters voorkomen.
-
-Bij veel problemen is de moeilijkste stap:
-
-\[
-\boxed{
-\text{werkelijke situatie}
-\longrightarrow
-\text{fysisch model}.
-}
-\]
-
-Doorheen deze cursus gebruiken we daarom een systematische aanpak.
-
-
-\FVDsubsection{Stap 1 — Begrijp de situatie}
-
-Lees het probleem volledig.
-
-Vraag jezelf af:
+De vector bevat twee soorten informatie:
 
 \begin{itemize}
-  \item Wat gebeurt er?
-  \item Welke voorwerpen of systemen spelen een rol?
-  \item Welke informatie is relevant?
-  \item Welke informatie is eventueel overbodig?
+    \item de grootte:
+    \[
+    |\vec{v}| = 60\,\si{\kilo\meter\per\hour};
+    \]
+
+    \item de richting en zin: naar het noordoosten.
 \end{itemize}
 
-
-\FVDsubsection{Stap 2 — Maak een schets}
-
-Een eenvoudige schets maakt vaak onmiddellijk duidelijk:
-
-\begin{itemize}
-  \item welke richting positief wordt gekozen;
-  \item welke afstanden of hoeken belangrijk zijn;
-  \item welke vectoren later nodig zullen zijn.
-\end{itemize}
-
-
-\FVDsubsection{Stap 3 — Noteer gegeven en gevraagd}
-
-Gebruik correcte symbolen en eenheden.
-
-Bijvoorbeeld:
-
-\[
-\begin{array}{ll}
-\text{gegeven:} &
-m=2{,}0\,\mathrm{kg},\\
-&
-a=3{,}0\,\mathrm{m/s^2},
-\\[1ex]
-\text{gevraagd:} &
-F=?
-\end{array}
-\]
-
-
-\FVDsubsection{Stap 4 — Kies een fysisch model}
-
-Vraag jezelf af welke fysische principes bruikbaar zijn.
-
-Later kunnen dat bijvoorbeeld zijn:
-
-\[
-\sum\vec F=m\vec a,
-\]
-
-de gravitatiewet,
-
-\[
-F_g
-=
-G\frac{m_1m_2}{r^2},
-\]
-
-of de wet van Coulomb.
-
-
-\FVDsubsection{Stap 5 — Werk indien mogelijk symbolisch}
-
-Probeer de gevraagde grootheid eerst symbolisch vrij te maken.
-
-Dat maakt zichtbaar hoe het antwoord afhangt van de verschillende
-grootheden en verkleint de kans op invoerfouten.
-
-
-\FVDsubsection{Stap 6 — Reken uit}
-
-Vul pas daarna de getalwaarden in.
-
-Gebruik geschikte eenheden en rond verantwoord af.
-
-
-\FVDsubsection{Stap 7 — Controleer het resultaat}
-
-Vraag jezelf af:
-
-\begin{itemize}
-  \item Heeft het antwoord de juiste eenheid?
-  \item Is de grootteorde realistisch?
-  \item Is het teken logisch?
-  \item Is de richting logisch?
-  \item Heb ik verantwoord afgerond?
-  \item Beantwoordt mijn resultaat werkelijk de gestelde vraag?
-\end{itemize}
-
-
-\begin{opmerking}
-
-Een fysische berekening eindigt niet wanneer de rekenmachine een getal
-geeft.
-
-Een oplossing is pas volledig wanneer het resultaat gecontroleerd en
-fysisch geïnterpreteerd is.
-
-\end{opmerking}
+\end{voorbeeld}
 
 
 % ============================================================
-% 18 OEFENINGEN
+% OEFENINGEN
 % ============================================================
 
-\FVDsection{Geïntegreerde oefeningen}
+\begin{oefening}[Scalair of vectorieel?]{\oefB\ESS}
 
-
-\begin{oefening}[Van nanometer tot kilometer]{\oefB\ESS}
-
-Zet alle waarden om naar SI-eenheden en schrijf ze daarna in
-wetenschappelijke notatie.
-
-\begin{enumerate}
-  \item $450\,\mathrm{nm}$
-  \item $3{,}2\,\mathrm{mm}$
-  \item $7{,}5\,\mathrm{km}$
-  \item $25\,\mathrm{\mu s}$
-  \item $3{,}6\,\mathrm{cm^2}$
-\end{enumerate}
-
-\end{oefening}
-
-
-\begin{oefening}[Dichtheid uit meetgegevens]{\oefB\ESS}
-
-Een laborant meet:
-
-\[
-m=0{,}00450\,\mathrm{kg}
-\]
-
-en:
-
-\[
-V=1{,}20\cdot10^{-6}\,\mathrm{m^3}.
-\]
-
-De dichtheid wordt gegeven door:
-
-\[
-\rho=\frac{m}{V}.
-\]
+Bepaal telkens of de gegeven grootheid scalair of vectorieel is.
 
 \begin{question}
-Bereken de dichtheid.
+Massa.
+
+\begin{oplossing}
+Massa heeft alleen een grootte.
+
+\[
+\boxed{\text{scalair}}
+\]
+\end{oplossing}
 \end{question}
 
-\begin{question}
-Rapporteer het resultaat met een verantwoord aantal beduidende cijfers.
-\end{question}
 
 \begin{question}
-Controleer de eenheid.
+Kracht.
+
+\begin{oplossing}
+Een kracht heeft een grootte, richting en zin.
+
+\[
+\boxed{\text{vectorieel}}
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Energie.
+
+\begin{oplossing}
+Energie heeft geen richting of zin.
+
+\[
+\boxed{\text{scalair}}
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Snelheid.
+
+\begin{oplossing}
+Een snelheidsvector heeft een grootte, richting en zin.
+
+\[
+\boxed{\text{vectorieel}}
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Temperatuur.
+
+\begin{oplossing}
+Temperatuur wordt volledig bepaald door een grootte.
+
+\[
+\boxed{\text{scalair}}
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Versnelling.
+
+\begin{oplossing}
+Versnelling heeft een richting en zin.
+
+\[
+\boxed{\text{vectorieel}}
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Volume.
+
+\begin{oplossing}
+Volume heeft geen richting.
+
+\[
+\boxed{\text{scalair}}
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Elektrisch veld.
+
+\begin{oplossing}
+Een elektrisch veld heeft in elk punt een grootte, richting en zin.
+
+\[
+\boxed{\text{vectorieel}}
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Tijd.
+
+\begin{oplossing}
+Tijd heeft geen ruimtelijke richting.
+
+\[
+\boxed{\text{scalair}}
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Verplaatsing.
+
+\begin{oplossing}
+Een verplaatsing bevat zowel informatie over de grootte als over de richting
+en zin van de beweging.
+
+\[
+\boxed{\text{vectorieel}}
+\]
+\end{oplossing}
 \end{question}
 
 \end{oefening}
 
 
-\begin{oefening}[Welke vector hoort erbij?]{\oefB}
 
-Een drone beweegt met:
+\begin{oefening}[Herken de vector]{\oefB\ESS}
+
+Bepaal telkens of de gegeven informatie een scalaire of een vectoriële
+grootheid beschrijft.
+
+\begin{question}
+\(
+5\,\si{\meter}
+\)
+
+\begin{oplossing}
+Er wordt alleen een grootte gegeven.
 
 \[
-12\,\mathrm{m/s}
+\boxed{\text{scalair}}
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+\(
+30\,\si{\meter\per\second}
+\quad \text{naar het oosten}
+\)
+
+\begin{oplossing}
+Er worden een grootte en een richting en zin gegeven.
+
+\[
+\boxed{\text{vectorieel}}
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+\(
+5\,\si{\kilo\meter}
+\quad \text{naar het noorden}
+\)
+
+\begin{oplossing}
+De informatie bevat een grootte en een richting en zin.
+
+Wanneer dit een verplaatsing voorstelt, is dit dus vectoriële informatie.
+
+\[
+\boxed{\text{vectorieel}}
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+\(
+20\,^{\circ}\mathrm{C}
+\)
+
+\begin{oplossing}
+Temperatuur heeft geen richting.
+
+\[
+\boxed{\text{scalair}}
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+\(
+256\,\mathrm{bytes}
+\)
+
+\begin{oplossing}
+Deze hoeveelheid bevat geen richting of zin.
+
+\[
+\boxed{\text{scalair}}
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+\(
+4\,\mathrm{kcal}
+\)
+
+\begin{oplossing}
+Energie is een scalaire grootheid.
+
+\[
+\boxed{\text{scalair}}
+\]
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+
+\begin{oefening}[Welke informatie ontbreekt?]{\oefB\ESS}
+
+Een robot moet zich verplaatsen in een magazijn.
+
+\begin{question}
+De opdracht luidt:
+
+\begin{center}
+``Verplaats je $8\,\si{\meter}$.''
+\end{center}
+
+Waarom is deze opdracht onvoldoende?
+
+\begin{oplossing}
+De grootte van de verplaatsing is gegeven:
+
+\[
+8\,\si{\meter}.
+\]
+
+Er ontbreekt echter informatie over de richting en zin.
+
+De robot weet dus niet waarheen hij moet bewegen.
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Geef een voorbeeld van een volledige opdracht.
+
+\begin{oplossing}
+Een mogelijke volledige opdracht is bijvoorbeeld:
+
+\begin{center}
+``Verplaats je $8\,\si{\meter}$ naar het noorden.''
+\end{center}
+
+Nu zijn zowel de grootte als de richting en zin bepaald.
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+
+\begin{oefening}[Eigenschappen van een vector]{\oefB\ESS}
+
+\begin{question}
+Welke drie eigenschappen zijn nodig om een vectoriële grootheid volledig te
+beschrijven?
+
+\begin{oplossing}
+Een vectoriële grootheid wordt bepaald door:
+
+\begin{itemize}
+    \item de \textbf{grootte};
+    \item de \textbf{richting};
+    \item de \textbf{zin}.
+\end{itemize}
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Waarom kan bij een kracht ook het aangrijpingspunt belangrijk zijn?
+
+\begin{oplossing}
+De plaats waar een kracht op een voorwerp werkt, kan het effect van die kracht
+beïnvloeden.
+
+Een kracht op het midden van een deur heeft bijvoorbeeld een ander effect dan
+dezelfde kracht dicht bij de scharnieren.
+
+Daarom is bij krachten vaak ook het aangrijpingspunt fysisch belangrijk.
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+
+\begin{oefening}[Teken een vector]{\oefB}
+
+\begin{question}
+Teken een vector $\vec{v}$:
+
+\begin{itemize}
+    \item met grootte $4$ eenheden;
+    \item onder een hoek van $30^\circ$ boven de positieve horizontale as;
+    \item met beginpunt $(0,0)$.
+\end{itemize}
+
+Label de vector met $\vec{v}$.
+
+\begin{oplossing}
+De vector start in $(0,0)$ en maakt een hoek van $30^\circ$ met de positieve
+horizontale as.
+
+Omdat de grootte $4$ is, liggen de coördinaten van het eindpunt op:
+
+\[
+x = 4\cos(30^\circ),
+\]
+
+\[
+y = 4\sin(30^\circ).
+\]
+
+Dus:
+
+\[
+x = 2\sqrt{3},
+\qquad
+y = 2.
+\]
+
+Een mogelijke voorstelling is:
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+
+    \draw[->] (-0.3,0) -- (4.5,0) node[right] {$x$};
+    \draw[->] (0,-0.3) -- (0,3.2) node[above] {$y$};
+
+    \draw[-latex, very thick]
+        (0,0) -- ({4*cos(30)},{4*sin(30)});
+
+    \draw (0.9,0)
+        arc[start angle=0,end angle=30,radius=0.9];
+
+    \node at (1.25,0.28) {$30^\circ$};
+
+    \node at (3.35,2.25) {$\vec{v}$};
+
+\end{tikzpicture}
+\end{center}
+
+De vector heeft dus de gevraagde grootte, richting en zin.
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+
+\begin{oefening}[Afstand of verplaatsing?]{\oefU}
+
+Een speler loopt in een game eerst
+
+\[
+30\,\si{\meter}
+\]
+
+naar het oosten en daarna
+
+\[
+30\,\si{\meter}
 \]
 
 naar het westen.
 
 \begin{question}
-Welke informatie bevat alleen het getal $12\,\mathrm{m/s}$?
-\end{question}
+Hoe groot is de totale afgelegde afstand?
 
-\begin{question}
-Waarom is die informatie onvoldoende om de snelheid als vector volledig
-te beschrijven?
-\end{question}
-
-\begin{question}
-Maak een vectorschets.
-\end{question}
-
-\end{oefening}
-
-
-\begin{oefening}[Twee krachten combineren]{\oefU\ESS}
-
-Op een voorwerp werken twee loodrechte krachten:
+\begin{oplossing}
+De afgelegde afstand telt de volledige gevolgde weg op:
 
 \[
-F_x=30\,\mathrm N
-\]
-
-naar rechts en:
-
-\[
-F_y=40\,\mathrm N
-\]
-
-naar boven.
-
-\begin{question}
-Teken beide vectoren.
-\end{question}
-
-\begin{question}
-Bepaal grafisch de richting van de resultante.
-\end{question}
-
-\begin{question}
-Bereken de grootte van de resultante.
-\end{question}
-
-\begin{question}
-Bereken de hoek van de resultante met de positieve horizontale richting.
-\end{question}
-
-\end{oefening}
-
-
-\begin{oefening}[Een slecht experiment]{\oefU\ESS}
-
-Een leerling wil onderzoeken hoe de lengte van een metalen draad
-afhangt van zijn temperatuur.
-
-Hij meet de lengte bij verschillende temperaturen, maar gebruikt bij
-iedere temperatuur een andere draad van hetzelfde materiaal.
-
-\begin{question}
-Wat is de onafhankelijke variabele?
-\end{question}
-
-\begin{question}
-Wat is de afhankelijke variabele?
-\end{question}
-
-\begin{question}
-Waarom is het gebruiken van telkens een andere draad problematisch?
-\end{question}
-
-\begin{question}
-Hoe zou je het experiment verbeteren?
-\end{question}
-
-\end{oefening}
-
-
-\begin{oefening}[Ontwerp een experiment]{\oefG}
-
-Een onderzoeker wil nagaan of de uitrekking van een elastiek recht
-evenredig is met de aangelegde kracht.
-
-Ontwerp een experiment.
-
-Beschrijf:
-
-\begin{enumerate}
-  \item de onderzoeksvraag;
-  \item een toetsbare hypothese;
-  \item de onafhankelijke variabele;
-  \item de afhankelijke variabele;
-  \item minstens drie controlevariabelen;
-  \item welke grootheden worden gemeten;
-  \item welke eenheden worden gebruikt;
-  \item hoe de meetgegevens in een grafiek worden voorgesteld;
-  \item welk grafisch patroon je verwacht bij recht evenredigheid;
-  \item hoe je beoordeelt of de meetgegevens voldoende bij het model passen;
-  \item minstens twee mogelijke bronnen van meetonzekerheid.
-\end{enumerate}
-
-\end{oefening}
-
-
-\begin{oefening}[Navigeren met wind]{\oefG}
-
-Een drone moet rechtstreeks van punt $A$ naar punt $B$ vliegen.
-
-Punt $B$ ligt ten opzichte van $A$:
-
-\[
-240\,\mathrm m
-\]
-
-naar het oosten en:
-
-\[
-180\,\mathrm m
-\]
-
-naar het noorden.
-
-De drone kan ten opzichte van de lucht vliegen met een snelheid van:
-
-\[
-15{,}0\,\mathrm{m/s}.
-\]
-
-Er staat een constante wind met snelheid:
-
-\[
-4{,}0\,\mathrm{m/s}
-\]
-
-naar het oosten.
-
-Onderzoek in welke richting de drone ten opzichte van de lucht moet
-vliegen om rechtstreeks van $A$ naar $B$ te bewegen.
-
-Maak eerst een duidelijke vectorschets en beschrijf je
-oplossingsstrategie voordat je begint te rekenen.
-
-\end{oefening}
-
-
-% ============================================================
-% 19 VEELVOORKOMENDE FOUTEN
-% ============================================================
-
-\FVDsection{Veelvoorkomende denkfouten}
-
-\begin{itemize}
-
-  \item \textbf{Een getal zonder eenheid noteren.}
-
-  In een fysische context is:
-
-  \[
-  12
-  \]
-
-  meestal onvoldoende.
-
-  \item \textbf{Alle cijfers van de rekenmachine overnemen.}
-
-  De rekenmachine kent de nauwkeurigheid van je metingen niet.
-
-  \item \textbf{Het aantal decimalen verwarren met het aantal
-  beduidende cijfers.}
-
-  Bijvoorbeeld:
-
-  \[
-  0{,}00450
-  \]
-
-  heeft drie beduidende cijfers.
-
-  \item \textbf{Een oppervlakte-eenheid lineair omzetten.}
-
-  Uit:
-
-  \[
-  1\,\mathrm{cm}=10^{-2}\,\mathrm m
-  \]
-
-  volgt:
-
-  \[
-  1\,\mathrm{cm^2}=10^{-4}\,\mathrm{m^2}.
-  \]
-
-  \item \textbf{Vectoren behandelen alsof ze gewone positieve
-  getallen zijn.}
-
-  Richting en zin zijn essentieel.
-
-  \item \textbf{Een berekening uitvoeren zonder eerst een schets of
-  model te maken.}
-
-  Bij complexere problemen leidt dit vaak tot teken- of
-  interpretatiefouten.
-
-  \item \textbf{Een afwijkende meting zomaar verwijderen.}
-
-  Eerst moet onderzocht worden waarom die meting afwijkt.
-
-\end{itemize}
-
-
-% ============================================================
-% 20 SAMENVATTING
-% ============================================================
-
-\FVDsection{Samenvatting}
-
-Een fysische grootheid wordt beschreven met een getalwaarde en eenheid:
-
-\[
-\boxed{
-\text{grootheid}
+30\,\si{\meter}+30\,\si{\meter}
 =
-\text{getalwaarde}
-\times
-\text{eenheid}.
-}
+60\,\si{\meter}.
 \]
 
-Voor wetenschappelijke communicatie gebruiken we bij voorkeur
-SI-eenheden.
-
-Zeer grote en zeer kleine waarden kunnen worden geschreven als:
+Dus:
 
 \[
-\boxed{
-a\cdot10^n
-}
+\boxed{60\,\si{\meter}}
 \]
 
-met:
+Afstand is een scalaire grootheid.
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Wat is de uiteindelijke verplaatsing van de speler?
+
+\begin{oplossing}
+De speler keert terug naar zijn vertrekpunt.
+
+Beginpunt en eindpunt vallen dus samen.
+
+Daarom is de verplaatsingsvector:
 
 \[
-1\leq |a|<10.
+\boxed{\vec{s}=\vec{0}}
 \]
 
-Een meetresultaat heeft een beperkte nauwkeurigheid.
-
-Het aantal gerapporteerde cijfers moet daarmee overeenkomen.
-
-Bij vermenigvuldigen en delen bepaalt in deze cursus doorgaans de
-meetwaarde met het kleinste aantal beduidende cijfers de rapportering
-van het eindresultaat.
-
-Bij optellen en aftrekken kijken we naar de plaats van het laatste
-betrouwbare cijfer.
-
-Een scalaire grootheid wordt door haar grootte beschreven.
-
-Een vectoriële grootheid heeft:
+en is de grootte van de verplaatsing:
 
 \[
-\boxed{
-\text{grootte, richting en zin}.
-}
+\boxed{0\,\si{\meter}}.
 \]
-
-Een vector kan worden ontbonden:
-
-\[
-\boxed{
-A_x=A\cos\alpha
-}
-\]
-
-en:
-
-\[
-\boxed{
-A_y=A\sin\alpha.
-}
-\]
-
-Uit componenten volgt:
-
-\[
-\boxed{
-A=\sqrt{A_x^2+A_y^2}.
-}
-\]
-
-De richting kan worden bepaald met:
-
-\[
-\boxed{
-\tan\alpha=\frac{A_y}{A_x}.
-}
-\]
-
-Een fysische vergelijking moet dimensioneel consistent zijn.
-
-Bij experimenteel onderzoek onderscheiden we:
-
-\[
-\boxed{
-\text{onafhankelijke variabele},
-\quad
-\text{afhankelijke variabele},
-\quad
-\text{controlevariabelen}.
-}
-\]
-
-Een goede probleemaanpak verloopt bijvoorbeeld als:
-
-\[
-\boxed{
-\text{begrijpen}
-\rightarrow
-\text{schetsen}
-\rightarrow
-\text{gegevens}
-\rightarrow
-\text{model}
-\rightarrow
-\text{rekenen}
-\rightarrow
-\text{controleren}
-\rightarrow
-\text{interpreteren}.
-}
-\]
+\end{oplossing}
+\end{question}
 
 
-% ============================================================
-% 21 MINIMALE BEHEERSING
-% ============================================================
+\begin{question}
+Leg uit waarom afstand en verplaatsing hier een verschillend resultaat geven.
 
-\FVDsection{Wat moet je zeker beheersen?}
+\begin{oplossing}
+Afstand beschrijft de totale lengte van het afgelegde traject en is een
+\textbf{scalaire grootheid}.
 
-Voor je verdergaat naar de wetten van Newton moet je de onderstaande
-vaardigheden voldoende beheersen.
+Verplaatsing beschrijft de verandering van beginpositie naar eindpositie en is
+een \textbf{vectoriële grootheid}.
 
-Je moet:
+De speler heeft wel $60\,\si{\meter}$ afgelegd, maar eindigt opnieuw op zijn
+startpunt.
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+
+\begin{oefening}[Een uitspraak kritisch beoordelen]{\oefU}
+
+Een leerling zegt:
+
+\begin{quote}
+``Een vector is gewoon een getal met een richting.''
+\end{quote}
+
+\begin{question}
+Is deze uitspraak volledig correct? Leg uit.
+
+\begin{oplossing}
+De uitspraak bevat de kern van het idee, maar is niet volledig.
+
+Een vector heeft:
 
 \begin{itemize}
-
-  \item fysische grootheden en eenheden correct kunnen noteren;
-
-  \item courante SI-voorvoegsels kunnen gebruiken;
-
-  \item eenheden kunnen omzetten;
-
-  \item ook oppervlakte- en volume-eenheden correct kunnen omzetten;
-
-  \item wetenschappelijke notatie kunnen lezen en schrijven;
-
-  \item het aantal beduidende cijfers van een meetwaarde kunnen bepalen;
-
-  \item een berekend resultaat verantwoord kunnen afronden;
-
-  \item een meetresultaat kritisch kunnen beoordelen;
-
-  \item scalaire en vectoriële grootheden kunnen onderscheiden;
-
-  \item een vector correct kunnen voorstellen;
-
-  \item vectoren kunnen optellen;
-
-  \item een vector kunnen ontbinden in horizontale en verticale
-        componenten;
-
-  \item uit componenten grootte en richting kunnen terugvinden;
-
-  \item eenheden kunnen gebruiken als controle op een fysische formule;
-
-  \item onafhankelijke, afhankelijke en controlevariabelen kunnen
-        onderscheiden;
-
-  \item een fysisch probleem systematisch kunnen aanpakken.
-
+    \item een grootte;
+    \item een richting;
+    \item een zin.
 \end{itemize}
 
-De oefeningen met de markering \verb|\ESS| zijn noodzakelijk om deze
-gereedschapskist voldoende te beheersen.
+Alleen zeggen dat een vector ``een getal met een richting'' is, maakt het
+onderscheid tussen richting en zin niet duidelijk.
 
-Niet alle essentiële oefeningen zijn \verb|\oefB|-oefeningen.
-Sommige \verb|\oefU|-oefeningen zijn eveneens noodzakelijk omdat je
-niet alleen technieken moet uitvoeren, maar meetgegevens, modellen en
-redeneringen ook kritisch moet kunnen analyseren.
-
-
-% ============================================================
-% 22 VOORUITBLIK
-% ============================================================
-
-\FVDsection{Vooruitblik: van vectoren naar krachten}
-
-We beschikken nu over een aantal belangrijke gereedschappen.
-
-We kunnen:
-
-\[
-\text{meten},
-\]
-
-\[
-\text{eenheden gebruiken},
-\]
-
-\[
-\text{vectoren voorstellen},
-\]
-
-\[
-\text{vectoren ontbinden},
-\]
-
-en:
-
-\[
-\text{fysische problemen systematisch analyseren}.
-\]
-
-In het volgende hoofdstuk gebruiken we deze gereedschappen voor een
-fundamentele vraag:
+Een betere formulering is:
 
 \begin{center}
-\textit{Waarom verandert de beweging van een voorwerp?}
+Een vectoriële grootheid heeft een grootte, richting en zin.
 \end{center}
+\end{oplossing}
+\end{question}
 
-Daarvoor onderzoeken we krachten en de drie wetten van Newton.
+\end{oefening}
 
-De stap wordt:
+
+
+\begin{oefening}[Twee bewegingen vergelijken]{\oefG}
+
+Twee drones vliegen allebei met een snelheid waarvan de grootte
 
 \[
-\boxed{
-\text{vectoren}
-\longrightarrow
-\text{krachten}
-\longrightarrow
-\sum\vec F
-\longrightarrow
-\text{bewegingsverandering}.
-}
+15\,\si{\meter\per\second}
 \]
+
+bedraagt.
+
+Drone A vliegt naar het noorden en drone B naar het oosten.
+
+\begin{question}
+Hebben beide drones dezelfde snelheidsgrootte?
+
+\begin{oplossing}
+Ja.
+
+Voor beide drones geldt:
+
+\[
+|\vec{v}|=15\,\si{\meter\per\second}.
+\]
+
+Hun snelheidsgrootte is dus gelijk.
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Hebben beide drones dezelfde snelheidsvector?
+
+\begin{oplossing}
+Nee.
+
+De grootte van beide vectoren is wel gelijk, maar hun richting is verschillend.
+
+Voor drone A wijst de snelheidsvector naar het noorden.
+
+Voor drone B wijst de snelheidsvector naar het oosten.
+
+Daarom geldt:
+
+\[
+\boxed{\vec{v}_A \neq \vec{v}_B}.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Welke belangrijke eigenschap van vectoren toont dit voorbeeld aan?
+
+\begin{oplossing}
+Twee vectoren zijn niet automatisch gelijk omdat hun grootte gelijk is.
+
+Om dezelfde vector te hebben, moeten ook richting en zin overeenkomen.
+
+Dit voorbeeld toont dus dat de grootte alleen onvoldoende is om een vector
+volledig te bepalen.
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+
+
+% ============================================================
+% VOORSTELLING VAN EEN VECTOR
+% ============================================================
+
+\FVDsection{Hoe stellen we een vector voor?}
+
+Een vectoriële grootheid bevat meer informatie dan alleen een getal.
+We moeten niet alleen weten \textbf{hoe groot} de vector is, maar ook
+\textbf{in welke richting en zin} hij wijst.
+
+Daarom stellen we een vector grafisch voor door een \textbf{gerichte pijl}.
+
+
+\begin{definitie}[Grafische voorstelling van een vector]
+
+Een vector wordt voorgesteld door een \textbf{gerichte pijl}.
+
+Aan deze pijl kunnen we de eigenschappen van de vector aflezen:
+
+\begin{itemize}
+    \item de \textbf{lengte van de pijl} stelt de grootte van de vector voor;
+    \item de \textbf{richting} wordt bepaald door de rechte waarop de pijl ligt;
+    \item de \textbf{zin} wordt aangegeven door de pijlpunt.
+\end{itemize}
+
+Bij sommige fysische vectoren, zoals een kracht, kan ook het
+\textbf{aangrijpingspunt} belangrijk zijn.
+
+\end{definitie}
+
+
+\begin{voorbeeld}[De onderdelen van een vector]
+
+Beschouw de onderstaande vector $\vec{v}$.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.05]
+
+    % horizontale referentielijn
+    \draw[->, gray] (-0.4,0) -- (5.3,0);
+    \node[gray] at (5.15,-0.3) {horizontaal};
+
+    % vector
+    \draw[-latex, very thick] (0,0) -- (4,2.3);
+
+    % beginpunt
+    \fill (0,0) circle (2pt);
+    \node[below left] at (0,0) {beginpunt};
+
+    % vectorlabel
+    \node[above] at (3.6,2.2) {$\vec{v}$};
+
+    % hoek / richting
+    \draw (1.0,0)
+        arc[start angle=0,end angle=30,radius=1.0];
+
+    \node at (1.35,0.30) {$\alpha$};
+
+    % grootte
+    \node[rotate=30] at (2.15,1.35)
+        {$|\vec{v}|$};
+
+    % zin
+    \node[align=left] at (4.8,1.8) {zin};
+    \draw[->] (4.55,1.7) -- (4.05,2.15);
+
+\end{tikzpicture}
+\end{center}
+
+Uit de tekening kunnen we aflezen:
+
+\begin{itemize}
+    \item $|\vec{v}|$ stelt de \textbf{grootte} van de vector voor;
+    \item de hoek $\alpha$ bepaalt de \textbf{richting};
+    \item de pijlpunt bepaalt de \textbf{zin}.
+\end{itemize}
+
+\end{voorbeeld}
+
+
+\FVDsubsection{Richting en zin zijn niet hetzelfde}
+
+De begrippen \textbf{richting} en \textbf{zin} worden vaak door elkaar gehaald.
+
+Twee vectoren kunnen dezelfde richting hebben, maar een tegengestelde zin.
+
+\begin{voorbeeld}[Zelfde richting, andere zin]
+
+Beschouw de vectoren $\vec{a}$ en $\vec{b}$.
+
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+    % vector a
+    \draw[-latex, very thick] (0,1.2) -- (4,1.2);
+    \node[above] at (2,1.2) {$\vec{a}$};
+
+    % vector b
+    \draw[-latex, very thick] (4,0) -- (0,0);
+    \node[below] at (2,0) {$\vec{b}$};
+
+\end{tikzpicture}
+\end{center}
+
+Beide vectoren liggen horizontaal en hebben dus dezelfde
+\textbf{richting}.
+
+Hun \textbf{zin} is echter tegengesteld:
+
+\begin{itemize}
+    \item $\vec{a}$ wijst naar rechts;
+    \item $\vec{b}$ wijst naar links.
+\end{itemize}
+
+\end{voorbeeld}
+
+
+\FVDsubsection{De grootte van een vector}
+
+De grootte van een vector schrijven we met verticale strepen.
+
+Voor de vector $\vec{v}$ schrijven we:
+
+\[
+|\vec{v}|.
+\]
+
+Bij een snelheidsvector kan bijvoorbeeld gelden:
+
+\[
+|\vec{v}| = 60\,\si{\kilo\meter\per\hour}.
+\]
+
+Wanneer uit de context duidelijk is dat we alleen de grootte bedoelen,
+schrijven we vaak eenvoudiger:
+
+\[
+v = 60\,\si{\kilo\meter\per\hour}.
+\]
+
+
+\begin{voorbeeld}[Een snelheidsvector]
+
+Een auto rijdt met een snelheid van
+
+\[
+60\,\si{\kilo\meter\per\hour}
+\]
+
+onder een hoek van $45^\circ$ ten opzichte van de horizontale richting.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.95]
+
+    % assen
+    \draw[->] (-0.4,0) -- (4.8,0) node[right] {$x$};
+    \draw[->] (0,-0.4) -- (0,4.4) node[above] {$y$};
+
+    % vector
+    \draw[-latex, very thick] (0,0) -- (3.2,3.2);
+
+    % vectornaam
+    \node[above right] at (3.2,3.2) {$\vec{v}$};
+
+    % hoek
+    \draw (0.9,0)
+        arc[start angle=0,end angle=45,radius=0.9];
+
+    \node at (1.25,0.35) {$45^\circ$};
+
+    % grootte
+    \node[rotate=45] at (2.05,1.75)
+        {$60\,\si{\kilo\meter\per\hour}$};
+
+\end{tikzpicture}
+\end{center}
+
+De vector vertelt dus twee dingen tegelijk:
+
+\[
+|\vec{v}| = 60\,\si{\kilo\meter\per\hour}
+\]
+
+en de beweging gebeurt onder een hoek van
+
+\[
+45^\circ.
+\]
+
+\end{voorbeeld}
+
+
+\FVDsubsection{Vectoren met verschillende grootte}
+
+Ook de lengte van de pijl bevat informatie.
+
+\begin{voorbeeld}[Vergelijk de grootte]
+
+Beschouw de volgende vectoren.
+
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+    % vector a
+    \draw[-latex, very thick] (0,2) -- (2,2);
+    \node[above] at (1,2) {$\vec{a}$};
+
+    % vector b
+    \draw[-latex, very thick] (0,1) -- (4,1);
+    \node[above] at (2,1) {$\vec{b}$};
+
+    % vector c
+    \draw[-latex, very thick] (0,0) -- (3,0);
+    \node[below] at (1.5,0) {$\vec{c}$};
+
+\end{tikzpicture}
+\end{center}
+
+Alle drie de vectoren hebben dezelfde richting en zin.
+
+Hun grootte is echter verschillend:
+
+\[
+|\vec{a}| < |\vec{c}| < |\vec{b}|.
+\]
+
+De langste pijl stelt dus de grootste vector voor.
+
+\end{voorbeeld}
+
+
+\begin{opmerking}
+
+De lengte van een getekende vector stelt de grootte alleen correct voor
+wanneer er een schaal is afgesproken.
+
+Bijvoorbeeld:
+
+\[
+1\,\si{\centi\meter}
+\quad \widehat{=}\quad
+10\,\si{\newton}.
+\]
+
+Een pijl van $4\,\si{\centi\meter}$ stelt dan een kracht voor met grootte
+
+\[
+40\,\si{\newton}.
+\]
+
+\end{opmerking}
+
+
+% ============================================================
+% OEFENINGEN
+% ============================================================
+
+\begin{oefening}[Lees een vector af]{\oefB\ESS}
+
+Beschouw de onderstaande vector.
+
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+    \draw[->] (-0.3,0) -- (5,0);
+
+    \draw[-latex, very thick] (0,0) -- (3.5,2);
+
+    \node[above right] at (3.5,2) {$\vec{F}$};
+
+    \draw (0.9,0)
+        arc[start angle=0,end angle=30,radius=0.9];
+
+    \node at (1.3,0.28) {$30^\circ$};
+
+\end{tikzpicture}
+\end{center}
+
+
+\begin{question}
+Welke grootheid wordt door de pijl voorgesteld?
+
+\begin{oplossing}
+De vector is aangeduid met
+
+\[
+\vec{F}.
+\]
+
+De pijl stelt dus een \textbf{krachtvector} voor.
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Welke informatie geeft de hoek van $30^\circ$?
+
+\begin{oplossing}
+De hoek bepaalt de \textbf{richting} van de vector ten opzichte van de
+horizontale as.
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Hoe kun je de zin van de vector aflezen?
+
+\begin{oplossing}
+De zin wordt bepaald door de \textbf{pijlpunt}.
+
+In deze tekening wijst de vector naar rechts en naar boven.
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+
+\begin{oefening}[Richting of zin?]{\oefB\ESS}
+
+Beschouw de twee vectoren.
+
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+    \draw[-latex, very thick] (0,1) -- (4,1);
+    \node[above] at (2,1) {$\vec{a}$};
+
+    \draw[-latex, very thick] (4,0) -- (0,0);
+    \node[below] at (2,0) {$\vec{b}$};
+
+\end{tikzpicture}
+\end{center}
+
+
+\begin{question}
+Hebben $\vec{a}$ en $\vec{b}$ dezelfde richting?
+
+\begin{oplossing}
+Ja.
+
+Beide vectoren liggen op een horizontale rechte en hebben dus dezelfde
+richting.
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Hebben $\vec{a}$ en $\vec{b}$ dezelfde zin?
+
+\begin{oplossing}
+Nee.
+
+$\vec{a}$ wijst naar rechts en $\vec{b}$ wijst naar links.
+
+Ze hebben dus een tegengestelde zin.
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+
+\begin{oefening}[Teken zelf een vector]{\oefB}
+
+\begin{question}
+Teken een vector $\vec{v}$:
+
+\begin{itemize}
+    \item met beginpunt $(0,0)$;
+    \item met grootte $4$ eenheden;
+    \item onder een hoek van $30^\circ$ boven de positieve horizontale as.
+\end{itemize}
+
+\begin{oplossing}
+Een correcte voorstelling is:
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+
+    \draw[->] (-0.3,0) -- (4.5,0) node[right] {$x$};
+    \draw[->] (0,-0.3) -- (0,3.2) node[above] {$y$};
+
+    \draw[-latex, very thick]
+        (0,0) -- ({4*cos(30)},{4*sin(30)});
+
+    \draw (0.9,0)
+        arc[start angle=0,end angle=30,radius=0.9];
+
+    \node at (1.3,0.27) {$30^\circ$};
+
+    \node[above right]
+        at ({4*cos(30)},{4*sin(30)})
+        {$\vec{v}$};
+
+    \node[rotate=30]
+        at ({2*cos(30)},{2*sin(30)+0.25})
+        {$4$};
+
+\end{tikzpicture}
+\end{center}
+
+De vector heeft grootte $4$, maakt een hoek van $30^\circ$ met de
+horizontale as en wijst naar rechtsboven.
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+
+\begin{oefening}[Welke vector is welke?]{\oefU}
+
+Beschouw de vier onderstaande vectoren.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+
+    % A
+    \draw[-latex, very thick] (0,3) -- (3,3);
+    \node[left] at (0,3) {A};
+
+    % B
+    \draw[-latex, very thick] (0,2) -- (5,2);
+    \node[left] at (0,2) {B};
+
+    % C
+    \draw[-latex, very thick] (3,1) -- (0,1);
+    \node[right] at (3,1) {C};
+
+    % D
+    \draw[-latex, very thick] (0,0) -- (2,1);
+    \node[left] at (0,0) {D};
+
+\end{tikzpicture}
+\end{center}
+
+
+\begin{question}
+Welke vectoren hebben dezelfde richting?
+
+\begin{oplossing}
+De vectoren A, B en C liggen allemaal horizontaal.
+
+Ze hebben dus dezelfde richting.
+
+Vector D heeft een andere richting.
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Welke vectoren hebben dezelfde zin?
+
+\begin{oplossing}
+A en B wijzen beide naar rechts en hebben dus dezelfde zin.
+
+C wijst naar links en heeft een tegengestelde zin.
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Welke van de horizontale vectoren heeft de grootste grootte?
+
+\begin{oplossing}
+Vector B is het langst.
+
+Daarom heeft B de grootste grootte.
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+
 
 \end{document}

@@ -86,6 +86,14 @@
 
 
 
+
+
+
+
+
+
+
+
 \maketitle
 
 \FVDbeginExercises
@@ -129,6 +137,40 @@ Gaat het om een lokaal maximum of een lokaal minimum?
 Motiveer met de tekenverandering van $f'$.
 \end{question}
 
+\begin{oplossing}
+
+Uit de tekentabel volgt:
+\[
+f'(x)>0 \quad \text{voor } x<-2,
+\]
+dus $f$ is stijgend op
+\[
+]-\infty,-2[.
+\]
+
+Verder:
+\[
+f'(x)<0 \quad \text{voor } x>-2,
+\]
+dus $f$ is dalend op
+\[
+]-2,+\infty[.
+\]
+
+Bij $x=-2$ geldt
+\[
+f'(-2)=0.
+\]
+De afgeleide verandert daar van positief naar negatief. De functie gaat
+dus over van stijgen naar dalen.
+
+Bijgevolg heeft $f$ bij $x=-2$ een lokaal maximum.
+
+De functiewaarde van dit maximum kunnen we uit de gegeven informatie niet
+bepalen.
+
+\end{oplossing}
+
 \end{oefening}
 
 
@@ -163,6 +205,34 @@ Wat gebeurt er bij $x=3$?
 Kun je uit deze gegevens de functiewaarde van het extremum bepalen?
 Leg uit.
 \end{question}
+
+\begin{oplossing}
+
+Uit de tekentabel volgt:
+\[
+g'(x)<0 \quad \text{voor } x<3,
+\]
+dus $g$ is dalend op
+\[
+]-\infty,3[.
+\]
+
+Voor $x>3$ geldt
+\[
+g'(x)>0,
+\]
+dus $g$ is stijgend op
+\[
+]3,+\infty[.
+\]
+
+Bij $x=3$ verandert $g'$ van negatief naar positief. De functie gaat dus
+over van dalen naar stijgen en heeft daar een lokaal minimum.
+
+De functiewaarde van het minimum kunnen we niet bepalen, omdat $g(3)$ niet
+gegeven is.
+
+\end{oplossing}
 
 \end{oefening}
 
@@ -216,6 +286,30 @@ f'(a)=0
 niet om te besluiten dat $f$ in $a$ een extremum heeft?
 \end{question}
 
+\begin{oplossing}
+
+Bij $x=a$ verandert $f'$ van positief naar negatief. Daarom heeft $f$ daar
+een lokaal maximum.
+
+Bij $x=b$ verandert $g'$ van negatief naar positief. Daarom heeft $g$ daar
+een lokaal minimum.
+
+Bij $x=c$ geldt
+\[
+h'(c)=0,
+\]
+maar $h'$ is zowel links als rechts van $c$ positief. De functie blijft dus
+stijgen. Er is wel een stationair punt, maar geen extremum.
+
+De voorwaarde
+\[
+f'(a)=0
+\]
+zegt alleen dat de raaklijn horizontaal is. Voor een extremum moet bovendien
+het teken van $f'$ links en rechts van $a$ veranderen.
+
+\end{oplossing}
+
 \end{oefening}
 
 
@@ -253,6 +347,54 @@ Bepaal de intervallen waarop $f$ stijgt en daalt.
 \begin{question}
 Bepaal het lokale extremum van $f$.
 \end{question}
+
+\begin{oplossing}
+
+Gegeven:
+\[
+f(x)=x^2-4x+1.
+\]
+
+De afgeleide is
+\[
+f'(x)=2x-4=2(x-2).
+\]
+
+Dus
+\[
+f'(x)=0
+\quad\Longleftrightarrow\quad
+x=2.
+\]
+
+Het tekenverloop is:
+\[
+\begin{array}{c|ccccc}
+x & -\infty & & 2 & & +\infty\\ \hline
+f'(x) & & - & 0 & + &
+\end{array}
+\]
+
+Daarom is $f$ dalend op
+\[
+]-\infty,2[
+\]
+en stijgend op
+\[
+]2,+\infty[.
+\]
+
+Bij $x=2$ heeft $f$ een lokaal minimum. De functiewaarde is
+\[
+f(2)=4-8+1=-3.
+\]
+
+Het lokale minimum is dus
+\[
+\boxed{(2,-3)}.
+\]
+
+\end{oplossing}
 
 \end{oefening}
 
@@ -293,6 +435,71 @@ Bepaal waar $f$ stijgt en waar $f$ daalt.
 Bepaal de lokale extrema en geef hun coördinaten.
 \end{question}
 
+\begin{oplossing}
+
+Gegeven:
+\[
+f(x)=x^3-3x^2-9x+5.
+\]
+
+De afgeleide is
+\[
+f'(x)=3x^2-6x-9.
+\]
+
+Factoriseren geeft
+\[
+f'(x)=3(x^2-2x-3)
+=3(x+1)(x-3).
+\]
+
+De stationaire waarden zijn dus
+\[
+x=-1
+\qquad\text{en}\qquad
+x=3.
+\]
+
+Het tekenverloop:
+\[
+\begin{array}{c|ccccccc}
+x & -\infty & & -1 & & 3 & & +\infty\\ \hline
+f'(x) & & + & 0 & - & 0 & + &
+\end{array}
+\]
+
+Daarom is $f$ stijgend op
+\[
+]-\infty,-1[
+\quad\text{en}\quad
+]3,+\infty[
+\]
+en dalend op
+\[
+]-1,3[.
+\]
+
+Bij $x=-1$ verandert $f'$ van positief naar negatief, dus daar ligt een
+lokaal maximum:
+\[
+f(-1)=-1-3+9+5=10.
+\]
+
+Bij $x=3$ verandert $f'$ van negatief naar positief, dus daar ligt een
+lokaal minimum:
+\[
+f(3)=27-27-27+5=-22.
+\]
+
+De lokale extrema zijn dus
+\[
+\boxed{(-1,10)}
+\qquad\text{en}\qquad
+\boxed{(3,-22)}.
+\]
+
+\end{oplossing}
+
 \end{oefening}
 
 
@@ -329,6 +536,42 @@ Welke fout maakt een leerling die redeneert:
 ``$f'(0)=0$, dus $(0,0)$ is een extremum''?
 \end{question}
 
+\begin{oplossing}
+
+Voor
+\[
+f(x)=x^3
+\]
+geldt
+\[
+f'(x)=3x^2.
+\]
+
+Dus
+\[
+f'(x)=0
+\quad\Longleftrightarrow\quad
+x=0.
+\]
+
+Voor zowel $x<0$ als $x>0$ geldt
+\[
+f'(x)>0.
+\]
+
+De functie is dus aan beide kanten van $0$ stijgend. Bij $x=0$ is er geen
+tekenverandering van $f'$ en bijgevolg geen lokaal extremum.
+
+De leerling maakt de fout om
+\[
+f'(0)=0
+\]
+als voldoende voorwaarde voor een extremum te beschouwen. Het is slechts
+een kandidaatvoorwaarde; het tekenverloop rond het punt moet nog onderzocht
+worden.
+
+\end{oplossing}
+
 \end{oefening}
 
 
@@ -362,6 +605,27 @@ Wat kun je besluiten bij $x=2$?
 \begin{question}
 Welke rol speelt de tekenverandering van $f''$ in je besluit?
 \end{question}
+
+\begin{oplossing}
+
+Voor $x<2$ geldt
+\[
+f''(x)<0.
+\]
+De grafiek is daar bol (concaaf) en $f'$ is dalend.
+
+Voor $x>2$ geldt
+\[
+f''(x)>0.
+\]
+De grafiek is daar hol (convex) en $f'$ is stijgend.
+
+Bij $x=2$ verandert $f''$ van teken. De kromming van de grafiek verandert
+dus. Bijgevolg heeft de grafiek bij abscis $x=2$ een buigpunt.
+
+De $y$-coördinaat kan niet worden bepaald zonder de functiewaarde $f(2)$.
+
+\end{oplossing}
 
 \end{oefening}
 
@@ -406,6 +670,54 @@ Motiveer.
 Bepaal de coördinaten van het buigpunt.
 \end{question}
 
+\begin{oplossing}
+
+Gegeven:
+\[
+f(x)=x^3-6x^2+4x+3.
+\]
+
+De eerste afgeleide is
+\[
+f'(x)=3x^2-12x+4.
+\]
+
+De tweede afgeleide is
+\[
+f''(x)=6x-12=6(x-2).
+\]
+
+Dus
+\[
+f''(x)=0
+\quad\Longleftrightarrow\quad
+x=2.
+\]
+
+Voor $x<2$ geldt
+\[
+f''(x)<0,
+\]
+en voor $x>2$ geldt
+\[
+f''(x)>0.
+\]
+
+De tweede afgeleide verandert dus van teken. De grafiek heeft bijgevolg
+een buigpunt bij $x=2$.
+
+De functiewaarde is
+\[
+f(2)=8-24+8+3=-5.
+\]
+
+Het buigpunt is
+\[
+\boxed{(2,-5)}.
+\]
+
+\end{oplossing}
+
 \end{oefening}
 
 
@@ -444,6 +756,47 @@ Is $(0,0)$ een buigpunt?
 Formuleer op basis hiervan waarom $f''(a)=0$ alleen
 niet voldoende is om een buigpunt te besluiten.
 \end{question}
+
+\begin{oplossing}
+
+Voor
+\[
+f(x)=x^4
+\]
+geldt
+\[
+f'(x)=4x^3
+\]
+en
+\[
+f''(x)=12x^2.
+\]
+
+Daarom
+\[
+f''(0)=0.
+\]
+
+Maar voor zowel $x<0$ als $x>0$ geldt
+\[
+f''(x)>0.
+\]
+
+De tweede afgeleide verandert dus niet van teken en de kromming verandert
+niet. Bijgevolg is
+\[
+(0,0)
+\]
+geen buigpunt.
+
+De voorwaarde
+\[
+f''(a)=0
+\]
+is dus op zichzelf niet voldoende. We moeten bijkomend onderzoeken of de
+kromming, of equivalent het teken van $f''$, werkelijk verandert.
+
+\end{oplossing}
 
 \end{oefening}
 
@@ -491,6 +844,90 @@ Bepaal het buigpunt.
 \begin{question}
 Maak op basis van je onderzoek een kwalitatieve schets van de grafiek.
 \end{question}
+
+\begin{oplossing}
+
+Gegeven:
+\[
+f(x)=x^3-3x.
+\]
+
+We vinden:
+\[
+f'(x)=3x^2-3=3(x-1)(x+1),
+\]
+en
+\[
+f''(x)=6x.
+\]
+
+De stationaire waarden zijn
+\[
+x=-1
+\qquad\text{en}\qquad
+x=1.
+\]
+
+Het tekenverloop van $f'$ is:
+\[
+\begin{array}{c|ccccccc}
+x & -\infty & & -1 & & 1 & & +\infty\\ \hline
+f'(x) & & + & 0 & - & 0 & + &
+\end{array}
+\]
+
+Dus $f$ stijgt op
+\[
+]-\infty,-1[
+\quad\text{en}\quad
+]1,+\infty[
+\]
+en daalt op
+\[
+]-1,1[.
+\]
+
+Bij $x=-1$ ligt een lokaal maximum:
+\[
+f(-1)=-1+3=2.
+\]
+Dus
+\[
+\boxed{(-1,2)}.
+\]
+
+Bij $x=1$ ligt een lokaal minimum:
+\[
+f(1)=1-3=-2.
+\]
+Dus
+\[
+\boxed{(1,-2)}.
+\]
+
+Voor de kromming:
+\[
+f''(x)<0 \quad \text{voor }x<0,
+\]
+en
+\[
+f''(x)>0 \quad \text{voor }x>0.
+\]
+
+De kromming verandert bij $x=0$. Omdat
+\[
+f(0)=0,
+\]
+is het buigpunt
+\[
+\boxed{(0,0)}.
+\]
+
+De kwalitatieve grafiek is een derdegraadsgrafiek die stijgt tot
+$(-1,2)$, vervolgens daalt via het buigpunt $(0,0)$ tot $(1,-2)$ en daarna
+opnieuw stijgt.
+
+\end{oplossing}
 
 \end{oefening}
 
@@ -555,6 +992,48 @@ Geef aan waar $f'(x)>0$ en waar $f'(x)<0$.
 Schets kwalitatief een mogelijke grafiek van $f'$.
 \end{question}
 
+\begin{oplossing}
+
+Uit de grafiek zien we een lokaal maximum rond
+\[
+x\approx -1.15
+\]
+en een lokaal minimum rond
+\[
+x\approx 1.15.
+\]
+
+Daarom is $f$ stijgend voor ongeveer
+\[
+x<-1.15
+\quad\text{en}\quad
+x>1.15,
+\]
+en dalend voor ongeveer
+\[
+-1.15<x<1.15.
+\]
+
+Bij de twee extrema verwachten we
+\[
+f'(x)=0.
+\]
+
+Dus kwalitatief:
+\[
+f'(x)>0
+\]
+buiten deze twee waarden en
+\[
+f'(x)<0
+\]
+ertussen.
+
+Een mogelijke grafiek van $f'$ is bijgevolg een naar boven geopende
+parabool met nulpunten rond $x=-1.15$ en $x=1.15$.
+
+\end{oplossing}
+
 \end{oefening}
 
 
@@ -614,6 +1093,72 @@ De grafiek van $f'$ heeft zelf een minimum.
 Wat vertelt dat over $f''$?
 \end{question}
 
+\begin{oplossing}
+
+De grafiek van $f'$ snijdt de $x$-as bij
+\[
+x=-2
+\qquad\text{en}\qquad
+x=1.
+\]
+
+Dus
+\[
+f'(-2)=0
+\qquad\text{en}\qquad
+f'(1)=0.
+\]
+
+Omdat de parabool naar boven opent, geldt
+\[
+f'(x)>0
+\]
+voor
+\[
+x<-2
+\quad\text{en}\quad
+x>1,
+\]
+en
+\[
+f'(x)<0
+\]
+voor
+\[
+-2<x<1.
+\]
+
+Daarom is $f$ stijgend op
+\[
+]-\infty,-2[
+\quad\text{en}\quad
+]1,+\infty[
+\]
+en dalend op
+\[
+]-2,1[.
+\]
+
+Bij $x=-2$ verandert $f'$ van positief naar negatief, dus heeft $f$ daar
+een lokaal maximum.
+
+Bij $x=1$ verandert $f'$ van negatief naar positief, dus heeft $f$ daar
+een lokaal minimum.
+
+De grafiek van $f'$ heeft zelf een minimum halverwege haar nulpunten:
+\[
+x=\frac{-2+1}{2}=-\frac12.
+\]
+
+Daar is de helling van $f'$ nul, dus
+\[
+f''\left(-\frac12\right)=0.
+\]
+Omdat $f'$ daar van dalen naar stijgen gaat, verandert $f''$ van teken.
+Voor $f$ komt dit overeen met een verandering van kromming.
+
+\end{oplossing}
+
 \end{oefening}
 
 
@@ -648,6 +1193,27 @@ Neemt $f'$ op dit interval toe of af?
 \begin{question}
 Beschrijf in woorden hoe $f$ op dit interval verandert.
 \end{question}
+
+\begin{oplossing}
+
+Omdat
+\[
+f'(x)>0,
+\]
+is $f$ stijgend op het interval $I$.
+
+Omdat
+\[
+f''(x)<0,
+\]
+is de grafiek bol (concaaf) en is $f'$ dalend.
+
+De functie stijgt dus nog steeds, maar de richtingscoëfficiënten van de
+raaklijnen worden kleiner.
+
+Met andere woorden: $f$ stijgt steeds minder snel.
+
+\end{oplossing}
 
 \end{oefening}
 
@@ -686,6 +1252,48 @@ f'(x)<0,\qquad f''(x)<0.
 
 Geef bij elke situatie zowel informatie over het verloop van $f$
 als over de verandering van de hellingen.
+
+\begin{oplossing}
+
+\textbf{1.}
+\[
+f'(x)>0,\qquad f''(x)>0.
+\]
+
+$f$ stijgt en $f'$ neemt toe. De hellingen worden dus steeds groter:
+$f$ stijgt steeds sneller. De grafiek is hol (convex).
+
+\medskip
+
+\textbf{2.}
+\[
+f'(x)>0,\qquad f''(x)<0.
+\]
+
+$f$ stijgt, maar $f'$ neemt af. De hellingen worden kleiner:
+$f$ stijgt steeds minder snel. De grafiek is bol (concaaf).
+
+\medskip
+
+\textbf{3.}
+\[
+f'(x)<0,\qquad f''(x)>0.
+\]
+
+$f$ daalt, maar $f'$ neemt toe. De negatieve hellingen worden minder
+negatief: $f$ daalt steeds minder snel. De grafiek is hol (convex).
+
+\medskip
+
+\textbf{4.}
+\[
+f'(x)<0,\qquad f''(x)<0.
+\]
+
+$f$ daalt en $f'$ neemt verder af. De hellingen worden steeds negatiever:
+$f$ daalt steeds sneller. De grafiek is bol (concaaf).
+
+\end{oplossing}
 
 \end{oefening}
 
@@ -735,6 +1343,108 @@ Maak een kwalitatieve grafiek en controleer of alle gevonden
 eigenschappen zichtbaar zijn.
 \end{question}
 
+\begin{oplossing}
+
+Gegeven:
+\[
+f(x)=x^4-4x^2.
+\]
+
+De eerste afgeleide is
+\[
+f'(x)=4x^3-8x
+=4x(x^2-2)
+=4x(x-\sqrt2)(x+\sqrt2).
+\]
+
+De stationaire waarden zijn
+\[
+x=-\sqrt2,\qquad x=0,\qquad x=\sqrt2.
+\]
+
+Het tekenverloop:
+\[
+\begin{array}{c|ccccccccc}
+x & -\infty & & -\sqrt2 & & 0 & & \sqrt2 & & +\infty\\ \hline
+f'(x) & & - & 0 & + & 0 & - & 0 & + &
+\end{array}
+\]
+
+Dus $f$ daalt op
+\[
+]-\infty,-\sqrt2[
+\quad\text{en}\quad
+]0,\sqrt2[
+\]
+en stijgt op
+\[
+]-\sqrt2,0[
+\quad\text{en}\quad
+]\sqrt2,+\infty[.
+\]
+
+Bij $x=\pm\sqrt2$ liggen lokale minima:
+\[
+f(\pm\sqrt2)=4-8=-4.
+\]
+
+Dus:
+\[
+\boxed{(-\sqrt2,-4)}
+\qquad\text{en}\qquad
+\boxed{(\sqrt2,-4)}.
+\]
+
+Bij $x=0$ ligt een lokaal maximum:
+\[
+\boxed{(0,0)}.
+\]
+
+De tweede afgeleide is
+\[
+f''(x)=12x^2-8
+=4(3x^2-2).
+\]
+
+Dus
+\[
+f''(x)=0
+\quad\Longleftrightarrow\quad
+x=\pm\sqrt{\frac23}.
+\]
+
+Voor
+\[
+|x|>\sqrt{\frac23}
+\]
+is $f''(x)>0$ en is de grafiek hol. Voor
+\[
+|x|<\sqrt{\frac23}
+\]
+is $f''(x)<0$ en is de grafiek bol.
+
+De kromming verandert bij beide nulpunten van $f''$. Omdat
+\[
+f\left(\pm\sqrt{\frac23}\right)
+=
+\frac49-\frac83
+=
+-\frac{20}{9},
+\]
+zijn de buigpunten
+\[
+\boxed{\left(-\sqrt{\frac23},-\frac{20}{9}\right)}
+\]
+en
+\[
+\boxed{\left(\sqrt{\frac23},-\frac{20}{9}\right)}.
+\]
+
+De kwalitatieve grafiek is symmetrisch ten opzichte van de $y$-as en moet
+alle gevonden extrema en buigpunten respecteren.
+
+\end{oplossing}
+
 \end{oefening}
 
 
@@ -774,6 +1484,44 @@ Geef een voorbeeld van een functie waarvoor $f'(2)=0$
 maar $x=2$ niet bij een extremum hoort.
 \end{question}
 
+\begin{oplossing}
+
+De redenering is niet geldig.
+
+Uit
+\[
+f'(2)=0
+\]
+volgt alleen dat $x=2$ een stationaire waarde is en dat de raaklijn daar
+horizontaal is.
+
+Om een extremum te besluiten, moet onderzocht worden of $f'$ van teken
+verandert rond $x=2$.
+
+Een voorbeeld waarbij er wel een extremum is:
+\[
+f(x)=(x-2)^2.
+\]
+Dan
+\[
+f'(x)=2(x-2),
+\]
+en $f'$ verandert bij $x=2$ van negatief naar positief. Er ligt dus een
+lokaal minimum.
+
+Een voorbeeld zonder extremum:
+\[
+g(x)=(x-2)^3.
+\]
+Dan
+\[
+g'(x)=3(x-2)^2.
+\]
+Deze afgeleide is aan beide kanten positief, zodat de functie blijft
+stijgen. Er is dus geen extremum.
+
+\end{oplossing}
+
 \end{oefening}
 
 
@@ -806,6 +1554,44 @@ Geef een voorbeeld waarbij $f''(-1)=0$ en er wel een buigpunt is.
 \begin{question}
 Geef een voorbeeld waarbij $f''(-1)=0$ maar er geen buigpunt is.
 \end{question}
+
+\begin{oplossing}
+
+De conclusie is niet noodzakelijk correct.
+
+Uit
+\[
+f''(-1)=0
+\]
+volgt alleen dat $x=-1$ een mogelijke kandidaat voor een buigpunt is.
+Er moet bijkomend worden onderzocht of de kromming verandert, bijvoorbeeld
+door het teken van $f''$ links en rechts van $-1$ te vergelijken.
+
+Een voorbeeld met een buigpunt is
+\[
+f(x)=(x+1)^3.
+\]
+Dan
+\[
+f''(x)=6(x+1),
+\]
+zodat $f''$ van negatief naar positief verandert bij $x=-1$.
+
+Een voorbeeld zonder buigpunt is
+\[
+g(x)=(x+1)^4.
+\]
+Dan
+\[
+g''(x)=12(x+1)^2.
+\]
+Hoewel
+\[
+g''(-1)=0,
+\]
+is $g''$ aan beide kanten positief. De kromming verandert dus niet.
+
+\end{oplossing}
 
 \end{oefening}
 
@@ -867,6 +1653,68 @@ Schets een mogelijke grafiek van $f$ die met alle gegevens
 overeenkomt.
 \end{question}
 
+\begin{oplossing}
+
+Uit de tekentabel van $f'$ volgt:
+
+\[
+f'(x)>0
+\]
+voor
+\[
+x<-1
+\quad\text{en}\quad
+x>2.
+\]
+
+Dus $f$ is stijgend op
+\[
+]-\infty,-1[
+\quad\text{en}\quad
+]2,+\infty[.
+\]
+
+Voor
+\[
+-1<x<2
+\]
+geldt
+\[
+f'(x)<0,
+\]
+dus $f$ is daar dalend.
+
+Bij $x=-1$ verandert $f'$ van positief naar negatief, dus ligt er een lokaal
+maximum. Omdat
+\[
+f(-1)=3,
+\]
+is dit
+\[
+\boxed{(-1,3)}.
+\]
+
+Bij $x=2$ verandert $f'$ van negatief naar positief, dus ligt er een lokaal
+minimum:
+\[
+\boxed{(2,-2)}.
+\]
+
+Uit de tekentabel van $f''$ volgt dat de kromming verandert bij $x=0$.
+Omdat
+\[
+f(0)=1,
+\]
+is het buigpunt
+\[
+\boxed{(0,1)}.
+\]
+
+Een mogelijke schets stijgt dus tot $(-1,3)$, daalt vervolgens door het
+buigpunt $(0,1)$ tot $(2,-2)$ en stijgt daarna opnieuw.
+
+\end{oplossing}
+
 \end{oefening}
 
 
@@ -921,6 +1769,76 @@ Wanneer is de versnelling nul?
 Verbind je resultaten met het verloop van de positiegrafiek.
 \end{question}
 
+\begin{oplossing}
+
+Gegeven:
+\[
+s(t)=t^3-6t^2+9t.
+\]
+
+De snelheid is
+\[
+v(t)=s'(t)=3t^2-12t+9
+=3(t-1)(t-3).
+\]
+
+Het voorwerp staat ogenblikkelijk stil als
+\[
+v(t)=0.
+\]
+Dus:
+\[
+\boxed{t=1\ \mathrm{s}}
+\qquad\text{en}\qquad
+\boxed{t=3\ \mathrm{s}}.
+\]
+
+Voor $t\geq0$ is het tekenverloop:
+\[
+\begin{array}{c|ccccccc}
+t & 0 & & 1 & & 3 & & +\infty\\ \hline
+v(t) & & + & 0 & - & 0 & + &
+\end{array}
+\]
+
+Het voorwerp beweegt dus in de positieve richting voor
+\[
+0\leq t<1
+\quad\text{en}\quad
+t>3,
+\]
+en in de negatieve richting voor
+\[
+1<t<3.
+\]
+
+De versnelling is
+\[
+a(t)=v'(t)=6t-12=6(t-2).
+\]
+
+Dus
+\[
+a(t)=0
+\quad\Longleftrightarrow\quad
+\boxed{t=2\ \mathrm{s}}.
+\]
+
+De positiegrafiek stijgt waar $v>0$ en daalt waar $v<0$. Ze heeft een lokaal
+maximum bij $t=1$ en een lokaal minimum bij $t=3$.
+
+Verder is
+\[
+a(t)<0 \quad \text{voor }t<2
+\]
+en
+\[
+a(t)>0 \quad \text{voor }t>2.
+\]
+De kromming van de positiegrafiek verandert dus bij $t=2$.
+
+\end{oplossing}
+
 \end{oefening}
 
 
@@ -961,6 +1879,75 @@ Leg het verschil uit tussen de uitspraken
 ``de biomassa neemt toe'' en
 ``de groeisnelheid neemt toe''.
 \end{question}
+
+\begin{oplossing}
+
+Gegeven:
+\[
+B(t)=-t^3+9t^2+24,
+\qquad 0\leq t\leq6.
+\]
+
+De eerste afgeleide is
+\[
+B'(t)=-3t^2+18t
+=3t(6-t).
+\]
+
+Voor
+\[
+0<t<6
+\]
+geldt
+\[
+B'(t)>0.
+\]
+De biomassa neemt dus gedurende het volledige inwendige interval toe.
+Aan de uiteinden geldt
+\[
+B'(0)=B'(6)=0.
+\]
+
+De tweede afgeleide is
+\[
+B''(t)=-6t+18
+=6(3-t).
+\]
+
+Voor
+\[
+0<t<3
+\]
+geldt
+\[
+B''(t)>0,
+\]
+dus de groeisnelheid $B'$ neemt toe.
+
+Voor
+\[
+3<t<6
+\]
+geldt
+\[
+B''(t)<0,
+\]
+dus de groeisnelheid neemt af.
+
+``De biomassa neemt toe'' betekent
+\[
+B'(t)>0.
+\]
+
+``De groeisnelheid neemt toe'' betekent
+\[
+B''(t)>0.
+\]
+
+De biomassa kan dus nog steeds toenemen terwijl haar groeisnelheid al
+afneemt.
+
+\end{oplossing}
 
 \end{oefening}
 
@@ -1011,6 +1998,58 @@ voorwaarden voldoet.
 Is je antwoord uniek? Leg uit.
 \end{question}
 
+\begin{oplossing}
+
+We willen nulpunten van $f'$ bij
+\[
+x=-1
+\qquad\text{en}\qquad
+x=2,
+\]
+met tekenverloop
+\[
++\quad -\quad +.
+\]
+
+Een eenvoudige keuze is daarom
+\[
+\boxed{f'(x)=(x+1)(x-2)}.
+\]
+
+Inderdaad:
+\[
+f'(x)>0 \quad \text{voor }x<-1,
+\]
+\[
+f'(x)<0 \quad \text{voor }-1<x<2,
+\]
+en
+\[
+f'(x)>0 \quad \text{voor }x>2.
+\]
+
+Omdat
+\[
+f'(x)=x^2-x-2,
+\]
+is een mogelijke functie
+\[
+\boxed{
+f(x)=\frac13x^3-\frac12x^2-2x
+}.
+\]
+
+Algemener mag daar nog een constante bij:
+\[
+f(x)=\frac13x^3-\frac12x^2-2x+C.
+\]
+
+Het antwoord is dus niet uniek. Bovendien kan ook $f'$ met een positieve
+constante factor vermenigvuldigd worden zonder het gewenste tekenverloop te
+veranderen.
+
+\end{oplossing}
+
 \end{oefening}
 
 
@@ -1043,6 +2082,55 @@ Voor welke waarde van $a$ vallen de stationaire punten samen?
 Onderzoek wat er in dat bijzondere geval met het verloop van de
 functie gebeurt.
 \end{question}
+
+\begin{oplossing}
+
+Gegeven:
+\[
+f_a(x)=x^3-3ax.
+\]
+
+De afgeleide is
+\[
+f_a'(x)=3x^2-3a
+=3(x^2-a).
+\]
+
+Stationaire punten voldoen aan
+\[
+x^2=a.
+\]
+
+Er zijn twee verschillende reële oplossingen
+\[
+x=\pm\sqrt a
+\]
+als
+\[
+\boxed{a>0}.
+\]
+
+De twee stationaire punten vallen samen als
+\[
+\boxed{a=0}.
+\]
+
+Dan is
+\[
+f_0(x)=x^3
+\]
+en
+\[
+f_0'(x)=3x^2.
+\]
+
+De afgeleide is zowel links als rechts van $0$ positief. De functie blijft
+dus stijgen en heeft bij $x=0$ geen extremum. Er is daar een stationair punt
+met horizontale raaklijn.
+
+Voor $a<0$ zijn er geen reële stationaire punten.
+
+\end{oplossing}
 
 \end{oefening}
 
@@ -1090,6 +2178,92 @@ Onderzoek zorgvuldig welke bijkomende aannames nodig zijn om
 hierover te kunnen besluiten.
 \end{question}
 
+\begin{oplossing}
+
+\textbf{1.}
+\[
+f'(x)>0
+\qquad\text{en}\qquad
+f''(x)<0.
+\]
+
+Dit kan. De functie stijgt, maar de hellingen worden kleiner. Bijvoorbeeld
+\[
+f(x)=-x^2+4x
+\]
+op het interval $]0,1[$. Daar geldt
+\[
+f'(x)=4-2x>0
+\]
+en
+\[
+f''(x)=-2<0.
+\]
+
+\medskip
+
+\textbf{2.}
+\[
+f'(x)<0
+\]
+terwijl $f'$ stijgt.
+
+Ook dit kan. Dan is
+\[
+f''(x)>0.
+\]
+Bijvoorbeeld
+\[
+f(x)=x^2
+\]
+op een interval met $x<0$. Daar is
+\[
+f'(x)=2x<0
+\]
+en
+\[
+f''(x)=2>0.
+\]
+
+\medskip
+
+\textbf{3.} Een lokaal minimum met
+\[
+f'(a)\neq0
+\]
+terwijl $f$ in een open interval rond $a$ afleidbaar is.
+
+Dit kan niet. Volgens de noodzakelijke voorwaarde van Fermat geldt voor een
+afleidbare functie in een inwendig lokaal extremum:
+\[
+f'(a)=0.
+\]
+
+\medskip
+
+\textbf{4.} Een buigpunt bij $x=a$ met
+\[
+f''(a)\neq0.
+\]
+
+Als $f$ tweemaal afleidbaar is in $a$ en een buigpunt betekent dat de
+kromming werkelijk verandert, dan kan dit niet: bij zo'n glad buigpunt moet
+\[
+f''(a)=0.
+\]
+
+Een buigpunt kan wel bestaan wanneer $f''(a)$ niet bestaat. Bijvoorbeeld:
+\[
+f(x)=x|x|.
+\]
+De kromming verandert bij $x=0$, terwijl de tweede afgeleide daar niet
+bestaat.
+
+De bijkomende aannames over het bestaan van $f''(a)$ en de gebruikte
+definitie van een buigpunt zijn dus essentieel.
+
+\end{oplossing}
+
 \end{oefening}
 
 
@@ -1131,6 +2305,68 @@ Leg uit waarom de dubbele factor hierbij belangrijk is.
 \begin{question}
 Schets een mogelijke kwalitatieve grafiek van $f$.
 \end{question}
+
+\begin{oplossing}
+
+Gegeven:
+\[
+f'(x)=(x+2)(x-1)^2(x-3).
+\]
+
+De stationaire waarden zijn
+\[
+\boxed{x=-2,\qquad x=1,\qquad x=3}.
+\]
+
+Omdat
+\[
+(x-1)^2\geq0,
+\]
+wordt het teken vooral bepaald door
+\[
+(x+2)(x-3).
+\]
+
+Het tekenverloop is:
+\[
+\begin{array}{c|ccccccccc}
+x & -\infty & & -2 & & 1 & & 3 & & +\infty\\ \hline
+f'(x) & & + & 0 & - & 0 & - & 0 & + &
+\end{array}
+\]
+
+Dus $f$ stijgt op
+\[
+]-\infty,-2[
+\quad\text{en}\quad
+]3,+\infty[
+\]
+en daalt op
+\[
+]-2,1[
+\quad\text{en}\quad
+]1,3[.
+\]
+
+Bij $x=-2$ verandert $f'$ van positief naar negatief. Daar ligt een lokaal
+maximum.
+
+Bij $x=3$ verandert $f'$ van negatief naar positief. Daar ligt een lokaal
+minimum.
+
+Bij $x=1$ verandert het teken van $f'$ niet. Er is daar dus wel een
+stationair punt, maar geen extremum.
+
+De dubbele factor
+\[
+(x-1)^2
+\]
+is precies de reden waarom het teken bij $x=1$ niet verandert.
+
+Een mogelijke kwalitatieve grafiek stijgt tot $x=-2$, daalt vervolgens
+door het stationaire punt bij $x=1$ tot $x=3$ en stijgt daarna opnieuw.
+
+\end{oplossing}
 
 \end{oefening}
 
@@ -1175,6 +2411,51 @@ Schets een mogelijke grafiek die aan de voorwaarden voldoet.
 Geef, indien mogelijk, een eenvoudig functievoorschrift dat
 op een geschikt interval aan de voorwaarden voldoet.
 \end{question}
+
+\begin{oplossing}
+
+De uitspraak van de leerling is fout.
+
+Uit
+\[
+f'(x)>0
+\]
+volgt dat de functie stijgt.
+
+Maar uit
+\[
+f''(x)<0
+\]
+volgt dat $f'$ afneemt. De positieve hellingen worden dus steeds kleiner.
+
+De functie stijgt bijgevolg
+\[
+\boxed{\text{steeds minder snel}}.
+\]
+
+De grafiek is bol (concaaf).
+
+Een eenvoudig voorbeeld is
+\[
+f(x)=-x^2+4x
+\]
+op bijvoorbeeld het interval
+\[
+]0,1[.
+\]
+
+Daar geldt
+\[
+f'(x)=4-2x>0
+\]
+en
+\[
+f''(x)=-2<0.
+\]
+
+De grafiek stijgt op dat interval, maar wordt geleidelijk minder steil.
+
+\end{oplossing}
 
 \end{oefening}
 
@@ -1240,6 +2521,110 @@ Welke informatie uit je algebraïsche onderzoek kun je rechtstreeks
 op de grafiek herkennen?
 \end{question}
 
+\begin{oplossing}
+
+Gegeven:
+\[
+f(x)=x^4-4x^3.
+\]
+
+De eerste afgeleide is
+\[
+f'(x)=4x^3-12x^2
+=4x^2(x-3).
+\]
+
+De tweede afgeleide is
+\[
+f''(x)=12x^2-24x
+=12x(x-2).
+\]
+
+De stationaire waarden zijn
+\[
+x=0
+\qquad\text{en}\qquad
+x=3.
+\]
+
+Het tekenverloop van $f'$:
+\[
+\begin{array}{c|ccccccc}
+x & -\infty & & 0 & & 3 & & +\infty\\ \hline
+f'(x) & & - & 0 & - & 0 & + &
+\end{array}
+\]
+
+Dus $f$ is dalend op
+\[
+]-\infty,0[
+\quad\text{en}\quad
+]0,3[
+\]
+en stijgend op
+\[
+]3,+\infty[.
+\]
+
+Bij $x=0$ verandert $f'$ niet van teken. Er is dus geen extremum, maar wel
+een stationair punt.
+
+Bij $x=3$ verandert $f'$ van negatief naar positief. Daar ligt een lokaal
+minimum:
+\[
+f(3)=81-108=-27.
+\]
+
+Dus:
+\[
+\boxed{(3,-27)}.
+\]
+
+Voor de tweede afgeleide:
+\[
+f''(x)>0 \quad \text{voor }x<0,
+\]
+\[
+f''(x)<0 \quad \text{voor }0<x<2,
+\]
+en
+\[
+f''(x)>0 \quad \text{voor }x>2.
+\]
+
+De kromming verandert dus bij
+\[
+x=0
+\qquad\text{en}\qquad
+x=2.
+\]
+
+Omdat
+\[
+f(0)=0
+\]
+en
+\[
+f(2)=16-32=-16,
+\]
+zijn de buigpunten
+\[
+\boxed{(0,0)}
+\qquad\text{en}\qquad
+\boxed{(2,-16)}.
+\]
+
+Het punt $(0,0)$ is tegelijk een stationair punt en een buigpunt.
+
+De grafiek daalt van links naar rechts tot aan het minimum $(3,-27)$,
+waarbij de kromming verandert in $(0,0)$ en $(2,-16)$, en stijgt daarna.
+
+Bij controle met ICT moeten precies deze stationaire punten, het minimum,
+de twee buigpunten en de gevonden stijg-, daal- en krommingsintervallen
+zichtbaar zijn.
+
+\end{oplossing}
+
 \end{oefening}
 
 
@@ -1296,6 +2681,57 @@ f''(a)=0
 \]
 geen voldoende voorwaarde voor een buigpunt?
 \end{question}
+
+\begin{oplossing}
+
+Als
+\[
+f'(x)>0,
+\]
+dan is $f$ stijgend.
+
+Als
+\[
+f'(x)<0,
+\]
+dan is $f$ dalend.
+
+Als $f'$ bij $x=a$ van positief naar negatief verandert, dan heeft $f$
+daar een lokaal maximum.
+
+Als $f'$ bij $x=a$ van negatief naar positief verandert, dan heeft $f$
+daar een lokaal minimum.
+
+Als
+\[
+f''(x)>0,
+\]
+dan is $f'$ stijgend en is de grafiek van $f$ hol (convex).
+
+Als
+\[
+f''(x)<0,
+\]
+dan is $f'$ dalend en is de grafiek van $f$ bol (concaaf).
+
+Voor een buigpunt moet de kromming van de grafiek veranderen.
+
+De voorwaarde
+\[
+f'(a)=0
+\]
+is niet voldoende voor een extremum, omdat $f'$ mogelijk aan beide kanten
+van $a$ hetzelfde teken heeft. Er moet een tekenverandering worden
+onderzocht.
+
+Ook
+\[
+f''(a)=0
+\]
+is niet voldoende voor een buigpunt. Er moet bijkomend worden nagegaan of
+$f''$ van teken verandert, of equivalent of de kromming werkelijk verandert.
+
+\end{oplossing}
 
 \end{oefening}
 

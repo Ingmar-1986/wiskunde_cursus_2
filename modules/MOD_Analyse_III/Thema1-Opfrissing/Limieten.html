@@ -1,1319 +1,1414 @@
-<!DOCTYPE html> 
-<html lang='en-US' xml:lang='en-US'> 
-<head> <title>Limieten en asymptotisch gedrag</title> 
-<meta charset='utf-8' /> 
-<meta content='TeX4ht (https://tug.org/tex4ht/)' name='generator' /> 
-<meta content='width=device-width,initial-scale=1' name='viewport' /> 
-<link href='\aa:CssFile ' rel='stylesheet' type='text/css' /> 
-<meta content='Limieten.online.tex' name='src' /> 
-<script>window.MathJax = { tex: { tags: "ams", }, }; </script> 
-<script async='async' id='MathJax-script' src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js' type='text/javascript'></script>  
-<meta content='Ingmar Herreman' name='author' /> 
-<meta content='version 2.5.1' name='ximera' /> 
-<link href='https://ximera.osu.edu/public/stylesheets/standalone.css' media='screen' rel='stylesheet' /> 
-<script async='' src='https://ximera.osu.edu/public/javascripts/standalone.min.js' type='text/javascript'></script> 
-</head><body> 
-<div class='preamble'><script type='math/tex'>\newenvironment {prompt}{}{}
-\newcommand {\accordion }[0]{}
-\newcommand {\ungraded }[0]{}
-\newcommand {\xmDefaultPreamble }[0]{xmPreamble.tex}
-\newcommand {\xmDefaultPrintstyle }[0]{xmPrintstyle.sty}
-\newcommand {\multirowsetup }[0]{\raggedright }
-\newcommand {\textscale  }[2]{\leavevmode \begingroup \relscale {#1}#2\endgroup }
-\newcommand {\headrulewidth }[0]{0.4pt}
-\newcommand {\footrulewidth }[0]{0pt}
-\newcommand {\headruleskip }[0]{0pt}
-\newcommand {\footruleskip }[0]{.3\normalbaselineskip }
-\newcommand {\plainheadrulewidth }[0]{0pt}
-\newcommand {\plainfootrulewidth }[0]{0pt}
-\newcommand {\officialeuro  }[0]{{\fontencoding {U}\fontfamily {eurosym}\selectfont {}e}}
-\newcommand {\eurobars  }[0]{{\fontencoding {U}\fontfamily {eurosym}\selectfont {}A}}
-\newcommand {\eurobarsnarrow  }[0]{{\fontencoding {U}\fontfamily {eurosym}\selectfont {}B}}
-\newcommand {\eurobarswide  }[0]{{\fontencoding {U}\fontfamily {eurosym}\selectfont {}C}}
-\newcommand {\p }[0]{}
-\newcommand {\captionnewline }[0]{\\\relax }
-\newcommand {\memcaptioninfo }[4]{}
-\newcommand {\captiongroup }[0]{\setcaptiontype }
-\newcommand {\LTcaptype }[0]{table}
-\newcommand {\showtodonotes }[0]{disable}
-\newcommand {\todo }[1]{\typeout {TODO #1}}
-\newcommand {\tcbpkgprefix }[0]{}
-\newcommand {\blue }[1]{{\color {blue}#1}}
-\newcommand {\red }[1]{{\color {red}#1}}
-\newcommand {\CancelColor }[0]{\color {xmaccent!50!black}}
-\newcommand {\important }[1]{\ensuremath {\colorbox {orange}{$#1$}}}
-\newcommand {\pdfnl }[0]{}
-\newcommand {\handoutnl }[0]{}
-\newcommand {\importantcell }[1]{\ensuremath {#1}}
-\newcommand {\xmPlotsColor }[0]{ \pgfplotsset { plot1/.style={darkgray,no marks,samples=100}, plot2/.style={lightgray,no marks,samples=100}, plotresult/.style={blue,no marks,samples=100}, plotblue/.style={blue,no marks,samples=100}, plotred/.style={red,no marks,samples=100}, plotgreen/.style={green,no marks,samples=100}, plotpurple/.style={purple,no marks,samples=100} } }
-\newcommand {\xmPlotsBlackWhite }[0]{ \pgfplotsset { plot1/.style={black,loosely dashed,no marks,samples=100}, plot2/.style={black,loosely dotted,no marks,samples=100}, plotresult/.style={black,no marks,samples=100}, plotblue/.style={black,no marks,samples=100}, plotred/.style={black,dotted,no marks,samples=100}, plotgreen/.style={black,dashed,no marks,samples=100}, plotpurple/.style={black,dashdotted,no marks,samples=100} } }
-\newcommand {\xmPlotsColorAndStyle }[0]{ \pgfplotsset { plot1/.style={darkgray,no marks,samples=100}, plot2/.style={lightgray,no marks,samples=100}, plotresult/.style={blue,no marks,samples=100}, plotblue/.style={xmblue,no marks,samples=100}, plotred/.style={xmred,dashed,thick,no marks,samples=100}, plotgreen/.style={xmgreen,dotted,very thick,no marks,samples=100}, plotpurple/.style={purple,no marks,samples=100} } }
-\newcommand {\geqnoslant }[0]{\geq }
-\newcommand {\geq }[0]{\geqslant }
-\newcommand {\leqnoslant }[0]{\leq }
-\newcommand {\leq }[0]{\leqslant }
-\newcommand {\emph }[1]{\textit {#1}}
-\newcommand {\ds }[0]{\displaystyle }
-\newcommand {\ts }[0]{\textstyle }
-\newcommand {\bron }[1]{\begin {scriptsize} \emph {#1} \end {scriptsize}}
-\newcommand {\R }[0]{\ensuremath {\mathbb {R}}}
-\newcommand {\Rnul }[0]{\ensuremath {\mathbb {R}_0}}
-\newcommand {\Reen }[0]{\ensuremath {\mathbb {R}\setminus \{1\}}}
-\newcommand {\Rnuleen }[0]{\ensuremath {\mathbb {R}\setminus \{0,1\}}}
-\newcommand {\Rplus }[0]{\ensuremath {\mathbb {R}^+}}
-\newcommand {\Rmin }[0]{\ensuremath {\mathbb {R}^-}}
-\newcommand {\Rnulplus }[0]{\ensuremath {\mathbb {R}_0^+}}
-\newcommand {\Rnulmin }[0]{\ensuremath {\mathbb {R}_0^-}}
-\newcommand {\Rnuleenplus }[0]{\ensuremath {\mathbb {R}^+\setminus \{0,1\}}}
-\newcommand {\N }[0]{\ensuremath {\mathbb {N}}}
-\newcommand {\Nnul }[0]{\ensuremath {\mathbb {N}_0}}
-\newcommand {\Z }[0]{\ensuremath {\mathbb {Z}}}
-\newcommand {\Znul }[0]{\ensuremath {\mathbb {Z}_0}}
-\newcommand {\Zplus }[0]{\ensuremath {\mathbb {Z}^+}}
-\newcommand {\Zmin }[0]{\ensuremath {\mathbb {Z}^-}}
-\newcommand {\Znulplus }[0]{\ensuremath {\mathbb {Z}_0^+}}
-\newcommand {\Znulmin }[0]{\ensuremath {\mathbb {Z}_0^-}}
-\newcommand {\C }[0]{\ensuremath {\mathbb {C}}}
-\newcommand {\Cnul }[0]{\ensuremath {\mathbb {C}_0}}
-\newcommand {\Cplus }[0]{\ensuremath {\mathbb {C}^+}}
-\newcommand {\Cmin }[0]{\ensuremath {\mathbb {C}^-}}
-\newcommand {\Cnulplus }[0]{\ensuremath {\mathbb {C}_0^+}}
-\newcommand {\Cnulmin }[0]{\ensuremath {\mathbb {C}_0^-}}
-\newcommand {\Q }[0]{\ensuremath {\mathbb {Q}}}
-\newcommand {\Qnul }[0]{\ensuremath {\mathbb {Q}_0}}
-\newcommand {\Qplus }[0]{\ensuremath {\mathbb {Q}^+}}
-\newcommand {\Qmin }[0]{\ensuremath {\mathbb {Q}^-}}
-\newcommand {\Qnulplus }[0]{\ensuremath {\mathbb {Q}_0^+}}
-\newcommand {\Qnulmin }[0]{\ensuremath {\mathbb {Q}_0^-}}
-\newcommand {\perdef }[0]{\overset {\mathrm {def}}{=}}
-\newcommand {\pernot }[0]{\overset {\mathrm {notatie}}{=}}
-\newcommand {\perinderdaad }[0]{\overset {!}{=}}
-\newcommand {\perhaps }[0]{\overset {?}{=}}
-\newcommand {\degree }[0]{^\circ }
-\DeclareMathOperator {\dom }{dom}
-\DeclareMathOperator {\codom }{codom}
-\DeclareMathOperator {\bld }{bld}
-\DeclareMathOperator {\graf }{graf}
-\DeclareMathOperator {\rico }{rico}
-\DeclareMathOperator {\co }{co}
-\DeclareMathOperator {\gr }{gr}
-\DeclareMathOperator {\bgsin }{bgsin}
-\DeclareMathOperator {\bgcos }{bgcos}
-\DeclareMathOperator {\bgtan }{bgtan}
-\DeclareMathOperator {\bgcot }{bgcot}
-\DeclareMathOperator {\bgsinh }{bgsinh}
-\DeclareMathOperator {\bgcosh }{bgcosh}
-\DeclareMathOperator {\bgtanh }{bgtanh}
-\DeclareMathOperator {\bgcoth }{bgcoth}
-\newcommand {\d }[0]{\mathrm {d}}
-\newcommand {\dx }[0]{\d x}
-\newcommand {\dd }[1]{\frac {\mathrm {d}}{\mathrm {d}#1}}
-\newcommand {\ddx }[0]{\dd {x}}
-\newcommand {\afg }[1]{{#1}'}
-\newcommand {\xmshortabstract }[0]{}
-\newcommand {\xmopje }[1]{\iftoggle {showxmopje}{#1}{}}
-\newcommand {\xmcolorbox }[2]{ \HCode {\Hnewline <div class="xmcolorbox">\Hnewline }#2\HCode {\Hnewline </div>\Hnewline } }
-\newcommand {\xmopmerking }[1]{ \HCode {\Hnewline <div class="xmopmerking">\Hnewline }#1\HCode {\Hnewline </div>\Hnewline } }
-\newcommand {\proofname }[0]{Bewijs}
-\newcommand {\xmonlineChoice }[1]{\pdfOnly {\wordchoicegiventrue }\wordChoice {#1}\pdfOnly {\wordchoicegivenfalse }}
-\newcommand {\onlineChoice }[1]{\pdfOnly {\wordchoicegiventrue }\wordChoice {#1}\pdfOnly {\wordchoicegivenfalse }}
-\newcommand {\TJa }[0]{\nlentext { Ja }{ Yes }}
-\newcommand {\TNee }[0]{\nlentext { Nee }{ No }}
-\newcommand {\TJuist }[0]{\nlentext { Juist }{ True }}
-\newcommand {\TFout }[0]{\nlentext { Fout }{ False }}
-\newcommand {\choiceTrue }[0]{{\wordChoice {\choice [correct]{\TJuist }\choice {\TFout }}}}
-\newcommand {\choiceFalse }[0]{{\wordChoice {\choice {\TJuist }\choice [correct]{\TFout }}}}
-\newcommand {\choiceYes }[0]{{\wordChoice {\choice [correct]{\TJa }\choice {\TNee }}}}
-\newcommand {\choiceNo }[0]{{\wordChoice {\choice {\TJa }\choice [correct]{\TNee }}}}
-\newcommand {\choiceminimumverticalsize }[0]{\vphantom {$\tfrac {2}{2}$}}
-\newcommand {\setchoicedefanswer }[0]{ \ifdefined \HCode \else \let \inlinechoice \inlinechoicedefanswer \fi }
-\newcommand {\xmsection }[0]{\subsection }
-\newcommand {\xmsubsection }[0]{\subsubsection }
-\newcommand {\activitychapter }[1]{ \typeout {ACTIVITYCHAPTER #1} \chapterstyle \activity {#1} }
-\newcommand {\activitysection }[1]{ \typeout {ACTIVITYSECTION #1} \sectionstyle \activity {#1} }
-\newcommand {\practicesection }[1]{ \typeout {PRACTICESECTION #1} \sectionstyle \activity {#1} }
-\newcommand {\hypertarget }[1]{\HCode {<a class="ximera-label" id="#1"></a>}}
-\newcommand {\hyperlink }[2]{\HCode {<a class="reference reference-keeptext" href="\##1">}#2\HCode {</a>}}
-\newcommand {\figurename }[0]{Figuur}
-\newcommand {\tablename }[0]{Tabel}
-\newcommand {\printFull }[0]{ \hintstrue \handoutfalse \toggletrue {showonline} }
-\newcommand {\nl }[0]{}
-\newcommand {\basicOnly }[0]{}
-\newcommand {\basicSkip }[0]{}
-\newcommand {\tab }[0]{\quad }
-\newcommand {\instructorNotes }[0]{\setbox 0\vbox \bgroup }
-\newcommand {\nlen }[2]{#1}
-\newcommand {\nlentext }[2]{\text {#1}}
-\newcommand {\nlentextbf }[2]{\textbf {#1}}
-\newcommand {\TWaar }[0]{\nlentext { Waar }{ True }}
-\newcommand {\TOnwaar }[0]{\nlentext { Vals }{ False }}
-\newcommand {\Ten }[0]{\nlentext { en }{ and }}
-\newcommand {\Tof }[0]{\nlentext { of }{ or }}
-\newcommand {\Tdus }[0]{\nlentext { dus }{ so }}
-\newcommand {\Tendus }[0]{\nlentext { en dus }{ and thus }}
-\newcommand {\Tvooralle }[0]{\nlentext { voor alle }{ for all }}
-\newcommand {\Took }[0]{\nlentext { ook }{ also }}
-\newcommand {\Tals }[0]{\nlentext { als }{ when }}
-\newcommand {\Twant }[0]{\nlentext { want }{ as }}
-\newcommand {\Tmaal }[0]{\nlentext { maal }{ times }}
-\newcommand {\Toptellen }[0]{\nlentext { optellen }{ add }}
-\newcommand {\Tde }[0]{\nlentext { de }{ the }}
-\newcommand {\Thet }[0]{\nlentext { het }{ the }}
-\newcommand {\Tis }[0]{\nlentext { is }{ is }}
-\newcommand {\Tmet }[0]{\nlentext { met }{ where }}
-\newcommand {\Tnooit }[0]{\nlentext { nooit }{ never }}
-\newcommand {\Tmaar }[0]{\nlentext { maar }{ but }}
-\newcommand {\Tniet }[0]{\nlentext { niet }{ not }}
-\newcommand {\Tuit }[0]{\nlentext { uit }{ from }}
-\newcommand {\Ttov }[0]{\nlentext { t.o.v. }{ w.r.t. }}
-\newcommand {\Tzodat }[0]{\nlentext { zodat }{ such that }}
-\newcommand {\Tdeth }[0]{\nlentext {de }{th }}
-\newcommand {\Tomdat }[0]{\nlentext {omdat }{because }}
-\newcommand {\fvdschoollogo }[0]{}
-\newcommand {\fvdschoollogobreedte }[0]{0.65\textwidth }
-\newcommand {\fvdschoolnaam }[0]{}
-\newcommand {\fvdschooljaar }[0]{}
-\newcommand {\fvdklas }[0]{}
-\newcommand {\fvdleerkracht }[0]{}
-\newcommand {\fvdmodulenummer }[0]{1}
-\newcommand {\fvdmoduletitel }[0]{}
-\newcommand {\fvdmodulebeeld }[0]{}
-\newcommand {\fvdmodulevariant }[0]{}
-\newcommand {\fvdmodulesubtitel }[0]{}
-\newcommand {\fvdtitletext }[0]{}
-\newcommand {\fvdtitle }[1]{\gdef \fvdtitletext {#1}\title {#1}}
-\newcommand {\voorkennisicon }[0]{\begin {tikzpicture}[ baseline=-0.6ex, line cap=round, line join=round ] \par \fill [fvdcyanicon] (0,0) circle (0.38cm); \par \draw [ fvdcyan, line width=0.7pt ] (-0.22,0.14) .. controls (-0.10,0.19) and (-0.04,0.17) .. (0,0.10) -- (0,-0.19) .. controls (-0.08,-0.13) and (-0.15,-0.12) .. (-0.22,-0.15) -- cycle; \par \draw [ fvdcyan, line width=0.7pt ] (0.22,0.14) .. controls (0.10,0.19) and (0.04,0.17) .. (0,0.10) -- (0,-0.19) .. controls (0.08,-0.13) and (0.15,-0.12) .. (0.22,-0.15) -- cycle; \par \end {tikzpicture}}
-\newcommand {\leerdoelenicon }[0]{\begin {tikzpicture}[ baseline=-0.6ex, line cap=round, line join=round ] \par \fill [fvdmagentaicon] (0,0) circle (0.38cm); \par \draw [ fvdmagenta, line width=0.7pt ] (0,0) circle (0.20cm); \par \draw [ fvdmagenta, line width=0.7pt ] (0,0) circle (0.10cm); \par \fill [fvdmagenta] (0,0) circle (0.025cm); \par \draw [ fvdmagenta, line width=0.7pt ] (0.05,0.05) -- (0.25,0.25); \par \draw [ fvdmagenta, line width=0.7pt ] (0.18,0.25) -- (0.25,0.25) -- (0.25,0.18); \par \end {tikzpicture}}
-\newcommand {\fvdboxtitle }[3]{\par \noindent #1\hspace {2.5mm}{\large \bfseries \color {#2}#3}\par \vspace {1.5mm}{\color {#2}\hrule height 0.4pt}\vspace {2mm}}
-\newcommand {\voorkennis }[0]{\ifdefined \HCode \par \HCode {<section class="learning-box learning-box--prior"> <div class="learning-box__header"> <span class="learning-box__icon"></span> <span class="learning-box__title">Voorkennis</span> </div> <div class="learning-box__content"> }\par \begin {itemize} \par \else \par \begin {tcolorbox}[ enhanced, breakable, frame hidden, colback=fvdcyanlight, coltext=fvdnavy, borderline west={1.8pt}{0pt}{fvdcyan}, sharp corners, boxrule=0pt, left=5mm, right=5mm, top=3.5mm, bottom=3.5mm, before skip=4mm, after skip=4mm ] \par \fvdboxtitle {\voorkennisicon } {fvdcyan} {Voorkennis} \par \begin {itemize}[ leftmargin=6mm, itemsep=1.5mm, topsep=0mm, parsep=0pt ] \par \fi }
-\newcommand {\leerdoelen }[0]{\ifdefined \HCode \par \HCode {<section class="learning-box learning-box--goals"> <div class="learning-box__header"> <span class="learning-box__icon"></span> <span class="learning-box__title">Leerdoelen</span> </div> <div class="learning-box__content"> }\par \begin {itemize} \par \else \par \begin {tcolorbox}[ enhanced, breakable, frame hidden, colback=fvdmagentalight, coltext=fvdnavy, borderline west={1.8pt}{0pt}{fvdmagenta}, sharp corners, boxrule=0pt, left=5mm, right=5mm, top=3.5mm, bottom=3.5mm, before skip=4mm, after skip=4mm ] \par \fvdboxtitle {\leerdoelenicon } {fvdmagenta} {Leerdoelen} \par \begin {itemize}[ leftmargin=6mm, itemsep=1.5mm, topsep=0mm, parsep=0pt ] \par \fi }
-\newcommand {\fvdchapterdata }[3]{\par \par \ifdefined \HCode \else \clearpage \fi \par \par \gdef \fvdstandalonethemenumber {#1}\gdef \fvdstandalonetheme {#2}\par \setcounter {part}{#1}\setcounter {titlenumber}{\numexpr #3-1\relax }\par \par \setcounter {fvdsection}{0}\setcounter {fvdsubsection}{0}\setcounter {fvdoefening}{0}}
-\newcommand {\fvdcurrentthemetitle }[0]{}
-\newcommand {\FVDpart }[1]{}
-\newcommand {\FVDpart }[1]{\refstepcounter {fvdtheme}\setcounter {fvdsection}{0}\gdef \fvdcurrentthemetitle {#1}\part {#1}}
-\newcommand {\FVDthemeopening }[1]{\begin {center} \includegraphics [width=\textwidth ]{#1} \end {center} }
-\newcommand {\thefvdsection }[0]{\arabic {fvdsection}}
-\newcommand {\thefvdsubsection }[0]{\thefvdsection .\arabic {fvdsubsection}}
-\newcommand {\FVDsection }[1]{}
-\newcommand {\FVDsubsection }[1]{}
-\newcommand {\FVDsection }[1]{\refstepcounter {fvdsection}\par \HCode {<div class="fvd-section-bar">}\HCode {<div class="fvd-section-bar__number">}\thefvdsection \HCode {</div>}\HCode {<div class="fvd-section-bar__title">}#1\HCode {</div>}\HCode {</div>}}
-\newcommand {\FVDsubsection }[1]{\refstepcounter {fvdsubsection}\par \HCode {<div class="fvd-subsection">}\par \HCode {<div class="fvd-subsection__row">}\par \HCode {<div class="fvd-subsection__number">}\thefvdsection .\arabic {fvdsubsection}\HCode {</div>}\par \HCode {<div class="fvd-subsection__title">}#1\HCode {</div>}\par \HCode {</div>}\par \HCode {<div class="fvd-subsection__line"></div>}\par \HCode {</div>}}
-\newcommand {\themaintro }[1]{\par \bigskip \noindent \begin {minipage}{\textwidth } \textbf {\large #1} \par \smallskip }
-\newcommand {\FVDthemechaptertile }[2]{}
-\newcommand {\FVDthemechaptertile }[2]{\HCode {<div class="fvd-theme-chapter-tile">}\HCode {<span class="fvd-theme-chapter-tile__number">}#1\HCode {</span>}\HCode {<span class="fvd-theme-chapter-tile__title">}#2\HCode {</span>}\HCode {</div>}}
-\newcommand {\FVDthemeoverviewempty }[0]{\emph {Voor dit thema zijn nog geen hoofdstukken toegevoegd.}}
-\newcommand {\hoofdstukoverzicht }[0]{\HCode {<section class="fvd-theme-overview">}\HCode {<h2 class="fvd-theme-overview__title">}Overzicht van de hoofdstukken\HCode {</h2>}\HCode {<div class="fvd-theme-overview__grid">}}
-\newcommand {\FVDResetExamples }[0]{\setcounter {fvdexample}{0}}
-\newcommand {\FVDExampleOptionalTitle }[1]{\if \relax \detokenize {#1}\relax \else \space ---\space #1\fi }
-\newcommand {\FVDbeginExercises }[0]{}
-\newcommand {\FVDendExercises }[0]{}
-\newcommand {\FVDwidebegin }[0]{}
-\newcommand {\FVDwideend }[0]{}
-\newcommand {\FVDResetExercises }[0]{\setcounter {fvdoefening}{0}}
-\newcommand {\oefB }[0]{}
-\newcommand {\oefU }[0]{}
-\newcommand {\oefG }[0]{}
-\newcommand {\ESS }[0]{}
-\newcommand {\oefB }[0]{\HCode {<span class="fvd-exercise-chip fvd-exercise-chip--b">B</span>}}
-\newcommand {\oefU }[0]{\HCode {<span class="fvd-exercise-chip fvd-exercise-chip--u">U</span>}}
-\newcommand {\oefG }[0]{\HCode {<span class="fvd-exercise-chip fvd-exercise-chip--g">G</span>}}
-\newcommand {\ESS }[0]{\HCode {<span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span>}}
-\newcommand {\FVDmodulecover }[0]{}
-\newcommand {\ESSinline }[0]{\tikz [baseline=-0.6ex]{\node [ fill=fvdEssBg, text=fvdEssText, rounded corners=1.5mm, minimum width=9mm, minimum height=5.5mm, inner sep=0pt, font=\sffamily \bfseries \scriptsize ] {$\blacklozenge $}; }}
-\newcommand {\oefBinline }[0]{\tikz [baseline=-0.6ex]{\node [ fill=fvdBasisBg, text=fvdBasisText, rounded corners=1.5mm, minimum width=9mm, minimum height=5.5mm, inner sep=0pt, font=\sffamily \bfseries \scriptsize ] {B}; }}
-\newcommand {\oefUinline }[0]{\tikz [baseline=-0.6ex]{\node [ fill=fvdVerdiepingBg, text=fvdVerdiepingText, rounded corners=1.5mm, minimum width=9mm, minimum height=5.5mm, inner sep=0pt, font=\sffamily \bfseries \scriptsize ] {U}; }}
-\newcommand {\oefGinline }[0]{\tikz [baseline=-0.6ex]{\node [ fill=fvdGevorderdBg, text=fvdGevorderdText, rounded corners=1.5mm, minimum width=9mm, minimum height=5.5mm, inner sep=0pt, font=\sffamily \bfseries \scriptsize ] {G}; }}
-\newcommand {\FVDNumberLine }[2]{\draw [fvd axis] (#1-0.6,0) -- (#2+0.6,0); \par \foreach \x in {#1,...,#2}{\draw [fvd tick] (\x ,0.13) -- (\x ,-0.13); \par \ifnum \x =0 \node [ below=3pt, text=fvdmagenta, font=\small \bfseries ] at (\x ,0) {0}; \else \node [ below=3pt, text=fvddark, font=\small ] at (\x ,0) {\x }; \fi }}
-\newcommand {\FVDPoint }[1]{\fill [fvdmagenta] (#1,0) circle (2.2pt); }
-\newcommand {\FVDPointCyan }[1]{\fill [fvdcyan] (#1,0) circle (2.2pt); }
-\newcommand {\FVDLabeledPoint }[2]{\fill [fvdmagenta] (#1,0) circle (2.2pt); \par \node [ fvd label, above=7pt ] at (#1,0) {#2}; }
-\newcommand {\FVDGuideUp }[2]{\draw [fvd guide] (#1,0.08) -- (#1,#2); }
-\newcommand {\FVDMoveLeft }[3]{\draw [ ->, line width=1.4pt, color=fvdcyan ] (#1,0.52) to[bend left=28] (#2,0.52); \par \node [ fill=white, draw=fvdcyan!40, text=fvddark, rounded corners=2pt, inner xsep=5pt, inner ysep=2pt, font=\small ] at (#2+1.5,1.15) {#3}; \par \FVDGuideUp {#1}{0.50} \FVDGuideUp {#2}{0.50} }
-\newcommand {\FVDMoveRight }[3]{\draw [ ->, line width=1.4pt, color=fvdcyan ] (#1,0.52) to[bend left=28] (#2,0.52); \par \node [ fill=white, draw=fvdcyan!40, text=fvddark, rounded corners=2pt, inner xsep=5pt, inner ysep=2pt, font=\small ] at (#1+2.0,1.15) {#3}; \par \FVDGuideUp {#1}{0.50} \FVDGuideUp {#2}{0.50} }
-\newcommand {\FVDPixelPlayer }[0]{\fill [fvddark] (0,4) rectangle (4,8); \par \fill [fvdcyan] (0.8,5.7) rectangle (1.7,6.6); \fill [fvdcyan] (2.8,5.7) rectangle (3.7,6.6); \par \fill [white] (1.05,5.95) rectangle (1.45,6.35); \fill [white] (3.05,5.95) rectangle (3.45,6.35); \par \fill [fvdmagenta] (1,1.5) rectangle (3.5,4); \par \fill [fvdcyan] (0,2.3) rectangle (1,3.8); \fill [fvdcyan] (3.5,2.3) rectangle (4.5,3.8); \par \fill [fvddark] (1,0) rectangle (1.9,1.5); \fill [fvddark] (2.6,0) rectangle (3.5,1.5); }
-\newcommand {\FVDPixelController }[0]{\fill [fvddark] (1,2) rectangle (11,7); \fill [fvddark] (0,3) rectangle (12,6); \fill [fvddark] (2,1) rectangle (4,3); \fill [fvddark] (8,1) rectangle (10,3); \par \fill [white] (1.5,2.5) rectangle (10.5,6.5); \fill [fvdcyan] (1.5,6.0) rectangle (10.5,6.5); \par \fill [fvddark] (2.2,4.1) rectangle (5.0,4.9); \fill [fvddark] (3.2,3.1) rectangle (4.0,5.9); \par \fill [fvdmagenta] (8.0,4.8) circle (0.42); \fill [fvdmagenta] (9.2,3.7) circle (0.42); \fill [fvdcyan] (6.9,3.7) circle (0.42); \fill [fvdcyan] (8.0,2.8) circle (0.42); \par \fill [fvddark] (5.2,4.15) rectangle (5.9,4.45); \fill [fvddark] (6.2,4.15) rectangle (6.9,4.45); }
-\newcommand {\FVDStartPositionFigure }[3]{\begin {center} \begin {tikzpicture}[ x=0.85cm, y=1cm, line cap=round, line join=round ] \par \par \FVDNumberLine {#1}{#2} \par \draw [fvd guide] (#3,0.08) -- (#3,0.70); \par \begin {scope}[shift={(#3-0.18,0.76)},scale=0.055] \FVDPixelPlayer \end {scope} \par \node [ fvd label ] at (#3,1.42) {startpositie \(#3\)}; \par \node [ anchor=east, text=fvdmagenta, font=\small \bfseries ] at (-0.35,-1) {negatieve richting}; \par \node [ anchor=west, text=fvdcyan, font=\small \bfseries ] at (0.35,-1) {positieve richting}; \par \end {tikzpicture} \end {center} }
-\newcommand {\FVDMovementLeftFigure }[5]{\begin {center} \begin {tikzpicture}[ x=0.85cm, y=1cm, line cap=round, line join=round ] \par (#1-0.8,-0.72) rectangle (#2+0.8,1.72); \par \FVDNumberLine {#1}{#2} \par \FVDPoint {#3} \FVDPointCyan {#4} \FVDMoveLeft {#3}{#4}{#5} \par \end {tikzpicture} \end {center} }
-\newcommand {\FVDMovementRightFigure }[5]{\begin {center} \begin {tikzpicture}[ x=0.85cm, y=1cm, line cap=round, line join=round ] \par \fill [fvdcyan!6] (#1-0.8,-0.72) rectangle (#2+0.8,1.72); \par \FVDNumberLine {#1}{#2} \par \FVDPoint {#3} \FVDPointCyan {#4} \FVDMoveRight {#3}{#4}{#5} \par \end {tikzpicture} \end {center} }
-\newcommand {\FVDCoordinatePlane }[4]{\draw [ step=1cm, color=fvdcyan!18, line width=0.35pt ] (#1,#3) grid (#2,#4); \par \draw [fvd axis] (#1,0) -- (#2+0.35,0) node[ below left=2pt, text=fvddark ] {\(x\)}; \par \draw [fvd axis] (0,#3) -- (0,#4+0.35) node[ below left=2pt, text=fvddark ] {\(y\)}; \par \foreach \x in {#1,...,#2}{\ifnum \x =0 \else \draw [fvd tick] (\x ,0.10) -- (\x ,-0.10); \node [ below=2pt, text=fvddark, font=\scriptsize ] at (\x ,0) {\x }; \fi } \par \foreach \y in {#3,...,#4}{\ifnum \y =0 \else \draw [fvd tick] (0.10,\y ) -- (-0.10,\y ); \node [ left=2pt, text=fvddark, font=\scriptsize ] at (0,\y ) {\y }; \fi } \par \node [ below left=2pt, text=fvdmagenta, font=\scriptsize \bfseries ] at (0,0) {0}; }
-\newcommand {\FVDCoordinatePoint }[3]{\draw [fvd guide] (#1,0) -- (#1,#2); \draw [fvd guide] (0,#2) -- (#1,#2); \par \fill [fvdmagenta] (#1,#2) circle (2.2pt); \par \node [ fvd label, above right=3pt ] at (#1,#2) {\(#3\)}; }
-\newcommand {\luastring }[1]{"\luatexluaescapestring {#1}"}
-\newcommand {\luastringO }[1]{\luastring {\unexpanded \expandafter {#1}}}
-\newcommand {\luastringN }[1]{\luastring {\unexpanded {#1}}}
-\newcommand {\RestoreMathJaxEnvironment }[1]{\expandafter \let \csname #1\expandafter \endcsname \csname mathjax-#1\endcsname \expandafter \let \csname end#1\expandafter \endcsname \csname mathjax-end#1\endcsname }
-\newcommand {\DeclareMicrotypeVariants }[1]{}
-\newcommand {\DeclareMicrotypeAlias }[2]{}
-\newcommand {\LoadMicrotypeFile }[1]{}
-\newcommand {\DeclareMicrotypeFilePrefix }[1]{}
-\newcommand {\DeclareMicrotypeBabelHook }[2]{}
-\newcommand {\microtypesetup }[1]{}
-\newcommand {\microtypecontext }[1]{}
-\newcommand {\textmicrotypecontext }[2]{#2}
-\newcommand {\leftprotrusion }[1]{#1}
-\newcommand {\rightprotrusion }[1]{#1}
-\newcommand {\noprotrusionifhmode }[0]{}
-\newcommand {\lsstyle }[0]{}
-\newcommand {\lslig }[1]{#1}
-\newcommand {\maketitle }[0]{}
-\newcommand {\problem }[0]{ }
-\newcommand {\exercise }[0]{ }
-\newcommand {\question }[0]{ }
-\newcommand {\exploration }[0]{ }
-\newcommand {\ConfigureTheoremEnv }[1]{\renewenvironment {#1}[1][]{\refstepcounter {problem}\ifthenelse {\equal {###1}{}}{}{\HCode {<span class="theorem-like-title">}###1\HCode {</span>}}}{} \ConfigureEnv {#1}{\stepcounter {identification}\ifvmode \IgnorePar \fi \EndP \HCode {<div class="theorem-like problem-environment #1" id="problem\arabic {identification}" titletext=" \GetTranslation {#1}">}}{\ifvmode \IgnorePar \fi \EndP \HCode {</div>}\IgnoreIndent }{}{}}
-\newcommand {\xmalt }[1]{\ifvmode \IgnorePar \fi \EndP \HCode {<details><summary>Show Alt Text</summary>} #1 \HCode {</details>}}
-\newcommand {\dialogue }[0]{\begin {description}}
-\newcommand {\foldable }[0]{\stepcounter {identification}\ifvmode \IgnorePar \fi \EndP \HCode {<div id="foldable\arabic {identification}" class="foldable">}}
-\newcommand {\unfoldable }[1]{\HCode {<span class="unfoldable">}#1\HCode {</span>}}
-\newcommand {\selectAll }[0]{\refstepcounter {problem}}
-\newcommand {\freeResponse }[0]{\refstepcounter {problem}}
-\newcommand {\javascript }[0]{\NoFonts }
-\newcommand {\sageCell }[0]{\NoFonts }
-\newcommand {\sageOutput }[0]{\NoFonts }
-\newcommand {\sagesilent }[0]{\NoFonts }
-\newcommand {\ungraded }[0]{\ifvmode \IgnorePar \fi \EndP \HCode {<div class="ungraded">}\IgnoreIndent }
-\newcommand {\accordion }[0]{\ifvmode \IgnorePar \fi \EndP \HCode {<div class="accordion">} }
-\newcommand {\expandable }[2]{\stepcounter {identification}\ifvmode \IgnorePar \fi \EndP \HCode {<div class="accordion">\Hnewline }\HCode {<h3 class="#1">}#2\HCode {</h3>\Hnewline }\HCode {<div id="accordion-item\arabic {identification}" class="accordion-item #1-content">\Hnewline } }
-\newcommand {\paragraph }[1]{\HCode {<span class="paragraphHead">}#1\HCode {</span>}\par \IgnorePar }
-\newcommand {\subparagraph }[1]{\HCode {<span class="subparagraphHead">}#1\HCode {</span>}\par \IgnorePar }
-\newcommand {\outcome }[1]{\HCode {<span class="learning-outcome">#1</span>} }
-\newcommand {\javascriptCode }[0]{\NoFonts }
-\newcommand {\GetTranslation }[1]{#1}
-\newcommand {\ref }[1]{\HCode {<a class="reference" href="\##1">#1</a>}}</script></div>
-<style> .activity-body pre { white-space: pre; background-color: lightgray; } .xmyoutube { aspect-ratio: 16/9; min-width: 75%; } .image-environment img { width: unset; } </style> 
+<!DOCTYPE html>
+<html lang="en-US" xml:lang="en-US">
+<head> <title>Limieten en asymptotisch gedrag – Functies in verandering</title>
+<meta charset="utf-8"/>
+<meta content="TeX4ht (https://tug.org/tex4ht/)" name="generator"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="\aa:CssFile " rel="stylesheet" type="text/css"/>
+<meta content="Limieten.online.tex" name="src"/>
+<script>window.MathJax = { tex: { tags: "ams", }, }; </script>
+<script async="async" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+<meta content="Ingmar Herreman" name="author"/>
+<meta content="version 2.5.1" name="ximera"/>
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" media="screen" rel="stylesheet"/>
+<script async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js" type="text/javascript"></script>
+<link href="../../../assets/css/base.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/global.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/Header_Footer.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/ChapterLayout.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/chapter-hero.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/ExerciseHero.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/learning-boxes.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/CourseOverview.css" media="screen" rel="stylesheet"/></head><body><!-- XIMERA-HEADER-START --><!-- =========================================================
+     HEADER.HTML — Wiskunde 7 FVD
+     Plaats dit bestand bijvoorbeeld in:
+     assets/html/Header.html
+     ========================================================= -->
+<header aria-labelledby="fvd-hero-title" class="fvd-hero">
+<div aria-hidden="true" class="fvd-hero__grid"></div>
+<div aria-hidden="true" class="fvd-hero__glow fvd-hero__glow--left"></div>
+<div aria-hidden="true" class="fvd-hero__glow fvd-hero__glow--right"></div>
+<div class="fvd-hero__inner">
+<!-- Groot Athena-logo links -->
+<div class="fvd-hero__brand">
+<img alt="Athena secundair onderwijs" class="fvd-hero__logo" src="/images/banners/logo_athena.png"/>
+</div>
+<div aria-hidden="true" class="fvd-hero__divider"></div>
+<!-- Centrale titel en leerinhouden -->
+<div class="fvd-hero__content">
+<p class="fvd-hero__eyebrow">
+                    Fundamentele Vorming Digitale Creatie
+                </p>
+<h1 class="fvd-hero__title" id="fvd-hero-title">
+<span class="fvd-hero__title-main">Wiskunde</span>
+<span class="fvd-hero__title-accent">7 FVD</span>
+</h1>
+<div aria-hidden="true" class="fvd-hero__pink-line"></div>
+<p class="fvd-hero__subtitle">
+                    Wiskundige inzichten die je nodig hebt om digitale werelden te bouwen.
+                </p>
+<div aria-label="Onderwerpen in deze cursus" class="fvd-hero__chips">
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<rect height="18" rx="2" width="14" x="5" y="3"></rect>
+<path d="M8 7h8M8 11h2M14 11h2M8 15h2M14 15h2M8 18h2M14 18h2"></path>
+</svg>
+                        Basiswiskunde
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M4 17c4-1 4-10 8-10 2 0 2 3 4 3 1 0 2-.4 4-2"></path>
+<path d="M7 20 13 4"></path>
+</svg>
+                        Algebra
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M5 8h14M5 16h14"></path>
+</svg>
+                        Vergelijkingen
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M4 19V5M4 19h16"></path>
+<path d="m7 16 4-5 3 2 4-6"></path>
+</svg>
+                        Functies
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M5 18 18 5"></path>
+<path d="M12 5h6v6"></path>
+</svg>
+                        Vectoren
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="7"></circle>
+<path d="M12 2v20M2 12h20"></path>
+</svg>
+                        Coördinaten
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="m12 3 8 4.5v9L12 21l-8-4.5v-9z"></path>
+<path d="m4 7.5 8 4.5 8-4.5M12 12v9"></path>
+</svg>
+                        3D-meetkunde
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M3 16c3-8 7-8 10 0 2 5 5 4 8-4"></path>
+</svg>
+                        Goniometrie
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M5 18V6M5 18h14"></path>
+<path d="M8 16c1-6 3-9 8-10"></path>
+</svg>
+                        Logaritmen
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="m7 6 10 5-10 5z"></path>
+<path d="m7 10 10 5-10 5"></path>
+</svg>
+                        Transformaties
+                    </span>
+</div>
+</div>
+<!-- Rechterzijde met wiskundige SVG-tekeningen -->
+<div aria-hidden="true" class="fvd-hero__visual">
+<!-- 3D-kubus -->
+<svg class="fvd-visual fvd-visual--cube" viewbox="0 0 310 245">
+<g class="fvd-svg-cyan">
+<path d="M65 72 185 86 245 48 125 34Z"></path>
+<path d="M65 72v110l120 16V86"></path>
+<path d="M185 86 245 48v110l-60 40"></path>
+<path class="fvd-svg-dash" d="M125 34v110M125 144 65 182M125 144l120 14"></path>
+<path d="M125 144 90 210M125 144l88 28M125 144V15"></path>
+<path d="m90 210 11-4-7-9M213 172l-9-7-2 11M125 15l-6 11h12"></path>
+</g>
+<g class="fvd-svg-label">
+<text x="82" y="225">x</text>
+<text x="220" y="180">y</text>
+<text x="132" y="18">z</text>
+</g>
+</svg>
+<!-- Matrix -->
+<svg class="fvd-visual fvd-visual--matrix" viewbox="0 0 220 100">
+<g class="fvd-svg-soft">
+<text x="0" y="58">A =</text>
+<path d="M60 10c-12 18-12 62 0 80M205 10c12 18 12 62 0 80"></path>
+<text x="82" y="36">1</text>
+<text x="123" y="36">2</text>
+<text x="165" y="36">0</text>
+<text x="73" y="61">−1</text>
+<text x="123" y="61">0</text>
+<text x="165" y="61">3</text>
+<text x="82" y="86">2</text>
+<text x="113" y="86">−2</text>
+<text x="165" y="86">1</text>
+</g>
+</svg>
+<!-- Vectoren en rotatie -->
+<svg class="fvd-visual fvd-visual--vectors" viewbox="0 0 260 170">
+<g class="fvd-svg-cyan">
+<path d="M55 138 132 74"></path>
+<path d="m132 74-13 3 8 10"></path>
+<path d="M55 138h125"></path>
+<path d="m180 138-12-6v12"></path>
+<path class="fvd-svg-dash" d="M55 138c24-65 116-95 156-25"></path>
+</g>
+<g class="fvd-svg-pink">
+<path d="M55 138 207 104"></path>
+<path d="m207 104-13-2 5 12"></path>
+<path class="fvd-svg-dash" d="M211 113c17-13 25-5 21 11"></path>
+<path d="m232 124-9-8-2 12"></path>
+</g>
+<g class="fvd-svg-label">
+<text x="38" y="153">O</text>
+<text x="138" y="73">u⃗</text>
+<text x="188" y="98">v⃗</text>
+<text x="141" y="130">x⃗</text>
+<text x="222" y="102">Rθ</text>
+</g>
+</svg>
+<!-- Bézier-curve -->
+<svg class="fvd-visual fvd-visual--bezier" viewbox="0 0 280 110">
+<g class="fvd-svg-soft">
+<path d="M30 82 85 30 190 30 245 82"></path>
+</g>
+<g class="fvd-svg-cyan">
+<path d="M30 82c42-12 55-52 105-52s67 40 110 52"></path>
+</g>
+<g class="fvd-svg-pink">
+<circle cx="30" cy="82" r="4"></circle>
+<circle cx="85" cy="30" r="4"></circle>
+<circle cx="190" cy="30" r="4"></circle>
+<circle cx="245" cy="82" r="4"></circle>
+</g>
+<g class="fvd-svg-label">
+<text x="18" y="102">P₀</text>
+<text x="74" y="20">P₁</text>
+<text x="181" y="20">P₂</text>
+<text x="238" y="102">P₃</text>
+<text x="103" y="79">Bézier-curve</text>
+</g>
+</svg>
+</div>
+</div>
+<div aria-hidden="true" class="fvd-hero__pink-corner"></div>
+</header><!-- XIMERA-HEADER-END --><!-- XIMERA-CHAPTER-HERO-START --><section class="chapter-hero">
+<div aria-hidden="true" class="chapter-hero__decoration">
+<span class="chapter-hero__formula">
+            f(x) = ax² + bx + c
+        </span>
+<span class="chapter-hero__curve"></span>
+<span class="chapter-hero__grid"></span>
+</div>
+<div class="chapter-hero__content">
+<div class="chapter-hero__theme">
+<span class="chapter-hero__theme-label">
+                Thema 1
+            </span>
+<span class="chapter-hero__theme-dot"></span>
+<span class="chapter-hero__theme-name">
+                Veranderingen in beeld
+            </span>
+</div>
+<div class="chapter-hero__chapter-label">
+            Hoofdstuk
+        </div>
+<div class="chapter-hero__main">
+<div class="chapter-hero__number">
+                4
+            </div>
+<div class="chapter-hero__text">
+<h1 class="chapter-hero__title">
+                    Limieten en asymptotisch gedrag
+                </h1>
+<p class="chapter-hero__abstract">
+                    Een functie hoeft niet overal een functiewaarde te hebben om toch voorspelbaar gedrag te vertonen. Met limieten beschrijven we wat er met de functiewaarden gebeurt wanneer x een bepaalde waarde nadert of onbeperkt groot of klein wordt. In het vijfde jaar leerde je al limieten berekenen en asymptoten bepalen bij veeltermfuncties, rationale en irrationale functies. In dit hoofdstuk halen we de kern daarvan opnieuw naar boven. De nadruk ligt niet op nieuwe rekentechnieken, maar op betekenis: wat vertelt een limiet over een grafiek en hoe herken je daaruit asymptotisch gedrag?
+                </p>
+</div>
+</div>
+<div class="chapter-hero__accent"></div>
+</div>
+</section><!-- XIMERA-CHAPTER-HERO-END --><button aria-controls="courseSidebar" aria-expanded="false" class="course-menu-button" id="courseMenuButton" type="button">☰ Toon cursusinhoud</button><div class="course-sidebar-overlay" id="courseSidebarOverlay"></div><!-- XIMERA-CHAPTER-LAYOUT-START --><main class="chapter-layout"><!--
+    AUTOMATISCH GEGENEREERD BESTAND
 
-<div class='maketitle'></div>
-<!--  l. 112  --><section class='learning-box learning-box--prior'> <div class='learning-box__header'> <span class='learning-box__icon'> </span><span class='learning-box__title'>Voorkennis</span> </div> <div class='learning-box__content'> 
-     
-<ul class='itemize1'>
-<li class='itemize'>Je kent het domein van veelterm-, rationale en irrationale functies.
+    Dit bestand wordt opgebouwd door:
+        scripts/generate-sidebar.sh
+
+    Bewerk niet dit bestand, maar:
+        assets/html/SidebarTemplate.html
+        en modules/.../index.tex
+-->
+<aside class="course-sidebar" id="courseSidebar">
+<div class="sidebar-header">
+<div class="sidebar-header__text">
+<span class="sidebar-label">
+                Functies in verandering
+            </span>
+<h2 class="sidebar-title">
+                Cursusinhoud
+            </h2>
+</div>
+<button aria-label="Sluit cursusmenu" class="sidebar-close" id="sidebarClose" type="button">
+            ×
+        </button>
+</div>
+<nav aria-label="Cursusinhoud" class="course-navigation">
+<div class="course-section is-open" data-theme="1">
+<button aria-controls="course-section-1-veranderingen-in-beeld" aria-expanded="true" class="course-section-toggle" type="button">
+<span class="course-section-number">
+            1
+        </span>
+<span class="course-section-title">
+            Veranderingen in beeld
+        </span>
+<span aria-hidden="true" class="course-section-arrow">
+            ▾
+        </span>
+</button>
+<div class="course-section-content" id="course-section-1-veranderingen-in-beeld">
+<a class="course-chapter-link" data-chapter="Thema1-Opfrissing/Afgeleid-getal" href="Thema1-Opfrissing/Afgeleid-getal.html">
+<span class="course-chapter-number">
+                1
+            </span>
+<span class="course-chapter-title">
+                Verandering en het afgeleid getal
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema1-Opfrissing/Oefeningen-Afgeleid-getal" href="Thema1-Opfrissing/Oefeningen-Afgeleid-getal.html">
+<span class="course-chapter-number">
+                1.OEF
+            </span>
+<span class="course-chapter-title">
+                Oefeningen — Verandering en het afgeleid getal
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema1-Opfrissing/Afgeleide-functie" href="Thema1-Opfrissing/Afgeleide-functie.html">
+<span class="course-chapter-number">
+                2
+            </span>
+<span class="course-chapter-title">
+                De afgeleide functie
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema1-Opfrissing/Oefeningen-Afgeleide-functie" href="Thema1-Opfrissing/Oefeningen-Afgeleide-functie.html">
+<span class="course-chapter-number">
+                2.OEF
+            </span>
+<span class="course-chapter-title">
+                Oefeningen — De afgeleide functie
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema1-Opfrissing/Verloop-functies" href="Thema1-Opfrissing/Verloop-functies.html">
+<span class="course-chapter-number">
+                3
+            </span>
+<span class="course-chapter-title">
+                Verloop van functies
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema1-Opfrissing/Oefeningen-Verloop-functies" href="Thema1-Opfrissing/Oefeningen-Verloop-functies.html">
+<span class="course-chapter-number">
+                3.OEF
+            </span>
+<span class="course-chapter-title">
+                Oefeningen — Verloop van functies
+            </span>
+</a>
+<a aria-current="page" class="course-chapter-link is-active" data-chapter="Thema1-Opfrissing/Limieten" href="Thema1-Opfrissing/Limieten.html">
+<span class="course-chapter-number">
+                4
+            </span>
+<span class="course-chapter-title">
+                Limieten en asymptotisch gedrag
+            </span>
+</a>
+</div>
+</div>
+</nav>
+</aside>
+<article class="chapter-content"><div class="chapter-body">
+<div class="preamble">
+</div>
+<style> .activity-body pre { white-space: pre; background-color: lightgray; } .xmyoutube { aspect-ratio: 16/9; min-width: 75%; } .image-environment img { width: unset; } </style>
+<div class="maketitle"></div>
+<!-- l. 112 --><p class="noindent"></p><section class="learning-box learning-box--prior"> <div class="learning-box__header"> <span class="learning-box__icon"> </span><span class="learning-box__title">Voorkennis</span> </div> <div class="learning-box__content">
+<p></p>
+<ul class="itemize1">
+<li class="itemize">Je kent het domein van veelterm-, rationale en irrationale functies.
 </li>
-<li class='itemize'>Je kan eenvoudige limieten algebraïsch berekenen.
+<li class="itemize">Je kan eenvoudige limieten algebraïsch berekenen.
 </li>
-<li class='itemize'>Je kan rationale uitdrukkingen vereenvoudigen.
+<li class="itemize">Je kan rationale uitdrukkingen vereenvoudigen.
 </li>
-<li class='itemize'>Je kan bij wortelvormen werken met de toegevoegde factor.
+<li class="itemize">Je kan bij wortelvormen werken met de toegevoegde factor.
 </li>
-<li class='itemize'>Je kan verticale, horizontale en schuine asymptoten bepalen.
+<li class="itemize">Je kan verticale, horizontale en schuine asymptoten bepalen.
 </li>
-<li class='itemize'>Je kan informatie aflezen uit een grafiek.</li></ul>
-<!--  l. 119  --></div> </section> 
-<!--  l. 121  --><section class='learning-box learning-box--goals'> <div class='learning-box__header'> <span class='learning-box__icon'> </span><span class='learning-box__title'>Leerdoelen</span> </div> <div class='learning-box__content'> 
-     
-<ul class='itemize1'>
-<li class='itemize'>Je kan in woorden uitleggen wat een limiet beschrijft.
+<li class="itemize">Je kan informatie aflezen uit een grafiek.</li></ul>
+<!-- l. 119 --><p class="noindent"></p></div> </section>
+<p></p><!-- l. 121 --><p class="noindent"></p><section class="learning-box learning-box--goals"> <div class="learning-box__header"> <span class="learning-box__icon"> </span><span class="learning-box__title">Leerdoelen</span> </div> <div class="learning-box__content">
+<p></p>
+<ul class="itemize1">
+<li class="itemize">Je kan in woorden uitleggen wat een limiet beschrijft.
 </li>
-<li class='itemize'>Je kan functiewaarde en limiet van elkaar onderscheiden.
+<li class="itemize">Je kan functiewaarde en limiet van elkaar onderscheiden.
                                                                   
 
                                                                   
 </li>
-<li class='itemize'>Je kan linker- en rechterlimieten interpreteren.
+<li class="itemize">Je kan linker- en rechterlimieten interpreteren.
 </li>
-<li class='itemize'>Je kan limieten in een punt en op oneindig uit een grafiek aflezen.
+<li class="itemize">Je kan limieten in een punt en op oneindig uit een grafiek aflezen.
 </li>
-<li class='itemize'>Je kan een oneindige limiet correct interpreteren.
+<li class="itemize">Je kan een oneindige limiet correct interpreteren.
 </li>
-<li class='itemize'>Je kan verticale, horizontale en schuine asymptoten herkennen.
+<li class="itemize">Je kan verticale, horizontale en schuine asymptoten herkennen.
 </li>
-<li class='itemize'>Je kan het verband tussen limieten en asymptotisch gedrag uitleggen.
+<li class="itemize">Je kan het verband tussen limieten en asymptotisch gedrag uitleggen.
 </li>
-<li class='itemize'>Je kan eerder geleerde limiettechnieken opnieuw gebruiken.
+<li class="itemize">Je kan eerder geleerde limiettechnieken opnieuw gebruiken.
 </li>
-<li class='itemize'>Je kan vanuit limietinformatie uitspraken doen over het mogelijke verloop
+<li class="itemize">Je kan vanuit limietinformatie uitspraken doen over het mogelijke verloop
 van een grafiek.</li></ul>
-<!--  l. 131  --></div> </section> 
-<p><a id='x1-2r1'></a>
-</p><!--  l. 138  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>1</div><div class='fvd-section-bar__title'>Waarom opnieuw limieten?</div></div>
-<!--  l. 140  --><p class='noindent'>In de vorige hoofdstukken onderzochten we hoe een functie <em>verandert</em>.
-</p><!--  l. 143  --><p class='noindent'>Met <span class='mathjax-inline'>\(f'\)</span> en <span class='mathjax-inline'>\(f''\)</span> kunnen we bijvoorbeeld stijgen, dalen, extrema en kromming onderzoeken.
-</p><!--  l. 146  --><p class='noindent'>Maar daarmee kennen we nog niet het volledige gedrag van een functie.
-</p><!--  l. 148  --><p class='noindent'>Bij de functie
+<!-- l. 131 --><p class="noindent"></p></div> </section>
+<p><a id="x1-2r1"></a>
+</p><p></p><!-- l. 138 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">1</div><div class="fvd-section-bar__title">Waarom opnieuw limieten?</div></div>
+<p></p><!-- l. 140 --><p class="noindent">In de vorige hoofdstukken onderzochten we hoe een functie <em>verandert</em>.
+</p><!-- l. 143 --><p class="noindent">Met <span class="mathjax-inline">\(f'\)</span> en <span class="mathjax-inline">\(f''\)</span> kunnen we bijvoorbeeld stijgen, dalen, extrema en kromming onderzoeken.
+</p><!-- l. 146 --><p class="noindent">Maar daarmee kennen we nog niet het volledige gedrag van een functie.
+</p><!-- l. 148 --><p class="noindent">Bij de functie
 </p>
-<div class='mathjax-block'>\[ f(x)=\frac {1}{x-2} \]</div>
-<!--  l. 154  --><p class='noindent'>is bijvoorbeeld vooral interessant wat er gebeurt wanneer
+<div class="mathjax-block">\[ f(x)=\frac {1}{x-2} \]</div>
+<!-- l. 154 --><p class="noindent">is bijvoorbeeld vooral interessant wat er gebeurt wanneer
 </p>
-<div class='mathjax-block'>\[ x\to 2 \]</div>
-<!--  l. 160  --><p class='noindent'>of wanneer
+<div class="mathjax-block">\[ x\to 2 \]</div>
+<!-- l. 160 --><p class="noindent">of wanneer
                                                                   
 
                                                                   
 </p>
-<div class='mathjax-block'>\[ x\to +\infty . \]</div>
-<!--  l. 166  --><p class='noindent'>De functie is niet gedefinieerd voor <span class='mathjax-inline'>\(x=2\)</span>, maar haar gedrag in de buurt van <span class='mathjax-inline'>\(2\)</span> kunnen we
+<div class="mathjax-block">\[ x\to +\infty . \]</div>
+<!-- l. 166 --><p class="noindent">De functie is niet gedefinieerd voor <span class="mathjax-inline">\(x=2\)</span>, maar haar gedrag in de buurt van <span class="mathjax-inline">\(2\)</span> kunnen we
 wel heel precies beschrijven.
-</p><!--  l. 169  --><p class='noindent'>Daarvoor gebruiken we <strong>limieten</strong>.
-</p><!--  l. 172  --><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span></div><div class='fvd-remark__content'>Een limiet beantwoordt niet in de eerste plaats de vraag
-
-<div class='mathjax-block'>\[ \text {``Wat is de functiewaarde?''} \]</div>
-<!--  l. 178  --><p class='noindent'>maar wel
+</p><!-- l. 169 --><p class="noindent">Daarvoor gebruiken we <strong>limieten</strong>.
+</p><!-- l. 172 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">Een limiet beantwoordt niet in de eerste plaats de vraag
+<p></p>
+<div class="mathjax-block">\[ \text {``Wat is de functiewaarde?''} \]</div>
+<!-- l. 178 --><p class="noindent">maar wel
 </p>
-<div class='mathjax-block'>\[ \boxed { \text {``Waarheen gaan de functiewaarden wanneer }x \text { een bepaalde waarde nadert?''} } \]</div> </div></section>
-<p><a id='x1-3r2'></a>
-</p><!--  l. 193  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>2</div><div class='fvd-section-bar__title'>Wat vertelt een limiet?</div></div>
-<!--  l. 195  --><p class='noindent'>Neem een functie <span class='mathjax-inline'>\(f\)</span> en laat <span class='mathjax-inline'>\(x\)</span> steeds dichter bij een getal <span class='mathjax-inline'>\(a\)</span> komen.
-</p><!--  l. 198  --><p class='noindent'>Wanneer de functiewaarden daarbij steeds dichter bij een getal <span class='mathjax-inline'>\(L\)</span> komen, schrijven
+<div class="mathjax-block">\[ \boxed { \text {``Waarheen gaan de functiewaarden wanneer }x \text { een bepaalde waarde nadert?''} } \]</div> </div></section>
+<p><a id="x1-3r2"></a>
+</p><!-- l. 193 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">2</div><div class="fvd-section-bar__title">Wat vertelt een limiet?</div></div>
+<p></p><!-- l. 195 --><p class="noindent">Neem een functie <span class="mathjax-inline">\(f\)</span> en laat <span class="mathjax-inline">\(x\)</span> steeds dichter bij een getal <span class="mathjax-inline">\(a\)</span> komen.
+</p><!-- l. 198 --><p class="noindent">Wanneer de functiewaarden daarbij steeds dichter bij een getal <span class="mathjax-inline">\(L\)</span> komen, schrijven
 we
 </p>
-<div class='mathjax-block'>\[ \boxed { \lim _{x\to a}f(x)=L. } \]</div>
-<!--  l. 207  --><p class='noindent'>We lezen:
+<div class="mathjax-block">\[ \boxed { \lim _{x\to a}f(x)=L. } \]</div>
+<!-- l. 207 --><p class="noindent">We lezen:
 </p>
-<div class='center'>
-<!--  l. 209  --><!--  l. 210  --><p class='noindent'>“de limiet van <span class='mathjax-inline'>\(f(x)\)</span> voor <span class='mathjax-inline'>\(x\)</span> gaande naar <span class='mathjax-inline'>\(a\)</span> is <span class='mathjax-inline'>\(L\)</span>”.</p></div>
-<!--  l. 213  --><p class='noindent'>Het getal <span class='mathjax-inline'>\(a\)</span> vertelt dus <em>waarheen <span class='mathjax-inline'>\(x\)</span> gaat</em>.
-</p><!--  l. 215  --><p class='noindent'>Het getal <span class='mathjax-inline'>\(L\)</span> vertelt <em>waarheen <span class='mathjax-inline'>\(f(x)\)</span> gaat</em>.
-<a id='x1-4r1'></a>
-</p><!--  l. 222  --><div class='fvd-subsection'>
-<!--  l. 222  --><div class='fvd-subsection__row'>
-<!--  l. 222  --><div class='fvd-subsection__number'>2.1</div>
-<!--  l. 222  --><div class='fvd-subsection__title'>Een limiet gaat over gedrag in de buurt</div>
-<!--  l. 222  --></div>
-<!--  l. 222  --><div class='fvd-subsection__line'></div>
-<!--  l. 222  --></div>
-
-                                                                  
-
-                                                                  
-<div class='center'>
-<!--  l. 224  --><!--  l. 225  --><p class='noindent'><img alt='[Picture]' src='Limieten.online-91ec43bcb56233b98d3b719a027fbd41.svg' /></p></div>
-<!--  l. 263  --><p class='noindent'>In deze grafiek geldt:
+<div class="center">
+<!-- l. 209 --><p class="noindent">
+</p><!-- l. 210 --><p class="noindent">“de limiet van <span class="mathjax-inline">\(f(x)\)</span> voor <span class="mathjax-inline">\(x\)</span> gaande naar <span class="mathjax-inline">\(a\)</span> is <span class="mathjax-inline">\(L\)</span>”.</p></div>
+<!-- l. 213 --><p class="noindent">Het getal <span class="mathjax-inline">\(a\)</span> vertelt dus <em>waarheen <span class="mathjax-inline">\(x\)</span> gaat</em>.
+</p><!-- l. 215 --><p class="noindent">Het getal <span class="mathjax-inline">\(L\)</span> vertelt <em>waarheen <span class="mathjax-inline">\(f(x)\)</span> gaat</em>.
+<a id="x1-4r1"></a>
+</p><!-- l. 222 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 222 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 222 --><p class="noindent"></p><div class="fvd-subsection__number">2.1</div>
+<p></p><!-- l. 222 --><p class="noindent"></p><div class="fvd-subsection__title">Een limiet gaat over gedrag in de buurt</div>
+<p></p><!-- l. 222 --><p class="noindent"></p></div>
+<p></p><!-- l. 222 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 222 --><p class="noindent"></p></div>
+<p></p>
+<div class="center">
+<!-- l. 224 --><p class="noindent">
+</p><!-- l. 225 --><p class="noindent"><img alt="[Picture]" src="Limieten.online-91ec43bcb56233b98d3b719a027fbd41.svg"/></p></div>
+<!-- l. 263 --><p class="noindent">In deze grafiek geldt:
 </p>
-<div class='mathjax-block'>\[ f(a)\neq L, \]</div>
-<!--  l. 269  --><p class='noindent'>maar toch:
+<div class="mathjax-block">\[ f(a)\neq L, \]</div>
+<!-- l. 269 --><p class="noindent">maar toch:
 </p>
-<div class='mathjax-block'>\[ \boxed { \lim _{x\to a}f(x)=L. } \]</div>
-<!--  l. 277  --><p class='noindent'>De waarden van <span class='mathjax-inline'>\(f(x)\)</span> naderen immers <span class='mathjax-inline'>\(L\)</span> wanneer <span class='mathjax-inline'>\(x\)</span> naar <span class='mathjax-inline'>\(a\)</span> nadert.
-</p><!--  l. 280  --><section class='fvd-property'><div class='fvd-property__title'><span class='fvd-property__label'>EIGENSCHAP</span><span class='fvd-property__separator'> — </span><span class='fvd-property__name'>Functiewaarde en limiet</span></div><div class='fvd-property__content'>
-<!--  l. 282  --><p class='noindent'>De uitspraken
+<div class="mathjax-block">\[ \boxed { \lim _{x\to a}f(x)=L. } \]</div>
+<!-- l. 277 --><p class="noindent">De waarden van <span class="mathjax-inline">\(f(x)\)</span> naderen immers <span class="mathjax-inline">\(L\)</span> wanneer <span class="mathjax-inline">\(x\)</span> naar <span class="mathjax-inline">\(a\)</span> nadert.
+</p><!-- l. 280 --><p class="noindent"></p><section class="fvd-property"><div class="fvd-property__title"><span class="fvd-property__label">EIGENSCHAP</span><span class="fvd-property__separator"> — </span><span class="fvd-property__name">Functiewaarde en limiet</span></div><div class="fvd-property__content">
+<p></p><!-- l. 282 --><p class="noindent">De uitspraken
 </p>
-<div class='mathjax-block'>\[ f(a)=L \]</div>
-<!--  l. 288  --><p class='noindent'>en
+<div class="mathjax-block">\[ f(a)=L \]</div>
+<!-- l. 288 --><p class="noindent">en
 </p>
-<div class='mathjax-block'>\[ \lim _{x\to a}f(x)=L \]</div>
-<!--  l. 294  --><p class='noindent'>zeggen niet hetzelfde.
-</p><!--  l. 296  --><p class='noindent'>De eerste gaat over de waarde <em>in</em> <span class='mathjax-inline'>\(a\)</span>.
-</p><!--  l. 298  --><p class='noindent'>De tweede gaat over het gedrag van de functie <em>in de buurt van</em> <span class='mathjax-inline'>\(a\)</span>.
+<div class="mathjax-block">\[ \lim _{x\to a}f(x)=L \]</div>
+<!-- l. 294 --><p class="noindent">zeggen niet hetzelfde.
+</p><!-- l. 296 --><p class="noindent">De eerste gaat over de waarde <em>in</em> <span class="mathjax-inline">\(a\)</span>.
+</p><!-- l. 298 --><p class="noindent">De tweede gaat over het gedrag van de functie <em>in de buurt van</em> <span class="mathjax-inline">\(a\)</span>.
 </p></div></section>
-<p><a id='x1-5r1'></a>
-</p><!--  l. 308  --><section class='fvd-exercise'>
-<!--  l. 308  --><div class='fvd-exercise__title'>
-<!--  l. 308  --><p class='noindent'>Oefening 1
+<p><a id="x1-5r1"></a>
+</p><p></p><!-- l. 308 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 308 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 308 --><p class="noindent">Oefening 1
                                                                   
 
                                                                   
-</p><!--  l. 308  --><p class='noindent'>— Functiewaarde of limiet?
-</p><!--  l. 308  --></div>
-<!--  l. 308  --><div class='fvd-exercise__body'>
-<!--  l. 308  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
-<!--  l. 308  --><div class='fvd-exercise__content'>
-<!--  l. 310  --><p class='noindent'>Uit een grafiek lezen we:
+</p><!-- l. 308 --><p class="noindent">— Functiewaarde of limiet?
+</p><!-- l. 308 --><p class="noindent"></p></div>
+<p></p><!-- l. 308 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 308 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--b">B</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 308 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 310 --><p class="noindent">Uit een grafiek lezen we:
 </p>
-<div class='mathjax-block'>\[ f(2)=5 \]</div>
-<!--  l. 316  --><p class='noindent'>en
+<div class="mathjax-block">\[ f(2)=5 \]</div>
+<!-- l. 316 --><p class="noindent">en
 </p>
-<div class='mathjax-block'>\[ \lim _{x\to 2}f(x)=3. \]</div>
-<!--  l. 322  --><p class='noindent'>Welke uitspraak is correct?
+<div class="mathjax-block">\[ \lim _{x\to 2}f(x)=3. \]</div>
+<!-- l. 322 --><p class="noindent">Welke uitspraak is correct?
 </p>
-<div class='multiple-choice' id='problem1' titletext=' Multiple Choice'><span class='choice  ' id='choice1'>Dit is onmogelijk: functiewaarde en limiet moeten gelijk zijn. </span><span class='choice  ' id='choice2'>De grafiek gaat
-noodzakelijk door <span class='mathjax-inline'>\((2,3)\)</span>.</span> <span class='choice correct ' id='choice3'>In <span class='mathjax-inline'>\(x=2\)</span> is de functiewaarde <span class='mathjax-inline'>\(5\)</span>, terwijl de functiewaarden in de buurt
-van <span class='mathjax-inline'>\(2\)</span> naar <span class='mathjax-inline'>\(3\)</span> naderen.</span> <span class='choice  ' id='choice4'>De functie is niet gedefinieerd in <span class='mathjax-inline'>\(x=2\)</span>.</span> </div>
+<div class="multiple-choice" id="problem1" titletext=" Multiple Choice"><span class="choice" id="choice1">Dit is onmogelijk: functiewaarde en limiet moeten gelijk zijn. </span><span class="choice" id="choice2">De grafiek gaat
+noodzakelijk door <span class="mathjax-inline">\((2,3)\)</span>.</span> <span class="choice correct" id="choice3">In <span class="mathjax-inline">\(x=2\)</span> is de functiewaarde <span class="mathjax-inline">\(5\)</span>, terwijl de functiewaarden in de buurt
+van <span class="mathjax-inline">\(2\)</span> naar <span class="mathjax-inline">\(3\)</span> naderen.</span> <span class="choice" id="choice4">De functie is niet gedefinieerd in <span class="mathjax-inline">\(x=2\)</span>.</span> </div>
 </div>
-<!--  l. 331  --></div>
-<!--  l. 331  --></section>
-<p><a id='x1-6r3'></a>
-</p><!--  l. 338  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>3</div><div class='fvd-section-bar__title'>Van links of van rechts naderen</div></div>
-<!--  l. 340  --><p class='noindent'>We kunnen een waarde <span class='mathjax-inline'>\(a\)</span> op twee manieren naderen.
-</p><!--  l. 342  --><p class='noindent'>Van links:
+<!-- l. 331 --><p class="noindent"></p></div>
+<p></p><!-- l. 331 --><p class="noindent"></p></section>
+<p><a id="x1-6r3"></a>
+</p><p></p><!-- l. 338 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">3</div><div class="fvd-section-bar__title">Van links of van rechts naderen</div></div>
+<p></p><!-- l. 340 --><p class="noindent">We kunnen een waarde <span class="mathjax-inline">\(a\)</span> op twee manieren naderen.
+</p><!-- l. 342 --><p class="noindent">Van links:
 </p>
-<div class='mathjax-block'>\[ x\to a^-. \]</div>
-<!--  l. 348  --><p class='noindent'>Van rechts:
+<div class="mathjax-block">\[ x\to a^-. \]</div>
+<!-- l. 348 --><p class="noindent">Van rechts:
 </p>
-<div class='mathjax-block'>\[ x\to a^+. \]</div>
-<!--  l. 354  --><p class='noindent'>Daarom onderscheiden we:
+<div class="mathjax-block">\[ x\to a^+. \]</div>
+<!-- l. 354 --><p class="noindent">Daarom onderscheiden we:
 </p>
-<div class='mathjax-block'>\[ \boxed { \lim _{x\to a^-}f(x) } \]</div>
-<!--  l. 362  --><p class='noindent'>en
+<div class="mathjax-block">\[ \boxed { \lim _{x\to a^-}f(x) } \]</div>
+<!-- l. 362 --><p class="noindent">en
 </p>
-<div class='mathjax-block'>\[ \boxed { \lim _{x\to a^+}f(x). } \]</div>
-<!--  l. 370  --><p class='noindent'>Dit noemen we respectievelijk de <strong>linkerlimiet</strong> en de <strong>rechterlimiet</strong>.
+<div class="mathjax-block">\[ \boxed { \lim _{x\to a^+}f(x). } \]</div>
+<!-- l. 370 --><p class="noindent">Dit noemen we respectievelijk de <strong>linkerlimiet</strong> en de <strong>rechterlimiet</strong>.
                                                                   
 
                                                                   
-</p><!--  l. 373  --><section class='fvd-property'><div class='fvd-property__title'><span class='fvd-property__label'>EIGENSCHAP</span><span class='fvd-property__separator'> — </span><span class='fvd-property__name'>Wanneer bestaat de tweezijdige limiet?</span></div><div class='fvd-property__content'>
-<!--  l. 375  --><p class='noindent'>Als beide eenzijdige limieten bestaan en gelijk zijn, dan bestaat de limiet:
+</p><!-- l. 373 --><p class="noindent"></p><section class="fvd-property"><div class="fvd-property__title"><span class="fvd-property__label">EIGENSCHAP</span><span class="fvd-property__separator"> — </span><span class="fvd-property__name">Wanneer bestaat de tweezijdige limiet?</span></div><div class="fvd-property__content">
+<p></p><!-- l. 375 --><p class="noindent">Als beide eenzijdige limieten bestaan en gelijk zijn, dan bestaat de limiet:
 </p>
-<div class='mathjax-block'>\[ \boxed { \lim _{x\to a}f(x)=L } \]</div>
-<!--  l. 384  --><p class='noindent'>precies wanneer
+<div class="mathjax-block">\[ \boxed { \lim _{x\to a}f(x)=L } \]</div>
+<!-- l. 384 --><p class="noindent">precies wanneer
 </p>
-<div class='mathjax-block'>\[ \lim _{x\to a^-}f(x)=L \]</div>
-<!--  l. 390  --><p class='noindent'>en
+<div class="mathjax-block">\[ \lim _{x\to a^-}f(x)=L \]</div>
+<!-- l. 390 --><p class="noindent">en
 </p>
-<div class='mathjax-block'>\[ \lim _{x\to a^+}f(x)=L. \]</div>
-<!--  l. 396  --><p class='noindent'>Zijn linker- en rechterlimiet verschillend, dan bestaat de tweezijdige limiet
+<div class="mathjax-block">\[ \lim _{x\to a^+}f(x)=L. \]</div>
+<!-- l. 396 --><p class="noindent">Zijn linker- en rechterlimiet verschillend, dan bestaat de tweezijdige limiet
 niet.
 </p></div></section>
-<p><a id='x1-7r2'></a>
-</p><!--  l. 406  --><section class='fvd-exercise'>
-<!--  l. 406  --><div class='fvd-exercise__title'>
-<!--  l. 406  --><p class='noindent'>Oefening 2
-</p><!--  l. 406  --><p class='noindent'>— Links en rechts
-</p><!--  l. 406  --></div>
-<!--  l. 406  --><div class='fvd-exercise__body'>
-<!--  l. 406  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
-<!--  l. 406  --><div class='fvd-exercise__content'>
-<!--  l. 408  --><p class='noindent'>Voor een functie <span class='mathjax-inline'>\(f\)</span> geldt:
+<p><a id="x1-7r2"></a>
+</p><p></p><!-- l. 406 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 406 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 406 --><p class="noindent">Oefening 2
+</p><!-- l. 406 --><p class="noindent">— Links en rechts
+</p><!-- l. 406 --><p class="noindent"></p></div>
+<p></p><!-- l. 406 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 406 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--b">B</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 406 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 408 --><p class="noindent">Voor een functie <span class="mathjax-inline">\(f\)</span> geldt:
 </p>
-<div class='mathjax-block'>\[ \lim _{x\to 3^-}f(x)=2 \]</div>
-<!--  l. 414  --><p class='noindent'>en
+<div class="mathjax-block">\[ \lim _{x\to 3^-}f(x)=2 \]</div>
+<!-- l. 414 --><p class="noindent">en
 </p>
-<div class='mathjax-block'>\[ \lim _{x\to 3^+}f(x)=5. \]</div>
-<!--  l. 420  --><p class='noindent'>Welke uitspraak is correct?
+<div class="mathjax-block">\[ \lim _{x\to 3^+}f(x)=5. \]</div>
+<!-- l. 420 --><p class="noindent">Welke uitspraak is correct?
 </p>
-<div class='multiple-choice' id='problem2' titletext=' Multiple Choice'><span class='choice  ' id='choice5'><span class='mathjax-inline'>\(\displaystyle \lim _{x\to 3}f(x)=2\)</span></span> <span class='choice  ' id='choice6'><span class='mathjax-inline'>\(\displaystyle \lim _{x\to 3}f(x)=5\)</span></span> <span class='choice  ' id='choice7'><span class='mathjax-inline'>\(\displaystyle \lim _{x\to 3}f(x)=\frac 72\)</span></span> <span class='choice correct ' id='choice8'>De tweezijdige limiet voor <span class='mathjax-inline'>\(x\to 3\)</span> bestaat niet.</span> </div>
+<div class="multiple-choice" id="problem2" titletext=" Multiple Choice"><span class="choice" id="choice5"><span class="mathjax-inline">\(\displaystyle \lim _{x\to 3}f(x)=2\)</span></span> <span class="choice" id="choice6"><span class="mathjax-inline">\(\displaystyle \lim _{x\to 3}f(x)=5\)</span></span> <span class="choice" id="choice7"><span class="mathjax-inline">\(\displaystyle \lim _{x\to 3}f(x)=\frac 72\)</span></span> <span class="choice correct" id="choice8">De tweezijdige limiet voor <span class="mathjax-inline">\(x\to 3\)</span> bestaat niet.</span> </div>
 </div>
-<!--  l. 429  --></div>
-<!--  l. 429  --></section>
-<p><a id='x1-8r4'></a>
-                                                                  
-
-                                                                  
-</p><!--  l. 436  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>4</div><div class='fvd-section-bar__title'>Wanneer functiewaarden onbegrensd worden</div></div>
-<!--  l. 438  --><p class='noindent'>Een limiet hoeft geen reëel getal te zijn.
-</p><!--  l. 440  --><p class='noindent'>Bijvoorbeeld:
+<!-- l. 429 --><p class="noindent"></p></div>
+<p></p><!-- l. 429 --><p class="noindent"></p></section>
+<p><a id="x1-8r4"></a>
+</p><p></p><!-- l. 436 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">4</div><div class="fvd-section-bar__title">Wanneer functiewaarden onbegrensd worden</div></div>
+<p></p><!-- l. 438 --><p class="noindent">Een limiet hoeft geen reëel getal te zijn.
+</p><!-- l. 440 --><p class="noindent">Bijvoorbeeld:
 </p>
-<div class='mathjax-block'>\[ \lim _{x\to 2^+}\frac {1}{x-2}=+\infty . \]</div>
-<!--  l. 446  --><p class='noindent'>Dat betekent:
-</p><!--  l. 448  --><p class='noindent'>wanneer <span class='mathjax-inline'>\(x\)</span> langs rechts steeds dichter bij <span class='mathjax-inline'>\(2\)</span> komt, worden de functiewaarden positief en
+<div class="mathjax-block">\[ \lim _{x\to 2^+}\frac {1}{x-2}=+\infty . \]</div>
+<!-- l. 446 --><p class="noindent">Dat betekent:
+</p><!-- l. 448 --><p class="noindent">wanneer <span class="mathjax-inline">\(x\)</span> langs rechts steeds dichter bij <span class="mathjax-inline">\(2\)</span> komt, worden de functiewaarden positief en
 onbeperkt groot.
-</p><!--  l. 451  --><p class='noindent'>Langs links geldt:
+</p><!-- l. 451 --><p class="noindent">Langs links geldt:
 </p>
-<div class='mathjax-block'>\[ \lim _{x\to 2^-}\frac {1}{x-2}=-\infty . \]</div>
-<div class='center'>
-<!--  l. 462  --><!--  l. 463  --><p class='noindent'><img alt='[Picture]' src='Limieten.online-d3a7992d44ef732cf7b183b6c2f2f234.svg' /></p></div>
-<!--  l. 486  --><p class='noindent'>De rechte
+<div class="mathjax-block">\[ \lim _{x\to 2^-}\frac {1}{x-2}=-\infty . \]</div>
+<div class="center">
+<!-- l. 462 --><p class="noindent">
+</p><!-- l. 463 --><p class="noindent"><img alt="[Picture]" src="Limieten.online-d3a7992d44ef732cf7b183b6c2f2f234.svg"/></p></div>
+<!-- l. 486 --><p class="noindent">De rechte
 </p>
-<div class='mathjax-block'>\[ x=2 \]</div>
-<!--  l. 492  --><p class='noindent'>beschrijft hier een verticale grens die de grafiek steeds dichter nadert.
-</p><!--  l. 495  --><p class='noindent'>Dat brengt ons bij asymptoten.
-<a id='x1-9r5'></a>
-</p><!--  l. 502  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>5</div><div class='fvd-section-bar__title'>Verticale asymptoten</div></div>
-                                                                  
-
-                                                                  
-<!--  l. 504  --><section class='fvd-definition'><div class='fvd-definition__title'><span class='fvd-definition__label'>DEFINITIE</span><span class='fvd-definition__separator'> — </span><span class='fvd-definition__name'>Verticale asymptoot</span></div><div class='fvd-definition__content'>
-<!--  l. 506  --><p class='noindent'>De rechte
+<div class="mathjax-block">\[ x=2 \]</div>
+<!-- l. 492 --><p class="noindent">beschrijft hier een verticale grens die de grafiek steeds dichter nadert.
+</p><!-- l. 495 --><p class="noindent">Dat brengt ons bij asymptoten.
+<a id="x1-9r5"></a>
+</p><!-- l. 502 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">5</div><div class="fvd-section-bar__title">Verticale asymptoten</div></div>
+<p></p><!-- l. 504 --><p class="noindent"></p><section class="fvd-definition"><div class="fvd-definition__title"><span class="fvd-definition__label">DEFINITIE</span><span class="fvd-definition__separator"> — </span><span class="fvd-definition__name">Verticale asymptoot</span></div><div class="fvd-definition__content">
+<p></p><!-- l. 506 --><p class="noindent">De rechte
 </p>
-<div class='mathjax-block'>\[ \boxed {x=a} \]</div>
-<!--  l. 512  --><p class='noindent'>is een <strong>verticale asymptoot</strong> van de grafiek van <span class='mathjax-inline'>\(f\)</span> wanneer minstens één van de
-relevante eenzijdige limieten bij <span class='mathjax-inline'>\(a\)</span> oneindig is.
-</p><!--  l. 516  --><p class='noindent'>Bijvoorbeeld:
+<div class="mathjax-block">\[ \boxed {x=a} \]</div>
+<!-- l. 512 --><p class="noindent">is een <strong>verticale asymptoot</strong> van de grafiek van <span class="mathjax-inline">\(f\)</span> wanneer minstens één van de
+relevante eenzijdige limieten bij <span class="mathjax-inline">\(a\)</span> oneindig is.
+</p><!-- l. 516 --><p class="noindent">Bijvoorbeeld:
 </p>
-<div class='mathjax-block'>\[ \lim _{x\to a^-}f(x)=+\infty , \qquad \lim _{x\to a^+}f(x)=-\infty . \]</div>
+<div class="mathjax-block">\[ \lim _{x\to a^-}f(x)=+\infty , \qquad \lim _{x\to a^+}f(x)=-\infty . \]</div>
 </div></section>
-<!--  l. 526  --><p class='noindent'>Let op: het teken links en rechts hoeft niet hetzelfde te zijn.
-</p><!--  l. 528  --><p class='noindent'>Bij
+<!-- l. 526 --><p class="noindent">Let op: het teken links en rechts hoeft niet hetzelfde te zijn.
+</p><!-- l. 528 --><p class="noindent">Bij
 </p>
-<div class='mathjax-block'>\[ f(x)=\frac {1}{(x-2)^2} \]</div>
-<!--  l. 534  --><p class='noindent'>geldt bijvoorbeeld:
+<div class="mathjax-block">\[ f(x)=\frac {1}{(x-2)^2} \]</div>
+<!-- l. 534 --><p class="noindent">geldt bijvoorbeeld:
 </p>
-<div class='mathjax-block'>\[ \lim _{x\to 2^-}f(x)=+\infty \]</div>
-<!--  l. 540  --><p class='noindent'>en
+<div class="mathjax-block">\[ \lim _{x\to 2^-}f(x)=+\infty \]</div>
+<!-- l. 540 --><p class="noindent">en
 </p>
-<div class='mathjax-block'>\[ \lim _{x\to 2^+}f(x)=+\infty . \]</div>
-<!--  l. 546  --><p class='noindent'>Ook daar is
+<div class="mathjax-block">\[ \lim _{x\to 2^+}f(x)=+\infty . \]</div>
+<!-- l. 546 --><p class="noindent">Ook daar is
 </p>
-<div class='mathjax-block'>\[ x=2 \]</div>
-<!--  l. 552  --><p class='noindent'>een verticale asymptoot.
-<a id='x1-10r3'></a>
-</p><!--  l. 559  --><section class='fvd-exercise'>
-<!--  l. 559  --><div class='fvd-exercise__title'>
-<!--  l. 559  --><p class='noindent'>Oefening 3
-</p><!--  l. 559  --><p class='noindent'>— Van limieten naar verticale asymptoot
-</p><!--  l. 559  --></div>
-<!--  l. 559  --><div class='fvd-exercise__body'>
-<!--  l. 559  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
-<!--  l. 559  --><div class='fvd-exercise__content'>
-<!--  l. 561  --><p class='noindent'>Gegeven:
+<div class="mathjax-block">\[ x=2 \]</div>
+<!-- l. 552 --><p class="noindent">een verticale asymptoot.
+<a id="x1-10r3"></a>
+</p><!-- l. 559 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 559 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 559 --><p class="noindent">Oefening 3
+</p><!-- l. 559 --><p class="noindent">— Van limieten naar verticale asymptoot
+</p><!-- l. 559 --><p class="noindent"></p></div>
+<p></p><!-- l. 559 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 559 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--b">B</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 559 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 561 --><p class="noindent">Gegeven:
 </p>
-                                                                  
-
-                                                                  
-<div class='mathjax-block'>\[ \lim _{x\to -1^-}f(x)=-\infty \]</div>
-<!--  l. 567  --><p class='noindent'>en
+<div class="mathjax-block">\[ \lim _{x\to -1^-}f(x)=-\infty \]</div>
+<!-- l. 567 --><p class="noindent">en
 </p>
-<div class='mathjax-block'>\[ \lim _{x\to -1^+}f(x)=+\infty . \]</div>
-<!--  l. 573  --><p class='noindent'>Welke conclusie kun je trekken?
+<div class="mathjax-block">\[ \lim _{x\to -1^+}f(x)=+\infty . \]</div>
+<!-- l. 573 --><p class="noindent">Welke conclusie kun je trekken?
 </p>
-<div class='multiple-choice' id='problem3' titletext=' Multiple Choice'><span class='choice  ' id='choice9'><span class='mathjax-inline'>\(y=-1\)</span> is een horizontale asymptoot.</span> <span class='choice correct ' id='choice10'><span class='mathjax-inline'>\(x=-1\)</span> is een verticale asymptoot.</span> <span class='choice  ' id='choice11'><span class='mathjax-inline'>\((-1,0)\)</span> is noodzakelijk een
-nulpunt.</span> <span class='choice  ' id='choice12'><span class='mathjax-inline'>\(f(-1)=0\)</span>.</span> </div>
+<div class="multiple-choice" id="problem3" titletext=" Multiple Choice"><span class="choice" id="choice9"><span class="mathjax-inline">\(y=-1\)</span> is een horizontale asymptoot.</span> <span class="choice correct" id="choice10"><span class="mathjax-inline">\(x=-1\)</span> is een verticale asymptoot.</span> <span class="choice" id="choice11"><span class="mathjax-inline">\((-1,0)\)</span> is noodzakelijk een
+nulpunt.</span> <span class="choice" id="choice12"><span class="mathjax-inline">\(f(-1)=0\)</span>.</span> </div>
 </div>
-<!--  l. 582  --></div>
-<!--  l. 582  --></section>
-<p><a id='x1-11r6'></a>
-</p><!--  l. 589  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>6</div><div class='fvd-section-bar__title'>Wat gebeurt er ver naar links en rechts?</div></div>
-<!--  l. 591  --><p class='noindent'>Limieten kunnen ook beschrijven wat er gebeurt wanneer <span class='mathjax-inline'>\(x\)</span> onbegrensd groot of klein
+<!-- l. 582 --><p class="noindent"></p></div>
+<p></p><!-- l. 582 --><p class="noindent"></p></section>
+<p><a id="x1-11r6"></a>
+</p><p></p><!-- l. 589 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">6</div><div class="fvd-section-bar__title">Wat gebeurt er ver naar links en rechts?</div></div>
+<p></p><!-- l. 591 --><p class="noindent">Limieten kunnen ook beschrijven wat er gebeurt wanneer <span class="mathjax-inline">\(x\)</span> onbegrensd groot of klein
 wordt.
-</p><!--  l. 594  --><p class='noindent'>We schrijven bijvoorbeeld
+</p><!-- l. 594 --><p class="noindent">We schrijven bijvoorbeeld
 </p>
-<div class='mathjax-block'>\[ \lim _{x\to +\infty }f(x)=3. \]</div>
-<!--  l. 600  --><p class='noindent'>Dit betekent dat de functiewaarden steeds dichter bij <span class='mathjax-inline'>\(3\)</span> komen wanneer we op de
+<div class="mathjax-block">\[ \lim _{x\to +\infty }f(x)=3. \]</div>
+<!-- l. 600 --><p class="noindent">Dit betekent dat de functiewaarden steeds dichter bij <span class="mathjax-inline">\(3\)</span> komen wanneer we op de
 grafiek steeds verder naar rechts gaan.
-</p><!--  l. 603  --><p class='noindent'>Analoog beschrijft
+</p><!-- l. 603 --><p class="noindent">Analoog beschrijft
 </p>
-<div class='mathjax-block'>\[ \lim _{x\to -\infty }f(x) \]</div>
-<!--  l. 609  --><p class='noindent'>het gedrag ver naar links.
-</p><!--  l. 612  --><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span></div><div class='fvd-remark__content'>De symbolen
-
-<div class='mathjax-block'>\[ +\infty \qquad \text {en}\qquad -\infty \]</div>
-<!--  l. 620  --><p class='noindent'>zijn hier geen gewone getallen.
-</p><!--  l. 622  --><p class='noindent'>De notatie <span class='mathjax-inline'>\(x\to +\infty \)</span> betekent dat <span class='mathjax-inline'>\(x\)</span> onbeperkt toeneemt. </p></div></section>
-<p><a id='x1-12r7'></a>
-</p><!--  l. 630  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>7</div><div class='fvd-section-bar__title'>Horizontale asymptoten</div></div>
-<!--  l. 632  --><section class='fvd-definition'><div class='fvd-definition__title'><span class='fvd-definition__label'>DEFINITIE</span><span class='fvd-definition__separator'> — </span><span class='fvd-definition__name'>Horizontale asymptoot</span></div><div class='fvd-definition__content'>
-<!--  l. 634  --><p class='noindent'>Als
+<div class="mathjax-block">\[ \lim _{x\to -\infty }f(x) \]</div>
+<!-- l. 609 --><p class="noindent">het gedrag ver naar links.
+</p><!-- l. 612 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">De symbolen
+<p></p>
+<div class="mathjax-block">\[ +\infty \qquad \text {en}\qquad -\infty \]</div>
+<!-- l. 620 --><p class="noindent">zijn hier geen gewone getallen.
+</p><!-- l. 622 --><p class="noindent">De notatie <span class="mathjax-inline">\(x\to +\infty \)</span> betekent dat <span class="mathjax-inline">\(x\)</span> onbeperkt toeneemt. </p></div></section>
+<p><a id="x1-12r7"></a>
+</p><p></p><!-- l. 630 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">7</div><div class="fvd-section-bar__title">Horizontale asymptoten</div></div>
+<p></p><!-- l. 632 --><p class="noindent"></p><section class="fvd-definition"><div class="fvd-definition__title"><span class="fvd-definition__label">DEFINITIE</span><span class="fvd-definition__separator"> — </span><span class="fvd-definition__name">Horizontale asymptoot</span></div><div class="fvd-definition__content">
+<p></p><!-- l. 634 --><p class="noindent">Als
 </p>
-<div class='mathjax-block'>\[ \lim _{x\to +\infty }f(x)=b \]</div>
-<!--  l. 640  --><p class='noindent'>of
+<div class="mathjax-block">\[ \lim _{x\to +\infty }f(x)=b \]</div>
+<!-- l. 640 --><p class="noindent">of
                                                                   
 
                                                                   
 </p>
-<div class='mathjax-block'>\[ \lim _{x\to -\infty }f(x)=b, \]</div>
-<!--  l. 646  --><p class='noindent'>dan is
+<div class="mathjax-block">\[ \lim _{x\to -\infty }f(x)=b, \]</div>
+<!-- l. 646 --><p class="noindent">dan is
 </p>
-<div class='mathjax-block'>\[ \boxed {y=b} \]</div>
-<!--  l. 652  --><p class='noindent'>een <strong>horizontale asymptoot</strong> van de grafiek van <span class='mathjax-inline'>\(f\)</span> aan de overeenkomstige
+<div class="mathjax-block">\[ \boxed {y=b} \]</div>
+<!-- l. 652 --><p class="noindent">een <strong>horizontale asymptoot</strong> van de grafiek van <span class="mathjax-inline">\(f\)</span> aan de overeenkomstige
 zijde.
 </p></div></section>
-
-<div class='center'>
-<!--  l. 662  --><!--  l. 663  --><p class='noindent'><img alt='[Picture]' src='Limieten.online-afdcd090856c2373cfd87d77b42e1f58.svg' /></p></div>
-<!--  l. 683  --><p class='noindent'>Voor deze grafiek zien we:
+<p></p>
+<div class="center">
+<!-- l. 662 --><p class="noindent">
+</p><!-- l. 663 --><p class="noindent"><img alt="[Picture]" src="Limieten.online-afdcd090856c2373cfd87d77b42e1f58.svg"/></p></div>
+<!-- l. 683 --><p class="noindent">Voor deze grafiek zien we:
 </p>
-<div class='mathjax-block'>\[ \lim _{x\to -\infty }f(x)=2 \]</div>
-<!--  l. 689  --><p class='noindent'>en
+<div class="mathjax-block">\[ \lim _{x\to -\infty }f(x)=2 \]</div>
+<!-- l. 689 --><p class="noindent">en
 </p>
-<div class='mathjax-block'>\[ \lim _{x\to +\infty }f(x)=2. \]</div>
-<!--  l. 695  --><p class='noindent'>Dus:
+<div class="mathjax-block">\[ \lim _{x\to +\infty }f(x)=2. \]</div>
+<!-- l. 695 --><p class="noindent">Dus:
 </p>
-<div class='mathjax-block'>\[ \boxed {y=2} \]</div>
-<!--  l. 701  --><p class='noindent'>is een horizontale asymptoot.
-<a id='x1-13r1'></a>
-</p><!--  l. 708  --><div class='fvd-subsection'>
-<!--  l. 708  --><div class='fvd-subsection__row'>
-                                                                  
-
-                                                                  
-<!--  l. 708  --><div class='fvd-subsection__number'>7.1</div>
-<!--  l. 708  --><div class='fvd-subsection__title'>Mag een grafiek een horizontale asymptoot snijden?</div>
-<!--  l. 708  --></div>
-<!--  l. 708  --><div class='fvd-subsection__line'></div>
-<!--  l. 708  --></div>
-<!--  l. 710  --><p class='noindent'>Ja.
-</p><!--  l. 712  --><p class='noindent'>Een horizontale asymptoot beschrijft het gedrag voor
+<div class="mathjax-block">\[ \boxed {y=2} \]</div>
+<!-- l. 701 --><p class="noindent">is een horizontale asymptoot.
+<a id="x1-13r1"></a>
+</p><!-- l. 708 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 708 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 708 --><p class="noindent"></p><div class="fvd-subsection__number">7.1</div>
+<p></p><!-- l. 708 --><p class="noindent"></p><div class="fvd-subsection__title">Mag een grafiek een horizontale asymptoot snijden?</div>
+<p></p><!-- l. 708 --><p class="noindent"></p></div>
+<p></p><!-- l. 708 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 708 --><p class="noindent"></p></div>
+<p></p><!-- l. 710 --><p class="noindent">Ja.
+</p><!-- l. 712 --><p class="noindent">Een horizontale asymptoot beschrijft het gedrag voor
 </p>
-<div class='mathjax-block'>\[ x\to +\infty \]</div>
-<!--  l. 718  --><p class='noindent'>of
+<div class="mathjax-block">\[ x\to +\infty \]</div>
+<!-- l. 718 --><p class="noindent">of
 </p>
-<div class='mathjax-block'>\[ x\to -\infty . \]</div>
-<!--  l. 724  --><p class='noindent'>Ze zegt niet dat de grafiek de rechte nergens mag snijden.
-</p><!--  l. 727  --><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span></div><div class='fvd-remark__content'>Een asymptoot is geen “muur” waar een grafiek niet doorheen
+<div class="mathjax-block">\[ x\to -\infty . \]</div>
+<!-- l. 724 --><p class="noindent">Ze zegt niet dat de grafiek de rechte nergens mag snijden.
+</p><!-- l. 727 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">Een asymptoot is geen “muur” waar een grafiek niet doorheen
 mag.
-<!--  l. 729  --><p class='noindent'>De limiet beschrijft hoe de afstand tussen de grafiek en de asymptoot zich gedraagt
+<p></p><!-- l. 729 --><p class="noindent">De limiet beschrijft hoe de afstand tussen de grafiek en de asymptoot zich gedraagt
 in de relevante richting. </p></div></section>
-<p><a id='x1-14r8'></a>
-</p><!--  l. 738  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>8</div><div class='fvd-section-bar__title'>Schuine asymptoten</div></div>
-<!--  l. 740  --><p class='noindent'>Een functie hoeft voor grote <span class='mathjax-inline'>\(|x|\)</span> niet naar een constante waarde te naderen.
-</p><!--  l. 743  --><p class='noindent'>Ze kan ook steeds dichter bij een schuine rechte komen.
-</p><!--  l. 745  --><section class='fvd-definition'><div class='fvd-definition__title'><span class='fvd-definition__label'>DEFINITIE</span><span class='fvd-definition__separator'> — </span><span class='fvd-definition__name'>Schuine asymptoot</span></div><div class='fvd-definition__content'>
-<!--  l. 747  --><p class='noindent'>De rechte
+<p><a id="x1-14r8"></a>
+</p><p></p><!-- l. 738 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">8</div><div class="fvd-section-bar__title">Schuine asymptoten</div></div>
+<p></p><!-- l. 740 --><p class="noindent">Een functie hoeft voor grote <span class="mathjax-inline">\(|x|\)</span> niet naar een constante waarde te naderen.
+</p><!-- l. 743 --><p class="noindent">Ze kan ook steeds dichter bij een schuine rechte komen.
+</p><!-- l. 745 --><p class="noindent"></p><section class="fvd-definition"><div class="fvd-definition__title"><span class="fvd-definition__label">DEFINITIE</span><span class="fvd-definition__separator"> — </span><span class="fvd-definition__name">Schuine asymptoot</span></div><div class="fvd-definition__content">
+<p></p><!-- l. 747 --><p class="noindent">De rechte
 </p>
-<div class='mathjax-block'>\[ \boxed {y=ax+b} \qquad (a\neq 0) \]</div>
-<!--  l. 754  --><p class='noindent'>is een schuine asymptoot wanneer
+<div class="mathjax-block">\[ \boxed {y=ax+b} \qquad (a\neq 0) \]</div>
+<!-- l. 754 --><p class="noindent">is een schuine asymptoot wanneer
 </p>
-<div class='mathjax-block'>\[ \boxed { \lim _{x\to \pm \infty } \bigl (f(x)-(ax+b)\bigr )=0 } \]</div>
-<!--  l. 763  --><p class='noindent'>voor de onderzochte richting.
+<div class="mathjax-block">\[ \boxed { \lim _{x\to \pm \infty } \bigl (f(x)-(ax+b)\bigr )=0 } \]</div>
+<!-- l. 763 --><p class="noindent">voor de onderzochte richting.
 </p></div></section>
-<!--  l. 767  --><p class='noindent'>Het verschil
+<p></p><!-- l. 767 --><p class="noindent">Het verschil
 </p>
-<div class='mathjax-block'>\[ f(x)-(ax+b) \]</div>
-<!--  l. 773  --><p class='noindent'>is de verticale afstand met teken tussen de functiewaarde en de waarde op de
+<div class="mathjax-block">\[ f(x)-(ax+b) \]</div>
+<!-- l. 773 --><p class="noindent">is de verticale afstand met teken tussen de functiewaarde en de waarde op de
 rechte.
                                                                   
 
                                                                   
-</p><!--  l. 776  --><p class='noindent'>Als dat verschil naar nul gaat, komen grafiek en rechte steeds dichter bij
+</p><!-- l. 776 --><p class="noindent">Als dat verschil naar nul gaat, komen grafiek en rechte steeds dichter bij
 elkaar.
 </p>
-<div class='center'>
-<!--  l. 784  --><!--  l. 785  --><p class='noindent'><img alt='[Picture]' src='Limieten.online-1e267a4022c4c8318f582cc2ecddfbb7.svg' /></p></div>
-<p><a id='x1-15r4'></a>
-</p><!--  l. 810  --><section class='fvd-exercise'>
-<!--  l. 810  --><div class='fvd-exercise__title'>
-<!--  l. 810  --><p class='noindent'>Oefening 4
-</p><!--  l. 810  --><p class='noindent'>— Welke asymptoot?
-</p><!--  l. 810  --></div>
-<!--  l. 810  --><div class='fvd-exercise__body'>
-<!--  l. 810  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
-<!--  l. 810  --><div class='fvd-exercise__content'>
-<!--  l. 812  --><p class='noindent'>Koppel elke limietuitspraak aan de juiste conclusie.
+<div class="center">
+<!-- l. 784 --><p class="noindent">
+</p><!-- l. 785 --><p class="noindent"><img alt="[Picture]" src="Limieten.online-1e267a4022c4c8318f582cc2ecddfbb7.svg"/></p></div>
+<p><a id="x1-15r4"></a>
+</p><!-- l. 810 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 810 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 810 --><p class="noindent">Oefening 4
+</p><!-- l. 810 --><p class="noindent">— Welke asymptoot?
+</p><!-- l. 810 --><p class="noindent"></p></div>
+<p></p><!-- l. 810 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 810 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--b">B</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 810 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 812 --><p class="noindent">Koppel elke limietuitspraak aan de juiste conclusie.
 </p>
-<div class='problem-environment question' id='problem4' numbered=' ' role='article' titletext=' Question'>
-<div class='mathjax-block'>\[ \lim _{x\to 4^+}f(x)=+\infty . \]</div>
-<!--  l. 820  --><p class='noindent'>Welke asymptoot kan hieruit volgen?
+<div class="problem-environment question" id="problem4" numbered=" " role="article" titletext=" Question">
+<div class="mathjax-block">\[ \lim _{x\to 4^+}f(x)=+\infty . \]</div>
+<!-- l. 820 --><p class="noindent">Welke asymptoot kan hieruit volgen?
 </p>
-<div class='multiple-choice' id='problem5' titletext=' Multiple Choice'><span class='choice  ' id='choice13'><span class='mathjax-inline'>\(y=4\)</span></span> <span class='choice correct ' id='choice14'><span class='mathjax-inline'>\(x=4\)</span></span> <span class='choice  ' id='choice15'><span class='mathjax-inline'>\(y=x+4\)</span></span> </div>
-                                                                  
-
-                                                                  
+<div class="multiple-choice" id="problem5" titletext=" Multiple Choice"><span class="choice" id="choice13"><span class="mathjax-inline">\(y=4\)</span></span> <span class="choice correct" id="choice14"><span class="mathjax-inline">\(x=4\)</span></span> <span class="choice" id="choice15"><span class="mathjax-inline">\(y=x+4\)</span></span> </div>
 </div>
-<div class='problem-environment question' id='problem6' numbered=' ' role='article' titletext=' Question'>
-<div class='mathjax-block'>\[ \lim _{x\to +\infty }f(x)=-3. \]</div>
-<!--  l. 836  --><p class='noindent'>Welke asymptoot volgt hieruit?
+<div class="problem-environment question" id="problem6" numbered=" " role="article" titletext=" Question">
+<div class="mathjax-block">\[ \lim _{x\to +\infty }f(x)=-3. \]</div>
+<!-- l. 836 --><p class="noindent">Welke asymptoot volgt hieruit?
 </p>
-<div class='multiple-choice' id='problem7' titletext=' Multiple Choice'><span class='choice  ' id='choice16'><span class='mathjax-inline'>\(x=-3\)</span></span> <span class='choice correct ' id='choice17'><span class='mathjax-inline'>\(y=-3\)</span></span> <span class='choice  ' id='choice18'><span class='mathjax-inline'>\(y=x-3\)</span></span> </div>
+<div class="multiple-choice" id="problem7" titletext=" Multiple Choice"><span class="choice" id="choice16"><span class="mathjax-inline">\(x=-3\)</span></span> <span class="choice correct" id="choice17"><span class="mathjax-inline">\(y=-3\)</span></span> <span class="choice" id="choice18"><span class="mathjax-inline">\(y=x-3\)</span></span> </div>
 </div>
-<div class='problem-environment question' id='problem8' numbered=' ' role='article' titletext=' Question'>
-<div class='mathjax-block'>\[ \lim _{x\to +\infty } \bigl (f(x)-(2x-1)\bigr )=0. \]</div>
-<!--  l. 853  --><p class='noindent'>Welke asymptoot volgt hieruit?
+<div class="problem-environment question" id="problem8" numbered=" " role="article" titletext=" Question">
+<div class="mathjax-block">\[ \lim _{x\to +\infty } \bigl (f(x)-(2x-1)\bigr )=0. \]</div>
+<!-- l. 853 --><p class="noindent">Welke asymptoot volgt hieruit?
 </p>
-<div class='multiple-choice' id='problem9' titletext=' Multiple Choice'><span class='choice  ' id='choice19'><span class='mathjax-inline'>\(x=2\)</span></span> <span class='choice  ' id='choice20'><span class='mathjax-inline'>\(y=-1\)</span></span> <span class='choice correct ' id='choice21'><span class='mathjax-inline'>\(y=2x-1\)</span></span> </div>
+<div class="multiple-choice" id="problem9" titletext=" Multiple Choice"><span class="choice" id="choice19"><span class="mathjax-inline">\(x=2\)</span></span> <span class="choice" id="choice20"><span class="mathjax-inline">\(y=-1\)</span></span> <span class="choice correct" id="choice21"><span class="mathjax-inline">\(y=2x-1\)</span></span> </div>
 </div>
 </div>
-<!--  l. 863  --></div>
-<!--  l. 863  --></section>
-<p><a id='x1-16r9'></a>
-</p><!--  l. 870  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>9</div><div class='fvd-section-bar__title'>Drie soorten asymptotisch gedrag</div></div>
-<!--  l. 872  --><p class='noindent'>De drie situaties kunnen we nu naast elkaar plaatsen.
+<!-- l. 863 --><p class="noindent"></p></div>
+<p></p><!-- l. 863 --><p class="noindent"></p></section>
+<p><a id="x1-16r9"></a>
+</p><p></p><!-- l. 870 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">9</div><div class="fvd-section-bar__title">Drie soorten asymptotisch gedrag</div></div>
+<p></p><!-- l. 872 --><p class="noindent">De drie situaties kunnen we nu naast elkaar plaatsen.
 </p>
-<div class='mathjax-block'>\[ \boxed { \begin{array}{c|c} \text {limietgedrag} &amp; \text {asymptoot} \\ \hline f(x)\to \pm \infty \text { voor }x\to a^\pm &amp; x=a \\[2mm] f(x)\to b \text { voor }x\to \pm \infty &amp; y=b \\[2mm] f(x)-(ax+b)\to 0 \text { voor }x\to \pm \infty &amp; y=ax+b \end{array} } \]</div>
-<!--  l. 900  --><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span></div><div class='fvd-remark__content'>Probeer deze verbanden niet als drie losse recepten te onthouden.
-<!--  l. 902  --><p class='noindent'>Vraag telkens:
+<div class="mathjax-block">\[ \boxed { \begin {array}{c|c} \text {limietgedrag} &amp; \text {asymptoot} \\ \hline f(x)\to \pm \infty \text { voor }x\to a^\pm &amp; x=a \\[2mm] f(x)\to b \text { voor }x\to \pm \infty &amp; y=b \\[2mm] f(x)-(ax+b)\to 0 \text { voor }x\to \pm \infty &amp; y=ax+b \end {array} } \]</div>
+<!-- l. 900 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">Probeer deze verbanden niet als drie losse recepten te onthouden.
+<p></p><!-- l. 902 --><p class="noindent">Vraag telkens:
 </p>
-<div class='mathjax-block'>\[ \boxed {\text {Wat doet de grafiek?}} \]</div>
-<!--  l. 908  --><p class='noindent'>Bij een verticale asymptoot wordt <span class='mathjax-inline'>\(x\)</span> begrensd terwijl <span class='mathjax-inline'>\(f(x)\)</span> onbegrensd wordt.
-</p><!--  l. 911  --><p class='noindent'>Bij een horizontale of schuine asymptoot gaat <span class='mathjax-inline'>\(x\)</span> juist naar <span class='mathjax-inline'>\(\pm \infty \)</span> en nadert de grafiek steeds
+<div class="mathjax-block">\[ \boxed {\text {Wat doet de grafiek?}} \]</div>
+<!-- l. 908 --><p class="noindent">Bij een verticale asymptoot wordt <span class="mathjax-inline">\(x\)</span> begrensd terwijl <span class="mathjax-inline">\(f(x)\)</span> onbegrensd wordt.
+</p><!-- l. 911 --><p class="noindent">Bij een horizontale of schuine asymptoot gaat <span class="mathjax-inline">\(x\)</span> juist naar <span class="mathjax-inline">\(\pm \infty \)</span> en nadert de grafiek steeds
 dichter tot een rechte. </p></div></section>
-<p><a id='x1-17r10'></a>
-</p><!--  l. 920  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>10</div><div class='fvd-section-bar__title'>Kun je de limieten nog berekenen?</div></div>
-<!--  l. 922  --><p class='noindent'>In het vijfde jaar heb je verschillende technieken geleerd om limieten algebraïsch te
+<p><a id="x1-17r10"></a>
+</p><p></p><!-- l. 920 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">10</div><div class="fvd-section-bar__title">Kun je de limieten nog berekenen?</div></div>
+<p></p><!-- l. 922 --><p class="noindent">In het vijfde jaar heb je verschillende technieken geleerd om limieten algebraïsch te
 bepalen.
-</p><!--  l. 925  --><p class='noindent'>We bouwen die technieken hier niet opnieuw volledig op.
-</p><!--  l. 927  --><p class='noindent'>Je moet wel opnieuw herkennen welke aanpak geschikt is.
+</p><!-- l. 925 --><p class="noindent">We bouwen die technieken hier niet opnieuw volledig op.
+</p><!-- l. 927 --><p class="noindent">Je moet wel opnieuw herkennen welke aanpak geschikt is.
 </p>
-                                                                  
-
-                                                                  
-<div class='center'>
-<!--  l. 929  -->
-<div class='mathjax-block'>\[ \boxed { \text {eerst analyseren} \quad \longrightarrow \quad \text {dan pas rekenen} } \]</div></div>
-<!--  l. 939  --><p class='noindent'>Een nuttige eerste stap is altijd:
-</p>     
-<ol class='enumerate1'>
-<li class='enumerate' id='x1-19x1'>naar welke waarde gaat <span class='mathjax-inline'>\(x\)</span>?
+<div class="center">
+<!-- l. 929 --><p class="noindent">
+</p>
+<div class="mathjax-block">\[ \boxed { \text {eerst analyseren} \quad \longrightarrow \quad \text {dan pas rekenen} } \]</div></div>
+<!-- l. 939 --><p class="noindent">Een nuttige eerste stap is altijd:
+</p>
+<ol class="enumerate1">
+<li class="enumerate" id="x1-19x1">naar welke waarde gaat <span class="mathjax-inline">\(x\)</span>?
 </li>
-<li class='enumerate' id='x1-21x2'>wat verwacht je dat teller en noemer doen?
+<li class="enumerate" id="x1-21x2">wat verwacht je dat teller en noemer doen?
 </li>
-<li class='enumerate' id='x1-23x3'>ontstaat een gewone waarde, oneindig gedrag of een onbepaalde vorm?
+<li class="enumerate" id="x1-23x3">ontstaat een gewone waarde, oneindig gedrag of een onbepaalde vorm?
 </li>
-<li class='enumerate' id='x1-25x4'>welke eerder geleerde techniek kan die vorm vereenvoudigen?</li></ol>
-<p><a id='x1-26r1'></a>
-</p><!--  l. 954  --><div class='fvd-subsection'>
-<!--  l. 954  --><div class='fvd-subsection__row'>
-<!--  l. 954  --><div class='fvd-subsection__number'>10.1</div>
-<!--  l. 954  --><div class='fvd-subsection__title'>Veeltermfuncties</div>
-<!--  l. 954  --></div>
-<!--  l. 954  --><div class='fvd-subsection__line'></div>
-<!--  l. 954  --></div>
-<!--  l. 956  --><p class='noindent'>Voor gedrag op oneindig bepaalt de term van de hoogste graad het uiteindelijke
+<li class="enumerate" id="x1-25x4">welke eerder geleerde techniek kan die vorm vereenvoudigen?</li></ol>
+<p><a id="x1-26r1"></a>
+</p><!-- l. 954 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 954 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 954 --><p class="noindent"></p><div class="fvd-subsection__number">10.1</div>
+<p></p><!-- l. 954 --><p class="noindent"></p><div class="fvd-subsection__title">Veeltermfuncties</div>
+<p></p><!-- l. 954 --><p class="noindent"></p></div>
+<p></p><!-- l. 954 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 954 --><p class="noindent"></p></div>
+<p></p><!-- l. 956 --><p class="noindent">Voor gedrag op oneindig bepaalt de term van de hoogste graad het uiteindelijke
 gedrag.
-</p><!--  l. 959  --><p class='noindent'>Bijvoorbeeld:
+</p><!-- l. 959 --><p class="noindent">Bijvoorbeeld:
 </p>
-<div class='mathjax-block'>\[ f(x)=-2x^5+3x^2-7. \]</div>
-                                                                  
-
-                                                                  
-<!--  l. 965  --><p class='noindent'>Voor grote positieve <span class='mathjax-inline'>\(x\)</span> overheerst
+<div class="mathjax-block">\[ f(x)=-2x^5+3x^2-7. \]</div>
+<!-- l. 965 --><p class="noindent">Voor grote positieve <span class="mathjax-inline">\(x\)</span> overheerst
 </p>
-<div class='mathjax-block'>\[ -2x^5. \]</div>
-<!--  l. 971  --><p class='noindent'>Daarom:
+<div class="mathjax-block">\[ -2x^5. \]</div>
+<!-- l. 971 --><p class="noindent">Daarom:
 </p>
-<div class='mathjax-block'>\[ \boxed { \lim _{x\to +\infty }f(x)=-\infty . } \]</div>
-<!--  l. 979  --><p class='noindent'>Voor <span class='mathjax-inline'>\(x\to -\infty \)</span> geldt:
+<div class="mathjax-block">\[ \boxed { \lim _{x\to +\infty }f(x)=-\infty . } \]</div>
+<!-- l. 979 --><p class="noindent">Voor <span class="mathjax-inline">\(x\to -\infty \)</span> geldt:
 </p>
-<div class='mathjax-block'>\[ -2x^5\to +\infty , \]</div>
-<!--  l. 985  --><p class='noindent'>dus:
+<div class="mathjax-block">\[ -2x^5\to +\infty , \]</div>
+<!-- l. 985 --><p class="noindent">dus:
 </p>
-<div class='mathjax-block'>\[ \boxed { \lim _{x\to -\infty }f(x)=+\infty . } \]</div>
-<p><a id='x1-27r2'></a>
-</p><!--  l. 998  --><div class='fvd-subsection'>
-<!--  l. 998  --><div class='fvd-subsection__row'>
-<!--  l. 998  --><div class='fvd-subsection__number'>10.2</div>
-<!--  l. 998  --><div class='fvd-subsection__title'>Rationale functies</div>
-<!--  l. 998  --></div>
-<!--  l. 998  --><div class='fvd-subsection__line'></div>
-<!--  l. 998  --></div>
-<!--  l. 1000  --><p class='noindent'>Neem
+<div class="mathjax-block">\[ \boxed { \lim _{x\to -\infty }f(x)=+\infty . } \]</div>
+<p><a id="x1-27r2"></a>
+</p><!-- l. 998 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 998 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 998 --><p class="noindent"></p><div class="fvd-subsection__number">10.2</div>
+<p></p><!-- l. 998 --><p class="noindent"></p><div class="fvd-subsection__title">Rationale functies</div>
+<p></p><!-- l. 998 --><p class="noindent"></p></div>
+<p></p><!-- l. 998 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 998 --><p class="noindent"></p></div>
+<p></p><!-- l. 1000 --><p class="noindent">Neem
 </p>
-<div class='mathjax-block'>\[ f(x)=\frac {2x^2+3x-1}{x^2-4}. \]</div>
-<!--  l. 1006  --><p class='noindent'>Voor <span class='mathjax-inline'>\(|x|\)</span> groot delen we teller en noemer bijvoorbeeld door <span class='mathjax-inline'>\(x^2\)</span>:
+<div class="mathjax-block">\[ f(x)=\frac {2x^2+3x-1}{x^2-4}. \]</div>
+<!-- l. 1006 --><p class="noindent">Voor <span class="mathjax-inline">\(|x|\)</span> groot delen we teller en noemer bijvoorbeeld door <span class="mathjax-inline">\(x^2\)</span>:
 </p>
-<div class='mathjax-block'>\[ f(x) = \frac { 2+\frac 3x-\frac 1{x^2} }{ 1-\frac 4{x^2} }. \]</div>
-<!--  l. 1018  --><p class='noindent'>Voor <span class='mathjax-inline'>\(x\to \pm \infty \)</span> verdwijnen de termen met <span class='mathjax-inline'>\(\frac 1x\)</span> en <span class='mathjax-inline'>\(\frac 1{x^2}\)</span>.
-</p><!--  l. 1021  --><p class='noindent'>Dus:
+<div class="mathjax-block">\[ f(x) = \frac { 2+\frac 3x-\frac 1{x^2} }{ 1-\frac 4{x^2} }. \]</div>
+<!-- l. 1018 --><p class="noindent">Voor <span class="mathjax-inline">\(x\to \pm \infty \)</span> verdwijnen de termen met <span class="mathjax-inline">\(\frac 1x\)</span> en <span class="mathjax-inline">\(\frac 1{x^2}\)</span>.
+</p><!-- l. 1021 --><p class="noindent">Dus:
 </p>
-<div class='mathjax-block'>\[ \boxed { \lim _{x\to \pm \infty }f(x)=2. } \]</div>
-<!--  l. 1029  --><p class='noindent'>Daaruit volgt de horizontale asymptoot
+<div class="mathjax-block">\[ \boxed { \lim _{x\to \pm \infty }f(x)=2. } \]</div>
+<!-- l. 1029 --><p class="noindent">Daaruit volgt de horizontale asymptoot
 </p>
-<div class='mathjax-block'>\[ \boxed {y=2.} \]</div>
-<!--  l. 1035  --><p class='noindent'>Voor verticale asymptoten onderzoeken we onder meer waar de noemer nul wordt en
+<div class="mathjax-block">\[ \boxed {y=2.} \]</div>
+<!-- l. 1035 --><p class="noindent">Voor verticale asymptoten onderzoeken we onder meer waar de noemer nul wordt en
 wat de functie daar langs beide zijden doet.
-<a id='x1-28r3'></a>
-                                                                  
-
-                                                                  
-</p><!--  l. 1043  --><div class='fvd-subsection'>
-<!--  l. 1043  --><div class='fvd-subsection__row'>
-<!--  l. 1043  --><div class='fvd-subsection__number'>10.3</div>
-<!--  l. 1043  --><div class='fvd-subsection__title'>Irrationale functies</div>
-<!--  l. 1043  --></div>
-<!--  l. 1043  --><div class='fvd-subsection__line'></div>
-<!--  l. 1043  --></div>
-<!--  l. 1045  --><p class='noindent'>Bij wortelvormen kan de toegevoegde factor opnieuw nuttig zijn.
-</p><!--  l. 1047  --><p class='noindent'>Neem bijvoorbeeld
+<a id="x1-28r3"></a>
+</p><!-- l. 1043 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 1043 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 1043 --><p class="noindent"></p><div class="fvd-subsection__number">10.3</div>
+<p></p><!-- l. 1043 --><p class="noindent"></p><div class="fvd-subsection__title">Irrationale functies</div>
+<p></p><!-- l. 1043 --><p class="noindent"></p></div>
+<p></p><!-- l. 1043 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 1043 --><p class="noindent"></p></div>
+<p></p><!-- l. 1045 --><p class="noindent">Bij wortelvormen kan de toegevoegde factor opnieuw nuttig zijn.
+</p><!-- l. 1047 --><p class="noindent">Neem bijvoorbeeld
 </p>
-<div class='mathjax-block'>\[ f(x)=\sqrt {x^2+4x}-x, \qquad x\to +\infty . \]</div>
-<!--  l. 1054  --><p class='noindent'>Rechtstreeks invullen suggereert de onbepaalde vorm
+<div class="mathjax-block">\[ f(x)=\sqrt {x^2+4x}-x, \qquad x\to +\infty . \]</div>
+<!-- l. 1054 --><p class="noindent">Rechtstreeks invullen suggereert de onbepaalde vorm
 </p>
-<div class='mathjax-block'>\[ \infty -\infty . \]</div>
-<!--  l. 1060  --><p class='noindent'>We vermenigvuldigen met de toegevoegde factor:
+<div class="mathjax-block">\[ \infty -\infty . \]</div>
+<!-- l. 1060 --><p class="noindent">We vermenigvuldigen met de toegevoegde factor:
 </p>
-<div class='mathjax-block'>\[ \sqrt {x^2+4x}-x = \frac { (\sqrt {x^2+4x}-x)(\sqrt {x^2+4x}+x) }{ \sqrt {x^2+4x}+x }. \]</div>
-<!--  l. 1072  --><p class='noindent'>Dus:
+<div class="mathjax-block">\[ \sqrt {x^2+4x}-x = \frac { (\sqrt {x^2+4x}-x)(\sqrt {x^2+4x}+x) }{ \sqrt {x^2+4x}+x }. \]</div>
+<!-- l. 1072 --><p class="noindent">Dus:
 </p>
-<div class='mathjax-block'>\[ f(x) = \frac {4x} {\sqrt {x^2+4x}+x}. \]</div>
-<!--  l. 1081  --><p class='noindent'>Voor <span class='mathjax-inline'>\(x&gt;0\)</span> kunnen we <span class='mathjax-inline'>\(x\)</span> afzonderen:
+<div class="mathjax-block">\[ f(x) = \frac {4x} {\sqrt {x^2+4x}+x}. \]</div>
+<!-- l. 1081 --><p class="noindent">Voor <span class="mathjax-inline">\(x&gt;0\)</span> kunnen we <span class="mathjax-inline">\(x\)</span> afzonderen:
 </p>
-<div class='mathjax-block'>\[ f(x) = \frac {4} {\sqrt {1+\frac 4x}+1}. \]</div>
-<!--  l. 1090  --><p class='noindent'>Daarom:
+<div class="mathjax-block">\[ f(x) = \frac {4} {\sqrt {1+\frac 4x}+1}. \]</div>
+<!-- l. 1090 --><p class="noindent">Daarom:
 </p>
-<div class='mathjax-block'>\[ \boxed { \lim _{x\to +\infty }f(x)=2. } \]</div>
-<!--  l. 1098  --><p class='noindent'>De grafiek heeft voor <span class='mathjax-inline'>\(x\to +\infty \)</span> dus horizontale asymptoot
+<div class="mathjax-block">\[ \boxed { \lim _{x\to +\infty }f(x)=2. } \]</div>
+<!-- l. 1098 --><p class="noindent">De grafiek heeft voor <span class="mathjax-inline">\(x\to +\infty \)</span> dus horizontale asymptoot
 </p>
-<div class='mathjax-block'>\[ \boxed {y=2.} \]</div>
-<p><a id='x1-29r5'></a>
-</p><!--  l. 1109  --><section class='fvd-exercise'>
-<!--  l. 1109  --><div class='fvd-exercise__title'>
-<!--  l. 1109  --><p class='noindent'>Oefening 5
-</p><!--  l. 1109  --><p class='noindent'>— Parate rekentechniek
-</p><!--  l. 1109  --></div>
-                                                                  
-
-                                                                  
-<!--  l. 1109  --><div class='fvd-exercise__body'>
-<!--  l. 1109  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
-<!--  l. 1109  --><div class='fvd-exercise__content'>
-<!--  l. 1111  --><p class='noindent'>Bereken zonder dat een methode wordt aangegeven.
+<div class="mathjax-block">\[ \boxed {y=2.} \]</div>
+<p><a id="x1-29r5"></a>
+</p><!-- l. 1109 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 1109 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 1109 --><p class="noindent">Oefening 5
+</p><!-- l. 1109 --><p class="noindent">— Parate rekentechniek
+</p><!-- l. 1109 --><p class="noindent"></p></div>
+<p></p><!-- l. 1109 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 1109 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--b">B</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 1109 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 1111 --><p class="noindent">Bereken zonder dat een methode wordt aangegeven.
 </p>
-<div class='problem-environment question' id='problem10' numbered=' ' role='article' titletext=' Question'>
-<div class='mathjax-block'>\[ \lim _{x\to +\infty } \left (-3x^4+2x^2-7\right ). \]</div>
+<div class="problem-environment question" id="problem10" numbered=" " role="article" titletext=" Question">
+<div class="mathjax-block">\[ \lim _{x\to +\infty } \left (-3x^4+2x^2-7\right ). \]</div>
 </div>
-<div class='problem-environment question' id='problem11' numbered=' ' role='article' titletext=' Question'>
-<div class='mathjax-block'>\[ \lim _{x\to +\infty } \frac {5x^2-x+1}{2x^2+3}. \]</div>
+<div class="problem-environment question" id="problem11" numbered=" " role="article" titletext=" Question">
+<div class="mathjax-block">\[ \lim _{x\to +\infty } \frac {5x^2-x+1}{2x^2+3}. \]</div>
 </div>
-<div class='problem-environment question' id='problem12' numbered=' ' role='article' titletext=' Question'>
-<div class='mathjax-block'>\[ \lim _{x\to +\infty } \left (\sqrt {x^2+6x}-x\right ). \]</div>
+<div class="problem-environment question" id="problem12" numbered=" " role="article" titletext=" Question">
+<div class="mathjax-block">\[ \lim _{x\to +\infty } \left (\sqrt {x^2+6x}-x\right ). \]</div>
 </div>
-<!--  l. 1140  --><p class='noindent'>Noteer bij elke limiet niet alleen het resultaat, maar ook welke eigenschap of techniek
+<!-- l. 1140 --><p class="noindent">Noteer bij elke limiet niet alleen het resultaat, maar ook welke eigenschap of techniek
 je gebruikt.
 </p></div>
-<!--  l. 1143  --></div>
-<!--  l. 1143  --></section>
-<p><a id='x1-30r11'></a>
-</p><!--  l. 1150  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>11</div><div class='fvd-section-bar__title'>Van grafiek naar limiet</div></div>
-<!--  l. 1152  --><p class='noindent'>Limieten moeten niet altijd algebraïsch worden berekend.
-</p><!--  l. 1154  --><p class='noindent'>Uit een grafiek kun je vaak rechtstreeks aflezen:
-</p>     
-<ul class='itemize1'>
-<li class='itemize'>welke waarde <span class='mathjax-inline'>\(f(x)\)</span> nadert voor <span class='mathjax-inline'>\(x\to a^-\)</span>;
+<p></p><!-- l. 1143 --><p class="noindent"></p></div>
+<p></p><!-- l. 1143 --><p class="noindent"></p></section>
+<p><a id="x1-30r11"></a>
+</p><p></p><!-- l. 1150 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">11</div><div class="fvd-section-bar__title">Van grafiek naar limiet</div></div>
+<p></p><!-- l. 1152 --><p class="noindent">Limieten moeten niet altijd algebraïsch worden berekend.
+</p><!-- l. 1154 --><p class="noindent">Uit een grafiek kun je vaak rechtstreeks aflezen:
+</p>
+<ul class="itemize1">
+<li class="itemize">welke waarde <span class="mathjax-inline">\(f(x)\)</span> nadert voor <span class="mathjax-inline">\(x\to a^-\)</span>;
 </li>
-<li class='itemize'>welke waarde <span class='mathjax-inline'>\(f(x)\)</span> nadert voor <span class='mathjax-inline'>\(x\to a^+\)</span>;
+<li class="itemize">welke waarde <span class="mathjax-inline">\(f(x)\)</span> nadert voor <span class="mathjax-inline">\(x\to a^+\)</span>;
 </li>
-<li class='itemize'>of de functiewaarden onbegrensd worden;
+<li class="itemize">of de functiewaarden onbegrensd worden;
 </li>
-                                                                  
-
-                                                                  
-<li class='itemize'>hoe de functie zich gedraagt voor <span class='mathjax-inline'>\(x\to \pm \infty \)</span>;
+<li class="itemize">hoe de functie zich gedraagt voor <span class="mathjax-inline">\(x\to \pm \infty \)</span>;
 </li>
-<li class='itemize'>welke asymptoten zichtbaar zijn.</li></ul>
-<!--  l. 1164  --><p class='noindent'>Belangrijk is dat je de grafiek <em>gericht</em> leest.
-</p><!--  l. 1166  --><p class='noindent'>Volg de grafiek in de richting waarin <span class='mathjax-inline'>\(x\)</span> nadert.
-<a id='x1-31r12'></a>
-</p><!--  l. 1173  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>12</div><div class='fvd-section-bar__title'>Van limietinformatie naar een grafiek</div></div>
-<!--  l. 1175  --><p class='noindent'>De omgekeerde richting is minstens even belangrijk.
-</p><!--  l. 1177  --><p class='noindent'>Stel dat een functie <span class='mathjax-inline'>\(f\)</span> voldoet aan:
+<li class="itemize">welke asymptoten zichtbaar zijn.</li></ul>
+<!-- l. 1164 --><p class="noindent">Belangrijk is dat je de grafiek <em>gericht</em> leest.
+</p><!-- l. 1166 --><p class="noindent">Volg de grafiek in de richting waarin <span class="mathjax-inline">\(x\)</span> nadert.
+<a id="x1-31r12"></a>
+</p><!-- l. 1173 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">12</div><div class="fvd-section-bar__title">Van limietinformatie naar een grafiek</div></div>
+<p></p><!-- l. 1175 --><p class="noindent">De omgekeerde richting is minstens even belangrijk.
+</p><!-- l. 1177 --><p class="noindent">Stel dat een functie <span class="mathjax-inline">\(f\)</span> voldoet aan:
 </p>
-<div class='mathjax-block'>\[ \lim _{x\to -2^-}f(x)=+\infty , \]</div>
-<div class='mathjax-block'>\[ \lim _{x\to -2^+}f(x)=-\infty , \]</div>
-<div class='mathjax-block'>\[ \lim _{x\to -\infty }f(x)=1 \]</div>
-<!--  l. 1191  --><p class='noindent'>en
+<div class="mathjax-block">\[ \lim _{x\to -2^-}f(x)=+\infty , \]</div>
+<div class="mathjax-block">\[ \lim _{x\to -2^+}f(x)=-\infty , \]</div>
+<div class="mathjax-block">\[ \lim _{x\to -\infty }f(x)=1 \]</div>
+<!-- l. 1191 --><p class="noindent">en
 </p>
-<div class='mathjax-block'>\[ \lim _{x\to +\infty }f(x)=3. \]</div>
-<!--  l. 1197  --><p class='noindent'>Zonder het voorschrift van <span class='mathjax-inline'>\(f\)</span> te kennen, weten we al heel wat.
-</p><!--  l. 1199  --><p class='noindent'>Er is een verticale asymptoot
+<div class="mathjax-block">\[ \lim _{x\to +\infty }f(x)=3. \]</div>
+<!-- l. 1197 --><p class="noindent">Zonder het voorschrift van <span class="mathjax-inline">\(f\)</span> te kennen, weten we al heel wat.
+</p><!-- l. 1199 --><p class="noindent">Er is een verticale asymptoot
 </p>
-<div class='mathjax-block'>\[ x=-2. \]</div>
-<!--  l. 1205  --><p class='noindent'>Links nadert de grafiek voor <span class='mathjax-inline'>\(x\to -\infty \)</span> de rechte
+<div class="mathjax-block">\[ x=-2. \]</div>
+<!-- l. 1205 --><p class="noindent">Links nadert de grafiek voor <span class="mathjax-inline">\(x\to -\infty \)</span> de rechte
 </p>
-<div class='mathjax-block'>\[ y=1. \]</div>
-<!--  l. 1211  --><p class='noindent'>Rechts nadert de grafiek voor <span class='mathjax-inline'>\(x\to +\infty \)</span> de rechte
+<div class="mathjax-block">\[ y=1. \]</div>
+<!-- l. 1211 --><p class="noindent">Rechts nadert de grafiek voor <span class="mathjax-inline">\(x\to +\infty \)</span> de rechte
 </p>
-<div class='mathjax-block'>\[ y=3. \]</div>
-<!--  l. 1217  --><p class='noindent'>De limieten leggen dus belangrijke randvoorwaarden op aan de vorm van de
+<div class="mathjax-block">\[ y=3. \]</div>
+<!-- l. 1217 --><p class="noindent">De limieten leggen dus belangrijke randvoorwaarden op aan de vorm van de
 grafiek.
-<a id='x1-32r6'></a>
-</p><!--  l. 1225  --><section class='fvd-exercise'>
-<!--  l. 1225  --><div class='fvd-exercise__title'>
-<!--  l. 1225  --><p class='noindent'>Oefening 6
-</p><!--  l. 1225  --><p class='noindent'>— Schets uit limietgegevens
+<a id="x1-32r6"></a>
+</p><!-- l. 1225 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 1225 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 1225 --><p class="noindent">Oefening 6
+</p><!-- l. 1225 --><p class="noindent">— Schets uit limietgegevens
                                                                   
 
                                                                   
-</p><!--  l. 1225  --></div>
-<!--  l. 1225  --><div class='fvd-exercise__body'>
-<!--  l. 1225  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
-<!--  l. 1225  --><div class='fvd-exercise__content'>
-<!--  l. 1227  --><p class='noindent'>Van een functie <span class='mathjax-inline'>\(f\)</span> is gegeven:
+</p><!-- l. 1225 --><p class="noindent"></p></div>
+<p></p><!-- l. 1225 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 1225 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 1225 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 1227 --><p class="noindent">Van een functie <span class="mathjax-inline">\(f\)</span> is gegeven:
 </p>
-<div class='mathjax-block'>\[ \lim _{x\to 1^-}f(x)=-\infty , \]</div>
-<div class='mathjax-block'>\[ \lim _{x\to 1^+}f(x)=+\infty , \]</div>
-<div class='mathjax-block'>\[ \lim _{x\to -\infty }f(x)=2 \]</div>
-<!--  l. 1241  --><p class='noindent'>en
+<div class="mathjax-block">\[ \lim _{x\to 1^-}f(x)=-\infty , \]</div>
+<div class="mathjax-block">\[ \lim _{x\to 1^+}f(x)=+\infty , \]</div>
+<div class="mathjax-block">\[ \lim _{x\to -\infty }f(x)=2 \]</div>
+<!-- l. 1241 --><p class="noindent">en
 </p>
-<div class='mathjax-block'>\[ \lim _{x\to +\infty } \bigl (f(x)-(x-1)\bigr )=0. \]</div>
-<div class='problem-environment question' id='problem13' numbered=' ' role='article' titletext=' Question'>  Bepaal alle asymptoten die uit deze informatie volgen.    </div>
-<div class='problem-environment question' id='problem14' numbered=' ' role='article' titletext=' Question'>  Geef bij elke asymptoot aan aan welke zijde van de grafiek de informatie
+<div class="mathjax-block">\[ \lim _{x\to +\infty } \bigl (f(x)-(x-1)\bigr )=0. \]</div>
+<div class="problem-environment question" id="problem13" numbered=" " role="article" titletext=" Question">  Bepaal alle asymptoten die uit deze informatie volgen.    </div>
+<div class="problem-environment question" id="problem14" numbered=" " role="article" titletext=" Question">  Geef bij elke asymptoot aan aan welke zijde van de grafiek de informatie
 betrekking heeft.    </div>
-<div class='problem-environment question' id='problem15' numbered=' ' role='article' titletext=' Question'>  Maak een mogelijke schets van de grafiek.
-<!--  l. 1260  --><p class='noindent'>Je schets hoeft niet uniek te zijn, maar moet met alle gegeven limieten overeenstemmen.
+<div class="problem-environment question" id="problem15" numbered=" " role="article" titletext=" Question">  Maak een mogelijke schets van de grafiek.
+<!-- l. 1260 --><p class="noindent">Je schets hoeft niet uniek te zijn, maar moet met alle gegeven limieten overeenstemmen.
 </p></div>
-<div class='problem-environment question' id='problem16' numbered=' ' role='article' titletext=' Question'>  Leg uit waarom verschillende grafieken aan dezelfde vier limietvoorwaarden kunnen
+<div class="problem-environment question" id="problem16" numbered=" " role="article" titletext=" Question">  Leg uit waarom verschillende grafieken aan dezelfde vier limietvoorwaarden kunnen
 voldoen.    </div>
 </div>
-<!--  l. 1269  --></div>
-<!--  l. 1269  --></section>
-<p><a id='x1-33r13'></a>
-</p><!--  l. 1276  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>13</div><div class='fvd-section-bar__title'>Wat een asymptoot niet zegt</div></div>
-<!--  l. 1278  --><p class='noindent'>Een asymptoot vertelt hoe een grafiek zich in een bepaalde limietsituatie
+<!-- l. 1269 --><p class="noindent"></p></div>
+<p></p><!-- l. 1269 --><p class="noindent"></p></section>
+<p><a id="x1-33r13"></a>
+</p><p></p><!-- l. 1276 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">13</div><div class="fvd-section-bar__title">Wat een asymptoot niet zegt</div></div>
+<p></p><!-- l. 1278 --><p class="noindent">Een asymptoot vertelt hoe een grafiek zich in een bepaalde limietsituatie
 gedraagt.
-</p><!--  l. 1281  --><p class='noindent'>Daaruit mag je niet méér besluiten dan de limiet werkelijk zegt.
-</p><!--  l. 1284  --><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span></div><div class='fvd-remark__content'>
-<!--  l. 1285  --><p class='noindent'><strong>Een verticale asymptoot</strong>
+</p><!-- l. 1281 --><p class="noindent">Daaruit mag je niet méér besluiten dan de limiet werkelijk zegt.
+</p><!-- l. 1284 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">
+<p></p><!-- l. 1285 --><p class="noindent"><strong>Een verticale asymptoot</strong>
 </p>
-<div class='mathjax-block'>\[ x=a \]</div>
-<!--  l. 1291  --><p class='noindent'>betekent niet automatisch dat de linker- en rechterlimiet hetzelfde teken
+<div class="mathjax-block">\[ x=a \]</div>
+<!-- l. 1291 --><p class="noindent">betekent niet automatisch dat de linker- en rechterlimiet hetzelfde teken
 hebben.
-</p><!--  l. 1296  --><p class='noindent'><strong>Een horizontale asymptoot</strong>
-                                                                  
-
-                                                                  
+</p><!-- l. 1296 --><p class="noindent"><strong>Een horizontale asymptoot</strong>
 </p>
-<div class='mathjax-block'>\[ y=b \]</div>
-<!--  l. 1302  --><p class='noindent'>betekent niet dat de grafiek de rechte nooit kan snijden.
-</p><!--  l. 1306  --><p class='noindent'><strong>Een schuine asymptoot</strong>
+<div class="mathjax-block">\[ y=b \]</div>
+<!-- l. 1302 --><p class="noindent">betekent niet dat de grafiek de rechte nooit kan snijden.
+</p><!-- l. 1306 --><p class="noindent"><strong>Een schuine asymptoot</strong>
 </p>
-<div class='mathjax-block'>\[ y=ax+b \]</div>
-<!--  l. 1312  --><p class='noindent'>betekent niet dat de grafiek voor eindige <span class='mathjax-inline'>\(x\)</span> exact op die rechte ligt.
-</p><!--  l. 1317  --><p class='noindent'>Een asymptoot beschrijft <strong>naderingsgedrag</strong>.
+<div class="mathjax-block">\[ y=ax+b \]</div>
+<!-- l. 1312 --><p class="noindent">betekent niet dat de grafiek voor eindige <span class="mathjax-inline">\(x\)</span> exact op die rechte ligt.
+</p><!-- l. 1317 --><p class="noindent">Een asymptoot beschrijft <strong>naderingsgedrag</strong>.
 </p></div></section>
-<p><a id='x1-34r7'></a>
-</p><!--  l. 1326  --><section class='fvd-exercise'>
-<!--  l. 1326  --><div class='fvd-exercise__title'>
-<!--  l. 1326  --><p class='noindent'>Oefening 7
-</p><!--  l. 1326  --><p class='noindent'>— Wat kun je werkelijk besluiten?
-</p><!--  l. 1326  --></div>
-<!--  l. 1326  --><div class='fvd-exercise__body'>
-<!--  l. 1326  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
-<!--  l. 1326  --><div class='fvd-exercise__content'>
-<!--  l. 1328  --><p class='noindent'>Een functie <span class='mathjax-inline'>\(f\)</span> voldoet aan
+<p><a id="x1-34r7"></a>
+</p><p></p><!-- l. 1326 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 1326 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 1326 --><p class="noindent">Oefening 7
+</p><!-- l. 1326 --><p class="noindent">— Wat kun je werkelijk besluiten?
+</p><!-- l. 1326 --><p class="noindent"></p></div>
+<p></p><!-- l. 1326 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 1326 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 1326 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 1328 --><p class="noindent">Een functie <span class="mathjax-inline">\(f\)</span> voldoet aan
 </p>
-<div class='mathjax-block'>\[ \lim _{x\to +\infty }f(x)=4. \]</div>
-<!--  l. 1334  --><p class='noindent'>Beoordeel de volgende uitspraken.
+<div class="mathjax-block">\[ \lim _{x\to +\infty }f(x)=4. \]</div>
+<!-- l. 1334 --><p class="noindent">Beoordeel de volgende uitspraken.
 </p>
-<div class='problem-environment question' id='problem17' numbered=' ' role='article' titletext=' Question'>  Voor voldoende grote <span class='mathjax-inline'>\(x\)</span> is <span class='mathjax-inline'>\(f(x)=4\)</span>.
-<div class='multiple-choice' id='problem18' titletext=' Multiple Choice'><span class='choice  ' id='choice22'>Altijd waar. </span><span class='choice correct ' id='choice23'>Niet noodzakelijk waar.</span> </div>    </div>
-<div class='problem-environment question' id='problem19' numbered=' ' role='article' titletext=' Question'>  De rechte <span class='mathjax-inline'>\(y=4\)</span> is een horizontale asymptoot voor <span class='mathjax-inline'>\(x\to +\infty \)</span>.
-<div class='multiple-choice' id='problem20' titletext=' Multiple Choice'><span class='choice correct ' id='choice24'>Waar. </span><span class='choice  ' id='choice25'>Niet waar.</span> </div>    </div>
-<div class='problem-environment question' id='problem21' numbered=' ' role='article' titletext=' Question'>  De grafiek kan de rechte <span class='mathjax-inline'>\(y=4\)</span> nergens snijden.
-<div class='multiple-choice' id='problem22' titletext=' Multiple Choice'><span class='choice  ' id='choice26'>Waar. </span><span class='choice correct ' id='choice27'>Niet noodzakelijk waar.</span> </div>    </div>
-<div class='problem-environment question' id='problem23' numbered=' ' role='article' titletext=' Question'>  Uit deze limiet alleen kunnen we besluiten dat <span class='mathjax-inline'>\(f\)</span> stijgend is voor grote
-<span class='mathjax-inline'>\(x\)</span>.
-<div class='multiple-choice' id='problem24' titletext=' Multiple Choice'><span class='choice  ' id='choice28'>Waar. </span><span class='choice correct ' id='choice29'>Niet noodzakelijk waar.</span> </div>    </div>
+<div class="problem-environment question" id="problem17" numbered=" " role="article" titletext=" Question">  Voor voldoende grote <span class="mathjax-inline">\(x\)</span> is <span class="mathjax-inline">\(f(x)=4\)</span>.
+<div class="multiple-choice" id="problem18" titletext=" Multiple Choice"><span class="choice" id="choice22">Altijd waar. </span><span class="choice correct" id="choice23">Niet noodzakelijk waar.</span> </div> </div>
+<div class="problem-environment question" id="problem19" numbered=" " role="article" titletext=" Question">  De rechte <span class="mathjax-inline">\(y=4\)</span> is een horizontale asymptoot voor <span class="mathjax-inline">\(x\to +\infty \)</span>.
+<div class="multiple-choice" id="problem20" titletext=" Multiple Choice"><span class="choice correct" id="choice24">Waar. </span><span class="choice" id="choice25">Niet waar.</span> </div> </div>
+<div class="problem-environment question" id="problem21" numbered=" " role="article" titletext=" Question">  De grafiek kan de rechte <span class="mathjax-inline">\(y=4\)</span> nergens snijden.
+<div class="multiple-choice" id="problem22" titletext=" Multiple Choice"><span class="choice" id="choice26">Waar. </span><span class="choice correct" id="choice27">Niet noodzakelijk waar.</span> </div> </div>
+<div class="problem-environment question" id="problem23" numbered=" " role="article" titletext=" Question">  Uit deze limiet alleen kunnen we besluiten dat <span class="mathjax-inline">\(f\)</span> stijgend is voor grote
+<span class="mathjax-inline">\(x\)</span>.
+<div class="multiple-choice" id="problem24" titletext=" Multiple Choice"><span class="choice" id="choice28">Waar. </span><span class="choice correct" id="choice29">Niet noodzakelijk waar.</span> </div> </div>
 </div>
-                                                                  
-
-                                                                  
-<!--  l. 1374  --></div>
-<!--  l. 1374  --></section>
-<p><a id='x1-35r14'></a>
-</p><!--  l. 1381  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>14</div><div class='fvd-section-bar__title'>Asymptotisch gedrag in een model</div></div>
-<!--  l. 1383  --><p class='noindent'>Asymptoten komen niet alleen voor in abstracte functievoorschriften.
-</p><!--  l. 1385  --><p class='noindent'>Ze kunnen in een model een grenswaarde voorstellen die steeds dichter wordt
+<!-- l. 1374 --><p class="noindent"></p></div>
+<p></p><!-- l. 1374 --><p class="noindent"></p></section>
+<p><a id="x1-35r14"></a>
+</p><p></p><!-- l. 1381 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">14</div><div class="fvd-section-bar__title">Asymptotisch gedrag in een model</div></div>
+<p></p><!-- l. 1383 --><p class="noindent">Asymptoten komen niet alleen voor in abstracte functievoorschriften.
+</p><!-- l. 1385 --><p class="noindent">Ze kunnen in een model een grenswaarde voorstellen die steeds dichter wordt
 benaderd.
-</p><!--  l. 1388  --><p class='noindent'>Stel bijvoorbeeld dat de temperatuur van een voorwerp wordt beschreven door <span class='mathjax-inline'>\(T(t)\)</span> en
+</p><!-- l. 1388 --><p class="noindent">Stel bijvoorbeeld dat de temperatuur van een voorwerp wordt beschreven door <span class="mathjax-inline">\(T(t)\)</span> en
 dat
 </p>
-<div class='mathjax-block'>\[ \lim _{t\to +\infty }T(t)=20. \]</div>
-<!--  l. 1395  --><p class='noindent'>Dan betekent dit dat de temperatuur bij langdurig verloop steeds dichter
+<div class="mathjax-block">\[ \lim _{t\to +\infty }T(t)=20. \]</div>
+<!-- l. 1395 --><p class="noindent">Dan betekent dit dat de temperatuur bij langdurig verloop steeds dichter
 bij
 </p>
-<div class='mathjax-block'>\[ 20\,^\circ \mathrm {C} \]</div>
-<!--  l. 1402  --><p class='noindent'>komt.
-</p><!--  l. 1404  --><p class='noindent'>De horizontale asymptoot
+<div class="mathjax-block">\[ 20\,^\circ \mathrm {C} \]</div>
+<!-- l. 1402 --><p class="noindent">komt.
+</p><!-- l. 1404 --><p class="noindent">De horizontale asymptoot
 </p>
-<div class='mathjax-block'>\[ T=20 \]</div>
-<!--  l. 1410  --><p class='noindent'>heeft dan een concrete betekenis: ze stelt de <strong>evenwichtstemperatuur</strong> van het
+<div class="mathjax-block">\[ T=20 \]</div>
+<!-- l. 1410 --><p class="noindent">heeft dan een concrete betekenis: ze stelt de <strong>evenwichtstemperatuur</strong> van het
 model voor.
-</p><!--  l. 1414  --><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span></div><div class='fvd-remark__content'>Bij een toepassing moet je een limiet daarom altijd terug vertalen naar
+</p><!-- l. 1414 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">Bij een toepassing moet je een limiet daarom altijd terug vertalen naar
 de oorspronkelijke grootheden en eenheden.
-<!--  l. 1417  --><p class='noindent'>Niet alleen
+<p></p><!-- l. 1417 --><p class="noindent">Niet alleen
 </p>
-<div class='mathjax-block'>\[ \lim _{t\to +\infty }T(t)=20, \]</div>
-<!--  l. 1423  --><p class='noindent'>maar bijvoorbeeld:
-</p>     
-<blockquote class='quote'>
-<!--  l. 1426  --><p class='noindent'>Op lange termijn nadert de temperatuur volgens het model <span class='mathjax-inline'>\(20\,^\circ \mathrm {C}\)</span>.</p></blockquote>
+<div class="mathjax-block">\[ \lim _{t\to +\infty }T(t)=20, \]</div>
+<!-- l. 1423 --><p class="noindent">maar bijvoorbeeld:
+</p>
+<blockquote class="quote">
+<!-- l. 1426 --><p class="noindent">Op lange termijn nadert de temperatuur volgens het model <span class="mathjax-inline">\(20\,^\circ \mathrm {C}\)</span>.</p></blockquote>
 </div></section>
-<p><a id='x1-36r8'></a>
-</p><!--  l. 1436  --><section class='fvd-exercise'>
-<!--  l. 1436  --><div class='fvd-exercise__title'>
-<!--  l. 1436  --><p class='noindent'>Oefening 8
+<p><a id="x1-36r8"></a>
+</p><!-- l. 1436 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 1436 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 1436 --><p class="noindent">Oefening 8
                                                                   
 
                                                                   
-</p><!--  l. 1436  --><p class='noindent'>— Een grenswaarde interpreteren
-</p><!--  l. 1436  --></div>
-<!--  l. 1436  --><div class='fvd-exercise__body'>
-<!--  l. 1436  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
-<!--  l. 1436  --><div class='fvd-exercise__content'>
-<!--  l. 1438  --><p class='noindent'>De concentratie <span class='mathjax-inline'>\(C(t)\)</span> van een stof in een reactor wordt uitgedrukt in <span class='mathjax-inline'>\(\mathrm {mg/L}\)</span>.
-</p><!--  l. 1441  --><p class='noindent'>Er geldt:
+</p><!-- l. 1436 --><p class="noindent">— Een grenswaarde interpreteren
+</p><!-- l. 1436 --><p class="noindent"></p></div>
+<p></p><!-- l. 1436 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 1436 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 1436 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 1438 --><p class="noindent">De concentratie <span class="mathjax-inline">\(C(t)\)</span> van een stof in een reactor wordt uitgedrukt in <span class="mathjax-inline">\(\mathrm {mg/L}\)</span>.
+</p><!-- l. 1441 --><p class="noindent">Er geldt:
 </p>
-<div class='mathjax-block'>\[ \lim _{t\to +\infty }C(t)=8. \]</div>
-<div class='problem-environment question' id='problem25' numbered=' ' role='article' titletext=' Question'>  Geef een correcte interpretatie van deze limiet in de context.    </div>
-<div class='problem-environment question' id='problem26' numbered=' ' role='article' titletext=' Question'>  Welke horizontale asymptoot hoort bij het model?    </div>
-<div class='problem-environment question' id='problem27' numbered=' ' role='article' titletext=' Question'>  Kun je uit deze informatie alleen besluiten dat de concentratie altijd kleiner is dan
-<span class='mathjax-inline'>\(8\,\mathrm {mg/L}\)</span>?
-<!--  l. 1459  --><p class='noindent'>Verantwoord.    </p></div>
+<div class="mathjax-block">\[ \lim _{t\to +\infty }C(t)=8. \]</div>
+<div class="problem-environment question" id="problem25" numbered=" " role="article" titletext=" Question">  Geef een correcte interpretatie van deze limiet in de context.    </div>
+<div class="problem-environment question" id="problem26" numbered=" " role="article" titletext=" Question">  Welke horizontale asymptoot hoort bij het model?    </div>
+<div class="problem-environment question" id="problem27" numbered=" " role="article" titletext=" Question">  Kun je uit deze informatie alleen besluiten dat de concentratie altijd kleiner is dan
+<span class="mathjax-inline">\(8\,\mathrm {mg/L}\)</span>?
+<!-- l. 1459 --><p class="noindent">Verantwoord.    </p></div>
 </div>
-<!--  l. 1462  --></div>
-<!--  l. 1462  --></section>
-<p><a id='x1-37r15'></a>
-</p><!--  l. 1469  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>15</div><div class='fvd-section-bar__title'>Veelgemaakte denkfouten</div></div>
-<!--  l. 1472  --><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span></div><div class='fvd-remark__content'>
-<!--  l. 1473  --><p class='noindent'><strong>Denkfout 1</strong>
+<!-- l. 1462 --><p class="noindent"></p></div>
+<p></p><!-- l. 1462 --><p class="noindent"></p></section>
+<p><a id="x1-37r15"></a>
+</p><p></p><!-- l. 1469 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">15</div><div class="fvd-section-bar__title">Veelgemaakte denkfouten</div></div>
+<p></p><!-- l. 1472 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">
+<p></p><!-- l. 1473 --><p class="noindent"><strong>Denkfout 1</strong>
 </p>
-<div class='mathjax-block'>\[ \lim _{x\to a}f(x)=L \]</div>
-<!--  l. 1479  --><p class='noindent'>betekent niet automatisch
+<div class="mathjax-block">\[ \lim _{x\to a}f(x)=L \]</div>
+<!-- l. 1479 --><p class="noindent">betekent niet automatisch
 </p>
-<div class='mathjax-block'>\[ f(a)=L. \]</div>
-<!--  l. 1487  --><p class='noindent'><strong>Denkfout 2</strong>
-</p><!--  l. 1489  --><p class='noindent'>Als
+<div class="mathjax-block">\[ f(a)=L. \]</div>
+<!-- l. 1487 --><p class="noindent"><strong>Denkfout 2</strong>
+</p><!-- l. 1489 --><p class="noindent">Als
 </p>
-<div class='mathjax-block'>\[ f(a) \]</div>
-<!--  l. 1495  --><p class='noindent'>niet bestaat, betekent dat niet automatisch dat
+<div class="mathjax-block">\[ f(a) \]</div>
+<!-- l. 1495 --><p class="noindent">niet bestaat, betekent dat niet automatisch dat
 </p>
-<div class='mathjax-block'>\[ \lim _{x\to a}f(x) \]</div>
-<!--  l. 1501  --><p class='noindent'>niet bestaat.
+<div class="mathjax-block">\[ \lim _{x\to a}f(x) \]</div>
+<!-- l. 1501 --><p class="noindent">niet bestaat.
                                                                   
 
                                                                   
-</p><!--  l. 1505  --><p class='noindent'><strong>Denkfout 3</strong>
-</p><!--  l. 1507  --><p class='noindent'>Een nulwaarde van de noemer betekent niet zonder verder onderzoek automatisch dat
+</p><!-- l. 1505 --><p class="noindent"><strong>Denkfout 3</strong>
+</p><!-- l. 1507 --><p class="noindent">Een nulwaarde van de noemer betekent niet zonder verder onderzoek automatisch dat
 er een verticale asymptoot is.
-</p><!--  l. 1510  --><p class='noindent'>Onderzoek het werkelijke limietgedrag.
-</p><!--  l. 1514  --><p class='noindent'><strong>Denkfout 4</strong>
-</p><!--  l. 1516  --><p class='noindent'>Een horizontale asymptoot mag door de grafiek worden gesneden.
-</p><!--  l. 1520  --><p class='noindent'><strong>Denkfout 5</strong>
-</p><!--  l. 1522  --><p class='noindent'>Bij
+</p><!-- l. 1510 --><p class="noindent">Onderzoek het werkelijke limietgedrag.
+</p><!-- l. 1514 --><p class="noindent"><strong>Denkfout 4</strong>
+</p><!-- l. 1516 --><p class="noindent">Een horizontale asymptoot mag door de grafiek worden gesneden.
+</p><!-- l. 1520 --><p class="noindent"><strong>Denkfout 5</strong>
+</p><!-- l. 1522 --><p class="noindent">Bij
 </p>
-<div class='mathjax-block'>\[ x\to -\infty \]</div>
-<!--  l. 1528  --><p class='noindent'>mag je tekens niet gedachteloos behandelen alsof <span class='mathjax-inline'>\(x\)</span> positief is.
-</p><!--  l. 1530  --><p class='noindent'>Dat is vooral belangrijk bij uitdrukkingen met wortels, want
+<div class="mathjax-block">\[ x\to -\infty \]</div>
+<!-- l. 1528 --><p class="noindent">mag je tekens niet gedachteloos behandelen alsof <span class="mathjax-inline">\(x\)</span> positief is.
+</p><!-- l. 1530 --><p class="noindent">Dat is vooral belangrijk bij uitdrukkingen met wortels, want
 </p>
-<div class='mathjax-block'>\[ \sqrt {x^2}=|x|. \]</div>
-<!--  l. 1538  --><p class='noindent'><strong>Denkfout 6</strong>
-</p><!--  l. 1540  --><p class='noindent'>Een asymptoot is geen afzonderlijk rekenobject.
-</p><!--  l. 1542  --><p class='noindent'>Ze volgt uit het limietgedrag van de functie.
+<div class="mathjax-block">\[ \sqrt {x^2}=|x|. \]</div>
+<!-- l. 1538 --><p class="noindent"><strong>Denkfout 6</strong>
+</p><!-- l. 1540 --><p class="noindent">Een asymptoot is geen afzonderlijk rekenobject.
+</p><!-- l. 1542 --><p class="noindent">Ze volgt uit het limietgedrag van de functie.
 </p></div></section>
-<p><a id='x1-38r16'></a>
-</p><!--  l. 1551  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>16</div><div class='fvd-section-bar__title'>Kun je alles verbinden?</div></div>
-<p><a id='x1-39r17'></a>
-</p><!--  l. 1557  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>17</div><div class='fvd-section-bar__title'>Eén grafiek, meerdere limieten</div></div>
-<!--  l. 1559  --><p class='noindent'>Een grafiek kan tegelijk verschillende vormen van asymptotisch gedrag vertonen.
-</p><!--  l. 1562  --><p class='noindent'>Beschouw de functie
+<p><a id="x1-38r16"></a>
+</p><p></p><!-- l. 1551 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">16</div><div class="fvd-section-bar__title">Kun je alles verbinden?</div></div>
+<p><a id="x1-39r17"></a>
+</p><p></p><!-- l. 1557 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">17</div><div class="fvd-section-bar__title">Eén grafiek, meerdere limieten</div></div>
+<p></p><!-- l. 1559 --><p class="noindent">Een grafiek kan tegelijk verschillende vormen van asymptotisch gedrag vertonen.
+</p><!-- l. 1562 --><p class="noindent">Beschouw de functie
 </p>
-<div class='mathjax-block'>\[ f(x)=x+1+\frac {1}{x-1}. \]</div>
-<!--  l. 1568  --><p class='noindent'>De grafiek heeft een verticale asymptoot en een schuine asymptoot.
+<div class="mathjax-block">\[ f(x)=x+1+\frac {1}{x-1}. \]</div>
+<!-- l. 1568 --><p class="noindent">De grafiek heeft een verticale asymptoot en een schuine asymptoot.
 </p>
-<div class='center'>
-<!--  l. 1570  --><!--  l. 1571  --><p class='noindent'><img alt='[Picture]' src='Limieten.online-8bbcc4e01bfd5385c2aec7c008f3cc65.svg' /></p></div>
-<p><a id='x1-40r9'></a>
-</p><!--  l. 1668  --><section class='fvd-exercise'>
-<!--  l. 1668  --><div class='fvd-exercise__title'>
-<!--  l. 1668  --><p class='noindent'>Oefening 9
-</p><!--  l. 1668  --><p class='noindent'>— Lees het asymptotisch gedrag
-</p><!--  l. 1668  --></div>
-<!--  l. 1668  --><div class='fvd-exercise__body'>
-<!--  l. 1668  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
-<!--  l. 1668  --><div class='fvd-exercise__content'>
-<!--  l. 1670  --><p class='noindent'>Gebruik uitsluitend de grafiek.
+<div class="center">
+<!-- l. 1570 --><p class="noindent">
+</p><!-- l. 1571 --><p class="noindent"><img alt="[Picture]" src="Limieten.online-8bbcc4e01bfd5385c2aec7c008f3cc65.svg"/></p></div>
+<p><a id="x1-40r9"></a>
+</p><!-- l. 1668 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 1668 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 1668 --><p class="noindent">Oefening 9
+</p><!-- l. 1668 --><p class="noindent">— Lees het asymptotisch gedrag
+</p><!-- l. 1668 --><p class="noindent"></p></div>
+<p></p><!-- l. 1668 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 1668 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 1668 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 1670 --><p class="noindent">Gebruik uitsluitend de grafiek.
 </p>
-<div class='problem-environment question' id='problem28' numbered=' ' role='article' titletext=' Question'>
-<!--  l. 1674  --><p class='noindent'>Wat is
+<div class="problem-environment question" id="problem28" numbered=" " role="article" titletext=" Question">
+<!-- l. 1674 --><p class="noindent">Wat is
 </p>
-<div class='mathjax-block'>\[ \lim _{x\to 1^-}f(x)? \]</div>
-<div class='mathjax-block'>\[ \answer {-\infty } \]</div>
+<div class="mathjax-block">\[ \lim _{x\to 1^-}f(x)? \]</div>
+<div class="mathjax-block">\[ \answer {-\infty } \]</div>
 </div>
-<div class='problem-environment question' id='problem29' numbered=' ' role='article' titletext=' Question'>
-                                                                  
-
-                                                                  
-<!--  l. 1688  --><p class='noindent'>Wat is
+<div class="problem-environment question" id="problem29" numbered=" " role="article" titletext=" Question">
+<!-- l. 1688 --><p class="noindent">Wat is
 </p>
-<div class='mathjax-block'>\[ \lim _{x\to 1^+}f(x)? \]</div>
-<div class='mathjax-block'>\[ \answer {+\infty } \]</div>
+<div class="mathjax-block">\[ \lim _{x\to 1^+}f(x)? \]</div>
+<div class="mathjax-block">\[ \answer {+\infty } \]</div>
 </div>
-<div class='problem-environment question' id='problem30' numbered=' ' role='article' titletext=' Question'>
-<!--  l. 1702  --><p class='noindent'>Welke verticale asymptoot volgt hieruit?
+<div class="problem-environment question" id="problem30" numbered=" " role="article" titletext=" Question">
+<!-- l. 1702 --><p class="noindent">Welke verticale asymptoot volgt hieruit?
 </p>
-<div class='mathjax-block'>\[ \boxed {x=\answer {1}} \]</div>
+<div class="mathjax-block">\[ \boxed {x=\answer {1}} \]</div>
 </div>
-<div class='problem-environment question' id='problem31' numbered=' ' role='article' titletext=' Question'>
-<!--  l. 1712  --><p class='noindent'>Wat gebeurt er met het verschil
+<div class="problem-environment question" id="problem31" numbered=" " role="article" titletext=" Question">
+<!-- l. 1712 --><p class="noindent">Wat gebeurt er met het verschil
 </p>
-<div class='mathjax-block'>\[ f(x)-(x+1) \]</div>
-<!--  l. 1718  --><p class='noindent'>wanneer
+<div class="mathjax-block">\[ f(x)-(x+1) \]</div>
+<!-- l. 1718 --><p class="noindent">wanneer
 </p>
-<div class='mathjax-block'>\[ x\to +\infty ? \]</div>
-<div class='mathjax-block'>\[ \answer {0} \]</div>
+<div class="mathjax-block">\[ x\to +\infty ? \]</div>
+<div class="mathjax-block">\[ \answer {0} \]</div>
 </div>
-<div class='problem-environment question' id='problem32' numbered=' ' role='article' titletext=' Question'>
-<!--  l. 1732  --><p class='noindent'>En wanneer
+<div class="problem-environment question" id="problem32" numbered=" " role="article" titletext=" Question">
+<!-- l. 1732 --><p class="noindent">En wanneer
 </p>
-<div class='mathjax-block'>\[ x\to -\infty ? \]</div>
-<div class='mathjax-block'>\[ \answer {0} \]</div>
+<div class="mathjax-block">\[ x\to -\infty ? \]</div>
+<div class="mathjax-block">\[ \answer {0} \]</div>
 </div>
-<div class='problem-environment question' id='problem33' numbered=' ' role='article' titletext=' Question'>
-<!--  l. 1746  --><p class='noindent'>Welke schuine asymptoot volgt daaruit?
+<div class="problem-environment question" id="problem33" numbered=" " role="article" titletext=" Question">
+<!-- l. 1746 --><p class="noindent">Welke schuine asymptoot volgt daaruit?
 </p>
-<div class='mathjax-block'>\[ \boxed {y=\answer {x+1}} \]</div>
+<div class="mathjax-block">\[ \boxed {y=\answer {x+1}} \]</div>
 </div>
 </div>
-<!--  l. 1754  --></div>
-<!--  l. 1754  --></section>
-<p><a id='x1-41r10'></a>
-                                                                  
-
-                                                                  
-</p><!--  l. 1756  --><section class='fvd-exercise'>
-<!--  l. 1756  --><div class='fvd-exercise__title'>
-<!--  l. 1756  --><p class='noindent'>Oefening 10
-</p><!--  l. 1756  --><p class='noindent'>— Van formule naar volledig asymptotisch beeld
-</p><!--  l. 1756  --></div>
-<!--  l. 1756  --><div class='fvd-exercise__body'>
-<!--  l. 1756  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
-<!--  l. 1756  --><div class='fvd-exercise__content'>
-<!--  l. 1758  --><p class='noindent'>Gegeven:
+<!-- l. 1754 --><p class="noindent"></p></div>
+<p></p><!-- l. 1754 --><p class="noindent"></p></section>
+<p><a id="x1-41r10"></a>
+</p><p></p><!-- l. 1756 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 1756 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 1756 --><p class="noindent">Oefening 10
+</p><!-- l. 1756 --><p class="noindent">— Van formule naar volledig asymptotisch beeld
+</p><!-- l. 1756 --><p class="noindent"></p></div>
+<p></p><!-- l. 1756 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 1756 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 1756 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 1758 --><p class="noindent">Gegeven:
 </p>
-<div class='mathjax-block'>\[ f(x)=\frac {2x^2-x+3}{x-1}. \]</div>
-<div class='problem-environment question' id='problem34' numbered=' ' role='article' titletext=' Question'>  Bepaal het domein.    </div>
-<div class='problem-environment question' id='problem35' numbered=' ' role='article' titletext=' Question'>  Onderzoek het gedrag voor
-<div class='mathjax-block'>\[ x\to 1^- \qquad \text {en}\qquad x\to 1^+. \]</div>
-<!--  l. 1777  --><p class='noindent'>Bepaal daaruit een eventuele verticale asymptoot.    </p></div>
-<div class='problem-environment question' id='problem36' numbered=' ' role='article' titletext=' Question'>  Voer de veeltermdeling uit en schrijf <span class='mathjax-inline'>\(f\)</span> in de vorm
-<div class='mathjax-block'>\[ f(x)=ax+b+\frac {r}{x-1}. \]</div>
+<div class="mathjax-block">\[ f(x)=\frac {2x^2-x+3}{x-1}. \]</div>
+<div class="problem-environment question" id="problem34" numbered=" " role="article" titletext=" Question">  Bepaal het domein.    </div>
+<div class="problem-environment question" id="problem35" numbered=" " role="article" titletext=" Question">  Onderzoek het gedrag voor
+<div class="mathjax-block">\[ x\to 1^- \qquad \text {en}\qquad x\to 1^+. \]</div>
+<!-- l. 1777 --><p class="noindent">Bepaal daaruit een eventuele verticale asymptoot.    </p></div>
+<div class="problem-environment question" id="problem36" numbered=" " role="article" titletext=" Question">  Voer de veeltermdeling uit en schrijf <span class="mathjax-inline">\(f\)</span> in de vorm
+<div class="mathjax-block">\[ f(x)=ax+b+\frac {r}{x-1}. \]</div>
 </div>
-<div class='problem-environment question' id='problem37' numbered=' ' role='article' titletext=' Question'>  Gebruik die vorm om het gedrag voor
-<div class='mathjax-block'>\[ x\to \pm \infty \]</div>
-<!--  l. 1796  --><p class='noindent'>te analyseren.    </p></div>
-<div class='problem-environment question' id='problem38' numbered=' ' role='article' titletext=' Question'>  Bepaal de schuine asymptoot.    </div>
-<div class='problem-environment question' id='problem39' numbered=' ' role='article' titletext=' Question'>  Maak op basis van je resultaten een kwalitatieve schets van de grafiek.
-<!--  l. 1807  --><p class='noindent'>Duid de asymptoten duidelijk aan.    </p></div>
+<div class="problem-environment question" id="problem37" numbered=" " role="article" titletext=" Question">  Gebruik die vorm om het gedrag voor
+<div class="mathjax-block">\[ x\to \pm \infty \]</div>
+<!-- l. 1796 --><p class="noindent">te analyseren.    </p></div>
+<div class="problem-environment question" id="problem38" numbered=" " role="article" titletext=" Question">  Bepaal de schuine asymptoot.    </div>
+<div class="problem-environment question" id="problem39" numbered=" " role="article" titletext=" Question">  Maak op basis van je resultaten een kwalitatieve schets van de grafiek.
+<!-- l. 1807 --><p class="noindent">Duid de asymptoten duidelijk aan.    </p></div>
 </div>
-<!--  l. 1810  --></div>
-<!--  l. 1810  --></section>
-<!--  l. 1813  --><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span></div><div class='fvd-remark__content'>
-<!--  l. 1814  --><p class='noindent'>Uit één grafiek kunnen dus verschillende soorten limietinformatie worden
+<!-- l. 1810 --><p class="noindent"></p></div>
+<p></p><!-- l. 1810 --><p class="noindent"></p></section>
+<p></p><!-- l. 1813 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">
+<p></p><!-- l. 1814 --><p class="noindent">Uit één grafiek kunnen dus verschillende soorten limietinformatie worden
 afgeleid.
-</p><!--  l. 1817  --><p class='noindent'>Bij
+</p><!-- l. 1817 --><p class="noindent">Bij
 </p>
-<div class='mathjax-block'>\[ x\to 1^\pm \]</div>
-                                                                  
-
-                                                                  
-<!--  l. 1823  --><p class='noindent'>onderzoeken we lokaal gedrag in de buurt van een bepaalde <span class='mathjax-inline'>\(x\)</span>-waarde.
-</p><!--  l. 1826  --><p class='noindent'>Bij
+<div class="mathjax-block">\[ x\to 1^\pm \]</div>
+<!-- l. 1823 --><p class="noindent">onderzoeken we lokaal gedrag in de buurt van een bepaalde <span class="mathjax-inline">\(x\)</span>-waarde.
+</p><!-- l. 1826 --><p class="noindent">Bij
 </p>
-<div class='mathjax-block'>\[ x\to \pm \infty \]</div>
-<!--  l. 1832  --><p class='noindent'>onderzoeken we het gedrag van de grafiek ver naar links en rechts.
-</p><!--  l. 1834  --><p class='noindent'>Dezelfde grafiek kan dus tegelijk een verticale én een schuine asymptoot
+<div class="mathjax-block">\[ x\to \pm \infty \]</div>
+<!-- l. 1832 --><p class="noindent">onderzoeken we het gedrag van de grafiek ver naar links en rechts.
+</p><!-- l. 1834 --><p class="noindent">Dezelfde grafiek kan dus tegelijk een verticale én een schuine asymptoot
 hebben.
 </p></div></section>
-<p><a id='x1-42r11'></a>
-</p><!--  l. 1843  --><section class='fvd-exercise'>
-<!--  l. 1843  --><div class='fvd-exercise__title'>
-<!--  l. 1843  --><p class='noindent'>Oefening 11
-</p><!--  l. 1843  --><p class='noindent'>— Kan dezelfde functie dit allemaal?
-</p><!--  l. 1843  --></div>
-<!--  l. 1843  --><div class='fvd-exercise__body'>
-<!--  l. 1843  --><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--g'>G</span></div>
-<!--  l. 1843  --><div class='fvd-exercise__content'>
-<!--  l. 1845  --><p class='noindent'>Onderzoek of er een functie kan bestaan waarvoor tegelijk geldt:
+<p><a id="x1-42r11"></a>
+</p><p></p><!-- l. 1843 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 1843 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 1843 --><p class="noindent">Oefening 11
+</p><!-- l. 1843 --><p class="noindent">— Kan dezelfde functie dit allemaal?
+</p><!-- l. 1843 --><p class="noindent"></p></div>
+<p></p><!-- l. 1843 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 1843 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--g">G</span></div>
+<p></p><!-- l. 1843 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 1845 --><p class="noindent">Onderzoek of er een functie kan bestaan waarvoor tegelijk geldt:
 </p>
-<div class='mathjax-block'>\[ \lim _{x\to 2^-}f(x)=+\infty , \]</div>
-<div class='mathjax-block'>\[ \lim _{x\to 2^+}f(x)=-\infty , \]</div>
-<div class='mathjax-block'>\[ \lim _{x\to -\infty }f(x)=1 \]</div>
-<!--  l. 1859  --><p class='noindent'>en
+<div class="mathjax-block">\[ \lim _{x\to 2^-}f(x)=+\infty , \]</div>
+<div class="mathjax-block">\[ \lim _{x\to 2^+}f(x)=-\infty , \]</div>
+<div class="mathjax-block">\[ \lim _{x\to -\infty }f(x)=1 \]</div>
+<!-- l. 1859 --><p class="noindent">en
 </p>
-<div class='mathjax-block'>\[ \lim _{x\to +\infty }\bigl (f(x)-(2x+3)\bigr )=0. \]</div>
-<!--  l. 1865  --><p class='noindent'>Als je denkt dat dit mogelijk is, maak dan een kwalitatieve schets.
-</p><!--  l. 1867  --><p class='noindent'>Als je denkt dat dit onmogelijk is, leg dan uit welke voorwaarden elkaar
+<div class="mathjax-block">\[ \lim _{x\to +\infty }\bigl (f(x)-(2x+3)\bigr )=0. \]</div>
+<!-- l. 1865 --><p class="noindent">Als je denkt dat dit mogelijk is, maak dan een kwalitatieve schets.
+</p><!-- l. 1867 --><p class="noindent">Als je denkt dat dit onmogelijk is, leg dan uit welke voorwaarden elkaar
 tegenspreken.
 </p></div>
-<!--  l. 1870  --></div>
-<!--  l. 1870  --></section>
-<p><a id='x1-43r18'></a>
-</p><!--  l. 1877  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>18</div><div class='fvd-section-bar__title'>Samengevat</div></div>
-<!--  l. 1879  --><p class='noindent'>Een limiet beschrijft het gedrag van functiewaarden wanneer <span class='mathjax-inline'>\(x\)</span> een bepaalde waarde
+<p></p><!-- l. 1870 --><p class="noindent"></p></div>
+<p></p><!-- l. 1870 --><p class="noindent"></p></section>
+<p><a id="x1-43r18"></a>
+</p><p></p><!-- l. 1877 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">18</div><div class="fvd-section-bar__title">Samengevat</div></div>
+<p></p><!-- l. 1879 --><p class="noindent">Een limiet beschrijft het gedrag van functiewaarden wanneer <span class="mathjax-inline">\(x\)</span> een bepaalde waarde
 nadert:
                                                                   
 
                                                                   
 </p>
-<div class='mathjax-block'>\[ \boxed { \lim _{x\to a}f(x)=L. } \]</div>
-<!--  l. 1888  --><p class='noindent'>Functiewaarde en limiet zijn verschillende begrippen:
+<div class="mathjax-block">\[ \boxed { \lim _{x\to a}f(x)=L. } \]</div>
+<!-- l. 1888 --><p class="noindent">Functiewaarde en limiet zijn verschillende begrippen:
 </p>
-<div class='mathjax-block'>\[ f(a) \qquad \text {tegenover}\qquad \lim _{x\to a}f(x). \]</div>
-<!--  l. 1896  --><p class='noindent'>Voor een tweezijdige limiet moeten linker- en rechterlimiet overeenkomen.
-</p><!--  l. 1899  --><p class='noindent'>Een verticale asymptoot heeft vergelijking
+<div class="mathjax-block">\[ f(a) \qquad \text {tegenover}\qquad \lim _{x\to a}f(x). \]</div>
+<!-- l. 1896 --><p class="noindent">Voor een tweezijdige limiet moeten linker- en rechterlimiet overeenkomen.
+</p><!-- l. 1899 --><p class="noindent">Een verticale asymptoot heeft vergelijking
 </p>
-<div class='mathjax-block'>\[ \boxed {x=a} \]</div>
-<!--  l. 1905  --><p class='noindent'>en hangt samen met oneindig gedrag voor <span class='mathjax-inline'>\(x\to a^\pm \)</span>.
-</p><!--  l. 1907  --><p class='noindent'>Een horizontale asymptoot heeft vergelijking
+<div class="mathjax-block">\[ \boxed {x=a} \]</div>
+<!-- l. 1905 --><p class="noindent">en hangt samen met oneindig gedrag voor <span class="mathjax-inline">\(x\to a^\pm \)</span>.
+</p><!-- l. 1907 --><p class="noindent">Een horizontale asymptoot heeft vergelijking
 </p>
-<div class='mathjax-block'>\[ \boxed {y=b} \]</div>
-<!--  l. 1913  --><p class='noindent'>wanneer
+<div class="mathjax-block">\[ \boxed {y=b} \]</div>
+<!-- l. 1913 --><p class="noindent">wanneer
 </p>
-<div class='mathjax-block'>\[ \lim _{x\to \pm \infty }f(x)=b. \]</div>
-<!--  l. 1919  --><p class='noindent'>Een schuine asymptoot heeft vergelijking
+<div class="mathjax-block">\[ \lim _{x\to \pm \infty }f(x)=b. \]</div>
+<!-- l. 1919 --><p class="noindent">Een schuine asymptoot heeft vergelijking
 </p>
-<div class='mathjax-block'>\[ \boxed {y=ax+b} \]</div>
-<!--  l. 1925  --><p class='noindent'>wanneer
+<div class="mathjax-block">\[ \boxed {y=ax+b} \]</div>
+<!-- l. 1925 --><p class="noindent">wanneer
 </p>
-<div class='mathjax-block'>\[ \lim _{x\to \pm \infty } \bigl (f(x)-(ax+b)\bigr )=0. \]</div>
-<!--  l. 1932  --><p class='noindent'>De centrale gedachte is:
+<div class="mathjax-block">\[ \lim _{x\to \pm \infty } \bigl (f(x)-(ax+b)\bigr )=0. \]</div>
+<!-- l. 1932 --><p class="noindent">De centrale gedachte is:
 </p>
-<div class='mathjax-block'>\[ \boxed { \text {limiet} \quad \longleftrightarrow \quad \text {gedrag van de grafiek} } \]</div>
-<!--  l. 1942  --><p class='noindent'>Een goede analyse gaat daarom in beide richtingen:
+<div class="mathjax-block">\[ \boxed { \text {limiet} \quad \longleftrightarrow \quad \text {gedrag van de grafiek} } \]</div>
+<!-- l. 1942 --><p class="noindent">Een goede analyse gaat daarom in beide richtingen:
 </p>
-<div class='mathjax-block'>\[ \text {formule} \longrightarrow \text {limiet} \longrightarrow \text {grafiek} \]</div>
-<!--  l. 1952  --><p class='noindent'>maar ook
+<div class="mathjax-block">\[ \text {formule} \longrightarrow \text {limiet} \longrightarrow \text {grafiek} \]</div>
+<!-- l. 1952 --><p class="noindent">maar ook
 </p>
-<div class='mathjax-block'>\[ \text {grafiek} \longrightarrow \text {limietinformatie}. \]</div>
-<p><a id='x1-44r19'></a>
-</p><!--  l. 1965  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>19</div><div class='fvd-section-bar__title'>Wat moet je zeker beheersen?</div></div>
-<!--  l. 1967  --><p class='noindent'>Na deze opfrissing moet je opnieuw vlot kunnen:
+<div class="mathjax-block">\[ \text {grafiek} \longrightarrow \text {limietinformatie}. \]</div>
+<p><a id="x1-44r19"></a>
+</p><!-- l. 1965 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">19</div><div class="fvd-section-bar__title">Wat moet je zeker beheersen?</div></div>
+<p></p><!-- l. 1967 --><p class="noindent">Na deze opfrissing moet je opnieuw vlot kunnen:
 </p>
-                                                                  
-
-                                                                  
-<ul class='itemize1'>     
-<li class='itemize'>uitleggen wat een limiet betekent;
+<ul class="itemize1">
+<li class="itemize">uitleggen wat een limiet betekent;
 </li>
-<li class='itemize'>functiewaarde en limiet onderscheiden;
+<li class="itemize">functiewaarde en limiet onderscheiden;
 </li>
-<li class='itemize'>linker- en rechterlimieten lezen en interpreteren;
+<li class="itemize">linker- en rechterlimieten lezen en interpreteren;
 </li>
-<li class='itemize'>limieten uit een grafiek aflezen;
+<li class="itemize">limieten uit een grafiek aflezen;
 </li>
-<li class='itemize'>oneindige limieten interpreteren;
+<li class="itemize">oneindige limieten interpreteren;
 </li>
-<li class='itemize'>het verband leggen tussen limieten en verticale, horizontale en schuine
+<li class="itemize">het verband leggen tussen limieten en verticale, horizontale en schuine
 asymptoten;
 </li>
-<li class='itemize'>eenvoudige  limieten  van  veelterm-,  rationale  en  irrationale  functies
+<li class="itemize">eenvoudige  limieten  van  veelterm-,  rationale  en  irrationale  functies
 opnieuw berekenen;
 </li>
-<li class='itemize'>een geschikte rekentechniek zelfstandig herkennen;
+<li class="itemize">een geschikte rekentechniek zelfstandig herkennen;
 </li>
-<li class='itemize'>uit limietgegevens eigenschappen van een mogelijke grafiek afleiden;
+<li class="itemize">uit limietgegevens eigenschappen van een mogelijke grafiek afleiden;
 </li>
-<li class='itemize'>asymptotisch   gedrag   in   een   eenvoudige   wetenschappelijke   context
+<li class="itemize">asymptotisch   gedrag   in   een   eenvoudige   wetenschappelijke   context
 interpreteren.
 </li></ul>
-                                                                  
-
-                                                                  
-<!--  l. 1998  --><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span></div><div class='fvd-remark__content'>De oefeningen met de diamant vormen het minimumtraject.
-<!--  l. 2000  --><p class='noindent'>Concreet:
-</p>     
-<ul class='itemize1'>
-<li class='itemize'><em>Functiewaarde of limiet?</em>;
+<!-- l. 1998 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">De oefeningen met de diamant vormen het minimumtraject.
+<p></p><!-- l. 2000 --><p class="noindent">Concreet:
+</p>
+<ul class="itemize1">
+<li class="itemize"><em>Functiewaarde of limiet?</em>;
 </li>
-<li class='itemize'><em>Links en rechts</em>;
+<li class="itemize"><em>Links en rechts</em>;
 </li>
-<li class='itemize'><em>Van limieten naar verticale asymptoot</em>;
+<li class="itemize"><em>Van limieten naar verticale asymptoot</em>;
 </li>
-<li class='itemize'><em>Welke asymptoot?</em>;
+<li class="itemize"><em>Welke asymptoot?</em>;
 </li>
-<li class='itemize'><em>Parate rekentechniek</em>;
+<li class="itemize"><em>Parate rekentechniek</em>;
 </li>
-<li class='itemize'><em>Schets uit limietgegevens</em>;
+<li class="itemize"><em>Schets uit limietgegevens</em>;
 </li>
-<li class='itemize'><em>Wat kun je werkelijk besluiten?</em>;
+<li class="itemize"><em>Wat kun je werkelijk besluiten?</em>;
 </li>
-<li class='itemize'><em>Een grenswaarde interpreteren</em>;
+<li class="itemize"><em>Een grenswaarde interpreteren</em>;
 </li>
-<li class='itemize'><em>Van formule naar volledig asymptotisch beeld</em>.</li></ul>
-<!--  l. 2014  --><p class='noindent'>Merk op dat meerdere essentiële oefeningen als <span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span> zijn geclassificeerd.
-</p><!--  l. 2017  --><p class='noindent'>Dat is bewust: limieten en asymptotisch gedrag moeten uiteindelijk niet
+<li class="itemize"><em>Van formule naar volledig asymptotisch beeld</em>.</li></ul>
+<!-- l. 2014 --><p class="noindent">Merk op dat meerdere essentiële oefeningen als <span class="fvd-exercise-chip fvd-exercise-chip--u">U</span> zijn geclassificeerd.
+</p><!-- l. 2017 --><p class="noindent">Dat is bewust: limieten en asymptotisch gedrag moeten uiteindelijk niet
 alleen berekend, maar ook geïnterpreteerd en geanalyseerd kunnen worden.
 </p></div></section>
-                                                                  
-
-                                                                  
-<p><a id='x1-45r20'></a>
-</p><!--  l. 2027  --><div class='fvd-section-bar'><div class='fvd-section-bar__number'>20</div><div class='fvd-section-bar__title'>De gereedschapskist is opnieuw klaar</div></div>
-<!--  l. 2029  --><p class='noindent'>In dit eerste thema hebben we geen volledig nieuwe theorie opgebouwd.
-</p><!--  l. 2031  --><p class='noindent'>We hebben het wiskundige gereedschap uit het vijfde jaar opnieuw scherpgesteld.
-</p><!--  l. 2034  --><p class='noindent'>We begonnen met gemiddelde verandering:
+<p><a id="x1-45r20"></a>
+</p><p></p><!-- l. 2027 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">20</div><div class="fvd-section-bar__title">De gereedschapskist is opnieuw klaar</div></div>
+<p></p><!-- l. 2029 --><p class="noindent">In dit eerste thema hebben we geen volledig nieuwe theorie opgebouwd.
+</p><!-- l. 2031 --><p class="noindent">We hebben het wiskundige gereedschap uit het vijfde jaar opnieuw scherpgesteld.
+</p><!-- l. 2034 --><p class="noindent">We begonnen met gemiddelde verandering:
 </p>
-<div class='mathjax-block'>\[ \frac {\Delta y}{\Delta x}. \]</div>
-<!--  l. 2040  --><p class='noindent'>Door het interval steeds kleiner te maken kwamen we bij het afgeleid getal:
+<div class="mathjax-block">\[ \frac {\Delta y}{\Delta x}. \]</div>
+<!-- l. 2040 --><p class="noindent">Door het interval steeds kleiner te maken kwamen we bij het afgeleid getal:
 </p>
-<div class='mathjax-block'>\[ f'(a). \]</div>
-<!--  l. 2047  --><p class='noindent'>Daaruit bouwden we de afgeleide functie:
+<div class="mathjax-block">\[ f'(a). \]</div>
+<!-- l. 2047 --><p class="noindent">Daaruit bouwden we de afgeleide functie:
 </p>
-<div class='mathjax-block'>\[ f'(x), \]</div>
-<!--  l. 2053  --><p class='noindent'>en vervolgens de tweede afgeleide:
+<div class="mathjax-block">\[ f'(x), \]</div>
+<!-- l. 2053 --><p class="noindent">en vervolgens de tweede afgeleide:
 </p>
-<div class='mathjax-block'>\[ f''(x). \]</div>
-<!--  l. 2059  --><p class='noindent'>Met die functies konden we het verloop van <span class='mathjax-inline'>\(f\)</span> analyseren.
-</p><!--  l. 2061  --><p class='noindent'>En met limieten beschreven we wat er gebeurt nabij bijzondere <span class='mathjax-inline'>\(x\)</span>-waarden en op
+<div class="mathjax-block">\[ f''(x). \]</div>
+<!-- l. 2059 --><p class="noindent">Met die functies konden we het verloop van <span class="mathjax-inline">\(f\)</span> analyseren.
+</p><!-- l. 2061 --><p class="noindent">En met limieten beschreven we wat er gebeurt nabij bijzondere <span class="mathjax-inline">\(x\)</span>-waarden en op
 oneindig.
-</p><!--  l. 2064  --><p class='noindent'>De belangrijkste ideeën van Thema 1 vormen zo één geheel:
+</p><!-- l. 2064 --><p class="noindent">De belangrijkste ideeën van Thema 1 vormen zo één geheel:
 </p>
-<div class='mathjax-block'>\[ \boxed { \text {functie} \;\longrightarrow \; \text {verandering} \;\longrightarrow \; \text {afgeleiden} \;\longrightarrow \; \text {verloop} \;\longrightarrow \; \text {limietgedrag} } \]</div>
-<!--  l. 2080  --><p class='noindent'>Vanaf nu kunnen we deze gereedschapskist gebruiken bij nieuwe functieklassen en
+<div class="mathjax-block">\[ \boxed { \text {functie} \;\longrightarrow \; \text {verandering} \;\longrightarrow \; \text {afgeleiden} \;\longrightarrow \; \text {verloop} \;\longrightarrow \; \text {limietgedrag} } \]</div>
+<!-- l. 2080 --><p class="noindent">Vanaf nu kunnen we deze gereedschapskist gebruiken bij nieuwe functieklassen en
 nieuwe technieken.
                                                                   
 
                                                                   
 </p>
-</body> 
- 
+</div><!-- XIMERA-PREVIOUS-NEXT-START --><nav aria-label="Hoofdstuknavigatie" class="chapter-navigation">
+<a class="chapter-navigation__card chapter-navigation__card--previous" data-visible="true" href="Oefeningen-Verloop-functies.html">
+<span aria-hidden="true" class="chapter-navigation__icon">
+            ←
+        </span>
+<span class="chapter-navigation__content">
+<span class="chapter-navigation__label">
+                Vorig hoofdstuk
+            </span>
+<span class="chapter-navigation__title">
+                Oefeningen — Verloop van functies
+            </span>
+</span>
+</a>
+<a class="chapter-navigation__card chapter-navigation__card--overview" href="index.html">
+<span aria-hidden="true" class="chapter-navigation__overview-icon">
+<span></span>
+<span></span>
+<span></span>
+</span>
+<span class="chapter-navigation__content">
+<span class="chapter-navigation__label">
+                Cursus
+            </span>
+<span class="chapter-navigation__title">
+                Overzicht
+            </span>
+</span>
+</a>
+<a class="chapter-navigation__card chapter-navigation__card--next" data-visible="false" href="#">
+<span class="chapter-navigation__content">
+<span class="chapter-navigation__label">
+                Volgend hoofdstuk
+            </span>
+<span class="chapter-navigation__title">
+</span>
+</span>
+<span aria-hidden="true" class="chapter-navigation__icon">
+            →
+        </span>
+</a>
+</nav><!-- XIMERA-PREVIOUS-NEXT-END --></article></main><!-- XIMERA-CHAPTER-LAYOUT-END --><div class="course-footer-clear"></div><!-- XIMERA-FOOTER-START --><footer class="site-footer">
+<div aria-hidden="true" class="site-footer__accent"></div>
+<div class="site-footer__inner">
+<div class="site-footer__quote">
+<span aria-hidden="true" class="site-footer__quote-mark">◈</span>
+<p class="site-footer__quote-text">
+                Think mathematically. Create digitally. Shape the future.
+            </p>
+</div>
+<div aria-hidden="true" class="site-footer__divider"></div>
+<div class="site-footer__grid">
+<section class="site-footer__column">
+<p class="site-footer__eyebrow">
+                    Wiskunde 7 FVD
+                </p>
+<h2 class="site-footer__title">
+                    Fundamentele Vorming Digitale Creatie
+                </h2>
+<p class="site-footer__text">
+                    Wiskundige basis voor programmeren, graphics,
+                    animatie, simulatie en 3D.
+                </p>
+</section>
+<section class="site-footer__column">
+<p class="site-footer__eyebrow">
+                    Ontwikkeling
+                </p>
+<p class="site-footer__name">
+                    Ingmar Herreman
+                </p>
+<p class="site-footer__text">
+                    GO! Athena Campus Bellevue
+                </p>
+<p class="site-footer__text">
+                    Versie 1.0 · 2026
+                </p>
+</section>
+<section class="site-footer__column">
+<p class="site-footer__eyebrow">
+                    Technologie
+                </p>
+<div class="site-footer__tech">
+<span>Ximera</span>
+<span>HTML</span>
+<span>PDF</span>
+<span>GeoGebra</span>
+<span>GitHub</span>
+</div>
+</section>
+</div>
+<div class="site-footer__bottom">
+<span>Gebouwd met Ximera</span>
+<span aria-hidden="true">•</span>
+<span>Voor 7 FVD</span>
+<span aria-hidden="true">•</span>
+<span>© 2026</span>
+</div>
+</div>
+</footer><!-- XIMERA-FOOTER-END --><script src="../../../assets/js/chapter-layout.js"></script></body>
 </html>
-                                                                  
-
-

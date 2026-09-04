@@ -95,6 +95,14 @@
 
 
 
+
+
+
+
+
+
+
+
 % ============================================================
 % ABSTRACT
 % ============================================================
@@ -371,8 +379,6 @@ Wat stelt $f'(2)$ meetkundig voor?
 We frissen nu de afleidingsregels op die nodig zijn om
 veeltermfuncties af te leiden.
 
-Het doel is niet om de volledige theorie opnieuw op te bouwen,
-maar om deze regels opnieuw vlot beschikbaar te maken.
 
 
 % --------------------------------------------------------------------
@@ -748,38 +754,32 @@ f'(x)
 Bepaal telkens de afgeleide functie.
 
 \begin{question}
-
-\[
+\(
 f(x)=5x^4-3x^2+8
-\]
-
-\[
+\) \ \ \ \ \ \ \ \ 
+\(
 f'(x)=\answer{20x^3-6x}.
-\]
+\)
 
 \end{question}
 
 \begin{question}
-
-\[
+\(
 g(x)=-2x^3+7x-4
-\]
-
-\[
+\) \ \ \ \ \ \ \ \ 
+\(
 g'(x)=\answer{-6x^2+7}.
-\]
+\)
 
 \end{question}
 
 \begin{question}
-
-\[
+\(
 h(x)=\frac{1}{2}x^6-4x^3+x
-\]
-
-\[
+\) \ \ \ \ \ \ \ \ 
+\(
 h'(x)=\answer{3x^5-12x^2+1}.
-\]
+\)
 
 \end{question}
 
@@ -822,17 +822,6 @@ f'(x)=6x^2-12x+8.
 \end{voorbeeld}
 
 
-\begin{opmerking}
-
-Later leren we regels waarmee we producten van functies
-rechtstreeks kunnen afleiden.
-
-Voor deze opfrissing van veeltermfuncties is eerst uitwerken
-vaak voldoende.
-
-\end{opmerking}
-
-
 \begin{oefening}[Eerst vereenvoudigen]{\oefU \ESS}
 
 Gegeven:
@@ -843,7 +832,7 @@ f(x)=(x+2)(x^2-3x+1).
 
 Werk eerst uit en bepaal daarna $f'(x)$.
 
-\begin{oplossing}[toon]
+\begin{oplossing}
 
 Eerst:
 
@@ -965,6 +954,54 @@ $2x^3-5x$
 
 Leg je keuze uit aan de hand van minstens twee afleidingsregels.
 
+\begin{oplossing}
+
+  We leiden de functie term per term af:
+  
+  \[
+  f(x)=2x^4-5x^2+7.
+  \]
+  
+  Met de \textbf{machtsregel}
+  
+  \[
+  (x^n)'=nx^{n-1}
+  \]
+  
+  en de \textbf{constante-factorregel}
+  
+  \[
+  (c\cdot f(x))'=c\cdot f'(x)
+  \]
+  
+  vinden we
+  
+  \[
+  (2x^4)'=2\cdot 4x^3=8x^3
+  \]
+  
+  en
+  
+  \[
+  (-5x^2)'=-5\cdot 2x=-10x.
+  \]
+  
+  De afgeleide van een constante is nul, dus
+  
+  \[
+  (7)'=0.
+  \]
+  
+  Daarom is
+  
+  \[
+  \boxed{f'(x)=8x^3-10x}.
+  \]
+  
+  De tweede uitdrukking is dus de enige die kan kloppen.
+  
+  \end{oplossing}
+
 \end{oefening}
 
 
@@ -1051,124 +1088,12 @@ f(x)=x^5-4x^3+6x^2-2.
 
 Bepaal $f'$ en $f''$.
 
-\begin{question}
-
-\[
-f'(x)
-=
-\answer{5x^4-12x^2+12x}.
-\]
-
-\end{question}
-
-\begin{question}
-
-\[
-f''(x)
-=
-\answer{20x^3-24x+12}.
-\]
-
-\end{question}
+\begin{itemize}
+  \item \( f'(x)=\answer{5x^4-12x^2+12x} \)
+  \item \(f''(x)=\answer{20x^3-24x+12} \)
+\end{itemize}
 
 \end{oefening}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% BETEKENIS VAN f' EN f''
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\FVDsection{Wat vertellen $f'$ en $f''$?}
-
-
-% --------------------------------------------------------------------
-% BETEKENIS f'
-% --------------------------------------------------------------------
-
-\FVDsubsection{De eerste afgeleide beschrijft verandering}
-
-De eerste afgeleide
-
-\[
-f'(x)
-\]
-
-vertelt hoe $f$ ogenblikkelijk verandert.
-
-Zo geldt lokaal:
-
-\[
-f'(x)>0
-\]
-
-wanneer de grafiek in dat punt een positieve helling heeft,
-
-\[
-f'(x)<0
-\]
-
-wanneer de helling negatief is,
-
-en
-
-\[
-f'(x)=0
-\]
-
-wanneer de raaklijn horizontaal is.
-
-We zullen in het volgende hoofdstuk onderzoeken hoe het teken van $f'$
-over volledige intervallen gebruikt wordt om stijgen, dalen en extrema
-te analyseren.
-
-
-% --------------------------------------------------------------------
-% BETEKENIS f''
-% --------------------------------------------------------------------
-
-\FVDsubsection{De tweede afgeleide beschrijft de verandering van de verandering}
-
-De tweede afgeleide
-
-\[
-f''(x)
-\]
-
-beschrijft hoe $f'(x)$ verandert.
-
-Je kunt dit lezen als:
-
-\[
-\boxed{
-f
-\quad\xrightarrow{\text{afleiden}}\quad
-f'
-\quad\xrightarrow{\text{afleiden}}\quad
-f''.
-}
-\]
-
-Daarbij beschrijft:
-
-\[
-f
-\]
-
-de oorspronkelijke grootheid,
-
-\[
-f'
-\]
-
-de verandering van die grootheid,
-
-en
-
-\[
-f''
-\]
-
-hoe die verandering zelf verandert.
 
 
 \begin{voorbeeld}[Beweging]
@@ -1277,218 +1202,9 @@ a(2)=\answer{0}.
 \end{oefening}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% DENKFOUTEN
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\FVDsection{Veelgemaakte denkfouten}
 
 
-\FVDsubsection{$f'(x)$ en $f(x)$ verwarren}
-
-De uitdrukking
-
-\[
-f(x)
-\]
-
-geeft een functiewaarde.
-
-De uitdrukking
-
-\[
-f'(x)
-\]
-
-geeft de ogenblikkelijke verandering van die functiewaarde.
-
-Het zijn verschillende functies en ze hebben in het algemeen
-verschillende waarden.
-
-
-\FVDsubsection{Een constante niet laten verdwijnen}
-
-Bijvoorbeeld:
-
-\[
-f(x)=4x^3+7.
-\]
-
-Dan is niet
-
-\[
-f'(x)=12x^2+7,
-\]
-
-maar
-
-\[
-\boxed{
-f'(x)=12x^2.
-}
-\]
-
-De afgeleide van de constante $7$ is nul.
-
-
-\FVDsubsection{De exponent vergeten te verminderen}
-
-Uit
-
-\[
-(x^5)'=5x^4
-\]
-
-volgt niet alleen dat de exponent als factor vooraan komt.
-
-De exponent moet ook met één verminderen.
-
-
-\FVDsubsection{$f''$ verwarren met $(f')^2$}
-
-De notatie
-
-\[
-f''(x)
-\]
-
-betekent:
-
-\[
-(f'(x))'.
-\]
-
-Ze betekent niet:
-
-\[
-(f'(x))^2.
-\]
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% VERBINDEN
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\FVDsection{Kun je de ideeën verbinden?}
-
-
-\begin{oefening}[Van functie naar verandering]{\oefU \ESS}
-
-Gegeven is
-
-\[
-f(x)=x^3-3x^2-9x+5.
-\]
-
-\begin{question}
-
-Bepaal de eerste afgeleide.
-
-\[
-f'(x)=\answer{3x^2-6x-9}.
-\]
-
-\end{question}
-
-\begin{question}
-
-Bepaal de tweede afgeleide.
-
-\[
-f''(x)=\answer{6x-6}.
-\]
-
-\end{question}
-
-\begin{question}
-
-Bereken
-
-\[
-f'(0)=\answer{-9}.
-\]
-
-Wat betekent dit meetkundig?
-
-\begin{multipleChoice}
-  \choice{De grafiek gaat door $(0,-9)$.}
-  \choice[correct]{De raaklijn aan de grafiek bij $x=0$ heeft richtingscoëfficiënt $-9$.}
-  \choice{De functie heeft noodzakelijk een minimum bij $x=0$.}
-\end{multipleChoice}
-
-\end{question}
-
-\begin{question}
-
-Een leerling beweert:
-
-\begin{center}
-``Omdat $f'(0)<0$, is $f$ overal dalend.''
-\end{center}
-
-Is dat besluit correct?
-
-\begin{multipleChoice}
-
-\choice{
-Ja, want een negatieve afgeleide betekent altijd dat een functie
-over haar volledige domein daalt.
-}
-
-\choice[correct]{
-Nee. $f'(0)<0$ geeft alleen informatie over de verandering
-bij $x=0$. Om te weten waar $f$ stijgt of daalt, moeten we
-het teken van $f'(x)$ over intervallen onderzoeken.
-}
-
-\end{multipleChoice}
-
-\end{question}
-
-\end{oefening}
-
-
-\begin{oefening}[Redeneren zonder volledig uit te rekenen]{\oefG}
-
-Een veeltermfunctie $f$ heeft graad $6$ en een niet-nul
-coëfficiënt bij $x^6$.
-
-Beantwoord zonder een concreet functievoorschrift te kiezen.
-
-\begin{question}
-
-Welke graad heeft $f'$?
-
-\[
-\answer{5}
-\]
-
-\end{question}
-
-\begin{question}
-
-Welke graad heeft $f''$?
-
-\[
-\answer{4}
-\]
-
-\end{question}
-
-\begin{question}
-
-Kan $f'$ een constante functie zijn?
-
-\begin{multipleChoice}
-  \choice{Ja}
-  \choice[correct]{Nee}
-\end{multipleChoice}
-
-\end{question}
-
-Leg uit waarom je antwoorden noodzakelijk volgen uit de machtsregel.
-
-\end{oefening}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1548,111 +1264,143 @@ f''=(f')'.
 }
 \]
 
-Daarbij kun je de drie functies conceptueel lezen als
+\begin{oefening}[Van functie naar verandering]{\oefU \ESS}
 
-\[
-\boxed{
-f
-\longrightarrow
-\text{grootheid}
-}
-\]
+  Gegeven is
+  
+  \[
+  f(x)=x^3-3x^2-9x+5.
+  \]
+  
+  \begin{question}
+  
+  Bepaal de eerste afgeleide.
+  
+  \[
+  f'(x)=\answer{3x^2-6x-9}.
+  \]
+  
+  \end{question}
+  
+  \begin{question}
+  
+  Bepaal de tweede afgeleide.
+  
+  \[
+  f''(x)=\answer{6x-6}.
+  \]
+  
+  \end{question}
+  
+  \begin{question}
+  
+  Bereken
+  
+  \[
+  f'(0)=\answer{-9}.
+  \]
+  
+  Wat betekent dit meetkundig?
+  
+  \begin{multipleChoice}
+    \choice{De grafiek gaat door $(0,-9)$.}
+    \choice[correct]{De raaklijn aan de grafiek bij $x=0$ heeft richtingscoëfficiënt $-9$.}
+    \choice{De functie heeft noodzakelijk een minimum bij $x=0$.}
+  \end{multipleChoice}
+  
+  \end{question}
+  
+  \begin{question}
+  
+  Een leerling beweert:
+  
+  \begin{center}
+  ``Omdat $f'(0)<0$, is $f$ overal dalend.''
+  \end{center}
+  
+  Is dat besluit correct?
+  
+  \begin{multipleChoice}
+  
+  \choice{
+  Ja, want een negatieve afgeleide betekent altijd dat een functie
+  over haar volledige domein daalt.
+  }
+  
+  \choice[correct]{
+  Nee. $f'(0)<0$ geeft alleen informatie over de verandering
+  bij $x=0$. Om te weten waar $f$ stijgt of daalt, moeten we
+  het teken van $f'(x)$ over intervallen onderzoeken.
+  }
+  
+  \end{multipleChoice}
+  
+  \end{question}
+  
+  \end{oefening}
+  
+  
+  \begin{oefening}[Redeneren zonder volledig uit te rekenen]{\oefG}
+  
+  Een veeltermfunctie $f$ heeft graad $6$ en een niet-nul
+  coëfficiënt bij $x^6$.
+  
+  Beantwoord zonder een concreet functievoorschrift te kiezen.
+  
+  \begin{question}
+  
+  Welke graad heeft $f'$?
+  
+  \[
+  \answer{5}
+  \]
+  
+  \end{question}
+  
+  \begin{question}
+  
+  Welke graad heeft $f''$?
+  
+  \[
+  \answer{4}
+  \]
+  
+  \end{question}
+  
+  \begin{question}
+  
+  Kan $f'$ een constante functie zijn?
+  
+  \begin{multipleChoice}
+    \choice{Ja}
+    \choice[correct]{Nee}
+  \end{multipleChoice}
 
-\[
-\boxed{
-f'
-\longrightarrow
-\text{verandering van de grootheid}
-}
-\]
+  \begin{oplossing}
+    De afgeleide $f'$ kan dus geen constante functie zijn. Een constante
+    functie heeft graad $0$, terwijl $f'$ hier noodzakelijk graad $5$ heeft.
+    
+    \[
+    \boxed{\text{$f'$ kan geen constante functie zijn.}}
+    \]
+  \end{oplossing}
+  
+  \end{question}
+  
+  Leg uit waarom je antwoorden noodzakelijk volgen uit de machtsregel.
 
-\[
-\boxed{
-f''
-\longrightarrow
-\text{verandering van die verandering}.
-}
-\]
+  \begin{oplossing}
+
+Algemeen verlaagt het afleiden van een niet-constante veelterm de graad
+telkens met één. Dit volgt rechtstreeks uit de machtsregel.
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% MINIMUMTRAJECT
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \end{oplossing}
+  
+  \end{oefening}
+  
 
-\FVDsection{Wat moet je zeker beheersen?}
 
-Na deze opfrissing moet je zelfstandig kunnen uitleggen wat het verschil
-is tussen $f'(a)$ en $f'(x)$, veeltermfuncties correct afleiden met de
-constante-, machts-, constante-factor- en som- en verschilregel, een
-tweede afgeleide bepalen en de betekenis van $f$, $f'$ en $f''$
-onderscheiden.
 
-Je moet bovendien eenvoudige redeneringen over een afgeleide kunnen
-controleren. Uit één waarde zoals $f'(2)<0$ mag je bijvoorbeeld geen
-besluit trekken over het gedrag van de functie op haar volledige domein.
-
-\begin{opmerking}
-
-De oefeningen met de diamant vormen in dit hoofdstuk het minimumtraject.
-
-Concreet zijn dat:
-
-\[
-\boxed{
-\text{Afgeleid getal of afgeleide functie?}
-}
-\]
-
-\[
-\boxed{
-\text{Veeltermfuncties afleiden}
-}
-\]
-
-\[
-\boxed{
-\text{Eerst vereenvoudigen}
-}
-\]
-
-\[
-\boxed{
-\text{Welke afgeleide kan kloppen?}
-}
-\]
-
-\[
-\boxed{
-\text{Eerste en tweede afgeleide}
-}
-\]
-
-\[
-\boxed{
-\text{Beweging}
-}
-\]
-
-en
-
-\[
-\boxed{
-\text{Van functie naar verandering}.
-}
-\]
-
-\end{opmerking}
-
-In het volgende hoofdstuk gebruiken we deze parate kennis om het
-\textbf{verloop van functies} te onderzoeken.
-
-We leggen dan systematisch het verband tussen
-
-\[
-f,\qquad f',\qquad f'',
-\]
-
-en gebruiken dat verband voor stijgen en dalen, extrema,
-kromming en buigpunten.
 
 \end{document}
