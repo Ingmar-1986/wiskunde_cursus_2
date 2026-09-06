@@ -1,0 +1,426 @@
+\documentclass{xourse}
+
+
+\input{../../preamble.tex}
+\input{../../Opmaak.tex}
+\addPrintStyle{../..}
+  
+
+\fvdtitle{Van krachten tot kernen}
+\author{Ingmar Herreman}
+
+
+\begin{abstract}
+
+  In deze cursus bouwen we verder op de fysica uit de tweede graad en
+  onderzoeken we hoe krachten en velden ons helpen om verschijnselen op
+  heel verschillende schalen te begrijpen: van de beweging van alledaagse
+  voorwerpen en planeten tot de wisselwerking tussen elektrische ladingen
+  en de processen in de atoomkern.
+
+  We starten met de gereedschapskist van de fysicus. Grootheden en eenheden,
+  beduidende cijfers, wetenschappelijke notatie en vectoren vormen de taal
+  waarmee we fysische verschijnselen nauwkeurig kunnen beschrijven. Daarna
+  hernemen en verdiepen we de wetten van Newton. We leren krachten
+  analyseren, vectorieel voorstellen en gebruiken om de beweging van
+  voorwerpen te verklaren en te voorspellen.
+
+  Vervolgens maken we de stap van krachten die we rechtstreeks waarnemen
+  naar krachten die op afstand werken. Vanuit de gravitatie onderzoeken we
+  hoe massa's elkaar aantrekken en hoe het begrip veld toelaat om die
+  wisselwerking te beschrijven. Daarna ontdekken we dat elektrische
+  ladingen op een verrassend gelijkaardige manier met elkaar interageren.
+  De wet van Coulomb, het elektrische veld, elektrische potentiële energie,
+  potentiaal en spanning bouwen samen een steeds rijker model van
+  elektrische wisselwerking op.
+
+  Vanuit elektrische ladingen zetten we de stap naar magnetisme. We
+  onderzoeken hoe bewegende ladingen en elektrische stromen magnetische
+  velden veroorzaken en hoe magnetische velden op bewegende ladingen
+  kunnen inwerken. Daarna ontdekken we met elektromagnetische inductie
+  dat een veranderend magnetisch veld op zijn beurt elektrische effecten
+  kan veroorzaken. Zo groeien elektriciteit en magnetisme uit van twee
+  ogenschijnlijk verschillende verschijnselen tot onderdelen van één
+  samenhangend fysisch verhaal.
+
+  Ten slotte richten we onze blik op een veel kleinere schaal: de
+  atoomkern. We onderzoeken de opbouw en stabiliteit van kernen,
+  radioactief verval en kernreacties en bestuderen hoe massa en energie
+  met elkaar verbonden zijn. Begrippen zoals halveringstijd,
+  bindingsenergie en massadefect laten zien hoe dezelfde fysische manier
+  van denken ook processen kan beschrijven die zich diep binnenin de
+  materie afspelen.
+
+  Doorheen de cursus gebruiken we wiskunde als taal van de fysica.
+  Vectoren helpen ons krachten en velden te beschrijven, functies tonen
+  hoe fysische grootheden van elkaar afhangen en exponentiële modellen
+  krijgen een concrete betekenis bij radioactief verval. We leren niet
+  alleen formules gebruiken, maar ook modellen opbouwen, verbanden
+  herkennen en resultaten kritisch interpreteren.
+
+  Experimenten, metingen en gegevensanalyse vormen daarbij een essentieel
+  onderdeel van de fysica. We leren onderzoeksvragen stellen, metingen
+  uitvoeren, gegevens verwerken en nagaan in welke mate een model de
+  werkelijkheid beschrijft. Ook toepassingen uit wetenschap en
+  technologie laten zien hoe de onderzochte principes buiten het
+  klaslokaal worden gebruikt.
+
+  Fysica wordt zo geen verzameling afzonderlijke formules en wetten.
+  Van Newtons bewegingswetten over gravitatie en elektromagnetisme tot
+  processen in de atoomkern zoeken we telkens naar dezelfde onderliggende
+  vragen: welke wisselwerkingen spelen een rol, hoe kunnen we ze
+  modelleren en wat kunnen we ermee verklaren en voorspellen?
+
+\end{abstract}
+
+
+% ============================================================
+% MODULEGEGEVENS
+% ============================================================
+
+\def\fvdmodulenummer{1}
+\def\fvdmoduletitel{Van krachten tot kernen}
+\def\fvdmodulebeeld{../images/banners/fysica5.png}
+\def\fvdschoolembleem{../images/banners/logo_bellevue.png}
+\def\fvdschoollogo{../images/banners/logo_bellevue.png}
+\renewcommand{\fvdschoolnaam}{Campus Bellevue Izegem}
+\def\vaknaam{Fysica}
+
+\def\fvdklas{5 Wetenschappen-wiskunde        5 Moderne talen - Wetenschappen}
+\def\fvdschooljaar{2026--2027}
+\def\fvdmodulevariant{                             }
+\def\fvdmodulesubtitel{}
+
+
+
+% ============================================================
+% THEORIE + BIJHORENDE OEFENINGEN
+%
+% HTML:
+%   theorie + oefeningen
+%
+% PDF:
+%   alleen theorie
+% ============================================================
+
+\newcommand{\FVDchapterpair}[2]{%
+  \ifdefined\HCode
+
+    % ONLINE: theorie
+    \activity{#1}%
+
+    % ONLINE: oefeningen, indien aanwezig
+    \if\relax\detokenize{#2}\relax
+    \else
+      \activity{#2}%
+    \fi
+
+  \else
+
+    % PDF: alleen theorie
+    \activity{#1}%
+
+  \fi
+}
+
+
+\begin{document}
+
+
+\FVDmodulecover
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% MODULE-OPENING
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\ifdefined\HCode
+  % Website: gebruik de gewone Ximera-titelpagina.
+  \maketitle
+\else
+  % PDF: gebruik de automatisch gegenereerde module-opening.
+  \IfFileExists{module-opening.generated.tex}{%
+    \input{module-opening.generated.tex}%
+  }{%
+    \PackageWarning{FVD}{Automatische module-opening ontbreekt}%
+    \maketitle
+  }%
+\fi
+
+
+\FVDpart{Gereedschapskist en Newton - Van meten en vectoren tot krachten en beweging}
+
+\FVDthemeopening{../images/banners/fysica_newton.png}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% BEGIN AUTO THEME OVERVIEW
+\begin{hoofdstukoverzicht}
+  \FVDthemechaptertile{1}{De gereedschapskist van de fysicus}
+  \FVDthemechaptertile{2}{Krachten en de wetten van Newton}
+\end{hoofdstukoverzicht}
+% END AUTO THEME OVERVIEW
+
+\begin{themaintro}{}
+
+  Fysica begint met waarnemen. We meten een afstand, bepalen een tijd,
+  vergelijken snelheden of onderzoeken welke krachten op een voorwerp
+  werken. Maar een meting levert pas bruikbare informatie op wanneer we
+  precies weten wat we meten en hoe nauwkeurig we dat kunnen doen.
+
+  In dit eerste thema vullen we daarom onze fysische gereedschapskist.
+  We werken met fysische grootheden en SI-eenheden en leren meetresultaten
+  correct noteren en interpreteren. Beduidende cijfers, wetenschappelijke
+  notatie en meetnauwkeurigheid helpen ons om resultaten weer te geven
+  zonder meer nauwkeurigheid te suggereren dan onze metingen toelaten.
+
+  Daarna maken we de stap van getallen naar vectoren. Sommige grootheden,
+  zoals massa en tijd, worden volledig bepaald door hun grootte. Andere,
+  zoals kracht, verplaatsing en snelheid, hebben ook een richting en een
+  zin. We leren zulke vectoriële grootheden voorstellen, ontbinden en
+  combineren. Die vaardigheden zullen doorheen de volledige cursus
+  voortdurend terugkeren.
+
+  Met deze gereedschappen keren we vervolgens terug naar een van de
+  centrale vragen van de klassieke mechanica: waardoor verandert de
+  beweging van een voorwerp? De wetten van Newton verbinden kracht,
+  massa en versnelling en vormen daarmee een krachtig model om beweging
+  te verklaren en te voorspellen.
+
+  We leren krachten herkennen en correct voorstellen in een
+  krachtendiagram. Vervolgens bepalen we de resulterende kracht en
+  onderzoeken we wat die vertelt over de beweging van een voorwerp.
+  Daarbij maken we een belangrijk onderscheid tussen evenwicht en
+  beweging: een voorwerp waarop de resulterende kracht nul is, hoeft
+  immers niet noodzakelijk stil te staan.
+
+  Doorheen het thema leren we ook fysische problemen systematisch
+  aanpakken. We onderscheiden gegeven en gevraagde grootheden, maken
+  schetsen en krachtendiagrammen, kiezen een geschikt fysisch model,
+  voeren berekeningen uit en controleren of ons antwoord fysisch
+  betekenisvol is.
+
+  Wiskunde vormt daarbij de taal van de fysica. Eenheden helpen ons
+  resultaten controleren, vectoren beschrijven richting en grootte en
+  vergelijkingen drukken verbanden tussen fysische grootheden compact uit.
+  Metingen en experimenten verbinden die wiskundige modellen vervolgens
+  met de werkelijkheid.
+
+  Zo bouwen we in dit eerste thema de gereedschapskist op die we in de
+  rest van de cursus nodig hebben: \textbf{nauwkeurig meten, correct
+  rekenen, vectorieel denken, krachten analyseren en fysische problemen
+  systematisch oplossen}.
+
+\end{themaintro}
+
+
+
+
+
+
+
+
+
+
+\FVDchapterpair{Thema1-Newton/1-Parate-kennis}
+{}
+\FVDchapterpair{Thema1-Newton/2-Newton}
+{}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% THEMA 2
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\FVDpart{Krachten op afstand - Van gravitatie tot elektrische velden}
+
+\FVDthemeopening{../images/banners/fysica_krachten.png}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% BEGIN AUTO THEME OVERVIEW
+\begin{hoofdstukoverzicht}
+  \FVDthemechaptertile{1}{Gravitatie: aantrekking op afstand}
+  \FVDthemechaptertile{2}{Elektrische kracht: aantrekken en afstoten}
+  \FVDthemechaptertile{3}{Elektrisch veld en potentiaal}
+\end{hoofdstukoverzicht}
+% END AUTO THEME OVERVIEW
+
+\begin{themaintro}{}
+
+  Sommige krachten werken zonder rechtstreeks contact. De aarde trekt
+  een appel aan, de maan blijft in haar baan rond de aarde en twee
+  elektrische ladingen kunnen elkaar aantrekken of afstoten zonder elkaar
+  aan te raken. Hoe kunnen zulke wisselwerkingen op afstand ontstaan en
+  hoe kunnen we ze wiskundig beschrijven?
+
+  In dit thema starten we met gravitatie. We onderzoeken hoe twee massa's
+  elkaar aantrekken en hoe de gravitatiekracht afhangt van hun massa en
+  onderlinge afstand. Daarbij bouwen we voort op de wetten van Newton:
+  gravitatiekrachten vormen actie-reactieparen en meerdere krachten kunnen
+  vectorieel worden gecombineerd tot één resulterende kracht.
+
+  Vervolgens introduceren we het begrip gravitatieveld. In plaats van
+  alleen te kijken naar de kracht tussen twee afzonderlijke massa's,
+  beschrijven we hoe een massa de ruimte rondom zich beïnvloedt. Met
+  veldvectoren en veldlijnen kunnen we die invloed zichtbaar maken en
+  onderzoeken hoe de veldsterkte verandert met de afstand.
+
+  Daarna maken we de stap naar elektrische interacties. We onderzoeken wat
+  elektrische lading is, hoe voorwerpen geladen kunnen worden en waarom
+  sommige materialen elektrische lading gemakkelijk verplaatsen terwijl
+  andere dat nauwelijks doen. Ook elektrische influentie laat zien dat
+  ladingen elkaar kunnen beïnvloeden zonder rechtstreeks contact.
+
+  Met de wet van Coulomb beschrijven we vervolgens de elektrische kracht
+  tussen twee ladingen. De wiskundige vorm vertoont een opvallende
+  gelijkenis met de gravitatiewet:
+
+  \[
+  F_g
+  =
+  G\frac{m_1m_2}{r^2}
+  \qquad\text{en}\qquad
+  F_e
+  =
+  k\frac{|q_1q_2|}{r^2}.
+  \]
+
+  Die overeenkomst is geen toeval in onze cursusopbouw. Ze laat ons toe
+  om twee fundamentele krachten met elkaar te vergelijken. Tegelijk leren
+  we ook de verschillen herkennen: gravitatie tussen gewone massa's is
+  steeds aantrekkend, terwijl elektrische krachten zowel aantrekkend als
+  afstotend kunnen zijn.
+
+  Vanuit de elektrische kracht bouwen we vervolgens het begrip elektrisch
+  veld op. We bestuderen radiale velden, homogene velden en dipoolvelden
+  en onderzoeken hoe veldlijnen informatie geven over richting en
+  veldsterkte. Zo leren we opnieuw de stap maken van een kracht tussen twee
+  objecten naar een beschrijving van de invloed in de ruimte rondom een
+  bron.
+
+  Ten slotte bekijken we elektrische interacties vanuit het perspectief
+  van energie. Begrippen zoals elektrische potentiële energie, potentiaal
+  en spanning geven ons een nieuwe manier om elektrische systemen te
+  beschrijven. Daarmee leggen we tegelijk de basis voor het volgende
+  thema, waarin bewegende ladingen en magnetische velden centraal staan.
+
+  Doorheen het thema gebruiken we wiskunde voortdurend als taal van de
+  fysica. Vectoren beschrijven richting en zin van krachten en velden,
+  inverse-kwadratenwetten tonen hoe interacties met afstand veranderen en
+  grafische voorstellingen helpen ons om veldstructuren te begrijpen.
+
+  Zo groeit één centrale gedachte uit tot een hele reeks begrippen:
+
+  \[
+  \boxed{
+  \text{bron}
+  \longrightarrow
+  \text{kracht}
+  \longrightarrow
+  \text{veld}
+  \longrightarrow
+  \text{energie en potentiaal}
+  }
+  \]
+
+  En precies die structuur zullen we zowel bij gravitatie als bij
+  elektriciteit opnieuw herkennen.
+
+\end{themaintro}
+
+\FVDchapterpair{Thema2-Veldkrachten/1-Gravitatiekracht}
+{}
+\FVDchapterpair{Thema2-Veldkrachten/2-Elektrische-kracht}
+{}
+\FVDchapterpair{Thema2-Veldkrachten/3-Elektrisch-veld}
+{}
+
+\FVDpart{Elektriciteit wordt magnetisme - Van bewegende ladingen tot elektromagnetische inductie}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% BEGIN AUTO THEME OVERVIEW
+\begin{hoofdstukoverzicht}
+  \FVDthemeoverviewempty
+\end{hoofdstukoverzicht}
+% END AUTO THEME OVERVIEW
+
+\FVDpart{Binnen in de kern- Van kernstructuur tot radioactief verval}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
+% BEGIN AUTO THEME OVERVIEW
+\begin{hoofdstukoverzicht}
+  \FVDthemeoverviewempty
+\end{hoofdstukoverzicht}
+% END AUTO THEME OVERVIEW

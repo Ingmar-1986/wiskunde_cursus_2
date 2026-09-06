@@ -1,0 +1,1831 @@
+<!DOCTYPE html>
+<html lang="en-US" xml:lang="en-US">
+<head> <title>Parate kennis — Je wiskundige gereedschapskist – Van data naar functies — verbanden herkennen en gedrag onderzoeken</title>
+<meta charset="utf-8"/>
+<meta content="TeX4ht (https://tug.org/tex4ht/)" name="generator"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="\aa:CssFile " rel="stylesheet" type="text/css"/>
+<meta content="Parate-kennis.online.tex" name="src"/>
+<script>window.MathJax = { tex: { tags: "ams", }, }; </script>
+<script async="async" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+<meta content="Ingmar Herreman" name="author"/>
+<meta content="version 2.5.1" name="ximera"/>
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" media="screen" rel="stylesheet"/>
+<script async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js" type="text/javascript"></script>
+<link href="../../../assets/css/base.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/global.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/Header_Footer.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/ChapterLayout.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/chapter-hero.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/ExerciseHero.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/learning-boxes.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/CourseOverview.css" media="screen" rel="stylesheet"/></head><body><!-- XIMERA-HEADER-START --><!-- =========================================================
+     HEADER.HTML — Wiskunde 7 FVD
+     Plaats dit bestand bijvoorbeeld in:
+     assets/html/Header.html
+     ========================================================= -->
+<header aria-labelledby="fvd-hero-title" class="fvd-hero">
+<div aria-hidden="true" class="fvd-hero__grid"></div>
+<div aria-hidden="true" class="fvd-hero__glow fvd-hero__glow--left"></div>
+<div aria-hidden="true" class="fvd-hero__glow fvd-hero__glow--right"></div>
+<div class="fvd-hero__inner">
+<!-- Groot Athena-logo links -->
+<div class="fvd-hero__brand">
+<img alt="Athena secundair onderwijs" class="fvd-hero__logo" src="/images/banners/logo_athena.png"/>
+</div>
+<div aria-hidden="true" class="fvd-hero__divider"></div>
+<!-- Centrale titel en leerinhouden -->
+<div class="fvd-hero__content">
+<p class="fvd-hero__eyebrow">
+                    Fundamentele Vorming Digitale Creatie
+                </p>
+<h1 class="fvd-hero__title" id="fvd-hero-title">
+<span class="fvd-hero__title-main">Wiskunde</span>
+<span class="fvd-hero__title-accent">7 FVD</span>
+</h1>
+<div aria-hidden="true" class="fvd-hero__pink-line"></div>
+<p class="fvd-hero__subtitle">
+                    Wiskundige inzichten die je nodig hebt om digitale werelden te bouwen.
+                </p>
+<div aria-label="Onderwerpen in deze cursus" class="fvd-hero__chips">
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<rect height="18" rx="2" width="14" x="5" y="3"></rect>
+<path d="M8 7h8M8 11h2M14 11h2M8 15h2M14 15h2M8 18h2M14 18h2"></path>
+</svg>
+                        Basiswiskunde
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M4 17c4-1 4-10 8-10 2 0 2 3 4 3 1 0 2-.4 4-2"></path>
+<path d="M7 20 13 4"></path>
+</svg>
+                        Algebra
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M5 8h14M5 16h14"></path>
+</svg>
+                        Vergelijkingen
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M4 19V5M4 19h16"></path>
+<path d="m7 16 4-5 3 2 4-6"></path>
+</svg>
+                        Functies
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M5 18 18 5"></path>
+<path d="M12 5h6v6"></path>
+</svg>
+                        Vectoren
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="7"></circle>
+<path d="M12 2v20M2 12h20"></path>
+</svg>
+                        Coördinaten
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="m12 3 8 4.5v9L12 21l-8-4.5v-9z"></path>
+<path d="m4 7.5 8 4.5 8-4.5M12 12v9"></path>
+</svg>
+                        3D-meetkunde
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M3 16c3-8 7-8 10 0 2 5 5 4 8-4"></path>
+</svg>
+                        Goniometrie
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M5 18V6M5 18h14"></path>
+<path d="M8 16c1-6 3-9 8-10"></path>
+</svg>
+                        Logaritmen
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="m7 6 10 5-10 5z"></path>
+<path d="m7 10 10 5-10 5"></path>
+</svg>
+                        Transformaties
+                    </span>
+</div>
+</div>
+<!-- Rechterzijde met wiskundige SVG-tekeningen -->
+<div aria-hidden="true" class="fvd-hero__visual">
+<!-- 3D-kubus -->
+<svg class="fvd-visual fvd-visual--cube" viewbox="0 0 310 245">
+<g class="fvd-svg-cyan">
+<path d="M65 72 185 86 245 48 125 34Z"></path>
+<path d="M65 72v110l120 16V86"></path>
+<path d="M185 86 245 48v110l-60 40"></path>
+<path class="fvd-svg-dash" d="M125 34v110M125 144 65 182M125 144l120 14"></path>
+<path d="M125 144 90 210M125 144l88 28M125 144V15"></path>
+<path d="m90 210 11-4-7-9M213 172l-9-7-2 11M125 15l-6 11h12"></path>
+</g>
+<g class="fvd-svg-label">
+<text x="82" y="225">x</text>
+<text x="220" y="180">y</text>
+<text x="132" y="18">z</text>
+</g>
+</svg>
+<!-- Matrix -->
+<svg class="fvd-visual fvd-visual--matrix" viewbox="0 0 220 100">
+<g class="fvd-svg-soft">
+<text x="0" y="58">A =</text>
+<path d="M60 10c-12 18-12 62 0 80M205 10c12 18 12 62 0 80"></path>
+<text x="82" y="36">1</text>
+<text x="123" y="36">2</text>
+<text x="165" y="36">0</text>
+<text x="73" y="61">−1</text>
+<text x="123" y="61">0</text>
+<text x="165" y="61">3</text>
+<text x="82" y="86">2</text>
+<text x="113" y="86">−2</text>
+<text x="165" y="86">1</text>
+</g>
+</svg>
+<!-- Vectoren en rotatie -->
+<svg class="fvd-visual fvd-visual--vectors" viewbox="0 0 260 170">
+<g class="fvd-svg-cyan">
+<path d="M55 138 132 74"></path>
+<path d="m132 74-13 3 8 10"></path>
+<path d="M55 138h125"></path>
+<path d="m180 138-12-6v12"></path>
+<path class="fvd-svg-dash" d="M55 138c24-65 116-95 156-25"></path>
+</g>
+<g class="fvd-svg-pink">
+<path d="M55 138 207 104"></path>
+<path d="m207 104-13-2 5 12"></path>
+<path class="fvd-svg-dash" d="M211 113c17-13 25-5 21 11"></path>
+<path d="m232 124-9-8-2 12"></path>
+</g>
+<g class="fvd-svg-label">
+<text x="38" y="153">O</text>
+<text x="138" y="73">u⃗</text>
+<text x="188" y="98">v⃗</text>
+<text x="141" y="130">x⃗</text>
+<text x="222" y="102">Rθ</text>
+</g>
+</svg>
+<!-- Bézier-curve -->
+<svg class="fvd-visual fvd-visual--bezier" viewbox="0 0 280 110">
+<g class="fvd-svg-soft">
+<path d="M30 82 85 30 190 30 245 82"></path>
+</g>
+<g class="fvd-svg-cyan">
+<path d="M30 82c42-12 55-52 105-52s67 40 110 52"></path>
+</g>
+<g class="fvd-svg-pink">
+<circle cx="30" cy="82" r="4"></circle>
+<circle cx="85" cy="30" r="4"></circle>
+<circle cx="190" cy="30" r="4"></circle>
+<circle cx="245" cy="82" r="4"></circle>
+</g>
+<g class="fvd-svg-label">
+<text x="18" y="102">P₀</text>
+<text x="74" y="20">P₁</text>
+<text x="181" y="20">P₂</text>
+<text x="238" y="102">P₃</text>
+<text x="103" y="79">Bézier-curve</text>
+</g>
+</svg>
+</div>
+</div>
+<div aria-hidden="true" class="fvd-hero__pink-corner"></div>
+</header><!-- XIMERA-HEADER-END --><!-- XIMERA-CHAPTER-HERO-START --><section class="chapter-hero">
+<div aria-hidden="true" class="chapter-hero__decoration">
+<span class="chapter-hero__formula">
+            f(x) = ax² + bx + c
+        </span>
+<span class="chapter-hero__curve"></span>
+<span class="chapter-hero__grid"></span>
+</div>
+<div class="chapter-hero__content">
+<div class="chapter-hero__theme">
+<span class="chapter-hero__theme-label">
+                Thema 1
+            </span>
+<span class="chapter-hero__theme-dot"></span>
+<span class="chapter-hero__theme-name">
+                Parate kennis — Het gereedschap dat je nodig hebt
+            </span>
+</div>
+<div class="chapter-hero__chapter-label">
+            Hoofdstuk
+        </div>
+<div class="chapter-hero__main">
+<div class="chapter-hero__number">
+                1
+            </div>
+<div class="chapter-hero__text">
+<h1 class="chapter-hero__title">
+                    Parate kennis — Je wiskundige gereedschapskist
+                </h1>
+<p class="chapter-hero__abstract">
+                    In dit hoofdstuk brengen we de wiskundige technieken die je uit vorige jaren kent opnieuw op scherp. We bouwen deze leerstof niet volledig opnieuw op. We verzamelen de technieken die je doorheen de derde graad voortdurend nodig zult hebben: rekenen, algebra, vergelijkingen, formules, eenheden, coördinaten, rechten en meetkunde. Het belangrijkste is niet alleen dat je een techniek kunt uitvoeren. Je moet ook leren herkennen wanneer je ze nodig hebt, je resultaat kunnen controleren en verschillende technieken kunnen combineren in een probleem. Wat je al vlot beheerst, hoef je niet opnieuw uitgebreid te oefenen. Waar een zelfcheck moeilijk loopt, oefen je gericht bij in de oefeningenbundel.
+                </p>
+</div>
+</div>
+<div class="chapter-hero__accent"></div>
+</div>
+</section><!-- XIMERA-CHAPTER-HERO-END --><button aria-controls="courseSidebar" aria-expanded="false" class="course-menu-button" id="courseMenuButton" type="button">☰ Toon cursusinhoud</button><div class="course-sidebar-overlay" id="courseSidebarOverlay"></div><!-- XIMERA-CHAPTER-LAYOUT-START --><main class="chapter-layout"><!--
+    AUTOMATISCH GEGENEREERD BESTAND
+
+    Dit bestand wordt opgebouwd door:
+        scripts/generate-sidebar.sh
+
+    Bewerk niet dit bestand, maar:
+        assets/html/SidebarTemplate.html
+        en modules/.../index.tex
+-->
+<aside class="course-sidebar" id="courseSidebar">
+<div class="sidebar-header">
+<div class="sidebar-header__text">
+<span class="sidebar-label">
+                Van data naar functies — verbanden herkennen en gedrag onderzoeken
+            </span>
+<h2 class="sidebar-title">
+                Cursusinhoud
+            </h2>
+</div>
+<button aria-label="Sluit cursusmenu" class="sidebar-close" id="sidebarClose" type="button">
+            ×
+        </button>
+</div>
+<nav aria-label="Cursusinhoud" class="course-navigation">
+<div class="course-section is-open" data-theme="1">
+<button aria-controls="course-section-1-parate-kennis-het-gereedschap-dat-je-nodig-hebt" aria-expanded="true" class="course-section-toggle" type="button">
+<span class="course-section-number">
+            1
+        </span>
+<span class="course-section-title">
+            Parate kennis — Het gereedschap dat je nodig hebt
+        </span>
+<span aria-hidden="true" class="course-section-arrow">
+            ▾
+        </span>
+</button>
+<div class="course-section-content" id="course-section-1-parate-kennis-het-gereedschap-dat-je-nodig-hebt">
+<a aria-current="page" class="course-chapter-link is-active" data-chapter="Thema1-Parate-kennis/Parate-kennis" href="Thema1-Parate-kennis/Parate-kennis.html">
+<span class="course-chapter-number">
+                1
+            </span>
+<span class="course-chapter-title">
+                Parate kennis — Je wiskundige gereedschapskist
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema1-Parate-kennis/Parate-kennis-oefeningen" href="Thema1-Parate-kennis/Parate-kennis-oefeningen.html">
+<span class="course-chapter-number">
+                2
+            </span>
+<span class="course-chapter-title">
+                Oefeningen — Parate kennis
+            </span>
+</a>
+</div>
+</div>
+<div class="course-section" data-theme="2">
+<button aria-controls="course-section-2-van-werkelijkheid-naar-wiskunde-en-terug" aria-expanded="true" class="course-section-toggle" type="button">
+<span class="course-section-number">
+            2
+        </span>
+<span class="course-section-title">
+            Van werkelijkheid naar wiskunde — en terug
+        </span>
+<span aria-hidden="true" class="course-section-arrow">
+            ▾
+        </span>
+</button>
+<div class="course-section-content" id="course-section-2-van-werkelijkheid-naar-wiskunde-en-terug">
+<a class="course-chapter-link" data-chapter="Thema2-Modelleren/Werkelijkheid-terug" href="Thema2-Modelleren/Werkelijkheid-terug.html">
+<span class="course-chapter-number">
+                1
+            </span>
+<span class="course-chapter-title">
+                Van werkelijkheid naar wiskunde — en terug
+            </span>
+</a>
+</div>
+</div>
+<div class="course-section" data-theme="3">
+<button aria-controls="course-section-3-verbanden-onderzoeken-met-data" aria-expanded="true" class="course-section-toggle" type="button">
+<span class="course-section-number">
+            3
+        </span>
+<span class="course-section-title">
+            Verbanden onderzoeken met data
+        </span>
+<span aria-hidden="true" class="course-section-arrow">
+            ▾
+        </span>
+</button>
+<div class="course-section-content" id="course-section-3-verbanden-onderzoeken-met-data">
+<a class="course-chapter-link" data-chapter="Thema3-Verbanden/Van-data-naar-puntenwolk" href="Thema3-Verbanden/Van-data-naar-puntenwolk.html">
+<span class="course-chapter-number">
+                1
+            </span>
+<span class="course-chapter-title">
+                Van data naar puntenwolk
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema3-Verbanden/Van-data-naar-puntenwolk-oefeningen" href="Thema3-Verbanden/Van-data-naar-puntenwolk-oefeningen.html">
+<span class="course-chapter-number">
+                2
+            </span>
+<span class="course-chapter-title">
+                Oefeningen — Van data naar puntenwolk
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema3-Verbanden/Correlatie" href="Thema3-Verbanden/Correlatie.html">
+<span class="course-chapter-number">
+                3
+            </span>
+<span class="course-chapter-title">
+                Correlatie — Hoe sterk is het lineaire verband?
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema3-Verbanden/Correlatie-oefeningen" href="Thema3-Verbanden/Correlatie-oefeningen.html">
+<span class="course-chapter-number">
+                4
+            </span>
+<span class="course-chapter-title">
+                Oefeningen — Correlatie
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema3-Verbanden/Lineaire-regressie" href="Thema3-Verbanden/Lineaire-regressie.html">
+<span class="course-chapter-number">
+                5
+            </span>
+<span class="course-chapter-title">
+                Lineaire regressie — Van data naar model
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema3-Verbanden/Lineaire-regressie-oefeningen" href="Thema3-Verbanden/Lineaire-regressie-oefeningen.html">
+<span class="course-chapter-number">
+                6
+            </span>
+<span class="course-chapter-title">
+                Oefeningen — Lineaire regressie
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema3-Verbanden/Samenhang-oorzaak" href="Thema3-Verbanden/Samenhang-oorzaak.html">
+<span class="course-chapter-number">
+                7
+            </span>
+<span class="course-chapter-title">
+                Samenhang is nog geen oorzaak
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema3-Verbanden/Samenhang-oorzaak-oefeningen" href="Thema3-Verbanden/Samenhang-oorzaak-oefeningen.html">
+<span class="course-chapter-number">
+                8
+            </span>
+<span class="course-chapter-title">
+                Oefeningen — Samenhang is nog geen oorzaak
+            </span>
+</a>
+</div>
+</div>
+</nav>
+</aside>
+<article class="chapter-content"><div class="chapter-body">
+<div class="preamble">
+</div>
+<style> .activity-body pre { white-space: pre; background-color: lightgray; } .xmyoutube { aspect-ratio: 16/9; min-width: 75%; } .image-environment img { width: unset; } </style>
+<div class="maketitle"></div>
+<!-- l. 35 --><p class="noindent"></p><section class="learning-box learning-box--prior"> <div class="learning-box__header"> <span class="learning-box__icon"> </span><span class="learning-box__title">Voorkennis</span> </div> <div class="learning-box__content">
+<p></p>
+<ul class="itemize1">
+<li class="itemize">Rekenen met gehele, rationale en reële getallen.
+</li>
+<li class="itemize">Basisvaardigheden met breuken, machten en wortels.
+</li>
+<li class="itemize">Elementaire algebra uit de tweede graad.
+</li>
+<li class="itemize">Werken in een cartesisch assenstelsel.
+</li>
+<li class="itemize">Basismeetkunde van rechthoekige driehoeken.</li></ul>
+<!-- l. 41 --><p class="noindent"></p></div> </section>
+<p></p><!-- l. 44 --><p class="noindent"></p><section class="learning-box learning-box--goals"> <div class="learning-box__header"> <span class="learning-box__icon"> </span><span class="learning-box__title">Leerdoelen</span> </div> <div class="learning-box__content">
+<p></p>
+<ul class="itemize1">
+<li class="itemize">Je rekent correct en efficiënt met getallen en breuken.
+</li>
+<li class="itemize">Je gebruikt machten, wortels en wetenschappelijke notatie.
+</li>
+<li class="itemize">Je schat resultaten en beoordeelt of een antwoord redelijk is.
+                                                                  
+
+                                                                  
+</li>
+<li class="itemize">Je werkt algebraïsche uitdrukkingen uit en ontbindt ze.
+</li>
+<li class="itemize">Je herkent algebraïsche structuren en kiest een geschikte techniek.
+</li>
+<li class="itemize">Je lost eenvoudige vergelijkingen en ongelijkheden op.
+</li>
+<li class="itemize">Je  vormt  formules  om  en  interpreteert  formules  in  wetenschappelijke
+contexten.
+</li>
+<li class="itemize">Je rekent correct met grootheden en eenheden.
+</li>
+<li class="itemize">Je  gebruikt  coördinaten,  richtingscoëfficiënten  en  vergelijkingen  van
+rechten.
+</li>
+<li class="itemize">Je bepaalt een vergelijking van een rechte uit gegevens of uit een grafiek.
+</li>
+<li class="itemize">Je gebruikt Pythagoras en basisgoniometrie.
+</li>
+<li class="itemize">Je     combineert     verschillende     technieken     in     wiskundige     en
+STEM-problemen.
+</li>
+<li class="itemize">Je controleert resultaten op teken, grootteorde, eenheid en betekenis.</li></ul>
+<!-- l. 58 --><p class="noindent"></p></div> </section>
+<p><a id="x1-2r1"></a>
+</p><p></p><!-- l. 64 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">1</div><div class="fvd-section-bar__title">Rekenen met getallen en breuken</div></div>
+<p><a id="x1-3r1"></a>
+</p><p></p><!-- l. 67 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 67 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 67 --><p class="noindent"></p><div class="fvd-subsection__number">1.1</div>
+<p></p><!-- l. 67 --><p class="noindent"></p><div class="fvd-subsection__title">Rekenvolgorde</div>
+<p></p><!-- l. 67 --><p class="noindent"></p></div>
+<p></p><!-- l. 67 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 67 --><p class="noindent"></p></div>
+<p></p><!-- l. 69 --><p class="noindent">Bij een berekening voeren we bewerkingen niet willekeurig uit.
+</p><!-- l. 71 --><p class="noindent">De standaardvolgorde is
+</p>
+<div class="mathjax-block">\[ \boxed { \text {haakjes} \rightarrow \text {machten en wortels} \rightarrow \text {vermenigvuldigen en delen} \rightarrow \text {optellen en aftrekken} } \]</div>
+<!-- l. 85 --><p class="noindent">Bewerkingen van hetzelfde niveau voer je van links naar rechts uit.
+<a id="x1-4r1"></a>
+</p><!-- l. 88 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 88 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 1</div>
+<p></p><!-- l. 88 --><p class="noindent"></p><div class="fvd-example__content">Bereken <p></p><div class="mathjax-block">\[ 18-3(2+4). \]</div>
+<!-- l. 93 --><p class="noindent">Eerst de haakjes: </p><div class="mathjax-block">\[ 2+4=6. \]</div>
+<!-- l. 98 --><p class="noindent">Daarna de vermenigvuldiging: </p><div class="mathjax-block">\[ 3\cdot 6=18. \]</div>
+<!-- l. 103 --><p class="noindent">Ten slotte: </p><div class="mathjax-block">\[ 18-18=0. \]</div> </div></section>
+<p><a id="x1-5r2"></a>
+</p><!-- l. 110 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 110 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 110 --><p class="noindent"></p><div class="fvd-subsection__number">1.2</div>
+<p></p><!-- l. 110 --><p class="noindent"></p><div class="fvd-subsection__title">Een breukstreep groepeert</div>
+<p></p><!-- l. 110 --><p class="noindent"></p></div>
+<p></p><!-- l. 110 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 110 --><p class="noindent"></p></div>
+<p></p><!-- l. 112 --><p class="noindent">Een breukstreep werkt als een paar haakjes rond de volledige teller en de volledige
+noemer.
+</p><!-- l. 114 --><p class="noindent">Bijvoorbeeld:
+                                                                  
+
+                                                                  
+</p>
+<div class="mathjax-block">\[ \frac {2^4-4}{3}+1 = \frac {16-4}{3}+1 = \frac {12}{3}+1 = 5. \]</div>
+<!-- l. 126 --><p class="noindent">Let daarom op het verschil tussen
+</p>
+<div class="mathjax-block">\[ \frac {24}{3\cdot 2}=4 \]</div>
+<!-- l. 132 --><p class="noindent">en
+</p>
+<div class="mathjax-block">\[ \frac {24}{3}\cdot 2=16. \]</div>
+<p><a id="x1-6r3"></a>
+</p><!-- l. 139 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 139 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 139 --><p class="noindent"></p><div class="fvd-subsection__number">1.3</div>
+<p></p><!-- l. 139 --><p class="noindent"></p><div class="fvd-subsection__title">Rekenen met breuken</div>
+<p></p><!-- l. 139 --><p class="noindent"></p></div>
+<p></p><!-- l. 139 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 139 --><p class="noindent"></p></div> <section class="fvd-property"><div class="fvd-property__title"><span class="fvd-property__label">EIGENSCHAP</span></div><div class="fvd-property__content">Voor <span class="mathjax-inline">\(b\neq 0\)</span> en <span class="mathjax-inline">\(d\neq 0\)</span>:
+<p></p>
+<div class="mathjax-block">\[ \frac ab+\frac cd = \frac {ad+bc}{bd}, \]</div>
+<div class="mathjax-block">\[ \frac ab-\frac cd = \frac {ad-bc}{bd}, \]</div>
+<div class="mathjax-block">\[ \frac ab\cdot \frac cd = \frac {ac}{bd}, \]</div>
+<!-- l. 161 --><p class="noindent">en
+</p>
+<div class="mathjax-block">\[ \frac ab:\frac cd = \frac ab\cdot \frac dc, \qquad c\neq 0. \]</div> </div></section><p> Bij optellen en aftrekken moet je dus eerst een gemeenschappelijke noemer
+zoeken.
+<a id="x1-7r2"></a>
+</p><!-- l. 173 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 173 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 2</div>
+<p></p><!-- l. 173 --><p class="noindent"></p><div class="fvd-example__content"><p></p><div class="mathjax-block">\[ \frac 34+\frac 56 = \frac 9{12}+\frac {10}{12} = \frac {19}{12}. \]</div> </div></section>
+<!-- l. 182 --><p class="noindent">Bij vermenigvuldigen kun je vaak vereenvoudigen vóór je de tellers en noemers
+vermenigvuldigt.
+<a id="x1-8r3"></a>
+</p><!-- l. 186 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 186 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 3</div>
+<p></p><!-- l. 186 --><p class="noindent"></p><div class="fvd-example__content"><p></p><div class="mathjax-block">\[ \frac {14}{15}\cdot \frac {25}{21} = \frac 23\cdot \frac 53 = \frac {10}{9}. \]</div> </div></section>
+<p><a id="x1-9r4"></a>
+</p><!-- l. 196 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 196 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 196 --><p class="noindent"></p><div class="fvd-subsection__number">1.4</div>
+<p></p><!-- l. 196 --><p class="noindent"></p><div class="fvd-subsection__title">Algebraïsche breuken</div>
+<p></p><!-- l. 196 --><p class="noindent"></p></div>
+<p></p><!-- l. 196 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 196 --><p class="noindent"></p></div>
+<p></p><!-- l. 198 --><p class="noindent">Dezelfde rekenregels gelden wanneer teller en noemer letters bevatten.
+</p><!-- l. 200 --><p class="noindent">Daarbij is er één extra aandachtspunt:
+</p>
+<div class="mathjax-block">\[ \boxed {\text {een noemer mag nooit nul zijn}} \]</div>
+<!-- l. 206 --><p class="noindent">Bij
+</p>
+<div class="mathjax-block">\[ \frac {x^2-4}{x^2+2x} \]</div>
+<!-- l. 212 --><p class="noindent">is
+</p>
+<div class="mathjax-block">\[ x^2+2x=x(x+2). \]</div>
+<!-- l. 218 --><p class="noindent">Daarom gelden de voorwaarden
+</p>
+<div class="mathjax-block">\[ x\neq 0 \qquad \text {en}\qquad x\neq -2. \]</div>
+<!-- l. 226 --><p class="noindent">Vervolgens ontbinden we:
+</p>
+<div class="mathjax-block">\[ \frac {x^2-4}{x^2+2x} = \frac {(x-2)(x+2)}{x(x+2)} = \frac {x-2}{x}. \]</div>
+<!-- l. 236 --><p class="noindent">De oorspronkelijke voorwaarden blijven gelden.
+</p><!-- l. 239 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">Je mag alleen <strong>factoren</strong> schrappen.
+<p></p><!-- l. 241 --><p class="noindent">Bijvoorbeeld:
+</p>
+<div class="mathjax-block">\[ \frac {x(x+2)}{x}=x+2 \]</div>
+<!-- l. 247 --><p class="noindent">voor <span class="mathjax-inline">\(x\neq 0\)</span>.
+</p><!-- l. 249 --><p class="noindent">Maar in
+</p>
+<div class="mathjax-block">\[ \frac {x+2}{x} \]</div>
+<!-- l. 255 --><p class="noindent">mag je de <span class="mathjax-inline">\(x\)</span> niet schrappen: <span class="mathjax-inline">\(x+2\)</span> is een som en geen product. </p></div></section>
+<p><a id="x1-10r5"></a>
+</p><p></p><!-- l. 259 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 259 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 259 --><p class="noindent"></p><div class="fvd-subsection__number">1.5</div>
+<p></p><!-- l. 259 --><p class="noindent"></p><div class="fvd-subsection__title">Samengestelde breuken</div>
+<p></p><!-- l. 259 --><p class="noindent"></p></div>
+<p></p><!-- l. 259 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 259 --><p class="noindent"></p></div>
+<p></p><!-- l. 261 --><p class="noindent">Een breuk kan zelf opnieuw breuken bevatten.
+</p><!-- l. 263 --><p class="noindent">Bijvoorbeeld:
+</p>
+<div class="mathjax-block">\[ \frac {\frac 34}{\frac 56} = \frac 34:\frac 56 = \frac 34\cdot \frac 65 = \frac 9{10}. \]</div>
+<!-- l. 275 --><p class="noindent">Ook hier geldt dus dezelfde regel:
+</p>
+<div class="mathjax-block">\[ \boxed {\text {delen door een breuk = vermenigvuldigen met het omgekeerde}} \]</div>
+<p><a id="x1-11r2"></a>
+</p><!-- l. 283 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">2</div><div class="fvd-section-bar__title">Schatten en controleren</div></div>
+<p></p><!-- l. 286 --><p class="noindent">Een rekenmachine kan zeer nauwkeurig een fout ingevoerde berekening uitvoeren.
+Daarom is schatten een belangrijke controlevaardigheid.
+</p><!-- l. 289 --><p class="noindent">Bij een schatting vervang je getallen door eenvoudige waarden die ongeveer even
+groot zijn.
+<a id="x1-12r4"></a>
+</p><!-- l. 292 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 292 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 4</div>
+<p></p><!-- l. 292 --><p class="noindent"></p><div class="fvd-example__content">Beschouw
+<p></p>
+<div class="mathjax-block">\[ \frac {198\cdot 4{,}9}{10{,}2}. \]</div>
+<!-- l. 298 --><p class="noindent">Vooraf schatten we:
+</p>
+<div class="mathjax-block">\[ \frac {200\cdot 5}{10}=100. \]</div>
+<!-- l. 304 --><p class="noindent">Een nauwkeurig resultaat moet dus ongeveer <span class="mathjax-inline">\(100\)</span> zijn. De werkelijke waarde is
+ongeveer
+</p>
+<div class="mathjax-block">\[ 95{,}12. \]</div>
+<!-- l. 311 --><p class="noindent">Dat is verenigbaar met onze schatting. </p></div></section>
+<p><a id="x1-13r1"></a>
+</p><p></p><!-- l. 315 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 315 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 315 --><p class="noindent"></p><div class="fvd-subsection__number">2.1</div>
+<p></p><!-- l. 315 --><p class="noindent"></p><div class="fvd-subsection__title">Schatten om fouten op te sporen</div>
+<p></p><!-- l. 315 --><p class="noindent"></p></div>
+<p></p><!-- l. 315 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 315 --><p class="noindent"></p></div>
+<p></p><!-- l. 317 --><p class="noindent">Stel dat iemand beweert:
+</p>
+<div class="mathjax-block">\[ \frac {603}{19{,}8}=3{,}05. \]</div>
+<!-- l. 323 --><p class="noindent">Zonder de exacte berekening uit te voeren:
+</p>
+<div class="mathjax-block">\[ 603\approx 600, \qquad 19{,}8\approx 20. \]</div>
+<!-- l. 331 --><p class="noindent">Dus
+</p>
+<div class="mathjax-block">\[ \frac {603}{19{,}8} \approx \frac {600}{20} = 30. \]</div>
+<!-- l. 341 --><p class="noindent">Een antwoord rond <span class="mathjax-inline">\(3\)</span> kan onmogelijk kloppen.
+</p><!-- l. 344 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">Controleer na een numerieke berekening minstens:
+<p></p>
+<div class="mathjax-block">\[ \boxed { \text {teken} \quad \quad \quad \text {grootteorde} \quad \quad \quad \text {eenheid} \quad \quad \quad \text {voorwaarden} } \]</div> </div></section>
+<p><a id="x1-14r3"></a>
+</p><!-- l. 361 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">3</div><div class="fvd-section-bar__title">Machten</div></div>
+<p></p><!-- l. 364 --><p class="noindent">Voor geschikte waarden van <span class="mathjax-inline">\(a\)</span>: </p><section class="fvd-property"><div class="fvd-property__title"><span class="fvd-property__label">EIGENSCHAP</span></div><div class="fvd-property__content">
+<p></p>
+<ol class="enumerate1">
+<li class="enumerate" id="x1-16x1"><span class="mathjax-inline">\( a^m\cdot a^n=a^{m+n} \)</span>
+</li>
+<li class="enumerate" id="x1-18x2"><span class="mathjax-inline">\( \frac {a^m}{a^n}=a^{m-n}, \qquad a\neq 0 \)</span>
+</li>
+<li class="enumerate" id="x1-20x3"><span class="mathjax-inline">\((a^m)^n=a^{mn}\)</span>
+</li>
+<li class="enumerate" id="x1-22x4"><span class="mathjax-inline">\((ab)^n=a^nb^n\)</span>
+</li>
+<li class="enumerate" id="x1-24x5"><span class="mathjax-inline">\( \left (\frac ab\right )^n = \frac {a^n}{b^n}, \qquad b\neq 0 \)</span>
+</li>
+<li class="enumerate" id="x1-26x6"><span class="mathjax-inline">\( a^0=1, \qquad a\neq 0 \)</span>
+</li>
+<li class="enumerate" id="x1-28x7"><span class="mathjax-inline">\( a^{-n}=\frac 1{a^n}. \)</span></li></ol>
+</div></section>
+<p><a id="x1-29r5"></a>
+</p><!-- l. 392 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 392 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 5</div>
+<p></p><!-- l. 392 --><p class="noindent"></p><div class="fvd-example__content">
+<p></p><!-- l. 393 --><p class="noindent">Vereenvoudig.
+</p>
+<div class="problem-environment question" id="problem1" numbered=" " role="article" titletext=" Question"> <span class="mathjax-inline">\((2x^3)^4 = 2^4x^{12} = 16x^{12}\)</span> </div>
+<div class="problem-environment question" id="problem2" numbered=" " role="article" titletext=" Question"> <span class="mathjax-inline">\(\dfrac {x^8}{x^3} = x^{8-3} = x^5, \qquad x\neq 0\)</span> </div>
+<div class="problem-environment question" id="problem3" numbered=" " role="article" titletext=" Question"> <span class="mathjax-inline">\((3a^2b)^3 = 3^3(a^2)^3b^3 = 27a^6b^3\)</span> </div>
+<div class="problem-environment question" id="problem4" numbered=" " role="article" titletext=" Question"> <span class="mathjax-inline">\(\dfrac {5x^{-3}}{10x^2} = \dfrac 12x^{-5} = \dfrac {1}{2x^5}, \qquad x\neq 0\)</span> </div>
+</div></section>
+<p><a id="x1-30r1"></a>
+</p><!-- l. 432 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 432 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 432 --><p class="noindent"></p><div class="fvd-subsection__number">3.1</div>
+<p></p><!-- l. 432 --><p class="noindent"></p><div class="fvd-subsection__title">Negatieve exponenten</div>
+<p></p><!-- l. 432 --><p class="noindent"></p></div>
+<p></p><!-- l. 432 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 432 --><p class="noindent"></p></div>
+<p></p><!-- l. 434 --><p class="noindent">Een negatieve exponent betekent niet dat de uitdrukking negatief is. De exponent
+geeft aan dat we met het omgekeerde werken.
+                                                                  
+
+                                                                  
+</p><!-- l. 437 --><p class="noindent">Voor <span class="mathjax-inline">\(a\neq 0\)</span> geldt:
+</p>
+<div class="mathjax-block">\[ a^{-n}=\frac {1}{a^n}. \]</div>
+<!-- l. 443 --><p class="noindent">Zo is bijvoorbeeld
+</p>
+<div class="mathjax-block">\[ x^{-3}=\frac 1{x^3}. \]</div>
+<!-- l. 449 --><p class="noindent">Ook omgekeerd geldt:
+</p>
+<div class="mathjax-block">\[ \frac 1{x^3}=x^{-3}. \]</div>
+<!-- l. 455 --><p class="noindent">Negatieve exponenten volgen verder dezelfde rekenregels als positieve exponenten.
+</p><!-- l. 457 --><p class="noindent">Bijvoorbeeld:
+</p>
+<div class="mathjax-block">\[ x^{-2}\cdot x^5 = x^{-2+5} = x^3. \]</div>
+<!-- l. 467 --><p class="noindent">En:
+</p>
+<div class="mathjax-block">\[ \frac {x^{-3}}{x^2} = x^{-3-2} = x^{-5} = \frac 1{x^5}. \]</div>
+<!-- l. 479 --><p class="noindent">Bij samengestelde uitdrukkingen werk je stap voor stap.
+<a id="x1-31r6"></a>
+</p><!-- l. 482 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 482 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 6</div>
+<p></p><!-- l. 482 --><p class="noindent"></p><div class="fvd-example__content">
+<p></p><!-- l. 483 --><p class="noindent">Vereenvoudig en werk de negatieve exponent weg.
+</p>
+<div class="problem-environment question" id="problem5" numbered=" " role="article" titletext=" Question"> <span class="mathjax-inline">\(\dfrac {5x^{-3}}{10x^2} = \dfrac 12x^{-5} = \dfrac 1{2x^5}, \qquad x\neq 0\)</span> </div>
+<div class="problem-environment question" id="problem6" numbered=" " role="article" titletext=" Question"> <span class="mathjax-inline">\((2a^2b^{-1})^{-2} = 2^{-2}a^{-4}b^2 = \dfrac {b^2}{4a^4}, \qquad a\neq 0,\ b\neq 0\)</span> </div>
+</div></section>
+<!-- l. 506 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">Een negatieve exponent verplaatst een factor als het ware van teller
+naar noemer of omgekeerd:
+<p></p>
+<div class="mathjax-block">\[ x^{-n}=\frac 1{x^n}, \qquad \frac 1{x^{-n}}=x^n. \]</div>
+<!-- l. 514 --><p class="noindent">Werk in een eindantwoord negatieve exponenten weg wanneer dat gevraagd wordt.
+Let ook steeds op de voorwaarden: een basis die door een negatieve exponent in een
+noemer terechtkomt, mag niet gelijk zijn aan nul. </p></div></section>
+<p><a id="x1-32r4"></a>
+</p><p></p><!-- l. 520 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">4</div><div class="fvd-section-bar__title">Wortels</div></div>
+<p></p><!-- l. 523 --><p class="noindent">Voor <span class="mathjax-inline">\(a\geq 0\)</span> is <span class="mathjax-inline">\(\sqrt a\)</span> het niet-negatieve getal waarvan het kwadraat <span class="mathjax-inline">\(a\)</span> is.
+                                                                  
+
+                                                                  
+</p><!-- l. 525 --><p class="noindent">Zo is
+</p>
+<div class="mathjax-block">\[ \sqrt {25}=5. \]</div>
+<!-- l. 531 --><p class="noindent">Algemeen geldt
+</p>
+<div class="mathjax-block">\[ \sqrt {a^2}=|a|. \]</div>
+<!-- l. 537 --><p class="noindent">Voor niet-negatieve <span class="mathjax-inline">\(a\)</span> en <span class="mathjax-inline">\(b\)</span>:
+</p>
+<div class="mathjax-block">\[ \sqrt {ab}=\sqrt a\sqrt b. \]</div>
+<!-- l. 543 --><p class="noindent">Daardoor kunnen we wortels vereenvoudigen door een zo groot mogelijke
+kwadraatfactor af te zonderen.
+<a id="x1-33r7"></a>
+</p><!-- l. 547 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 547 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 7</div>
+<p></p><!-- l. 547 --><p class="noindent"></p><div class="fvd-example__content"><p></p><div class="mathjax-block">\[ \sqrt {72} = \sqrt {36\cdot 2} = 6\sqrt 2. \]</div> </div></section>
+<p><a id="x1-34r1"></a>
+</p><!-- l. 557 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 557 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 557 --><p class="noindent"></p><div class="fvd-subsection__number">4.1</div>
+<p></p><!-- l. 557 --><p class="noindent"></p><div class="fvd-subsection__title">Gelijksoortige wortels</div>
+<p></p><!-- l. 557 --><p class="noindent"></p></div>
+<p></p><!-- l. 557 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 557 --><p class="noindent"></p></div>
+<p></p><!-- l. 559 --><p class="noindent">Alleen gelijksoortige wortels kunnen worden samengenomen.
+</p>
+<div class="mathjax-block">\[ 3\sqrt 8+2\sqrt {18} = 3(2\sqrt 2)+2(3\sqrt 2) = 12\sqrt 2. \]</div>
+<!-- l. 569 --><p class="noindent">Maar
+</p>
+<div class="mathjax-block">\[ \sqrt 2+\sqrt 3 \]</div>
+<!-- l. 575 --><p class="noindent">kan niet verder worden vereenvoudigd.
+<a id="x1-35r2"></a>
+</p><!-- l. 578 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 578 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 578 --><p class="noindent"></p><div class="fvd-subsection__number">4.2</div>
+<p></p><!-- l. 578 --><p class="noindent"></p><div class="fvd-subsection__title">Rekenen met wortels</div>
+<p></p><!-- l. 578 --><p class="noindent"></p></div>
+<p></p><!-- l. 578 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 578 --><p class="noindent"></p></div>
+<p></p><!-- l. 580 --><p class="noindent">We kunnen wortels ook vermenigvuldigen:
+</p>
+<div class="mathjax-block">\[ \sqrt 6\cdot \sqrt {24} = \sqrt {144} = 12. \]</div>
+<!-- l. 590 --><p class="noindent">Merkwaardige producten blijven eveneens geldig:
+</p>
+<div class="mathjax-block">\[ (\sqrt 7-2)(\sqrt 7+2) = 7-4 = 3. \]</div>
+<!-- l. 600 --><p class="noindent">En
+</p>
+<div class="mathjax-block">\[ (\sqrt 5+\sqrt 2)^2 = 5+2\sqrt {10}+2 = 7+2\sqrt {10}. \]</div>
+<p><a id="x1-36r5"></a>
+</p><!-- l. 614 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">5</div><div class="fvd-section-bar__title">Wetenschappelijke notatie en ordegrootte</div></div>
+<p></p><!-- l. 617 --><p class="noindent">Een getal staat in wetenschappelijke notatie wanneer het geschreven is als
+</p>
+<div class="mathjax-block">\[ a\cdot 10^n \]</div>
+<!-- l. 623 --><p class="noindent">met
+</p>
+<div class="mathjax-block">\[ 1\leq |a|&lt;10. \]</div>
+<!-- l. 629 --><p class="noindent">Bijvoorbeeld:
+</p>
+<div class="mathjax-block">\[ 73\,500\,000 = 7{,}35\cdot 10^7 \]</div>
+<!-- l. 637 --><p class="noindent">en
+</p>
+<div class="mathjax-block">\[ 0{,}000\,0042 = 4{,}2\cdot 10^{-6}. \]</div>
+<p><a id="x1-37r1"></a>
+</p><!-- l. 646 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 646 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 646 --><p class="noindent"></p><div class="fvd-subsection__number">5.1</div>
+<p></p><!-- l. 646 --><p class="noindent"></p><div class="fvd-subsection__title">Rekenen in wetenschappelijke notatie</div>
+<p></p><!-- l. 646 --><p class="noindent"></p></div>
+<p></p><!-- l. 646 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 646 --><p class="noindent"></p></div>
+<p></p><!-- l. 648 --><p class="noindent">Bij vermenigvuldigen:
+                                                                  
+
+                                                                  
+</p>
+<div class="mathjax-block">\[ (a\cdot 10^m)(b\cdot 10^n) = ab\cdot 10^{m+n}. \]</div>
+<!-- l. 656 --><p class="noindent">Bij delen:
+</p>
+<div class="mathjax-block">\[ \frac {a\cdot 10^m}{b\cdot 10^n} = \frac ab\cdot 10^{m-n}. \]</div>
+<!-- l. 664 --><p class="noindent">Na de berekening moet de voorfactor opnieuw tussen <span class="mathjax-inline">\(1\)</span> en <span class="mathjax-inline">\(10\)</span> liggen.
+<a id="x1-38r8"></a>
+</p><!-- l. 667 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 667 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 8</div>
+<p></p><!-- l. 667 --><p class="noindent"></p><div class="fvd-example__content"><p></p><div class="mathjax-block">\[ (3\cdot 10^5)(4\cdot 10^{-8}) = 12\cdot 10^{-3} = 1{,}2\cdot 10^{-2}. \]</div> </div></section>
+<p><a id="x1-39r2"></a>
+</p><!-- l. 677 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 677 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 677 --><p class="noindent"></p><div class="fvd-subsection__number">5.2</div>
+<p></p><!-- l. 677 --><p class="noindent"></p><div class="fvd-subsection__title">Ordegrootte</div>
+<p></p><!-- l. 677 --><p class="noindent"></p></div>
+<p></p><!-- l. 677 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 677 --><p class="noindent"></p></div>
+<p></p><!-- l. 679 --><p class="noindent">Wetenschappelijke notatie maakt onmiddellijk zichtbaar op welke schaal een
+grootheid ligt.
+</p><!-- l. 681 --><p class="noindent">Een bacterie met lengte
+</p>
+<div class="mathjax-block">\[ 2\cdot 10^{-6}\,\mathrm m \]</div>
+<!-- l. 687 --><p class="noindent">heeft een karakteristieke schaal van ongeveer
+</p>
+<div class="mathjax-block">\[ 10^{-6}\,\mathrm m. \]</div>
+<!-- l. 693 --><p class="noindent">Voor het vergelijken van zeer grote of zeer kleine grootheden zijn de exponenten vaak
+belangrijker dan alle cijfers afzonderlijk.
+<a id="x1-40r9"></a>
+</p><!-- l. 697 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 697 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 9</div>
+<p></p><!-- l. 697 --><p class="noindent"></p><div class="fvd-example__content">Vergelijk
+<p></p>
+<div class="mathjax-block">\[ 7\cdot 10^{-5}\,\mathrm m \]</div>
+<!-- l. 703 --><p class="noindent">met
+                                                                  
+
+                                                                  
+</p>
+<div class="mathjax-block">\[ 2\cdot 10^{-6}\,\mathrm m. \]</div>
+<!-- l. 709 --><p class="noindent">De verhouding is
+</p>
+<div class="mathjax-block">\[ \frac {7\cdot 10^{-5}}{2\cdot 10^{-6}} = \frac 72\cdot 10 = 35. \]</div>
+<!-- l. 719 --><p class="noindent">De eerste lengte is dus <span class="mathjax-inline">\(35\)</span> keer zo groot. </p></div></section>
+<p></p><!-- l. 723 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">Wanneer we de <em>ordegrootte</em> als de dichtstbijzijnde macht van <span class="mathjax-inline">\(10\)</span>
+gebruiken, moet je niet alleen naar de exponent kijken. Zo ligt <span class="mathjax-inline">\(7\cdot 10^{-5}\)</span> dichter bij <span class="mathjax-inline">\(10^{-4}\)</span> dan bij <span class="mathjax-inline">\(10^{-5}\)</span>.
+</div></section>
+<p><a id="x1-41r6"></a>
+</p><p></p><!-- l. 730 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">6</div><div class="fvd-section-bar__title">Procenten, verhoudingen en verandering</div></div>
+<p><a id="x1-42r1"></a>
+</p><p></p><!-- l. 733 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 733 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 733 --><p class="noindent"></p><div class="fvd-subsection__number">6.1</div>
+<p></p><!-- l. 733 --><p class="noindent"></p><div class="fvd-subsection__title">Absolute en relatieve verandering</div>
+<p></p><!-- l. 733 --><p class="noindent"></p></div>
+<p></p><!-- l. 733 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 733 --><p class="noindent"></p></div>
+<p></p><!-- l. 735 --><p class="noindent">Van een oude waarde <span class="mathjax-inline">\(O\)</span> naar een nieuwe waarde <span class="mathjax-inline">\(N\)</span> is de absolute verandering
+</p>
+<div class="mathjax-block">\[ \Delta =N-O. \]</div>
+<!-- l. 741 --><p class="noindent">De relatieve verandering is
+</p>
+<div class="mathjax-block">\[ \frac {N-O}{O}. \]</div>
+<!-- l. 747 --><p class="noindent">De procentuele verandering is
+</p>
+<div class="mathjax-block">\[ \boxed { \frac {N-O}{O}\cdot 100\% } \]</div>
+<p><a id="x1-43r10"></a>
+</p><!-- l. 756 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 756 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 10</div>
+<p></p><!-- l. 756 --><p class="noindent"></p><div class="fvd-example__content">Van <span class="mathjax-inline">\(80\)</span> naar <span class="mathjax-inline">\(92\)</span>:
+<p></p>
+<div class="mathjax-block">\[ \Delta =92-80=12. \]</div>
+<!-- l. 762 --><p class="noindent">Dus
+</p>
+<div class="mathjax-block">\[ \frac {12}{80}\cdot 100\% = 15\%. \]</div> </div></section>
+<!-- l. 771 --><p class="noindent">Een negatieve procentuele verandering betekent een daling.
+<a id="x1-44r2"></a>
+</p><!-- l. 777 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 777 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 777 --><p class="noindent"></p><div class="fvd-subsection__number">6.2</div>
+<p></p><!-- l. 777 --><p class="noindent"></p><div class="fvd-subsection__title">Verhoudingen en schaal</div>
+<p></p><!-- l. 777 --><p class="noindent"></p></div>
+<p></p><!-- l. 777 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 777 --><p class="noindent"></p></div>
+<p></p><!-- l. 779 --><p class="noindent">Een verhouding vergelijkt twee hoeveelheden door ze te delen.
+</p><!-- l. 781 --><p class="noindent">Bijvoorbeeld: <span class="mathjax-inline">\(18\,\mathrm g\)</span> stof in <span class="mathjax-inline">\(300\,\mathrm g\)</span> oplossing geeft
+</p>
+<div class="mathjax-block">\[ \frac {18}{300}=0{,}06=6\%. \]</div>
+<!-- l. 787 --><p class="noindent">Bij een schaal <span class="mathjax-inline">\(1:25\,000\)</span> betekent <span class="mathjax-inline">\(1\)</span> eenheid op de kaart <span class="mathjax-inline">\(25\,000\)</span> dezelfde eenheden in werkelijkheid.
+</p><!-- l. 790 --><p class="noindent">Ook een factor is een verhouding.
+</p><!-- l. 792 --><p class="noindent">Van <span class="mathjax-inline">\(2{,}4\,\mathrm V\)</span> naar <span class="mathjax-inline">\(3{,}0\,\mathrm V\)</span>:
+</p>
+<div class="mathjax-block">\[ \frac {3{,}0}{2{,}4}=1{,}25. \]</div>
+<!-- l. 798 --><p class="noindent">De spanning werd dus met factor <span class="mathjax-inline">\(1{,}25\)</span> vermenigvuldigd.
+<a id="x1-45r7"></a>
+</p><!-- l. 802 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">7</div><div class="fvd-section-bar__title">Algebraïsch rekenen</div></div>
+<p><a id="x1-46r1"></a>
+</p><p></p><!-- l. 805 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 805 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 805 --><p class="noindent"></p><div class="fvd-subsection__number">7.1</div>
+<p></p><!-- l. 805 --><p class="noindent"></p><div class="fvd-subsection__title">Uitwerken</div>
+<p></p><!-- l. 805 --><p class="noindent"></p></div>
+<p></p><!-- l. 805 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 805 --><p class="noindent"></p></div>
+<p></p><!-- l. 807 --><p class="noindent">Uitwerken betekent haakjes wegwerken en gelijksoortige termen samenbrengen.
+</p><!-- l. 809 --><p class="noindent">De distributieve eigenschap is
+</p>
+<div class="mathjax-block">\[ a(b+c)=ab+ac. \]</div>
+<!-- l. 815 --><p class="noindent">Bijvoorbeeld:
+</p>
+<div class="mathjax-block">\[ 3x(2x-5) = 6x^2-15x. \]</div>
+<!-- l. 823 --><p class="noindent">Bij twee tweetermen:
+</p>
+<div class="mathjax-block">\[ (x+4)(x-3) = x^2-3x+4x-12 = x^2+x-12. \]</div>
+<p><a id="x1-47r2"></a>
+</p><!-- l. 834 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 834 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 834 --><p class="noindent"></p><div class="fvd-subsection__number">7.2</div>
+<p></p><!-- l. 834 --><p class="noindent"></p><div class="fvd-subsection__title">Merkwaardige producten</div>
+<p></p><!-- l. 834 --><p class="noindent"></p></div>
+<p></p><!-- l. 834 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 834 --><p class="noindent"></p></div>
+<p></p><!-- l. 836 --><p class="noindent">De drie basisvormen zijn
+</p>
+<div class="mathjax-block">\[ (a+b)^2=a^2+2ab+b^2, \]</div>
+<div class="mathjax-block">\[ (a-b)^2=a^2-2ab+b^2, \]</div>
+<div class="mathjax-block">\[ (a-b)(a+b)=a^2-b^2. \]</div>
+<!-- l. 850 --><p class="noindent">Je moet deze formules in beide richtingen herkennen.
+<a id="x1-48r11"></a>
+</p><!-- l. 853 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 853 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 11</div>
+<p></p><!-- l. 853 --><p class="noindent"></p><div class="fvd-example__content"><p></p><div class="mathjax-block">\[ (2x-3)^2 = 4x^2-12x+9. \]</div> </div></section>
+<p><a id="x1-49r3"></a>
+</p><!-- l. 861 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 861 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 861 --><p class="noindent"></p><div class="fvd-subsection__number">7.3</div>
+<p></p><!-- l. 861 --><p class="noindent"></p><div class="fvd-subsection__title">Ontbinden</div>
+<p></p><!-- l. 861 --><p class="noindent"></p></div>
+<p></p><!-- l. 861 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 861 --><p class="noindent"></p></div>
+<p></p><!-- l. 863 --><p class="noindent">Ontbinden is het omgekeerde van uitwerken: we schrijven een som of verschil als een
+product.
+                                                                  
+
+                                                                  
+</p><!-- l. 865 --><p class="noindent">Er bestaat niet één techniek die altijd werkt.
+</p><!-- l. 867 --><p class="noindent">Een nuttige zoekstrategie is:
+</p>
+<div class="mathjax-block">\[ \boxed { \begin {array}{c} \text {gemeenschappelijke factor?}\\ \downarrow \\ \text {merkwaardig product?}\\ \downarrow \\ \text {verschil van kwadraten?}\\ \downarrow \\ \text {andere factorisatie?} \end {array}} \]</div>
+<p><a id="x1-50r4"></a>
+</p><!-- l. 883 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 883 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 883 --><p class="noindent"></p><div class="fvd-subsection__number">7.4</div>
+<p></p><!-- l. 883 --><p class="noindent"></p><div class="fvd-subsection__title">Gemeenschappelijke factor</div>
+<p></p><!-- l. 883 --><p class="noindent"></p></div>
+<p></p><!-- l. 883 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 883 --><p class="noindent"></p></div>
+<p></p><!-- l. 885 --><p class="noindent">Bijvoorbeeld:
+</p>
+<div class="mathjax-block">\[ 5x^2-20x = 5x(x-4). \]</div>
+<!-- l. 893 --><p class="noindent">Bij
+</p>
+<div class="mathjax-block">\[ 18a^3+60a^2b+50ab^2 \]</div>
+<!-- l. 899 --><p class="noindent">nemen we eerst <span class="mathjax-inline">\(2a\)</span> buiten haakjes:
+</p>
+<div class="mathjax-block">\[ 2a(9a^2+30ab+25b^2). \]</div>
+<!-- l. 905 --><p class="noindent">Daarna herkennen we een volkomen kwadraat:
+</p>
+<div class="mathjax-block">\[ \boxed { 18a^3+60a^2b+50ab^2 = 2a(3a+5b)^2 } \]</div>
+<p><a id="x1-51r5"></a>
+</p><!-- l. 916 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 916 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 916 --><p class="noindent"></p><div class="fvd-subsection__number">7.5</div>
+<p></p><!-- l. 916 --><p class="noindent"></p><div class="fvd-subsection__title">Structuur herkennen</div>
+<p></p><!-- l. 916 --><p class="noindent"></p></div>
+<p></p><!-- l. 916 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 916 --><p class="noindent"></p></div>
+<p></p><!-- l. 918 --><p class="noindent">Sterk algebraïsch rekenen betekent niet dat je onmiddellijk begint uit te
+werken.
+</p><!-- l. 920 --><p class="noindent">Bij
+                                                                  
+
+                                                                  
+</p>
+<div class="mathjax-block">\[ (x+2)(x^2+1)+(x+2)(x+1) \]</div>
+<!-- l. 926 --><p class="noindent">is de gemeenschappelijke factor <span class="mathjax-inline">\((x+2)\)</span> zichtbaar.
+</p><!-- l. 928 --><p class="noindent">Dus:
+</p>
+<div class="mathjax-block">\[ (x+2)\bigl [(x^2+1)+(x+1)\bigr ] \]</div>
+<!-- l. 934 --><p class="noindent">en bijgevolg
+</p>
+<div class="mathjax-block">\[ (x+2)(x^2+x+2). \]</div>
+<!-- l. 941 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">Vraag jezelf vóór een lange berekening af:
+<p></p>
+<div class="mathjax-block">\[ \boxed {\text {Welke structuur zie ik?}} \]</div>
+<!-- l. 947 --><p class="noindent">Een goede eerste stap kan veel rekenwerk vermijden. </p></div></section>
+<p><a id="x1-52r8"></a>
+</p><p></p><!-- l. 952 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">8</div><div class="fvd-section-bar__title">Vergelijkingen, formules en ongelijkheden</div></div>
+<p><a id="x1-53r1"></a>
+</p><p></p><!-- l. 955 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 955 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 955 --><p class="noindent"></p><div class="fvd-subsection__number">8.1</div>
+<p></p><!-- l. 955 --><p class="noindent"></p><div class="fvd-subsection__title">Uitdrukking, identiteit en vergelijking</div>
+<p></p><!-- l. 955 --><p class="noindent"></p></div>
+<p></p><!-- l. 955 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 955 --><p class="noindent"></p></div>
+<p></p><!-- l. 957 --><p class="noindent">Deze drie objecten betekenen niet hetzelfde.
+</p><!-- l. 959 --><p class="noindent">Een uitdrukking:
+</p>
+<div class="mathjax-block">\[ 3x+2. \]</div>
+<!-- l. 965 --><p class="noindent">Een identiteit:
+</p>
+<div class="mathjax-block">\[ (a+b)^2=a^2+2ab+b^2. \]</div>
+<!-- l. 971 --><p class="noindent">Een vergelijking:
+</p>
+<div class="mathjax-block">\[ 3x+2=11. \]</div>
+<!-- l. 977 --><p class="noindent">Een vergelijking bevat een onbekende en we zoeken de waarden waarvoor beide leden
+gelijk zijn.
+                                                                  
+
+                                                                  
+<a id="x1-54r2"></a>
+</p><!-- l. 980 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 980 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 980 --><p class="noindent"></p><div class="fvd-subsection__number">8.2</div>
+<p></p><!-- l. 980 --><p class="noindent"></p><div class="fvd-subsection__title">Eerstegraadsvergelijkingen</div>
+<p></p><!-- l. 980 --><p class="noindent"></p></div>
+<p></p><!-- l. 980 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 980 --><p class="noindent"></p></div>
+<p></p><!-- l. 982 --><p class="noindent">We mogen aan beide leden dezelfde geldige bewerking uitvoeren.
+<a id="x1-55r12"></a>
+</p><!-- l. 985 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 985 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 12</div>
+<p></p><!-- l. 985 --><p class="noindent"></p><div class="fvd-example__content"><p></p><div class="mathjax-block">\[ 4(2x-3)=5x+9. \]</div>
+<!-- l. 989 --><p class="noindent">Uitwerken:
+</p>
+<div class="mathjax-block">\[ 8x-12=5x+9. \]</div>
+<!-- l. 995 --><p class="noindent">Alle termen met <span class="mathjax-inline">\(x\)</span> naar één kant:
+</p>
+<div class="mathjax-block">\[ 3x=21. \]</div>
+<!-- l. 1001 --><p class="noindent">Dus
+</p>
+<div class="mathjax-block">\[ x=7. \]</div> </div></section>
+<p><a id="x1-56r3"></a>
+</p><!-- l. 1009 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 1009 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 1009 --><p class="noindent"></p><div class="fvd-subsection__number">8.3</div>
+<p></p><!-- l. 1009 --><p class="noindent"></p><div class="fvd-subsection__title">Vergelijkingen met breuken</div>
+<p></p><!-- l. 1009 --><p class="noindent"></p></div>
+<p></p><!-- l. 1009 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 1009 --><p class="noindent"></p></div>
+<p></p><!-- l. 1011 --><p class="noindent">Bij
+</p>
+<div class="mathjax-block">\[ \frac {x-2}{3}+\frac {x+1}{2}=5 \]</div>
+<!-- l. 1017 --><p class="noindent">kunnen we alle leden vermenigvuldigen met <span class="mathjax-inline">\(6\)</span>:
+                                                                  
+
+                                                                  
+</p>
+<div class="mathjax-block">\[ 2(x-2)+3(x+1)=30. \]</div>
+<!-- l. 1023 --><p class="noindent">Daarna lossen we de gewone lineaire vergelijking op.
+<a id="x1-57r4"></a>
+</p><!-- l. 1026 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 1026 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 1026 --><p class="noindent"></p><div class="fvd-subsection__number">8.4</div>
+<p></p><!-- l. 1026 --><p class="noindent"></p><div class="fvd-subsection__title">Nulproductregel</div>
+<p></p><!-- l. 1026 --><p class="noindent"></p></div>
+<p></p><!-- l. 1026 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 1026 --><p class="noindent"></p></div>
+<p></p><!-- l. 1028 --><p class="noindent">Als
+</p>
+<div class="mathjax-block">\[ A\cdot B=0, \]</div>
+<!-- l. 1034 --><p class="noindent">dan geldt
+</p>
+<div class="mathjax-block">\[ A=0 \qquad \text {of}\qquad B=0. \]</div>
+<!-- l. 1042 --><p class="noindent">Bijvoorbeeld:
+</p>
+<div class="mathjax-block">\[ (x-3)(x+2)=0 \]</div>
+<!-- l. 1048 --><p class="noindent">geeft
+</p>
+<div class="mathjax-block">\[ x=3 \qquad \text {of}\qquad x=-2. \]</div>
+<!-- l. 1056 --><p class="noindent">Daarom is ontbinden een belangrijke techniek bij veeltermvergelijkingen.
+<a id="x1-58r5"></a>
+</p><!-- l. 1059 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 1059 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 1059 --><p class="noindent"></p><div class="fvd-subsection__number">8.5</div>
+<p></p><!-- l. 1059 --><p class="noindent"></p><div class="fvd-subsection__title">Formules omvormen</div>
+<p></p><!-- l. 1059 --><p class="noindent"></p></div>
+<p></p><!-- l. 1059 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 1059 --><p class="noindent"></p></div>
+<p></p><!-- l. 1061 --><p class="noindent">In wetenschappen is de onbekende meestal geen <span class="mathjax-inline">\(x\)</span>, maar een grootheid.
+</p><!-- l. 1063 --><p class="noindent">Bijvoorbeeld:
+                                                                  
+
+                                                                  
+</p>
+<div class="mathjax-block">\[ v=\frac st. \]</div>
+<!-- l. 1069 --><p class="noindent">Naar <span class="mathjax-inline">\(s\)</span>:
+</p>
+<div class="mathjax-block">\[ vt=s. \]</div>
+<!-- l. 1075 --><p class="noindent">Dus
+</p>
+<div class="mathjax-block">\[ \boxed {s=vt}. \]</div>
+<!-- l. 1081 --><p class="noindent">Naar <span class="mathjax-inline">\(t\)</span>:
+</p>
+<div class="mathjax-block">\[ \boxed {t=\frac sv}. \]</div>
+<p><a id="x1-59r13"></a>
+</p><!-- l. 1089 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 1089 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 13</div>
+<p></p><!-- l. 1089 --><p class="noindent"></p><div class="fvd-example__content">Uit
+<p></p>
+<div class="mathjax-block">\[ E_k=\frac 12mv^2 \]</div>
+<!-- l. 1095 --><p class="noindent">volgt:
+</p>
+<div class="mathjax-block">\[ 2E_k=mv^2, \]</div>
+<div class="mathjax-block">\[ v^2=\frac {2E_k}{m}. \]</div>
+<!-- l. 1105 --><p class="noindent">Voor de grootte van de snelheid:
+</p>
+<div class="mathjax-block">\[ \boxed { v=\sqrt {\frac {2E_k}{m}} } \]</div> </div></section>
+<p><a id="x1-60r6"></a>
+</p><!-- l. 1115 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 1115 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 1115 --><p class="noindent"></p><div class="fvd-subsection__number">8.6</div>
+<p></p><!-- l. 1115 --><p class="noindent"></p><div class="fvd-subsection__title">Formules met meerdere stappen</div>
+<p></p><!-- l. 1115 --><p class="noindent"></p></div>
+<p></p><!-- l. 1115 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 1115 --><p class="noindent"></p></div>
+<p></p><!-- l. 1117 --><p class="noindent">Beschouw de periode van een eenvoudige slinger:
+</p>
+<div class="mathjax-block">\[ T=2\pi \sqrt {\frac {\ell }{g}}. \]</div>
+<!-- l. 1123 --><p class="noindent">We willen <span class="mathjax-inline">\(\ell \)</span> vrijmaken.
+</p><!-- l. 1125 --><p class="noindent">Eerst:
+</p>
+<div class="mathjax-block">\[ \frac {T}{2\pi } = \sqrt {\frac {\ell }{g}}. \]</div>
+<!-- l. 1133 --><p class="noindent">Kwadrateren:
+</p>
+<div class="mathjax-block">\[ \frac {T^2}{4\pi ^2} = \frac {\ell }{g}. \]</div>
+<!-- l. 1141 --><p class="noindent">Vermenigvuldigen met <span class="mathjax-inline">\(g\)</span>:
+</p>
+<div class="mathjax-block">\[ \boxed { \ell =\frac {gT^2}{4\pi ^2} } \]</div>
+<!-- l. 1149 --><p class="noindent">Hierbij kun je de eenheden gebruiken als controle.
+<a id="x1-61r9"></a>
+</p><!-- l. 1153 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">9</div><div class="fvd-section-bar__title">Ongelijkheden en tekenschema’s</div></div>
+<p><a id="x1-62r1"></a>
+</p><p></p><!-- l. 1156 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 1156 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 1156 --><p class="noindent"></p><div class="fvd-subsection__number">9.1</div>
+<p></p><!-- l. 1156 --><p class="noindent"></p><div class="fvd-subsection__title">Eerstegraadsongelijkheden</div>
+<p></p><!-- l. 1156 --><p class="noindent"></p></div>
+<p></p><!-- l. 1156 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 1156 --><p class="noindent"></p></div>
+<p></p><!-- l. 1158 --><p class="noindent">Een ongelijkheid lossen we grotendeels op zoals een vergelijking.
+</p><!-- l. 1160 --><p class="noindent">Er is één cruciale uitzondering:
+</p>
+<div class="mathjax-block">\[ \boxed { \text {bij vermenigvuldigen of delen door een negatief getal keert het teken om} } \]</div>
+<!-- l. 1168 --><p class="noindent">Bijvoorbeeld:
+</p>
+<div class="mathjax-block">\[ 5-3x\leq 14. \]</div>
+<!-- l. 1174 --><p class="noindent">Dus:
+</p>
+<div class="mathjax-block">\[ -3x\leq 9. \]</div>
+<!-- l. 1180 --><p class="noindent">Delen door <span class="mathjax-inline">\(-3\)</span>:
+</p>
+<div class="mathjax-block">\[ x\geq -3. \]</div>
+<p><a id="x1-63r2"></a>
+</p><!-- l. 1187 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 1187 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 1187 --><p class="noindent"></p><div class="fvd-subsection__number">9.2</div>
+<p></p><!-- l. 1187 --><p class="noindent"></p><div class="fvd-subsection__title">Intervalnotatie</div>
+<p></p><!-- l. 1187 --><p class="noindent"></p></div>
+<p></p><!-- l. 1187 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 1187 --><p class="noindent"></p></div>
+<p></p><!-- l. 1189 --><p class="noindent">Voorbeelden:
+</p>
+<div class="mathjax-block">\[ x&lt;4 \quad \Longleftrightarrow \quad x\in ]-\infty ,4[, \]</div>
+<div class="mathjax-block">\[ x\geq -3 \quad \Longleftrightarrow \quad x\in [-3,+\infty [, \]</div>
+<div class="mathjax-block">\[ -2&lt;x\leq 7 \quad \Longleftrightarrow \quad x\in ]-2,7]. \]</div>
+<!-- l. 1209 --><p class="noindent">Oneindig wordt nooit inbegrepen.
+<a id="x1-64r3"></a>
+</p><!-- l. 1212 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 1212 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 1212 --><p class="noindent"></p><div class="fvd-subsection__number">9.3</div>
+<p></p><!-- l. 1212 --><p class="noindent"></p><div class="fvd-subsection__title">Tekenschema’s</div>
+<p></p><!-- l. 1212 --><p class="noindent"></p></div>
+<p></p><!-- l. 1212 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 1212 --><p class="noindent"></p></div>
+<p></p><!-- l. 1214 --><p class="noindent">Voor productongelijkheden onderzoeken we het teken van de afzonderlijke
+factoren.
+</p><!-- l. 1216 --><p class="noindent">Beschouw
+</p>
+<div class="mathjax-block">\[ (x-2)(x+4)&gt;0. \]</div>
+<!-- l. 1222 --><p class="noindent">De nulpunten zijn
+</p>
+<div class="mathjax-block">\[ x=-4 \qquad \text {en}\qquad x=2. \]</div>
+<!-- l. 1230 --><p class="noindent">Deze punten verdelen de getallenas in drie intervallen:
+</p>
+<div class="mathjax-block">\[ ]-\infty ,-4[, \qquad ]-4,2[, \qquad ]2,+\infty [. \]</div>
+<!-- l. 1240 --><p class="noindent">Het product is positief wanneer beide factoren hetzelfde teken hebben.
+</p><!-- l. 1242 --><p class="noindent">Daarom:
+                                                                  
+
+                                                                  
+</p>
+<div class="mathjax-block">\[ \boxed { x\in ]-\infty ,-4[\cup ]2,+\infty [ } \]</div>
+<!-- l. 1252 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">Een tekenschema volgt steeds dezelfde strategie:
+<p></p>
+<div class="mathjax-block">\[ \boxed { \text {ontbinden} \rightarrow \text {nulpunten} \rightarrow \text {tekens van factoren} \rightarrow \text {teken product} \rightarrow \text {gevraagde intervallen} } \]</div> </div></section>
+<p><a id="x1-65r10"></a>
+</p><!-- l. 1273 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">10</div><div class="fvd-section-bar__title">Rechten en coördinaten</div></div>
+<p><a id="x1-66r1"></a>
+</p><p></p><!-- l. 1276 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 1276 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 1276 --><p class="noindent"></p><div class="fvd-subsection__number">10.1</div>
+<p></p><!-- l. 1276 --><p class="noindent"></p><div class="fvd-subsection__title">De richtingscoëfficiënt</div>
+<p></p><!-- l. 1276 --><p class="noindent"></p></div>
+<p></p><!-- l. 1276 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 1276 --><p class="noindent"></p></div>
+<p></p><!-- l. 1278 --><p class="noindent">Voor twee punten
+</p>
+<div class="mathjax-block">\[ P(x_1,y_1), \qquad Q(x_2,y_2) \]</div>
+<!-- l. 1286 --><p class="noindent">met <span class="mathjax-inline">\(x_1\neq x_2\)</span> is de richtingscoëfficiënt
+</p>
+<div class="mathjax-block">\[ \boxed { m=\frac {y_2-y_1}{x_2-x_1} = \frac {\Delta y}{\Delta x} } \]</div>
+<!-- l. 1296 --><p class="noindent">De richtingscoëfficiënt beschrijft hoeveel <span class="mathjax-inline">\(y\)</span> verandert wanneer <span class="mathjax-inline">\(x\)</span> één eenheid
+toeneemt.
+</p>
+<ul class="itemize1">
+<li class="itemize"><span class="mathjax-inline">\(m&gt;0\)</span>: de rechte stijgt.
+</li>
+<li class="itemize"><span class="mathjax-inline">\(m&lt;0\)</span>: de rechte daalt.
+</li>
+<li class="itemize"><span class="mathjax-inline">\(m=0\)</span>: de rechte is horizontaal.</li></ul>
+<div class="center">
+<!-- l. 1305 --><p class="noindent">
+</p><!-- l. 1306 --><p class="noindent"><img alt="[Picture]" src="Parate-kennis.online-3fe13160476b8ed27098c1b87906e44c.svg"/></p></div>
+<!-- l. 1322 --><p class="noindent">Grafisch bepaal je dus de rico door twee duidelijke punten op de rechte te kiezen
+en
+</p>
+<div class="mathjax-block">\[ m=\frac {\text {verticale verandering}}{\text {horizontale verandering}} \]</div>
+<!-- l. 1328 --><p class="noindent">te berekenen.
+<a id="x1-67r2"></a>
+</p><!-- l. 1331 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 1331 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 1331 --><p class="noindent"></p><div class="fvd-subsection__number">10.2</div>
+<p></p><!-- l. 1331 --><p class="noindent"></p><div class="fvd-subsection__title">Vergelijking van een rechte</div>
+<p></p><!-- l. 1331 --><p class="noindent"></p></div>
+<p></p><!-- l. 1331 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 1331 --><p class="noindent"></p></div>
+<p></p><!-- l. 1333 --><p class="noindent">Een niet-verticale rechte kan geschreven worden als
+</p>
+<div class="mathjax-block">\[ \boxed {y=mx+q} \]</div>
+<!-- l. 1339 --><p class="noindent">waarbij
+</p>
+<div class="mathjax-block">\[ m=\text {richtingscoëfficiënt} \]</div>
+<!-- l. 1345 --><p class="noindent">en
+</p>
+<div class="mathjax-block">\[ q=\text {snijpunt met de \(y\)-as}. \]</div>
+<p><a id="x1-68r14"></a>
+</p><!-- l. 1353 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 1353 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 14</div>
+<p></p><!-- l. 1353 --><p class="noindent"></p><div class="fvd-example__content">
+<p></p><!-- l. 1354 --><p class="noindent">Als
+</p>
+<div class="mathjax-block">\[ m=4 \qquad \text {en}\qquad q=-1, \]</div>
+<!-- l. 1362 --><p class="noindent">dan is onmiddellijk
+</p>
+<div class="mathjax-block">\[ \boxed {y=4x-1}. \]</div> </div></section>
+<p><a id="x1-69r3"></a>
+</p><!-- l. 1369 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 1369 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 1369 --><p class="noindent"></p><div class="fvd-subsection__number">10.3</div>
+<p></p><!-- l. 1369 --><p class="noindent"></p><div class="fvd-subsection__title">Rechte door een punt met gegeven rico</div>
+<p></p><!-- l. 1369 --><p class="noindent"></p></div>
+<p></p><!-- l. 1369 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 1369 --><p class="noindent"></p></div>
+<p></p><!-- l. 1371 --><p class="noindent">Een rechte met rico <span class="mathjax-inline">\(m\)</span> door <span class="mathjax-inline">\(P(x_0,y_0)\)</span> voldoet aan
+</p>
+<div class="mathjax-block">\[ \boxed { y-y_0=m(x-x_0) } \]</div>
+<!-- l. 1379 --><p class="noindent">de punt-richtingsvorm.
+<a id="x1-70r15"></a>
+</p><!-- l. 1382 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 1382 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 15</div>
+<p></p><!-- l. 1382 --><p class="noindent"></p><div class="fvd-example__content">
+<p></p><!-- l. 1383 --><p class="noindent">Voor <span class="mathjax-inline">\(P(2,5)\)</span> en <span class="mathjax-inline">\(m=3\)</span>:
+</p>
+<div class="mathjax-block">\[ y-5=3(x-2), \]</div>
+<!-- l. 1389 --><p class="noindent">dus
+</p>
+<div class="mathjax-block">\[ y=3x-1. \]</div> </div></section>
+<p><a id="x1-71r4"></a>
+</p><!-- l. 1396 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 1396 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 1396 --><p class="noindent"></p><div class="fvd-subsection__number">10.4</div>
+<p></p><!-- l. 1396 --><p class="noindent"></p><div class="fvd-subsection__title">Rechte door twee punten</div>
+<p></p><!-- l. 1396 --><p class="noindent"></p></div>
+<p></p><!-- l. 1396 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 1396 --><p class="noindent"></p></div>
+<p></p><!-- l. 1398 --><p class="noindent">Gegeven
+</p>
+<div class="mathjax-block">\[ P(0,3) \qquad \text {en}\qquad Q(2,7). \]</div>
+<!-- l. 1406 --><p class="noindent">Eerst:
+</p>
+<div class="mathjax-block">\[ m=\frac {7-3}{2-0}=2. \]</div>
+<!-- l. 1412 --><p class="noindent">Omdat <span class="mathjax-inline">\(P(0,3)\)</span> op de <span class="mathjax-inline">\(y\)</span>-as ligt:
+</p>
+<div class="mathjax-block">\[ q=3. \]</div>
+<!-- l. 1418 --><p class="noindent">Dus
+</p>
+<div class="mathjax-block">\[ \boxed {y=2x+3}. \]</div>
+<p><a id="x1-72r5"></a>
+</p><!-- l. 1425 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 1425 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 1425 --><p class="noindent"></p><div class="fvd-subsection__number">10.5</div>
+<p></p><!-- l. 1425 --><p class="noindent"></p><div class="fvd-subsection__title">Vergelijking bepalen uit een grafiek</div>
+<p></p><!-- l. 1425 --><p class="noindent"></p></div>
+<p></p><!-- l. 1425 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 1425 --><p class="noindent"></p></div>
+<p></p><!-- l. 1427 --><p class="noindent">Wanneer alleen de grafiek gegeven is:
+</p>
+<ol class="enumerate1">
+<li class="enumerate" id="x1-74x1">kies twee punten die je nauwkeurig kunt aflezen;
+</li>
+<li class="enumerate" id="x1-76x2">
+<!-- l. 1431 --><p class="noindent">bereken </p><div class="mathjax-block">\[ m=\frac {\Delta y}{\Delta x}; \]</div>
+</li>
+<li class="enumerate" id="x1-78x3">lees indien mogelijk <span class="mathjax-inline">\(q\)</span> af op de <span class="mathjax-inline">\(y\)</span>-as;
+</li>
+<li class="enumerate" id="x1-80x4">
+<!-- l. 1436 --><p class="noindent">schrijf </p><div class="mathjax-block">\[ y=mx+q; \]</div>
+</li>
+<li class="enumerate" id="x1-82x5">controleer met een ander punt van de grafiek.</li></ol>
+<div class="center">
+<!-- l. 1444 --><p class="noindent">
+</p><!-- l. 1445 --><p class="noindent"><img alt="[Picture]" src="Parate-kennis.online-33e835c3451337ac6a663b7812a5d43c.svg"/></p></div>
+<!-- l. 1470 --><p class="noindent">Hier:
+</p>
+<div class="mathjax-block">\[ m=\frac 22=1, \qquad q=-1. \]</div>
+<!-- l. 1478 --><p class="noindent">Dus
+</p>
+<div class="mathjax-block">\[ \boxed {y=x-1}. \]</div>
+<p><a id="x1-83r6"></a>
+</p><!-- l. 1485 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 1485 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 1485 --><p class="noindent"></p><div class="fvd-subsection__number">10.6</div>
+<p></p><!-- l. 1485 --><p class="noindent"></p><div class="fvd-subsection__title">Horizontale en verticale rechten</div>
+<p></p><!-- l. 1485 --><p class="noindent"></p></div>
+<p></p><!-- l. 1485 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 1485 --><p class="noindent"></p></div>
+<p></p><!-- l. 1487 --><p class="noindent">Een horizontale rechte heeft vergelijking
+</p>
+<div class="mathjax-block">\[ \boxed {y=c}. \]</div>
+<!-- l. 1493 --><p class="noindent">Bijvoorbeeld: horizontaal door <span class="mathjax-inline">\(P(3,-4)\)</span>:
+</p>
+<div class="mathjax-block">\[ y=-4. \]</div>
+<!-- l. 1499 --><p class="noindent">Een verticale rechte heeft vergelijking
+</p>
+<div class="mathjax-block">\[ \boxed {x=c}. \]</div>
+<!-- l. 1505 --><p class="noindent">Bijvoorbeeld: verticaal door <span class="mathjax-inline">\(P(-5,2)\)</span>:
+</p>
+<div class="mathjax-block">\[ x=-5. \]</div>
+<!-- l. 1511 --><p class="noindent">Een verticale rechte kan niet geschreven worden als <span class="mathjax-inline">\(y=mx+q\)</span>, omdat haar richtingscoëfficiënt
+niet gedefinieerd is.
+<a id="x1-84r11"></a>
+</p><!-- l. 1516 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">11</div><div class="fvd-section-bar__title">Midden en afstand</div></div>
+<p></p><!-- l. 1519 --><p class="noindent">Voor
+</p>
+<div class="mathjax-block">\[ A(x_A,y_A) \qquad \text {en}\qquad B(x_B,y_B) \]</div>
+<!-- l. 1527 --><p class="noindent">is het midden
+</p>
+<div class="mathjax-block">\[ \boxed { M\left ( \frac {x_A+x_B}{2}, \frac {y_A+y_B}{2} \right ) } \]</div>
+<!-- l. 1538 --><p class="noindent">Het midden ontstaat dus door de overeenkomstige coördinaten te middelen.
+<a id="x1-85r1"></a>
+</p><!-- l. 1541 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 1541 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 1541 --><p class="noindent"></p><div class="fvd-subsection__number">11.1</div>
+<p></p><!-- l. 1541 --><p class="noindent"></p><div class="fvd-subsection__title">Afstand tussen twee punten</div>
+<p></p><!-- l. 1541 --><p class="noindent"></p></div>
+<p></p><!-- l. 1541 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 1541 --><p class="noindent"></p></div>
+<p></p><!-- l. 1543 --><p class="noindent">Het horizontale verschil is
+</p>
+<div class="mathjax-block">\[ \Delta x=x_B-x_A \]</div>
+<!-- l. 1549 --><p class="noindent">en het verticale verschil
+</p>
+<div class="mathjax-block">\[ \Delta y=y_B-y_A. \]</div>
+<!-- l. 1555 --><p class="noindent">Deze verschillen vormen de rechthoekszijden van een rechthoekige driehoek.
+</p><!-- l. 1557 --><p class="noindent">Met Pythagoras:
+</p>
+<div class="mathjax-block">\[ |AB|^2 = (\Delta x)^2+(\Delta y)^2. \]</div>
+<!-- l. 1565 --><p class="noindent">Dus:
+</p>
+<div class="mathjax-block">\[ \boxed { |AB| = \sqrt {(x_B-x_A)^2+(y_B-y_A)^2} } \]</div>
+<!-- l. 1575 --><p class="noindent">De afstandsformule is dus geen losstaande formule: ze is rechtstreeks afgeleid uit
+Pythagoras.
+<a id="x1-86r12"></a>
+</p><!-- l. 1579 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">12</div><div class="fvd-section-bar__title">Pythagoras</div></div>
+<p></p><!-- l. 1582 --><p class="noindent">In een rechthoekige driehoek geldt
+</p>
+<div class="mathjax-block">\[ \boxed { a^2+b^2=c^2 } \]</div>
+<!-- l. 1590 --><p class="noindent">waarbij <span class="mathjax-inline">\(c\)</span> de schuine zijde is.
+</p>
+<div class="center">
+<!-- l. 1593 --><p class="noindent">
+</p><!-- l. 1594 --><p class="noindent"><img alt="[Picture]" src="Parate-kennis.online-d94f6cddb9ceaac2aa4d0a72bb6cabe2.svg"/></p></div>
+<!-- l. 1610 --><p class="noindent">Als de schuine zijde gezocht wordt:
+</p>
+<div class="mathjax-block">\[ c=\sqrt {a^2+b^2}. \]</div>
+<!-- l. 1616 --><p class="noindent">Als een rechthoekszijde gezocht wordt:
+</p>
+<div class="mathjax-block">\[ a=\sqrt {c^2-b^2}. \]</div>
+<p><a id="x1-87r16"></a>
+</p><!-- l. 1624 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 1624 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 16</div>
+<p></p><!-- l. 1624 --><p class="noindent"></p><div class="fvd-example__content">Voor rechthoekszijden <span class="mathjax-inline">\(6\)</span> en <span class="mathjax-inline">\(8\)</span>:
+<p></p>
+<div class="mathjax-block">\[ c = \sqrt {6^2+8^2} = \sqrt {100} = 10. \]</div> </div></section>
+<p><a id="x1-88r13"></a>
+</p><!-- l. 1639 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">13</div><div class="fvd-section-bar__title">Sinus, cosinus en tangens</div></div>
+<p></p><!-- l. 1642 --><p class="noindent">Beschouw een scherpe hoek <span class="mathjax-inline">\(\alpha \)</span> in een rechthoekige driehoek.
+</p>
+<div class="center">
+<!-- l. 1645 --><p class="noindent">
+</p><!-- l. 1646 --><p class="noindent"><img alt="[Picture]" src="Parate-kennis.online-32f122c237e64484502a346accafbeea.svg"/></p></div>
+<!-- l. 1665 --><p class="noindent">Dan:
+</p>
+<div class="mathjax-block">\[ \boxed { \sin \alpha = \frac {\text {overstaande zijde}}{\text {schuine zijde}} } \]</div>
+<div class="mathjax-block">\[ \boxed { \cos \alpha = \frac {\text {aanliggende zijde}}{\text {schuine zijde}} } \]</div>
+<div class="mathjax-block">\[ \boxed { \tan \alpha = \frac {\text {overstaande zijde}}{\text {aanliggende zijde}} } \]</div>
+<p><a id="x1-89r17"></a>
+</p><!-- l. 1692 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 1692 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 17<span class="fvd-example__subtitle"> — Een zijde bepalen</span></div>
+<p></p><!-- l. 1692 --><p class="noindent"></p><div class="fvd-example__content">
+<p></p><!-- l. 1694 --><p class="noindent">Als
+</p>
+<div class="mathjax-block">\[ \sin \alpha =\frac 35 \]</div>
+<!-- l. 1700 --><p class="noindent">en de schuine zijde <span class="mathjax-inline">\(20\)</span> is, dan
+</p>
+<div class="mathjax-block">\[ \frac {\text {overstaande}}{20} = \frac 35. \]</div>
+<!-- l. 1708 --><p class="noindent">Dus:
+</p>
+<div class="mathjax-block">\[ \text {overstaande}=12. \]</div> </div></section>
+<p><a id="x1-90r18"></a>
+</p><!-- l. 1715 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 1715 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 18<span class="fvd-example__subtitle"> — Een hoek bepalen</span></div>
+<p></p><!-- l. 1715 --><p class="noindent"></p><div class="fvd-example__content">
+<p></p><!-- l. 1717 --><p class="noindent">Als de zijden gekend zijn, gebruiken we een inverse goniometrische functie.
+</p><!-- l. 1719 --><p class="noindent">Bijvoorbeeld:
+</p>
+<div class="mathjax-block">\[ \tan \alpha =\frac 8{15}. \]</div>
+<!-- l. 1725 --><p class="noindent">Dus
+</p>
+<div class="mathjax-block">\[ \alpha = \arctan \left (\frac 8{15}\right ) \approx 28{,}1^\circ . \]</div>
+</div></section>
+<p><a id="x1-91r19"></a>
+</p><!-- l. 1738 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 1738 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 19<span class="fvd-example__subtitle"> — Een helling</span></div>
+<p></p><!-- l. 1738 --><p class="noindent"></p><div class="fvd-example__content">
+<p></p><!-- l. 1740 --><p class="noindent">Een helling met horizontale afstand <span class="mathjax-inline">\(12\,\mathrm m\)</span> en hoogteverschil <span class="mathjax-inline">\(1{,}8\,\mathrm m\)</span> vormt een rechthoekige
+driehoek.
+</p><!-- l. 1743 --><p class="noindent">De lengte is
+</p>
+<div class="mathjax-block">\[ L = \sqrt {12^2+1{,}8^2}. \]</div>
+<!-- l. 1751 --><p class="noindent">De hellingshoek voldoet aan
+</p>
+<div class="mathjax-block">\[ \tan \alpha = \frac {1{,}8}{12} = 0{,}15. \]</div>
+<!-- l. 1761 --><p class="noindent">Dus
+</p>
+<div class="mathjax-block">\[ \alpha = \arctan (0{,}15) \approx 8{,}53^\circ . \]</div>
+<!-- l. 1770 --><p class="noindent">Het hellingspercentage is daarentegen
+</p>
+<div class="mathjax-block">\[ \frac {\text {verticale stijging}} {\text {horizontale afstand}} \cdot 100\%. \]</div>
+<!-- l. 1778 --><p class="noindent">Hier:
+</p>
+<div class="mathjax-block">\[ \frac {1{,}8}{12}\cdot 100\% = 15\%. \]</div>
+<!-- l. 1786 --><p class="noindent">Dus:
+</p>
+<div class="mathjax-block">\[ \boxed { \text {hellingspercentage}=100\tan \alpha } \]</div>
+<!-- l. 1794 --><p class="noindent">Een helling van <span class="mathjax-inline">\(15\%\)</span> betekent dus niet een hoek van <span class="mathjax-inline">\(15^\circ \)</span>.
+</p></div></section> <p><a id="x1-92r14"></a>
+</p><p></p><!-- l. 1798 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">14</div><div class="fvd-section-bar__title">Een rechte als model</div></div>
+<p></p><!-- l. 1801 --><p class="noindent">Een rechte kan een verband tussen twee grootheden modelleren.
+</p><!-- l. 1803 --><p class="noindent">Bij
+</p>
+<div class="mathjax-block">\[ y=mx+q \]</div>
+<!-- l. 1809 --><p class="noindent">heeft <span class="mathjax-inline">\(m\)</span> dan een betekenis in de context:
+</p>
+<div class="mathjax-block">\[ m= \frac {\text {verandering van }y} {\text {verandering van }x}. \]</div>
+<!-- l. 1817 --><p class="noindent">De parameter <span class="mathjax-inline">\(q\)</span> is de voorspelde waarde van <span class="mathjax-inline">\(y\)</span> bij <span class="mathjax-inline">\(x=0\)</span>.
+<a id="x1-93r20"></a>
+</p><!-- l. 1821 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 1821 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 20</div>
+<p></p><!-- l. 1821 --><p class="noindent"></p><div class="fvd-example__content">Een experiment levert de punten
+<p></p>
+<div class="mathjax-block">\[ (2,7) \qquad \text {en}\qquad (8,25). \]</div>
+<!-- l. 1829 --><p class="noindent">De rico is
+</p>
+<div class="mathjax-block">\[ m = \frac {25-7}{8-2} = 3. \]</div>
+<!-- l. 1839 --><p class="noindent">Met <span class="mathjax-inline">\((2,7)\)</span>:
+</p>
+<div class="mathjax-block">\[ 7=3\cdot 2+q, \]</div>
+<!-- l. 1845 --><p class="noindent">dus
+</p>
+<div class="mathjax-block">\[ q=1. \]</div>
+<!-- l. 1851 --><p class="noindent">Het model is
+</p>
+<div class="mathjax-block">\[ \boxed {y=3x+1}. \]</div>
+<!-- l. 1857 --><p class="noindent">De rico <span class="mathjax-inline">\(3\)</span> betekent dat <span class="mathjax-inline">\(y\)</span> volgens het model met <span class="mathjax-inline">\(3\)</span> eenheden stijgt wanneer <span class="mathjax-inline">\(x\)</span> met <span class="mathjax-inline">\(1\)</span> eenheid
+toeneemt. </p></div></section>
+<p><a id="x1-94r1"></a>
+</p><p></p><!-- l. 1862 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 1862 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 1862 --><p class="noindent"></p><div class="fvd-subsection__number">14.1</div>
+<p></p><!-- l. 1862 --><p class="noindent"></p><div class="fvd-subsection__title">Interpolatie en extrapolatie</div>
+<p></p><!-- l. 1862 --><p class="noindent"></p></div>
+<p></p><!-- l. 1862 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 1862 --><p class="noindent"></p></div>
+<p></p><!-- l. 1864 --><p class="noindent">Voorspellen <em>binnen</em> het gebied waarin gegevens verzameld werden noemen we
+<em>interpoleren</em>.
+</p><!-- l. 1867 --><p class="noindent">Voorspellen <em>buiten</em> dat gebied noemen we <em>extrapoleren</em>.
+</p><!-- l. 1869 --><p class="noindent">Extrapolatie is riskanter.
+</p><!-- l. 1871 --><p class="noindent">Een model dat goed werkt tussen <span class="mathjax-inline">\(x=2\)</span> en <span class="mathjax-inline">\(x=8\)</span> hoeft bij <span class="mathjax-inline">\(x=1000\)</span> niet meer geldig te zijn.
+</p>
+<div class="mathjax-block">\[ \boxed { \text {een modeluitkomst is niet automatisch een betrouwbare voorspelling} } \]</div>
+<p><a id="x1-95r15"></a>
+</p><!-- l. 1882 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">15</div><div class="fvd-section-bar__title">Parameters onderzoeken</div></div>
+<p></p><!-- l. 1885 --><p class="noindent">Een letter in een formule kan ook een <em>parameter</em> zijn.
+</p><!-- l. 1887 --><p class="noindent">Beschouw
+</p>
+<div class="mathjax-block">\[ f_a(x)=ax+4. \]</div>
+<!-- l. 1893 --><p class="noindent">Voor elke waarde van <span class="mathjax-inline">\(a\)</span> krijgen we een andere rechte.
+</p><!-- l. 1895 --><p class="noindent">De parameter <span class="mathjax-inline">\(a\)</span> bepaalt hier de richtingscoëfficiënt.
+</p><!-- l. 1897 --><p class="noindent">Als de grafiek door <span class="mathjax-inline">\(P(3,10)\)</span> moet gaan, dan moeten de coördinaten van dat punt aan het
+functievoorschrift voldoen:
+</p>
+<div class="mathjax-block">\[ 10=3a+4. \]</div>
+<!-- l. 1904 --><p class="noindent">Daaruit:
+</p>
+<div class="mathjax-block">\[ a=2. \]</div>
+<!-- l. 1910 --><p class="noindent">De functie wordt dan
+</p>
+<div class="mathjax-block">\[ f(x)=2x+4. \]</div>
+<!-- l. 1916 --><p class="noindent">Zo verbinden parameters algebra, grafieken en voorwaarden.
+<a id="x1-96r16"></a>
+</p><!-- l. 1920 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">16</div><div class="fvd-section-bar__title">Kan dit kloppen?</div></div>
+<p></p><!-- l. 1923 --><p class="noindent">Een wiskundige berekening eindigt niet bij het getal op je scherm.
+</p><!-- l. 1925 --><p class="noindent">Gebruik vier controles:
+</p>
+<div class="mathjax-block">\[ \boxed { \text {teken} \quad \text {ordegrootte} \quad \text {eenheid} \quad \text {context} } \]</div>
+<p><a id="x1-97r1"></a>
+</p><!-- l. 1940 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 1940 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 1940 --><p class="noindent"></p><div class="fvd-subsection__number">16.1</div>
+<p></p><!-- l. 1940 --><p class="noindent"></p><div class="fvd-subsection__title">Teken</div>
+<p></p><!-- l. 1940 --><p class="noindent"></p></div>
+<p></p><!-- l. 1940 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 1940 --><p class="noindent"></p></div>
+<p></p><!-- l. 1942 --><p class="noindent">Verwacht je een positieve lengte, maar krijg je <span class="mathjax-inline">\(-3\,\mathrm m\)</span>? Dan moet je onderzoeken wat er fout
+ging of hoe het resultaat geïnterpreteerd moet worden.
+<a id="x1-98r2"></a>
+</p><!-- l. 1946 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 1946 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 1946 --><p class="noindent"></p><div class="fvd-subsection__number">16.2</div>
+<p></p><!-- l. 1946 --><p class="noindent"></p><div class="fvd-subsection__title">Ordegrootte</div>
+<p></p><!-- l. 1946 --><p class="noindent"></p></div>
+<p></p><!-- l. 1946 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 1946 --><p class="noindent"></p></div>
+<p></p><!-- l. 1948 --><p class="noindent">Als
+</p>
+<div class="mathjax-block">\[ \sqrt {398} \]</div>
+<!-- l. 1954 --><p class="noindent">gevraagd wordt, weet je vooraf:
+</p>
+<div class="mathjax-block">\[ \sqrt {398}\approx \sqrt {400}=20. \]</div>
+<!-- l. 1960 --><p class="noindent">Een antwoord van <span class="mathjax-inline">\(199\)</span> is dus onmogelijk.
+<a id="x1-99r3"></a>
+</p><!-- l. 1963 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 1963 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 1963 --><p class="noindent"></p><div class="fvd-subsection__number">16.3</div>
+<p></p><!-- l. 1963 --><p class="noindent"></p><div class="fvd-subsection__title">Eenheid</div>
+<p></p><!-- l. 1963 --><p class="noindent"></p></div>
+<p></p><!-- l. 1963 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 1963 --><p class="noindent"></p></div>
+<p></p><!-- l. 1965 --><p class="noindent">Een berekende snelheid moet een snelheidseenheid hebben, bijvoorbeeld
+</p>
+<div class="mathjax-block">\[ \mathrm {m/s}. \]</div>
+<p><a id="x1-100r4"></a>
+</p><!-- l. 1972 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 1972 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 1972 --><p class="noindent"></p><div class="fvd-subsection__number">16.4</div>
+<p></p><!-- l. 1972 --><p class="noindent"></p><div class="fvd-subsection__title">Voorwaarden</div>
+<p></p><!-- l. 1972 --><p class="noindent"></p></div>
+<p></p><!-- l. 1972 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 1972 --><p class="noindent"></p></div>
+<p></p><!-- l. 1974 --><p class="noindent">Bij
+</p>
+<div class="mathjax-block">\[ \frac {x+1}{x-2} \]</div>
+<!-- l. 1980 --><p class="noindent">moet
+</p>
+<div class="mathjax-block">\[ x\neq 2. \]</div>
+<!-- l. 1986 --><p class="noindent">Een algebraïsche bewerking mag deze oorspronkelijke voorwaarde niet doen
+verdwijnen.
+<a id="x1-101r5"></a>
+</p><!-- l. 1989 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 1989 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 1989 --><p class="noindent"></p><div class="fvd-subsection__number">16.5</div>
+<p></p><!-- l. 1989 --><p class="noindent"></p><div class="fvd-subsection__title">Context</div>
+<p></p><!-- l. 1989 --><p class="noindent"></p></div>
+<p></p><!-- l. 1989 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 1989 --><p class="noindent"></p></div>
+<p></p><!-- l. 1991 --><p class="noindent">Een wiskundig correcte oplossing kan fysisch onmogelijk zijn.
+</p><!-- l. 1993 --><p class="noindent">Bij een vergelijking voor een lengte kunnen bijvoorbeeld twee algebraïsche
+                                                                  
+
+                                                                  
+oplossingen ontstaan, waarvan één negatief is.
+</p><!-- l. 1996 --><p class="noindent">De context bepaalt dan welke oplossing zinvol is.
+<a id="x1-102r17"></a>
+</p><!-- l. 2000 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">17</div><div class="fvd-section-bar__title">Welk gereedschap heb je nodig?</div></div>
+<p></p><!-- l. 2003 --><p class="noindent">Bij oefeningen in een apart hoofdstuk weet je meestal welke techniek verwacht wordt.
+Bij een echt probleem staat dat er niet bij.
+</p><!-- l. 2006 --><p class="noindent">Gebruik daarom:
+</p>
+<div class="mathjax-block">\[ \boxed { \text {gegeven} \rightarrow \text {gevraagd} \rightarrow \text {verband} \rightarrow \text {gereedschap} \rightarrow \text {controle} } \]</div>
+<div class="center">
+<!-- l. 2023 --><p class="noindent">
+</p>
+<div class="tabular"> <table class="tabular" id="TBL-1"><colgroup id="TBL-1-1g"><col id="TBL-1-1"/><col id="TBL-1-2"/></colgroup><tr id="TBL-1-1-" style="vertical-align:baseline;"><td class="td11" id="TBL-1-1-1" style="white-space:nowrap; text-align:left;"> <strong>Je ziet of zoekt</strong> </td>
+<td class="td11" id="TBL-1-1-2" style="white-space:nowrap; text-align:left;"> <strong>Denk onder andere aan</strong> </td></tr><tr class="vspace" style="font-size:5.69054pt"><td></td><td></td></tr><tr id="TBL-1-2-" style="vertical-align:baseline;"><td class="td11" id="TBL-1-2-1" style="white-space:nowrap; text-align:left;"> verhouding of percentage </td>
+<td class="td11" id="TBL-1-2-2" style="white-space:nowrap; text-align:left;"> breuken, groeifactoren             </td>
+</tr><tr id="TBL-1-3-" style="vertical-align:baseline;"><td class="td11" id="TBL-1-3-1" style="white-space:nowrap; text-align:left;"> zeer groot of klein getal      </td>
+<td class="td11" id="TBL-1-3-2" style="white-space:nowrap; text-align:left;"> wetenschappelijke notatie        </td>
+</tr><tr id="TBL-1-4-" style="vertical-align:baseline;"><td class="td11" id="TBL-1-4-1" style="white-space:nowrap; text-align:left;"> algebraïsche structuur        </td>
+<td class="td11" id="TBL-1-4-2" style="white-space:nowrap; text-align:left;"> uitwerken of ontbinden            </td>
+</tr><tr id="TBL-1-5-" style="vertical-align:baseline;"><td class="td11" id="TBL-1-5-1" style="white-space:nowrap; text-align:left;"> onbekende in formule          </td>
+<td class="td11" id="TBL-1-5-2" style="white-space:nowrap; text-align:left;"> formule omvormen                 </td></tr><tr id="TBL-1-6-" style="vertical-align:baseline;"><td class="td11" id="TBL-1-6-1" style="white-space:nowrap; text-align:left;"> product gelijk aan nul </td>
+<td class="td11" id="TBL-1-6-2" style="white-space:nowrap; text-align:left;"> nulproductregel                     </td>
+</tr><tr id="TBL-1-7-" style="vertical-align:baseline;"><td class="td11" id="TBL-1-7-1" style="white-space:nowrap; text-align:left;"> productongelijkheid            </td><td class="td11" id="TBL-1-7-2" style="white-space:nowrap; text-align:left;"> ontbinden en tekenschema       </td>
+</tr><tr id="TBL-1-8-" style="vertical-align:baseline;"><td class="td11" id="TBL-1-8-1" style="white-space:nowrap; text-align:left;"> twee punten                      </td>
+<td class="td11" id="TBL-1-8-2" style="white-space:nowrap; text-align:left;"> rico, rechte, afstand of midden  </td>
+</tr><tr id="TBL-1-9-" style="vertical-align:baseline;"><td class="td11" id="TBL-1-9-1" style="white-space:nowrap; text-align:left;"> rechthoekige driehoek         </td>
+<td class="td11" id="TBL-1-9-2" style="white-space:nowrap; text-align:left;"> Pythagoras of goniometrie       </td>
+</tr><tr id="TBL-1-10-" style="vertical-align:baseline;"><td class="td11" id="TBL-1-10-1" style="white-space:nowrap; text-align:left;"> meetgegevens                    </td>
+<td class="td11" id="TBL-1-10-2" style="white-space:nowrap; text-align:left;"> model en interpretatie             </td>
+</tr><tr id="TBL-1-11-" style="vertical-align:baseline;"><td class="td11" id="TBL-1-11-1" style="white-space:nowrap; text-align:left;"> vreemd numeriek antwoord  </td>
+<td class="td11" id="TBL-1-11-2" style="white-space:nowrap; text-align:left;"> schatten en controleren           </td>
+</tr></table> </div></div>
+<p><a id="x1-103r18"></a>
+</p><!-- l. 2041 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">18</div><div class="fvd-section-bar__title">Synthese: technieken combineren</div></div>
+<p></p><!-- l. 2044 --><p class="noindent">In een realistisch probleem heb je vaak meerdere gereedschappen nodig.
+</p><!-- l. 2046 --><p class="noindent">Stel dat een drone van
+</p>
+<div class="mathjax-block">\[ A(0,0) \]</div>
+<!-- l. 2052 --><p class="noindent">naar
+</p>
+<div class="mathjax-block">\[ B(120,50) \]</div>
+<!-- l. 2058 --><p class="noindent">vliegt in <span class="mathjax-inline">\(10\,\mathrm s\)</span>.
+</p><!-- l. 2060 --><p class="noindent">De rechte afstand volgt uit Pythagoras:
+</p>
+<div class="mathjax-block">\[ |AB| = \sqrt {120^2+50^2} = 130\,\mathrm m. \]</div>
+<!-- l. 2070 --><p class="noindent">De gemiddelde snelheid is
+</p>
+<div class="mathjax-block">\[ v=\frac st = \frac {130}{10} = 13\,\mathrm {m/s}. \]</div>
+<!-- l. 2080 --><p class="noindent">Omzetten naar kilometer per uur:
+</p>
+<div class="mathjax-block">\[ 13\,\mathrm {m/s} \cdot 3{,}6 = 46{,}8\,\mathrm {km/h}. \]</div>
+<!-- l. 2089 --><p class="noindent">Als een tweede vlucht <span class="mathjax-inline">\(15\,\mathrm {m/s}\)</span> haalt, is de procentuele stijging
+</p>
+<div class="mathjax-block">\[ \frac {15-13}{13}\cdot 100\% \approx 15{,}4\%. \]</div>
+<!-- l. 2096 --><p class="noindent">Eén probleem combineert hier dus:
+</p>
+<div class="mathjax-block">\[ \boxed { \text {coördinaten} + \text {Pythagoras} + \text {formules} + \text {eenheden} + \text {procenten} } \]</div>
+<p><a id="x1-104r19"></a>
+</p><!-- l. 2114 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">19</div><div class="fvd-section-bar__title">Zelfcheck</div></div>
+<p></p><!-- l. 2117 --><p class="noindent">Gebruik deze korte zelfcheck om te bepalen waar je nog gericht moet oefenen.
+<a id="x1-105r1"></a>
+</p><!-- l. 2119 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 2119 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 2119 --><p class="noindent">Oefening 1
+</p><!-- l. 2119 --><p class="noindent">— Zelfcheck: rekenen en breuken
+</p><!-- l. 2119 --><p class="noindent"></p></div>
+<p></p><!-- l. 2119 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 2119 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--b">B</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 2119 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p>
+<div class="problem-environment question" id="problem7" numbered=" " role="article" titletext=" Question"> <div class="mathjax-block">\[ 7-2(3-5)=\answer {11}. \]</div> </div>
+<div class="problem-environment question" id="problem8" numbered=" " role="article" titletext=" Question"> <div class="mathjax-block">\[ \frac 34+\frac 56=\answer {\frac {19}{12}}. \]</div> </div>
+<div class="problem-environment question" id="problem9" numbered=" " role="article" titletext=" Question"> <div class="mathjax-block">\[ \frac 56:\frac {10}{9}=\answer {\frac 34}. \]</div> </div>
+</div>
+<!-- l. 2139 --><p class="noindent"></p></div>
+<p></p><!-- l. 2139 --><p class="noindent"></p></section>
+<p><a id="x1-106r2"></a>
+</p><p></p><!-- l. 2142 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 2142 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 2142 --><p class="noindent">Oefening 2
+</p><!-- l. 2142 --><p class="noindent">— Zelfcheck: machten, wortels en wetenschappelijke notatie
+</p><!-- l. 2142 --><p class="noindent"></p></div>
+<p></p><!-- l. 2142 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 2142 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--b">B</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 2142 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p>
+<div class="problem-environment question" id="problem10" numbered=" " role="article" titletext=" Question"> <div class="mathjax-block">\[ \frac {x^7}{x^3}=\answer {x^4}. \]</div> </div>
+<div class="problem-environment question" id="problem11" numbered=" " role="article" titletext=" Question"> <div class="mathjax-block">\[ \sqrt {50}=\answer {5\sqrt 2}. \]</div> </div>
+<div class="problem-environment question" id="problem12" numbered=" " role="article" titletext=" Question"> <div class="mathjax-block">\[ 0{,}00042 = \answer {4.2}\cdot 10^{\answer {-4}}. \]</div> </div>
+</div>
+<!-- l. 2164 --><p class="noindent"></p></div>
+<p></p><!-- l. 2164 --><p class="noindent"></p></section>
+<p><a id="x1-107r3"></a>
+</p><p></p><!-- l. 2167 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 2167 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 2167 --><p class="noindent">Oefening 3
+</p><!-- l. 2167 --><p class="noindent">— Zelfcheck: algebra
+</p><!-- l. 2167 --><p class="noindent"></p></div>
+<p></p><!-- l. 2167 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 2167 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--b">B</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 2167 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p>
+<div class="problem-environment question" id="problem13" numbered=" " role="article" titletext=" Question"> <div class="mathjax-block">\[ (2x-3)^2 = \answer {4x^2-12x+9}. \]</div> </div>
+<div class="problem-environment question" id="problem14" numbered=" " role="article" titletext=" Question"> <div class="mathjax-block">\[ 5x^2-20x = \answer {5x(x-4)}. \]</div> </div>
+<div class="problem-environment question" id="problem15" numbered=" " role="article" titletext=" Question"> <div class="mathjax-block">\[ x^2-49 = \answer {(x-7)(x+7)}. \]</div> </div>
+</div>
+<!-- l. 2193 --><p class="noindent"></p></div>
+<p></p><!-- l. 2193 --><p class="noindent"></p></section>
+<p><a id="x1-108r4"></a>
+</p><p></p><!-- l. 2196 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 2196 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 2196 --><p class="noindent">Oefening 4
+</p><!-- l. 2196 --><p class="noindent">— Zelfcheck: vergelijkingen en ongelijkheden
+</p><!-- l. 2196 --><p class="noindent"></p></div>
+<p></p><!-- l. 2196 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 2196 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--b">B</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 2196 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p>
+<div class="problem-environment question" id="problem16" numbered=" " role="article" titletext=" Question"> <div class="mathjax-block">\[ 3x-4\leq 8 \quad \Longrightarrow \quad x\leq \answer {4}. \]</div> </div>
+<div class="problem-environment question" id="problem17" numbered=" " role="article" titletext=" Question"> <div class="mathjax-block">\[ (x-2)(x+3)=0. \]</div>
+<!-- l. 2211 --><p class="noindent">De oplossingen zijn </p><div class="mathjax-block">\[ x=\answer {2} \qquad \text {of}\qquad x=\answer {-3}. \]</div> </div>
+</div>
+<!-- l. 2219 --><p class="noindent"></p></div>
+<p></p><!-- l. 2219 --><p class="noindent"></p></section>
+<p><a id="x1-109r5"></a>
+</p><p></p><!-- l. 2222 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 2222 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 2222 --><p class="noindent">Oefening 5
+</p><!-- l. 2222 --><p class="noindent">— Zelfcheck: rechten en coördinaten
+</p><!-- l. 2222 --><p class="noindent"></p></div>
+<p></p><!-- l. 2222 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 2222 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--b">B</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 2222 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 2224 --><p class="noindent">Gegeven
+</p>
+<div class="mathjax-block">\[ A(2,1), \qquad B(6,9). \]</div>
+<div class="problem-environment question" id="problem18" numbered=" " role="article" titletext=" Question">  De richtingscoëfficiënt is <div class="mathjax-block">\[ m=\answer {2}. \]</div> </div>
+<div class="problem-environment question" id="problem19" numbered=" " role="article" titletext=" Question">  Het midden is <div class="mathjax-block">\[ M(\answer {4},\answer {5}). \]</div> </div>
+<div class="problem-environment question" id="problem20" numbered=" " role="article" titletext=" Question">  De afstand is <div class="mathjax-block">\[ |AB|=\answer {4\sqrt 5}. \]</div> </div>
+</div>
+<!-- l. 2253 --><p class="noindent"></p></div>
+<p></p><!-- l. 2253 --><p class="noindent"></p></section>
+<p><a id="x1-110r6"></a>
+</p><p></p><!-- l. 2256 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 2256 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 2256 --><p class="noindent">Oefening 6
+</p><!-- l. 2256 --><p class="noindent">— Zelfcheck: Pythagoras en goniometrie
+</p><!-- l. 2256 --><p class="noindent"></p></div>
+<p></p><!-- l. 2256 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 2256 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--b">B</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 2256 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p>
+<div class="problem-environment question" id="problem21" numbered=" " role="article" titletext=" Question">  Rechthoekszijden <span class="mathjax-inline">\(5\)</span> en <span class="mathjax-inline">\(12\)</span>: <div class="mathjax-block">\[ c=\answer {13}. \]</div> </div>
+<div class="problem-environment question" id="problem22" numbered=" " role="article" titletext=" Question">  Overstaande zijde <span class="mathjax-inline">\(3\)</span>, aanliggende zijde <span class="mathjax-inline">\(4\)</span>: <div class="mathjax-block">\[ \tan \alpha =\answer {\frac 34}. \]</div> </div>
+</div>
+<!-- l. 2272 --><p class="noindent"></p></div>
+<p></p><!-- l. 2272 --><p class="noindent"></p></section>
+<p></p>
+</div><!-- XIMERA-PREVIOUS-NEXT-START --><nav aria-label="Hoofdstuknavigatie" class="chapter-navigation">
+<a class="chapter-navigation__card chapter-navigation__card--previous" data-visible="false" href="#">
+<span aria-hidden="true" class="chapter-navigation__icon">
+            ←
+        </span>
+<span class="chapter-navigation__content">
+<span class="chapter-navigation__label">
+                Vorig hoofdstuk
+            </span>
+<span class="chapter-navigation__title">
+</span>
+</span>
+</a>
+<a class="chapter-navigation__card chapter-navigation__card--overview" href="index.html">
+<span aria-hidden="true" class="chapter-navigation__overview-icon">
+<span></span>
+<span></span>
+<span></span>
+</span>
+<span class="chapter-navigation__content">
+<span class="chapter-navigation__label">
+                Cursus
+            </span>
+<span class="chapter-navigation__title">
+                Overzicht
+            </span>
+</span>
+</a>
+<a class="chapter-navigation__card chapter-navigation__card--next" data-visible="true" href="Parate-kennis-oefeningen.html">
+<span class="chapter-navigation__content">
+<span class="chapter-navigation__label">
+                Volgend hoofdstuk
+            </span>
+<span class="chapter-navigation__title">
+                Oefeningen — Parate kennis
+            </span>
+</span>
+<span aria-hidden="true" class="chapter-navigation__icon">
+            →
+        </span>
+</a>
+</nav><!-- XIMERA-PREVIOUS-NEXT-END --></article></main><!-- XIMERA-CHAPTER-LAYOUT-END --><div class="course-footer-clear"></div><!-- XIMERA-FOOTER-START --><footer class="site-footer">
+<div aria-hidden="true" class="site-footer__accent"></div>
+<div class="site-footer__inner">
+<div class="site-footer__quote">
+<span aria-hidden="true" class="site-footer__quote-mark">◈</span>
+<p class="site-footer__quote-text">
+                Think mathematically. Create digitally. Shape the future.
+            </p>
+</div>
+<div aria-hidden="true" class="site-footer__divider"></div>
+<div class="site-footer__grid">
+<section class="site-footer__column">
+<p class="site-footer__eyebrow">
+                    Wiskunde 7 FVD
+                </p>
+<h2 class="site-footer__title">
+                    Fundamentele Vorming Digitale Creatie
+                </h2>
+<p class="site-footer__text">
+                    Wiskundige basis voor programmeren, graphics,
+                    animatie, simulatie en 3D.
+                </p>
+</section>
+<section class="site-footer__column">
+<p class="site-footer__eyebrow">
+                    Ontwikkeling
+                </p>
+<p class="site-footer__name">
+                    Ingmar Herreman
+                </p>
+<p class="site-footer__text">
+                    GO! Athena Campus Bellevue
+                </p>
+<p class="site-footer__text">
+                    Versie 1.0 · 2026
+                </p>
+</section>
+<section class="site-footer__column">
+<p class="site-footer__eyebrow">
+                    Technologie
+                </p>
+<div class="site-footer__tech">
+<span>Ximera</span>
+<span>HTML</span>
+<span>PDF</span>
+<span>GeoGebra</span>
+<span>GitHub</span>
+</div>
+</section>
+</div>
+<div class="site-footer__bottom">
+<span>Gebouwd met Ximera</span>
+<span aria-hidden="true">•</span>
+<span>Voor 7 FVD</span>
+<span aria-hidden="true">•</span>
+<span>© 2026</span>
+</div>
+</div>
+</footer><!-- XIMERA-FOOTER-END --><script src="../../../assets/js/chapter-layout.js"></script></body>
+</html>

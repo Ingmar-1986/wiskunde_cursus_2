@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en-US" xml:lang="en-US">
+<head> <title>Correlatie — Hoe sterk is het lineaire verband? – Van data naar functies — verbanden herkennen en gedrag onderzoeken</title>
+<meta charset="utf-8"/>
+<meta content="TeX4ht (https://tug.org/tex4ht/)" name="generator"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="\aa:CssFile " rel="stylesheet" type="text/css"/>
+<meta content="Correlatie.online.tex" name="src"/>
+<script>window.MathJax = { tex: { tags: "ams", }, }; </script>
+<script async="async" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+<meta content="Ingmar Herreman" name="author"/>
+<meta content="version 2.5.1" name="ximera"/>
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" media="screen" rel="stylesheet"/>
+<script async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js" type="text/javascript"></script>
+<link href="../../../assets/css/base.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/global.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/Header_Footer.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/ChapterLayout.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/chapter-hero.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/ExerciseHero.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/learning-boxes.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/CourseOverview.css" media="screen" rel="stylesheet"/></head><body><!-- XIMERA-HEADER-START --><!-- =========================================================
+     HEADER.HTML — Wiskunde 7 FVD
+     Plaats dit bestand bijvoorbeeld in:
+     assets/html/Header.html
+     ========================================================= -->
+<header aria-labelledby="fvd-hero-title" class="fvd-hero">
+<div aria-hidden="true" class="fvd-hero__grid"></div>
+<div aria-hidden="true" class="fvd-hero__glow fvd-hero__glow--left"></div>
+<div aria-hidden="true" class="fvd-hero__glow fvd-hero__glow--right"></div>
+<div class="fvd-hero__inner">
+<!-- Groot Athena-logo links -->
+<div class="fvd-hero__brand">
+<img alt="Athena secundair onderwijs" class="fvd-hero__logo" src="/images/banners/logo_athena.png"/>
+</div>
+<div aria-hidden="true" class="fvd-hero__divider"></div>
+<!-- Centrale titel en leerinhouden -->
+<div class="fvd-hero__content">
+<p class="fvd-hero__eyebrow">
+                    Fundamentele Vorming Digitale Creatie
+                </p>
+<h1 class="fvd-hero__title" id="fvd-hero-title">
+<span class="fvd-hero__title-main">Wiskunde</span>
+<span class="fvd-hero__title-accent">7 FVD</span>
+</h1>
+<div aria-hidden="true" class="fvd-hero__pink-line"></div>
+<p class="fvd-hero__subtitle">
+                    Wiskundige inzichten die je nodig hebt om digitale werelden te bouwen.
+                </p>
+<div aria-label="Onderwerpen in deze cursus" class="fvd-hero__chips">
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<rect height="18" rx="2" width="14" x="5" y="3"></rect>
+<path d="M8 7h8M8 11h2M14 11h2M8 15h2M14 15h2M8 18h2M14 18h2"></path>
+</svg>
+                        Basiswiskunde
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M4 17c4-1 4-10 8-10 2 0 2 3 4 3 1 0 2-.4 4-2"></path>
+<path d="M7 20 13 4"></path>
+</svg>
+                        Algebra
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M5 8h14M5 16h14"></path>
+</svg>
+                        Vergelijkingen
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M4 19V5M4 19h16"></path>
+<path d="m7 16 4-5 3 2 4-6"></path>
+</svg>
+                        Functies
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M5 18 18 5"></path>
+<path d="M12 5h6v6"></path>
+</svg>
+                        Vectoren
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="7"></circle>
+<path d="M12 2v20M2 12h20"></path>
+</svg>
+                        Coördinaten
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="m12 3 8 4.5v9L12 21l-8-4.5v-9z"></path>
+<path d="m4 7.5 8 4.5 8-4.5M12 12v9"></path>
+</svg>
+                        3D-meetkunde
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M3 16c3-8 7-8 10 0 2 5 5 4 8-4"></path>
+</svg>
+                        Goniometrie
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M5 18V6M5 18h14"></path>
+<path d="M8 16c1-6 3-9 8-10"></path>
+</svg>
+                        Logaritmen
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="m7 6 10 5-10 5z"></path>
+<path d="m7 10 10 5-10 5"></path>
+</svg>
+                        Transformaties
+                    </span>
+</div>
+</div>
+<!-- Rechterzijde met wiskundige SVG-tekeningen -->
+<div aria-hidden="true" class="fvd-hero__visual">
+<!-- 3D-kubus -->
+<svg class="fvd-visual fvd-visual--cube" viewbox="0 0 310 245">
+<g class="fvd-svg-cyan">
+<path d="M65 72 185 86 245 48 125 34Z"></path>
+<path d="M65 72v110l120 16V86"></path>
+<path d="M185 86 245 48v110l-60 40"></path>
+<path class="fvd-svg-dash" d="M125 34v110M125 144 65 182M125 144l120 14"></path>
+<path d="M125 144 90 210M125 144l88 28M125 144V15"></path>
+<path d="m90 210 11-4-7-9M213 172l-9-7-2 11M125 15l-6 11h12"></path>
+</g>
+<g class="fvd-svg-label">
+<text x="82" y="225">x</text>
+<text x="220" y="180">y</text>
+<text x="132" y="18">z</text>
+</g>
+</svg>
+<!-- Matrix -->
+<svg class="fvd-visual fvd-visual--matrix" viewbox="0 0 220 100">
+<g class="fvd-svg-soft">
+<text x="0" y="58">A =</text>
+<path d="M60 10c-12 18-12 62 0 80M205 10c12 18 12 62 0 80"></path>
+<text x="82" y="36">1</text>
+<text x="123" y="36">2</text>
+<text x="165" y="36">0</text>
+<text x="73" y="61">−1</text>
+<text x="123" y="61">0</text>
+<text x="165" y="61">3</text>
+<text x="82" y="86">2</text>
+<text x="113" y="86">−2</text>
+<text x="165" y="86">1</text>
+</g>
+</svg>
+<!-- Vectoren en rotatie -->
+<svg class="fvd-visual fvd-visual--vectors" viewbox="0 0 260 170">
+<g class="fvd-svg-cyan">
+<path d="M55 138 132 74"></path>
+<path d="m132 74-13 3 8 10"></path>
+<path d="M55 138h125"></path>
+<path d="m180 138-12-6v12"></path>
+<path class="fvd-svg-dash" d="M55 138c24-65 116-95 156-25"></path>
+</g>
+<g class="fvd-svg-pink">
+<path d="M55 138 207 104"></path>
+<path d="m207 104-13-2 5 12"></path>
+<path class="fvd-svg-dash" d="M211 113c17-13 25-5 21 11"></path>
+<path d="m232 124-9-8-2 12"></path>
+</g>
+<g class="fvd-svg-label">
+<text x="38" y="153">O</text>
+<text x="138" y="73">u⃗</text>
+<text x="188" y="98">v⃗</text>
+<text x="141" y="130">x⃗</text>
+<text x="222" y="102">Rθ</text>
+</g>
+</svg>
+<!-- Bézier-curve -->
+<svg class="fvd-visual fvd-visual--bezier" viewbox="0 0 280 110">
+<g class="fvd-svg-soft">
+<path d="M30 82 85 30 190 30 245 82"></path>
+</g>
+<g class="fvd-svg-cyan">
+<path d="M30 82c42-12 55-52 105-52s67 40 110 52"></path>
+</g>
+<g class="fvd-svg-pink">
+<circle cx="30" cy="82" r="4"></circle>
+<circle cx="85" cy="30" r="4"></circle>
+<circle cx="190" cy="30" r="4"></circle>
+<circle cx="245" cy="82" r="4"></circle>
+</g>
+<g class="fvd-svg-label">
+<text x="18" y="102">P₀</text>
+<text x="74" y="20">P₁</text>
+<text x="181" y="20">P₂</text>
+<text x="238" y="102">P₃</text>
+<text x="103" y="79">Bézier-curve</text>
+</g>
+</svg>
+</div>
+</div>
+<div aria-hidden="true" class="fvd-hero__pink-corner"></div>
+</header><!-- XIMERA-HEADER-END --><!-- XIMERA-CHAPTER-HERO-START --><section class="chapter-hero">
+<div aria-hidden="true" class="chapter-hero__decoration">
+<span class="chapter-hero__formula">
+            f(x) = ax² + bx + c
+        </span>
+<span class="chapter-hero__curve"></span>
+<span class="chapter-hero__grid"></span>
+</div>
+<div class="chapter-hero__content">
+<div class="chapter-hero__theme">
+<span class="chapter-hero__theme-label">
+                Thema 3
+            </span>
+<span class="chapter-hero__theme-dot"></span>
+<span class="chapter-hero__theme-name">
+                Verbanden onderzoeken met data
+            </span>
+</div>
+<div class="chapter-hero__chapter-label">
+            Hoofdstuk
+        </div>
+<div class="chapter-hero__main">
+<div class="chapter-hero__number">
+                3
+            </div>
+<div class="chapter-hero__text">
+<h1 class="chapter-hero__title">
+                    Correlatie — Hoe sterk is het lineaire verband?
+                </h1>
+<p class="chapter-hero__abstract">
+                    In het vorige hoofdstuk leerden we een puntenwolk systematisch lezen: we onderzochten de richting, de vorm, de sterkte en bijzondere kenmerken van het patroon. Wanneer een verband ongeveer lineair is, willen we die visuele beschrijving nauwkeuriger maken. Daarvoor gebruiken we de correlatiecoëfficiënt r. De correlatiecoëfficiënt vat twee eigenschappen van een lineair verband samen: de richting en de sterkte. Maar één getal vertelt nooit het volledige verhaal. Daarom leren we r steeds samen met het spreidingsdiagram en de context interpreteren. We onderzoeken ook situaties waarin r misleidend kan zijn: niet-lineaire verbanden, uitschieters en datasets met een bijzondere structuur. Zo leren we niet alleen een correlatiecoëfficiënt aflezen, maar vooral beoordelen wat die coëfficiënt wel en niet over de gegevens vertelt.
+                </p>
+</div>
+</div>
+<div class="chapter-hero__accent"></div>
+</div>
+</section><!-- XIMERA-CHAPTER-HERO-END --><button aria-controls="courseSidebar" aria-expanded="false" class="course-menu-button" id="courseMenuButton" type="button">☰ Toon cursusinhoud</button><div class="course-sidebar-overlay" id="courseSidebarOverlay"></div><!-- XIMERA-CHAPTER-LAYOUT-START --><main class="chapter-layout"><!--
+    AUTOMATISCH GEGENEREERD BESTAND
+
+    Dit bestand wordt opgebouwd door:
+        scripts/generate-sidebar.sh
+
+    Bewerk niet dit bestand, maar:
+        assets/html/SidebarTemplate.html
+        en modules/.../index.tex
+-->
+<aside class="course-sidebar" id="courseSidebar">
+<div class="sidebar-header">
+<div class="sidebar-header__text">
+<span class="sidebar-label">
+                Van data naar functies — verbanden herkennen en gedrag onderzoeken
+            </span>
+<h2 class="sidebar-title">
+                Cursusinhoud
+            </h2>
+</div>
+<button aria-label="Sluit cursusmenu" class="sidebar-close" id="sidebarClose" type="button">
+            ×
+        </button>
+</div>
+<nav aria-label="Cursusinhoud" class="course-navigation">
+<div class="course-section" data-theme="1">
+<button aria-controls="course-section-1-parate-kennis-het-gereedschap-dat-je-nodig-hebt" aria-expanded="true" class="course-section-toggle" type="button">
+<span class="course-section-number">
+            1
+        </span>
+<span class="course-section-title">
+            Parate kennis — Het gereedschap dat je nodig hebt
+        </span>
+<span aria-hidden="true" class="course-section-arrow">
+            ▾
+        </span>
+</button>
+<div class="course-section-content" id="course-section-1-parate-kennis-het-gereedschap-dat-je-nodig-hebt">
+<a class="course-chapter-link" data-chapter="Thema1-Parate-kennis/Parate-kennis" href="Thema1-Parate-kennis/Parate-kennis.html">
+<span class="course-chapter-number">
+                1
+            </span>
+<span class="course-chapter-title">
+                Parate kennis — Je wiskundige gereedschapskist
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema1-Parate-kennis/Parate-kennis-oefeningen" href="Thema1-Parate-kennis/Parate-kennis-oefeningen.html">
+<span class="course-chapter-number">
+                2
+            </span>
+<span class="course-chapter-title">
+                Oefeningen — Parate kennis
+            </span>
+</a>
+</div>
+</div>
+<div class="course-section" data-theme="2">
+<button aria-controls="course-section-2-van-werkelijkheid-naar-wiskunde-en-terug" aria-expanded="true" class="course-section-toggle" type="button">
+<span class="course-section-number">
+            2
+        </span>
+<span class="course-section-title">
+            Van werkelijkheid naar wiskunde — en terug
+        </span>
+<span aria-hidden="true" class="course-section-arrow">
+            ▾
+        </span>
+</button>
+<div class="course-section-content" id="course-section-2-van-werkelijkheid-naar-wiskunde-en-terug">
+<a class="course-chapter-link" data-chapter="Thema2-Modelleren/Werkelijkheid-terug" href="Thema2-Modelleren/Werkelijkheid-terug.html">
+<span class="course-chapter-number">
+                1
+            </span>
+<span class="course-chapter-title">
+                Van werkelijkheid naar wiskunde — en terug
+            </span>
+</a>
+</div>
+</div>
+<div class="course-section is-open" data-theme="3">
+<button aria-controls="course-section-3-verbanden-onderzoeken-met-data" aria-expanded="true" class="course-section-toggle" type="button">
+<span class="course-section-number">
+            3
+        </span>
+<span class="course-section-title">
+            Verbanden onderzoeken met data
+        </span>
+<span aria-hidden="true" class="course-section-arrow">
+            ▾
+        </span>
+</button>
+<div class="course-section-content" id="course-section-3-verbanden-onderzoeken-met-data">
+<a class="course-chapter-link" data-chapter="Thema3-Verbanden/Van-data-naar-puntenwolk" href="Thema3-Verbanden/Van-data-naar-puntenwolk.html">
+<span class="course-chapter-number">
+                1
+            </span>
+<span class="course-chapter-title">
+                Van data naar puntenwolk
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema3-Verbanden/Van-data-naar-puntenwolk-oefeningen" href="Thema3-Verbanden/Van-data-naar-puntenwolk-oefeningen.html">
+<span class="course-chapter-number">
+                2
+            </span>
+<span class="course-chapter-title">
+                Oefeningen — Van data naar puntenwolk
+            </span>
+</a>
+<a aria-current="page" class="course-chapter-link is-active" data-chapter="Thema3-Verbanden/Correlatie" href="Thema3-Verbanden/Correlatie.html">
+<span class="course-chapter-number">
+                3
+            </span>
+<span class="course-chapter-title">
+                Correlatie — Hoe sterk is het lineaire verband?
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema3-Verbanden/Correlatie-oefeningen" href="Thema3-Verbanden/Correlatie-oefeningen.html">
+<span class="course-chapter-number">
+                4
+            </span>
+<span class="course-chapter-title">
+                Oefeningen — Correlatie
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema3-Verbanden/Lineaire-regressie" href="Thema3-Verbanden/Lineaire-regressie.html">
+<span class="course-chapter-number">
+                5
+            </span>
+<span class="course-chapter-title">
+                Lineaire regressie — Van data naar model
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema3-Verbanden/Lineaire-regressie-oefeningen" href="Thema3-Verbanden/Lineaire-regressie-oefeningen.html">
+<span class="course-chapter-number">
+                6
+            </span>
+<span class="course-chapter-title">
+                Oefeningen — Lineaire regressie
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema3-Verbanden/Samenhang-oorzaak" href="Thema3-Verbanden/Samenhang-oorzaak.html">
+<span class="course-chapter-number">
+                7
+            </span>
+<span class="course-chapter-title">
+                Samenhang is nog geen oorzaak
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema3-Verbanden/Samenhang-oorzaak-oefeningen" href="Thema3-Verbanden/Samenhang-oorzaak-oefeningen.html">
+<span class="course-chapter-number">
+                8
+            </span>
+<span class="course-chapter-title">
+                Oefeningen — Samenhang is nog geen oorzaak
+            </span>
+</a>
+</div>
+</div>
+</nav>
+</aside>
+<article class="chapter-content"><div class="chapter-body">
+<div class="preamble">
+</div>
+<style> .activity-body pre { white-space: pre; background-color: lightgray; } .xmyoutube { aspect-ratio: 16/9; min-width: 75%; } .image-environment img { width: unset; } </style>
+<div class="maketitle"></div>
+<!-- l. 41 --><p class="noindent"></p><section class="learning-box learning-box--prior"> <div class="learning-box__header"> <span class="learning-box__icon"> </span><span class="learning-box__title">Voorkennis</span> </div> <div class="learning-box__content">
+<p></p>
+<ul class="itemize1">
+<li class="itemize">Je weet wat gekoppelde numerieke gegevens zijn.
+</li>
+<li class="itemize">Je kan een spreidingsdiagram maken en lezen.
+</li>
+<li class="itemize">Je kan de richting, vorm en visuele sterkte van een puntenwolk beschrijven.
+</li>
+<li class="itemize">Je  kan  een  ongeveer  lineair  verband  onderscheiden  van  een  duidelijk
+niet-lineair verband.
+</li>
+<li class="itemize">Je kan uitschieters en clusters herkennen.</li></ul>
+<!-- l. 47 --><p class="noindent"></p></div> </section>
+<p></p><!-- l. 49 --><p class="noindent"></p><section class="learning-box learning-box--goals"> <div class="learning-box__header"> <span class="learning-box__icon"> </span><span class="learning-box__title">Leerdoelen</span> </div> <div class="learning-box__content">
+<p></p>
+<ul class="itemize1">
+<li class="itemize">Je kan uitleggen waarom een visuele beoordeling van een lineair verband
+niet altijd volstaat.
+</li>
+<li class="itemize">Je kent het bereik <span class="mathjax-inline">\(-1\leq r\leq 1\)</span> van de correlatiecoëfficiënt.
+</li>
+<li class="itemize">Je kan het teken van <span class="mathjax-inline">\(r\)</span> koppelen aan de richting van een lineair verband.
+                                                                  
+
+                                                                  
+</li>
+<li class="itemize">Je kan <span class="mathjax-inline">\(|r|\)</span> koppelen aan de sterkte van een lineair verband.
+</li>
+<li class="itemize">Je kan een correlatiecoëfficiënt steeds samen met een spreidingsdiagram
+interpreteren.
+</li>
+<li class="itemize">Je kan uitleggen waarom <span class="mathjax-inline">\(r\approx 0\)</span> niet noodzakelijk betekent dat er geen verband
+bestaat.
+</li>
+<li class="itemize">Je  kan  onderzoeken  hoe  een  uitschieter  de  correlatiecoëfficiënt  kan
+beïnvloeden.
+</li>
+<li class="itemize">Je kan met ICT de correlatiecoëfficiënt van een dataset bepalen.
+</li>
+<li class="itemize">Je  kan  op  basis  van  puntenwolk,  correlatiecoëfficiënt  en  context  een
+onderbouwde conclusie formuleren.</li></ul>
+<!-- l. 59 --><p class="noindent"></p></div> </section>
+<p><a id="x1-2r1"></a>
+</p><p></p><!-- l. 63 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">1</div><div class="fvd-section-bar__title">Van kijken naar meten</div></div>
+<p></p><!-- l. 66 --><p class="noindent">In het vorige hoofdstuk beschreven we een puntenwolk met woorden.
+</p><!-- l. 68 --><p class="noindent">Bijvoorbeeld:
+</p>
+<blockquote class="quote">
+<!-- l. 71 --><p class="noindent">De punten vertonen een sterk positief en ongeveer lineair verband.</p></blockquote>
+<!-- l. 74 --><p class="noindent">Zo’n beschrijving is nuttig, maar bevat ook een subjectief element. Wat de ene
+leerling “sterk” noemt, kan een andere leerling “matig sterk” noemen.
+</p><!-- l. 78 --><p class="noindent">Wanneer een puntenwolk ongeveer lineair is, willen we daarom een numerieke maat
+voor de richting en de sterkte van dat lineaire verband.
+</p><!-- l. 82 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">De volgorde blijft belangrijk:
+                                                                  
+
+                                                                  
+<p></p>
+<div class="mathjax-block">\[ \important { \text {puntenwolk bekijken} \longrightarrow \text {vorm beoordelen} \longrightarrow \text {correlatie interpreteren} } \]</div>
+<!-- l. 94 --><p class="noindent">We berekenen dus niet blind een getal. Eerst onderzoeken we of een lineaire
+beschrijving van de gegevens zinvol lijkt. </p></div></section>
+<p><a id="x1-3r2"></a>
+</p><p></p><!-- l. 100 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">2</div><div class="fvd-section-bar__title">De correlatiecoëfficiënt</div></div>
+<p></p><!-- l. 104 --><p class="noindent"></p><section class="fvd-definition"><div class="fvd-definition__title"><span class="fvd-definition__label">DEFINITIE</span></div><div class="fvd-definition__content">De <strong>correlatiecoëfficiënt</strong> <span class="mathjax-inline">\(r\)</span> is een getal dat de <strong>richting</strong> en de
+<strong>sterkte van het lineaire verband</strong> tussen twee numerieke grootheden
+beschrijft.
+<p></p><!-- l. 108 --><p class="noindent">Voor <span class="mathjax-inline">\(r\)</span> geldt steeds
+</p>
+<div class="mathjax-block">\[ \boxed {-1\leq r\leq 1}. \]</div> </div></section>
+<!-- l. 115 --><p class="noindent">De correlatiecoëfficiënt combineert dus twee soorten informatie:
+</p>
+<div class="mathjax-block">\[ \important { \text {teken van }r \longrightarrow \text {richting} } \]</div>
+<!-- l. 125 --><p class="noindent">en
+</p>
+<div class="mathjax-block">\[ \important { |r| \longrightarrow \text {sterkte van het lineaire verband} } \]</div>
+<p><a id="x1-4r1"></a>
+</p><!-- l. 137 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 137 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 137 --><p class="noindent"></p><div class="fvd-subsection__number">2.1</div>
+<p></p><!-- l. 137 --><p class="noindent"></p><div class="fvd-subsection__title">Het teken van r</div>
+<p></p><!-- l. 137 --><p class="noindent"></p></div>
+<p></p><!-- l. 137 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 137 --><p class="noindent"></p></div>
+<p></p><!-- l. 140 --><p class="noindent">Wanneer
+</p>
+<div class="mathjax-block">\[ r&gt;0, \]</div>
+<!-- l. 146 --><p class="noindent">is de lineaire samenhang <strong>positief</strong>: grotere waarden van de ene grootheid gaan
+doorgaans samen met grotere waarden van de andere.
+</p><!-- l. 149 --><p class="noindent">Wanneer
+</p>
+<div class="mathjax-block">\[ r&lt;0, \]</div>
+<!-- l. 155 --><p class="noindent">is de lineaire samenhang <strong>negatief</strong>: grotere waarden van de ene grootheid gaan
+doorgaans samen met kleinere waarden van de andere.
+                                                                  
+
+                                                                  
+</p><!-- l. 158 --><p class="noindent">Het teken zegt niets over de sterkte.
+</p><!-- l. 160 --><p class="noindent">Zo kunnen
+</p>
+<div class="mathjax-block">\[ r=0{,}20 \qquad \text {en}\qquad r=0{,}92 \]</div>
+<!-- l. 168 --><p class="noindent">beide positief zijn, terwijl het tweede lineaire verband veel sterker is.
+<a id="x1-5r2"></a>
+</p><!-- l. 172 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 172 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 172 --><p class="noindent"></p><div class="fvd-subsection__number">2.2</div>
+<p></p><!-- l. 172 --><p class="noindent"></p><div class="fvd-subsection__title">De absolute waarde van r</div>
+<p></p><!-- l. 172 --><p class="noindent"></p></div>
+<p></p><!-- l. 172 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 172 --><p class="noindent"></p></div>
+<p></p><!-- l. 175 --><p class="noindent">Voor de sterkte kijken we naar
+</p>
+<div class="mathjax-block">\[ |r|. \]</div>
+<!-- l. 181 --><p class="noindent">Hoe dichter <span class="mathjax-inline">\(|r|\)</span> bij <span class="mathjax-inline">\(1\)</span> ligt, hoe dichter de punten bij een rechte band liggen.
+</p><!-- l. 184 --><p class="noindent">Hoe dichter <span class="mathjax-inline">\(|r|\)</span> bij <span class="mathjax-inline">\(0\)</span> ligt, hoe zwakker de <strong>lineaire</strong> samenhang.
+</p>
+<div class="mathjax-block">\[ \begin {array}{c|c} |r| &amp; \text {globale interpretatie}\\ \hline \text {dicht bij }1 &amp; \text {sterk lineair verband}\\ \text {dicht bij }0 &amp; \text {zwak lineair verband} \end {array} \]</div>
+<!-- l. 196 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">Er bestaan conventies die woorden zoals “zwak”, “matig” en “sterk”
+aan vaste intervallen voor <span class="mathjax-inline">\(|r|\)</span> koppelen.
+<p></p><!-- l. 199 --><p class="noindent">We behandelen zulke grenzen niet als natuurwetten. De betekenis van een correlatie
+hangt ook af van de context, het aantal waarnemingen, de kwaliteit van de gegevens
+en de vorm van de puntenwolk. </p></div></section>
+<p><a id="x1-6r3"></a>
+</p><p></p><!-- l. 206 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">3</div><div class="fvd-section-bar__title">De bijzondere waarden</div></div>
+<p><a id="x1-7r1"></a>
+</p><p></p><!-- l. 209 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 209 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 209 --><p class="noindent"></p><div class="fvd-subsection__number">3.1</div>
+<p></p><!-- l. 209 --><p class="noindent"></p><div class="fvd-subsection__title">Perfect positieve lineaire samenhang</div>
+<p></p><!-- l. 209 --><p class="noindent"></p></div>
+<p></p><!-- l. 209 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 209 --><p class="noindent"></p></div>
+<p></p><!-- l. 211 --><p class="noindent">Als alle punten exact op een stijgende rechte liggen, dan
+</p>
+<div class="mathjax-block">\[ r=1. \]</div>
+<!-- l. 218 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content"><span class="mathjax-inline">\(r=1\)</span> betekent niet dat de richtingscoëfficiënt van die rechte gelijk is aan
+<span class="mathjax-inline">\(1\)</span>.
+<p></p><!-- l. 221 --><p class="noindent">Het betekent dat de punten exact op <em>een</em> stijgende rechte liggen. </p></div></section>
+<p><a id="x1-8r2"></a>
+</p><p></p><!-- l. 225 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 225 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 225 --><p class="noindent"></p><div class="fvd-subsection__number">3.2</div>
+<p></p><!-- l. 225 --><p class="noindent"></p><div class="fvd-subsection__title">Perfect negatieve lineaire samenhang</div>
+<p></p><!-- l. 225 --><p class="noindent"></p></div>
+<p></p><!-- l. 225 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 225 --><p class="noindent"></p></div>
+<p></p><!-- l. 227 --><p class="noindent">Als alle punten exact op een dalende rechte liggen, dan
+</p>
+<div class="mathjax-block">\[ r=-1. \]</div>
+<!-- l. 233 --><p class="noindent">Ook hier zegt <span class="mathjax-inline">\(-1\)</span> niets over de numerieke helling van de rechte. Het geeft aan dat de
+lineaire samenhang perfect negatief is.
+<a id="x1-9r3"></a>
+</p><!-- l. 237 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 237 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 237 --><p class="noindent"></p><div class="fvd-subsection__number">3.3</div>
+<p></p><!-- l. 237 --><p class="noindent"></p><div class="fvd-subsection__title">Wat betekent r=0?</div>
+<p></p><!-- l. 237 --><p class="noindent"></p></div>
+<p></p><!-- l. 237 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 237 --><p class="noindent"></p></div>
+<p></p><!-- l. 239 --><p class="noindent">Wanneer
+</p>
+<div class="mathjax-block">\[ r=0, \]</div>
+<!-- l. 245 --><p class="noindent">is er geen lineaire samenhang in de gegevens zoals die door <span class="mathjax-inline">\(r\)</span> wordt gemeten.
+</p><!-- l. 248 --><p class="noindent">Maar daaruit volgt niet:
+</p>
+<div class="mathjax-block">\[ \text {``er bestaat geen enkel verband.''} \]</div>
+<!-- l. 254 --><p class="noindent">Een duidelijke U-vormige puntenwolk kan bijvoorbeeld een sterk niet-lineair verband
+                                                                  
+
+                                                                  
+vertonen terwijl <span class="mathjax-inline">\(r\)</span> ongeveer nul is.
+</p><!-- l. 258 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">Dit is één van de belangrijkste interpretatieregels van dit
+hoofdstuk:
+<p></p>
+<div class="mathjax-block">\[ \important { r\approx 0 \quad \not \Rightarrow \quad \text {geen verband} } \]</div>
+<!-- l. 268 --><p class="noindent">Wel:
+</p>
+<div class="mathjax-block">\[ \important { r\approx 0 \quad \Rightarrow \quad \text {weinig of geen lineaire samenhang volgens }r } \]</div> </div></section>
+<p><a id="x1-10r4"></a>
+</p><!-- l. 281 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">4</div><div class="fvd-section-bar__title">Puntenwolk en r horen samen</div></div>
+<p></p><!-- l. 284 --><p class="noindent">De correlatiecoëfficiënt is een samenvatting. Bij een samenvatting gaat altijd
+informatie verloren.
+</p><!-- l. 287 --><p class="noindent">Daarom bekijken we nooit alleen <span class="mathjax-inline">\(r\)</span>.
+<a id="x1-11r1"></a>
+</p><!-- l. 289 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 289 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 1<span class="fvd-example__subtitle"> — Vier mogelijke conclusies</span></div>
+<p></p><!-- l. 289 --><p class="noindent"></p><div class="fvd-example__content"> Stel dat vier datasets de volgende correlatiecoëfficiënten hebben:
+<p></p>
+<div class="mathjax-block">\[ r_A=0{,}94,\qquad r_B=-0{,}91,\qquad r_C=0{,}18,\qquad r_D=-0{,}35. \]</div>
+<!-- l. 299 --><p class="noindent">Dan kunnen we voorlopig zeggen:
+</p>
+<ul class="itemize1">
+<li class="itemize">dataset <span class="mathjax-inline">\(A\)</span>: sterke positieve lineaire samenhang;
+</li>
+<li class="itemize">dataset <span class="mathjax-inline">\(B\)</span>: sterke negatieve lineaire samenhang;
+</li>
+<li class="itemize">dataset <span class="mathjax-inline">\(C\)</span>: zwakke positieve lineaire samenhang;
+</li>
+<li class="itemize">dataset <span class="mathjax-inline">\(D\)</span>: eerder zwakke negatieve lineaire samenhang.</li></ul>
+<!-- l. 308 --><p class="noindent">Maar vóór een definitieve conclusie bekijken we ook de puntenwolken. Misschien is er
+een uitschieter, een krom patroon of een opsplitsing in clusters. </p></div></section>
+<p><a id="x1-12r1"></a>
+</p><p></p><!-- l. 314 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 314 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 314 --><p class="noindent">Oefening 1
+</p><!-- l. 314 --><p class="noindent">— Lees r correct
+</p><!-- l. 314 --><p class="noindent"></p></div>
+<p></p><!-- l. 314 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 314 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--b">B</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 314 --><p class="noindent"></p><div class="fvd-exercise__content"> <p></p><div class="problem-environment question" id="problem1" numbered=" " role="article" titletext=" Question">  Wat vertelt <span class="mathjax-inline">\(r=-0{,}88\)</span>?
+<div class="multiple-choice" id="problem2" titletext=" Multiple Choice"><span class="choice" id="choice1">Een sterk positief lineair verband. </span><span class="choice correct" id="choice2">Een sterk negatief lineair verband. </span><span class="choice" id="choice3">Een zwak
+negatief lineair verband. </span><span class="choice" id="choice4">Een sterk niet-lineair verband.</span> </div> </div>
+<div class="problem-environment question" id="problem3" numbered=" " role="article" titletext=" Question">  Welke correlatie is lineair het sterkst?
+<div class="mathjax-block">\[ r_1=-0{,}93,\qquad r_2=0{,}81,\qquad r_3=0{,}42 \]</div>
+<div class="multiple-choice" id="problem4" titletext=" Multiple Choice"><span class="choice correct" id="choice5"><span class="mathjax-inline">\(r_1\)</span></span> <span class="choice" id="choice6"><span class="mathjax-inline">\(r_2\)</span></span> <span class="choice" id="choice7"><span class="mathjax-inline">\(r_3\)</span></span> </div> </div>
+<div class="problem-environment question" id="problem5" numbered=" " role="article" titletext=" Question">  Waarom vergelijk je daarvoor de absolute waarden?
+<div class="accordion">
+<h3 class="xmoplossing"></h3>
+<div class="accordion-item xmoplossing-content" id="accordion-item6"> 
+ Omdat het teken de richting aangeeft. De sterkte van de lineaire samenhang wordt
+beschreven door de grootte van <span class="mathjax-inline">\(|r|\)</span>. </div>
+</div>
+</div> </div>
+<!-- l. 348 --><p class="noindent"></p></div>
+<p></p><!-- l. 348 --><p class="noindent"></p></section>
+<p><a id="x1-13r5"></a>
+</p><p></p><!-- l. 352 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">5</div><div class="fvd-section-bar__title">Wat r niet ziet</div></div>
+<p></p><!-- l. 355 --><p class="noindent">Een correlatiecoëfficiënt kan correct berekend zijn en toch een onvolledig beeld
+geven.
+</p><!-- l. 358 --><p class="noindent">Daarom onderzoeken we drie belangrijke valkuilen.
+<a id="x1-14r1"></a>
+</p><!-- l. 362 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 362 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 362 --><p class="noindent"></p><div class="fvd-subsection__number">5.1</div>
+<p></p><!-- l. 362 --><p class="noindent"></p><div class="fvd-subsection__title">Niet-lineaire verbanden</div>
+<p></p><!-- l. 362 --><p class="noindent"></p></div>
+<p></p><!-- l. 362 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 362 --><p class="noindent"></p></div>
+<p></p><!-- l. 365 --><p class="noindent">Beschouw opnieuw een U-vormig verband zoals
+</p>
+<div class="mathjax-block">\[ y\approx x^2. \]</div>
+<!-- l. 371 --><p class="noindent">Voor negatieve <span class="mathjax-inline">\(x\)</span> daalt <span class="mathjax-inline">\(y\)</span> wanneer <span class="mathjax-inline">\(x\)</span> toeneemt. Voor positieve <span class="mathjax-inline">\(x\)</span> stijgt <span class="mathjax-inline">\(y\)</span> wanneer <span class="mathjax-inline">\(x\)</span>
+toeneemt.
+</p><!-- l. 374 --><p class="noindent">Over de volledige dataset kunnen die twee richtingen elkaar in de lineaire correlatie
+grotendeels opheffen.
+</p><!-- l. 377 --><p class="noindent">Toch is het patroon duidelijk.
+</p><!-- l. 380 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">Een lage waarde van <span class="mathjax-inline">\(|r|\)</span> kan dus twee heel verschillende situaties
+verbergen:
+<p></p>
+<ol class="enumerate1">
+<li class="enumerate" id="x1-16x1">er is werkelijk nauwelijks een patroon;
+</li>
+<li class="enumerate" id="x1-18x2">er is een duidelijk patroon, maar het is niet lineair.</li></ol>
+<!-- l. 388 --><p class="noindent">Alleen de puntenwolk laat ons dat onderscheid zien. </p></div></section>
+<p><a id="x1-19r2"></a>
+</p><p></p><!-- l. 393 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 393 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 393 --><p class="noindent"></p><div class="fvd-subsection__number">5.2</div>
+<p></p><!-- l. 393 --><p class="noindent"></p><div class="fvd-subsection__title">Uitschieters</div>
+<p></p><!-- l. 393 --><p class="noindent"></p></div>
+<p></p><!-- l. 393 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 393 --><p class="noindent"></p></div>
+<p></p><!-- l. 396 --><p class="noindent">Een uitzonderlijk punt kan <span class="mathjax-inline">\(r\)</span> sterk beïnvloeden.
+</p><!-- l. 398 --><p class="noindent">Soms maakt één punt een lineair verband schijnbaar sterker. In andere datasets
+maakt één punt een bestaand lineair verband juist veel zwakker.
+</p><!-- l. 402 --><p class="noindent">Daarom vragen we bij een uitschieter:
+</p>
+<ul class="itemize1">
+<li class="itemize">is het punt correct gemeten en ingevoerd?
+</li>
+<li class="itemize">hoort het bij dezelfde populatie of experimentele situatie?
+</li>
+<li class="itemize">hoe verandert de puntenwolk als we het punt onderzoeken?
+</li>
+<li class="itemize">hoe verandert <span class="mathjax-inline">\(r\)</span>?</li></ul>
+<!-- l. 412 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">Een uitschieter verwijderen omdat hij “niet mooi past” is geen
+verantwoorde statistische werkwijze. </div></section>
+<p><a id="x1-20r3"></a>
+</p><p></p><!-- l. 418 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 418 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 418 --><p class="noindent"></p><div class="fvd-subsection__number">5.3</div>
+<p></p><!-- l. 418 --><p class="noindent"></p><div class="fvd-subsection__title">Clusters</div>
+<p></p><!-- l. 418 --><p class="noindent"></p></div>
+<p></p><!-- l. 418 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 418 --><p class="noindent"></p></div>
+<p></p><!-- l. 421 --><p class="noindent">Ook clusters kunnen een globale correlatie misleidend maken.
+</p><!-- l. 423 --><p class="noindent">Stel dat gegevens van twee verschillende materialen samen in één dataset staan.
+Binnen elk materiaal kan nauwelijks een verband bestaan, terwijl de twee groepen
+samen toch een duidelijke globale richting lijken te vormen.
+</p><!-- l. 428 --><p class="noindent">Daarom blijft de structuur van de puntenwolk belangrijk.
+<a id="x1-21r6"></a>
+</p><!-- l. 432 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">6</div><div class="fvd-section-bar__title">Correlatie bepalen met ICT</div></div>
+<p></p><!-- l. 435 --><p class="noindent">Voor realistische datasets gebruiken we ICT om <span class="mathjax-inline">\(r\)</span> te bepalen.
+</p><!-- l. 437 --><p class="noindent">Het doel is niet om een lange rekenprocedure uit het hoofd uit te voeren, maar om de
+uitvoer correct te interpreteren.
+</p><!-- l. 440 --><p class="noindent">Een goede werkwijze is:
+</p>
+<ol class="enumerate1">
+<li class="enumerate" id="x1-23x1">controleer de gekoppelde gegevens;
+</li>
+<li class="enumerate" id="x1-25x2">maak eerst een spreidingsdiagram;
+</li>
+<li class="enumerate" id="x1-27x3">beoordeel of het verband ongeveer lineair lijkt;
+</li>
+<li class="enumerate" id="x1-29x4">laat ICT de correlatiecoëfficiënt <span class="mathjax-inline">\(r\)</span> bepalen;
+</li>
+<li class="enumerate" id="x1-31x5">interpreteer teken en grootte van <span class="mathjax-inline">\(r\)</span>;
+</li>
+<li class="enumerate" id="x1-33x6">vergelijk die interpretatie met de puntenwolk;
+</li>
+<li class="enumerate" id="x1-35x7">formuleer een conclusie in de context.</li></ol>
+<!-- l. 453 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">Een antwoord zoals
+<p></p>
+<div class="mathjax-block">\[ r=0{,}87 \]</div>
+<!-- l. 459 --><p class="noindent">is geen volledige analyse.
+</p><!-- l. 461 --><p class="noindent">Een betere conclusie is bijvoorbeeld:
+</p>
+<blockquote class="quote">
+<!-- l. 464 --><p class="noindent">De  puntenwolk  vertoont  een  sterk  positief  en  ongeveer  lineair
+verband. Dat wordt ondersteund door <span class="mathjax-inline">\(r=0{,}87\)</span>. In deze dataset gaan grotere
+waarden van <span class="mathjax-inline">\(x\)</span> doorgaans samen met grotere waarden van <span class="mathjax-inline">\(y\)</span>.</p></blockquote>
+</div></section>
+<p><a id="x1-36r7"></a>
+</p><!-- l. 472 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">7</div><div class="fvd-section-bar__title">Correlatie is nog geen causaliteit</div></div>
+<p></p><!-- l. 475 --><p class="noindent">Een grote waarde van <span class="mathjax-inline">\(|r|\)</span> zegt dat twee grootheden sterk <strong>lineair samenhangen</strong> in de
+dataset.
+</p><!-- l. 478 --><p class="noindent">Ze zegt niet waarom dat verband bestaat.
+</p><!-- l. 480 --><p class="noindent">Dus zelfs bij
+</p>
+<div class="mathjax-block">\[ |r|\approx 1 \]</div>
+<!-- l. 486 --><p class="noindent">mogen we niet automatisch besluiten dat de ene grootheid de andere veroorzaakt.
+<a id="x1-37r2"></a>
+</p><!-- l. 489 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 489 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 2<span class="fvd-example__subtitle"> — Temperatuur en ijsverkoop</span></div>
+<p></p><!-- l. 489 --><p class="noindent"></p><div class="fvd-example__content"> Stel dat temperatuur en ijsverkoop sterk positief gecorreleerd zijn.
+<p></p><!-- l. 492 --><p class="noindent">Dat betekent dat warme dagen in de onderzochte gegevens doorgaans samengaan met
+een hogere ijsverkoop.
+</p><!-- l. 495 --><p class="noindent">De correlatiecoëfficiënt vertelt ons echter niet op zichzelf welke causale verklaring
+correct is. Daarvoor hebben we kennis van de context en eventueel verder onderzoek
+nodig. </p></div></section>
+<p></p><!-- l. 500 --><p class="noindent">In een later hoofdstuk onderzoeken we dit onderscheid uitgebreid.
+<a id="x1-38r8"></a>
+</p><!-- l. 504 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">8</div><div class="fvd-section-bar__title">Een volledige correlatieanalyse</div></div>
+<p></p><!-- l. 507 --><p class="noindent">Wanneer je een nieuwe dataset krijgt, gebruik je voortaan deze strategie:
+</p>
+<ol class="enumerate1">
+<li class="enumerate" id="x1-40x1"><strong>Context:</strong> welke twee numerieke grootheden worden onderzocht?
+</li>
+<li class="enumerate" id="x1-42x2"><strong>Puntenwolk:</strong> wat zie je qua richting, vorm, sterkte en bijzonderheden?
+</li>
+<li class="enumerate" id="x1-44x3"><strong>Lineariteit:</strong> is een lineaire beschrijving redelijk?
+</li>
+<li class="enumerate" id="x1-46x4"><strong>Correlatie:</strong> bepaal <span class="mathjax-inline">\(r\)</span> met ICT.
+                                                                  
+
+                                                                  
+</li>
+<li class="enumerate" id="x1-48x5"><strong>Interpretatie:</strong> wat vertellen teken en <span class="mathjax-inline">\(|r|\)</span>?
+</li>
+<li class="enumerate" id="x1-50x6"><strong>Controle:</strong> past die numerieke samenvatting bij de puntenwolk?
+</li>
+<li class="enumerate" id="x1-52x7"><strong>Conclusie:</strong> formuleer een contextgebonden besluit zonder causaliteit te
+veronderstellen.</li></ol>
+<p><a id="x1-53r2"></a>
+</p><!-- l. 520 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 520 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 520 --><p class="noindent">Oefening 2
+</p><!-- l. 520 --><p class="noindent">— Van getal naar conclusie
+</p><!-- l. 520 --><p class="noindent"></p></div>
+<p></p><!-- l. 520 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 520 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 520 --><p class="noindent"></p><div class="fvd-exercise__content"> Een onderzoek naar de buitentemperatuur <span class="mathjax-inline">\(T\)</span> en het dagelijkse elektriciteitsverbruik <span class="mathjax-inline">\(E\)</span>
+van een koelinstallatie levert een ongeveer lineaire stijgende puntenwolk
+en
+<p></p>
+<div class="mathjax-block">\[ r=0{,}91. \]</div>
+<div class="problem-environment question" id="problem7" numbered=" " role="article" titletext=" Question">  Wat zegt het teken van <span class="mathjax-inline">\(r\)</span>?
+<div class="accordion">
+<h3 class="xmoplossing"></h3>
+<div class="accordion-item xmoplossing-content" id="accordion-item8"> 
+ Het verband is positief: hogere temperaturen gaan in deze dataset doorgaans samen
+met een hoger elektriciteitsverbruik. </div>
+</div>
+</div>
+<div class="problem-environment question" id="problem9" numbered=" " role="article" titletext=" Question">  Wat zegt <span class="mathjax-inline">\(|r|\)</span>?
+<div class="accordion">
+<h3 class="xmoplossing"></h3>
+<div class="accordion-item xmoplossing-content" id="accordion-item10"> 
+ Omdat <span class="mathjax-inline">\(|r|=0{,}91\)</span> dicht bij <span class="mathjax-inline">\(1\)</span> ligt, is de lineaire samenhang sterk. </div>
+</div>
+</div>
+<div class="problem-environment question" id="problem11" numbered=" " role="article" titletext=" Question">  Formuleer een volledige conclusie.
+<div class="accordion">
+<h3 class="xmoplossing"></h3>
+<div class="accordion-item xmoplossing-content" id="accordion-item12"> 
+ De puntenwolk en <span class="mathjax-inline">\(r=0{,}91\)</span> wijzen op een sterk positief en ongeveer lineair verband tussen
+buitentemperatuur en elektriciteitsverbruik van de koelinstallatie. Binnen
+deze dataset gaan hogere temperaturen doorgaans samen met een hoger
+verbruik. Uit correlatie alleen volgt nog geen bewijs van causaliteit. </div>
+</div>
+</div>
+</div>
+<!-- l. 557 --><p class="noindent"></p></div>
+<p></p><!-- l. 557 --><p class="noindent"></p></section>
+<p><a id="x1-54r9"></a>
+</p><p></p><!-- l. 561 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">9</div><div class="fvd-section-bar__title">Samengevat</div></div>
+<p></p><!-- l. 564 --><p class="noindent">De correlatiecoëfficiënt <span class="mathjax-inline">\(r\)</span> beschrijft de richting en de sterkte van een <strong>lineair</strong>
+verband.
+</p>
+<div class="mathjax-block">\[ \boxed {-1\leq r\leq 1} \]</div>
+<!-- l. 571 --><p class="noindent">Het teken geeft de richting:
+</p>
+<div class="mathjax-block">\[ r&gt;0 \Rightarrow \text {positieve lineaire samenhang}, \]</div>
+<div class="mathjax-block">\[ r&lt;0 \Rightarrow \text {negatieve lineaire samenhang}. \]</div>
+<!-- l. 585 --><p class="noindent">De absolute waarde geeft informatie over de sterkte:
+</p>
+<div class="mathjax-block">\[ |r|\text { dicht bij }1 \Rightarrow \text {sterke lineaire samenhang}, \]</div>
+<div class="mathjax-block">\[ |r|\text { dicht bij }0 \Rightarrow \text {zwakke lineaire samenhang}. \]</div>
+<!-- l. 599 --><p class="noindent">Maar:
+</p>
+<div class="mathjax-block">\[ \important { r\approx 0 \not \Rightarrow \text {geen enkel verband} } \]</div>
+<!-- l. 609 --><p class="noindent">en
+</p>
+<div class="mathjax-block">\[ \important { \text {correlatie} \not \Rightarrow \text {causaliteit} } \]</div>
+<!-- l. 619 --><p class="noindent">Daarom gebruiken we altijd:
+</p>
+<div class="mathjax-block">\[ \boxed { \text {puntenwolk} + r + \text {context} \longrightarrow \text {conclusie} } \]</div>
+<!-- l. 633 --><p class="noindent">In het volgende hoofdstuk zetten we een volgende stap: wanneer het verband
+voldoende lineair is, proberen we het met een <strong>lineair model</strong> te beschrijven.
+                                                                  
+
+                                                                  
+</p>
+</div><!-- XIMERA-PREVIOUS-NEXT-START --><nav aria-label="Hoofdstuknavigatie" class="chapter-navigation">
+<a class="chapter-navigation__card chapter-navigation__card--previous" data-visible="true" href="Van-data-naar-puntenwolk-oefeningen.html">
+<span aria-hidden="true" class="chapter-navigation__icon">
+            ←
+        </span>
+<span class="chapter-navigation__content">
+<span class="chapter-navigation__label">
+                Vorig hoofdstuk
+            </span>
+<span class="chapter-navigation__title">
+                Oefeningen — Van data naar puntenwolk
+            </span>
+</span>
+</a>
+<a class="chapter-navigation__card chapter-navigation__card--overview" href="index.html">
+<span aria-hidden="true" class="chapter-navigation__overview-icon">
+<span></span>
+<span></span>
+<span></span>
+</span>
+<span class="chapter-navigation__content">
+<span class="chapter-navigation__label">
+                Cursus
+            </span>
+<span class="chapter-navigation__title">
+                Overzicht
+            </span>
+</span>
+</a>
+<a class="chapter-navigation__card chapter-navigation__card--next" data-visible="true" href="Correlatie-oefeningen.html">
+<span class="chapter-navigation__content">
+<span class="chapter-navigation__label">
+                Volgend hoofdstuk
+            </span>
+<span class="chapter-navigation__title">
+                Oefeningen — Correlatie
+            </span>
+</span>
+<span aria-hidden="true" class="chapter-navigation__icon">
+            →
+        </span>
+</a>
+</nav><!-- XIMERA-PREVIOUS-NEXT-END --></article></main><!-- XIMERA-CHAPTER-LAYOUT-END --><div class="course-footer-clear"></div><!-- XIMERA-FOOTER-START --><footer class="site-footer">
+<div aria-hidden="true" class="site-footer__accent"></div>
+<div class="site-footer__inner">
+<div class="site-footer__quote">
+<span aria-hidden="true" class="site-footer__quote-mark">◈</span>
+<p class="site-footer__quote-text">
+                Think mathematically. Create digitally. Shape the future.
+            </p>
+</div>
+<div aria-hidden="true" class="site-footer__divider"></div>
+<div class="site-footer__grid">
+<section class="site-footer__column">
+<p class="site-footer__eyebrow">
+                    Wiskunde 7 FVD
+                </p>
+<h2 class="site-footer__title">
+                    Fundamentele Vorming Digitale Creatie
+                </h2>
+<p class="site-footer__text">
+                    Wiskundige basis voor programmeren, graphics,
+                    animatie, simulatie en 3D.
+                </p>
+</section>
+<section class="site-footer__column">
+<p class="site-footer__eyebrow">
+                    Ontwikkeling
+                </p>
+<p class="site-footer__name">
+                    Ingmar Herreman
+                </p>
+<p class="site-footer__text">
+                    GO! Athena Campus Bellevue
+                </p>
+<p class="site-footer__text">
+                    Versie 1.0 · 2026
+                </p>
+</section>
+<section class="site-footer__column">
+<p class="site-footer__eyebrow">
+                    Technologie
+                </p>
+<div class="site-footer__tech">
+<span>Ximera</span>
+<span>HTML</span>
+<span>PDF</span>
+<span>GeoGebra</span>
+<span>GitHub</span>
+</div>
+</section>
+</div>
+<div class="site-footer__bottom">
+<span>Gebouwd met Ximera</span>
+<span aria-hidden="true">•</span>
+<span>Voor 7 FVD</span>
+<span aria-hidden="true">•</span>
+<span>© 2026</span>
+</div>
+</div>
+</footer><!-- XIMERA-FOOTER-END --><script src="../../../assets/js/chapter-layout.js"></script></body>
+</html>

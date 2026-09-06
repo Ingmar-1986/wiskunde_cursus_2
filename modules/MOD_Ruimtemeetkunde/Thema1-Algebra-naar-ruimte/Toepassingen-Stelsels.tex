@@ -1,0 +1,546 @@
+\documentclass{ximera}
+
+\input{../../../preamble.tex}
+\input{../../../Opmaak.tex}
+\addPrintStyle{../../..}
+
+\title{Stelsels aan het werk}
+\author{Ingmar Herreman}
+
+\begin{abstract}
+Een stelsel is meer dan een rij vergelijkingen. Het kan een concrete situatie
+beschrijven waarin verschillende voorwaarden tegelijk moeten gelden.
+
+In dit hoofdstuk gebruiken we stelsels als model voor problemen uit onder
+andere mengsels, productie en chemie. Het rekenwerk van de matrixreductie
+laten we bewust aan ICT over. De nadruk ligt op wat jij moet doen:
+onbekenden kiezen, voorwaarden vertalen naar vergelijkingen, een matrix
+correct invoeren en de uitkomst interpreteren en controleren.
+\end{abstract}
+
+\begin{document}
+
+% FVD_CHAPTER_DATA_START
+% Automatisch gegenereerd uit index.tex.
+% Niet handmatig aanpassen.
+\fvdchapterdata{1}{Van algebra naar ruimte}{2}
+% FVD_CHAPTER_DATA_END
+
+
+
+
+
+\maketitle
+
+\begin{voorkennis}
+  \item Je kan een lineair stelsel herkennen en in matrixnotatie schrijven.
+  \item Je kan een uitgebreide matrix met ICT reduceren.
+  \item Je kan de rang van een matrix uit een gereduceerde vorm aflezen.
+  \item Je kan de oplosbaarheid van een lineair stelsel analyseren.
+  \item Je kan vrije onbekenden herkennen en een oplossing parametriseren.
+\end{voorkennis}
+
+\begin{leerdoelen}
+  \item Je kan in een concrete situatie geschikte onbekenden kiezen.
+  \item Je kan voorwaarden uit een context vertalen naar lineaire vergelijkingen.
+  \item Je kan het verkregen stelsel als uitgebreide matrix invoeren in ICT.
+  \item Je kan de ICT-uitvoer interpreteren en terugkoppelen naar de oorspronkelijke context.
+  \item Je kan controleren of een wiskundige oplossing ook binnen de context aanvaardbaar is.
+  \item Je kan bij een onderbepaald of strijdig model uitleggen wat dit in de context betekent.
+  \item Je kan een chemische reactievergelijking balanceren door atoombehoud als een homogeen lineair stelsel te modelleren.
+  \item Je kan uitleggen waarom de coëfficiënten van een gebalanceerde reactievergelijking slechts tot op een schaalfactor bepaald zijn.
+\end{leerdoelen}
+
+\begin{opmerking}[ICT neemt het rekenwerk over]
+In dit hoofdstuk is het niet de bedoeling om omvangrijke matrices volledig
+met de hand te reduceren. Gebruik ICT voor de Gauss--Jordan-reductie.
+
+De kern van het werk ligt vóór en na die berekening:
+\[
+\boxed{\text{context}
+\longrightarrow
+\text{model}
+\longrightarrow
+\text{matrix}
+\longrightarrow
+\text{ICT}
+\longrightarrow
+\text{interpretatie}}
+\]
+
+Een correcte \texttt{rref}-uitvoer is nog geen antwoord op een vraagstuk.
+\end{opmerking}
+
+
+% ============================================================
+% 1. VAN CONTEXT NAAR MODEL
+% ============================================================
+
+\FVDsection{Van een probleem naar een stelsel}
+
+Bij een gewoon stelsel zijn de onbekenden en vergelijkingen al gegeven.
+Bij een toepassing moet je het stelsel eerst \textbf{zelf bouwen}.
+Dat noemen we \textbf{mathematiseren}: informatie uit de werkelijkheid
+vertalen naar wiskunde.
+
+\FVDsubsection{Een vaste aanpak}
+
+Een betrouwbare aanpak bestaat uit zes stappen.
+
+\begin{enumerate}
+  \item \textbf{Lees en structureer.}
+        Welke grootheden zijn onbekend? Welke gegevens en voorwaarden zijn er?
+  \item \textbf{Kies de onbekenden.}
+        Noteer duidelijk wat elke letter betekent, met eenheid waar nodig.
+  \item \textbf{Vertaal elke onafhankelijke voorwaarde.}
+        Bouw zo een lineair stelsel.
+  \item \textbf{Maak de uitgebreide matrix.}
+        Bewaak overal dezelfde volgorde van de onbekenden.
+  \item \textbf{Reduceer met ICT en analyseer.}
+        Lees oplossing, rang en eventuele vrije onbekenden correct af.
+  \item \textbf{Keer terug naar de context.}
+        Controleer eenheden, teken, gehele aantallen, redelijkheid en de
+        oorspronkelijke voorwaarden.
+\end{enumerate}
+
+\begin{opmerking}[Een vergelijking moet ergens vandaan komen]
+Schrijf niet meteen formules neer. Geef voor jezelf bij elke vergelijking aan
+\emph{welke voorwaarde uit de tekst} ze voorstelt. Dat maakt fouten veel
+makkelijker zichtbaar.
+\end{opmerking}
+
+
+% ============================================================
+% 2. EEN VOLLEDIG VOORBEELD
+% ============================================================
+
+\FVDsection{Een volledig modelleerprobleem}
+
+\begin{voorbeeld}[Kippen, eenden en duiven]
+
+Joeri verkoopt zijn kippen, eenden en duiven. Hij heeft in totaal \(27\)
+dieren. Het aantal kippen is driemaal het aantal eenden. Een handelaar biedt
+\(1\) euro per kip, \(1{,}50\) euro per eend en \(0{,}50\) euro per duif.
+Voor alle dieren samen biedt hij \(21\) euro.
+
+Hoeveel dieren heeft Joeri van elke soort?
+
+\textbf{Stap 1 -- onbekenden kiezen}
+
+We nemen
+\[
+x=\text{aantal kippen},\qquad
+y=\text{aantal eenden},\qquad
+z=\text{aantal duiven}.
+\]
+
+\textbf{Stap 2 -- voorwaarden vertalen}
+
+Uit het totaal aantal dieren:
+\[
+x+y+z=27.
+\]
+
+Uit ``driemaal zoveel kippen als eenden'':
+\[
+x=3y
+\qquad\Longleftrightarrow\qquad
+x-3y=0.
+\]
+
+Uit het totale bod:
+\[
+x+1{,}5y+0{,}5z=21.
+\]
+
+Dus
+\[
+\begin{cases}
+x+y+z=27,\\
+x-3y=0,\\
+x+1{,}5y+0{,}5z=21.
+\end{cases}
+\]
+
+\textbf{Stap 3 -- uitgebreide matrix}
+
+\[
+A_b=
+\left[
+\begin{array}{ccc|c}
+1&1&1&27\\
+1&-3&0&0\\
+1&1{,}5&0{,}5&21
+\end{array}
+\right].
+\]
+
+\textbf{Stap 4 -- reduceren met ICT}
+
+De gereduceerde vorm is
+\[
+\left[
+\begin{array}{ccc|c}
+1&0&0&9\\
+0&1&0&3\\
+0&0&1&15
+\end{array}
+\right].
+\]
+
+Dus
+\[
+x=9,\qquad y=3,\qquad z=15.
+\]
+
+\textbf{Stap 5 -- interpreteren en controleren}
+
+De waarden zijn niet-negatieve gehele aantallen, zoals aantallen dieren
+moeten zijn. Bovendien:
+\[
+9+3+15=27,\qquad 9=3\cdot3,
+\]
+en
+\[
+9+1{,}5\cdot3+0{,}5\cdot15=21.
+\]
+
+Joeri heeft dus \(9\) kippen, \(3\) eenden en \(15\) duiven.
+
+\end{voorbeeld}
+
+
+% ============================================================
+% 3. ICT
+% ============================================================
+
+\FVDsection{Wat doet ICT, en wat doe jij?}
+
+Bij toepassingen is een digitale matrixreductie bijzonder nuttig:
+de berekening mag snel gaan, zodat de aandacht naar het model en de
+interpretatie kan gaan.
+
+\begin{opmerking}[Jouw verantwoordelijkheid]
+ICT kan controleren noch beslissen of
+\begin{itemize}
+  \item je de juiste onbekenden gekozen hebt;
+  \item je de tekst correct naar vergelijkingen vertaald hebt;
+  \item de kolommen van de matrix in de juiste volgorde staan;
+  \item een negatieve oplossing betekenis heeft;
+  \item een kommagetal aanvaardbaar is als je personen of toestellen telt;
+  \item een vrije parameter binnen de context alle reële waarden mag aannemen.
+\end{itemize}
+Dat blijft jouw wiskundige taak.
+\end{opmerking}
+
+\FVDsubsection{Een oplossingsverzameling kan door de context kleiner worden}
+
+Stel dat ICT voor een model met drie onbekenden geeft
+\[
+(x,y,z)=(25+t,\,35-5t,\,4t).
+\]
+
+Algebraïsch kan \(t\) elke reële waarde aannemen. Als \(x,y,z\) aantallen
+lampen voorstellen, gelden echter extra voorwaarden:
+\[
+x,y,z\in\mathbb{N}
+\qquad\text{en}\qquad
+x,y,z\geq0.
+\]
+
+De context legt dus beperkingen op die niet automatisch in het oorspronkelijke
+lineaire stelsel aanwezig zijn.
+
+\begin{opmerking}
+\textbf{Demathematiseren} betekent dat je de wiskundige uitkomst opnieuw
+vertaalt naar de werkelijkheid. Een model kan algebraïsch correct opgelost
+zijn en toch een onbruikbaar contextantwoord opleveren.
+\end{opmerking}
+
+
+% ============================================================
+% 4. MENGPROBLEMEN
+% ============================================================
+
+\FVDsection{Mengproblemen}
+
+Mengproblemen leveren natuurlijke lineaire stelsels op omdat verschillende
+bestanddelen tegelijk aan opgelegde totalen moeten voldoen.
+
+\begin{voorbeeld}[Voedingsmengsel]
+
+Een bioloog wil een mengsel maken dat \(23\) g proteïne, \(6{,}2\) g vet
+en \(16\) g vocht bevat. Hij beschikt over:
+
+\begin{itemize}
+  \item mengsel A: \(20\%\) proteïne, \(2\%\) vet en \(15\%\) vocht;
+  \item mengsel B: \(10\%\) proteïne, \(6\%\) vet en \(10\%\) vocht;
+  \item mengsel C: \(15\%\) proteïne, \(5\%\) vet en \(5\%\) vocht.
+\end{itemize}
+
+Neem \(x,y,z\) als het aantal gram van respectievelijk A, B en C.
+
+Dan geeft behoud van elke component:
+\[
+\begin{cases}
+0{,}20x+0{,}10y+0{,}15z=23,\\
+0{,}02x+0{,}06y+0{,}05z=6{,}2,\\
+0{,}15x+0{,}10y+0{,}05z=16.
+\end{cases}
+\]
+
+Voer de uitgebreide matrix in ICT in. De reductie levert
+\[
+x=60,\qquad y=50,\qquad z=40.
+\]
+
+De contextcontrole is essentieel. Voor proteïne bijvoorbeeld:
+\[
+0{,}20\cdot60+0{,}10\cdot50+0{,}15\cdot40
+=12+5+6=23.
+\]
+
+Er is dus \(60\) g van A, \(50\) g van B en \(40\) g van C nodig.
+\end{voorbeeld}
+
+
+% ============================================================
+% 5. RANG IN EEN CONTEXT
+% ============================================================
+
+\FVDsection{Wanneer een model niet één antwoord geeft}
+
+De rang vertelt niet alleen iets over een abstract stelsel.
+Ook in een context heeft elke mogelijkheid betekenis.
+
+\begin{eigenschap}[Interpretatie van de oplosbaarheid]
+Voor een lineair model met \(n\) onbekenden geldt:
+
+\begin{itemize}
+  \item \(\operatorname{rang}(A)<\operatorname{rang}(A_b)\):
+        de voorwaarden zijn onderling strijdig; er bestaat geen oplossing;
+  \item \(\operatorname{rang}(A)=\operatorname{rang}(A_b)=n\):
+        de voorwaarden bepalen precies één wiskundige oplossing;
+  \item \(\operatorname{rang}(A)=\operatorname{rang}(A_b)<n\):
+        de gegeven voorwaarden bepalen de situatie niet volledig;
+        er blijven vrije parameters over.
+\end{itemize}
+\end{eigenschap}
+
+\begin{voorbeeld}[Zestig ledlampen]
+
+Er moeten \(60\) ledlampen worden geplaatst met samen \(40\,000\) lumen.
+Er is keuze uit lampen van \(900\), \(500\) en \(400\) lumen.
+
+Met \(x,y,z\) als de aantallen krijgen we
+\[
+\begin{cases}
+x+y+z=60,\\
+900x+500y+400z=40\,000.
+\end{cases}
+\]
+
+Er zijn drie onbekenden maar slechts twee onafhankelijke voorwaarden.
+Na reductie blijft één vrije parameter over.
+
+Dat betekent niet dat elke reële parameterwaarde bruikbaar is:
+aantallen lampen moeten niet-negatieve gehele getallen zijn.
+
+De context verandert een oneindige algebraïsche oplossingsverzameling dus
+in een eindige verzameling praktisch mogelijke keuzes.
+\end{voorbeeld}
+
+
+% ============================================================
+% 6. CHEMIE
+% ============================================================
+
+\FVDsection{Chemische reactievergelijkingen als stelsel}
+
+Een bijzonder mooie toepassing ontstaat in de chemie.
+Bij het balanceren van een reactievergelijking moeten van elk element
+evenveel atomen vóór als na de reactie aanwezig zijn.
+
+\begin{opmerking}[Wat wordt behouden?]
+Bij het balanceren veranderen we \textbf{alleen de coëfficiënten vóór de
+stoffen}. We veranderen nooit de indices in een chemische formule.
+
+De vergelijkingen drukken het behoud van het aantal atomen van elk element
+uit. Dat is de wiskundige vertaling die we nodig hebben.
+\end{opmerking}
+
+\begin{voorbeeld}[Verbranding van methaan]
+
+We willen
+\[
+\ldots\,CH_4+\ldots\,O_2
+\longrightarrow
+\ldots\,CO_2+\ldots\,H_2O
+\]
+balanceren.
+
+Geef de onbekende coëfficiënten namen:
+\[
+a\,CH_4+b\,O_2
+\longrightarrow
+c\,CO_2+d\,H_2O.
+\]
+
+Voor elk element schrijven we een behoudsvergelijking.
+
+Koolstof:
+\[
+a=c.
+\]
+
+Waterstof:
+\[
+4a=2d.
+\]
+
+Zuurstof:
+\[
+2b=2c+d.
+\]
+
+Dus:
+\[
+\begin{cases}
+a-c=0,\\
+4a-2d=0,\\
+2b-2c-d=0.
+\end{cases}
+\]
+
+De coëfficiënten vormen een homogeen stelsel:
+\[
+\left[
+\begin{array}{cccc|c}
+1&0&-1&0&0\\
+4&0&0&-2&0\\
+0&2&-2&-1&0
+\end{array}
+\right].
+\]
+
+Laat ICT reduceren:
+\[
+\left[
+\begin{array}{cccc|c}
+1&0&0&-\frac12&0\\
+0&1&0&-1&0\\
+0&0&1&-\frac12&0
+\end{array}
+\right].
+\]
+
+Er zijn vier onbekenden en drie pivots:
+\[
+\operatorname{rang}(A)=3<4.
+\]
+
+Er is dus één vrije parameter. Neem \(d=t\). Dan:
+\[
+a=\frac12t,\qquad b=t,\qquad c=\frac12t,\qquad d=t.
+\]
+
+Of:
+\[
+(a,b,c,d)
+=
+t\left(\frac12,1,\frac12,1\right).
+\]
+
+Chemisch kiezen we de \textbf{kleinste positieve gehele verhouding}.
+Met \(t=2\):
+\[
+(a,b,c,d)=(1,2,1,2).
+\]
+
+Daarom:
+\[
+\boxed{CH_4+2O_2\longrightarrow CO_2+2H_2O}.
+\]
+
+\end{voorbeeld}
+
+
+% ============================================================
+% 7. WAAROM EEN VRIJE PARAMETER?
+% ============================================================
+
+\FVDsection{Waarom is een reactievergelijking niet uniek?}
+
+Als
+\[
+CH_4+2O_2\longrightarrow CO_2+2H_2O
+\]
+klopt, dan klopt ook
+\[
+2CH_4+4O_2\longrightarrow2CO_2+4H_2O.
+\]
+
+Beide beschrijven dezelfde verhouding.
+
+Wiskundig zien we precies hetzelfde:
+als \(X\) een oplossing is van het homogene stelsel
+\[
+AX=0,
+\]
+dan is voor elke \(\lambda\in\mathbb{R}\)
+\[
+A(\lambda X)=\lambda AX=0.
+\]
+
+Daarom bepaalt het stelsel bij een gewone balanceeropgave geen unieke
+coëfficiëntenvector. We zoeken uiteindelijk de kleinste positieve gehele
+vertegenwoordiger van die verhouding.
+
+\begin{opmerking}[De nuloplossing]
+Omdat het stelsel homogeen is, is
+\[
+(a,b,c,d)=(0,0,0,0)
+\]
+altijd een wiskundige oplossing. Chemisch is die betekenisloos.
+We zoeken daarom een \textbf{niet-triviale} oplossing met positieve
+coëfficiënten.
+\end{opmerking}
+
+
+% ============================================================
+% 8. SAMENVATTING
+% ============================================================
+
+\FVDsection{Samenvatting: van werkelijkheid naar antwoord}
+
+Bij toepassingen van stelsels is de matrixreductie slechts één schakel.
+
+\[
+\boxed{
+\begin{array}{c}
+\text{1. kies onbekenden}\\
+\downarrow\\
+\text{2. vertaal voorwaarden naar vergelijkingen}\\
+\downarrow\\
+\text{3. maak de uitgebreide matrix}\\
+\downarrow\\
+\text{4. reduceer met ICT}\\
+\downarrow\\
+\text{5. analyseer rang en oplossingen}\\
+\downarrow\\
+\text{6. interpreteer en controleer in de context}
+\end{array}}
+\]
+
+\begin{opmerking}[Wat moet je zeker beheersen?]
+Je moet niet alleen een gegeven matrix met ICT kunnen reduceren.
+Voor het minimumtraject van dit hoofdstuk moet je ook zelfstandig een
+betekenisvolle context kunnen mathematiseren en de verkregen oplossing
+correct kunnen demathematiseren.
+
+Bij chemische reactievergelijkingen moet je bovendien het homogene stelsel,
+de vrije parameter en de keuze van de kleinste positieve gehele verhouding
+kunnen verklaren.
+\end{opmerking}
+
+\end{document}

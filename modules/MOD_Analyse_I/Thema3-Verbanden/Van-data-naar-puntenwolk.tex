@@ -1,0 +1,793 @@
+\documentclass{ximera}
+
+\input{../../../preamble.tex}
+\input{../../../Opmaak.tex}
+\addPrintStyle{../../..}
+
+\title{Van data naar puntenwolk}
+\author{Ingmar Herreman}
+
+\begin{abstract}
+Wanneer twee grootheden samen worden gemeten, ontstaat een nieuwe vraag:
+\emph{hangt de ene grootheid samen met de andere?}
+
+Een tabel met meetwaarden bevat alle afzonderlijke waarnemingen,
+maar maakt een patroon niet altijd zichtbaar. Daarom stellen we
+gekoppelde gegevens voor in een \textbf{spreidingsdiagram}.
+Elk punt stelt één waarneming voor; alle punten samen vormen een
+puntenwolk.
+
+In dit hoofdstuk leren we zo'n puntenwolk zorgvuldig lezen.
+We onderzoeken de \textbf{richting}, de \textbf{vorm} en de
+\textbf{sterkte} van een mogelijk verband en letten op
+\textbf{uitschieters} en \textbf{clusters}.
+
+We rekenen het verband nog niet samen tot één getal en stellen nog
+geen regressiemodel op. Eerst leren we kijken, beschrijven en
+argumenteren. Dat vormt de noodzakelijke basis voor correlatie en
+lineaire regressie in de volgende hoofdstukken.
+\end{abstract}
+
+\begin{document}
+
+% FVD_CHAPTER_DATA_START
+% Automatisch gegenereerd uit index.tex.
+% Niet handmatig aanpassen.
+\fvdchapterdata{3}{Verbanden onderzoeken met data}{4}
+% FVD_CHAPTER_DATA_END
+
+
+
+
+
+\maketitle
+
+\begin{voorkennis}
+  \item Je kan gegevens aflezen uit een tabel en een grafiek.
+  \item Je kent het cartesisch assenstelsel en kan een punt $(x,y)$ plaatsen.
+  \item Je kan grootheden, waarden en eenheden van elkaar onderscheiden.
+  \item Je kan stijgend en dalend gedrag in een grafiek herkennen.
+  \item Je weet dat meetgegevens een beschrijving van de werkelijkheid vormen.
+\end{voorkennis}
+
+\begin{leerdoelen}
+  \item Je kan twee numerieke grootheden in een dataset herkennen en correct benoemen.
+  \item Je kan uitleggen wat één punt in een spreidingsdiagram in de context betekent.
+  \item Je kan gekoppelde gegevens voorstellen in een spreidingsdiagram.
+  \item Je kan een puntenwolk beschrijven volgens richting, vorm en sterkte.
+  \item Je kan een mogelijk positief of negatief verband herkennen.
+  \item Je kan lineair en niet-lineair gedrag visueel van elkaar onderscheiden.
+  \item Je kan uitschieters en clusters herkennen en uitleggen waarom ze aandacht verdienen.
+  \item Je kan op basis van een spreidingsdiagram een voorzichtige, contextgebonden conclusie formuleren.
+  \item Je kan uitleggen waarom een spreidingsdiagram op zichzelf geen causaliteit bewijst.
+\end{leerdoelen}
+
+
+% ============================================================
+\FVDsection{Waarom twee grootheden samen onderzoeken?}
+% ============================================================
+
+In wetenschappen meten we vaak niet één, maar meerdere grootheden
+bij hetzelfde object, dezelfde persoon of hetzelfde experiment.
+
+Denk bijvoorbeeld aan:
+
+\begin{itemize}
+  \item de massa en de lengte van een dier;
+  \item de hoogte en de gemiddelde temperatuur van een meetstation;
+  \item de spanning en de stroomsterkte in een elektrische component;
+  \item de concentratie van een oplossing en de gemeten absorbantie;
+  \item de buitentemperatuur en het energieverbruik van een gebouw.
+\end{itemize}
+
+Wanneer twee numerieke grootheden bij dezelfde waarnemingen worden
+gemeten, kunnen we onderzoeken of hun waarden \textbf{samen veranderen}.
+
+\begin{opmerking}
+Een verband onderzoeken begint niet met een formule.
+
+We beginnen met drie vragen:
+
+\[
+\important{
+\text{Wat werd gemeten?}
+\quad
+\text{Hoe zijn de gegevens gekoppeld?}
+\quad
+\text{Welk patroon zien we?}
+}
+\]
+\end{opmerking}
+
+
+\FVDsubsection{Gekoppelde gegevens}
+
+Beschouw een eenvoudig experiment waarbij van acht metalen staven
+de lengte en de massa worden gemeten.
+
+\[
+\begin{array}{c|cccccccc}
+\text{staaf} & 1&2&3&4&5&6&7&8\\ \hline
+\text{lengte }x\;(\mathrm{cm})
+&10&14&18&22&26&30&34&38\\
+\text{massa }y\;(\mathrm{g})
+&24&32&43&50&61&69&81&88
+\end{array}
+\]
+
+De waarden in dezelfde kolom horen bij \textbf{dezelfde staaf}.
+We mogen de eerste waarneming dus schrijven als
+\(
+(10,24),
+\)
+de tweede als
+\(
+(14,32),
+\)
+enzovoort.
+
+\begin{definitie}
+Een dataset met twee numerieke grootheden bestaat uit
+\textbf{gekoppelde waarnemingen}
+
+\[
+(x_1,y_1),(x_2,y_2),\ldots,(x_n,y_n).
+\]
+
+Bij elke waarneming horen dus twee waarden die samen gemeten zijn.
+\end{definitie}
+
+\begin{oefening}[Wat hoort bij elkaar?]{\oefB \ESS}
+
+In een onderzoek worden voor verschillende dagen de buitentemperatuur
+en het dagelijkse elektriciteitsverbruik van een koelinstallatie gemeten.
+
+\begin{question}
+Wat stelt één gegevenspaar $(x_i,y_i)$ voor?
+
+\begin{multipleChoice}
+  \choice{De temperatuur van één dag en het verbruik van een andere dag.}
+  \choice[correct]{De temperatuur en het verbruik die bij dezelfde dag horen.}
+  \choice{Twee opeenvolgende temperaturen.}
+  \choice{Twee opeenvolgende verbruiken.}
+\end{multipleChoice}
+\end{question}
+
+\begin{question}
+Waarom mogen we de waarden niet willekeurig door elkaar mengen?
+
+\begin{oplossing}
+Omdat de koppeling tussen beide metingen essentieel is.
+We willen onderzoeken hoe de twee grootheden bij dezelfde waarneming
+samen voorkomen.
+\end{oplossing}
+\end{question}
+\end{oefening}
+
+
+% ============================================================
+\FVDsection{Van tabel naar spreidingsdiagram}
+% ============================================================
+
+Een tabel bewaart de meetwaarden nauwkeurig, maar een patroon is er
+niet altijd gemakkelijk in te herkennen.
+
+Daarom zetten we ieder gegevenspaar $(x_i,y_i)$ als een punt in een
+assenstelsel.
+
+\begin{definitie}
+Een \textbf{spreidingsdiagram} of \textbf{puntenwolk} is een grafische
+voorstelling van gekoppelde numerieke gegevens.
+
+Elk gegevenspaar
+\[
+(x_i,y_i)
+\]
+wordt voorgesteld door één punt in een assenstelsel.
+\end{definitie}
+
+Voor de metalen staven krijgen we dus acht punten.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=0.72\textwidth,
+    height=7cm,
+    axis lines=left,
+    xlabel={lengte $x$},
+    ylabel={massa $y$},
+    xmin=0,
+    xmax=90,
+    ymin=0,
+    ymax=100,
+    xtick={0,10,...,90},
+    ytick={0,10,...,100},
+    grid=major,
+    clip=false
+]
+
+\addplot[
+    only marks,
+    mark=*,
+    mark size=2.5pt
+]
+coordinates {
+    (10,14)
+    (20,23)
+    (30,37)
+    (40,44)
+    (50,58)
+    (60,66)
+    (70,82)
+    (80,87)
+};
+
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+In het spreidingsdiagram wordt iets zichtbaar wat in de tabel
+minder gemakkelijk opvalt: de punten vertonen een duidelijk patroon.
+
+De punten hoeven niet exact op een rechte of kromme te liggen.
+Het gaat om \textbf{meetgegevens}; natuurlijke variatie en
+meetonzekerheid zijn normaal.
+
+
+
+\FVDsubsection{Welke grootheid komt op welke as?}
+
+Wanneer de context een natuurlijke richting suggereert, plaatsen we
+de grootheid die als mogelijke verklarende of instelbare grootheid
+wordt gebruikt meestal op de horizontale as.
+
+De andere grootheid komt dan op de verticale as.
+
+Bijvoorbeeld:
+
+\[
+\text{hoogte}
+\longrightarrow
+\text{temperatuur}
+\]
+
+of
+
+\[
+\text{concentratie}
+\longrightarrow
+\text{absorbantie}.
+\]
+
+\begin{opmerking}
+De keuze van de assen \textbf{bewijst geen oorzaak-gevolgrelatie}.
+Ze helpt ons alleen om de gegevens op een zinvolle manier te organiseren.
+Of een verband werkelijk causaal is, vraagt bijkomende argumenten en
+onderzoek.
+\end{opmerking}
+
+
+\begin{oefening}[De assen kiezen]{\oefB \ESS}
+
+Een leerling onderzoekt bij een veer hoe de uitrekking verandert
+wanneer verschillende massa's worden opgehangen.
+
+\begin{question}
+Welke grootheid plaats je hier het meest natuurlijk op de horizontale as?
+
+\begin{multipleChoice}
+  \choice[correct]{de opgehangen massa}
+  \choice{de uitrekking}
+\end{multipleChoice}
+\end{question}
+
+\begin{question}
+Welke informatie moet bij de assen vermeld worden?
+
+\begin{oplossing}
+De naam of het symbool van de grootheid en de gebruikte eenheid.
+\end{oplossing}
+\end{question}
+\end{oefening}
+
+
+% ============================================================
+\FVDsection{Een puntenwolk systematisch lezen}
+% ============================================================
+
+Een puntenwolk beoordelen we niet op basis van één punt.
+
+We bekijken het \textbf{globale patroon}.
+
+Daarbij gebruiken we vier aandachtspunten:
+
+\[
+\important{
+\text{richting}
+\quad
+\text{vorm}
+\quad
+\text{sterkte}
+\quad
+\text{bijzonderheden}
+}
+\]
+
+Die vier woorden vormen vanaf nu onze vaste leesstrategie.
+
+
+% ------------------------------------------------------------
+\FVDsubsection{1. Richting}
+% ------------------------------------------------------------
+
+\begin{definitie}
+We spreken van een \textbf{positief verband} wanneer grotere waarden
+van de ene grootheid in het algemeen samengaan met grotere waarden
+van de andere grootheid.
+
+We spreken van een \textbf{negatief verband} wanneer grotere waarden
+van de ene grootheid in het algemeen samengaan met kleinere waarden
+van de andere grootheid.
+\end{definitie}
+
+Positief en negatief zeggen dus iets over de \textbf{richting} van
+de puntenwolk, niet over hoe sterk het verband is.
+
+\begin{center}
+\begin{tikzpicture}
+
+\begin{axis}[
+    name=positief,
+    width=0.38\textwidth,
+    height=4.6cm,
+    axis lines=left,
+    xmin=0, xmax=10,
+    ymin=0, ymax=10,
+    xtick=\empty,
+    ytick=\empty,
+    title={\small positief verband},
+    clip=false
+]
+\addplot[
+    only marks,
+    mark=*,
+    mark size=1.8pt
+]
+coordinates {
+    (1,2.0) (2,2.3) (3,3.8) (4,4.1)
+    (5,5.8) (6,5.5) (7,7.2) (8,7.7) (9,8.5)
+};
+\end{axis}
+
+\begin{axis}[
+    at={(positief.east)},
+    anchor=west,
+    xshift=1.3cm,
+    width=0.38\textwidth,
+    height=4.6cm,
+    axis lines=left,
+    xmin=0, xmax=10,
+    ymin=0, ymax=10,
+    xtick=\empty,
+    ytick=\empty,
+    title={\small negatief verband},
+    clip=false
+]
+\addplot[
+    only marks,
+    mark=*,
+    mark size=1.8pt
+]
+coordinates {
+    (1,8.5) (2,7.9) (3,7.0) (4,6.4)
+    (5,5.2) (6,4.8) (7,3.6) (8,2.7) (9,2.2)
+};
+\end{axis}
+
+\end{tikzpicture}
+\end{center}
+
+\begin{voorbeeld}[Twee wetenschappelijke situaties]
+Bij eenzelfde soort metalen staaf verwachten we doorgaans een positief
+verband tussen lengte en massa.
+
+Bij meetstations in een berggebied verwachten we doorgaans een negatief
+verband tussen hoogte en temperatuur: hoger gelegen stations zijn
+gemiddeld kouder.
+\end{voorbeeld}
+
+
+% ------------------------------------------------------------
+\FVDsubsection{2. Vorm}
+% ------------------------------------------------------------
+
+Niet ieder verband is lineair.
+
+\begin{definitie}
+Een puntenwolk vertoont een \textbf{ongeveer lineair verband} wanneer
+de punten globaal rond een rechte band liggen.
+
+Bij een \textbf{niet-lineair verband} volgt de puntenwolk duidelijk
+een andere vorm, bijvoorbeeld een kromme.
+\end{definitie}
+
+\begin{center}
+\begin{tikzpicture}
+
+\begin{axis}[
+    name=lineair,
+    width=0.38\textwidth,
+    height=4.6cm,
+    axis lines=left,
+    xmin=0, xmax=10,
+    ymin=0, ymax=10,
+    xtick=\empty,
+    ytick=\empty,
+    title={\small ongeveer lineair},
+]
+\addplot[
+    only marks,
+    mark=*,
+    mark size=1.8pt
+]
+coordinates {
+    (1,1.7) (2,2.5) (3,3.1) (4,4.4)
+    (5,5.0) (6,6.2) (7,6.8) (8,8.0) (9,8.6)
+};
+\end{axis}
+
+\begin{axis}[
+    at={(lineair.east)},
+    anchor=west,
+    xshift=1.3cm,
+    width=0.38\textwidth,
+    height=4.6cm,
+    axis lines=left,
+    xmin=-4, xmax=4,
+    ymin=0, ymax=10,
+    xtick=\empty,
+    ytick=\empty,
+    title={\small niet-lineair},
+]
+\addplot[
+    only marks,
+    mark=*,
+    mark size=1.8pt
+]
+coordinates {
+    (-3.5,8.5) (-3,6.8) (-2.5,5.5) (-2,4.1)
+    (-1.5,2.9) (-1,2.0) (-0.5,1.3) (0,1.0)
+    (0.5,1.4) (1,2.0) (1.5,2.8) (2,4.2)
+    (2.5,5.6) (3,7.0) (3.5,8.7)
+};
+\end{axis}
+
+\end{tikzpicture}
+\end{center}
+
+Dat onderscheid is belangrijk. In het volgende hoofdstuk zullen we
+een getal invoeren dat specifiek de sterkte van een
+\textbf{lineair} verband beschrijft.
+
+\begin{opmerking}
+Een puntenwolk zonder duidelijke rechte richting kan toch een sterk
+verband bevatten.
+
+Bijvoorbeeld: wanneer $y$ ongeveer afhangt van $x^2$, kan de puntenwolk
+een duidelijke U-vorm hebben. Het verband is dan sterk, maar niet lineair.
+\end{opmerking}
+
+
+% ------------------------------------------------------------
+\FVDsubsection{3. Sterkte}
+% ------------------------------------------------------------
+
+Wanneer de punten dicht rond een herkenbaar patroon liggen, spreken
+we informeel van een sterker verband.
+
+Wanneer de punten veel verder verspreid liggen, is het verband zwakker.
+
+\begin{center}
+\begin{tikzpicture}
+
+\begin{axis}[
+    name=sterk,
+    width=0.38\textwidth,
+    height=4.6cm,
+    axis lines=left,
+    xmin=0, xmax=10,
+    ymin=0, ymax=10,
+    xtick=\empty,
+    ytick=\empty,
+    title={\small sterker verband},
+]
+\addplot[
+    only marks,
+    mark=*,
+    mark size=1.8pt
+]
+coordinates {
+    (1,1.5) (2,2.4) (3,3.2) (4,4.0)
+    (5,5.1) (6,6.0) (7,7.1) (8,8.0) (9,8.8)
+};
+\end{axis}
+
+\begin{axis}[
+    at={(sterk.east)},
+    anchor=west,
+    xshift=1.3cm,
+    width=0.38\textwidth,
+    height=4.6cm,
+    axis lines=left,
+    xmin=0, xmax=10,
+    ymin=0, ymax=10,
+    xtick=\empty,
+    ytick=\empty,
+    title={\small zwakker verband},
+]
+\addplot[
+    only marks,
+    mark=*,
+    mark size=1.8pt
+]
+coordinates {
+    (1,1.5) (2,4.0) (3,2.2) (4,5.5)
+    (5,4.1) (6,7.4) (7,5.1) (8,8.2) (9,6.8)
+};
+\end{axis}
+
+\end{tikzpicture}
+\end{center}
+
+\begin{opmerking}
+In dit hoofdstuk beoordelen we de sterkte nog \textbf{visueel}.
+
+In het volgende hoofdstuk leren we de sterkte en richting van een
+lineair verband samenvatten met de correlatiecoëfficiënt.
+\end{opmerking}
+
+
+% ------------------------------------------------------------
+\FVDsubsection{4. Bijzonderheden: uitschieters en clusters}
+% ------------------------------------------------------------
+
+Een globale trend is niet het hele verhaal.
+
+\begin{definitie}
+Een \textbf{uitschieter} is een waarneming die opvallend ver van het
+algemene patroon van de andere gegevens ligt.
+\end{definitie}
+
+\begin{center}
+\begin{tikzpicture}
+
+\begin{axis}[
+    name=outlier,
+    width=0.38\textwidth,
+    height=4.6cm,
+    axis lines=left,
+    xmin=0, xmax=10,
+    ymin=0, ymax=10,
+    xtick=\empty,
+    ytick=\empty,
+    title={\small uitschieter},
+]
+\addplot[
+    only marks,
+    mark=*,
+    mark size=1.8pt
+]
+coordinates {
+    (1,1.4) (2,2.3) (3,3.1) (4,4.2)
+    (5,5.0) (6,6.1) (7,7.0) (8,8.0)
+};
+\addplot[
+    only marks,
+    mark=*,
+    mark size=2.8pt
+]
+coordinates {
+    (7.5,2.0)
+};
+\end{axis}
+
+\begin{axis}[
+    at={(outlier.east)},
+    anchor=west,
+    xshift=1.3cm,
+    width=0.38\textwidth,
+    height=4.6cm,
+    axis lines=left,
+    xmin=0, xmax=10,
+    ymin=0, ymax=10,
+    xtick=\empty,
+    ytick=\empty,
+    title={\small twee clusters},
+]
+\addplot[
+    only marks,
+    mark=*,
+    mark size=1.8pt
+]
+coordinates {
+    (1.2,2.0) (1.7,2.4) (2.1,1.8) (2.5,2.7)
+    (2.8,2.2)
+    (6.5,7.0) (7.0,7.6) (7.4,6.8) (8.0,7.9)
+    (8.5,7.2)
+};
+\end{axis}
+
+\end{tikzpicture}
+\end{center}
+
+Een uitschieter kan verschillende oorzaken hebben:
+
+\begin{itemize}
+    \item een meet- of invoerfout;
+    \item een uitzonderlijke maar correcte waarneming;
+    \item een andere experimentele situatie;
+    \item een aanwijzing dat ons model te eenvoudig is.
+\end{itemize}
+
+We verwijderen een uitschieter daarom nooit automatisch.
+
+\begin{definitie}
+Een \textbf{cluster} is een groep waarnemingen die in een bepaald
+gebied van het spreidingsdiagram duidelijk samen ligt.
+\end{definitie}
+
+Clusters kunnen erop wijzen dat verschillende groepen in de dataset
+door elkaar voorkomen.
+
+Denk bijvoorbeeld aan metingen bij twee verschillende materialen,
+twee leeftijdsgroepen of twee experimentele omstandigheden.
+
+
+% ============================================================
+\FVDsection{Van kijken naar beschrijven}
+% ============================================================
+
+Een goede analyse bestaat niet uit één woord zoals ``positief'' of
+``sterk''. Gebruik bij een nieuwe puntenwolk bij voorkeur deze volgorde:
+
+\begin{enumerate}
+  \item \textbf{Context:} welke twee grootheden worden vergeleken?
+  \item \textbf{Richting:} positief, negatief of geen duidelijke richting?
+  \item \textbf{Vorm:} ongeveer lineair of duidelijk niet-lineair?
+  \item \textbf{Sterkte:} liggen de punten dicht of ruim rond het patroon?
+  \item \textbf{Bijzonderheden:} zijn er uitschieters, clusters of andere opvallende kenmerken?
+  \item \textbf{Conclusie:} wat suggereert de puntenwolk in deze context?
+\end{enumerate}
+
+\begin{voorbeeld}[Hoogte en temperatuur]
+
+  Stel dat meetstations op verschillende hoogtes worden vergeleken.
+  Onderstaande puntenwolk toont de gemeten hoogte en temperatuur.
+  
+  \begin{center}
+  \begin{tikzpicture}
+  \begin{axis}[
+      width=0.68\textwidth,
+      height=6.2cm,
+      axis lines=left,
+      xlabel={hoogte (m)},
+      ylabel={temperatuur ($^\circ$C)},
+      xmin=0,
+      xmax=2200,
+      ymin=0,
+      ymax=22,
+      xtick={0,500,1000,1500,2000},
+      ytick={0,5,10,15,20},
+      grid=major,
+      clip=false
+  ]
+  
+  % Punten die het globale negatieve lineaire verband vormen
+  \addplot[
+      only marks,
+      mark=*,
+      mark size=2.2pt
+  ]
+  coordinates {
+      (150,19.0)
+      (350,17.5)
+      (550,16.4)
+      (750,14.2)
+      (950,13.1)
+      (1150,11.0)
+      (1400,9.8)
+      (1600,7.5)
+      (1850,6.2)
+      (2050,4.3)
+  };
+  
+  % Opvallende uitschieter
+  \addplot[
+      only marks,
+      mark=*,
+      mark size=3.2pt
+  ]
+  coordinates {
+      (1500,15.8)
+  };
+  
+  \node[
+      anchor=west
+  ] at (axis cs:1530,15.8) {\small uitschieter};
+  
+  \end{axis}
+  \end{tikzpicture}
+  \end{center}
+  
+  Een goede beschrijving is bijvoorbeeld:
+  
+  \begin{quote}
+  De gegevens suggereren een vrij sterk negatief en ongeveer lineair
+  verband tussen hoogte en temperatuur. Hoger gelegen meetstations
+  hebben in deze dataset doorgaans een lagere temperatuur. Eén station
+  wijkt opvallend af van het globale patroon.
+  \end{quote}
+  
+  Merk op wat we \textbf{niet} schrijven:
+  
+  \begin{quote}
+  Hoogte veroorzaakt hier zeker de gemeten temperatuur.
+  \end{quote}
+  
+  Een spreidingsdiagram toont samenhang in de gegevens, maar bewijst
+  op zichzelf geen causaliteit.
+  
+  \end{voorbeeld}
+
+
+\begin{oefening}[Van losse woorden naar een analyse]{\oefU \ESS}
+
+Een leerling bekijkt een spreidingsdiagram van buitentemperatuur en
+dagelijks gasverbruik van een schoolgebouw. De punten liggen vrij dicht
+rond een dalende rechte band, behalve één punt dat veel hoger ligt.
+
+\begin{question}
+Welke richting heeft het verband?
+
+\begin{multipleChoice}
+  \choice{positief}
+  \choice[correct]{negatief}
+  \choice{geen duidelijke richting}
+\end{multipleChoice}
+\end{question}
+
+\begin{question}
+Welke vorm lijkt geschikt als eerste beschrijving?
+
+\begin{multipleChoice}
+  \choice[correct]{ongeveer lineair}
+  \choice{duidelijk U-vormig}
+  \choice{volledig willekeurig}
+\end{multipleChoice}
+\end{question}
+
+\begin{question}
+Wat moet je met het afwijkende punt doen?
+
+\begin{multipleChoice}
+  \choice{Het onmiddellijk verwijderen.}
+  \choice{Het negeren omdat de andere punten wel goed liggen.}
+  \choice[correct]{Het onderzoeken en nagaan waarom die waarneming afwijkt.}
+\end{multipleChoice}
+\end{question}
+
+\begin{question}
+Formuleer een volledige conclusie in woorden.
+
+\begin{oplossing}
+De gegevens suggereren een vrij sterk negatief en ongeveer lineair
+verband tussen buitentemperatuur en gasverbruik: op warmere dagen is
+het gasverbruik doorgaans lager. Eén waarneming wijkt duidelijk af en
+verdient verder onderzoek. Uit deze puntenwolk alleen volgt nog geen
+bewijs voor causaliteit.
+\end{oplossing}
+\end{question}
+\end{oefening}
+
+
+\end{document}

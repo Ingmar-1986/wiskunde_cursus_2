@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en-US" xml:lang="en-US">
+<head> <title>Van data naar puntenwolk – Van data naar functies — verbanden herkennen en gedrag onderzoeken</title>
+<meta charset="utf-8"/>
+<meta content="TeX4ht (https://tug.org/tex4ht/)" name="generator"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="\aa:CssFile " rel="stylesheet" type="text/css"/>
+<meta content="Van-data-naar-puntenwolk.online.tex" name="src"/>
+<script>window.MathJax = { tex: { tags: "ams", }, }; </script>
+<script async="async" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+<meta content="Ingmar Herreman" name="author"/>
+<meta content="version 2.5.1" name="ximera"/>
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" media="screen" rel="stylesheet"/>
+<script async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js" type="text/javascript"></script>
+<link href="../../../assets/css/base.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/global.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/Header_Footer.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/ChapterLayout.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/chapter-hero.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/ExerciseHero.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/learning-boxes.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/CourseOverview.css" media="screen" rel="stylesheet"/></head><body><!-- XIMERA-HEADER-START --><!-- =========================================================
+     HEADER.HTML — Wiskunde 7 FVD
+     Plaats dit bestand bijvoorbeeld in:
+     assets/html/Header.html
+     ========================================================= -->
+<header aria-labelledby="fvd-hero-title" class="fvd-hero">
+<div aria-hidden="true" class="fvd-hero__grid"></div>
+<div aria-hidden="true" class="fvd-hero__glow fvd-hero__glow--left"></div>
+<div aria-hidden="true" class="fvd-hero__glow fvd-hero__glow--right"></div>
+<div class="fvd-hero__inner">
+<!-- Groot Athena-logo links -->
+<div class="fvd-hero__brand">
+<img alt="Athena secundair onderwijs" class="fvd-hero__logo" src="/images/banners/logo_athena.png"/>
+</div>
+<div aria-hidden="true" class="fvd-hero__divider"></div>
+<!-- Centrale titel en leerinhouden -->
+<div class="fvd-hero__content">
+<p class="fvd-hero__eyebrow">
+                    Fundamentele Vorming Digitale Creatie
+                </p>
+<h1 class="fvd-hero__title" id="fvd-hero-title">
+<span class="fvd-hero__title-main">Wiskunde</span>
+<span class="fvd-hero__title-accent">7 FVD</span>
+</h1>
+<div aria-hidden="true" class="fvd-hero__pink-line"></div>
+<p class="fvd-hero__subtitle">
+                    Wiskundige inzichten die je nodig hebt om digitale werelden te bouwen.
+                </p>
+<div aria-label="Onderwerpen in deze cursus" class="fvd-hero__chips">
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<rect height="18" rx="2" width="14" x="5" y="3"></rect>
+<path d="M8 7h8M8 11h2M14 11h2M8 15h2M14 15h2M8 18h2M14 18h2"></path>
+</svg>
+                        Basiswiskunde
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M4 17c4-1 4-10 8-10 2 0 2 3 4 3 1 0 2-.4 4-2"></path>
+<path d="M7 20 13 4"></path>
+</svg>
+                        Algebra
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M5 8h14M5 16h14"></path>
+</svg>
+                        Vergelijkingen
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M4 19V5M4 19h16"></path>
+<path d="m7 16 4-5 3 2 4-6"></path>
+</svg>
+                        Functies
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M5 18 18 5"></path>
+<path d="M12 5h6v6"></path>
+</svg>
+                        Vectoren
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="7"></circle>
+<path d="M12 2v20M2 12h20"></path>
+</svg>
+                        Coördinaten
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="m12 3 8 4.5v9L12 21l-8-4.5v-9z"></path>
+<path d="m4 7.5 8 4.5 8-4.5M12 12v9"></path>
+</svg>
+                        3D-meetkunde
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M3 16c3-8 7-8 10 0 2 5 5 4 8-4"></path>
+</svg>
+                        Goniometrie
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M5 18V6M5 18h14"></path>
+<path d="M8 16c1-6 3-9 8-10"></path>
+</svg>
+                        Logaritmen
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="m7 6 10 5-10 5z"></path>
+<path d="m7 10 10 5-10 5"></path>
+</svg>
+                        Transformaties
+                    </span>
+</div>
+</div>
+<!-- Rechterzijde met wiskundige SVG-tekeningen -->
+<div aria-hidden="true" class="fvd-hero__visual">
+<!-- 3D-kubus -->
+<svg class="fvd-visual fvd-visual--cube" viewbox="0 0 310 245">
+<g class="fvd-svg-cyan">
+<path d="M65 72 185 86 245 48 125 34Z"></path>
+<path d="M65 72v110l120 16V86"></path>
+<path d="M185 86 245 48v110l-60 40"></path>
+<path class="fvd-svg-dash" d="M125 34v110M125 144 65 182M125 144l120 14"></path>
+<path d="M125 144 90 210M125 144l88 28M125 144V15"></path>
+<path d="m90 210 11-4-7-9M213 172l-9-7-2 11M125 15l-6 11h12"></path>
+</g>
+<g class="fvd-svg-label">
+<text x="82" y="225">x</text>
+<text x="220" y="180">y</text>
+<text x="132" y="18">z</text>
+</g>
+</svg>
+<!-- Matrix -->
+<svg class="fvd-visual fvd-visual--matrix" viewbox="0 0 220 100">
+<g class="fvd-svg-soft">
+<text x="0" y="58">A =</text>
+<path d="M60 10c-12 18-12 62 0 80M205 10c12 18 12 62 0 80"></path>
+<text x="82" y="36">1</text>
+<text x="123" y="36">2</text>
+<text x="165" y="36">0</text>
+<text x="73" y="61">−1</text>
+<text x="123" y="61">0</text>
+<text x="165" y="61">3</text>
+<text x="82" y="86">2</text>
+<text x="113" y="86">−2</text>
+<text x="165" y="86">1</text>
+</g>
+</svg>
+<!-- Vectoren en rotatie -->
+<svg class="fvd-visual fvd-visual--vectors" viewbox="0 0 260 170">
+<g class="fvd-svg-cyan">
+<path d="M55 138 132 74"></path>
+<path d="m132 74-13 3 8 10"></path>
+<path d="M55 138h125"></path>
+<path d="m180 138-12-6v12"></path>
+<path class="fvd-svg-dash" d="M55 138c24-65 116-95 156-25"></path>
+</g>
+<g class="fvd-svg-pink">
+<path d="M55 138 207 104"></path>
+<path d="m207 104-13-2 5 12"></path>
+<path class="fvd-svg-dash" d="M211 113c17-13 25-5 21 11"></path>
+<path d="m232 124-9-8-2 12"></path>
+</g>
+<g class="fvd-svg-label">
+<text x="38" y="153">O</text>
+<text x="138" y="73">u⃗</text>
+<text x="188" y="98">v⃗</text>
+<text x="141" y="130">x⃗</text>
+<text x="222" y="102">Rθ</text>
+</g>
+</svg>
+<!-- Bézier-curve -->
+<svg class="fvd-visual fvd-visual--bezier" viewbox="0 0 280 110">
+<g class="fvd-svg-soft">
+<path d="M30 82 85 30 190 30 245 82"></path>
+</g>
+<g class="fvd-svg-cyan">
+<path d="M30 82c42-12 55-52 105-52s67 40 110 52"></path>
+</g>
+<g class="fvd-svg-pink">
+<circle cx="30" cy="82" r="4"></circle>
+<circle cx="85" cy="30" r="4"></circle>
+<circle cx="190" cy="30" r="4"></circle>
+<circle cx="245" cy="82" r="4"></circle>
+</g>
+<g class="fvd-svg-label">
+<text x="18" y="102">P₀</text>
+<text x="74" y="20">P₁</text>
+<text x="181" y="20">P₂</text>
+<text x="238" y="102">P₃</text>
+<text x="103" y="79">Bézier-curve</text>
+</g>
+</svg>
+</div>
+</div>
+<div aria-hidden="true" class="fvd-hero__pink-corner"></div>
+</header><!-- XIMERA-HEADER-END --><!-- XIMERA-CHAPTER-HERO-START --><section class="chapter-hero">
+<div aria-hidden="true" class="chapter-hero__decoration">
+<span class="chapter-hero__formula">
+            f(x) = ax² + bx + c
+        </span>
+<span class="chapter-hero__curve"></span>
+<span class="chapter-hero__grid"></span>
+</div>
+<div class="chapter-hero__content">
+<div class="chapter-hero__theme">
+<span class="chapter-hero__theme-label">
+                Thema 3
+            </span>
+<span class="chapter-hero__theme-dot"></span>
+<span class="chapter-hero__theme-name">
+                Verbanden onderzoeken met data
+            </span>
+</div>
+<div class="chapter-hero__chapter-label">
+            Hoofdstuk
+        </div>
+<div class="chapter-hero__main">
+<div class="chapter-hero__number">
+                1
+            </div>
+<div class="chapter-hero__text">
+<h1 class="chapter-hero__title">
+                    Van data naar puntenwolk
+                </h1>
+<p class="chapter-hero__abstract">
+                    Wanneer twee grootheden samen worden gemeten, ontstaat een nieuwe vraag: hangt de ene grootheid samen met de andere? Een tabel met meetwaarden bevat alle afzonderlijke waarnemingen, maar maakt een patroon niet altijd zichtbaar. Daarom stellen we gekoppelde gegevens voor in een spreidingsdiagram. Elk punt stelt één waarneming voor; alle punten samen vormen een puntenwolk. In dit hoofdstuk leren we zo'n puntenwolk zorgvuldig lezen. We onderzoeken de richting, de vorm en de sterkte van een mogelijk verband en letten op uitschieters en clusters. We rekenen het verband nog niet samen tot één getal en stellen nog geen regressiemodel op. Eerst leren we kijken, beschrijven en argumenteren. Dat vormt de noodzakelijke basis voor correlatie en lineaire regressie in de volgende hoofdstukken.
+                </p>
+</div>
+</div>
+<div class="chapter-hero__accent"></div>
+</div>
+</section><!-- XIMERA-CHAPTER-HERO-END --><button aria-controls="courseSidebar" aria-expanded="false" class="course-menu-button" id="courseMenuButton" type="button">☰ Toon cursusinhoud</button><div class="course-sidebar-overlay" id="courseSidebarOverlay"></div><!-- XIMERA-CHAPTER-LAYOUT-START --><main class="chapter-layout"><!--
+    AUTOMATISCH GEGENEREERD BESTAND
+
+    Dit bestand wordt opgebouwd door:
+        scripts/generate-sidebar.sh
+
+    Bewerk niet dit bestand, maar:
+        assets/html/SidebarTemplate.html
+        en modules/.../index.tex
+-->
+<aside class="course-sidebar" id="courseSidebar">
+<div class="sidebar-header">
+<div class="sidebar-header__text">
+<span class="sidebar-label">
+                Van data naar functies — verbanden herkennen en gedrag onderzoeken
+            </span>
+<h2 class="sidebar-title">
+                Cursusinhoud
+            </h2>
+</div>
+<button aria-label="Sluit cursusmenu" class="sidebar-close" id="sidebarClose" type="button">
+            ×
+        </button>
+</div>
+<nav aria-label="Cursusinhoud" class="course-navigation">
+<div class="course-section" data-theme="1">
+<button aria-controls="course-section-1-parate-kennis-het-gereedschap-dat-je-nodig-hebt" aria-expanded="true" class="course-section-toggle" type="button">
+<span class="course-section-number">
+            1
+        </span>
+<span class="course-section-title">
+            Parate kennis — Het gereedschap dat je nodig hebt
+        </span>
+<span aria-hidden="true" class="course-section-arrow">
+            ▾
+        </span>
+</button>
+<div class="course-section-content" id="course-section-1-parate-kennis-het-gereedschap-dat-je-nodig-hebt">
+<a class="course-chapter-link" data-chapter="Thema1-Parate-kennis/Parate-kennis" href="Thema1-Parate-kennis/Parate-kennis.html">
+<span class="course-chapter-number">
+                1
+            </span>
+<span class="course-chapter-title">
+                Parate kennis — Je wiskundige gereedschapskist
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema1-Parate-kennis/Parate-kennis-oefeningen" href="Thema1-Parate-kennis/Parate-kennis-oefeningen.html">
+<span class="course-chapter-number">
+                2
+            </span>
+<span class="course-chapter-title">
+                Oefeningen — Parate kennis
+            </span>
+</a>
+</div>
+</div>
+<div class="course-section" data-theme="2">
+<button aria-controls="course-section-2-van-werkelijkheid-naar-wiskunde-en-terug" aria-expanded="true" class="course-section-toggle" type="button">
+<span class="course-section-number">
+            2
+        </span>
+<span class="course-section-title">
+            Van werkelijkheid naar wiskunde — en terug
+        </span>
+<span aria-hidden="true" class="course-section-arrow">
+            ▾
+        </span>
+</button>
+<div class="course-section-content" id="course-section-2-van-werkelijkheid-naar-wiskunde-en-terug">
+<a class="course-chapter-link" data-chapter="Thema2-Modelleren/Werkelijkheid-terug" href="Thema2-Modelleren/Werkelijkheid-terug.html">
+<span class="course-chapter-number">
+                1
+            </span>
+<span class="course-chapter-title">
+                Van werkelijkheid naar wiskunde — en terug
+            </span>
+</a>
+</div>
+</div>
+<div class="course-section is-open" data-theme="3">
+<button aria-controls="course-section-3-verbanden-onderzoeken-met-data" aria-expanded="true" class="course-section-toggle" type="button">
+<span class="course-section-number">
+            3
+        </span>
+<span class="course-section-title">
+            Verbanden onderzoeken met data
+        </span>
+<span aria-hidden="true" class="course-section-arrow">
+            ▾
+        </span>
+</button>
+<div class="course-section-content" id="course-section-3-verbanden-onderzoeken-met-data">
+<a aria-current="page" class="course-chapter-link is-active" data-chapter="Thema3-Verbanden/Van-data-naar-puntenwolk" href="Thema3-Verbanden/Van-data-naar-puntenwolk.html">
+<span class="course-chapter-number">
+                1
+            </span>
+<span class="course-chapter-title">
+                Van data naar puntenwolk
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema3-Verbanden/Van-data-naar-puntenwolk-oefeningen" href="Thema3-Verbanden/Van-data-naar-puntenwolk-oefeningen.html">
+<span class="course-chapter-number">
+                2
+            </span>
+<span class="course-chapter-title">
+                Oefeningen — Van data naar puntenwolk
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema3-Verbanden/Correlatie" href="Thema3-Verbanden/Correlatie.html">
+<span class="course-chapter-number">
+                3
+            </span>
+<span class="course-chapter-title">
+                Correlatie — Hoe sterk is het lineaire verband?
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema3-Verbanden/Correlatie-oefeningen" href="Thema3-Verbanden/Correlatie-oefeningen.html">
+<span class="course-chapter-number">
+                4
+            </span>
+<span class="course-chapter-title">
+                Oefeningen — Correlatie
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema3-Verbanden/Lineaire-regressie" href="Thema3-Verbanden/Lineaire-regressie.html">
+<span class="course-chapter-number">
+                5
+            </span>
+<span class="course-chapter-title">
+                Lineaire regressie — Van data naar model
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema3-Verbanden/Lineaire-regressie-oefeningen" href="Thema3-Verbanden/Lineaire-regressie-oefeningen.html">
+<span class="course-chapter-number">
+                6
+            </span>
+<span class="course-chapter-title">
+                Oefeningen — Lineaire regressie
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema3-Verbanden/Samenhang-oorzaak" href="Thema3-Verbanden/Samenhang-oorzaak.html">
+<span class="course-chapter-number">
+                7
+            </span>
+<span class="course-chapter-title">
+                Samenhang is nog geen oorzaak
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema3-Verbanden/Samenhang-oorzaak-oefeningen" href="Thema3-Verbanden/Samenhang-oorzaak-oefeningen.html">
+<span class="course-chapter-number">
+                8
+            </span>
+<span class="course-chapter-title">
+                Oefeningen — Samenhang is nog geen oorzaak
+            </span>
+</a>
+</div>
+</div>
+</nav>
+</aside>
+<article class="chapter-content"><div class="chapter-body">
+<div class="preamble">
+</div>
+<style> .activity-body pre { white-space: pre; background-color: lightgray; } .xmyoutube { aspect-ratio: 16/9; min-width: 75%; } .image-environment img { width: unset; } </style>
+<div class="maketitle"></div>
+<!-- l. 41 --><p class="noindent"></p><section class="learning-box learning-box--prior"> <div class="learning-box__header"> <span class="learning-box__icon"> </span><span class="learning-box__title">Voorkennis</span> </div> <div class="learning-box__content">
+<p></p>
+<ul class="itemize1">
+<li class="itemize">Je kan gegevens aflezen uit een tabel en een grafiek.
+</li>
+<li class="itemize">Je kent het cartesisch assenstelsel en kan een punt <span class="mathjax-inline">\((x,y)\)</span> plaatsen.
+</li>
+<li class="itemize">Je kan grootheden, waarden en eenheden van elkaar onderscheiden.
+</li>
+<li class="itemize">Je kan stijgend en dalend gedrag in een grafiek herkennen.
+</li>
+<li class="itemize">Je weet dat meetgegevens een beschrijving van de werkelijkheid vormen.</li></ul>
+<!-- l. 47 --><p class="noindent"></p></div> </section>
+<p></p><!-- l. 49 --><p class="noindent"></p><section class="learning-box learning-box--goals"> <div class="learning-box__header"> <span class="learning-box__icon"> </span><span class="learning-box__title">Leerdoelen</span> </div> <div class="learning-box__content">
+<p></p>
+<ul class="itemize1">
+<li class="itemize">Je kan twee numerieke grootheden in een dataset herkennen en correct
+benoemen.
+</li>
+<li class="itemize">Je kan uitleggen wat één punt in een spreidingsdiagram in de context
+betekent.
+</li>
+<li class="itemize">Je kan gekoppelde gegevens voorstellen in een spreidingsdiagram.
+                                                                  
+
+                                                                  
+</li>
+<li class="itemize">Je kan een puntenwolk beschrijven volgens richting, vorm en sterkte.
+</li>
+<li class="itemize">Je kan een mogelijk positief of negatief verband herkennen.
+</li>
+<li class="itemize">Je kan lineair en niet-lineair gedrag visueel van elkaar onderscheiden.
+</li>
+<li class="itemize">Je kan uitschieters en clusters herkennen en uitleggen waarom ze aandacht
+verdienen.
+</li>
+<li class="itemize">Je   kan   op   basis   van   een   spreidingsdiagram   een   voorzichtige,
+contextgebonden conclusie formuleren.
+</li>
+<li class="itemize">Je kan uitleggen waarom een spreidingsdiagram op zichzelf geen causaliteit
+bewijst.</li></ul>
+<!-- l. 59 --><p class="noindent"></p></div> </section>
+<p><a id="x1-2r1"></a>
+</p><p></p><!-- l. 63 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">1</div><div class="fvd-section-bar__title">Waarom twee grootheden samen onderzoeken?</div></div>
+<p></p><!-- l. 66 --><p class="noindent">In wetenschappen meten we vaak niet één, maar meerdere grootheden bij hetzelfde
+object, dezelfde persoon of hetzelfde experiment.
+</p><!-- l. 69 --><p class="noindent">Denk bijvoorbeeld aan:
+</p>
+<ul class="itemize1">
+<li class="itemize">de massa en de lengte van een dier;
+</li>
+<li class="itemize">de hoogte en de gemiddelde temperatuur van een meetstation;
+                                                                  
+
+                                                                  
+</li>
+<li class="itemize">de spanning en de stroomsterkte in een elektrische component;
+</li>
+<li class="itemize">de concentratie van een oplossing en de gemeten absorbantie;
+</li>
+<li class="itemize">de buitentemperatuur en het energieverbruik van een gebouw.</li></ul>
+<!-- l. 79 --><p class="noindent">Wanneer twee numerieke grootheden bij dezelfde waarnemingen worden gemeten,
+kunnen we onderzoeken of hun waarden <strong>samen veranderen</strong>.
+</p><!-- l. 83 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">Een verband onderzoeken begint niet met een formule.
+<p></p><!-- l. 85 --><p class="noindent">We beginnen met drie vragen:
+</p>
+<div class="mathjax-block">\[ \important { \text {Wat werd gemeten?} \quad \text {Hoe zijn de gegevens gekoppeld?} \quad \text {Welk patroon zien we?} } \]</div> </div></section>
+<p><a id="x1-3r1"></a>
+</p><!-- l. 99 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 99 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 99 --><p class="noindent"></p><div class="fvd-subsection__number">1.1</div>
+<p></p><!-- l. 99 --><p class="noindent"></p><div class="fvd-subsection__title">Gekoppelde gegevens</div>
+<p></p><!-- l. 99 --><p class="noindent"></p></div>
+<p></p><!-- l. 99 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 99 --><p class="noindent"></p></div>
+<p></p><!-- l. 101 --><p class="noindent">Beschouw een eenvoudig experiment waarbij van acht metalen staven de lengte en de
+massa worden gemeten.
+</p>
+<div class="mathjax-block">\[ \begin {array}{c|cccccccc} \text {staaf} &amp; 1&amp;2&amp;3&amp;4&amp;5&amp;6&amp;7&amp;8\\ \hline \text {lengte }x\;(\mathrm {cm}) &amp;10&amp;14&amp;18&amp;22&amp;26&amp;30&amp;34&amp;38\\ \text {massa }y\;(\mathrm {g}) &amp;24&amp;32&amp;43&amp;50&amp;61&amp;69&amp;81&amp;88 \end {array} \]</div>
+<!-- l. 114 --><p class="noindent">De waarden in dezelfde kolom horen bij <strong>dezelfde staaf</strong>. We mogen de eerste
+waarneming dus schrijven als
+</p>
+<div class="mathjax-block">\[ (10,24), \]</div>
+<!-- l. 121 --><p class="noindent">de tweede als
+</p>
+<div class="mathjax-block">\[ (14,32), \]</div>
+<!-- l. 127 --><p class="noindent">enzovoort.
+                                                                  
+
+                                                                  
+</p><!-- l. 130 --><p class="noindent"></p><section class="fvd-definition"><div class="fvd-definition__title"><span class="fvd-definition__label">DEFINITIE</span></div><div class="fvd-definition__content">Een dataset met twee numerieke grootheden bestaat uit <strong>gekoppelde
+waarnemingen</strong>
+<p></p>
+<div class="mathjax-block">\[ (x_1,y_1),(x_2,y_2),\ldots ,(x_n,y_n). \]</div>
+<!-- l. 137 --><p class="noindent">Bij elke waarneming horen dus twee waarden die samen gemeten zijn. </p></div></section>
+<p><a id="x1-4r1"></a>
+</p><p></p><!-- l. 140 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 140 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 140 --><p class="noindent">Oefening 1
+</p><!-- l. 140 --><p class="noindent">— Wat hoort bij elkaar?
+</p><!-- l. 140 --><p class="noindent"></p></div>
+<p></p><!-- l. 140 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 140 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--b">B</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 140 --><p class="noindent"></p><div class="fvd-exercise__content"> In een onderzoek worden voor verschillende dagen de buitentemperatuur en het
+dagelijkse elektriciteitsverbruik van een koelinstallatie gemeten.
+<p></p>
+<div class="problem-environment question" id="problem1" numbered=" " role="article" titletext=" Question">  Wat stelt één gegevenspaar <span class="mathjax-inline">\((x_i,y_i)\)</span> voor?
+<div class="multiple-choice" id="problem2" titletext=" Multiple Choice"><span class="choice" id="choice1">De temperatuur van één dag en het verbruik van een andere dag. </span><span class="choice correct" id="choice2">De
+temperatuur en het verbruik die bij dezelfde dag horen. </span><span class="choice" id="choice3">Twee opeenvolgende
+temperaturen. </span><span class="choice" id="choice4">Twee opeenvolgende verbruiken.</span> </div> </div>
+<div class="problem-environment question" id="problem3" numbered=" " role="article" titletext=" Question">  Waarom mogen we de waarden niet willekeurig door elkaar mengen?
+<div class="accordion">
+<h3 class="xmoplossing"></h3>
+<div class="accordion-item xmoplossing-content" id="accordion-item4"> 
+ Omdat de koppeling tussen beide metingen essentieel is. We willen onderzoeken
+hoe de twee grootheden bij dezelfde waarneming samen voorkomen. </div>
+</div>
+</div>
+</div>
+<!-- l. 164 --><p class="noindent"></p></div>
+<p></p><!-- l. 164 --><p class="noindent"></p></section>
+<p><a id="x1-5r2"></a>
+</p><p></p><!-- l. 168 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">2</div><div class="fvd-section-bar__title">Van tabel naar spreidingsdiagram</div></div>
+<p></p><!-- l. 171 --><p class="noindent">Een tabel bewaart de meetwaarden nauwkeurig, maar een patroon is er niet altijd
+gemakkelijk in te herkennen.
+</p><!-- l. 174 --><p class="noindent">Daarom zetten we ieder gegevenspaar <span class="mathjax-inline">\((x_i,y_i)\)</span> als een punt in een assenstelsel.
+</p><!-- l. 178 --><p class="noindent"></p><section class="fvd-definition"><div class="fvd-definition__title"><span class="fvd-definition__label">DEFINITIE</span></div><div class="fvd-definition__content">Een <strong>spreidingsdiagram</strong> of <strong>puntenwolk</strong> is een grafische voorstelling
+van gekoppelde numerieke gegevens.
+<p></p><!-- l. 181 --><p class="noindent">Elk gegevenspaar
+</p>
+<div class="mathjax-block">\[ (x_i,y_i) \]</div>
+<!-- l. 187 --><p class="noindent">wordt voorgesteld door één punt in een assenstelsel. </p></div></section>
+<p></p><!-- l. 190 --><p class="noindent">Voor de metalen staven krijgen we dus acht punten. De punten hoeven niet exact op
+een rechte of kromme te liggen. Het gaat om <strong>meetgegevens</strong>; natuurlijke variatie en
+meetonzekerheid zijn normaal.
+<a id="x1-6r1"></a>
+</p><!-- l. 196 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 196 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 196 --><p class="noindent"></p><div class="fvd-subsection__number">2.1</div>
+<p></p><!-- l. 196 --><p class="noindent"></p><div class="fvd-subsection__title">Wat stelt één punt voor?</div>
+<p></p><!-- l. 196 --><p class="noindent"></p></div>
+<p></p><!-- l. 196 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 196 --><p class="noindent"></p></div>
+<p></p><!-- l. 198 --><p class="noindent">Een punt in een spreidingsdiagram heeft altijd een betekenis in de context.
+</p><!-- l. 201 --><p class="noindent">Het punt
+</p>
+<div class="mathjax-block">\[ (26,61) \]</div>
+<!-- l. 207 --><p class="noindent">betekent in het voorbeeld:
+</p>
+<blockquote class="quote">
+<!-- l. 210 --><p class="noindent">Een staaf met een lengte van <span class="mathjax-inline">\(26\,\mathrm {cm}\)</span> heeft een gemeten massa van <span class="mathjax-inline">\(61\,\mathrm {g}\)</span>.</p></blockquote>
+<!-- l. 215 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">Lees een punt nooit alleen als “<span class="mathjax-inline">\((26,61)\)</span>”.
+<p></p><!-- l. 217 --><p class="noindent">Een goede interpretatie bevat:
+</p>
+<ul class="itemize1">
+<li class="itemize">de twee grootheden;
+</li>
+<li class="itemize">de twee waarden;
+</li>
+<li class="itemize">de eenheden;
+</li>
+<li class="itemize">de betekenis in de context.</li></ul>
+</div></section>
+<p><a id="x1-7r2"></a>
+</p><!-- l. 228 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 228 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 228 --><p class="noindent"></p><div class="fvd-subsection__number">2.2</div>
+<p></p><!-- l. 228 --><p class="noindent"></p><div class="fvd-subsection__title">Welke grootheid komt op welke as?</div>
+<p></p><!-- l. 228 --><p class="noindent"></p></div>
+<p></p><!-- l. 228 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 228 --><p class="noindent"></p></div>
+<p></p><!-- l. 230 --><p class="noindent">Wanneer de context een natuurlijke richting suggereert, plaatsen we de grootheid die
+als mogelijke verklarende of instelbare grootheid wordt gebruikt meestal op de
+horizontale as.
+</p><!-- l. 234 --><p class="noindent">De andere grootheid komt dan op de verticale as.
+</p><!-- l. 236 --><p class="noindent">Bijvoorbeeld:
+</p>
+<div class="mathjax-block">\[ \text {hoogte} \longrightarrow \text {temperatuur} \]</div>
+<!-- l. 244 --><p class="noindent">of
+</p>
+<div class="mathjax-block">\[ \text {concentratie} \longrightarrow \text {absorbantie}. \]</div>
+<!-- l. 253 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">De keuze van de assen <strong>bewijst geen oorzaak-gevolgrelatie</strong>. Ze
+helpt ons alleen om de gegevens op een zinvolle manier te organiseren. Of een
+verband werkelijk causaal is, vraagt bijkomende argumenten en onderzoek.
+</div></section>
+<p><a id="x1-8r2"></a>
+</p><p></p><!-- l. 260 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 260 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 260 --><p class="noindent">Oefening 2
+</p><!-- l. 260 --><p class="noindent">— De assen kiezen
+</p><!-- l. 260 --><p class="noindent"></p></div>
+<p></p><!-- l. 260 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 260 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--b">B</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 260 --><p class="noindent"></p><div class="fvd-exercise__content"> Een leerling onderzoekt bij een veer hoe de uitrekking verandert wanneer
+verschillende massa’s worden opgehangen.
+<p></p>
+<div class="problem-environment question" id="problem5" numbered=" " role="article" titletext=" Question">  Welke grootheid plaats je hier het meest natuurlijk op de horizontale
+as?
+<div class="multiple-choice" id="problem6" titletext=" Multiple Choice"><span class="choice correct" id="choice5">de opgehangen massa </span><span class="choice" id="choice6">de uitrekking</span> </div> </div>
+<div class="problem-environment question" id="problem7" numbered=" " role="article" titletext=" Question">  Welke informatie moet bij de assen vermeld worden?
+<div class="accordion">
+<h3 class="xmoplossing"></h3>
+<div class="accordion-item xmoplossing-content" id="accordion-item8"> 
+ De naam of het symbool van de grootheid en de gebruikte eenheid. </div>
+</div>
+</div>
+</div>
+<!-- l. 280 --><p class="noindent"></p></div>
+<p></p><!-- l. 280 --><p class="noindent"></p></section>
+<p><a id="x1-9r3"></a>
+</p><p></p><!-- l. 284 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">3</div><div class="fvd-section-bar__title">Een puntenwolk systematisch lezen</div></div>
+<p></p><!-- l. 287 --><p class="noindent">Een puntenwolk beoordelen we niet op basis van één punt. We bekijken het <strong>globale
+patroon</strong>.
+</p><!-- l. 290 --><p class="noindent">Daarbij gebruiken we vier aandachtspunten:
+</p>
+<div class="mathjax-block">\[ \important { \text {richting} \quad \text {vorm} \quad \text {sterkte} \quad \text {bijzonderheden} } \]</div>
+<!-- l. 304 --><p class="noindent">Die vier woorden vormen vanaf nu onze vaste leesstrategie.
+<a id="x1-10r1"></a>
+</p><!-- l. 308 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 308 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 308 --><p class="noindent"></p><div class="fvd-subsection__number">3.1</div>
+<p></p><!-- l. 308 --><p class="noindent"></p><div class="fvd-subsection__title">1. Richting</div>
+<p></p><!-- l. 308 --><p class="noindent"></p></div>
+<p></p><!-- l. 308 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 308 --><p class="noindent"></p></div>
+<p></p><!-- l. 312 --><p class="noindent"></p><section class="fvd-definition"><div class="fvd-definition__title"><span class="fvd-definition__label">DEFINITIE</span></div><div class="fvd-definition__content">We spreken van een <strong>positief verband</strong> wanneer grotere waarden van de
+ene grootheid in het algemeen samengaan met grotere waarden van de andere
+grootheid.
+<p></p><!-- l. 316 --><p class="noindent">We spreken van een <strong>negatief verband</strong> wanneer grotere waarden van de ene
+grootheid in het algemeen samengaan met kleinere waarden van de andere grootheid.
+</p></div></section>
+<p></p><!-- l. 321 --><p class="noindent">Positief en negatief zeggen dus iets over de <strong>richting</strong> van de puntenwolk, niet over hoe
+sterk het verband is.
+<a id="x1-11r1"></a>
+</p><!-- l. 324 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 324 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 1<span class="fvd-example__subtitle"> — Twee wetenschappelijke situaties</span></div>
+<p></p><!-- l. 324 --><p class="noindent"></p><div class="fvd-example__content"> Bij eenzelfde soort metalen staaf verwachten we doorgaans een positief verband
+                                                                  
+
+                                                                  
+tussen lengte en massa.
+<p></p><!-- l. 328 --><p class="noindent">Bij meetstations in een berggebied verwachten we doorgaans een negatief verband
+tussen hoogte en temperatuur: hoger gelegen stations zijn gemiddeld kouder.
+</p></div></section>
+<p><a id="x1-12r2"></a>
+</p><p></p><!-- l. 335 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 335 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 335 --><p class="noindent"></p><div class="fvd-subsection__number">3.2</div>
+<p></p><!-- l. 335 --><p class="noindent"></p><div class="fvd-subsection__title">2. Vorm</div>
+<p></p><!-- l. 335 --><p class="noindent"></p></div>
+<p></p><!-- l. 335 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 335 --><p class="noindent"></p></div>
+<p></p><!-- l. 338 --><p class="noindent">Niet ieder verband is lineair.
+</p><!-- l. 341 --><p class="noindent"></p><section class="fvd-definition"><div class="fvd-definition__title"><span class="fvd-definition__label">DEFINITIE</span></div><div class="fvd-definition__content">Een puntenwolk vertoont een <strong>ongeveer lineair verband</strong> wanneer de
+punten globaal rond een rechte band liggen.
+<p></p><!-- l. 344 --><p class="noindent">Bij een <strong>niet-lineair verband</strong> volgt de puntenwolk duidelijk een andere vorm,
+bijvoorbeeld een kromme. </p></div></section>
+<p></p><!-- l. 348 --><p class="noindent">Dat onderscheid is belangrijk. In het volgende hoofdstuk zullen we een getal invoeren
+dat specifiek de sterkte van een <strong>lineair</strong> verband beschrijft.
+</p><!-- l. 353 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">Een puntenwolk zonder duidelijke rechte richting kan toch een sterk
+verband bevatten.
+<p></p><!-- l. 356 --><p class="noindent">Bijvoorbeeld: wanneer <span class="mathjax-inline">\(y\)</span> ongeveer afhangt van <span class="mathjax-inline">\(x^2\)</span>, kan de puntenwolk een duidelijke
+U-vorm hebben. Het verband is dan sterk, maar niet lineair. </p></div></section>
+<p><a id="x1-13r3"></a>
+</p><p></p><!-- l. 362 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 362 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 362 --><p class="noindent"></p><div class="fvd-subsection__number">3.3</div>
+<p></p><!-- l. 362 --><p class="noindent"></p><div class="fvd-subsection__title">3. Sterkte</div>
+<p></p><!-- l. 362 --><p class="noindent"></p></div>
+<p></p><!-- l. 362 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 362 --><p class="noindent"></p></div>
+<p></p><!-- l. 365 --><p class="noindent">Wanneer de punten dicht rond een herkenbaar patroon liggen, spreken we informeel
+van een sterker verband.
+</p><!-- l. 368 --><p class="noindent">Wanneer de punten veel verder verspreid liggen, is het verband zwakker.
+</p><!-- l. 371 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">In dit hoofdstuk beoordelen we de sterkte nog <strong>visueel</strong>.
+                                                                  
+
+                                                                  
+<p></p><!-- l. 373 --><p class="noindent">In het volgende hoofdstuk leren we de sterkte en richting van een lineair verband
+samenvatten met de correlatiecoëfficiënt. </p></div></section>
+<p><a id="x1-14r4"></a>
+</p><p></p><!-- l. 379 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 379 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 379 --><p class="noindent"></p><div class="fvd-subsection__number">3.4</div>
+<p></p><!-- l. 379 --><p class="noindent"></p><div class="fvd-subsection__title">4. Bijzonderheden: uitschieters en clusters</div>
+<p></p><!-- l. 379 --><p class="noindent"></p></div>
+<p></p><!-- l. 379 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 379 --><p class="noindent"></p></div>
+<p></p><!-- l. 382 --><p class="noindent">Een globale trend is niet het hele verhaal.
+</p><!-- l. 385 --><p class="noindent"></p><section class="fvd-definition"><div class="fvd-definition__title"><span class="fvd-definition__label">DEFINITIE</span></div><div class="fvd-definition__content">Een <strong>uitschieter</strong> is een waarneming die opvallend ver van het algemene
+patroon van de andere gegevens ligt. </div></section>
+<p></p><!-- l. 389 --><p class="noindent">Een uitschieter kan verschillende oorzaken hebben:
+</p>
+<ul class="itemize1">
+<li class="itemize">een meet- of invoerfout;
+</li>
+<li class="itemize">een uitzonderlijke maar correcte waarneming;
+</li>
+<li class="itemize">een andere experimentele situatie;
+</li>
+<li class="itemize">een aanwijzing dat ons model te eenvoudig is.</li></ul>
+<!-- l. 398 --><p class="noindent">We verwijderen een uitschieter daarom nooit automatisch.
+</p><!-- l. 401 --><p class="noindent"></p><section class="fvd-definition"><div class="fvd-definition__title"><span class="fvd-definition__label">DEFINITIE</span></div><div class="fvd-definition__content">Een <strong>cluster</strong> is een groep waarnemingen die in een bepaald gebied van
+het spreidingsdiagram duidelijk samen ligt. </div></section>
+<p></p><!-- l. 405 --><p class="noindent">Clusters kunnen erop wijzen dat verschillende groepen in de dataset door elkaar
+voorkomen.
+</p><!-- l. 408 --><p class="noindent">Denk bijvoorbeeld aan metingen bij twee verschillende materialen, twee
+leeftijdsgroepen of twee experimentele omstandigheden.
+<a id="x1-15r4"></a>
+</p><!-- l. 413 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">4</div><div class="fvd-section-bar__title">Van kijken naar beschrijven</div></div>
+<p></p><!-- l. 416 --><p class="noindent">Een goede analyse bestaat niet uit één woord zoals “positief” of “sterk”.
+</p><!-- l. 419 --><p class="noindent">Gebruik bij een nieuwe puntenwolk bij voorkeur deze volgorde:
+</p>
+<ol class="enumerate1">
+<li class="enumerate" id="x1-17x1"><strong>Context:</strong> welke twee grootheden worden vergeleken?
+</li>
+<li class="enumerate" id="x1-19x2"><strong>Richting:</strong> positief, negatief of geen duidelijke richting?
+</li>
+<li class="enumerate" id="x1-21x3"><strong>Vorm:</strong> ongeveer lineair of duidelijk niet-lineair?
+</li>
+<li class="enumerate" id="x1-23x4"><strong>Sterkte:</strong> liggen de punten dicht of ruim rond het patroon?
+</li>
+<li class="enumerate" id="x1-25x5"><strong>Bijzonderheden:</strong>  zijn  er  uitschieters,  clusters  of  andere  opvallende
+kenmerken?
+</li>
+<li class="enumerate" id="x1-27x6"><strong>Conclusie:</strong> wat suggereert de puntenwolk in deze context?</li></ol>
+<p><a id="x1-28r2"></a>
+</p><!-- l. 430 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 430 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 2<span class="fvd-example__subtitle"> — Hoogte en temperatuur</span></div>
+<p></p><!-- l. 430 --><p class="noindent"></p><div class="fvd-example__content"> Stel dat meetstations op verschillende hoogtes worden vergeleken en de puntenwolk
+duidelijk van linksboven naar rechtsonder loopt.
+<p></p><!-- l. 434 --><p class="noindent">Een goede beschrijving is bijvoorbeeld:
+                                                                  
+
+                                                                  
+</p>
+<blockquote class="quote">
+<!-- l. 437 --><p class="noindent">De gegevens suggereren een vrij sterk negatief en ongeveer lineair
+verband tussen hoogte en temperatuur. Hoger gelegen meetstations
+hebben  in  deze  dataset  doorgaans  een  lagere  temperatuur.  Eén
+station wijkt opvallend af van het globale patroon.</p></blockquote>
+<!-- l. 443 --><p class="noindent">Merk op wat we <strong>niet</strong> schrijven:
+</p>
+<blockquote class="quote">
+<!-- l. 446 --><p class="noindent">Hoogte veroorzaakt hier zeker de gemeten temperatuur.</p></blockquote>
+<!-- l. 449 --><p class="noindent">Een spreidingsdiagram toont samenhang in de gegevens, maar bewijst op zichzelf
+geen causaliteit. </p></div></section>
+<p><a id="x1-29r3"></a>
+</p><p></p><!-- l. 454 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 454 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 454 --><p class="noindent">Oefening 3
+</p><!-- l. 454 --><p class="noindent">— Van losse woorden naar een analyse
+</p><!-- l. 454 --><p class="noindent"></p></div>
+<p></p><!-- l. 454 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 454 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 454 --><p class="noindent"></p><div class="fvd-exercise__content"> Een leerling bekijkt een spreidingsdiagram van buitentemperatuur en dagelijks
+gasverbruik van een schoolgebouw. De punten liggen vrij dicht rond een dalende
+rechte band, behalve één punt dat veel hoger ligt.
+<p></p>
+<div class="problem-environment question" id="problem9" numbered=" " role="article" titletext=" Question">  Welke richting heeft het verband?
+<div class="multiple-choice" id="problem10" titletext=" Multiple Choice"><span class="choice" id="choice7">positief </span><span class="choice correct" id="choice8">negatief </span><span class="choice" id="choice9">geen duidelijke richting</span> </div> </div>
+<div class="problem-environment question" id="problem11" numbered=" " role="article" titletext=" Question">  Welke vorm lijkt geschikt als eerste beschrijving?
+<div class="multiple-choice" id="problem12" titletext=" Multiple Choice"><span class="choice correct" id="choice10">ongeveer lineair </span><span class="choice" id="choice11">duidelijk U-vormig </span><span class="choice" id="choice12">volledig willekeurig</span> </div> </div>
+<div class="problem-environment question" id="problem13" numbered=" " role="article" titletext=" Question">  Wat moet je met het afwijkende punt doen?
+<div class="multiple-choice" id="problem14" titletext=" Multiple Choice"><span class="choice" id="choice13">Het onmiddellijk verwijderen. </span><span class="choice" id="choice14">Het negeren omdat de andere punten wel
+goed liggen. </span><span class="choice correct" id="choice15">Het onderzoeken en nagaan waarom die waarneming afwijkt.</span> </div>
+</div>
+<div class="problem-environment question" id="problem15" numbered=" " role="article" titletext=" Question">  Formuleer een volledige conclusie in woorden.
+<div class="accordion">
+<h3 class="xmoplossing"></h3>
+<div class="accordion-item xmoplossing-content" id="accordion-item16"> 
+ De gegevens suggereren een vrij sterk negatief en ongeveer lineair verband tussen
+buitentemperatuur en gasverbruik: op warmere dagen is het gasverbruik doorgaans
+                                                                  
+
+                                                                  
+lager. Eén waarneming wijkt duidelijk af en verdient verder onderzoek. Uit deze
+puntenwolk alleen volgt nog geen bewijs voor causaliteit. </div>
+</div>
+</div> </div>
+<!-- l. 500 --><p class="noindent"></p></div>
+<p></p><!-- l. 500 --><p class="noindent"></p></section>
+<p><a id="x1-30r5"></a>
+</p><p></p><!-- l. 504 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">5</div><div class="fvd-section-bar__title">Een spreidingsdiagram maken met ICT</div></div>
+<p></p><!-- l. 507 --><p class="noindent">Bij grotere datasets gebruiken we ICT om de puntenwolk te tekenen. Dat bespaart
+tijd, maar de software neemt het denkwerk niet over.
+</p><!-- l. 510 --><p class="noindent">Een correcte werkwijze is:
+</p>
+<ol class="enumerate1">
+<li class="enumerate" id="x1-32x1">controleer welke twee kolommen gekoppelde gegevens bevatten;
+</li>
+<li class="enumerate" id="x1-34x2">kies welke grootheid op de horizontale en verticale as komt;
+</li>
+<li class="enumerate" id="x1-36x3">maak een spreidingsdiagram;
+</li>
+<li class="enumerate" id="x1-38x4">geef beide assen een betekenisvolle naam en eenheid;
+</li>
+<li class="enumerate" id="x1-40x5">controleer de schaal;
+</li>
+<li class="enumerate" id="x1-42x6">beschrijf daarna richting, vorm, sterkte en bijzonderheden.</li></ol>
+<!-- l. 522 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">Een lijngrafiek en een spreidingsdiagram zijn niet hetzelfde.
+<p></p><!-- l. 524 --><p class="noindent">Bij een spreidingsdiagram worden afzonderlijke gekoppelde waarnemingen als punten
+weergegeven. De punten hoeven niet in meetvolgorde met lijnstukken verbonden te
+worden. </p></div></section>
+<p><a id="x1-43r6"></a>
+</p><p></p><!-- l. 531 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">6</div><div class="fvd-section-bar__title">Grafieken kritisch bekijken</div></div>
+<p></p><!-- l. 534 --><p class="noindent">Ook een correct getekende puntenwolk kan verkeerd geïnterpreteerd worden.
+</p><!-- l. 536 --><p class="noindent">Let daarom op:
+</p>
+<ul class="itemize1">
+<li class="itemize">de schaal van beide assen;
+</li>
+<li class="itemize">het bereik van de gemeten waarden;
+</li>
+<li class="itemize">het aantal waarnemingen;
+</li>
+<li class="itemize">mogelijke uitschieters;
+</li>
+<li class="itemize">mogelijke clusters;
+</li>
+<li class="itemize">de vraag of het globale patroon werkelijk lineair lijkt.</li></ul>
+<p><a id="x1-44r3"></a>
+</p><!-- l. 547 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 547 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 3<span class="fvd-example__subtitle"> — Een te snelle conclusie</span></div>
+<p></p><!-- l. 547 --><p class="noindent"></p><div class="fvd-example__content"> Een onderzoek bevat slechts vijf meetpunten. Vier punten liggen dicht bij elkaar en
+één punt ligt ver weg. Door dat ene punt lijkt een sterk stijgend verband te
+ontstaan.
+<p></p><!-- l. 552 --><p class="noindent">Dan is “er is een sterk positief verband” een te snelle conclusie. De uitschieter heeft
+mogelijk een zeer grote invloed op het beeld. We moeten eerst onderzoeken wat er
+met die waarneming aan de hand is. </p></div></section>
+<p><a id="x1-45r7"></a>
+</p><p></p><!-- l. 559 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">7</div><div class="fvd-section-bar__title">Samengevat</div></div>
+<p></p><!-- l. 562 --><p class="noindent">Wanneer twee numerieke grootheden bij dezelfde waarnemingen worden gemeten,
+kunnen we hun samenhang onderzoeken met een spreidingsdiagram.
+</p>
+<div class="mathjax-block">\[ \important { (x_i,y_i) \longrightarrow \text {punt} \longrightarrow \text {puntenwolk} \longrightarrow \text {patroon} \longrightarrow \text {voorzichtige conclusie} } \]</div>
+<!-- l. 579 --><p class="noindent">Bij het lezen van een puntenwolk onderzoeken we steeds:
+</p>
+<div class="mathjax-block">\[ \boxed { \text {richting} \quad \text {vorm} \quad \text {sterkte} \quad \text {bijzonderheden} } \]</div>
+<!-- l. 593 --><p class="noindent">Een positief verband betekent dat grotere waarden doorgaans samengaan met grotere
+waarden. Bij een negatief verband gaan grotere waarden doorgaans samen met
+kleinere waarden.
+</p><!-- l. 597 --><p class="noindent">Een verband kan ongeveer lineair of duidelijk niet-lineair zijn. Uitschieters en clusters
+mogen niet zomaar genegeerd worden.
+</p><!-- l. 600 --><p class="noindent">Ten slotte geldt:
+</p>
+<div class="mathjax-block">\[ \important { \text {een spreidingsdiagram toont een patroon in gegevens, maar bewijst geen causaliteit} } \]</div>
+<!-- l. 609 --><p class="noindent">In het volgende hoofdstuk gaan we een ongeveer lineair verband nauwkeuriger
+beschrijven met de <strong>correlatiecoëfficiënt</strong>.
+                                                                  
+
+                                                                  
+</p>
+</div><!-- XIMERA-PREVIOUS-NEXT-START --><nav aria-label="Hoofdstuknavigatie" class="chapter-navigation">
+<a class="chapter-navigation__card chapter-navigation__card--previous" data-visible="true" href="Werkelijkheid-terug.html">
+<span aria-hidden="true" class="chapter-navigation__icon">
+            ←
+        </span>
+<span class="chapter-navigation__content">
+<span class="chapter-navigation__label">
+                Vorig hoofdstuk
+            </span>
+<span class="chapter-navigation__title">
+                Van werkelijkheid naar wiskunde — en terug
+            </span>
+</span>
+</a>
+<a class="chapter-navigation__card chapter-navigation__card--overview" href="index.html">
+<span aria-hidden="true" class="chapter-navigation__overview-icon">
+<span></span>
+<span></span>
+<span></span>
+</span>
+<span class="chapter-navigation__content">
+<span class="chapter-navigation__label">
+                Cursus
+            </span>
+<span class="chapter-navigation__title">
+                Overzicht
+            </span>
+</span>
+</a>
+<a class="chapter-navigation__card chapter-navigation__card--next" data-visible="true" href="Van-data-naar-puntenwolk-oefeningen.html">
+<span class="chapter-navigation__content">
+<span class="chapter-navigation__label">
+                Volgend hoofdstuk
+            </span>
+<span class="chapter-navigation__title">
+                Oefeningen — Van data naar puntenwolk
+            </span>
+</span>
+<span aria-hidden="true" class="chapter-navigation__icon">
+            →
+        </span>
+</a>
+</nav><!-- XIMERA-PREVIOUS-NEXT-END --></article></main><!-- XIMERA-CHAPTER-LAYOUT-END --><div class="course-footer-clear"></div><!-- XIMERA-FOOTER-START --><footer class="site-footer">
+<div aria-hidden="true" class="site-footer__accent"></div>
+<div class="site-footer__inner">
+<div class="site-footer__quote">
+<span aria-hidden="true" class="site-footer__quote-mark">◈</span>
+<p class="site-footer__quote-text">
+                Think mathematically. Create digitally. Shape the future.
+            </p>
+</div>
+<div aria-hidden="true" class="site-footer__divider"></div>
+<div class="site-footer__grid">
+<section class="site-footer__column">
+<p class="site-footer__eyebrow">
+                    Wiskunde 7 FVD
+                </p>
+<h2 class="site-footer__title">
+                    Fundamentele Vorming Digitale Creatie
+                </h2>
+<p class="site-footer__text">
+                    Wiskundige basis voor programmeren, graphics,
+                    animatie, simulatie en 3D.
+                </p>
+</section>
+<section class="site-footer__column">
+<p class="site-footer__eyebrow">
+                    Ontwikkeling
+                </p>
+<p class="site-footer__name">
+                    Ingmar Herreman
+                </p>
+<p class="site-footer__text">
+                    GO! Athena Campus Bellevue
+                </p>
+<p class="site-footer__text">
+                    Versie 1.0 · 2026
+                </p>
+</section>
+<section class="site-footer__column">
+<p class="site-footer__eyebrow">
+                    Technologie
+                </p>
+<div class="site-footer__tech">
+<span>Ximera</span>
+<span>HTML</span>
+<span>PDF</span>
+<span>GeoGebra</span>
+<span>GitHub</span>
+</div>
+</section>
+</div>
+<div class="site-footer__bottom">
+<span>Gebouwd met Ximera</span>
+<span aria-hidden="true">•</span>
+<span>Voor 7 FVD</span>
+<span aria-hidden="true">•</span>
+<span>© 2026</span>
+</div>
+</div>
+</footer><!-- XIMERA-FOOTER-END --><script src="../../../assets/js/chapter-layout.js"></script></body>
+</html>

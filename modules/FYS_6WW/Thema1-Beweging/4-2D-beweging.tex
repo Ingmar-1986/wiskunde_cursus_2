@@ -1,0 +1,1984 @@
+\documentclass{ximera}
+
+\input{../../../preamble.tex}
+\input{../../../Opmaak.tex}
+\addPrintStyle{../../..}
+
+\title{Bewegen in twee dimensies}
+\author{Ingmar Herreman}
+
+\begin{abstract}
+Tot nu toe beschreven we bewegingen langs één rechte. Veel bewegingen
+in de werkelijkheid zijn echter tweedimensionaal. Een bal die
+horizontaal van een tafel wordt weggeschoten, beweegt tegelijk
+horizontaal én verticaal.
+
+In dit hoofdstuk bouwen we daarom de vectoriële beschrijving van
+beweging verder uit. We beschrijven positie, verplaatsing, snelheid en
+versnelling met componenten en onderzoeken hoe twee onafhankelijke
+componentbewegingen samen één baan vormen.
+
+De horizontale worp is onze centrale toepassing. Horizontaal voert het
+voorwerp een eenparige rechtlijnige beweging uit; verticaal een vrije
+val. Door beide bewegingen samen te brengen kunnen we positie,
+snelheid, valtijd, dracht en baan analyseren en kwantificeren.
+
+We onderzoeken de horizontale worp ook experimenteel en leren kritisch
+omgaan met het model zonder luchtweerstand.
+
+Voor wie verder wil gaan, eindigt het hoofdstuk met een verdieping over
+de schuine worp. Daar blijkt dat de horizontale worp slechts een
+bijzonder geval is van een veel algemener model voor projectielbeweging.
+\end{abstract}
+
+\begin{document}
+
+% FVD_CHAPTER_DATA_START
+% Automatisch gegenereerd uit index.tex.
+% Niet handmatig aanpassen.
+\fvdchapterdata{1}{Beweging en kracht — Van beweging beschrijven tot energie begrijpen}{4}
+% FVD_CHAPTER_DATA_END
+
+
+
+\maketitle
+
+% ============================================================
+% VOORKENNIS EN LEERDOELEN
+% ============================================================
+
+\begin{voorkennis}
+  \item Je kan een beweging in één dimensie beschrijven met positie,
+        snelheid en versnelling.
+  \item Je kan een ERB en een EVRB analyseren.
+  \item Je kan vrije val beschrijven met $y(t)$, $v_y(t)$ en $a_y(t)$.
+  \item Je kan vectoren tekenen en ontbinden in componenten.
+  \item Je kan de grootte van een vector uit zijn loodrechte componenten
+        bepalen met de stelling van Pythagoras.
+  \item Je kan een referentiestelsel kiezen en consequent met tekens werken.
+\end{voorkennis}
+
+\begin{leerdoelen}
+  \item Je kan positie, verplaatsing, snelheid en versnelling bij een
+        tweedimensionale beweging vectorieel beschrijven.
+  \item Je kan vectoren correct tekenen en hun $x$- en $y$-componenten
+        interpreteren.
+  \item Je kan het onafhankelijkheidsbeginsel uitleggen en toepassen.
+  \item Je kan een horizontale worp ontbinden in een horizontale ERB en
+        een verticale vrije val.
+  \item Je kan $x(t)$, $y(t)$, $v_x(t)$, $v_y(t)$, $a_x(t)$ en $a_y(t)$
+        bij een horizontale worp opstellen en interpreteren.
+  \item Je kan de snelheidsvector tijdens een horizontale worp construeren
+        en zijn grootte en richting bepalen.
+  \item Je kan valtijd, horizontale dracht en impactgrootheden bepalen.
+  \item Je kan de baanvergelijking van een horizontale worp afleiden en
+        interpreteren.
+  \item Je kan problemen over horizontale worpen systematisch mathematiseren.
+  \item Je kan een horizontale worp experimenteel onderzoeken en meetgegevens
+        vergelijken met het theoretische model.
+  \item Je kan de beperkingen van het ideale projectielmodel aangeven.
+\end{leerdoelen}
+
+
+% ============================================================
+% 1 OPENING
+% ============================================================
+
+\FVDsection{Twee ballen, één verrassende vraag}
+
+Stel je twee identieke ballen voor op dezelfde hoogte.
+
+Bal A wordt zonder beginsnelheid losgelaten.
+
+Bal B wordt op exact hetzelfde ogenblik horizontaal weggeschoten.
+
+Welke bal raakt eerst de grond?
+
+De horizontaal weggeschoten bal legt tijdens zijn val een veel langere
+baan af. Het is daarom verleidelijk te denken dat hij langer onderweg
+is. Toch is dat in het ideale model niet zo.
+
+De sleutel is dat we niet naar de volledige beweging in één keer
+kijken, maar naar twee loodrechte componenten.
+
+\begin{oefening}[Voorspel vóór je rekent]{\oefB\ESS}
+
+Twee identieke ballen vertrekken op hetzelfde ogenblik van dezelfde
+hoogte. Bal A wordt losgelaten; bal B krijgt een horizontale
+beginsnelheid.
+
+Verwaarloos luchtweerstand.
+
+\begin{question}
+Welke bal verwacht je eerst op de grond? Noteer je voorspelling.
+\end{question}
+
+\begin{question}
+Heeft bal B aanvankelijk een verticale snelheidscomponent?
+\end{question}
+
+\begin{question}
+Vergelijk de verticale versnellingen van beide ballen.
+\end{question}
+
+Bewaar je eerste antwoord. We komen erop terug nadat we het model
+hebben opgebouwd.
+
+\end{oefening}
+
+
+% ============================================================
+% 2 VAN 1D NAAR 2D
+% ============================================================
+
+\FVDsection{Van één naar twee dimensies}
+
+Bij een rechtlijnige beweging volstond één coördinaat, bijvoorbeeld
+$x(t)$. Bij een beweging in een vlak hebben we in het algemeen twee
+coördinaten nodig:
+
+\[
+x(t)
+\qquad\text{en}\qquad
+y(t).
+\]
+
+Samen bepalen ze op elk tijdstip de positie van het voorwerp.
+
+
+\FVDsubsection{De positievector}
+
+Ten opzichte van een gekozen oorsprong $O$ beschrijven we de positie
+met de vector
+
+\[
+\boxed{
+\vec r(t)=x(t)\,\vec e_x+y(t)\,\vec e_y.
+}
+\]
+
+Hierbij zijn $\vec e_x$ en $\vec e_y$ eenheidsvectoren langs de
+$x$- en $y$-as.
+
+In componentnotatie kunnen we schrijven:
+
+\[
+\vec r(t)=
+\begin{pmatrix}
+x(t)\\
+y(t)
+\end{pmatrix}.
+\]
+
+De positievector wijst dus van de oorsprong naar de actuele positie
+van het voorwerp.
+
+
+\FVDsubsection{De verplaatsingsvector}
+
+Tussen twee tijdstippen $t_1$ en $t_2$ is de verplaatsing:
+
+\[
+\boxed{
+\Delta\vec r
+=
+\vec r(t_2)-\vec r(t_1).
+}
+\]
+
+Dus:
+
+\[
+\Delta\vec r
+=
+\Delta x\,\vec e_x+\Delta y\,\vec e_y.
+\]
+
+De verplaatsingsvector verbindt de beginpositie rechtstreeks met de
+eindpositie. Hij is niet noodzakelijk gelijk aan de afgelegde baan.
+
+
+\begin{oefening}[Positie en verplaatsing]{\oefB\ESS}
+
+Een drone bevindt zich eerst in
+
+\[
+P(2,0\,\mathrm{m},\,3,0\,\mathrm{m})
+\]
+
+en later in
+
+\[
+Q(8,0\,\mathrm{m},\,7,0\,\mathrm{m}).
+\]
+
+\begin{question}
+Schrijf de twee positievectoren.
+\end{question}
+
+\begin{question}
+Bepaal de verplaatsingsvector.
+\end{question}
+
+\begin{question}
+Bepaal de grootte van de verplaatsing.
+\end{question}
+
+\begin{question}
+Leg uit waarom je uit deze gegevens niet noodzakelijk de afgelegde weg
+van de drone kent.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 3 SNELHEID EN VERSNELLING IN 2D
+% ============================================================
+
+\FVDsection{Snelheid en versnelling als vectoren}
+
+De snelheidsvector beschrijft zowel hoe snel als in welke richting de
+positie verandert.
+
+\[
+\boxed{
+\vec v(t)=v_x(t)\,\vec e_x+v_y(t)\,\vec e_y.
+}
+\]
+
+Voor leerlingen Wetenschappen-Wiskunde kunnen we dit ook schrijven als
+
+\[
+\boxed{
+\vec v(t)=\vec r\,'(t).
+}
+\]
+
+Componentgewijs:
+
+\[
+v_x(t)=x'(t),
+\qquad
+v_y(t)=y'(t).
+\]
+
+De grootte van de snelheid is:
+
+\[
+\boxed{
+v=|\vec v|
+=
+\sqrt{v_x^2+v_y^2}.
+}
+\]
+
+De richting van $\vec v$ is op elk punt raaklijnig aan de baan.
+
+
+\FVDsubsection{De versnellingsvector}
+
+Ook versnelling is een vector:
+
+\[
+\boxed{
+\vec a(t)=a_x(t)\,\vec e_x+a_y(t)\,\vec e_y.
+}
+\]
+
+Met afgeleiden:
+
+\[
+\boxed{
+\vec a(t)=\vec v\,'(t)=\vec r\,''(t).
+}
+\]
+
+Dus:
+
+\[
+a_x=v_x'(t),
+\qquad
+a_y=v_y'(t).
+\]
+
+Een voorwerp kan een constante snelheidscomponent in één richting
+hebben en tegelijk versnellen in een loodrechte richting.
+
+
+\begin{opmerking}
+
+Dat de \emph{grootte} van de snelheid verandert, is niet de enige
+mogelijkheid voor versnelling. Ook een verandering van richting van
+de snelheidsvector betekent versnelling.
+
+Dit idee wordt later essentieel bij de cirkelbeweging.
+
+\end{opmerking}
+
+
+\begin{oefening}[Van componenten naar vector]{\oefB\ESS}
+
+Op een bepaald tijdstip heeft een voorwerp
+
+\[
+v_x=12,0\,\mathrm{m/s},
+\qquad
+v_y=-5,0\,\mathrm{m/s}.
+\]
+
+\begin{question}
+Schrijf de snelheidsvector.
+\end{question}
+
+\begin{question}
+Bepaal de grootte van de snelheid.
+\end{question}
+
+\begin{question}
+Beschrijf de bewegingsrichting in woorden.
+\end{question}
+
+\begin{question}
+Schets de componenten en de resulterende snelheidsvector.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 4 ONAFHANKELIJKHEIDSBEGINSEL
+% ============================================================
+
+\FVDsection{Het onafhankelijkheidsbeginsel}
+
+Een tweedimensionale beweging kan vaak worden geanalyseerd als de
+samenstelling van twee loodrechte bewegingen.
+
+\begin{eigenschap}[Onafhankelijkheidsbeginsel]
+
+De beweging in de $x$-richting en de beweging in de $y$-richting
+kunnen afzonderlijk worden geanalyseerd. Beide componentbewegingen
+verlopen gelijktijdig en hebben dezelfde tijdsvariabele $t$.
+
+\end{eigenschap}
+
+Dat betekent niet dat er twee verschillende voorwerpen bewegen. Het
+is één beweging die wij voor de analyse ontbinden in twee componenten:
+
+\[
+\boxed{
+\text{2D-beweging}
+=
+\text{$x$-beweging}
++
+\text{$y$-beweging}.
+}
+\]
+
+De tijd vormt de verbinding tussen beide beschrijvingen.
+
+
+\FVDsubsection{Vectoriële samenstelling}
+
+Als tijdens een klein tijdsinterval een voorwerp horizontaal
+$\Delta x$ en verticaal $\Delta y$ verplaatst, dan is de totale
+verplaatsing:
+
+\[
+\Delta\vec r
+=
+\Delta x\,\vec e_x+\Delta y\,\vec e_y.
+\]
+
+Hetzelfde geldt voor snelheid:
+
+\[
+\vec v
+=
+v_x\,\vec e_x+v_y\,\vec e_y.
+\]
+
+En voor versnelling:
+
+\[
+\vec a
+=
+a_x\,\vec e_x+a_y\,\vec e_y.
+\]
+
+
+\begin{oefening}[Eén beweging, twee componenten]{\oefU\ESS}
+
+Een puntmassa heeft:
+
+\[
+x(t)=4,0t,
+\qquad
+y(t)=6,0-4,905t^2.
+\]
+
+\begin{question}
+Beschrijf de beweging in de $x$-richting.
+\end{question}
+
+\begin{question}
+Beschrijf de beweging in de $y$-richting.
+\end{question}
+
+\begin{question}
+Bepaal $v_x(t)$ en $v_y(t)$.
+\end{question}
+
+\begin{question}
+Bepaal $a_x(t)$ en $a_y(t)$.
+\end{question}
+
+\begin{question}
+Welke bekende fysische beweging herken je?
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 5 HORIZONTALE WORP
+% ============================================================
+
+\FVDsection{De horizontale worp}
+
+Een \textbf{horizontale worp} ontstaat wanneer een voorwerp met een
+horizontale beginsnelheid wordt gelanceerd en daarna, in het ideale
+model, alleen door de zwaartekracht wordt beïnvloed.
+
+We verwaarlozen luchtweerstand en nemen $g$ constant.
+
+We kiezen:
+
+\begin{itemize}
+  \item de $x$-as horizontaal naar rechts;
+  \item de $y$-as verticaal omhoog;
+  \item het lanceerpunt op $(x_0,y_0)$.
+\end{itemize}
+
+De beginsnelheid is volledig horizontaal:
+
+\[
+\vec v_0=v_0\,\vec e_x.
+\]
+
+Dus:
+
+\[
+v_{x,0}=v_0,
+\qquad
+v_{y,0}=0.
+\]
+
+De versnelling is volledig verticaal:
+
+\[
+\boxed{
+\vec a=-g\,\vec e_y.
+}
+\]
+
+Dus:
+
+\[
+a_x=0,
+\qquad
+a_y=-g.
+\]
+
+
+\FVDsubsection{Horizontaal: een ERB}
+
+Omdat
+
+\[
+a_x=0,
+\]
+
+blijft de horizontale snelheidscomponent constant:
+
+\[
+\boxed{
+v_x(t)=v_0.
+}
+\]
+
+De horizontale positie is:
+
+\[
+\boxed{
+x(t)=x_0+v_0t.
+}
+\]
+
+
+\FVDsubsection{Verticaal: vrije val}
+
+Verticaal is de beginsnelheid nul:
+
+\[
+v_{y,0}=0.
+\]
+
+Daarom:
+
+\[
+\boxed{
+v_y(t)=-gt
+}
+\]
+
+en:
+
+\[
+\boxed{
+y(t)=y_0-\frac12gt^2.
+}
+\]
+
+
+\begin{eigenschap}[Horizontale worp als samenstelling]
+
+\[
+\boxed{
+\begin{array}{ccl}
+x\text{-richting} &:& \text{ERB}\\[1mm]
+y\text{-richting} &:& \text{vrije val}
+\end{array}
+}
+\]
+
+De horizontale en verticale beweging delen alleen dezelfde tijd $t$.
+
+\end{eigenschap}
+
+
+\begin{oefening}[De basisvergelijkingen]{\oefB\ESS}
+
+Een bal verlaat horizontaal een tafel met
+
+\[
+v_0=3,0\,\mathrm{m/s}.
+\]
+
+De tafel is $1,25\,\mathrm{m}$ hoog. Kies de grond als $y=0$ en het
+punt loodrecht onder de tafelrand als $x=0$.
+
+\begin{question}
+Noteer $x_0$, $y_0$, $v_{x,0}$, $v_{y,0}$, $a_x$ en $a_y$.
+\end{question}
+
+\begin{question}
+Stel $x(t)$ en $y(t)$ op.
+\end{question}
+
+\begin{question}
+Stel $v_x(t)$ en $v_y(t)$ op.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 6 TWEE BALLEN
+% ============================================================
+
+\FVDsection{Waarom vallen beide ballen tegelijk?}
+
+We keren terug naar de openingsvraag.
+
+Bal A wordt losgelaten. Bal B wordt gelijktijdig horizontaal
+weggeschoten. Beide vertrekken van dezelfde hoogte en hebben dezelfde
+verticale beginsnelheid:
+
+\[
+v_{y,0}=0.
+\]
+
+Voor beide geldt verticaal:
+
+\[
+y(t)=y_0-\frac12gt^2.
+\]
+
+Hun verticale bewegingen zijn dus identiek.
+
+De horizontale snelheid van bal B heeft geen invloed op de tijd die
+nodig is om verticaal dezelfde afstand te vallen.
+
+\begin{eigenschap}
+
+In het ideale model raken twee voorwerpen die op hetzelfde tijdstip
+van dezelfde hoogte vertrekken en dezelfde verticale beginsnelheid
+hebben, tegelijk de grond, ook wanneer één van beide een horizontale
+snelheidscomponent heeft.
+
+\end{eigenschap}
+
+
+\begin{oefening}[Herbekijk je voorspelling]{\oefU\ESS}
+
+Keer terug naar de eerste oefening.
+
+\begin{question}
+Was je oorspronkelijke voorspelling correct?
+\end{question}
+
+\begin{question}
+Bewijs met de verticale bewegingsvergelijking dat de valtijd niet van
+$v_x$ afhangt.
+\end{question}
+
+\begin{question}
+Leg hetzelfde resultaat uit zonder formules, met het
+onafhankelijkheidsbeginsel.
+\end{question}
+
+\begin{question}
+Welke aanname uit ons model zou in een werkelijk experiment kleine
+verschillen kunnen veroorzaken?
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 7 VALTIJD EN DRACHT
+% ============================================================
+
+\FVDsection{Valtijd en horizontale dracht}
+
+Stel dat een voorwerp horizontaal wordt weggeschoten vanaf hoogte $h$
+boven een horizontale grond.
+
+Kies:
+
+\[
+y_0=h,
+\qquad
+y_{\mathrm{grond}}=0.
+\]
+
+Bij impact:
+
+\[
+0=h-\frac12gt^2.
+\]
+
+Daaruit:
+
+\[
+\boxed{
+t_{\mathrm{val}}
+=
+\sqrt{\frac{2h}{g}}.
+}
+\]
+
+Merk op: de horizontale beginsnelheid komt niet in deze formule voor.
+
+
+\FVDsubsection{De horizontale dracht}
+
+Tijdens de valtijd beweegt het voorwerp horizontaal met constante
+snelheid $v_0$.
+
+Als $x_0=0$:
+
+\[
+d=v_0t_{\mathrm{val}}.
+\]
+
+Dus:
+
+\[
+\boxed{
+d
+=
+v_0\sqrt{\frac{2h}{g}}.
+}
+\]
+
+Deze formule is nuttig, maar belangrijker is dat je haar kunt
+reconstrueren vanuit de twee componentbewegingen.
+
+
+\begin{voorbeeld}[Een tennisbal van een tafel]
+
+Een tennisbal rolt horizontaal van een tafel van
+$1,20\,\mathrm{m}$ hoog met een snelheid van
+$4,50\,\mathrm{m/s}$.
+
+De valtijd:
+
+\[
+t_{\mathrm{val}}
+=
+\sqrt{\frac{2\cdot1,20}{9,81}}
+\approx0,495\,\mathrm{s}.
+\]
+
+De horizontale dracht:
+
+\[
+d
+=
+4,50\cdot0,495
+\approx2,23\,\mathrm{m}.
+\]
+
+\end{voorbeeld}
+
+
+\begin{oefening}[Van tafel naar vloer]{\oefB\ESS}
+
+Een knikker verlaat horizontaal een tafel van
+$0,80\,\mathrm{m}$ hoog met $v_0=2,50\,\mathrm{m/s}$.
+
+\begin{question}
+Bepaal de valtijd.
+\end{question}
+
+\begin{question}
+Bepaal de horizontale dracht.
+\end{question}
+
+\begin{question}
+Wat gebeurt er met de valtijd als de horizontale beginsnelheid
+verdubbelt?
+\end{question}
+
+\begin{question}
+Wat gebeurt er dan met de dracht?
+\end{question}
+
+\end{oefening}
+
+
+\begin{oefening}[Schaalredenering]{\oefU\ESS}
+
+Voor een horizontale worp geldt:
+
+\[
+d=v_0\sqrt{\frac{2h}{g}}.
+\]
+
+Onderzoek zonder telkens nieuwe getallen in te vullen:
+
+\begin{question}
+hoe $d$ verandert als $v_0$ verdubbelt;
+\end{question}
+
+\begin{question}
+hoe $d$ verandert als $h$ verviervoudigt;
+\end{question}
+
+\begin{question}
+hoe $d$ verandert als zowel $v_0$ als $h$ verdubbelen.
+\end{question}
+
+Motiveer vanuit de formule én vanuit de fysica.
+
+\end{oefening}
+
+
+% ============================================================
+% 8 SNELHEIDSVECTOR
+% ============================================================
+
+\FVDsection{De snelheidsvector verandert voortdurend}
+
+Bij de horizontale worp blijft:
+
+\[
+v_x=v_0.
+\]
+
+Maar:
+
+\[
+v_y=-gt.
+\]
+
+De totale snelheidsvector is dus:
+
+\[
+\boxed{
+\vec v(t)
+=
+v_0\,\vec e_x-gt\,\vec e_y.
+}
+\]
+
+Hoewel de horizontale component constant blijft, verandert de totale
+snelheidsvector voortdurend.
+
+
+\FVDsubsection{Grootte van de snelheid}
+
+Omdat de componenten loodrecht op elkaar staan:
+
+\[
+\boxed{
+|\vec v(t)|
+=
+\sqrt{v_0^2+(gt)^2}.
+}
+\]
+
+De grootte van de snelheid neemt dus toe tijdens de val.
+
+
+\FVDsubsection{Richting van de snelheid}
+
+Noem $\theta$ de hoek die de snelheidsvector onder de horizontale
+maakt. Dan:
+
+\[
+\tan\theta
+=
+\frac{|v_y|}{v_x}
+=
+\frac{gt}{v_0}.
+\]
+
+Dus:
+
+\[
+\boxed{
+\theta
+=
+\arctan\left(\frac{gt}{v_0}\right).
+}
+\]
+
+De snelheidsvector is steeds raaklijnig aan de baan.
+
+
+\begin{voorbeeld}[Snelheid bij impact]
+
+Voor de tennisbal uit het vorige voorbeeld:
+
+\[
+v_x=4,50\,\mathrm{m/s}.
+\]
+
+Na $0,495\,\mathrm{s}$:
+
+\[
+v_y
+=
+-9,81\cdot0,495
+\approx-4,86\,\mathrm{m/s}.
+\]
+
+De grootte van de impactsnelheid:
+
+\[
+|\vec v|
+=
+\sqrt{4,50^2+4,86^2}
+\approx6,62\,\mathrm{m/s}.
+\]
+
+\end{voorbeeld}
+
+
+\begin{oefening}[Vectoren langs de baan]{\oefU\ESS}
+
+Een voorwerp wordt horizontaal gelanceerd met
+
+\[
+v_0=8,0\,\mathrm{m/s}.
+\]
+
+\begin{question}
+Bepaal $\vec v$ na $0,50\,\mathrm{s}$.
+\end{question}
+
+\begin{question}
+Bepaal de grootte van de snelheid.
+\end{question}
+
+\begin{question}
+Bepaal de hoek van de snelheid onder de horizontale.
+\end{question}
+
+\begin{question}
+Schets op drie opeenvolgende punten van de baan de snelheidsvector.
+Wat blijft gelijk en wat verandert?
+\end{question}
+
+\begin{question}
+Schets op dezelfde punten de versnellingsvector.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 9 GRAFIEKEN
+% ============================================================
+
+\FVDsection{Zes functies vertellen één verhaal}
+
+Een horizontale worp kunnen we volledig beschrijven met zes
+componentfuncties.
+
+Voor $x_0=0$ en lanceerhoogte $y_0=h$:
+
+\[
+x(t)=v_0t,
+\qquad
+v_x(t)=v_0,
+\qquad
+a_x(t)=0,
+\]
+
+en:
+
+\[
+y(t)=h-\frac12gt^2,
+\qquad
+v_y(t)=-gt,
+\qquad
+a_y(t)=-g.
+\]
+
+Horizontaal herkennen we dus:
+
+\[
+\text{lineaire positie}
+\longrightarrow
+\text{constante snelheid}
+\longrightarrow
+\text{nulversnelling}.
+\]
+
+Verticaal:
+
+\[
+\text{kwadratische positie}
+\longrightarrow
+\text{lineaire snelheid}
+\longrightarrow
+\text{constante versnelling}.
+\]
+
+
+\begin{oefening}[Van functies naar grafieken]{\oefU\ESS}
+
+Voor een horizontale worp geldt:
+
+\[
+v_0=6,0\,\mathrm{m/s},
+\qquad
+h=5,0\,\mathrm{m}.
+\]
+
+Schets voor de volledige vlucht:
+
+\[
+x(t),\quad v_x(t),\quad a_x(t),
+\]
+
+en:
+
+\[
+y(t),\quad v_y(t),\quad a_y(t).
+\]
+
+Duid op alle grafieken het tijdstip van impact aan.
+
+Beschrijf vervolgens minstens vier verbanden tussen de zes grafieken.
+
+\end{oefening}
+
+
+% ============================================================
+% 10 BAANVERGELIJKING
+% ============================================================
+
+\FVDsection{Van tijdsfuncties naar de baan}
+
+De vergelijkingen
+
+\[
+x(t)=x_0+v_0t
+\]
+
+en
+
+\[
+y(t)=y_0-\frac12gt^2
+\]
+
+geven de positie als functie van de tijd.
+
+Soms willen we rechtstreeks weten welke $y$-waarde hoort bij een
+gegeven $x$-waarde. Dan elimineren we de tijd.
+
+Uit:
+
+\[
+x=x_0+v_0t
+\]
+
+volgt:
+
+\[
+t=\frac{x-x_0}{v_0}.
+\]
+
+Invullen in de verticale plaatsfunctie geeft:
+
+\[
+y
+=
+y_0
+-
+\frac12g
+\left(
+\frac{x-x_0}{v_0}
+\right)^2.
+\]
+
+Dus:
+
+\[
+\boxed{
+y(x)
+=
+y_0
+-
+\frac{g}{2v_0^2}(x-x_0)^2.
+}
+\]
+
+Dit is een kwadratische functie. De ideale baan van een horizontaal
+geworpen puntmassa is dus een deel van een parabool.
+
+
+\begin{opmerking}
+
+De baanvergelijking bevat geen tijd meer. Ze vertelt \emph{waar} de
+baan ligt, maar niet rechtstreeks \emph{wanneer} het voorwerp een
+bepaald punt bereikt.
+
+\end{opmerking}
+
+
+\begin{oefening}[Van parametervergelijkingen naar parabool]{\oefU\ESS}
+
+Een bal wordt horizontaal gelanceerd vanuit
+
+\[
+(x_0,y_0)=(0,\,10,0\,\mathrm{m})
+\]
+
+met
+
+\[
+v_0=7,0\,\mathrm{m/s}.
+\]
+
+\begin{question}
+Stel $x(t)$ en $y(t)$ op.
+\end{question}
+
+\begin{question}
+Elimineer $t$ en bepaal $y(x)$.
+\end{question}
+
+\begin{question}
+Bepaal met de baanvergelijking de hoogte wanneer $x=5,0\,\mathrm{m}$.
+\end{question}
+
+\begin{question}
+Controleer hetzelfde punt via de tijdsfuncties.
+\end{question}
+
+\end{oefening}
+
+
+\begin{oefening}[Wat verandert de parabool?]{\oefG}
+
+Beschouw horizontale worpen vanaf hetzelfde punt met verschillende
+horizontale beginsnelheden.
+
+Gebruik
+
+\[
+y(x)
+=
+y_0-\frac{g}{2v_0^2}x^2.
+\]
+
+\begin{question}
+Onderzoek wat er met de vorm van de baan gebeurt wanneer $v_0$
+toeneemt.
+\end{question}
+
+\begin{question}
+Leg dit resultaat fysisch uit.
+\end{question}
+
+\begin{question}
+Gebruik eventueel ICT om verschillende banen in één assenstelsel te
+tekenen.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 11 PROBLEEMOPLOSSEN
+% ============================================================
+
+\FVDsection{Een horizontale worp mathematiseren}
+
+Bij een horizontale worp is het zelden verstandig meteen naar één
+formule te zoeken.
+
+Werk systematisch:
+
+\begin{enumerate}
+  \item Maak een schets.
+  \item Kies een oorsprong en positieve richtingen.
+  \item Splits de beweging op in $x$ en $y$.
+  \item Noteer voor elke richting de beginpositie, beginsnelheid en
+        versnelling.
+  \item Noteer wat op het gezochte tijdstip bekend is.
+  \item Gebruik de componentbeweging waarin voldoende informatie
+        beschikbaar is om eerst $t$ te bepalen.
+  \item Gebruik diezelfde tijd in de andere componentbeweging.
+  \item Stel indien nodig de snelheidsvector samen.
+  \item Controleer teken, eenheid, grootteorde en modelaannames.
+\end{enumerate}
+
+\begin{eigenschap}
+
+Dezelfde tijd $t$ verschijnt in beide componentbewegingen. Dat is vaak
+de sleutel om een horizontale-worpprobleem op te lossen.
+
+\end{eigenschap}
+
+
+\begin{oefening}[Reddingspakket]{\oefU\ESS}
+
+Een drone vliegt horizontaal met constante snelheid
+
+\[
+v_0=18,0\,\mathrm{m/s}
+\]
+
+op een hoogte van $45,0\,\mathrm{m}$. Een klein pakket wordt
+losgelaten. Verwaarloos luchtweerstand.
+
+\begin{question}
+Hoe lang valt het pakket?
+\end{question}
+
+\begin{question}
+Hoe ver vóór het doel moet het pakket worden losgelaten?
+\end{question}
+
+\begin{question}
+Bepaal de horizontale en verticale snelheidscomponent bij impact.
+\end{question}
+
+\begin{question}
+Bepaal de grootte van de impactsnelheid.
+\end{question}
+
+\begin{question}
+Leg uit waarom het pakket bij het loslaten een horizontale
+beginsnelheid heeft, hoewel het alleen maar wordt ``losgelaten''.
+\end{question}
+
+\end{oefening}
+
+
+\begin{oefening}[Stuntman]{\oefG}
+
+Een stuntman rijdt horizontaal van een platform en moet op een lager
+platform landen.
+
+Het landingsplatform ligt $3,20\,\mathrm{m}$ lager en de horizontale
+afstand tussen de randen bedraagt $8,50\,\mathrm{m}$.
+
+\begin{question}
+Bepaal de minimale horizontale snelheid waarmee hij de rand van het
+landingsplatform bereikt volgens het puntmassamodel.
+\end{question}
+
+\begin{question}
+Bepaal de grootte en richting van zijn snelheid op dat ogenblik.
+\end{question}
+
+\begin{question}
+Welke aspecten van een echte stunt worden door dit model genegeerd?
+Noem er minstens drie.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 12 LABO
+% ============================================================
+
+\FVDsection{Labo: onderzoek een horizontale worp}
+
+Een horizontale worp leent zich uitstekend voor videoanalyse.
+
+\textbf{Onderzoek experimenteel het verband tussen positie, tijd, snelheid en versnelling bij een horizontale worp.}
+
+
+
+Een mogelijke werkwijze:
+
+\begin{enumerate}
+  \item Laat een kleine bal horizontaal van een tafel rollen.
+  \item Film de beweging loodrecht op het bewegingsvlak.
+  \item Zorg voor een lengteschaal in beeld.
+  \item Kies in de videoanalyse een oorsprong en assenstelsel.
+  \item Registreer op opeenvolgende tijdstippen $x$ en $y$.
+  \item Verwerk de meetgegevens grafisch.
+\end{enumerate}
+
+
+\FVDsubsection{Horizontale analyse}
+
+Maak een grafiek van $x$ als functie van $t$.
+
+Volgens het model verwachten we:
+
+\[
+x(t)=x_0+v_0t.
+\]
+
+Dus een lineaire trendlijn.
+
+De helling levert een schatting van $v_x$.
+
+
+\FVDsubsection{Verticale analyse}
+
+Maak een grafiek van $y$ als functie van $t$.
+
+Volgens het model verwachten we:
+
+\[
+y(t)=y_0-\frac12gt^2.
+\]
+
+Dus een kwadratisch verband.
+
+Bij een regressiemodel
+
+\[
+y(t)=At^2+Bt+C
+\]
+
+verwachten we idealiter:
+
+\[
+A\approx-\frac g2,
+\qquad
+B\approx0,
+\qquad
+C\approx y_0.
+\]
+
+
+\begin{oefening}[Laboanalyse]{\oefU\ESS}
+
+Verwerk de meetgegevens van de horizontale worp.
+
+\begin{question}
+Maak een $x(t)$-grafiek en bepaal een geschikte trendlijn.
+\end{question}
+
+\begin{question}
+Interpreteer de parameters fysisch.
+\end{question}
+
+\begin{question}
+Maak een $y(t)$-grafiek en bepaal een kwadratische trendlijn.
+\end{question}
+
+\begin{question}
+Bepaal uit het kwadratische model een experimentele waarde voor $g$.
+\end{question}
+
+\begin{question}
+Maak indien mogelijk ook $v_x(t)$ en $v_y(t)$ zichtbaar.
+\end{question}
+
+\begin{question}
+Vergelijk experiment en theorie en bespreek mogelijke
+afwijkingsbronnen.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 13 MODELKRITIEK
+% ============================================================
+
+\FVDsection{Het ideale projectielmodel}
+
+Onze horizontale worp is een model.
+
+We nemen onder andere aan:
+
+\begin{itemize}
+  \item het voorwerp is een puntmassa;
+  \item luchtweerstand is verwaarloosbaar;
+  \item $g$ is constant;
+  \item de aarde kan lokaal als vlak worden beschouwd;
+  \item rotatie en aerodynamische effecten zijn niet relevant.
+\end{itemize}
+
+Voor een kleine compacte bal over een beperkte afstand kan dat een
+zeer bruikbaar model zijn. Voor een pluimbal, een voetbal met sterke
+spin of een projectiel over zeer grote afstand kunnen de afwijkingen
+belangrijk worden.
+
+
+\begin{oefening}[Model of werkelijkheid?]{\oefU}
+
+Vergelijk de geschiktheid van het ideale horizontale-worpmodel voor:
+
+\begin{question}
+een stalen knikker die van een tafel rolt;
+\end{question}
+
+\begin{question}
+een prop papier die horizontaal wordt weggegooid;
+\end{question}
+
+\begin{question}
+een voetbal met sterke spin;
+\end{question}
+
+\begin{question}
+een waterdruppel uit een tuinslang.
+\end{question}
+
+Geef telkens aan welke modelaanname mogelijk problematisch is.
+
+\end{oefening}
+
+
+% ============================================================
+% 14 GEINTEGREERDE KERN
+% ============================================================
+
+\FVDsection{Geïntegreerde oefeningen horizontale worp}
+
+\begin{oefening}[Van functie naar fysica]{\oefU\ESS}
+
+Van een horizontale worp worden de componentfuncties gegeven:
+
+\[
+x(t)=2,0+9,0t,
+\]
+
+\[
+y(t)=15,0-4,905t^2.
+\]
+
+Alle afstanden zijn in meter en de tijd in seconde.
+
+\begin{question}
+Bepaal de beginpositie.
+\end{question}
+
+\begin{question}
+Bepaal de beginsnelheidsvector.
+\end{question}
+
+\begin{question}
+Bepaal de versnellingsvector.
+\end{question}
+
+\begin{question}
+Bepaal wanneer het voorwerp $y=0$ bereikt.
+\end{question}
+
+\begin{question}
+Bepaal de horizontale positie op dat ogenblik.
+\end{question}
+
+\begin{question}
+Bepaal de snelheidsvector en de grootte van de snelheid bij impact.
+\end{question}
+
+\end{oefening}
+
+
+\begin{oefening}[Ontwerp achterwaarts]{\oefG}
+
+Een horizontaal gelanceerde bal moet vanaf een platform van
+$5,00\,\mathrm{m}$ hoogte een doel raken dat zich
+$7,50\,\mathrm{m}$ horizontaal van de platformrand bevindt.
+
+\begin{question}
+Bepaal de vereiste horizontale beginsnelheid.
+\end{question}
+
+\begin{question}
+Stel de baanvergelijking op.
+\end{question}
+
+\begin{question}
+Bepaal de snelheid waarmee de bal het doel bereikt.
+\end{question}
+
+\begin{question}
+Als de lanceersnelheid een relatieve onzekerheid van $2\%$ heeft,
+bespreek kwalitatief hoe dit de horizontale landingspositie beïnvloedt.
+\end{question}
+
+\end{oefening}
+
+
+\begin{oefening}[Redeneer zonder rekenen]{\oefU\ESS}
+
+Twee ballen worden horizontaal van dezelfde hoogte gelanceerd.
+Bal B heeft een driemaal zo grote horizontale beginsnelheid als bal A.
+
+Verwaarloos luchtweerstand.
+
+Vergelijk zonder eerst getallen te kiezen:
+
+\begin{question}
+de valtijden;
+\end{question}
+
+\begin{question}
+de verticale impactsnelheden;
+\end{question}
+
+\begin{question}
+de horizontale drachten;
+\end{question}
+
+\begin{question}
+de groottes van de totale impactsnelheden.
+\end{question}
+
+Motiveer elke conclusie.
+
+\end{oefening}
+
+
+% ============================================================
+% 15 VERDIEPING SCHUINE WORP
+% ============================================================
+
+\FVDsection{Verdieping: de schuine worp}
+
+\begin{opmerking}
+
+Deze sectie is een \textbf{uitbreiding}. De horizontale worp behoort
+tot de kern van dit hoofdstuk. De schuine worp gaat verder en is
+bedoeld voor leerlingen die de kern vlot beheersen en extra uitdaging
+willen.
+
+\end{opmerking}
+
+Bij een schuine worp maakt de beginsnelheid een hoek $\alpha$ met de
+horizontale.
+
+We ontbinden:
+
+\[
+\boxed{
+v_{0x}=v_0\cos\alpha
+}
+\]
+
+en:
+
+\[
+\boxed{
+v_{0y}=v_0\sin\alpha.
+}
+\]
+
+Daarna verandert het principe niet.
+
+Horizontaal:
+
+\[
+a_x=0
+\]
+
+en:
+
+\[
+\boxed{
+x(t)=x_0+v_0\cos\alpha\,t.
+}
+\]
+
+Verticaal:
+
+\[
+a_y=-g
+\]
+
+en:
+
+\[
+\boxed{
+y(t)
+=
+y_0+v_0\sin\alpha\,t-\frac12gt^2.
+}
+\]
+
+De snelheidscomponenten zijn:
+
+\[
+\boxed{
+v_x(t)=v_0\cos\alpha
+}
+\]
+
+en:
+
+\[
+\boxed{
+v_y(t)=v_0\sin\alpha-gt.
+}
+\]
+
+De horizontale worp is dus het bijzondere geval:
+
+\[
+\boxed{\alpha=0^\circ.}
+\]
+
+
+\FVDsubsection{Het hoogste punt}
+
+Op het hoogste punt:
+
+\[
+v_y=0.
+\]
+
+Dus:
+
+\[
+v_0\sin\alpha-gt_{\max}=0
+\]
+
+en:
+
+\[
+\boxed{
+t_{\max}
+=
+\frac{v_0\sin\alpha}{g}.
+}
+\]
+
+De horizontale snelheidscomponent is daar niet nul:
+
+\[
+v_x=v_0\cos\alpha.
+\]
+
+De totale snelheid is op het hoogste punt dus horizontaal.
+
+
+\FVDsubsection{Maximale hoogtewinst}
+
+Voor de verticale component kunnen we het resultaat uit de verticale
+worp gebruiken:
+
+\[
+\boxed{
+\Delta y_{\max}
+=
+\frac{v_0^2\sin^2\alpha}{2g}.
+}
+\]
+
+
+\FVDsubsection{Baanvergelijking}
+
+Uit:
+
+\[
+x-x_0=v_0\cos\alpha\,t
+\]
+
+volgt:
+
+\[
+t
+=
+\frac{x-x_0}{v_0\cos\alpha}.
+\]
+
+Invullen in $y(t)$ geeft:
+
+\[
+\boxed{
+y(x)
+=
+y_0
++
+(x-x_0)\tan\alpha
+-
+\frac{g(x-x_0)^2}
+{2v_0^2\cos^2\alpha}.
+}
+\]
+
+Ook de ideale schuine worp volgt dus een parabool.
+
+
+\begin{oefening}[Een schuine worp analyseren]{\oefU}
+
+Een bal wordt vanaf de grond gelanceerd met:
+
+\[
+v_0=20,0\,\mathrm{m/s},
+\qquad
+\alpha=35^\circ.
+\]
+
+Verwaarloos luchtweerstand.
+
+\begin{question}
+Bepaal $v_{0x}$ en $v_{0y}$.
+\end{question}
+
+\begin{question}
+Stel $x(t)$ en $y(t)$ op.
+\end{question}
+
+\begin{question}
+Bepaal het tijdstip en de hoogte van het hoogste punt.
+\end{question}
+
+\begin{question}
+Bepaal de snelheidsvector op het hoogste punt.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 16 VERDIEPING GELIJKE HOOGTE
+% ============================================================
+
+\FVDsection{Verdieping: gelijke begin- en eindhoogte}
+
+Wanneer een schuine worp eindigt op dezelfde hoogte als waarop hij
+begon, kunnen enkele elegante relaties worden afgeleid.
+
+Naast de triviale oplossing $t=0$ geldt voor de terugkeer:
+
+\[
+0
+=
+v_0\sin\alpha\,t-\frac12gt^2.
+\]
+
+Dus:
+
+\[
+\boxed{
+T
+=
+\frac{2v_0\sin\alpha}{g}.
+}
+\]
+
+De dracht is:
+
+\[
+R
+=
+v_0\cos\alpha\,T.
+\]
+
+Invullen geeft:
+
+\[
+R
+=
+\frac{2v_0^2\sin\alpha\cos\alpha}{g}.
+\]
+
+Met
+
+\[
+2\sin\alpha\cos\alpha=\sin(2\alpha)
+\]
+
+volgt:
+
+\[
+\boxed{
+R
+=
+\frac{v_0^2\sin(2\alpha)}{g}.
+}
+\]
+
+
+\FVDsubsection{Welke hoek geeft de grootste dracht?}
+
+Voor vaste $v_0$ en gelijke begin- en eindhoogte is $R$ maximaal
+wanneer:
+
+\[
+\sin(2\alpha)=1.
+\]
+
+Dus:
+
+\[
+2\alpha=90^\circ
+\]
+
+en:
+
+\[
+\boxed{
+\alpha=45^\circ.
+}
+\]
+
+Dit resultaat geldt binnen het ideale model. In echte sporten of
+technische toepassingen kunnen luchtweerstand, rotatie, lanceerhoogte
+en aerodynamica de optimale hoek veranderen.
+
+
+\begin{oefening}[Complementaire hoeken]{\oefG}
+
+Toon aan dat twee lanceerhoeken
+
+\[
+\alpha
+\qquad\text{en}\qquad
+90^\circ-\alpha
+\]
+
+bij dezelfde $v_0$ en gelijke begin- en eindhoogte dezelfde
+horizontale dracht geven.
+
+Gebruik zowel de formule voor $R$ als een inhoudelijke redenering over
+de horizontale en verticale component van de beginsnelheid.
+
+\end{oefening}
+
+
+\begin{oefening}[Is $45^\circ$ altijd optimaal?]{\oefG}
+
+Een leerling beweert:
+
+\begin{quote}
+``Een projectiel vliegt altijd het verst onder een hoek van
+$45^\circ$.''
+\end{quote}
+
+Analyseer deze uitspraak.
+
+\begin{question}
+Onder welke aannames is ze correct?
+\end{question}
+
+\begin{question}
+Waarom hoeft ze niet te gelden wanneer begin- en eindhoogte
+verschillen?
+\end{question}
+
+\begin{question}
+Waarom hoeft ze niet te gelden in een echte sportcontext?
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 17 VERDIEPING MODELLEREN
+% ============================================================
+
+\FVDsection{Verdieping: ontwerp een projectielbaan}
+
+\begin{oefening}[Van doel naar lanceerhoek]{\oefG}
+
+Een projectiel wordt vanaf de oorsprong gelanceerd met een vaste
+beginsnelheid $v_0$. Een doel bevindt zich in het punt $(X,Y)$.
+
+Uit de baanvergelijking:
+
+\[
+Y
+=
+X\tan\alpha
+-
+\frac{gX^2}{2v_0^2\cos^2\alpha}
+\]
+
+kan je onderzoeken welke lanceerhoeken het doel kunnen bereiken.
+
+\begin{question}
+Leg uit waarom er voor sommige doelen twee mogelijke lanceerhoeken
+kunnen bestaan.
+\end{question}
+
+\begin{question}
+Leg uit waarom sommige doelen met de gegeven $v_0$ helemaal niet
+bereikbaar zijn.
+\end{question}
+
+\begin{question}
+Gebruik ICT om voor een zelfgekozen $v_0$ een familie van banen voor
+verschillende $\alpha$ te tekenen.
+\end{question}
+
+\begin{question}
+Formuleer op basis van de grafieken een hypothese over het bereikbare
+gebied en onderzoek die verder.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 18 SAMENVATTING
+% ============================================================
+
+\FVDsection{Wat hebben we opgebouwd?}
+
+Bij een tweedimensionale beweging:
+
+\[
+\boxed{
+\vec r=x\,\vec e_x+y\,\vec e_y
+}
+\]
+
+\[
+\boxed{
+\vec v=v_x\,\vec e_x+v_y\,\vec e_y
+}
+\]
+
+\[
+\boxed{
+\vec a=a_x\,\vec e_x+a_y\,\vec e_y.
+}
+\]
+
+De componentbewegingen kunnen afzonderlijk worden geanalyseerd, maar
+delen dezelfde tijd.
+
+Voor een horizontale worp met omhoog positief:
+
+\[
+\boxed{
+a_x=0,
+\qquad
+a_y=-g
+}
+\]
+
+\[
+\boxed{
+x(t)=x_0+v_0t
+}
+\]
+
+\[
+\boxed{
+y(t)=y_0-\frac12gt^2
+}
+\]
+
+\[
+\boxed{
+v_x=v_0,
+\qquad
+v_y=-gt.
+}
+\]
+
+De totale snelheid:
+
+\[
+\boxed{
+|\vec v|
+=
+\sqrt{v_x^2+v_y^2}.
+}
+\]
+
+Vanaf hoogte $h$:
+
+\[
+\boxed{
+t_{\mathrm{val}}
+=
+\sqrt{\frac{2h}{g}}
+}
+\]
+
+en:
+
+\[
+\boxed{
+d
+=
+v_0\sqrt{\frac{2h}{g}}.
+}
+\]
+
+De baanvergelijking:
+
+\[
+\boxed{
+y(x)
+=
+y_0-\frac{g}{2v_0^2}(x-x_0)^2.
+}
+\]
+
+De ideale baan is dus parabolisch.
+
+
+% ============================================================
+% 20 VOORUITBLIK
+% ============================================================
+
+\FVDsection{Vooruitblik}
+
+Bij de horizontale worp veranderde de snelheidsvector zowel in grootte
+als in richting.
+
+Er bestaat ook een beweging waarbij de grootte van de snelheid
+constant blijft, maar de richting voortdurend verandert: de
+eenparige cirkelbeweging.
+
+Ook daar zal de vectoriële beschrijving essentieel blijken. De
+versnellingsvector wijst dan niet in de bewegingsrichting, maar naar
+het middelpunt van de cirkel.
+
+\end{document}

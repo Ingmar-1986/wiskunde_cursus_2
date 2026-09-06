@@ -1,0 +1,1406 @@
+\documentclass{ximera}
+
+\input{../../../preamble.tex}
+\input{../../../Opmaak.tex}
+
+
+\title{De afgeleide functie}
+
+\begin{document}
+
+% FVD_CHAPTER_DATA_START
+% Automatisch gegenereerd uit index.tex.
+% Niet handmatig aanpassen.
+\fvdchapterdata{1}{Veranderingen in beeld}{2}
+% FVD_CHAPTER_DATA_END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% ============================================================
+% ABSTRACT
+% ============================================================
+
+\begin{abstract}
+In het vorige hoofdstuk bekeken we de afgeleide in één punt:
+het afgeleid getal $f'(a)$.
+
+Nu laten we het punt variëren.
+Zo ontstaat een nieuwe functie, de afgeleide functie $f'$,
+die in elk punt beschrijft hoe snel de oorspronkelijke functie verandert.
+
+We frissen ook op hoe je de eerste en tweede afgeleide van
+veeltermfuncties berekent. Die technieken vormen de basis voor het
+functieonderzoek in het volgende hoofdstuk en voor de nieuwe
+afleidingstechnieken die later in deze module volgen.
+\end{abstract}
+
+\maketitle
+
+
+% ============================================================
+% VOORKENNIS EN LEERDOELEN
+% ============================================================
+
+\begin{voorkennis}
+  \item Je kent het verschil tussen een gemiddelde en een
+        ogenblikkelijke verandering.
+  \item Je kan het afgeleid getal $f'(a)$ interpreteren.
+  \item Je weet dat $f'(a)$ de richtingscoëfficiënt van de raaklijn is.
+  \item Je kan werken met machten met gehele positieve exponenten.
+  \item Je kan veeltermen vereenvoudigen.
+\end{voorkennis}
+
+\begin{leerdoelen}
+  \item Je kan het verschil uitleggen tussen een afgeleid getal
+        $f'(a)$ en een afgeleide functie $f'(x)$.
+  \item Je kan uitleggen wat de functiewaarde $f'(x)$ betekent.
+  \item Je kan de afgeleide bepalen van constante functies en
+        machtsfuncties $x^n$.
+  \item Je kan de constante-factorregel en de som- en verschilregel
+        gebruiken.
+  \item Je kan veeltermfuncties afleiden.
+  \item Je kan de tweede afgeleide $f''$ bepalen.
+  \item Je kan de betekenis van $f'$ en $f''$ onderscheiden.
+  \item Je kan controleren of een voorgestelde afgeleide plausibel is.
+\end{leerdoelen}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% WAAROM LEER JE DIT?
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\FVDsection{Waarom leer je dit?}
+
+In het vorige hoofdstuk keken we naar de verandering van een functie
+in één specifiek punt.
+
+Als bijvoorbeeld
+
+\[
+f'(3)=5,
+\]
+
+dan weten we hoe $f$ verandert bij $x=3$.
+
+Maar meestal willen we niet alleen weten wat er in één punt gebeurt.
+We willen kunnen onderzoeken hoe de verandering zelf varieert
+wanneer $x$ verandert.
+
+Daarom stellen we voor elk geschikt punt dezelfde vraag:
+
+\[
+\boxed{\text{hoe snel verandert }f\text{ hier?}}
+\]
+
+Het antwoord hangt af van $x$ en vormt dus opnieuw een functie.
+
+Die nieuwe functie noemen we de \textbf{afgeleide functie}.
+
+\[
+\boxed{
+f
+\longrightarrow
+f'
+}
+\]
+
+De oorspronkelijke functie $f$ beschrijft de grootheid.
+
+De afgeleide functie $f'$ beschrijft hoe die grootheid verandert.
+
+Later zullen we precies die informatie gebruiken om grafieken
+systematisch te onderzoeken.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% VAN AFGELEID GETAL NAAR AFGELEIDE FUNCTIE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\FVDsection{Van afgeleid getal naar afgeleide functie}
+
+
+% --------------------------------------------------------------------
+% AFGELEID GETAL
+% --------------------------------------------------------------------
+
+\FVDsubsection{Eén punt: het afgeleid getal}
+
+Voor een vaste waarde $a$ is
+
+\[
+f'(a)
+\]
+
+een \textbf{getal}.
+
+Het beschrijft de ogenblikkelijke verandering van $f$
+bij $x=a$.
+
+Meetkundig is het de richtingscoëfficiënt van de raaklijn
+aan de grafiek van $f$ in
+
+\[
+P(a,f(a)).
+\]
+
+Bijvoorbeeld:
+
+\[
+f'(2)=4
+\]
+
+betekent dat de raaklijn bij $x=2$ richtingscoëfficiënt $4$ heeft.
+
+
+% --------------------------------------------------------------------
+% AFGELEIDE FUNCTIE
+% --------------------------------------------------------------------
+
+\FVDsubsection{Alle punten: de afgeleide functie}
+
+We kunnen het afgeleid getal niet alleen bij $x=2$ bepalen,
+maar bij elke waarde van $x$ waarvoor de functie afleidbaar is.
+
+Zo ontstaat een nieuwe functie.
+
+\begin{definitie}[Afgeleide functie]
+
+De \textbf{afgeleide functie} van een functie $f$ is de functie
+
+\[
+f'
+\]
+
+die aan elke waarde $x$ het afgeleid getal van $f$ in dat punt
+toekent.
+
+Dus:
+
+\[
+\boxed{
+x\longmapsto f'(x)
+}
+\]
+
+waarbij $f'(x)$ de ogenblikkelijke verandering van $f$
+bij $x$ beschrijft.
+
+\end{definitie}
+
+
+Het onderscheid is belangrijk:
+
+\[
+\boxed{f'(a)}
+\qquad\text{is een getal,}
+\]
+
+terwijl
+
+\[
+\boxed{f'}
+\qquad\text{een functie is.}
+\]
+
+
+\begin{voorbeeld}
+
+Beschouw
+
+\[
+f(x)=x^2.
+\]
+
+De afgeleide functie is
+
+\[
+f'(x)=2x.
+\]
+
+Daaruit kunnen we verschillende afgeleide getallen bepalen:
+
+\[
+f'(1)=2,
+\qquad
+f'(3)=6,
+\qquad
+f'(-2)=-4.
+\]
+
+De functie
+
+\[
+f'(x)=2x
+\]
+
+geeft dus voor elk punt onmiddellijk de richtingscoëfficiënt
+van de raaklijn aan de grafiek van $f$.
+
+\end{voorbeeld}
+
+
+\begin{oefening}[Afgeleid getal of afgeleide functie?]{\oefB \ESS}
+
+Gegeven is
+
+\[
+f'(x)=3x^2-4.
+\]
+
+\begin{question}
+
+Is $f'$ een getal of een functie?
+
+\begin{multipleChoice}
+  \choice{Een getal}
+  \choice[correct]{Een functie}
+\end{multipleChoice}
+
+\end{question}
+
+\begin{question}
+
+Bereken
+
+\[
+f'(2)=\answer{8}.
+\]
+
+\end{question}
+
+\begin{question}
+
+Wat stelt $f'(2)$ meetkundig voor?
+
+\begin{multipleChoice}
+  \choice{De $y$-coördinaat van een punt op de grafiek van $f$.}
+  \choice[correct]{De richtingscoëfficiënt van de raaklijn aan de grafiek van $f$ bij $x=2$.}
+  \choice{De gemiddelde verandering van $f$ over $[0,2]$.}
+\end{multipleChoice}
+
+\end{question}
+
+\end{oefening}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% BASISAFGELEIDEN
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\FVDsection{Basisregels voor veeltermfuncties}
+
+We frissen nu de afleidingsregels op die nodig zijn om
+veeltermfuncties af te leiden.
+
+
+
+% --------------------------------------------------------------------
+% CONSTANTE FUNCTIE
+% --------------------------------------------------------------------
+
+\FVDsubsection{De afgeleide van een constante functie}
+
+Beschouw een constante functie
+
+\[
+f(x)=c.
+\]
+
+De grafiek is een horizontale rechte.
+
+De richtingscoëfficiënt is overal nul.
+
+Daarom geldt:
+
+\begin{eigenschap}[Constante functie]
+
+Voor elke constante $c$:
+
+\[
+\boxed{
+(c)'=0
+}
+\]
+
+of equivalent:
+
+\[
+f(x)=c
+\quad\Longrightarrow\quad
+f'(x)=0.
+\]
+
+\end{eigenschap}
+
+
+\begin{voorbeeld}
+
+Als
+
+\[
+f(x)=7,
+\]
+
+dan is
+
+\[
+f'(x)=0.
+\]
+
+Ook voor
+
+\[
+g(x)=-13
+\]
+
+geldt
+
+\[
+g'(x)=0.
+\]
+
+\end{voorbeeld}
+
+
+% --------------------------------------------------------------------
+% MACHTSREGEL
+% --------------------------------------------------------------------
+
+\FVDsubsection{De machtsregel}
+
+Een van de belangrijkste basisregels is de machtsregel.
+
+\begin{eigenschap}[Machtsregel]
+
+Voor een positieve gehele exponent $n$ geldt:
+
+\[
+\boxed{
+(x^n)'=n x^{n-1}
+}
+\]
+
+\end{eigenschap}
+
+
+Je kunt de regel onthouden als:
+
+\[
+\boxed{
+\text{exponent naar voren}
+\quad\text{en}\quad
+\text{exponent één verminderen}.
+}
+\]
+
+
+\begin{voorbeeld}
+
+\[
+f(x)=x^5
+\]
+
+geeft
+
+\[
+f'(x)=5x^4.
+\]
+
+Voor
+
+\[
+g(x)=x^3
+\]
+
+vinden we
+
+\[
+g'(x)=3x^2.
+\]
+
+En voor
+
+\[
+h(x)=x
+\]
+
+kunnen we schrijven
+
+\[
+h(x)=x^1,
+\]
+
+zodat
+
+\[
+h'(x)=1x^0=1.
+\]
+
+\end{voorbeeld}
+
+
+\begin{opmerking}
+
+Bij
+
+\[
+x^1
+\]
+
+wordt de exponent na afleiden nul.
+
+Omdat
+
+\[
+x^0=1,
+\]
+
+geldt dus
+
+\[
+(x)'=1.
+\]
+
+\end{opmerking}
+
+
+% --------------------------------------------------------------------
+% CONSTANTE FACTOR
+% --------------------------------------------------------------------
+
+\FVDsubsection{Een constante factor}
+
+Een constante factor blijft bij het afleiden behouden.
+
+\begin{eigenschap}[Constante-factorregel]
+
+Als $c$ een constante is, dan:
+
+\[
+\boxed{
+(c\,f(x))'=c\,f'(x)
+}
+\]
+
+\end{eigenschap}
+
+
+In het bijzonder:
+
+\[
+(ax^n)'=a n x^{n-1}.
+\]
+
+
+\begin{voorbeeld}
+
+Voor
+
+\[
+f(x)=4x^5
+\]
+
+geldt
+
+\[
+f'(x)=4\cdot5x^4=20x^4.
+\]
+
+Voor
+
+\[
+g(x)=-3x^2
+\]
+
+geldt
+
+\[
+g'(x)=-3\cdot2x=-6x.
+\]
+
+\end{voorbeeld}
+
+
+% --------------------------------------------------------------------
+% SOM EN VERSCHIL
+% --------------------------------------------------------------------
+
+\FVDsubsection{Som- en verschilregel}
+
+Bij een som of verschil mogen we term per term afleiden.
+
+\begin{eigenschap}[Som- en verschilregel]
+
+Voor afleidbare functies $f$ en $g$ geldt:
+
+\[
+\boxed{
+(f+g)'=f'+g'
+}
+\]
+
+en
+
+\[
+\boxed{
+(f-g)'=f'-g'.
+}
+\]
+
+\end{eigenschap}
+
+
+Daardoor kunnen we een veelterm eenvoudig term per term afleiden.
+
+
+\begin{voorbeeld}
+
+Gegeven:
+
+\[
+f(x)=3x^4-5x^2+7x-9.
+\]
+
+We leiden elke term afzonderlijk af:
+
+\[
+f'(x)
+=
+12x^3-10x+7.
+\]
+
+De constante term $-9$ verdwijnt omdat
+
+\[
+(-9)'=0.
+\]
+
+\end{voorbeeld}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% VEELTERMFUNCTIES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\FVDsection{Veeltermfuncties afleiden}
+
+
+% --------------------------------------------------------------------
+% ALGEMENE VORM
+% --------------------------------------------------------------------
+
+\FVDsubsection{Term per term}
+
+Voor een veeltermfunctie
+
+\[
+f(x)
+=
+a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0
+\]
+
+kunnen we elke term afzonderlijk afleiden.
+
+We krijgen:
+
+\[
+\boxed{
+f'(x)
+=
+na_nx^{n-1}
++(n-1)a_{n-1}x^{n-2}
++\cdots
++a_1.
+}
+\]
+
+
+\begin{voorbeeld}
+
+Bepaal de afgeleide van
+
+\[
+f(x)
+=
+-2x^5+3x^4-7x^2+6.
+\]
+
+\begin{oplossing}[toon]
+
+We leiden term per term af:
+
+\[
+(-2x^5)'=-10x^4,
+\]
+
+\[
+(3x^4)'=12x^3,
+\]
+
+\[
+(-7x^2)'=-14x,
+\]
+
+en
+
+\[
+(6)'=0.
+\]
+
+Dus:
+
+\[
+\boxed{
+f'(x)
+=
+-10x^4+12x^3-14x.
+}
+\]
+
+\end{oplossing}
+
+\end{voorbeeld}
+
+
+\begin{oefening}[Veeltermfuncties afleiden]{\oefB \ESS}
+
+Bepaal telkens de afgeleide functie.
+
+\begin{question}
+\(
+f(x)=5x^4-3x^2+8
+\) \ \ \ \ \ \ \ \ 
+\(
+f'(x)=\answer{20x^3-6x}.
+\)
+
+\end{question}
+
+\begin{question}
+\(
+g(x)=-2x^3+7x-4
+\) \ \ \ \ \ \ \ \ 
+\(
+g'(x)=\answer{-6x^2+7}.
+\)
+
+\end{question}
+
+\begin{question}
+\(
+h(x)=\frac{1}{2}x^6-4x^3+x
+\) \ \ \ \ \ \ \ \ 
+\(
+h'(x)=\answer{3x^5-12x^2+1}.
+\)
+
+\end{question}
+
+\end{oefening}
+
+
+% --------------------------------------------------------------------
+% EERST VEREENVOUDIGEN
+% --------------------------------------------------------------------
+
+\FVDsubsection{Vereenvoudig wanneer dat nuttig is}
+
+Een functie staat niet altijd onmiddellijk in de handigste vorm.
+
+Bij veeltermfuncties kan het nuttig zijn om eerst haakjes weg te werken
+of gelijksoortige termen samen te nemen.
+
+\begin{voorbeeld}
+
+Gegeven:
+
+\[
+f(x)=2x(x^2-3x+4).
+\]
+
+Omdat dit een product van veeltermen is, kunnen we eerst uitwerken:
+
+\[
+f(x)=2x^3-6x^2+8x.
+\]
+
+Nu leiden we term per term af:
+
+\[
+\boxed{
+f'(x)=6x^2-12x+8.
+}
+\]
+
+\end{voorbeeld}
+
+
+\begin{oefening}[Eerst vereenvoudigen]{\oefU \ESS}
+
+Gegeven:
+
+\[
+f(x)=(x+2)(x^2-3x+1).
+\]
+
+Werk eerst uit en bepaal daarna $f'(x)$.
+
+\begin{oplossing}
+
+Eerst:
+
+\[
+f(x)
+=
+x^3-x^2-5x+2.
+\]
+
+Daarom:
+
+\[
+\boxed{
+f'(x)=3x^2-2x-5.
+}
+\]
+
+\end{oplossing}
+
+\end{oefening}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% EEN AFGELEIDE CONTROLEREN
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\FVDsection{Controleer je afgeleide}
+
+
+% --------------------------------------------------------------------
+% GRAAD
+% --------------------------------------------------------------------
+
+\FVDsubsection{De graad daalt met één}
+
+Bij een niet-constante veeltermfunctie daalt de graad na afleiden
+met één.
+
+Bijvoorbeeld:
+
+\[
+f(x)=4x^5-2x^3+x
+\]
+
+heeft graad $5$.
+
+De afgeleide
+
+\[
+f'(x)=20x^4-6x^2+1
+\]
+
+heeft graad $4$.
+
+Dit geeft een snelle controle.
+
+
+% --------------------------------------------------------------------
+% CONSTANTEN
+% --------------------------------------------------------------------
+
+\FVDsubsection{Constante termen verdwijnen}
+
+Een constante term heeft geen invloed op de verandering van een functie.
+
+Daarom verdwijnt hij bij het afleiden.
+
+Als
+
+\[
+f(x)=3x^2+5
+\]
+
+en
+
+\[
+g(x)=3x^2-100,
+\]
+
+dan geldt voor beide:
+
+\[
+f'(x)=g'(x)=6x.
+\]
+
+De grafieken liggen verticaal verschoven ten opzichte van elkaar,
+maar hebben bij dezelfde $x$ dezelfde helling.
+
+
+\begin{oefening}[Welke afgeleide kan kloppen?]{\oefU \ESS}
+
+Gegeven is
+
+\[
+f(x)=2x^4-5x^2+7.
+\]
+
+Welke uitdrukking kan de afgeleide zijn?
+
+\begin{multipleChoice}
+
+\choice{
+$8x^4-10x$
+}
+
+\choice[correct]{
+$8x^3-10x$
+}
+
+\choice{
+$8x^3-10x+7$
+}
+
+\choice{
+$2x^3-5x$
+}
+
+\end{multipleChoice}
+
+Leg je keuze uit aan de hand van minstens twee afleidingsregels.
+
+\begin{oplossing}
+
+  We leiden de functie term per term af:
+  
+  \[
+  f(x)=2x^4-5x^2+7.
+  \]
+  
+  Met de \textbf{machtsregel}
+  
+  \[
+  (x^n)'=nx^{n-1}
+  \]
+  
+  en de \textbf{constante-factorregel}
+  
+  \[
+  (c\cdot f(x))'=c\cdot f'(x)
+  \]
+  
+  vinden we
+  
+  \[
+  (2x^4)'=2\cdot 4x^3=8x^3
+  \]
+  
+  en
+  
+  \[
+  (-5x^2)'=-5\cdot 2x=-10x.
+  \]
+  
+  De afgeleide van een constante is nul, dus
+  
+  \[
+  (7)'=0.
+  \]
+  
+  Daarom is
+  
+  \[
+  \boxed{f'(x)=8x^3-10x}.
+  \]
+  
+  De tweede uitdrukking is dus de enige die kan kloppen.
+  
+  \end{oplossing}
+
+\end{oefening}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% EERSTE EN TWEEDE AFGELEIDE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\FVDsection{De eerste en tweede afgeleide}
+
+
+% --------------------------------------------------------------------
+% TWEEDE AFGELEIDE
+% --------------------------------------------------------------------
+
+\FVDsubsection{De afgeleide opnieuw afleiden}
+
+Omdat $f'$ zelf een functie is, kunnen we — wanneer dit mogelijk is —
+ook $f'$ opnieuw afleiden.
+
+Zo ontstaat de tweede afgeleide.
+
+\begin{definitie}[Tweede afgeleide]
+
+De afgeleide van de afgeleide functie noemen we
+de \textbf{tweede afgeleide} van $f$.
+
+We noteren:
+
+\[
+\boxed{
+f''(x)=(f'(x))'.
+}
+\]
+
+\end{definitie}
+
+
+\begin{voorbeeld}
+
+Gegeven:
+
+\[
+f(x)=2x^4-3x^3+5x.
+\]
+
+De eerste afgeleide is
+
+\[
+f'(x)=8x^3-9x^2+5.
+\]
+
+We leiden opnieuw af:
+
+\[
+f''(x)=24x^2-18x.
+\]
+
+Dus:
+
+\[
+\boxed{
+f'(x)=8x^3-9x^2+5
+}
+\]
+
+en
+
+\[
+\boxed{
+f''(x)=24x^2-18x.
+}
+\]
+
+\end{voorbeeld}
+
+
+\begin{oefening}[Eerste en tweede afgeleide]{\oefB \ESS}
+
+Gegeven:
+
+\[
+f(x)=x^5-4x^3+6x^2-2.
+\]
+
+Bepaal $f'$ en $f''$.
+
+\begin{itemize}
+  \item \( f'(x)=\answer{5x^4-12x^2+12x} \)
+  \item \(f''(x)=\answer{20x^3-24x+12} \)
+\end{itemize}
+
+\end{oefening}
+
+
+\begin{voorbeeld}[Beweging]
+
+Stel dat
+
+\[
+s(t)
+\]
+
+de positie van een bewegend voorwerp beschrijft in meter,
+met $t$ in seconde.
+
+Dan is
+
+\[
+s'(t)
+\]
+
+de ogenblikkelijke snelheid in
+
+\[
+\mathrm{m/s},
+\]
+
+en
+
+\[
+s''(t)
+\]
+
+de ogenblikkelijke versnelling in
+
+\[
+\mathrm{m/s^2}.
+\]
+
+Hier zien we zeer concreet het verschil tussen een functie,
+haar eerste afgeleide en haar tweede afgeleide.
+
+\end{voorbeeld}
+
+
+\begin{oefening}[Beweging]{\oefU \ESS}
+
+De positie van een voorwerp wordt gegeven door
+
+\[
+s(t)=t^3-6t^2+9t
+\]
+
+met $s$ in meter en $t$ in seconde.
+
+\begin{question}
+
+Bepaal de snelheidsfunctie.
+
+\[
+v(t)=s'(t)=\answer{3t^2-12t+9}.
+\]
+
+\end{question}
+
+\begin{question}
+
+Bepaal de versnellingsfunctie.
+
+\[
+a(t)=s''(t)=\answer{6t-12}.
+\]
+
+\end{question}
+
+\begin{question}
+
+Bereken de snelheid bij $t=2$.
+
+\[
+v(2)=\answer{-3}.
+\]
+
+\end{question}
+
+\begin{question}
+
+Welke eenheid hoort bij $v(2)$?
+
+\begin{multipleChoice}
+  \choice{$\mathrm{m}$}
+  \choice[correct]{$\mathrm{m/s}$}
+  \choice{$\mathrm{m/s^2}$}
+\end{multipleChoice}
+
+\end{question}
+
+\begin{question}
+
+Bereken de versnelling bij $t=2$.
+
+\[
+a(2)=\answer{0}.
+\]
+
+\end{question}
+
+\end{oefening}
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% SAMENVATTING
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\FVDsection{Samengevat}
+
+Het afgeleid getal
+
+\[
+f'(a)
+\]
+
+beschrijft de ogenblikkelijke verandering in één punt.
+
+Wanneer we dit voor elke geschikte waarde van $x$ doen,
+krijgen we de afgeleide functie
+
+\[
+\boxed{
+f'(x).
+}
+\]
+
+Voor veeltermfuncties gebruiken we vooral:
+
+\[
+\boxed{
+(c)'=0
+}
+\]
+
+\[
+\boxed{
+(x^n)'=nx^{n-1}
+}
+\]
+
+\[
+\boxed{
+(c f)'=c f'
+}
+\]
+
+\[
+\boxed{
+(f\pm g)'=f'\pm g'.
+}
+\]
+
+De afgeleide functie kan opnieuw worden afgeleid:
+
+\[
+\boxed{
+f''=(f')'.
+}
+\]
+
+\begin{oefening}[Van functie naar verandering]{\oefU \ESS}
+
+  Gegeven is
+  
+  \[
+  f(x)=x^3-3x^2-9x+5.
+  \]
+  
+  \begin{question}
+  
+  Bepaal de eerste afgeleide.
+  
+  \[
+  f'(x)=\answer{3x^2-6x-9}.
+  \]
+  
+  \end{question}
+  
+  \begin{question}
+  
+  Bepaal de tweede afgeleide.
+  
+  \[
+  f''(x)=\answer{6x-6}.
+  \]
+  
+  \end{question}
+  
+  \begin{question}
+  
+  Bereken
+  
+  \[
+  f'(0)=\answer{-9}.
+  \]
+  
+  Wat betekent dit meetkundig?
+  
+  \begin{multipleChoice}
+    \choice{De grafiek gaat door $(0,-9)$.}
+    \choice[correct]{De raaklijn aan de grafiek bij $x=0$ heeft richtingscoëfficiënt $-9$.}
+    \choice{De functie heeft noodzakelijk een minimum bij $x=0$.}
+  \end{multipleChoice}
+  
+  \end{question}
+  
+  \begin{question}
+  
+  Een leerling beweert:
+  
+  \begin{center}
+  ``Omdat $f'(0)<0$, is $f$ overal dalend.''
+  \end{center}
+  
+  Is dat besluit correct?
+  
+  \begin{multipleChoice}
+  
+  \choice{
+  Ja, want een negatieve afgeleide betekent altijd dat een functie
+  over haar volledige domein daalt.
+  }
+  
+  \choice[correct]{
+  Nee. $f'(0)<0$ geeft alleen informatie over de verandering
+  bij $x=0$. Om te weten waar $f$ stijgt of daalt, moeten we
+  het teken van $f'(x)$ over intervallen onderzoeken.
+  }
+  
+  \end{multipleChoice}
+  
+  \end{question}
+  
+  \end{oefening}
+  
+  
+  \begin{oefening}[Redeneren zonder volledig uit te rekenen]{\oefG}
+  
+  Een veeltermfunctie $f$ heeft graad $6$ en een niet-nul
+  coëfficiënt bij $x^6$.
+  
+  Beantwoord zonder een concreet functievoorschrift te kiezen.
+  
+  \begin{question}
+  
+  Welke graad heeft $f'$?
+  
+  \[
+  \answer{5}
+  \]
+  
+  \end{question}
+  
+  \begin{question}
+  
+  Welke graad heeft $f''$?
+  
+  \[
+  \answer{4}
+  \]
+  
+  \end{question}
+  
+  \begin{question}
+  
+  Kan $f'$ een constante functie zijn?
+  
+  \begin{multipleChoice}
+    \choice{Ja}
+    \choice[correct]{Nee}
+  \end{multipleChoice}
+
+  \begin{oplossing}
+    De afgeleide $f'$ kan dus geen constante functie zijn. Een constante
+    functie heeft graad $0$, terwijl $f'$ hier noodzakelijk graad $5$ heeft.
+    
+    \[
+    \boxed{\text{$f'$ kan geen constante functie zijn.}}
+    \]
+  \end{oplossing}
+  
+  \end{question}
+  
+  Leg uit waarom je antwoorden noodzakelijk volgen uit de machtsregel.
+
+  \begin{oplossing}
+
+Algemeen verlaagt het afleiden van een niet-constante veelterm de graad
+telkens met één. Dit volgt rechtstreeks uit de machtsregel.
+
+
+  \end{oplossing}
+  
+  \end{oefening}
+  
+
+
+
+
+\end{document}

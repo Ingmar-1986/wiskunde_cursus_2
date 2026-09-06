@@ -1,0 +1,499 @@
+\documentclass{ximera}
+
+\input{../../../preamble.tex}
+\input{../../../Opmaak.tex}
+\addPrintStyle{../../..}
+
+\title{Oefeningen --- Correlatie}
+\author{Ingmar Herreman}
+
+
+
+\begin{document}
+
+% FVD_CHAPTER_DATA_START
+% Automatisch gegenereerd uit index.tex.
+% Niet handmatig aanpassen.
+\fvdchapterdata{3}{Verbanden onderzoeken met data}{7}
+% FVD_CHAPTER_DATA_END
+
+
+
+
+
+
+\maketitle
+
+
+% ============================================================
+\FVDsection{Basis --- r lezen en interpreteren}
+% ============================================================
+
+\begin{oefening}[Teken en sterkte]{\oefB \ESS}
+Geef voor elke correlatiecoëfficiënt de richting en een globale
+beschrijving van de sterkte van het lineaire verband.
+
+\[
+\begin{array}{c|ccccc}
+& A&B&C&D&E\\ \hline
+r&0{,}94&-0{,}88&0{,}12&-0{,}41&1
+\end{array}
+\]
+
+\begin{oplossing}
+\begin{itemize}
+  \item $A$: sterk positief lineair;
+  \item $B$: sterk negatief lineair;
+  \item $C$: zwak positief lineair;
+  \item $D$: eerder zwak negatief lineair;
+  \item $E$: perfect positief lineair.
+\end{itemize}
+De woorden ``sterk'' en ``zwak'' zijn globale beschrijvingen; de
+context en de puntenwolk blijven belangrijk.
+\end{oplossing}
+\end{oefening}
+
+
+\begin{oefening}[Welke is sterker?]{\oefB \ESS}
+Vergelijk telkens de sterkte van de lineaire samenhang.
+
+\begin{question}
+Welke is sterker?
+
+\[
+r_1=-0{,}91,
+\qquad
+r_2=0{,}84
+\]
+
+\begin{multipleChoice}
+  \choice[correct]{$r_1$}
+  \choice{$r_2$}
+  \choice{even sterk}
+\end{multipleChoice}
+\end{question}
+
+\begin{question}
+Waarom?
+
+\begin{oplossing}
+Omdat $|-0{,}91|=0{,}91$ groter is dan $|0{,}84|=0{,}84$.
+Het minteken geeft alleen de richting aan.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Welke is sterker?
+
+\[
+r_3=-0{,}72,
+\qquad
+r_4=0{,}72
+\]
+
+\begin{multipleChoice}
+  \choice{$r_3$}
+  \choice{$r_4$}
+  \choice[correct]{even sterk}
+\end{multipleChoice}
+\end{question}
+\end{oefening}
+
+
+\begin{oefening}[Mogelijk of onmogelijk?]{\oefB \ESS}
+Duid aan welke waarden een correlatiecoëfficiënt kunnen zijn.
+
+\[
+-1{,}4,\quad -1,\quad -0{,}37,\quad 0,\quad 0{,}83,\quad 1,\quad 1{,}02
+\]
+
+\begin{oplossing}
+Mogelijk zijn
+
+\[
+-1,\quad -0{,}37,\quad 0,\quad 0{,}83,\quad 1.
+\]
+
+Een correlatiecoëfficiënt ligt steeds tussen $-1$ en $1$.
+\end{oplossing}
+\end{oefening}
+
+
+\begin{oefening}[Wat betekent nul?]{\oefB \ESS}
+Een dataset heeft
+
+\[
+r=0{,}02.
+\]
+
+Een leerling besluit:
+
+\begin{quote}
+Er bestaat geen verband tussen de twee grootheden.
+\end{quote}
+
+Beoordeel deze uitspraak.
+
+\begin{oplossing}
+De uitspraak is te sterk. $r=0{,}02$ wijst op vrijwel geen
+\emph{lineaire} samenhang. Er kan nog steeds een duidelijk niet-lineair
+verband bestaan. Daarom moet ook de puntenwolk bekeken worden.
+\end{oplossing}
+\end{oefening}
+
+
+% ============================================================
+\FVDsection{Verdieping --- r en puntenwolk samen gebruiken}
+% ============================================================
+
+\begin{oefening}[Temperatuur en gasverbruik]{\oefU \ESS}
+Voor tien winterdagen werden de gemiddelde buitentemperatuur en het
+gasverbruik van een school gemeten.
+
+\[
+\begin{array}{c|rrrrrrrrrr}
+T\;({}^{\circ}\mathrm C)&-2&0&2&4&5&7&8&10&11&13\\ \hline
+G\;(\mathrm{kWh})&820&790&735&690&655&610&590&535&520&470
+\end{array}
+\]
+
+\begin{question}
+Maak met ICT een spreidingsdiagram.
+\end{question}
+
+\begin{question}
+Bepaal met ICT de correlatiecoëfficiënt $r$.
+
+\begin{oplossing}
+Afhankelijk van afronding wordt een waarde zeer dicht bij $-1$
+gevonden.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Leg uit waarom het teken van $r$ past bij de puntenwolk.
+
+\begin{oplossing}
+De puntenwolk daalt: hogere buitentemperaturen gaan doorgaans samen
+met lager gasverbruik. Daarom is $r$ negatief.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Formuleer een volledige conclusie.
+
+\begin{oplossing}
+De puntenwolk en de correlatiecoëfficiënt wijzen op een zeer sterk
+negatief en ongeveer lineair verband tussen buitentemperatuur en
+gasverbruik tijdens deze dagen. Hogere temperaturen gaan in deze
+dataset doorgaans samen met een lager gasverbruik.
+\end{oplossing}
+\end{question}
+\end{oefening}
+
+
+\begin{oefening}[Sterk verband, kleine r]{\oefU \ESS}
+Een sensor levert de volgende gegevens.
+
+\[
+\begin{array}{c|rrrrrrrrr}
+x&-4&-3&-2&-1&0&1&2&3&4\\ \hline
+y&16&9&4&1&0&1&4&9&16
+\end{array}
+\]
+
+\begin{question}
+Maak een spreidingsdiagram en beschrijf het patroon.
+
+\begin{oplossing}
+De punten liggen exact op een U-vormig patroon, overeenkomstig
+$y=x^2$. Het verband is zeer sterk, maar niet lineair.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Bepaal $r$ met ICT.
+
+\begin{oplossing}
+Door de symmetrie is $r=0$.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Waarom is ``$r=0$, dus er is geen verband'' hier fout?
+
+\begin{oplossing}
+Omdat $r$ lineaire samenhang meet. De puntenwolk vertoont een perfect
+niet-lineair verband.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Welke algemene regel neem je uit deze oefening mee?
+
+\begin{oplossing}
+Bekijk altijd de puntenwolk voordat je een correlatiecoëfficiënt
+interpreteert.
+\end{oplossing}
+\end{question}
+\end{oefening}
+
+
+\begin{oefening}[De invloed van een uitschieter]{\oefU \ESS}
+Beschouw eerst de dataset
+
+\[
+\begin{array}{c|rrrrrrr}
+x&1&2&3&4&5&6&7\\ \hline
+y&2&4&6&8&10&12&14
+\end{array}
+\]
+
+en voeg daarna de waarneming
+
+\[
+(8,2)
+\]
+
+toe.
+
+\begin{question}
+Bepaal $r$ voor de eerste zeven punten.
+
+\begin{oplossing}
+$r=1$, want de punten liggen exact op de stijgende rechte $y=2x$.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Maak daarna de puntenwolk met het extra punt en bepaal opnieuw $r$.
+\end{question}
+
+\begin{question}
+Beschrijf wat er gebeurt.
+
+\begin{oplossing}
+Het extra punt wijkt sterk af van het oorspronkelijke lineaire patroon
+en verlaagt de correlatiecoëfficiënt aanzienlijk. Eén uitschieter kan
+dus een numerieke samenvatting sterk beïnvloeden.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Mag je het extra punt daarom verwijderen?
+
+\begin{oplossing}
+Niet automatisch. Eerst moet onderzocht worden of het om een fout,
+een uitzonderlijke correcte waarneming of een andere situatie gaat.
+\end{oplossing}
+\end{question}
+\end{oefening}
+
+
+\begin{oefening}[Zelfde richting, andere sterkte]{\oefU}
+Twee experimenten leveren beide een positieve correlatie op:
+
+\[
+r_A=0{,}96,
+\qquad
+r_B=0{,}54.
+\]
+
+\begin{question}
+Wat hebben beide datasets gemeenschappelijk?
+
+\begin{oplossing}
+Beide vertonen een positieve lineaire samenhang.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Wat is verschillend?
+
+\begin{oplossing}
+De lineaire samenhang is in dataset $A$ duidelijk sterker dan in
+dataset $B$, omdat $|r_A|>|r_B|$.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Kun je zonder puntenwolken uitsluiten dat één van de datasets een
+uitschieter bevat?
+
+\begin{oplossing}
+Nee. De correlatiecoëfficiënt alleen toont de structuur van de
+puntenwolk niet.
+\end{oplossing}
+\end{question}
+\end{oefening}
+
+
+% ============================================================
+\FVDsection{Geïntegreerd analyseren}
+% ============================================================
+
+\begin{oefening}[Absorbantie en concentratie]{\oefU \ESS}
+In een chemisch experiment wordt voor verschillende concentraties van
+een oplossing de absorbantie gemeten.
+
+\[
+\begin{array}{c|rrrrrrrr}
+c\;(\mathrm{mmol/L})&0{,}5&1{,}0&1{,}5&2{,}0&2{,}5&3{,}0&3{,}5&4{,}0\\ \hline
+A&0{,}12&0{,}21&0{,}34&0{,}43&0{,}55&0{,}64&0{,}77&0{,}85
+\end{array}
+\]
+
+Voer een volledige correlatieanalyse uit.
+
+\begin{question}
+Maak een spreidingsdiagram.
+\end{question}
+
+\begin{question}
+Beschrijf richting, vorm, sterkte en eventuele bijzonderheden.
+
+\begin{oplossing}
+De punten vertonen een sterk positief en ongeveer lineair verband,
+zonder opvallende uitschieters.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Bepaal $r$ met ICT.
+\end{question}
+
+\begin{question}
+Leg uit hoe de waarde van $r$ aansluit bij de grafische analyse.
+
+\begin{oplossing}
+De waarde van $r$ ligt zeer dicht bij $1$, wat past bij de puntenwolk:
+de punten liggen dicht rond een stijgende rechte band.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Formuleer een contextgebonden conclusie.
+
+\begin{oplossing}
+Binnen het onderzochte concentratiebereik vertonen concentratie en
+absorbantie een zeer sterke positieve en ongeveer lineaire samenhang:
+hogere concentraties gaan in deze dataset samen met hogere
+absorbanties.
+\end{oplossing}
+\end{question}
+\end{oefening}
+
+
+\begin{oefening}[Trainingsuren en testresultaat]{\oefU \ESS}
+Bij twaalf leerlingen wordt het aantal uren voorbereiding voor een
+test vergeleken met het behaalde resultaat. De software geeft
+
+\[
+r=0{,}76.
+\]
+
+De puntenwolk is stijgend en ongeveer lineair, maar bevat vrij veel
+spreiding.
+
+\begin{question}
+Interpreteer $r$.
+
+\begin{oplossing}
+Er is een vrij sterke positieve lineaire samenhang: leerlingen met
+meer voorbereidingsuren behalen in deze dataset doorgaans hogere
+resultaten.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Een leerling schrijft:
+``76\% van het testresultaat wordt veroorzaakt door het aantal
+trainingsuren.'' Beoordeel die uitspraak.
+
+\begin{oplossing}
+Die uitspraak is fout. $r=0{,}76$ is geen percentage verklaarde
+variatie en bewijst bovendien geen causaliteit.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Welke informatie uit de puntenwolk blijft belangrijk naast $r$?
+
+\begin{oplossing}
+De ongeveer lineaire vorm, de spreiding van de punten en eventuele
+uitschieters of clusters.
+\end{oplossing}
+\end{question}
+\end{oefening}
+
+
+% ============================================================
+\FVDsection{Gevorderd --- wanneer één getal niet genoeg is}
+% ============================================================
+
+\begin{oefening}[Maak r misleidend]{\oefG}
+Ontwerp met ICT twee datasets:
+
+\begin{enumerate}
+  \item een dataset met $r$ dicht bij $0$ maar met een duidelijk
+        niet-lineair verband;
+  \item een dataset waarin één uitzonderlijk punt de waarde van $r$
+        sterk verandert.
+\end{enumerate}
+
+Maak voor beide datasets een spreidingsdiagram en schrijf een korte
+analyse waarin je uitlegt waarom de puntenwolk noodzakelijk is voor
+een correcte interpretatie.
+
+\begin{oplossing}
+Er zijn veel correcte oplossingen mogelijk. Bij de eerste dataset
+moet een duidelijk krom patroon zichtbaar zijn ondanks een kleine
+lineaire correlatie. Bij de tweede moet aantoonbaar zijn dat één
+waarneming de correlatiecoëfficiënt sterk beïnvloedt.
+\end{oplossing}
+\end{oefening}
+
+
+\begin{oefening}[Kan r alleen beslissen?]{\oefG}
+Een onderzoeker heeft drie datasets en wil voor elk ervan later een
+lineair model opstellen. Hij sorteert ze uitsluitend volgens $|r|$ en
+kiest de dataset met de grootste waarde.
+
+Leg uit waarom deze werkwijze onvoldoende is en stel een betere
+beslisprocedure voor.
+
+\begin{oplossing}
+Een grote $|r|$ is nuttige informatie over lineaire samenhang, maar
+toont niet of er bijvoorbeeld uitschieters, clusters of andere
+bijzonderheden aanwezig zijn. Een betere procedure is eerst de
+puntenwolk te onderzoeken, de lineariteit en bijzondere punten te
+beoordelen, daarna $r$ te interpreteren en pas vervolgens te beslissen
+of een lineair model inhoudelijk zinvol is.
+\end{oplossing}
+\end{oefening}
+
+
+% ============================================================
+\FVDsection{Essentiële oefeningen}
+% ============================================================
+
+Voor dit hoofdstuk behoren de volgende oefeningen tot het minimumtraject:
+
+\begin{itemize}
+  \item \textbf{Teken en sterkte} --- teken en $|r|$ correct interpreteren;
+  \item \textbf{Welke is sterker?} --- sterkte vergelijken via $|r|$;
+  \item \textbf{Mogelijk of onmogelijk?} --- het bereik van $r$ beheersen;
+  \item \textbf{Wat betekent nul?} --- $r\approx0$ correct interpreteren;
+  \item \textbf{Temperatuur en gasverbruik} --- $r$ bepalen en in context analyseren;
+  \item \textbf{Sterk verband, kleine r} --- de beperking tot lineaire samenhang begrijpen;
+  \item \textbf{De invloed van een uitschieter} --- grafische en numerieke informatie combineren;
+  \item \textbf{Absorbantie en concentratie} --- een volledige correlatieanalyse uitvoeren;
+  \item \textbf{Trainingsuren en testresultaat} --- correcte en foutieve conclusies onderscheiden.
+\end{itemize}
+
+De \oefB-oefeningen leggen de noodzakelijke begrippen en technieken
+vast. De geïntegreerde \oefU-oefeningen met \ESS zijn eveneens
+essentieel: het leerplandoel vraagt dat leerlingen gegevens
+\textbf{analyseren}, niet alleen waarden van $r$ classificeren.
+
+\end{document}

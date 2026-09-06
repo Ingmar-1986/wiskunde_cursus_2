@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en-US" xml:lang="en-US">
+<head> <title>Oefeningen — Van data naar puntenwolk – Van data naar functies — verbanden herkennen en gedrag onderzoeken</title>
+<meta charset="utf-8"/>
+<meta content="TeX4ht (https://tug.org/tex4ht/)" name="generator"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="\aa:CssFile " rel="stylesheet" type="text/css"/>
+<meta content="Van-data-naar-puntenwolk-oefeningen.online.tex" name="src"/>
+<script>window.MathJax = { tex: { tags: "ams", }, }; </script>
+<script async="async" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+<meta content="Ingmar Herreman" name="author"/>
+<meta content="version 2.5.1" name="ximera"/>
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" media="screen" rel="stylesheet"/>
+<script async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js" type="text/javascript"></script>
+<link href="../../../assets/css/base.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/global.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/Header_Footer.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/ChapterLayout.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/chapter-hero.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/ExerciseHero.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/learning-boxes.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/CourseOverview.css" media="screen" rel="stylesheet"/></head><body><!-- XIMERA-HEADER-START --><!-- =========================================================
+     HEADER.HTML — Wiskunde 7 FVD
+     Plaats dit bestand bijvoorbeeld in:
+     assets/html/Header.html
+     ========================================================= -->
+<header aria-labelledby="fvd-hero-title" class="fvd-hero">
+<div aria-hidden="true" class="fvd-hero__grid"></div>
+<div aria-hidden="true" class="fvd-hero__glow fvd-hero__glow--left"></div>
+<div aria-hidden="true" class="fvd-hero__glow fvd-hero__glow--right"></div>
+<div class="fvd-hero__inner">
+<!-- Groot Athena-logo links -->
+<div class="fvd-hero__brand">
+<img alt="Athena secundair onderwijs" class="fvd-hero__logo" src="/images/banners/logo_athena.png"/>
+</div>
+<div aria-hidden="true" class="fvd-hero__divider"></div>
+<!-- Centrale titel en leerinhouden -->
+<div class="fvd-hero__content">
+<p class="fvd-hero__eyebrow">
+                    Fundamentele Vorming Digitale Creatie
+                </p>
+<h1 class="fvd-hero__title" id="fvd-hero-title">
+<span class="fvd-hero__title-main">Wiskunde</span>
+<span class="fvd-hero__title-accent">7 FVD</span>
+</h1>
+<div aria-hidden="true" class="fvd-hero__pink-line"></div>
+<p class="fvd-hero__subtitle">
+                    Wiskundige inzichten die je nodig hebt om digitale werelden te bouwen.
+                </p>
+<div aria-label="Onderwerpen in deze cursus" class="fvd-hero__chips">
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<rect height="18" rx="2" width="14" x="5" y="3"></rect>
+<path d="M8 7h8M8 11h2M14 11h2M8 15h2M14 15h2M8 18h2M14 18h2"></path>
+</svg>
+                        Basiswiskunde
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M4 17c4-1 4-10 8-10 2 0 2 3 4 3 1 0 2-.4 4-2"></path>
+<path d="M7 20 13 4"></path>
+</svg>
+                        Algebra
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M5 8h14M5 16h14"></path>
+</svg>
+                        Vergelijkingen
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M4 19V5M4 19h16"></path>
+<path d="m7 16 4-5 3 2 4-6"></path>
+</svg>
+                        Functies
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M5 18 18 5"></path>
+<path d="M12 5h6v6"></path>
+</svg>
+                        Vectoren
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="7"></circle>
+<path d="M12 2v20M2 12h20"></path>
+</svg>
+                        Coördinaten
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="m12 3 8 4.5v9L12 21l-8-4.5v-9z"></path>
+<path d="m4 7.5 8 4.5 8-4.5M12 12v9"></path>
+</svg>
+                        3D-meetkunde
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M3 16c3-8 7-8 10 0 2 5 5 4 8-4"></path>
+</svg>
+                        Goniometrie
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M5 18V6M5 18h14"></path>
+<path d="M8 16c1-6 3-9 8-10"></path>
+</svg>
+                        Logaritmen
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="m7 6 10 5-10 5z"></path>
+<path d="m7 10 10 5-10 5"></path>
+</svg>
+                        Transformaties
+                    </span>
+</div>
+</div>
+<!-- Rechterzijde met wiskundige SVG-tekeningen -->
+<div aria-hidden="true" class="fvd-hero__visual">
+<!-- 3D-kubus -->
+<svg class="fvd-visual fvd-visual--cube" viewbox="0 0 310 245">
+<g class="fvd-svg-cyan">
+<path d="M65 72 185 86 245 48 125 34Z"></path>
+<path d="M65 72v110l120 16V86"></path>
+<path d="M185 86 245 48v110l-60 40"></path>
+<path class="fvd-svg-dash" d="M125 34v110M125 144 65 182M125 144l120 14"></path>
+<path d="M125 144 90 210M125 144l88 28M125 144V15"></path>
+<path d="m90 210 11-4-7-9M213 172l-9-7-2 11M125 15l-6 11h12"></path>
+</g>
+<g class="fvd-svg-label">
+<text x="82" y="225">x</text>
+<text x="220" y="180">y</text>
+<text x="132" y="18">z</text>
+</g>
+</svg>
+<!-- Matrix -->
+<svg class="fvd-visual fvd-visual--matrix" viewbox="0 0 220 100">
+<g class="fvd-svg-soft">
+<text x="0" y="58">A =</text>
+<path d="M60 10c-12 18-12 62 0 80M205 10c12 18 12 62 0 80"></path>
+<text x="82" y="36">1</text>
+<text x="123" y="36">2</text>
+<text x="165" y="36">0</text>
+<text x="73" y="61">−1</text>
+<text x="123" y="61">0</text>
+<text x="165" y="61">3</text>
+<text x="82" y="86">2</text>
+<text x="113" y="86">−2</text>
+<text x="165" y="86">1</text>
+</g>
+</svg>
+<!-- Vectoren en rotatie -->
+<svg class="fvd-visual fvd-visual--vectors" viewbox="0 0 260 170">
+<g class="fvd-svg-cyan">
+<path d="M55 138 132 74"></path>
+<path d="m132 74-13 3 8 10"></path>
+<path d="M55 138h125"></path>
+<path d="m180 138-12-6v12"></path>
+<path class="fvd-svg-dash" d="M55 138c24-65 116-95 156-25"></path>
+</g>
+<g class="fvd-svg-pink">
+<path d="M55 138 207 104"></path>
+<path d="m207 104-13-2 5 12"></path>
+<path class="fvd-svg-dash" d="M211 113c17-13 25-5 21 11"></path>
+<path d="m232 124-9-8-2 12"></path>
+</g>
+<g class="fvd-svg-label">
+<text x="38" y="153">O</text>
+<text x="138" y="73">u⃗</text>
+<text x="188" y="98">v⃗</text>
+<text x="141" y="130">x⃗</text>
+<text x="222" y="102">Rθ</text>
+</g>
+</svg>
+<!-- Bézier-curve -->
+<svg class="fvd-visual fvd-visual--bezier" viewbox="0 0 280 110">
+<g class="fvd-svg-soft">
+<path d="M30 82 85 30 190 30 245 82"></path>
+</g>
+<g class="fvd-svg-cyan">
+<path d="M30 82c42-12 55-52 105-52s67 40 110 52"></path>
+</g>
+<g class="fvd-svg-pink">
+<circle cx="30" cy="82" r="4"></circle>
+<circle cx="85" cy="30" r="4"></circle>
+<circle cx="190" cy="30" r="4"></circle>
+<circle cx="245" cy="82" r="4"></circle>
+</g>
+<g class="fvd-svg-label">
+<text x="18" y="102">P₀</text>
+<text x="74" y="20">P₁</text>
+<text x="181" y="20">P₂</text>
+<text x="238" y="102">P₃</text>
+<text x="103" y="79">Bézier-curve</text>
+</g>
+</svg>
+</div>
+</div>
+<div aria-hidden="true" class="fvd-hero__pink-corner"></div>
+</header><!-- XIMERA-HEADER-END --><!-- XIMERA-CHAPTER-HERO-START --><section class="chapter-hero">
+<div aria-hidden="true" class="chapter-hero__decoration">
+<span class="chapter-hero__formula">
+            f(x) = ax² + bx + c
+        </span>
+<span class="chapter-hero__curve"></span>
+<span class="chapter-hero__grid"></span>
+</div>
+<div class="chapter-hero__content">
+<div class="chapter-hero__theme">
+<span class="chapter-hero__theme-label">
+                Thema 3
+            </span>
+<span class="chapter-hero__theme-dot"></span>
+<span class="chapter-hero__theme-name">
+                Verbanden onderzoeken met data
+            </span>
+</div>
+<div class="chapter-hero__chapter-label">
+            Hoofdstuk
+        </div>
+<div class="chapter-hero__main">
+<div class="chapter-hero__number">
+                2
+            </div>
+<div class="chapter-hero__text">
+<h1 class="chapter-hero__title">
+                    Oefeningen — Van data naar puntenwolk
+                </h1>
+<p class="chapter-hero__abstract">
+</p>
+</div>
+</div>
+<div class="chapter-hero__accent"></div>
+</div>
+</section><!-- XIMERA-CHAPTER-HERO-END --><button aria-controls="courseSidebar" aria-expanded="false" class="course-menu-button" id="courseMenuButton" type="button">☰ Toon cursusinhoud</button><div class="course-sidebar-overlay" id="courseSidebarOverlay"></div><!-- XIMERA-CHAPTER-LAYOUT-START --><main class="chapter-layout"><!--
+    AUTOMATISCH GEGENEREERD BESTAND
+
+    Dit bestand wordt opgebouwd door:
+        scripts/generate-sidebar.sh
+
+    Bewerk niet dit bestand, maar:
+        assets/html/SidebarTemplate.html
+        en modules/.../index.tex
+-->
+<aside class="course-sidebar" id="courseSidebar">
+<div class="sidebar-header">
+<div class="sidebar-header__text">
+<span class="sidebar-label">
+                Van data naar functies — verbanden herkennen en gedrag onderzoeken
+            </span>
+<h2 class="sidebar-title">
+                Cursusinhoud
+            </h2>
+</div>
+<button aria-label="Sluit cursusmenu" class="sidebar-close" id="sidebarClose" type="button">
+            ×
+        </button>
+</div>
+<nav aria-label="Cursusinhoud" class="course-navigation">
+<div class="course-section" data-theme="1">
+<button aria-controls="course-section-1-parate-kennis-het-gereedschap-dat-je-nodig-hebt" aria-expanded="true" class="course-section-toggle" type="button">
+<span class="course-section-number">
+            1
+        </span>
+<span class="course-section-title">
+            Parate kennis — Het gereedschap dat je nodig hebt
+        </span>
+<span aria-hidden="true" class="course-section-arrow">
+            ▾
+        </span>
+</button>
+<div class="course-section-content" id="course-section-1-parate-kennis-het-gereedschap-dat-je-nodig-hebt">
+<a class="course-chapter-link" data-chapter="Thema1-Parate-kennis/Parate-kennis" href="Thema1-Parate-kennis/Parate-kennis.html">
+<span class="course-chapter-number">
+                1
+            </span>
+<span class="course-chapter-title">
+                Parate kennis — Je wiskundige gereedschapskist
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema1-Parate-kennis/Parate-kennis-oefeningen" href="Thema1-Parate-kennis/Parate-kennis-oefeningen.html">
+<span class="course-chapter-number">
+                2
+            </span>
+<span class="course-chapter-title">
+                Oefeningen — Parate kennis
+            </span>
+</a>
+</div>
+</div>
+<div class="course-section" data-theme="2">
+<button aria-controls="course-section-2-van-werkelijkheid-naar-wiskunde-en-terug" aria-expanded="true" class="course-section-toggle" type="button">
+<span class="course-section-number">
+            2
+        </span>
+<span class="course-section-title">
+            Van werkelijkheid naar wiskunde — en terug
+        </span>
+<span aria-hidden="true" class="course-section-arrow">
+            ▾
+        </span>
+</button>
+<div class="course-section-content" id="course-section-2-van-werkelijkheid-naar-wiskunde-en-terug">
+<a class="course-chapter-link" data-chapter="Thema2-Modelleren/Werkelijkheid-terug" href="Thema2-Modelleren/Werkelijkheid-terug.html">
+<span class="course-chapter-number">
+                1
+            </span>
+<span class="course-chapter-title">
+                Van werkelijkheid naar wiskunde — en terug
+            </span>
+</a>
+</div>
+</div>
+<div class="course-section is-open" data-theme="3">
+<button aria-controls="course-section-3-verbanden-onderzoeken-met-data" aria-expanded="true" class="course-section-toggle" type="button">
+<span class="course-section-number">
+            3
+        </span>
+<span class="course-section-title">
+            Verbanden onderzoeken met data
+        </span>
+<span aria-hidden="true" class="course-section-arrow">
+            ▾
+        </span>
+</button>
+<div class="course-section-content" id="course-section-3-verbanden-onderzoeken-met-data">
+<a class="course-chapter-link" data-chapter="Thema3-Verbanden/Van-data-naar-puntenwolk" href="Thema3-Verbanden/Van-data-naar-puntenwolk.html">
+<span class="course-chapter-number">
+                1
+            </span>
+<span class="course-chapter-title">
+                Van data naar puntenwolk
+            </span>
+</a>
+<a aria-current="page" class="course-chapter-link is-active" data-chapter="Thema3-Verbanden/Van-data-naar-puntenwolk-oefeningen" href="Thema3-Verbanden/Van-data-naar-puntenwolk-oefeningen.html">
+<span class="course-chapter-number">
+                2
+            </span>
+<span class="course-chapter-title">
+                Oefeningen — Van data naar puntenwolk
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema3-Verbanden/Correlatie" href="Thema3-Verbanden/Correlatie.html">
+<span class="course-chapter-number">
+                3
+            </span>
+<span class="course-chapter-title">
+                Correlatie — Hoe sterk is het lineaire verband?
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema3-Verbanden/Correlatie-oefeningen" href="Thema3-Verbanden/Correlatie-oefeningen.html">
+<span class="course-chapter-number">
+                4
+            </span>
+<span class="course-chapter-title">
+                Oefeningen — Correlatie
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema3-Verbanden/Lineaire-regressie" href="Thema3-Verbanden/Lineaire-regressie.html">
+<span class="course-chapter-number">
+                5
+            </span>
+<span class="course-chapter-title">
+                Lineaire regressie — Van data naar model
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema3-Verbanden/Lineaire-regressie-oefeningen" href="Thema3-Verbanden/Lineaire-regressie-oefeningen.html">
+<span class="course-chapter-number">
+                6
+            </span>
+<span class="course-chapter-title">
+                Oefeningen — Lineaire regressie
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema3-Verbanden/Samenhang-oorzaak" href="Thema3-Verbanden/Samenhang-oorzaak.html">
+<span class="course-chapter-number">
+                7
+            </span>
+<span class="course-chapter-title">
+                Samenhang is nog geen oorzaak
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema3-Verbanden/Samenhang-oorzaak-oefeningen" href="Thema3-Verbanden/Samenhang-oorzaak-oefeningen.html">
+<span class="course-chapter-number">
+                8
+            </span>
+<span class="course-chapter-title">
+                Oefeningen — Samenhang is nog geen oorzaak
+            </span>
+</a>
+</div>
+</div>
+</nav>
+</aside>
+<article class="chapter-content"><div class="chapter-body">
+<div class="preamble">
+</div>
+<style> .activity-body pre { white-space: pre; background-color: lightgray; } .xmyoutube { aspect-ratio: 16/9; min-width: 75%; } .image-environment img { width: unset; } </style>
+<div class="maketitle"></div>
+<p><a id="x1-2r1"></a>
+</p><!-- l. 17 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">1</div><div class="fvd-section-bar__title">Basis — gegevens en spreidingsdiagrammen</div></div>
+<p><a id="x1-3r1"></a>
+</p><p></p><!-- l. 20 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 20 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 20 --><p class="noindent">Oefening 1
+</p><!-- l. 20 --><p class="noindent">— Gekoppelde gegevens
+</p><!-- l. 20 --><p class="noindent"></p></div>
+<p></p><!-- l. 20 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 20 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--b">B</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 20 --><p class="noindent"></p><div class="fvd-exercise__content"> Een bioloog meet bij zes planten de hoogte en de massa van de bovengrondse
+delen.
+<p></p>
+<div class="mathjax-block">\[ \begin {array}{c|rrrrrr} \text {plant} &amp;1&amp;2&amp;3&amp;4&amp;5&amp;6\\ \hline \text {hoogte (cm)}&amp;12&amp;18&amp;23&amp;29&amp;34&amp;41\\ \text {massa (g)}&amp;4{,}1&amp;6{,}0&amp;7{,}4&amp;9{,}8&amp;10{,}7&amp;13{,}2 \end {array} \]</div>
+<div class="problem-environment question" id="problem1" numbered=" " role="article" titletext=" Question">  Schrijf de zes gekoppelde gegevensparen op.
+<div class="accordion">
+<h3 class="xmoplossing"></h3>
+<div class="accordion-item xmoplossing-content" id="accordion-item2">
+<div class="mathjax-block">\[ (12,4{,}1),\ (18,6{,}0),\ (23,7{,}4),\ (29,9{,}8),\
+(34,10{,}7),\ (41,13{,}2). \]</div> </div>
+</div>
+</div>
+<div class="problem-environment question" id="problem3" numbered=" " role="article" titletext=" Question">  Wat betekent het punt <span class="mathjax-inline">\((29,9{,}8)\)</span> in deze context?
+<div class="accordion">
+<h3 class="xmoplossing"></h3>
+<div class="accordion-item xmoplossing-content" id="accordion-item4"> 
+ Plant 4 heeft een hoogte van <span class="mathjax-inline">\(29\,\mathrm {cm}\)</span> en een bovengrondse massa van <span class="mathjax-inline">\(9{,}8\,\mathrm {g}\)</span>. </div>
+</div>
+</div>
+<div class="problem-environment question" id="problem5" numbered=" " role="article" titletext=" Question">  Welke grootheid zou je hier het meest natuurlijk op de horizontale as
+plaatsen?
+<div class="accordion">
+<h3 class="xmoplossing"></h3>
+<div class="accordion-item xmoplossing-content" id="accordion-item6"> 
+ De hoogte. In deze analyse onderzoeken we hoe de massa samenhangt met de
+hoogte. Een andere keuze is wiskundig mogelijk, maar moet duidelijk worden
+gemotiveerd. </div>
+</div>
+</div> </div>
+<!-- l. 62 --><p class="noindent"></p></div>
+<p></p><!-- l. 62 --><p class="noindent"></p></section>
+<p><a id="x1-4r2"></a>
+</p><p></p><!-- l. 65 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 65 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 65 --><p class="noindent">Oefening 2
+</p><!-- l. 65 --><p class="noindent">— Richting herkennen
+</p><!-- l. 65 --><p class="noindent"></p></div>
+<p></p><!-- l. 65 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 65 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--b">B</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 65 --><p class="noindent"></p><div class="fvd-exercise__content"> Duid voor elke situatie aan welk globaal verband je verwacht. Dit is een <em>verwachting</em>;
+echte gegevens kunnen afwijken.
+<p></p>
+<div class="problem-environment question" id="problem7" numbered=" " role="article" titletext=" Question">  Buitentemperatuur en dagelijks gasverbruik voor verwarming:
+<div class="multiple-choice" id="problem8" titletext=" Multiple Choice"><span class="choice" id="choice1">positief </span><span class="choice correct" id="choice2">negatief </span><span class="choice" id="choice3">geen mogelijk verband</span> </div> </div>
+<div class="problem-environment question" id="problem9" numbered=" " role="article" titletext=" Question">  Lengte en massa van gelijkvormige metalen staven uit hetzelfde materiaal:
+<div class="multiple-choice" id="problem10" titletext=" Multiple Choice"><span class="choice correct" id="choice4">positief </span><span class="choice" id="choice5">negatief </span><span class="choice" id="choice6">geen mogelijk verband</span> </div> </div>
+<div class="problem-environment question" id="problem11" numbered=" " role="article" titletext=" Question">  Hoogte boven zeeniveau en luchtdruk in een geschikt meetbereik:
+<div class="multiple-choice" id="problem12" titletext=" Multiple Choice"><span class="choice" id="choice7">positief </span><span class="choice correct" id="choice8">negatief </span><span class="choice" id="choice9">geen mogelijk verband</span> </div> </div> </div>
+<!-- l. 98 --><p class="noindent"></p></div>
+<p></p><!-- l. 98 --><p class="noindent"></p></section>
+<p><a id="x1-5r3"></a>
+</p><p></p><!-- l. 101 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 101 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 101 --><p class="noindent">Oefening 3
+</p><!-- l. 101 --><p class="noindent">— Tabel naar puntenwolk
+</p><!-- l. 101 --><p class="noindent"></p></div>
+<p></p><!-- l. 101 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 101 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--b">B</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 101 --><p class="noindent"></p><div class="fvd-exercise__content"> Bij een proef met een veer worden de volgende gegevens verzameld.
+<p></p>
+<div class="mathjax-block">\[ \begin {array}{c|rrrrrr} m\;(\mathrm {g})&amp;50&amp;100&amp;150&amp;200&amp;250&amp;300\\ \hline u\;(\mathrm {cm})&amp;1{,}2&amp;2{,}5&amp;3{,}7&amp;5{,}0&amp;6{,}1&amp;7{,}5 \end {array} \]</div>
+<div class="problem-environment question" id="problem13" numbered=" " role="article" titletext=" Question">  Maak met ICT een spreidingsdiagram met de massa <span class="mathjax-inline">\(m\)</span> op de horizontale as en de
+uitrekking <span class="mathjax-inline">\(u\)</span> op de verticale as.    </div>
+<div class="problem-environment question" id="problem14" numbered=" " role="article" titletext=" Question">  Beschrijf richting, vorm en sterkte van het zichtbare verband.
+<div class="accordion">
+<h3 class="xmoplossing"></h3>
+<div class="accordion-item xmoplossing-content" id="accordion-item15"> 
+ De puntenwolk vertoont een sterk positief en ongeveer lineair verband: grotere
+massa’s gaan in deze dataset samen met grotere uitrekkingen en de punten liggen
+dicht rond een stijgende rechte band. </div>
+</div>
+</div>
+<div class="problem-environment question" id="problem16" numbered=" " role="article" titletext=" Question">  Mag je op basis van deze grafiek alleen besluiten dat de massa de uitrekking
+veroorzaakt?
+<div class="accordion">
+<h3 class="xmoplossing"></h3>
+<div class="accordion-item xmoplossing-content" id="accordion-item17"> 
+ Nee. De grafiek toont samenhang. Voor een causale conclusie is ook de
+experimentele opzet en fysische kennis nodig. </div>
+</div>
+</div> </div>
+<!-- l. 135 --><p class="noindent"></p></div>
+<p></p><!-- l. 135 --><p class="noindent"></p></section>
+<p><a id="x1-6r2"></a>
+</p><p></p><!-- l. 139 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">2</div><div class="fvd-section-bar__title">Verdieping — puntenwolken analyseren</div></div>
+<p><a id="x1-7r4"></a>
+</p><p></p><!-- l. 142 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 142 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 142 --><p class="noindent">Oefening 4
+</p><!-- l. 142 --><p class="noindent">— Temperatuur en energieverbruik
+</p><!-- l. 142 --><p class="noindent"></p></div>
+<p></p><!-- l. 142 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 142 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 142 --><p class="noindent"></p><div class="fvd-exercise__content"> Een school onderzoekt tijdens tien winterdagen de gemiddelde buitentemperatuur en
+het gasverbruik.
+<p></p>
+<div class="mathjax-block">\[ \begin {array}{c|rrrrrrrrrr} T\;({}^{\circ }\mathrm C)&amp;-2&amp;0&amp;2&amp;4&amp;5&amp;7&amp;8&amp;10&amp;11&amp;13\\ \hline G\;(\mathrm {kWh})&amp;820&amp;790&amp;735&amp;690&amp;655&amp;610&amp;590&amp;535&amp;520&amp;470 \end {array} \]</div>
+<div class="problem-environment question" id="problem18" numbered=" " role="article" titletext=" Question">  Maak een spreidingsdiagram.    </div>
+<div class="problem-environment question" id="problem19" numbered=" " role="article" titletext=" Question">  Analyseer de puntenwolk met de vier aandachtspunten: richting, vorm, sterkte en
+bijzonderheden.
+<div class="accordion">
+<h3 class="xmoplossing"></h3>
+<div class="accordion-item xmoplossing-content" id="accordion-item20"> 
+ Er is een sterk negatief en ongeveer lineair verband. Bij hogere buitentemperaturen
+ligt het gasverbruik doorgaans lager. De punten liggen vrij dicht rond een dalende
+rechte band en er is in deze kleine dataset geen uitgesproken uitschieter zichtbaar. </div>
+</div>
+</div>
+<div class="problem-environment question" id="problem21" numbered=" " role="article" titletext=" Question">  Formuleer een contextgebonden conclusie zonder meer te beweren dan de gegevens
+toelaten.
+<div class="accordion">
+<h3 class="xmoplossing"></h3>
+<div class="accordion-item xmoplossing-content" id="accordion-item22"> 
+ Tijdens deze tien winterdagen gaat een hogere gemiddelde buitentemperatuur
+doorgaans samen met een lager gasverbruik van de school. De gegevens suggereren
+een sterk negatief, ongeveer lineair verband. </div>
+</div>
+</div> </div>
+<!-- l. 180 --><p class="noindent"></p></div>
+<p></p><!-- l. 180 --><p class="noindent"></p></section>
+<p><a id="x1-8r5"></a>
+</p><p></p><!-- l. 183 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 183 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 183 --><p class="noindent">Oefening 5
+</p><!-- l. 183 --><p class="noindent">— Een verband dat niet lineair is
+</p><!-- l. 183 --><p class="noindent"></p></div>
+<p></p><!-- l. 183 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 183 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 183 --><p class="noindent"></p><div class="fvd-exercise__content"> Een sensor wordt getest. Voor verschillende waarden van <span class="mathjax-inline">\(x\)</span> wordt de respons <span class="mathjax-inline">\(y\)</span>
+gemeten.
+<p></p>
+<div class="mathjax-block">\[ \begin {array}{c|rrrrrrrrr} x&amp;-4&amp;-3&amp;-2&amp;-1&amp;0&amp;1&amp;2&amp;3&amp;4\\ \hline y&amp;16{,}2&amp;9{,}1&amp;4{,}2&amp;1{,}0&amp;0{,}2&amp;1{,}1&amp;3{,}9&amp;9{,}2&amp;15{,}8 \end {array} \]</div>
+<div class="problem-environment question" id="problem23" numbered=" " role="article" titletext=" Question">  Maak een spreidingsdiagram.    </div>
+<div class="problem-environment question" id="problem24" numbered=" " role="article" titletext=" Question">  Is er een duidelijk verband tussen <span class="mathjax-inline">\(x\)</span> en <span class="mathjax-inline">\(y\)</span>?
+<div class="accordion">
+<h3 class="xmoplossing"></h3>
+<div class="accordion-item xmoplossing-content" id="accordion-item25"> 
+ Ja. De punten volgen duidelijk een U-vormig patroon. </div>
+</div>
+</div>
+<div class="problem-environment question" id="problem26" numbered=" " role="article" titletext=" Question">  Is het verband ongeveer lineair?
+<div class="accordion">
+<h3 class="xmoplossing"></h3>
+<div class="accordion-item xmoplossing-content" id="accordion-item27"> 
+ Nee. Een rechte beschrijft het globale patroon niet goed. </div>
+</div>
+</div>
+<div class="problem-environment question" id="problem28" numbered=" " role="article" titletext=" Question">  Waarom is deze oefening belangrijk voordat we correlatie bestuderen?
+<div class="accordion">
+<h3 class="xmoplossing"></h3>
+<div class="accordion-item xmoplossing-content" id="accordion-item29"> 
+ Omdat een dataset een sterk en duidelijk verband kan vertonen zonder dat dit
+verband lineair is. Een maat voor lineaire samenhang moet dus altijd samen met de
+puntenwolk geïnterpreteerd worden. </div>
+</div>
+</div> </div>
+<!-- l. 223 --><p class="noindent"></p></div>
+<p></p><!-- l. 223 --><p class="noindent"></p></section>
+<p><a id="x1-9r6"></a>
+</p><p></p><!-- l. 226 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 226 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 226 --><p class="noindent">Oefening 6
+</p><!-- l. 226 --><p class="noindent">— De verdachte meting
+</p><!-- l. 226 --><p class="noindent"></p></div>
+<p></p><!-- l. 226 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 226 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 226 --><p class="noindent"></p><div class="fvd-exercise__content"> Bij een experiment worden de volgende waarden gemeten.
+<p></p>
+<div class="mathjax-block">\[ \begin {array}{c|rrrrrrrr} x&amp;1&amp;2&amp;3&amp;4&amp;5&amp;6&amp;7&amp;8\\ \hline y&amp;2{,}1&amp;4{,}0&amp;6{,}2&amp;8{,}1&amp;10{,}0&amp;24{,}5&amp;14{,}2&amp;16{,}1 \end {array} \]</div>
+<div class="problem-environment question" id="problem30" numbered=" " role="article" titletext=" Question">  Maak een spreidingsdiagram en beschrijf het globale patroon.
+<div class="accordion">
+<h3 class="xmoplossing"></h3>
+<div class="accordion-item xmoplossing-content" id="accordion-item31"> 
+ De meeste punten volgen een sterk positief en ongeveer lineair patroon. Het punt bij
+<span class="mathjax-inline">\(x=6\)</span> ligt opvallend ver boven dit patroon. </div>
+</div>
+</div>
+<div class="problem-environment question" id="problem32" numbered=" " role="article" titletext=" Question">  Welke waarneming is een mogelijke uitschieter?
+<div class="accordion">
+<h3 class="xmoplossing"></h3>
+<div class="accordion-item xmoplossing-content" id="accordion-item33">
+<span class="mathjax-inline">\((6,24{,}5)\)</span>. </div>
+</div>
+</div>
+<div class="problem-environment question" id="problem34" numbered=" " role="article" titletext=" Question">  Een leerling verwijdert het punt onmiddellijk. Beoordeel die werkwijze.
+<div class="accordion">
+<h3 class="xmoplossing"></h3>
+<div class="accordion-item xmoplossing-content" id="accordion-item35"> 
+ Dat is niet verantwoord zonder onderzoek. Het kan om een invoer- of meetfout
+gaan, maar ook om een correcte uitzonderlijke waarneming. Eerst moet de oorzaak
+                                                                  
+
+                                                                  
+worden nagegaan. </div>
+</div>
+</div> </div>
+<!-- l. 262 --><p class="noindent"></p></div>
+<p></p><!-- l. 262 --><p class="noindent"></p></section>
+<p><a id="x1-10r7"></a>
+</p><p></p><!-- l. 265 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 265 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 265 --><p class="noindent">Oefening 7
+</p><!-- l. 265 --><p class="noindent">— Twee groepen in één puntenwolk
+</p><!-- l. 265 --><p class="noindent"></p></div>
+<p></p><!-- l. 265 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 265 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span></div>
+<p></p><!-- l. 265 --><p class="noindent"></p><div class="fvd-exercise__content"> Een onderzoeker meet de massa en de lengte van onderdelen die afkomstig zijn van
+twee verschillende materialen. In de puntenwolk ontstaan twee duidelijk gescheiden
+groepen.
+<p></p>
+<div class="problem-environment question" id="problem36" numbered=" " role="article" titletext=" Question">  Hoe noemen we zulke groepen?
+<div class="accordion">
+<h3 class="xmoplossing"></h3>
+<div class="accordion-item xmoplossing-content" id="accordion-item37"> 
+ Clusters. </div>
+</div>
+</div>
+<div class="problem-environment question" id="problem38" numbered=" " role="article" titletext=" Question">  Waarom is het gevaarlijk om alleen één globale trend door alle punten te
+beschrijven?
+<div class="accordion">
+<h3 class="xmoplossing"></h3>
+<div class="accordion-item xmoplossing-content" id="accordion-item39"> 
+ Omdat de twee materialen mogelijk elk een ander verband vertonen. Een globale
+trend kan de groepsstructuur verbergen en daardoor een misleidende samenvatting
+geven. </div>
+</div>
+</div> </div>
+<!-- l. 288 --><p class="noindent"></p></div>
+<p></p><!-- l. 288 --><p class="noindent"></p></section>
+<p><a id="x1-11r3"></a>
+</p><p></p><!-- l. 292 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">3</div><div class="fvd-section-bar__title">Geïntegreerd analyseren</div></div>
+<p><a id="x1-12r8"></a>
+</p><p></p><!-- l. 295 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 295 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 295 --><p class="noindent">Oefening 8
+</p><!-- l. 295 --><p class="noindent">— Zonnepaneel
+</p><!-- l. 295 --><p class="noindent"></p></div>
+<p></p><!-- l. 295 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 295 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 295 --><p class="noindent"></p><div class="fvd-exercise__content"> Tijdens een practicum wordt op verschillende momenten de instraling op een
+                                                                  
+
+                                                                  
+zonnepaneel en het geleverde elektrische vermogen gemeten.
+<p></p>
+<div class="mathjax-block">\[ \begin {array}{c|rrrrrrrr} I\;(\mathrm {W/m^2})&amp;180&amp;260&amp;340&amp;430&amp;510&amp;620&amp;730&amp;840\\ \hline P\;(\mathrm {W})&amp;31&amp;43&amp;58&amp;70&amp;86&amp;101&amp;119&amp;136 \end {array} \]</div>
+<!-- l. 306 --><p class="noindent">Voer een volledige eerste analyse uit.
+</p>
+<div class="problem-environment question" id="problem40" numbered=" " role="article" titletext=" Question">  Benoem de twee numerieke grootheden en hun eenheden.
+<div class="accordion">
+<h3 class="xmoplossing"></h3>
+<div class="accordion-item xmoplossing-content" id="accordion-item41"> 
+ Instraling <span class="mathjax-inline">\(I\)</span> in <span class="mathjax-inline">\(\mathrm {W/m^2}\)</span> en elektrisch vermogen <span class="mathjax-inline">\(P\)</span> in <span class="mathjax-inline">\(\mathrm W\)</span>. </div>
+</div>
+</div>
+<div class="problem-environment question" id="problem42" numbered=" " role="article" titletext=" Question">  Maak met ICT een spreidingsdiagram.    </div>
+<div class="problem-environment question" id="problem43" numbered=" " role="article" titletext=" Question">  Beschrijf richting, vorm, sterkte en bijzonderheden.
+<div class="accordion">
+<h3 class="xmoplossing"></h3>
+<div class="accordion-item xmoplossing-content" id="accordion-item44"> 
+ De puntenwolk vertoont een sterk positief en ongeveer lineair verband. Grotere
+instraling gaat in deze dataset samen met groter geleverd vermogen. De punten
+liggen dicht rond een stijgende rechte band en er is geen duidelijke uitschieter. </div>
+</div>
+</div>
+<div class="problem-environment question" id="problem45" numbered=" " role="article" titletext=" Question">  Formuleer een voorzichtige conclusie.
+<div class="accordion">
+<h3 class="xmoplossing"></h3>
+<div class="accordion-item xmoplossing-content" id="accordion-item46"> 
+ Binnen het onderzochte meetbereik gaat een grotere instraling doorgaans samen
+met een groter elektrisch vermogen van het zonnepaneel. De gegevens suggereren een
+sterk positief en ongeveer lineair verband. </div>
+</div>
+</div>
+<div class="problem-environment question" id="problem47" numbered=" " role="article" titletext=" Question">  Welke vervolgvraag ligt voor de hand als we het verband nauwkeuriger willen
+beschrijven?
+<div class="accordion">
+<h3 class="xmoplossing"></h3>
+<div class="accordion-item xmoplossing-content" id="accordion-item48"> 
+ We kunnen onderzoeken hoe sterk het lineaire verband is en vervolgens een
+lineair model bepalen. Dat leidt naar correlatie en lineaire regressie. </div>
+</div>
+</div>
+</div>
+<!-- l. 352 --><p class="noindent"></p></div>
+<p></p><!-- l. 352 --><p class="noindent"></p></section>
+<p><a id="x1-13r4"></a>
+</p><p></p><!-- l. 356 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">4</div><div class="fvd-section-bar__title">Gevorderd — kritisch onderzoeken</div></div>
+<p><a id="x1-14r9"></a>
+</p><p></p><!-- l. 359 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 359 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 359 --><p class="noindent">Oefening 9
+</p><!-- l. 359 --><p class="noindent">— Kan één punt een verhaal veranderen?
+</p><!-- l. 359 --><p class="noindent"></p></div>
+<p></p><!-- l. 359 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 359 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--g">G</span></div>
+<p></p><!-- l. 359 --><p class="noindent"></p><div class="fvd-exercise__content"> Een dataset bevat aanvankelijk de punten
+<p></p>
+<div class="mathjax-block">\[ (2,8),\ (3,7),\ (4,6),\ (5,5),\ (6,4),\ (7,3). \]</div>
+<!-- l. 366 --><p class="noindent">Daar wordt één extra punt <span class="mathjax-inline">\((20,20)\)</span> aan toegevoegd.
+</p>
+<div class="problem-environment question" id="problem49" numbered=" " role="article" titletext=" Question">  Maak een spreidingsdiagram van de eerste zes punten en beschrijf het verband.
+</div>
+<div class="problem-environment question" id="problem50" numbered=" " role="article" titletext=" Question">  Voeg daarna <span class="mathjax-inline">\((20,20)\)</span> toe. Hoe verandert het globale beeld?    </div>
+<div class="problem-environment question" id="problem51" numbered=" " role="article" titletext=" Question">  Leg uit waarom een analyse nooit uitsluitend op een automatisch berekend getal
+mag steunen.
+<div class="accordion">
+<h3 class="xmoplossing"></h3>
+<div class="accordion-item xmoplossing-content" id="accordion-item52"> 
+ Een uitzonderlijk punt kan de numerieke samenvatting sterk beïnvloeden. De
+puntenwolk toont de structuur van de gegevens en maakt zulke bijzonderheden
+zichtbaar. Grafische en numerieke informatie moeten daarom samen geïnterpreteerd
+worden. </div>
+</div>
+</div> </div>
+<!-- l. 387 --><p class="noindent"></p></div>
+<p></p><!-- l. 387 --><p class="noindent"></p></section>
+<p><a id="x1-15r10"></a>
+</p><p></p><!-- l. 390 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 390 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 390 --><p class="noindent">Oefening 10
+</p><!-- l. 390 --><p class="noindent">— Ontwerp zelf een dataset
+</p><!-- l. 390 --><p class="noindent"></p></div>
+<p></p><!-- l. 390 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 390 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--g">G</span></div>
+<p></p><!-- l. 390 --><p class="noindent"></p><div class="fvd-exercise__content"> Maak zelf drie kleine datasets met telkens minstens acht punten:
+<p></p>
+<ol class="enumerate1">
+<li class="enumerate" id="x1-17x1">een sterk positief ongeveer lineair verband;
+</li>
+<li class="enumerate" id="x1-19x2">een sterk negatief ongeveer lineair verband;
+</li>
+<li class="enumerate" id="x1-21x3">een sterk maar duidelijk niet-lineair verband.</li></ol>
+<!-- l. 399 --><p class="noindent">Maak voor elke dataset een spreidingsdiagram en schrijf er een korte analyse bij
+volgens richting, vorm, sterkte en bijzonderheden.
+</p>
+<div class="accordion">
+<h3 class="xmoplossing"></h3>
+<div class="accordion-item xmoplossing-content" id="accordion-item53"> 
+ Er zijn veel correcte antwoorden mogelijk. De grafieken en de beschrijvingen
+moeten onderling consistent zijn. Bij de derde dataset moet duidelijk zijn
+dat “sterk verband” niet hetzelfde betekent als “sterk lineair verband”. </div>
+</div>
+</div>
+<!-- l. 408 --><p class="noindent"></p></div>
+<p></p><!-- l. 408 --><p class="noindent"></p></section>
+<p><a id="x1-22r5"></a>
+</p><p></p><!-- l. 412 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">5</div><div class="fvd-section-bar__title">Essentiële oefeningen</div></div>
+<p></p><!-- l. 415 --><p class="noindent">Voor dit hoofdstuk behoren de volgende oefeningen tot het minimumtraject:
+</p>
+<ul class="itemize1">
+<li class="itemize"><strong>Gekoppelde gegevens</strong> — betekenis van gegevensparen;
+</li>
+<li class="itemize"><strong>Richting herkennen</strong> — positief en negatief verband;
+</li>
+<li class="itemize"><strong>Tabel naar puntenwolk</strong> — een spreidingsdiagram maken en lezen;
+</li>
+<li class="itemize"><strong>Temperatuur   en   energieverbruik</strong>   —   een   nieuwe   puntenwolk
+analyseren;
+</li>
+<li class="itemize"><strong>Een verband dat niet lineair is</strong> — lineair en niet-lineair onderscheiden;
+</li>
+<li class="itemize"><strong>De verdachte meting</strong> — uitschieters herkennen en kritisch behandelen;
+</li>
+<li class="itemize"><strong>Zonnepaneel</strong> — geïntegreerde analyse in een STEM-context.</li></ul>
+<!-- l. 427 --><p class="noindent">De eerste oefeningen trainen noodzakelijke basisvaardigheden. De <span class="fvd-exercise-chip fvd-exercise-chip--u">U</span>-oefeningen met
+<span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span>zijn eveneens essentieel: zonder het zelfstandig analyseren van nieuwe gegevens wordt
+het vereiste beheersingsniveau niet bereikt.
+                                                                  
+
+                                                                  
+</p>
+</div><!-- XIMERA-PREVIOUS-NEXT-START --><nav aria-label="Hoofdstuknavigatie" class="chapter-navigation">
+<a class="chapter-navigation__card chapter-navigation__card--previous" data-visible="true" href="Van-data-naar-puntenwolk.html">
+<span aria-hidden="true" class="chapter-navigation__icon">
+            ←
+        </span>
+<span class="chapter-navigation__content">
+<span class="chapter-navigation__label">
+                Vorig hoofdstuk
+            </span>
+<span class="chapter-navigation__title">
+                Van data naar puntenwolk
+            </span>
+</span>
+</a>
+<a class="chapter-navigation__card chapter-navigation__card--overview" href="index.html">
+<span aria-hidden="true" class="chapter-navigation__overview-icon">
+<span></span>
+<span></span>
+<span></span>
+</span>
+<span class="chapter-navigation__content">
+<span class="chapter-navigation__label">
+                Cursus
+            </span>
+<span class="chapter-navigation__title">
+                Overzicht
+            </span>
+</span>
+</a>
+<a class="chapter-navigation__card chapter-navigation__card--next" data-visible="true" href="Correlatie.html">
+<span class="chapter-navigation__content">
+<span class="chapter-navigation__label">
+                Volgend hoofdstuk
+            </span>
+<span class="chapter-navigation__title">
+                Correlatie — Hoe sterk is het lineaire verband?
+            </span>
+</span>
+<span aria-hidden="true" class="chapter-navigation__icon">
+            →
+        </span>
+</a>
+</nav><!-- XIMERA-PREVIOUS-NEXT-END --></article></main><!-- XIMERA-CHAPTER-LAYOUT-END --><div class="course-footer-clear"></div><!-- XIMERA-FOOTER-START --><footer class="site-footer">
+<div aria-hidden="true" class="site-footer__accent"></div>
+<div class="site-footer__inner">
+<div class="site-footer__quote">
+<span aria-hidden="true" class="site-footer__quote-mark">◈</span>
+<p class="site-footer__quote-text">
+                Think mathematically. Create digitally. Shape the future.
+            </p>
+</div>
+<div aria-hidden="true" class="site-footer__divider"></div>
+<div class="site-footer__grid">
+<section class="site-footer__column">
+<p class="site-footer__eyebrow">
+                    Wiskunde 7 FVD
+                </p>
+<h2 class="site-footer__title">
+                    Fundamentele Vorming Digitale Creatie
+                </h2>
+<p class="site-footer__text">
+                    Wiskundige basis voor programmeren, graphics,
+                    animatie, simulatie en 3D.
+                </p>
+</section>
+<section class="site-footer__column">
+<p class="site-footer__eyebrow">
+                    Ontwikkeling
+                </p>
+<p class="site-footer__name">
+                    Ingmar Herreman
+                </p>
+<p class="site-footer__text">
+                    GO! Athena Campus Bellevue
+                </p>
+<p class="site-footer__text">
+                    Versie 1.0 · 2026
+                </p>
+</section>
+<section class="site-footer__column">
+<p class="site-footer__eyebrow">
+                    Technologie
+                </p>
+<div class="site-footer__tech">
+<span>Ximera</span>
+<span>HTML</span>
+<span>PDF</span>
+<span>GeoGebra</span>
+<span>GitHub</span>
+</div>
+</section>
+</div>
+<div class="site-footer__bottom">
+<span>Gebouwd met Ximera</span>
+<span aria-hidden="true">•</span>
+<span>Voor 7 FVD</span>
+<span aria-hidden="true">•</span>
+<span>© 2026</span>
+</div>
+</div>
+</footer><!-- XIMERA-FOOTER-END --><script src="../../../assets/js/chapter-layout.js"></script></body>
+</html>

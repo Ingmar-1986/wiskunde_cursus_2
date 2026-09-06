@@ -1,0 +1,2064 @@
+\documentclass{ximera}
+
+\input{../../../preamble.tex}
+\input{../../../Opmaak.tex}
+\addPrintStyle{../../..}
+
+\title{Arbeid en energie}
+\author{Ingmar Herreman}
+
+\begin{abstract}
+In de vorige hoofdstukken beschreven we bewegingen en onderzochten we hoe
+krachten die bewegingen veranderen. In dit hoofdstuk bekijken we dezelfde
+fysica vanuit een andere invalshoek: energie.
+
+We starten met het begrip arbeid. Eerst herhalen we arbeid bij een constante
+kracht en onderzoeken we welke component van een kracht werkelijk bijdraagt
+aan een verplaatsing. Daarna lezen we arbeid rechtstreeks af uit een
+kracht-plaatsgrafiek. Voor eenvoudige grafieken gebruiken we oppervlakten van
+rechthoeken, driehoeken en trapezia. Wanneer de kracht continu verandert,
+wordt diezelfde oppervlakte beschreven door een bepaalde integraal.
+
+Vervolgens verbinden we arbeid met kinetische energie via het
+arbeid-energietheorema. We onderzoeken conservatieve en niet-conservatieve
+krachten en bouwen van daaruit de begrippen potentiële en mechanische energie
+verder op. Zwaarte-energie nabij het aardoppervlak en elastische energie
+worden opnieuw bekeken vanuit arbeid.
+
+Ten slotte keren we terug naar gravitatie op astronomische schaal. Daar is
+$mgh$ niet langer voldoende en gebruiken we de algemene gravitatie-energie.
+Zo kunnen we satellieten nu niet alleen vanuit krachten, maar ook vanuit
+energie begrijpen.
+
+Doorheen het hoofdstuk staat één idee centraal:
+\[
+\boxed{\text{arbeid is een manier waarop energie wordt overgedragen of omgezet}.}
+\]
+Grafieken, oppervlakten en integralen vormen daarbij de brug tussen wiskunde
+en fysica.
+\end{abstract}
+
+\begin{document}
+
+% FVD_CHAPTER_DATA_START
+% Automatisch gegenereerd uit index.tex.
+% Niet handmatig aanpassen.
+\fvdchapterdata{1}{Beweging en kracht — Van beweging beschrijven tot energie begrijpen}{8}
+% FVD_CHAPTER_DATA_END
+
+
+
+\maketitle
+
+\begin{voorkennis}
+  \item Je kan krachten tekenen, ontbinden en de resulterende kracht bepalen.
+  \item Je kan het scalair product interpreteren via de hoek tussen vectoren.
+  \item Je kent kinetische, gravitationele en elastische energie uit eerdere leerstof.
+  \item Je kan eenvoudige energieomzettingen beschrijven.
+  \item Je kan oppervlakten van rechthoeken, driehoeken en trapezia berekenen.
+  \item Je kent de bepaalde integraal als georiënteerde oppervlakte.
+  \item Je kan Newton II toepassen en snelheidsveranderingen analyseren.
+\end{voorkennis}
+
+\begin{leerdoelen}
+  \item Je kan arbeid fysisch interpreteren als energieoverdracht of energieomzetting.
+  \item Je kan arbeid van een constante kracht berekenen met
+        $W=F\Delta r\cos\theta$.
+  \item Je kan positieve, negatieve en nul-arbeid fysisch interpreteren.
+  \item Je kan arbeid bepalen uit een $F_x(x)$-grafiek met de oppervlaktemethode.
+  \item Je kan arbeid bij een niet-constante kracht bepalen met een bepaalde integraal.
+  \item Je kan het arbeid-energietheorema gebruiken en interpreteren.
+  \item Je kan conservatieve en niet-conservatieve krachten onderscheiden.
+  \item Je kan potentiële energie verbinden met arbeid van een conservatieve kracht.
+  \item Je kan energieomzettingen analyseren met behoud van mechanische energie
+        wanneer het model dit toelaat.
+  \item Je kan energiedissipatie analyseren wanneer niet-conservatieve krachten werken.
+  \item Je kan arbeid- en energieproblemen systematisch mathematiseren,
+        oplossen en fysisch interpreteren.
+\end{leerdoelen}
+
+
+% ============================================================
+\FVDsection{Van kracht naar energie}
+% ============================================================
+
+In de mechanica kunnen we een beweging op verschillende manieren onderzoeken.
+
+Met Newton II kijken we naar de krachten:
+
+\[
+\sum\vec F=m\vec a.
+\]
+
+Daarmee kunnen we bepalen hoe de snelheid op elk moment verandert.
+
+Maar soms interesseert ons vooral het verschil tussen een begin- en
+eindtoestand. Hoe snel rijdt een wagen na het remmen? Hoe hoog geraakt een
+voorwerp? Hoeveel energie moet een motor leveren? Hoeveel energie gaat door
+wrijving over in interne energie?
+
+Dan is een energiebeschrijving vaak efficiënter.
+
+\begin{center}
+\[
+\boxed{
+\text{kracht over een verplaatsing}
+\longrightarrow
+\text{arbeid}
+\longrightarrow
+\text{verandering van energie}
+}
+\]
+\end{center}
+
+\begin{oefening}[Arbeid in het dagelijks leven en in fysica]{\oefB}
+
+Beoordeel telkens of de genoemde kracht mechanische arbeid verricht op het
+beschouwde voorwerp.
+
+\begin{enumerate}
+  \item Je duwt een slede vooruit en de slede verplaatst zich.
+  \item Je duwt hard tegen een kast, maar de kast blijft staan.
+  \item Je houdt een zware halter onbeweeglijk boven je hoofd.
+  \item Een bloempot valt naar beneden.
+  \item Je rekt een veer uit.
+  \item De normaalkracht werkt op een kist die horizontaal over een vlak schuift.
+\end{enumerate}
+
+Motiveer telkens vanuit kracht én verplaatsing.
+
+\end{oefening}
+
+
+% ============================================================
+\FVDsection{Arbeid van een constante kracht}
+% ============================================================
+
+Beschouw eerst een constante kracht die evenwijdig en gelijkgericht is met
+de verplaatsing. Dan geldt:
+
+\[
+\boxed{W=F\Delta r.}
+\]
+
+De SI-eenheid van arbeid is de joule:
+
+\[
+\boxed{1\,\mathrm J=1\,\mathrm{N\,m}.}
+\]
+
+Arbeid is geen vector maar een scalaire grootheid.
+
+\begin{opmerking}
+Dat een kracht op een voorwerp werkt, betekent niet automatisch dat die kracht
+arbeid verricht. Er moet een verplaatsing zijn én de kracht moet een component
+hebben in de richting van die verplaatsing.
+\end{opmerking}
+
+\begin{oefening}[Constante kracht]{\oefB}
+
+Een karretje wordt over $6{,}0\,\mathrm m$ voortgetrokken door een constante
+horizontale kracht van $35\,\mathrm N$.
+
+\begin{question}
+Bereken de arbeid van de trekkracht.
+\end{question}
+
+\begin{question}
+Hoe verandert de arbeid als dezelfde kracht over een dubbele afstand werkt?
+\end{question}
+
+\begin{question}
+Welke energie-eenheid is equivalent met $\mathrm{N\,m}$?
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+\FVDsection{Wanneer kracht en verplaatsing niet evenwijdig zijn}
+% ============================================================
+
+Een trekkracht staat vaak onder een hoek met de verplaatsing. Denk aan een
+reiskoffer of slee die met een schuin touw wordt voortgetrokken.
+
+Alleen de component van de kracht in de richting van de verplaatsing draagt
+bij tot de arbeid.
+
+Als $\theta$ de hoek is tussen $\vec F$ en $\Delta\vec r$, dan:
+
+\[
+F_\parallel=F\cos\theta.
+\]
+
+Daarom:
+
+\[
+W=F_\parallel\Delta r
+\]
+
+en dus:
+
+\[
+\boxed{
+W=F\Delta r\cos\theta.
+}
+\]
+
+Dit is precies het scalair product:
+
+\[
+\boxed{
+W=\vec F\cdot\Delta\vec r.
+}
+\]
+
+De formule bevat dus zowel de grootte van de kracht en verplaatsing als hun
+onderlinge richting.
+
+
+\FVDsubsection{Het teken van arbeid}
+
+Uit de cosinus volgt onmiddellijk:
+
+\[
+0^\circ\leq\theta<90^\circ
+\quad\Rightarrow\quad
+W>0,
+\]
+
+\[
+\theta=90^\circ
+\quad\Rightarrow\quad
+W=0,
+\]
+
+\[
+90^\circ<\theta\leq180^\circ
+\quad\Rightarrow\quad
+W<0.
+\]
+
+Positieve arbeid betekent dat de betrokken kracht energie toevoegt aan de
+bewegingsvorm die we onderzoeken. Negatieve arbeid betekent dat de kracht
+daar energie aan onttrekt.
+
+\begin{opmerking}
+``Negatieve arbeid'' betekent niet dat er ``negatieve energie'' bestaat.
+Het teken geeft de richting van de energieoverdracht aan binnen het gekozen
+model.
+\end{opmerking}
+
+
+\begin{oefening}[Kracht onder een hoek]{\oefB\ESS}
+
+Een persoon trekt een koffer met een constante kracht van $200\,\mathrm N$
+over $100\,\mathrm m$. De trekkracht maakt een hoek van $30^\circ$ met de
+horizontale verplaatsing.
+
+\begin{question}
+Bereken de component van de trekkracht in de bewegingsrichting.
+\end{question}
+
+\begin{question}
+Bereken de arbeid van de trekkracht.
+\end{question}
+
+\begin{question}
+Welke component van de trekkracht verricht in dit model geen arbeid?
+Waarom?
+\end{question}
+
+\end{oefening}
+
+
+\begin{oefening}[Positief, negatief of nul?]{\oefU\ESS}
+
+Een kist schuift naar rechts over een horizontale vloer. Op de kist werken
+zwaartekracht, normaalkracht, een trekkracht schuin naar rechtsboven en
+wrijvingskracht.
+
+\begin{question}
+Maak een vrijlichaamsdiagram.
+\end{question}
+
+\begin{question}
+Bepaal voor elke kracht of haar arbeid positief, negatief of nul is.
+\end{question}
+
+\begin{question}
+Kan een kracht groot zijn en toch geen arbeid verrichten? Gebruik deze
+situatie om je antwoord te motiveren.
+\end{question}
+
+\begin{question}
+Waarom is het onvoldoende om alleen naar de richting van de kracht te kijken?
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+\FVDsection{Arbeid uit een kracht-plaatsgrafiek}
+% ============================================================
+
+De formule
+
+\[
+W=F_x\Delta x
+\]
+
+heeft een belangrijke grafische betekenis.
+
+Stel dat een constante krachtcomponent $F_x$ wordt uitgezet als functie van
+de plaats $x$. Tussen $x_1$ en $x_2$ ontstaat onder de grafiek een rechthoek.
+
+De oppervlakte is:
+
+\[
+F_x(x_2-x_1).
+\]
+
+Dat is precies de arbeid:
+
+\[
+\boxed{
+W=\text{georiënteerde oppervlakte tussen de }F_x(x)\text{-grafiek en de }x\text{-as}.
+}
+\]
+
+Deze interpretatie is veel algemener dan de formule voor een constante kracht.
+
+
+\FVDsubsection{De oppervlaktemethode}
+
+Voor eenvoudige, stukgewijs lineaire grafieken hoeven we niet onmiddellijk
+een integraal te berekenen. We verdelen het gebied in gekende meetkundige
+figuren.
+
+Voor een rechthoek:
+
+\[
+W=bh.
+\]
+
+Voor een driehoek:
+
+\[
+W=\frac12bh.
+\]
+
+Voor een trapezium:
+
+\[
+W=\frac{h_1+h_2}{2}b.
+\]
+
+Hierbij stelt de horizontale afmeting een verplaatsing voor en de verticale
+afmeting een krachtcomponent.
+
+Controle van de eenheid:
+
+\[
+\mathrm{N\,m}=\mathrm J.
+\]
+
+
+\begin{oefening}[Oppervlaktemethode: rechthoek en driehoek]{\oefB\ESS}
+
+De krachtcomponent $F_x$ op een voorwerp verloopt als volgt:
+
+\begin{itemize}
+  \item van $x=0$ tot $x=4\,\mathrm m$: $F_x=6\,\mathrm N$;
+  \item van $x=4$ tot $x=8\,\mathrm m$: $F_x$ daalt lineair van
+        $6\,\mathrm N$ tot $0\,\mathrm N$.
+\end{itemize}
+
+\begin{question}
+Schets de $F_x(x)$-grafiek.
+\end{question}
+
+\begin{question}
+Bereken de arbeid van $0$ tot $4\,\mathrm m$ als oppervlakte van een rechthoek.
+\end{question}
+
+\begin{question}
+Bereken de arbeid van $4$ tot $8\,\mathrm m$ als oppervlakte van een driehoek.
+\end{question}
+
+\begin{question}
+Bepaal de totale arbeid.
+\end{question}
+
+\end{oefening}
+
+
+\FVDsubsection{Oppervlakte onder de as}
+
+Wanneer $F_x<0$ terwijl de positieve $x$-richting als bewegingsrichting is
+gekozen, ligt de grafiek onder de $x$-as. Die oppervlakte telt negatief mee.
+
+We spreken daarom nauwkeuriger van een \textbf{georiënteerde oppervlakte}.
+
+\begin{oefening}[Georiënteerde oppervlakte]{\oefU\ESS}
+
+Een krachtcomponent is:
+
+\[
+F_x=
+\begin{cases}
+4\,\mathrm N, & 0\leq x<3\,\mathrm m,\\
+-2\,\mathrm N, & 3\leq x\leq7\,\mathrm m.
+\end{cases}
+\]
+
+\begin{question}
+Schets de grafiek.
+\end{question}
+
+\begin{question}
+Bereken de positieve oppervlakte.
+\end{question}
+
+\begin{question}
+Bereken de negatieve bijdrage.
+\end{question}
+
+\begin{question}
+Bepaal de netto arbeid.
+\end{question}
+
+\begin{question}
+Leg uit waarom ``totale oppervlakte'' zonder teken hier tot een fout antwoord
+kan leiden.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+\FVDsection{Niet-constante kracht: van oppervlakte naar integraal}
+% ============================================================
+
+In veel realistische situaties verandert een kracht voortdurend met de plaats.
+Dan bestaat de oppervlakte onder de $F_x(x)$-grafiek niet uit één eenvoudige
+meetkundige figuur.
+
+De bepaalde integraal veralgemeent precies de oppervlaktemethode:
+
+\[
+\boxed{
+W_{x_1\rightarrow x_2}
+=
+\int_{x_1}^{x_2}F_x(x)\,dx.
+}
+\]
+
+De integraal is hier geen los wiskundig trucje. Ze drukt hetzelfde fysische
+idee uit als de oppervlakteberekeningen uit de vorige paragraaf.
+
+\begin{center}
+\[
+\boxed{
+\text{oppervlaktemethode}
+\longrightarrow
+\text{bepaalde integraal}
+}
+\]
+\end{center}
+
+Als $F_x$ constant is:
+
+\[
+W=\int_{x_1}^{x_2}F_x\,dx
+=F_x(x_2-x_1),
+\]
+
+zodat de bekende formule terug verschijnt.
+
+
+\begin{oefening}[Een lineair veranderende kracht]{\oefU\ESS}
+
+Een krachtcomponent wordt beschreven door:
+
+\[
+F_x(x)=3x+2
+\]
+
+met $F_x$ in newton en $x$ in meter. Het voorwerp beweegt van $x=0$ tot
+$x=4\,\mathrm m$.
+
+\begin{question}
+Schets de grafiek.
+\end{question}
+
+\begin{question}
+Bereken de arbeid eerst met de oppervlaktemethode.
+\end{question}
+
+\begin{question}
+Bereken dezelfde arbeid met:
+\[
+W=\int_0^4(3x+2)\,dx.
+\]
+\end{question}
+
+\begin{question}
+Vergelijk beide resultaten en verklaar waarom ze gelijk moeten zijn.
+\end{question}
+
+\end{oefening}
+
+
+\begin{oefening}[Een niet-lineaire kracht]{\oefU\ESS}
+
+Voor een krachtcomponent geldt:
+
+\[
+F_x(x)=2x^2+1.
+\]
+
+Een voorwerp beweegt van $x=1\,\mathrm m$ naar $x=3\,\mathrm m$.
+
+\begin{question}
+Waarom is een eenvoudige driehoek- of trapeziumformule hier niet exact?
+\end{question}
+
+\begin{question}
+Stel de bepaalde integraal voor de arbeid op.
+\end{question}
+
+\begin{question}
+Bereken de arbeid.
+\end{question}
+
+\begin{question}
+Controleer de eenheid van je resultaat.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+\FVDsection{De veerkracht: een belangrijke variabele kracht}
+% ============================================================
+
+Voor een ideale veer geldt de wet van Hooke:
+
+\[
+\boxed{
+F_{\mathrm{veer}}=-kx.
+}
+\]
+
+Hierbij is $x$ de uitwijking ten opzichte van de evenwichts- of ongerekte
+toestand. De constante $k$ is de veerconstante.
+
+Het minteken toont dat de veerkracht een terugroepkracht is: ze is tegengesteld
+gericht aan de uitwijking.
+
+Let goed op de betekenis van $x$. Als een veer een rustlengte $L_0$ heeft en
+een lengte $L$, dan is:
+
+\[
+x=L-L_0.
+\]
+
+We integreren dus over de \emph{uitwijking}, niet automatisch over de absolute
+lengte van de veer.
+
+
+\FVDsubsection{Arbeid van de veerkracht}
+
+De arbeid van de veerkracht bij een verandering van $x_1$ naar $x_2$ is:
+
+\[
+W_{\mathrm{veer}}
+=
+\int_{x_1}^{x_2}-kx\,dx.
+\]
+
+Dus:
+
+\[
+\boxed{
+W_{\mathrm{veer}}
+=
+-\frac12k(x_2^2-x_1^2).
+}
+\]
+
+Bij het uitrekken van $0$ tot $x>0$:
+
+\[
+W_{\mathrm{veer}}=-\frac12kx^2.
+\]
+
+De externe kracht die de veer langzaam uitrekt, verricht in het ideale
+quasistatische geval positieve arbeid:
+
+\[
+W_{\mathrm{ext}}=+\frac12kx^2.
+\]
+
+
+\begin{oefening}[Veer: grafiek, oppervlakte en integraal]{\oefU\ESS}
+
+Een ideale veer heeft:
+
+\[
+k=240\,\mathrm{\frac Nm}.
+\]
+
+Ze wordt vanuit haar ongerekte toestand uitgerekt tot:
+
+\[
+x=0{,}050\,\mathrm m.
+\]
+
+\begin{question}
+Schets $F_{\mathrm{veer}}(x)$.
+\end{question}
+
+\begin{question}
+Bepaal de arbeid van de veerkracht met de oppervlaktemethode.
+\end{question}
+
+\begin{question}
+Controleer het resultaat met een bepaalde integraal.
+\end{question}
+
+\begin{question}
+Bepaal de arbeid van een externe kracht wanneer de veer zeer langzaam wordt
+uitgerekt.
+\end{question}
+
+\begin{question}
+Waarom hebben beide arbeidsgrootheden een tegengesteld teken?
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+\FVDsection{Kinetische energie}
+% ============================================================
+
+Een bewegend voorwerp bezit kinetische energie:
+
+\[
+\boxed{
+E_k=\frac12mv^2.
+}
+\]
+
+De kinetische energie hangt af van de massa en van het kwadraat van de
+snelheid.
+
+Daarom:
+
+\[
+v\rightarrow2v
+\quad\Rightarrow\quad
+E_k\rightarrow4E_k.
+\]
+
+En:
+
+\[
+m\rightarrow2m
+\quad\Rightarrow\quad
+E_k\rightarrow2E_k.
+\]
+
+Omdat $v^2\geq0$ is:
+
+\[
+E_k\geq0.
+\]
+
+
+\begin{oefening}[Snelheid telt kwadratisch]{\oefB}
+
+Een wagen rijdt eerst met snelheid $v$ en daarna met snelheid $2v$. De massa
+blijft constant.
+
+\begin{question}
+Met welke factor verandert de kinetische energie?
+\end{question}
+
+\begin{question}
+Waarom is de uitspraak ``dubbele snelheid betekent dubbele kinetische
+energie'' fout?
+\end{question}
+
+\begin{question}
+Wat betekent dit kwalitatief voor de energie die bij een noodstop moet
+worden omgezet?
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+\FVDsection{Het arbeid-energietheorema}
+% ============================================================
+
+De arbeid van alle krachten samen is gelijk aan de verandering van de
+kinetische energie:
+
+\[
+\boxed{
+W_{\mathrm{res}}
+=
+\Delta E_k.
+}
+\]
+
+Dus:
+
+\[
+\boxed{
+W_{\mathrm{res}}
+=
+\frac12mv_e^2-\frac12mv_b^2.
+}
+\]
+
+Dit is het \textbf{arbeid-energietheorema}.
+
+Het woord ``res'' is belangrijk. We mogen ofwel de arbeid van de resulterende
+kracht bepalen, ofwel de arbeid van alle afzonderlijke krachten optellen:
+
+\[
+W_{\mathrm{res}}
+=
+\sum_i W_i.
+\]
+
+Als:
+
+\[
+W_{\mathrm{res}}>0,
+\]
+
+dan neemt de kinetische energie toe.
+
+Als:
+
+\[
+W_{\mathrm{res}}<0,
+\]
+
+dan neemt de kinetische energie af.
+
+Als:
+
+\[
+W_{\mathrm{res}}=0,
+\]
+
+dan blijft de kinetische energie constant.
+
+
+\FVDsubsection{Waarom werkt het?}
+
+In één dimensie:
+
+\[
+F_{\mathrm{res}}=ma.
+\]
+
+Met:
+
+\[
+a=\frac{dv}{dt}
+\qquad\text{en}\qquad
+v=\frac{dx}{dt}
+\]
+
+kunnen we schrijven:
+
+\[
+a
+=
+\frac{dv}{dt}
+=
+\frac{dv}{dx}\frac{dx}{dt}
+=
+v\frac{dv}{dx}.
+\]
+
+Daarom:
+
+\[
+F_{\mathrm{res}}
+=
+mv\frac{dv}{dx}.
+\]
+
+Vermenigvuldigen met $dx$:
+
+\[
+F_{\mathrm{res}}\,dx=m v\,dv.
+\]
+
+Integreren tussen begin- en eindtoestand:
+
+\[
+\int_{x_b}^{x_e}F_{\mathrm{res}}\,dx
+=
+\int_{v_b}^{v_e}mv\,dv.
+\]
+
+Dus:
+
+\[
+W_{\mathrm{res}}
+=
+\left[\frac12mv^2\right]_{v_b}^{v_e}
+\]
+
+en:
+
+\[
+\boxed{
+W_{\mathrm{res}}=\Delta E_k.
+}
+\]
+
+Deze afleiding toont een diepe verbinding tussen Newtons bewegingswet en de
+energiebeschrijving.
+
+
+\begin{oefening}[Versnellen via arbeid]{\oefB\ESS}
+
+Een auto met massa $1000\,\mathrm{kg}$ rijdt aanvankelijk
+$3{,}0\,\mathrm{m/s}$. Een constante resulterende kracht van
+$4000\,\mathrm N$ werkt over een afstand van $5{,}0\,\mathrm m$ in de
+bewegingsrichting.
+
+\begin{question}
+Bereken de arbeid van de resulterende kracht.
+\end{question}
+
+\begin{question}
+Gebruik het arbeid-energietheorema om de eindsnelheid te bepalen.
+\end{question}
+
+\begin{question}
+Welke alternatieve methode met Newton II en kinematica zou eveneens mogelijk
+zijn?
+\end{question}
+
+\begin{question}
+Welke methode vind je hier het kortst? Motiveer.
+\end{question}
+
+\end{oefening}
+
+
+\begin{oefening}[Remweg]{\oefU\ESS}
+
+Een voertuig wordt geremd door een ongeveer constante resulterende remkracht.
+
+\begin{question}
+Gebruik het arbeid-energietheorema om aan te tonen dat, bij dezelfde massa en
+dezelfde remkracht,
+\[
+d_{\mathrm{rem}}\sim v_0^2.
+\]
+\end{question}
+
+\begin{question}
+Wat gebeurt er met de remweg als de beginsnelheid verdubbelt?
+\end{question}
+
+\begin{question}
+Waarom is dit resultaat relevant voor verkeersveiligheid?
+\end{question}
+
+\begin{question}
+Welke vereenvoudigingen bevat het model?
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+\FVDsection{Conservatieve krachten}
+% ============================================================
+
+Bij sommige krachten hangt de verrichte arbeid tussen twee punten alleen af
+van begin- en eindpunt, niet van het gevolgde pad.
+
+Zo'n kracht noemen we \textbf{conservatief}.
+
+Voor een conservatieve kracht kunnen we een potentiële energie definiëren:
+
+\[
+\boxed{
+W_{\mathrm{cons}}=-\Delta E_p.
+}
+\]
+
+Dus:
+
+\[
+W_{\mathrm{cons}}
+=
+E_{p,b}-E_{p,e}.
+\]
+
+Voorbeelden die we in deze cursus gebruiken zijn:
+
+\begin{itemize}
+  \item gravitatiekracht;
+  \item zwaartekracht in de nabij-aardebenadering;
+  \item ideale veerkracht.
+\end{itemize}
+
+
+\FVDsubsection{Niet-conservatieve krachten}
+
+Bij niet-conservatieve krachten hangt de arbeid in het algemeen wel af van het
+gevolgde pad of treedt overdracht naar andere energievormen op.
+
+Wrijving is het belangrijkste mechanische voorbeeld in deze cursus.
+
+Mechanische energie hoeft dan niet behouden te blijven.
+
+Dat betekent niet dat energie ``verdwijnt''. Ze wordt bijvoorbeeld omgezet in
+interne energie van voorwerp en omgeving.
+
+
+\begin{oefening}[Conservatief of niet?]{\oefU\ESS}
+
+Beschouw gravitatiekracht, ideale veerkracht en kinetische wrijvingskracht.
+
+\begin{question}
+Welke krachten modelleren we als conservatief?
+\end{question}
+
+\begin{question}
+Voor welke krachten kunnen we in deze context een potentiële energie
+definiëren?
+\end{question}
+
+\begin{question}
+Waarom leidt wrijving vaak tot een afname van de mechanische energie?
+\end{question}
+
+\begin{question}
+Is de totale energie daarom niet behouden? Leg zorgvuldig uit.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+\FVDsection{Zwaarte-energie nabij het aardoppervlak}
+% ============================================================
+
+Nabij het aardoppervlak behandelen we het gravitatieveld vaak als homogeen:
+
+\[
+g\approx\text{constant}.
+\]
+
+Kies de positieve $y$-richting omhoog. De zwaartekracht is dan:
+
+\[
+F_{g,y}=-mg.
+\]
+
+Voor een verplaatsing van $y_1$ naar $y_2$:
+
+\[
+W_g
+=
+\int_{y_1}^{y_2}-mg\,dy
+=
+-mg(y_2-y_1).
+\]
+
+Omdat:
+
+\[
+W_g=-\Delta E_{p,g},
+\]
+
+volgt:
+
+\[
+\Delta E_{p,g}=mg(y_2-y_1).
+\]
+
+Als we een referentieniveau $h=0$ kiezen:
+
+\[
+\boxed{
+E_{p,g}=mgh.
+}
+\]
+
+De absolute waarde hangt af van de gekozen nulhoogte; energieverschillen zijn
+fysisch relevant.
+
+
+\begin{oefening}[De nulhoogte kiezen]{\oefB}
+
+Een boek met massa $1{,}5\,\mathrm{kg}$ ligt op een tafel van
+$0{,}80\,\mathrm m$ hoog.
+
+\begin{question}
+Bereken de potentiële zwaarte-energie als de vloer het nulniveau is.
+\end{question}
+
+\begin{question}
+Welke waarde krijg je als het tafelblad als nulniveau wordt gekozen?
+\end{question}
+
+\begin{question}
+Verandert de arbeid van de zwaartekracht wanneer het boek van de tafel op de
+vloer valt door die andere keuze? Verklaar.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+\FVDsection{Elastische potentiële energie}
+% ============================================================
+
+We vonden voor de arbeid van een ideale veerkracht:
+
+\[
+W_{\mathrm{veer}}
+=
+-\frac12k(x_2^2-x_1^2).
+\]
+
+Voor een conservatieve kracht:
+
+\[
+W_{\mathrm{veer}}=-\Delta E_{p,\mathrm{el}}.
+\]
+
+Dus:
+
+\[
+\Delta E_{p,\mathrm{el}}
+=
+\frac12k(x_2^2-x_1^2).
+\]
+
+Met de ongerekte toestand als referentie:
+
+\[
+\boxed{
+E_{p,\mathrm{el}}=\frac12kx^2.
+}
+\]
+
+Dit resultaat is dus niet zomaar een formule om te onthouden: het volgt uit
+de oppervlakte onder de kracht-plaatsgrafiek.
+
+
+\begin{oefening}[Van $F(x)$ naar energie]{\oefU\ESS}
+
+Een ideale veer heeft veerconstante $k$.
+
+\begin{question}
+Schets de grootte van de externe kracht die nodig is om de veer zeer langzaam
+van $x=0$ tot $x=X$ uit te rekken.
+\end{question}
+
+\begin{question}
+Gebruik de oppervlakte van de driehoek om de externe arbeid te bepalen.
+\end{question}
+
+\begin{question}
+Toon zo aan dat:
+\[
+E_{p,\mathrm{el}}=\frac12kX^2.
+\]
+\end{question}
+
+\begin{question}
+Welke wiskundige methode geeft hetzelfde resultaat voor een willekeurige
+krachtfunctie?
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+\FVDsection{Mechanische energie}
+% ============================================================
+
+De mechanische energie van een systeem is de som van kinetische en relevante
+potentiële energieën:
+
+\[
+\boxed{
+E_m=E_k+E_p.
+}
+\]
+
+Wanneer alleen conservatieve krachten arbeid verrichten:
+
+\[
+\boxed{
+E_{m,b}=E_{m,e}.
+}
+\]
+
+Of:
+
+\[
+\boxed{
+E_k+E_p=\text{constant}.
+}
+\]
+
+Energie kan voortdurend van vorm veranderen terwijl de totale mechanische
+energie constant blijft.
+
+
+\begin{oefening}[Vallen met energie]{\oefB\ESS}
+
+Een voorwerp wordt vanuit rust losgelaten op hoogte $h$. Verwaarloos
+luchtweerstand.
+
+\begin{question}
+Kies het grondniveau als nulniveau en schrijf de mechanische energie bij het
+loslaten.
+\end{question}
+
+\begin{question}
+Schrijf de mechanische energie vlak voor het bereiken van de grond.
+\end{question}
+
+\begin{question}
+Leid daaruit af:
+\[
+v=\sqrt{2gh}.
+\]
+\end{question}
+
+\begin{question}
+Vergelijk deze methode met de kinematische aanpak uit het hoofdstuk vrije val.
+\end{question}
+
+\end{oefening}
+
+
+\begin{oefening}[Veer lanceert een karretje]{\oefU\ESS}
+
+Een karretje met massa $m$ staat op een horizontaal wrijvingsloos spoor tegen
+een ingedrukte veer met veerconstante $k$. De indrukking is $x$.
+
+\begin{question}
+Welke energievorm is aanvankelijk aanwezig?
+\end{question}
+
+\begin{question}
+Welke energievorm bezit het karretje wanneer de veer haar evenwichtsstand
+bereikt?
+\end{question}
+
+\begin{question}
+Leid een formule af voor de snelheid:
+\[
+v=x\sqrt{\frac{k}{m}}.
+\]
+\end{question}
+
+\begin{question}
+Wat gebeurt er met $v$ als de indrukking verdubbelt?
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+\FVDsection{Niet-conservatieve arbeid en energiedissipatie}
+% ============================================================
+
+Als niet-conservatieve krachten arbeid verrichten, is de mechanische energie
+in het algemeen niet constant.
+
+We kunnen schrijven:
+
+\[
+\boxed{
+W_{\mathrm{nc}}=\Delta E_m
+}
+\]
+
+wanneer $W_{\mathrm{nc}}$ de arbeid van de niet-conservatieve krachten op het
+gekozen mechanische systeem voorstelt.
+
+Bij kinetische wrijving is die arbeid vaak negatief:
+
+\[
+W_w=-F_w d
+\]
+
+voor een constante wrijvingskracht tegengesteld aan de beweging.
+
+De ``verdwenen'' mechanische energie verschijnt als andere energievormen,
+bijvoorbeeld interne energie.
+
+
+\begin{oefening}[Glijden met wrijving]{\oefU\ESS}
+
+Een blok met massa $m$ vertrekt vanuit rust van hoogte $h$ en glijdt naar
+beneden. Door wrijving wordt een hoeveelheid mechanische energie
+$E_{\mathrm{diss}}$ gedissipeerd.
+
+\begin{question}
+Stel een energiebalans op.
+\end{question}
+
+\begin{question}
+Leid een uitdrukking af voor de snelheid onderaan.
+\end{question}
+
+\begin{question}
+Vergelijk met het wrijvingsloze geval.
+\end{question}
+
+\begin{question}
+Waarom is het fysisch misleidend om te zeggen dat de energie door wrijving
+``verloren'' is?
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+\FVDsection{Wanneer gebruik je Newton en wanneer energie?}
+% ============================================================
+
+Beide methoden beschrijven dezelfde fysica, maar beantwoorden vaak andere
+vragen efficiënt.
+
+Gebruik een krachtenaanpak wanneer je bijvoorbeeld de versnelling, richting
+van de versnelling of tijdsontwikkeling nodig hebt.
+
+Gebruik een energieaanpak wanneer vooral begin- en eindtoestand belangrijk
+zijn en het gevolgde tijdsverloop niet nodig is.
+
+Soms moet je beide combineren.
+
+\begin{oefening}[Kies een methode]{\oefU\ESS}
+
+Geef voor elke vraag aan of een aanpak via Newton/kinematica, via energie, of
+een combinatie het meest efficiënt lijkt. Motiveer.
+
+\begin{enumerate}
+  \item Bepaal de snelheid van een vallend voorwerp na een hoogteverschil $h$.
+  \item Bepaal de normaalkracht op een auto in het laagste punt van een
+        verticale cirkelbaan.
+  \item Bepaal hoe ver een blok met beginsnelheid $v_0$ over een ruw vlak
+        schuift voor het stopt.
+  \item Bepaal de versnelling van een blok op een hellend vlak.
+  \item Bepaal de maximale hoogte van een karretje op een wrijvingsloze baan.
+\end{enumerate}
+
+\end{oefening}
+
+
+% ============================================================
+\FVDsection{Algemene gravitatie-energie}
+% ============================================================
+
+In H7 gebruikten we:
+
+\[
+F_g=G\frac{Mm}{r^2}.
+\]
+
+Voor satellieten verandert $r$ aanzienlijk. De nabij-aardeformule
+
+\[
+E_{p,g}=mgh
+\]
+
+is dan geen geschikte algemene beschrijving.
+
+We kiezen de gravitatiepotentiële energie gelijk aan nul op oneindig grote
+afstand:
+
+\[
+E_{p,g}(\infty)=0.
+\]
+
+Voor de gravitatiekracht volgt dan:
+
+\[
+\boxed{
+E_{p,g}(r)=-\frac{GMm}{r}.
+}
+\]
+
+De negatieve waarde heeft een duidelijke betekenis: een massa op eindige
+afstand bevindt zich in een gebonden toestand ten opzichte van het gekozen
+nulniveau op oneindig.
+
+
+\FVDsubsection{Waarom een minteken?}
+
+Om een massa vanuit een eindige afstand $r$ tot oneindig te brengen zonder
+eindsnelheid, moet van buitenaf positieve arbeid worden geleverd.
+
+De potentiële energie stijgt daarbij van:
+
+\[
+-\frac{GMm}{r}
+\]
+
+naar:
+
+\[
+0.
+\]
+
+Daarom is de gravitatiepotentiële energie op eindige afstand negatief bij
+deze conventie.
+
+
+\begin{oefening}[Van dichtbij naar ver weg]{\oefU}
+
+Een satelliet wordt van een cirkelbaan met straal $r_1$ naar een grotere
+afstand $r_2>r_1$ gebracht.
+
+\begin{question}
+Vergelijk $E_{p,g}(r_1)$ en $E_{p,g}(r_2)$.
+\end{question}
+
+\begin{question}
+Welke waarde ligt dichter bij nul?
+\end{question}
+
+\begin{question}
+Waarom betekent ``grotere potentiële gravitatie-energie'' hier niet
+noodzakelijk een positief getal?
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+\FVDsection{Satellieten opnieuw bekeken: nu met energie}
+% ============================================================
+
+Voor een satelliet in een ideale cirkelbaan vonden we in H7:
+
+\[
+v^2=\frac{GM}{r}.
+\]
+
+De kinetische energie is dus:
+
+\[
+E_k
+=
+\frac12mv^2
+=
+\frac12m\frac{GM}{r}.
+\]
+
+Daarom:
+
+\[
+\boxed{
+E_k=\frac{GMm}{2r}.
+}
+\]
+
+De gravitatiepotentiële energie is:
+
+\[
+\boxed{
+E_{p,g}=-\frac{GMm}{r}.
+}
+\]
+
+De totale mechanische energie wordt:
+
+\[
+E_m=E_k+E_{p,g}.
+\]
+
+Dus:
+
+\[
+\boxed{
+E_m=-\frac{GMm}{2r}.
+}
+\]
+
+Voor een ideale cirkelbaan geldt bijgevolg:
+
+\[
+\boxed{
+E_{p,g}=-2E_k
+}
+\]
+
+en:
+
+\[
+\boxed{
+E_m=-E_k.
+}
+\]
+
+
+\begin{oefening}[Een hogere cirkelbaan]{\oefG}
+
+Een satelliet wordt van een cirkelbaan met straal $r$ naar een cirkelbaan met
+straal $4r$ gebracht.
+
+\begin{question}
+Met welke factor verandert de baansnelheid?
+\end{question}
+
+\begin{question}
+Met welke factor verandert de kinetische energie?
+\end{question}
+
+\begin{question}
+Vergelijk de gravitatiepotentiële energie van beide banen.
+\end{question}
+
+\begin{question}
+Vergelijk de totale mechanische energie.
+\end{question}
+
+\begin{question}
+Moet netto energie worden toegevoerd of afgevoerd om de satelliet naar de
+hogere cirkelbaan te brengen? Motiveer vanuit $E_m$.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+\FVDsection{Gevorderd: ontsnappen aan een gravitatieveld}
+% ============================================================
+
+Hoe groot moet de beginsnelheid aan het oppervlak van een planeet minstens
+zijn zodat een voorwerp in het ideale model oneindig ver kan raken zonder nog
+kinetische energie over te houden?
+
+We verwaarlozen atmosfeer, rotatie en andere hemellichamen.
+
+Aan het oppervlak:
+
+\[
+E_{m,b}
+=
+\frac12mv_{\mathrm{esc}}^2-\frac{GMm}{R}.
+\]
+
+In de grenssituatie op oneindig:
+
+\[
+E_{m,e}=0.
+\]
+
+Behoud van mechanische energie geeft:
+
+\[
+\frac12mv_{\mathrm{esc}}^2-\frac{GMm}{R}=0.
+\]
+
+Dus:
+
+\[
+\boxed{
+v_{\mathrm{esc}}
+=
+\sqrt{\frac{2GM}{R}}.
+}
+\]
+
+De massa van het ontsnappende voorwerp valt opnieuw weg.
+
+\begin{oefening}[Ontsnappingssnelheid]{\oefG}
+
+\begin{question}
+Leid de formule voor $v_{\mathrm{esc}}$ zelfstandig af vanuit energiebehoud.
+\end{question}
+
+\begin{question}
+Vergelijk met de cirkelbaansnelheid vlak boven het oppervlak:
+\[
+v_{\mathrm{baan}}=\sqrt{\frac{GM}{R}}.
+\]
+\end{question}
+
+\begin{question}
+Toon aan:
+\[
+v_{\mathrm{esc}}=\sqrt2\,v_{\mathrm{baan}}.
+\]
+\end{question}
+
+\begin{question}
+Waarom is ontsnappingssnelheid in dit ideale model onafhankelijk van de massa
+van het gelanceerde voorwerp?
+\end{question}
+
+\begin{question}
+Welke belangrijke realistische effecten zijn niet in dit model opgenomen?
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+\FVDsection{Een krachtgrafiek als volledig energieprobleem}
+% ============================================================
+
+Een $F_x(x)$-grafiek kan rechtstreeks vertellen hoe de kinetische energie
+verandert:
+
+\[
+\Delta E_k
+=
+W_{\mathrm{res}}
+=
+\int_{x_1}^{x_2}F_{\mathrm{res},x}(x)\,dx.
+\]
+
+Dit maakt een grafiek tot veel meer dan een afbeelding van de kracht. De
+georiënteerde oppervlakte bevat informatie over de verandering van de
+beweging.
+
+
+\begin{oefening}[Van grafiek naar snelheid]{\oefU\ESS}
+
+Een voorwerp met massa $2{,}0\,\mathrm{kg}$ beweegt bij $x=0$ met
+$3{,}0\,\mathrm{m/s}$. De resulterende kracht verloopt als volgt:
+
+\begin{itemize}
+  \item van $0$ tot $2\,\mathrm m$ stijgt $F_x$ lineair van $0$ tot
+        $6\,\mathrm N$;
+  \item van $2$ tot $5\,\mathrm m$ blijft $F_x=6\,\mathrm N$;
+  \item van $5$ tot $7\,\mathrm m$ daalt $F_x$ lineair tot $0$.
+\end{itemize}
+
+\begin{question}
+Schets de $F_x(x)$-grafiek.
+\end{question}
+
+\begin{question}
+Bepaal met de oppervlaktemethode de totale arbeid.
+\end{question}
+
+\begin{question}
+Bereken de kinetische energie bij $x=7\,\mathrm m$.
+\end{question}
+
+\begin{question}
+Bereken de snelheid daar.
+\end{question}
+
+\begin{question}
+Waarom hoefde je de tijdsduur van de beweging nergens te kennen?
+\end{question}
+
+\end{oefening}
+
+
+\begin{oefening}[Een kracht die van teken verandert]{\oefG}
+
+De resulterende kracht op een deeltje is:
+
+\[
+F_x(x)=6-2x
+\]
+
+voor $0\leq x\leq5\,\mathrm m$.
+
+\begin{question}
+Op welke plaats verandert de kracht van teken?
+\end{question}
+
+\begin{question}
+Bepaal de arbeid van $x=0$ tot dat punt met een oppervlakte.
+\end{question}
+
+\begin{question}
+Bepaal de arbeid over het volledige interval met een bepaalde integraal.
+\end{question}
+
+\begin{question}
+Kan de kinetische energie op een deel van het traject toenemen en later
+afnemen? Leg uit vanuit het teken van $F_x$.
+\end{question}
+
+\begin{question}
+Waarom is het teken van de lokale kracht niet hetzelfde als het teken van de
+totale arbeid over een volledig traject?
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+\FVDsection{Problemen oplossen met energie}
+% ============================================================
+
+Gebruik bij een energieprobleem een vaste strategie.
+
+\begin{enumerate}
+  \item \textbf{Kies het systeem.} Welke objecten behoren tot het systeem?
+  \item \textbf{Kies begin- en eindtoestand.}
+  \item \textbf{Maak een schets.}
+  \item \textbf{Inventariseer relevante energievormen.}
+  \item \textbf{Bepaal of niet-conservatieve arbeid relevant is.}
+  \item \textbf{Schrijf eerst symbolisch de energiebalans.}
+  \item \textbf{Vul pas daarna waarden in.}
+  \item \textbf{Controleer eenheden en grootteorde.}
+  \item \textbf{Interpreteer het resultaat.}
+\end{enumerate}
+
+Een energietabel kan helpen:
+
+\[
+\begin{array}{c|c|c}
+&\text{begin}&\text{einde}\\ \hline
+E_k&\cdots&\cdots\\
+E_{p,g}&\cdots&\cdots\\
+E_{p,\mathrm{el}}&\cdots&\cdots
+\end{array}
+\]
+
+
+\begin{oefening}[Achtbaan zonder motor]{\oefU\ESS}
+
+Een karretje vertrekt vanuit rust op hoogte $h_1$ en bereikt later hoogte
+$h_2<h_1$. Verwaarloos eerst wrijving.
+
+\begin{question}
+Maak een energietabel.
+\end{question}
+
+\begin{question}
+Leid een formule af voor de snelheid op hoogte $h_2$.
+\end{question}
+
+\begin{question}
+Welke massa-afhankelijkheid blijft in het eindresultaat over?
+\end{question}
+
+\begin{question}
+Herhaal de energiebalans wanneer onderweg een hoeveelheid
+$E_{\mathrm{diss}}$ wordt gedissipeerd.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+\FVDsection{STEM-context: regeneratief remmen}
+% ============================================================
+
+Bij klassieke wrijvingsremmen wordt een groot deel van de kinetische energie
+omgezet in interne energie van remmen en omgeving.
+
+Bij regeneratief remmen kan een elektromotor als generator werken en een deel
+van de kinetische energie omzetten in elektrische energie die opnieuw wordt
+opgeslagen.
+
+Een eenvoudig energiemodel is:
+
+\[
+E_{\mathrm{terug}}=\eta\,\Delta E_k,
+\]
+
+waar $0\leq\eta\leq1$ het rendement van de terugwinning voorstelt.
+
+
+\begin{oefening}[Energie terugwinnen]{\oefU}
+
+Een elektrisch voertuig met massa $1600\,\mathrm{kg}$ vertraagt van
+$20\,\mathrm{m/s}$ tot $5{,}0\,\mathrm{m/s}$. Van de afname van de kinetische
+energie kan $65\%$ elektrisch worden teruggewonnen.
+
+\begin{question}
+Bereken de afname van de kinetische energie.
+\end{question}
+
+\begin{question}
+Bereken hoeveel energie wordt teruggewonnen.
+\end{question}
+
+\begin{question}
+Waar blijft de rest van de energie?
+\end{question}
+
+\begin{question}
+Waarom kan een echt regeneratief remsysteem nooit alle kinetische energie
+opnieuw als bruikbare elektrische energie opslaan?
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+\FVDsection{STEM-context: botsing met een meteoor}
+% ============================================================
+
+Bij zeer hoge snelheden kan de kinetische energie enorm zijn door het
+kwadratische snelheidsverband.
+
+\begin{oefening}[Barringerkrater]{\oefB}
+
+Een meteoor heeft vóór de inslag naar schatting een massa van
+$65\,\mathrm{ton}$ en een snelheid van $15\,\mathrm{km/s}$.
+
+\begin{question}
+Zet beide grootheden om naar SI-eenheden.
+\end{question}
+
+\begin{question}
+Bereken de kinetische energie vlak vóór de inslag.
+\end{question}
+
+\begin{question}
+Waarom kan die energie na de inslag niet eenvoudig volledig als kinetische
+energie van één object worden teruggevonden?
+\end{question}
+
+\begin{question}
+Noem minstens drie mogelijke energievormen of processen waarin de
+oorspronkelijke kinetische energie terechtkomt.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+\FVDsection{ICT: arbeid numeriek benaderen}
+% ============================================================
+
+Niet elke krachtfunctie heeft een eenvoudige primitieve die leerlingen meteen
+kunnen gebruiken. Experimentele gegevens bestaan bovendien vaak uit een tabel
+van gemeten waarden.
+
+Dan kunnen we de arbeid numeriek benaderen.
+
+Bij meetpunten:
+
+\[
+(x_0,F_0),(x_1,F_1),\ldots,(x_n,F_n)
+\]
+
+kan een trapeziumbenadering worden gebruikt:
+
+\[
+\boxed{
+W\approx
+\sum_{i=0}^{n-1}
+\frac{F_i+F_{i+1}}{2}(x_{i+1}-x_i).
+}
+\]
+
+Dit is de discrete versie van hetzelfde oppervlakte-idee.
+
+
+\begin{oefening}[Arbeid uit meetgegevens]{\oefU}
+
+Bij een trekproef worden kracht en verplaatsing gemeten:
+
+\[
+\begin{array}{c|ccccc}
+x\,(\mathrm m)&0&0{,}10&0{,}20&0{,}30&0{,}40\\ \hline
+F\,(\mathrm N)&0&18&35&49&60
+\end{array}
+\]
+
+\begin{question}
+Maak met ICT een spreidingsdiagram van $F$ tegen $x$.
+\end{question}
+
+\begin{question}
+Benader de arbeid met trapezia.
+\end{question}
+
+\begin{question}
+Welke fysische betekenis heeft de oppervlakte onder de gemeten grafiek?
+\end{question}
+
+\begin{question}
+Waarom is een numerieke methode hier natuurlijker dan zomaar een
+functievoorschrift te verzinnen?
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+\FVDsection{Geïntegreerde analyse}
+% ============================================================
+
+\begin{oefening}[Kist op een helling]{\oefU\ESS}
+
+Een kist glijdt vanuit rust een helling af over afstand $s$. De hellingshoek
+is $\alpha$ en de kinetische wrijvingscoëfficiënt is $\mu_k$.
+
+\begin{question}
+Maak een vrijlichaamsdiagram.
+\end{question}
+
+\begin{question}
+Bepaal de arbeid van de zwaartekracht.
+\end{question}
+
+\begin{question}
+Bepaal de arbeid van de normaalkracht.
+\end{question}
+
+\begin{question}
+Bepaal de arbeid van de wrijvingskracht.
+\end{question}
+
+\begin{question}
+Gebruik het arbeid-energietheorema om een formule voor de eindsnelheid af te
+leiden.
+\end{question}
+
+\begin{question}
+Controleer of je resultaat overeenkomt met wat je via Newton II en kinematica
+zou vinden.
+\end{question}
+
+\end{oefening}
+
+
+\begin{oefening}[Welke informatie ontbreekt?]{\oefG}
+
+Een grafiek toont de resulterende kracht $F_x(x)$ op een voorwerp. De
+oppervlakte tussen $x_1$ en $x_2$ bedraagt $40\,\mathrm J$.
+
+Een leerling besluit:
+
+\begin{quote}
+``De snelheid bij $x_2$ is dus $40\,\mathrm{m/s}$.''
+\end{quote}
+
+\begin{question}
+Welke fysische grootheid stelt $40\,\mathrm J$ werkelijk voor?
+\end{question}
+
+\begin{question}
+Welke bijkomende gegevens zijn minstens nodig om de eindsnelheid te bepalen?
+\end{question}
+
+\begin{question}
+Stel een algemene formule voor $v_2$ op in functie van $W$, $m$ en $v_1$.
+\end{question}
+
+\begin{question}
+Onder welke voorwaarde bestaat binnen dit klassieke model een reële
+eindsnelheid?
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+\FVDsection{Veelvoorkomende denkfouten}
+% ============================================================
+
+\begin{itemize}
+  \item \textbf{``Er werkt een kracht, dus er is arbeid.''}\\
+        Niet noodzakelijk. Zonder verplaatsing of bij een kracht loodrecht op
+        de verplaatsing is de arbeid nul.
+
+  \item \textbf{``Arbeid is altijd positief.''}\\
+        Nee. Arbeid is een scalaire grootheid met teken.
+
+  \item \textbf{``De oppervlakte onder een $F(x)$-grafiek is altijd positief.''}\\
+        Nee. Gebieden onder de $x$-as leveren negatieve arbeid.
+
+  \item \textbf{``$mgh$ is altijd de gravitatiepotentiële energie.''}\\
+        Nee. $mgh$ is een lokale benadering voor een ongeveer homogeen
+        gravitatieveld.
+
+  \item \textbf{``Wrijving vernietigt energie.''}\\
+        Nee. Mechanische energie kan afnemen terwijl totale energie wordt
+        omgezet in andere vormen.
+
+  \item \textbf{``Als de kinetische energie constant is, werken er geen
+        krachten.''}\\
+        Niet noodzakelijk. Bij een cirkelbeweging kan een resulterende kracht
+        loodrecht op de snelheid staan en de richting veranderen zonder de
+        snelheidsgrootte te veranderen.
+\end{itemize}
+
+
+\begin{oefening}[Misconcepties ontleden]{\oefU\ESS}
+
+Kies drie uitspraken uit de lijst hierboven.
+
+Voor elke uitspraak:
+
+\begin{question}
+geef een concreet tegenvoorbeeld;
+\end{question}
+
+\begin{question}
+noem de relevante formule of wet;
+\end{question}
+
+\begin{question}
+formuleer een fysisch correcte vervangende uitspraak.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+\FVDsection{Samenvatting}
+% ============================================================
+
+Voor een constante kracht:
+
+\[
+\boxed{
+W=\vec F\cdot\Delta\vec r
+=F\Delta r\cos\theta.
+}
+\]
+
+Voor een veranderlijke kracht in één dimensie:
+
+\[
+\boxed{
+W=\int_{x_1}^{x_2}F_x(x)\,dx.
+}
+\]
+
+Grafisch is arbeid de georiënteerde oppervlakte onder de
+kracht-plaatsgrafiek.
+
+Kinetische energie:
+
+\[
+\boxed{
+E_k=\frac12mv^2.
+}
+\]
+
+Arbeid-energietheorema:
+
+\[
+\boxed{
+W_{\mathrm{res}}=\Delta E_k.
+}
+\]
+
+Voor een conservatieve kracht:
+
+\[
+\boxed{
+W_{\mathrm{cons}}=-\Delta E_p.
+}
+\]
+
+Nabij het aardoppervlak:
+
+\[
+\boxed{
+E_{p,g}=mgh.
+}
+\]
+
+Voor een ideale veer:
+
+\[
+\boxed{
+E_{p,\mathrm{el}}=\frac12kx^2.
+}
+\]
+
+Mechanische energie:
+
+\[
+\boxed{
+E_m=E_k+E_p.
+}
+\]
+
+Wanneer alleen conservatieve krachten arbeid verrichten:
+
+\[
+\boxed{
+E_m=\text{constant}.
+}
+\]
+
+Algemene gravitatiepotentiële energie:
+
+\[
+\boxed{
+E_{p,g}(r)=-\frac{GMm}{r}.
+}
+\]
+
+Voor een ideale satelliet in een cirkelbaan:
+
+\[
+\boxed{
+E_m=-\frac{GMm}{2r}.
+}
+\]
+
+
+
+
+% ============================================================
+\FVDsection{Vooruitblik: van energie naar trillingen}
+% ============================================================
+
+Een massa aan een veer bezit tijdens haar beweging afwisselend kinetische en
+elastische potentiële energie.
+
+In de uiterste stand is de snelheid nul en is de elastische energie maximaal.
+In de evenwichtsstand is de snelheid maximaal.
+
+Dezelfde veer waarvoor we in dit hoofdstuk vonden:
+
+\[
+F=-kx
+\]
+
+zal in het volgende thema leiden tot:
+
+\[
+a=-\frac{k}{m}x.
+\]
+
+Daarmee verschijnt een nieuw bewegingspatroon: de harmonische trilling.
+
+\begin{center}
+\[
+\boxed{
+\text{arbeid en energie}
+\longrightarrow
+\text{trillingen}
+\longrightarrow
+\text{golven}.
+}
+\]
+\end{center}
+
+\end{document}

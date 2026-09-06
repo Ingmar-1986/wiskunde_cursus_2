@@ -1,0 +1,2261 @@
+<!DOCTYPE html>
+<html lang="en-US" xml:lang="en-US">
+<head> <title>Snelheid en versnelling – Van krachten tot kwanta</title>
+<meta charset="utf-8"/>
+<meta content="TeX4ht (https://tug.org/tex4ht/)" name="generator"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="\aa:CssFile " rel="stylesheet" type="text/css"/>
+<meta content="2-ERVB.online.tex" name="src"/>
+<script>window.MathJax = { tex: { tags: "ams", }, }; </script>
+<script async="async" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+<meta content="Ingmar Herreman" name="author"/>
+<meta content="version 2.5.1" name="ximera"/>
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" media="screen" rel="stylesheet"/>
+<script async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js" type="text/javascript"></script>
+<link href="../../../assets/css/base.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/global.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/Header_Footer.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/ChapterLayout.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/chapter-hero.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/ExerciseHero.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/learning-boxes.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/CourseOverview.css" media="screen" rel="stylesheet"/></head><body><!-- XIMERA-HEADER-START --><!-- =========================================================
+     HEADER.HTML — Wiskunde 7 FVD
+     Plaats dit bestand bijvoorbeeld in:
+     assets/html/Header.html
+     ========================================================= -->
+<header aria-labelledby="fvd-hero-title" class="fvd-hero">
+<div aria-hidden="true" class="fvd-hero__grid"></div>
+<div aria-hidden="true" class="fvd-hero__glow fvd-hero__glow--left"></div>
+<div aria-hidden="true" class="fvd-hero__glow fvd-hero__glow--right"></div>
+<div class="fvd-hero__inner">
+<!-- Groot Athena-logo links -->
+<div class="fvd-hero__brand">
+<img alt="Athena secundair onderwijs" class="fvd-hero__logo" src="/images/banners/logo_athena.png"/>
+</div>
+<div aria-hidden="true" class="fvd-hero__divider"></div>
+<!-- Centrale titel en leerinhouden -->
+<div class="fvd-hero__content">
+<p class="fvd-hero__eyebrow">
+                    Fundamentele Vorming Digitale Creatie
+                </p>
+<h1 class="fvd-hero__title" id="fvd-hero-title">
+<span class="fvd-hero__title-main">Wiskunde</span>
+<span class="fvd-hero__title-accent">7 FVD</span>
+</h1>
+<div aria-hidden="true" class="fvd-hero__pink-line"></div>
+<p class="fvd-hero__subtitle">
+                    Wiskundige inzichten die je nodig hebt om digitale werelden te bouwen.
+                </p>
+<div aria-label="Onderwerpen in deze cursus" class="fvd-hero__chips">
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<rect height="18" rx="2" width="14" x="5" y="3"></rect>
+<path d="M8 7h8M8 11h2M14 11h2M8 15h2M14 15h2M8 18h2M14 18h2"></path>
+</svg>
+                        Basiswiskunde
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M4 17c4-1 4-10 8-10 2 0 2 3 4 3 1 0 2-.4 4-2"></path>
+<path d="M7 20 13 4"></path>
+</svg>
+                        Algebra
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M5 8h14M5 16h14"></path>
+</svg>
+                        Vergelijkingen
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M4 19V5M4 19h16"></path>
+<path d="m7 16 4-5 3 2 4-6"></path>
+</svg>
+                        Functies
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M5 18 18 5"></path>
+<path d="M12 5h6v6"></path>
+</svg>
+                        Vectoren
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="7"></circle>
+<path d="M12 2v20M2 12h20"></path>
+</svg>
+                        Coördinaten
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="m12 3 8 4.5v9L12 21l-8-4.5v-9z"></path>
+<path d="m4 7.5 8 4.5 8-4.5M12 12v9"></path>
+</svg>
+                        3D-meetkunde
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M3 16c3-8 7-8 10 0 2 5 5 4 8-4"></path>
+</svg>
+                        Goniometrie
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M5 18V6M5 18h14"></path>
+<path d="M8 16c1-6 3-9 8-10"></path>
+</svg>
+                        Logaritmen
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="m7 6 10 5-10 5z"></path>
+<path d="m7 10 10 5-10 5"></path>
+</svg>
+                        Transformaties
+                    </span>
+</div>
+</div>
+<!-- Rechterzijde met wiskundige SVG-tekeningen -->
+<div aria-hidden="true" class="fvd-hero__visual">
+<!-- 3D-kubus -->
+<svg class="fvd-visual fvd-visual--cube" viewbox="0 0 310 245">
+<g class="fvd-svg-cyan">
+<path d="M65 72 185 86 245 48 125 34Z"></path>
+<path d="M65 72v110l120 16V86"></path>
+<path d="M185 86 245 48v110l-60 40"></path>
+<path class="fvd-svg-dash" d="M125 34v110M125 144 65 182M125 144l120 14"></path>
+<path d="M125 144 90 210M125 144l88 28M125 144V15"></path>
+<path d="m90 210 11-4-7-9M213 172l-9-7-2 11M125 15l-6 11h12"></path>
+</g>
+<g class="fvd-svg-label">
+<text x="82" y="225">x</text>
+<text x="220" y="180">y</text>
+<text x="132" y="18">z</text>
+</g>
+</svg>
+<!-- Matrix -->
+<svg class="fvd-visual fvd-visual--matrix" viewbox="0 0 220 100">
+<g class="fvd-svg-soft">
+<text x="0" y="58">A =</text>
+<path d="M60 10c-12 18-12 62 0 80M205 10c12 18 12 62 0 80"></path>
+<text x="82" y="36">1</text>
+<text x="123" y="36">2</text>
+<text x="165" y="36">0</text>
+<text x="73" y="61">−1</text>
+<text x="123" y="61">0</text>
+<text x="165" y="61">3</text>
+<text x="82" y="86">2</text>
+<text x="113" y="86">−2</text>
+<text x="165" y="86">1</text>
+</g>
+</svg>
+<!-- Vectoren en rotatie -->
+<svg class="fvd-visual fvd-visual--vectors" viewbox="0 0 260 170">
+<g class="fvd-svg-cyan">
+<path d="M55 138 132 74"></path>
+<path d="m132 74-13 3 8 10"></path>
+<path d="M55 138h125"></path>
+<path d="m180 138-12-6v12"></path>
+<path class="fvd-svg-dash" d="M55 138c24-65 116-95 156-25"></path>
+</g>
+<g class="fvd-svg-pink">
+<path d="M55 138 207 104"></path>
+<path d="m207 104-13-2 5 12"></path>
+<path class="fvd-svg-dash" d="M211 113c17-13 25-5 21 11"></path>
+<path d="m232 124-9-8-2 12"></path>
+</g>
+<g class="fvd-svg-label">
+<text x="38" y="153">O</text>
+<text x="138" y="73">u⃗</text>
+<text x="188" y="98">v⃗</text>
+<text x="141" y="130">x⃗</text>
+<text x="222" y="102">Rθ</text>
+</g>
+</svg>
+<!-- Bézier-curve -->
+<svg class="fvd-visual fvd-visual--bezier" viewbox="0 0 280 110">
+<g class="fvd-svg-soft">
+<path d="M30 82 85 30 190 30 245 82"></path>
+</g>
+<g class="fvd-svg-cyan">
+<path d="M30 82c42-12 55-52 105-52s67 40 110 52"></path>
+</g>
+<g class="fvd-svg-pink">
+<circle cx="30" cy="82" r="4"></circle>
+<circle cx="85" cy="30" r="4"></circle>
+<circle cx="190" cy="30" r="4"></circle>
+<circle cx="245" cy="82" r="4"></circle>
+</g>
+<g class="fvd-svg-label">
+<text x="18" y="102">P₀</text>
+<text x="74" y="20">P₁</text>
+<text x="181" y="20">P₂</text>
+<text x="238" y="102">P₃</text>
+<text x="103" y="79">Bézier-curve</text>
+</g>
+</svg>
+</div>
+</div>
+<div aria-hidden="true" class="fvd-hero__pink-corner"></div>
+</header><!-- XIMERA-HEADER-END --><!-- XIMERA-CHAPTER-HERO-START --><section class="chapter-hero">
+<div aria-hidden="true" class="chapter-hero__decoration">
+<span class="chapter-hero__formula">
+            f(x) = ax² + bx + c
+        </span>
+<span class="chapter-hero__curve"></span>
+<span class="chapter-hero__grid"></span>
+</div>
+<div class="chapter-hero__content">
+<div class="chapter-hero__theme">
+<span class="chapter-hero__theme-label">
+                Thema 1
+            </span>
+<span class="chapter-hero__theme-dot"></span>
+<span class="chapter-hero__theme-name">
+                Beweging en kracht — Van beweging beschrijven tot energie begrijpen
+            </span>
+</div>
+<div class="chapter-hero__chapter-label">
+            Hoofdstuk
+        </div>
+<div class="chapter-hero__main">
+<div class="chapter-hero__number">
+                2
+            </div>
+<div class="chapter-hero__text">
+<h1 class="chapter-hero__title">
+                    Snelheid en versnelling
+                </h1>
+<p class="chapter-hero__abstract">
+                    In het vorige hoofdstuk leerden we een beweging beschrijven met een referentiestelsel, een positie, een tabel, een grafiek en een plaatsfunctie x(t). In dit hoofdstuk stellen we twee nieuwe vragen: hoe snel verandert de positie? en hoe snel verandert de snelheid? We bouwen de begrippen gemiddelde en ogenblikkelijke snelheid en versnelling zorgvuldig op. Daarbij verbinden we de fysica rechtstreeks met de wiskunde: een ogenblikkelijke snelheid ontstaat als limiet van gemiddelde snelheden en wordt berekend met een afgeleide. Op dezelfde manier is de versnelling de afgeleide van de snelheidsfunctie. Daarna keren we de redenering om. Met bepaalde integralen bepalen we uit een snelheidsfunctie de verplaatsing en uit een versnellingsfunctie de verandering van de snelheid. Zo ontstaat één samenhangend netwerk: x(t) v(t) a(t). Ten slotte passen we deze ideeën toe op de eenparige rechtlijnige beweging en de eenparig versnelde rechtlijnige beweging. Daarbij gebruiken we drie complementaire methoden: bewegingsvergelijkingen, de praktische oppervlaktemethode in v(t)- en a(t)-diagrammen en bepaalde integralen. Grafieken, functievoorschriften, probleemoplossing en experimentele gegevens worden voortdurend met elkaar verbonden.
+                </p>
+</div>
+</div>
+<div class="chapter-hero__accent"></div>
+</div>
+</section><!-- XIMERA-CHAPTER-HERO-END --><button aria-controls="courseSidebar" aria-expanded="false" class="course-menu-button" id="courseMenuButton" type="button">☰ Toon cursusinhoud</button><div class="course-sidebar-overlay" id="courseSidebarOverlay"></div><!-- XIMERA-CHAPTER-LAYOUT-START --><main class="chapter-layout"><!--
+    AUTOMATISCH GEGENEREERD BESTAND
+
+    Dit bestand wordt opgebouwd door:
+        scripts/generate-sidebar.sh
+
+    Bewerk niet dit bestand, maar:
+        assets/html/SidebarTemplate.html
+        en modules/.../index.tex
+-->
+<aside class="course-sidebar" id="courseSidebar">
+<div class="sidebar-header">
+<div class="sidebar-header__text">
+<span class="sidebar-label">
+                Van krachten tot kwanta
+            </span>
+<h2 class="sidebar-title">
+                Cursusinhoud
+            </h2>
+</div>
+<button aria-label="Sluit cursusmenu" class="sidebar-close" id="sidebarClose" type="button">
+            ×
+        </button>
+</div>
+<nav aria-label="Cursusinhoud" class="course-navigation">
+<div class="course-section is-open" data-theme="1">
+<button aria-controls="course-section-1-beweging-en-kracht-van-beweging-beschrijven-tot-energie-begrijpen" aria-expanded="true" class="course-section-toggle" type="button">
+<span class="course-section-number">
+            1
+        </span>
+<span class="course-section-title">
+            Beweging en kracht — Van beweging beschrijven tot energie begrijpen
+        </span>
+<span aria-hidden="true" class="course-section-arrow">
+            ▾
+        </span>
+</button>
+<div class="course-section-content" id="course-section-1-beweging-en-kracht-van-beweging-beschrijven-tot-energie-begrijpen">
+<a class="course-chapter-link" data-chapter="Thema1-Beweging/1-Beweging" href="Thema1-Beweging/1-Beweging.html">
+<span class="course-chapter-number">
+                1
+            </span>
+<span class="course-chapter-title">
+                Een beweging beschrijven
+            </span>
+</a>
+<a aria-current="page" class="course-chapter-link is-active" data-chapter="Thema1-Beweging/2-ERVB" href="Thema1-Beweging/2-ERVB.html">
+<span class="course-chapter-number">
+                2
+            </span>
+<span class="course-chapter-title">
+                Snelheid en versnelling
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema1-Beweging/3-Vallen_werpen" href="Thema1-Beweging/3-Vallen_werpen.html">
+<span class="course-chapter-number">
+                3
+            </span>
+<span class="course-chapter-title">
+                Vallen en werpen
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema1-Beweging/4-2D-beweging" href="Thema1-Beweging/4-2D-beweging.html">
+<span class="course-chapter-number">
+                4
+            </span>
+<span class="course-chapter-title">
+                Bewegen in twee dimensies
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema1-Beweging/5-Cirkels" href="Thema1-Beweging/5-Cirkels.html">
+<span class="course-chapter-number">
+                5
+            </span>
+<span class="course-chapter-title">
+                In cirkels bewegen
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema1-Beweging/6-Kracht" href="Thema1-Beweging/6-Kracht.html">
+<span class="course-chapter-number">
+                6
+            </span>
+<span class="course-chapter-title">
+                Kracht en beweging
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema1-Beweging/7-Kracht_cirkel" href="Thema1-Beweging/7-Kracht_cirkel.html">
+<span class="course-chapter-number">
+                7
+            </span>
+<span class="course-chapter-title">
+                Bewegen onder invloed van velden
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema1-Beweging/8-Arbeid-Energie" href="Thema1-Beweging/8-Arbeid-Energie.html">
+<span class="course-chapter-number">
+                8
+            </span>
+<span class="course-chapter-title">
+                Arbeid en energie
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema1-Beweging/9-Formules" href="Thema1-Beweging/9-Formules.html">
+<span class="course-chapter-number">
+                9
+            </span>
+<span class="course-chapter-title">
+                Formuleoverzicht Thema 1
+            </span>
+</a>
+</div>
+</div>
+</nav>
+</aside>
+<article class="chapter-content"><div class="chapter-body">
+<div class="preamble">
+</div>
+<style> .activity-body pre { white-space: pre; background-color: lightgray; } .xmyoutube { aspect-ratio: 16/9; min-width: 75%; } .image-environment img { width: unset; } </style>
+<div class="maketitle"></div>
+<!-- l. 60 --><p class="noindent"></p><section class="learning-box learning-box--prior"> <div class="learning-box__header"> <span class="learning-box__icon"> </span><span class="learning-box__title">Voorkennis</span> </div> <div class="learning-box__content">
+<p></p>
+<ul class="itemize1">
+<li class="itemize">Je kan een beweging beschrijven met een positie <span class="mathjax-inline">\(x(t)\)</span>.
+</li>
+<li class="itemize">Je kan afgelegde weg en verplaatsing van elkaar onderscheiden.
+</li>
+<li class="itemize">Je kan informatie aflezen uit een <span class="mathjax-inline">\(x(t)\)</span>-grafiek.
+</li>
+<li class="itemize">Je kent het differentiequotiënt en de betekenis van de limiet in een punt.
+</li>
+<li class="itemize">Je kan eenvoudige veeltermfuncties afleiden.
+</li>
+<li class="itemize">Je kent de basisbetekenis van een bepaalde integraal als georiënteerde
+oppervlakte.
+</li>
+<li class="itemize">Je kan eenvoudige bepaalde integralen van veeltermfuncties berekenen.
+</li>
+<li class="itemize">Je kan werken met een gekozen positieve richting en met positieve en
+negatieve grootheden.</li></ul>
+<!-- l. 69 --><p class="noindent"></p></div> </section>
+<p></p><!-- l. 71 --><p class="noindent"></p><section class="learning-box learning-box--goals"> <div class="learning-box__header"> <span class="learning-box__icon"> </span><span class="learning-box__title">Leerdoelen</span> </div> <div class="learning-box__content">
+<p></p>
+<ul class="itemize1">
+<li class="itemize">Je kan gemiddelde snelheid en gemiddelde versnelling berekenen en fysisch
+interpreteren.
+</li>
+<li class="itemize">Je kan uitleggen waarom een gemiddelde snelheid niet noodzakelijk het
+rekenkundig gemiddelde van enkele snelheidswaarden is.
+</li>
+<li class="itemize">Je kan ogenblikkelijke snelheid en versnelling interpreteren als limieten
+van gemiddelde waarden.
+</li>
+<li class="itemize">Je kan de snelheidsfunctie bepalen als afgeleide van de plaatsfunctie.
+</li>
+<li class="itemize">Je kan de versnellingsfunctie bepalen als afgeleide van de snelheidsfunctie
+en als tweede afgeleide van de plaatsfunctie.
+</li>
+<li class="itemize">Je kan grafieken van <span class="mathjax-inline">\(x(t)\)</span>, <span class="mathjax-inline">\(v(t)\)</span> en <span class="mathjax-inline">\(a(t)\)</span> onderling verbinden en analyseren.
+</li>
+<li class="itemize">Je kan het teken van snelheid en versnelling correct interpreteren.
+</li>
+<li class="itemize">Je kan uit een snelheidsfunctie de verplaatsing bepalen met een bepaalde
+integraal.
+</li>
+<li class="itemize">Je kan uit een versnellingsfunctie het snelheidsverschil bepalen met een
+bepaalde integraal.
+</li>
+<li class="itemize">Je kan verplaatsing praktisch bepalen als georiënteerde oppervlakte onder
+een <span class="mathjax-inline">\(v(t)\)</span>-grafiek met rechthoeken, driehoeken en trapezia.
+                                                                  
+
+                                                                  
+</li>
+<li class="itemize">Je kan snelheidsverschil praktisch bepalen als georiënteerde oppervlakte
+onder een <span class="mathjax-inline">\(a(t)\)</span>-grafiek.
+</li>
+<li class="itemize">Je   kan   bij   een   gegeven   beweging   doelgericht   kiezen   tussen
+oppervlaktemethode, bepaalde integraal en bewegingsvergelijkingen.
+</li>
+<li class="itemize">Je kan de eenparige rechtlijnige beweging herkennen als het bijzondere
+geval <span class="mathjax-inline">\(a=0\)</span>.
+</li>
+<li class="itemize">Je  kan  de  eenparig  versnelde  rechtlijnige  beweging  analyseren  met
+grafieken, functies en bewegingsvergelijkingen.
+</li>
+<li class="itemize">Je kan problemen met constante versnelling systematisch mathematiseren
+en oplossen.
+</li>
+<li class="itemize">Je kan experimentele gegevens van een rechtlijnige beweging verwerken en
+beoordelen.</li></ul>
+<!-- l. 88 --><p class="noindent"></p></div> </section>
+<p><a id="x1-2r1"></a>
+</p><p></p><!-- l. 95 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">1</div><div class="fvd-section-bar__title">Waarom leer je dit?</div></div>
+<p></p><!-- l. 97 --><p class="noindent">In het vorige hoofdstuk konden we beschrijven <em>waar</em> een voorwerp zich bevindt. Dat
+is nog niet voldoende om twee bewegingen met elkaar te vergelijken.
+</p><!-- l. 101 --><p class="noindent">Twee auto’s kunnen op hetzelfde punt vertrekken en na <span class="mathjax-inline">\(200\,\mathrm {m}\)</span> op dezelfde plaats aankomen.
+Toch kan de ene auto daar <span class="mathjax-inline">\(10\,\mathrm {s}\)</span> over doen en de andere <span class="mathjax-inline">\(25\,\mathrm {s}\)</span>.
+</p><!-- l. 105 --><p class="noindent">We hebben dus een grootheid nodig die beschrijft hoe snel de positie verandert.
+</p><!-- l. 108 --><p class="noindent">Die grootheid is de <strong>snelheid</strong>.
+</p><!-- l. 110 --><p class="noindent">Maar ook snelheid kan veranderen. Een trein die een station verlaat, een auto die
+remt en een vallend voorwerp hebben geen constante snelheid.
+</p><!-- l. 114 --><p class="noindent">Daarom hebben we nog een tweede grootheid nodig: de <strong>versnelling</strong>.
+                                                                  
+
+                                                                  
+</p><!-- l. 117 --><p class="noindent">In dit hoofdstuk bouwen we deze begrippen niet op als losse formules. We vertrekken
+telkens van een verandering:
+</p>
+<div class="mathjax-block">\[ \boxed { \text {positie} \xrightarrow {\text {verandering per tijd}} \text {snelheid} \xrightarrow {\text {verandering per tijd}} \text {versnelling} } \]</div>
+<!-- l. 130 --><p class="noindent">en verbinden die fysische redenering met afgeleiden, limieten, grafieken en
+integralen.
+<a id="x1-3r2"></a>
+</p><!-- l. 138 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">2</div><div class="fvd-section-bar__title">Gemiddelde snelheid</div></div>
+<p></p><!-- l. 140 --><p class="noindent">Beschouw een rechtlijnige beweging. Op tijdstip <span class="mathjax-inline">\(t_1\)</span> bevindt een voorwerp zich op positie
+<span class="mathjax-inline">\(x(t_1)\)</span> en op tijdstip <span class="mathjax-inline">\(t_2\)</span> op positie <span class="mathjax-inline">\(x(t_2)\)</span>.
+</p><!-- l. 144 --><p class="noindent">De verplaatsing tijdens dit tijdsinterval is
+</p>
+<div class="mathjax-block">\[ \Delta x=x(t_2)-x(t_1) \]</div>
+<!-- l. 150 --><p class="noindent">en het tijdsinterval is
+</p>
+<div class="mathjax-block">\[ \Delta t=t_2-t_1. \]</div>
+<!-- l. 156 --><p class="noindent"></p><section class="fvd-definition"><div class="fvd-definition__title"><span class="fvd-definition__label">DEFINITIE</span><span class="fvd-definition__separator"> — </span><span class="fvd-definition__name">Gemiddelde snelheid</span></div><div class="fvd-definition__content">
+<p></p><!-- l. 158 --><p class="noindent">De <strong>gemiddelde snelheid</strong> tijdens het tijdsinterval <span class="mathjax-inline">\([t_1,t_2]\)</span> is
+</p>
+<div class="mathjax-block">\[ \boxed { v_{\mathrm {gem}} = \frac {\Delta x}{\Delta t} = \frac {x(t_2)-x(t_1)}{t_2-t_1}. } \]</div>
+<!-- l. 171 --><p class="noindent">De SI-eenheid is
+</p>
+<div class="mathjax-block">\[ [v]=\mathrm {m/s}. \]</div>
+</div></section>
+<!-- l. 179 --><p class="noindent">De gemiddelde snelheid gebruikt de <em>verplaatsing</em> en niet noodzakelijk de volledige
+afgelegde weg.
+</p><!-- l. 182 --><p class="noindent">Daarom kan een gemiddelde snelheid positief, nul of negatief zijn.
+<a id="x1-4r1"></a>
+</p><!-- l. 185 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 185 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 185 --><p class="noindent"></p><div class="fvd-subsection__number">2.1</div>
+<p></p><!-- l. 185 --><p class="noindent"></p><div class="fvd-subsection__title">Grafische betekenis</div>
+<p></p><!-- l. 185 --><p class="noindent"></p></div>
+<p></p><!-- l. 185 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 185 --><p class="noindent"></p></div>
+<p></p><!-- l. 187 --><p class="noindent">In een <span class="mathjax-inline">\(x(t)\)</span>-diagram liggen de punten
+                                                                  
+
+                                                                  
+</p>
+<div class="mathjax-block">\[ P_1=(t_1,x(t_1)) \qquad \text {en}\qquad P_2=(t_2,x(t_2)). \]</div>
+<!-- l. 195 --><p class="noindent">De richtingscoëfficiënt van de rechte door <span class="mathjax-inline">\(P_1\)</span> en <span class="mathjax-inline">\(P_2\)</span> is
+</p>
+<div class="mathjax-block">\[ \frac {x(t_2)-x(t_1)}{t_2-t_1}. \]</div>
+<!-- l. 201 --><p class="noindent">Dat is precies de gemiddelde snelheid.
+</p><!-- l. 203 --><p class="noindent"></p><section class="fvd-property"><div class="fvd-property__title"><span class="fvd-property__label">EIGENSCHAP</span><span class="fvd-property__separator"> — </span><span class="fvd-property__name">Gemiddelde snelheid en secant</span></div><div class="fvd-property__content">
+<p></p><!-- l. 205 --><p class="noindent">In een positie-tijddiagram is de gemiddelde snelheid over een tijdsinterval gelijk aan
+de richtingscoëfficiënt van de <strong>secant</strong> door de twee bijbehorende punten van de
+grafiek.
+</p></div></section>
+<p><a id="x1-5r1"></a>
+</p><p></p><!-- l. 212 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 212 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 1<span class="fvd-example__subtitle"> — Een versnellende auto</span></div>
+<p></p><!-- l. 212 --><p class="noindent"></p><div class="fvd-example__content">
+<p></p><!-- l. 214 --><p class="noindent">De positie van een auto wordt beschreven door
+</p>
+<div class="mathjax-block">\[ x(t)=0,60t^2, \]</div>
+<!-- l. 220 --><p class="noindent">met <span class="mathjax-inline">\(x\)</span> in meter en <span class="mathjax-inline">\(t\)</span> in seconde.
+</p><!-- l. 222 --><p class="noindent">We bepalen de gemiddelde snelheid tussen <span class="mathjax-inline">\(t=10\,\mathrm {s}\)</span> en <span class="mathjax-inline">\(t=20\,\mathrm {s}\)</span>.
+</p>
+<div class="mathjax-block">\[ x(10)=60\,\mathrm {m}, \qquad x(20)=240\,\mathrm {m}. \]</div>
+<!-- l. 231 --><p class="noindent">Dus
+</p>
+<div class="mathjax-block">\[ v_{\mathrm {gem}} = \frac {240-60}{20-10} = 18\,\mathrm {m/s}. \]</div>
+<!-- l. 241 --><p class="noindent">De auto had tijdens dat interval niet voortdurend een snelheid van <span class="mathjax-inline">\(18\,\mathrm {m/s}\)</span>. Deze waarde
+beschrijft de gemiddelde verandering van de positie per seconde over het volledige
+interval.
+</p></div></section>
+<p><a id="x1-6r2"></a>
+</p><p></p><!-- l. 248 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 248 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 248 --><p class="noindent"></p><div class="fvd-subsection__number">2.2</div>
+<p></p><!-- l. 248 --><p class="noindent"></p><div class="fvd-subsection__title">Een belangrijke misconceptie</div>
+<p></p><!-- l. 248 --><p class="noindent"></p></div>
+<p></p><!-- l. 248 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 248 --><p class="noindent"></p></div>
+<p></p><!-- l. 250 --><p class="noindent">Een gemiddelde snelheid is in het algemeen <strong>niet</strong> het rekenkundig gemiddelde van
+enkele gemeten snelheidswaarden.
+<a id="x1-7r2"></a>
+</p><!-- l. 253 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 253 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 2<span class="fvd-example__subtitle"> — Twee gelijke afstanden</span></div>
+<p></p><!-- l. 253 --><p class="noindent"></p><div class="fvd-example__content">
+<p></p><!-- l. 255 --><p class="noindent">Een fietser legt eerst <span class="mathjax-inline">\(5,0\,\mathrm {km}\)</span> af aan <span class="mathjax-inline">\(10\,\mathrm {km/h}\)</span> en daarna nog eens <span class="mathjax-inline">\(5,0\,\mathrm {km}\)</span> aan <span class="mathjax-inline">\(20\,\mathrm {km/h}\)</span>.
+</p><!-- l. 259 --><p class="noindent">De totale afstand is
+</p>
+<div class="mathjax-block">\[ 10,0\,\mathrm {km}. \]</div>
+<!-- l. 265 --><p class="noindent">Voor het eerste deel heeft hij nodig:
+</p>
+<div class="mathjax-block">\[ \Delta t_1=\frac {5,0}{10}=0,50\,\mathrm {h}. \]</div>
+<!-- l. 271 --><p class="noindent">Voor het tweede deel:
+</p>
+<div class="mathjax-block">\[ \Delta t_2=\frac {5,0}{20}=0,25\,\mathrm {h}. \]</div>
+<!-- l. 277 --><p class="noindent">Dus
+</p>
+<div class="mathjax-block">\[ v_{\mathrm {gem}} = \frac {10,0}{0,75} \approx 13,3\,\mathrm {km/h}. \]</div>
+<!-- l. 287 --><p class="noindent">Dit is niet gelijk aan
+</p>
+<div class="mathjax-block">\[ \frac {10+20}{2}=15\,\mathrm {km/h}. \]</div>
+</div></section>
+<p><a id="x1-8r1"></a>
+</p><!-- l. 296 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 296 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 296 --><p class="noindent">Oefening 1
+</p><!-- l. 296 --><p class="noindent">— Gemiddelde snelheid
+</p><!-- l. 296 --><p class="noindent"></p></div>
+<p></p><!-- l. 296 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 296 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--b">B</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 296 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 298 --><p class="noindent">Een voorwerp beweegt langs een rechte lijn volgens
+                                                                  
+
+                                                                  
+</p>
+<div class="mathjax-block">\[ x(t)=2,0-4,6t+1,1t^2, \]</div>
+<!-- l. 304 --><p class="noindent">met <span class="mathjax-inline">\(x\)</span> in meter en <span class="mathjax-inline">\(t\)</span> in seconde.
+</p>
+<div class="problem-environment question" id="problem1" numbered=" " role="article" titletext=" Question">  Bereken <span class="mathjax-inline">\(x(1,0)\)</span> en <span class="mathjax-inline">\(x(3,0)\)</span>.    </div>
+<div class="problem-environment question" id="problem2" numbered=" " role="article" titletext=" Question">  Bereken de gemiddelde snelheid over het interval <span class="mathjax-inline">\([1,0\,\mathrm {s},3,0\,\mathrm {s}]\)</span>.    </div>
+<div class="problem-environment question" id="problem3" numbered=" " role="article" titletext=" Question">  Interpreteer het teken van je antwoord.    </div>
+</div>
+<!-- l. 319 --><p class="noindent"></p></div>
+<p></p><!-- l. 319 --><p class="noindent"></p></section>
+<p><a id="x1-9r2"></a>
+</p><p></p><!-- l. 322 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 322 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 322 --><p class="noindent">Oefening 2
+</p><!-- l. 322 --><p class="noindent">— Gemiddelde snelheid is niet altijd middelen
+</p><!-- l. 322 --><p class="noindent"></p></div>
+<p></p><!-- l. 322 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 322 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 322 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 324 --><p class="noindent">Een wandelaar legt een traject af dat uit twee even lange stukken bestaat. Op het
+eerste stuk is zijn gemiddelde snelheid <span class="mathjax-inline">\(4,0\,\mathrm {km/h}\)</span>, op het tweede <span class="mathjax-inline">\(6,0\,\mathrm {km/h}\)</span>.
+</p>
+<div class="problem-environment question" id="problem4" numbered=" " role="article" titletext=" Question">  Bepaal zijn gemiddelde snelheid over het volledige traject.    </div>
+<div class="problem-environment question" id="problem5" numbered=" " role="article" titletext=" Question">  Leg uit waarom je niet zomaar <span class="mathjax-inline">\((4,0+6,0)/2\)</span> mag gebruiken.    </div>
+</div>
+<!-- l. 336 --><p class="noindent"></p></div>
+<p></p><!-- l. 336 --><p class="noindent"></p></section>
+<p><a id="x1-10r3"></a>
+</p><p></p><!-- l. 343 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">3</div><div class="fvd-section-bar__title">Gemiddelde versnelling</div></div>
+<p></p><!-- l. 345 --><p class="noindent">Snelheid kan veranderen.
+</p><!-- l. 347 --><p class="noindent">Een auto kan sneller gaan rijden, trager gaan rijden of van bewegingsrichting
+veranderen.
+</p><!-- l. 350 --><p class="noindent">We vergelijken daarom de snelheid op twee tijdstippen.
+</p><!-- l. 352 --><p class="noindent"></p><section class="fvd-definition"><div class="fvd-definition__title"><span class="fvd-definition__label">DEFINITIE</span><span class="fvd-definition__separator"> — </span><span class="fvd-definition__name">Gemiddelde versnelling</span></div><div class="fvd-definition__content">
+<p></p><!-- l. 354 --><p class="noindent">De <strong>gemiddelde versnelling</strong> over het tijdsinterval <span class="mathjax-inline">\([t_1,t_2]\)</span> is
+</p>
+<div class="mathjax-block">\[ \boxed { a_{\mathrm {gem}} = \frac {\Delta v}{\Delta t} = \frac {v(t_2)-v(t_1)}{t_2-t_1}. } \]</div>
+<!-- l. 367 --><p class="noindent">De SI-eenheid is
+</p>
+<div class="mathjax-block">\[ [a]=\mathrm {m/s^2}. \]</div>
+</div></section>
+<!-- l. 375 --><p class="noindent">De eenheid <span class="mathjax-inline">\(\mathrm {m/s^2}\)</span> betekent dat de snelheid per seconde met een bepaald aantal <span class="mathjax-inline">\(\mathrm {m/s}\)</span>
+verandert.
+<a id="x1-11r3"></a>
+</p><!-- l. 379 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 379 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 3<span class="fvd-example__subtitle"> — Remmen</span></div>
+<p></p><!-- l. 379 --><p class="noindent"></p><div class="fvd-example__content">
+<p></p><!-- l. 381 --><p class="noindent">Een auto vertraagt in <span class="mathjax-inline">\(3,0\,\mathrm {s}\)</span> van <span class="mathjax-inline">\(90,0\,\mathrm {km/h}\)</span> naar <span class="mathjax-inline">\(60,0\,\mathrm {km/h}\)</span>.
+</p><!-- l. 384 --><p class="noindent">We zetten eerst om:
+</p>
+<div class="mathjax-block">\[ 90,0\,\mathrm {km/h}=25,0\,\mathrm {m/s}, \]</div>
+<div class="mathjax-block">\[ 60,0\,\mathrm {km/h}=16,7\,\mathrm {m/s}. \]</div>
+<!-- l. 394 --><p class="noindent">Dus
+</p>
+<div class="mathjax-block">\[ a_{\mathrm {gem}} = \frac {16,7-25,0}{3,0} = -2,8\,\mathrm {m/s^2}. \]</div>
+<!-- l. 404 --><p class="noindent">Het negatieve teken vertelt ons dat de verandering van de snelheid in de gekozen
+positieve richting negatief is.
+</p></div></section>
+<p><a id="x1-12r3"></a>
+</p><p></p><!-- l. 410 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 410 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 410 --><p class="noindent">Oefening 3
+</p><!-- l. 410 --><p class="noindent">— Gemiddelde versnelling
+</p><!-- l. 410 --><p class="noindent"></p></div>
+<p></p><!-- l. 410 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 410 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--b">B</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 410 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 412 --><p class="noindent">Een trein rijdt in de positieve <span class="mathjax-inline">\(x\)</span>-richting. Zijn snelheid verandert in <span class="mathjax-inline">\(12\,\mathrm {s}\)</span> van <span class="mathjax-inline">\(8,0\,\mathrm {m/s}\)</span> naar
+<span class="mathjax-inline">\(20,0\,\mathrm {m/s}\)</span>.
+                                                                  
+
+                                                                  
+</p>
+<div class="problem-environment question" id="problem6" numbered=" " role="article" titletext=" Question">  Bereken de gemiddelde versnelling.    </div>
+<div class="problem-environment question" id="problem7" numbered=" " role="article" titletext=" Question">  Leg in woorden uit wat je resultaat fysisch betekent.    </div>
+</div>
+<!-- l. 424 --><p class="noindent"></p></div>
+<p></p><!-- l. 424 --><p class="noindent"></p></section>
+<p><a id="x1-13r4"></a>
+</p><p></p><!-- l. 431 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">4</div><div class="fvd-section-bar__title">Van gemiddelde naar ogenblikkelijke snelheid</div></div>
+<p></p><!-- l. 433 --><p class="noindent">Een gemiddelde snelheid vertelt iets over een volledig tijdsinterval. Maar een
+snelheidsmeter in een auto toont de snelheid <em>op dat ogenblik</em>.
+</p><!-- l. 437 --><p class="noindent">Hoe kunnen we uit een plaatsfunctie <span class="mathjax-inline">\(x(t)\)</span> zo’n ogenblikkelijke snelheid bepalen?
+</p><!-- l. 440 --><p class="noindent">We vertrekken opnieuw van de gemiddelde snelheid:
+</p>
+<div class="mathjax-block">\[ v_{\mathrm {gem}} = \frac {x(t+\Delta t)-x(t)}{\Delta t}. \]</div>
+<!-- l. 448 --><p class="noindent">We laten het tijdsinterval steeds kleiner worden.
+</p>
+<div class="mathjax-block">\[ \Delta t\longrightarrow 0. \]</div>
+<!-- l. 454 --><p class="noindent">De secant in de <span class="mathjax-inline">\(x(t)\)</span>-grafiek nadert dan tot de raaklijn.
+</p><!-- l. 457 --><p class="noindent"></p><section class="fvd-definition"><div class="fvd-definition__title"><span class="fvd-definition__label">DEFINITIE</span><span class="fvd-definition__separator"> — </span><span class="fvd-definition__name">Ogenblikkelijke snelheid</span></div><div class="fvd-definition__content">
+<p></p><!-- l. 459 --><p class="noindent">De <strong>ogenblikkelijke snelheid</strong> op tijdstip <span class="mathjax-inline">\(t\)</span> is de limiet van de gemiddelde snelheid
+wanneer het tijdsinterval naar nul nadert:
+</p>
+<div class="mathjax-block">\[ \boxed { v(t) = \lim _{\Delta t\to 0} \frac {x(t+\Delta t)-x(t)}{\Delta t}. } \]</div>
+<!-- l. 471 --><p class="noindent">Dit is precies de afgeleide van de plaatsfunctie:
+</p>
+<div class="mathjax-block">\[ \boxed { v(t)=\frac {dx}{dt}=x'(t). } \]</div>
+</div></section>
+<!-- l. 482 --><p class="noindent"></p><section class="fvd-property"><div class="fvd-property__title"><span class="fvd-property__label">EIGENSCHAP</span><span class="fvd-property__separator"> — </span><span class="fvd-property__name">Grafische betekenis</span></div><div class="fvd-property__content">
+<p></p><!-- l. 484 --><p class="noindent">In een <span class="mathjax-inline">\(x(t)\)</span>-diagram is de ogenblikkelijke snelheid gelijk aan de richtingscoëfficiënt van de
+raaklijn aan de grafiek.
+</p></div></section>
+<p><a id="x1-14r4"></a>
+</p><p></p><!-- l. 490 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 490 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 4<span class="fvd-example__subtitle"> — Een steen wordt omhoog geworpen</span></div>
+<p></p><!-- l. 490 --><p class="noindent"></p><div class="fvd-example__content">
+<p></p><!-- l. 492 --><p class="noindent">De hoogte van een steen wordt in een vereenvoudigd model beschreven door
+</p>
+<div class="mathjax-block">\[ y(t)=-5,0t^2+20t. \]</div>
+<!-- l. 498 --><p class="noindent">De snelheidsfunctie is
+</p>
+<div class="mathjax-block">\[ v(t)=y'(t)=-10t+20. \]</div>
+<!-- l. 504 --><p class="noindent">Na <span class="mathjax-inline">\(1,0\,\mathrm {s}\)</span>:
+</p>
+<div class="mathjax-block">\[ v(1,0)=10\,\mathrm {m/s}. \]</div>
+<!-- l. 510 --><p class="noindent">Na <span class="mathjax-inline">\(2,0\,\mathrm {s}\)</span>:
+</p>
+<div class="mathjax-block">\[ v(2,0)=0. \]</div>
+<!-- l. 516 --><p class="noindent">De steen bevindt zich dan op het hoogste punt van zijn baan.
+</p></div></section>
+<p><a id="x1-15r4"></a>
+</p><p></p><!-- l. 521 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 521 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 521 --><p class="noindent">Oefening 4
+</p><!-- l. 521 --><p class="noindent">— Van gemiddelde naar ogenblikkelijke snelheid
+</p><!-- l. 521 --><p class="noindent"></p></div>
+<p></p><!-- l. 521 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 521 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 521 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 523 --><p class="noindent">Een bol beweegt volgens
+</p>
+<div class="mathjax-block">\[ x(t)=0,20t^2. \]</div>
+<div class="problem-environment question" id="problem8" numbered=" " role="article" titletext=" Question">  Bereken de gemiddelde snelheid over <span class="mathjax-inline">\([1,0;1,5]\)</span>.    </div>
+<div class="problem-environment question" id="problem9" numbered=" " role="article" titletext=" Question">  Bereken de gemiddelde snelheid over <span class="mathjax-inline">\([1,0;1,1]\)</span>.    </div>
+<div class="problem-environment question" id="problem10" numbered=" " role="article" titletext=" Question">  Bereken de ogenblikkelijke snelheid op <span class="mathjax-inline">\(t=1,0\,\mathrm {s}\)</span> met de afgeleide.    </div>
+<div class="problem-environment question" id="problem11" numbered=" " role="article" titletext=" Question">  Vergelijk de drie resultaten. Wat merk je op?    </div>
+</div>
+<!-- l. 546 --><p class="noindent"></p></div>
+<p></p><!-- l. 546 --><p class="noindent"></p></section>
+<p><a id="x1-16r5"></a>
+</p><p></p><!-- l. 553 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">5</div><div class="fvd-section-bar__title">Ogenblikkelijke versnelling</div></div>
+<p></p><!-- l. 555 --><p class="noindent">Net zoals de snelheid zelf kan veranderen, kan ook de verandering van de snelheid
+van ogenblik tot ogenblik verschillen.
+</p><!-- l. 558 --><p class="noindent">We passen daarom dezelfde redenering toe op de snelheidsfunctie.
+</p><!-- l. 560 --><p class="noindent"></p><section class="fvd-definition"><div class="fvd-definition__title"><span class="fvd-definition__label">DEFINITIE</span><span class="fvd-definition__separator"> — </span><span class="fvd-definition__name">Ogenblikkelijke versnelling</span></div><div class="fvd-definition__content">
+<p></p><!-- l. 562 --><p class="noindent">De <strong>ogenblikkelijke versnelling</strong> op tijdstip <span class="mathjax-inline">\(t\)</span> is
+</p>
+<div class="mathjax-block">\[ \boxed { a(t) = \lim _{\Delta t\to 0} \frac {v(t+\Delta t)-v(t)}{\Delta t}. } \]</div>
+<!-- l. 573 --><p class="noindent">Daarom:
+</p>
+<div class="mathjax-block">\[ \boxed { a(t)=\frac {dv}{dt}=v'(t). } \]</div>
+<!-- l. 581 --><p class="noindent">Omdat
+</p>
+<div class="mathjax-block">\[ v(t)=x'(t), \]</div>
+<!-- l. 587 --><p class="noindent">geldt ook:
+</p>
+<div class="mathjax-block">\[ \boxed { a(t)=x''(t)=\frac {d^2x}{dt^2}. } \]</div>
+</div></section>
+<!-- l. 598 --><p class="noindent"></p><section class="fvd-property"><div class="fvd-property__title"><span class="fvd-property__label">EIGENSCHAP</span><span class="fvd-property__separator"> — </span><span class="fvd-property__name">Grafische betekenis</span></div><div class="fvd-property__content">
+<p></p><!-- l. 600 --><p class="noindent">In een <span class="mathjax-inline">\(v(t)\)</span>-diagram is de ogenblikkelijke versnelling gelijk aan de richtingscoëfficiënt van
+de raaklijn aan de grafiek.
+</p></div></section>
+<p><a id="x1-17r5"></a>
+</p><p></p><!-- l. 606 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 606 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 5<span class="fvd-example__subtitle"> — Plaats, snelheid en versnelling</span></div>
+<p></p><!-- l. 606 --><p class="noindent"></p><div class="fvd-example__content">
+<p></p><!-- l. 608 --><p class="noindent">Een voorwerp beweegt volgens
+</p>
+<div class="mathjax-block">\[ x(t)=3,0t^2+1,0, \]</div>
+<!-- l. 614 --><p class="noindent">met <span class="mathjax-inline">\(x\)</span> in meter en <span class="mathjax-inline">\(t\)</span> in seconde.
+</p><!-- l. 616 --><p class="noindent">Dan:
+</p>
+<div class="mathjax-block">\[ v(t)=x'(t)=6,0t \]</div>
+<!-- l. 622 --><p class="noindent">en:
+</p>
+<div class="mathjax-block">\[ a(t)=v'(t)=6,0. \]</div>
+<!-- l. 628 --><p class="noindent">De versnelling is dus constant:
+</p>
+<div class="mathjax-block">\[ \boxed {a=6,0\,\mathrm {m/s^2}.} \]</div>
+</div></section>
+<p><a id="x1-18r5"></a>
+</p><!-- l. 637 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 637 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 637 --><p class="noindent">Oefening 5
+</p><!-- l. 637 --><p class="noindent">— Afleiden tot versnelling
+</p><!-- l. 637 --><p class="noindent"></p></div>
+<p></p><!-- l. 637 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 637 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--b">B</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 637 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 639 --><p class="noindent">Gegeven:
+</p>
+<div class="mathjax-block">\[ x(t)=1,5t^3-4,0t^2+2,0t+1,0. \]</div>
+<div class="problem-environment question" id="problem12" numbered=" " role="article" titletext=" Question">  Bepaal de snelheidsfunctie <span class="mathjax-inline">\(v(t)\)</span>.    </div>
+<div class="problem-environment question" id="problem13" numbered=" " role="article" titletext=" Question">  Bepaal de versnellingsfunctie <span class="mathjax-inline">\(a(t)\)</span>.    </div>
+<div class="problem-environment question" id="problem14" numbered=" " role="article" titletext=" Question">  Bereken <span class="mathjax-inline">\(v(2,0)\)</span> en <span class="mathjax-inline">\(a(2,0)\)</span>.    </div>
+</div>
+<!-- l. 657 --><p class="noindent"></p></div>
+<p></p><!-- l. 657 --><p class="noindent"></p></section>
+<p><a id="x1-19r6"></a>
+</p><p></p><!-- l. 664 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">6</div><div class="fvd-section-bar__title">Wat vertellen de tekens van snelheid en versnelling?</div></div>
+<p></p><!-- l. 666 --><p class="noindent">Het teken van de snelheid vertelt ons in welke zin het voorwerp langs de gekozen as
+beweegt.
+</p><!-- l. 669 --><p class="noindent">Bij een positieve <span class="mathjax-inline">\(x\)</span>-richting naar rechts:
+</p>
+<div class="mathjax-block">\[ v&gt;0 \quad \Rightarrow \quad \text {beweging in positieve zin}, \]</div>
+<div class="mathjax-block">\[ v&lt;0 \quad \Rightarrow \quad \text {beweging in negatieve zin}. \]</div>
+<!-- l. 683 --><p class="noindent">Het teken van de versnelling vertelt hoe de snelheid verandert.
+</p><!-- l. 685 --><p class="noindent">Een positieve versnelling betekent dus niet automatisch dat het voorwerp “sneller”
+gaat.
+                                                                  
+
+                                                                  
+</p><!-- l. 689 --><p class="noindent"></p><section class="fvd-property"><div class="fvd-property__title"><span class="fvd-property__label">EIGENSCHAP</span><span class="fvd-property__separator"> — </span><span class="fvd-property__name">Sneller of trager?</span></div><div class="fvd-property__content">
+<p></p><!-- l. 691 --><p class="noindent">Voor een rechtlijnige beweging geldt:
+</p>
+<div class="mathjax-block">\[ v\cdot a&gt;0 \quad \Rightarrow \quad |v|\text { neemt toe}, \]</div>
+<div class="mathjax-block">\[ v\cdot a&lt;0 \quad \Rightarrow \quad |v|\text { neemt af}. \]</div>
+<!-- l. 705 --><p class="noindent">Met andere woorden: een voorwerp gaat sneller wanneer snelheid en versnelling
+hetzelfde teken hebben, en trager wanneer ze tegengestelde tekens hebben.
+</p></div></section>
+<p><a id="x1-20r6"></a>
+</p><p></p><!-- l. 712 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 712 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 6<span class="fvd-example__subtitle"> — Negatieve snelheid en negatieve versnelling</span></div>
+<p></p><!-- l. 712 --><p class="noindent"></p><div class="fvd-example__content">
+<p></p><!-- l. 714 --><p class="noindent">Een trein beweegt in de negatieve <span class="mathjax-inline">\(x\)</span>-richting met
+</p>
+<div class="mathjax-block">\[ v=-5\,\mathrm {m/s}. \]</div>
+<!-- l. 720 --><p class="noindent">Even later rijdt hij
+</p>
+<div class="mathjax-block">\[ v=-7\,\mathrm {m/s}. \]</div>
+<!-- l. 726 --><p class="noindent">De snelheid wordt numeriek kleiner, maar de <em>grootte</em> van de snelheid neemt
+toe:
+</p>
+<div class="mathjax-block">\[ |v|:5\longrightarrow 7. \]</div>
+<!-- l. 733 --><p class="noindent">De trein gaat dus sneller in negatieve zin. De versnelling is negatief.
+</p></div></section>
+<p><a id="x1-21r6"></a>
+</p><p></p><!-- l. 738 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 738 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 738 --><p class="noindent">Oefening 6
+</p><!-- l. 738 --><p class="noindent">— Tekens analyseren
+</p><!-- l. 738 --><p class="noindent"></p></div>
+<p></p><!-- l. 738 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 738 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 738 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 740 --><p class="noindent">Beschouw vier situaties.
+</p>
+<div class="mathjax-block">\[ \begin {array}{c|cc} &amp; v &amp; a\\ \hline A &amp; + &amp; +\\ B &amp; + &amp; -\\ C &amp; - &amp; +\\ D &amp; - &amp; - \end {array} \]</div>
+<!-- l. 752 --><p class="noindent">Beschrijf voor elke situatie:
+</p>
+<div class="problem-environment question" id="problem15" numbered=" " role="article" titletext=" Question">  in welke zin het voorwerp beweegt;    </div>
+<div class="problem-environment question" id="problem16" numbered=" " role="article" titletext=" Question">  of de grootte van de snelheid toeneemt of afneemt.    </div>
+</div>
+<!-- l. 762 --><p class="noindent"></p></div>
+<p></p><!-- l. 762 --><p class="noindent"></p></section>
+<p><a id="x1-22r7"></a>
+</p><p></p><!-- l. 769 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">7</div><div class="fvd-section-bar__title">Het verband tussen <span class="mathjax-inline">\(x(t)\)</span>, <span class="mathjax-inline">\(v(t)\)</span> en <span class="mathjax-inline">\(a(t)\)</span></div></div>
+<p></p><!-- l. 771 --><p class="noindent">We hebben nu een fundamentele keten opgebouwd:
+</p>
+<div class="mathjax-block">\[ \boxed { x(t) \xrightarrow {\frac {d}{dt}} v(t) \xrightarrow {\frac {d}{dt}} a(t). } \]</div>
+<!-- l. 783 --><p class="noindent">Dat betekent:
+</p>
+<div class="mathjax-block">\[ v(t)=x'(t), \]</div>
+<div class="mathjax-block">\[ a(t)=v'(t)=x''(t). \]</div>
+<!-- l. 793 --><p class="noindent">Dit verband moet je niet alleen algebraïsch kunnen gebruiken. Je moet het ook
+grafisch kunnen herkennen.
+<a id="x1-23r1"></a>
+</p><!-- l. 797 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 797 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 797 --><p class="noindent"></p><div class="fvd-subsection__number">7.1</div>
+<p></p><!-- l. 797 --><p class="noindent"></p><div class="fvd-subsection__title">Van <span class="mathjax-inline">\(x(t)\)</span> naar <span class="mathjax-inline">\(v(t)\)</span></div>
+<p></p><!-- l. 797 --><p class="noindent"></p></div>
+<p></p><!-- l. 797 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 797 --><p class="noindent"></p></div>
+<p></p><!-- l. 799 --><p class="noindent">De snelheid is de helling van de <span class="mathjax-inline">\(x(t)\)</span>-grafiek.
+</p><!-- l. 801 --><p class="noindent">Dus:
+</p>
+<ul class="itemize1">
+<li class="itemize">stijgt <span class="mathjax-inline">\(x(t)\)</span>, dan is <span class="mathjax-inline">\(v&gt;0\)</span>;
+</li>
+<li class="itemize">daalt <span class="mathjax-inline">\(x(t)\)</span>, dan is <span class="mathjax-inline">\(v&lt;0\)</span>;
+</li>
+<li class="itemize">heeft <span class="mathjax-inline">\(x(t)\)</span> een horizontale raaklijn, dan is <span class="mathjax-inline">\(v=0\)</span>;
+</li>
+<li class="itemize">wordt de helling steeds groter, dan is de versnelling positief;
+</li>
+<li class="itemize">wordt de helling steeds kleiner, dan is de versnelling negatief.</li></ul>
+<p><a id="x1-24r2"></a>
+</p><!-- l. 812 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 812 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 812 --><p class="noindent"></p><div class="fvd-subsection__number">7.2</div>
+<p></p><!-- l. 812 --><p class="noindent"></p><div class="fvd-subsection__title">Van <span class="mathjax-inline">\(v(t)\)</span> naar <span class="mathjax-inline">\(a(t)\)</span></div>
+<p></p><!-- l. 812 --><p class="noindent"></p></div>
+<p></p><!-- l. 812 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 812 --><p class="noindent"></p></div>
+<p></p><!-- l. 814 --><p class="noindent">De versnelling is de helling van de <span class="mathjax-inline">\(v(t)\)</span>-grafiek.
+</p><!-- l. 816 --><p class="noindent">Dus:
+</p>
+<ul class="itemize1">
+<li class="itemize">een stijgende <span class="mathjax-inline">\(v(t)\)</span>-grafiek geeft <span class="mathjax-inline">\(a&gt;0\)</span>;
+</li>
+<li class="itemize">een dalende <span class="mathjax-inline">\(v(t)\)</span>-grafiek geeft <span class="mathjax-inline">\(a&lt;0\)</span>;
+</li>
+<li class="itemize">een horizontale <span class="mathjax-inline">\(v(t)\)</span>-grafiek geeft <span class="mathjax-inline">\(a=0\)</span>.</li></ul>
+<p><a id="x1-25r7"></a>
+</p><!-- l. 825 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 825 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 825 --><p class="noindent">Oefening 7
+</p><!-- l. 825 --><p class="noindent">— Drie grafieken verbinden
+</p><!-- l. 825 --><p class="noindent"></p></div>
+<p></p><!-- l. 825 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 825 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 825 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 827 --><p class="noindent">Een voorwerp heeft een <span class="mathjax-inline">\(v(t)\)</span>-grafiek die gedurende <span class="mathjax-inline">\(0\leq t\leq 6\)</span> een rechte lijn is van <span class="mathjax-inline">\(v(0)=2\,\mathrm {m/s}\)</span> naar
+<span class="mathjax-inline">\(v(6)=8\,\mathrm {m/s}\)</span>.
+</p>
+<div class="problem-environment question" id="problem17" numbered=" " role="article" titletext=" Question">  Schets de bijbehorende <span class="mathjax-inline">\(a(t)\)</span>-grafiek.    </div>
+<div class="problem-environment question" id="problem18" numbered=" " role="article" titletext=" Question">  Beschrijf kwalitatief hoe de <span class="mathjax-inline">\(x(t)\)</span>-grafiek eruitziet.    </div>
+<div class="problem-environment question" id="problem19" numbered=" " role="article" titletext=" Question">  Leg bij elke stap uit welk afgeleideverband je gebruikt.    </div>
+</div>
+<!-- l. 843 --><p class="noindent"></p></div>
+<p></p><!-- l. 843 --><p class="noindent"></p></section>
+<p><a id="x1-26r8"></a>
+</p><p></p><!-- l. 850 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">8</div><div class="fvd-section-bar__title">De omgekeerde weg: integreren</div></div>
+<p></p><!-- l. 852 --><p class="noindent">Tot nu toe gingen we van positie naar snelheid en van snelheid naar versnelling door
+af te leiden.
+</p><!-- l. 855 --><p class="noindent">Maar vaak kennen we juist de snelheidsfunctie of de versnellingsfunctie en willen we
+terug informatie over de beweging vinden.
+</p><!-- l. 859 --><p class="noindent">Daarvoor gebruiken we bepaalde integralen.
+<a id="x1-27r1"></a>
+</p><!-- l. 862 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 862 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 862 --><p class="noindent"></p><div class="fvd-subsection__number">8.1</div>
+<p></p><!-- l. 862 --><p class="noindent"></p><div class="fvd-subsection__title">Van snelheid naar verplaatsing</div>
+<p></p><!-- l. 862 --><p class="noindent"></p></div>
+<p></p><!-- l. 862 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 862 --><p class="noindent"></p></div>
+<p></p><!-- l. 864 --><p class="noindent">Omdat
+</p>
+<div class="mathjax-block">\[ v(t)=\frac {dx}{dt}, \]</div>
+<!-- l. 870 --><p class="noindent">geldt over een tijdsinterval <span class="mathjax-inline">\([t_1,t_2]\)</span>:
+</p>
+<div class="mathjax-block">\[ \boxed { \Delta x = x(t_2)-x(t_1) = \int _{t_1}^{t_2}v(t)\,dt. } \]</div>
+<!-- l. 882 --><p class="noindent"></p><section class="fvd-property"><div class="fvd-property__title"><span class="fvd-property__label">EIGENSCHAP</span><span class="fvd-property__separator"> — </span><span class="fvd-property__name">Oppervlakte onder een <span class="mathjax-inline">\(v(t)\)</span>-grafiek</span></div><div class="fvd-property__content">
+<p></p><!-- l. 884 --><p class="noindent">De georiënteerde oppervlakte tussen een <span class="mathjax-inline">\(v(t)\)</span>-grafiek en de tijdas over <span class="mathjax-inline">\([t_1,t_2]\)</span> is gelijk aan de
+verplaatsing tijdens dat tijdsinterval.
+</p></div></section>
+<p></p><!-- l. 890 --><p class="noindent">“Georiënteerd” betekent dat oppervlakten boven de tijdas positief en oppervlakten
+onder de tijdas negatief bijdragen.
+</p><!-- l. 895 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">
+<p></p><!-- l. 896 --><p class="noindent">De integraal
+</p>
+<div class="mathjax-block">\[ \int _{t_1}^{t_2}v(t)\,dt \]</div>
+<!-- l. 902 --><p class="noindent">geeft de <strong>verplaatsing</strong>, niet altijd de totale afgelegde weg.
+</p><!-- l. 904 --><p class="noindent">Als het voorwerp van bewegingsrichting verandert, moet voor de afgelegde weg
+rekening worden gehouden met de grootte van de snelheid:
+</p>
+<div class="mathjax-block">\[ \Delta s = \int _{t_1}^{t_2}|v(t)|\,dt. \]</div>
+</div></section>
+<p><a id="x1-28r7"></a>
+</p><!-- l. 916 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 916 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 7<span class="fvd-example__subtitle"> — Verplaatsing uit een snelheidsfunctie</span></div>
+<p></p><!-- l. 916 --><p class="noindent"></p><div class="fvd-example__content">
+<p></p><!-- l. 918 --><p class="noindent">Een voorwerp heeft
+</p>
+<div class="mathjax-block">\[ v(t)=2,0+0,50t \]</div>
+<!-- l. 924 --><p class="noindent">voor <span class="mathjax-inline">\(0\leq t\leq 8,0\,\mathrm {s}\)</span>.
+</p><!-- l. 926 --><p class="noindent">De verplaatsing is:
+</p>
+<div class="mathjax-block">\[ \Delta x = \int _0^8(2,0+0,50t)\,dt. \]</div>
+<!-- l. 934 --><p class="noindent">Dus:
+</p>
+<div class="mathjax-block">\[ \Delta x = \left [2,0t+0,25t^2\right ]_0^8 = 16+16 = 32\,\mathrm {m}. \]</div>
+</div></section>
+<p><a id="x1-29r2"></a>
+</p><!-- l. 949 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 949 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 949 --><p class="noindent"></p><div class="fvd-subsection__number">8.2</div>
+<p></p><!-- l. 949 --><p class="noindent"></p><div class="fvd-subsection__title">Van versnelling naar snelheidsverschil</div>
+<p></p><!-- l. 949 --><p class="noindent"></p></div>
+<p></p><!-- l. 949 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 949 --><p class="noindent"></p></div>
+<p></p><!-- l. 951 --><p class="noindent">Omdat
+</p>
+<div class="mathjax-block">\[ a(t)=\frac {dv}{dt}, \]</div>
+<!-- l. 957 --><p class="noindent">geldt:
+</p>
+<div class="mathjax-block">\[ \boxed { \Delta v = v(t_2)-v(t_1) = \int _{t_1}^{t_2}a(t)\,dt. } \]</div>
+<!-- l. 969 --><p class="noindent">De georiënteerde oppervlakte onder een <span class="mathjax-inline">\(a(t)\)</span>-grafiek geeft dus de verandering van de
+snelheid.
+<a id="x1-30r8"></a>
+</p><!-- l. 973 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 973 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 8<span class="fvd-example__subtitle"> — Snelheid reconstrueren</span></div>
+<p></p><!-- l. 973 --><p class="noindent"></p><div class="fvd-example__content">
+<p></p><!-- l. 975 --><p class="noindent">Een voorwerp heeft
+</p>
+<div class="mathjax-block">\[ a(t)=1,5\,\mathrm {m/s^2} \]</div>
+<!-- l. 981 --><p class="noindent">voor <span class="mathjax-inline">\(0\leq t\leq 4,0\,\mathrm {s}\)</span> en begint met
+</p>
+<div class="mathjax-block">\[ v(0)=2,0\,\mathrm {m/s}. \]</div>
+<!-- l. 987 --><p class="noindent">Dan:
+</p>
+<div class="mathjax-block">\[ \Delta v = \int _0^4 1,5\,dt = 6,0\,\mathrm {m/s}. \]</div>
+<!-- l. 997 --><p class="noindent">Dus:
+</p>
+<div class="mathjax-block">\[ v(4)=v(0)+\Delta v = 8,0\,\mathrm {m/s}. \]</div>
+</div></section>
+<p><a id="x1-31r3"></a>
+</p><!-- l. 1008 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 1008 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 1008 --><p class="noindent"></p><div class="fvd-subsection__number">8.3</div>
+<p></p><!-- l. 1008 --><p class="noindent"></p><div class="fvd-subsection__title">Afleiden en integreren als omgekeerde processen</div>
+<p></p><!-- l. 1008 --><p class="noindent"></p></div>
+<p></p><!-- l. 1008 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 1008 --><p class="noindent"></p></div>
+<p></p><!-- l. 1010 --><p class="noindent">We kunnen de volledige samenhang nu samenvatten:
+</p>
+<div class="mathjax-block">\[ \boxed { x(t) \xrightarrow {\frac {d}{dt}} v(t) \xrightarrow {\frac {d}{dt}} a(t) } \]</div>
+<!-- l. 1022 --><p class="noindent">en omgekeerd:
+</p>
+<div class="mathjax-block">\[ \boxed { a(t) \xrightarrow {\int dt} \Delta v \xrightarrow {\int dt} \Delta x. } \]</div>
+<!-- l. 1034 --><p class="noindent">Bij integreren hebben we telkens een beginwaarde nodig om een volledige functie te
+reconstrueren.
+</p><!-- l. 1037 --><p class="noindent">Bijvoorbeeld:
+</p>
+<div class="mathjax-block">\[ v(t)=v_0+\int _0^t a(\tau )\,d\tau , \]</div>
+<!-- l. 1043 --><p class="noindent">en
+</p>
+<div class="mathjax-block">\[ x(t)=x_0+\int _0^t v(\tau )\,d\tau . \]</div>
+<p><a id="x1-32r8"></a>
+</p><!-- l. 1050 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 1050 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 1050 --><p class="noindent">Oefening 8
+</p><!-- l. 1050 --><p class="noindent">— Integraal van de snelheid
+</p><!-- l. 1050 --><p class="noindent"></p></div>
+<p></p><!-- l. 1050 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 1050 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--b">B</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 1050 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 1052 --><p class="noindent">Een voorwerp beweegt volgens
+</p>
+<div class="mathjax-block">\[ v(t)=4,0-0,50t, \]</div>
+<!-- l. 1058 --><p class="noindent">voor <span class="mathjax-inline">\(0\leq t\leq 6,0\)</span>.
+</p>
+<div class="problem-environment question" id="problem20" numbered=" " role="article" titletext=" Question">  Bereken de verplaatsing tussen <span class="mathjax-inline">\(t=0\)</span> en <span class="mathjax-inline">\(t=6,0\,\mathrm {s}\)</span>.    </div>
+<div class="problem-environment question" id="problem21" numbered=" " role="article" titletext=" Question">  Bepaal de snelheid op <span class="mathjax-inline">\(t=6,0\,\mathrm {s}\)</span>.    </div>
+<div class="problem-environment question" id="problem22" numbered=" " role="article" titletext=" Question">  Is de afgelegde weg in dit interval gelijk aan de verplaatsing? Motiveer.
+</div>
+</div>
+<!-- l. 1073 --><p class="noindent"></p></div>
+<p></p><!-- l. 1073 --><p class="noindent"></p></section>
+<p><a id="x1-33r9"></a>
+</p><p></p><!-- l. 1076 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 1076 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 1076 --><p class="noindent">Oefening 9
+</p><!-- l. 1076 --><p class="noindent">— Van versnelling naar snelheid
+</p><!-- l. 1076 --><p class="noindent"></p></div>
+<p></p><!-- l. 1076 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 1076 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 1076 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 1078 --><p class="noindent">Een beweging wordt beschreven door
+</p>
+<div class="mathjax-block">\[ a(t)=0,60t \]</div>
+<!-- l. 1084 --><p class="noindent">voor <span class="mathjax-inline">\(0\leq t\leq 5,0\,\mathrm {s}\)</span>.
+</p><!-- l. 1086 --><p class="noindent">Op <span class="mathjax-inline">\(t=0\)</span> is
+</p>
+<div class="mathjax-block">\[ v_0=2,0\,\mathrm {m/s}. \]</div>
+<div class="problem-environment question" id="problem23" numbered=" " role="article" titletext=" Question">  Bepaal met een bepaalde integraal de snelheidsverandering tijdens de eerste <span class="mathjax-inline">\(5,0\,\mathrm {s}\)</span>.
+</div>
+<div class="problem-environment question" id="problem24" numbered=" " role="article" titletext=" Question">  Bepaal <span class="mathjax-inline">\(v(5,0)\)</span>.    </div>
+<div class="problem-environment question" id="problem25" numbered=" " role="article" titletext=" Question">  Stel een snelheidsfunctie <span class="mathjax-inline">\(v(t)\)</span> op.    </div>
+</div>
+<!-- l. 1105 --><p class="noindent"></p></div>
+<p></p><!-- l. 1105 --><p class="noindent"></p></section>
+<p><a id="x1-34r10"></a>
+</p><p></p><!-- l. 1108 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 1108 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 1108 --><p class="noindent">Oefening 10
+</p><!-- l. 1108 --><p class="noindent">— Richting veranderen
+</p><!-- l. 1108 --><p class="noindent"></p></div>
+<p></p><!-- l. 1108 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 1108 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 1108 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 1110 --><p class="noindent">Een voorwerp heeft
+</p>
+<div class="mathjax-block">\[ v(t)=t-3 \]</div>
+<!-- l. 1116 --><p class="noindent">voor <span class="mathjax-inline">\(0\leq t\leq 6\)</span>.
+</p>
+<div class="problem-environment question" id="problem26" numbered=" " role="article" titletext=" Question">  Op welk tijdstip verandert het voorwerp van bewegingsrichting?    </div>
+<div class="problem-environment question" id="problem27" numbered=" " role="article" titletext=" Question">  Bereken de verplaatsing over het volledige interval.    </div>
+<div class="problem-environment question" id="problem28" numbered=" " role="article" titletext=" Question">  Bereken de totale afgelegde weg.    </div>
+<div class="problem-environment question" id="problem29" numbered=" " role="article" titletext=" Question">  Leg uit waarom beide antwoorden verschillen.    </div>
+</div>
+<!-- l. 1134 --><p class="noindent"></p></div>
+<p></p><!-- l. 1134 --><p class="noindent"></p></section>
+<p><a id="x1-35r9"></a>
+</p><p></p><!-- l. 1141 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">9</div><div class="fvd-section-bar__title">De eenparige rechtlijnige beweging als bijzonder geval</div></div>
+<p></p><!-- l. 1143 --><p class="noindent">Uit de tweede graad ken je de <strong>eenparige rechtlijnige beweging</strong> of ERB.
+</p><!-- l. 1146 --><p class="noindent">Bij een ERB:
+</p>
+<div class="mathjax-block">\[ v(t)=v_0=\text {constant} \]</div>
+<!-- l. 1152 --><p class="noindent">en dus:
+</p>
+<div class="mathjax-block">\[ a(t)=0. \]</div>
+<!-- l. 1158 --><p class="noindent">Omdat
+</p>
+<div class="mathjax-block">\[ \Delta x=\int v(t)\,dt, \]</div>
+<!-- l. 1164 --><p class="noindent">volgt bij constante snelheid:
+</p>
+<div class="mathjax-block">\[ \Delta x=v\Delta t. \]</div>
+<!-- l. 1170 --><p class="noindent">Als we starten op <span class="mathjax-inline">\(t=0\)</span> met beginpositie <span class="mathjax-inline">\(x_0\)</span>, dan:
+</p>
+<div class="mathjax-block">\[ \boxed { x(t)=x_0+vt. } \]</div>
+<!-- l. 1179 --><p class="noindent"></p><section class="fvd-property"><div class="fvd-property__title"><span class="fvd-property__label">EIGENSCHAP</span><span class="fvd-property__separator"> — </span><span class="fvd-property__name">Grafieken van een ERB</span></div><div class="fvd-property__content">
+<p></p><!-- l. 1181 --><p class="noindent">Bij een ERB:
+</p>
+<ul class="itemize1">
+<li class="itemize">is de <span class="mathjax-inline">\(a(t)\)</span>-grafiek de tijdas;
+</li>
+<li class="itemize">is de <span class="mathjax-inline">\(v(t)\)</span>-grafiek een horizontale rechte;
+</li>
+<li class="itemize">is de <span class="mathjax-inline">\(x(t)\)</span>-grafiek een rechte met richtingscoëfficiënt <span class="mathjax-inline">\(v\)</span>.</li></ul>
+</div></section>
+<p><a id="x1-36r11"></a>
+</p><!-- l. 1192 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 1192 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 1192 --><p class="noindent">Oefening 11
+</p><!-- l. 1192 --><p class="noindent">— ERB herkennen
+</p><!-- l. 1192 --><p class="noindent"></p></div>
+<p></p><!-- l. 1192 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 1192 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--b">B</span></div>
+<p></p><!-- l. 1192 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 1194 --><p class="noindent">Leg uit hoe je uit elk van de volgende grafieken kan herkennen dat een beweging een
+ERB is:
+</p>
+<div class="problem-environment question" id="problem30" numbered=" " role="article" titletext=" Question">  een <span class="mathjax-inline">\(x(t)\)</span>-grafiek;    </div>
+<div class="problem-environment question" id="problem31" numbered=" " role="article" titletext=" Question">  een <span class="mathjax-inline">\(v(t)\)</span>-grafiek;    </div>
+<div class="problem-environment question" id="problem32" numbered=" " role="article" titletext=" Question">  een <span class="mathjax-inline">\(a(t)\)</span>-grafiek.    </div>
+</div>
+<!-- l. 1209 --><p class="noindent"></p></div>
+<p></p><!-- l. 1209 --><p class="noindent"></p></section>
+<p><a id="x1-37r10"></a>
+</p><p></p><!-- l. 1216 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">10</div><div class="fvd-section-bar__title">De eenparig versnelde rechtlijnige beweging</div></div>
+<p></p><!-- l. 1218 --><p class="noindent">We bekijken nu een rechtlijnige beweging waarbij de versnelling constant
+is.
+</p><!-- l. 1221 --><p class="noindent"></p><section class="fvd-definition"><div class="fvd-definition__title"><span class="fvd-definition__label">DEFINITIE</span><span class="fvd-definition__separator"> — </span><span class="fvd-definition__name">Eenparig versnelde rechtlijnige beweging</span></div><div class="fvd-definition__content">
+<p></p><!-- l. 1223 --><p class="noindent">Een <strong>eenparig versnelde rechtlijnige beweging</strong> is een rechtlijnige beweging met
+constante versnelling:
+                                                                  
+
+                                                                  
+</p>
+<div class="mathjax-block">\[ \boxed {a(t)=a_x=\text {constant}.} \]</div>
+</div></section>
+<!-- l. 1232 --><p class="noindent">We gebruiken hier bewust de term <em>eenparig versnelde rechtlijnige beweging</em>. Een
+constante versnelling kan positief of negatief zijn.
+<a id="x1-38r1"></a>
+</p><!-- l. 1237 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 1237 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 1237 --><p class="noindent"></p><div class="fvd-subsection__number">10.1</div>
+<p></p><!-- l. 1237 --><p class="noindent"></p><div class="fvd-subsection__title">De snelheidsfunctie afleiden met een integraal</div>
+<p></p><!-- l. 1237 --><p class="noindent"></p></div>
+<p></p><!-- l. 1237 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 1237 --><p class="noindent"></p></div>
+<p></p><!-- l. 1239 --><p class="noindent">Omdat
+</p>
+<div class="mathjax-block">\[ a_x=\frac {dv_x}{dt} \]</div>
+<!-- l. 1245 --><p class="noindent">en <span class="mathjax-inline">\(a_x\)</span> constant is:
+</p>
+<div class="mathjax-block">\[ v_x(t)-v_{x,0} = \int _0^t a_x\,d\tau . \]</div>
+<!-- l. 1253 --><p class="noindent">Dus:
+</p>
+<div class="mathjax-block">\[ \boxed { v_x(t)=v_{x,0}+a_xt. } \]</div>
+<p><a id="x1-39r2"></a>
+</p><!-- l. 1262 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 1262 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 1262 --><p class="noindent"></p><div class="fvd-subsection__number">10.2</div>
+<p></p><!-- l. 1262 --><p class="noindent"></p><div class="fvd-subsection__title">De plaatsfunctie afleiden met een integraal</div>
+<p></p><!-- l. 1262 --><p class="noindent"></p></div>
+<p></p><!-- l. 1262 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 1262 --><p class="noindent"></p></div>
+<p></p><!-- l. 1264 --><p class="noindent">We weten:
+</p>
+<div class="mathjax-block">\[ v_x(t)=v_{x,0}+a_xt. \]</div>
+<!-- l. 1270 --><p class="noindent">Omdat
+</p>
+<div class="mathjax-block">\[ v_x=\frac {dx}{dt}, \]</div>
+<!-- l. 1276 --><p class="noindent">geldt:
+</p>
+<div class="mathjax-block">\[ x(t)-x_0 = \int _0^t\left (v_{x,0}+a_x\tau \right )\,d\tau . \]</div>
+<!-- l. 1284 --><p class="noindent">Daaruit volgt:
+</p>
+<div class="mathjax-block">\[ \boxed { x(t) = x_0+v_{x,0}t+\frac 12a_xt^2. } \]</div>
+<!-- l. 1294 --><p class="noindent">Deze twee bewegingsvergelijkingen horen bij je formularium:
+</p>
+<div class="mathjax-block">\[ \boxed { v_x=v_{x,0}+a_xt } \]</div>
+<!-- l. 1302 --><p class="noindent">en
+</p>
+<div class="mathjax-block">\[ \boxed { x=x_0+v_{x,0}t+\frac 12a_xt^2. } \]</div>
+<p><a id="x1-40r3"></a>
+</p><!-- l. 1311 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 1311 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 1311 --><p class="noindent"></p><div class="fvd-subsection__number">10.3</div>
+<p></p><!-- l. 1311 --><p class="noindent"></p><div class="fvd-subsection__title">Grafieken van een EVRB</div>
+<p></p><!-- l. 1311 --><p class="noindent"></p></div>
+<p></p><!-- l. 1311 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 1311 --><p class="noindent"></p></div>
+<p></p><!-- l. 1313 --><p class="noindent">Bij constante versnelling:
+</p>
+<div class="mathjax-block">\[ a(t)=a_x \]</div>
+<!-- l. 1319 --><p class="noindent">is de <span class="mathjax-inline">\(a(t)\)</span>-grafiek een horizontale rechte.
+</p><!-- l. 1321 --><p class="noindent">De snelheidsfunctie
+</p>
+<div class="mathjax-block">\[ v(t)=v_0+at \]</div>
+<!-- l. 1327 --><p class="noindent">is een eerstegraadsfunctie.
+</p><!-- l. 1329 --><p class="noindent">De plaatsfunctie
+</p>
+<div class="mathjax-block">\[ x(t)=x_0+v_0t+\frac 12at^2 \]</div>
+<!-- l. 1335 --><p class="noindent">is een kwadratische functie.
+</p><!-- l. 1337 --><p class="noindent"></p><section class="fvd-property"><div class="fvd-property__title"><span class="fvd-property__label">EIGENSCHAP</span><span class="fvd-property__separator"> — </span><span class="fvd-property__name">Grafische samenhang bij EVRB</span></div><div class="fvd-property__content">
+<p></p><!-- l. 1339 --><p class="noindent">Bij een EVRB:
+                                                                  
+
+                                                                  
+</p>
+<ul class="itemize1">
+<li class="itemize">is <span class="mathjax-inline">\(a(t)\)</span> constant;
+</li>
+<li class="itemize">is <span class="mathjax-inline">\(v(t)\)</span> een rechte met richtingscoëfficiënt <span class="mathjax-inline">\(a\)</span>;
+</li>
+<li class="itemize">is <span class="mathjax-inline">\(x(t)\)</span> een parabool;
+</li>
+<li class="itemize">is de oppervlakte onder de <span class="mathjax-inline">\(v(t)\)</span>-grafiek de verplaatsing;
+</li>
+<li class="itemize">is de oppervlakte onder de <span class="mathjax-inline">\(a(t)\)</span>-grafiek het snelheidsverschil.</li></ul>
+</div></section>
+<p><a id="x1-41r9"></a>
+</p><!-- l. 1352 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 1352 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 9<span class="fvd-example__subtitle"> — Met beginsnelheid en beginpositie</span></div>
+<p></p><!-- l. 1352 --><p class="noindent"></p><div class="fvd-example__content">
+<p></p><!-- l. 1354 --><p class="noindent">Een puntmassa bevindt zich op <span class="mathjax-inline">\(t=0\)</span> op
+</p>
+<div class="mathjax-block">\[ x_0=4,0\,\mathrm {m} \]</div>
+<!-- l. 1360 --><p class="noindent">en heeft
+</p>
+<div class="mathjax-block">\[ v_0=2,0\,\mathrm {m/s}, \qquad a=1,0\,\mathrm {m/s^2}. \]</div>
+<!-- l. 1368 --><p class="noindent">De snelheidsfunctie is
+</p>
+<div class="mathjax-block">\[ v(t)=2,0+1,0t. \]</div>
+<!-- l. 1374 --><p class="noindent">De plaatsfunctie is
+</p>
+<div class="mathjax-block">\[ x(t)=4,0+2,0t+\frac 12t^2. \]</div>
+<!-- l. 1380 --><p class="noindent">Na <span class="mathjax-inline">\(2,0\,\mathrm {s}\)</span>:
+                                                                  
+
+                                                                  
+</p>
+<div class="mathjax-block">\[ v(2)=4,0\,\mathrm {m/s}, \]</div>
+<div class="mathjax-block">\[ x(2)=10,0\,\mathrm {m}. \]</div>
+</div></section>
+<p><a id="x1-42r12"></a>
+</p><!-- l. 1393 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 1393 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 1393 --><p class="noindent">Oefening 12
+</p><!-- l. 1393 --><p class="noindent">— EVRB uit functies
+</p><!-- l. 1393 --><p class="noindent"></p></div>
+<p></p><!-- l. 1393 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 1393 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--b">B</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 1393 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 1395 --><p class="noindent">Een voorwerp beweegt volgens
+</p>
+<div class="mathjax-block">\[ x(t)=3,0+5,0t-1,0t^2. \]</div>
+<div class="problem-environment question" id="problem33" numbered=" " role="article" titletext=" Question">  Bepaal <span class="mathjax-inline">\(v(t)\)</span>.    </div>
+<div class="problem-environment question" id="problem34" numbered=" " role="article" titletext=" Question">  Bepaal <span class="mathjax-inline">\(a(t)\)</span>.    </div>
+<div class="problem-environment question" id="problem35" numbered=" " role="article" titletext=" Question">  Toon aan dat de beweging een EVRB is.    </div>
+<div class="problem-environment question" id="problem36" numbered=" " role="article" titletext=" Question">  Bepaal <span class="mathjax-inline">\(x_0\)</span>, <span class="mathjax-inline">\(v_0\)</span> en <span class="mathjax-inline">\(a\)</span>.    </div>
+<div class="problem-environment question" id="problem37" numbered=" " role="article" titletext=" Question">  Op welk tijdstip is de snelheid nul?    </div>
+</div>
+<!-- l. 1421 --><p class="noindent"></p></div>
+<p></p><!-- l. 1421 --><p class="noindent"></p></section>
+<p><a id="x1-43r13"></a>
+</p><p></p><!-- l. 1424 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 1424 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 1424 --><p class="noindent">Oefening 13
+</p><!-- l. 1424 --><p class="noindent">— EVRB uit een <span class="mathjax-inline">\(v(t)\)</span>-grafiek
+</p><!-- l. 1424 --><p class="noindent"></p></div>
+<p></p><!-- l. 1424 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 1424 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 1424 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 1426 --><p class="noindent">Een snelheidsfunctie is gegeven door de rechte
+</p>
+<div class="mathjax-block">\[ v(t)=2,0+\frac {4}{15}t \]</div>
+<!-- l. 1432 --><p class="noindent">voor <span class="mathjax-inline">\(0\leq t\leq 15\,\mathrm {s}\)</span>.
+</p>
+<div class="problem-environment question" id="problem38" numbered=" " role="article" titletext=" Question">  Bepaal de versnelling.    </div>
+<div class="problem-environment question" id="problem39" numbered=" " role="article" titletext=" Question">  Bepaal met een integraal de verplaatsing tijdens de eerste <span class="mathjax-inline">\(15\,\mathrm {s}\)</span>.    </div>
+<div class="problem-environment question" id="problem40" numbered=" " role="article" titletext=" Question">  Bepaal dezelfde verplaatsing met de bewegingsvergelijking van de EVRB.
+</div>
+<div class="problem-environment question" id="problem41" numbered=" " role="article" titletext=" Question">  Leg uit waarom beide methoden noodzakelijk hetzelfde resultaat geven.
+</div>
+</div>
+<!-- l. 1451 --><p class="noindent"></p></div>
+<p></p><!-- l. 1451 --><p class="noindent"></p></section>
+<p><a id="x1-44r11"></a>
+</p><p></p><!-- l. 1458 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">11</div><div class="fvd-section-bar__title">De oppervlaktemethode: beweging lezen uit grafieken</div></div>
+<p></p><!-- l. 1460 --><p class="noindent">In een snelheids-tijddiagram zit meer informatie dan alleen de snelheid op een
+bepaald tijdstip. De oppervlakte tussen de <span class="mathjax-inline">\(v(t)\)</span>-grafiek en de tijdas heeft een
+rechtstreekse fysische betekenis.
+</p><!-- l. 1465 --><p class="noindent"></p><section class="fvd-property"><div class="fvd-property__title"><span class="fvd-property__label">EIGENSCHAP</span><span class="fvd-property__separator"> — </span><span class="fvd-property__name">Oppervlakte onder een <span class="mathjax-inline">\(v(t)\)</span>-grafiek</span></div><div class="fvd-property__content">
+<p></p><!-- l. 1467 --><p class="noindent">De <strong>georiënteerde oppervlakte</strong> tussen de <span class="mathjax-inline">\(v(t)\)</span>-grafiek en de tijdas over een tijdsinterval
+<span class="mathjax-inline">\([t_1,t_2]\)</span> is gelijk aan de verplaatsing:
+</p>
+<div class="mathjax-block">\[ \boxed { \Delta x = \text {georiënteerde oppervlakte onder de }v(t)\text {-grafiek}. } \]</div>
+<!-- l. 1479 --><p class="noindent">Een oppervlakte boven de tijdas draagt positief bij. Een oppervlakte onder de tijdas
+draagt negatief bij.
+</p></div></section>
+<p></p><!-- l. 1484 --><p class="noindent">Deze methode ken je gedeeltelijk uit de tweede graad. We gebruiken ze hier
+systematischer en verbinden ze met de bepaalde integraal.
+</p><!-- l. 1487 --><p class="noindent">De oppervlaktemethode is vooral handig wanneer een grafiek bestaat uit eenvoudige
+meetkundige figuren zoals rechthoeken, driehoeken en trapezia. We hoeven dan geen
+functievoorschrift te kennen.
+<a id="x1-45r1"></a>
+</p><!-- l. 1492 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 1492 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 1492 --><p class="noindent"></p><div class="fvd-subsection__number">11.1</div>
+<p></p><!-- l. 1492 --><p class="noindent"></p><div class="fvd-subsection__title">ERB: een rechthoek</div>
+<p></p><!-- l. 1492 --><p class="noindent"></p></div>
+<p></p><!-- l. 1492 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 1492 --><p class="noindent"></p></div>
+<p></p><!-- l. 1494 --><p class="noindent">Bij een eenparige rechtlijnige beweging is de snelheid constant:
+</p>
+<div class="mathjax-block">\[ v(t)=v. \]</div>
+<!-- l. 1500 --><p class="noindent">In een <span class="mathjax-inline">\(v(t)\)</span>-diagram is de grafiek een horizontale rechte. Tussen <span class="mathjax-inline">\(t_1\)</span> en <span class="mathjax-inline">\(t_2\)</span> ontstaat een
+rechthoek met breedte
+</p>
+<div class="mathjax-block">\[ \Delta t=t_2-t_1 \]</div>
+<!-- l. 1507 --><p class="noindent">en hoogte <span class="mathjax-inline">\(v\)</span>.
+</p><!-- l. 1509 --><p class="noindent">Daarom:
+</p>
+<div class="mathjax-block">\[ \Delta x=v\Delta t. \]</div>
+<!-- l. 1515 --><p class="noindent">De bekende formule voor een ERB is dus rechtstreeks zichtbaar als de oppervlakte
+van een rechthoek.
+<a id="x1-46r10"></a>
+</p><!-- l. 1518 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 1518 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 10<span class="fvd-example__subtitle"> — Een fietser met constante snelheid</span></div>
+<p></p><!-- l. 1518 --><p class="noindent"></p><div class="fvd-example__content">
+<p></p><!-- l. 1520 --><p class="noindent">Een fietser rijdt gedurende <span class="mathjax-inline">\(12\,\mathrm {s}\)</span> met constante snelheid
+</p>
+<div class="mathjax-block">\[ v=5,0\,\mathrm {m/s}. \]</div>
+<!-- l. 1526 --><p class="noindent">De oppervlakte onder de <span class="mathjax-inline">\(v(t)\)</span>-grafiek is een rechthoek:
+</p>
+<div class="mathjax-block">\[ \Delta x = 12\cdot 5,0 = 60\,\mathrm {m}. \]</div>
+</div></section>
+<p><a id="x1-47r2"></a>
+</p><!-- l. 1539 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 1539 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 1539 --><p class="noindent"></p><div class="fvd-subsection__number">11.2</div>
+<p></p><!-- l. 1539 --><p class="noindent"></p><div class="fvd-subsection__title">EVRB vanuit rust: een driehoek</div>
+<p></p><!-- l. 1539 --><p class="noindent"></p></div>
+<p></p><!-- l. 1539 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 1539 --><p class="noindent"></p></div>
+<p></p><!-- l. 1541 --><p class="noindent">Een voorwerp vertrekt uit rust en versnelt eenparig. De snelheid neemt lineair toe
+van <span class="mathjax-inline">\(0\)</span> tot <span class="mathjax-inline">\(v\)</span>.
+</p><!-- l. 1544 --><p class="noindent">De <span class="mathjax-inline">\(v(t)\)</span>-grafiek vormt dan samen met de tijdas een driehoek.
+</p><!-- l. 1546 --><p class="noindent">De oppervlakte is:
+</p>
+<div class="mathjax-block">\[ \Delta x = \frac 12\cdot \Delta t\cdot v. \]</div>
+<!-- l. 1554 --><p class="noindent">Omdat bij constante versnelling en vertrek uit rust
+</p>
+<div class="mathjax-block">\[ v=a\Delta t, \]</div>
+<!-- l. 1560 --><p class="noindent">volgt:
+</p>
+<div class="mathjax-block">\[ \Delta x = \frac 12\Delta t\cdot a\Delta t = \boxed {\frac 12a(\Delta t)^2}. \]</div>
+<!-- l. 1570 --><p class="noindent">De bewegingsvergelijking verschijnt hier dus rechtstreeks uit de meetkundige
+betekenis van de <span class="mathjax-inline">\(v(t)\)</span>-grafiek.
+<a id="x1-48r3"></a>
+</p><!-- l. 1574 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 1574 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 1574 --><p class="noindent"></p><div class="fvd-subsection__number">11.3</div>
+<p></p><!-- l. 1574 --><p class="noindent"></p><div class="fvd-subsection__title">EVRB met beginsnelheid: rechthoek en driehoek</div>
+<p></p><!-- l. 1574 --><p class="noindent"></p></div>
+<p></p><!-- l. 1574 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 1574 --><p class="noindent"></p></div>
+<p></p><!-- l. 1576 --><p class="noindent">Beschouw nu een eenparig versnelde beweging met beginsnelheid <span class="mathjax-inline">\(v_0\)</span>.
+</p><!-- l. 1578 --><p class="noindent">De snelheid is:
+</p>
+<div class="mathjax-block">\[ v(t)=v_0+at. \]</div>
+<!-- l. 1584 --><p class="noindent">Over een tijdsinterval <span class="mathjax-inline">\(\Delta t\)</span> kunnen we de oppervlakte onder de <span class="mathjax-inline">\(v(t)\)</span>-grafiek opsplitsen
+in:
+</p>
+<ul class="itemize1">
+<li class="itemize">een rechthoek met oppervlakte <span class="mathjax-inline">\(v_0\Delta t\)</span>;
+</li>
+<li class="itemize">een driehoek met oppervlakte <span class="mathjax-inline">\(\frac 12\Delta v\,\Delta t\)</span>.</li></ul>
+<!-- l. 1593 --><p class="noindent">Omdat
+</p>
+<div class="mathjax-block">\[ \Delta v=a\Delta t, \]</div>
+<!-- l. 1599 --><p class="noindent">krijgen we:
+</p>
+<div class="mathjax-block">\[ \Delta x = v_0\Delta t + \frac 12a(\Delta t)^2. \]</div>
+<!-- l. 1609 --><p class="noindent">Dus:
+</p>
+<div class="mathjax-block">\[ \boxed { \Delta x = v_0\Delta t+\frac 12a(\Delta t)^2. } \]</div>
+<!-- l. 1619 --><p class="noindent">Als <span class="mathjax-inline">\(t_0=0\)</span>, wordt dit:
+</p>
+<div class="mathjax-block">\[ \boxed { x(t) = x_0+v_0t+\frac 12at^2. } \]</div>
+<!-- l. 1629 --><p class="noindent">Dit is dezelfde bewegingsvergelijking die we analytisch via integratie kunnen
+verkrijgen. De grafische en analytische methode beschrijven dezelfde fysica.
+<a id="x1-49r4"></a>
+</p><!-- l. 1634 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 1634 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 1634 --><p class="noindent"></p><div class="fvd-subsection__number">11.4</div>
+<p></p><!-- l. 1634 --><p class="noindent"></p><div class="fvd-subsection__title">Hetzelfde gebied als trapezium</div>
+<p></p><!-- l. 1634 --><p class="noindent"></p></div>
+<p></p><!-- l. 1634 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 1634 --><p class="noindent"></p></div>
+<p></p><!-- l. 1636 --><p class="noindent">Bij een EVRB met snelheden <span class="mathjax-inline">\(v_1\)</span> en <span class="mathjax-inline">\(v_2\)</span> aan de uiteinden van een tijdsinterval kan dezelfde
+oppervlakte ook als een trapezium worden berekend:
+</p>
+<div class="mathjax-block">\[ \boxed { \Delta x = \frac {v_1+v_2}{2}\Delta t. } \]</div>
+<!-- l. 1648 --><p class="noindent">Hieruit volgt meteen:
+</p>
+<div class="mathjax-block">\[ v_{\mathrm {gem}} = \frac {\Delta x}{\Delta t} = \boxed {\frac {v_1+v_2}{2}} \]</div>
+<!-- l. 1658 --><p class="noindent">voor een beweging waarbij de snelheid lineair met de tijd verandert.
+</p><!-- l. 1661 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">
+<p></p><!-- l. 1662 --><p class="noindent">De formule
+</p>
+<div class="mathjax-block">\[ v_{\mathrm {gem}}=\frac {v_1+v_2}{2} \]</div>
+<!-- l. 1668 --><p class="noindent">geldt niet voor een willekeurige beweging. Ze werkt hier omdat <span class="mathjax-inline">\(v(t)\)</span> een lineaire functie
+is.
+</p></div></section>
+<p><a id="x1-50r11"></a>
+</p><p></p><!-- l. 1674 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 1674 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 11<span class="fvd-example__subtitle"> — Optrekken</span></div>
+<p></p><!-- l. 1674 --><p class="noindent"></p><div class="fvd-example__content">
+<p></p><!-- l. 1676 --><p class="noindent">Een auto verhoogt zijn snelheid in <span class="mathjax-inline">\(6,0\,\mathrm {s}\)</span> eenparig van
+</p>
+<div class="mathjax-block">\[ 4,0\,\mathrm {m/s} \]</div>
+<!-- l. 1682 --><p class="noindent">naar
+</p>
+<div class="mathjax-block">\[ 16,0\,\mathrm {m/s}. \]</div>
+<!-- l. 1688 --><p class="noindent">Met de trapeziummethode:
+</p>
+<div class="mathjax-block">\[ \Delta x = \frac {4,0+16,0}{2}\cdot 6,0 = 60\,\mathrm {m}. \]</div>
+<!-- l. 1698 --><p class="noindent">We kunnen hetzelfde gebied opsplitsen:
+</p>
+<div class="mathjax-block">\[ \Delta x = \underbrace {4,0\cdot 6,0}_{\text {rechthoek}} + \underbrace {\frac 12\cdot 6,0\cdot 12,0}_{\text {driehoek}} = 24+36 = 60\,\mathrm {m}. \]</div>
+<!-- l. 1712 --><p class="noindent">Beide berekeningen beschrijven exact dezelfde oppervlakte.
+</p></div></section>
+<p><a id="x1-51r14"></a>
+</p><p></p><!-- l. 1717 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 1717 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 1717 --><p class="noindent">Oefening 14
+</p><!-- l. 1717 --><p class="noindent">— Rechthoek, driehoek of trapezium?
+</p><!-- l. 1717 --><p class="noindent"></p></div>
+<p></p><!-- l. 1717 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 1717 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--b">B</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 1717 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 1719 --><p class="noindent">Bepaal telkens de verplaatsing met de oppervlaktemethode.
+</p>
+<div class="problem-environment question" id="problem42" numbered=" " role="article" titletext=" Question">  Een voorwerp beweegt <span class="mathjax-inline">\(8,0\,\mathrm {s}\)</span> met constante snelheid <span class="mathjax-inline">\(v=3,5\,\mathrm {m/s}\)</span>.    </div>
+<div class="problem-environment question" id="problem43" numbered=" " role="article" titletext=" Question">  Een voorwerp vertrekt uit rust en bereikt na <span class="mathjax-inline">\(5,0\,\mathrm {s}\)</span> een snelheid van <span class="mathjax-inline">\(10,0\,\mathrm {m/s}\)</span>. De snelheid neemt
+lineair toe.    </div>
+<div class="problem-environment question" id="problem44" numbered=" " role="article" titletext=" Question">  Een auto versnelt in <span class="mathjax-inline">\(4,0\,\mathrm {s}\)</span> eenparig van <span class="mathjax-inline">\(6,0\,\mathrm {m/s}\)</span> naar <span class="mathjax-inline">\(14,0\,\mathrm {m/s}\)</span>.    </div>
+<!-- l. 1736 --><p class="noindent">Geef bij elke situatie aan welke meetkundige figuur je gebruikt.
+</p></div>
+<p></p><!-- l. 1738 --><p class="noindent"></p></div>
+<p></p><!-- l. 1738 --><p class="noindent"></p></section>
+<p><a id="x1-52r15"></a>
+</p><p></p><!-- l. 1741 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 1741 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 1741 --><p class="noindent">Oefening 15
+</p><!-- l. 1741 --><p class="noindent">— Twee manieren voor dezelfde EVRB
+</p><!-- l. 1741 --><p class="noindent"></p></div>
+<p></p><!-- l. 1741 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 1741 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 1741 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 1743 --><p class="noindent">Een trein rijdt aanvankelijk met
+</p>
+<div class="mathjax-block">\[ v_0=8,0\,\mathrm {m/s} \]</div>
+<!-- l. 1749 --><p class="noindent">en versnelt gedurende <span class="mathjax-inline">\(10,0\,\mathrm {s}\)</span> eenparig met
+</p>
+<div class="mathjax-block">\[ a=0,60\,\mathrm {m/s^2}. \]</div>
+<div class="problem-environment question" id="problem45" numbered=" " role="article" titletext=" Question">  Bepaal de eindsnelheid.    </div>
+<div class="problem-environment question" id="problem46" numbered=" " role="article" titletext=" Question">  Bepaal de verplaatsing door de oppervlakte op te splitsen in een rechthoek en een
+driehoek.    </div>
+<div class="problem-environment question" id="problem47" numbered=" " role="article" titletext=" Question">  Bepaal dezelfde verplaatsing met <div class="mathjax-block">\[ \Delta x=v_0\Delta t+\frac 12a(\Delta t)^2. \]</div> </div>
+<div class="problem-environment question" id="problem48" numbered=" " role="article" titletext=" Question">  Leg uit waarom beide methoden noodzakelijk hetzelfde resultaat geven.
+</div>
+</div>
+<!-- l. 1775 --><p class="noindent"></p></div>
+<p></p><!-- l. 1775 --><p class="noindent"></p></section>
+<p><a id="x1-53r5"></a>
+</p><p></p><!-- l. 1778 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 1778 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 1778 --><p class="noindent"></p><div class="fvd-subsection__number">11.5</div>
+<p></p><!-- l. 1778 --><p class="noindent"></p><div class="fvd-subsection__title">Stukgewijze bewegingen</div>
+<p></p><!-- l. 1778 --><p class="noindent"></p></div>
+<p></p><!-- l. 1778 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 1778 --><p class="noindent"></p></div>
+<p></p><!-- l. 1780 --><p class="noindent">In realistische situaties is de beweging vaak niet gedurende het hele interval van
+hetzelfde type.
+</p><!-- l. 1783 --><p class="noindent">Een voertuig kan bijvoorbeeld:
+</p>
+<ol class="enumerate1">
+<li class="enumerate" id="x1-55x1">eerst eenparig versnellen;
+</li>
+<li class="enumerate" id="x1-57x2">daarna een tijdlang met constante snelheid rijden;
+</li>
+<li class="enumerate" id="x1-59x3">vervolgens eenparig vertragen.</li></ol>
+<!-- l. 1791 --><p class="noindent">In een <span class="mathjax-inline">\(v(t)\)</span>-diagram ontstaat dan een combinatie van driehoeken, rechthoeken en
+trapezia.
+</p><!-- l. 1794 --><p class="noindent">De totale verplaatsing vinden we door de georiënteerde oppervlakten van alle stukken
+op te tellen:
+</p>
+<div class="mathjax-block">\[ \boxed { \Delta x=A_1+A_2+A_3+\cdots } \]</div>
+<!-- l. 1803 --><p class="noindent">waarbij het teken van elk oppervlak bepaald wordt door de ligging ten opzichte van
+de tijdas.
+<a id="x1-60r12"></a>
+</p><!-- l. 1807 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 1807 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 12<span class="fvd-example__subtitle"> — Een metro tussen twee stations</span></div>
+<p></p><!-- l. 1807 --><p class="noindent"></p><div class="fvd-example__content">
+<p></p><!-- l. 1809 --><p class="noindent">Een metro vertrekt uit rust.
+</p>
+<ul class="itemize1">
+<li class="itemize">Van <span class="mathjax-inline">\(t=0\)</span> tot <span class="mathjax-inline">\(t=10\,\mathrm {s}\)</span> neemt de snelheid lineair toe van <span class="mathjax-inline">\(0\)</span> tot <span class="mathjax-inline">\(12\,\mathrm {m/s}\)</span>.
+                                                                  
+
+                                                                  
+</li>
+<li class="itemize">Van <span class="mathjax-inline">\(t=10\,\mathrm {s}\)</span> tot <span class="mathjax-inline">\(t=35\,\mathrm {s}\)</span> blijft de snelheid <span class="mathjax-inline">\(12\,\mathrm {m/s}\)</span>.
+</li>
+<li class="itemize">Van <span class="mathjax-inline">\(t=35\,\mathrm {s}\)</span> tot <span class="mathjax-inline">\(t=43\,\mathrm {s}\)</span> neemt de snelheid lineair af tot nul.</li></ul>
+<!-- l. 1820 --><p class="noindent">De verplaatsing bestaat uit:
+</p>
+<div class="mathjax-block">\[ A_1=\frac 12\cdot 10\cdot 12=60\,\mathrm {m}, \]</div>
+<div class="mathjax-block">\[ A_2=25\cdot 12=300\,\mathrm {m}, \]</div>
+<div class="mathjax-block">\[ A_3=\frac 12\cdot 8\cdot 12=48\,\mathrm {m}. \]</div>
+<!-- l. 1834 --><p class="noindent">Dus:
+</p>
+<div class="mathjax-block">\[ \boxed { \Delta x=60+300+48=408\,\mathrm {m}. } \]</div>
+<!-- l. 1842 --><p class="noindent">De grafiek maakt bovendien onmiddellijk zichtbaar welke bewegingsfase een ERB en
+welke fasen een EVRB zijn.
+</p></div></section>
+<p><a id="x1-61r16"></a>
+</p><p></p><!-- l. 1848 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 1848 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 1848 --><p class="noindent">Oefening 16
+</p><!-- l. 1848 --><p class="noindent">— Een volledige rit
+</p><!-- l. 1848 --><p class="noindent"></p></div>
+<p></p><!-- l. 1848 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 1848 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 1848 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 1850 --><p class="noindent">Een elektrische fiets vertrekt uit rust.
+</p>
+<ul class="itemize1">
+<li class="itemize">Gedurende <span class="mathjax-inline">\(4,0\,\mathrm {s}\)</span> stijgt de snelheid lineair van <span class="mathjax-inline">\(0\)</span> naar <span class="mathjax-inline">\(8,0\,\mathrm {m/s}\)</span>.
+</li>
+<li class="itemize">Daarna blijft de snelheid gedurende <span class="mathjax-inline">\(12,0\,\mathrm {s}\)</span> constant.
+                                                                  
+
+                                                                  
+</li>
+<li class="itemize">Vervolgens daalt de snelheid in <span class="mathjax-inline">\(5,0\,\mathrm {s}\)</span> lineair tot nul.</li></ul>
+<div class="problem-environment question" id="problem49" numbered=" " role="article" titletext=" Question">  Schets het <span class="mathjax-inline">\(v(t)\)</span>-diagram.    </div>
+<div class="problem-environment question" id="problem50" numbered=" " role="article" titletext=" Question">  Verdeel het gebied onder de grafiek in eenvoudige meetkundige figuren.
+</div>
+<div class="problem-environment question" id="problem51" numbered=" " role="article" titletext=" Question">  Bereken de verplaatsing tijdens elke bewegingsfase.    </div>
+<div class="problem-environment question" id="problem52" numbered=" " role="article" titletext=" Question">  Bereken de totale verplaatsing.    </div>
+<div class="problem-environment question" id="problem53" numbered=" " role="article" titletext=" Question">  Bepaal de gemiddelde snelheid over de volledige beweging.    </div>
+</div>
+<!-- l. 1879 --><p class="noindent"></p></div>
+<p></p><!-- l. 1879 --><p class="noindent"></p></section>
+<p><a id="x1-62r6"></a>
+</p><p></p><!-- l. 1882 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 1882 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 1882 --><p class="noindent"></p><div class="fvd-subsection__number">11.6</div>
+<p></p><!-- l. 1882 --><p class="noindent"></p><div class="fvd-subsection__title">Onder de tijdas: het teken telt</div>
+<p></p><!-- l. 1882 --><p class="noindent"></p></div>
+<p></p><!-- l. 1882 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 1882 --><p class="noindent"></p></div>
+<p></p><!-- l. 1884 --><p class="noindent">Wanneer <span class="mathjax-inline">\(v&lt;0\)</span>, beweegt het voorwerp in de negatieve richting.
+</p><!-- l. 1886 --><p class="noindent">Het gebied tussen de <span class="mathjax-inline">\(v(t)\)</span>-grafiek en de tijdas ligt dan onder de tijdas en levert een
+<strong>negatieve bijdrage</strong> aan de verplaatsing.
+</p><!-- l. 1889 --><p class="noindent">Stel bijvoorbeeld:
+</p>
+<div class="mathjax-block">\[ A_+=30\,\mathrm {m} \]</div>
+<!-- l. 1895 --><p class="noindent">boven de tijdas en
+</p>
+<div class="mathjax-block">\[ A_-=12\,\mathrm {m} \]</div>
+<!-- l. 1901 --><p class="noindent">onder de tijdas.
+</p><!-- l. 1903 --><p class="noindent">Voor de verplaatsing:
+</p>
+<div class="mathjax-block">\[ \Delta x=30-12=18\,\mathrm {m}. \]</div>
+<!-- l. 1909 --><p class="noindent">Voor de totale afgelegde weg tellen we de groottes van beide gebieden:
+                                                                  
+
+                                                                  
+</p>
+<div class="mathjax-block">\[ \Delta s=30+12=42\,\mathrm {m}. \]</div>
+<!-- l. 1915 --><p class="noindent">Dus:
+</p>
+<div class="mathjax-block">\[ \boxed { \text {verplaatsing} = \text {positieve oppervlakte} - \text {oppervlakte onder de tijdas} } \]</div>
+<!-- l. 1927 --><p class="noindent">terwijl
+</p>
+<div class="mathjax-block">\[ \boxed { \text {afgelegde weg} = \text {som van de groottes van alle oppervlakten}. } \]</div>
+<p><a id="x1-63r17"></a>
+</p><!-- l. 1938 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 1938 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 1938 --><p class="noindent">Oefening 17
+</p><!-- l. 1938 --><p class="noindent">— Vooruit en terug
+</p><!-- l. 1938 --><p class="noindent"></p></div>
+<p></p><!-- l. 1938 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 1938 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--b">B</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 1938 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 1940 --><p class="noindent">Een voorwerp heeft de volgende beweging:
+</p>
+<ul class="itemize1">
+<li class="itemize">van <span class="mathjax-inline">\(t=0\)</span> tot <span class="mathjax-inline">\(t=4\,\mathrm {s}\)</span> is <span class="mathjax-inline">\(v=+5\,\mathrm {m/s}\)</span>;
+</li>
+<li class="itemize">van <span class="mathjax-inline">\(t=4\)</span> tot <span class="mathjax-inline">\(t=6\,\mathrm {s}\)</span> is <span class="mathjax-inline">\(v=0\)</span>;
+</li>
+<li class="itemize">van <span class="mathjax-inline">\(t=6\)</span> tot <span class="mathjax-inline">\(t=9\,\mathrm {s}\)</span> is <span class="mathjax-inline">\(v=-3\,\mathrm {m/s}\)</span>.</li></ul>
+<div class="problem-environment question" id="problem54" numbered=" " role="article" titletext=" Question">  Schets het <span class="mathjax-inline">\(v(t)\)</span>-diagram.    </div>
+<div class="problem-environment question" id="problem55" numbered=" " role="article" titletext=" Question">  Bereken de verplaatsing met de oppervlaktemethode.    </div>
+<div class="problem-environment question" id="problem56" numbered=" " role="article" titletext=" Question">  Bereken de totale afgelegde weg.    </div>
+<div class="problem-environment question" id="problem57" numbered=" " role="article" titletext=" Question">  Bepaal de eindpositie als <span class="mathjax-inline">\(x_0=7\,\mathrm {m}\)</span>.    </div>
+</div>
+<!-- l. 1966 --><p class="noindent"></p></div>
+<p></p><!-- l. 1966 --><p class="noindent"></p></section>
+<p><a id="x1-64r18"></a>
+</p><p></p><!-- l. 1969 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 1969 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 1969 --><p class="noindent">Oefening 18
+</p><!-- l. 1969 --><p class="noindent">— Een grafiek die de tijdas snijdt
+</p><!-- l. 1969 --><p class="noindent"></p></div>
+<p></p><!-- l. 1969 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 1969 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 1969 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 1971 --><p class="noindent">De snelheid van een voorwerp wordt voor <span class="mathjax-inline">\(0\leq t\leq 8\,\mathrm {s}\)</span> beschreven door een rechte. Er
+geldt:
+</p>
+<div class="mathjax-block">\[ v(0)=6\,\mathrm {m/s}, \qquad v(8)=-2\,\mathrm {m/s}. \]</div>
+<div class="problem-environment question" id="problem58" numbered=" " role="article" titletext=" Question">  Bepaal op welk tijdstip het voorwerp van bewegingsrichting verandert.
+</div>
+<div class="problem-environment question" id="problem59" numbered=" " role="article" titletext=" Question">  Bereken de verplaatsing met de oppervlaktemethode.    </div>
+<div class="problem-environment question" id="problem60" numbered=" " role="article" titletext=" Question">  Bereken de totale afgelegde weg.    </div>
+<div class="problem-environment question" id="problem61" numbered=" " role="article" titletext=" Question">  Leg uit waarom je voor de afgelegde weg de volledige driehoek niet met één teken
+mag behandelen.    </div>
+</div>
+<!-- l. 1997 --><p class="noindent"></p></div>
+<p></p><!-- l. 1997 --><p class="noindent"></p></section>
+<p><a id="x1-65r7"></a>
+</p><p></p><!-- l. 2000 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 2000 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 2000 --><p class="noindent"></p><div class="fvd-subsection__number">11.7</div>
+<p></p><!-- l. 2000 --><p class="noindent"></p><div class="fvd-subsection__title">Van oppervlaktemethode naar bepaalde integraal</div>
+<p></p><!-- l. 2000 --><p class="noindent"></p></div>
+<p></p><!-- l. 2000 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 2000 --><p class="noindent"></p></div>
+<p></p><!-- l. 2002 --><p class="noindent">Wanneer een functievoorschrift voor <span class="mathjax-inline">\(v(t)\)</span> beschikbaar is, kunnen we dezelfde fysische
+grootheid ook analytisch bepalen.
+                                                                  
+
+                                                                  
+</p><!-- l. 2005 --><p class="noindent"></p><section class="fvd-property"><div class="fvd-property__title"><span class="fvd-property__label">EIGENSCHAP</span><span class="fvd-property__separator"> — </span><span class="fvd-property__name">Verplaatsing als bepaalde integraal</span></div><div class="fvd-property__content">
+<p></p><!-- l. 2007 --><p class="noindent">Voor een willekeurige snelheidsfunctie geldt:
+</p>
+<div class="mathjax-block">\[ \boxed { \Delta x = x(t_2)-x(t_1) = \int _{t_1}^{t_2}v(t)\,dt. } \]</div>
+<!-- l. 2019 --><p class="noindent">De bepaalde integraal is hier de georiënteerde oppervlakte onder de <span class="mathjax-inline">\(v(t)\)</span>-grafiek.
+</p></div></section>
+<p></p><!-- l. 2024 --><p class="noindent">We leiden het integraalbegrip in deze cursus niet opnieuw op. Dat behoort tot de
+wiskundecursus. In fysica gebruiken we de bepaalde integraal als een gekend
+wiskundig instrument om een beweging te analyseren.
+</p><!-- l. 2029 --><p class="noindent">De oppervlaktemethode en de integraalmethode zijn dus geen twee verschillende
+natuurkundige regels:
+</p>
+<div class="mathjax-block">\[ \boxed { \text {meetkundige oppervlaktemethode} \quad \longleftrightarrow \quad \text {bepaalde integraal} } \]</div>
+<!-- l. 2040 --><p class="noindent">Ze drukken dezelfde fysische relatie uit.
+<a id="x1-66r13"></a>
+</p><!-- l. 2043 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 2043 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 13<span class="fvd-example__subtitle"> — Dezelfde verplaatsing op twee manieren</span></div>
+<p></p><!-- l. 2043 --><p class="noindent"></p><div class="fvd-example__content">
+<p></p><!-- l. 2045 --><p class="noindent">Voor
+</p>
+<div class="mathjax-block">\[ v(t)=2,0+0,50t \]</div>
+<!-- l. 2051 --><p class="noindent">op <span class="mathjax-inline">\(0\leq t\leq 8,0\,\mathrm {s}\)</span> is de grafiek een rechte.
+</p><!-- l. 2053 --><p class="noindent"><strong>Oppervlaktemethode</strong>
+</p>
+<div class="mathjax-block">\[ v(0)=2,0\,\mathrm {m/s}, \qquad v(8)=6,0\,\mathrm {m/s}. \]</div>
+<!-- l. 2061 --><p class="noindent">Het gebied is een trapezium:
+</p>
+<div class="mathjax-block">\[ \Delta x = \frac {2,0+6,0}{2}\cdot 8,0 = 32\,\mathrm {m}. \]</div>
+<!-- l. 2071 --><p class="noindent"><strong>Integraalmethode</strong>
+</p>
+<div class="mathjax-block">\[ \Delta x = \int _0^8(2,0+0,50t)\,dt = \left [2,0t+0,25t^2\right ]_0^8 = 32\,\mathrm {m}. \]</div>
+<!-- l. 2083 --><p class="noindent">Beide methoden leveren hetzelfde resultaat omdat ze dezelfde georiënteerde
+oppervlakte bepalen.
+</p></div></section>
+<p><a id="x1-67r19"></a>
+</p><p></p><!-- l. 2089 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 2089 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 2089 --><p class="noindent">Oefening 19
+</p><!-- l. 2089 --><p class="noindent">— Oppervlakte én integraal
+</p><!-- l. 2089 --><p class="noindent"></p></div>
+<p></p><!-- l. 2089 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 2089 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 2089 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 2091 --><p class="noindent">Gegeven:
+</p>
+<div class="mathjax-block">\[ v(t)=3,0+t \]</div>
+<!-- l. 2097 --><p class="noindent">voor <span class="mathjax-inline">\(0\leq t\leq 6,0\,\mathrm {s}\)</span>.
+</p>
+<div class="problem-environment question" id="problem62" numbered=" " role="article" titletext=" Question">  Schets de <span class="mathjax-inline">\(v(t)\)</span>-grafiek.    </div>
+<div class="problem-environment question" id="problem63" numbered=" " role="article" titletext=" Question">  Bereken de verplaatsing met de oppervlaktemethode.    </div>
+<div class="problem-environment question" id="problem64" numbered=" " role="article" titletext=" Question">  Bereken dezelfde verplaatsing met een bepaalde integraal.    </div>
+<div class="problem-environment question" id="problem65" numbered=" " role="article" titletext=" Question">  Toon in je berekeningen aan welke onderdelen van de integraal overeenkomen met
+de rechthoek en de driehoek in de grafiek.    </div>
+</div>
+<!-- l. 2116 --><p class="noindent"></p></div>
+<p></p><!-- l. 2116 --><p class="noindent"></p></section>
+<p><a id="x1-68r20"></a>
+</p><p></p><!-- l. 2119 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 2119 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 2119 --><p class="noindent">Oefening 20
+</p><!-- l. 2119 --><p class="noindent">— Wanneer de integraal handiger wordt
+</p><!-- l. 2119 --><p class="noindent"></p></div>
+<p></p><!-- l. 2119 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 2119 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 2119 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 2121 --><p class="noindent">Een beweging wordt beschreven door
+</p>
+<div class="mathjax-block">\[ v(t)=0,30t^2+2,0 \]</div>
+<!-- l. 2127 --><p class="noindent">voor <span class="mathjax-inline">\(0\leq t\leq 5,0\,\mathrm {s}\)</span>.
+</p>
+<div class="problem-environment question" id="problem66" numbered=" " role="article" titletext=" Question">  Schets de snelheidsfunctie.    </div>
+<div class="problem-environment question" id="problem67" numbered=" " role="article" titletext=" Question">  Leg uit waarom de oppervlakte niet meer exact met één rechthoek, driehoek of
+trapezium kan worden bepaald.    </div>
+<div class="problem-environment question" id="problem68" numbered=" " role="article" titletext=" Question">  Bereken de verplaatsing met een bepaalde integraal.    </div>
+<div class="problem-environment question" id="problem69" numbered=" " role="article" titletext=" Question">  Bepaal de gemiddelde snelheid over het volledige interval.    </div>
+</div>
+<!-- l. 2146 --><p class="noindent"></p></div>
+<p></p><!-- l. 2146 --><p class="noindent"></p></section>
+<p><a id="x1-69r8"></a>
+</p><p></p><!-- l. 2149 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 2149 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 2149 --><p class="noindent"></p><div class="fvd-subsection__number">11.8</div>
+<p></p><!-- l. 2149 --><p class="noindent"></p><div class="fvd-subsection__title">Afgelegde weg met een integraal</div>
+<p></p><!-- l. 2149 --><p class="noindent"></p></div>
+<p></p><!-- l. 2149 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 2149 --><p class="noindent"></p></div>
+<p></p><!-- l. 2151 --><p class="noindent">Wanneer <span class="mathjax-inline">\(v(t)\)</span> gedurende het volledige interval hetzelfde teken heeft, is de grootte van de
+verplaatsing gelijk aan de afgelegde weg.
+</p><!-- l. 2154 --><p class="noindent">Wanneer <span class="mathjax-inline">\(v(t)\)</span> van teken verandert, moeten we voor de afgelegde weg de negatieve
+bijdragen positief meetellen.
+</p><!-- l. 2157 --><p class="noindent">Daarom:
+</p>
+<div class="mathjax-block">\[ \boxed { \Delta s = \int _{t_1}^{t_2}|v(t)|\,dt. } \]</div>
+<!-- l. 2167 --><p class="noindent">In de praktijk kan het vaak inzichtelijker zijn om eerst de nulwaarden van <span class="mathjax-inline">\(v(t)\)</span> te bepalen
+en het interval daar op te splitsen.
+<a id="x1-70r14"></a>
+</p><!-- l. 2170 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 2170 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 14<span class="fvd-example__subtitle"> — Van richting veranderen</span></div>
+<p></p><!-- l. 2170 --><p class="noindent"></p><div class="fvd-example__content">
+<p></p><!-- l. 2172 --><p class="noindent">Gegeven:
+</p>
+<div class="mathjax-block">\[ v(t)=t-3 \]</div>
+<!-- l. 2178 --><p class="noindent">voor <span class="mathjax-inline">\(0\leq t\leq 6\)</span>.
+</p><!-- l. 2180 --><p class="noindent">De bewegingsrichting verandert wanneer:
+</p>
+<div class="mathjax-block">\[ v(t)=0 \]</div>
+<!-- l. 2186 --><p class="noindent">dus:
+</p>
+<div class="mathjax-block">\[ t=3\,\mathrm {s}. \]</div>
+<!-- l. 2192 --><p class="noindent">De verplaatsing is:
+</p>
+<div class="mathjax-block">\[ \Delta x = \int _0^6(t-3)\,dt = 0. \]</div>
+<!-- l. 2202 --><p class="noindent">Grafisch zien we twee even grote driehoeken: één onder en één boven de
+tijdas.
+</p><!-- l. 2205 --><p class="noindent">De afgelegde weg is echter:
+</p>
+<div class="mathjax-block">\[ \Delta s = \int _0^3(3-t)\,dt + \int _3^6(t-3)\,dt = 4,5+4,5 = 9,0\,\mathrm {m}. \]</div>
+</div></section>
+<p><a id="x1-71r21"></a>
+</p><!-- l. 2222 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 2222 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 2222 --><p class="noindent">Oefening 21
+</p><!-- l. 2222 --><p class="noindent">— Verplaatsing tegenover afgelegde weg
+</p><!-- l. 2222 --><p class="noindent"></p></div>
+<p></p><!-- l. 2222 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 2222 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 2222 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 2224 --><p class="noindent">Gegeven:
+</p>
+<div class="mathjax-block">\[ v(t)=2t-4 \]</div>
+<!-- l. 2230 --><p class="noindent">voor <span class="mathjax-inline">\(0\leq t\leq 5\,\mathrm {s}\)</span>.
+</p>
+<div class="problem-environment question" id="problem70" numbered=" " role="article" titletext=" Question">  Bepaal wanneer het voorwerp van bewegingsrichting verandert.    </div>
+<div class="problem-environment question" id="problem71" numbered=" " role="article" titletext=" Question">  Schets de <span class="mathjax-inline">\(v(t)\)</span>-grafiek.    </div>
+<div class="problem-environment question" id="problem72" numbered=" " role="article" titletext=" Question">  Bepaal de verplaatsing met de oppervlaktemethode.    </div>
+<div class="problem-environment question" id="problem73" numbered=" " role="article" titletext=" Question">  Controleer de verplaatsing met een bepaalde integraal.    </div>
+<div class="problem-environment question" id="problem74" numbered=" " role="article" titletext=" Question">  Bepaal de totale afgelegde weg.    </div>
+</div>
+<!-- l. 2252 --><p class="noindent"></p></div>
+<p></p><!-- l. 2252 --><p class="noindent"></p></section>
+<p><a id="x1-72r9"></a>
+</p><p></p><!-- l. 2255 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 2255 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 2255 --><p class="noindent"></p><div class="fvd-subsection__number">11.9</div>
+<p></p><!-- l. 2255 --><p class="noindent"></p><div class="fvd-subsection__title">Dezelfde oppervlaktemethode bij een <span class="mathjax-inline">\(a(t)\)</span>-grafiek</div>
+<p></p><!-- l. 2255 --><p class="noindent"></p></div>
+<p></p><!-- l. 2255 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 2255 --><p class="noindent"></p></div>
+<p></p><!-- l. 2257 --><p class="noindent">Hetzelfde idee geldt voor versnelling.
+</p><!-- l. 2259 --><p class="noindent">Omdat versnelling de verandering van snelheid per tijdseenheid beschrijft, geeft de
+georiënteerde oppervlakte onder een <span class="mathjax-inline">\(a(t)\)</span>-grafiek het snelheidsverschil.
+</p><!-- l. 2263 --><p class="noindent"></p><section class="fvd-property"><div class="fvd-property__title"><span class="fvd-property__label">EIGENSCHAP</span><span class="fvd-property__separator"> — </span><span class="fvd-property__name">Oppervlakte onder een <span class="mathjax-inline">\(a(t)\)</span>-grafiek</span></div><div class="fvd-property__content">
+<p></p>
+<div class="mathjax-block">\[ \boxed { \Delta v = \text {georiënteerde oppervlakte onder de }a(t)\text {-grafiek} } \]</div>
+<!-- l. 2273 --><p class="noindent">en analytisch:
+</p>
+<div class="mathjax-block">\[ \boxed { \Delta v = \int _{t_1}^{t_2}a(t)\,dt. } \]</div>
+</div></section>
+<!-- l. 2285 --><p class="noindent">Bij een constante versnelling is het gebied een rechthoek:
+</p>
+<div class="mathjax-block">\[ \Delta v=a\Delta t. \]</div>
+<!-- l. 2291 --><p class="noindent">Daaruit volgt onmiddellijk:
+</p>
+<div class="mathjax-block">\[ \boxed { v=v_0+a\Delta t. } \]</div>
+<p><a id="x1-73r15"></a>
+</p><!-- l. 2300 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 2300 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 15<span class="fvd-example__subtitle"> — Versnelling uit een <span class="mathjax-inline">\(a(t)\)</span>-diagram</span></div>
+<p></p><!-- l. 2300 --><p class="noindent"></p><div class="fvd-example__content">
+<p></p><!-- l. 2302 --><p class="noindent">Een auto heeft gedurende <span class="mathjax-inline">\(4,0\,\mathrm {s}\)</span> een constante versnelling
+</p>
+<div class="mathjax-block">\[ a=2,5\,\mathrm {m/s^2}. \]</div>
+<!-- l. 2308 --><p class="noindent">De oppervlakte onder de <span class="mathjax-inline">\(a(t)\)</span>-grafiek is:
+</p>
+<div class="mathjax-block">\[ \Delta v = 4,0\cdot 2,5 = 10\,\mathrm {m/s}. \]</div>
+<!-- l. 2318 --><p class="noindent">Als
+</p>
+<div class="mathjax-block">\[ v_0=6,0\,\mathrm {m/s}, \]</div>
+<!-- l. 2324 --><p class="noindent">dan:
+</p>
+<div class="mathjax-block">\[ v=16,0\,\mathrm {m/s}. \]</div>
+</div></section>
+<p><a id="x1-74r22"></a>
+</p><!-- l. 2333 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 2333 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 2333 --><p class="noindent">Oefening 22
+</p><!-- l. 2333 --><p class="noindent">— Stukgewijze versnelling
+</p><!-- l. 2333 --><p class="noindent"></p></div>
+<p></p><!-- l. 2333 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 2333 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 2333 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 2335 --><p class="noindent">Een voertuig heeft de volgende versnelling:
+</p>
+<ul class="itemize1">
+<li class="itemize"><span class="mathjax-inline">\(a=2,0\,\mathrm {m/s^2}\)</span> gedurende de eerste <span class="mathjax-inline">\(3,0\,\mathrm {s}\)</span>;
+</li>
+<li class="itemize"><span class="mathjax-inline">\(a=0\)</span> gedurende de volgende <span class="mathjax-inline">\(4,0\,\mathrm {s}\)</span>;
+</li>
+<li class="itemize"><span class="mathjax-inline">\(a=-1,5\,\mathrm {m/s^2}\)</span> gedurende de laatste <span class="mathjax-inline">\(2,0\,\mathrm {s}\)</span>.</li></ul>
+<!-- l. 2343 --><p class="noindent">De beginsnelheid is
+</p>
+<div class="mathjax-block">\[ v_0=5,0\,\mathrm {m/s}. \]</div>
+<div class="problem-environment question" id="problem75" numbered=" " role="article" titletext=" Question">  Schets het <span class="mathjax-inline">\(a(t)\)</span>-diagram.    </div>
+<div class="problem-environment question" id="problem76" numbered=" " role="article" titletext=" Question">  Bepaal voor elke fase de snelheidsverandering met de oppervlaktemethode.
+</div>
+<div class="problem-environment question" id="problem77" numbered=" " role="article" titletext=" Question">  Bepaal de snelheid na elke fase.    </div>
+<div class="problem-environment question" id="problem78" numbered=" " role="article" titletext=" Question">  Bepaal de eindsnelheid.    </div>
+</div>
+<!-- l. 2366 --><p class="noindent"></p></div>
+<p></p><!-- l. 2366 --><p class="noindent"></p></section>
+<p><a id="x1-75r10"></a>
+</p><p></p><!-- l. 2369 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 2369 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 2369 --><p class="noindent"></p><div class="fvd-subsection__number">11.10</div>
+<p></p><!-- l. 2369 --><p class="noindent"></p><div class="fvd-subsection__title">Welke methode kies je?</div>
+<p></p><!-- l. 2369 --><p class="noindent"></p></div>
+<p></p><!-- l. 2369 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 2369 --><p class="noindent"></p></div>
+<p></p><!-- l. 2371 --><p class="noindent">Bij een bewegingsprobleem bestaan vaak verschillende correcte oplossingsmethoden.
+</p>
+<ul class="itemize1">
+<li class="itemize"><strong>Oppervlaktemethode:</strong> bijzonder efficiënt wanneer een <span class="mathjax-inline">\(v(t)\)</span>- of <span class="mathjax-inline">\(a(t)\)</span>-grafiek uit
+eenvoudige meetkundige stukken bestaat.
+</li>
+<li class="itemize"><strong>Bepaalde integraal:</strong> krachtig wanneer een functievoorschrift gegeven is,
+zeker bij niet-lineaire functies.
+</li>
+<li class="itemize"><strong>Bewegingsvergelijkingen:</strong> efficiënt  bij  een  ERB  of  EVRB  wanneer
+beginwaarden en constante versnelling bekend zijn.</li></ul>
+<!-- l. 2385 --><p class="noindent">Een sterke fysische probleemoplosser kiest niet automatisch één formule, maar
+beoordeelt eerst welke voorstelling en welke methode het meest geschikt
+zijn.
+<a id="x1-76r23"></a>
+</p><!-- l. 2390 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 2390 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 2390 --><p class="noindent">Oefening 23
+</p><!-- l. 2390 --><p class="noindent">— Kies een efficiënte methode
+</p><!-- l. 2390 --><p class="noindent"></p></div>
+<p></p><!-- l. 2390 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 2390 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--g">G</span></div>
+<p></p><!-- l. 2390 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 2392 --><p class="noindent">Voor elk van de volgende situaties kies je eerst de meest geschikte methode:
+oppervlaktemethode, integraal of bewegingsvergelijking. Los daarna het probleem op
+en motiveer je keuze.
+</p>
+<div class="problem-environment question" id="problem79" numbered=" " role="article" titletext=" Question">  Een <span class="mathjax-inline">\(v(t)\)</span>-diagram bestaat uit drie rechte lijnstukken en er is geen functievoorschrift
+gegeven.    </div>
+<div class="problem-environment question" id="problem80" numbered=" " role="article" titletext=" Question">  De snelheid wordt beschreven door <div class="mathjax-block">\[ v(t)=0,20t^2+1,5t+2,0. \]</div> </div>
+<div class="problem-environment question" id="problem81" numbered=" " role="article" titletext=" Question">  Een voertuig heeft <span class="mathjax-inline">\(v_0=12\,\mathrm {m/s}\)</span> en <span class="mathjax-inline">\(a=-2,0\,\mathrm {m/s^2}\)</span>. Gevraagd wordt de positie na <span class="mathjax-inline">\(4,0\,\mathrm {s}\)</span>.    </div>
+<div class="problem-environment question" id="problem82" numbered=" " role="article" titletext=" Question">  Leg voor minstens één situatie uit hoe je het resultaat met een tweede methode
+zou kunnen controleren.    </div>
+</div>
+<!-- l. 2419 --><p class="noindent"></p></div>
+<p></p><!-- l. 2419 --><p class="noindent"></p></section>
+<p><a id="x1-77r12"></a>
+</p><p></p><!-- l. 2425 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">12</div><div class="fvd-section-bar__title">Een bewegingsprobleem mathematiseren</div></div>
+<p></p><!-- l. 2427 --><p class="noindent">Bij veel vraagstukken is niet het rekenwerk de grootste moeilijkheid. De uitdaging
+is om een situatie om te zetten naar een bruikbaar fysisch en wiskundig
+model.
+</p><!-- l. 2431 --><p class="noindent">Gebruik daarom systematisch de volgende aanpak.
+</p><!-- l. 2434 --><p class="noindent"></p><section class="fvd-property"><div class="fvd-property__title"><span class="fvd-property__label">EIGENSCHAP</span><span class="fvd-property__separator"> — </span><span class="fvd-property__name">Probleemaanpak bij rechtlijnige beweging</span></div><div class="fvd-property__content">
+<p></p>
+<ol class="enumerate1">
+<li class="enumerate" id="x1-79x1"><strong>Begrijp de situatie.</strong><br class="newline"/>Wat gebeurt er fysisch?
+</li>
+<li class="enumerate" id="x1-81x2"><strong>Maak een schets.</strong><br class="newline"/>Teken    de    beweging,    de    relevante    posities    en    eventueel    de
+bewegingsrichting.
+</li>
+<li class="enumerate" id="x1-83x3"><strong>Kies een as.</strong><br class="newline"/>Kies een oorsprong en een positieve richting.
+</li>
+<li class="enumerate" id="x1-85x4"><strong>Noteer de gegevens.</strong><br class="newline"/>Gebruik correcte symbolen en SI-eenheden.
+</li>
+<li class="enumerate" id="x1-87x5"><strong>Noteer wat gezocht wordt.</strong>
+</li>
+<li class="enumerate" id="x1-89x6"><strong>Kies het model.</strong><br class="newline"/>ERB, EVRB of een algemene functie?
+</li>
+<li class="enumerate" id="x1-91x7"><strong>Kies de geschikte vergelijking of methode.</strong><br class="newline"/>Afgeleide, integraal, grafiek of bewegingsvergelijking?
+</li>
+<li class="enumerate" id="x1-93x8"><strong>Reken uit.</strong>
+</li>
+<li class="enumerate" id="x1-95x9"><strong>Controleer.</strong><br class="newline"/>Eenheden, teken, grootteorde en praktische betekenis.
+</li>
+<li class="enumerate" id="x1-97x10"><strong>Interpreteer.</strong><br class="newline"/>Formuleer een fysisch antwoord in woorden.</li></ol>
+</div></section>
+<p><a id="x1-98r16"></a>
+</p><!-- l. 2470 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 2470 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 16<span class="fvd-example__subtitle"> — Kan de bestuurder een boete vermijden?</span></div>
+<p></p><!-- l. 2470 --><p class="noindent"></p><div class="fvd-example__content">
+<p></p><!-- l. 2472 --><p class="noindent">Een auto rijdt
+</p>
+<div class="mathjax-block">\[ 126\,\mathrm {km/h}=35,0\,\mathrm {m/s} \]</div>
+<!-- l. 2478 --><p class="noindent">op een weg waar maximaal <span class="mathjax-inline">\(90\,\mathrm {km/h}\)</span> is toegestaan. Op <span class="mathjax-inline">\(50\,\mathrm {m}\)</span> vóór een flitspaal begint de
+bestuurder te reageren. Zijn reactietijd bedraagt <span class="mathjax-inline">\(0,50\,\mathrm {s}\)</span>. Daarna remt hij met constante
+versnelling
+</p>
+<div class="mathjax-block">\[ a=-7,5\,\mathrm {m/s^2}. \]</div>
+<!-- l. 2487 --><p class="noindent">Tijdens de reactietijd rijdt de auto nog met constante snelheid:
+</p>
+<div class="mathjax-block">\[ \Delta x_{\mathrm {reactie}} = 35,0\cdot 0,50 = 17,5\,\mathrm {m}. \]</div>
+<!-- l. 2497 --><p class="noindent">Er blijft dus:
+</p>
+<div class="mathjax-block">\[ 50,0-17,5=32,5\,\mathrm {m} \]</div>
+<!-- l. 2503 --><p class="noindent">over om te remmen.
+</p><!-- l. 2505 --><p class="noindent">Daarna moet het remgedeelte als een EVRB worden geanalyseerd.
+</p><!-- l. 2507 --><p class="noindent">Dit voorbeeld toont dat één realistische situatie uit verschillende bewegingsfasen kan
+bestaan.
+</p></div></section>
+<p><a id="x1-99r24"></a>
+</p><p></p><!-- l. 2513 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 2513 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 2513 --><p class="noindent">Oefening 24
+</p><!-- l. 2513 --><p class="noindent">— Remmende elektrische step
+</p><!-- l. 2513 --><p class="noindent"></p></div>
+<p></p><!-- l. 2513 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 2513 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 2513 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 2515 --><p class="noindent">Een elektrische step rijdt met <span class="mathjax-inline">\(25,0\,\mathrm {km/h}\)</span>. De bestuurder ziet een obstakel op <span class="mathjax-inline">\(18,0\,\mathrm {m}\)</span> afstand. Zijn
+reactietijd is <span class="mathjax-inline">\(0,70\,\mathrm {s}\)</span>. Tijdens het remmen is de versnelling constant en gelijk aan
+<span class="mathjax-inline">\(-3,0\,\mathrm {m/s^2}\)</span>.
+</p><!-- l. 2520 --><p class="noindent">Onderzoek of de step vóór het obstakel tot stilstand komt.
+                                                                  
+
+                                                                  
+</p><!-- l. 2522 --><p class="noindent">Werk volgens de systematische probleemaanpak.
+</p></div>
+<p></p><!-- l. 2524 --><p class="noindent"></p></div>
+<p></p><!-- l. 2524 --><p class="noindent"></p></section>
+<p><a id="x1-100r25"></a>
+</p><p></p><!-- l. 2527 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 2527 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 2527 --><p class="noindent">Oefening 25
+</p><!-- l. 2527 --><p class="noindent">— Twee bewegingsfasen
+</p><!-- l. 2527 --><p class="noindent"></p></div>
+<p></p><!-- l. 2527 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 2527 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--g">G</span></div>
+<p></p><!-- l. 2527 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 2529 --><p class="noindent">Een trein vertrekt uit een station vanuit rust en versnelt gedurende <span class="mathjax-inline">\(40\,\mathrm {s}\)</span> met constante
+versnelling. Daarna rijdt hij <span class="mathjax-inline">\(120\,\mathrm {s}\)</span> met constante snelheid.
+</p><!-- l. 2533 --><p class="noindent">Ontwerp zelf realistische waarden voor de versnelling en bereken:
+</p>
+<div class="problem-environment question" id="problem83" numbered=" " role="article" titletext=" Question">  de snelheid na de versnellingsfase;    </div>
+<div class="problem-environment question" id="problem84" numbered=" " role="article" titletext=" Question">  de totale verplaatsing;    </div>
+<div class="problem-environment question" id="problem85" numbered=" " role="article" titletext=" Question">  de gemiddelde snelheid over de volledige beweging.    </div>
+<!-- l. 2547 --><p class="noindent">Bespreek of je gekozen waarden fysisch realistisch zijn.
+</p></div>
+<p></p><!-- l. 2549 --><p class="noindent"></p></div>
+<p></p><!-- l. 2549 --><p class="noindent"></p></section>
+<p><a id="x1-101r13"></a>
+</p><p></p><!-- l. 2556 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">13</div><div class="fvd-section-bar__title">Grafieken, tabellen en ICT</div></div>
+<p></p><!-- l. 2558 --><p class="noindent">Niet elke beweging wordt gegeven door een formule.
+</p><!-- l. 2560 --><p class="noindent">In experimenten krijgen we vaak meetwaarden:
+</p>
+<div class="mathjax-block">\[ (t_i,x_i). \]</div>
+<!-- l. 2566 --><p class="noindent">Daaruit kunnen we met een spreadsheet, GeoGebra, Desmos of videoanalyse een
+model opbouwen.
+</p><!-- l. 2569 --><p class="noindent">Een sterke analyse verbindt:
+</p>
+<div class="mathjax-block">\[ \boxed { \text {metingen} \longleftrightarrow x(t) \longleftrightarrow v(t) \longleftrightarrow a(t). } \]</div>
+<!-- l. 2583 --><p class="noindent">Bij een eenparig versnelde beweging verwachten we bijvoorbeeld:
+</p>
+<ul class="itemize1">
+<li class="itemize">een kwadratisch model voor <span class="mathjax-inline">\(x(t)\)</span>;
+</li>
+<li class="itemize">een lineair model voor <span class="mathjax-inline">\(v(t)\)</span>;
+</li>
+<li class="itemize">een ongeveer constante waarde voor <span class="mathjax-inline">\(a(t)\)</span>.</li></ul>
+<p><a id="x1-102r26"></a>
+</p><!-- l. 2592 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 2592 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 2592 --><p class="noindent">Oefening 26
+</p><!-- l. 2592 --><p class="noindent">— Data analyseren
+</p><!-- l. 2592 --><p class="noindent"></p></div>
+<p></p><!-- l. 2592 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 2592 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 2592 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 2594 --><p class="noindent">Van een karretje op een helling worden de volgende posities gemeten:
+</p>
+<div class="mathjax-block">\[ \begin {array}{c|cccccc} t\,(\mathrm {s}) &amp; 0&amp;1&amp;2&amp;3&amp;4&amp;5\\ \hline x\,(\mathrm {m}) &amp; 0,00&amp;0,40&amp;1,60&amp;3,60&amp;6,40&amp;10,00 \end {array} \]</div>
+<div class="problem-environment question" id="problem86" numbered=" " role="article" titletext=" Question">  Maak een spreidingsdiagram van <span class="mathjax-inline">\(x\)</span> als functie van <span class="mathjax-inline">\(t\)</span>.    </div>
+<div class="problem-environment question" id="problem87" numbered=" " role="article" titletext=" Question">  Zoek een passend functievoorschrift.    </div>
+<div class="problem-environment question" id="problem88" numbered=" " role="article" titletext=" Question">  Bepaal uit dit model <span class="mathjax-inline">\(v(t)\)</span> en <span class="mathjax-inline">\(a(t)\)</span>.    </div>
+<div class="problem-environment question" id="problem89" numbered=" " role="article" titletext=" Question">  Beoordeel of de beweging een EVRB kan zijn.    </div>
+<div class="problem-environment question" id="problem90" numbered=" " role="article" titletext=" Question">  Formuleer minstens één beperking van je besluit op basis van deze meetgegevens.
+</div>
+</div>
+<!-- l. 2624 --><p class="noindent"></p></div>
+<p></p><!-- l. 2624 --><p class="noindent"></p></section>
+<p><a id="x1-103r14"></a>
+</p><p></p><!-- l. 2631 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">14</div><div class="fvd-section-bar__title">Labo: een versnelde beweging onderzoeken</div></div>
+<p></p><!-- l. 2633 --><p class="noindent">In dit hoofdstuk onderzoeken we experimenteel het verband tussen positie, tijd,
+snelheid en versnelling.
+</p><!-- l. 2636 --><p class="noindent">Een mogelijke opstelling is een karretje of knikker die langs een helling beweegt. De
+beweging kan worden geregistreerd met:
+</p>
+<ul class="itemize1">
+<li class="itemize">een bewegingssensor;
+</li>
+<li class="itemize">videoanalyse;
+</li>
+<li class="itemize">een smartphone;
+</li>
+<li class="itemize">een afstandssensor gekoppeld aan een programmeerbare stuurmodule.</li></ul>
+<p><a id="x1-104r1"></a>
+</p><!-- l. 2647 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 2647 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 2647 --><p class="noindent"></p><div class="fvd-subsection__number">14.1</div>
+<p></p><!-- l. 2647 --><p class="noindent"></p><div class="fvd-subsection__title">Onderzoeksvraag</div>
+<p></p><!-- l. 2647 --><p class="noindent"></p></div>
+<p></p><!-- l. 2647 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 2647 --><p class="noindent"></p></div>
+<p></p><!-- l. 2649 --><p class="noindent">Een mogelijke onderzoeksvraag is:
+</p>
+<div class="center">
+<!-- l. 2651 --><p class="noindent">
+</p><!-- l. 2653 --><p class="noindent"><em>Kan de beweging van een karretje op een vaste helling worden beschreven als
+een eenparig versnelde rechtlijnige beweging?</em></p></div>
+<p><a id="x1-105r2"></a>
+</p><!-- l. 2657 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 2657 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 2657 --><p class="noindent"></p><div class="fvd-subsection__number">14.2</div>
+<p></p><!-- l. 2657 --><p class="noindent"></p><div class="fvd-subsection__title">Werkwijze</div>
+<p></p><!-- l. 2657 --><p class="noindent"></p></div>
+<p></p><!-- l. 2657 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 2657 --><p class="noindent"></p></div>
+<p></p>
+<ol class="enumerate1">
+<li class="enumerate" id="x1-107x1">Formuleer een hypothese.
+</li>
+<li class="enumerate" id="x1-109x2">Meet de positie op verschillende tijdstippen.
+</li>
+<li class="enumerate" id="x1-111x3">Verwerk de meetwaarden in een tabel.
+</li>
+<li class="enumerate" id="x1-113x4">Maak een <span class="mathjax-inline">\(x(t)\)</span>-grafiek.
+</li>
+<li class="enumerate" id="x1-115x5">Bepaal een passende trendlijn.
+</li>
+<li class="enumerate" id="x1-117x6">Bepaal of reconstrueer <span class="mathjax-inline">\(v(t)\)</span>.
+</li>
+<li class="enumerate" id="x1-119x7">Bepaal of reconstrueer <span class="mathjax-inline">\(a(t)\)</span>.
+                                                                  
+
+                                                                  
+</li>
+<li class="enumerate" id="x1-121x8">Vergelijk de grafieken met het theoretische EVRB-model.
+</li>
+<li class="enumerate" id="x1-123x9">Bespreek meetonzekerheid en mogelijke storende factoren.
+</li>
+<li class="enumerate" id="x1-125x10">Formuleer een besluit bij de onderzoeksvraag.</li></ol>
+<!-- l. 2674 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">
+<p></p><!-- l. 2675 --><p class="noindent">Gebruik bij meetresultaten correcte SI-eenheden, wetenschappelijke notatie en een
+verantwoord aantal beduidende cijfers.
+</p></div></section>
+<p><a id="x1-126r15"></a>
+</p><p></p><!-- l. 2685 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">15</div><div class="fvd-section-bar__title">Geïntegreerde oefeningen</div></div>
+<p><a id="x1-127r27"></a>
+</p><p></p><!-- l. 2687 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 2687 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 2687 --><p class="noindent">Oefening 27
+</p><!-- l. 2687 --><p class="noindent">— Van plaatsfunctie tot volledige bewegingsanalyse
+</p><!-- l. 2687 --><p class="noindent"></p></div>
+<p></p><!-- l. 2687 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 2687 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 2687 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 2689 --><p class="noindent">Een voorwerp beweegt volgens
+</p>
+<div class="mathjax-block">\[ x(t)=2,0-4,0t+t^2, \]</div>
+<!-- l. 2695 --><p class="noindent">voor <span class="mathjax-inline">\(0\leq t\leq 6,0\,\mathrm {s}\)</span>.
+</p>
+<div class="problem-environment question" id="problem91" numbered=" " role="article" titletext=" Question">  Bepaal <span class="mathjax-inline">\(v(t)\)</span> en <span class="mathjax-inline">\(a(t)\)</span>.    </div>
+<div class="problem-environment question" id="problem92" numbered=" " role="article" titletext=" Question">  Op welk tijdstip verandert het voorwerp van bewegingsrichting?    </div>
+<div class="problem-environment question" id="problem93" numbered=" " role="article" titletext=" Question">  Bepaal de positie op dat tijdstip.    </div>
+<div class="problem-environment question" id="problem94" numbered=" " role="article" titletext=" Question">  Bepaal de verplaatsing tussen <span class="mathjax-inline">\(t=0\)</span> en <span class="mathjax-inline">\(t=6,0\,\mathrm {s}\)</span>.    </div>
+<div class="problem-environment question" id="problem95" numbered=" " role="article" titletext=" Question">  Bepaal de totale afgelegde weg in hetzelfde interval.    </div>
+<div class="problem-environment question" id="problem96" numbered=" " role="article" titletext=" Question">  Schets kwalitatief <span class="mathjax-inline">\(x(t)\)</span>, <span class="mathjax-inline">\(v(t)\)</span> en <span class="mathjax-inline">\(a(t)\)</span> en leg de onderlinge verbanden uit.    </div>
+</div>
+<!-- l. 2722 --><p class="noindent"></p></div>
+<p></p><!-- l. 2722 --><p class="noindent"></p></section>
+<p><a id="x1-128r28"></a>
+</p><p></p><!-- l. 2725 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 2725 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 2725 --><p class="noindent">Oefening 28
+</p><!-- l. 2725 --><p class="noindent">— Van versnelling naar positie
+</p><!-- l. 2725 --><p class="noindent"></p></div>
+<p></p><!-- l. 2725 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 2725 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--g">G</span></div>
+<p></p><!-- l. 2725 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 2727 --><p class="noindent">Een voorwerp beweegt langs een rechte lijn. De versnelling is
+</p>
+<div class="mathjax-block">\[ a(t)=0,40t. \]</div>
+<!-- l. 2733 --><p class="noindent">Verder geldt:
+</p>
+<div class="mathjax-block">\[ v(0)=1,0\,\mathrm {m/s}, \qquad x(0)=2,0\,\mathrm {m}. \]</div>
+<div class="problem-environment question" id="problem97" numbered=" " role="article" titletext=" Question">  Bepaal met integratie de snelheidsfunctie.    </div>
+<div class="problem-environment question" id="problem98" numbered=" " role="article" titletext=" Question">  Bepaal vervolgens de plaatsfunctie.    </div>
+<div class="problem-environment question" id="problem99" numbered=" " role="article" titletext=" Question">  Bereken de positie en snelheid na <span class="mathjax-inline">\(5,0\,\mathrm {s}\)</span>.    </div>
+<div class="problem-environment question" id="problem100" numbered=" " role="article" titletext=" Question">  Leg uit waarom deze beweging geen EVRB is.    </div>
+</div>
+<!-- l. 2757 --><p class="noindent"></p></div>
+<p></p><!-- l. 2757 --><p class="noindent"></p></section>
+<p><a id="x1-129r29"></a>
+</p><p></p><!-- l. 2760 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 2760 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 2760 --><p class="noindent">Oefening 29
+</p><!-- l. 2760 --><p class="noindent">— Fout zoeken
+                                                                  
+
+                                                                  
+</p><!-- l. 2760 --><p class="noindent"></p></div>
+<p></p><!-- l. 2760 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 2760 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 2760 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 2762 --><p class="noindent">Een leerling ziet dat een voorwerp op een bepaald tijdstip
+</p>
+<div class="mathjax-block">\[ v=-4,0\,\mathrm {m/s} \qquad \text {en}\qquad a=-2,0\,\mathrm {m/s^2} \]</div>
+<!-- l. 2770 --><p class="noindent">heeft en concludeert:
+</p>
+<blockquote class="quote">
+<!-- l. 2773 --><p class="noindent">“Omdat de versnelling negatief is, vertraagt het voorwerp.”</p></blockquote>
+<!-- l. 2776 --><p class="noindent">Beoordeel de redenering en verbeter ze.
+</p></div>
+<p></p><!-- l. 2778 --><p class="noindent"></p></div>
+<p></p><!-- l. 2778 --><p class="noindent"></p></section>
+<p><a id="x1-130r16"></a>
+</p><p></p><!-- l. 2785 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">16</div><div class="fvd-section-bar__title">Wat hebben we opgebouwd?</div></div>
+<p></p><!-- l. 2787 --><p class="noindent">De centrale structuur van dit hoofdstuk is:
+</p>
+<div class="mathjax-block">\[ \boxed { x(t) \xrightarrow {\frac {d}{dt}} v(t) \xrightarrow {\frac {d}{dt}} a(t). } \]</div>
+<!-- l. 2799 --><p class="noindent">De omgekeerde weg gebruiken we met integralen:
+</p>
+<div class="mathjax-block">\[ \boxed { \Delta v = \int a(t)\,dt, \qquad \Delta x = \int v(t)\,dt. } \]</div>
+<!-- l. 2813 --><p class="noindent">Daarbij is de integraal van de snelheid de <strong>verplaatsing</strong>. Wanneer een voorwerp van
+richting verandert, moet voor de totale afgelegde weg rekening worden gehouden met
+<span class="mathjax-inline">\(|v(t)|\)</span>.
+</p><!-- l. 2818 --><p class="noindent">Bij een ERB:
+</p>
+<div class="mathjax-block">\[ a=0, \qquad v=\text {constant}, \qquad x=x_0+vt. \]</div>
+<!-- l. 2828 --><p class="noindent">Bij een EVRB:
+</p>
+<div class="mathjax-block">\[ a=\text {constant}, \]</div>
+<div class="mathjax-block">\[ v=v_0+at, \]</div>
+<div class="mathjax-block">\[ x=x_0+v_0t+\frac 12at^2. \]</div>
+<!-- l. 2842 --><p class="noindent">Dezelfde algemene begrippen en methoden vormen in het volgende hoofdstuk de basis
+voor de analyse van bewegingen onder invloed van de zwaartekracht.
+                                                                  
+
+                                                                  
+</p>
+</div><!-- XIMERA-PREVIOUS-NEXT-START --><nav aria-label="Hoofdstuknavigatie" class="chapter-navigation">
+<a class="chapter-navigation__card chapter-navigation__card--previous" data-visible="true" href="1-Beweging.html">
+<span aria-hidden="true" class="chapter-navigation__icon">
+            ←
+        </span>
+<span class="chapter-navigation__content">
+<span class="chapter-navigation__label">
+                Vorig hoofdstuk
+            </span>
+<span class="chapter-navigation__title">
+                Een beweging beschrijven
+            </span>
+</span>
+</a>
+<a class="chapter-navigation__card chapter-navigation__card--overview" href="index.html">
+<span aria-hidden="true" class="chapter-navigation__overview-icon">
+<span></span>
+<span></span>
+<span></span>
+</span>
+<span class="chapter-navigation__content">
+<span class="chapter-navigation__label">
+                Cursus
+            </span>
+<span class="chapter-navigation__title">
+                Overzicht
+            </span>
+</span>
+</a>
+<a class="chapter-navigation__card chapter-navigation__card--next" data-visible="true" href="3-Vallen_werpen.html">
+<span class="chapter-navigation__content">
+<span class="chapter-navigation__label">
+                Volgend hoofdstuk
+            </span>
+<span class="chapter-navigation__title">
+                Vallen en werpen
+            </span>
+</span>
+<span aria-hidden="true" class="chapter-navigation__icon">
+            →
+        </span>
+</a>
+</nav><!-- XIMERA-PREVIOUS-NEXT-END --></article></main><!-- XIMERA-CHAPTER-LAYOUT-END --><div class="course-footer-clear"></div><!-- XIMERA-FOOTER-START --><footer class="site-footer">
+<div aria-hidden="true" class="site-footer__accent"></div>
+<div class="site-footer__inner">
+<div class="site-footer__quote">
+<span aria-hidden="true" class="site-footer__quote-mark">◈</span>
+<p class="site-footer__quote-text">
+                Think mathematically. Create digitally. Shape the future.
+            </p>
+</div>
+<div aria-hidden="true" class="site-footer__divider"></div>
+<div class="site-footer__grid">
+<section class="site-footer__column">
+<p class="site-footer__eyebrow">
+                    Wiskunde 7 FVD
+                </p>
+<h2 class="site-footer__title">
+                    Fundamentele Vorming Digitale Creatie
+                </h2>
+<p class="site-footer__text">
+                    Wiskundige basis voor programmeren, graphics,
+                    animatie, simulatie en 3D.
+                </p>
+</section>
+<section class="site-footer__column">
+<p class="site-footer__eyebrow">
+                    Ontwikkeling
+                </p>
+<p class="site-footer__name">
+                    Ingmar Herreman
+                </p>
+<p class="site-footer__text">
+                    GO! Athena Campus Bellevue
+                </p>
+<p class="site-footer__text">
+                    Versie 1.0 · 2026
+                </p>
+</section>
+<section class="site-footer__column">
+<p class="site-footer__eyebrow">
+                    Technologie
+                </p>
+<div class="site-footer__tech">
+<span>Ximera</span>
+<span>HTML</span>
+<span>PDF</span>
+<span>GeoGebra</span>
+<span>GitHub</span>
+</div>
+</section>
+</div>
+<div class="site-footer__bottom">
+<span>Gebouwd met Ximera</span>
+<span aria-hidden="true">•</span>
+<span>Voor 7 FVD</span>
+<span aria-hidden="true">•</span>
+<span>© 2026</span>
+</div>
+</div>
+</footer><!-- XIMERA-FOOTER-END --><script src="../../../assets/js/chapter-layout.js"></script></body>
+</html>

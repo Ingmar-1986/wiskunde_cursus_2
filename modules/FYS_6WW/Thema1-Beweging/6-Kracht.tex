@@ -1,0 +1,2140 @@
+\documentclass{ximera}
+
+\input{../../../preamble.tex}
+\input{../../../Opmaak.tex}
+\addPrintStyle{../../..}
+
+\title{Kracht en beweging}
+\author{Ingmar Herreman}
+
+\begin{abstract}
+In de vorige hoofdstukken beschreven we hoe voorwerpen bewegen.
+We onderzochten positie, snelheid en versnelling bij rechtlijnige,
+tweedimensionale en cirkelvormige bewegingen. Nu stellen we een
+fundamentelere vraag: waarom verandert een beweging?
+
+Het antwoord ligt bij krachten. We bouwen de dynamica op vanuit de drie
+wetten van Newton en leren krachten als vectoren samenstellen. Daarbij
+staat niet het herkennen van losse formules centraal, maar het analyseren
+van een volledig systeem: welk voorwerp onderzoeken we, welke krachten
+werken erop, wat is hun resultante en welke versnelling volgt daaruit?
+
+We besteden bijzondere aandacht aan vrijlichaamsdiagrammen, normaalkracht,
+spankracht en wrijving. We leren ook enkele hardnekkige misconcepties
+doorzien, zoals het verwarren van een Newton-III-paar met twee krachten
+die elkaar op één voorwerp opheffen.
+
+Ten slotte keren we terug naar de cirkelbeweging. De centripetale
+versnelling uit het vorige hoofdstuk moet volgens Newton II veroorzaakt
+worden door een naar binnen gerichte resulterende kracht. Daarmee leggen
+we de basis voor de latere studie van gravitatie en satellietbeweging.
+\end{abstract}
+
+\begin{document}
+
+% FVD_CHAPTER_DATA_START
+% Automatisch gegenereerd uit index.tex.
+% Niet handmatig aanpassen.
+\fvdchapterdata{1}{Beweging en kracht — Van beweging beschrijven tot energie begrijpen}{6}
+% FVD_CHAPTER_DATA_END
+
+
+
+\maketitle
+
+% ============================================================
+% 1 VOORKENNIS EN LEERDOELEN
+% ============================================================
+
+\begin{voorkennis}
+  \item Je kan positie, snelheid en versnelling vectorieel beschrijven.
+  \item Je kan vectoren optellen en ontbinden in componenten.
+  \item Je kan een eenparige en een eenparig versnelde beweging analyseren.
+  \item Je kent de zwaartekracht nabij het aardoppervlak.
+  \item Je kent bij een cirkelbeweging de richting van de centripetale
+        versnelling en de formule $a_c=v^2/r$.
+  \item Je kan goniometrie gebruiken om vectorcomponenten te bepalen.
+\end{voorkennis}
+
+\begin{leerdoelen}
+  \item Je kan de drie wetten van Newton formuleren en in samenhang gebruiken.
+  \item Je kan voor een gekozen systeem alle relevante uitwendige krachten
+        identificeren en in een vrijlichaamsdiagram voorstellen.
+  \item Je kan krachten vectorieel samenstellen en ontbinden.
+  \item Je kan het vectoriële verband
+        $\sum\vec F=m\vec a$ analyseren en kwantificeren.
+  \item Je kan uit een gegeven krachtensituatie de bewegingsverandering
+        voorspellen en omgekeerd uit de beweging conclusies trekken over
+        de resulterende kracht.
+  \item Je kan zwaartekracht, normaalkracht, spankracht en wrijvingskracht
+        correct herkennen en modelleren.
+  \item Je kan statische en kinetische wrijving onderscheiden.
+  \item Je kan Newton-III-paren onderscheiden van krachten die op hetzelfde
+        systeem werken.
+  \item Je kan dynamische problemen in één en twee dimensies systematisch
+        mathematiseren.
+  \item Je kan de wetten van Newton toepassen op eenparige cirkelbeweging.
+\end{leerdoelen}
+
+
+% ============================================================
+% 2 OPENING
+% ============================================================
+
+\FVDsection{Waarom verandert een beweging?}
+
+Een auto trekt op, een parachutist valt, een lift vertrekt, een doos
+wordt over een vloer geduwd en een satelliet verandert voortdurend van
+bewegingsrichting.
+
+In elk van deze situaties verandert de snelheidsvector:
+
+\[
+\vec v.
+\]
+
+Uit de kinematica weten we dat dit betekent dat er een versnelling is:
+
+\[
+\vec a\neq\vec 0.
+\]
+
+Maar de kinematica vertelt ons niet \emph{waarom} die versnelling
+ontstaat. Daarvoor hebben we de dynamica nodig.
+
+\begin{definitie}
+De \textbf{dynamica} bestudeert het verband tussen krachten en de
+bewegingsverandering van systemen.
+\end{definitie}
+
+De drie wetten van Newton vormen het fundament van de klassieke
+dynamica.
+
+
+\begin{oefening}[Voorspel vóór je rekent]{\oefB\ESS}
+
+Een ijshockeypuck glijdt naar rechts over een vrijwel wrijvingsloze
+horizontale ijsvlakte. Nadat de speler de puck heeft losgelaten, werkt
+er geen horizontale kracht van de stick meer op.
+
+\begin{question}
+Is er volgens jou een blijvende kracht naar rechts nodig om de puck met
+constante snelheid te laten voortbewegen?
+\end{question}
+
+\begin{question}
+Wat verwacht je dat er gebeurt wanneer de horizontale resulterende
+kracht nul is?
+\end{question}
+
+\begin{question}
+Welke krachten werken verticaal op de puck?
+\end{question}
+
+Bewaar je eerste redenering. We komen hierop terug bij Newton I.
+
+\end{oefening}
+
+
+% ============================================================
+% 3 SYSTEEM EN KRACHT
+% ============================================================
+
+\FVDsection{Begin met het systeem}
+
+Voor we krachten tekenen, moeten we bepalen \emph{welk systeem} we
+onderzoeken.
+
+Dat kan bijvoorbeeld zijn:
+
+\begin{itemize}
+  \item één boek;
+  \item een auto;
+  \item een blok op een helling;
+  \item twee verbonden massa's samen;
+  \item of één van die massa's afzonderlijk.
+\end{itemize}
+
+De keuze van het systeem bepaalt welke krachten uitwendig zijn en dus
+in het krachtendiagram thuishoren.
+
+\begin{definitie}
+Een \textbf{kracht} is een vectoriële wisselwerking die de
+bewegingsverandering van een systeem kan beïnvloeden.
+\end{definitie}
+
+Een kracht heeft dus:
+
+\[
+\boxed{\text{grootte, richting en zin}}
+\]
+
+en wordt voorgesteld door een vector $\vec F$.
+
+De SI-eenheid is de newton:
+
+\[
+[F]=\mathrm N.
+\]
+
+
+\FVDsubsection{Enkele krachten die we vaak gebruiken}
+
+In dit hoofdstuk ontmoeten we onder andere:
+
+\[
+\vec F_g
+\qquad \text{zwaartekracht},
+\]
+
+\[
+\vec F_N
+\qquad \text{normaalkracht},
+\]
+
+\[
+\vec F_T
+\qquad \text{spankracht},
+\]
+
+en
+
+\[
+\vec F_w
+\qquad \text{wrijvingskracht}.
+\]
+
+Deze krachten zijn geen formules die automatisch moeten worden ingevuld.
+We moeten telkens eerst onderzoeken of de betrokken wisselwerking
+werkelijk aanwezig is.
+
+
+% ============================================================
+% 4 RESULTANTE
+% ============================================================
+
+\FVDsection{De resulterende kracht}
+
+Op een systeem kunnen meerdere krachten tegelijk werken.
+
+De \textbf{resulterende kracht} is hun vectoriële som:
+
+\[
+\boxed{
+\vec F_{\mathrm{res}}
+=
+\sum_i\vec F_i.
+}
+\]
+
+In twee dimensies analyseren we componentgewijs:
+
+\[
+\boxed{
+\sum F_x=F_{\mathrm{res},x}
+}
+\]
+
+en
+
+\[
+\boxed{
+\sum F_y=F_{\mathrm{res},y}.
+}
+\]
+
+Een nulresultante betekent:
+
+\[
+\sum\vec F=\vec 0.
+\]
+
+Dat betekent niet dat er geen krachten werken. Het betekent dat de
+vectoriële som van alle uitwendige krachten nul is.
+
+
+\begin{oefening}[Krachten samenstellen]{\oefB\ESS}
+
+Op een voorwerp werken horizontaal drie krachten:
+
+\[
+F_1=18\,\mathrm N\quad\text{naar rechts},
+\]
+
+\[
+F_2=7,0\,\mathrm N\quad\text{naar links},
+\]
+
+\[
+F_3=4,0\,\mathrm N\quad\text{naar links}.
+\]
+
+\begin{question}
+Kies rechts als positieve richting en schrijf de drie krachten met teken.
+\end{question}
+
+\begin{question}
+Bepaal de resulterende kracht.
+\end{question}
+
+\begin{question}
+Wat kan je al zeggen over de richting van de versnelling?
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 5 NEWTON I
+% ============================================================
+
+\FVDsection{De eerste wet van Newton: traagheid}
+
+Een hardnekkige intuïtie is dat een voorwerp voortdurend een kracht in
+de bewegingsrichting nodig heeft om te blijven bewegen.
+
+Newton I zegt iets anders.
+
+\begin{eigenschap}[Eerste wet van Newton]
+Wanneer de resulterende uitwendige kracht op een systeem nul is, blijft
+de snelheid van het systeem constant:
+
+\[
+\boxed{
+\sum\vec F=\vec 0
+\quad\Longrightarrow\quad
+\vec v=\text{constant}.
+}
+\]
+
+Een systeem in rust blijft in rust; een bewegend systeem blijft
+rechtlijnig met constante snelheid bewegen.
+\end{eigenschap}
+
+Dit noemen we het \textbf{traagheidsbeginsel}.
+
+Merk op:
+
+\[
+\vec v=\text{constant}
+\]
+
+kan ook betekenen dat $\vec v=\vec 0$.
+
+
+\FVDsubsection{Evenwicht is niet hetzelfde als rust}
+
+Als
+
+\[
+\sum\vec F=\vec 0,
+\]
+
+dan is
+
+\[
+\vec a=\vec 0.
+\]
+
+Maar het voorwerp hoeft daarom niet stil te staan.
+
+Het kan:
+
+\begin{itemize}
+  \item in rust zijn;
+  \item of met constante snelheid langs een rechte bewegen.
+\end{itemize}
+
+
+\begin{oefening}[Kracht nodig om te blijven bewegen?]{\oefU\ESS}
+
+Een ruimtesonde bevindt zich ver van grote hemellichamen. Haar motoren
+worden uitgeschakeld terwijl ze een snelheid $\vec v_0$ heeft.
+
+Verwaarloos alle uitwendige krachten.
+
+\begin{question}
+Beschrijf de beweging na het uitschakelen van de motoren.
+\end{question}
+
+\begin{question}
+Is er een kracht in de bewegingsrichting nodig om $\vec v_0$ te
+behouden?
+\end{question}
+
+\begin{question}
+Welke misconceptie wordt door deze situatie zichtbaar?
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 6 NEWTON II
+% ============================================================
+
+\FVDsection{De tweede wet van Newton}
+
+Newton II verbindt de resulterende kracht met de versnelling.
+
+\begin{eigenschap}[Tweede wet van Newton]
+
+Voor een systeem met constante massa geldt:
+
+\[
+\boxed{
+\sum\vec F=m\vec a.
+}
+\]
+
+\end{eigenschap}
+
+Dit is een \textbf{vectorvergelijking}. Ze bevat tegelijk informatie
+over grootte én richting.
+
+Omdat $m>0$ geldt:
+
+\[
+\boxed{
+\vec a\ \text{heeft dezelfde richting en zin als}\ 
+\sum\vec F.
+}
+\]
+
+Niet noodzakelijk als de snelheid.
+
+
+\FVDsubsection{Componentvorm}
+
+In een cartesisch assenstelsel:
+
+\[
+\boxed{
+\sum F_x=ma_x
+}
+\]
+
+en
+
+\[
+\boxed{
+\sum F_y=ma_y.
+}
+\]
+
+Dit is één van de belangrijkste analysetechnieken van de mechanica.
+
+
+\FVDsubsection{Wat vertelt Newton II kwalitatief?}
+
+Bij dezelfde massa:
+
+\[
+a\sim F_{\mathrm{res}}.
+\]
+
+Een tweemaal zo grote resulterende kracht geeft dus een tweemaal zo
+grote versnelling.
+
+Bij dezelfde resulterende kracht:
+
+\[
+a\sim\frac1m.
+\]
+
+Een tweemaal zo grote massa geeft dus een half zo grote versnelling.
+
+
+\begin{oefening}[Van verband naar voorspelling]{\oefU\ESS}
+
+Een karretje met massa $m$ ondervindt een constante horizontale
+resulterende kracht $F$ en krijgt versnelling $a$.
+
+Redeneer zonder concrete getallen.
+
+\begin{question}
+Wat gebeurt er met $a$ als $F$ verdrievoudigt en $m$ gelijk blijft?
+\end{question}
+
+\begin{question}
+Wat gebeurt er met $a$ als $m$ verdubbelt en $F$ gelijk blijft?
+\end{question}
+
+\begin{question}
+Wat gebeurt er met $a$ als zowel $F$ als $m$ verdubbelen?
+\end{question}
+
+\begin{question}
+Waarom moet je bij zulke redeneringen altijd aangeven welke grootheid
+constant blijft?
+\end{question}
+
+\end{oefening}
+
+
+\FVDsubsection{Constante kracht en EVRB}
+
+Wanneer de massa constant is en de resulterende kracht constant blijft:
+
+\[
+\sum\vec F=\text{constant},
+\]
+
+dan volgt uit Newton II:
+
+\[
+\vec a=\text{constant}.
+\]
+
+In één dimensie herkennen we dan de eenparig versnelde rechtlijnige
+beweging uit de vorige hoofdstukken.
+
+Dynamica en kinematica sluiten dus rechtstreeks op elkaar aan:
+
+\[
+\boxed{
+\sum F=\text{constant}
+\Longrightarrow
+a=\text{constant}
+\Longrightarrow
+\text{EVRB}.
+}
+\]
+
+
+\begin{oefening}[Van kracht naar bewegingsfunctie]{\oefU\ESS}
+
+Een karretje met massa
+
+\[
+m=2,0\,\mathrm{kg}
+\]
+
+start vanuit rust op $x_0=0$. Vanaf $t=0$ werkt een constante
+resulterende horizontale kracht van $6,0\,\mathrm N$ naar rechts.
+
+\begin{question}
+Bepaal de versnelling.
+\end{question}
+
+\begin{question}
+Stel $v_x(t)$ op.
+\end{question}
+
+\begin{question}
+Stel $x(t)$ op.
+\end{question}
+
+\begin{question}
+Bepaal de positie en snelheid na $4,0\,\mathrm s$.
+\end{question}
+
+\begin{question}
+Leg uit hoe in deze oefening Newton II en de kinematica samenwerken.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 7 VRIJLICHAAMSDIAGRAM
+% ============================================================
+
+\FVDsection{Het vrijlichaamsdiagram}
+
+Een betrouwbaar Newtonprobleem begint niet met een formule, maar met een
+model van de krachten.
+
+Een \textbf{vrijlichaamsdiagram} (VLD) bevat alleen het gekozen systeem
+en de uitwendige krachten die daarop werken.
+
+Een goede werkwijze is:
+
+\begin{enumerate}
+  \item Kies het systeem.
+  \item Isoleer het systeem denkbeeldig van zijn omgeving.
+  \item Zoek alle wisselwerkingen met de omgeving.
+  \item Teken voor elke wisselwerking één krachtvector.
+  \item Benoem de krachten.
+  \item Kies pas daarna geschikte assen.
+\end{enumerate}
+
+\begin{opmerking}
+Teken in een VLD geen snelheid of versnelling alsof het krachten zijn.
+$\vec v$ en $\vec a$ beschrijven de beweging; $\vec F$ beschrijft een
+wisselwerking.
+\end{opmerking}
+
+
+\begin{oefening}[Welke krachten horen erbij?]{\oefB\ESS}
+
+Een boek ligt stil op een horizontale tafel.
+
+\begin{question}
+Kies het boek als systeem.
+\end{question}
+
+\begin{question}
+Teken het vrijlichaamsdiagram.
+\end{question}
+
+\begin{question}
+Welke kracht oefent de aarde op het boek uit?
+\end{question}
+
+\begin{question}
+Welke kracht oefent de tafel op het boek uit?
+\end{question}
+
+\begin{question}
+Wat is de verticale resultante?
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 8 ZWAARTEKRACHT
+% ============================================================
+
+\FVDsection{Zwaartekracht nabij het aardoppervlak}
+
+Nabij het aardoppervlak modelleren we de zwaartekracht op een massa $m$
+als:
+
+\[
+\boxed{
+\vec F_g=m\vec g.
+}
+\]
+
+De grootte is:
+
+\[
+\boxed{
+F_g=mg.
+}
+\]
+
+De richting is verticaal en de zin is naar het middelpunt van de aarde.
+
+In een assenstelsel met omhoog positief:
+
+\[
+F_{g,y}=-mg.
+\]
+
+\begin{opmerking}
+Massa en gewicht zijn niet hetzelfde. Massa $m$ is een eigenschap van
+het systeem en wordt uitgedrukt in kilogram. De zwaartekracht $F_g$ is
+een kracht en wordt uitgedrukt in newton.
+\end{opmerking}
+
+
+\begin{oefening}[Vrije val opnieuw bekeken]{\oefU\ESS}
+
+Een voorwerp valt in vacuüm nabij het aardoppervlak.
+
+\begin{question}
+Welke kracht werkt op het voorwerp als we andere invloeden
+verwaarlozen?
+\end{question}
+
+\begin{question}
+Gebruik Newton II om aan te tonen dat de versnelling onafhankelijk is
+van de massa.
+\end{question}
+
+\begin{question}
+Verklaar waarom een zwaarder voorwerp in dit model niet sneller valt
+dan een lichter voorwerp.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 9 NORMAALKRACHT
+% ============================================================
+
+\FVDsection{De normaalkracht}
+
+Wanneer twee oppervlakken contact maken, kan het oppervlak een
+contactkracht uitoefenen loodrecht op het contactvlak.
+
+Die loodrechte component noemen we de \textbf{normaalkracht}:
+
+\[
+\vec F_N.
+\]
+
+``Normaal'' betekent hier: loodrecht.
+
+
+\FVDsubsection{De normaalkracht is niet altijd $mg$}
+
+Voor een boek in rust op een horizontale tafel, zonder andere verticale
+krachten:
+
+\[
+\sum F_y=0
+\]
+
+geeft:
+
+\[
+F_N-F_g=0.
+\]
+
+Dus in deze specifieke situatie:
+
+\[
+F_N=mg.
+\]
+
+Maar dit is geen algemene natuurwet.
+
+Wanneer bijvoorbeeld extra verticaal wordt geduwd of getrokken, of
+wanneer het systeem verticaal versnelt, kan $F_N$ verschillen van
+$mg$.
+
+
+\begin{oefening}[Wanneer is $F_N=mg$?]{\oefU\ESS}
+
+Een kist met massa $20\,\mathrm{kg}$ staat op een horizontale vloer.
+
+Onderzoek drie situaties.
+
+\begin{question}
+Er werken geen andere verticale krachten en de kist versnelt niet
+verticaal. Bepaal $F_N$.
+\end{question}
+
+\begin{question}
+Iemand duwt bovendien verticaal naar beneden met $50\,\mathrm N$.
+Bepaal $F_N$ zolang de kist niet verticaal versnelt.
+\end{question}
+
+\begin{question}
+Iemand trekt verticaal omhoog met $50\,\mathrm N$, maar de kist blijft
+op de vloer. Bepaal $F_N$.
+\end{question}
+
+\begin{question}
+Formuleer waarom de regel ``$F_N=mg$'' gevaarlijk is.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 10 SPANKRACHT
+% ============================================================
+
+\FVDsection{Spankracht}
+
+Een gespannen touw, kabel of koord kan een trekkracht overbrengen.
+
+We noemen die kracht de \textbf{spankracht}:
+
+\[
+\vec F_T.
+\]
+
+Een ideaal massaloos touw met ideale katrollen wordt vaak gemodelleerd
+met dezelfde spankracht langs het touw. In echte touwen en niet-ideale
+katrollen kan dat model beperkingen hebben.
+
+\begin{oefening}[Hangende massa]{\oefB}
+
+Een lamp met massa $12\,\mathrm{kg}$ hangt stil aan één verticale kabel.
+
+\begin{question}
+Teken het VLD van de lamp.
+\end{question}
+
+\begin{question}
+Bepaal de spankracht in de kabel.
+\end{question}
+
+\begin{question}
+Welke twee krachten vormen hier een krachtenevenwicht op de lamp?
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 11 NEWTON III
+% ============================================================
+
+\FVDsection{De derde wet van Newton}
+
+Krachten ontstaan door wisselwerkingen tussen systemen.
+
+Als systeem A een kracht uitoefent op systeem B, dan oefent B
+tegelijk een kracht uit op A.
+
+\begin{eigenschap}[Derde wet van Newton]
+
+\[
+\boxed{
+\vec F_{A\rightarrow B}
+=
+-\vec F_{B\rightarrow A}.
+}
+\]
+
+De twee krachten hebben dezelfde grootte, dezelfde werklijn en
+tegengestelde zin, maar werken op \textbf{verschillende systemen}.
+\end{eigenschap}
+
+
+\FVDsubsection{Newton III is geen krachtenevenwicht}
+
+Een boek ligt op een tafel.
+
+Op het boek werken onder andere:
+
+\[
+\vec F_{g,\mathrm{aarde}\rightarrow\mathrm{boek}}
+\]
+
+en
+
+\[
+\vec F_{N,\mathrm{tafel}\rightarrow\mathrm{boek}}.
+\]
+
+Deze twee krachten kunnen elkaar opheffen, maar ze vormen geen
+Newton-III-paar: ze werken allebei op het boek.
+
+Het Newton-III-paar bij de normaalkracht is:
+
+\[
+\vec F_{\mathrm{tafel}\rightarrow\mathrm{boek}}
+=
+-\vec F_{\mathrm{boek}\rightarrow\mathrm{tafel}}.
+\]
+
+En bij de gravitatie-interactie:
+
+\[
+\vec F_{\mathrm{aarde}\rightarrow\mathrm{boek}}
+=
+-\vec F_{\mathrm{boek}\rightarrow\mathrm{aarde}}.
+\]
+
+
+\begin{oefening}[Actie-reactie of evenwicht?]{\oefU\ESS}
+
+Een persoon staat stil op de vloer.
+
+\begin{question}
+Teken het VLD van de persoon.
+\end{question}
+
+\begin{question}
+Zijn de zwaartekracht op de persoon en de normaalkracht van de vloer
+op de persoon een Newton-III-paar? Verklaar.
+\end{question}
+
+\begin{question}
+Geef het Newton-III-paar van de normaalkracht.
+\end{question}
+
+\begin{question}
+Geef het Newton-III-paar van de zwaartekracht op de persoon.
+\end{question}
+
+\end{oefening}
+
+
+\begin{oefening}[Paard en kar]{\oefU\ESS}
+
+Een leerling redeneert:
+
+\begin{quote}
+``Het paard trekt aan de kar en de kar trekt volgens Newton III even
+hard terug aan het paard. Die krachten heffen elkaar dus op. De kar kan
+nooit versnellen.''
+\end{quote}
+
+\begin{question}
+Wat is fout aan deze redenering?
+\end{question}
+
+\begin{question}
+Op welk systeem werkt de kracht van het paard op de kar?
+\end{question}
+
+\begin{question}
+Op welk systeem werkt de reactiekracht van de kar op het paard?
+\end{question}
+
+\begin{question}
+Waarom mogen deze twee krachten niet in één som
+$\sum\vec F$ voor één systeem worden opgeteld?
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 12 WRIJVING
+% ============================================================
+
+\FVDsection{Wrijvingskracht}
+
+Wanneer twee oppervlakken contact maken, kan naast de normaalkracht ook
+een kracht evenwijdig aan het contactvlak optreden: de
+\textbf{wrijvingskracht}.
+
+Wrijving verzet zich tegen relatieve glijbeweging of tegen de neiging
+tot glijden tussen de contactoppervlakken.
+
+
+\FVDsubsection{Statische wrijving}
+
+Als de oppervlakken niet ten opzichte van elkaar glijden, spreken we
+van \textbf{statische wrijving}.
+
+De statische wrijvingskracht past zich aan de situatie aan tot een
+maximale waarde:
+
+\[
+\boxed{
+0\leq F_{w,s}\leq \mu_sF_N.
+}
+\]
+
+De maximale statische wrijving is:
+
+\[
+\boxed{
+F_{w,s,\max}=\mu_sF_N.
+}
+\]
+
+Belangrijk:
+
+\[
+F_{w,s}=\mu_sF_N
+\]
+
+geldt dus alleen wanneer de statische wrijving haar maximale waarde
+bereikt, bijvoorbeeld vlak vóór het glijden begint.
+
+
+\FVDsubsection{Kinetische wrijving}
+
+Wanneer oppervlakken over elkaar glijden, gebruiken we in het
+eenvoudige model:
+
+\[
+\boxed{
+F_{w,k}=\mu_kF_N.
+}
+\]
+
+De kracht is tegengesteld aan de relatieve glijbeweging.
+
+Vaak geldt:
+
+\[
+\mu_s>\mu_k,
+\]
+
+maar dit is een materiaaleigenschap en geen universele wiskundige
+noodzaak.
+
+
+\begin{oefening}[De wrijving kiest niet automatisch $\mu_sF_N$]{\oefU\ESS}
+
+Een kist staat op een horizontale vloer. De maximale statische
+wrijvingskracht bedraagt $80\,\mathrm N$.
+
+\begin{question}
+Je duwt horizontaal met $30\,\mathrm N$ en de kist blijft stil.
+Hoe groot is de statische wrijvingskracht?
+\end{question}
+
+\begin{question}
+Je duwt met $60\,\mathrm N$ en de kist blijft stil.
+Hoe groot is de statische wrijvingskracht?
+\end{question}
+
+\begin{question}
+Waarom is in beide gevallen $F_{w,s}\neq80\,\mathrm N$?
+\end{question}
+
+\begin{question}
+Wat betekent de waarde $80\,\mathrm N$ fysisch?
+\end{question}
+
+\end{oefening}
+
+
+\begin{oefening}[Van rust naar glijden]{\oefU\ESS}
+
+Een kist met massa $25\,\mathrm{kg}$ staat op een horizontale vloer.
+Neem:
+
+\[
+\mu_s=0,40,
+\qquad
+\mu_k=0,30.
+\]
+
+Er wordt horizontaal aan de kist getrokken.
+
+\begin{question}
+Bepaal $F_N$.
+\end{question}
+
+\begin{question}
+Bepaal de maximale statische wrijvingskracht.
+\end{question}
+
+\begin{question}
+Zal de kist bewegen bij een trekkracht van $80\,\mathrm N$?
+Bepaal de werkelijke wrijvingskracht.
+\end{question}
+
+\begin{question}
+Zal de kist bewegen bij een trekkracht van $120\,\mathrm N$?
+\end{question}
+
+\begin{question}
+Bepaal in dat laatste geval de kinetische wrijvingskracht en de
+versnelling nadat de kist begint te glijden.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 13 WRIJVING EN BEWEGING
+% ============================================================
+
+\FVDsection{Wrijving werkt niet altijd ``tegen de beweging''}
+
+De eenvoudige zin ``wrijving werkt tegen de beweging'' kan misleidend
+zijn.
+
+Denk aan een auto die versnelt. De aangedreven banden duwen via hun
+contact met de weg naar achteren op het wegdek. Het wegdek oefent via
+statische wrijving een kracht naar voren uit op de banden.
+
+Die wrijvingskracht kan dus dezelfde zin hebben als de beweging van de
+auto.
+
+De nauwkeurigere formulering is:
+
+\[
+\boxed{
+\text{wrijving verzet zich tegen relatieve glijbeweging of glijneiging.}
+}
+\]
+
+
+\begin{oefening}[Waarom kan een auto optrekken?]{\oefG}
+
+Een auto trekt op een horizontale weg op zonder dat de aangedreven
+banden slippen.
+
+\begin{question}
+Is de relevante wrijving tussen band en weg statisch of kinetisch?
+\end{question}
+
+\begin{question}
+In welke zin duwt de aangedreven band op het wegdek?
+\end{question}
+
+\begin{question}
+Gebruik Newton III om de zin van de kracht van het wegdek op de band
+te bepalen.
+\end{question}
+
+\begin{question}
+Leg uit waarom de uitspraak ``wrijving werkt altijd tegen de
+bewegingsrichting'' hier tekortschiet.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 14 KRACHTEN ONTBINDEN
+% ============================================================
+
+\FVDsection{Krachten ontbinden}
+
+In twee dimensies is het vaak nuttig een kracht in componenten te
+ontbinden.
+
+Als een kracht $\vec F$ een hoek $\alpha$ maakt met de positieve
+$x$-as:
+
+\[
+\boxed{
+F_x=F\cos\alpha
+}
+\]
+
+en
+
+\[
+\boxed{
+F_y=F\sin\alpha.
+}
+\]
+
+Daarna passen we Newton II per richting toe:
+
+\[
+\boxed{
+\sum F_x=ma_x,
+\qquad
+\sum F_y=ma_y.
+}
+\]
+
+
+\FVDsubsection{Slimme assen kiezen}
+
+De assen hoeven niet altijd horizontaal en verticaal te liggen.
+
+Bij een hellend vlak is het vaak efficiënter om:
+
+\begin{itemize}
+  \item de $x$-as evenwijdig aan het vlak;
+  \item de $y$-as loodrecht op het vlak
+\end{itemize}
+
+te kiezen.
+
+Dan ligt de normaalkracht volledig langs één as.
+
+
+% ============================================================
+% 15 HELLEND VLAK
+% ============================================================
+
+\FVDsection{Het hellend vlak}
+
+Een blok ligt op een helling met hoek $\alpha$.
+
+De zwaartekracht wijst verticaal naar beneden:
+
+\[
+F_g=mg.
+\]
+
+Met assen evenwijdig en loodrecht op de helling ontbinden we:
+
+\[
+\boxed{
+F_{g,\parallel}=mg\sin\alpha
+}
+\]
+
+en
+
+\[
+\boxed{
+F_{g,\perp}=mg\cos\alpha.
+}
+\]
+
+Als het blok niet loodrecht op het vlak versnelt:
+
+\[
+\sum F_\perp=0.
+\]
+
+Zonder andere loodrechte krachten volgt:
+
+\[
+\boxed{
+F_N=mg\cos\alpha.
+}
+\]
+
+Opnieuw zien we dat $F_N$ niet automatisch gelijk is aan $mg$.
+
+
+\begin{oefening}[Wrijvingsloos hellend vlak]{\oefU\ESS}
+
+Een blok met massa $4,0\,\mathrm{kg}$ glijdt zonder wrijving langs een
+helling met hoek $30^\circ$.
+
+\begin{question}
+Teken het VLD.
+\end{question}
+
+\begin{question}
+Kies geschikte assen en ontbind $\vec F_g$.
+\end{question}
+
+\begin{question}
+Bepaal $F_N$.
+\end{question}
+
+\begin{question}
+Bepaal de resulterende kracht langs de helling.
+\end{question}
+
+\begin{question}
+Bepaal de versnelling.
+\end{question}
+
+\begin{question}
+Waarom verdwijnt de massa uit het eindresultaat voor $a$?
+\end{question}
+
+\end{oefening}
+
+
+\begin{oefening}[Hellend vlak met wrijving]{\oefU\ESS}
+
+Een blok glijdt naar beneden langs een helling met hoek $\alpha$.
+De kinetische wrijvingscoëfficiënt is $\mu_k$.
+
+\begin{question}
+Teken een algemeen VLD.
+\end{question}
+
+\begin{question}
+Toon aan dat, zolang er geen andere krachten werken,
+
+\[
+F_N=mg\cos\alpha.
+\]
+
+\end{question}
+
+\begin{question}
+Toon aan dat de kinetische wrijving de grootte
+
+\[
+F_{w,k}=\mu_kmg\cos\alpha
+\]
+
+heeft.
+\end{question}
+
+\begin{question}
+Leid af dat de versnelling langs het vlak gegeven wordt door
+
+\[
+\boxed{
+a=g(\sin\alpha-\mu_k\cos\alpha).
+}
+\]
+
+\end{question}
+
+\begin{question}
+Wat valt je op aan de massa? Interpreteer.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 16 SYSTEMATISCHE PROBLEEMAANPAK
+% ============================================================
+
+\FVDsection{Newtonproblemen mathematiseren}
+
+Bij complexere problemen is de grootste uitdaging meestal niet het
+algebraïsche rekenwerk, maar het vertalen van de situatie naar een
+correct fysisch model.
+
+Gebruik daarom systematisch:
+
+\begin{enumerate}
+  \item \textbf{Lees en schets.} Wat gebeurt er fysisch?
+  \item \textbf{Kies het systeem.} Over welk voorwerp of welke verzameling
+        voorwerpen gaat $\sum\vec F=m\vec a$?
+  \item \textbf{Maak een VLD.} Teken alleen de uitwendige krachten op dat
+        systeem.
+  \item \textbf{Kies assen.} Kies ze zo dat zoveel mogelijk krachten of
+        de versnelling langs een as liggen.
+  \item \textbf{Ontbind vectoren.}
+  \item \textbf{Schrijf Newton II per richting:}
+        \[
+        \sum F_x=ma_x,\qquad \sum F_y=ma_y.
+        \]
+  \item \textbf{Voeg modelrelaties toe.} Bijvoorbeeld
+        $F_g=mg$, $F_{w,k}=\mu_kF_N$ of een kinematische vergelijking.
+  \item \textbf{Los het stelsel op.}
+  \item \textbf{Controleer.} Kloppen teken, richting, eenheid en
+        grootteorde?
+  \item \textbf{Demathematiseer.} Wat betekent het resultaat in de
+        oorspronkelijke situatie?
+\end{enumerate}
+
+\begin{opmerking}
+Een negatieve uitkomst voor een component betekent niet automatisch dat
+de berekening fout is. Ze kan aangeven dat de werkelijke zin tegengesteld
+is aan de gekozen positieve richting.
+\end{opmerking}
+
+
+% ============================================================
+% 17 VOORBEELD VOLLEDIGE ANALYSE
+% ============================================================
+
+\FVDsection{Voorbeeld: trekken aan een kist}
+
+Een kist met massa $m$ wordt met een kracht $\vec F$ onder hoek
+$\alpha$ boven de horizontale over een ruwe horizontale vloer getrokken.
+
+Dit probleem toont waarom een VLD belangrijker is dan formules
+memoriseren.
+
+Verticaal is er geen versnelling:
+
+\[
+a_y=0.
+\]
+
+Dus:
+
+\[
+\sum F_y=0.
+\]
+
+Met omhoog positief:
+
+\[
+F_N+F\sin\alpha-mg=0.
+\]
+
+Daaruit:
+
+\[
+\boxed{
+F_N=mg-F\sin\alpha.
+}
+\]
+
+De trekkracht vermindert dus de normaalkracht.
+
+Bij kinetische wrijving:
+
+\[
+F_{w,k}=\mu_kF_N
+\]
+
+en dus:
+
+\[
+F_{w,k}
+=
+\mu_k(mg-F\sin\alpha).
+\]
+
+Horizontaal:
+
+\[
+F\cos\alpha-F_{w,k}=ma_x.
+\]
+
+Daarmee kunnen we de versnelling bepalen.
+
+Dit voorbeeld toont een belangrijk inzicht:
+
+\[
+\boxed{
+F_w=\mu F_N
+}
+\]
+
+kan niet correct worden gebruikt voordat $F_N$ uit de volledige
+krachtensituatie is bepaald.
+
+
+\begin{oefening}[Trekkracht onder een hoek]{\oefU\ESS}
+
+Een kist met massa $30\,\mathrm{kg}$ wordt over een horizontale vloer
+getrokken met een kracht van $150\,\mathrm N$ onder een hoek van
+$25^\circ$ boven de horizontale. Neem $\mu_k=0,20$.
+
+\begin{question}
+Teken het VLD.
+\end{question}
+
+\begin{question}
+Ontbind de trekkracht.
+\end{question}
+
+\begin{question}
+Bepaal de normaalkracht.
+\end{question}
+
+\begin{question}
+Bepaal de kinetische wrijvingskracht.
+\end{question}
+
+\begin{question}
+Bepaal de horizontale versnelling.
+\end{question}
+
+\begin{question}
+Vergelijk kwalitatief met dezelfde trekkracht die volledig horizontaal
+zou werken. Waarom verandert de wrijving?
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 18 TWEE SYSTEMEN
+% ============================================================
+
+\FVDsection{Meerdere systemen analyseren}
+
+Soms zijn verschillende voorwerpen gekoppeld.
+
+Dan kunnen we:
+
+\begin{itemize}
+  \item elk voorwerp afzonderlijk als systeem kiezen;
+  \item of de volledige verzameling als één groter systeem beschouwen.
+\end{itemize}
+
+Beide keuzes kunnen nuttig zijn.
+
+
+\begin{oefening}[Twee blokken]{\oefU\ESS}
+
+Twee blokken met massa's $m_1$ en $m_2$ liggen op een wrijvingsloze
+horizontale tafel en zijn verbonden door een massaloos touw. Op
+$m_2$ werkt horizontaal een uitwendige kracht $F$.
+
+\begin{question}
+Beschouw eerst beide blokken samen als één systeem. Leid de versnelling
+af.
+\end{question}
+
+\begin{question}
+Beschouw daarna alleen blok $m_1$. Bepaal de spankracht in het touw.
+\end{question}
+
+\begin{question}
+Toon dat
+
+\[
+a=\frac{F}{m_1+m_2}.
+\]
+
+\end{question}
+
+\begin{question}
+Toon dat
+
+\[
+F_T=\frac{m_1}{m_1+m_2}F.
+\]
+
+\end{question}
+
+\begin{question}
+Waarom verschijnt de interne spankracht niet wanneer beide blokken samen
+als systeem worden gekozen?
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 19 NEWTON I II III SAMEN
+% ============================================================
+
+\FVDsection{De drie wetten werken samen}
+
+In echte analyses gebruik je de wetten van Newton zelden als drie
+volledig losstaande regels.
+
+Newton I helpt herkennen wat een nulresultante betekent.
+
+Newton II verbindt de resultante met de versnelling:
+
+\[
+\sum\vec F=m\vec a.
+\]
+
+Newton III helpt wisselwerkingen tussen verschillende systemen correct
+te identificeren.
+
+Bij een auto die versnelt, bijvoorbeeld:
+
+\begin{itemize}
+  \item de banden oefenen een kracht uit op de weg;
+  \item de weg oefent volgens Newton III een tegengestelde kracht uit op
+        de banden;
+  \item die kracht draagt bij aan de resulterende kracht op de auto;
+  \item volgens Newton II veroorzaakt de resultante de versnelling.
+\end{itemize}
+
+Dit is precies waarom een beweging vaak alleen goed begrepen wordt door
+de drie wetten samen te gebruiken.
+
+
+\begin{oefening}[Liftanalyse]{\oefU\ESS}
+
+Een persoon met massa $70\,\mathrm{kg}$ staat op een weegschaal in een
+lift. De weegschaal meet de normaalkracht.
+
+Analyseer telkens met omhoog positief.
+
+\begin{question}
+Bepaal de aflezing wanneer de lift stilstaat.
+\end{question}
+
+\begin{question}
+Bepaal de aflezing wanneer de lift met
+$1,5\,\mathrm{m/s^2}$ omhoog versnelt.
+\end{question}
+
+\begin{question}
+Bepaal de aflezing wanneer de lift met
+$1,5\,\mathrm{m/s^2}$ naar beneden versnelt.
+\end{question}
+
+\begin{question}
+Wat leest de weegschaal af tijdens vrije val in het ideale model?
+\end{question}
+
+\begin{question}
+Waarom verandert de massa van de persoon in geen van deze situaties?
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 20 TERUG NAAR CIRKELBEWEGING
+% ============================================================
+
+\FVDsection{Newton en de cirkelbeweging}
+
+In het vorige hoofdstuk vonden we voor een ECB:
+
+\[
+\boxed{
+a_c=\frac{v^2}{r}.
+}
+\]
+
+De versnelling wijst naar het middelpunt.
+
+Newton II zegt dan dat ook de radiale resulterende kracht naar het
+middelpunt moet wijzen:
+
+\[
+\sum F_r=ma_c.
+\]
+
+Dus:
+
+\[
+\boxed{
+\sum F_r
+=
+m\frac{v^2}{r}.
+}
+\]
+
+Dit is geen nieuwe krachtsoort. Het is Newton II toegepast in de
+radiale richting.
+
+
+\FVDsubsection{Geen aparte ``centripetale kracht''}
+
+De naar binnen gerichte resultante kan geleverd worden door verschillende
+echte krachten of combinaties daarvan.
+
+Bijvoorbeeld:
+
+\begin{itemize}
+  \item spankracht bij een massa aan een touw;
+  \item wrijving bij een auto in een vlakke bocht;
+  \item normaalkracht in bepaalde gebogen banen;
+  \item gravitatie bij een satelliet.
+\end{itemize}
+
+Daarom is de formulering
+
+\[
+F_c=\frac{mv^2}{r}
+\]
+
+gevaarlijk wanneer ze doet vermoeden dat $F_c$ naast alle andere
+krachten in het VLD moet worden getekend.
+
+Beter is:
+
+\[
+\boxed{
+\sum F_r=\frac{mv^2}{r}.
+}
+\]
+
+
+\begin{oefening}[Auto in een vlakke bocht]{\oefU\ESS}
+
+Een auto met massa $1200\,\mathrm{kg}$ rijdt met constante
+snelheidsgrootte door een vlakke cirkelvormige bocht met straal
+$50\,\mathrm m$. De snelheid bedraagt $15\,\mathrm{m/s}$.
+
+\begin{question}
+Teken het VLD.
+\end{question}
+
+\begin{question}
+Welke kracht kan in het eenvoudige model de horizontale radiale
+resultante leveren?
+\end{question}
+
+\begin{question}
+Bepaal de vereiste radiale resultante.
+\end{question}
+
+\begin{question}
+Bepaal de minimale statische wrijvingscoëfficiënt om niet te slippen.
+\end{question}
+
+\begin{question}
+Wat gebeurt er met de vereiste radiale kracht als de snelheid
+verdubbelt?
+\end{question}
+
+\end{oefening}
+
+
+\begin{oefening}[Massa aan een touw]{\oefU}
+
+Een massa beweegt met constante snelheid in een horizontale cirkel.
+Veronderstel in een vereenvoudigd model dat de spankracht de volledige
+horizontale radiale resultante levert.
+
+\begin{question}
+Leid af:
+
+\[
+F_T=\frac{mv^2}{r}.
+\]
+
+\end{question}
+
+\begin{question}
+Hoe verandert $F_T$ als $v$ verdubbelt?
+\end{question}
+
+\begin{question}
+Hoe verandert $F_T$ als $r$ verdubbelt terwijl $v$ constant blijft?
+\end{question}
+
+\begin{question}
+Waarom moet je in een echte opstelling altijd eerst het VLD bekijken
+voordat je de spankracht gelijkstelt aan $mv^2/r$?
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 21 GRAVITATIE ALS VOORUITBLIK
+% ============================================================
+
+\FVDsection{Vooruitblik: waarom valt een satelliet niet naar beneden?}
+
+Een satelliet in een cirkelbaan heeft een centripetale versnelling naar
+het middelpunt van de aarde.
+
+Volgens Newton II moet er dus een naar binnen gerichte resulterende
+kracht zijn.
+
+Die kracht is de gravitatiekracht.
+
+We kunnen daarom al schrijven:
+
+\[
+\boxed{
+F_g=ma_c.
+}
+\]
+
+In een volgend hoofdstuk combineren we dit met de gravitatiewet:
+
+\[
+F_g=G\frac{Mm}{r^2}.
+\]
+
+Daaruit zullen onder andere de baansnelheid en omlooptijd van
+satellieten volgen.
+
+We stellen die volledige afleiding bewust uit: hier is het doel eerst
+de wetten van Newton grondig te leren analyseren.
+
+
+% ============================================================
+% 22 DATA EN ICT
+% ============================================================
+
+\FVDsection{Onderzoek met data en ICT}
+
+Newton II voorspelt bij constante massa:
+
+\[
+a=\frac{F_{\mathrm{res}}}{m}.
+\]
+
+Een experiment met een dynamiekwagentje kan dit verband onderzoeken.
+
+Bij constante massa verwachten we:
+
+\[
+\boxed{
+a\sim F_{\mathrm{res}}.
+}
+\]
+
+Een grafiek van $a$ als functie van $F_{\mathrm{res}}$ hoort dus
+lineair te zijn met helling:
+
+\[
+\frac1m.
+\]
+
+Bij constante kracht verwachten we:
+
+\[
+a\sim\frac1m.
+\]
+
+Een grafiek van $a$ tegen $m$ is dan niet lineair, maar een grafiek van
+$a$ tegen $1/m$ wel.
+
+
+\begin{oefening}[Newton II experimenteel onderzoeken]{\oefU}
+
+Gebruik een dynamiekar, krachtensensor en bewegingssensor of een
+geschikte simulatie.
+
+\begin{question}
+Formuleer een onderzoeksvraag over het verband tussen
+$F_{\mathrm{res}}$, $m$ en $a$.
+\end{question}
+
+\begin{question}
+Kies welke grootheid je varieert en welke je constant houdt.
+\end{question}
+
+\begin{question}
+Voorspel de vorm van de grafiek vóór je meet.
+\end{question}
+
+\begin{question}
+Verwerk de gegevens met een geschikte grafiek en trendlijn.
+\end{question}
+
+\begin{question}
+Interpreteer de helling fysisch.
+\end{question}
+
+\begin{question}
+Bespreek afwijkingen tussen model en experiment.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 23 GEINTEGREERDE OEFENINGEN
+% ============================================================
+
+\FVDsection{Geïntegreerde oefeningen}
+
+\begin{oefening}[Van beweging naar kracht]{\oefU\ESS}
+
+Een voorwerp met massa $3,0\,\mathrm{kg}$ beweegt langs de $x$-as met
+
+\[
+v_x(t)=4,0+2,5t.
+\]
+
+\begin{question}
+Bepaal $a_x(t)$.
+\end{question}
+
+\begin{question}
+Bepaal de resulterende kracht als functie van de tijd.
+\end{question}
+
+\begin{question}
+Is de resulterende kracht constant? Motiveer.
+\end{question}
+
+\begin{question}
+Welke soort rechtlijnige beweging voert het voorwerp uit?
+\end{question}
+
+\end{oefening}
+
+
+\begin{oefening}[Van krachtfunctie naar beweging]{\oefG}
+
+Een deeltje met constante massa $m$ beweegt in één dimensie. De
+resulterende kracht wordt gegeven door:
+
+\[
+F_{\mathrm{res}}(t)=kt,
+\]
+
+met $k>0$.
+
+Bij $t=0$ geldt:
+
+\[
+v(0)=v_0,
+\qquad
+x(0)=x_0.
+\]
+
+\begin{question}
+Bepaal $a(t)$ met Newton II.
+\end{question}
+
+\begin{question}
+Gebruik je kennis van integralen om $v(t)$ te bepalen.
+\end{question}
+
+\begin{question}
+Bepaal vervolgens $x(t)$.
+\end{question}
+
+\begin{question}
+Leg uit waarom deze beweging geen EVRB is.
+\end{question}
+
+\end{oefening}
+
+
+\begin{oefening}[Robot op een vloer]{\oefG}
+
+Een mobiele robot met massa $18\,\mathrm{kg}$ rijdt over een
+horizontale vloer. Zijn aandrijving levert horizontaal een kracht van
+$65\,\mathrm N$. De totale tegenwerkende kracht door rolweerstand en
+andere verliezen wordt in een eerste model als constant
+$20\,\mathrm N$ genomen.
+
+\begin{question}
+Maak een VLD.
+\end{question}
+
+\begin{question}
+Bepaal de resulterende horizontale kracht.
+\end{question}
+
+\begin{question}
+Bepaal de versnelling.
+\end{question}
+
+\begin{question}
+De robot draagt daarna een extra lading van $12\,\mathrm{kg}$ terwijl
+de twee krachten volgens het model gelijk blijven. Bepaal de nieuwe
+versnelling.
+\end{question}
+
+\begin{question}
+Beoordeel kritisch de aanname dat de tegenwerkende kracht bij de extra
+lading onveranderd blijft.
+\end{question}
+
+\end{oefening}
+
+
+\begin{oefening}[Foutenanalyse]{\oefU\ESS}
+
+Een leerling lost een probleem op voor een kist die over een ruwe
+horizontale vloer wordt getrokken en schrijft:
+
+\[
+F_N=mg,
+\]
+
+\[
+F_w=\mu F_N,
+\]
+
+\[
+F-F_w=ma.
+\]
+
+De trekkracht maakt in werkelijkheid een hoek van $30^\circ$ boven de
+horizontale.
+
+\begin{question}
+Welke stap is problematisch?
+\end{question}
+
+\begin{question}
+Maak het correcte VLD.
+\end{question}
+
+\begin{question}
+Schrijf de correcte vergelijking in de verticale richting.
+\end{question}
+
+\begin{question}
+Schrijf de correcte vergelijking in de horizontale richting.
+\end{question}
+
+\begin{question}
+Leg uit waarom een goed krachtendiagram de fout vrijwel automatisch
+zichtbaar maakt.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 24 VERDIEPING
+% ============================================================
+
+\FVDsection{Verdieping: Newton als differentiaalvergelijking}
+
+Newton II kan voor een beweging langs één as geschreven worden als:
+
+\[
+F_{\mathrm{res}}(x,v,t)
+=
+m\frac{dv}{dt}.
+\]
+
+Omdat
+
+\[
+v=\frac{dx}{dt},
+\]
+
+kan ook:
+
+\[
+\boxed{
+m\frac{d^2x}{dt^2}
+=
+F_{\mathrm{res}}(x,v,t).
+}
+\]
+
+Dit is een differentiaalvergelijking: de onbekende is niet alleen een
+getal, maar een functie $x(t)$.
+
+Voor een constante resulterende kracht:
+
+\[
+F_{\mathrm{res}}=F_0
+\]
+
+krijgen we:
+
+\[
+\frac{d^2x}{dt^2}
+=
+\frac{F_0}{m}
+=
+\text{constant}.
+\]
+
+Na tweemaal integreren ontstaan precies de bekende
+bewegingsvergelijkingen van de EVRB.
+
+Zo zien we dat de kinematische formules geen losse regels zijn, maar
+volgen uit Newton II wanneer de kracht constant is.
+
+
+\begin{oefening}[Van Newton naar kinematica]{\oefG}
+
+Neem:
+
+\[
+m\frac{d^2x}{dt^2}=F_0,
+\]
+
+met constante $F_0$.
+
+\begin{question}
+Toon dat
+
+\[
+a=\frac{F_0}{m}.
+\]
+
+\end{question}
+
+\begin{question}
+Integreer en gebruik $v(0)=v_0$ om te tonen dat
+
+\[
+v(t)=v_0+\frac{F_0}{m}t.
+\]
+
+\end{question}
+
+\begin{question}
+Integreer opnieuw en gebruik $x(0)=x_0$ om te tonen dat
+
+\[
+x(t)
+=
+x_0+v_0t+\frac12\frac{F_0}{m}t^2.
+\]
+
+\end{question}
+
+\begin{question}
+Leg uit hoe dit de verbinding tussen dynamica en de eerder bestudeerde
+kinematica zichtbaar maakt.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 25 SAMENVATTING
+% ============================================================
+
+\FVDsection{Wat hebben we opgebouwd?}
+
+De resulterende kracht is de vectoriële som van alle uitwendige
+krachten op het gekozen systeem:
+
+\[
+\boxed{
+\vec F_{\mathrm{res}}=\sum_i\vec F_i.
+}
+\]
+
+Newton I:
+
+\[
+\boxed{
+\sum\vec F=\vec 0
+\Longrightarrow
+\vec v=\text{constant}.
+}
+\]
+
+Newton II:
+
+\[
+\boxed{
+\sum\vec F=m\vec a.
+}
+\]
+
+In componenten:
+
+\[
+\boxed{
+\sum F_x=ma_x,
+\qquad
+\sum F_y=ma_y.
+}
+\]
+
+Newton III:
+
+\[
+\boxed{
+\vec F_{A\rightarrow B}
+=
+-\vec F_{B\rightarrow A}.
+}
+\]
+
+Zwaartekracht nabij het aardoppervlak:
+
+\[
+\boxed{
+F_g=mg.
+}
+\]
+
+Statische wrijving:
+
+\[
+\boxed{
+0\leq F_{w,s}\leq\mu_sF_N.
+}
+\]
+
+Maximale statische wrijving:
+
+\[
+\boxed{
+F_{w,s,\max}=\mu_sF_N.
+}
+\]
+
+Kinetische wrijving:
+
+\[
+\boxed{
+F_{w,k}=\mu_kF_N.
+}
+\]
+
+Voor een cirkelbeweging:
+
+\[
+\boxed{
+\sum F_r
+=
+ma_c
+=
+m\frac{v^2}{r}.
+}
+\]
+
+De kern is echter niet het memoriseren van deze formules. De kern is
+een situatie kunnen omzetten in een correct systeem, VLD en
+vectorvergelijking.
+
+
+
+% ============================================================
+% 27 VOORUITBLIK
+% ============================================================
+
+\FVDsection{Vooruitblik}
+
+We hebben nu twee krachtige ideeën samengebracht:
+
+\[
+\text{cirkelbeweging}
+\qquad\text{en}\qquad
+\text{Newton II}.
+\]
+
+Voor een cirkelbaan:
+
+\[
+\sum F_r=m\frac{v^2}{r}.
+\]
+
+Bij een satelliet kan de gravitatiekracht precies die radiale resultante
+leveren.
+
+In het volgende hoofdstuk keren we daarom terug naar gravitatie, maar
+nu met nieuwe gereedschappen. We zullen onderzoeken hoe Newtons
+gravitatiewet en de cirkelbeweging samen de beweging van manen,
+planeten en satellieten kunnen verklaren en kwantificeren.
+
+\end{document}

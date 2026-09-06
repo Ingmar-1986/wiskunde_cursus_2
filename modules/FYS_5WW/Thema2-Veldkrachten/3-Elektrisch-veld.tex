@@ -1,0 +1,3323 @@
+\documentclass{ximera}
+
+\input{../../../preamble.tex}
+\input{../../../Opmaak.tex}
+\addPrintStyle{../../..}
+
+\title{Elektrisch veld en potentiaal}
+\author{Ingmar Herreman}
+
+\begin{abstract}
+
+  Een elektrische lading kan een andere lading aantrekken of afstoten,
+  zelfs wanneer beide voorwerpen elkaar niet raken. In het vorige
+  hoofdstuk beschreven we deze wisselwerking met de wet van Coulomb.
+
+  Maar hoe kan een lading op afstand een kracht uitoefenen?
+
+  Om die vraag te beantwoorden voeren we het begrip
+  \textbf{elektrisch veld} in. Een geladen voorwerp verandert de
+  elektrische eigenschappen van de ruimte rondom zich. Wanneer we een
+  andere lading in die ruimte plaatsen, ondervindt ze een elektrische
+  kracht.
+
+  We onderzoeken hoe we zo'n elektrisch veld kunnen beschrijven met de
+  elektrische veldvector en hoe veldlijnen ons helpen om de structuur
+  van een veld zichtbaar te maken. We bestuderen radiale velden,
+  homogene velden en het veld van een elektrische dipool. Wanneer
+  meerdere ladingen aanwezig zijn, combineren we hun bijdragen met het
+  superpositiebeginsel.
+
+  Daarna bekijken we dezelfde elektrische wisselwerking vanuit een
+  energetisch perspectief. We voeren elektrische potentiële energie,
+  elektrische potentiaal en spanning in en onderzoeken het verband
+  tussen veld, arbeid en energie.
+
+  Zo ontstaan twee complementaire manieren om elektrische
+  wisselwerkingen te beschrijven:
+
+  \[
+  \boxed{
+  \text{kracht en veld}
+  \qquad\longleftrightarrow\qquad
+  \text{energie en potentiaal}
+  }
+  \]
+
+  Ten slotte brengen we deze ideeën opnieuw samen met de mechanica.
+  Een geladen deeltje in een elektrisch veld ondervindt een kracht en
+  kan daardoor versnellen. Elektrische velden kunnen dus niet alleen
+  krachten uitoefenen, maar ook de beweging en energie van geladen
+  deeltjes veranderen.
+
+\end{abstract}
+
+\begin{document}
+
+% FVD_CHAPTER_DATA_START
+% Automatisch gegenereerd uit index.tex.
+% Niet handmatig aanpassen.
+\fvdchapterdata{2}{Krachten op afstand - Van gravitatie tot elektrische velden}{5}
+% FVD_CHAPTER_DATA_END
+
+
+
+
+
+\maketitle
+
+
+% ============================================================
+% VOORKENNIS
+% ============================================================
+
+\begin{voorkennis}
+  \item Je kent positieve en negatieve elektrische lading.
+  \item Je kan de wet van Coulomb toepassen.
+  \item Je kan elektrische krachten als vectoren voorstellen.
+  \item Je kan meerdere vectoren optellen en ontbinden in componenten.
+  \item Je kent de wetten van Newton.
+  \item Je kent het gravitatieveld en de relatie
+        $\vec F_g=m\vec g$.
+  \item Je kent arbeid, energie en potentiële energie.
+  \item Je kan werken met machten van tien en SI-eenheden.
+\end{voorkennis}
+
+
+% ============================================================
+% LEERDOELEN
+% ============================================================
+
+\begin{leerdoelen}
+  \item Je kan uitleggen waarom het veldmodel nuttig is om
+        elektrische wisselwerkingen te beschrijven.
+  \item Je kan de elektrische veldsterkte definiëren en interpreteren.
+  \item Je kan het elektrisch veld van een puntlading bepalen.
+  \item Je kan richting en zin van een elektrische veldvector bepalen.
+  \item Je kan elektrische veldlijnen tekenen en interpreteren.
+  \item Je kan radiale, homogene en dipoolvelden herkennen en
+        analyseren.
+  \item Je kan de veldsterkte vergelijken aan de hand van de dichtheid
+        van veldlijnen.
+  \item Je kan elektrische velden van meerdere bronladingen vectorieel
+        combineren.
+  \item Je kan de kracht op een positieve of negatieve lading in een
+        elektrisch veld bepalen.
+  \item Je kan elektrische potentiële energie interpreteren.
+  \item Je kan elektrische potentiaal definiëren en berekenen.
+  \item Je kan het onderscheid tussen potentiaal en spanning uitleggen.
+  \item Je kan de potentiaal van meerdere puntladingen bepalen.
+  \item Je kan het verband tussen elektrisch veld en potentiaal
+        analyseren.
+  \item Je kan de beweging en energie van geladen deeltjes in een
+        homogeen elektrisch veld analyseren.
+\end{leerdoelen}
+
+
+% ============================================================
+% 1. VAN KRACHT NAAR VELD
+% ============================================================
+
+\FVDsection{Van kracht naar veld}
+
+In het vorige hoofdstuk onderzochten we de elektrische kracht tussen
+twee puntladingen.
+
+Voor een bronlading $Q$ en een tweede lading $q$ op afstand $r$ geldt:
+
+\[
+F_e
+=
+k\frac{|Qq|}{r^2}.
+\]
+
+De kracht ontstaat wanneer twee ladingen met elkaar interageren.
+
+Maar we kunnen een andere vraag stellen.
+
+Stel dat alleen de bronlading $Q$ aanwezig is.
+
+Heeft het dan betekenis om iets te zeggen over de ruimte rondom die
+lading?
+
+Het antwoord is ja.
+
+We zeggen dat een elektrische lading een
+\textbf{elektrisch veld} rondom zich veroorzaakt.
+
+Wanneer we vervolgens een tweede lading in dat veld plaatsen,
+ondervindt die lading een elektrische kracht.
+
+We kunnen de situatie dus voorstellen als:
+
+\[
+\boxed{
+Q
+\longrightarrow
+\vec E
+\longrightarrow
+\vec F_e
+}
+\]
+
+De bronlading $Q$ veroorzaakt het elektrische veld $\vec E$.
+
+Een lading $q$ die in dat veld geplaatst wordt, ondervindt daardoor
+een elektrische kracht $\vec F_e$.
+
+
+% ============================================================
+% 2. ANALOGIE MET GRAVITATIE
+% ============================================================
+
+\FVDsection{Een vertrouwde gedachte: het gravitatieveld}
+
+Het veldbegrip is niet volledig nieuw.
+
+Bij gravitatie schreven we:
+
+\[
+\boxed{
+\vec F_g=m\vec g.
+}
+\]
+
+De aarde veroorzaakt een gravitatieveld $\vec g$.
+
+Een massa $m$ die zich in dat veld bevindt, ondervindt een
+gravitatiekracht.
+
+Schematisch:
+
+\[
+M
+\longrightarrow
+\vec g
+\longrightarrow
+\vec F_g.
+\]
+
+Bij elektrische wisselwerkingen bouwen we een volledig analoge
+beschrijving op:
+
+\[
+Q
+\longrightarrow
+\vec E
+\longrightarrow
+\vec F_e.
+\]
+
+Dat geeft:
+
+\[
+\boxed{
+\begin{array}{c|c}
+\text{gravitatie} & \text{elektriciteit}\\
+\hline
+M & Q\\
+m & q\\
+\vec g & \vec E\\
+\vec F_g=m\vec g & \vec F_e=q\vec E
+\end{array}
+}
+\]
+
+
+De analogie is krachtig, maar niet volledig.
+
+Massa heeft in de klassieke mechanica één teken. Elektrische lading
+kan positief of negatief zijn.
+
+Dat zal belangrijke gevolgen hebben voor de richting van de kracht.
+
+
+% ============================================================
+% 3. TESTLADING
+% ============================================================
+
+\FVDsection{Hoe onderzoeken we een elektrisch veld?}
+
+Om te onderzoeken wat het elektrische veld op een bepaalde plaats
+doet, kunnen we ons voorstellen dat we daar een zeer kleine positieve
+lading plaatsen.
+
+Zo'n denkbeeldige lading noemen we een \textbf{testlading}.
+
+We kiezen de testlading:
+
+\begin{itemize}
+  \item positief, zodat de richting van het veld ondubbelzinnig kan
+        worden gedefinieerd;
+  \item voldoende klein, zodat ze de oorspronkelijke ladingsverdeling
+        zo weinig mogelijk verstoort.
+\end{itemize}
+
+
+Stel dat een positieve testlading $q_t$ op een bepaalde plaats een
+kracht $\vec F_e$ ondervindt.
+
+Dan gebruiken we die kracht om het elektrische veld op die plaats te
+definiëren.
+
+
+% ============================================================
+% 4. DEFINITIE ELEKTRISCHE VELDSTERKTE
+% ============================================================
+
+\FVDsection{Elektrische veldsterkte}
+
+\begin{definitie}[Elektrische veldsterkte]
+
+De elektrische veldsterkte $\vec E$ in een punt is de elektrische
+kracht per eenheid positieve testlading:
+
+\[
+\boxed{
+\vec E
+=
+\frac{\vec F_e}{q_t}
+}
+\]
+
+waarbij $q_t>0$ een positieve testlading is.
+
+\end{definitie}
+
+
+De elektrische veldsterkte is een \textbf{vectoriële grootheid}.
+
+Ze heeft dus:
+
+\begin{itemize}
+  \item een grootte;
+  \item een richting;
+  \item een zin.
+\end{itemize}
+
+
+De richting en zin van $\vec E$ worden gedefinieerd als de richting en
+zin van de kracht op een \textbf{positieve testlading}.
+
+
+% ============================================================
+% 5. EENHEID
+% ============================================================
+
+\FVDsection{Eenheid van elektrische veldsterkte}
+
+Uit:
+
+\[
+E=\frac{F_e}{q}
+\]
+
+volgt:
+
+\[
+[E]
+=
+\frac{\mathrm N}{\mathrm C}.
+\]
+
+Dus:
+
+\[
+\boxed{
+[E]=\mathrm{\frac NC}.
+}
+\]
+
+Een elektrisch veld met grootte:
+
+\[
+E=500\,\mathrm{\frac NC}
+\]
+
+betekent dat een positieve testlading van $1\,\mathrm C$ op die plaats
+een elektrische kracht van $500\,\mathrm N$ zou ondervinden.
+
+Een testlading van $1\,\mathrm C$ is in veel praktische situaties
+uitzonderlijk groot. De definitie blijft echter geldig voor kleinere
+testladingen.
+
+
+% ============================================================
+% 6. VAN COULOMB NAAR VELD
+% ============================================================
+
+\FVDsection{Het elektrische veld van een puntlading}
+
+We kunnen de veldsterkte van een puntlading afleiden uit de wet van
+Coulomb.
+
+Een bronlading $Q$ oefent op een positieve testlading $q_t$ een kracht
+uit met grootte:
+
+\[
+F_e
+=
+k\frac{|Qq_t|}{r^2}.
+\]
+
+Volgens de definitie:
+
+\[
+E=\frac{F_e}{q_t}.
+\]
+
+Invullen geeft:
+
+\[
+E
+=
+\frac{1}{q_t}
+k\frac{|Qq_t|}{r^2}.
+\]
+
+Omdat $q_t>0$:
+
+\[
+\boxed{
+E
+=
+k\frac{|Q|}{r^2}.
+}
+\]
+
+
+Dit resultaat is fundamenteel.
+
+De testlading is verdwenen uit de formule.
+
+De elektrische veldsterkte wordt bepaald door:
+
+\begin{itemize}
+  \item de bronlading $Q$;
+  \item de afstand $r$ tot de bronlading.
+\end{itemize}
+
+Niet door de testlading waarmee we het veld onderzoeken.
+
+
+% ============================================================
+% 7. BRONLADING VERSUS TESTLADING
+% ============================================================
+
+\FVDsection{Bronlading en testlading niet verwarren}
+
+Er spelen twee verschillende rollen.
+
+De \textbf{bronlading} veroorzaakt het veld:
+
+\[
+Q
+\longrightarrow
+\vec E.
+\]
+
+De \textbf{testlading} ondervindt een kracht door dat veld:
+
+\[
+q
+\longrightarrow
+\vec F_e.
+\]
+
+Daarom:
+
+\[
+\boxed{
+E=k\frac{|Q|}{r^2}
+}
+\]
+
+maar:
+
+\[
+\boxed{
+\vec F_e=q\vec E.
+}
+\]
+
+
+\begin{opmerking}
+
+Wanneer de testlading verdubbelt, verandert het elektrische veld niet.
+
+De kracht op die testlading verdubbelt wel.
+
+\end{opmerking}
+
+
+\begin{oefening}[Veld of kracht?]{\oefB\ESS}
+
+Een positieve testlading $q$ bevindt zich in een elektrisch veld met
+veldsterkte $E$.
+
+De testlading wordt vervangen door een lading $2q$ op dezelfde plaats.
+
+Bepaal wat er gebeurt met:
+
+\begin{enumerate}
+  \item de elektrische veldsterkte;
+  \item de elektrische kracht.
+\end{enumerate}
+
+Verklaar je antwoord.
+
+\end{oefening}
+
+
+% ============================================================
+% 8. RICHTING VAN HET VELD
+% ============================================================
+
+\FVDsection{Richting en zin van het veld}
+
+De richting van $\vec E$ is de richting waarin een positieve
+testlading zou worden geduwd.
+
+
+Voor een positieve bronlading:
+
+\[
+\boxed{
+Q>0
+\quad\Rightarrow\quad
+\vec E\text{ wijst van }Q\text{ weg}.
+}
+\]
+
+
+Voor een negatieve bronlading:
+
+\[
+\boxed{
+Q<0
+\quad\Rightarrow\quad
+\vec E\text{ wijst naar }Q\text{ toe}.
+}
+\]
+
+
+Dat volgt rechtstreeks uit aantrekking en afstoting.
+
+Een positieve testlading wordt door een positieve bronlading afgestoten
+en door een negatieve bronlading aangetrokken.
+
+
+% ============================================================
+% 9. RADIAAL VELD
+% ============================================================
+
+\FVDsection{Het radiale elektrische veld}
+
+Het elektrische veld van een geïsoleerde puntlading is een
+\textbf{radiaal veld}.
+
+De veldvector ligt in elk punt op de rechte door het punt en de
+bronlading.
+
+Voor de grootte geldt:
+
+\[
+\boxed{
+E(r)
+=
+k\frac{|Q|}{r^2}.
+}
+\]
+
+Dus:
+
+\[
+\boxed{
+E\propto\frac{1}{r^2}.
+}
+\]
+
+Het elektrische veld van een puntlading volgt dezelfde
+inverse-kwadratenwet als de Coulombkracht.
+
+
+Wanneer:
+
+\[
+r\rightarrow2r,
+\]
+
+dan:
+
+\[
+E\rightarrow\frac14E.
+\]
+
+Wanneer:
+
+\[
+r\rightarrow3r,
+\]
+
+dan:
+
+\[
+E\rightarrow\frac19E.
+\]
+
+
+\begin{oefening}[Afstand en veldsterkte]{\oefB\ESS}
+
+Op afstand $r$ van een puntlading bedraagt de elektrische veldsterkte
+$E$.
+
+Bepaal de veldsterkte op afstand:
+
+\begin{enumerate}
+  \item $2r$;
+  \item $4r$;
+  \item $r/2$.
+\end{enumerate}
+
+Werk met verhoudingen en gebruik de constante $k$ niet.
+
+\end{oefening}
+
+
+% ============================================================
+% 10. VOORBEELD
+% ============================================================
+
+\begin{voorbeeld}[Veld van een puntlading]
+
+Een puntlading:
+
+\[
+Q=+3{,}0\,\mathrm{\mu C}
+\]
+
+bevindt zich in de oorsprong.
+
+Bereken de elektrische veldsterkte op een afstand:
+
+\[
+r=0{,}20\,\mathrm m.
+\]
+
+We gebruiken:
+
+\[
+E
+=
+k\frac{|Q|}{r^2}.
+\]
+
+Dus:
+
+\[
+E
+=
+8{,}99\times10^9
+\frac{
+3{,}0\times10^{-6}
+}{
+(0{,}20)^2
+}.
+\]
+
+Daaruit volgt:
+
+\[
+\boxed{
+E\approx6{,}7\times10^5\,\mathrm{\frac NC}.
+}
+\]
+
+Omdat de bronlading positief is, wijst de veldvector van de bronlading
+weg.
+
+\end{voorbeeld}
+
+
+% ============================================================
+% 11. VELDLIJNEN
+% ============================================================
+
+\FVDsection{Een onzichtbaar veld zichtbaar maken}
+
+Een elektrisch veld bestaat in elk punt van de ruimte.
+
+Het is onmogelijk om in een tekening op elk punt een veldvector te
+plaatsen.
+
+Daarom gebruiken we \textbf{elektrische veldlijnen}.
+
+
+\begin{definitie}[Veldlijn]
+
+Een elektrische veldlijn is een denkbeeldige lijn waarvan de raaklijn
+in elk punt de richting van de elektrische veldvector aangeeft.
+
+\end{definitie}
+
+
+Voor veldlijnen gelden enkele belangrijke regels:
+
+\begin{itemize}
+  \item veldlijnen vertrekken bij positieve ladingen;
+  \item veldlijnen eindigen bij negatieve ladingen of lopen naar
+        oneindig;
+  \item de raaklijn aan een veldlijn geeft de richting van $\vec E$;
+  \item de pijlen geven de zin van $\vec E$;
+  \item veldlijnen kruisen elkaar nooit;
+  \item waar de veldlijnen dichter bij elkaar liggen, is het veld
+        sterker.
+\end{itemize}
+
+
+% ============================================================
+% 12. WAAROM KRUISEN VELDLIJNEN NIET?
+% ============================================================
+
+\FVDsection{Waarom kunnen veldlijnen elkaar niet kruisen?}
+
+Stel dat twee veldlijnen elkaar zouden kruisen.
+
+In het snijpunt zouden dan twee verschillende raaklijnen bestaan.
+
+Dat zou betekenen dat de elektrische veldvector in hetzelfde punt twee
+verschillende richtingen heeft.
+
+Maar een vector in één punt heeft één welbepaalde richting.
+
+Daarom:
+
+\[
+\boxed{
+\text{elektrische veldlijnen kunnen elkaar niet kruisen}.
+}
+\]
+
+
+\begin{oefening}[Redeneren met veldlijnen]{\oefU\ESS}
+
+Een leerling tekent twee elektrische veldlijnen die elkaar kruisen.
+
+Leg zonder berekening uit waarom deze voorstelling fysisch onmogelijk
+is.
+
+\end{oefening}
+
+
+% ============================================================
+% 13. VELDLIJNDICHTHEID
+% ============================================================
+
+\FVDsection{Veldlijndichtheid en veldsterkte}
+
+Een veldlijnendiagram geeft niet alleen informatie over de richting
+van het veld.
+
+Ook de dichtheid van de lijnen bevat informatie.
+
+Waar de lijnen dichter bij elkaar liggen, stellen we een grotere
+veldsterkte voor.
+
+Waar ze verder uit elkaar liggen, stellen we een kleinere
+veldsterkte voor.
+
+Bij een puntlading spreiden de veldlijnen zich steeds verder uit
+wanneer de afstand toeneemt.
+
+Dat past bij:
+
+\[
+E\propto\frac{1}{r^2}.
+\]
+
+
+\begin{oefening}[Waar is het veld het sterkst?]{\oefB\ESS}
+
+In een veldlijnendiagram liggen de veldlijnen in gebied A duidelijk
+dichter bij elkaar dan in gebied B.
+
+Vergelijk:
+
+\[
+E_A
+\qquad\text{en}\qquad
+E_B.
+\]
+
+Verklaar je antwoord.
+
+\end{oefening}
+
+
+% ============================================================
+% 14. SUPERPOSITIE
+% ============================================================
+
+\FVDsection{Meerdere bronladingen}
+
+Wanneer meerdere ladingen aanwezig zijn, veroorzaakt elke bronlading
+haar eigen elektrisch veld.
+
+In een bepaald punt geldt:
+
+\[
+\vec E_1,
+\qquad
+\vec E_2,
+\qquad
+\vec E_3,
+\ldots
+\]
+
+De resulterende elektrische veldvector is de vectorsom:
+
+\[
+\boxed{
+\vec E_\mathrm{res}
+=
+\vec E_1+\vec E_2+\vec E_3+\cdots
+}
+\]
+
+Dit is opnieuw het \textbf{superpositiebeginsel}.
+
+
+Let op het verschil met de Coulombkracht.
+
+Bij het berekenen van het veld in een punt hebben we nog geen
+testlading nodig.
+
+We bepalen eerst:
+
+\[
+\vec E_\mathrm{res}.
+\]
+
+Pas wanneer een lading $q$ in dat punt wordt geplaatst, berekenen we:
+
+\[
+\vec F_e=q\vec E_\mathrm{res}.
+\]
+
+
+% ============================================================
+% 15. SYSTEMATISCHE AANPAK
+% ============================================================
+
+\FVDsection{Een elektrisch veld systematisch bepalen}
+
+Bij meerdere bronladingen gebruiken we de volgende strategie:
+
+\[
+\boxed{
+\begin{array}{c}
+\text{maak een schets}
+\\
+\downarrow
+\\
+\text{kies het punt waarin }\vec E\text{ gevraagd wordt}
+\\
+\downarrow
+\\
+\text{bepaal voor elke bronlading richting en zin}
+\\
+\downarrow
+\\
+\text{bereken elke veldsterkte afzonderlijk}
+\\
+\downarrow
+\\
+\text{ontbind indien nodig in componenten}
+\\
+\downarrow
+\\
+\text{tel de veldvectoren op}
+\\
+\downarrow
+\\
+\text{controleer richting, eenheid en grootteorde}
+\end{array}
+}
+\]
+
+
+Begin dus niet onmiddellijk te rekenen.
+
+De vectortekening bepaalt hoe de afzonderlijke bijdragen gecombineerd
+moeten worden.
+
+
+% ============================================================
+% 16. TWEE GELIJKE LADINGEN
+% ============================================================
+
+\FVDsection{Symmetrie gebruiken}
+
+Beschouw twee gelijke positieve puntladingen:
+
+\[
++Q
+\qquad\qquad
++Q.
+\]
+
+We onderzoeken het elektrische veld precies in het midden tussen beide
+ladingen.
+
+De twee bronladingen bevinden zich op dezelfde afstand van het
+middelpunt.
+
+Dus:
+
+\[
+E_1=E_2.
+\]
+
+Maar hun veldvectoren hebben tegengestelde zin.
+
+Daarom:
+
+\[
+\boxed{
+\vec E_\mathrm{res}=\vec 0.
+}
+\]
+
+
+Dit resultaat kunnen we vinden zonder één getal in te vullen.
+
+Symmetrie kan dus een krachtiger hulpmiddel zijn dan rekenen.
+
+
+\begin{oefening}[Symmetrie]{\oefU\ESS}
+
+Twee identieke negatieve puntladingen bevinden zich op afstand $d$ van
+elkaar.
+
+Bepaal het elektrische veld precies in het midden tussen beide
+ladingen.
+
+Verklaar je antwoord met een vectortekening.
+
+\end{oefening}
+
+
+% ============================================================
+% 17. ELEKTRISCHE DIPOOL
+% ============================================================
+
+\FVDsection{Het elektrische dipoolveld}
+
+Een belangrijke configuratie bestaat uit twee even grote maar
+tegengestelde ladingen:
+
+\[
++Q
+\qquad\qquad
+-Q.
+\]
+
+Zo'n configuratie noemen we een \textbf{elektrische dipool}.
+
+De veldlijnen vertrekken bij de positieve lading en eindigen bij de
+negatieve lading.
+
+Het veld is niet radiaal rond één enkel punt.
+
+De richting en grootte van $\vec E$ veranderen van plaats tot plaats.
+
+Het dipoolveld is belangrijk omdat dipoolachtige ladingsverdelingen
+voorkomen in onder andere moleculen en gepolariseerde materie.
+
+
+% ============================================================
+% 18. INFLUENTIE OPNIEUW BEKEKEN
+% ============================================================
+
+\FVDsection{Influente werking in veldtaal}
+
+In het vorige hoofdstuk onderzochten we elektrostatische influentie.
+
+We kunnen dat verschijnsel nu preciezer beschrijven.
+
+Een geladen voorwerp veroorzaakt een elektrisch veld.
+
+Wanneer een geleider in dat veld wordt geplaatst, oefenen elektrische
+krachten op de mobiele elektronen in de geleider.
+
+Daardoor herverdelen de elektronen zich.
+
+Influente werking kan dus worden beschreven als:
+
+\[
+\boxed{
+\text{extern elektrisch veld}
+\longrightarrow
+\text{krachten op mobiele ladingen}
+\longrightarrow
+\text{ladingsherverdeling}.
+}
+\]
+
+We hebben daarvoor geen rechtstreeks contact tussen beide voorwerpen
+nodig.
+
+
+% ============================================================
+% 19. HOMOGEEN ELEKTRISCH VELD
+% ============================================================
+
+\FVDsection{Een homogeen elektrisch veld}
+
+Niet elk elektrisch veld is radiaal.
+
+Beschouw twee grote evenwijdige platen met tegengestelde lading.
+
+Ver van de randen kunnen we het elektrische veld tussen de platen
+benaderen als homogeen.
+
+In een homogeen elektrisch veld is:
+
+\[
+\boxed{
+\vec E=\text{constant}.
+}
+\]
+
+Dat betekent dat zowel:
+
+\begin{itemize}
+  \item de grootte;
+  \item de richting;
+  \item de zin
+\end{itemize}
+
+van de veldvector overal dezelfde zijn.
+
+
+De veldlijnen zijn dan:
+
+\begin{itemize}
+  \item recht;
+  \item evenwijdig;
+  \item gelijkmatig verdeeld.
+\end{itemize}
+
+
+Ze lopen van de positieve naar de negatieve plaat.
+
+
+% ============================================================
+% 20. RADIAAL VERSUS HOMOGEEN
+% ============================================================
+
+\FVDsection{Radiaal en homogeen veld vergelijken}
+
+\[
+\boxed{
+\begin{array}{c|c}
+\text{radiaal veld} & \text{homogeen veld}\\
+\hline
+\text{puntlading als bron}
+&
+\text{ideaal tussen evenwijdige platen}
+\\[1mm]
+E\propto1/r^2
+&
+E=\text{constant}
+\\[1mm]
+\text{richting verandert met plaats}
+&
+\text{richting overal gelijk}
+\\[1mm]
+\text{veldlijnen spreiden}
+&
+\text{veldlijnen evenwijdig}
+\end{array}
+}
+\]
+
+
+\begin{oefening}[Herken het veld]{\oefU\ESS}
+
+Een veldlijnendiagram toont rechte, evenwijdige en gelijkmatig
+verdeelde veldlijnen.
+
+\begin{enumerate}
+  \item Welk soort elektrisch veld wordt voorgesteld?
+  \item Wat kan je zeggen over de grootte van $E$ op verschillende
+        plaatsen?
+  \item Wat kan je zeggen over de richting van $\vec E$?
+\end{enumerate}
+
+\end{oefening}
+
+
+% ============================================================
+% 21. KRACHT IN EEN ELEKTRISCH VELD
+% ============================================================
+
+\FVDsection{Van veld terug naar kracht}
+
+Wanneer een lading $q$ in een elektrisch veld wordt geplaatst, geldt:
+
+\[
+\boxed{
+\vec F_e=q\vec E.
+}
+\]
+
+Dit lijkt sterk op:
+
+\[
+\vec F_g=m\vec g.
+\]
+
+Maar het teken van $q$ maakt een belangrijk verschil.
+
+
+Voor:
+
+\[
+q>0
+\]
+
+hebben $\vec F_e$ en $\vec E$ dezelfde zin.
+
+
+Voor:
+
+\[
+q<0
+\]
+
+hebben $\vec F_e$ en $\vec E$ tegengestelde zin.
+
+
+\begin{opmerking}
+
+Een negatieve lading verandert de richting van het elektrische veld
+niet.
+
+Het veld wordt bepaald door de bronladingen.
+
+Het teken van de lading bepaalt wel de zin van de kracht die zij in dat
+veld ondervindt.
+
+\end{opmerking}
+
+
+\begin{oefening}[Positief of negatief?]{\oefB\ESS}
+
+Een elektrisch veld wijst horizontaal naar rechts.
+
+Teken de elektrische kracht op:
+
+\begin{enumerate}
+  \item een positieve lading;
+  \item een negatieve lading.
+\end{enumerate}
+
+\end{oefening}
+
+
+% ============================================================
+% 22. VOORBEELD KRACHT
+% ============================================================
+
+\begin{voorbeeld}[Elektron in een elektrisch veld]
+
+Een elektron bevindt zich in een homogeen elektrisch veld:
+
+\[
+E=2{,}0\times10^4\,\mathrm{\frac NC}.
+\]
+
+De grootte van de kracht is:
+
+\[
+F_e=|q|E.
+\]
+
+Dus:
+
+\[
+F_e
+=
+(1{,}602\times10^{-19})
+(2{,}0\times10^4).
+\]
+
+Daaruit volgt:
+
+\[
+\boxed{
+F_e\approx3{,}2\times10^{-15}\,\mathrm N.
+}
+\]
+
+Omdat het elektron negatief geladen is, wijst de kracht
+\textbf{tegengesteld aan} de elektrische veldvector.
+
+\end{voorbeeld}
+
+
+% ============================================================
+% 23. VAN KRACHT NAAR ENERGIE
+% ============================================================
+
+\FVDsection{Een tweede manier om elektrische interacties te beschrijven}
+
+Tot nu toe beschreven we elektrische interacties met krachten en
+velden.
+
+Maar uit de mechanica kennen we een andere krachtige aanpak:
+
+\[
+\text{arbeid en energie}.
+\]
+
+Een elektrische kracht kan arbeid verrichten wanneer een geladen
+deeltje zich verplaatst.
+
+Daarom kunnen we aan de positie van een lading in een elektrisch veld
+een \textbf{elektrische potentiële energie} koppelen.
+
+Voor de arbeid van de elektrische kracht geldt:
+
+\[
+\boxed{
+W_e=-\Delta E_{\mathrm{pot,e}}.
+}
+\]
+
+Wanneer de elektrische kracht positieve arbeid verricht:
+
+\[
+\Delta E_{\mathrm{pot,e}}<0.
+\]
+
+De elektrische potentiële energie neemt dan af.
+
+
+% ============================================================
+% 24. POTENTIELE ENERGIE VAN TWEE PUNTLADINGEN
+% ============================================================
+
+\FVDsection{Elektrische potentiële energie van twee puntladingen}
+
+Voor twee puntladingen $Q$ en $q$ op afstand $r$ definiëren we, met
+het nulpunt op oneindig:
+
+\[
+\boxed{
+E_{\mathrm{pot,e}}
+=
+k\frac{Qq}{r}.
+}
+\]
+
+Let op: hier gebruiken we geen absolute waarde.
+
+Het teken bevat fysische informatie.
+
+
+Voor gelijknamige ladingen:
+
+\[
+Qq>0
+\]
+
+en dus:
+
+\[
+E_{\mathrm{pot,e}}>0.
+\]
+
+
+Voor tegengestelde ladingen:
+
+\[
+Qq<0
+\]
+
+en dus:
+
+\[
+E_{\mathrm{pot,e}}<0.
+\]
+
+
+% ============================================================
+% 25. WAAROM EEN TEKEN?
+% ============================================================
+
+\FVDsection{Wat betekent het teken van potentiële energie?}
+
+Het nulpunt van de potentiële energie kiezen we bij:
+
+\[
+r\rightarrow\infty.
+\]
+
+Voor twee gelijknamige ladingen moeten we arbeid leveren om ze dichter
+bij elkaar te brengen tegen de afstotende elektrische kracht in.
+
+De potentiële energie wordt positief.
+
+Voor tegengestelde ladingen trekken de ladingen elkaar spontaan aan.
+
+Wanneer ze dichter bij elkaar komen, kan de elektrische kracht
+positieve arbeid verrichten.
+
+De potentiële energie wordt dan negatiever.
+
+
+\begin{oefening}[Teken van de energie]{\oefU\ESS}
+
+Bepaal zonder numerieke berekening het teken van de elektrische
+potentiële energie voor:
+
+\begin{enumerate}
+  \item twee positieve puntladingen;
+  \item twee negatieve puntladingen;
+  \item een positieve en een negatieve puntlading.
+\end{enumerate}
+
+Verklaar telkens fysisch.
+
+\end{oefening}
+
+
+% ============================================================
+% 26. VAN POTENTIELE ENERGIE NAAR POTENTIAAL
+% ============================================================
+
+\FVDsection{Van energie naar potentiaal}
+
+De elektrische potentiële energie:
+
+\[
+E_{\mathrm{pot,e}}
+=
+k\frac{Qq}{r}
+\]
+
+hangt af van zowel de bronlading $Q$ als de lading $q$ die we in het
+veld plaatsen.
+
+Maar net zoals we bij kracht het veld wilden beschrijven onafhankelijk
+van de testlading, willen we dat ook bij energie.
+
+Daarom definiëren we de \textbf{elektrische potentiaal}.
+
+
+\begin{definitie}[Elektrische potentiaal]
+
+De elektrische potentiaal $V$ in een punt is de elektrische potentiële
+energie per eenheid lading:
+
+\[
+\boxed{
+V
+=
+\frac{E_{\mathrm{pot,e}}}{q}.
+}
+\]
+
+\end{definitie}
+
+
+Voor een puntlading volgt:
+
+\[
+V
+=
+\frac{1}{q}
+k\frac{Qq}{r}.
+\]
+
+Dus:
+
+\[
+\boxed{
+V
+=
+k\frac{Q}{r}.
+}
+\]
+
+
+% ============================================================
+% 27. VELD EN POTENTIAAL
+% ============================================================
+
+\FVDsection{Veld en potentiaal: twee beschrijvingen}
+
+Voor een puntlading:
+
+\[
+\boxed{
+E
+=
+k\frac{|Q|}{r^2}
+}
+\]
+
+en:
+
+\[
+\boxed{
+V
+=
+k\frac{Q}{r}.
+}
+\]
+
+Er zijn belangrijke verschillen.
+
+De elektrische veldsterkte $\vec E$ is een vector.
+
+De elektrische potentiaal $V$ is een scalair.
+
+Bovendien:
+
+\[
+E\propto\frac1{r^2},
+\]
+
+terwijl:
+
+\[
+V\propto\frac1r.
+\]
+
+
+\begin{center}
+\[
+\boxed{
+\begin{array}{c|c}
+\text{elektrisch veld} & \text{elektrische potentiaal}\\
+\hline
+\vec E & V\\
+\text{vector} & \text{scalair}\\
+\mathrm{N/C} & \mathrm V\\
+E\propto1/r^2 & V\propto1/r
+\end{array}
+}
+\]
+\end{center}
+
+
+% ============================================================
+% 28. EENHEID VAN POTENTIAAL
+% ============================================================
+
+\FVDsection{De volt}
+
+Uit:
+
+\[
+V=\frac{E_{\mathrm{pot,e}}}{q}
+\]
+
+volgt:
+
+\[
+[V]=\frac{\mathrm J}{\mathrm C}.
+\]
+
+Deze eenheid noemen we de \textbf{volt}:
+
+\[
+\boxed{
+1\,\mathrm V
+=
+1\,\frac{\mathrm J}{\mathrm C}.
+}
+\]
+
+Een potentiaalverschil van één volt betekent dus een verschil van één
+joule potentiële energie per coulomb lading.
+
+
+% ============================================================
+% 29. POTENTIAAL IS GEEN POTENTIELE ENERGIE
+% ============================================================
+
+\FVDsection{Potentiaal is geen energie}
+
+De begrippen worden gemakkelijk verward.
+
+Potentiaal $V$ is een eigenschap van een plaats in een elektrisch veld.
+
+Potentiële energie $E_{\mathrm{pot,e}}$ hangt daarnaast af van de
+lading die op die plaats aanwezig is.
+
+Hun verband is:
+
+\[
+\boxed{
+E_{\mathrm{pot,e}}=qV.
+}
+\]
+
+
+Op dezelfde plaats hebben verschillende ladingen dus dezelfde
+potentiaal $V$, maar niet noodzakelijk dezelfde potentiële energie.
+
+
+\begin{oefening}[Zelfde plaats, andere lading]{\oefB\ESS}
+
+Op een bepaalde plaats is:
+
+\[
+V=250\,\mathrm V.
+\]
+
+Bereken de elektrische potentiële energie van:
+
+\begin{enumerate}
+  \item $q=+2{,}0\,\mathrm{\mu C}$;
+  \item $q=-2{,}0\,\mathrm{\mu C}$.
+\end{enumerate}
+
+Vergelijk beide resultaten.
+
+\end{oefening}
+
+
+% ============================================================
+% 30. SUPERPOSITIE VAN POTENTIAAL
+% ============================================================
+
+\FVDsection{Potentiaal van meerdere bronladingen}
+
+Wanneer meerdere bronladingen aanwezig zijn, draagt elke bronlading bij
+aan de potentiaal.
+
+Voor één puntlading:
+
+\[
+V_i
+=
+k\frac{Q_i}{r_i}.
+\]
+
+Omdat potentiaal een scalaire grootheid is, geldt:
+
+\[
+\boxed{
+V_\mathrm{tot}
+=
+V_1+V_2+V_3+\cdots
+}
+\]
+
+of:
+
+\[
+\boxed{
+V
+=
+k\sum_i\frac{Q_i}{r_i}.
+}
+\]
+
+
+Hier moeten de tekens van de ladingen wel behouden blijven.
+
+Een positieve bronlading levert een positieve bijdrage.
+
+Een negatieve bronlading levert een negatieve bijdrage.
+
+
+% ============================================================
+% 31. VECTOR VERSUS SCALAIR
+% ============================================================
+
+\FVDsection{Waarom is potentiaal soms eenvoudiger?}
+
+Voor het elektrische veld:
+
+\[
+\boxed{
+\vec E_\mathrm{res}
+=
+\sum_i\vec E_i.
+}
+\]
+
+Daarvoor moeten we rekening houden met richting en zin.
+
+Voor potentiaal:
+
+\[
+\boxed{
+V_\mathrm{tot}
+=
+\sum_iV_i.
+}
+\]
+
+Dat is een algebraïsche som.
+
+Dit verschil tussen vectoren en scalairen is een van de redenen waarom
+potentiaal bij complexe elektrische configuraties zo'n nuttig begrip
+is.
+
+
+\begin{oefening}[Midden tussen twee ladingen]{\oefU\ESS}
+
+Twee puntladingen:
+
+\[
++Q
+\qquad\text{en}\qquad
+-Q
+\]
+
+bevinden zich op gelijke afstand van punt $P$.
+
+\begin{enumerate}
+  \item Bepaal de totale potentiaal in $P$.
+  \item Mag je daaruit besluiten dat ook
+        $\vec E(P)=\vec 0$?
+  \item Onderzoek de richting van beide veldvectoren en formuleer een
+        besluit.
+\end{enumerate}
+
+\end{oefening}
+
+
+% ============================================================
+% 32. SPANNING
+% ============================================================
+
+\FVDsection{Potentiaalverschil en spanning}
+
+In toepassingen is vaak niet de potentiaal in één punt belangrijk,
+maar het verschil tussen twee punten.
+
+We definiëren het potentiaalverschil van A naar B als:
+
+\[
+\Delta V
+=
+V_B-V_A.
+\]
+
+Een potentiaalverschil noemen we ook een
+\textbf{elektrische spanning}.
+
+We kunnen dus schrijven:
+
+\[
+\boxed{
+U_{AB}=V_A-V_B
+}
+\]
+
+wanneer $U_{AB}$ de spanning van A ten opzichte van B voorstelt.
+
+Let steeds op de gebruikte volgorde van de punten.
+
+
+Voor de verandering van potentiële energie geldt:
+
+\[
+\boxed{
+\Delta E_{\mathrm{pot,e}}
+=
+q\Delta V.
+}
+\]
+
+Dus:
+
+\[
+\boxed{
+E_{\mathrm{pot,e},B}
+-
+E_{\mathrm{pot,e},A}
+=
+q(V_B-V_A).
+}
+\]
+
+
+% ============================================================
+% 33. ARBEID EN SPANNING
+% ============================================================
+
+\FVDsection{Arbeid, energie en spanning}
+
+Omdat:
+
+\[
+W_e
+=
+-\Delta E_{\mathrm{pot,e}},
+\]
+
+en:
+
+\[
+\Delta E_{\mathrm{pot,e}}
+=
+q(V_B-V_A),
+\]
+
+volgt:
+
+\[
+W_{e,A\rightarrow B}
+=
+q(V_A-V_B).
+\]
+
+Dus:
+
+\[
+\boxed{
+W_{e,A\rightarrow B}
+=
+qU_{AB}.
+}
+\]
+
+Een elektrisch potentiaalverschil kan dus rechtstreeks gekoppeld
+worden aan de arbeid die de elektrische kracht kan verrichten.
+
+
+% ============================================================
+% 34. POSITIEVE EN NEGATIEVE LADING
+% ============================================================
+
+\FVDsection{Welke kant beweegt een lading spontaan uit?}
+
+Een positieve lading die vrij kan bewegen, wordt versneld in de
+richting van $\vec E$.
+
+Ze beweegt daardoor spontaan naar lagere elektrische potentiaal.
+
+Voor een positieve lading:
+
+\[
+q>0
+\quad\Rightarrow\quad
+E_{\mathrm{pot,e}}=qV.
+\]
+
+Lagere $V$ betekent dus lagere potentiële energie.
+
+
+Voor een negatieve lading is de situatie omgekeerd.
+
+Omdat:
+
+\[
+q<0,
+\]
+
+kan een stijging van $V$ juist overeenkomen met een daling van de
+potentiële energie.
+
+Daarom:
+
+\[
+\boxed{
+\text{een negatieve lading wordt versneld tegengesteld aan }\vec E.
+}
+\]
+
+
+\begin{oefening}[Elektron tussen twee punten]{\oefU\ESS}
+
+Voor twee punten geldt:
+
+\[
+V_A=100\,\mathrm V,
+\qquad
+V_B=500\,\mathrm V.
+\]
+
+Een elektron kan vrij bewegen.
+
+\begin{enumerate}
+  \item In welke richting wijst het elektrische veld langs de
+        verbindingslijn?
+  \item Naar welk punt wordt het elektron versneld?
+  \item Neemt zijn elektrische potentiële energie daarbij toe of af?
+\end{enumerate}
+
+Verklaar de drie antwoorden samenhangend.
+
+\end{oefening}
+
+
+% ============================================================
+% 35. EQUIPOTENTIAAL
+% ============================================================
+
+\FVDsection{Equipotentiaallijnen en equipotentiaalvlakken}
+
+Een \textbf{equipotentiaallijn} verbindt punten met dezelfde
+elektrische potentiaal.
+
+In drie dimensies spreken we van een
+\textbf{equipotentiaalvlak}.
+
+Langs zo'n lijn of vlak geldt:
+
+\[
+\Delta V=0.
+\]
+
+Dus:
+
+\[
+\Delta E_{\mathrm{pot,e}}=q\Delta V=0.
+\]
+
+De elektrische kracht verricht bijgevolg geen arbeid wanneer een
+lading langs een equipotentiaal wordt verplaatst.
+
+
+Elektrische veldlijnen staan loodrecht op equipotentiaallijnen:
+
+\[
+\boxed{
+\vec E
+\perp
+\text{equipotentiaallijnen}.
+}
+\]
+
+
+% ============================================================
+% 36. WAAROM LOODRECHT?
+% ============================================================
+
+\FVDsection{Waarom staan veldlijnen loodrecht op equipotentialen?}
+
+Stel dat de elektrische veldvector een component langs een
+equipotentiaallijn zou hebben.
+
+Dan zou de elektrische kracht op een positieve testlading eveneens een
+component langs die lijn hebben.
+
+Bij een kleine verplaatsing langs de equipotentiaal zou de elektrische
+kracht dan arbeid verrichten.
+
+Maar langs een equipotentiaal geldt:
+
+\[
+\Delta V=0
+\]
+
+en dus:
+
+\[
+W_e=0.
+\]
+
+Daarom kan de elektrische veldvector geen component langs de
+equipotentiaal hebben.
+
+Dus:
+
+\[
+\boxed{
+\vec E\perp\text{equipotentiaal}.
+}
+\]
+
+
+% ============================================================
+% 37. HOMOGEEN VELD EN POTENTIAAL
+% ============================================================
+
+\FVDsection{Potentiaalverschil in een homogeen veld}
+
+Beschouw een homogeen elektrisch veld met veldsterkte $E$.
+
+We verplaatsen ons over een afstand $d$ in de richting van het veld.
+
+De potentiaal neemt af.
+
+Voor de grootte van het potentiaalverschil geldt:
+
+\[
+\boxed{
+|\Delta V|=Ed.
+}
+\]
+
+Daaruit:
+
+\[
+\boxed{
+E=\frac{|\Delta V|}{d}.
+}
+\]
+
+
+Dit geeft een tweede eenheid voor elektrische veldsterkte:
+
+\[
+[E]
+=
+\frac{\mathrm V}{\mathrm m}.
+\]
+
+Dus:
+
+\[
+\boxed{
+1\,\mathrm{\frac NC}
+=
+1\,\mathrm{\frac Vm}.
+}
+\]
+
+
+% ============================================================
+% 38. VOORBEELD HOMOGEEN VELD
+% ============================================================
+
+\begin{voorbeeld}[Twee evenwijdige platen]
+
+Twee evenwijdige platen bevinden zich op:
+
+\[
+d=5{,}0\,\mathrm{cm}
+\]
+
+van elkaar.
+
+Het potentiaalverschil tussen de platen bedraagt:
+
+\[
+|\Delta V|=600\,\mathrm V.
+\]
+
+In het ideale model is:
+
+\[
+E=\frac{|\Delta V|}{d}.
+\]
+
+Met:
+
+\[
+d=0{,}050\,\mathrm m
+\]
+
+vinden we:
+
+\[
+E
+=
+\frac{600}{0{,}050}.
+\]
+
+Dus:
+
+\[
+\boxed{
+E=1{,}2\times10^4\,\mathrm{\frac Vm}.
+}
+\]
+
+Omdat:
+
+\[
+1\,\mathrm{\frac Vm}
+=
+1\,\mathrm{\frac NC},
+\]
+
+kunnen we ook schrijven:
+
+\[
+\boxed{
+E=1{,}2\times10^4\,\mathrm{\frac NC}.
+}
+\]
+
+\end{voorbeeld}
+
+
+% ============================================================
+% 39. VAN ELEKTRICITEIT TERUG NAAR MECHANICA
+% ============================================================
+
+\FVDsection{Een geladen deeltje in een elektrisch veld}
+
+Nu kunnen we de elektrische leerstof verbinden met de wetten van
+Newton.
+
+Een geladen deeltje in een elektrisch veld ondervindt:
+
+\[
+\vec F_e=q\vec E.
+\]
+
+Volgens Newton II:
+
+\[
+\vec F_\mathrm{res}=m\vec a.
+\]
+
+Wanneer de elektrische kracht de enige relevante kracht is:
+
+\[
+m\vec a=q\vec E.
+\]
+
+Dus:
+
+\[
+\boxed{
+\vec a
+=
+\frac{q}{m}\vec E.
+}
+\]
+
+
+In een homogeen elektrisch veld zijn $q$, $m$ en $\vec E$ constant.
+
+Daarom is ook:
+
+\[
+\boxed{
+\vec a=\text{constant}.
+}
+\]
+
+Een geladen deeltje voert dan een eenparig versnelde beweging uit in
+de richting van de elektrische kracht.
+
+
+% ============================================================
+% 40. POSITIEF EN NEGATIEF DEELTJE
+% ============================================================
+
+\FVDsection{Welke kant versnelt het deeltje uit?}
+
+Voor een positief geladen deeltje:
+
+\[
+q>0
+\]
+
+geldt:
+
+\[
+\vec a\parallel\vec E
+\]
+
+met dezelfde zin.
+
+
+Voor een negatief geladen deeltje:
+
+\[
+q<0
+\]
+
+geldt:
+
+\[
+\vec a\parallel\vec E
+\]
+
+met tegengestelde zin.
+
+
+De grootte van de versnelling is:
+
+\[
+\boxed{
+a
+=
+\frac{|q|E}{m}.
+}
+\]
+
+
+Daaruit zien we dat niet alleen de lading belangrijk is.
+
+Ook de massa speelt een rol.
+
+De verhouding:
+
+\[
+\boxed{
+\frac{|q|}{m}
+}
+\]
+
+bepaalt hoe sterk een deeltje op een gegeven elektrisch veld reageert.
+
+
+% ============================================================
+% 41. ENERGIE VAN EEN VERSNELD DEELTJE
+% ============================================================
+
+\FVDsection{Elektrische energie wordt kinetische energie}
+
+Wanneer alleen de elektrische kracht arbeid verricht, geldt behoud van
+mechanische energie:
+
+\[
+E_k+E_{\mathrm{pot,e}}=\text{constant}.
+\]
+
+Dus:
+
+\[
+\Delta E_k
+=
+-\Delta E_{\mathrm{pot,e}}.
+\]
+
+Omdat:
+
+\[
+\Delta E_{\mathrm{pot,e}}
+=
+q\Delta V,
+\]
+
+volgt:
+
+\[
+\boxed{
+\Delta E_k
+=
+-q\Delta V.
+}
+\]
+
+Of voor beweging van A naar B:
+
+\[
+\boxed{
+\Delta E_k
+=
+q(V_A-V_B).
+}
+\]
+
+
+Wanneer een deeltje vanuit rust versnelt:
+
+\[
+E_{k,A}=0,
+\]
+
+dan kan:
+
+\[
+\frac12mv^2
+=
+q(V_A-V_B)
+\]
+
+worden gebruikt, op voorwaarde dat het rechterlid positief is.
+
+
+% ============================================================
+% 42. VOORBEELD PROTON
+% ============================================================
+
+\begin{voorbeeld}[Proton versnellen]
+
+Een proton vertrekt uit rust en beweegt door een potentiaalverschil
+waarbij zijn elektrische potentiële energie afneemt met:
+
+\[
+1{,}60\times10^{-16}\,\mathrm J.
+\]
+
+De kinetische energie neemt met dezelfde hoeveelheid toe:
+
+\[
+\Delta E_k
+=
+1{,}60\times10^{-16}\,\mathrm J.
+\]
+
+Met:
+
+\[
+E_k=\frac12m_pv^2
+\]
+
+vinden we:
+
+\[
+v
+=
+\sqrt{
+\frac{2E_k}{m_p}
+}.
+\]
+
+Dit voorbeeld toont hoe een elektrisch potentiaalverschil rechtstreeks
+kan worden gebruikt om geladen deeltjes te versnellen.
+
+\end{voorbeeld}
+
+
+% ============================================================
+% 43. ELEKTRONVOLT
+% ============================================================
+
+\FVDsection{Een handige energie-eenheid: de elektronvolt}
+
+Op atomaire en subatomaire schaal is de joule vaak een onhandig grote
+eenheid.
+
+Daarom gebruiken fysici vaak de \textbf{elektronvolt}.
+
+Eén elektronvolt is de energieverandering van een elementaire lading
+die een potentiaalverschil van één volt doorloopt:
+
+\[
+\boxed{
+1\,\mathrm{eV}
+=
+1{,}602\times10^{-19}\,\mathrm J.
+}
+\]
+
+Let op:
+
+\[
+\mathrm{eV}
+\]
+
+is een eenheid van \textbf{energie}, niet van spanning.
+
+
+% ============================================================
+% 44. AFBUIGING VAN EEN DEELTJESBUNDEL
+% ============================================================
+
+\FVDsection{STEM: geladen deeltjes afbuigen}
+
+Beschouw een positief geladen deeltje dat horizontaal een gebied met
+een homogeen verticaal elektrisch veld binnenkomt.
+
+Horizontaal werkt geen elektrische kracht.
+
+Daarom is:
+
+\[
+a_x=0.
+\]
+
+De horizontale beweging is eenparig:
+
+\[
+x=v_{0x}t.
+\]
+
+
+Verticaal geldt:
+
+\[
+F_y=qE.
+\]
+
+Dus:
+
+\[
+a_y=\frac{qE}{m}.
+\]
+
+Wanneer:
+
+\[
+v_{0y}=0,
+\]
+
+dan:
+
+\[
+y
+=
+\frac12a_yt^2.
+\]
+
+Dus:
+
+\[
+y
+=
+\frac12
+\frac{qE}{m}
+t^2.
+\]
+
+Uit:
+
+\[
+t=\frac{x}{v_{0x}}
+\]
+
+volgt:
+
+\[
+y
+=
+\frac12
+\frac{qE}{m}
+\frac{x^2}{v_{0x}^2}.
+\]
+
+Daarom:
+
+\[
+\boxed{
+y
+=
+\frac{qE}{2mv_{0x}^2}x^2.
+}
+\]
+
+
+De baan is dus een \textbf{parabool}.
+
+
+% ============================================================
+% 45. EEN VERTROUWDE PARABOOL
+% ============================================================
+
+\FVDsection{De elektrische versie van een worpbeweging}
+
+De vorige beweging lijkt sterk op een horizontale worp.
+
+Bij een horizontale worp:
+
+\[
+a_x=0,
+\qquad
+a_y=g.
+\]
+
+Bij een geladen deeltje in een homogeen elektrisch veld:
+
+\[
+a_x=0,
+\qquad
+a_y=\frac{qE}{m}.
+\]
+
+In beide gevallen combineren we:
+
+\begin{itemize}
+  \item een eenparige beweging in één richting;
+  \item een eenparig versnelde beweging in de loodrechte richting.
+\end{itemize}
+
+Daardoor ontstaat in beide gevallen een parabolische baan.
+
+Hetzelfde wiskundige model kan dus verschillende fysische situaties
+beschrijven.
+
+
+% ============================================================
+% 46. MODEL EN WERKELIJKHEID
+% ============================================================
+
+\FVDsection{Hoe goed is ons model?}
+
+Wanneer we schrijven:
+
+\[
+E=\frac{|\Delta V|}{d},
+\]
+
+voor twee evenwijdige platen, gebruiken we een ideaal model.
+
+We veronderstellen onder andere:
+
+\begin{itemize}
+  \item grote evenwijdige platen;
+  \item een afstand die klein is ten opzichte van hun afmetingen;
+  \item een gebied voldoende ver van de randen;
+  \item verwaarloosbare invloed van andere ladingen en velden.
+\end{itemize}
+
+Dicht bij de randen zijn de veldlijnen niet perfect recht en
+evenwijdig.
+
+Daar treedt een \textbf{randeffect} op.
+
+Een fysisch model hoeft dus niet overal exact te zijn om zeer bruikbaar
+te zijn.
+
+
+% ============================================================
+% 47. OEFENINGENBUNDEL
+% ============================================================
+
+\FVDsection{Oefeningen}
+
+
+% ------------------------------------------------------------
+% BASIS
+% ------------------------------------------------------------
+
+\FVDsubsection{Basis}
+
+
+\begin{oefening}[Veldsterkte]{\oefB\ESS}
+
+Een puntlading:
+
+\[
+Q=+5{,}0\,\mathrm{\mu C}
+\]
+
+bevindt zich in de oorsprong.
+
+Bereken de elektrische veldsterkte op:
+
+\[
+r=0{,}30\,\mathrm m.
+\]
+
+Geef ook richting en zin.
+
+\end{oefening}
+
+
+\begin{oefening}[Negatieve bronlading]{\oefB\ESS}
+
+Een puntlading:
+
+\[
+Q=-8{,}0\,\mathrm{nC}
+\]
+
+bevindt zich op afstand:
+
+\[
+r=4{,}0\,\mathrm{cm}
+\]
+
+van punt $P$.
+
+Bereken $E$ in $P$ en beschrijf de zin van $\vec E$.
+
+\end{oefening}
+
+
+\begin{oefening}[Kracht uit veld]{\oefB\ESS}
+
+Een positieve lading:
+
+\[
+q=2{,}0\,\mathrm{\mu C}
+\]
+
+bevindt zich in een homogeen elektrisch veld:
+
+\[
+E=3{,}0\times10^4\,\mathrm{\frac NC}.
+\]
+
+Bereken de elektrische kracht.
+
+\end{oefening}
+
+
+\begin{oefening}[Elektron]{\oefB\ESS}
+
+Een elektron bevindt zich in hetzelfde veld als in de vorige
+oefening.
+
+\begin{enumerate}
+  \item Bereken de grootte van de kracht.
+  \item Vergelijk de zin van $\vec F_e$ met die van $\vec E$.
+\end{enumerate}
+
+\end{oefening}
+
+
+\begin{oefening}[Potentiaal van een puntlading]{\oefB\ESS}
+
+Een puntlading:
+
+\[
+Q=+4{,}0\,\mathrm{\mu C}
+\]
+
+bevindt zich op afstand:
+
+\[
+r=0{,}50\,\mathrm m
+\]
+
+van punt $P$.
+
+Bereken de elektrische potentiaal in $P$ wanneer het nulpunt op
+oneindig ligt.
+
+\end{oefening}
+
+
+\begin{oefening}[Potentiële energie]{\oefB\ESS}
+
+Op een plaats met:
+
+\[
+V=-250\,\mathrm V
+\]
+
+wordt een lading geplaatst:
+
+\[
+q=+3{,}0\,\mathrm{\mu C}.
+\]
+
+Bereken de elektrische potentiële energie.
+
+\end{oefening}
+
+
+\begin{oefening}[Homogeen veld]{\oefB\ESS}
+
+Tussen twee evenwijdige platen bedraagt het potentiaalverschil:
+
+\[
+900\,\mathrm V.
+\]
+
+De afstand tussen de platen is:
+
+\[
+3{,}0\,\mathrm{cm}.
+\]
+
+Bereken de elektrische veldsterkte in het ideale homogene gebied.
+
+\end{oefening}
+
+
+% ------------------------------------------------------------
+% VERDIEPING
+% ------------------------------------------------------------
+
+\FVDsubsection{Verdieping}
+
+
+\begin{oefening}[Veld en kracht onderscheiden]{\oefU\ESS}
+
+Een leerling zegt:
+
+``Als ik de testlading driemaal groter maak, wordt het elektrische veld
+ook driemaal groter.''
+
+Analyseer de uitspraak.
+
+Gebruik zowel:
+
+\[
+\vec E=\frac{\vec F_e}{q}
+\]
+
+als de formule voor het veld van een puntlading in je verklaring.
+
+\end{oefening}
+
+
+\begin{oefening}[Twee positieve bronladingen]{\oefU\ESS}
+
+Twee puntladingen:
+
+\[
+Q_1=+2{,}0\,\mathrm{\mu C},
+\qquad
+Q_2=+8{,}0\,\mathrm{\mu C}
+\]
+
+bevinden zich op een afstand:
+
+\[
+d=0{,}60\,\mathrm m
+\]
+
+van elkaar.
+
+Bepaal op de verbindingslijn tussen beide ladingen het punt waar:
+
+\[
+\vec E_\mathrm{res}=\vec 0.
+\]
+
+Maak eerst een kwalitatieve voorspelling van de ligging.
+
+\end{oefening}
+
+
+\begin{oefening}[Veld nul, potentiaal niet nul]{\oefU\ESS}
+
+Twee gelijke positieve ladingen bevinden zich symmetrisch rond punt
+$P$.
+
+\begin{enumerate}
+  \item Bepaal kwalitatief $\vec E(P)$.
+  \item Bepaal het teken van $V(P)$.
+  \item Leg uit waarom een nulveld niet noodzakelijk een nulpotentiaal
+        betekent.
+\end{enumerate}
+
+\end{oefening}
+
+
+\begin{oefening}[Potentiaal nul, veld niet nul]{\oefU\ESS}
+
+Een positieve en een even grote negatieve puntlading bevinden zich
+symmetrisch rond punt $P$.
+
+\begin{enumerate}
+  \item Bepaal $V(P)$.
+  \item Onderzoek de veldvectoren in $P$.
+  \item Is $\vec E(P)$ nul?
+  \item Leg uit waarom $V=0$ niet noodzakelijk betekent dat
+        $\vec E=\vec 0$.
+\end{enumerate}
+
+\end{oefening}
+
+
+\begin{oefening}[Drie bronladingen]{\oefU\ESS}
+
+Drie puntladingen liggen op de $x$-as:
+
+\[
+Q_1=+2{,}0\,\mathrm{\mu C}
+\quad\text{bij}\quad
+x=0,
+\]
+
+\[
+Q_2=-4{,}0\,\mathrm{\mu C}
+\quad\text{bij}\quad
+x=0{,}20\,\mathrm m,
+\]
+
+\[
+Q_3=+3{,}0\,\mathrm{\mu C}
+\quad\text{bij}\quad
+x=0{,}50\,\mathrm m.
+\]
+
+Bepaal:
+
+\begin{enumerate}
+  \item de elektrische veldsterkte in
+        $x=0{,}35\,\mathrm m$;
+  \item de elektrische potentiaal in datzelfde punt.
+\end{enumerate}
+
+Vergelijk de werkwijze voor de vectoriële en scalaire grootheid.
+
+\end{oefening}
+
+
+\begin{oefening}[Energie en snelheid]{\oefU\ESS}
+
+Een proton vertrekt uit rust en wordt versneld door een
+potentiaalverschil van:
+
+\[
+500\,\mathrm V.
+\]
+
+Verwaarloos andere krachten.
+
+Bereken de snelheid van het proton nadat het dit potentiaalverschil
+heeft doorlopen.
+
+Gebruik:
+
+\[
+m_p=1{,}67\times10^{-27}\,\mathrm{kg}.
+\]
+
+\end{oefening}
+
+
+\begin{oefening}[Redeneren zonder rekenen]{\oefU\ESS}
+
+Een positieve lading wordt losgelaten in een niet-homogeen elektrisch
+veld.
+
+Ze beweegt aanvankelijk in de richting van een gebied met lagere
+potentiaal.
+
+Bespreek wat je kan besluiten over:
+
+\begin{enumerate}
+  \item de richting van de elektrische kracht;
+  \item de verandering van de potentiële energie;
+  \item de verandering van de kinetische energie wanneer alleen de
+        elektrische kracht arbeid verricht.
+\end{enumerate}
+
+\end{oefening}
+
+
+% ------------------------------------------------------------
+% GEVORDERD
+% ------------------------------------------------------------
+
+\FVDsubsection{Gevorderd}
+
+
+\begin{oefening}[Veld in twee dimensies]{\oefG}
+
+Twee positieve puntladingen:
+
+\[
+Q_1=2Q
+\qquad\text{en}\qquad
+Q_2=Q
+\]
+
+bevinden zich op de $x$-as.
+
+Een punt $P$ bevindt zich boven het midden tussen beide ladingen.
+
+Stel zelf geschikte coördinaten in en bepaal symbolisch:
+
+\begin{enumerate}
+  \item $\vec E_1(P)$;
+  \item $\vec E_2(P)$;
+  \item de componenten van $\vec E_\mathrm{res}(P)$;
+  \item de richting van het resulterende veld.
+\end{enumerate}
+
+Controleer of je antwoord overeenkomt met wat je op basis van de
+symmetrie en de ongelijke ladingen verwacht.
+
+\end{oefening}
+
+
+\begin{oefening}[Veld en potentiaal vergelijken]{\oefG}
+
+Voor een puntlading geldt:
+
+\[
+E(r)=k\frac{|Q|}{r^2}
+\]
+
+en:
+
+\[
+V(r)=k\frac{Q}{r}.
+\]
+
+Onderzoek wiskundig en fysisch:
+
+\begin{enumerate}
+  \item hoe beide functies veranderen met $r$;
+  \item welke functie het snelst naar nul gaat;
+  \item waarom $E$ en $V$ verschillende machten van $r$ bevatten;
+  \item welk verband je ziet tussen de helling van $V(r)$ en de
+        grootte van $E(r)$.
+\end{enumerate}
+
+\end{oefening}
+
+
+\begin{oefening}[Van potentiaal naar veld]{\oefG}
+
+Langs de $x$-as wordt de elektrische potentiaal beschreven door:
+
+\[
+V(x)=\frac{A}{x}
+\]
+
+voor $x>0$, met $A>0$.
+
+Voor leerlingen die vertrouwd zijn met afgeleiden geldt in één
+dimensie:
+
+\[
+E_x=-\frac{dV}{dx}.
+\]
+
+\begin{enumerate}
+  \item Bepaal $E_x(x)$.
+  \item Vergelijk het resultaat met het radiale veld van een positieve
+        puntlading.
+  \item Verklaar de betekenis van het minteken.
+\end{enumerate}
+
+\end{oefening}
+
+
+\begin{oefening}[Elektrische afbuiging]{\oefG}
+
+Een positief geladen deeltje met massa $m$ en lading $q$ komt
+horizontaal met snelheid $v_0$ een gebied binnen met een homogeen
+verticaal elektrisch veld $E$.
+
+Het veldgebied heeft horizontale lengte $L$.
+
+\begin{enumerate}
+  \item Bepaal hoe lang het deeltje zich tussen de platen bevindt.
+  \item Bepaal de verticale versnelling.
+  \item Bepaal de verticale uitwijking bij het verlaten van het
+        veldgebied.
+  \item Toon aan dat de baan tussen de platen parabolisch is.
+  \item Onderzoek hoe de uitwijking verandert wanneer $v_0$ wordt
+        verdubbeld.
+\end{enumerate}
+
+\end{oefening}
+
+
+\begin{oefening}[Modelkritiek bij evenwijdige platen]{\oefG}
+
+Een leerling gebruikt overal tussen en rond twee eindige geladen platen:
+
+\[
+E=\frac{|\Delta V|}{d}.
+\]
+
+Analyseer deze keuze.
+
+Bespreek:
+
+\begin{enumerate}
+  \item onder welke omstandigheden de formule een goed model vormt;
+  \item wat er bij de randen van de platen gebeurt;
+  \item waarom een fysisch model bruikbaar kan zijn zonder exact de
+        volledige werkelijkheid te beschrijven.
+\end{enumerate}
+
+\end{oefening}
+
+
+% ============================================================
+% 48. ICT-ONDERZOEK
+% ============================================================
+
+\FVDsection{Onderzoeken met ICT}
+
+Gebruik GeoGebra, Desmos, een spreadsheet of een geschikte
+veldsimulatie om het elektrische veld en de elektrische potentiaal van
+puntladingen te onderzoeken.
+
+Onderzoek eerst één positieve puntlading.
+
+Maak grafieken van:
+
+\[
+E(r)=k\frac{|Q|}{r^2}
+\]
+
+en:
+
+\[
+V(r)=k\frac{Q}{r}.
+\]
+
+Vergelijk:
+
+\begin{enumerate}
+  \item de vorm van beide grafieken;
+  \item hun gedrag voor grote $r$;
+  \item hun gedrag wanneer $r$ kleiner wordt;
+  \item de invloed van een verdubbeling van $Q$.
+\end{enumerate}
+
+Onderzoek daarna twee ladingen.
+
+Vergelijk bijvoorbeeld:
+
+\[
+(+Q,+Q)
+\]
+
+met:
+
+\[
+(+Q,-Q).
+\]
+
+Maak voor verschillende punten een voorstelling van:
+
+\[
+\vec E
+\]
+
+en:
+
+\[
+V.
+\]
+
+Zoek punten waar:
+
+\[
+\vec E=\vec 0
+\]
+
+en punten waar:
+
+\[
+V=0.
+\]
+
+Onderzoek of dit dezelfde punten zijn.
+
+Formuleer op basis van je waarnemingen een besluit.
+
+
+% ============================================================
+% 49. MISCONCEPTIES
+% ============================================================
+
+\FVDsection{Veelvoorkomende denkfouten}
+
+\begin{itemize}
+
+  \item \textbf{``Het elektrische veld hangt af van de testlading.''}
+
+  Nee. De bronladingen bepalen het veld. De testlading bepaalt welke
+  kracht ze in dat veld ondervindt.
+
+  \item \textbf{``Een negatieve testlading keert het veld om.''}
+
+  Nee. Ze keert de zin van de kracht ten opzichte van het veld om.
+
+  \item \textbf{``Veldlijnen zijn echte draden in de ruimte.''}
+
+  Nee. Het zijn voorstellingsmiddelen om een vectorveld zichtbaar te
+  maken.
+
+  \item \textbf{``Waar geen veldlijn getekend is, is het veld nul.''}
+
+  Nee. Een veldlijnendiagram toont slechts een selectie van lijnen.
+
+  \item \textbf{``Potentiaal en potentiële energie zijn hetzelfde.''}
+
+  Nee:
+
+  \[
+  E_{\mathrm{pot,e}}=qV.
+  \]
+
+  \item \textbf{``Als $V=0$, dan is ook $E=0$.''}
+
+  Niet noodzakelijk.
+
+  \item \textbf{``Als $E=0$, dan moet $V=0$.''}
+
+  Ook dat is niet noodzakelijk.
+
+  \item \textbf{``Een positieve en negatieve lading bewegen spontaan
+  allebei naar lagere potentiaal.''}
+
+  Nee. Een systeem evolueert spontaan naar lagere potentiële energie.
+  Omdat $E_{\mathrm{pot,e}}=qV$, hangt de relatie met $V$ af van het
+  teken van $q$.
+
+  \item \textbf{``In een homogeen veld is de potentiaal overal
+  dezelfde.''}
+
+  Nee. Het veld is constant, maar de potentiaal verandert lineair in de
+  richting van het veld.
+
+\end{itemize}
+
+
+% ============================================================
+% 50. SAMENVATTING
+% ============================================================
+
+\FVDsection{Samenvatting}
+
+
+\FVDsubsection{Elektrische veldsterkte}
+
+\[
+\boxed{
+\vec E
+=
+\frac{\vec F_e}{q_t}
+}
+\]
+
+voor een positieve testlading.
+
+Eenheid:
+
+\[
+\boxed{
+[E]=\mathrm{\frac NC}.
+}
+\]
+
+
+\FVDsubsection{Puntlading}
+
+\[
+\boxed{
+E
+=
+k\frac{|Q|}{r^2}.
+}
+\]
+
+Voor $Q>0$ wijst $\vec E$ van de lading weg.
+
+Voor $Q<0$ wijst $\vec E$ naar de lading toe.
+
+
+\FVDsubsection{Superpositie}
+
+\[
+\boxed{
+\vec E_\mathrm{res}
+=
+\sum_i\vec E_i.
+}
+\]
+
+
+\FVDsubsection{Kracht in een veld}
+
+\[
+\boxed{
+\vec F_e=q\vec E.
+}
+\]
+
+Voor $q>0$ hebben $\vec F_e$ en $\vec E$ dezelfde zin.
+
+Voor $q<0$ hebben ze tegengestelde zin.
+
+
+\FVDsubsection{Elektrische potentiële energie}
+
+Voor twee puntladingen:
+
+\[
+\boxed{
+E_{\mathrm{pot,e}}
+=
+k\frac{Qq}{r}.
+}
+\]
+
+
+\FVDsubsection{Elektrische potentiaal}
+
+\[
+\boxed{
+V
+=
+\frac{E_{\mathrm{pot,e}}}{q}.
+}
+\]
+
+Voor een puntlading:
+
+\[
+\boxed{
+V
+=
+k\frac{Q}{r}.
+}
+\]
+
+Eenheid:
+
+\[
+\boxed{
+1\,\mathrm V
+=
+1\,\mathrm{\frac JC}.
+}
+\]
+
+
+\FVDsubsection{Superpositie van potentiaal}
+
+\[
+\boxed{
+V_\mathrm{tot}
+=
+\sum_iV_i.
+}
+\]
+
+
+\FVDsubsection{Spanning}
+
+\[
+\boxed{
+\Delta V=V_B-V_A.
+}
+\]
+
+En:
+
+\[
+\boxed{
+\Delta E_{\mathrm{pot,e}}
+=
+q\Delta V.
+}
+\]
+
+
+\FVDsubsection{Homogeen elektrisch veld}
+
+Voor een verplaatsing evenwijdig aan het veld:
+
+\[
+\boxed{
+|\Delta V|=Ed.
+}
+\]
+
+Dus:
+
+\[
+\boxed{
+E=\frac{|\Delta V|}{d}.
+}
+\]
+
+Daaruit:
+
+\[
+\boxed{
+1\,\mathrm{\frac NC}
+=
+1\,\mathrm{\frac Vm}.
+}
+\]
+
+
+\FVDsubsection{Versnelling van een geladen deeltje}
+
+\[
+\boxed{
+\vec a
+=
+\frac{q}{m}\vec E.
+}
+\]
+
+
+\FVDsubsection{Energieomzetting}
+
+Wanneer alleen de elektrische kracht arbeid verricht:
+
+\[
+\boxed{
+\Delta E_k
+=
+-\Delta E_{\mathrm{pot,e}}.
+}
+\]
+
+Dus:
+
+\[
+\boxed{
+\Delta E_k
+=
+-q\Delta V.
+}
+\]
+
+
+% ============================================================
+% 51. WAT MOET JE ZEKER BEHEERSEN?
+% ============================================================
+
+\FVDsection{Wat moet je zeker beheersen?}
+
+Om dit hoofdstuk op het vereiste niveau te beheersen, moet je meer
+kunnen dan formules invullen.
+
+Je moet zeker kunnen:
+
+\begin{itemize}
+
+  \item uitleggen wat een elektrisch veld voorstelt;
+
+  \item bronlading en testlading onderscheiden;
+
+  \item de definitie
+
+        \[
+        \vec E=\frac{\vec F_e}{q_t}
+        \]
+
+        interpreteren;
+
+  \item het veld van een puntlading berekenen met
+
+        \[
+        E=k\frac{|Q|}{r^2};
+        \]
+
+  \item richting en zin van $\vec E$ bepalen;
+
+  \item veldlijnen tekenen en interpreteren;
+
+  \item uit veldlijndichtheid conclusies trekken over de grootte van
+        $E$;
+
+  \item radiale, homogene en dipoolvelden herkennen en vergelijken;
+
+  \item meerdere elektrische velden vectorieel combineren;
+
+  \item symmetrie gebruiken om een elektrisch veld te analyseren;
+
+  \item de kracht op een positieve en negatieve lading bepalen met
+
+        \[
+        \vec F_e=q\vec E;
+        \]
+
+  \item elektrische potentiële energie interpreteren;
+
+  \item potentiaal berekenen met
+
+        \[
+        V=k\frac{Q}{r};
+        \]
+
+  \item het verschil tussen $\vec E$, $V$ en
+        $E_{\mathrm{pot,e}}$ uitleggen;
+
+  \item de potentiaal van meerdere bronladingen algebraïsch optellen;
+
+  \item uitleggen waarom $V=0$ niet noodzakelijk betekent dat
+        $\vec E=0$;
+
+  \item spanning als potentiaalverschil interpreteren;
+
+  \item werken met
+
+        \[
+        \Delta E_{\mathrm{pot,e}}=q\Delta V;
+        \]
+
+  \item in een homogeen veld het verband
+
+        \[
+        |\Delta V|=Ed
+        \]
+
+        toepassen;
+
+  \item het verband tussen veldlijnen en equipotentialen uitleggen;
+
+  \item de beweging en energie van een geladen deeltje in een homogeen
+        elektrisch veld analyseren;
+
+  \item je berekeningen controleren op eenheden, tekens, richting,
+        grootteorde en fysische betekenis.
+
+\end{itemize}
+
+De oefeningen met de essentieel-markering vormen samen de minimale
+oefenset.
+
+Let op: ook verschillende oefeningen uit de categorie
+\oefU zijn essentieel. Dat is noodzakelijk omdat je niet alleen
+standaardtechnieken moet kunnen uitvoeren, maar elektrische velden en
+potentialen ook in nieuwe situaties moet kunnen analyseren.
+
+
+% ============================================================
+% 52. SLOT
+% ============================================================
+
+\FVDsection{Van elektrische naar magnetische velden}
+
+We hebben elektrische wisselwerkingen nu op verschillende niveaus
+leren beschrijven.
+
+Eerst als kracht tussen ladingen:
+
+\[
+Q_1,Q_2
+\longrightarrow
+\vec F_e.
+\]
+
+Daarna als elektrisch veld:
+
+\[
+Q
+\longrightarrow
+\vec E
+\longrightarrow
+\vec F_e.
+\]
+
+En ten slotte vanuit energie:
+
+\[
+V
+\longrightarrow
+E_{\mathrm{pot,e}}
+\longrightarrow
+E_k.
+\]
+
+Een belangrijke vraag blijft echter open.
+
+Tot nu toe hebben we vooral elektrische ladingen beschouwd die als
+bron van een elektrisch veld optreden.
+
+Maar wat gebeurt er wanneer elektrische ladingen
+\textbf{bewegen}?
+
+Een bewegende elektrische lading blijkt nog een ander soort veld te
+kunnen veroorzaken:
+
+\[
+\boxed{
+\text{een magnetisch veld}.
+}
+\]
+
+Daarmee ontstaat een nieuwe verbinding:
+
+\[
+\boxed{
+\text{bewegende elektrische lading}
+\longrightarrow
+\text{magnetisme}.
+}
+\]
+
+In het volgende thema onderzoeken we hoe elektriciteit en magnetisme
+met elkaar verbonden zijn.
+
+\end{document}

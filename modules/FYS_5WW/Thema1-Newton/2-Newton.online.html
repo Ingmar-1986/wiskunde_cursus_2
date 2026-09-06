@@ -1,0 +1,1491 @@
+<!DOCTYPE html> 
+<html lang='en-US' xml:lang='en-US'> 
+<head> <title>Krachten en de wetten van Newton</title> 
+<meta charset='utf-8' /> 
+<meta content='TeX4ht (https://tug.org/tex4ht/)' name='generator' /> 
+<meta content='width=device-width,initial-scale=1' name='viewport' /> 
+<link href='\aa:CssFile ' rel='stylesheet' type='text/css' /> 
+<meta content='2-Newton.online.tex' name='src' /> 
+<script>window.MathJax = { tex: { tags: "ams", }, }; </script> 
+<script async='async' id='MathJax-script' src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js' type='text/javascript'></script>  
+<meta content='Ingmar Herreman' name='author' /> 
+<meta content='version 2.5.1' name='ximera' /> 
+<link href='https://ximera.osu.edu/public/stylesheets/standalone.css' media='screen' rel='stylesheet' /> 
+<script async='' src='https://ximera.osu.edu/public/javascripts/standalone.min.js' type='text/javascript'></script> 
+</head><body> 
+<div class='preamble'>
+</div>
+<style> .activity-body pre { white-space: pre; background-color: lightgray; } .xmyoutube { aspect-ratio: 16/9; min-width: 75%; } .image-environment img { width: unset; } </style> 
+
+<div class='maketitle'></div>
+<!-- l. 49 --><p class='noindent'></p><section class='learning-box learning-box--prior'> <div class='learning-box__header'> <span class='learning-box__icon'> </span><span class='learning-box__title'>Voorkennis</span> </div> <div class='learning-box__content'> 
+<p></p>     
+<ul class='itemize1'>
+<li class='itemize'>Je kan scalaire en vectoriële grootheden onderscheiden.
+</li>
+<li class='itemize'>Je kan een vector beschrijven aan de hand van grootte, richting en zin.
+</li>
+<li class='itemize'>Je kan eenvoudige vectoren grafisch optellen.
+</li>
+<li class='itemize'>Je begrijpt wat een resulterende vector is.
+</li>
+<li class='itemize'>Je kent de begrippen massa, snelheid en versnelling uit de tweede graad.
+</li>
+<li class='itemize'>Je  kan  eenvoudige  formules  gebruiken  en  een  onbekende  grootheid
+vrijmaken.</li></ul>
+<!-- l. 56 --><p class='noindent'></p></div> </section> 
+<p></p><!-- l. 58 --><p class='noindent'></p><section class='learning-box learning-box--goals'> <div class='learning-box__header'> <span class='learning-box__icon'> </span><span class='learning-box__title'>Leerdoelen</span> </div> <div class='learning-box__content'> 
+<p></p>     
+<ul class='itemize1'>
+<li class='itemize'>Je kan uitleggen dat een kracht een wisselwerking tussen twee systemen
+beschrijft.
+</li>
+<li class='itemize'>Je kan een kracht correct als vector voorstellen.
+                                                                  
+
+                                                                  
+</li>
+<li class='itemize'>Je kan bij eenvoudige situaties de resulterende kracht bepalen.
+</li>
+<li class='itemize'>Je kan de eerste wet van Newton uitleggen en toepassen in eenvoudige
+situaties.
+</li>
+<li class='itemize'>Je  kan  het  verband  tussen  resulterende  kracht,  massa  en  versnelling
+uitleggen met de tweede wet van Newton.
+</li>
+<li class='itemize'>Je kan eenvoudige berekeningen uitvoeren met <span class='mathjax-inline'>\(\sum \vec F=m\vec a\)</span>.
+</li>
+<li class='itemize'>Je kan de derde wet van Newton correct formuleren.
+</li>
+<li class='itemize'>Je kan in een concrete situatie een actie-reactiepaar herkennen.
+</li>
+<li class='itemize'>Je kan uitleggen waarom actie- en reactiekracht elkaar niet opheffen.
+</li>
+<li class='itemize'>Je kan onderscheid maken tussen een krachtenpaar volgens Newton III en
+twee krachten die op hetzelfde voorwerp werken.
+</li>
+<li class='itemize'>Je kan het superpositiebeginsel voor krachten gebruiken.
+</li>
+<li class='itemize'>Je kan de wetten van Newton verbinden met gravitatiekracht en elektrische
+kracht.</li></ul>
+                                                                  
+
+                                                                  
+<!-- l. 71 --><p class='noindent'></p></div> </section> 
+<p><a id='x1-2r1'></a>
+</p><p></p><!-- l. 78 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>1</div><div class='fvd-section-bar__title'>Waarom verandert een beweging?</div></div>
+<p></p><!-- l. 80 --><p class='noindent'>In het vorige hoofdstuk bouwden we een aantal gereedschappen op om fysische
+verschijnselen te beschrijven.
+</p><!-- l. 83 --><p class='noindent'>We kunnen grootheden meten, vectoren voorstellen en verschillende vectoren
+combineren.
+</p><!-- l. 86 --><p class='noindent'>Maar daarmee is een fundamentele vraag nog niet beantwoord:
+</p>
+<div class='center'>
+<!-- l. 88 --><p class='noindent'>
+</p><!-- l. 89 --><p class='noindent'><em>Waarom verandert de beweging van een voorwerp?</em></p></div>
+<!-- l. 92 --><p class='noindent'>Een voetbal blijft liggen tot iemand ertegen trapt.
+</p><!-- l. 94 --><p class='noindent'>Een fiets versnelt wanneer de fietser kracht uitoefent.
+</p><!-- l. 96 --><p class='noindent'>Een auto vertraagt wanneer hij remt.
+</p><!-- l. 98 --><p class='noindent'>Een steen die wordt losgelaten versnelt naar de aarde.
+</p><!-- l. 100 --><p class='noindent'>De maan verandert voortdurend van bewegingsrichting terwijl ze rond de aarde
+beweegt.
+</p><!-- l. 103 --><p class='noindent'>In al deze voorbeelden verandert de snelheidsvector.
+</p><!-- l. 105 --><p class='noindent'>Dat kan betekenen dat:
+</p>     
+<ul class='itemize1'>
+<li class='itemize'>de grootte van de snelheid verandert;
+</li>
+<li class='itemize'>de richting van de snelheid verandert;
+</li>
+<li class='itemize'>of beide tegelijk veranderen.</li></ul>
+<!-- l. 113 --><p class='noindent'>Een verandering van de snelheidsvector betekent dat er een versnelling is.
+</p>
+                                                                  
+
+                                                                  
+<div class='mathjax-block'>\[ \boxed { \text {verandering van }\vec v \quad \Longleftrightarrow \quad \vec a\neq \vec 0 } \]</div>
+<!-- l. 123 --><p class='noindent'>Newton legde het verband tussen zo’n bewegingsverandering en de krachten die op
+een voorwerp werken.
+<a id='x1-3r2'></a>
+</p><!-- l. 131 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>2</div><div class='fvd-section-bar__title'>Een kracht ontstaat door een wisselwerking</div></div>
+<p></p><!-- l. 133 --><p class='noindent'>We spreken in het dagelijks leven gemakkelijk over “een kracht op een voorwerp”.
+</p><!-- l. 136 --><p class='noindent'>Maar fysisch is het belangrijk om verder te vragen:
+</p>
+<div class='center'>
+<!-- l. 138 --><p class='noindent'>
+</p><!-- l. 139 --><p class='noindent'><em>Welk systeem oefent die kracht uit?</em></p></div>
+<!-- l. 142 --><p class='noindent'>Wanneer je tegen een muur duwt, oefent je hand een kracht uit op de muur.
+</p><!-- l. 145 --><p class='noindent'>Wanneer de aarde een appel aantrekt, oefent de aarde een kracht uit op de
+appel.
+</p><!-- l. 148 --><p class='noindent'>Wanneer twee geladen deeltjes elkaar afstoten, oefent elke lading een elektrische
+kracht uit op de andere.
+</p><!-- l. 152 --><p class='noindent'></p><section class='fvd-definition'><div class='fvd-definition__title'><span class='fvd-definition__label'>DEFINITIE</span><span class='fvd-definition__separator'> — </span><span class='fvd-definition__name'>Kracht</span></div><div class='fvd-definition__content'>
+<p></p><!-- l. 154 --><p class='noindent'>Een <strong>kracht</strong> beschrijft een wisselwerking waarbij een systeem een invloed uitoefent op
+een ander systeem.
+</p><!-- l. 157 --><p class='noindent'>Een kracht is een vectoriële grootheid.
+</p></div></section>
+<p></p><!-- l. 162 --><p class='noindent'>We schrijven een kracht bijvoorbeeld als:
+</p>
+<div class='mathjax-block'>\[ \vec F. \]</div>
+<!-- l. 168 --><p class='noindent'>De SI-eenheid van kracht is de newton:
+</p>
+<div class='mathjax-block'>\[ \boxed { [F]=\mathrm N. } \]</div>
+<p><a id='x1-4r1'></a>
+</p><!-- l. 177 --><p class='noindent'></p><div class='fvd-subsection'>
+<p></p><!-- l. 177 --><p class='noindent'></p><div class='fvd-subsection__row'>
+<p></p><!-- l. 177 --><p class='noindent'></p><div class='fvd-subsection__number'>2.1</div>
+<p></p><!-- l. 177 --><p class='noindent'></p><div class='fvd-subsection__title'>Wie oefent kracht uit op wie?</div>
+<p></p><!-- l. 177 --><p class='noindent'></p></div>
+<p></p><!-- l. 177 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
+                                                                  
+
+                                                                  
+<p></p><!-- l. 177 --><p class='noindent'></p></div>
+<p></p><!-- l. 179 --><p class='noindent'>Om verwarring te vermijden kunnen we bij een kracht expliciet vermelden welk
+systeem de kracht uitoefent en op welk systeem de kracht werkt.
+</p><!-- l. 183 --><p class='noindent'>We schrijven bijvoorbeeld:
+</p>
+<div class='mathjax-block'>\[ \boxed { \vec F_{A\rightarrow B} } \]</div>
+<!-- l. 191 --><p class='noindent'>voor:
+</p>
+<div class='center'>
+<!-- l. 193 --><p class='noindent'>
+</p><!-- l. 194 --><p class='noindent'>de kracht die systeem <span class='mathjax-inline'>\(A\)</span> uitoefent op systeem <span class='mathjax-inline'>\(B\)</span>.</p></div>
+<!-- l. 197 --><p class='noindent'>De pijl in het onderschrift betekent dus niet de richting van de krachtvector in de
+ruimte.
+</p><!-- l. 200 --><p class='noindent'>Hij geeft aan:
+</p>
+<div class='mathjax-block'>\[ \boxed { \text {wie oefent de kracht uit} \rightarrow \text {op wie werkt de kracht}. } \]</div>
+<p><a id='x1-5r1'></a>
+</p><!-- l. 211 --><p class='noindent'></p><section class='fvd-example'>
+<p></p><!-- l. 211 --><p class='noindent'></p><div class='fvd-example__title'>Voorbeeld 1<span class='fvd-example__subtitle'> — De aarde en een appel</span></div>
+<p></p><!-- l. 211 --><p class='noindent'></p><div class='fvd-example__content'>
+<p></p><!-- l. 213 --><p class='noindent'>Een appel bevindt zich boven het aardoppervlak.
+</p><!-- l. 215 --><p class='noindent'>De aarde oefent een gravitatiekracht uit op de appel:
+</p>
+<div class='mathjax-block'>\[ \vec F_{\mathrm {aarde}\rightarrow \mathrm {appel}}. \]</div>
+<!-- l. 221 --><p class='noindent'>Maar de interactie werkt in beide richtingen.
+</p><!-- l. 223 --><p class='noindent'>De appel oefent eveneens een gravitatiekracht uit op de aarde:
+</p>
+<div class='mathjax-block'>\[ \vec F_{\mathrm {appel}\rightarrow \mathrm {aarde}}. \]</div>
+<!-- l. 229 --><p class='noindent'>Later zullen we zien dat deze twee krachten een actie-reactiepaar vormen.
+</p></div></section>
+<p><a id='x1-6r1'></a>
+</p><p></p><!-- l. 235 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 235 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 235 --><p class='noindent'>Oefening 1
+                                                                  
+
+                                                                  
+</p><!-- l. 235 --><p class='noindent'>— Wie oefent de kracht uit?
+</p><!-- l. 235 --><p class='noindent'></p></div>
+<p></p><!-- l. 235 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 235 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 235 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 237 --><p class='noindent'>Beschrijf bij elke situatie duidelijk welk systeem een kracht uitoefent op welk ander
+systeem.
+</p>     
+<ol class='enumerate1'>
+<li class='enumerate' id='x1-8x1'>De aarde trekt een satelliet aan.
+</li>
+<li class='enumerate' id='x1-10x2'>Een magneet trekt een ijzeren voorwerp aan.
+</li>
+<li class='enumerate' id='x1-12x3'>Een positief geladen deeltje stoot een ander positief geladen deeltje af.
+</li>
+<li class='enumerate' id='x1-14x4'>Een hand duwt tegen een deur.
+</li>
+<li class='enumerate' id='x1-16x5'>De vloer duwt tegen de voeten van een leerling.</li></ol>
+<!-- l. 249 --><p class='noindent'>Gebruik waar mogelijk de notatie:
+</p>
+<div class='mathjax-block'>\[ \vec F_{A\rightarrow B}. \]</div>
+</div>
+<!-- l. 255 --><p class='noindent'></p></div>
+<p></p><!-- l. 255 --><p class='noindent'></p></section>
+<p><a id='x1-17r3'></a>
+</p><p></p><!-- l. 262 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>3</div><div class='fvd-section-bar__title'>Een kracht is een vector</div></div>
+                                                                  
+
+                                                                  
+<p></p><!-- l. 264 --><p class='noindent'>Het is niet voldoende om te zeggen:
+</p>
+<div class='center'>
+<!-- l. 266 --><p class='noindent'>
+</p><!-- l. 267 --><p class='noindent'>“Er werkt een kracht van <span class='mathjax-inline'>\(20\,\mathrm N\)</span>.”</p></div>
+<!-- l. 270 --><p class='noindent'>We moeten ook weten in welke richting en zin de kracht werkt.
+</p><!-- l. 272 --><p class='noindent'>Een kracht heeft dus:
+</p>
+<div class='mathjax-block'>\[ \boxed { \text {grootte, richting en zin}. } \]</div>
+<!-- l. 280 --><p class='noindent'>Daarom is kracht een vectoriële grootheid.
+<a id='x1-18r2'></a>
+</p><!-- l. 284 --><p class='noindent'></p><section class='fvd-example'>
+<p></p><!-- l. 284 --><p class='noindent'></p><div class='fvd-example__title'>Voorbeeld 2</div>
+<p></p><!-- l. 284 --><p class='noindent'></p><div class='fvd-example__content'>
+<p></p><!-- l. 285 --><p class='noindent'>Twee leerlingen trekken aan een kar.
+</p><!-- l. 287 --><p class='noindent'>De eerste leerling oefent een kracht van:
+</p>
+<div class='mathjax-block'>\[ 50\,\mathrm N \]</div>
+<!-- l. 293 --><p class='noindent'>naar rechts uit.
+</p><!-- l. 295 --><p class='noindent'>De tweede leerling oefent een kracht van:
+</p>
+<div class='mathjax-block'>\[ 30\,\mathrm N \]</div>
+<!-- l. 301 --><p class='noindent'>naar links uit.
+</p><!-- l. 303 --><p class='noindent'>Omdat de krachten tegengesteld gericht zijn, is de resulterende kracht:
+</p>
+<div class='mathjax-block'>\[ F_{\mathrm {res}} = 50-30 = 20\,\mathrm N. \]</div>
+<!-- l. 313 --><p class='noindent'>De zin is naar rechts.
+</p><!-- l. 315 --><p class='noindent'>Dus:
+</p>
+<div class='mathjax-block'>\[ \boxed { \vec F_{\mathrm {res}} = 20\,\mathrm N \text { naar rechts}. } \]</div>
+</div></section>
+<p><a id='x1-19r4'></a>
+</p><!-- l. 333 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>4</div><div class='fvd-section-bar__title'>De resulterende kracht</div></div>
+                                                                  
+
+                                                                  
+<p></p><!-- l. 335 --><p class='noindent'>Op een voorwerp werkt meestal niet slechts één kracht.
+</p><!-- l. 337 --><p class='noindent'>Op een boek dat op een tafel ligt werkt bijvoorbeeld de gravitatiekracht van de aarde,
+maar ook een kracht van de tafel.
+</p><!-- l. 340 --><p class='noindent'>Voor de beweging van het voorwerp is het gezamenlijke effect van alle krachten
+belangrijk.
+</p><!-- l. 343 --><p class='noindent'>We noemen dit de <strong>resulterende kracht</strong> of <strong>nettokracht</strong>.
+</p><!-- l. 346 --><p class='noindent'></p><section class='fvd-definition'><div class='fvd-definition__title'><span class='fvd-definition__label'>DEFINITIE</span><span class='fvd-definition__separator'> — </span><span class='fvd-definition__name'>Resulterende kracht</span></div><div class='fvd-definition__content'>
+<p></p><!-- l. 348 --><p class='noindent'>De <strong>resulterende kracht</strong> is de vectorsom van alle krachten die op hetzelfde gekozen
+systeem werken.
+</p>
+<div class='mathjax-block'>\[ \boxed { \vec F_{\mathrm {res}} = \sum _i\vec F_i } \]</div>
+</div></section>
+<!-- l. 362 --><p class='noindent'>Bij twee krachten:
+</p>
+<div class='mathjax-block'>\[ \vec F_{\mathrm {res}} = \vec F_1+\vec F_2. \]</div>
+<!-- l. 370 --><p class='noindent'>Bij drie krachten:
+</p>
+<div class='mathjax-block'>\[ \vec F_{\mathrm {res}} = \vec F_1+\vec F_2+\vec F_3. \]</div>
+<!-- l. 380 --><p class='noindent'></p><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span></div><div class='fvd-remark__content'>
+<p></p><!-- l. 381 --><p class='noindent'>We mogen alleen krachten optellen wanneer we het effect van die krachten op
+<strong>hetzelfde systeem</strong> onderzoeken.
+</p><!-- l. 384 --><p class='noindent'>Dat wordt straks bijzonder belangrijk bij de derde wet van Newton.
+</p></div></section>
+<p><a id='x1-20r2'></a>
+</p><p></p><!-- l. 389 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 389 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 389 --><p class='noindent'>Oefening 2
+</p><!-- l. 389 --><p class='noindent'>— Resultante
+</p><!-- l. 389 --><p class='noindent'></p></div>
+<p></p><!-- l. 389 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 389 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 389 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 391 --><p class='noindent'>Bepaal telkens de resulterende kracht.
+</p>     
+<ol class='enumerate1'>
+                                                                  
+
+                                                                  
+<li class='enumerate' id='x1-22x1'><span class='mathjax-inline'>\(12\,\mathrm N\)</span> naar rechts en <span class='mathjax-inline'>\(8\,\mathrm N\)</span> naar rechts.
+</li>
+<li class='enumerate' id='x1-24x2'><span class='mathjax-inline'>\(12\,\mathrm N\)</span> naar rechts en <span class='mathjax-inline'>\(8\,\mathrm N\)</span> naar links.
+</li>
+<li class='enumerate' id='x1-26x3'><span class='mathjax-inline'>\(25\,\mathrm N\)</span> omhoog en <span class='mathjax-inline'>\(25\,\mathrm N\)</span> omlaag.
+</li>
+<li class='enumerate' id='x1-28x4'><span class='mathjax-inline'>\(4\,\mathrm N\)</span> naar rechts en <span class='mathjax-inline'>\(3\,\mathrm N\)</span> omhoog.
+</li></ol>
+<!-- l. 405 --><p class='noindent'>Maak telkens eerst een vectorschets.
+</p></div>
+<p></p><!-- l. 407 --><p class='noindent'></p></div>
+<p></p><!-- l. 407 --><p class='noindent'></p></section>
+<p><a id='x1-29r5'></a>
+</p><p></p><!-- l. 414 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>5</div><div class='fvd-section-bar__title'>De eerste wet van Newton: traagheid</div></div>
+<p></p><!-- l. 416 --><p class='noindent'>Stel dat een ijshockeypuck over bijna wrijvingsloos ijs glijdt.
+</p><!-- l. 418 --><p class='noindent'>Wat gebeurt er wanneer niemand de puck nog aanraakt?
+</p><!-- l. 420 --><p class='noindent'>Onze dagelijkse ervaring kan ons misleiden. Voorwerpen op aarde komen
+meestal uiteindelijk tot stilstand, maar dat gebeurt omdat er wrijvings- en
+weerstandskrachten aanwezig zijn.
+</p><!-- l. 424 --><p class='noindent'>Wanneer de resulterende kracht nul is, is er geen reden waarom de snelheidsvector
+zou veranderen.
+</p><!-- l. 428 --><p class='noindent'></p><section class='fvd-definition'><div class='fvd-definition__title'><span class='fvd-definition__label'>DEFINITIE</span><span class='fvd-definition__separator'> — </span><span class='fvd-definition__name'>Eerste wet van Newton</span></div><div class='fvd-definition__content'>
+<p></p><!-- l. 430 --><p class='noindent'>Wanneer de resulterende kracht op een voorwerp nul is, blijft zijn snelheidsvector
+constant.
+</p>
+<div class='mathjax-block'>\[ \boxed { \sum \vec F=\vec 0 \quad \Longrightarrow \quad \vec v=\text {constant}. } \]</div>
+</div></section>
+<!-- l. 444 --><p class='noindent'>Dit bevat twee belangrijke mogelijkheden.
+                                                                  
+
+                                                                  
+</p><!-- l. 446 --><p class='noindent'>Het voorwerp kan in rust zijn:
+</p>
+<div class='mathjax-block'>\[ \vec v=\vec 0. \]</div>
+<!-- l. 452 --><p class='noindent'>Maar het kan ook bewegen met constante snelheid in een rechte lijn:
+</p>
+<div class='mathjax-block'>\[ \vec v=\text {constant}\neq \vec 0. \]</div>
+<!-- l. 460 --><p class='noindent'></p><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span></div><div class='fvd-remark__content'>
+<p></p><!-- l. 461 --><p class='noindent'>Een resulterende kracht van nul betekent dus <strong>niet</strong> noodzakelijk dat een voorwerp
+stilstaat.
+</p><!-- l. 464 --><p class='noindent'>Het betekent dat de snelheidsvector niet verandert.
+</p></div></section>
+<p><a id='x1-30r1'></a>
+</p><p></p><!-- l. 469 --><p class='noindent'></p><div class='fvd-subsection'>
+<p></p><!-- l. 469 --><p class='noindent'></p><div class='fvd-subsection__row'>
+<p></p><!-- l. 469 --><p class='noindent'></p><div class='fvd-subsection__number'>5.1</div>
+<p></p><!-- l. 469 --><p class='noindent'></p><div class='fvd-subsection__title'>Traagheid</div>
+<p></p><!-- l. 469 --><p class='noindent'></p></div>
+<p></p><!-- l. 469 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
+<p></p><!-- l. 469 --><p class='noindent'></p></div>
+<p></p><!-- l. 471 --><p class='noindent'>De neiging van een voorwerp om zijn bewegingstoestand te behouden noemen we
+<strong>traagheid</strong>.
+</p><!-- l. 475 --><p class='noindent'></p><section class='fvd-definition'><div class='fvd-definition__title'><span class='fvd-definition__label'>DEFINITIE</span><span class='fvd-definition__separator'> — </span><span class='fvd-definition__name'>Traagheid</span></div><div class='fvd-definition__content'>
+<p></p><!-- l. 477 --><p class='noindent'><strong>Traagheid</strong> is de eigenschap van materie waardoor een voorwerp zich verzet tegen
+een verandering van zijn bewegingstoestand.
+</p></div></section>
+<p></p><!-- l. 482 --><p class='noindent'>De massa is een maat voor die traagheid.
+</p><!-- l. 484 --><p class='noindent'>Een vrachtwagen heeft een grotere massa dan een fiets en is daarom moeilijker in
+beweging te brengen, af te remmen of van richting te veranderen.
+<a id='x1-31r3'></a>
+</p><!-- l. 489 --><p class='noindent'></p><section class='fvd-example'>
+<p></p><!-- l. 489 --><p class='noindent'></p><div class='fvd-example__title'>Voorbeeld 3<span class='fvd-example__subtitle'> — Een optrekkende bus</span></div>
+<p></p><!-- l. 489 --><p class='noindent'></p><div class='fvd-example__content'>
+<p></p><!-- l. 491 --><p class='noindent'>Je staat rechtop in een stilstaande bus.
+</p><!-- l. 493 --><p class='noindent'>Plots trekt de bus vooruit op.
+</p><!-- l. 495 --><p class='noindent'>Je lichaam heeft de neiging zijn oorspronkelijke bewegingstoestand te behouden. Je
+                                                                  
+
+                                                                  
+voeten worden door de vloer van de bus naar voren versneld, terwijl de rest van je
+lichaam niet onmiddellijk dezelfde bewegingsverandering ondergaat.
+</p><!-- l. 500 --><p class='noindent'>Ten opzichte van de bus lijkt het daardoor alsof je naar achteren beweegt.
+</p><!-- l. 503 --><p class='noindent'>Dit is een gevolg van traagheid.
+</p></div></section>
+<p><a id='x1-32r3'></a>
+</p><p></p><!-- l. 508 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 508 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 508 --><p class='noindent'>Oefening 3
+</p><!-- l. 508 --><p class='noindent'>— Moet er een kracht zijn om te blijven bewegen?
+</p><!-- l. 508 --><p class='noindent'></p></div>
+<p></p><!-- l. 508 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 508 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 508 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 510 --><p class='noindent'>Een leerling zegt:
+</p>
+<div class='center'>
+<!-- l. 512 --><p class='noindent'>
+</p><!-- l. 513 --><p class='noindent'>“Een voorwerp kan alleen blijven bewegen zolang er een kracht in de
+bewegingsrichting op werkt.”</p></div>
+<!-- l. 517 --><p class='noindent'>Beoordeel deze uitspraak met behulp van de eerste wet van Newton.
+</p><!-- l. 519 --><p class='noindent'>Geef ook een voorbeeld dat je redenering ondersteunt.
+</p></div>
+<p></p><!-- l. 521 --><p class='noindent'></p></div>
+<p></p><!-- l. 521 --><p class='noindent'></p></section>
+<p><a id='x1-33r6'></a>
+</p><p></p><!-- l. 528 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>6</div><div class='fvd-section-bar__title'>De tweede wet van Newton: kracht verandert beweging</div></div>
+<p></p><!-- l. 530 --><p class='noindent'>De eerste wet vertelt wat gebeurt wanneer de resulterende kracht nul is.
+</p><!-- l. 532 --><p class='noindent'>Maar wat gebeurt er wanneer:
+</p>
+<div class='mathjax-block'>\[ \sum \vec F\neq \vec 0? \]</div>
+<!-- l. 538 --><p class='noindent'>Dan verandert de snelheidsvector.
+</p><!-- l. 540 --><p class='noindent'>Het voorwerp versnelt.
+                                                                  
+
+                                                                  
+</p><!-- l. 543 --><p class='noindent'></p><section class='fvd-definition'><div class='fvd-definition__title'><span class='fvd-definition__label'>DEFINITIE</span><span class='fvd-definition__separator'> — </span><span class='fvd-definition__name'>Tweede wet van Newton</span></div><div class='fvd-definition__content'>
+<p></p><!-- l. 545 --><p class='noindent'>De versnelling van een voorwerp wordt bepaald door de resulterende kracht en de
+massa van het voorwerp.
+</p>
+<div class='mathjax-block'>\[ \boxed { \sum \vec F=m\vec a. } \]</div>
+</div></section>
+<!-- l. 557 --><p class='noindent'>Daaruit volgt:
+</p>
+<div class='mathjax-block'>\[ \boxed { \vec a = \frac {\sum \vec F}{m}. } \]</div>
+<!-- l. 568 --><p class='noindent'>Deze formule bevat veel fysische informatie.
+<a id='x1-34r1'></a>
+</p><!-- l. 571 --><p class='noindent'></p><div class='fvd-subsection'>
+<p></p><!-- l. 571 --><p class='noindent'></p><div class='fvd-subsection__row'>
+<p></p><!-- l. 571 --><p class='noindent'></p><div class='fvd-subsection__number'>6.1</div>
+<p></p><!-- l. 571 --><p class='noindent'></p><div class='fvd-subsection__title'>Invloed van de kracht</div>
+<p></p><!-- l. 571 --><p class='noindent'></p></div>
+<p></p><!-- l. 571 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
+<p></p><!-- l. 571 --><p class='noindent'></p></div>
+<p></p><!-- l. 573 --><p class='noindent'>Bij gelijke massa geldt:
+</p>
+<div class='mathjax-block'>\[ a\propto F_{\mathrm {res}}. \]</div>
+<!-- l. 579 --><p class='noindent'>Een tweemaal zo grote resulterende kracht veroorzaakt een tweemaal zo grote
+versnelling.
+<a id='x1-35r2'></a>
+</p><!-- l. 583 --><p class='noindent'></p><div class='fvd-subsection'>
+<p></p><!-- l. 583 --><p class='noindent'></p><div class='fvd-subsection__row'>
+<p></p><!-- l. 583 --><p class='noindent'></p><div class='fvd-subsection__number'>6.2</div>
+<p></p><!-- l. 583 --><p class='noindent'></p><div class='fvd-subsection__title'>Invloed van de massa</div>
+<p></p><!-- l. 583 --><p class='noindent'></p></div>
+<p></p><!-- l. 583 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
+<p></p><!-- l. 583 --><p class='noindent'></p></div>
+<p></p><!-- l. 585 --><p class='noindent'>Bij dezelfde resulterende kracht geldt:
+</p>
+<div class='mathjax-block'>\[ a\propto \frac {1}{m}. \]</div>
+<!-- l. 591 --><p class='noindent'>Een grotere massa betekent dus een kleinere versnelling bij dezelfde resulterende
+                                                                  
+
+                                                                  
+kracht.
+<a id='x1-36r3'></a>
+</p><!-- l. 595 --><p class='noindent'></p><div class='fvd-subsection'>
+<p></p><!-- l. 595 --><p class='noindent'></p><div class='fvd-subsection__row'>
+<p></p><!-- l. 595 --><p class='noindent'></p><div class='fvd-subsection__number'>6.3</div>
+<p></p><!-- l. 595 --><p class='noindent'></p><div class='fvd-subsection__title'>De richting van de versnelling</div>
+<p></p><!-- l. 595 --><p class='noindent'></p></div>
+<p></p><!-- l. 595 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
+<p></p><!-- l. 595 --><p class='noindent'></p></div>
+<p></p><!-- l. 597 --><p class='noindent'>Omdat <span class='mathjax-inline'>\(m\)</span> een positieve scalaire grootheid is, hebben:
+</p>
+<div class='mathjax-block'>\[ \vec a \]</div>
+<!-- l. 603 --><p class='noindent'>en:
+</p>
+<div class='mathjax-block'>\[ \sum \vec F \]</div>
+<!-- l. 609 --><p class='noindent'>dezelfde richting en zin.
+</p><!-- l. 611 --><p class='noindent'>Dus:
+</p>
+<div class='mathjax-block'>\[ \boxed { \vec a\parallel \vec F_{\mathrm {res}}. } \]</div>
+<!-- l. 621 --><p class='noindent'></p><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span></div><div class='fvd-remark__content'>
+<p></p><!-- l. 622 --><p class='noindent'>De versnelling heeft de richting van de <strong>resulterende kracht</strong>, niet noodzakelijk de
+richting van één afzonderlijke kracht.
+</p></div></section>
+<p><a id='x1-37r4'></a>
+</p><p></p><!-- l. 628 --><p class='noindent'></p><section class='fvd-example'>
+<p></p><!-- l. 628 --><p class='noindent'></p><div class='fvd-example__title'>Voorbeeld 4<span class='fvd-example__subtitle'> — Een kar versnellen</span></div>
+<p></p><!-- l. 628 --><p class='noindent'></p><div class='fvd-example__content'>
+<p></p><!-- l. 630 --><p class='noindent'>Op een kar met massa:
+</p>
+<div class='mathjax-block'>\[ m=4{,}0\,\mathrm {kg} \]</div>
+<!-- l. 636 --><p class='noindent'>werkt een resulterende kracht van:
+</p>
+<div class='mathjax-block'>\[ F_{\mathrm {res}}=12\,\mathrm N. \]</div>
+<!-- l. 642 --><p class='noindent'>Uit:
+</p>
+                                                                  
+
+                                                                  
+<div class='mathjax-block'>\[ F_{\mathrm {res}}=ma \]</div>
+<!-- l. 648 --><p class='noindent'>volgt:
+</p>
+<div class='mathjax-block'>\[ a = \frac {F_{\mathrm {res}}}{m}. \]</div>
+<!-- l. 656 --><p class='noindent'>Dus:
+</p>
+<div class='mathjax-block'>\[ a = \frac {12}{4{,}0} = 3{,}0\,\mathrm {m/s^2}. \]</div>
+<div class='mathjax-block'>\[ \boxed { a=3{,}0\,\mathrm {m/s^2}. } \]</div>
+</div></section>
+<p><a id='x1-38r4'></a>
+</p><!-- l. 675 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 675 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 675 --><p class='noindent'>Oefening 4
+</p><!-- l. 675 --><p class='noindent'>— Kracht, massa en versnelling
+</p><!-- l. 675 --><p class='noindent'></p></div>
+<p></p><!-- l. 675 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 675 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 675 --><p class='noindent'></p><div class='fvd-exercise__content'>     
+<p></p>
+<ol class='enumerate1'>
+<li class='enumerate' id='x1-40x1'>Op een voorwerp van <span class='mathjax-inline'>\(5{,}0\,\mathrm {kg}\)</span> werkt een resulterende kracht van <span class='mathjax-inline'>\(20\,\mathrm N\)</span>. Bereken de
+versnelling.
+</li>
+<li class='enumerate' id='x1-42x2'>Een voorwerp versnelt met <span class='mathjax-inline'>\(3{,}0\,\mathrm {m/s^2}\)</span> onder invloed van een resulterende kracht van
+<span class='mathjax-inline'>\(15\,\mathrm N\)</span>. Bereken de massa.
+</li>
+<li class='enumerate' id='x1-44x3'>Een voorwerp van <span class='mathjax-inline'>\(2{,}5\,\mathrm {kg}\)</span> krijgt een versnelling van <span class='mathjax-inline'>\(4{,}0\,\mathrm {m/s^2}\)</span>. Bereken de resulterende
+kracht.
+</li></ol>
+                                                                  
+
+                                                                  
+</div>
+<!-- l. 693 --><p class='noindent'></p></div>
+<p></p><!-- l. 693 --><p class='noindent'></p></section>
+<p><a id='x1-45r5'></a>
+</p><p></p><!-- l. 696 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 696 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 696 --><p class='noindent'>Oefening 5
+</p><!-- l. 696 --><p class='noindent'>— Dezelfde kracht, andere massa
+</p><!-- l. 696 --><p class='noindent'></p></div>
+<p></p><!-- l. 696 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 696 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 696 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 698 --><p class='noindent'>Twee karretjes worden afzonderlijk voortgeduwd door dezelfde constante resulterende
+kracht.
+</p><!-- l. 701 --><p class='noindent'>Karretje A heeft massa:
+</p>
+<div class='mathjax-block'>\[ m_A=2{,}0\,\mathrm {kg}. \]</div>
+<!-- l. 707 --><p class='noindent'>Karretje B heeft massa:
+</p>
+<div class='mathjax-block'>\[ m_B=6{,}0\,\mathrm {kg}. \]</div>
+<!-- l. 713 --><p class='noindent'>Zonder de kracht numeriek te kennen:
+</p>     
+<ol class='enumerate1'>
+<li class='enumerate' id='x1-47x1'>vergelijk <span class='mathjax-inline'>\(a_A\)</span> en <span class='mathjax-inline'>\(a_B\)</span>;
+</li>
+<li class='enumerate' id='x1-49x2'>     
+<!-- l. 717 --><p class='noindent'>bepaal de verhouding </p><div class='mathjax-block'>\[ \frac {a_A}{a_B}; \]</div>
+</li>
+<li class='enumerate' id='x1-51x3'>verklaar je antwoord fysisch met het begrip traagheid.</li></ol>
+</div>
+                                                                  
+
+                                                                  
+<!-- l. 724 --><p class='noindent'></p></div>
+<p></p><!-- l. 724 --><p class='noindent'></p></section>
+<p><a id='x1-52r7'></a>
+</p><p></p><!-- l. 731 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>7</div><div class='fvd-section-bar__title'>De derde wet van Newton: krachten komen in paren</div></div>
+<p></p><!-- l. 733 --><p class='noindent'>Tot nu toe bekeken we vooral welke krachten op één gekozen voorwerp werken.
+</p><!-- l. 736 --><p class='noindent'>Maar een kracht ontstaat altijd door een interactie tussen twee systemen.
+</p><!-- l. 739 --><p class='noindent'>Wanneer systeem <span class='mathjax-inline'>\(A\)</span> een kracht uitoefent op systeem <span class='mathjax-inline'>\(B\)</span>, oefent systeem <span class='mathjax-inline'>\(B\)</span> tegelijk een
+kracht uit op systeem <span class='mathjax-inline'>\(A\)</span>.
+</p><!-- l. 743 --><p class='noindent'></p><section class='fvd-definition'><div class='fvd-definition__title'><span class='fvd-definition__label'>DEFINITIE</span><span class='fvd-definition__separator'> — </span><span class='fvd-definition__name'>Derde wet van Newton</span></div><div class='fvd-definition__content'>
+<p></p><!-- l. 745 --><p class='noindent'>Wanneer systeem <span class='mathjax-inline'>\(A\)</span> een kracht uitoefent op systeem <span class='mathjax-inline'>\(B\)</span>, oefent systeem <span class='mathjax-inline'>\(B\)</span> tegelijkertijd een
+even grote maar tegengesteld gerichte kracht uit op systeem <span class='mathjax-inline'>\(A\)</span>.
+</p>
+<div class='mathjax-block'>\[ \boxed { \vec F_{A\rightarrow B} = -\vec F_{B\rightarrow A}. } \]</div>
+</div></section>
+<!-- l. 760 --><p class='noindent'>De twee krachten:
+</p>     
+<ul class='itemize1'>
+<li class='itemize'>ontstaan door dezelfde interactie;
+</li>
+<li class='itemize'>zijn even groot;
+</li>
+<li class='itemize'>hebben dezelfde richting;
+</li>
+<li class='itemize'>hebben tegengestelde zin;
+</li>
+<li class='itemize'>treden gelijktijdig op;
+</li>
+<li class='itemize'>werken op verschillende systemen.</li></ul>
+                                                                  
+
+                                                                  
+<!-- l. 773 --><p class='noindent'></p><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span></div><div class='fvd-remark__content'>
+<p></p><!-- l. 774 --><p class='noindent'>Het laatste punt is cruciaal:
+</p>
+<div class='mathjax-block'>\[ \boxed { \text {actie en reactie werken op verschillende voorwerpen.} } \]</div>
+<!-- l. 782 --><p class='noindent'>Daarom heffen ze elkaar niet op wanneer we de beweging van één afzonderlijk
+voorwerp onderzoeken.
+</p></div></section>
+<p><a id='x1-53r8'></a>
+</p><p></p><!-- l. 792 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>8</div><div class='fvd-section-bar__title'>Actie en reactie herkennen</div></div>
+<p></p><!-- l. 794 --><p class='noindent'>De woorden “actie” en “reactie” kunnen misleidend zijn.
+</p><!-- l. 796 --><p class='noindent'>Ze betekenen niet dat eerst de ene kracht ontstaat en pas daarna de andere.
+</p><!-- l. 799 --><p class='noindent'>Beide krachten bestaan tegelijkertijd.
+</p><!-- l. 801 --><p class='noindent'>Er is ook geen fysisch onderscheid waarbij één kracht belangrijker of “de echte
+kracht” zou zijn.
+</p><!-- l. 804 --><p class='noindent'>Beide maken deel uit van dezelfde interactie.
+<a id='x1-54r5'></a>
+</p><!-- l. 807 --><p class='noindent'></p><section class='fvd-example'>
+<p></p><!-- l. 807 --><p class='noindent'></p><div class='fvd-example__title'>Voorbeeld 5<span class='fvd-example__subtitle'> — Hand en muur</span></div>
+<p></p><!-- l. 807 --><p class='noindent'></p><div class='fvd-example__content'>
+<p></p><!-- l. 809 --><p class='noindent'>Je duwt met je hand tegen een muur.
+</p><!-- l. 811 --><p class='noindent'>Je hand oefent een kracht uit op de muur:
+</p>
+<div class='mathjax-block'>\[ \vec F_{\mathrm {hand}\rightarrow \mathrm {muur}}. \]</div>
+<!-- l. 817 --><p class='noindent'>De muur oefent tegelijkertijd een kracht uit op je hand:
+</p>
+<div class='mathjax-block'>\[ \vec F_{\mathrm {muur}\rightarrow \mathrm {hand}}. \]</div>
+<!-- l. 823 --><p class='noindent'>Volgens Newton III:
+</p>
+<div class='mathjax-block'>\[ \boxed { \vec F_{\mathrm {hand}\rightarrow \mathrm {muur}} = - \vec F_{\mathrm {muur}\rightarrow \mathrm {hand}}. } \]</div>
+<!-- l. 834 --><p class='noindent'>Daarom voel je de muur tegen je hand duwen.
+</p></div></section>
+<p><a id='x1-55r6'></a>
+</p><p></p><!-- l. 839 --><p class='noindent'></p><section class='fvd-example'>
+<p></p><!-- l. 839 --><p class='noindent'></p><div class='fvd-example__title'>Voorbeeld 6<span class='fvd-example__subtitle'> — Twee skaters</span></div>
+<p></p><!-- l. 839 --><p class='noindent'></p><div class='fvd-example__content'>
+                                                                  
+
+                                                                  
+<p></p><!-- l. 841 --><p class='noindent'>Twee skaters staan stil tegenover elkaar op vrijwel wrijvingsloos ijs.
+</p><!-- l. 843 --><p class='noindent'>Skater A duwt tegen skater B.
+</p><!-- l. 845 --><p class='noindent'>Dan oefent A een kracht uit op B:
+</p>
+<div class='mathjax-block'>\[ \vec F_{A\rightarrow B}. \]</div>
+<!-- l. 851 --><p class='noindent'>Tegelijk oefent B een kracht uit op A:
+</p>
+<div class='mathjax-block'>\[ \vec F_{B\rightarrow A}. \]</div>
+<!-- l. 857 --><p class='noindent'>De krachten zijn even groot:
+</p>
+<div class='mathjax-block'>\[ F_{A\rightarrow B} = F_{B\rightarrow A}. \]</div>
+<!-- l. 865 --><p class='noindent'>Toch hoeven hun versnellingen niet even groot te zijn.
+</p><!-- l. 867 --><p class='noindent'>Volgens Newton II:
+</p>
+<div class='mathjax-block'>\[ a_A = \frac {F}{m_A} \]</div>
+<!-- l. 875 --><p class='noindent'>en:
+</p>
+<div class='mathjax-block'>\[ a_B = \frac {F}{m_B}. \]</div>
+<!-- l. 883 --><p class='noindent'>Als:
+</p>
+<div class='mathjax-block'>\[ m_A&lt;m_B, \]</div>
+<!-- l. 889 --><p class='noindent'>dan:
+</p>
+<div class='mathjax-block'>\[ a_A&gt;a_B. \]</div>
+<!-- l. 895 --><p class='noindent'>De lichtere skater krijgt dus de grootste versnelling, hoewel beide krachten even groot
+zijn.
+</p></div></section>
+<p><a id='x1-56r6'></a>
+</p><p></p><!-- l. 901 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 901 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 901 --><p class='noindent'>Oefening 6
+</p><!-- l. 901 --><p class='noindent'>— Twee skaters
+</p><!-- l. 901 --><p class='noindent'></p></div>
+<p></p><!-- l. 901 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 901 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+                                                                  
+
+                                                                  
+<p></p><!-- l. 901 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 903 --><p class='noindent'>Skater A heeft massa:
+</p>
+<div class='mathjax-block'>\[ m_A=50\,\mathrm {kg} \]</div>
+<!-- l. 909 --><p class='noindent'>en skater B:
+</p>
+<div class='mathjax-block'>\[ m_B=75\,\mathrm {kg}. \]</div>
+<!-- l. 915 --><p class='noindent'>Tijdens het afduwen oefent A een kracht van:
+</p>
+<div class='mathjax-block'>\[ 120\,\mathrm N \]</div>
+<!-- l. 921 --><p class='noindent'>uit op B.
+</p>
+<div class='problem-environment question' id='problem1' numbered=' ' role='article' titletext=' Question'>  Hoe groot is de kracht die B op A uitoefent?    </div>
+<div class='problem-environment question' id='problem2' numbered=' ' role='article' titletext=' Question'>  Bereken de versnelling van A.    </div>
+<div class='problem-environment question' id='problem3' numbered=' ' role='article' titletext=' Question'>  Bereken de versnelling van B.    </div>
+<div class='problem-environment question' id='problem4' numbered=' ' role='article' titletext=' Question'>  Leg uit waarom de versnellingen verschillend zijn terwijl de krachten even groot
+zijn.    </div>
+</div>
+<!-- l. 940 --><p class='noindent'></p></div>
+<p></p><!-- l. 940 --><p class='noindent'></p></section>
+<p><a id='x1-57r9'></a>
+</p><p></p><!-- l. 947 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>9</div><div class='fvd-section-bar__title'>Een belangrijke valkuil: krachtpaar of krachtenevenwicht?</div></div>
+<p></p><!-- l. 949 --><p class='noindent'>Dit is een van de belangrijkste onderscheidingen in de mechanica.
+</p><!-- l. 951 --><p class='noindent'>Beschouw een boek dat stil op een tafel ligt.
+</p><!-- l. 953 --><p class='noindent'>Op het boek werkt de gravitatiekracht van de aarde:
+</p>
+<div class='mathjax-block'>\[ \vec F_{\mathrm {aarde}\rightarrow \mathrm {boek}}. \]</div>
+<!-- l. 959 --><p class='noindent'>Daarnaast oefent de tafel een opwaartse kracht uit op het boek:
+</p>
+<div class='mathjax-block'>\[ \vec F_{\mathrm {tafel}\rightarrow \mathrm {boek}}. \]</div>
+<!-- l. 965 --><p class='noindent'>Wanneer het boek in rust blijft, kunnen deze twee krachten elkaar compenseren:
+</p>
+<div class='mathjax-block'>\[ \vec F_{\mathrm {aarde}\rightarrow \mathrm {boek}} + \vec F_{\mathrm {tafel}\rightarrow \mathrm {boek}} = \vec 0. \]</div>
+<!-- l. 976 --><p class='noindent'>Maar deze twee krachten vormen <strong>geen</strong> actie-reactiepaar.
+</p><!-- l. 978 --><p class='noindent'>Waarom niet?
+                                                                  
+
+                                                                  
+</p><!-- l. 980 --><p class='noindent'>Omdat beide krachten op hetzelfde systeem werken:
+</p>
+<div class='mathjax-block'>\[ \boxed {\text {het boek}.} \]</div>
+<!-- l. 987 --><p class='noindent'>De reactiekracht bij:
+</p>
+<div class='mathjax-block'>\[ \vec F_{\mathrm {aarde}\rightarrow \mathrm {boek}} \]</div>
+<!-- l. 993 --><p class='noindent'>is:
+</p>
+<div class='mathjax-block'>\[ \vec F_{\mathrm {boek}\rightarrow \mathrm {aarde}}. \]</div>
+<!-- l. 999 --><p class='noindent'>En de reactiekracht bij:
+</p>
+<div class='mathjax-block'>\[ \vec F_{\mathrm {tafel}\rightarrow \mathrm {boek}} \]</div>
+<!-- l. 1005 --><p class='noindent'>is:
+</p>
+<div class='mathjax-block'>\[ \vec F_{\mathrm {boek}\rightarrow \mathrm {tafel}}. \]</div>
+<!-- l. 1013 --><p class='noindent'></p><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span></div><div class='fvd-remark__content'>
+<p></p><!-- l. 1014 --><p class='noindent'>Gebruik deze test:
+</p>
+<div class='mathjax-block'>\[ \boxed { \vec F_{A\rightarrow B} \quad \leftrightarrow \quad \vec F_{B\rightarrow A} } \]</div>
+<!-- l. 1024 --><p class='noindent'>Bij een actie-reactiepaar worden de namen van de twee systemen dus omgewisseld.
+</p></div></section>
+<p><a id='x1-58r7'></a>
+</p><p></p><!-- l. 1030 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 1030 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 1030 --><p class='noindent'>Oefening 7
+</p><!-- l. 1030 --><p class='noindent'>— Actie-reactie of niet?
+</p><!-- l. 1030 --><p class='noindent'></p></div>
+<p></p><!-- l. 1030 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 1030 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 1030 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 1032 --><p class='noindent'>Bepaal telkens of de twee beschreven krachten een actie-reactiepaar vormen.
+Verklaar.
+</p>     
+<ol class='enumerate1'>
+<li class='enumerate' id='x1-60x1'>De aarde trekt aan een appel en de appel trekt aan de aarde.
+</li>
+<li class='enumerate' id='x1-62x2'>De aarde trekt een boek naar beneden en de tafel duwt het boek omhoog.
+</li>
+<li class='enumerate' id='x1-64x3'>Een voet duwt tegen een voetbal en de voetbal duwt tegen de voet.
+</li>
+<li class='enumerate' id='x1-66x4'>Een auto trekt een aanhangwagen vooruit en de aanhangwagen trekt de
+auto achteruit.
+</li>
+<li class='enumerate' id='x1-68x5'>De aarde trekt een satelliet aan en de zon trekt dezelfde satelliet aan.
+</li></ol>
+</div>
+<!-- l. 1052 --><p class='noindent'></p></div>
+<p></p><!-- l. 1052 --><p class='noindent'></p></section>
+<p><a id='x1-69r10'></a>
+</p><p></p><!-- l. 1059 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>10</div><div class='fvd-section-bar__title'>Hoe kan een raket zich afzetten in de ruimte?</div></div>
+<p></p><!-- l. 1061 --><p class='noindent'>Een hardnekkige misconceptie is dat een raket zich in de ruimte niet zou kunnen
+voortbewegen omdat er “niets is om zich tegen af te zetten”.
+</p><!-- l. 1064 --><p class='noindent'>Maar een raket hoeft zich niet af te zetten tegen de lucht.
+</p><!-- l. 1066 --><p class='noindent'>De interactie vindt plaats tussen de raket en de uitgestoten gassen.
+</p><!-- l. 1068 --><p class='noindent'>De raket oefent een kracht uit op de uitlaatgassen:
+</p>
+<div class='mathjax-block'>\[ \vec F_{\mathrm {raket}\rightarrow \mathrm {gas}}. \]</div>
+<!-- l. 1074 --><p class='noindent'>De gassen oefenen tegelijkertijd een tegengestelde kracht uit op de raket:
+</p>
+<div class='mathjax-block'>\[ \vec F_{\mathrm {gas}\rightarrow \mathrm {raket}}. \]</div>
+<!-- l. 1081 --><p class='noindent'>Volgens Newton III:
+                                                                  
+
+                                                                  
+</p>
+<div class='mathjax-block'>\[ \boxed { \vec F_{\mathrm {raket}\rightarrow \mathrm {gas}} = - \vec F_{\mathrm {gas}\rightarrow \mathrm {raket}}. } \]</div>
+<!-- l. 1092 --><p class='noindent'>De raket kan daardoor ook in het luchtledige versnellen.
+<a id='x1-70r8'></a>
+</p><!-- l. 1095 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 1095 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 1095 --><p class='noindent'>Oefening 8
+</p><!-- l. 1095 --><p class='noindent'>— Raket in het luchtledige
+</p><!-- l. 1095 --><p class='noindent'></p></div>
+<p></p><!-- l. 1095 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 1095 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 1095 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 1097 --><p class='noindent'>Een leerling beweert:
+</p>
+<div class='center'>
+<!-- l. 1099 --><p class='noindent'>
+</p><!-- l. 1100 --><p class='noindent'>“Een raket kan in de ruimte niet versnellen, want er is geen lucht waartegen
+hij zich kan afzetten.”</p></div>
+<!-- l. 1104 --><p class='noindent'>Leg met behulp van Newton III uit waarom deze redenering fout is.
+</p><!-- l. 1106 --><p class='noindent'>Vermeld expliciet de twee systemen en de twee krachten van het actie-reactiepaar.
+</p></div>
+<p></p><!-- l. 1109 --><p class='noindent'></p></div>
+<p></p><!-- l. 1109 --><p class='noindent'></p></section>
+<p><a id='x1-71r11'></a>
+</p><p></p><!-- l. 1116 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>11</div><div class='fvd-section-bar__title'>Meerdere krachten tegelijk: superpositie</div></div>
+<p></p><!-- l. 1118 --><p class='noindent'>Een voorwerp kan tegelijkertijd met meerdere andere systemen interageren.
+</p><!-- l. 1121 --><p class='noindent'>Een satelliet kan bijvoorbeeld worden aangetrokken door de aarde, maar ook door de
+maan en de zon.
+</p><!-- l. 1124 --><p class='noindent'>Een geladen deeltje kan tegelijkertijd elektrische krachten ondervinden van meerdere
+andere ladingen.
+</p><!-- l. 1127 --><p class='noindent'>Het gezamenlijke effect vinden we door de krachtvectoren op te tellen.
+</p><!-- l. 1130 --><p class='noindent'></p><section class='fvd-definition'><div class='fvd-definition__title'><span class='fvd-definition__label'>DEFINITIE</span><span class='fvd-definition__separator'> — </span><span class='fvd-definition__name'>Superpositiebeginsel voor krachten</span></div><div class='fvd-definition__content'>
+<p></p><!-- l. 1132 --><p class='noindent'>Wanneer meerdere krachten op hetzelfde systeem werken, is de resulterende kracht de
+                                                                  
+
+                                                                  
+vectorsom van de afzonderlijke krachten.
+</p>
+<div class='mathjax-block'>\[ \boxed { \vec F_{\mathrm {res}} = \sum _i\vec F_i. } \]</div>
+</div></section>
+<!-- l. 1146 --><p class='noindent'>Voor drie krachten:
+</p>
+<div class='mathjax-block'>\[ \boxed { \vec F_{\mathrm {res}} = \vec F_1+\vec F_2+\vec F_3. } \]</div>
+<!-- l. 1158 --><p class='noindent'></p><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span></div><div class='fvd-remark__content'>
+<p></p><!-- l. 1159 --><p class='noindent'>Superpositie is straks essentieel.
+</p><!-- l. 1161 --><p class='noindent'>Bij gravitatie zullen verschillende massa’s elk een gravitatiekracht uitoefenen.
+</p><!-- l. 1164 --><p class='noindent'>Bij elektriciteit zullen verschillende ladingen elk een elektrische kracht uitoefenen.
+</p><!-- l. 1167 --><p class='noindent'>De totale kracht vinden we telkens door de afzonderlijke <strong>krachtvectoren</strong> op te
+tellen.
+</p></div></section>
+<p><a id='x1-72r7'></a>
+</p><p></p><!-- l. 1173 --><p class='noindent'></p><section class='fvd-example'>
+<p></p><!-- l. 1173 --><p class='noindent'></p><div class='fvd-example__title'>Voorbeeld 7<span class='fvd-example__subtitle'> — Twee tegengestelde krachten</span></div>
+<p></p><!-- l. 1173 --><p class='noindent'></p><div class='fvd-example__content'>
+<p></p><!-- l. 1175 --><p class='noindent'>Op een deeltje werken twee krachten langs dezelfde rechte:
+</p>
+<div class='mathjax-block'>\[ F_1=8{,}0\,\mathrm N \]</div>
+<!-- l. 1181 --><p class='noindent'>naar rechts en:
+</p>
+<div class='mathjax-block'>\[ F_2=3{,}0\,\mathrm N \]</div>
+<!-- l. 1187 --><p class='noindent'>naar links.
+</p><!-- l. 1189 --><p class='noindent'>Kiezen we rechts als positieve zin, dan:
+</p>
+<div class='mathjax-block'>\[ F_{\mathrm {res}} = 8{,}0-3{,}0 = 5{,}0\,\mathrm N. \]</div>
+<!-- l. 1199 --><p class='noindent'>Dus:
+</p>
+<div class='mathjax-block'>\[ \boxed { \vec F_{\mathrm {res}} = 5{,}0\,\mathrm N \text { naar rechts}. } \]</div>
+</div></section>
+<p><a id='x1-73r9'></a>
+</p><!-- l. 1213 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 1213 --><p class='noindent'></p><div class='fvd-exercise__title'>
+                                                                  
+
+                                                                  
+<p></p><!-- l. 1213 --><p class='noindent'>Oefening 9
+</p><!-- l. 1213 --><p class='noindent'>— Twee loodrechte krachten
+</p><!-- l. 1213 --><p class='noindent'></p></div>
+<p></p><!-- l. 1213 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 1213 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 1213 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 1215 --><p class='noindent'>Op een klein voorwerp werken twee krachten:
+</p>
+<div class='mathjax-block'>\[ F_1=6{,}0\,\mathrm N \]</div>
+<!-- l. 1221 --><p class='noindent'>naar rechts en:
+</p>
+<div class='mathjax-block'>\[ F_2=8{,}0\,\mathrm N \]</div>
+<!-- l. 1227 --><p class='noindent'>omhoog.
+</p>
+<div class='problem-environment question' id='problem5' numbered=' ' role='article' titletext=' Question'>  Maak een vectorschets.    </div>
+<div class='problem-environment question' id='problem6' numbered=' ' role='article' titletext=' Question'>  Bereken de grootte van de resulterende kracht.    </div>
+<div class='problem-environment question' id='problem7' numbered=' ' role='article' titletext=' Question'>  Bepaal de richting van de resulterende kracht.    </div>
+<div class='problem-environment question' id='problem8' numbered=' ' role='article' titletext=' Question'>  Het voorwerp heeft een massa van <span class='mathjax-inline'>\(2{,}0\,\mathrm {kg}\)</span>. Bereken de grootte van zijn versnelling.
+</div>
+<div class='problem-environment question' id='problem9' numbered=' ' role='article' titletext=' Question'>  Welke richting heeft de versnelling?    </div>
+</div>
+<!-- l. 1250 --><p class='noindent'></p></div>
+<p></p><!-- l. 1250 --><p class='noindent'></p></section>
+<p><a id='x1-74r12'></a>
+</p><p></p><!-- l. 1257 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>12</div><div class='fvd-section-bar__title'>Newton I en Newton II vertellen hetzelfde verhaal</div></div>
+<p></p><!-- l. 1259 --><p class='noindent'>De eerste en tweede wet van Newton worden vaak als volledig aparte wetten
+geleerd.
+</p><!-- l. 1262 --><p class='noindent'>Toch sluiten ze sterk bij elkaar aan.
+</p><!-- l. 1264 --><p class='noindent'>Volgens Newton II:
+</p>
+<div class='mathjax-block'>\[ \sum \vec F=m\vec a. \]</div>
+<!-- l. 1270 --><p class='noindent'>Wanneer:
+</p>
+<div class='mathjax-block'>\[ \sum \vec F=\vec 0, \]</div>
+<!-- l. 1276 --><p class='noindent'>dan volgt:
+                                                                  
+
+                                                                  
+</p>
+<div class='mathjax-block'>\[ m\vec a=\vec 0. \]</div>
+<!-- l. 1282 --><p class='noindent'>Omdat:
+</p>
+<div class='mathjax-block'>\[ m\neq 0, \]</div>
+<!-- l. 1288 --><p class='noindent'>moet:
+</p>
+<div class='mathjax-block'>\[ \vec a=\vec 0. \]</div>
+<!-- l. 1294 --><p class='noindent'>Dus verandert de snelheidsvector niet:
+</p>
+<div class='mathjax-block'>\[ \boxed { \vec v=\text {constant}. } \]</div>
+<!-- l. 1302 --><p class='noindent'>Dat is precies de bewegingstoestand die in Newton I wordt beschreven.
+</p><!-- l. 1304 --><p class='noindent'>Newton I benadrukt daarnaast het fundamentele idee van traagheid en de bijzondere
+betekenis van inertiaalstelsels, waarop we later nog kunnen terugkomen.
+<a id='x1-75r13'></a>
+</p><!-- l. 1313 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>13</div><div class='fvd-section-bar__title'>Van interactie naar bewegingsverandering</div></div>
+<p></p><!-- l. 1315 --><p class='noindent'>We kunnen de ideeën uit dit hoofdstuk nu samenbrengen.
+</p><!-- l. 1317 --><p class='noindent'>Wanneer twee systemen met elkaar interageren, ontstaan krachten.
+</p><!-- l. 1319 --><p class='noindent'>Volgens Newton III:
+</p>
+<div class='mathjax-block'>\[ \boxed { \vec F_{A\rightarrow B} = -\vec F_{B\rightarrow A}. } \]</div>
+<!-- l. 1329 --><p class='noindent'>Op één systeem kunnen verschillende krachten werken.
+</p><!-- l. 1331 --><p class='noindent'>Door superpositie:
+</p>
+<div class='mathjax-block'>\[ \boxed { \vec F_{\mathrm {res}} = \sum _i\vec F_i. } \]</div>
+<!-- l. 1341 --><p class='noindent'>De resulterende kracht bepaalt vervolgens de versnelling:
+</p>
+<div class='mathjax-block'>\[ \boxed { \sum \vec F=m\vec a. } \]</div>
+<!-- l. 1349 --><p class='noindent'>We krijgen dus de keten:
+</p>
+<div class='mathjax-block'>\[ \boxed { \text {interactie} \longrightarrow \text {krachten} \longrightarrow \text {resulterende kracht} \longrightarrow \text {versnelling} \longrightarrow \text {verandering van beweging}. } \]</div>
+<p><a id='x1-76r14'></a>
+</p><!-- l. 1370 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>14</div><div class='fvd-section-bar__title'>Even grote krachten, maar niet hetzelfde effect</div></div>
+<p></p><!-- l. 1372 --><p class='noindent'>Newton III zegt:
+</p>
+<div class='mathjax-block'>\[ F_{A\rightarrow B} = F_{B\rightarrow A}. \]</div>
+                                                                  
+
+                                                                  
+<!-- l. 1380 --><p class='noindent'>Daaruit zou je ten onrechte kunnen besluiten dat beide voorwerpen ook even sterk
+versnellen.
+</p><!-- l. 1383 --><p class='noindent'>Dat hoeft niet.
+</p><!-- l. 1385 --><p class='noindent'>Voor systeem A:
+</p>
+<div class='mathjax-block'>\[ a_A = \frac {F_{B\rightarrow A}}{m_A}. \]</div>
+<!-- l. 1393 --><p class='noindent'>Voor systeem B:
+</p>
+<div class='mathjax-block'>\[ a_B = \frac {F_{A\rightarrow B}}{m_B}. \]</div>
+<!-- l. 1401 --><p class='noindent'>Omdat de groottes van de krachten gelijk zijn:
+</p>
+<div class='mathjax-block'>\[ F_{A\rightarrow B} = F_{B\rightarrow A} = F, \]</div>
+<!-- l. 1411 --><p class='noindent'>geldt:
+</p>
+<div class='mathjax-block'>\[ a_A=\frac {F}{m_A} \]</div>
+<!-- l. 1417 --><p class='noindent'>en:
+</p>
+<div class='mathjax-block'>\[ a_B=\frac {F}{m_B}. \]</div>
+<!-- l. 1423 --><p class='noindent'>Daaruit volgt:
+</p>
+<div class='mathjax-block'>\[ \boxed { \frac {a_A}{a_B} = \frac {m_B}{m_A}. } \]</div>
+<!-- l. 1433 --><p class='noindent'>De versnellingen zijn dus omgekeerd evenredig met de massa’s.
+<a id='x1-77r8'></a>
+</p><!-- l. 1436 --><p class='noindent'></p><section class='fvd-example'>
+<p></p><!-- l. 1436 --><p class='noindent'></p><div class='fvd-example__title'>Voorbeeld 8<span class='fvd-example__subtitle'> — Appel en aarde</span></div>
+<p></p><!-- l. 1436 --><p class='noindent'></p><div class='fvd-example__content'>
+<p></p><!-- l. 1438 --><p class='noindent'>De aarde trekt aan een vallende appel.
+</p><!-- l. 1440 --><p class='noindent'>Maar volgens Newton III trekt de appel met precies dezelfde kracht aan de
+aarde.
+</p><!-- l. 1443 --><p class='noindent'>Waarom zien we de aarde dan niet merkbaar naar de appel versnellen?
+</p><!-- l. 1445 --><p class='noindent'>Omdat:
+</p>
+<div class='mathjax-block'>\[ m_{\mathrm {aarde}}\gg m_{\mathrm {appel}}. \]</div>
+<!-- l. 1451 --><p class='noindent'>Voor dezelfde kracht geldt:
+</p>
+<div class='mathjax-block'>\[ a=\frac {F}{m}. \]</div>
+                                                                  
+
+                                                                  
+<!-- l. 1457 --><p class='noindent'>De versnelling van de aarde is daardoor extreem klein.
+</p>
+<div class='center'>
+<!-- l. 1459 --><p class='noindent'>
+</p><!-- l. 1461 --><p class='noindent'><strong>De aarde trekt dus niet harder aan de appel dan de appel aan de
+aarde.</strong></p></div>
+<!-- l. 1464 --><p class='noindent'>Het verschil zit in de massa’s en daardoor in de versnellingen.
+</p></div></section>
+<p><a id='x1-78r10'></a>
+</p><p></p><!-- l. 1469 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 1469 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 1469 --><p class='noindent'>Oefening 10
+</p><!-- l. 1469 --><p class='noindent'>— Aarde en astronaut
+</p><!-- l. 1469 --><p class='noindent'></p></div>
+<p></p><!-- l. 1469 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 1469 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 1469 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 1471 --><p class='noindent'>Een astronaut bevindt zich in de ruimte en wordt door de aarde aangetrokken.
+</p><!-- l. 1474 --><p class='noindent'>Een leerling zegt:
+</p>
+<div class='center'>
+<!-- l. 1476 --><p class='noindent'>
+</p><!-- l. 1477 --><p class='noindent'>“De aarde oefent een veel grotere kracht uit op de astronaut dan de astronaut
+op de aarde, want de aarde heeft veel meer massa.”</p></div>
+<div class='problem-environment question' id='problem10' numbered=' ' role='article' titletext=' Question'>  Is deze uitspraak juist?    </div>
+<div class='problem-environment question' id='problem11' numbered=' ' role='article' titletext=' Question'>  Gebruik Newton III in je verklaring.    </div>
+<div class='problem-environment question' id='problem12' numbered=' ' role='article' titletext=' Question'>  Waarom is de versnelling van de astronaut toch veel groter dan die van de aarde?
+</div>
+</div>
+<!-- l. 1494 --><p class='noindent'></p></div>
+<p></p><!-- l. 1494 --><p class='noindent'></p></section>
+                                                                  
+
+                                                                  
+<p><a id='x1-79r15'></a>
+</p><p></p><!-- l. 1501 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>15</div><div class='fvd-section-bar__title'>Vooruitblik: gravitatie als wisselwerking</div></div>
+<p></p><!-- l. 1503 --><p class='noindent'>Newton vertelt ons hoe krachten samenhangen met beweging.
+</p><!-- l. 1505 --><p class='noindent'>Maar Newton II vertelt ons nog niet automatisch <strong>hoe groot</strong> een bepaalde
+interactiekracht is.
+</p><!-- l. 1508 --><p class='noindent'>Daarvoor hebben we specifieke krachtwetten nodig.
+</p><!-- l. 1510 --><p class='noindent'>Bij gravitatie stellen we bijvoorbeeld de vraag:
+</p>
+<div class='center'>
+<!-- l. 1512 --><p class='noindent'>
+</p><!-- l. 1513 --><p class='noindent'><em>Hoe groot is de kracht waarmee twee massa’s elkaar aantrekken?</em></p></div>
+<!-- l. 1516 --><p class='noindent'>We zullen een verband vinden van de vorm:
+</p>
+<div class='mathjax-block'>\[ F_g = G\frac {m_1m_2}{r^2}. \]</div>
+<!-- l. 1524 --><p class='noindent'>Daarbij zal Newton III onmiddellijk zichtbaar zijn.
+</p><!-- l. 1526 --><p class='noindent'>Massa <span class='mathjax-inline'>\(m_1\)</span> oefent een kracht uit op massa <span class='mathjax-inline'>\(m_2\)</span>:
+</p>
+<div class='mathjax-block'>\[ \vec F_{1\rightarrow 2}. \]</div>
+<!-- l. 1532 --><p class='noindent'>Massa <span class='mathjax-inline'>\(m_2\)</span> oefent een kracht uit op massa <span class='mathjax-inline'>\(m_1\)</span>:
+</p>
+<div class='mathjax-block'>\[ \vec F_{2\rightarrow 1}. \]</div>
+<!-- l. 1538 --><p class='noindent'>En:
+</p>
+<div class='mathjax-block'>\[ \boxed { \vec F_{1\rightarrow 2} = -\vec F_{2\rightarrow 1}. } \]</div>
+<p><a id='x1-80r16'></a>
+</p><!-- l. 1553 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>16</div><div class='fvd-section-bar__title'>Vooruitblik: elektrische kracht als wisselwerking</div></div>
+<p></p><!-- l. 1555 --><p class='noindent'>Een opvallend vergelijkbare structuur verschijnt bij elektrische ladingen.
+</p><!-- l. 1558 --><p class='noindent'>Twee elektrische ladingen oefenen krachten op elkaar uit.
+</p><!-- l. 1560 --><p class='noindent'>Ook daar geldt Newton III:
+</p>
+<div class='mathjax-block'>\[ \boxed { \vec F_{1\rightarrow 2} = -\vec F_{2\rightarrow 1}. } \]</div>
+<!-- l. 1570 --><p class='noindent'>En ook daar zullen we een krachtwet vinden die afhangt van de afstand tussen beide
+systemen.
+</p><!-- l. 1573 --><p class='noindent'>Later vinden we:
+                                                                  
+
+                                                                  
+</p>
+<div class='mathjax-block'>\[ F_e = k\frac {|q_1q_2|}{r^2}. \]</div>
+<!-- l. 1581 --><p class='noindent'>Vergelijk dit met gravitatie:
+</p>
+<div class='mathjax-block'>\[ F_g = G\frac {m_1m_2}{r^2}. \]</div>
+<!-- l. 1589 --><p class='noindent'>De overeenkomst is opvallend:
+</p>
+<div class='mathjax-block'>\[ \boxed { \begin {array}{ccc} \text {gravitatie} &amp;&amp; \text {elektriciteit} \\[1ex] m_1m_2 &amp;&amp; q_1q_2 \\[1ex] G &amp;&amp; k \\[1ex] \dfrac {1}{r^2} &amp;&amp; \dfrac {1}{r^2} \end {array} } \]</div>
+<!-- l. 1613 --><p class='noindent'>Maar er zal ook een belangrijk verschil zijn:
+</p>     
+<ul class='itemize1'>
+<li class='itemize'>gravitatie tussen gewone massa’s is aantrekkend;
+</li>
+<li class='itemize'>elektrische interacties kunnen aantrekkend of afstotend zijn.</li></ul>
+<!-- l. 1620 --><p class='noindent'>Dit wordt een van de centrale vergelijkingen in het volgende thema.
+<a id='x1-81r17'></a>
+</p><!-- l. 1627 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>17</div><div class='fvd-section-bar__title'>Oefeningen</div></div>
+<p><a id='x1-82r11'></a>
+</p><p></p><!-- l. 1630 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 1630 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 1630 --><p class='noindent'>Oefening 11
+</p><!-- l. 1630 --><p class='noindent'>— Waar of niet waar?
+</p><!-- l. 1630 --><p class='noindent'></p></div>
+<p></p><!-- l. 1630 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 1630 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 1630 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 1632 --><p class='noindent'>Beoordeel elke uitspraak. Verbeter een foute uitspraak.
+</p>     
+<ol class='enumerate1'>
+<li class='enumerate' id='x1-84x1'>Als  een  voorwerp  beweegt,  moet  er  een  resulterende  kracht  in  de
+bewegingsrichting werken.
+                                                                  
+
+                                                                  
+</li>
+<li class='enumerate' id='x1-86x2'>Als de resulterende kracht nul is, moet het voorwerp stilstaan.
+</li>
+<li class='enumerate' id='x1-88x3'>Als de resulterende kracht nul is, is de versnelling nul.
+</li>
+<li class='enumerate' id='x1-90x4'>De versnelling heeft dezelfde richting als de resulterende kracht.
+</li>
+<li class='enumerate' id='x1-92x5'>Een grotere massa betekent bij dezelfde resulterende kracht een grotere
+versnelling.
+</li>
+<li class='enumerate' id='x1-94x6'>Actie en reactie werken op hetzelfde voorwerp.
+</li>
+<li class='enumerate' id='x1-96x7'>Actie en reactie zijn even groot.
+</li>
+<li class='enumerate' id='x1-98x8'>Actie en reactie ontstaan tegelijkertijd.
+</li></ol>
+</div>
+<!-- l. 1657 --><p class='noindent'></p></div>
+<p></p><!-- l. 1657 --><p class='noindent'></p></section>
+<p><a id='x1-99r12'></a>
+</p><p></p><!-- l. 1660 --><p class='noindent'></p><section class='fvd-exercise'>
+                                                                  
+
+                                                                  
+<p></p><!-- l. 1660 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 1660 --><p class='noindent'>Oefening 12
+</p><!-- l. 1660 --><p class='noindent'>— Welke wet van Newton?
+</p><!-- l. 1660 --><p class='noindent'></p></div>
+<p></p><!-- l. 1660 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 1660 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 1660 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 1662 --><p class='noindent'>Geef bij elke situatie aan welke wet van Newton het meest rechtstreeks wordt
+geïllustreerd. Verklaar kort.
+</p>     
+<ol class='enumerate1'>
+<li class='enumerate' id='x1-101x1'>Een passagier beweegt bij plots remmen naar voren ten opzichte van de
+auto.
+</li>
+<li class='enumerate' id='x1-103x2'>Een  leeg  winkelkarretje  krijgt  bij  dezelfde  duwkracht  een  grotere
+versnelling dan een vol winkelkarretje.
+</li>
+<li class='enumerate' id='x1-105x3'>Een zwemmer duwt water naar achteren en beweegt daardoor naar voren.
+</li>
+<li class='enumerate' id='x1-107x4'>Een  ruimtesonde  blijft  met  constante  snelheid  bewegen  wanneer  de
+resulterende kracht erop nul is.
+</li>
+<li class='enumerate' id='x1-109x5'>Een geweer ondervindt bij het afvuren een terugslag.
+</li></ol>
+</div>
+<!-- l. 1683 --><p class='noindent'></p></div>
+                                                                  
+
+                                                                  
+<p></p><!-- l. 1683 --><p class='noindent'></p></section>
+<p><a id='x1-110r13'></a>
+</p><p></p><!-- l. 1686 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 1686 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 1686 --><p class='noindent'>Oefening 13
+</p><!-- l. 1686 --><p class='noindent'>— De parachutist
+</p><!-- l. 1686 --><p class='noindent'></p></div>
+<p></p><!-- l. 1686 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 1686 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 1686 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 1688 --><p class='noindent'>Een parachutist valt met constante snelheid naar beneden.
+</p><!-- l. 1690 --><p class='noindent'>Op de parachutist werken onder andere:
+</p>     
+<ul class='itemize1'>
+<li class='itemize'>een neerwaartse gravitatiekracht;
+</li>
+<li class='itemize'>een opwaartse luchtweerstandskracht.</li></ul>
+<div class='problem-environment question' id='problem13' numbered=' ' role='article' titletext=' Question'>  Wat kan je besluiten over de resulterende kracht?    </div>
+<div class='problem-environment question' id='problem14' numbered=' ' role='article' titletext=' Question'>  Is de versnelling nul? Verklaar.    </div>
+<div class='problem-environment question' id='problem15' numbered=' ' role='article' titletext=' Question'>  Werken er geen krachten omdat de snelheid constant is?    </div>
+<div class='problem-environment question' id='problem16' numbered=' ' role='article' titletext=' Question'>  Vormen de gravitatiekracht en de luchtweerstandskracht een actie-reactiepaar?
+Verklaar.    </div>
+</div>
+<!-- l. 1714 --><p class='noindent'></p></div>
+<p></p><!-- l. 1714 --><p class='noindent'></p></section>
+<p></p><!-- l. 1718 --><p class='noindent'></p><section class='fvd-remark'><div class='fvd-remark__title'><span class='fvd-remark__label'>OPMERKING</span></div><div class='fvd-remark__content'>
+<p></p><!-- l. 1719 --><p class='noindent'>Een parachutist die met constante snelheid daalt noemen we hier niet “in vrije val”.
+In het ideale vrije-valmodel verwaarlozen we de luchtweerstand en werkt alleen de
+gravitatiekracht.
+</p></div></section>
+<p><a id='x1-111r14'></a>
+</p><p></p><!-- l. 1730 --><p class='noindent'></p><section class='fvd-exercise'>
+                                                                  
+
+                                                                  
+<p></p><!-- l. 1730 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 1730 --><p class='noindent'>Oefening 14
+</p><!-- l. 1730 --><p class='noindent'>— Een botsing tussen een vrachtwagen en een auto
+</p><!-- l. 1730 --><p class='noindent'></p></div>
+<p></p><!-- l. 1730 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 1730 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 1730 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 1732 --><p class='noindent'>Een zware vrachtwagen botst frontaal met een veel lichtere personenauto.
+</p><!-- l. 1734 --><p class='noindent'>Een leerling zegt:
+</p>
+<div class='center'>
+<!-- l. 1736 --><p class='noindent'>
+</p><!-- l. 1737 --><p class='noindent'>“De vrachtwagen oefent tijdens de botsing een grotere kracht uit op de auto,
+want de vrachtwagen is veel zwaarder.”</p></div>
+<!-- l. 1741 --><p class='noindent'>Analyseer deze redenering.
+</p><!-- l. 1743 --><p class='noindent'>Bespreek afzonderlijk:
+</p>     
+<ol class='enumerate1'>
+<li class='enumerate' id='x1-113x1'>de kracht van de vrachtwagen op de auto;
+</li>
+<li class='enumerate' id='x1-115x2'>de kracht van de auto op de vrachtwagen;
+</li>
+<li class='enumerate' id='x1-117x3'>de versnelling van de vrachtwagen;
+</li>
+<li class='enumerate' id='x1-119x4'>de versnelling van de auto.</li></ol>
+                                                                  
+
+                                                                  
+<!-- l. 1752 --><p class='noindent'>Gebruik Newton II en Newton III in je verklaring.
+</p></div>
+<p></p><!-- l. 1754 --><p class='noindent'></p></div>
+<p></p><!-- l. 1754 --><p class='noindent'></p></section>
+<p><a id='x1-120r15'></a>
+</p><p></p><!-- l. 1757 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 1757 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 1757 --><p class='noindent'>Oefening 15
+</p><!-- l. 1757 --><p class='noindent'>— Touwtrekken
+</p><!-- l. 1757 --><p class='noindent'></p></div>
+<p></p><!-- l. 1757 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 1757 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span></div>
+<p></p><!-- l. 1757 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 1759 --><p class='noindent'>Twee leerlingen trekken aan de uiteinden van hetzelfde touw.
+</p><!-- l. 1761 --><p class='noindent'>Leerling A beweert:
+</p>
+<div class='center'>
+<!-- l. 1763 --><p class='noindent'>
+</p><!-- l. 1764 --><p class='noindent'>“Ik trek harder aan het touw dan jij aan mij trekt, want ik win.”</p></div>
+<!-- l. 1767 --><p class='noindent'>Onderzoek zorgvuldig welke krachten een actie-reactiepaar vormen.
+</p><!-- l. 1769 --><p class='noindent'>Leg vervolgens uit waarom het feit dat één leerling beweegt niet betekent dat
+Newton III geschonden wordt.
+</p></div>
+<p></p><!-- l. 1772 --><p class='noindent'></p></div>
+<p></p><!-- l. 1772 --><p class='noindent'></p></section>
+<p><a id='x1-121r16'></a>
+</p><p></p><!-- l. 1775 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 1775 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 1775 --><p class='noindent'>Oefening 16
+</p><!-- l. 1775 --><p class='noindent'>— Drie krachten op een ruimtesonde
+</p><!-- l. 1775 --><p class='noindent'></p></div>
+<p></p><!-- l. 1775 --><p class='noindent'></p><div class='fvd-exercise__body'>
+                                                                  
+
+                                                                  
+<p></p><!-- l. 1775 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 1775 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 1777 --><p class='noindent'>Op een ruimtesonde werken op een bepaald ogenblik drie krachten.
+</p>
+<div class='mathjax-block'>\[ \vec F_1: \quad 6{,}0\,\mathrm N \text { naar rechts}, \]</div>
+<div class='mathjax-block'>\[ \vec F_2: \quad 2{,}0\,\mathrm N \text { naar links}, \]</div>
+<div class='mathjax-block'>\[ \vec F_3: \quad 3{,}0\,\mathrm N \text { omhoog}. \]</div>
+<!-- l. 1800 --><p class='noindent'>De massa van de sonde is:
+</p>
+<div class='mathjax-block'>\[ m=2{,}0\,\mathrm {kg}. \]</div>
+<div class='problem-environment question' id='problem17' numbered=' ' role='article' titletext=' Question'>  Maak een vectorschets.    </div>
+<div class='problem-environment question' id='problem18' numbered=' ' role='article' titletext=' Question'>  Bepaal de horizontale en verticale component van de resulterende kracht.
+</div>
+<div class='problem-environment question' id='problem19' numbered=' ' role='article' titletext=' Question'>  Bereken de grootte van de resulterende kracht.    </div>
+<div class='problem-environment question' id='problem20' numbered=' ' role='article' titletext=' Question'>  Bepaal de richting van de resulterende kracht.    </div>
+<div class='problem-environment question' id='problem21' numbered=' ' role='article' titletext=' Question'>  Bereken de grootte van de versnelling.    </div>
+<div class='problem-environment question' id='problem22' numbered=' ' role='article' titletext=' Question'>  Welke richting heeft de versnelling?    </div>
+</div>
+<!-- l. 1830 --><p class='noindent'></p></div>
+<p></p><!-- l. 1830 --><p class='noindent'></p></section>
+<p><a id='x1-122r17'></a>
+</p><p></p><!-- l. 1837 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 1837 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 1837 --><p class='noindent'>Oefening 17
+</p><!-- l. 1837 --><p class='noindent'>— Drie massa’s op één lijn
+</p><!-- l. 1837 --><p class='noindent'></p></div>
+<p></p><!-- l. 1837 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 1837 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--g'>G</span></div>
+<p></p><!-- l. 1837 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 1839 --><p class='noindent'>Drie massa’s <span class='mathjax-inline'>\(A\)</span>, <span class='mathjax-inline'>\(B\)</span> en <span class='mathjax-inline'>\(C\)</span> liggen op één rechte.
+</p><!-- l. 1841 --><p class='noindent'>Massa <span class='mathjax-inline'>\(A\)</span> bevindt zich links van <span class='mathjax-inline'>\(B\)</span> en massa <span class='mathjax-inline'>\(C\)</span> rechts van <span class='mathjax-inline'>\(B\)</span>.
+</p><!-- l. 1843 --><p class='noindent'>Door gravitatie oefent <span class='mathjax-inline'>\(A\)</span> een kracht uit op <span class='mathjax-inline'>\(B\)</span>:
+</p>
+<div class='mathjax-block'>\[ \vec F_{A\rightarrow B}. \]</div>
+                                                                  
+
+                                                                  
+<!-- l. 1849 --><p class='noindent'>Ook <span class='mathjax-inline'>\(C\)</span> oefent een gravitatiekracht uit op <span class='mathjax-inline'>\(B\)</span>:
+</p>
+<div class='mathjax-block'>\[ \vec F_{C\rightarrow B}. \]</div>
+<!-- l. 1855 --><p class='noindent'>Veronderstel dat:
+</p>
+<div class='mathjax-block'>\[ F_{A\rightarrow B} = F_{C\rightarrow B}. \]</div>
+<div class='problem-environment question' id='problem23' numbered=' ' role='article' titletext=' Question'>  Bepaal de resulterende gravitatiekracht op <span class='mathjax-inline'>\(B\)</span>.    </div>
+<div class='problem-environment question' id='problem24' numbered=' ' role='article' titletext=' Question'>  Wat kan je op basis van Newton II zeggen over de versnelling van <span class='mathjax-inline'>\(B\)</span> op dat ogenblik?
+</div>
+<div class='problem-environment question' id='problem25' numbered=' ' role='article' titletext=' Question'>  Betekent dit dat er geen gravitatiekrachten op <span class='mathjax-inline'>\(B\)</span> werken?    </div>
+<div class='problem-environment question' id='problem26' numbered=' ' role='article' titletext=' Question'>  Geef voor <span class='mathjax-inline'>\(\vec F_{A\rightarrow B}\)</span> het bijhorende actie-reactiepaar.    </div>
+<div class='problem-environment question' id='problem27' numbered=' ' role='article' titletext=' Question'>  Geef voor <span class='mathjax-inline'>\(\vec F_{C\rightarrow B}\)</span> het bijhorende actie-reactiepaar.    </div>
+</div>
+<!-- l. 1884 --><p class='noindent'></p></div>
+<p></p><!-- l. 1884 --><p class='noindent'></p></section>
+<p><a id='x1-123r18'></a>
+</p><p></p><!-- l. 1887 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 1887 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 1887 --><p class='noindent'>Oefening 18
+</p><!-- l. 1887 --><p class='noindent'>— Van gravitatie naar elektriciteit
+</p><!-- l. 1887 --><p class='noindent'></p></div>
+<p></p><!-- l. 1887 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 1887 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--g'>G</span></div>
+<p></p><!-- l. 1887 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 1889 --><p class='noindent'>Beschouw eerst twee massa’s die elkaar door gravitatie aantrekken.
+</p><!-- l. 1891 --><p class='noindent'>Beschouw daarna twee positieve elektrische ladingen die elkaar afstoten.
+</p><!-- l. 1894 --><p class='noindent'>Maak voor beide situaties een schets met de twee krachtvectoren.
+</p><!-- l. 1896 --><p class='noindent'>Onderzoek vervolgens:
+</p>     
+<ol class='enumerate1'>
+<li class='enumerate' id='x1-125x1'>wat in beide situaties hetzelfde is volgens Newton III;
+</li>
+                                                                  
+
+                                                                  
+<li class='enumerate' id='x1-127x2'>wat verschillend is in de zin van de krachtvectoren;
+</li>
+<li class='enumerate' id='x1-129x3'>waarom in beide gevallen de twee krachten even groot moeten zijn;
+</li>
+<li class='enumerate' id='x1-131x4'>waarom de versnellingen van beide systemen toch verschillend kunnen zijn.</li></ol>
+</div>
+<!-- l. 1906 --><p class='noindent'></p></div>
+<p></p><!-- l. 1906 --><p class='noindent'></p></section>
+<p><a id='x1-132r18'></a>
+</p><p></p><!-- l. 1913 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>18</div><div class='fvd-section-bar__title'>Veelvoorkomende denkfouten</div></div>
+<p></p>     
+<ul class='itemize1'>
+<li class='itemize'>    
+<!-- l. 1917 --><p class='noindent'><strong>“Er is een kracht nodig om een beweging in stand te houden.”</strong>
+</p>     
+<!-- l. 1920 --><p class='noindent'>Niet noodzakelijk. Een resulterende kracht is nodig om de snelheidsvector
+te veranderen.
+</p>     
+</li>
+<li class='itemize'>    
+<!-- l. 1923 --><p class='noindent'><strong>“Als de resulterende kracht nul is, staat het voorwerp stil.”</strong>
+</p>     
+<!-- l. 1926 --><p class='noindent'>Niet noodzakelijk. Het voorwerp kan ook met constante snelheid rechtlijnig
+bewegen.
+</p>     
+</li>
+<li class='itemize'>    
+<!-- l. 1929 --><p class='noindent'><strong>“De versnelling wijst altijd in de richting van de snelheid.”</strong>
+</p>     
+<!-- l. 1932 --><p class='noindent'>Nee. De versnelling wijst in de richting van de resulterende kracht.
+</p>     
+</li>
+<li class='itemize'>    
+<!-- l. 1934 --><p class='noindent'><strong>“Het zwaarste voorwerp oefent de grootste kracht uit.”</strong>
+</p>     
+<!-- l. 1936 --><p class='noindent'>Niet   bij   een   actie-reactiepaar.   Volgens   Newton   III   zijn   beide
+interactiekrachten even groot.
+                                                                  
+
+                                                                  
+</p>     
+</li>
+<li class='itemize'>    
+<!-- l. 1939 --><p class='noindent'><strong>“Actie en reactie heffen elkaar op.”</strong>
+</p>     
+<!-- l. 1941 --><p class='noindent'>Niet  wanneer  we  één  afzonderlijk  systeem  bestuderen.  Ze  werken  op
+verschillende systemen.
+</p>     
+</li>
+<li class='itemize'>    
+<!-- l. 1944 --><p class='noindent'><strong>“Reactie komt na actie.”</strong>
+</p>     
+<!-- l. 1946 --><p class='noindent'>Nee. Beide krachten bestaan tegelijkertijd.
+</p>     
+</li>
+<li class='itemize'>    
+<!-- l. 1948 --><p class='noindent'><strong>“Als een voorwerp niet versnelt, werken er geen krachten.”</strong>
+</p>     
+<!-- l. 1951 --><p class='noindent'>Niet  noodzakelijk.  Er  kunnen  meerdere  krachten  werken  waarvan  de
+vectorsom nul is.
+</p>     
+</li></ul>
+<p><a id='x1-133r19'></a>
+</p><!-- l. 1961 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>19</div><div class='fvd-section-bar__title'>Samenvatting</div></div>
+<p></p><!-- l. 1963 --><p class='noindent'>Een kracht beschrijft een wisselwerking tussen systemen.
+</p><!-- l. 1965 --><p class='noindent'>Kracht is een vectoriële grootheid:
+</p>
+<div class='mathjax-block'>\[ \boxed { \vec F. } \]</div>
+<!-- l. 1973 --><p class='noindent'>De SI-eenheid is:
+</p>
+<div class='mathjax-block'>\[ \boxed { [F]=\mathrm N. } \]</div>
+<!-- l. 1981 --><p class='noindent'>Wanneer meerdere krachten op hetzelfde systeem werken, is hun resultante:
+</p>
+<div class='mathjax-block'>\[ \boxed { \vec F_{\mathrm {res}} = \sum _i\vec F_i. } \]</div>
+<p><a id='x1-134r1'></a>
+</p><!-- l. 1993 --><p class='noindent'></p><div class='fvd-subsection'>
+<p></p><!-- l. 1993 --><p class='noindent'></p><div class='fvd-subsection__row'>
+<p></p><!-- l. 1993 --><p class='noindent'></p><div class='fvd-subsection__number'>19.1</div>
+<p></p><!-- l. 1993 --><p class='noindent'></p><div class='fvd-subsection__title'>*</div>
+<p></p><!-- l. 1993 --><p class='noindent'></p></div>
+<p></p><!-- l. 1993 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
+                                                                  
+
+                                                                  
+<p></p><!-- l. 1993 --><p class='noindent'></p></div><p>Eerste wet van Newton
+</p><p></p><!-- l. 1995 --><p class='noindent'>Als de resulterende kracht nul is:
+</p>
+<div class='mathjax-block'>\[ \boxed { \sum \vec F=\vec 0, } \]</div>
+<!-- l. 2003 --><p class='noindent'>dan blijft de snelheidsvector constant:
+</p>
+<div class='mathjax-block'>\[ \boxed { \vec v=\text {constant}. } \]</div>
+<p><a id='x1-135r2'></a>
+</p><!-- l. 2012 --><p class='noindent'></p><div class='fvd-subsection'>
+<p></p><!-- l. 2012 --><p class='noindent'></p><div class='fvd-subsection__row'>
+<p></p><!-- l. 2012 --><p class='noindent'></p><div class='fvd-subsection__number'>19.2</div>
+<p></p><!-- l. 2012 --><p class='noindent'></p><div class='fvd-subsection__title'>*</div>
+<p></p><!-- l. 2012 --><p class='noindent'></p></div>
+<p></p><!-- l. 2012 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
+<p></p><!-- l. 2012 --><p class='noindent'></p></div><p>Tweede wet van Newton
+</p><p></p><!-- l. 2014 --><p class='noindent'>De resulterende kracht veroorzaakt een versnelling:
+</p>
+<div class='mathjax-block'>\[ \boxed { \sum \vec F=m\vec a. } \]</div>
+<!-- l. 2022 --><p class='noindent'>Dus:
+</p>
+<div class='mathjax-block'>\[ \boxed { \vec a = \frac {\sum \vec F}{m}. } \]</div>
+<!-- l. 2032 --><p class='noindent'>De versnelling heeft dezelfde richting en zin als de resulterende kracht.
+<a id='x1-136r3'></a>
+</p><!-- l. 2036 --><p class='noindent'></p><div class='fvd-subsection'>
+<p></p><!-- l. 2036 --><p class='noindent'></p><div class='fvd-subsection__row'>
+<p></p><!-- l. 2036 --><p class='noindent'></p><div class='fvd-subsection__number'>19.3</div>
+<p></p><!-- l. 2036 --><p class='noindent'></p><div class='fvd-subsection__title'>*</div>
+<p></p><!-- l. 2036 --><p class='noindent'></p></div>
+<p></p><!-- l. 2036 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
+<p></p><!-- l. 2036 --><p class='noindent'></p></div><p>Derde wet van Newton
+</p><p></p><!-- l. 2038 --><p class='noindent'>Wanneer systeem <span class='mathjax-inline'>\(A\)</span> een kracht uitoefent op systeem <span class='mathjax-inline'>\(B\)</span>, oefent <span class='mathjax-inline'>\(B\)</span> een even grote,
+tegengesteld gerichte kracht uit op <span class='mathjax-inline'>\(A\)</span>:
+</p>
+<div class='mathjax-block'>\[ \boxed { \vec F_{A\rightarrow B} = -\vec F_{B\rightarrow A}. } \]</div>
+<!-- l. 2049 --><p class='noindent'>Actie en reactie:
+                                                                  
+
+                                                                  
+</p>     
+<ul class='itemize1'>
+<li class='itemize'>zijn even groot;
+</li>
+<li class='itemize'>zijn tegengesteld gericht;
+</li>
+<li class='itemize'>treden tegelijkertijd op;
+</li>
+<li class='itemize'>werken op verschillende systemen.</li></ul>
+<p><a id='x1-137r4'></a>
+</p><!-- l. 2059 --><p class='noindent'></p><div class='fvd-subsection'>
+<p></p><!-- l. 2059 --><p class='noindent'></p><div class='fvd-subsection__row'>
+<p></p><!-- l. 2059 --><p class='noindent'></p><div class='fvd-subsection__number'>19.4</div>
+<p></p><!-- l. 2059 --><p class='noindent'></p><div class='fvd-subsection__title'>*</div>
+<p></p><!-- l. 2059 --><p class='noindent'></p></div>
+<p></p><!-- l. 2059 --><p class='noindent'></p><div class='fvd-subsection__line'></div>
+<p></p><!-- l. 2059 --><p class='noindent'></p></div><p>Superpositie
+</p><p></p><!-- l. 2061 --><p class='noindent'>Meerdere krachten op hetzelfde systeem worden vectorieel opgeteld:
+</p>
+<div class='mathjax-block'>\[ \boxed { \vec F_{\mathrm {res}} = \vec F_1+\vec F_2+\cdots . } \]</div>
+<p><a id='x1-138r20'></a>
+</p><!-- l. 2076 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>20</div><div class='fvd-section-bar__title'>Wat moet je zeker beheersen?</div></div>
+<p></p><!-- l. 2078 --><p class='noindent'>Voor de volgende hoofdstukken moet je zeker:
+</p>     
+<ul class='itemize1'>
+<li class='itemize'>begrijpen dat een kracht een interactie tussen systemen beschrijft;
+</li>
+<li class='itemize'>een kracht als vector kunnen interpreteren;
+                                                                  
+
+                                                                  
+</li>
+<li class='itemize'>eenvoudige resulterende krachten kunnen bepalen;
+</li>
+<li class='itemize'>     
+<!-- l. 2089 --><p class='noindent'>begrijpen dat </p><div class='mathjax-block'>\[ \sum \vec F=\vec 0 \]</div> niet betekent dat een voorwerp noodzakelijk stilstaat;
+</li>     
+<li class='itemize'>de eerste wet van Newton correct kunnen uitleggen;
+</li>
+<li class='itemize'>     
+<!-- l. 2097 --><p class='noindent'>de tweede wet van Newton kunnen gebruiken: </p><div class='mathjax-block'>\[ \sum \vec F=m\vec a; \]</div>
+</li>     
+<li class='itemize'>begrijpen dat de versnelling dezelfde richting heeft als de resulterende
+kracht;
+</li>
+<li class='itemize'>de derde wet van Newton correct kunnen formuleren;
+</li>
+<li class='itemize'>actie-reactieparen kunnen herkennen;
+</li>
+<li class='itemize'>begrijpen waarom actie en reactie elkaar niet opheffen;
+</li>
+<li class='itemize'>onderscheid    kunnen    maken    tussen    krachtenevenwicht    en    een
+actie-reactiepaar;
+</li>
+<li class='itemize'>het superpositiebeginsel voor krachten kunnen gebruiken;
+</li>
+<li class='itemize'>kunnen uitleggen waarom twee voorwerpen bij een interactie even grote
+krachten maar verschillende versnellingen kunnen ondervinden.
+                                                                  
+
+                                                                  
+</li></ul>
+<!-- l. 2122 --><p class='noindent'>De oefeningen met de essentieel-markering zijn noodzakelijk voor deze basis.
+</p><!-- l. 2125 --><p class='noindent'>In het bijzonder moeten de essentiële verdiepende oefeningen rond Newton III
+beheerst worden. Alleen de drie wetten uit het hoofd kennen is onvoldoende: je moet
+ze correct kunnen herkennen en gebruiken in nieuwe fysische situaties.
+<a id='x1-139r21'></a>
+</p><!-- l. 2135 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>21</div><div class='fvd-section-bar__title'>Vooruitblik: krachten zonder contact</div></div>
+<p></p><!-- l. 2137 --><p class='noindent'>Tot nu toe hebben we vooral gevraagd wat een kracht doet.
+</p><!-- l. 2139 --><p class='noindent'>Newton II vertelt ons:
+</p>
+<div class='mathjax-block'>\[ \boxed { \sum \vec F=m\vec a. } \]</div>
+<!-- l. 2147 --><p class='noindent'>Newton III vertelt ons hoe krachten bij een interactie in paren voorkomen:
+</p>
+<div class='mathjax-block'>\[ \boxed { \vec F_{A\rightarrow B} = -\vec F_{B\rightarrow A}. } \]</div>
+<!-- l. 2158 --><p class='noindent'>Maar er blijft een nieuwe vraag:
+</p>
+<div class='center'>
+<!-- l. 2160 --><p class='noindent'>
+</p><!-- l. 2161 --><p class='noindent'><em>Hoe groot is zo’n interactiekracht?</em></p></div>
+<!-- l. 2164 --><p class='noindent'>En nog fundamenteler:
+</p>
+<div class='center'>
+<!-- l. 2166 --><p class='noindent'>
+</p><!-- l. 2168 --><p class='noindent'><em>Hoe kunnen twee voorwerpen elkaar beïnvloeden zonder elkaar aan te raken?</em></p></div>
+<!-- l. 2171 --><p class='noindent'>In het volgende thema onderzoeken we twee antwoorden op die vraag.
+</p><!-- l. 2173 --><p class='noindent'>Voor massa’s:
+</p>
+<div class='mathjax-block'>\[ \boxed {\text {gravitatie}} \]</div>
+<!-- l. 2179 --><p class='noindent'>en voor elektrische ladingen:
+</p>
+                                                                  
+
+                                                                  
+<div class='mathjax-block'>\[ \boxed {\text {elektrische interactie}.} \]</div>
+<!-- l. 2185 --><p class='noindent'>We zullen ontdekken dat beide krachtwetten een verrassend gelijkaardige wiskundige
+structuur hebben:
+</p>
+<div class='mathjax-block'>\[ F_g = G\frac {m_1m_2}{r^2} \]</div>
+<!-- l. 2194 --><p class='noindent'>en:
+</p>
+<div class='mathjax-block'>\[ F_e = k\frac {|q_1q_2|}{r^2}. \]</div>
+<!-- l. 2202 --><p class='noindent'>Daarmee maken we de stap:
+</p>
+<div class='mathjax-block'>\[ \boxed { \text {Newton} \longrightarrow \text {krachten op afstand} \longrightarrow \text {velden}. } \]</div>
+                                                                  
+
+                                                                  
+</body> 
+ 
+</html>
+                                                                  
+
+

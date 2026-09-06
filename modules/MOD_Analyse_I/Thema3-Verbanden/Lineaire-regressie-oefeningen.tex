@@ -1,0 +1,493 @@
+\documentclass{ximera}
+
+\input{../../../preamble.tex}
+\input{../../../Opmaak.tex}
+\addPrintStyle{../../..}
+
+\title{Oefeningen --- Lineaire regressie}
+\author{Ingmar Herreman}
+
+
+\begin{document}
+
+% FVD_CHAPTER_DATA_START
+% Automatisch gegenereerd uit index.tex.
+% Niet handmatig aanpassen.
+\fvdchapterdata{3}{Verbanden onderzoeken met data}{9}
+% FVD_CHAPTER_DATA_END
+
+
+
+
+
+
+\maketitle
+
+
+% ============================================================
+\FVDsection{Basis --- een regressiemodel lezen}
+% ============================================================
+
+\begin{oefening}[Parameters interpreteren]{\oefB \ESS}
+Voor een dataset werd het regressiemodel
+
+\[
+\hat y=-2{,}8x+74
+\]
+
+gevonden. $x$ wordt gemeten in ${}^{\circ}\mathrm C$ en $y$ in
+$\mathrm{kWh}$.
+
+\begin{question}
+Wat is de eenheid van de richtingscoëfficiënt?
+
+\begin{oplossing}
+\[
+\frac{\mathrm{kWh}}{{}^{\circ}\mathrm C}.
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Interpreteer $-2{,}8$.
+
+\begin{oplossing}
+Wanneer $x$ met $1\,{}^{\circ}\mathrm C$ toeneemt, daalt de door het
+model voorspelde waarde van $y$ met $2{,}8\,\mathrm{kWh}$.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Wat betekent $74$ algebraïsch?
+
+\begin{oplossing}
+Voor $x=0\,{}^{\circ}\mathrm C$ voorspelt het model
+$\hat y=74\,\mathrm{kWh}$.
+\end{oplossing}
+\end{question}
+\end{oefening}
+
+
+\begin{oefening}[Voorspellen met een model]{\oefB \ESS}
+Voor een sensor geldt binnen het onderzochte bereik
+
+\[
+\hat U=0{,}42T+1{,}8,
+\]
+
+met $T$ in ${}^{\circ}\mathrm C$ en $U$ in volt.
+
+\begin{question}
+Voorspel $U$ bij $T=20\,{}^{\circ}\mathrm C$.
+
+\begin{oplossing}
+\[
+\hat U=0{,}42\cdot20+1{,}8=10{,}2\,\mathrm V.
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Wat betekent het dakje in $\hat U$?
+
+\begin{oplossing}
+Het gaat om de door het regressiemodel voorspelde waarde, niet
+noodzakelijk om de werkelijk gemeten waarde.
+\end{oplossing}
+\end{question}
+\end{oefening}
+
+
+\begin{oefening}[Interpolatie of extrapolatie?]{\oefB \ESS}
+Een model is gebaseerd op metingen voor
+
+\[
+15\leq x\leq 80.
+\]
+
+Classificeer de volgende voorspellingen.
+
+\[
+x=20,\qquad x=57,\qquad x=80,\qquad x=95,\qquad x=4.
+\]
+
+\begin{oplossing}
+$x=20$, $57$ en $80$ liggen binnen het gemeten bereik en zijn
+interpolaties. $x=95$ en $x=4$ liggen buiten het bereik en zijn
+extrapolaties.
+\end{oplossing}
+\end{oefening}
+
+
+\begin{oefening}[Gemeten en voorspeld]{\oefB}
+Voor een waarneming geldt
+
+\[
+y=53{,}7
+\qquad\text{en}\qquad
+\hat y=50{,}9.
+\]
+
+\begin{question}
+Bereken het residu.
+
+\begin{oplossing}
+\[
+e=y-\hat y=53{,}7-50{,}9=2{,}8.
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Ligt het meetpunt boven of onder de regressierechte?
+
+\begin{oplossing}
+Boven de regressierechte, want het residu is positief.
+\end{oplossing}
+\end{question}
+\end{oefening}
+
+
+% ============================================================
+\FVDsection{Verdieping --- van dataset naar model}
+% ============================================================
+
+\begin{oefening}[Groei van een jonge plant]{\oefU \ESS}
+Van een jonge plant wordt gedurende de eerste weken de hoogte gemeten.
+
+\[
+\begin{array}{c|rrrrrrrr}
+t\;(\mathrm{week})&1&2&3&4&5&6&7&8\\ \hline
+h\;(\mathrm{cm})&8{,}2&11{,}1&14{,}5&17{,}2&20{,}6&23{,}1&26{,}5&29{,}4
+\end{array}
+\]
+
+\begin{question}
+Maak met ICT een spreidingsdiagram en beschrijf het patroon.
+\end{question}
+
+\begin{question}
+Bepaal $r$ en voer een lineaire regressie uit.
+\end{question}
+
+\begin{question}
+Noteer het model als
+
+\[
+\hat h=at+b.
+\]
+\end{question}
+
+\begin{question}
+Interpreteer $a$ met eenheid.
+
+\begin{oplossing}
+$a$ geeft de gemiddelde toename van de door het model voorspelde
+planthoogte per week, in $\mathrm{cm/week}$.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Gebruik het model om de hoogte in week $6{,}5$ te schatten. Is dit
+interpolatie of extrapolatie?
+
+\begin{oplossing}
+De voorspelling wordt verkregen door $t=6{,}5$ in het gevonden model
+in te vullen. Het is interpolatie omdat $6{,}5$ binnen het gemeten
+interval van $1$ tot $8$ weken ligt.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Is een voorspelling voor week $52$ verantwoord?
+
+\begin{oplossing}
+Niet zonder bijkomende informatie. Dat is een zeer verre extrapolatie.
+Biologische groei blijft bovendien niet onbeperkt lineair.
+\end{oplossing}
+\end{question}
+\end{oefening}
+
+
+\begin{oefening}[Hoogte en temperatuur]{\oefU \ESS}
+Op acht meetstations worden hoogte en gemiddelde temperatuur gemeten.
+
+\[
+\begin{array}{c|rrrrrrrr}
+H\;(\mathrm m)&120&280&450&690&910&1180&1450&1710\\ \hline
+T\;({}^{\circ}\mathrm C)&15{,}8&15{,}0&13{,}9&12{,}8&11{,}7&10{,}1&8{,}9&7{,}2
+\end{array}
+\]
+
+\begin{question}
+Maak een spreidingsdiagram en beoordeel of een lineair model zinvol
+lijkt.
+\end{question}
+
+\begin{question}
+Bepaal met ICT $r$ en de regressierechte.
+\end{question}
+
+\begin{question}
+Interpreteer de richtingscoëfficiënt met eenheid.
+
+\begin{oplossing}
+De richtingscoëfficiënt geeft de verandering van de voorspelde
+temperatuur per meter hoogte, in ${}^{\circ}\mathrm C/\mathrm m$.
+Voor een praktischere interpretatie kan men de verandering per
+$100\,\mathrm m$ berekenen.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Voorspel met het model de temperatuur op $1000\,\mathrm m$ hoogte en
+classificeer de voorspelling.
+
+\begin{oplossing}
+Vul $H=1000$ in in het gevonden regressiemodel. Het is interpolatie,
+want $1000\,\mathrm m$ ligt binnen het gemeten hoogtebereik.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Waarom moet je voorzichtig zijn met een voorspelling voor
+$8000\,\mathrm m$?
+
+\begin{oplossing}
+Dat is een zeer verre extrapolatie. Het gevonden lokale lineaire
+verband hoeft over zo'n groot hoogtebereik niet geldig te blijven.
+\end{oplossing}
+\end{question}
+\end{oefening}
+
+
+\begin{oefening}[Wanneer heeft het intercept betekenis?]{\oefU \ESS}
+Een regressiemodel voor de massa $m$ van metalen staven in functie van
+hun lengte $L$ is
+
+\[
+\hat m=2{,}31L+1{,}7.
+\]
+
+De gemeten lengtes liggen tussen $10\,\mathrm{cm}$ en
+$50\,\mathrm{cm}$.
+
+\begin{question}
+Wat betekent de richtingscoëfficiënt?
+
+\begin{oplossing}
+Volgens het model neemt de voorspelde massa met ongeveer
+$2{,}31\,\mathrm g$ toe per extra centimeter lengte.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Algebraïsch voorspelt het model bij $L=0$ een massa van
+$1{,}7\,\mathrm g$. Waarom moet je die interpretatie kritisch bekijken?
+
+\begin{oplossing}
+$L=0$ ligt buiten het onderzochte bereik en een staaf met lengte nul
+heeft in deze context geen gewone fysische betekenis. Het intercept
+hoeft dus geen betekenisvolle fysische grootheid te zijn.
+\end{oplossing}
+\end{question}
+\end{oefening}
+
+
+% ============================================================
+\FVDsection{Geïntegreerd analyseren}
+% ============================================================
+
+\begin{oefening}[Kalibratie van een oplossing]{\oefU \ESS}
+In een chemisch experiment wordt de absorbantie $A$ gemeten voor
+oplossingen met bekende concentratie $c$.
+
+\[
+\begin{array}{c|rrrrrrrr}
+c\;(\mathrm{mmol/L})&0{,}5&1{,}0&1{,}5&2{,}0&2{,}5&3{,}0&3{,}5&4{,}0\\ \hline
+A&0{,}12&0{,}21&0{,}34&0{,}43&0{,}55&0{,}64&0{,}77&0{,}85
+\end{array}
+\]
+
+Een onbekende oplossing heeft een gemeten absorbantie van $0{,}60$.
+
+\begin{question}
+Maak een spreidingsdiagram en beoordeel de lineariteit.
+\end{question}
+
+\begin{question}
+Bepaal $r$ en een lineair regressiemodel voor $A$ in functie van $c$.
+\end{question}
+
+\begin{question}
+Interpreteer de richtingscoëfficiënt.
+\end{question}
+
+\begin{question}
+Gebruik het model om te onderzoeken welke concentratie ongeveer
+overeenkomt met $A=0{,}60$.
+
+\begin{oplossing}
+Los in het gevonden model
+\[
+0{,}60=ac+b
+\]
+op naar $c$. De precieze waarde hangt af van de door ICT gevonden en
+afgeronde regressiecoëfficiënten.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Leg uit waarom het meetbereik van de kalibratie belangrijk is voor de
+betrouwbaarheid van deze schatting.
+
+\begin{oplossing}
+Binnen het gekalibreerde bereik hebben we gegevens die het lineaire
+model ondersteunen. Buiten dat bereik zouden we extrapoleren en weten
+we niet of dezelfde lineaire relatie geldig blijft.
+\end{oplossing}
+\end{question}
+\end{oefening}
+
+
+\begin{oefening}[Een model dat te ver wordt doorgetrokken]{\oefU \ESS}
+Voor baby's tussen $1$ en $12$ maanden wordt een sterk lineair verband
+gevonden tussen leeftijd $t$ in maanden en lichaamslengte $L$ in cm:
+
+\[
+\hat L=1{,}55t+52{,}4.
+\]
+
+\begin{question}
+Interpreteer $1{,}55$.
+
+\begin{oplossing}
+Binnen het onderzochte leeftijdsbereik neemt de voorspelde
+lichaamslengte volgens het model gemiddeld met ongeveer
+$1{,}55\,\mathrm{cm}$ per extra maand toe.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Voorspel de lengte bij $t=8$ maanden. Is dit interpolatie of
+extrapolatie?
+
+\begin{oplossing}
+\[
+\hat L=1{,}55\cdot8+52{,}4=64{,}8\,\mathrm{cm}.
+\]
+Dit is interpolatie.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Bereken wat het model voor $t=240$ maanden voorspelt.
+
+\begin{oplossing}
+\[
+\hat L=1{,}55\cdot240+52{,}4=424{,}4\,\mathrm{cm}.
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Wat leert dit resultaat over modelleren?
+
+\begin{oplossing}
+Een regressiemodel kan binnen het onderzochte bereik zeer bruikbaar
+zijn en bij verre extrapolatie volkomen onrealistische voorspellingen
+geven. Een model moet altijd in zijn context en toepassingsgebied
+worden geïnterpreteerd.
+\end{oplossing}
+\end{question}
+\end{oefening}
+
+
+% ============================================================
+\FVDsection{Gevorderd --- modelkeuze en kritiek}
+% ============================================================
+
+\begin{oefening}[Rechte of kromme?]{\oefG}
+Een experiment levert de gegevens
+
+\[
+\begin{array}{c|rrrrrrrr}
+x&1&2&3&4&5&6&7&8\\ \hline
+y&1{,}1&3{,}9&9{,}2&16{,}1&24{,}8&36{,}3&49{,}1&64{,}2
+\end{array}
+\]
+
+\begin{question}
+Maak een spreidingsdiagram.
+\end{question}
+
+\begin{question}
+Laat ICT toch een lineaire regressie uitvoeren.
+\end{question}
+
+\begin{question}
+Leg uit waarom een regressierechte hier ondanks de software-uitvoer
+geen goede modelkeuze is.
+
+\begin{oplossing}
+De punten volgen duidelijk een krom, ongeveer kwadratisch patroon.
+De afwijkingen van een rechte zijn systematisch en niet willekeurig.
+Een softwarepakket kan altijd een regressierechte berekenen, maar dat
+betekent niet dat het model inhoudelijk geschikt is.
+\end{oplossing}
+\end{question}
+\end{oefening}
+
+
+\begin{oefening}[Onderzoek een eigen dataset]{\oefG}
+Zoek of verzamel een kleine dataset met twee numerieke grootheden uit
+fysica, chemie, biologie, technologie of een andere wetenschappelijke
+context.
+
+Voer een volledige analyse uit:
+
+\begin{enumerate}
+  \item beschrijf de grootheden, eenheden en bron van de gegevens;
+  \item maak een spreidingsdiagram;
+  \item analyseer richting, vorm, sterkte en bijzonderheden;
+  \item bepaal $r$;
+  \item beoordeel of een lineair model geschikt is;
+  \item bepaal indien verantwoord de regressierechte;
+  \item interpreteer de parameters;
+  \item maak één zinvolle voorspelling;
+  \item bepaal of dit interpolatie of extrapolatie is;
+  \item formuleer minstens één beperking van je model.
+\end{enumerate}
+
+\begin{oplossing}
+Er zijn veel correcte oplossingen mogelijk. De kwaliteit wordt bepaald
+door de samenhang tussen dataset, grafische analyse, modelkeuze,
+interpretatie en kritische terugkoppeling naar de context.
+\end{oplossing}
+\end{oefening}
+
+
+% ============================================================
+\FVDsection{Essentiële oefeningen}
+% ============================================================
+
+Voor dit hoofdstuk behoren de volgende oefeningen tot het minimumtraject:
+
+\begin{itemize}
+  \item \textbf{Parameters interpreteren} --- $a$, $b$ en eenheden correct lezen;
+  \item \textbf{Voorspellen met een model} --- een regressiemodel gebruiken;
+  \item \textbf{Interpolatie of extrapolatie?} --- het toepassingsgebied bewaken;
+  \item \textbf{Groei van een jonge plant} --- van dataset naar regressiemodel;
+  \item \textbf{Hoogte en temperatuur} --- een STEM-dataset volledig analyseren;
+  \item \textbf{Wanneer heeft het intercept betekenis?} --- parameters kritisch interpreteren;
+  \item \textbf{Kalibratie van een oplossing} --- regressie als wetenschappelijk model gebruiken;
+  \item \textbf{Een model dat te ver wordt doorgetrokken} --- extrapolatie kritisch beoordelen.
+\end{itemize}
+
+De \oefB-oefeningen leggen de noodzakelijke technische basis.
+De \oefU-oefeningen met \ESS zijn eveneens essentieel omdat het
+leerplandoel op \textbf{analyseren} staat: leerlingen moeten bij nieuwe
+gegevens zelf grafiek, correlatie, regressiemodel en context met elkaar
+in verband kunnen brengen.
+
+\end{document}

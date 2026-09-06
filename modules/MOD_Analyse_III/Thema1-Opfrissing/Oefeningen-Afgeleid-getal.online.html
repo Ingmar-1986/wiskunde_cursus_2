@@ -1,0 +1,549 @@
+<!DOCTYPE html> 
+<html lang='en-US' xml:lang='en-US'> 
+<head> <title>Oefeningen — Verandering en het afgeleid getal</title> 
+<meta charset='utf-8' /> 
+<meta content='TeX4ht (https://tug.org/tex4ht/)' name='generator' /> 
+<meta content='width=device-width,initial-scale=1' name='viewport' /> 
+<link href='\aa:CssFile ' rel='stylesheet' type='text/css' /> 
+<meta content='Oefeningen-Afgeleid-getal.online.tex' name='src' /> 
+<script>window.MathJax = { tex: { tags: "ams", }, }; </script> 
+<script async='async' id='MathJax-script' src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js' type='text/javascript'></script>  
+<meta content='Ingmar Herreman' name='author' /> 
+<meta content='version 2.5.1' name='ximera' /> 
+<link href='https://ximera.osu.edu/public/stylesheets/standalone.css' media='screen' rel='stylesheet' /> 
+<script async='' src='https://ximera.osu.edu/public/javascripts/standalone.min.js' type='text/javascript'></script> 
+</head><body> 
+<div class='preamble'>
+</div>
+<style> .activity-body pre { white-space: pre; background-color: lightgray; } .xmyoutube { aspect-ratio: 16/9; min-width: 75%; } .image-environment img { width: unset; } </style> 
+
+<div class='maketitle'></div>
+<p><a id='x1-2r1'></a>
+</p><!-- l. 109 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 109 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 109 --><p class='noindent'>Oefening 1
+</p><!-- l. 109 --><p class='noindent'>— Gemiddelde verandering
+</p><!-- l. 109 --><p class='noindent'></p></div>
+<p></p><!-- l. 109 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 109 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 109 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 111 --><p class='noindent'>Gegeven is
+</p>
+<div class='mathjax-block'>\[ f(x)=x^2-2x+3. \]</div>
+<div class='problem-environment question' id='problem1' numbered=' ' role='article' titletext=' Question'>  Bereken <span class='mathjax-inline'>\(f(1)\)</span> en <span class='mathjax-inline'>\(f(4)\)</span>.    </div>
+<div class='problem-environment question' id='problem2' numbered=' ' role='article' titletext=' Question'>  Bereken de gemiddelde verandering van <span class='mathjax-inline'>\(f\)</span> op <span class='mathjax-inline'>\([1,4]\)</span>:
+<div class='mathjax-block'>\[ \frac {f(4)-f(1)}{4-1}. \]</div>   </div>
+<div class='problem-environment question' id='problem3' numbered=' ' role='article' titletext=' Question'>  Welke meetkundige betekenis heeft dit resultaat?
+<div class='multiple-choice' id='problem4' titletext=' Multiple Choice'><span class='choice  ' id='choice1'>De richtingscoëfficiënt van de raaklijn in <span class='mathjax-inline'>\(x=1\)</span>.</span> <span class='choice correct ' id='choice2'>De richtingscoëfficiënt van de secant
+door de punten met abscissen <span class='mathjax-inline'>\(1\)</span> en <span class='mathjax-inline'>\(4\)</span>.</span> <span class='choice  ' id='choice3'>De functiewaarde in <span class='mathjax-inline'>\(x=4\)</span>.</span> <span class='choice  ' id='choice4'>De oppervlakte onder
+de grafiek tussen <span class='mathjax-inline'>\(1\)</span> en <span class='mathjax-inline'>\(4\)</span>.</span> </div>    </div>
+</div>
+<!-- l. 140 --><p class='noindent'></p></div>
+<p></p><!-- l. 140 --><p class='noindent'></p></section>
+<p><a id='x1-3r2'></a>
+</p><p></p><!-- l. 147 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 147 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 147 --><p class='noindent'>Oefening 2
+</p><!-- l. 147 --><p class='noindent'>— Van tabel naar verandering
+</p><!-- l. 147 --><p class='noindent'></p></div>
+<p></p><!-- l. 147 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 147 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+                                                                  
+
+                                                                  
+<p></p><!-- l. 147 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 149 --><p class='noindent'>De positie <span class='mathjax-inline'>\(s\)</span> van een bewegend voorwerp wordt op enkele tijdstippen gemeten.
+</p>
+<div class='mathjax-block'>\[ \begin {array}{c|ccccc} t\;(\mathrm {s}) &amp; 0 &amp; 1 &amp; 2 &amp; 3 &amp; 4\\ \hline s\;(\mathrm {m}) &amp; 2 &amp; 5 &amp; 10 &amp; 17 &amp; 26 \end {array} \]</div>
+<div class='problem-environment question' id='problem5' numbered=' ' role='article' titletext=' Question'>  Bereken de gemiddelde snelheid tussen <span class='mathjax-inline'>\(t=1\)</span> en <span class='mathjax-inline'>\(t=3\)</span>.    </div>
+<div class='problem-environment question' id='problem6' numbered=' ' role='article' titletext=' Question'>  Noteer de correcte eenheid.    </div>
+<div class='problem-environment question' id='problem7' numbered=' ' role='article' titletext=' Question'>  Bereken ook de gemiddelde snelheid tussen <span class='mathjax-inline'>\(t=2\)</span> en <span class='mathjax-inline'>\(t=4\)</span>.    </div>
+<div class='problem-environment question' id='problem8' numbered=' ' role='article' titletext=' Question'>  Leg uit waarom een gemiddelde snelheid niet noodzakelijk gelijk is aan de snelheid
+op elk tijdstip van het onderzochte interval.    </div>
+</div>
+<!-- l. 176 --><p class='noindent'></p></div>
+<p></p><!-- l. 176 --><p class='noindent'></p></section>
+<p><a id='x1-4r3'></a>
+</p><p></p><!-- l. 183 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 183 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 183 --><p class='noindent'>Oefening 3
+</p><!-- l. 183 --><p class='noindent'>— Het differentiequotiënt
+</p><!-- l. 183 --><p class='noindent'></p></div>
+<p></p><!-- l. 183 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 183 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 183 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 185 --><p class='noindent'>Gegeven is
+</p>
+<div class='mathjax-block'>\[ f(x)=x^2+1. \]</div>
+<!-- l. 191 --><p class='noindent'>We onderzoeken de verandering in de buurt van <span class='mathjax-inline'>\(x=2\)</span>.
+</p>
+<div class='problem-environment question' id='problem9' numbered=' ' role='article' titletext=' Question'>  Bereken
+<div class='mathjax-block'>\[ f(2). \]</div>   </div>
+<div class='problem-environment question' id='problem10' numbered=' ' role='article' titletext=' Question'>  Bereken en vereenvoudig
+<div class='mathjax-block'>\[ \frac {f(2+h)-f(2)}{h}. \]</div>   </div>
+<div class='problem-environment question' id='problem11' numbered=' ' role='article' titletext=' Question'>  Bepaal vervolgens
+<div class='mathjax-block'>\[ \lim _{h\to 0} \frac {f(2+h)-f(2)}{h}. \]</div>   </div>
+<div class='problem-environment question' id='problem12' numbered=' ' role='article' titletext=' Question'>  Welke betekenis heeft het gevonden getal?    </div>
+</div>
+                                                                  
+
+                                                                  
+<!-- l. 222 --><p class='noindent'></p></div>
+<p></p><!-- l. 222 --><p class='noindent'></p></section>
+<p><a id='x1-5r4'></a>
+</p><p></p><!-- l. 229 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 229 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 229 --><p class='noindent'>Oefening 4
+</p><!-- l. 229 --><p class='noindent'>— Afgeleid getal vanuit de definitie
+</p><!-- l. 229 --><p class='noindent'></p></div>
+<p></p><!-- l. 229 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 229 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 229 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 231 --><p class='noindent'>Gegeven is
+</p>
+<div class='mathjax-block'>\[ f(x)=3x^2-2x. \]</div>
+<!-- l. 237 --><p class='noindent'>Bereken vanuit de definitie
+</p>
+<div class='mathjax-block'>\[ f'(1) = \lim _{h\to 0} \frac {f(1+h)-f(1)}{h}. \]</div>
+<!-- l. 246 --><p class='noindent'>Werk het differentiequotiënt volledig uit.
+</p></div>
+<p></p><!-- l. 248 --><p class='noindent'></p></div>
+<p></p><!-- l. 248 --><p class='noindent'></p></section>
+<p><a id='x1-6r5'></a>
+</p><p></p><!-- l. 255 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 255 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 255 --><p class='noindent'>Oefening 5
+</p><!-- l. 255 --><p class='noindent'>— Wat betekent <span class='mathjax-inline'>\(f'(a)\)</span>?
+</p><!-- l. 255 --><p class='noindent'></p></div>
+<p></p><!-- l. 255 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 255 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 255 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 257 --><p class='noindent'>Duid telkens alle correcte interpretaties van <span class='mathjax-inline'>\(f'(a)\)</span> aan.
+</p>
+<div class='select-all' id='problem13' titletext=' Select All'><a id='x1-7r1'></a> <span class='choice correct ' id='choice5'>De ogenblikkelijke verandering van <span class='mathjax-inline'>\(f\)</span> in <span class='mathjax-inline'>\(a\)</span>.</span> <span class='choice correct ' id='choice6'>De richtingscoëfficiënt van de raaklijn
+aan de grafiek in <span class='mathjax-inline'>\(x=a\)</span>.</span> <span class='choice  ' id='choice7'>De functiewaarde <span class='mathjax-inline'>\(f(a)\)</span>.</span> <span class='choice  ' id='choice8'>De gemiddelde verandering van <span class='mathjax-inline'>\(f\)</span> op elk
+                                                                  
+
+                                                                  
+interval dat <span class='mathjax-inline'>\(a\)</span> bevat.</span> <span class='choice correct ' id='choice9'>De limiet van een differentiequotiënt, wanneer die limiet
+bestaat.</span> </div>
+</div>
+<!-- l. 267 --><p class='noindent'></p></div>
+<p></p><!-- l. 267 --><p class='noindent'></p></section>
+<p><a id='x1-8r6'></a>
+</p><p></p><!-- l. 274 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 274 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 274 --><p class='noindent'>Oefening 6
+</p><!-- l. 274 --><p class='noindent'>— Teken van het afgeleid getal
+</p><!-- l. 274 --><p class='noindent'></p></div>
+<p></p><!-- l. 274 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 274 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 274 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 276 --><p class='noindent'>Beantwoord zonder een afgeleide te berekenen.
+</p>
+<div class='problem-environment question' id='problem14' numbered=' ' role='article' titletext=' Question'>  De grafiek van <span class='mathjax-inline'>\(f\)</span> heeft in <span class='mathjax-inline'>\(x=2\)</span> een stijgende raaklijn.
+<!-- l. 281 --><p class='noindent'>Welk teken heeft <span class='mathjax-inline'>\(f'(2)\)</span>?    </p></div>
+<div class='problem-environment question' id='problem15' numbered=' ' role='article' titletext=' Question'>  De grafiek van <span class='mathjax-inline'>\(g\)</span> heeft in <span class='mathjax-inline'>\(x=-1\)</span> een dalende raaklijn.
+<!-- l. 287 --><p class='noindent'>Welk teken heeft <span class='mathjax-inline'>\(g'(-1)\)</span>?    </p></div>
+<div class='problem-environment question' id='problem16' numbered=' ' role='article' titletext=' Question'>  De grafiek van <span class='mathjax-inline'>\(h\)</span> heeft in <span class='mathjax-inline'>\(x=4\)</span> een horizontale raaklijn.
+<!-- l. 293 --><p class='noindent'>Wat weet je over <span class='mathjax-inline'>\(h'(4)\)</span>?    </p></div>
+</div>
+<!-- l. 296 --><p class='noindent'></p></div>
+<p></p><!-- l. 296 --><p class='noindent'></p></section>
+<p><a id='x1-9r7'></a>
+</p><p></p><!-- l. 303 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 303 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 303 --><p class='noindent'>Oefening 7
+</p><!-- l. 303 --><p class='noindent'>— Raaklijn bepalen
+</p><!-- l. 303 --><p class='noindent'></p></div>
+<p></p><!-- l. 303 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 303 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+                                                                  
+
+                                                                  
+<p></p><!-- l. 303 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 305 --><p class='noindent'>Gegeven is
+</p>
+<div class='mathjax-block'>\[ f(x)=x^2-3x+4 \]</div>
+<!-- l. 311 --><p class='noindent'>en
+</p>
+<div class='mathjax-block'>\[ f'(2)=1. \]</div>
+<div class='problem-environment question' id='problem17' numbered=' ' role='article' titletext=' Question'>  Bepaal het raakpunt aan de grafiek voor <span class='mathjax-inline'>\(x=2\)</span>.    </div>
+<div class='problem-environment question' id='problem18' numbered=' ' role='article' titletext=' Question'>  Welke richtingscoëfficiënt heeft de raaklijn?    </div>
+<div class='problem-environment question' id='problem19' numbered=' ' role='article' titletext=' Question'>  Bepaal een vergelijking van de raaklijn.    </div>
+</div>
+<!-- l. 329 --><p class='noindent'></p></div>
+<p></p><!-- l. 329 --><p class='noindent'></p></section>
+<p><a id='x1-10r8'></a>
+</p><p></p><!-- l. 336 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 336 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 336 --><p class='noindent'>Oefening 8
+</p><!-- l. 336 --><p class='noindent'>— Van raaklijn naar afgeleid getal
+</p><!-- l. 336 --><p class='noindent'></p></div>
+<p></p><!-- l. 336 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 336 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span></div>
+<p></p><!-- l. 336 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 338 --><p class='noindent'>De raaklijn aan de grafiek van <span class='mathjax-inline'>\(f\)</span> in het punt <span class='mathjax-inline'>\(P(3,5)\)</span> heeft vergelijking
+</p>
+<div class='mathjax-block'>\[ y=-2x+11. \]</div>
+<div class='problem-environment question' id='problem20' numbered=' ' role='article' titletext=' Question'>  Bepaal <span class='mathjax-inline'>\(f(3)\)</span>.    </div>
+<div class='problem-environment question' id='problem21' numbered=' ' role='article' titletext=' Question'>  Bepaal <span class='mathjax-inline'>\(f'(3)\)</span>.    </div>
+<div class='problem-environment question' id='problem22' numbered=' ' role='article' titletext=' Question'>  Is <span class='mathjax-inline'>\(f\)</span> in de onmiddellijke omgeving van <span class='mathjax-inline'>\(x=3\)</span> stijgend of dalend? Motiveer.    </div>
+</div>
+<!-- l. 358 --><p class='noindent'></p></div>
+<p></p><!-- l. 358 --><p class='noindent'></p></section>
+<p><a id='x1-11r9'></a>
+</p><p></p><!-- l. 365 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 365 --><p class='noindent'></p><div class='fvd-exercise__title'>
+                                                                  
+
+                                                                  
+<p></p><!-- l. 365 --><p class='noindent'>Oefening 9
+</p><!-- l. 365 --><p class='noindent'>— Eenheden
+</p><!-- l. 365 --><p class='noindent'></p></div>
+<p></p><!-- l. 365 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 365 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 365 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 367 --><p class='noindent'>De hoogte <span class='mathjax-inline'>\(h(t)\)</span> van een object wordt uitgedrukt in meter en de tijd <span class='mathjax-inline'>\(t\)</span> in seconde.
+</p>
+<div class='problem-environment question' id='problem23' numbered=' ' role='article' titletext=' Question'>  Welke eenheid heeft
+<div class='mathjax-block'>\[ \frac {h(5)-h(2)}{5-2}? \]</div>   </div>
+<div class='problem-environment question' id='problem24' numbered=' ' role='article' titletext=' Question'>  Welke eenheid heeft
+<div class='mathjax-block'>\[ h'(5)? \]</div>   </div>
+<div class='problem-environment question' id='problem25' numbered=' ' role='article' titletext=' Question'>  Leg uit waarom beide grootheden dezelfde eenheid hebben, hoewel hun betekenis
+verschillend is.    </div>
+</div>
+<!-- l. 391 --><p class='noindent'></p></div>
+<p></p><!-- l. 391 --><p class='noindent'></p></section>
+<p><a id='x1-12r10'></a>
+</p><p></p><!-- l. 398 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 398 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 398 --><p class='noindent'>Oefening 10
+</p><!-- l. 398 --><p class='noindent'>— Horizontale raaklijn
+</p><!-- l. 398 --><p class='noindent'></p></div>
+<p></p><!-- l. 398 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 398 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--b'>B</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 398 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 400 --><p class='noindent'>Een leerling beweert:
+</p>
+<div class='mathjax-block'>\[ f'(a)=0 \quad \Longrightarrow \quad f \text { heeft in }a\text { een extremum}. \]</div>
+<div class='problem-environment question' id='problem26' numbered=' ' role='article' titletext=' Question'>  Is deze uitspraak altijd juist?    </div>
+<div class='problem-environment question' id='problem27' numbered=' ' role='article' titletext=' Question'>  Geef een tegenvoorbeeld of beschrijf een mogelijke grafiek waarvoor <span class='mathjax-inline'>\(f'(a)=0\)</span> maar <span class='mathjax-inline'>\(f\)</span> geen
+extremum heeft in <span class='mathjax-inline'>\(a\)</span>.    </div>
+<div class='problem-environment question' id='problem28' numbered=' ' role='article' titletext=' Question'>  Wat kun je uit <span class='mathjax-inline'>\(f'(a)=0\)</span> wél besluiten?    </div>
+</div>
+                                                                  
+
+                                                                  
+<!-- l. 421 --><p class='noindent'></p></div>
+<p></p><!-- l. 421 --><p class='noindent'></p></section>
+<p><a id='x1-13r11'></a>
+</p><p></p><!-- l. 435 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 435 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 435 --><p class='noindent'>Oefening 11
+</p><!-- l. 435 --><p class='noindent'>— Secanten naderen een raaklijn
+</p><!-- l. 435 --><p class='noindent'></p></div>
+<p></p><!-- l. 435 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 435 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 435 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 437 --><p class='noindent'>Gegeven is
+</p>
+<div class='mathjax-block'>\[ f(x)=x^2. \]</div>
+<!-- l. 443 --><p class='noindent'>We onderzoeken het punt met abscis <span class='mathjax-inline'>\(x=1\)</span>.
+</p><!-- l. 445 --><p class='noindent'>Vul de tabel aan.
+</p>
+<div class='mathjax-block'>\[ \begin {array}{c|c} h &amp; \dfrac {f(1+h)-f(1)}{h} \\ \hline 1 &amp; \\ 0.5 &amp; \\ 0.1 &amp; \\ 0.01 &amp; \\ -0.1 &amp; \\ -0.01 &amp; \end {array} \]</div>
+<div class='problem-environment question' id='problem29' numbered=' ' role='article' titletext=' Question'>  Naar welk getal lijken de differentiequotiënten te naderen?    </div>
+<div class='problem-environment question' id='problem30' numbered=' ' role='article' titletext=' Question'>  Wat betekent dit getal meetkundig?    </div>
+<div class='problem-environment question' id='problem31' numbered=' ' role='article' titletext=' Question'>  Waarom onderzoeken we zowel positieve als negatieve waarden van <span class='mathjax-inline'>\(h\)</span>?    </div>
+</div>
+<!-- l. 473 --><p class='noindent'></p></div>
+<p></p><!-- l. 473 --><p class='noindent'></p></section>
+<p><a id='x1-14r12'></a>
+</p><p></p><!-- l. 480 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 480 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 480 --><p class='noindent'>Oefening 12
+</p><!-- l. 480 --><p class='noindent'>— Van grafiek naar afgeleide informatie
+</p><!-- l. 480 --><p class='noindent'></p></div>
+<p></p><!-- l. 480 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 480 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 480 --><p class='noindent'></p><div class='fvd-exercise__content'>
+                                                                  
+
+                                                                  
+<p></p><!-- l. 482 --><p class='noindent'>Onderstaande figuur toont een mogelijke grafiek van <span class='mathjax-inline'>\(f\)</span>.
+</p>
+<div class='center'>
+<!-- l. 484 --><p class='noindent'>
+</p><!-- l. 485 --><p class='noindent'><img alt='[Picture]' src='Oefeningen-Afgeleid-getal.online-5927595951d306eba3bd939bfd126fb0.svg' /></p></div>
+<div class='problem-environment question' id='problem32' numbered=' ' role='article' titletext=' Question'>  Bepaal op basis van de grafiek het teken van
+<div class='mathjax-block'>\[ f'(a),\qquad f'(b),\qquad f'(c). \]</div>
+<!-- l. 519 --><p class='noindent'>Je hoeft geen exacte waarden te bepalen.    </p></div>
+<div class='problem-environment question' id='problem33' numbered=' ' role='article' titletext=' Question'>  In welk van de drie punten lijkt de raaklijn het steilst?    </div>
+<div class='problem-environment question' id='problem34' numbered=' ' role='article' titletext=' Question'>  Wat zegt een grotere absolute waarde van <span class='mathjax-inline'>\(f'(x)\)</span> over de raaklijn?    </div>
+</div>
+<!-- l. 530 --><p class='noindent'></p></div>
+<p></p><!-- l. 530 --><p class='noindent'></p></section>
+<p><a id='x1-15r13'></a>
+</p><p></p><!-- l. 537 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 537 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 537 --><p class='noindent'>Oefening 13
+</p><!-- l. 537 --><p class='noindent'>— Raaklijn uit de definitie
+</p><!-- l. 537 --><p class='noindent'></p></div>
+<p></p><!-- l. 537 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 537 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 537 --><p class='noindent'></p><div class='fvd-exercise__content'>
+                                                                  
+
+                                                                  
+<p></p><!-- l. 539 --><p class='noindent'>Gegeven is
+</p>
+<div class='mathjax-block'>\[ f(x)=2x^2-x+1. \]</div>
+<!-- l. 545 --><p class='noindent'>Bepaal de vergelijking van de raaklijn aan de grafiek in het punt met abscis
+<span class='mathjax-inline'>\(x=2\)</span>.
+</p><!-- l. 548 --><p class='noindent'>Je mag geen afleidingsregel gebruiken.
+</p><!-- l. 550 --><p class='noindent'>Je oplossing moet dus de volgende keten bevatten:
+</p>
+<div class='mathjax-block'>\[ \frac {f(2+h)-f(2)}{h} \longrightarrow f'(2) \longrightarrow \text {raaklijn}. \]</div>
+</div>
+<!-- l. 560 --><p class='noindent'></p></div>
+<p></p><!-- l. 560 --><p class='noindent'></p></section>
+<p><a id='x1-16r14'></a>
+</p><p></p><!-- l. 567 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 567 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 567 --><p class='noindent'>Oefening 14
+</p><!-- l. 567 --><p class='noindent'>— Snelheid op één ogenblik
+</p><!-- l. 567 --><p class='noindent'></p></div>
+<p></p><!-- l. 567 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 567 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 567 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 569 --><p class='noindent'>De positie van een bewegend voorwerp wordt beschreven door
+</p>
+<div class='mathjax-block'>\[ s(t)=t^2+2t \]</div>
+<!-- l. 575 --><p class='noindent'>met <span class='mathjax-inline'>\(s\)</span> in meter en <span class='mathjax-inline'>\(t\)</span> in seconde.
+</p>
+<div class='problem-environment question' id='problem35' numbered=' ' role='article' titletext=' Question'>  Bereken de gemiddelde snelheid tussen <span class='mathjax-inline'>\(t=2\)</span> en <span class='mathjax-inline'>\(t=2+h\)</span>.    </div>
+<div class='problem-environment question' id='problem36' numbered=' ' role='article' titletext=' Question'>  Vereenvoudig je uitdrukking.    </div>
+<div class='problem-environment question' id='problem37' numbered=' ' role='article' titletext=' Question'>  Laat <span class='mathjax-inline'>\(h\to 0\)</span> en bepaal de ogenblikkelijke snelheid op <span class='mathjax-inline'>\(t=2\)</span>.    </div>
+<div class='problem-environment question' id='problem38' numbered=' ' role='article' titletext=' Question'>  Interpreteer je resultaat in een volledige zin met eenheid.    </div>
+</div>
+<!-- l. 593 --><p class='noindent'></p></div>
+<p></p><!-- l. 593 --><p class='noindent'></p></section>
+<p><a id='x1-17r15'></a>
+                                                                  
+
+                                                                  
+</p><p></p><!-- l. 600 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 600 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 600 --><p class='noindent'>Oefening 15
+</p><!-- l. 600 --><p class='noindent'>— Temperatuur verandert
+</p><!-- l. 600 --><p class='noindent'></p></div>
+<p></p><!-- l. 600 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 600 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span></div>
+<p></p><!-- l. 600 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 602 --><p class='noindent'>De temperatuur van een vloeistof wordt gedurende een experiment beschreven door
+een functie <span class='mathjax-inline'>\(T(t)\)</span>, met <span class='mathjax-inline'>\(T\)</span> in <span class='mathjax-inline'>\(^\circ \mathrm {C}\)</span> en <span class='mathjax-inline'>\(t\)</span> in minuten.
+</p><!-- l. 606 --><p class='noindent'>Op een bepaald ogenblik geldt
+</p>
+<div class='mathjax-block'>\[ T'(6)=-1.8. \]</div>
+<div class='problem-environment question' id='problem39' numbered=' ' role='article' titletext=' Question'>  Wat betekent het minteken?    </div>
+<div class='problem-environment question' id='problem40' numbered=' ' role='article' titletext=' Question'>  Wat betekent de waarde <span class='mathjax-inline'>\(1.8\)</span>?    </div>
+<div class='problem-environment question' id='problem41' numbered=' ' role='article' titletext=' Question'>  Geef een correcte interpretatie van
+<div class='mathjax-block'>\[ T'(6)=-1.8 \]</div>
+<!-- l. 627 --><p class='noindent'>in de context.    </p></div>
+<div class='problem-environment question' id='problem42' numbered=' ' role='article' titletext=' Question'>  Kun je hieruit besluiten dat de temperatuur gedurende de volledige zesde minuut
+exact <span class='mathjax-inline'>\(1.8^\circ \mathrm {C}\)</span> daalt? Verklaar.    </div>
+</div>
+<!-- l. 635 --><p class='noindent'></p></div>
+<p></p><!-- l. 635 --><p class='noindent'></p></section>
+<p><a id='x1-18r16'></a>
+</p><p></p><!-- l. 642 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 642 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 642 --><p class='noindent'>Oefening 16
+</p><!-- l. 642 --><p class='noindent'>— Welke informatie is voldoende?
+</p><!-- l. 642 --><p class='noindent'></p></div>
+<p></p><!-- l. 642 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 642 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 642 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 644 --><p class='noindent'>We willen <span class='mathjax-inline'>\(f'(3)\)</span> bepalen.
+                                                                  
+
+                                                                  
+</p><!-- l. 646 --><p class='noindent'>Onderzoek telkens of de gegeven informatie voldoende is.
+</p>
+<div class='problem-environment question' id='problem43' numbered=' ' role='article' titletext=' Question'>  Je kent alleen <span class='mathjax-inline'>\(f(3)=7\)</span>.    </div>
+<div class='problem-environment question' id='problem44' numbered=' ' role='article' titletext=' Question'>  Je kent twee punten van de grafiek: <span class='mathjax-inline'>\((2,4)\)</span> en <span class='mathjax-inline'>\((4,8)\)</span>.    </div>
+<div class='problem-environment question' id='problem45' numbered=' ' role='article' titletext=' Question'>  Je kent de vergelijking van de raaklijn aan de grafiek in <span class='mathjax-inline'>\(x=3\)</span>.    </div>
+<div class='problem-environment question' id='problem46' numbered=' ' role='article' titletext=' Question'>  Je kent voor alle <span class='mathjax-inline'>\(h\neq 0\)</span> de uitdrukking
+<div class='mathjax-block'>\[ \frac {f(3+h)-f(3)}{h}=5+2h. \]</div>
+<!-- l. 667 --><p class='noindent'>Bepaal in dit geval ook <span class='mathjax-inline'>\(f'(3)\)</span>.    </p></div>
+</div>
+<!-- l. 670 --><p class='noindent'></p></div>
+<p></p><!-- l. 670 --><p class='noindent'></p></section>
+<p><a id='x1-19r17'></a>
+</p><p></p><!-- l. 677 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 677 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 677 --><p class='noindent'>Oefening 17
+</p><!-- l. 677 --><p class='noindent'>— Een fout opsporen
+</p><!-- l. 677 --><p class='noindent'></p></div>
+<p></p><!-- l. 677 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 677 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 677 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 679 --><p class='noindent'>Een leerling wil voor
+</p>
+<div class='mathjax-block'>\[ f(x)=x^2+3 \]</div>
+<!-- l. 685 --><p class='noindent'>het afgeleid getal in <span class='mathjax-inline'>\(x=2\)</span> berekenen en schrijft:
+</p>
+<div class='mathjax-block'>\[ f'(2) = \lim _{h\to 0} \frac {f(2+h)}{h} = \lim _{h\to 0} \frac {(2+h)^2+3}{h}. \]</div>
+<div class='problem-environment question' id='problem47' numbered=' ' role='article' titletext=' Question'>  Waar zit de eerste fout?    </div>
+<div class='problem-environment question' id='problem48' numbered=' ' role='article' titletext=' Question'>  Schrijf het correcte differentiequotiënt.    </div>
+<div class='problem-environment question' id='problem49' numbered=' ' role='article' titletext=' Question'>  Bereken vervolgens <span class='mathjax-inline'>\(f'(2)\)</span> correct.    </div>
+<div class='problem-environment question' id='problem50' numbered=' ' role='article' titletext=' Question'>  Leg uit waarom de term <span class='mathjax-inline'>\(-f(2)\)</span> essentieel is in het differentiequotiënt.    </div>
+</div>
+<!-- l. 714 --><p class='noindent'></p></div>
+<p></p><!-- l. 714 --><p class='noindent'></p></section>
+<p><a id='x1-20r18'></a>
+                                                                  
+
+                                                                  
+</p><p></p><!-- l. 727 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 727 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 727 --><p class='noindent'>Oefening 18
+</p><!-- l. 727 --><p class='noindent'>— Een onbekende parameter
+</p><!-- l. 727 --><p class='noindent'></p></div>
+<p></p><!-- l. 727 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 727 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--g'>G</span></div>
+<p></p><!-- l. 727 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 729 --><p class='noindent'>Gegeven is de familie functies
+</p>
+<div class='mathjax-block'>\[ f_a(x)=x^2+ax. \]</div>
+<!-- l. 735 --><p class='noindent'>De raaklijn aan de grafiek in het punt met abscis <span class='mathjax-inline'>\(x=1\)</span> heeft richtingscoëfficiënt
+<span class='mathjax-inline'>\(5\)</span>.
+</p><!-- l. 738 --><p class='noindent'>Bepaal <span class='mathjax-inline'>\(a\)</span> vanuit de definitie van het afgeleid getal.
+</p></div>
+<p></p><!-- l. 740 --><p class='noindent'></p></div>
+<p></p><!-- l. 740 --><p class='noindent'></p></section>
+<p><a id='x1-21r19'></a>
+</p><p></p><!-- l. 747 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 747 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 747 --><p class='noindent'>Oefening 19
+</p><!-- l. 747 --><p class='noindent'>— Zelfde afgeleid getal, andere functie
+</p><!-- l. 747 --><p class='noindent'></p></div>
+<p></p><!-- l. 747 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 747 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--g'>G</span></div>
+<p></p><!-- l. 747 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 749 --><p class='noindent'>Zoek twee verschillende veeltermfuncties <span class='mathjax-inline'>\(f\)</span> en <span class='mathjax-inline'>\(g\)</span> waarvoor
+</p>
+<div class='mathjax-block'>\[ f(2)\neq g(2) \]</div>
+<!-- l. 755 --><p class='noindent'>maar
+</p>
+<div class='mathjax-block'>\[ f'(2)=g'(2)=3. \]</div>
+<div class='problem-environment question' id='problem51' numbered=' ' role='article' titletext=' Question'>  Geef twee mogelijke voorschriften.    </div>
+<div class='problem-environment question' id='problem52' numbered=' ' role='article' titletext=' Question'>  Controleer de voorwaarden.    </div>
+                                                                  
+
+                                                                  
+<div class='problem-environment question' id='problem53' numbered=' ' role='article' titletext=' Question'>  Leg meetkundig uit hoe twee grafieken in verschillende punten toch hetzelfde
+afgeleid getal kunnen hebben.    </div>
+</div>
+<!-- l. 774 --><p class='noindent'></p></div>
+<p></p><!-- l. 774 --><p class='noindent'></p></section>
+<p><a id='x1-22r20'></a>
+</p><p></p><!-- l. 781 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 781 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 781 --><p class='noindent'>Oefening 20
+</p><!-- l. 781 --><p class='noindent'>— Meetgegevens en een ogenblikkelijke snelheid
+</p><!-- l. 781 --><p class='noindent'></p></div>
+<p></p><!-- l. 781 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 781 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--g'>G</span></div>
+<p></p><!-- l. 781 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 783 --><p class='noindent'>Een sensor registreert de positie van een robot rond <span class='mathjax-inline'>\(t=4\)</span> s.
+</p>
+<div class='mathjax-block'>\[ \begin {array}{c|ccccc} t\;(\mathrm {s}) &amp;3.8&amp;3.9&amp;4.0&amp;4.1&amp;4.2\\ \hline s\;(\mathrm {m}) &amp;7.22&amp;7.60&amp;8.00&amp;8.42&amp;8.86 \end {array} \]</div>
+<!-- l. 794 --><p class='noindent'>Het exacte functievoorschrift is onbekend.
+</p>
+<div class='problem-environment question' id='problem54' numbered=' ' role='article' titletext=' Question'>  Bereken een benadering van de snelheid op <span class='mathjax-inline'>\(t=4\)</span> door alleen de metingen op <span class='mathjax-inline'>\(t=4\)</span> en <span class='mathjax-inline'>\(t=4.1\)</span> te
+gebruiken.    </div>
+<div class='problem-environment question' id='problem55' numbered=' ' role='article' titletext=' Question'>  Bereken een tweede benadering met de metingen op <span class='mathjax-inline'>\(t=3.9\)</span> en <span class='mathjax-inline'>\(t=4\)</span>.    </div>
+<div class='problem-environment question' id='problem56' numbered=' ' role='article' titletext=' Question'>  Gebruik vervolgens de meetpunten op <span class='mathjax-inline'>\(t=3.9\)</span> en <span class='mathjax-inline'>\(t=4.1\)</span> om een derde schatting te maken.
+</div>
+<div class='problem-environment question' id='problem57' numbered=' ' role='article' titletext=' Question'>  Welke schatting vind je het meest overtuigend als benadering van de ogenblikkelijke
+snelheid? Motiveer.    </div>
+<div class='problem-environment question' id='problem58' numbered=' ' role='article' titletext=' Question'>  Waarom kunnen we uit een eindige tabel met meetgegevens in het algemeen niet de
+exacte waarde van <span class='mathjax-inline'>\(s'(4)\)</span> bewijzen?    </div>
+</div>
+<!-- l. 820 --><p class='noindent'></p></div>
+<p></p><!-- l. 820 --><p class='noindent'></p></section>
+<p><a id='x1-23r21'></a>
+</p><p></p><!-- l. 827 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 827 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 827 --><p class='noindent'>Oefening 21
+                                                                  
+
+                                                                  
+</p><!-- l. 827 --><p class='noindent'>— Een bewering onderzoeken
+</p><!-- l. 827 --><p class='noindent'></p></div>
+<p></p><!-- l. 827 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 827 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--g'>G</span></div>
+<p></p><!-- l. 827 --><p class='noindent'></p><div class='fvd-exercise__content'>
+<p></p><!-- l. 829 --><p class='noindent'>Een leerling beweert:
+</p>     
+<blockquote class='quote'>
+<!-- l. 832 --><p class='noindent'>Als twee functies in <span class='mathjax-inline'>\(x=a\)</span> dezelfde functiewaarde hebben en hetzelfde
+afgeleid  getal,  dan  moeten  hun  grafieken  in  de  buurt  van  <span class='mathjax-inline'>\(a\)</span>
+samenvallen.</p></blockquote>
+<!-- l. 837 --><p class='noindent'>Onderzoek deze bewering.
+</p>
+<div class='problem-environment question' id='problem59' numbered=' ' role='article' titletext=' Question'>  Is ze waar of onwaar?    </div>
+<div class='problem-environment question' id='problem60' numbered=' ' role='article' titletext=' Question'>  Geef een overtuigend voorbeeld of tegenvoorbeeld.    </div>
+<div class='problem-environment question' id='problem61' numbered=' ' role='article' titletext=' Question'>  Wat betekent het wél als
+<div class='mathjax-block'>\[ f(a)=g(a) \]</div>
+<!-- l. 854 --><p class='noindent'>en
+</p>
+<div class='mathjax-block'>\[ f'(a)=g'(a)? \]</div>   </div>
+</div>
+<!-- l. 861 --><p class='noindent'></p></div>
+<p></p><!-- l. 861 --><p class='noindent'></p></section>
+<p><a id='x1-24r1'></a>
+</p><p></p><!-- l. 868 --><p class='noindent'></p><div class='fvd-section-bar'><div class='fvd-section-bar__number'>1</div><div class='fvd-section-bar__title'>Zelftest</div></div>
+<p><a id='x1-25r22'></a>
+</p><p></p><!-- l. 870 --><p class='noindent'></p><section class='fvd-exercise'>
+<p></p><!-- l. 870 --><p class='noindent'></p><div class='fvd-exercise__title'>
+<p></p><!-- l. 870 --><p class='noindent'>Oefening 22
+</p><!-- l. 870 --><p class='noindent'>— Alles samen
+</p><!-- l. 870 --><p class='noindent'></p></div>
+<p></p><!-- l. 870 --><p class='noindent'></p><div class='fvd-exercise__body'>
+<p></p><!-- l. 870 --><p class='noindent'></p><div class='fvd-exercise__meta'><span class='fvd-exercise-chip fvd-exercise-chip--u'>U</span><span class='fvd-exercise-chip fvd-exercise-chip--ess'>ESS</span></div>
+<p></p><!-- l. 870 --><p class='noindent'></p><div class='fvd-exercise__content'>
+                                                                  
+
+                                                                  
+<p></p><!-- l. 872 --><p class='noindent'>Gegeven is
+</p>
+<div class='mathjax-block'>\[ f(x)=x^2-4x+5. \]</div>
+<!-- l. 878 --><p class='noindent'>Onderzoek het punt met abscis <span class='mathjax-inline'>\(x=3\)</span>.
+</p>
+<div class='problem-environment question' id='problem62' numbered=' ' role='article' titletext=' Question'>  Bereken <span class='mathjax-inline'>\(f(3)\)</span>.    </div>
+<div class='problem-environment question' id='problem63' numbered=' ' role='article' titletext=' Question'>  Stel het differentiequotiënt
+<div class='mathjax-block'>\[ \frac {f(3+h)-f(3)}{h} \]</div>
+<!-- l. 891 --><p class='noindent'>op en vereenvoudig.    </p></div>
+<div class='problem-environment question' id='problem64' numbered=' ' role='article' titletext=' Question'>  Bepaal vanuit de definitie <span class='mathjax-inline'>\(f'(3)\)</span>.    </div>
+<div class='problem-environment question' id='problem65' numbered=' ' role='article' titletext=' Question'>  Interpreteer het teken van <span class='mathjax-inline'>\(f'(3)\)</span> grafisch.    </div>
+<div class='problem-environment question' id='problem66' numbered=' ' role='article' titletext=' Question'>  Bepaal de vergelijking van de raaklijn in <span class='mathjax-inline'>\(x=3\)</span>.    </div>
+<div class='problem-environment question' id='problem67' numbered=' ' role='article' titletext=' Question'>  Neem nu <span class='mathjax-inline'>\(h=0.1\)</span>.
+<!-- l. 909 --><p class='noindent'>Bereken de richtingscoëfficiënt van de overeenkomstige secant en vergelijk die met <span class='mathjax-inline'>\(f'(3)\)</span>.
+</p></div>
+<div class='problem-environment question' id='problem68' numbered=' ' role='article' titletext=' Question'>  Leg uit waarom die twee waarden dicht bij elkaar liggen.    </div>
+</div>
+<!-- l. 917 --><p class='noindent'></p></div>
+<p></p><!-- l. 917 --><p class='noindent'></p></section>
+                                                                  
+
+                                                                  
+<p></p>
+</body> 
+ 
+</html>
+                                                                  
+
+

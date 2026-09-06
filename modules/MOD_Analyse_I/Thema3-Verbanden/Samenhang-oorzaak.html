@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en-US" xml:lang="en-US">
+<head> <title>Samenhang is nog geen oorzaak – Van data naar functies — verbanden herkennen en gedrag onderzoeken</title>
+<meta charset="utf-8"/>
+<meta content="TeX4ht (https://tug.org/tex4ht/)" name="generator"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="\aa:CssFile " rel="stylesheet" type="text/css"/>
+<meta content="Samenhang-oorzaak.online.tex" name="src"/>
+<script>window.MathJax = { tex: { tags: "ams", }, }; </script>
+<script async="async" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+<meta content="Ingmar Herreman" name="author"/>
+<meta content="version 2.5.1" name="ximera"/>
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" media="screen" rel="stylesheet"/>
+<script async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js" type="text/javascript"></script>
+<link href="../../../assets/css/base.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/global.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/Header_Footer.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/ChapterLayout.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/chapter-hero.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/ExerciseHero.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/learning-boxes.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/CourseOverview.css" media="screen" rel="stylesheet"/></head><body><!-- XIMERA-HEADER-START --><!-- =========================================================
+     HEADER.HTML — Wiskunde 7 FVD
+     Plaats dit bestand bijvoorbeeld in:
+     assets/html/Header.html
+     ========================================================= -->
+<header aria-labelledby="fvd-hero-title" class="fvd-hero">
+<div aria-hidden="true" class="fvd-hero__grid"></div>
+<div aria-hidden="true" class="fvd-hero__glow fvd-hero__glow--left"></div>
+<div aria-hidden="true" class="fvd-hero__glow fvd-hero__glow--right"></div>
+<div class="fvd-hero__inner">
+<!-- Groot Athena-logo links -->
+<div class="fvd-hero__brand">
+<img alt="Athena secundair onderwijs" class="fvd-hero__logo" src="/images/banners/logo_athena.png"/>
+</div>
+<div aria-hidden="true" class="fvd-hero__divider"></div>
+<!-- Centrale titel en leerinhouden -->
+<div class="fvd-hero__content">
+<p class="fvd-hero__eyebrow">
+                    Fundamentele Vorming Digitale Creatie
+                </p>
+<h1 class="fvd-hero__title" id="fvd-hero-title">
+<span class="fvd-hero__title-main">Wiskunde</span>
+<span class="fvd-hero__title-accent">7 FVD</span>
+</h1>
+<div aria-hidden="true" class="fvd-hero__pink-line"></div>
+<p class="fvd-hero__subtitle">
+                    Wiskundige inzichten die je nodig hebt om digitale werelden te bouwen.
+                </p>
+<div aria-label="Onderwerpen in deze cursus" class="fvd-hero__chips">
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<rect height="18" rx="2" width="14" x="5" y="3"></rect>
+<path d="M8 7h8M8 11h2M14 11h2M8 15h2M14 15h2M8 18h2M14 18h2"></path>
+</svg>
+                        Basiswiskunde
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M4 17c4-1 4-10 8-10 2 0 2 3 4 3 1 0 2-.4 4-2"></path>
+<path d="M7 20 13 4"></path>
+</svg>
+                        Algebra
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M5 8h14M5 16h14"></path>
+</svg>
+                        Vergelijkingen
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M4 19V5M4 19h16"></path>
+<path d="m7 16 4-5 3 2 4-6"></path>
+</svg>
+                        Functies
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M5 18 18 5"></path>
+<path d="M12 5h6v6"></path>
+</svg>
+                        Vectoren
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="7"></circle>
+<path d="M12 2v20M2 12h20"></path>
+</svg>
+                        Coördinaten
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="m12 3 8 4.5v9L12 21l-8-4.5v-9z"></path>
+<path d="m4 7.5 8 4.5 8-4.5M12 12v9"></path>
+</svg>
+                        3D-meetkunde
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M3 16c3-8 7-8 10 0 2 5 5 4 8-4"></path>
+</svg>
+                        Goniometrie
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M5 18V6M5 18h14"></path>
+<path d="M8 16c1-6 3-9 8-10"></path>
+</svg>
+                        Logaritmen
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="m7 6 10 5-10 5z"></path>
+<path d="m7 10 10 5-10 5"></path>
+</svg>
+                        Transformaties
+                    </span>
+</div>
+</div>
+<!-- Rechterzijde met wiskundige SVG-tekeningen -->
+<div aria-hidden="true" class="fvd-hero__visual">
+<!-- 3D-kubus -->
+<svg class="fvd-visual fvd-visual--cube" viewbox="0 0 310 245">
+<g class="fvd-svg-cyan">
+<path d="M65 72 185 86 245 48 125 34Z"></path>
+<path d="M65 72v110l120 16V86"></path>
+<path d="M185 86 245 48v110l-60 40"></path>
+<path class="fvd-svg-dash" d="M125 34v110M125 144 65 182M125 144l120 14"></path>
+<path d="M125 144 90 210M125 144l88 28M125 144V15"></path>
+<path d="m90 210 11-4-7-9M213 172l-9-7-2 11M125 15l-6 11h12"></path>
+</g>
+<g class="fvd-svg-label">
+<text x="82" y="225">x</text>
+<text x="220" y="180">y</text>
+<text x="132" y="18">z</text>
+</g>
+</svg>
+<!-- Matrix -->
+<svg class="fvd-visual fvd-visual--matrix" viewbox="0 0 220 100">
+<g class="fvd-svg-soft">
+<text x="0" y="58">A =</text>
+<path d="M60 10c-12 18-12 62 0 80M205 10c12 18 12 62 0 80"></path>
+<text x="82" y="36">1</text>
+<text x="123" y="36">2</text>
+<text x="165" y="36">0</text>
+<text x="73" y="61">−1</text>
+<text x="123" y="61">0</text>
+<text x="165" y="61">3</text>
+<text x="82" y="86">2</text>
+<text x="113" y="86">−2</text>
+<text x="165" y="86">1</text>
+</g>
+</svg>
+<!-- Vectoren en rotatie -->
+<svg class="fvd-visual fvd-visual--vectors" viewbox="0 0 260 170">
+<g class="fvd-svg-cyan">
+<path d="M55 138 132 74"></path>
+<path d="m132 74-13 3 8 10"></path>
+<path d="M55 138h125"></path>
+<path d="m180 138-12-6v12"></path>
+<path class="fvd-svg-dash" d="M55 138c24-65 116-95 156-25"></path>
+</g>
+<g class="fvd-svg-pink">
+<path d="M55 138 207 104"></path>
+<path d="m207 104-13-2 5 12"></path>
+<path class="fvd-svg-dash" d="M211 113c17-13 25-5 21 11"></path>
+<path d="m232 124-9-8-2 12"></path>
+</g>
+<g class="fvd-svg-label">
+<text x="38" y="153">O</text>
+<text x="138" y="73">u⃗</text>
+<text x="188" y="98">v⃗</text>
+<text x="141" y="130">x⃗</text>
+<text x="222" y="102">Rθ</text>
+</g>
+</svg>
+<!-- Bézier-curve -->
+<svg class="fvd-visual fvd-visual--bezier" viewbox="0 0 280 110">
+<g class="fvd-svg-soft">
+<path d="M30 82 85 30 190 30 245 82"></path>
+</g>
+<g class="fvd-svg-cyan">
+<path d="M30 82c42-12 55-52 105-52s67 40 110 52"></path>
+</g>
+<g class="fvd-svg-pink">
+<circle cx="30" cy="82" r="4"></circle>
+<circle cx="85" cy="30" r="4"></circle>
+<circle cx="190" cy="30" r="4"></circle>
+<circle cx="245" cy="82" r="4"></circle>
+</g>
+<g class="fvd-svg-label">
+<text x="18" y="102">P₀</text>
+<text x="74" y="20">P₁</text>
+<text x="181" y="20">P₂</text>
+<text x="238" y="102">P₃</text>
+<text x="103" y="79">Bézier-curve</text>
+</g>
+</svg>
+</div>
+</div>
+<div aria-hidden="true" class="fvd-hero__pink-corner"></div>
+</header><!-- XIMERA-HEADER-END --><!-- XIMERA-CHAPTER-HERO-START --><section class="chapter-hero">
+<div aria-hidden="true" class="chapter-hero__decoration">
+<span class="chapter-hero__formula">
+            f(x) = ax² + bx + c
+        </span>
+<span class="chapter-hero__curve"></span>
+<span class="chapter-hero__grid"></span>
+</div>
+<div class="chapter-hero__content">
+<div class="chapter-hero__theme">
+<span class="chapter-hero__theme-label">
+                Thema 3
+            </span>
+<span class="chapter-hero__theme-dot"></span>
+<span class="chapter-hero__theme-name">
+                Verbanden onderzoeken met data
+            </span>
+</div>
+<div class="chapter-hero__chapter-label">
+            Hoofdstuk
+        </div>
+<div class="chapter-hero__main">
+<div class="chapter-hero__number">
+                7
+            </div>
+<div class="chapter-hero__text">
+<h1 class="chapter-hero__title">
+                    Samenhang is nog geen oorzaak
+                </h1>
+<p class="chapter-hero__abstract">
+                    Een puntenwolk kan een duidelijk patroon vertonen. De correlatiecoëfficiënt kan dicht bij 1 of -1 liggen en een regressiemodel kan de gegevens uitstekend beschrijven. Maar daarmee is nog niet aangetoond dat de ene grootheid de andere veroorzaakt. In dit hoofdstuk onderzoeken we het verschil tussen samenhang en causaliteit. We bekijken hoe een waargenomen samenhang kan ontstaan door een gemeenschappelijke derde variabele, door omgekeerde beïnvloeding, door toeval of door de manier waarop gegevens verzameld werden. We leren daarom niet alleen vragen ``Is er een verband?'', maar ook ``Welke conclusie laten deze gegevens werkelijk toe?'' Zo maken we de volledige beweging van werkelijkheid naar data en wiskundig model — en opnieuw terug naar de werkelijkheid.
+                </p>
+</div>
+</div>
+<div class="chapter-hero__accent"></div>
+</div>
+</section><!-- XIMERA-CHAPTER-HERO-END --><button aria-controls="courseSidebar" aria-expanded="false" class="course-menu-button" id="courseMenuButton" type="button">☰ Toon cursusinhoud</button><div class="course-sidebar-overlay" id="courseSidebarOverlay"></div><!-- XIMERA-CHAPTER-LAYOUT-START --><main class="chapter-layout"><!--
+    AUTOMATISCH GEGENEREERD BESTAND
+
+    Dit bestand wordt opgebouwd door:
+        scripts/generate-sidebar.sh
+
+    Bewerk niet dit bestand, maar:
+        assets/html/SidebarTemplate.html
+        en modules/.../index.tex
+-->
+<aside class="course-sidebar" id="courseSidebar">
+<div class="sidebar-header">
+<div class="sidebar-header__text">
+<span class="sidebar-label">
+                Van data naar functies — verbanden herkennen en gedrag onderzoeken
+            </span>
+<h2 class="sidebar-title">
+                Cursusinhoud
+            </h2>
+</div>
+<button aria-label="Sluit cursusmenu" class="sidebar-close" id="sidebarClose" type="button">
+            ×
+        </button>
+</div>
+<nav aria-label="Cursusinhoud" class="course-navigation">
+<div class="course-section" data-theme="1">
+<button aria-controls="course-section-1-parate-kennis-het-gereedschap-dat-je-nodig-hebt" aria-expanded="true" class="course-section-toggle" type="button">
+<span class="course-section-number">
+            1
+        </span>
+<span class="course-section-title">
+            Parate kennis — Het gereedschap dat je nodig hebt
+        </span>
+<span aria-hidden="true" class="course-section-arrow">
+            ▾
+        </span>
+</button>
+<div class="course-section-content" id="course-section-1-parate-kennis-het-gereedschap-dat-je-nodig-hebt">
+<a class="course-chapter-link" data-chapter="Thema1-Parate-kennis/Parate-kennis" href="Thema1-Parate-kennis/Parate-kennis.html">
+<span class="course-chapter-number">
+                1
+            </span>
+<span class="course-chapter-title">
+                Parate kennis — Je wiskundige gereedschapskist
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema1-Parate-kennis/Parate-kennis-oefeningen" href="Thema1-Parate-kennis/Parate-kennis-oefeningen.html">
+<span class="course-chapter-number">
+                2
+            </span>
+<span class="course-chapter-title">
+                Oefeningen — Parate kennis
+            </span>
+</a>
+</div>
+</div>
+<div class="course-section" data-theme="2">
+<button aria-controls="course-section-2-van-werkelijkheid-naar-wiskunde-en-terug" aria-expanded="true" class="course-section-toggle" type="button">
+<span class="course-section-number">
+            2
+        </span>
+<span class="course-section-title">
+            Van werkelijkheid naar wiskunde — en terug
+        </span>
+<span aria-hidden="true" class="course-section-arrow">
+            ▾
+        </span>
+</button>
+<div class="course-section-content" id="course-section-2-van-werkelijkheid-naar-wiskunde-en-terug">
+<a class="course-chapter-link" data-chapter="Thema2-Modelleren/Werkelijkheid-terug" href="Thema2-Modelleren/Werkelijkheid-terug.html">
+<span class="course-chapter-number">
+                1
+            </span>
+<span class="course-chapter-title">
+                Van werkelijkheid naar wiskunde — en terug
+            </span>
+</a>
+</div>
+</div>
+<div class="course-section is-open" data-theme="3">
+<button aria-controls="course-section-3-verbanden-onderzoeken-met-data" aria-expanded="true" class="course-section-toggle" type="button">
+<span class="course-section-number">
+            3
+        </span>
+<span class="course-section-title">
+            Verbanden onderzoeken met data
+        </span>
+<span aria-hidden="true" class="course-section-arrow">
+            ▾
+        </span>
+</button>
+<div class="course-section-content" id="course-section-3-verbanden-onderzoeken-met-data">
+<a class="course-chapter-link" data-chapter="Thema3-Verbanden/Van-data-naar-puntenwolk" href="Thema3-Verbanden/Van-data-naar-puntenwolk.html">
+<span class="course-chapter-number">
+                1
+            </span>
+<span class="course-chapter-title">
+                Van data naar puntenwolk
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema3-Verbanden/Van-data-naar-puntenwolk-oefeningen" href="Thema3-Verbanden/Van-data-naar-puntenwolk-oefeningen.html">
+<span class="course-chapter-number">
+                2
+            </span>
+<span class="course-chapter-title">
+                Oefeningen — Van data naar puntenwolk
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema3-Verbanden/Correlatie" href="Thema3-Verbanden/Correlatie.html">
+<span class="course-chapter-number">
+                3
+            </span>
+<span class="course-chapter-title">
+                Correlatie — Hoe sterk is het lineaire verband?
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema3-Verbanden/Correlatie-oefeningen" href="Thema3-Verbanden/Correlatie-oefeningen.html">
+<span class="course-chapter-number">
+                4
+            </span>
+<span class="course-chapter-title">
+                Oefeningen — Correlatie
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema3-Verbanden/Lineaire-regressie" href="Thema3-Verbanden/Lineaire-regressie.html">
+<span class="course-chapter-number">
+                5
+            </span>
+<span class="course-chapter-title">
+                Lineaire regressie — Van data naar model
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema3-Verbanden/Lineaire-regressie-oefeningen" href="Thema3-Verbanden/Lineaire-regressie-oefeningen.html">
+<span class="course-chapter-number">
+                6
+            </span>
+<span class="course-chapter-title">
+                Oefeningen — Lineaire regressie
+            </span>
+</a>
+<a aria-current="page" class="course-chapter-link is-active" data-chapter="Thema3-Verbanden/Samenhang-oorzaak" href="Thema3-Verbanden/Samenhang-oorzaak.html">
+<span class="course-chapter-number">
+                7
+            </span>
+<span class="course-chapter-title">
+                Samenhang is nog geen oorzaak
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema3-Verbanden/Samenhang-oorzaak-oefeningen" href="Thema3-Verbanden/Samenhang-oorzaak-oefeningen.html">
+<span class="course-chapter-number">
+                8
+            </span>
+<span class="course-chapter-title">
+                Oefeningen — Samenhang is nog geen oorzaak
+            </span>
+</a>
+</div>
+</div>
+</nav>
+</aside>
+<article class="chapter-content"><div class="chapter-body">
+<div class="preamble">
+</div>
+<style> .activity-body pre { white-space: pre; background-color: lightgray; } .xmyoutube { aspect-ratio: 16/9; min-width: 75%; } .image-environment img { width: unset; } </style>
+<div class="maketitle"></div>
+<!-- l. 42 --><p class="noindent"></p><section class="learning-box learning-box--prior"> <div class="learning-box__header"> <span class="learning-box__icon"> </span><span class="learning-box__title">Voorkennis</span> </div> <div class="learning-box__content">
+<p></p>
+<ul class="itemize1">
+<li class="itemize">Je kan een spreidingsdiagram analyseren.
+</li>
+<li class="itemize">Je kan de correlatiecoëfficiënt <span class="mathjax-inline">\(r\)</span> interpreteren.
+</li>
+<li class="itemize">Je weet dat <span class="mathjax-inline">\(r\)</span> de richting en sterkte van een lineair verband beschrijft.
+</li>
+<li class="itemize">Je kan een lineair regressiemodel opstellen en interpreteren.
+</li>
+<li class="itemize">Je kan interpolatie en extrapolatie onderscheiden.
+</li>
+<li class="itemize">Je kan een wiskundig model terugkoppelen naar de context.</li></ul>
+<!-- l. 49 --><p class="noindent"></p></div> </section>
+<p></p><!-- l. 51 --><p class="noindent"></p><section class="learning-box learning-box--goals"> <div class="learning-box__header"> <span class="learning-box__icon"> </span><span class="learning-box__title">Leerdoelen</span> </div> <div class="learning-box__content">
+<p></p>
+<ul class="itemize1">
+<li class="itemize">Je kan in concrete situaties het verschil uitleggen tussen samenhang en
+causaliteit.
+</li>
+<li class="itemize">Je kan aangeven welke conclusies een correlatie of regressiemodel wel en
+niet ondersteunt.
+                                                                  
+
+                                                                  
+</li>
+<li class="itemize">Je kan herkennen dat een derde variabele een waargenomen samenhang
+kan helpen verklaren.
+</li>
+<li class="itemize">Je kan omgekeerde causaliteit als mogelijke verklaring herkennen.
+</li>
+<li class="itemize">Je kan uitleggen waarom observationele gegevens meestal onvoldoende zijn
+om causaliteit vast te stellen.
+</li>
+<li class="itemize">Je kan uitleggen waarom een gecontroleerd experiment sterkere causale
+uitspraken kan ondersteunen.
+</li>
+<li class="itemize">Je kan een causale claim kritisch beoordelen op basis van gegevens en
+onderzoeksopzet.
+</li>
+<li class="itemize">Je   kan   een   voorzichtige,   wetenschappelijk   verantwoorde   conclusie
+formuleren.</li></ul>
+<!-- l. 60 --><p class="noindent"></p></div> </section>
+<p><a id="x1-2r1"></a>
+</p><p></p><!-- l. 64 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">1</div><div class="fvd-section-bar__title">Een sterk verband — wat weten we nu?</div></div>
+<p></p><!-- l. 67 --><p class="noindent">Stel dat we twee numerieke grootheden <span class="mathjax-inline">\(x\)</span> en <span class="mathjax-inline">\(y\)</span> onderzoeken.
+</p><!-- l. 69 --><p class="noindent">We maken een spreidingsdiagram en vinden een bijna rechte puntenwolk. ICT geeft
+bovendien
+</p>
+<div class="mathjax-block">\[ r=0{,}96. \]</div>
+<!-- l. 76 --><p class="noindent">Een lineaire regressie levert
+</p>
+<div class="mathjax-block">\[ \hat y=2{,}4x+7{,}1. \]</div>
+<!-- l. 82 --><p class="noindent">We mogen dan besluiten dat er in deze dataset een <strong>sterke positieve lineaire
+samenhang</strong> bestaat.
+                                                                  
+
+                                                                  
+</p><!-- l. 85 --><p class="noindent">Maar mogen we ook besluiten:
+</p>
+<div class="center">
+<!-- l. 87 --><p class="noindent">
+</p><!-- l. 88 --><p class="noindent"><strong>“Een stijging van <span class="mathjax-inline">\(x\)</span> veroorzaakt een stijging van <span class="mathjax-inline">\(y\)</span>”?</strong></p></div>
+<!-- l. 91 --><p class="noindent">Nee. Daarvoor hebben we meer informatie nodig.
+</p><!-- l. 94 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">Correlatie en regressie beschrijven een patroon in gegevens.
+<p></p><!-- l. 96 --><p class="noindent">Ze beantwoorden vragen zoals:
+</p>
+<ul class="itemize1">
+<li class="itemize">veranderen twee grootheden samen?
+</li>
+<li class="itemize">in welke richting?
+</li>
+<li class="itemize">hoe sterk is hun lineaire samenhang?
+</li>
+<li class="itemize">welk lineair model beschrijft het patroon?</li></ul>
+<!-- l. 105 --><p class="noindent">Ze vertellen op zichzelf niet <strong>waarom</strong> dat patroon bestaat. </p></div></section>
+<p></p><!-- l. 108 --><p class="noindent">Daarmee komen we bij een fundamenteel onderscheid.
+<a id="x1-3r2"></a>
+</p><!-- l. 112 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">2</div><div class="fvd-section-bar__title">Samenhang en causaliteit</div></div>
+<p></p><!-- l. 116 --><p class="noindent"></p><section class="fvd-definition"><div class="fvd-definition__title"><span class="fvd-definition__label">DEFINITIE</span></div><div class="fvd-definition__content">We spreken van <strong>samenhang</strong> wanneer waarden van twee grootheden op
+een systematische manier samen voorkomen of samen veranderen. </div></section>
+<p></p><!-- l. 120 --><p class="noindent">Een correlatiecoëfficiënt is een maat voor een bepaalde vorm van samenhang,
+namelijk <strong>lineaire samenhang</strong>.
+</p><!-- l. 124 --><p class="noindent"></p><section class="fvd-definition"><div class="fvd-definition__title"><span class="fvd-definition__label">DEFINITIE</span></div><div class="fvd-definition__content">We spreken van <strong>causaliteit</strong> wanneer een verandering in een grootheid
+een verandering in een andere grootheid <strong>veroorzaakt</strong>. </div></section>
+<p></p><!-- l. 129 --><p class="noindent">Dat zijn verschillende uitspraken.
+</p>
+<div class="mathjax-block">\[ \boxed { \text {samenhang} \neq \text {causaliteit} } \]</div>
+<p><a id="x1-4r1"></a>
+</p><!-- l. 139 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 139 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 1<span class="fvd-example__subtitle"> — Een wetenschappelijke formulering</span></div>
+<p></p><!-- l. 139 --><p class="noindent"></p><div class="fvd-example__content"> Stel dat leerlingen die meer uren slapen gemiddeld betere scores halen op een
+concentratietest.
+<p></p><!-- l. 143 --><p class="noindent">Uit de gegevens kunnen we bijvoorbeeld besluiten:
+</p>
+<blockquote class="quote">
+<!-- l. 146 --><p class="noindent">In de onderzochte groep bestaat een positieve samenhang tussen
+slaapduur en de score op de concentratietest.</p></blockquote>
+<!-- l. 150 --><p class="noindent">Maar uit die samenhang alleen volgt nog niet:
+</p>
+<blockquote class="quote">
+<!-- l. 153 --><p class="noindent">Meer slapen veroorzaakt noodzakelijk een hogere score.</p></blockquote>
+<!-- l. 156 --><p class="noindent">Misschien verschillen de groepen ook in stress, gezondheid, schermgebruik, leeftijd of
+andere factoren. </p></div></section>
+<p><a id="x1-5r3"></a>
+</p><p></p><!-- l. 162 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">3</div><div class="fvd-section-bar__title">Waarom kan samenhang ontstaan zonder directe oorzaak?</div></div>
+<p></p><!-- l. 165 --><p class="noindent">Wanneer twee grootheden samenhangen, zijn meerdere verklaringen mogelijk.
+</p><!-- l. 168 --><p class="noindent">Een goede onderzoeker probeert die mogelijkheden van elkaar te onderscheiden.
+<a id="x1-6r1"></a>
+</p><!-- l. 173 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 173 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 173 --><p class="noindent"></p><div class="fvd-subsection__number">3.1</div>
+<p></p><!-- l. 173 --><p class="noindent"></p><div class="fvd-subsection__title">Een derde variabele</div>
+<p></p><!-- l. 173 --><p class="noindent"></p></div>
+<p></p><!-- l. 173 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 173 --><p class="noindent"></p></div>
+<p></p><!-- l. 176 --><p class="noindent">Soms worden twee grootheden allebei beïnvloed door een derde grootheid.
+<a id="x1-7r2"></a>
+</p><!-- l. 178 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 178 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 2<span class="fvd-example__subtitle"> — IJsverkoop en verdrinkingsincidenten</span></div>
+<p></p><!-- l. 178 --><p class="noindent"></p><div class="fvd-example__content"> Stel dat in een dataset op dagen met een hogere ijsverkoop ook meer
+verdrinkingsincidenten voorkomen.
+<p></p><!-- l. 182 --><p class="noindent">We zouden een positieve correlatie kunnen vinden tussen
+</p>
+<div class="mathjax-block">\[ \text {ijsverkoop} \quad \text {en}\quad \text {aantal verdrinkingsincidenten}. \]</div>
+<!-- l. 190 --><p class="noindent">Daaruit volgt uiteraard niet dat ijs eten verdrinkingen veroorzaakt.
+</p><!-- l. 192 --><p class="noindent">Een mogelijke derde variabele is de <strong>temperatuur</strong>:
+</p>
+<div class="mathjax-block">\[ \text {hogere temperatuur} \longrightarrow \begin {cases} \text {meer ijsverkoop},\\ \text {meer mensen die gaan zwemmen}. \end {cases} \]</div>
+<!-- l. 203 --><p class="noindent">De temperatuur kan dus bijdragen aan de samenhang tussen beide gemeten
+grootheden. </p></div></section>
+<p></p><!-- l. 208 --><p class="noindent"></p><section class="fvd-definition"><div class="fvd-definition__title"><span class="fvd-definition__label">DEFINITIE</span></div><div class="fvd-definition__content">Een <strong>derde variabele</strong> is een bijkomende variabele die de waargenomen
+samenhang tussen twee onderzochte grootheden mee kan verklaren. </div></section>
+<p></p><!-- l. 214 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">Het noemen van een mogelijke derde variabele bewijst nog niet dat die
+variabele werkelijk de volledige verklaring is.
+<p></p><!-- l. 217 --><p class="noindent">Het toont wel aan waarom de oorspronkelijke correlatie op zichzelf geen bewijs voor
+een directe causale relatie vormt. </p></div></section>
+<p><a id="x1-8r2"></a>
+</p><p></p><!-- l. 223 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 223 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 223 --><p class="noindent"></p><div class="fvd-subsection__number">3.2</div>
+<p></p><!-- l. 223 --><p class="noindent"></p><div class="fvd-subsection__title">Omgekeerde causaliteit</div>
+<p></p><!-- l. 223 --><p class="noindent"></p></div>
+<p></p><!-- l. 223 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 223 --><p class="noindent"></p></div>
+<p></p><!-- l. 226 --><p class="noindent">Zelfs als twee grootheden causaal met elkaar verbonden zijn, is de richting niet altijd
+meteen duidelijk.
+<a id="x1-9r3"></a>
+</p><!-- l. 229 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 229 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 3<span class="fvd-example__subtitle"> — Beweging en lichamelijke conditie</span></div>
+<p></p><!-- l. 229 --><p class="noindent"></p><div class="fvd-example__content"> Stel dat mensen die meer bewegen gemiddeld een betere lichamelijke conditie
+hebben.
+<p></p><!-- l. 233 --><p class="noindent">Een mogelijke verklaring is
+</p>
+<div class="mathjax-block">\[ \text {meer bewegen} \longrightarrow \text {betere conditie}. \]</div>
+<!-- l. 241 --><p class="noindent">Maar ook de omgekeerde richting kan een rol spelen:
+                                                                  
+
+                                                                  
+</p>
+<div class="mathjax-block">\[ \text {betere conditie} \longrightarrow \text {meer kunnen of willen bewegen}. \]</div>
+<!-- l. 249 --><p class="noindent">In werkelijkheid kunnen beide effecten tegelijk aanwezig zijn. </p></div></section>
+<p></p><!-- l. 253 --><p class="noindent"></p><section class="fvd-definition"><div class="fvd-definition__title"><span class="fvd-definition__label">DEFINITIE</span></div><div class="fvd-definition__content">Bij <strong>omgekeerde causaliteit</strong> is het mogelijk dat de richting van oorzaak
+en gevolg anders is dan eerst wordt verondersteld. </div></section>
+<p><a id="x1-10r3"></a>
+</p><p></p><!-- l. 259 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 259 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 259 --><p class="noindent"></p><div class="fvd-subsection__number">3.3</div>
+<p></p><!-- l. 259 --><p class="noindent"></p><div class="fvd-subsection__title">Toeval</div>
+<p></p><!-- l. 259 --><p class="noindent"></p></div>
+<p></p><!-- l. 259 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 259 --><p class="noindent"></p></div>
+<p></p><!-- l. 262 --><p class="noindent">Wanneer we veel variabelen onderzoeken, kunnen sommige toevallig samenhangen.
+</p><!-- l. 265 --><p class="noindent">Een correlatie in één dataset is dus niet automatisch een universeel patroon.
+</p><!-- l. 268 --><p class="noindent">Bij kleine datasets is voorzichtigheid extra belangrijk: enkele waarnemingen kunnen
+een groot effect hebben op de gevonden samenhang.
+</p><!-- l. 272 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">Een opvallende correlatie is een reden om verder te onderzoeken, niet
+automatisch een bewijs van een mechanisme. </div></section>
+<p><a id="x1-11r4"></a>
+</p><p></p><!-- l. 278 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 278 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 278 --><p class="noindent"></p><div class="fvd-subsection__number">3.4</div>
+<p></p><!-- l. 278 --><p class="noindent"></p><div class="fvd-subsection__title">De manier waarop gegevens verzameld worden</div>
+<p></p><!-- l. 278 --><p class="noindent"></p></div>
+<p></p><!-- l. 278 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 278 --><p class="noindent"></p></div>
+<p></p><!-- l. 281 --><p class="noindent">Ook de selectie van waarnemingen kan het beeld beïnvloeden.
+</p><!-- l. 283 --><p class="noindent">Stel dat we het verband tussen beweging en gezondheid willen onderzoeken, maar
+alleen gegevens verzamelen bij leden van een sportclub.
+</p><!-- l. 287 --><p class="noindent">Dan onderzoeken we geen willekeurige doorsnede van de volledige bevolking.
+</p><!-- l. 290 --><p class="noindent">De manier waarop een steekproef tot stand komt, kan dus mee bepalen welke
+patronen we zien.
+</p><!-- l. 294 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">Een statistisch patroon moet altijd gelezen worden samen met de
+vraag:
+                                                                  
+
+                                                                  
+<p></p>
+<div class="mathjax-block">\[ \important { \text {Waar komen deze gegevens vandaan?} } \]</div> </div></section>
+<p><a id="x1-12r4"></a>
+</p><!-- l. 305 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">4</div><div class="fvd-section-bar__title">Observationeel onderzoek</div></div>
+<p></p><!-- l. 308 --><p class="noindent">Veel datasets ontstaan doordat onderzoekers de werkelijkheid <strong>observeren</strong> zonder
+zelf een grootheid toe te wijzen of te veranderen.
+</p><!-- l. 313 --><p class="noindent"></p><section class="fvd-definition"><div class="fvd-definition__title"><span class="fvd-definition__label">DEFINITIE</span></div><div class="fvd-definition__content">Bij een <strong>observationeel onderzoek</strong> observeert en meet de onderzoeker
+bestaande verschillen zonder de onderzochte situatie doelbewust toe te wijzen.
+</div></section>
+<p></p><!-- l. 318 --><p class="noindent">Voorbeelden zijn:
+</p>
+<ul class="itemize1">
+<li class="itemize">slaapduur en schoolresultaten bij leerlingen meten;
+</li>
+<li class="itemize">luchtvervuiling en gezondheidsgegevens in verschillende steden vergelijken;
+</li>
+<li class="itemize">temperatuur en energieverbruik van een gebouw registreren;
+</li>
+<li class="itemize">beweging en conditie bij een groep personen meten.</li></ul>
+<!-- l. 327 --><p class="noindent">Observationeel onderzoek kan zeer waardevol zijn. Het kan patronen zichtbaar
+maken, hypotheses opleveren en voorspellingen ondersteunen.
+</p><!-- l. 330 --><p class="noindent">Maar mogelijke derde variabelen zijn vaak moeilijk volledig uit te sluiten.
+</p><!-- l. 333 --><p class="noindent">Daarom zijn causale uitspraken op basis van uitsluitend observationele samenhang
+meestal niet gerechtvaardigd.
+<a id="x1-13r5"></a>
+</p><!-- l. 338 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">5</div><div class="fvd-section-bar__title">Experimenten en causaliteit</div></div>
+<p></p><!-- l. 341 --><p class="noindent">Wanneer we een mogelijke oorzaak werkelijk willen onderzoeken, proberen we de
+onderzoeksopzet zo te organiseren dat alternatieve verklaringen zoveel mogelijk
+worden beperkt.
+</p><!-- l. 346 --><p class="noindent"></p><section class="fvd-definition"><div class="fvd-definition__title"><span class="fvd-definition__label">DEFINITIE</span></div><div class="fvd-definition__content">Bij een <strong>experiment</strong> grijpt de onderzoeker doelbewust in en
+onderzoekt hij wat er gebeurt wanneer een bepaalde factor wordt veranderd,
+terwijl andere relevante omstandigheden zoveel mogelijk worden gecontroleerd.
+</div></section>
+<p><a id="x1-14r4"></a>
+</p><p></p><!-- l. 352 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 352 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 4<span class="fvd-example__subtitle"> — Meststof en plantengroei</span></div>
+<p></p><!-- l. 352 --><p class="noindent"></p><div class="fvd-example__content"> We willen onderzoeken of een bepaalde hoeveelheid meststof de groei van planten
+beïnvloedt.
+<p></p><!-- l. 356 --><p class="noindent">Alleen planten observeren die toevallig verschillende hoeveelheden meststof krijgen,
+laat veel alternatieve verklaringen toe.
+</p><!-- l. 359 --><p class="noindent">Een sterker ontwerp is bijvoorbeeld:
+</p>
+<ul class="itemize1">
+<li class="itemize">vergelijkbare planten gebruiken;
+</li>
+<li class="itemize">planten willekeurig over behandelingsgroepen verdelen;
+</li>
+<li class="itemize">de hoeveelheid meststof doelbewust variëren;
+</li>
+<li class="itemize">licht, water, temperatuur en andere omstandigheden zo gelijk mogelijk
+houden;
+</li>
+<li class="itemize">daarna de groei vergelijken.</li></ul>
+<!-- l. 369 --><p class="noindent">Zo wordt het aannemelijker dat een systematisch verschil in groei samenhangt met de
+onderzochte behandeling. </p></div></section>
+<p><a id="x1-15r1"></a>
+</p><p></p><!-- l. 375 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 375 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 375 --><p class="noindent"></p><div class="fvd-subsection__number">5.1</div>
+<p></p><!-- l. 375 --><p class="noindent"></p><div class="fvd-subsection__title">Waarom willekeurig verdelen?</div>
+<p></p><!-- l. 375 --><p class="noindent"></p></div>
+<p></p><!-- l. 375 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 375 --><p class="noindent"></p></div>
+<p></p><!-- l. 378 --><p class="noindent">Wanneer proefeenheden willekeurig over groepen worden verdeeld, proberen we te
+vermijden dat één groep vooraf systematisch anders is dan een andere.
+</p><!-- l. 383 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">Randomisatie maakt een experiment niet automatisch perfect.
+<p></p><!-- l. 385 --><p class="noindent">Ze helpt wel om alternatieve verklaringen te beperken en versterkt daardoor de
+mogelijkheid om een causaal effect te onderzoeken. </p></div></section>
+<p><a id="x1-16r2"></a>
+</p><p></p><!-- l. 391 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 391 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 391 --><p class="noindent"></p><div class="fvd-subsection__number">5.2</div>
+<p></p><!-- l. 391 --><p class="noindent"></p><div class="fvd-subsection__title">Waarom controleren?</div>
+<p></p><!-- l. 391 --><p class="noindent"></p></div>
+<p></p><!-- l. 391 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 391 --><p class="noindent"></p></div>
+<p></p><!-- l. 394 --><p class="noindent">Als verschillende factoren tegelijk veranderen, weten we niet welke factor
+verantwoordelijk is voor een waargenomen verschil.
+</p><!-- l. 397 --><p class="noindent">Daarom proberen we in een gecontroleerd experiment relevante omstandigheden
+gelijk te houden.
+</p>
+<div class="mathjax-block">\[ \important { \text {één factor onderzoeken} \quad \Rightarrow \quad \text {andere relevante factoren zo goed mogelijk controleren} } \]</div>
+<p><a id="x1-17r6"></a>
+</p><!-- l. 410 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">6</div><div class="fvd-section-bar__title">Wat mag je uit een onderzoek besluiten?</div></div>
+<p></p><!-- l. 413 --><p class="noindent">We kunnen nu verschillende soorten uitspraken onderscheiden.
+</p>
+<div class="center">
+<!-- l. 415 --><p class="noindent">
+</p>
+<div class="tabular"> <table class="tabular" id="TBL-1"><colgroup id="TBL-1-1g"><col id="TBL-1-1"/></colgroup><colgroup id="TBL-1-2g"><col id="TBL-1-2"/></colgroup><tr id="TBL-1-1-" style="vertical-align:baseline;"><td class="td11" id="TBL-1-1-1" style="white-space:normal; text-align:left;"> <!-- l. 417 --><p class="noindent"><strong>Informatie</strong> </p></td>
+<td class="td11" id="TBL-1-1-2" style="white-space:normal; text-align:left;"> <!-- l. 417 --><p class="noindent"><strong>Wat ondersteunt ze?</strong> </p></td></tr><tr class="hline" style="border-top:1px solid #000"><td></td><td></td></tr><tr id="TBL-1-2-" style="vertical-align:baseline;"><td class="td11" id="TBL-1-2-1" style="white-space:normal; text-align:left;"> <!-- l. 418 --><p class="noindent">Spreidingsdiagram </p></td>
+<td class="td11" id="TBL-1-2-2" style="white-space:normal; text-align:left;"> <!-- l. 419 --><p class="noindent">Een visuele beschrijving van samenhang in de 
+waargenomen gegevens.                                 </p></td>
+</tr><tr id="TBL-1-3-" style="vertical-align:baseline;"><td class="td11" id="TBL-1-3-1" style="white-space:normal; text-align:left;"> <!-- l. 420 --><p class="noindent">Correlatiecoëfficiënt       </p></td>
+<td class="td11" id="TBL-1-3-2" style="white-space:normal; text-align:left;"> <!-- l. 421 --><p class="noindent">Richting en sterkte van lineaire samenhang.      </p></td>
+</tr><tr id="TBL-1-4-" style="vertical-align:baseline;"><td class="td11" id="TBL-1-4-1" style="white-space:normal; text-align:left;"> <!-- l. 422 --><p class="noindent">Regressiemodel              </p></td>
+<td class="td11" id="TBL-1-4-2" style="white-space:normal; text-align:left;"> <!-- l. 423 --><p class="noindent">Een             wiskundige             beschrijving 
+en mogelijke voorspellingen binnen een geschikt 
+toepassingsgebied.                                        </p></td>
+</tr><tr id="TBL-1-5-" style="vertical-align:baseline;"><td class="td11" id="TBL-1-5-1" style="white-space:normal; text-align:left;"> <!-- l. 424 --><p class="noindent">Observationeel 
+onderzoek                     </p></td>
+<td class="td11" id="TBL-1-5-2" style="white-space:normal; text-align:left;"> <!-- l. 425 --><p class="noindent">Samenhang    vaststellen;    causaliteit    blijft 
+doorgaans onzeker.                                       </p></td>
+</tr><tr id="TBL-1-6-" style="vertical-align:baseline;"><td class="td11" id="TBL-1-6-1" style="white-space:normal; text-align:left;"> <!-- l. 426 --><p class="noindent">Goed       gecontroleerd 
+experiment                   </p></td>
+<td class="td11" id="TBL-1-6-2" style="white-space:normal; text-align:left;"> <!-- l. 427 --><p class="noindent">Kan,   afhankelijk   van   de   onderzoeksopzet, 
+sterkere causale conclusies ondersteunen.          </p></td>
+</tr></table> </div></div>
+<!-- l. 432 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">Het woord <strong>veroorzaakt</strong> vraagt dus veel meer onderbouwing dan
+woorden zoals
+<p></p>
+<ul class="itemize1">
+<li class="itemize">hangt samen met;
+</li>
+<li class="itemize">gaat samen met;
+</li>
+<li class="itemize">is geassocieerd met;
+</li>
+<li class="itemize">wordt door het model voorspeld.</li></ul>
+</div></section>
+<p><a id="x1-18r7"></a>
+</p><!-- l. 445 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">7</div><div class="fvd-section-bar__title">Van krantenkop naar wetenschappelijke uitspraak</div></div>
+<p></p><!-- l. 448 --><p class="noindent">In nieuwsberichten en sociale media wordt een statistische samenhang soms vertaald
+naar een causale titel.
+</p><!-- l. 451 --><p class="noindent">Bijvoorbeeld:
+</p>
+<blockquote class="quote">
+<!-- l. 454 --><p class="noindent">“Leerlingen  die  ontbijten  halen  hogere  cijfers:  ontbijt  maakt  je
+slimmer.”</p></blockquote>
+<!-- l. 458 --><p class="noindent">Stel dat het onderliggende onderzoek alleen heeft vastgesteld dat leerlingen die
+regelmatig ontbijten gemiddeld hogere cijfers behalen.
+</p><!-- l. 461 --><p class="noindent">Dan ondersteunt het onderzoek voorlopig slechts een uitspraak over <strong>samenhang</strong>.
+</p><!-- l. 464 --><p class="noindent">Andere factoren kunnen een rol spelen, bijvoorbeeld slaapritme, thuissituatie,
+gezondheid of algemene leefgewoonten.
+</p><!-- l. 467 --><p class="noindent">Een wetenschappelijk voorzichtiger formulering is:
+</p>
+<blockquote class="quote">
+<!-- l. 470 --><p class="noindent">In  de  onderzochte  groep  hangt  regelmatig  ontbijten  samen  met
+hogere schoolresultaten.</p></blockquote>
+<!-- l. 475 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">Kritisch omgaan met gegevens betekent niet dat we elke mogelijke
+causale verklaring afwijzen.
+<p></p><!-- l. 478 --><p class="noindent">Het betekent dat we het onderscheid bewaken tussen
+</p>
+<div class="mathjax-block">\[ \important { \text {wat de gegevens suggereren} \quad \text {en}\quad \text {wat het onderzoek werkelijk aantoont}. } \]</div> </div></section>
+<p><a id="x1-19r8"></a>
+</p><!-- l. 491 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">8</div><div class="fvd-section-bar__title">Een vaste strategie voor causale claims</div></div>
+<p></p><!-- l. 494 --><p class="noindent">Wanneer iemand uit gegevens een oorzaak-gevolgrelatie afleidt, stel je achtereenvolgens
+deze vragen:
+</p>
+<ol class="enumerate1">
+<li class="enumerate" id="x1-21x1"><strong>Wat is precies waargenomen?</strong><br class="newline"/>Welke twee grootheden vertonen samenhang?
+</li>
+<li class="enumerate" id="x1-23x2"><strong>Hoe sterk en van welke vorm is de samenhang?</strong><br class="newline"/>Wat tonen puntenwolk, correlatie en eventueel regressie?
+</li>
+<li class="enumerate" id="x1-25x3"><strong>Hoe zijn de gegevens verzameld?</strong><br class="newline"/>Observationeel of experimenteel?
+</li>
+<li class="enumerate" id="x1-27x4"><strong>Kan een derde variabele een rol spelen?</strong><br class="newline"/>Welke alternatieve verklaringen zijn mogelijk?
+</li>
+<li class="enumerate" id="x1-29x5"><strong>Kan de richting omgekeerd zijn?</strong><br class="newline"/>Is het duidelijk welke variabele oorzaak en welke gevolg is?
+</li>
+<li class="enumerate" id="x1-31x6"><strong>Zijn relevante factoren gecontroleerd?</strong><br class="newline"/>Hoe sterk is de onderzoeksopzet?
+                                                                  
+
+                                                                  
+</li>
+<li class="enumerate" id="x1-33x7"><strong>Welke conclusie is werkelijk verantwoord?</strong><br class="newline"/>Spreek over samenhang als causaliteit niet voldoende is aangetoond.</li></ol>
+<!-- l. 520 --><p class="noindent">Deze strategie is breder bruikbaar dan statistiek. Ze is een manier van wetenschappelijk
+redeneren.
+<a id="x1-34r9"></a>
+</p><!-- l. 525 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">9</div><div class="fvd-section-bar__title">De volledige leerlijn van dit thema</div></div>
+<p></p><!-- l. 528 --><p class="noindent">We begonnen met ruwe gegevens.
+</p><!-- l. 530 --><p class="noindent">Daaruit ontstond een puntenwolk:
+</p>
+<div class="mathjax-block">\[ (x_i,y_i) \longrightarrow \text {spreidingsdiagram}. \]</div>
+<!-- l. 538 --><p class="noindent">Vervolgens beschreven we het patroon:
+</p>
+<div class="mathjax-block">\[ \text {richting} + \text {vorm} + \text {sterkte} + \text {bijzonderheden}. \]</div>
+<!-- l. 550 --><p class="noindent">Voor ongeveer lineaire verbanden gebruikten we de correlatiecoëfficiënt:
+</p>
+<div class="mathjax-block">\[ -1\leq r\leq 1. \]</div>
+<!-- l. 557 --><p class="noindent">Daarna bouwden we een lineair model:
+</p>
+<div class="mathjax-block">\[ \hat y=ax+b. \]</div>
+<!-- l. 563 --><p class="noindent">Met dat model konden we voorspellen en het verschil tussen interpolatie en
+extrapolatie onderzoeken.
+</p><!-- l. 566 --><p class="noindent">Maar pas daarna komt de wetenschappelijk beslissende stap:
+</p>
+<div class="mathjax-block">\[ \important { \text {Wat betekent dit resultaat in de werkelijkheid?} } \]</div>
+<!-- l. 574 --><p class="noindent">De volledige cyclus wordt dus
+</p>
+<div class="mathjax-block">\[ \boxed { \begin {array}{c} \text {werkelijkheid}\\ \downarrow \\ \text {gegevens}\\ \downarrow \\ \text {puntenwolk}\\ \downarrow \\ \text {correlatie}\\ \downarrow \\ \text {regressiemodel}\\ \downarrow \\ \text {voorspelling en conclusie}\\ \downarrow \\ \text {kritische terugkeer naar de werkelijkheid} \end {array} } \]</div>
+<!-- l. 596 --><p class="noindent">Dat laatste is essentieel.
+</p><!-- l. 598 --><p class="noindent">Wiskunde helpt ons patronen zichtbaar te maken en modellen te bouwen, maar de
+betekenis van die modellen wordt uiteindelijk bepaald door de context en de kwaliteit
+van het onderzoek.
+<a id="x1-35r10"></a>
+</p><!-- l. 604 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">10</div><div class="fvd-section-bar__title">Samengevat</div></div>
+<p></p><!-- l. 607 --><p class="noindent">Samenhang betekent dat twee grootheden systematisch samen voorkomen of samen
+                                                                  
+
+                                                                  
+veranderen.
+</p><!-- l. 610 --><p class="noindent">Causaliteit betekent dat een verandering van de ene grootheid een verandering van de
+andere veroorzaakt.
+</p>
+<div class="mathjax-block">\[ \boxed { \text {samenhang} \neq \text {causaliteit} } \]</div>
+<!-- l. 621 --><p class="noindent">Een samenhang kan onder andere beïnvloed worden door
+</p>
+<ul class="itemize1">
+<li class="itemize">een derde variabele;
+</li>
+<li class="itemize">omgekeerde causaliteit;
+</li>
+<li class="itemize">toeval;
+</li>
+<li class="itemize">de manier waarop gegevens geselecteerd of verzameld zijn.</li></ul>
+<!-- l. 630 --><p class="noindent">Observationeel onderzoek kan sterke samenhang aantonen, maar laat vaak
+alternatieve verklaringen open.
+</p><!-- l. 633 --><p class="noindent">Een goed ontworpen experiment kan sterkere causale conclusies ondersteunen
+doordat de onderzochte factor doelbewust wordt veranderd en andere relevante
+factoren zoveel mogelijk worden gecontroleerd.
+</p><!-- l. 637 --><p class="noindent">Daarom geldt:
+</p>
+<div class="mathjax-block">\[ \important { \text {een hoge correlatie} \not \Rightarrow \text {een bewezen oorzaak-gevolgrelatie} } \]</div>
+<!-- l. 647 --><p class="noindent">en zelfs
+</p>
+<div class="mathjax-block">\[ \important { \text {een uitstekend regressiemodel} \not \Rightarrow \text {een causale verklaring} } \]</div>
+<!-- l. 657 --><p class="noindent">De juiste slotvraag is steeds:
+</p>
+<div class="mathjax-block">\[ \boxed { \text {Welke conclusie laten de gegevens én de onderzoeksopzet toe?} } \]</div>
+</div><!-- XIMERA-PREVIOUS-NEXT-START --><nav aria-label="Hoofdstuknavigatie" class="chapter-navigation">
+<a class="chapter-navigation__card chapter-navigation__card--previous" data-visible="true" href="Lineaire-regressie-oefeningen.html">
+<span aria-hidden="true" class="chapter-navigation__icon">
+            ←
+        </span>
+<span class="chapter-navigation__content">
+<span class="chapter-navigation__label">
+                Vorig hoofdstuk
+            </span>
+<span class="chapter-navigation__title">
+                Oefeningen — Lineaire regressie
+            </span>
+</span>
+</a>
+<a class="chapter-navigation__card chapter-navigation__card--overview" href="index.html">
+<span aria-hidden="true" class="chapter-navigation__overview-icon">
+<span></span>
+<span></span>
+<span></span>
+</span>
+<span class="chapter-navigation__content">
+<span class="chapter-navigation__label">
+                Cursus
+            </span>
+<span class="chapter-navigation__title">
+                Overzicht
+            </span>
+</span>
+</a>
+<a class="chapter-navigation__card chapter-navigation__card--next" data-visible="true" href="Samenhang-oorzaak-oefeningen.html">
+<span class="chapter-navigation__content">
+<span class="chapter-navigation__label">
+                Volgend hoofdstuk
+            </span>
+<span class="chapter-navigation__title">
+                Oefeningen — Samenhang is nog geen oorzaak
+            </span>
+</span>
+<span aria-hidden="true" class="chapter-navigation__icon">
+            →
+        </span>
+</a>
+</nav><!-- XIMERA-PREVIOUS-NEXT-END --></article></main><!-- XIMERA-CHAPTER-LAYOUT-END --><div class="course-footer-clear"></div><!-- XIMERA-FOOTER-START --><footer class="site-footer">
+<div aria-hidden="true" class="site-footer__accent"></div>
+<div class="site-footer__inner">
+<div class="site-footer__quote">
+<span aria-hidden="true" class="site-footer__quote-mark">◈</span>
+<p class="site-footer__quote-text">
+                Think mathematically. Create digitally. Shape the future.
+            </p>
+</div>
+<div aria-hidden="true" class="site-footer__divider"></div>
+<div class="site-footer__grid">
+<section class="site-footer__column">
+<p class="site-footer__eyebrow">
+                    Wiskunde 7 FVD
+                </p>
+<h2 class="site-footer__title">
+                    Fundamentele Vorming Digitale Creatie
+                </h2>
+<p class="site-footer__text">
+                    Wiskundige basis voor programmeren, graphics,
+                    animatie, simulatie en 3D.
+                </p>
+</section>
+<section class="site-footer__column">
+<p class="site-footer__eyebrow">
+                    Ontwikkeling
+                </p>
+<p class="site-footer__name">
+                    Ingmar Herreman
+                </p>
+<p class="site-footer__text">
+                    GO! Athena Campus Bellevue
+                </p>
+<p class="site-footer__text">
+                    Versie 1.0 · 2026
+                </p>
+</section>
+<section class="site-footer__column">
+<p class="site-footer__eyebrow">
+                    Technologie
+                </p>
+<div class="site-footer__tech">
+<span>Ximera</span>
+<span>HTML</span>
+<span>PDF</span>
+<span>GeoGebra</span>
+<span>GitHub</span>
+</div>
+</section>
+</div>
+<div class="site-footer__bottom">
+<span>Gebouwd met Ximera</span>
+<span aria-hidden="true">•</span>
+<span>Voor 7 FVD</span>
+<span aria-hidden="true">•</span>
+<span>© 2026</span>
+</div>
+</div>
+</footer><!-- XIMERA-FOOTER-END --><script src="../../../assets/js/chapter-layout.js"></script></body>
+</html>

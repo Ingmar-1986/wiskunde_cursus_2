@@ -1,0 +1,1738 @@
+<!DOCTYPE html>
+<html lang="en-US" xml:lang="en-US">
+<head> <title>Vallen en werpen – Van krachten tot kwanta</title>
+<meta charset="utf-8"/>
+<meta content="TeX4ht (https://tug.org/tex4ht/)" name="generator"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="\aa:CssFile " rel="stylesheet" type="text/css"/>
+<meta content="3-Vallen_werpen.online.tex" name="src"/>
+<script>window.MathJax = { tex: { tags: "ams", }, }; </script>
+<script async="async" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+<meta content="Ingmar Herreman" name="author"/>
+<meta content="version 2.5.1" name="ximera"/>
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" media="screen" rel="stylesheet"/>
+<script async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js" type="text/javascript"></script>
+<link href="../../../assets/css/base.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/global.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/Header_Footer.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/ChapterLayout.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/chapter-hero.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/ExerciseHero.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/learning-boxes.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/CourseOverview.css" media="screen" rel="stylesheet"/></head><body><!-- XIMERA-HEADER-START --><!-- =========================================================
+     HEADER.HTML — Wiskunde 7 FVD
+     Plaats dit bestand bijvoorbeeld in:
+     assets/html/Header.html
+     ========================================================= -->
+<header aria-labelledby="fvd-hero-title" class="fvd-hero">
+<div aria-hidden="true" class="fvd-hero__grid"></div>
+<div aria-hidden="true" class="fvd-hero__glow fvd-hero__glow--left"></div>
+<div aria-hidden="true" class="fvd-hero__glow fvd-hero__glow--right"></div>
+<div class="fvd-hero__inner">
+<!-- Groot Athena-logo links -->
+<div class="fvd-hero__brand">
+<img alt="Athena secundair onderwijs" class="fvd-hero__logo" src="/images/banners/logo_athena.png"/>
+</div>
+<div aria-hidden="true" class="fvd-hero__divider"></div>
+<!-- Centrale titel en leerinhouden -->
+<div class="fvd-hero__content">
+<p class="fvd-hero__eyebrow">
+                    Fundamentele Vorming Digitale Creatie
+                </p>
+<h1 class="fvd-hero__title" id="fvd-hero-title">
+<span class="fvd-hero__title-main">Wiskunde</span>
+<span class="fvd-hero__title-accent">7 FVD</span>
+</h1>
+<div aria-hidden="true" class="fvd-hero__pink-line"></div>
+<p class="fvd-hero__subtitle">
+                    Wiskundige inzichten die je nodig hebt om digitale werelden te bouwen.
+                </p>
+<div aria-label="Onderwerpen in deze cursus" class="fvd-hero__chips">
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<rect height="18" rx="2" width="14" x="5" y="3"></rect>
+<path d="M8 7h8M8 11h2M14 11h2M8 15h2M14 15h2M8 18h2M14 18h2"></path>
+</svg>
+                        Basiswiskunde
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M4 17c4-1 4-10 8-10 2 0 2 3 4 3 1 0 2-.4 4-2"></path>
+<path d="M7 20 13 4"></path>
+</svg>
+                        Algebra
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M5 8h14M5 16h14"></path>
+</svg>
+                        Vergelijkingen
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M4 19V5M4 19h16"></path>
+<path d="m7 16 4-5 3 2 4-6"></path>
+</svg>
+                        Functies
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M5 18 18 5"></path>
+<path d="M12 5h6v6"></path>
+</svg>
+                        Vectoren
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="7"></circle>
+<path d="M12 2v20M2 12h20"></path>
+</svg>
+                        Coördinaten
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="m12 3 8 4.5v9L12 21l-8-4.5v-9z"></path>
+<path d="m4 7.5 8 4.5 8-4.5M12 12v9"></path>
+</svg>
+                        3D-meetkunde
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M3 16c3-8 7-8 10 0 2 5 5 4 8-4"></path>
+</svg>
+                        Goniometrie
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M5 18V6M5 18h14"></path>
+<path d="M8 16c1-6 3-9 8-10"></path>
+</svg>
+                        Logaritmen
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="m7 6 10 5-10 5z"></path>
+<path d="m7 10 10 5-10 5"></path>
+</svg>
+                        Transformaties
+                    </span>
+</div>
+</div>
+<!-- Rechterzijde met wiskundige SVG-tekeningen -->
+<div aria-hidden="true" class="fvd-hero__visual">
+<!-- 3D-kubus -->
+<svg class="fvd-visual fvd-visual--cube" viewbox="0 0 310 245">
+<g class="fvd-svg-cyan">
+<path d="M65 72 185 86 245 48 125 34Z"></path>
+<path d="M65 72v110l120 16V86"></path>
+<path d="M185 86 245 48v110l-60 40"></path>
+<path class="fvd-svg-dash" d="M125 34v110M125 144 65 182M125 144l120 14"></path>
+<path d="M125 144 90 210M125 144l88 28M125 144V15"></path>
+<path d="m90 210 11-4-7-9M213 172l-9-7-2 11M125 15l-6 11h12"></path>
+</g>
+<g class="fvd-svg-label">
+<text x="82" y="225">x</text>
+<text x="220" y="180">y</text>
+<text x="132" y="18">z</text>
+</g>
+</svg>
+<!-- Matrix -->
+<svg class="fvd-visual fvd-visual--matrix" viewbox="0 0 220 100">
+<g class="fvd-svg-soft">
+<text x="0" y="58">A =</text>
+<path d="M60 10c-12 18-12 62 0 80M205 10c12 18 12 62 0 80"></path>
+<text x="82" y="36">1</text>
+<text x="123" y="36">2</text>
+<text x="165" y="36">0</text>
+<text x="73" y="61">−1</text>
+<text x="123" y="61">0</text>
+<text x="165" y="61">3</text>
+<text x="82" y="86">2</text>
+<text x="113" y="86">−2</text>
+<text x="165" y="86">1</text>
+</g>
+</svg>
+<!-- Vectoren en rotatie -->
+<svg class="fvd-visual fvd-visual--vectors" viewbox="0 0 260 170">
+<g class="fvd-svg-cyan">
+<path d="M55 138 132 74"></path>
+<path d="m132 74-13 3 8 10"></path>
+<path d="M55 138h125"></path>
+<path d="m180 138-12-6v12"></path>
+<path class="fvd-svg-dash" d="M55 138c24-65 116-95 156-25"></path>
+</g>
+<g class="fvd-svg-pink">
+<path d="M55 138 207 104"></path>
+<path d="m207 104-13-2 5 12"></path>
+<path class="fvd-svg-dash" d="M211 113c17-13 25-5 21 11"></path>
+<path d="m232 124-9-8-2 12"></path>
+</g>
+<g class="fvd-svg-label">
+<text x="38" y="153">O</text>
+<text x="138" y="73">u⃗</text>
+<text x="188" y="98">v⃗</text>
+<text x="141" y="130">x⃗</text>
+<text x="222" y="102">Rθ</text>
+</g>
+</svg>
+<!-- Bézier-curve -->
+<svg class="fvd-visual fvd-visual--bezier" viewbox="0 0 280 110">
+<g class="fvd-svg-soft">
+<path d="M30 82 85 30 190 30 245 82"></path>
+</g>
+<g class="fvd-svg-cyan">
+<path d="M30 82c42-12 55-52 105-52s67 40 110 52"></path>
+</g>
+<g class="fvd-svg-pink">
+<circle cx="30" cy="82" r="4"></circle>
+<circle cx="85" cy="30" r="4"></circle>
+<circle cx="190" cy="30" r="4"></circle>
+<circle cx="245" cy="82" r="4"></circle>
+</g>
+<g class="fvd-svg-label">
+<text x="18" y="102">P₀</text>
+<text x="74" y="20">P₁</text>
+<text x="181" y="20">P₂</text>
+<text x="238" y="102">P₃</text>
+<text x="103" y="79">Bézier-curve</text>
+</g>
+</svg>
+</div>
+</div>
+<div aria-hidden="true" class="fvd-hero__pink-corner"></div>
+</header><!-- XIMERA-HEADER-END --><!-- XIMERA-CHAPTER-HERO-START --><section class="chapter-hero">
+<div aria-hidden="true" class="chapter-hero__decoration">
+<span class="chapter-hero__formula">
+            f(x) = ax² + bx + c
+        </span>
+<span class="chapter-hero__curve"></span>
+<span class="chapter-hero__grid"></span>
+</div>
+<div class="chapter-hero__content">
+<div class="chapter-hero__theme">
+<span class="chapter-hero__theme-label">
+                Thema 1
+            </span>
+<span class="chapter-hero__theme-dot"></span>
+<span class="chapter-hero__theme-name">
+                Beweging en kracht — Van beweging beschrijven tot energie begrijpen
+            </span>
+</div>
+<div class="chapter-hero__chapter-label">
+            Hoofdstuk
+        </div>
+<div class="chapter-hero__main">
+<div class="chapter-hero__number">
+                3
+            </div>
+<div class="chapter-hero__text">
+<h1 class="chapter-hero__title">
+                    Vallen en werpen
+                </h1>
+<p class="chapter-hero__abstract">
+                    Waarom valt een muntstuk sneller dan een los blad papier, maar niet sneller dan datzelfde papier wanneer luchtweerstand geen rol speelt? Waarom is de snelheid van een omhoog geworpen bal op het hoogste punt nul, terwijl zijn versnelling daar niet nul is? In dit hoofdstuk passen we de algemene kinematica uit het vorige hoofdstuk toe op bewegingen onder invloed van de zwaartekracht. We vertrekken van waarnemingen en maken vervolgens een fysisch model: de vrije val. Daarbij maken we scherp onderscheid tussen een werkelijke valbeweging en het geïdealiseerde model waarin andere krachten dan de zwaartekracht worden verwaarloosd. We analyseren vrije val en verticale worp met positie-, snelheids- en versnellingsfuncties. We verbinden functievoorschriften met grafieken, afgeleiden, de oppervlaktemethode en bepaalde integralen. Bij elk probleem besteden we bijzondere aandacht aan het gekozen referentiestelsel en de tekenconventie. Zo gebruiken we dezelfde wiskundige structuur om een voorwerp dat wordt losgelaten, omhoog geworpen of naar beneden geworpen te beschrijven. Tegelijk leren we kritisch beoordelen wanneer het vrije-valmodel bruikbaar is en wanneer de werkelijkheid een rijker model vereist.
+                </p>
+</div>
+</div>
+<div class="chapter-hero__accent"></div>
+</div>
+</section><!-- XIMERA-CHAPTER-HERO-END --><button aria-controls="courseSidebar" aria-expanded="false" class="course-menu-button" id="courseMenuButton" type="button">☰ Toon cursusinhoud</button><div class="course-sidebar-overlay" id="courseSidebarOverlay"></div><!-- XIMERA-CHAPTER-LAYOUT-START --><main class="chapter-layout"><!--
+    AUTOMATISCH GEGENEREERD BESTAND
+
+    Dit bestand wordt opgebouwd door:
+        scripts/generate-sidebar.sh
+
+    Bewerk niet dit bestand, maar:
+        assets/html/SidebarTemplate.html
+        en modules/.../index.tex
+-->
+<aside class="course-sidebar" id="courseSidebar">
+<div class="sidebar-header">
+<div class="sidebar-header__text">
+<span class="sidebar-label">
+                Van krachten tot kwanta
+            </span>
+<h2 class="sidebar-title">
+                Cursusinhoud
+            </h2>
+</div>
+<button aria-label="Sluit cursusmenu" class="sidebar-close" id="sidebarClose" type="button">
+            ×
+        </button>
+</div>
+<nav aria-label="Cursusinhoud" class="course-navigation">
+<div class="course-section is-open" data-theme="1">
+<button aria-controls="course-section-1-beweging-en-kracht-van-beweging-beschrijven-tot-energie-begrijpen" aria-expanded="true" class="course-section-toggle" type="button">
+<span class="course-section-number">
+            1
+        </span>
+<span class="course-section-title">
+            Beweging en kracht — Van beweging beschrijven tot energie begrijpen
+        </span>
+<span aria-hidden="true" class="course-section-arrow">
+            ▾
+        </span>
+</button>
+<div class="course-section-content" id="course-section-1-beweging-en-kracht-van-beweging-beschrijven-tot-energie-begrijpen">
+<a class="course-chapter-link" data-chapter="Thema1-Beweging/1-Beweging" href="Thema1-Beweging/1-Beweging.html">
+<span class="course-chapter-number">
+                1
+            </span>
+<span class="course-chapter-title">
+                Een beweging beschrijven
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema1-Beweging/2-ERVB" href="Thema1-Beweging/2-ERVB.html">
+<span class="course-chapter-number">
+                2
+            </span>
+<span class="course-chapter-title">
+                Snelheid en versnelling
+            </span>
+</a>
+<a aria-current="page" class="course-chapter-link is-active" data-chapter="Thema1-Beweging/3-Vallen_werpen" href="Thema1-Beweging/3-Vallen_werpen.html">
+<span class="course-chapter-number">
+                3
+            </span>
+<span class="course-chapter-title">
+                Vallen en werpen
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema1-Beweging/4-2D-beweging" href="Thema1-Beweging/4-2D-beweging.html">
+<span class="course-chapter-number">
+                4
+            </span>
+<span class="course-chapter-title">
+                Bewegen in twee dimensies
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema1-Beweging/5-Cirkels" href="Thema1-Beweging/5-Cirkels.html">
+<span class="course-chapter-number">
+                5
+            </span>
+<span class="course-chapter-title">
+                In cirkels bewegen
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema1-Beweging/6-Kracht" href="Thema1-Beweging/6-Kracht.html">
+<span class="course-chapter-number">
+                6
+            </span>
+<span class="course-chapter-title">
+                Kracht en beweging
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema1-Beweging/7-Kracht_cirkel" href="Thema1-Beweging/7-Kracht_cirkel.html">
+<span class="course-chapter-number">
+                7
+            </span>
+<span class="course-chapter-title">
+                Bewegen onder invloed van velden
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema1-Beweging/8-Arbeid-Energie" href="Thema1-Beweging/8-Arbeid-Energie.html">
+<span class="course-chapter-number">
+                8
+            </span>
+<span class="course-chapter-title">
+                Arbeid en energie
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema1-Beweging/9-Formules" href="Thema1-Beweging/9-Formules.html">
+<span class="course-chapter-number">
+                9
+            </span>
+<span class="course-chapter-title">
+                Formuleoverzicht Thema 1
+            </span>
+</a>
+</div>
+</div>
+</nav>
+</aside>
+<article class="chapter-content"><div class="chapter-body">
+<div class="preamble">
+</div>
+<style> .activity-body pre { white-space: pre; background-color: lightgray; } .xmyoutube { aspect-ratio: 16/9; min-width: 75%; } .image-environment img { width: unset; } </style>
+<div class="maketitle"></div>
+<!-- l. 51 --><p class="noindent"></p><section class="learning-box learning-box--prior"> <div class="learning-box__header"> <span class="learning-box__icon"> </span><span class="learning-box__title">Voorkennis</span> </div> <div class="learning-box__content">
+<p></p>
+<ul class="itemize1">
+<li class="itemize">Je kan een rechtlijnige beweging beschrijven met <span class="mathjax-inline">\(x(t)\)</span>, <span class="mathjax-inline">\(v(t)\)</span> en <span class="mathjax-inline">\(a(t)\)</span>.
+</li>
+<li class="itemize">Je kan snelheid bepalen als afgeleide van de plaatsfunctie.
+</li>
+<li class="itemize">Je kan versnelling bepalen als afgeleide van de snelheidsfunctie.
+</li>
+<li class="itemize">Je kan een EVRB analyseren met <span class="mathjax-inline">\(v=v_0+at\)</span> en <span class="mathjax-inline">\(x=x_0+v_0t+\frac 12at^2\)</span>.
+</li>
+<li class="itemize">Je  kan  verplaatsing  bepalen  als  georiënteerde  oppervlakte  onder  een
+<span class="mathjax-inline">\(v(t)\)</span>-grafiek.
+</li>
+<li class="itemize">Je kan snelheidsverschil bepalen als georiënteerde oppervlakte onder een
+<span class="mathjax-inline">\(a(t)\)</span>-grafiek.
+</li>
+<li class="itemize">Je kan bepaalde integralen gebruiken om verplaatsing en snelheidsverschil
+te bepalen.
+</li>
+<li class="itemize">Je kan een oorsprong en positieve richting kiezen en consequent met tekens
+werken.</li></ul>
+<!-- l. 62 --><p class="noindent"></p></div> </section>
+<p></p><!-- l. 64 --><p class="noindent"></p><section class="learning-box learning-box--goals"> <div class="learning-box__header"> <span class="learning-box__icon"> </span><span class="learning-box__title">Leerdoelen</span> </div> <div class="learning-box__content">
+<p></p>
+<ul class="itemize1">
+<li class="itemize">Je kan valbeweging en vrije val van elkaar onderscheiden.
+</li>
+<li class="itemize">Je kan uitleggen onder welke voorwaarden het vrije-valmodel bruikbaar
+is.
+</li>
+<li class="itemize">Je kan de valversnelling <span class="mathjax-inline">\(\vec g\)</span> fysisch interpreteren en het teken van <span class="mathjax-inline">\(g_y\)</span> bepalen
+uit een gekozen assenstelsel.
+</li>
+<li class="itemize">Je  kan  verklaren  waarom  de  massa  in  het  ideale  vrije-valmodel  niet
+voorkomt in de bewegingsvergelijkingen.
+</li>
+<li class="itemize">Je kan een vrije val zonder beginsnelheid analyseren met <span class="mathjax-inline">\(y(t)\)</span>, <span class="mathjax-inline">\(v_y(t)\)</span> en <span class="mathjax-inline">\(a_y(t)\)</span>.
+</li>
+<li class="itemize">Je kan een verticale worp omhoog of omlaag analyseren met <span class="mathjax-inline">\(y(t)\)</span>, <span class="mathjax-inline">\(v_y(t)\)</span> en <span class="mathjax-inline">\(a_y(t)\)</span>.
+</li>
+<li class="itemize">Je kan de grafieken van positie, snelheid en versnelling bij vrije val en
+verticale worp schetsen, analyseren en kwantificeren.
+</li>
+<li class="itemize">Je kan het hoogste punt van een verticale worp correct interpreteren: <span class="mathjax-inline">\(v_y=0\)</span>
+maar <span class="mathjax-inline">\(a_y\neq 0\)</span>.
+</li>
+<li class="itemize">Je                                                                                        kan
+verplaatsingen bij valbewegingen bepalen met de oppervlaktemethode en
+met bepaalde integralen.
+                                                                  
+
+                                                                  
+</li>
+<li class="itemize">Je kan een valsituatie mathematiseren door een schets, referentiestelsel,
+gegevens en geschikt model te kiezen.
+</li>
+<li class="itemize">Je kan resultaten kritisch beoordelen en de beperkingen van het model
+zonder luchtweerstand aangeven.
+</li>
+<li class="itemize">Je kan gegevens of videobeelden van een valbeweging gebruiken om het
+model van een EVRB te onderzoeken.</li></ul>
+<!-- l. 77 --><p class="noindent"></p></div> </section>
+<p><a id="x1-2r1"></a>
+</p><p></p><!-- l. 84 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">1</div><div class="fvd-section-bar__title">Wat bepaalt hoe een voorwerp valt?</div></div>
+<p></p><!-- l. 86 --><p class="noindent">Laat van dezelfde hoogte tegelijk een tennisbal en een pingpongbal vallen. Herhaal
+het experiment met een muntstuk en een los blad papier.
+</p><!-- l. 89 --><p class="noindent">Wat verwacht je?
+</p><!-- l. 91 --><p class="noindent">In het dagelijkse leven lijkt het vanzelfsprekend dat sommige voorwerpen sneller
+vallen dan andere. Een muntstuk bereikt de grond duidelijk eerder dan een los blad
+papier. Daaruit besluiten dat “zwaardere voorwerpen sneller vallen” is echter te
+snel.
+</p><!-- l. 96 --><p class="noindent">Voer een tweede proef uit. Leg het blad papier op het muntstuk en laat beide
+samen vallen. Het papier kan nu vrijwel tegelijk met het muntstuk de grond
+bereiken.
+</p><!-- l. 100 --><p class="noindent">Er is dus meer aan de hand dan alleen massa.
+<a id="x1-3r1"></a>
+</p><!-- l. 102 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 102 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 102 --><p class="noindent">Oefening 1
+</p><!-- l. 102 --><p class="noindent">— Voorspel voor je rekent
+</p><!-- l. 102 --><p class="noindent"></p></div>
+<p></p><!-- l. 102 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 102 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--b">B</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 102 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 104 --><p class="noindent">Beantwoord de vragen vóór je verdere theorie leest.
+                                                                  
+
+                                                                  
+</p>
+<div class="problem-environment question" id="problem1" numbered=" " role="article" titletext=" Question">  Welke van twee bollen met dezelfde vorm maar verschillende massa verwacht je in
+vacuüm eerst op de grond?    </div>
+<div class="problem-environment question" id="problem2" numbered=" " role="article" titletext=" Question">  Waarom kan een los blad papier in lucht veel trager vallen dan een muntstuk?
+</div>
+<div class="problem-environment question" id="problem3" numbered=" " role="article" titletext=" Question">  Welke variabele zou je in een experiment veranderen om het effect van
+luchtweerstand zichtbaar te maken?    </div>
+</div>
+<!-- l. 121 --><p class="noindent"></p></div>
+<p></p><!-- l. 121 --><p class="noindent"></p></section>
+<p><a id="x1-4r2"></a>
+</p><p></p><!-- l. 128 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">2</div><div class="fvd-section-bar__title">Valbeweging en vrije val zijn niet hetzelfde</div></div>
+<p></p><!-- l. 130 --><p class="noindent">Een <strong>valbeweging</strong> is een beweging waarbij een voorwerp onder invloed van de
+zwaartekracht naar beneden beweegt. In een werkelijke situatie kunnen daarnaast
+andere krachten optreden, vooral luchtweerstand.
+</p><!-- l. 135 --><p class="noindent">Een blad papier dat door de lucht naar beneden dwarrelt, voert dus een valbeweging
+uit, maar zijn versnelling is niet voortdurend gelijk aan de valversnelling.
+</p><!-- l. 139 --><p class="noindent">Voor veel problemen gebruiken we een eenvoudiger model.
+</p><!-- l. 141 --><p class="noindent"></p><section class="fvd-definition"><div class="fvd-definition__title"><span class="fvd-definition__label">DEFINITIE</span><span class="fvd-definition__separator"> — </span><span class="fvd-definition__name">Vrije val</span></div><div class="fvd-definition__content">
+<p></p><!-- l. 143 --><p class="noindent">Bij een <strong>vrije val</strong> beschrijven we een voorwerp nadat het is losgelaten of
+geworpen terwijl we aannemen dat alleen de zwaartekracht de beweging
+beïnvloedt.
+</p><!-- l. 147 --><p class="noindent">Dicht bij het aardoppervlak behandelen we de valversnelling daarbij als
+constant.
+</p></div></section>
+<p></p><!-- l. 152 --><p class="noindent">In dit hoofdstuk betekent “vrije val” dus niet noodzakelijk “vallen vanuit rust”. Ook
+een bal die verticaal omhoog wordt geworpen, bevindt zich na het loslaten in vrije val
+wanneer we luchtweerstand verwaarlozen.
+</p><!-- l. 158 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">
+<p></p><!-- l. 159 --><p class="noindent">Het woord <em>vrij</em> verwijst naar het model waarin alleen de zwaartekracht werkzaam is.
+Een voorwerp kan dus omhoog bewegen en toch in vrije val zijn.
+</p></div></section>
+<p><a id="x1-5r1"></a>
+</p><p></p><!-- l. 166 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 166 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 166 --><p class="noindent"></p><div class="fvd-subsection__number">2.1</div>
+<p></p><!-- l. 166 --><p class="noindent"></p><div class="fvd-subsection__title">Werkelijkheid en model</div>
+<p></p><!-- l. 166 --><p class="noindent"></p></div>
+<p></p><!-- l. 166 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 166 --><p class="noindent"></p></div>
+<p></p><!-- l. 168 --><p class="noindent">We gebruiken het schema
+</p>
+<div class="mathjax-block">\[ \boxed { \text {werkelijke beweging} \longrightarrow \text {aannames} \longrightarrow \text {vrije-valmodel} } \]</div>
+<!-- l. 180 --><p class="noindent">met als belangrijke aannames:
+</p>
+<ul class="itemize1">
+<li class="itemize">de luchtweerstand is verwaarloosbaar;
+</li>
+<li class="itemize">de beweging vindt plaats dicht genoeg bij het aardoppervlak;
+</li>
+<li class="itemize">de verandering van <span class="mathjax-inline">\(g\)</span> over de beschouwde hoogte is verwaarloosbaar;
+</li>
+<li class="itemize">het voorwerp kan voor de beweging als puntmassa worden behandeld.</li></ul>
+<!-- l. 189 --><p class="noindent">Onder die voorwaarden is de verticale versnelling constant en is de beweging een
+EVRB.
+<a id="x1-6r2"></a>
+</p><!-- l. 193 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 193 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 193 --><p class="noindent">Oefening 2
+</p><!-- l. 193 --><p class="noindent">— Vrije val of niet?
+</p><!-- l. 193 --><p class="noindent"></p></div>
+<p></p><!-- l. 193 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 193 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--b">B</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 193 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 195 --><p class="noindent">Beoordeel of het vrije-valmodel waarschijnlijk bruikbaar is. Motiveer.
+</p>
+<div class="problem-environment question" id="problem4" numbered=" " role="article" titletext=" Question">  Een kleine stalen kogel valt <span class="mathjax-inline">\(1,0\,\mathrm {m}\)</span> in een klaslokaal.    </div>
+<div class="problem-environment question" id="problem5" numbered=" " role="article" titletext=" Question">  Een open valscherm daalt naar de grond.    </div>
+<div class="problem-environment question" id="problem6" numbered=" " role="article" titletext=" Question">  Een verfrommeld blad papier valt van een tafel.    </div>
+<div class="problem-environment question" id="problem7" numbered=" " role="article" titletext=" Question">  Een veertje valt door een vacuümbuis.    </div>
+<div class="problem-environment question" id="problem8" numbered=" " role="article" titletext=" Question">  Een regendruppel valt vanuit een wolk tot op de grond.    </div>
+</div>
+<!-- l. 217 --><p class="noindent"></p></div>
+<p></p><!-- l. 217 --><p class="noindent"></p></section>
+<p><a id="x1-7r3"></a>
+</p><p></p><!-- l. 220 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 220 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 220 --><p class="noindent">Oefening 3
+</p><!-- l. 220 --><p class="noindent">— Een model bekritiseren
+</p><!-- l. 220 --><p class="noindent"></p></div>
+<p></p><!-- l. 220 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 220 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 220 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 222 --><p class="noindent">Een leerling gebruikt voor een valschermspringer die van <span class="mathjax-inline">\(2000\,\mathrm {m}\)</span> hoogte springt gedurende
+de volledige beweging het model
+</p>
+<div class="mathjax-block">\[ a=-9,81\,\mathrm {m/s^2}. \]</div>
+<div class="problem-environment question" id="problem9" numbered=" " role="article" titletext=" Question">  Welke belangrijke aanname maakt de leerling?    </div>
+<div class="problem-environment question" id="problem10" numbered=" " role="article" titletext=" Question">  Waarom wordt die aanname na verloop van tijd steeds minder realistisch?
+</div>
+<div class="problem-environment question" id="problem11" numbered=" " role="article" titletext=" Question">  Wat verwacht je dat er met de versnelling gebeurt wanneer de luchtweerstand
+belangrijk wordt?    </div>
+</div>
+<!-- l. 243 --><p class="noindent"></p></div>
+<p></p><!-- l. 243 --><p class="noindent"></p></section>
+<p><a id="x1-8r3"></a>
+</p><p></p><!-- l. 250 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">3</div><div class="fvd-section-bar__title">De valversnelling</div></div>
+<p></p><!-- l. 252 --><p class="noindent">Dicht bij het aardoppervlak is de grootte van de valversnelling ongeveer
+</p>
+<div class="mathjax-block">\[ \boxed { g=9,81\,\mathrm {m/s^2}. } \]</div>
+<!-- l. 261 --><p class="noindent">De vector <span class="mathjax-inline">\(\vec g\)</span> is naar het middelpunt van de aarde gericht.
+</p><!-- l. 263 --><p class="noindent">De waarde <span class="mathjax-inline">\(9,81\,\mathrm {m/s^2}\)</span> is de <strong>grootte</strong> van de valversnelling en is daarom positief. Het
+teken van de component van de versnelling hangt af van de gekozen positieve
+richting.
+</p><!-- l. 268 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">
+<p></p><!-- l. 269 --><p class="noindent">Maak onderscheid tussen
+</p>
+<div class="mathjax-block">\[ g=9,81\,\mathrm {m/s^2} \]</div>
+<!-- l. 275 --><p class="noindent">als grootte van de valversnelling en bijvoorbeeld
+</p>
+<div class="mathjax-block">\[ a_y=-g=-9,81\,\mathrm {m/s^2} \]</div>
+<!-- l. 281 --><p class="noindent">wanneer de positieve <span class="mathjax-inline">\(y\)</span>-richting omhoog is gekozen.
+</p></div></section>
+<p><a id="x1-9r1"></a>
+</p><p></p><!-- l. 286 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 286 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 286 --><p class="noindent"></p><div class="fvd-subsection__number">3.1</div>
+<p></p><!-- l. 286 --><p class="noindent"></p><div class="fvd-subsection__title">Waarom valt massa weg uit het model?</div>
+<p></p><!-- l. 286 --><p class="noindent"></p></div>
+<p></p><!-- l. 286 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 286 --><p class="noindent"></p></div>
+<p></p><!-- l. 288 --><p class="noindent">In het ideale model is de zwaartekracht op een voorwerp dicht bij het aardoppervlak
+</p>
+<div class="mathjax-block">\[ F_z=mg. \]</div>
+<!-- l. 295 --><p class="noindent">Volgens de tweede wet van Newton:
+</p>
+<div class="mathjax-block">\[ F_{\mathrm {res}}=ma. \]</div>
+<!-- l. 301 --><p class="noindent">Wanneer de zwaartekracht de enige kracht is:
+</p>
+<div class="mathjax-block">\[ ma=mg. \]</div>
+<!-- l. 307 --><p class="noindent">Voor <span class="mathjax-inline">\(m\neq 0\)</span> volgt:
+</p>
+<div class="mathjax-block">\[ \boxed {a=g} \]</div>
+<!-- l. 313 --><p class="noindent">in grootte.
+</p><!-- l. 315 --><p class="noindent">De massa valt dus uit de vergelijking. Dat verklaart waarom twee voorwerpen met
+                                                                  
+
+                                                                  
+verschillende massa in hetzelfde zwaarteveld dezelfde valversnelling hebben wanneer
+andere krachten verwaarloosbaar zijn.
+</p><!-- l. 320 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">
+<p></p><!-- l. 321 --><p class="noindent">Dit is een verbinding met de dynamica: de kinematica beschrijft <em>hoe</em> het voorwerp
+beweegt; de tweede wet van Newton verklaart <em>waarom</em> de versnelling in dit model
+onafhankelijk is van de massa.
+</p></div></section>
+<p><a id="x1-10r4"></a>
+</p><p></p><!-- l. 329 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 329 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 329 --><p class="noindent">Oefening 4
+</p><!-- l. 329 --><p class="noindent">— Zwaar of licht?
+</p><!-- l. 329 --><p class="noindent"></p></div>
+<p></p><!-- l. 329 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 329 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 329 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 331 --><p class="noindent">Twee massieve bollen hebben dezelfde vorm en afmetingen. Bol B heeft een tweemaal
+zo grote massa als bol A. Ze worden in vacuüm gelijktijdig van dezelfde hoogte
+losgelaten.
+</p>
+<div class="problem-environment question" id="problem12" numbered=" " role="article" titletext=" Question">  Vergelijk de zwaartekrachten op beide bollen.    </div>
+<div class="problem-environment question" id="problem13" numbered=" " role="article" titletext=" Question">  Vergelijk hun versnellingen.    </div>
+<div class="problem-environment question" id="problem14" numbered=" " role="article" titletext=" Question">  Bereiken ze de grond op hetzelfde tijdstip? Verklaar met de tweede wet van
+Newton.    </div>
+</div>
+<!-- l. 348 --><p class="noindent"></p></div>
+<p></p><!-- l. 348 --><p class="noindent"></p></section>
+<p><a id="x1-11r4"></a>
+</p><p></p><!-- l. 355 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">4</div><div class="fvd-section-bar__title">Eerst kiezen, dan rekenen</div></div>
+<p></p><!-- l. 357 --><p class="noindent">Veel fouten bij valbewegingen zijn geen rekenfouten maar <strong>tekenfouten</strong>. Daarom
+kiezen we vóór elke berekening:
+</p>
+<ol class="enumerate1">
+<li class="enumerate" id="x1-13x1">een oorsprong;
+</li>
+<li class="enumerate" id="x1-15x2">een positieve richting;
+</li>
+<li class="enumerate" id="x1-17x3">een symbool voor de verticale positie.</li></ol>
+<!-- l. 366 --><p class="noindent">We gebruiken meestal de <span class="mathjax-inline">\(y\)</span>-as.
+<a id="x1-18r1"></a>
+</p><!-- l. 369 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 369 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 369 --><p class="noindent"></p><div class="fvd-subsection__number">4.1</div>
+<p></p><!-- l. 369 --><p class="noindent"></p><div class="fvd-subsection__title">Omhoog positief</div>
+<p></p><!-- l. 369 --><p class="noindent"></p></div>
+<p></p><!-- l. 369 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 369 --><p class="noindent"></p></div>
+<p></p><!-- l. 371 --><p class="noindent">Kiezen we omhoog als positieve richting, dan geldt altijd:
+</p>
+<div class="mathjax-block">\[ \boxed {a_y=-g.} \]</div>
+<!-- l. 377 --><p class="noindent">Een voorwerp dat omhoog beweegt heeft
+</p>
+<div class="mathjax-block">\[ v_y&gt;0, \]</div>
+<!-- l. 383 --><p class="noindent">een voorwerp dat naar beneden beweegt heeft
+</p>
+<div class="mathjax-block">\[ v_y&lt;0. \]</div>
+<p><a id="x1-19r2"></a>
+</p><!-- l. 390 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 390 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 390 --><p class="noindent"></p><div class="fvd-subsection__number">4.2</div>
+<p></p><!-- l. 390 --><p class="noindent"></p><div class="fvd-subsection__title">Naar beneden positief</div>
+<p></p><!-- l. 390 --><p class="noindent"></p></div>
+<p></p><!-- l. 390 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 390 --><p class="noindent"></p></div>
+<p></p><!-- l. 392 --><p class="noindent">Kiezen we naar beneden als positieve richting, dan:
+</p>
+<div class="mathjax-block">\[ \boxed {a_y=+g.} \]</div>
+<!-- l. 398 --><p class="noindent">Een vallend voorwerp heeft dan een positieve snelheid.
+</p><!-- l. 400 --><p class="noindent">Beide keuzes zijn correct. Alleen de tekens verschillen.
+</p><!-- l. 402 --><p class="noindent"></p><section class="fvd-property"><div class="fvd-property__title"><span class="fvd-property__label">EIGENSCHAP</span><span class="fvd-property__separator"> — </span><span class="fvd-property__name">Consequentie is belangrijker dan de keuze</span></div><div class="fvd-property__content">
+<p></p><!-- l. 404 --><p class="noindent">Een fysisch antwoord mag niet afhangen van de gekozen positieve richting. De
+tussenresultaten kunnen andere tekens hebben, maar meetbare grootheden zoals
+valtijd en de grootte van de impactsnelheid moeten dezelfde zijn.
+</p></div></section>
+<p><a id="x1-20r5"></a>
+</p><p></p><!-- l. 412 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 412 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 412 --><p class="noindent">Oefening 5
+</p><!-- l. 412 --><p class="noindent">— Tekencheck
+</p><!-- l. 412 --><p class="noindent"></p></div>
+<p></p><!-- l. 412 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 412 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--b">B</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 412 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 414 --><p class="noindent">Kies de positieve <span class="mathjax-inline">\(y\)</span>-richting omhoog.
+</p><!-- l. 416 --><p class="noindent">Geef het teken van <span class="mathjax-inline">\(v_y\)</span> en <span class="mathjax-inline">\(a_y\)</span> voor:
+</p>
+<div class="problem-environment question" id="problem15" numbered=" " role="article" titletext=" Question">  een bal die omhoog beweegt na te zijn geworpen;    </div>
+<div class="problem-environment question" id="problem16" numbered=" " role="article" titletext=" Question">  dezelfde bal op het hoogste punt;    </div>
+<div class="problem-environment question" id="problem17" numbered=" " role="article" titletext=" Question">  dezelfde bal tijdens het dalen.    </div>
+</div>
+<!-- l. 430 --><p class="noindent"></p></div>
+<p></p><!-- l. 430 --><p class="noindent"></p></section>
+<p><a id="x1-21r6"></a>
+</p><p></p><!-- l. 433 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 433 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 433 --><p class="noindent">Oefening 6
+</p><!-- l. 433 --><p class="noindent">— Twee assenstelsels, één fysica
+</p><!-- l. 433 --><p class="noindent"></p></div>
+<p></p><!-- l. 433 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 433 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span></div>
+<p></p><!-- l. 433 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 435 --><p class="noindent">Een steen wordt vanuit rust van een hoogte <span class="mathjax-inline">\(h\)</span> losgelaten.
+</p><!-- l. 437 --><p class="noindent">Analyseer dezelfde beweging tweemaal:
+</p>
+<div class="problem-environment question" id="problem18" numbered=" " role="article" titletext=" Question">  met omhoog als positieve richting;    </div>
+<div class="problem-environment question" id="problem19" numbered=" " role="article" titletext=" Question">  met naar beneden als positieve richting.    </div>
+<!-- l. 447 --><p class="noindent">Vergelijk de tekens van positie, verplaatsing, snelheid en versnelling. Leg uit waarom
+de berekende valtijd dezelfde moet zijn.
+</p></div>
+<p></p><!-- l. 450 --><p class="noindent"></p></div>
+<p></p><!-- l. 450 --><p class="noindent"></p></section>
+<p><a id="x1-22r5"></a>
+</p><p></p><!-- l. 457 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">5</div><div class="fvd-section-bar__title">Vrije val zonder beginsnelheid</div></div>
+<p></p><!-- l. 459 --><p class="noindent">We kiezen in deze sectie de positieve <span class="mathjax-inline">\(y\)</span>-richting omhoog.
+</p><!-- l. 461 --><p class="noindent">Een voorwerp wordt op tijdstip <span class="mathjax-inline">\(t=0\)</span> losgelaten vanaf hoogte <span class="mathjax-inline">\(y_0\)</span>.
+</p><!-- l. 463 --><p class="noindent">Dan:
+</p>
+<div class="mathjax-block">\[ v_{y,0}=0 \]</div>
+<!-- l. 469 --><p class="noindent">en
+</p>
+<div class="mathjax-block">\[ a_y=-g. \]</div>
+<!-- l. 475 --><p class="noindent">De algemene EVRB-vergelijkingen uit het vorige hoofdstuk worden:
+</p>
+<div class="mathjax-block">\[ v_y(t)=v_{y,0}+a_yt \]</div>
+<!-- l. 481 --><p class="noindent">en
+</p>
+<div class="mathjax-block">\[ y(t)=y_0+v_{y,0}t+\frac 12a_yt^2. \]</div>
+<!-- l. 487 --><p class="noindent">Dus:
+</p>
+<div class="mathjax-block">\[ \boxed { v_y(t)=-gt } \]</div>
+<!-- l. 495 --><p class="noindent">en
+</p>
+<div class="mathjax-block">\[ \boxed { y(t)=y_0-\frac 12gt^2. } \]</div>
+<!-- l. 503 --><p class="noindent">De verplaatsing na tijd <span class="mathjax-inline">\(t\)</span> is:
+</p>
+<div class="mathjax-block">\[ \boxed { \Delta y=-\frac 12gt^2. } \]</div>
+<!-- l. 511 --><p class="noindent">De grootte van de snelheid is:
+</p>
+<div class="mathjax-block">\[ \boxed { |v_y|=gt. } \]</div>
+<p><a id="x1-23r1"></a>
+</p><!-- l. 520 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 520 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 520 --><p class="noindent"></p><div class="fvd-subsection__number">5.1</div>
+<p></p><!-- l. 520 --><p class="noindent"></p><div class="fvd-subsection__title">De drie grafieken</div>
+<p></p><!-- l. 520 --><p class="noindent"></p></div>
+<p></p><!-- l. 520 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 520 --><p class="noindent"></p></div>
+<p></p><!-- l. 522 --><p class="noindent">Bij vrije val uit rust met omhoog positief:
+</p>
+<ul class="itemize1">
+<li class="itemize"><span class="mathjax-inline">\(a_y(t)=-g\)</span> is een horizontale rechte onder de tijdas;
+</li>
+<li class="itemize"><span class="mathjax-inline">\(v_y(t)=-gt\)</span> is een dalende rechte door de oorsprong;
+</li>
+<li class="itemize"><span class="mathjax-inline">\(y(t)=y_0-\frac 12gt^2\)</span> is een dalende parabool.</li></ul>
+<!-- l. 530 --><p class="noindent">De drie grafieken zijn niet onafhankelijk:
+</p>
+<div class="mathjax-block">\[ \boxed { v_y(t)=y'(t), \qquad a_y(t)=v_y'(t)=y''(t). } \]</div>
+<p><a id="x1-24r1"></a>
+</p><!-- l. 541 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 541 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 1<span class="fvd-example__subtitle"> — Een steen van een klif</span></div>
+<p></p><!-- l. 541 --><p class="noindent"></p><div class="fvd-example__content">
+<p></p><!-- l. 543 --><p class="noindent">Een steen wordt van een klif losgelaten en raakt <span class="mathjax-inline">\(1,80\,\mathrm {s}\)</span> later het water. Verwaarloos
+luchtweerstand.
+</p><!-- l. 546 --><p class="noindent">We kiezen omhoog positief en nemen het wateroppervlak als <span class="mathjax-inline">\(y=0\)</span>.
+</p><!-- l. 548 --><p class="noindent">De hoogte van de klif volgt uit:
+                                                                  
+
+                                                                  
+</p>
+<div class="mathjax-block">\[ 0=y_0-\frac 12g(1,80)^2. \]</div>
+<!-- l. 554 --><p class="noindent">Dus:
+</p>
+<div class="mathjax-block">\[ y_0 = \frac 12\cdot 9,81\cdot (1,80)^2 \approx 15,9\,\mathrm {m}. \]</div>
+<!-- l. 563 --><p class="noindent">De snelheid bij het raken van het water:
+</p>
+<div class="mathjax-block">\[ v_y(1,80) = -9,81\cdot 1,80 \approx -17,7\,\mathrm {m/s}. \]</div>
+<!-- l. 572 --><p class="noindent">Het minteken betekent dat de snelheid naar beneden gericht is. De grootte van de
+impactsnelheid is:
+</p>
+<div class="mathjax-block">\[ \boxed {|v_y|\approx 17,7\,\mathrm {m/s}.} \]</div>
+</div></section>
+<p><a id="x1-25r7"></a>
+</p><!-- l. 582 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 582 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 582 --><p class="noindent">Oefening 7
+</p><!-- l. 582 --><p class="noindent">— Vrije val uit rust
+</p><!-- l. 582 --><p class="noindent"></p></div>
+<p></p><!-- l. 582 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 582 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--b">B</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 582 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 584 --><p class="noindent">Een kleine metalen bol wordt van <span class="mathjax-inline">\(20,0\,\mathrm {m}\)</span> hoogte losgelaten. Verwaarloos luchtweerstand.
+</p>
+<div class="problem-environment question" id="problem20" numbered=" " role="article" titletext=" Question">  Maak een schets en kies een assenstelsel.    </div>
+<div class="problem-environment question" id="problem21" numbered=" " role="article" titletext=" Question">  Stel <span class="mathjax-inline">\(y(t)\)</span> en <span class="mathjax-inline">\(v_y(t)\)</span> op.    </div>
+<div class="problem-environment question" id="problem22" numbered=" " role="article" titletext=" Question">  Bepaal de valtijd.    </div>
+<div class="problem-environment question" id="problem23" numbered=" " role="article" titletext=" Question">  Bepaal de snelheid vlak vóór het raken van de grond.    </div>
+<div class="problem-environment question" id="problem24" numbered=" " role="article" titletext=" Question">  Interpreteer het teken van de snelheid.    </div>
+</div>
+<!-- l. 607 --><p class="noindent"></p></div>
+<p></p><!-- l. 607 --><p class="noindent"></p></section>
+<p><a id="x1-26r6"></a>
+</p><p></p><!-- l. 614 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">6</div><div class="fvd-section-bar__title">Vrije val in het <span class="mathjax-inline">\(v(t)\)</span>- en <span class="mathjax-inline">\(a(t)\)</span>-diagram</div></div>
+<p></p><!-- l. 616 --><p class="noindent">Hoofdstuk 2 gaf ons twee krachtige verbanden:
+</p>
+<div class="mathjax-block">\[ \Delta y = \int _{t_1}^{t_2}v_y(t)\,dt \]</div>
+<!-- l. 624 --><p class="noindent">en
+</p>
+<div class="mathjax-block">\[ \Delta v_y = \int _{t_1}^{t_2}a_y(t)\,dt. \]</div>
+<!-- l. 632 --><p class="noindent">Bij vrije val worden deze relaties bijzonder overzichtelijk.
+<a id="x1-27r1"></a>
+</p><!-- l. 635 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 635 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 635 --><p class="noindent"></p><div class="fvd-subsection__number">6.1</div>
+<p></p><!-- l. 635 --><p class="noindent"></p><div class="fvd-subsection__title">Van versnelling naar snelheid</div>
+<p></p><!-- l. 635 --><p class="noindent"></p></div>
+<p></p><!-- l. 635 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 635 --><p class="noindent"></p></div>
+<p></p><!-- l. 637 --><p class="noindent">Met omhoog positief is:
+</p>
+<div class="mathjax-block">\[ a_y=-g. \]</div>
+<!-- l. 643 --><p class="noindent">De <span class="mathjax-inline">\(a(t)\)</span>-grafiek vormt over een interval <span class="mathjax-inline">\(\Delta t\)</span> een rechthoek onder de tijdas.
+</p><!-- l. 646 --><p class="noindent">De georiënteerde oppervlakte is:
+</p>
+<div class="mathjax-block">\[ \Delta v_y=-g\Delta t. \]</div>
+<!-- l. 652 --><p class="noindent">Analytisch:
+</p>
+<div class="mathjax-block">\[ \Delta v_y = \int _{t_1}^{t_2}-g\,dt = -g(t_2-t_1). \]</div>
+<p><a id="x1-28r2"></a>
+</p><!-- l. 663 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 663 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 663 --><p class="noindent"></p><div class="fvd-subsection__number">6.2</div>
+<p></p><!-- l. 663 --><p class="noindent"></p><div class="fvd-subsection__title">Van snelheid naar verplaatsing</div>
+<p></p><!-- l. 663 --><p class="noindent"></p></div>
+<p></p><!-- l. 663 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 663 --><p class="noindent"></p></div>
+<p></p><!-- l. 665 --><p class="noindent">Bij een val uit rust is:
+</p>
+<div class="mathjax-block">\[ v_y(t)=-gt. \]</div>
+<!-- l. 671 --><p class="noindent">De <span class="mathjax-inline">\(v(t)\)</span>-grafiek vormt een driehoek onder de tijdas. Over <span class="mathjax-inline">\([0,t]\)</span>:
+</p>
+<div class="mathjax-block">\[ \Delta y = -\frac 12\cdot t\cdot gt = -\frac 12gt^2. \]</div>
+<!-- l. 681 --><p class="noindent">Met een integraal:
+</p>
+<div class="mathjax-block">\[ \Delta y = \int _0^t -g\tau \,d\tau = -\frac 12gt^2. \]</div>
+<!-- l. 691 --><p class="noindent">De bewegingsvergelijking, de oppervlaktemethode en de integraal geven dus exact
+dezelfde fysische relatie.
+</p><!-- l. 695 --><p class="noindent"></p><section class="fvd-property"><div class="fvd-property__title"><span class="fvd-property__label">EIGENSCHAP</span><span class="fvd-property__separator"> — </span><span class="fvd-property__name">Drie talen, één beweging</span></div><div class="fvd-property__content">
+<p></p><!-- l. 697 --><p class="noindent">Voor vrije val kunnen we dezelfde beweging analyseren met:
+</p>
+<div class="mathjax-block">\[ \boxed { \text {bewegingsvergelijkingen} \quad \longleftrightarrow \quad \text {grafiek en oppervlakte} \quad \longleftrightarrow \quad \text {bepaalde integraal}. } \]</div>
+<!-- l. 709 --><p class="noindent">Een sterke analyse kan tussen deze voorstellingen schakelen.
+</p></div></section>
+<p><a id="x1-29r8"></a>
+</p><p></p><!-- l. 714 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 714 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 714 --><p class="noindent">Oefening 8
+</p><!-- l. 714 --><p class="noindent">— Dezelfde val op drie manieren
+</p><!-- l. 714 --><p class="noindent"></p></div>
+<p></p><!-- l. 714 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 714 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 714 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 716 --><p class="noindent">Een voorwerp wordt vanuit rust losgelaten en valt gedurende <span class="mathjax-inline">\(2,00\,\mathrm {s}\)</span>. Kies omhoog
+positief.
+</p>
+<div class="problem-environment question" id="problem25" numbered=" " role="article" titletext=" Question">  Bepaal de snelheidsverandering met de oppervlakte onder de <span class="mathjax-inline">\(a(t)\)</span>-grafiek.
+</div>
+<div class="problem-environment question" id="problem26" numbered=" " role="article" titletext=" Question">  Bepaal de verplaatsing met de oppervlakte onder de <span class="mathjax-inline">\(v(t)\)</span>-grafiek.    </div>
+<div class="problem-environment question" id="problem27" numbered=" " role="article" titletext=" Question">  Controleer beide resultaten met bepaalde integralen.    </div>
+<div class="problem-environment question" id="problem28" numbered=" " role="article" titletext=" Question">  Controleer de verplaatsing ten slotte met de EVRB-formule.    </div>
+</div>
+<!-- l. 736 --><p class="noindent"></p></div>
+<p></p><!-- l. 736 --><p class="noindent"></p></section>
+<p><a id="x1-30r7"></a>
+</p><p></p><!-- l. 743 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">7</div><div class="fvd-section-bar__title">Verticale worp</div></div>
+<p></p><!-- l. 745 --><p class="noindent">Een voorwerp wordt verticaal omhoog of omlaag geworpen. Zodra het voorwerp de
+hand verlaat en we luchtweerstand verwaarlozen, werkt in ons model alleen de
+zwaartekracht.
+</p><!-- l. 749 --><p class="noindent">De beweging is opnieuw een EVRB, maar nu is de beginsnelheid in het algemeen niet
+nul.
+</p><!-- l. 752 --><p class="noindent">Met omhoog positief:
+</p>
+<div class="mathjax-block">\[ \boxed {a_y=-g} \]</div>
+<!-- l. 758 --><p class="noindent">en dus:
+</p>
+<div class="mathjax-block">\[ \boxed { v_y(t)=v_{y,0}-gt } \]</div>
+<!-- l. 766 --><p class="noindent">en
+</p>
+<div class="mathjax-block">\[ \boxed { y(t)=y_0+v_{y,0}t-\frac 12gt^2. } \]</div>
+<!-- l. 774 --><p class="noindent">Deze twee functies beschrijven zowel een worp omhoog als een worp omlaag. Het
+teken van <span class="mathjax-inline">\(v_{y,0}\)</span> bepaalt de aanvankelijke bewegingsrichting.
+<a id="x1-31r1"></a>
+</p><!-- l. 779 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 779 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 779 --><p class="noindent"></p><div class="fvd-subsection__number">7.1</div>
+<p></p><!-- l. 779 --><p class="noindent"></p><div class="fvd-subsection__title">Worp omhoog</div>
+<p></p><!-- l. 779 --><p class="noindent"></p></div>
+<p></p><!-- l. 779 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 779 --><p class="noindent"></p></div>
+<p></p><!-- l. 781 --><p class="noindent">Bij een worp omhoog:
+</p>
+<div class="mathjax-block">\[ v_{y,0}&gt;0. \]</div>
+<!-- l. 787 --><p class="noindent">Tijdens het stijgen:
+</p>
+<div class="mathjax-block">\[ v_y&gt;0, \qquad a_y&lt;0. \]</div>
+<!-- l. 795 --><p class="noindent">Snelheid en versnelling hebben tegengestelde tekens, dus de grootte van de snelheid
+neemt af.
+<a id="x1-32r2"></a>
+</p><!-- l. 799 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 799 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 799 --><p class="noindent"></p><div class="fvd-subsection__number">7.2</div>
+<p></p><!-- l. 799 --><p class="noindent"></p><div class="fvd-subsection__title">Het hoogste punt</div>
+<p></p><!-- l. 799 --><p class="noindent"></p></div>
+<p></p><!-- l. 799 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 799 --><p class="noindent"></p></div>
+<p></p><!-- l. 801 --><p class="noindent">Op het hoogste punt geldt:
+</p>
+<div class="mathjax-block">\[ \boxed {v_y=0.} \]</div>
+<!-- l. 807 --><p class="noindent">Maar:
+</p>
+<div class="mathjax-block">\[ \boxed {a_y=-g.} \]</div>
+<!-- l. 813 --><p class="noindent">De versnelling is daar dus niet nul.
+</p><!-- l. 816 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">
+<p></p><!-- l. 817 --><p class="noindent">“Het voorwerp staat op het hoogste punt even stil” mag niet worden verward met “er
+is geen versnelling”.
+</p><!-- l. 820 --><p class="noindent">De snelheid is op dat ene ogenblik nul. De snelheid verandert echter nog steeds met <span class="mathjax-inline">\(-9,81\,\mathrm {m/s}\)</span>
+per seconde.
+</p></div></section>
+<p><a id="x1-33r3"></a>
+</p><p></p><!-- l. 826 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 826 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 826 --><p class="noindent"></p><div class="fvd-subsection__number">7.3</div>
+<p></p><!-- l. 826 --><p class="noindent"></p><div class="fvd-subsection__title">Tijdens het dalen</div>
+<p></p><!-- l. 826 --><p class="noindent"></p></div>
+<p></p><!-- l. 826 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 826 --><p class="noindent"></p></div>
+<p></p><!-- l. 828 --><p class="noindent">Na het hoogste punt:
+</p>
+<div class="mathjax-block">\[ v_y&lt;0, \qquad a_y&lt;0. \]</div>
+<!-- l. 836 --><p class="noindent">Snelheid en versnelling hebben nu hetzelfde teken. Daarom neemt de grootte van de
+snelheid toe.
+<a id="x1-34r9"></a>
+</p><!-- l. 840 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 840 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 840 --><p class="noindent">Oefening 9
+</p><!-- l. 840 --><p class="noindent">— Stijgen, hoogste punt, dalen
+</p><!-- l. 840 --><p class="noindent"></p></div>
+<p></p><!-- l. 840 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 840 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--b">B</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 840 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 842 --><p class="noindent">Een bal wordt verticaal omhoog geworpen. Omhoog is positief.
+</p><!-- l. 844 --><p class="noindent">Vul voor elke fase het teken van <span class="mathjax-inline">\(v_y\)</span> en <span class="mathjax-inline">\(a_y\)</span> in en vermeld of <span class="mathjax-inline">\(|v_y|\)</span> toeneemt, afneemt of
+ogenblikkelijk nul is.
+</p>
+<div class="mathjax-block">\[ \begin {array}{c|c|c|c} \text {fase} &amp; v_y &amp; a_y &amp; |v_y|\\ \hline \text {stijgen} &amp; &amp; &amp;\\ \text {hoogste punt} &amp; &amp; &amp;\\ \text {dalen} &amp; &amp; &amp; \end {array} \]</div>
+</div>
+<!-- l. 856 --><p class="noindent"></p></div>
+<p></p><!-- l. 856 --><p class="noindent"></p></section>
+<p><a id="x1-35r10"></a>
+</p><p></p><!-- l. 859 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 859 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 859 --><p class="noindent">Oefening 10
+</p><!-- l. 859 --><p class="noindent">— Misconcepten
+</p><!-- l. 859 --><p class="noindent"></p></div>
+<p></p><!-- l. 859 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 859 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 859 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 861 --><p class="noindent">Beoordeel elke uitspraak. Verbeter ze indien nodig.
+</p>
+<div class="problem-environment question" id="problem29" numbered=" " role="article" titletext=" Question">  Tijdens het stijgen is de versnelling positief omdat de bal omhoog beweegt.
+</div>
+<div class="problem-environment question" id="problem30" numbered=" " role="article" titletext=" Question">  Op het hoogste punt zijn snelheid en versnelling beide nul.    </div>
+<div class="problem-environment question" id="problem31" numbered=" " role="article" titletext=" Question">  Tijdens het dalen is de versnelling negatief wanneer omhoog positief gekozen is.
+</div>
+<div class="problem-environment question" id="problem32" numbered=" " role="article" titletext=" Question">  Een negatieve snelheid betekent dat het voorwerp vertraagt.    </div>
+</div>
+<!-- l. 879 --><p class="noindent"></p></div>
+<p></p><!-- l. 879 --><p class="noindent"></p></section>
+<p><a id="x1-36r8"></a>
+</p><p></p><!-- l. 886 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">8</div><div class="fvd-section-bar__title">Het hoogste punt kwantificeren</div></div>
+<p></p><!-- l. 888 --><p class="noindent">Een bal wordt vanaf hoogte <span class="mathjax-inline">\(y_0\)</span> omhoog geworpen met beginsnelheid <span class="mathjax-inline">\(v_0&gt;0\)</span>. We kiezen
+omhoog positief.
+<a id="x1-37r1"></a>
+</p><!-- l. 892 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 892 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 892 --><p class="noindent"></p><div class="fvd-subsection__number">8.1</div>
+<p></p><!-- l. 892 --><p class="noindent"></p><div class="fvd-subsection__title">Tijd tot het hoogste punt</div>
+<p></p><!-- l. 892 --><p class="noindent"></p></div>
+<p></p><!-- l. 892 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 892 --><p class="noindent"></p></div>
+<p></p><!-- l. 894 --><p class="noindent">Op het hoogste punt:
+</p>
+<div class="mathjax-block">\[ v_y=0. \]</div>
+<!-- l. 900 --><p class="noindent">Uit
+</p>
+<div class="mathjax-block">\[ v_y(t)=v_0-gt \]</div>
+<!-- l. 906 --><p class="noindent">volgt:
+</p>
+<div class="mathjax-block">\[ 0=v_0-gt_{\max }. \]</div>
+<!-- l. 912 --><p class="noindent">Dus:
+</p>
+<div class="mathjax-block">\[ \boxed { t_{\max }=\frac {v_0}{g}. } \]</div>
+<p><a id="x1-38r2"></a>
+</p><!-- l. 921 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 921 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 921 --><p class="noindent"></p><div class="fvd-subsection__number">8.2</div>
+<p></p><!-- l. 921 --><p class="noindent"></p><div class="fvd-subsection__title">Hoogtewinst</div>
+<p></p><!-- l. 921 --><p class="noindent"></p></div>
+<p></p><!-- l. 921 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 921 --><p class="noindent"></p></div>
+<p></p><!-- l. 923 --><p class="noindent">We kunnen de hoogtewinst bepalen door <span class="mathjax-inline">\(t_{\max }\)</span> in de plaatsfunctie in te vullen. Een tweede
+methode gebruikt het <span class="mathjax-inline">\(v(t)\)</span>-diagram.
+</p><!-- l. 926 --><p class="noindent">Tijdens het stijgen vormt het gebied onder de <span class="mathjax-inline">\(v(t)\)</span>-grafiek een driehoek:
+                                                                  
+
+                                                                  
+</p>
+<div class="mathjax-block">\[ \Delta y_{\max } = \frac 12 v_0t_{\max }. \]</div>
+<!-- l. 935 --><p class="noindent">Met
+</p>
+<div class="mathjax-block">\[ t_{\max }=\frac {v_0}{g} \]</div>
+<!-- l. 941 --><p class="noindent">krijgen we:
+</p>
+<div class="mathjax-block">\[ \boxed { \Delta y_{\max } = \frac {v_0^2}{2g}. } \]</div>
+<!-- l. 951 --><p class="noindent">Dus:
+</p>
+<div class="mathjax-block">\[ \boxed { y_{\max } = y_0+\frac {v_0^2}{2g}. } \]</div>
+<!-- l. 961 --><p class="noindent">Deze relatie maakt onmiddellijk zichtbaar dat de hoogtewinst evenredig is met het
+<strong>kwadraat</strong> van de beginsnelheid.
+<a id="x1-39r2"></a>
+</p><!-- l. 965 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 965 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 2<span class="fvd-example__subtitle"> — Een bal omhoog werpen</span></div>
+<p></p><!-- l. 965 --><p class="noindent"></p><div class="fvd-example__content">
+<p></p><!-- l. 967 --><p class="noindent">Een bal verlaat een hand op
+</p>
+<div class="mathjax-block">\[ y_0=1,50\,\mathrm {m} \]</div>
+<!-- l. 973 --><p class="noindent">met
+</p>
+<div class="mathjax-block">\[ v_0=13,0\,\mathrm {m/s}. \]</div>
+<!-- l. 979 --><p class="noindent">De tijd tot het hoogste punt is:
+</p>
+<div class="mathjax-block">\[ t_{\max } = \frac {13,0}{9,81} \approx 1,33\,\mathrm {s}. \]</div>
+<!-- l. 988 --><p class="noindent">De hoogtewinst:
+</p>
+<div class="mathjax-block">\[ \Delta y_{\max } = \frac {13,0^2}{2\cdot 9,81} \approx 8,61\,\mathrm {m}. \]</div>
+<!-- l. 997 --><p class="noindent">Dus:
+</p>
+<div class="mathjax-block">\[ y_{\max } \approx 1,50+8,61 = 10,1\,\mathrm {m}. \]</div>
+</div></section>
+<p><a id="x1-40r11"></a>
+</p><!-- l. 1010 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 1010 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 1010 --><p class="noindent">Oefening 11
+</p><!-- l. 1010 --><p class="noindent">— Dubbele beginsnelheid
+</p><!-- l. 1010 --><p class="noindent"></p></div>
+<p></p><!-- l. 1010 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 1010 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 1010 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 1012 --><p class="noindent">Bal A en bal B worden vanaf dezelfde hoogte verticaal omhoog geworpen. De
+beginsnelheid van B is tweemaal die van A:
+</p>
+<div class="mathjax-block">\[ v_{0,B}=2v_{0,A}. \]</div>
+<div class="problem-environment question" id="problem33" numbered=" " role="article" titletext=" Question">  Vergelijk de tijden tot het hoogste punt.    </div>
+<div class="problem-environment question" id="problem34" numbered=" " role="article" titletext=" Question">  Vergelijk de hoogtewinsten.    </div>
+<div class="problem-environment question" id="problem35" numbered=" " role="article" titletext=" Question">  Verklaar waarom een dubbele beginsnelheid niet leidt tot een dubbele hoogtewinst.
+</div>
+</div>
+<!-- l. 1032 --><p class="noindent"></p></div>
+<p></p><!-- l. 1032 --><p class="noindent"></p></section>
+<p><a id="x1-41r12"></a>
+</p><p></p><!-- l. 1035 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 1035 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 1035 --><p class="noindent">Oefening 12
+</p><!-- l. 1035 --><p class="noindent">— Algemeen verband afleiden
+</p><!-- l. 1035 --><p class="noindent"></p></div>
+<p></p><!-- l. 1035 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 1035 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--g">G</span></div>
+<p></p><!-- l. 1035 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 1037 --><p class="noindent">Leid zonder de plaatsfunctie te gebruiken de formule
+</p>
+<div class="mathjax-block">\[ \Delta y_{\max }=\frac {v_0^2}{2g} \]</div>
+<!-- l. 1043 --><p class="noindent">af uit het <span class="mathjax-inline">\(v(t)\)</span>-diagram en de oppervlaktemethode.
+</p><!-- l. 1045 --><p class="noindent">Geef daarna aan hoe dezelfde formule met een bepaalde integraal kan worden
+verkregen.
+</p></div>
+<p></p><!-- l. 1048 --><p class="noindent"></p></div>
+<p></p><!-- l. 1048 --><p class="noindent"></p></section>
+<p><a id="x1-42r9"></a>
+</p><p></p><!-- l. 1055 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">9</div><div class="fvd-section-bar__title">Omhoog en omlaag: een bijzondere symmetrie</div></div>
+<p></p><!-- l. 1057 --><p class="noindent">Wanneer een voorwerp omhoog wordt geworpen en later terugkeert naar <strong>dezelfde
+hoogte</strong>, ontstaat in het ideale model een belangrijke symmetrie.
+</p><!-- l. 1061 --><p class="noindent">Stel dat het voorwerp vanaf <span class="mathjax-inline">\(y_0\)</span> wordt geworpen met snelheid <span class="mathjax-inline">\(v_0\)</span>.
+</p><!-- l. 1063 --><p class="noindent">Op dezelfde hoogte tijdens het dalen geldt:
+</p>
+<div class="mathjax-block">\[ v_y=-v_0. \]</div>
+<!-- l. 1069 --><p class="noindent">De richting is omgekeerd, maar de grootte is dezelfde:
+</p>
+<div class="mathjax-block">\[ |v_y|=v_0. \]</div>
+<!-- l. 1075 --><p class="noindent">Ook de tijd omhoog is gelijk aan de tijd terug naar dezelfde hoogte:
+</p>
+<div class="mathjax-block">\[ t_{\mathrm {terug}}=2t_{\max }. \]</div>
+<!-- l. 1082 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">
+<p></p><!-- l. 1083 --><p class="noindent">Deze symmetrie geldt alleen wanneer we dezelfde begin- en eindhoogte vergelijken en
+het model zonder luchtweerstand gebruiken.
+</p><!-- l. 1086 --><p class="noindent">Wanneer het voorwerp op een andere hoogte landt, mag je de totale bewegingstijd
+niet zomaar verdubbelen.
+</p></div></section>
+<p><a id="x1-43r13"></a>
+</p><p></p><!-- l. 1092 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 1092 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 1092 --><p class="noindent">Oefening 13
+</p><!-- l. 1092 --><p class="noindent">— Wat is symmetrisch?
+</p><!-- l. 1092 --><p class="noindent"></p></div>
+<p></p><!-- l. 1092 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 1092 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 1092 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 1094 --><p class="noindent">Een bal wordt vanaf een balkon omhoog geworpen en landt uiteindelijk op de straat,
+die lager ligt dan het balkon.
+</p><!-- l. 1097 --><p class="noindent">Beoordeel:
+</p>
+<div class="problem-environment question" id="problem36" numbered=" " role="article" titletext=" Question">  Is de tijd van loslaten tot het hoogste punt gelijk aan de tijd van het hoogste punt
+tot de straat?    </div>
+<div class="problem-environment question" id="problem37" numbered=" " role="article" titletext=" Question">  Is de snelheid bij het opnieuw passeren van de balkonhoogte gelijk aan de
+beginsnelheid?    </div>
+<div class="problem-environment question" id="problem38" numbered=" " role="article" titletext=" Question">  Is de <em>grootte</em> van die snelheid gelijk aan de beginsnelheid?    </div>
+<!-- l. 1113 --><p class="noindent">Motiveer telkens.
+</p></div>
+<p></p><!-- l. 1115 --><p class="noindent"></p></div>
+<p></p><!-- l. 1115 --><p class="noindent"></p></section>
+<p><a id="x1-44r10"></a>
+</p><p></p><!-- l. 1122 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">10</div><div class="fvd-section-bar__title">De drie grafieken analyseren</div></div>
+<p></p><!-- l. 1124 --><p class="noindent">Voor een verticale worp omhoog met omhoog positief:
+</p>
+<div class="mathjax-block">\[ y(t)=y_0+v_0t-\frac 12gt^2, \]</div>
+<div class="mathjax-block">\[ v_y(t)=v_0-gt, \]</div>
+<div class="mathjax-block">\[ a_y(t)=-g. \]</div>
+<p><a id="x1-45r1"></a>
+</p><!-- l. 1139 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 1139 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 1139 --><p class="noindent"></p><div class="fvd-subsection__number">10.1</div>
+<p></p><!-- l. 1139 --><p class="noindent"></p><div class="fvd-subsection__title">De <span class="mathjax-inline">\(y(t)\)</span>-grafiek</div>
+<p></p><!-- l. 1139 --><p class="noindent"></p></div>
+<p></p><!-- l. 1139 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 1139 --><p class="noindent"></p></div>
+<p></p><!-- l. 1141 --><p class="noindent">De plaatsfunctie is een neerwaarts geopende parabool.
+</p>
+<ul class="itemize1">
+<li class="itemize">De beginwaarde is <span class="mathjax-inline">\(y_0\)</span>.
+</li>
+<li class="itemize">Tijdens het stijgen neemt <span class="mathjax-inline">\(y\)</span> toe.
+</li>
+<li class="itemize">Op het hoogste punt heeft <span class="mathjax-inline">\(y(t)\)</span> een maximum.
+</li>
+<li class="itemize">De raaklijn is daar horizontaal omdat <span class="mathjax-inline">\(v_y=0\)</span>.
+</li>
+<li class="itemize">Daarna neemt <span class="mathjax-inline">\(y\)</span> af.</li></ul>
+<p><a id="x1-46r2"></a>
+</p><!-- l. 1152 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 1152 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 1152 --><p class="noindent"></p><div class="fvd-subsection__number">10.2</div>
+<p></p><!-- l. 1152 --><p class="noindent"></p><div class="fvd-subsection__title">De <span class="mathjax-inline">\(v(t)\)</span>-grafiek</div>
+<p></p><!-- l. 1152 --><p class="noindent"></p></div>
+<p></p><!-- l. 1152 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 1152 --><p class="noindent"></p></div>
+<p></p><!-- l. 1154 --><p class="noindent">De snelheidsfunctie is een dalende rechte met richtingscoëfficiënt
+</p>
+<div class="mathjax-block">\[ -g. \]</div>
+<ul class="itemize1">
+<li class="itemize"><span class="mathjax-inline">\(v_y&gt;0\)</span> tijdens het stijgen;
+</li>
+<li class="itemize"><span class="mathjax-inline">\(v_y=0\)</span> op het hoogste punt;
+</li>
+<li class="itemize"><span class="mathjax-inline">\(v_y&lt;0\)</span> tijdens het dalen.</li></ul>
+<p><a id="x1-47r3"></a>
+</p><!-- l. 1167 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 1167 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 1167 --><p class="noindent"></p><div class="fvd-subsection__number">10.3</div>
+<p></p><!-- l. 1167 --><p class="noindent"></p><div class="fvd-subsection__title">De <span class="mathjax-inline">\(a(t)\)</span>-grafiek</div>
+<p></p><!-- l. 1167 --><p class="noindent"></p></div>
+<p></p><!-- l. 1167 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 1167 --><p class="noindent"></p></div>
+<p></p><!-- l. 1169 --><p class="noindent">De versnelling is voortdurend:
+                                                                  
+
+                                                                  
+</p>
+<div class="mathjax-block">\[ a_y=-g. \]</div>
+<!-- l. 1175 --><p class="noindent">De grafiek is dus een horizontale rechte onder de tijdas.
+<a id="x1-48r14"></a>
+</p><!-- l. 1178 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 1178 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 1178 --><p class="noindent">Oefening 14
+</p><!-- l. 1178 --><p class="noindent">— Van één grafiek naar drie
+</p><!-- l. 1178 --><p class="noindent"></p></div>
+<p></p><!-- l. 1178 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 1178 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 1178 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 1180 --><p class="noindent">Een <span class="mathjax-inline">\(v(t)\)</span>-grafiek van een verticale worp is een rechte die start bij
+</p>
+<div class="mathjax-block">\[ v(0)=18\,\mathrm {m/s} \]</div>
+<!-- l. 1186 --><p class="noindent">en een richtingscoëfficiënt
+</p>
+<div class="mathjax-block">\[ -9,81\,\mathrm {m/s^2} \]</div>
+<!-- l. 1192 --><p class="noindent">heeft.
+</p>
+<div class="problem-environment question" id="problem39" numbered=" " role="article" titletext=" Question">  Bepaal het tijdstip van het hoogste punt.    </div>
+<div class="problem-environment question" id="problem40" numbered=" " role="article" titletext=" Question">  Schets de bijbehorende <span class="mathjax-inline">\(a(t)\)</span>-grafiek.    </div>
+<div class="problem-environment question" id="problem41" numbered=" " role="article" titletext=" Question">  Schets kwalitatief de <span class="mathjax-inline">\(y(t)\)</span>-grafiek.    </div>
+<div class="problem-environment question" id="problem42" numbered=" " role="article" titletext=" Question">  Duid op alle grafieken hetzelfde hoogste punt aan.    </div>
+<div class="problem-environment question" id="problem43" numbered=" " role="article" titletext=" Question">  Leg uit welke grafische eigenschap op elke grafiek met dat punt overeenkomt.
+</div>
+</div>
+<!-- l. 1215 --><p class="noindent"></p></div>
+<p></p><!-- l. 1215 --><p class="noindent"></p></section>
+<p><a id="x1-49r11"></a>
+</p><p></p><!-- l. 1222 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">11</div><div class="fvd-section-bar__title">Verticaal naar beneden werpen</div></div>
+<p></p><!-- l. 1224 --><p class="noindent">Een verticale worp hoeft niet omhoog gericht te zijn.
+</p><!-- l. 1226 --><p class="noindent">Kiezen we omhoog positief en werpen we een voorwerp naar beneden, dan:
+</p>
+<div class="mathjax-block">\[ v_{y,0}&lt;0 \]</div>
+<!-- l. 1232 --><p class="noindent">en nog steeds:
+</p>
+<div class="mathjax-block">\[ a_y=-g. \]</div>
+<!-- l. 1238 --><p class="noindent">Dus:
+</p>
+<div class="mathjax-block">\[ v_y(t)=v_{y,0}-gt. \]</div>
+<!-- l. 1244 --><p class="noindent">Snelheid en versnelling zijn vanaf het begin beide negatief. De grootte van de snelheid
+neemt daarom toe.
+<a id="x1-50r15"></a>
+</p><!-- l. 1248 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 1248 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 1248 --><p class="noindent">Oefening 15
+</p><!-- l. 1248 --><p class="noindent">— Steen naar beneden
+</p><!-- l. 1248 --><p class="noindent"></p></div>
+<p></p><!-- l. 1248 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 1248 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--b">B</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 1248 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 1250 --><p class="noindent">Vanop een platform <span class="mathjax-inline">\(30,0\,\mathrm {m}\)</span> boven de grond wordt een steen verticaal naar beneden
+geworpen met een beginsnelheid van <span class="mathjax-inline">\(4,00\,\mathrm {m/s}\)</span>.
+</p><!-- l. 1254 --><p class="noindent">Kies omhoog positief en de grond als oorsprong.
+</p>
+<div class="problem-environment question" id="problem44" numbered=" " role="article" titletext=" Question">  Noteer <span class="mathjax-inline">\(y_0\)</span>, <span class="mathjax-inline">\(v_{y,0}\)</span> en <span class="mathjax-inline">\(a_y\)</span> met correct teken.    </div>
+<div class="problem-environment question" id="problem45" numbered=" " role="article" titletext=" Question">  Stel <span class="mathjax-inline">\(y(t)\)</span> en <span class="mathjax-inline">\(v_y(t)\)</span> op.    </div>
+<div class="problem-environment question" id="problem46" numbered=" " role="article" titletext=" Question">  Bepaal wanneer de steen de grond bereikt.    </div>
+<div class="problem-environment question" id="problem47" numbered=" " role="article" titletext=" Question">  Bepaal de impactsnelheid.    </div>
+</div>
+<!-- l. 1272 --><p class="noindent"></p></div>
+<p></p><!-- l. 1272 --><p class="noindent"></p></section>
+<p><a id="x1-51r12"></a>
+</p><p></p><!-- l. 1279 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">12</div><div class="fvd-section-bar__title">Valproblemen systematisch oplossen</div></div>
+<p></p><!-- l. 1281 --><p class="noindent">Bij vrije val en verticale worp zijn de formules meestal niet het moeilijkste onderdeel.
+De grootste uitdaging is de situatie correct mathematiseren.
+</p><!-- l. 1285 --><p class="noindent">Gebruik daarom deze aanpak:
+                                                                  
+
+                                                                  
+</p>
+<ol class="enumerate1">
+<li class="enumerate" id="x1-53x1"><strong>Schets de situatie.</strong>
+</li>
+<li class="enumerate" id="x1-55x2"><strong>Kies oorsprong en positieve richting.</strong>
+</li>
+<li class="enumerate" id="x1-57x3"><strong>Noteer de beginvoorwaarden:</strong> <span class="mathjax-inline">\(y_0\)</span>, <span class="mathjax-inline">\(v_{y,0}\)</span> en <span class="mathjax-inline">\(a_y\)</span>.
+</li>
+<li class="enumerate" id="x1-59x4"><strong>Noteer de gezochte grootheid.</strong>
+</li>
+<li class="enumerate" id="x1-61x5"><strong>Vertaal bijzondere gebeurtenissen:</strong> hoogste punt <span class="mathjax-inline">\(\Rightarrow v_y=0\)</span>, grond <span class="mathjax-inline">\(\Rightarrow y=y_{\mathrm {grond}}\)</span>, enzovoort.
+</li>
+<li class="enumerate" id="x1-63x6"><strong>Kies een methode:</strong> bewegingsvergelijking, grafiek, oppervlaktemethode
+of integraal.
+</li>
+<li class="enumerate" id="x1-65x7"><strong>Los op en selecteer fysisch zinvolle oplossingen.</strong>
+</li>
+<li class="enumerate" id="x1-67x8"><strong>Controleer teken, eenheid en grootteorde.</strong>
+</li>
+<li class="enumerate" id="x1-69x9"><strong>Interpreteer het antwoord in woorden.</strong></li></ol>
+<p><a id="x1-70r3"></a>
+</p><!-- l. 1303 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 1303 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 3<span class="fvd-example__subtitle"> — Een tennisbal vanuit een raam</span></div>
+<p></p><!-- l. 1303 --><p class="noindent"></p><div class="fvd-example__content">
+<p></p><!-- l. 1305 --><p class="noindent">Vanuit een raam op <span class="mathjax-inline">\(8,00\,\mathrm {m}\)</span> boven de grond wordt een tennisbal verticaal omhoog geworpen.
+De bal raakt na <span class="mathjax-inline">\(2,00\,\mathrm {s}\)</span> de grond. Welke beginsnelheid had de bal?
+</p><!-- l. 1309 --><p class="noindent">We kiezen de grond als <span class="mathjax-inline">\(y=0\)</span> en omhoog positief.
+</p>
+<div class="mathjax-block">\[ y_0=8,00\,\mathrm {m}, \qquad y(2,00)=0, \qquad a_y=-9,81\,\mathrm {m/s^2}. \]</div>
+<!-- l. 1319 --><p class="noindent">Uit
+</p>
+<div class="mathjax-block">\[ y(t)=y_0+v_0t-\frac 12gt^2 \]</div>
+<!-- l. 1325 --><p class="noindent">volgt:
+</p>
+<div class="mathjax-block">\[ 0 = 8,00+2,00v_0 -\frac 12\cdot 9,81\cdot (2,00)^2. \]</div>
+<!-- l. 1334 --><p class="noindent">Dus:
+</p>
+<div class="mathjax-block">\[ 2,00v_0=11,62 \]</div>
+<!-- l. 1340 --><p class="noindent">en:
+</p>
+<div class="mathjax-block">\[ \boxed { v_0\approx 5,81\,\mathrm {m/s}. } \]</div>
+<!-- l. 1348 --><p class="noindent">Het positieve teken bevestigt dat de bal aanvankelijk omhoog werd geworpen.
+</p></div></section>
+<p><a id="x1-71r16"></a>
+</p><p></p><!-- l. 1354 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 1354 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 1354 --><p class="noindent">Oefening 16
+</p><!-- l. 1354 --><p class="noindent">— Van raam naar straat
+</p><!-- l. 1354 --><p class="noindent"></p></div>
+<p></p><!-- l. 1354 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 1354 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 1354 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 1356 --><p class="noindent">Een bal wordt vanaf <span class="mathjax-inline">\(12,0\,\mathrm {m}\)</span> boven de grond verticaal omhoog geworpen met <span class="mathjax-inline">\(v_0=8,00\,\mathrm {m/s}\)</span>.
+</p>
+<div class="problem-environment question" id="problem48" numbered=" " role="article" titletext=" Question">  Maak een schets en stel <span class="mathjax-inline">\(y(t)\)</span> en <span class="mathjax-inline">\(v_y(t)\)</span> op.    </div>
+<div class="problem-environment question" id="problem49" numbered=" " role="article" titletext=" Question">  Bepaal de maximale hoogte boven de grond.    </div>
+<div class="problem-environment question" id="problem50" numbered=" " role="article" titletext=" Question">  Bepaal wanneer de bal de grond raakt.    </div>
+<div class="problem-environment question" id="problem51" numbered=" " role="article" titletext=" Question">  Bij het oplossen van <span class="mathjax-inline">\(y(t)=0\)</span> ontstaan algebraïsch twee oplossingen. Bespreek welke
+oplossingen fysisch betekenisvol zijn.    </div>
+<div class="problem-environment question" id="problem52" numbered=" " role="article" titletext=" Question">  Bepaal de snelheid bij impact.    </div>
+</div>
+<!-- l. 1380 --><p class="noindent"></p></div>
+<p></p><!-- l. 1380 --><p class="noindent"></p></section>
+<p><a id="x1-72r17"></a>
+</p><p></p><!-- l. 1383 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 1383 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 1383 --><p class="noindent">Oefening 17
+</p><!-- l. 1383 --><p class="noindent">— De baksteen
+</p><!-- l. 1383 --><p class="noindent"></p></div>
+<p></p><!-- l. 1383 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 1383 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 1383 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 1385 --><p class="noindent">Een bouwvakker werpt een baksteen verticaal omhoog vanaf <span class="mathjax-inline">\(1,50\,\mathrm {m}\)</span> boven de grond. Een
+metselaar wil de steen op een stelling op <span class="mathjax-inline">\(4,00\,\mathrm {m}\)</span> hoogte kunnen opvangen.
+</p>
+<div class="problem-environment question" id="problem53" numbered=" " role="article" titletext=" Question">  Welke minimale beginsnelheid is nodig om die hoogte te bereiken?    </div>
+<div class="problem-environment question" id="problem54" numbered=" " role="article" titletext=" Question">  Welke bijzondere voorwaarde geldt bij de minimale beginsnelheid op <span class="mathjax-inline">\(4,00\,\mathrm {m}\)</span> hoogte?
+</div>
+<div class="problem-environment question" id="problem55" numbered=" " role="article" titletext=" Question">  Leg uit waarom een grotere beginsnelheid tot twee mogelijke passagetijdstippen op <span class="mathjax-inline">\(4,00\,\mathrm {m}\)</span>
+kan leiden.    </div>
+</div>
+<!-- l. 1403 --><p class="noindent"></p></div>
+<p></p><!-- l. 1403 --><p class="noindent"></p></section>
+<p><a id="x1-73r13"></a>
+</p><p></p><!-- l. 1410 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">13</div><div class="fvd-section-bar__title">Wanneer faalt het vrije-valmodel?</div></div>
+<p></p><!-- l. 1412 --><p class="noindent">De vergelijkingen
+</p>
+<div class="mathjax-block">\[ a_y=-g, \qquad v_y=v_0-gt, \qquad y=y_0+v_0t-\frac 12gt^2 \]</div>
+<!-- l. 1422 --><p class="noindent">zijn krachtig, maar niet universeel.
+</p><!-- l. 1424 --><p class="noindent">In lucht werkt naast de zwaartekracht ook luchtweerstand. Die hangt onder andere af
+                                                                  
+
+                                                                  
+van vorm, oppervlakte, snelheid en eigenschappen van de lucht.
+</p><!-- l. 1428 --><p class="noindent">Daardoor is de resulterende kracht niet meer constant en is de versnelling niet
+noodzakelijk gelijk aan <span class="mathjax-inline">\(-g\)</span>.
+<a id="x1-74r1"></a>
+</p><!-- l. 1432 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 1432 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 1432 --><p class="noindent"></p><div class="fvd-subsection__number">13.1</div>
+<p></p><!-- l. 1432 --><p class="noindent"></p><div class="fvd-subsection__title">Eindsnelheid</div>
+<p></p><!-- l. 1432 --><p class="noindent"></p></div>
+<p></p><!-- l. 1432 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 1432 --><p class="noindent"></p></div>
+<p></p><!-- l. 1434 --><p class="noindent">Bij een vallend voorwerp kan de luchtweerstand toenemen wanneer de snelheid groter
+wordt.
+</p><!-- l. 1437 --><p class="noindent">Wanneer de luchtweerstand uiteindelijk even groot is als de zwaartekracht:
+</p>
+<div class="mathjax-block">\[ F_{\mathrm {res}}=0. \]</div>
+<!-- l. 1444 --><p class="noindent">Dan:
+</p>
+<div class="mathjax-block">\[ a=0 \]</div>
+<!-- l. 1450 --><p class="noindent">en verandert de snelheid niet meer. Het voorwerp beweegt dan met een
+<strong>eindsnelheid</strong>.
+</p><!-- l. 1453 --><p class="noindent">Dit gedrag kan niet worden beschreven door het eenvoudige vrije-valmodel met
+constante versnelling <span class="mathjax-inline">\(g\)</span>.
+<a id="x1-75r18"></a>
+</p><!-- l. 1457 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 1457 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 1457 --><p class="noindent">Oefening 18
+</p><!-- l. 1457 --><p class="noindent">— Waarom is de voorspelling onrealistisch?
+</p><!-- l. 1457 --><p class="noindent"></p></div>
+<p></p><!-- l. 1457 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 1457 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 1457 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 1459 --><p class="noindent">Een model zonder luchtweerstand voorspelt voor een persoon die vanuit rust <span class="mathjax-inline">\(2000\,\mathrm {m}\)</span>
+valt:
+</p>
+<div class="mathjax-block">\[ |v|=\sqrt {2gh}. \]</div>
+<div class="problem-environment question" id="problem56" numbered=" " role="article" titletext=" Question">  Bereken de voorspelde snelheid.    </div>
+<div class="problem-environment question" id="problem57" numbered=" " role="article" titletext=" Question">  Zet het resultaat om naar <span class="mathjax-inline">\(\mathrm {km/h}\)</span>.    </div>
+<div class="problem-environment question" id="problem58" numbered=" " role="article" titletext=" Question">  Waarom moet je voorzichtig zijn met de fysische interpretatie van dit resultaat?
+</div>
+<div class="problem-environment question" id="problem59" numbered=" " role="article" titletext=" Question">  Welke ontbrekende kracht maakt het model bij zo’n beweging onvoldoende?
+</div>
+</div>
+<!-- l. 1484 --><p class="noindent"></p></div>
+<p></p><!-- l. 1484 --><p class="noindent"></p></section>
+<p><a id="x1-76r19"></a>
+</p><p></p><!-- l. 1487 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 1487 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 1487 --><p class="noindent">Oefening 19
+</p><!-- l. 1487 --><p class="noindent">— Papier als modeltest
+</p><!-- l. 1487 --><p class="noindent"></p></div>
+<p></p><!-- l. 1487 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 1487 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--g">G</span></div>
+<p></p><!-- l. 1487 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 1489 --><p class="noindent">Ontwerp een eenvoudig experiment met een blad papier waarmee je aantoont dat
+vorm en luchtweerstand een belangrijke rol kunnen spelen.
+</p><!-- l. 1492 --><p class="noindent">Beschrijf:
+</p>
+<div class="problem-environment question" id="problem60" numbered=" " role="article" titletext=" Question">  welke grootheid je verandert;    </div>
+<div class="problem-environment question" id="problem61" numbered=" " role="article" titletext=" Question">  welke grootheden je zoveel mogelijk constant houdt;    </div>
+<div class="problem-environment question" id="problem62" numbered=" " role="article" titletext=" Question">  welke waarneming je verwacht;    </div>
+<div class="problem-environment question" id="problem63" numbered=" " role="article" titletext=" Question">  waarom het resultaat geen tegenspraak vormt met het vrije-valmodel.
+</div>
+</div>
+<!-- l. 1510 --><p class="noindent"></p></div>
+<p></p><!-- l. 1510 --><p class="noindent"></p></section>
+<p><a id="x1-77r14"></a>
+</p><p></p><!-- l. 1517 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">14</div><div class="fvd-section-bar__title">Een valbeweging onderzoeken met data</div></div>
+<p></p><!-- l. 1519 --><p class="noindent">Het leerplan vraagt niet alleen dat je formules toepast. Je moet ook verbanden tussen
+positie, snelheid en versnelling kunnen analyseren.
+                                                                  
+
+                                                                  
+</p><!-- l. 1522 --><p class="noindent">Een videoanalyse is daarvoor bijzonder geschikt.
+</p><!-- l. 1524 --><p class="noindent">Film bijvoorbeeld een kleine bal die over een beperkte hoogte valt. Bepaal met een
+videoanalysetool op opeenvolgende tijdstippen de verticale positie.
+</p><!-- l. 1528 --><p class="noindent">Je krijgt meetpunten:
+</p>
+<div class="mathjax-block">\[ (t_i,y_i). \]</div>
+<!-- l. 1534 --><p class="noindent">Voor vrije val verwachten we een kwadratisch model:
+</p>
+<div class="mathjax-block">\[ y(t)=y_0+v_0t-\frac 12gt^2. \]</div>
+<!-- l. 1540 --><p class="noindent">Bij loslaten uit rust:
+</p>
+<div class="mathjax-block">\[ v_0\approx 0. \]</div>
+<!-- l. 1546 --><p class="noindent">Uit het kwadratische model kunnen we door afleiden een lineaire snelheidsfunctie en
+een constante versnellingsfunctie reconstrueren.
+<a id="x1-78r20"></a>
+</p><!-- l. 1550 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 1550 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 1550 --><p class="noindent">Oefening 20
+</p><!-- l. 1550 --><p class="noindent">— Videoanalyse van een vallende bal
+</p><!-- l. 1550 --><p class="noindent"></p></div>
+<p></p><!-- l. 1550 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 1550 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 1550 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 1552 --><p class="noindent">Registreer of gebruik een gegeven video van een kleine bal die wordt losgelaten.
+</p>
+<div class="problem-environment question" id="problem64" numbered=" " role="article" titletext=" Question">  Kies een oorsprong en positieve richting en noteer die expliciet.    </div>
+<div class="problem-environment question" id="problem65" numbered=" " role="article" titletext=" Question">  Maak een tabel met <span class="mathjax-inline">\(t\)</span> en <span class="mathjax-inline">\(y\)</span>.    </div>
+<div class="problem-environment question" id="problem66" numbered=" " role="article" titletext=" Question">  Maak een spreidingsdiagram van <span class="mathjax-inline">\(y\)</span> als functie van <span class="mathjax-inline">\(t\)</span>.    </div>
+<div class="problem-environment question" id="problem67" numbered=" " role="article" titletext=" Question">  Bepaal met ICT een kwadratisch model <div class="mathjax-block">\[ y(t)=At^2+Bt+C. \]</div> </div>
+<div class="problem-environment question" id="problem68" numbered=" " role="article" titletext=" Question">  Interpreteer <span class="mathjax-inline">\(A\)</span>, <span class="mathjax-inline">\(B\)</span> en <span class="mathjax-inline">\(C\)</span> fysisch.    </div>
+<div class="problem-environment question" id="problem69" numbered=" " role="article" titletext=" Question">  Bepaal uit het model <span class="mathjax-inline">\(v_y(t)\)</span> en <span class="mathjax-inline">\(a_y(t)\)</span>.    </div>
+<div class="problem-environment question" id="problem70" numbered=" " role="article" titletext=" Question">  Vergelijk de experimenteel gevonden versnelling met <span class="mathjax-inline">\(9,81\,\mathrm {m/s^2}\)</span>.    </div>
+<div class="problem-environment question" id="problem71" numbered=" " role="article" titletext=" Question">  Bespreek mogelijke oorzaken van een verschil.    </div>
+</div>
+<!-- l. 1591 --><p class="noindent"></p></div>
+<p></p><!-- l. 1591 --><p class="noindent"></p></section>
+<p><a id="x1-79r15"></a>
+</p><p></p><!-- l. 1598 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">15</div><div class="fvd-section-bar__title">Geïntegreerde oefeningen</div></div>
+<p><a id="x1-80r21"></a>
+</p><p></p><!-- l. 1600 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 1600 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 1600 --><p class="noindent">Oefening 21
+</p><!-- l. 1600 --><p class="noindent">— Een voetbal verticaal omhoog
+</p><!-- l. 1600 --><p class="noindent"></p></div>
+<p></p><!-- l. 1600 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 1600 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--b">B</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 1600 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 1602 --><p class="noindent">Een voetbal wordt vanaf de grond verticaal omhoog getrapt met
+</p>
+<div class="mathjax-block">\[ v_0=15,0\,\mathrm {m/s}. \]</div>
+<!-- l. 1608 --><p class="noindent">Verwaarloos luchtweerstand.
+</p>
+<div class="problem-environment question" id="problem72" numbered=" " role="article" titletext=" Question">  Stel <span class="mathjax-inline">\(y(t)\)</span>, <span class="mathjax-inline">\(v_y(t)\)</span> en <span class="mathjax-inline">\(a_y(t)\)</span> op.    </div>
+<div class="problem-environment question" id="problem73" numbered=" " role="article" titletext=" Question">  Bepaal wanneer de bal zijn hoogste punt bereikt.    </div>
+<div class="problem-environment question" id="problem74" numbered=" " role="article" titletext=" Question">  Bepaal de maximale hoogte.    </div>
+<div class="problem-environment question" id="problem75" numbered=" " role="article" titletext=" Question">  Bepaal wanneer de bal opnieuw de grond bereikt.    </div>
+<div class="problem-environment question" id="problem76" numbered=" " role="article" titletext=" Question">  Bepaal de snelheid vlak vóór het bereiken van de grond.    </div>
+<div class="problem-environment question" id="problem77" numbered=" " role="article" titletext=" Question">  Schets de drie bewegingsgrafieken.    </div>
+</div>
+<!-- l. 1634 --><p class="noindent"></p></div>
+<p></p><!-- l. 1634 --><p class="noindent"></p></section>
+<p><a id="x1-81r22"></a>
+</p><p></p><!-- l. 1637 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 1637 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 1637 --><p class="noindent">Oefening 22
+</p><!-- l. 1637 --><p class="noindent">— Een onbekende beginsnelheid
+</p><!-- l. 1637 --><p class="noindent"></p></div>
+<p></p><!-- l. 1637 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 1637 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 1637 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 1639 --><p class="noindent">Een bal wordt vanaf <span class="mathjax-inline">\(2,00\,\mathrm {m}\)</span> hoogte verticaal omhoog geworpen. Hij bereikt een maximale
+hoogte van <span class="mathjax-inline">\(7,00\,\mathrm {m}\)</span>.
+</p>
+<div class="problem-environment question" id="problem78" numbered=" " role="article" titletext=" Question">  Bepaal de beginsnelheid.    </div>
+<div class="problem-environment question" id="problem79" numbered=" " role="article" titletext=" Question">  Bepaal de tijd tot het hoogste punt.    </div>
+<div class="problem-environment question" id="problem80" numbered=" " role="article" titletext=" Question">  Bepaal de totale tijd tot de bal de grond bereikt.    </div>
+<div class="problem-environment question" id="problem81" numbered=" " role="article" titletext=" Question">  Leg uit waarom je voor de laatste vraag de stijgtijd niet zomaar mag verdubbelen.
+</div>
+</div>
+<!-- l. 1659 --><p class="noindent"></p></div>
+<p></p><!-- l. 1659 --><p class="noindent"></p></section>
+<p><a id="x1-82r23"></a>
+</p><p></p><!-- l. 1662 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 1662 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 1662 --><p class="noindent">Oefening 23
+</p><!-- l. 1662 --><p class="noindent">— Grafiek zonder formule
+</p><!-- l. 1662 --><p class="noindent"></p></div>
+<p></p><!-- l. 1662 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 1662 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 1662 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 1664 --><p class="noindent">Van een verticale worp is alleen het volgende bekend:
+</p>
+<ul class="itemize1">
+<li class="itemize"><span class="mathjax-inline">\(v_y(0)=19,62\,\mathrm {m/s}\)</span>;
+</li>
+<li class="itemize">de <span class="mathjax-inline">\(v(t)\)</span>-grafiek is een rechte met helling <span class="mathjax-inline">\(-9,81\,\mathrm {m/s^2}\)</span>;
+</li>
+<li class="itemize"><span class="mathjax-inline">\(y(0)=1,00\,\mathrm {m}\)</span>.</li></ul>
+<div class="problem-environment question" id="problem82" numbered=" " role="article" titletext=" Question">  Bepaal grafisch of met de oppervlaktemethode de hoogtewinst tot het hoogste punt.
+                                                                  
+
+                                                                  
+</div>
+<div class="problem-environment question" id="problem83" numbered=" " role="article" titletext=" Question">  Bepaal de maximale hoogte.    </div>
+<div class="problem-environment question" id="problem84" numbered=" " role="article" titletext=" Question">  Controleer met een integraal.    </div>
+<div class="problem-environment question" id="problem85" numbered=" " role="article" titletext=" Question">  Stel daarna pas de plaatsfunctie op.    </div>
+</div>
+<!-- l. 1690 --><p class="noindent"></p></div>
+<p></p><!-- l. 1690 --><p class="noindent"></p></section>
+<p><a id="x1-83r24"></a>
+</p><p></p><!-- l. 1693 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 1693 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 1693 --><p class="noindent">Oefening 24
+</p><!-- l. 1693 --><p class="noindent">— Twee bollen
+</p><!-- l. 1693 --><p class="noindent"></p></div>
+<p></p><!-- l. 1693 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 1693 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--g">G</span></div>
+<p></p><!-- l. 1693 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 1695 --><p class="noindent">Vanaf dezelfde hoogte wordt bol A losgelaten. Op hetzelfde tijdstip wordt bol B
+verticaal naar beneden geworpen.
+</p><!-- l. 1698 --><p class="noindent">Beide bollen bewegen volgens het ideale vrije-valmodel.
+</p>
+<div class="problem-environment question" id="problem86" numbered=" " role="article" titletext=" Question">  Vergelijk hun versnellingen.    </div>
+<div class="problem-environment question" id="problem87" numbered=" " role="article" titletext=" Question">  Stel voor beide bollen een snelheidsfunctie op.    </div>
+<div class="problem-environment question" id="problem88" numbered=" " role="article" titletext=" Question">  Onderzoek hoe het snelheidsverschil tussen beide bollen in de tijd verandert.
+</div>
+<div class="problem-environment question" id="problem89" numbered=" " role="article" titletext=" Question">  Onderzoek hoe hun onderlinge afstand in de tijd verandert.    </div>
+<div class="problem-environment question" id="problem90" numbered=" " role="article" titletext=" Question">  Formuleer een algemene conclusie en verklaar die fysisch.    </div>
+</div>
+<!-- l. 1721 --><p class="noindent"></p></div>
+<p></p><!-- l. 1721 --><p class="noindent"></p></section>
+<p><a id="x1-84r25"></a>
+</p><p></p><!-- l. 1724 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 1724 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 1724 --><p class="noindent">Oefening 25
+</p><!-- l. 1724 --><p class="noindent">— Foutenanalyse
+                                                                  
+
+                                                                  
+</p><!-- l. 1724 --><p class="noindent"></p></div>
+<p></p><!-- l. 1724 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 1724 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 1724 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 1726 --><p class="noindent">Een leerling lost een verticale worp op met omhoog positief:
+</p>
+<div class="mathjax-block">\[ v_0=12,0\,\mathrm {m/s}. \]</div>
+<!-- l. 1732 --><p class="noindent">Hij schrijft:
+</p>
+<div class="mathjax-block">\[ v(t)=12,0+9,81t \]</div>
+<!-- l. 1738 --><p class="noindent">en zegt:
+</p>
+<blockquote class="quote">
+<!-- l. 1741 --><p class="noindent">“De bal gaat omhoog, dus <span class="mathjax-inline">\(g\)</span> moet positief zijn.”</p></blockquote>
+<div class="problem-environment question" id="problem91" numbered=" " role="article" titletext=" Question">  Identificeer de fout.    </div>
+<div class="problem-environment question" id="problem92" numbered=" " role="article" titletext=" Question">  Schrijf de correcte snelheidsfunctie.    </div>
+<div class="problem-environment question" id="problem93" numbered=" " role="article" titletext=" Question">  Leg uit waarom de richting van de snelheid niet bepaalt welk teken de versnelling
+heeft.    </div>
+</div>
+<!-- l. 1757 --><p class="noindent"></p></div>
+<p></p><!-- l. 1757 --><p class="noindent"></p></section>
+<p><a id="x1-85r26"></a>
+</p><p></p><!-- l. 1760 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 1760 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 1760 --><p class="noindent">Oefening 26
+</p><!-- l. 1760 --><p class="noindent">— Een model vergelijken met data
+</p><!-- l. 1760 --><p class="noindent"></p></div>
+<p></p><!-- l. 1760 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 1760 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--g">G</span></div>
+<p></p><!-- l. 1760 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 1762 --><p class="noindent">Een sensor levert voor een vallend voorwerp meetgegevens op. Een leerling vindt via
+regressie:
+</p>
+<div class="mathjax-block">\[ y(t)=2,01-0,08t-4,72t^2. \]</div>
+<!-- l. 1769 --><p class="noindent">De positieve richting is omhoog.
+</p>
+<div class="problem-environment question" id="problem94" numbered=" " role="article" titletext=" Question">  Bepaal de gemodelleerde beginsnelheid.    </div>
+<div class="problem-environment question" id="problem95" numbered=" " role="article" titletext=" Question">  Bepaal de gemodelleerde versnelling.    </div>
+<div class="problem-environment question" id="problem96" numbered=" " role="article" titletext=" Question">  Vergelijk deze versnelling met de theoretische waarde <span class="mathjax-inline">\(-g\)</span>.    </div>
+<div class="problem-environment question" id="problem97" numbered=" " role="article" titletext=" Question">  Geef minstens drie mogelijke verklaringen voor het verschil.    </div>
+<div class="problem-environment question" id="problem98" numbered=" " role="article" titletext=" Question">  Beoordeel welke extra informatie je nodig hebt om te besluiten of luchtweerstand
+de belangrijkste oorzaak is.    </div>
+</div>
+<!-- l. 1792 --><p class="noindent"></p></div>
+<p></p><!-- l. 1792 --><p class="noindent"></p></section>
+<p><a id="x1-86r16"></a>
+</p><p></p><!-- l. 1799 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">16</div><div class="fvd-section-bar__title">Wat hebben we opgebouwd?</div></div>
+<p></p><!-- l. 1801 --><p class="noindent">Een werkelijke valbeweging kan beïnvloed worden door verschillende krachten. In het
+vrije-valmodel verwaarlozen we andere krachten dan de zwaartekracht.
+</p><!-- l. 1805 --><p class="noindent">Dicht bij het aardoppervlak:
+</p>
+<div class="mathjax-block">\[ g\approx 9,81\,\mathrm {m/s^2}. \]</div>
+<!-- l. 1811 --><p class="noindent">Met omhoog positief:
+</p>
+<div class="mathjax-block">\[ \boxed {a_y=-g.} \]</div>
+<!-- l. 1817 --><p class="noindent">Voor een verticale beweging met beginvoorwaarden <span class="mathjax-inline">\(y_0\)</span> en <span class="mathjax-inline">\(v_0\)</span>:
+</p>
+<div class="mathjax-block">\[ \boxed { v_y(t)=v_0-gt } \]</div>
+<!-- l. 1825 --><p class="noindent">en
+</p>
+<div class="mathjax-block">\[ \boxed { y(t)=y_0+v_0t-\frac 12gt^2. } \]</div>
+<!-- l. 1833 --><p class="noindent">Bij loslaten uit rust:
+</p>
+<div class="mathjax-block">\[ v_0=0. \]</div>
+<!-- l. 1839 --><p class="noindent">Bij een verticale worp omhoog:
+</p>
+<div class="mathjax-block">\[ v_0&gt;0. \]</div>
+<!-- l. 1845 --><p class="noindent">Op het hoogste punt:
+</p>
+<div class="mathjax-block">\[ \boxed { v_y=0 \qquad \text {maar}\qquad a_y=-g. } \]</div>
+<!-- l. 1855 --><p class="noindent">Voor een worp omhoog:
+</p>
+<div class="mathjax-block">\[ \boxed { t_{\max }=\frac {v_0}{g} } \]</div>
+<!-- l. 1863 --><p class="noindent">en:
+</p>
+<div class="mathjax-block">\[ \boxed { \Delta y_{\max }=\frac {v_0^2}{2g}. } \]</div>
+<!-- l. 1871 --><p class="noindent">De relaties uit hoofdstuk 2 blijven volledig geldig:
+</p>
+<div class="mathjax-block">\[ \boxed { v_y(t)=y'(t), \qquad a_y(t)=v_y'(t) } \]</div>
+<!-- l. 1881 --><p class="noindent">en:
+</p>
+<div class="mathjax-block">\[ \boxed { \Delta y=\int v_y(t)\,dt, \qquad \Delta v_y=\int a_y(t)\,dt. } \]</div>
+<!-- l. 1891 --><p class="noindent">De georiënteerde oppervlakten onder de <span class="mathjax-inline">\(v(t)\)</span>- en <span class="mathjax-inline">\(a(t)\)</span>-grafieken geven respectievelijk
+verplaatsing en snelheidsverschil.
+<a id="x1-87r17"></a>
+</p><!-- l. 1901 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">17</div><div class="fvd-section-bar__title">Vooruitblik</div></div>
+<p></p><!-- l. 1903 --><p class="noindent">Tot nu toe bewoog het voorwerp langs één verticale rechte.
+</p><!-- l. 1905 --><p class="noindent">Maar wat gebeurt er wanneer een bal horizontaal wordt weggeschoten? De
+zwaartekracht versnelt hem verticaal, terwijl hij tegelijk horizontaal beweegt.
+</p><!-- l. 1909 --><p class="noindent">Dan volstaat één coördinaat niet meer.
+</p><!-- l. 1911 --><p class="noindent">In het volgende hoofdstuk breiden we onze beschrijving uit naar bewegingen in
+twee dimensies. We onderzoeken hoe onafhankelijke bewegingscomponenten
+samen één baan vormen en gebruiken dat inzicht om de horizontale worp te
+analyseren.
+                                                                  
+
+                                                                  
+</p>
+</div><!-- XIMERA-PREVIOUS-NEXT-START --><nav aria-label="Hoofdstuknavigatie" class="chapter-navigation">
+<a class="chapter-navigation__card chapter-navigation__card--previous" data-visible="true" href="2-ERVB.html">
+<span aria-hidden="true" class="chapter-navigation__icon">
+            ←
+        </span>
+<span class="chapter-navigation__content">
+<span class="chapter-navigation__label">
+                Vorig hoofdstuk
+            </span>
+<span class="chapter-navigation__title">
+                Snelheid en versnelling
+            </span>
+</span>
+</a>
+<a class="chapter-navigation__card chapter-navigation__card--overview" href="index.html">
+<span aria-hidden="true" class="chapter-navigation__overview-icon">
+<span></span>
+<span></span>
+<span></span>
+</span>
+<span class="chapter-navigation__content">
+<span class="chapter-navigation__label">
+                Cursus
+            </span>
+<span class="chapter-navigation__title">
+                Overzicht
+            </span>
+</span>
+</a>
+<a class="chapter-navigation__card chapter-navigation__card--next" data-visible="true" href="4-2D-beweging.html">
+<span class="chapter-navigation__content">
+<span class="chapter-navigation__label">
+                Volgend hoofdstuk
+            </span>
+<span class="chapter-navigation__title">
+                Bewegen in twee dimensies
+            </span>
+</span>
+<span aria-hidden="true" class="chapter-navigation__icon">
+            →
+        </span>
+</a>
+</nav><!-- XIMERA-PREVIOUS-NEXT-END --></article></main><!-- XIMERA-CHAPTER-LAYOUT-END --><div class="course-footer-clear"></div><!-- XIMERA-FOOTER-START --><footer class="site-footer">
+<div aria-hidden="true" class="site-footer__accent"></div>
+<div class="site-footer__inner">
+<div class="site-footer__quote">
+<span aria-hidden="true" class="site-footer__quote-mark">◈</span>
+<p class="site-footer__quote-text">
+                Think mathematically. Create digitally. Shape the future.
+            </p>
+</div>
+<div aria-hidden="true" class="site-footer__divider"></div>
+<div class="site-footer__grid">
+<section class="site-footer__column">
+<p class="site-footer__eyebrow">
+                    Wiskunde 7 FVD
+                </p>
+<h2 class="site-footer__title">
+                    Fundamentele Vorming Digitale Creatie
+                </h2>
+<p class="site-footer__text">
+                    Wiskundige basis voor programmeren, graphics,
+                    animatie, simulatie en 3D.
+                </p>
+</section>
+<section class="site-footer__column">
+<p class="site-footer__eyebrow">
+                    Ontwikkeling
+                </p>
+<p class="site-footer__name">
+                    Ingmar Herreman
+                </p>
+<p class="site-footer__text">
+                    GO! Athena Campus Bellevue
+                </p>
+<p class="site-footer__text">
+                    Versie 1.0 · 2026
+                </p>
+</section>
+<section class="site-footer__column">
+<p class="site-footer__eyebrow">
+                    Technologie
+                </p>
+<div class="site-footer__tech">
+<span>Ximera</span>
+<span>HTML</span>
+<span>PDF</span>
+<span>GeoGebra</span>
+<span>GitHub</span>
+</div>
+</section>
+</div>
+<div class="site-footer__bottom">
+<span>Gebouwd met Ximera</span>
+<span aria-hidden="true">•</span>
+<span>Voor 7 FVD</span>
+<span aria-hidden="true">•</span>
+<span>© 2026</span>
+</div>
+</div>
+</footer><!-- XIMERA-FOOTER-END --><script src="../../../assets/js/chapter-layout.js"></script></body>
+</html>

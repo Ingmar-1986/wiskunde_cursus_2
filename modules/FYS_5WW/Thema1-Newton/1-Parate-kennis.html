@@ -1,0 +1,2215 @@
+<!DOCTYPE html>
+<html lang="en-US" xml:lang="en-US">
+<head> <title>De gereedschapskist van de fysicus – Van krachten tot kernen</title>
+<meta charset="utf-8"/>
+<meta content="TeX4ht (https://tug.org/tex4ht/)" name="generator"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="\aa:CssFile " rel="stylesheet" type="text/css"/>
+<meta content="1-Parate-kennis.online.tex" name="src"/>
+<script>window.MathJax = { tex: { tags: "ams", }, }; </script>
+<script async="async" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+<meta content="Ingmar Herreman" name="author"/>
+<meta content="version 2.5.1" name="ximera"/>
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" media="screen" rel="stylesheet"/>
+<script async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js" type="text/javascript"></script>
+<link href="../../../assets/css/base.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/global.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/Header_Footer.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/ChapterLayout.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/chapter-hero.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/ExerciseHero.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/learning-boxes.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/CourseOverview.css" media="screen" rel="stylesheet"/></head><body><!-- XIMERA-HEADER-START --><!-- =========================================================
+     HEADER.HTML — Wiskunde 7 FVD
+     Plaats dit bestand bijvoorbeeld in:
+     assets/html/Header.html
+     ========================================================= -->
+<header aria-labelledby="fvd-hero-title" class="fvd-hero">
+<div aria-hidden="true" class="fvd-hero__grid"></div>
+<div aria-hidden="true" class="fvd-hero__glow fvd-hero__glow--left"></div>
+<div aria-hidden="true" class="fvd-hero__glow fvd-hero__glow--right"></div>
+<div class="fvd-hero__inner">
+<!-- Groot Athena-logo links -->
+<div class="fvd-hero__brand">
+<img alt="Athena secundair onderwijs" class="fvd-hero__logo" src="/images/banners/logo_athena.png"/>
+</div>
+<div aria-hidden="true" class="fvd-hero__divider"></div>
+<!-- Centrale titel en leerinhouden -->
+<div class="fvd-hero__content">
+<p class="fvd-hero__eyebrow">
+                    Fundamentele Vorming Digitale Creatie
+                </p>
+<h1 class="fvd-hero__title" id="fvd-hero-title">
+<span class="fvd-hero__title-main">Wiskunde</span>
+<span class="fvd-hero__title-accent">7 FVD</span>
+</h1>
+<div aria-hidden="true" class="fvd-hero__pink-line"></div>
+<p class="fvd-hero__subtitle">
+                    Wiskundige inzichten die je nodig hebt om digitale werelden te bouwen.
+                </p>
+<div aria-label="Onderwerpen in deze cursus" class="fvd-hero__chips">
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<rect height="18" rx="2" width="14" x="5" y="3"></rect>
+<path d="M8 7h8M8 11h2M14 11h2M8 15h2M14 15h2M8 18h2M14 18h2"></path>
+</svg>
+                        Basiswiskunde
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M4 17c4-1 4-10 8-10 2 0 2 3 4 3 1 0 2-.4 4-2"></path>
+<path d="M7 20 13 4"></path>
+</svg>
+                        Algebra
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M5 8h14M5 16h14"></path>
+</svg>
+                        Vergelijkingen
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M4 19V5M4 19h16"></path>
+<path d="m7 16 4-5 3 2 4-6"></path>
+</svg>
+                        Functies
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M5 18 18 5"></path>
+<path d="M12 5h6v6"></path>
+</svg>
+                        Vectoren
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="7"></circle>
+<path d="M12 2v20M2 12h20"></path>
+</svg>
+                        Coördinaten
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="m12 3 8 4.5v9L12 21l-8-4.5v-9z"></path>
+<path d="m4 7.5 8 4.5 8-4.5M12 12v9"></path>
+</svg>
+                        3D-meetkunde
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M3 16c3-8 7-8 10 0 2 5 5 4 8-4"></path>
+</svg>
+                        Goniometrie
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M5 18V6M5 18h14"></path>
+<path d="M8 16c1-6 3-9 8-10"></path>
+</svg>
+                        Logaritmen
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="m7 6 10 5-10 5z"></path>
+<path d="m7 10 10 5-10 5"></path>
+</svg>
+                        Transformaties
+                    </span>
+</div>
+</div>
+<!-- Rechterzijde met wiskundige SVG-tekeningen -->
+<div aria-hidden="true" class="fvd-hero__visual">
+<!-- 3D-kubus -->
+<svg class="fvd-visual fvd-visual--cube" viewbox="0 0 310 245">
+<g class="fvd-svg-cyan">
+<path d="M65 72 185 86 245 48 125 34Z"></path>
+<path d="M65 72v110l120 16V86"></path>
+<path d="M185 86 245 48v110l-60 40"></path>
+<path class="fvd-svg-dash" d="M125 34v110M125 144 65 182M125 144l120 14"></path>
+<path d="M125 144 90 210M125 144l88 28M125 144V15"></path>
+<path d="m90 210 11-4-7-9M213 172l-9-7-2 11M125 15l-6 11h12"></path>
+</g>
+<g class="fvd-svg-label">
+<text x="82" y="225">x</text>
+<text x="220" y="180">y</text>
+<text x="132" y="18">z</text>
+</g>
+</svg>
+<!-- Matrix -->
+<svg class="fvd-visual fvd-visual--matrix" viewbox="0 0 220 100">
+<g class="fvd-svg-soft">
+<text x="0" y="58">A =</text>
+<path d="M60 10c-12 18-12 62 0 80M205 10c12 18 12 62 0 80"></path>
+<text x="82" y="36">1</text>
+<text x="123" y="36">2</text>
+<text x="165" y="36">0</text>
+<text x="73" y="61">−1</text>
+<text x="123" y="61">0</text>
+<text x="165" y="61">3</text>
+<text x="82" y="86">2</text>
+<text x="113" y="86">−2</text>
+<text x="165" y="86">1</text>
+</g>
+</svg>
+<!-- Vectoren en rotatie -->
+<svg class="fvd-visual fvd-visual--vectors" viewbox="0 0 260 170">
+<g class="fvd-svg-cyan">
+<path d="M55 138 132 74"></path>
+<path d="m132 74-13 3 8 10"></path>
+<path d="M55 138h125"></path>
+<path d="m180 138-12-6v12"></path>
+<path class="fvd-svg-dash" d="M55 138c24-65 116-95 156-25"></path>
+</g>
+<g class="fvd-svg-pink">
+<path d="M55 138 207 104"></path>
+<path d="m207 104-13-2 5 12"></path>
+<path class="fvd-svg-dash" d="M211 113c17-13 25-5 21 11"></path>
+<path d="m232 124-9-8-2 12"></path>
+</g>
+<g class="fvd-svg-label">
+<text x="38" y="153">O</text>
+<text x="138" y="73">u⃗</text>
+<text x="188" y="98">v⃗</text>
+<text x="141" y="130">x⃗</text>
+<text x="222" y="102">Rθ</text>
+</g>
+</svg>
+<!-- Bézier-curve -->
+<svg class="fvd-visual fvd-visual--bezier" viewbox="0 0 280 110">
+<g class="fvd-svg-soft">
+<path d="M30 82 85 30 190 30 245 82"></path>
+</g>
+<g class="fvd-svg-cyan">
+<path d="M30 82c42-12 55-52 105-52s67 40 110 52"></path>
+</g>
+<g class="fvd-svg-pink">
+<circle cx="30" cy="82" r="4"></circle>
+<circle cx="85" cy="30" r="4"></circle>
+<circle cx="190" cy="30" r="4"></circle>
+<circle cx="245" cy="82" r="4"></circle>
+</g>
+<g class="fvd-svg-label">
+<text x="18" y="102">P₀</text>
+<text x="74" y="20">P₁</text>
+<text x="181" y="20">P₂</text>
+<text x="238" y="102">P₃</text>
+<text x="103" y="79">Bézier-curve</text>
+</g>
+</svg>
+</div>
+</div>
+<div aria-hidden="true" class="fvd-hero__pink-corner"></div>
+</header><!-- XIMERA-HEADER-END --><!-- XIMERA-CHAPTER-HERO-START --><section class="chapter-hero">
+<div aria-hidden="true" class="chapter-hero__decoration">
+<span class="chapter-hero__formula">
+            f(x) = ax² + bx + c
+        </span>
+<span class="chapter-hero__curve"></span>
+<span class="chapter-hero__grid"></span>
+</div>
+<div class="chapter-hero__content">
+<div class="chapter-hero__theme">
+<span class="chapter-hero__theme-label">
+                Thema 1
+            </span>
+<span class="chapter-hero__theme-dot"></span>
+<span class="chapter-hero__theme-name">
+                Gereedschapskist en Newton - Van meten en vectoren tot krachten en beweging
+            </span>
+</div>
+<div class="chapter-hero__chapter-label">
+            Hoofdstuk
+        </div>
+<div class="chapter-hero__main">
+<div class="chapter-hero__number">
+                1
+            </div>
+<div class="chapter-hero__text">
+<h1 class="chapter-hero__title">
+                    De gereedschapskist van de fysicus
+                </h1>
+<p class="chapter-hero__abstract">
+                    Fysica begint met waarnemen en meten. Een afstand, een tijdsduur, een massa of een temperatuur wordt pas bruikbare wetenschappelijke informatie wanneer duidelijk is welke grootheid gemeten werd, in welke eenheid het resultaat wordt uitgedrukt en hoe nauwkeurig de meting is. In dit eerste hoofdstuk bouwen we daarom een gereedschapskist op die we doorheen de volledige fysicacursus zullen gebruiken. We werken met fysische grootheden en SI-eenheden, wetenschappelijke notatie, voorvoegsels, meetnauwkeurigheid en beduidende cijfers. Daarna maken we de stap van scalaire naar vectoriële grootheden. Krachten, snelheden en versnellingen hebben immers niet alleen een grootte, maar ook een richting en een zin. We leren vectoren voorstellen, optellen en ontbinden in componenten. Ook experimenteren krijgt een plaats. We onderzoeken hoe een wetenschappelijke onderzoeksvraag wordt vertaald naar meetbare grootheden en hoe meetresultaten kritisch worden verwerkt en geïnterpreteerd. Ten slotte ontwikkelen we een vaste aanpak voor fysische problemen: de situatie begrijpen, een geschikt model kiezen, systematisch rekenen en het resultaat kritisch controleren. Deze gereedschappen vormen de basis voor het volgende hoofdstuk, waarin we krachten en de wetten van Newton bestuderen.
+                </p>
+</div>
+</div>
+<div class="chapter-hero__accent"></div>
+</div>
+</section><!-- XIMERA-CHAPTER-HERO-END --><button aria-controls="courseSidebar" aria-expanded="false" class="course-menu-button" id="courseMenuButton" type="button">☰ Toon cursusinhoud</button><div class="course-sidebar-overlay" id="courseSidebarOverlay"></div><!-- XIMERA-CHAPTER-LAYOUT-START --><main class="chapter-layout"><!--
+    AUTOMATISCH GEGENEREERD BESTAND
+
+    Dit bestand wordt opgebouwd door:
+        scripts/generate-sidebar.sh
+
+    Bewerk niet dit bestand, maar:
+        assets/html/SidebarTemplate.html
+        en modules/.../index.tex
+-->
+<aside class="course-sidebar" id="courseSidebar">
+<div class="sidebar-header">
+<div class="sidebar-header__text">
+<span class="sidebar-label">
+                Van krachten tot kernen
+            </span>
+<h2 class="sidebar-title">
+                Cursusinhoud
+            </h2>
+</div>
+<button aria-label="Sluit cursusmenu" class="sidebar-close" id="sidebarClose" type="button">
+            ×
+        </button>
+</div>
+<nav aria-label="Cursusinhoud" class="course-navigation">
+<div class="course-section is-open" data-theme="1">
+<button aria-controls="course-section-1-gereedschapskist-en-newton-van-meten-en-vectoren-tot-krachten-en-beweging" aria-expanded="true" class="course-section-toggle" type="button">
+<span class="course-section-number">
+            1
+        </span>
+<span class="course-section-title">
+            Gereedschapskist en Newton - Van meten en vectoren tot krachten en beweging
+        </span>
+<span aria-hidden="true" class="course-section-arrow">
+            ▾
+        </span>
+</button>
+<div class="course-section-content" id="course-section-1-gereedschapskist-en-newton-van-meten-en-vectoren-tot-krachten-en-beweging">
+<a aria-current="page" class="course-chapter-link is-active" data-chapter="Thema1-Newton/1-Parate-kennis" href="Thema1-Newton/1-Parate-kennis.html">
+<span class="course-chapter-number">
+                1
+            </span>
+<span class="course-chapter-title">
+                De gereedschapskist van de fysicus
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema1-Newton/2-Newton" href="Thema1-Newton/2-Newton.html">
+<span class="course-chapter-number">
+                2
+            </span>
+<span class="course-chapter-title">
+                Krachten en de wetten van Newton
+            </span>
+</a>
+</div>
+</div>
+<div class="course-section" data-theme="2">
+<button aria-controls="course-section-2-krachten-op-afstand-van-gravitatie-tot-elektrische-velden" aria-expanded="true" class="course-section-toggle" type="button">
+<span class="course-section-number">
+            2
+        </span>
+<span class="course-section-title">
+            Krachten op afstand - Van gravitatie tot elektrische velden
+        </span>
+<span aria-hidden="true" class="course-section-arrow">
+            ▾
+        </span>
+</button>
+<div class="course-section-content" id="course-section-2-krachten-op-afstand-van-gravitatie-tot-elektrische-velden">
+<a class="course-chapter-link" data-chapter="Thema2-Veldkrachten/1-Gravitatiekracht" href="Thema2-Veldkrachten/1-Gravitatiekracht.html">
+<span class="course-chapter-number">
+                1
+            </span>
+<span class="course-chapter-title">
+                Gravitatie: aantrekking op afstand
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema2-Veldkrachten/2-Elektrische-kracht" href="Thema2-Veldkrachten/2-Elektrische-kracht.html">
+<span class="course-chapter-number">
+                2
+            </span>
+<span class="course-chapter-title">
+                Elektrische kracht: aantrekken en afstoten
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema2-Veldkrachten/3-Elektrisch-veld" href="Thema2-Veldkrachten/3-Elektrisch-veld.html">
+<span class="course-chapter-number">
+                3
+            </span>
+<span class="course-chapter-title">
+                Elektrisch veld en potentiaal
+            </span>
+</a>
+</div>
+</div>
+</nav>
+</aside>
+<article class="chapter-content"><div class="chapter-body">
+<div class="preamble">
+</div>
+<style> .activity-body pre { white-space: pre; background-color: lightgray; } .xmyoutube { aspect-ratio: 16/9; min-width: 75%; } .image-environment img { width: unset; } </style>
+<div class="maketitle"></div>
+<!-- l. 54 --><p class="noindent"></p><section class="learning-box learning-box--prior"> <div class="learning-box__header"> <span class="learning-box__icon"> </span><span class="learning-box__title">Voorkennis</span> </div> <div class="learning-box__content">
+<p></p>
+<ul class="itemize1">
+<li class="itemize">Je kan eenvoudige meetresultaten met een getalwaarde en eenheid noteren.
+</li>
+<li class="itemize">Je kan rekenen met machten van tien.
+</li>
+<li class="itemize">Je kent enkele courante SI-eenheden en voorvoegsels.
+</li>
+<li class="itemize">Je  kan  eenvoudige  formules  gebruiken  en  een  onbekende  grootheid
+vrijmaken.
+</li>
+<li class="itemize">Je kent uit de tweede graad het onderscheid tussen scalaire en vectoriële
+grootheden.
+</li>
+<li class="itemize">Je kan de stelling van Pythagoras en eenvoudige goniometrie gebruiken.</li></ul>
+<!-- l. 61 --><p class="noindent"></p></div> </section>
+<p></p><!-- l. 63 --><p class="noindent"></p><section class="learning-box learning-box--goals"> <div class="learning-box__header"> <span class="learning-box__icon"> </span><span class="learning-box__title">Leerdoelen</span> </div> <div class="learning-box__content">
+<p></p>
+<ul class="itemize1">
+<li class="itemize">Je   kan   fysische   grootheden,   grootheidssymbolen,   getalwaarden   en
+eenheden correct onderscheiden.
+                                                                  
+
+                                                                  
+</li>
+<li class="itemize">Je kan met SI-eenheden en courante voorvoegsels werken.
+</li>
+<li class="itemize">Je kan eenheden omzetten en daarbij ook machten van eenheden correct
+behandelen.
+</li>
+<li class="itemize">Je kan getallen schrijven en interpreteren in wetenschappelijke notatie.
+</li>
+<li class="itemize">Je  kan  meetresultaten  met  een  verantwoord  aantal  beduidende  cijfers
+rapporteren.
+</li>
+<li class="itemize">Je kan het onderscheid uitleggen tussen resolutie, meetnauwkeurigheid en
+beduidende cijfers.
+</li>
+<li class="itemize">Je kan scalaire en vectoriële grootheden onderscheiden.
+</li>
+<li class="itemize">Je kan de grootte, richting en zin van een vector beschrijven.
+</li>
+<li class="itemize">Je kan vectoren grafisch optellen en ontbinden in componenten.
+</li>
+<li class="itemize">Je  kan  uit  vectorcomponenten  de  grootte  en  richting  van  een  vector
+bepalen.
+</li>
+<li class="itemize">Je  kan  bij  een  eenvoudig  experiment  onafhankelijke,  afhankelijke  en
+controlevariabelen onderscheiden.
+                                                                  
+
+                                                                  
+</li>
+<li class="itemize">Je kan meetgegevens kritisch beoordelen.
+</li>
+<li class="itemize">Je kan een fysische berekening controleren met behulp van eenheden.
+</li>
+<li class="itemize">Je kan een fysisch probleem systematisch mathematiseren, oplossen en
+interpreteren.</li></ul>
+<!-- l. 78 --><p class="noindent"></p></div> </section>
+<p><a id="x1-2r1"></a>
+</p><p></p><!-- l. 85 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">1</div><div class="fvd-section-bar__title">Waarom heb je een gereedschapskist nodig?</div></div>
+<p></p><!-- l. 87 --><p class="noindent">Een afstand van <span class="mathjax-inline">\(12{,}4\,\mathrm m\)</span>, een tijd van <span class="mathjax-inline">\(3{,}8\,\mathrm s\)</span>, een snelheid van <span class="mathjax-inline">\(90\,\mathrm {km/h}\)</span> of een kracht van <span class="mathjax-inline">\(250\,\mathrm N\)</span>: fysica zit vol
+getallen.
+</p><!-- l. 91 --><p class="noindent">Maar fysica is niet simpelweg rekenen met getallen.
+</p><!-- l. 93 --><p class="noindent">Bij elk getal moeten we ons afvragen:
+</p>
+<ul class="itemize1">
+<li class="itemize">Welke fysische grootheid wordt beschreven?
+</li>
+<li class="itemize">Welke eenheid wordt gebruikt?
+</li>
+<li class="itemize">Hoe nauwkeurig is het resultaat gekend?
+</li>
+<li class="itemize">Is de gekozen notatie geschikt?
+</li>
+<li class="itemize">Heeft de grootheid ook een richting?
+                                                                  
+
+                                                                  
+</li>
+<li class="itemize">Past het resultaat bij de werkelijkheid?</li></ul>
+<!-- l. 104 --><p class="noindent">De fysicus probeert waarnemingen om te zetten in een beschrijving die kan worden
+onderzocht, gecontroleerd en gebruikt om voorspellingen te maken.
+</p><!-- l. 108 --><p class="noindent">Een mogelijke keten is:
+</p>
+<div class="mathjax-block">\[ \boxed { \text {waarnemen} \longrightarrow \text {meten} \longrightarrow \text {modelleren} \longrightarrow \text {verklaren} \longrightarrow \text {voorspellen} } \]</div>
+<!-- l. 124 --><p class="noindent">De begrippen en technieken uit dit hoofdstuk zullen daarom niet alleen hier gebruikt
+worden. Ze keren in bijna elk volgend hoofdstuk terug.
+<a id="x1-3r2"></a>
+</p><!-- l. 132 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">2</div><div class="fvd-section-bar__title">Fysische grootheden en eenheden</div></div>
+<p></p><!-- l. 134 --><p class="noindent">Een eigenschap die we kunnen meten of berekenen noemen we een <strong>fysische
+grootheid</strong>.
+</p><!-- l. 137 --><p class="noindent">Voorbeelden zijn:
+</p>
+<ul class="itemize1">
+<li class="itemize">lengte;
+</li>
+<li class="itemize">tijd;
+</li>
+<li class="itemize">massa;
+</li>
+<li class="itemize">temperatuur;
+</li>
+<li class="itemize">snelheid;
+</li>
+<li class="itemize">versnelling;
+                                                                  
+
+                                                                  
+</li>
+<li class="itemize">kracht;
+</li>
+<li class="itemize">energie.</li></ul>
+<!-- l. 150 --><p class="noindent"></p><section class="fvd-definition"><div class="fvd-definition__title"><span class="fvd-definition__label">DEFINITIE</span><span class="fvd-definition__separator"> — </span><span class="fvd-definition__name">Fysische grootheid</span></div><div class="fvd-definition__content">
+<p></p><!-- l. 152 --><p class="noindent">Een <strong>fysische grootheid</strong> is een meetbare of berekenbare eigenschap van een
+voorwerp, systeem of verschijnsel.
+</p></div></section>
+<p></p><!-- l. 157 --><p class="noindent">Iedere grootheid krijgt meestal een symbool.
+</p><!-- l. 159 --><p class="noindent">Bijvoorbeeld:
+</p>
+<div class="mathjax-block">\[ \begin {array}{c|c} \text {grootheid} &amp; \text {symbool}\\ \hline \text {tijd} &amp; t\\ \text {massa} &amp; m\\ \text {lengte} &amp; l\\ \text {snelheid} &amp; v\\ \text {versnelling} &amp; a\\ \text {kracht} &amp; F\\ \text {energie} &amp; E \end {array} \]</div>
+<!-- l. 175 --><p class="noindent">Een gemeten waarde bestaat uit een getalwaarde en een eenheid.
+</p><!-- l. 177 --><p class="noindent">Bijvoorbeeld:
+</p>
+<div class="mathjax-block">\[ l=2{,}35\,\mathrm m. \]</div>
+<!-- l. 183 --><p class="noindent">Daarin is:
+</p>
+<div class="mathjax-block">\[ \boxed { \begin {array}{ll} l &amp; \text {het grootheidssymbool},\\ 2{,}35 &amp; \text {de getalwaarde},\\ \mathrm m &amp; \text {de eenheid}. \end {array} } \]</div>
+<!-- l. 196 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">
+<p></p><!-- l. 197 --><p class="noindent">De uitspraak
+</p>
+<div class="mathjax-block">\[ d=12 \]</div>
+<!-- l. 203 --><p class="noindent">is in een fysische context meestal onvolledig.
+</p><!-- l. 205 --><p class="noindent">De uitspraak
+</p>
+<div class="mathjax-block">\[ d=12\,\mathrm m \]</div>
+<!-- l. 211 --><p class="noindent">bevat wel de noodzakelijke informatie over de gebruikte eenheid.
+</p></div></section>
+<p><a id="x1-4r3"></a>
+</p><p></p><!-- l. 220 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">3</div><div class="fvd-section-bar__title">Het SI-stelsel</div></div>
+<p></p><!-- l. 222 --><p class="noindent">Wetenschappers moeten meetresultaten met elkaar kunnen vergelijken.
+</p><!-- l. 224 --><p class="noindent">Daarom wordt internationaal gewerkt met het <strong>Internationaal Stelsel van
+                                                                  
+
+                                                                  
+Eenheden</strong>, kortweg het <strong>SI-stelsel</strong>.
+</p><!-- l. 228 --><p class="noindent">Enkele belangrijke SI-basiseenheden zijn:
+</p>
+<div class="mathjax-block">\[ \begin {array}{c|c|c} \text {grootheid} &amp; \text {symbool} &amp; \text {SI-eenheid}\\ \hline \text {lengte} &amp; l &amp; \mathrm m\\ \text {massa} &amp; m &amp; \mathrm {kg}\\ \text {tijd} &amp; t &amp; \mathrm s\\ \text {temperatuur} &amp; T &amp; \mathrm K\\ \text {stroomsterkte} &amp; I &amp; \mathrm A\\ \text {hoeveelheid stof} &amp; n &amp; \mathrm {mol}\\ \text {lichtsterkte} &amp; I_v &amp; \mathrm {cd} \end {array} \]</div>
+<!-- l. 244 --><p class="noindent">Veel andere fysische eenheden zijn afgeleid van deze basiseenheden.
+</p><!-- l. 246 --><p class="noindent">Voor snelheid:
+</p>
+<div class="mathjax-block">\[ v=\frac {\Delta x}{\Delta t}. \]</div>
+<!-- l. 252 --><p class="noindent">De eenheid wordt:
+</p>
+<div class="mathjax-block">\[ [v] = \frac {\mathrm m}{\mathrm s} = \mathrm {m/s}. \]</div>
+<!-- l. 262 --><p class="noindent">Voor versnelling:
+</p>
+<div class="mathjax-block">\[ [a] = \frac {\mathrm {m/s}}{\mathrm s} = \mathrm {m/s^2}. \]</div>
+<!-- l. 272 --><p class="noindent">Later zullen we zien dat voor kracht geldt:
+</p>
+<div class="mathjax-block">\[ 1\,\mathrm N = 1\,\mathrm {kg\,m/s^2}. \]</div>
+<p><a id="x1-5r1"></a>
+</p><!-- l. 281 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 281 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 281 --><p class="noindent">Oefening 1
+</p><!-- l. 281 --><p class="noindent">— Grootheid of eenheid?
+</p><!-- l. 281 --><p class="noindent"></p></div>
+<p></p><!-- l. 281 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 281 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--b">B</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 281 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 283 --><p class="noindent">Geef telkens de grootheid, het grootheidssymbool en de eenheid.
+</p>
+<ol class="enumerate1">
+<li class="enumerate" id="x1-7x1">Een experiment duurt <span class="mathjax-inline">\(12{,}5\,\mathrm s\)</span>.
+</li>
+<li class="enumerate" id="x1-9x2">Een voorwerp heeft een massa van <span class="mathjax-inline">\(2{,}40\,\mathrm {kg}\)</span>.
+                                                                  
+
+                                                                  
+</li>
+<li class="enumerate" id="x1-11x3">Een wagen rijdt <span class="mathjax-inline">\(25\,\mathrm {m/s}\)</span>.
+</li>
+<li class="enumerate" id="x1-13x4">Op een voorwerp werkt een kracht van <span class="mathjax-inline">\(18\,\mathrm N\)</span>.
+</li>
+<li class="enumerate" id="x1-15x5">Een toestel verbruikt <span class="mathjax-inline">\(850\,\mathrm J\)</span> energie.</li></ol>
+</div>
+<!-- l. 293 --><p class="noindent"></p></div>
+<p></p><!-- l. 293 --><p class="noindent"></p></section>
+<p><a id="x1-16r4"></a>
+</p><p></p><!-- l. 300 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">4</div><div class="fvd-section-bar__title">Van nanometer tot gigameter</div></div>
+<p></p><!-- l. 302 --><p class="noindent">In de fysica komen zeer verschillende lengteschalen voor.
+</p><!-- l. 304 --><p class="noindent">Een atoom heeft een typische grootteorde van ongeveer
+</p>
+<div class="mathjax-block">\[ 10^{-10}\,\mathrm m, \]</div>
+<!-- l. 310 --><p class="noindent">terwijl afstanden in de astronomie vele miljarden meters kunnen bedragen.
+</p><!-- l. 313 --><p class="noindent">Daarom gebruiken we <strong>voorvoegsels</strong>.
+</p>
+<div class="mathjax-block">\[ \begin {array}{c|c|c} \text {voorvoegsel} &amp; \text {symbool} &amp; \text {factor}\\ \hline \text {tera} &amp; \mathrm T &amp; 10^{12}\\ \text {giga} &amp; \mathrm G &amp; 10^9\\ \text {mega} &amp; \mathrm M &amp; 10^6\\ \text {kilo} &amp; \mathrm k &amp; 10^3\\ \text {deci} &amp; \mathrm d &amp; 10^{-1}\\ \text {centi} &amp; \mathrm c &amp; 10^{-2}\\ \text {milli} &amp; \mathrm m &amp; 10^{-3}\\ \text {micro} &amp; \mu &amp; 10^{-6}\\ \text {nano} &amp; \mathrm n &amp; 10^{-9}\\ \text {pico} &amp; \mathrm p &amp; 10^{-12} \end {array} \]</div>
+<p><a id="x1-17r1"></a>
+</p><!-- l. 333 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 333 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 333 --><p class="noindent"></p><div class="fvd-subsection__number">4.1</div>
+<p></p><!-- l. 333 --><p class="noindent"></p><div class="fvd-subsection__title">Eenheden omzetten</div>
+<p></p><!-- l. 333 --><p class="noindent"></p></div>
+<p></p><!-- l. 333 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 333 --><p class="noindent"></p></div>
+<p></p><!-- l. 335 --><p class="noindent">Beschouw:
+</p>
+<div class="mathjax-block">\[ 3{,}5\,\mathrm {km}. \]</div>
+<!-- l. 341 --><p class="noindent">Omdat:
+</p>
+<div class="mathjax-block">\[ 1\,\mathrm {km}=10^3\,\mathrm m, \]</div>
+<!-- l. 347 --><p class="noindent">geldt:
+</p>
+<div class="mathjax-block">\[ 3{,}5\,\mathrm {km} = 3{,}5\cdot 10^3\,\mathrm m = 3500\,\mathrm m. \]</div>
+<p><a id="x1-18r1"></a>
+</p><!-- l. 358 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 358 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 1<span class="fvd-example__subtitle"> — Van kilometer per uur naar meter per seconde</span></div>
+<p></p><!-- l. 358 --><p class="noindent"></p><div class="fvd-example__content">
+<p></p><!-- l. 360 --><p class="noindent">Een auto rijdt:
+</p>
+<div class="mathjax-block">\[ 90\,\mathrm {km/h}. \]</div>
+<!-- l. 366 --><p class="noindent">We gebruiken:
+</p>
+<div class="mathjax-block">\[ 1\,\mathrm {km}=1000\,\mathrm m \]</div>
+<!-- l. 372 --><p class="noindent">en:
+</p>
+<div class="mathjax-block">\[ 1\,\mathrm h=3600\,\mathrm s. \]</div>
+<!-- l. 378 --><p class="noindent">Dan:
+</p>
+<div class="mathjax-block">\[ 90\,\mathrm {km/h} = 90\cdot \frac {1000\,\mathrm m}{3600\,\mathrm s}. \]</div>
+<!-- l. 387 --><p class="noindent">Dus:
+</p>
+<div class="mathjax-block">\[ \boxed { v=25\,\mathrm {m/s}. } \]</div>
+</div></section>
+<p><a id="x1-19r2"></a>
+</p><!-- l. 398 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 398 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 398 --><p class="noindent"></p><div class="fvd-subsection__number">4.2</div>
+<p></p><!-- l. 398 --><p class="noindent"></p><div class="fvd-subsection__title">Opgelet met oppervlakte en volume</div>
+<p></p><!-- l. 398 --><p class="noindent"></p></div>
+<p></p><!-- l. 398 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 398 --><p class="noindent"></p></div>
+<p></p><!-- l. 400 --><p class="noindent">Bij oppervlakte-eenheden moet ook de omzettingsfactor gekwadrateerd worden.
+</p><!-- l. 403 --><p class="noindent">Omdat:
+</p>
+<div class="mathjax-block">\[ 1\,\mathrm {cm} = 10^{-2}\,\mathrm m, \]</div>
+<!-- l. 411 --><p class="noindent">geldt:
+</p>
+<div class="mathjax-block">\[ 1\,\mathrm {cm^2} = (10^{-2}\,\mathrm m)^2. \]</div>
+<!-- l. 419 --><p class="noindent">Dus:
+</p>
+<div class="mathjax-block">\[ \boxed { 1\,\mathrm {cm^2} = 10^{-4}\,\mathrm {m^2}. } \]</div>
+<!-- l. 429 --><p class="noindent">Voor volume:
+</p>
+<div class="mathjax-block">\[ 1\,\mathrm {cm^3} = (10^{-2}\,\mathrm m)^3 = 10^{-6}\,\mathrm {m^3}. \]</div>
+<!-- l. 441 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">
+<p></p><!-- l. 442 --><p class="noindent">De omzetting
+</p>
+<div class="mathjax-block">\[ 1\,\mathrm {cm^2} = 10^{-2}\,\mathrm {m^2} \]</div>
+<!-- l. 450 --><p class="noindent">is fout.
+</p><!-- l. 452 --><p class="noindent">Het voorvoegsel hoort bij de volledige lengteeenheid en wordt dus mee
+gekwadrateerd.
+</p></div></section>
+<p><a id="x1-20r2"></a>
+</p><p></p><!-- l. 458 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 458 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 458 --><p class="noindent">Oefening 2
+</p><!-- l. 458 --><p class="noindent">— Eenheden omzetten
+</p><!-- l. 458 --><p class="noindent"></p></div>
+<p></p><!-- l. 458 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 458 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--b">B</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 458 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 460 --><p class="noindent">Zet om.
+</p>
+<ol class="enumerate1">
+<li class="enumerate" id="x1-22x1"><span class="mathjax-inline">\(4{,}2\,\mathrm {km}\)</span> naar meter.
+                                                                  
+
+                                                                  
+</li>
+<li class="enumerate" id="x1-24x2"><span class="mathjax-inline">\(350\,\mathrm {ms}\)</span> naar seconde.
+</li>
+<li class="enumerate" id="x1-26x3"><span class="mathjax-inline">\(7{,}4\,\mathrm {cm}\)</span> naar meter.
+</li>
+<li class="enumerate" id="x1-28x4"><span class="mathjax-inline">\(72\,\mathrm {km/h}\)</span> naar <span class="mathjax-inline">\(\mathrm {m/s}\)</span>.
+</li>
+<li class="enumerate" id="x1-30x5"><span class="mathjax-inline">\(5{,}0\,\mathrm {cm^2}\)</span> naar <span class="mathjax-inline">\(\mathrm {m^2}\)</span>.
+</li>
+<li class="enumerate" id="x1-32x6"><span class="mathjax-inline">\(12\,\mathrm {cm^3}\)</span> naar <span class="mathjax-inline">\(\mathrm {m^3}\)</span>.</li></ol>
+</div>
+<!-- l. 471 --><p class="noindent"></p></div>
+<p></p><!-- l. 471 --><p class="noindent"></p></section>
+<p><a id="x1-33r5"></a>
+</p><p></p><!-- l. 478 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">5</div><div class="fvd-section-bar__title">Wetenschappelijke notatie</div></div>
+<p></p><!-- l. 480 --><p class="noindent">Wetenschappelijke notatie maakt zeer grote en zeer kleine getallen overzichtelijk.
+</p><!-- l. 483 --><p class="noindent">De lichtsnelheid is ongeveer:
+</p>
+<div class="mathjax-block">\[ 300\,000\,000\,\mathrm {m/s}. \]</div>
+<!-- l. 489 --><p class="noindent">Dat schrijven we als:
+</p>
+<div class="mathjax-block">\[ 3{,}00\cdot 10^8\,\mathrm {m/s}. \]</div>
+<!-- l. 495 --><p class="noindent">De grootteorde van een atoom is ongeveer:
+</p>
+<div class="mathjax-block">\[ 0{,}0000000001\,\mathrm m. \]</div>
+<!-- l. 501 --><p class="noindent">Dat wordt:
+                                                                  
+
+                                                                  
+</p>
+<div class="mathjax-block">\[ 1\cdot 10^{-10}\,\mathrm m. \]</div>
+<!-- l. 508 --><p class="noindent"></p><section class="fvd-definition"><div class="fvd-definition__title"><span class="fvd-definition__label">DEFINITIE</span><span class="fvd-definition__separator"> — </span><span class="fvd-definition__name">Wetenschappelijke notatie</span></div><div class="fvd-definition__content">
+<p></p><!-- l. 510 --><p class="noindent">Een getal staat in <strong>wetenschappelijke notatie</strong> wanneer het geschreven wordt
+als:
+</p>
+<div class="mathjax-block">\[ \boxed { a\cdot 10^n } \]</div>
+<!-- l. 519 --><p class="noindent">met:
+</p>
+<div class="mathjax-block">\[ 1\leq |a|&lt;10 \]</div>
+<!-- l. 525 --><p class="noindent">en:
+</p>
+<div class="mathjax-block">\[ n\in \mathbb Z. \]</div>
+</div></section>
+<p><a id="x1-34r2"></a>
+</p><!-- l. 535 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 535 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 2</div>
+<p></p><!-- l. 535 --><p class="noindent"></p><div class="fvd-example__content">
+<p></p><!-- l. 536 --><p class="noindent">Schrijf:
+</p>
+<div class="mathjax-block">\[ 0{,}000061 \]</div>
+<!-- l. 542 --><p class="noindent">in wetenschappelijke notatie.
+</p><!-- l. 544 --><p class="noindent">We verschuiven de komma vijf plaatsen naar rechts:
+</p>
+<div class="mathjax-block">\[ 0{,}000061 = 6{,}1\cdot 10^{-5}. \]</div>
+<!-- l. 552 --><p class="noindent">Dus:
+</p>
+<div class="mathjax-block">\[ \boxed { 6{,}1\cdot 10^{-5} } \]</div>
+</div></section>
+<p><a id="x1-35r3"></a>
+</p><!-- l. 563 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 563 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 563 --><p class="noindent">Oefening 3
+</p><!-- l. 563 --><p class="noindent">— Wetenschappelijke notatie
+</p><!-- l. 563 --><p class="noindent"></p></div>
+<p></p><!-- l. 563 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 563 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--b">B</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 563 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 565 --><p class="noindent">Schrijf in wetenschappelijke notatie.
+</p>
+<ol class="enumerate1">
+<li class="enumerate" id="x1-37x1"><span class="mathjax-inline">\(470000\)</span>
+</li>
+<li class="enumerate" id="x1-39x2"><span class="mathjax-inline">\(0{,}000832\)</span>
+</li>
+<li class="enumerate" id="x1-41x3"><span class="mathjax-inline">\(-0{,}00000725\)</span>
+</li>
+<li class="enumerate" id="x1-43x4"><span class="mathjax-inline">\(8600000000\)</span>
+</li>
+<li class="enumerate" id="x1-45x5"><span class="mathjax-inline">\(0{,}00000000045\)</span></li></ol>
+<!-- l. 575 --><p class="noindent">Schrijf daarna opnieuw in gewone decimale notatie:
+</p>
+<ol class="enumerate1">
+<li class="enumerate" id="x1-47x1"><span class="mathjax-inline">\(3{,}8\cdot 10^6\)</span>
+</li>
+<li class="enumerate" id="x1-49x2"><span class="mathjax-inline">\(6{,}02\cdot 10^{-4}\)</span>
+</li>
+<li class="enumerate" id="x1-51x3"><span class="mathjax-inline">\(9{,}1\cdot 10^{-9}\)</span></li></ol>
+</div>
+<!-- l. 583 --><p class="noindent"></p></div>
+<p></p><!-- l. 583 --><p class="noindent"></p></section>
+<p><a id="x1-52r6"></a>
+</p><p></p><!-- l. 590 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">6</div><div class="fvd-section-bar__title">Een meting is nooit exact</div></div>
+<p></p><!-- l. 592 --><p class="noindent">Stel dat we de lengte van een tafel meten en vinden:
+</p>
+<div class="mathjax-block">\[ l=1{,}84\,\mathrm m. \]</div>
+<!-- l. 598 --><p class="noindent">Betekent dit dat de tafel exact:
+</p>
+<div class="mathjax-block">\[ 1{,}840000000000\ldots \,\mathrm m \]</div>
+<!-- l. 604 --><p class="noindent">lang is?
+</p><!-- l. 606 --><p class="noindent">Nee.
+</p><!-- l. 608 --><p class="noindent">Iedere meting heeft een beperkte nauwkeurigheid.
+</p><!-- l. 610 --><p class="noindent">De kwaliteit van een meetresultaat hangt onder andere af van:
+</p>
+<ul class="itemize1">
+<li class="itemize">het gebruikte meetinstrument;
+</li>
+<li class="itemize">de resolutie van het meetinstrument;
+</li>
+<li class="itemize">de meetmethode;
+</li>
+<li class="itemize">de omstandigheden;
+</li>
+<li class="itemize">de persoon die meet;
+                                                                  
+
+                                                                  
+</li>
+<li class="itemize">eventuele systematische afwijkingen.</li></ul>
+<p><a id="x1-53r1"></a>
+</p><!-- l. 622 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 622 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 622 --><p class="noindent"></p><div class="fvd-subsection__number">6.1</div>
+<p></p><!-- l. 622 --><p class="noindent"></p><div class="fvd-subsection__title">Resolutie</div>
+<p></p><!-- l. 622 --><p class="noindent"></p></div>
+<p></p><!-- l. 622 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 622 --><p class="noindent"></p></div>
+<p></p><!-- l. 624 --><p class="noindent"></p><section class="fvd-definition"><div class="fvd-definition__title"><span class="fvd-definition__label">DEFINITIE</span><span class="fvd-definition__separator"> — </span><span class="fvd-definition__name">Resolutie</span></div><div class="fvd-definition__content">
+<p></p><!-- l. 626 --><p class="noindent">De <strong>resolutie</strong> van een meetinstrument is de kleinste verandering van de gemeten
+grootheid die het instrument kan onderscheiden.
+</p></div></section>
+<p></p><!-- l. 631 --><p class="noindent">Een gewone liniaal met millimeterverdeling heeft bijvoorbeeld een andere resolutie
+dan een schuifmaat.
+</p><!-- l. 634 --><p class="noindent">Een digitaal toestel kan bijvoorbeeld tonen:
+</p>
+<div class="mathjax-block">\[ 12{,}37\,\mathrm V. \]</div>
+<!-- l. 640 --><p class="noindent">De laatste weergegeven positie geeft informatie over de resolutie van het
+toestel.
+</p><!-- l. 645 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">
+<p></p><!-- l. 646 --><p class="noindent">Meer cijfers op een digitaal scherm betekenen niet automatisch dat het meetresultaat
+ook werkelijk nauwkeuriger is.
+</p><!-- l. 649 --><p class="noindent">Ook kalibratie, meetmethode en experimentele omstandigheden kunnen de
+betrouwbaarheid beperken.
+</p></div></section>
+<p><a id="x1-54r7"></a>
+</p><p></p><!-- l. 659 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">7</div><div class="fvd-section-bar__title">Beduidende cijfers</div></div>
+<p></p><!-- l. 661 --><p class="noindent">Wanneer we een meetresultaat noteren, moeten de cijfers overeenkomen met de
+nauwkeurigheid die we werkelijk kunnen verantwoorden.
+</p><!-- l. 664 --><p class="noindent">Daarom gebruiken we het begrip <strong>beduidende cijfers</strong>.
+</p><!-- l. 667 --><p class="noindent"></p><section class="fvd-definition"><div class="fvd-definition__title"><span class="fvd-definition__label">DEFINITIE</span><span class="fvd-definition__separator"> — </span><span class="fvd-definition__name">Beduidende cijfers</span></div><div class="fvd-definition__content">
+<p></p><!-- l. 669 --><p class="noindent">De <strong>beduidende cijfers</strong> van een meetwaarde zijn de cijfers die informatie dragen
+                                                                  
+
+                                                                  
+over de gerapporteerde waarde en haar nauwkeurigheid.
+</p></div></section>
+<p></p><!-- l. 674 --><p class="noindent">Beschouw:
+</p>
+<div class="mathjax-block">\[ 12{,}4\,\mathrm {cm}. \]</div>
+<!-- l. 680 --><p class="noindent">Dit getal bevat drie beduidende cijfers:
+</p>
+<div class="mathjax-block">\[ 1,\qquad 2,\qquad 4. \]</div>
+<p><a id="x1-55r1"></a>
+</p><!-- l. 687 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 687 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 687 --><p class="noindent"></p><div class="fvd-subsection__number">7.1</div>
+<p></p><!-- l. 687 --><p class="noindent"></p><div class="fvd-subsection__title">Praktische regels</div>
+<p></p><!-- l. 687 --><p class="noindent"></p></div>
+<p></p><!-- l. 687 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 687 --><p class="noindent"></p></div>
+<p></p>
+<ol class="enumerate1">
+<li class="enumerate" id="x1-57x1">
+<!-- l. 691 --><p class="noindent">Alle cijfers van <span class="mathjax-inline">\(1\)</span> tot en met <span class="mathjax-inline">\(9\)</span> zijn beduidend.
+</p>
+<!-- l. 693 --><p class="noindent">Bijvoorbeeld:
+</p>
+<div class="mathjax-block">\[ 37{,}2 \]</div>
+<!-- l. 699 --><p class="noindent">heeft drie beduidende cijfers.
+</p>
+</li>
+<li class="enumerate" id="x1-59x2">
+<!-- l. 701 --><p class="noindent">Nullen tussen andere beduidende cijfers zijn beduidend.
+</p>
+<!-- l. 703 --><p class="noindent">Bijvoorbeeld:
+</p>
+<div class="mathjax-block">\[ 4{,}007 \]</div>
+<!-- l. 709 --><p class="noindent">heeft vier beduidende cijfers.
+</p>
+</li>
+<li class="enumerate" id="x1-61x3">
+<!-- l. 711 --><p class="noindent">Nullen vóór het eerste niet-nulcijfer zijn niet beduidend.
+</p>
+<!-- l. 713 --><p class="noindent">Bijvoorbeeld:
+</p>
+<div class="mathjax-block">\[ 0{,}00450 \]</div>
+<!-- l. 719 --><p class="noindent">heeft drie beduidende cijfers:
+</p>
+<div class="mathjax-block">\[ 4,\quad 5,\quad 0. \]</div>
+</li>
+<li class="enumerate" id="x1-63x4">
+<!-- l. 725 --><p class="noindent">Nullen achter de komma en na een niet-nulcijfer kunnen wel beduidend
+zijn.
+</p>
+<!-- l. 728 --><p class="noindent">Bijvoorbeeld:
+</p>
+<div class="mathjax-block">\[ 2{,}300 \]</div>
+<!-- l. 734 --><p class="noindent">heeft vier beduidende cijfers.
+</p>
+</li></ol>
+<p><a id="x1-64r2"></a>
+</p><!-- l. 739 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 739 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 739 --><p class="noindent"></p><div class="fvd-subsection__number">7.2</div>
+<p></p><!-- l. 739 --><p class="noindent"></p><div class="fvd-subsection__title">Waarom wetenschappelijke notatie helpt</div>
+<p></p><!-- l. 739 --><p class="noindent"></p></div>
+<p></p><!-- l. 739 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 739 --><p class="noindent"></p></div>
+<p></p><!-- l. 741 --><p class="noindent">Bij een getal zoals:
+</p>
+<div class="mathjax-block">\[ 5000 \]</div>
+<!-- l. 747 --><p class="noindent">is zonder verdere context niet altijd duidelijk hoeveel beduidende cijfers bedoeld
+zijn.
+</p><!-- l. 750 --><p class="noindent">Wetenschappelijke notatie maakt dat ondubbelzinnig.
+</p>
+<div class="mathjax-block">\[ 5\cdot 10^3 \]</div>
+<!-- l. 756 --><p class="noindent">heeft één beduidend cijfer.
+</p>
+<div class="mathjax-block">\[ 5{,}0\cdot 10^3 \]</div>
+<!-- l. 762 --><p class="noindent">heeft twee beduidende cijfers.
+</p>
+<div class="mathjax-block">\[ 5{,}000\cdot 10^3 \]</div>
+<!-- l. 768 --><p class="noindent">heeft vier beduidende cijfers.
+</p><!-- l. 772 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">
+<p></p><!-- l. 773 --><p class="noindent">Wetenschappelijke notatie geeft dus niet alleen de grootteorde van een getal weer. Ze
+kan ook duidelijk maken met hoeveel beduidende cijfers een meetwaarde wordt
+gerapporteerd.
+</p></div></section>
+<p><a id="x1-65r4"></a>
+</p><p></p><!-- l. 780 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 780 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 780 --><p class="noindent">Oefening 4
+</p><!-- l. 780 --><p class="noindent">— Beduidende cijfers herkennen
+</p><!-- l. 780 --><p class="noindent"></p></div>
+<p></p><!-- l. 780 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 780 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--b">B</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 780 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 782 --><p class="noindent">Bepaal het aantal beduidende cijfers.
+</p>
+<ol class="enumerate1">
+<li class="enumerate" id="x1-67x1"><span class="mathjax-inline">\(0{,}00450\)</span>
+</li>
+<li class="enumerate" id="x1-69x2"><span class="mathjax-inline">\(2{,}030\)</span>
+</li>
+<li class="enumerate" id="x1-71x3"><span class="mathjax-inline">\(6{,}00\cdot 10^4\)</span>
+</li>
+<li class="enumerate" id="x1-73x4"><span class="mathjax-inline">\(0{,}0000700\)</span>
+</li>
+<li class="enumerate" id="x1-75x5"><span class="mathjax-inline">\(1{,}0050\)</span></li></ol>
+</div>
+<!-- l. 792 --><p class="noindent"></p></div>
+<p></p><!-- l. 792 --><p class="noindent"></p></section>
+<p><a id="x1-76r8"></a>
+</p><p></p><!-- l. 799 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">8</div><div class="fvd-section-bar__title">Rekenen met meetwaarden</div></div>
+<p></p><!-- l. 801 --><p class="noindent">Een rekenmachine kan veel cijfers produceren.
+</p><!-- l. 803 --><p class="noindent">Dat betekent niet dat al die cijfers fysisch betekenisvol zijn.
+<a id="x1-77r3"></a>
+</p><!-- l. 806 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 806 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 3<span class="fvd-example__subtitle"> — Een gemiddelde snelheid</span></div>
+<p></p><!-- l. 806 --><p class="noindent"></p><div class="fvd-example__content">
+<p></p><!-- l. 808 --><p class="noindent">Een voorwerp legt:
+</p>
+<div class="mathjax-block">\[ s=12{,}4\,\mathrm m \]</div>
+<!-- l. 814 --><p class="noindent">af in:
+</p>
+<div class="mathjax-block">\[ t=3{,}2\,\mathrm s. \]</div>
+<!-- l. 820 --><p class="noindent">De rekenmachine geeft:
+</p>
+<div class="mathjax-block">\[ v = \frac {12{,}4}{3{,}2} = 3{,}875\,\mathrm {m/s}. \]</div>
+<!-- l. 830 --><p class="noindent">De tijd is gegeven met twee beduidende cijfers.
+</p><!-- l. 832 --><p class="noindent">Een verantwoord gerapporteerd resultaat is daarom:
+</p>
+<div class="mathjax-block">\[ \boxed { v=3{,}9\,\mathrm {m/s}. } \]</div>
+<!-- l. 840 --><p class="noindent">Het resultaat:
+</p>
+<div class="mathjax-block">\[ 3{,}875000000\,\mathrm {m/s} \]</div>
+<!-- l. 846 --><p class="noindent">suggereert een nauwkeurigheid die de oorspronkelijke metingen niet hebben.
+</p></div></section>
+<p><a id="x1-78r1"></a>
+</p><p></p><!-- l. 852 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 852 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 852 --><p class="noindent"></p><div class="fvd-subsection__number">8.1</div>
+<p></p><!-- l. 852 --><p class="noindent"></p><div class="fvd-subsection__title">Vermenigvuldigen en delen</div>
+<p></p><!-- l. 852 --><p class="noindent"></p></div>
+<p></p><!-- l. 852 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 852 --><p class="noindent"></p></div>
+<p></p><!-- l. 854 --><p class="noindent">Bij vermenigvuldigen en delen wordt een resultaat in deze cursus doorgaans
+gerapporteerd met evenveel beduidende cijfers als de meetwaarde met het kleinste
+aantal beduidende cijfers.
+<a id="x1-79r4"></a>
+</p><!-- l. 860 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 860 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 4</div>
+<p></p><!-- l. 860 --><p class="noindent"></p><div class="fvd-example__content">
+<p></p><!-- l. 861 --><p class="noindent">Bereken:
+</p>
+<div class="mathjax-block">\[ (2{,}30\cdot 10^2) (1{,}0\cdot 10^{-3}). \]</div>
+<!-- l. 868 --><p class="noindent">We vinden:
+</p>
+<div class="mathjax-block">\[ 0{,}230. \]</div>
+<!-- l. 874 --><p class="noindent">De factor:
+</p>
+<div class="mathjax-block">\[ 1{,}0\cdot 10^{-3} \]</div>
+<!-- l. 880 --><p class="noindent">heeft twee beduidende cijfers.
+</p><!-- l. 882 --><p class="noindent">Daarom rapporteren we:
+</p>
+<div class="mathjax-block">\[ \boxed { 0{,}23. } \]</div>
+</div></section>
+<p><a id="x1-80r2"></a>
+</p><!-- l. 893 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 893 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 893 --><p class="noindent"></p><div class="fvd-subsection__number">8.2</div>
+<p></p><!-- l. 893 --><p class="noindent"></p><div class="fvd-subsection__title">Optellen en aftrekken</div>
+<p></p><!-- l. 893 --><p class="noindent"></p></div>
+<p></p><!-- l. 893 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 893 --><p class="noindent"></p></div>
+<p></p><!-- l. 895 --><p class="noindent">Bij optellen en aftrekken kijken we niet naar het aantal beduidende cijfers, maar naar
+de plaats van het laatste betrouwbare cijfer.
+</p><!-- l. 898 --><p class="noindent">Bijvoorbeeld:
+</p>
+<div class="mathjax-block">\[ 12{,}35+1{,}2=13{,}55. \]</div>
+<!-- l. 904 --><p class="noindent">De tweede meetwaarde is slechts tot op één decimaal gegeven.
+</p><!-- l. 906 --><p class="noindent">Daarom:
+</p>
+<div class="mathjax-block">\[ \boxed { 13{,}6. } \]</div>
+<p><a id="x1-81r5"></a>
+</p><!-- l. 915 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 915 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 915 --><p class="noindent">Oefening 5
+</p><!-- l. 915 --><p class="noindent">— Te veel cijfers
+</p><!-- l. 915 --><p class="noindent"></p></div>
+<p></p><!-- l. 915 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 915 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 915 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 917 --><p class="noindent">Een leerling meet:
+</p>
+<div class="mathjax-block">\[ l=12{,}4\,\mathrm {cm} \]</div>
+<!-- l. 923 --><p class="noindent">en:
+</p>
+<div class="mathjax-block">\[ b=3{,}2\,\mathrm {cm}. \]</div>
+<!-- l. 929 --><p class="noindent">Hij berekent:
+</p>
+<div class="mathjax-block">\[ A=39{,}680000\,\mathrm {cm^2}. \]</div>
+<div class="problem-environment question" id="problem1" numbered=" " role="article" titletext=" Question">  Leg uit waarom deze notatie fysisch misleidend is.    </div>
+<div class="problem-environment question" id="problem2" numbered=" " role="article" titletext=" Question">  Bereken een verantwoord gerapporteerde waarde van de oppervlakte.    </div>
+<div class="problem-environment question" id="problem3" numbered=" " role="article" titletext=" Question">  Schrijf het resultaat ook in wetenschappelijke notatie zodat het aantal beduidende
+cijfers ondubbelzinnig is.    </div>
+</div>
+<!-- l. 948 --><p class="noindent"></p></div>
+<p></p><!-- l. 948 --><p class="noindent"></p></section>
+<p><a id="x1-82r6"></a>
+</p><p></p><!-- l. 951 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 951 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 951 --><p class="noindent">Oefening 6
+</p><!-- l. 951 --><p class="noindent">— Een meetresultaat beoordelen
+</p><!-- l. 951 --><p class="noindent"></p></div>
+<p></p><!-- l. 951 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 951 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 951 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 953 --><p class="noindent">Een leerling schrijft in een practicumverslag:
+</p>
+<blockquote class="quote">
+<!-- l. 956 --><p class="noindent">De lengte van een metalen staaf is <span class="mathjax-inline">\(12{,}3478291\,\mathrm {cm}\)</span>. De lengte werd gemeten met een
+gewone schoolliniaal met millimeterverdeling.</p></blockquote>
+<!-- l. 962 --><p class="noindent">Analyseer deze rapportering.
+</p>
+<div class="problem-environment question" id="problem4" numbered=" " role="article" titletext=" Question">  Wat is problematisch aan het opgegeven aantal cijfers?    </div>
+<div class="problem-environment question" id="problem5" numbered=" " role="article" titletext=" Question">  Waarom kan een rekenmachine of digitaal document geen extra meetnauwkeurigheid
+creëren?    </div>
+<div class="problem-environment question" id="problem6" numbered=" " role="article" titletext=" Question">  Hoe zou je het resultaat realistischer rapporteren?    </div>
+</div>
+<!-- l. 977 --><p class="noindent"></p></div>
+<p></p><!-- l. 977 --><p class="noindent"></p></section>
+<p><a id="x1-83r9"></a>
+</p><p></p><!-- l. 984 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">9</div><div class="fvd-section-bar__title">Van meten naar onderzoeken</div></div>
+<p></p><!-- l. 986 --><p class="noindent">Meten is geen doel op zich.
+</p><!-- l. 988 --><p class="noindent">Een fysicus meet om een vraag over de werkelijkheid te beantwoorden.
+</p><!-- l. 990 --><p class="noindent">Bijvoorbeeld:
+</p>
+<div class="center">
+<!-- l. 992 --><p class="noindent">
+</p><!-- l. 994 --><p class="noindent"><em>Hoe verandert de uitrekking van een veer wanneer de kracht op de veer
+toeneemt?</em></p></div>
+<!-- l. 997 --><p class="noindent">Dat is een vraag die we experimenteel kunnen onderzoeken.
+<a id="x1-84r1"></a>
+</p><!-- l. 1000 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 1000 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 1000 --><p class="noindent"></p><div class="fvd-subsection__number">9.1</div>
+<p></p><!-- l. 1000 --><p class="noindent"></p><div class="fvd-subsection__title">Onderzoeksvraag</div>
+<p></p><!-- l. 1000 --><p class="noindent"></p></div>
+<p></p><!-- l. 1000 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 1000 --><p class="noindent"></p></div>
+<p></p><!-- l. 1002 --><p class="noindent">Een goede experimentele onderzoeksvraag bevat meestal meetbare grootheden.
+</p><!-- l. 1005 --><p class="noindent">Bijvoorbeeld:
+</p>
+<div class="mathjax-block">\[ \boxed { \text {Hoe hangt de uitrekking }x \text { af van de aangelegde kracht }F? } \]</div>
+<p><a id="x1-85r2"></a>
+</p><!-- l. 1015 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 1015 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 1015 --><p class="noindent"></p><div class="fvd-subsection__number">9.2</div>
+<p></p><!-- l. 1015 --><p class="noindent"></p><div class="fvd-subsection__title">Hypothese</div>
+<p></p><!-- l. 1015 --><p class="noindent"></p></div>
+<p></p><!-- l. 1015 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 1015 --><p class="noindent"></p></div>
+<p></p><!-- l. 1017 --><p class="noindent"></p><section class="fvd-definition"><div class="fvd-definition__title"><span class="fvd-definition__label">DEFINITIE</span><span class="fvd-definition__separator"> — </span><span class="fvd-definition__name">Hypothese</span></div><div class="fvd-definition__content">
+<p></p><!-- l. 1019 --><p class="noindent">Een <strong>hypothese</strong> is een toetsbare verwachting over het resultaat van een
+onderzoek.
+</p></div></section>
+<p></p><!-- l. 1024 --><p class="noindent">Bijvoorbeeld:
+</p>
+<blockquote class="quote">
+<!-- l. 1027 --><p class="noindent">Als  de  kracht  op  de  veer  toeneemt,  dan  verwachten  we  dat  de
+uitrekking toeneemt.</p></blockquote>
+<p><a id="x1-86r3"></a>
+</p><!-- l. 1032 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 1032 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 1032 --><p class="noindent"></p><div class="fvd-subsection__number">9.3</div>
+<p></p><!-- l. 1032 --><p class="noindent"></p><div class="fvd-subsection__title">Variabelen</div>
+<p></p><!-- l. 1032 --><p class="noindent"></p></div>
+<p></p><!-- l. 1032 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 1032 --><p class="noindent"></p></div>
+<p></p><!-- l. 1034 --><p class="noindent">In een gecontroleerd experiment onderscheiden we verschillende soorten
+variabelen.
+</p><!-- l. 1037 --><p class="noindent"></p><section class="fvd-definition"><div class="fvd-definition__title"><span class="fvd-definition__label">DEFINITIE</span><span class="fvd-definition__separator"> — </span><span class="fvd-definition__name">Onafhankelijke variabele</span></div><div class="fvd-definition__content">
+<p></p><!-- l. 1039 --><p class="noindent">De <strong>onafhankelijke variabele</strong> is de grootheid die de onderzoeker doelbewust
+verandert.
+</p></div></section>
+<p></p><!-- l. 1044 --><p class="noindent"></p><section class="fvd-definition"><div class="fvd-definition__title"><span class="fvd-definition__label">DEFINITIE</span><span class="fvd-definition__separator"> — </span><span class="fvd-definition__name">Afhankelijke variabele</span></div><div class="fvd-definition__content">
+<p></p><!-- l. 1046 --><p class="noindent">De <strong>afhankelijke variabele</strong> is de grootheid waarvan onderzocht wordt hoe ze
+reageert op de verandering van de onafhankelijke variabele.
+</p></div></section>
+<p></p><!-- l. 1052 --><p class="noindent"></p><section class="fvd-definition"><div class="fvd-definition__title"><span class="fvd-definition__label">DEFINITIE</span><span class="fvd-definition__separator"> — </span><span class="fvd-definition__name">Controlevariabelen</span></div><div class="fvd-definition__content">
+<p></p><!-- l. 1054 --><p class="noindent"><strong>Controlevariabelen</strong> zijn andere relevante factoren die tijdens het experiment zoveel
+mogelijk constant gehouden worden.
+</p></div></section>
+<p><a id="x1-87r5"></a>
+</p><p></p><!-- l. 1060 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 1060 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 5<span class="fvd-example__subtitle"> — Een veer onderzoeken</span></div>
+<p></p><!-- l. 1060 --><p class="noindent"></p><div class="fvd-example__content">
+<p></p><!-- l. 1062 --><p class="noindent">We onderzoeken hoe de uitrekking van één bepaalde veer afhangt van de aangelegde
+kracht.
+</p><!-- l. 1065 --><p class="noindent">Dan kan gelden:
+</p>
+<div class="mathjax-block">\[ \begin {array}{ll} \text {onafhankelijke variabele} &amp; F,\\ \text {afhankelijke variabele} &amp; x,\\ \text {controlevariabelen} &amp; \text {dezelfde veer, meetmethode, opstelling, \ldots } \end {array} \]</div>
+</div></section>
+<p><a id="x1-88r4"></a>
+</p><!-- l. 1079 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 1079 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 1079 --><p class="noindent"></p><div class="fvd-subsection__number">9.4</div>
+<p></p><!-- l. 1079 --><p class="noindent"></p><div class="fvd-subsection__title">Een mogelijke onderzoekscyclus</div>
+<p></p><!-- l. 1079 --><p class="noindent"></p></div>
+<p></p><!-- l. 1079 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 1079 --><p class="noindent"></p></div>
+<p></p><!-- l. 1081 --><p class="noindent">Een wetenschappelijk onderzoek verloopt niet altijd exact lineair, maar volgende
+stappen vormen een bruikbaar kader:
+</p>
+<div class="mathjax-block">\[ \boxed { \begin {array}{c} \text {waarneming of probleem}\\ \downarrow \\ \text {onderzoeksvraag}\\ \downarrow \\ \text {hypothese}\\ \downarrow \\ \text {onderzoeksplan}\\ \downarrow \\ \text {metingen}\\ \downarrow \\ \text {gegevens verwerken}\\ \downarrow \\ \text {besluit}\\ \downarrow \\ \text {reflectie} \end {array} } \]</div>
+<!-- l. 1106 --><p class="noindent">Meetgegevens kunnen worden weergegeven met:
+</p>
+<ul class="itemize1">
+<li class="itemize">tabellen;
+</li>
+<li class="itemize">grafieken;
+</li>
+<li class="itemize">functievoorschriften;
+</li>
+<li class="itemize">trendlijnen;
+</li>
+<li class="itemize">numerieke of grafische modellen.</li></ul>
+<p><a id="x1-89r5"></a>
+</p><!-- l. 1117 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 1117 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 1117 --><p class="noindent"></p><div class="fvd-subsection__number">9.5</div>
+<p></p><!-- l. 1117 --><p class="noindent"></p><div class="fvd-subsection__title">Kritisch omgaan met meetgegevens</div>
+<p></p><!-- l. 1117 --><p class="noindent"></p></div>
+<p></p><!-- l. 1117 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 1117 --><p class="noindent"></p></div>
+<p></p><!-- l. 1119 --><p class="noindent">Na een experiment vragen we niet alleen:
+</p>
+<div class="center">
+<!-- l. 1121 --><p class="noindent">
+</p><!-- l. 1122 --><p class="noindent"><em>Wat is het antwoord?</em></p></div>
+<!-- l. 1125 --><p class="noindent">We vragen ook:
+</p>
+<ul class="itemize1">
+<li class="itemize">Zijn er voldoende metingen uitgevoerd?
+</li>
+<li class="itemize">Zijn de meetwaarden reproduceerbaar?
+</li>
+<li class="itemize">Zijn er uitschieters?
+</li>
+<li class="itemize">Is het meetinstrument voldoende nauwkeurig?
+</li>
+<li class="itemize">Zijn relevante controlevariabelen constant gehouden?
+</li>
+<li class="itemize">Past het gekozen model bij de meetgegevens?
+</li>
+<li class="itemize">Welke beperkingen heeft het experiment?</li></ul>
+<!-- l. 1139 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">
+<p></p><!-- l. 1140 --><p class="noindent">Een afwijkend meetpunt mag niet zomaar verwijderd worden omdat het niet mooi bij
+de andere meetpunten past.
+</p><!-- l. 1143 --><p class="noindent">Er moet eerst onderzocht worden of er een inhoudelijke reden is om dat meetpunt als
+onbetrouwbaar te beschouwen.
+</p></div></section>
+<p><a id="x1-90r7"></a>
+</p><p></p><!-- l. 1149 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 1149 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 1149 --><p class="noindent">Oefening 7
+</p><!-- l. 1149 --><p class="noindent">— Een opvallend meetpunt
+</p><!-- l. 1149 --><p class="noindent"></p></div>
+<p></p><!-- l. 1149 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 1149 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 1149 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 1151 --><p class="noindent">Een leerling meet vijf keer de tijd die een karretje nodig heeft om dezelfde afstand af
+te leggen.
+</p>
+<div class="mathjax-block">\[ \begin {array}{c|ccccc} \text {meting} &amp; 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5\\ \hline t\,(\mathrm s) &amp; 2{,}41 &amp; 2{,}39 &amp; 2{,}40 &amp; 3{,}12 &amp; 2{,}42 \end {array} \]</div>
+<div class="problem-environment question" id="problem7" numbered=" " role="article" titletext=" Question">  Welke meetwaarde valt op?    </div>
+<div class="problem-environment question" id="problem8" numbered=" " role="article" titletext=" Question">  Mag die meetwaarde onmiddellijk worden verwijderd?    </div>
+<div class="problem-environment question" id="problem9" numbered=" " role="article" titletext=" Question">  Geef minstens twee mogelijke verklaringen voor de afwijking.    </div>
+<div class="problem-environment question" id="problem10" numbered=" " role="article" titletext=" Question">  Welke bijkomende informatie zou je willen hebben voordat je beslist hoe je met de
+meetwaarde omgaat?    </div>
+</div>
+<!-- l. 1179 --><p class="noindent"></p></div>
+<p></p><!-- l. 1179 --><p class="noindent"></p></section>
+<p><a id="x1-91r10"></a>
+</p><p></p><!-- l. 1186 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">10</div><div class="fvd-section-bar__title">Niet alles past in één getal</div></div>
+<p></p><!-- l. 1188 --><p class="noindent">Stel dat iemand zegt:
+</p>
+<div class="center">
+<!-- l. 1190 --><p class="noindent">
+</p><!-- l. 1191 --><p class="noindent">“Een drone moet zich <span class="mathjax-inline">\(20\,\mathrm m\)</span> verplaatsen.”</p></div>
+<!-- l. 1194 --><p class="noindent">Is dat voldoende informatie om de drone naar zijn bestemming te sturen?
+</p><!-- l. 1196 --><p class="noindent">Nee.
+</p><!-- l. 1198 --><p class="noindent">We weten hoe groot de verplaatsing moet zijn, maar niet in welke richting.
+</p><!-- l. 1201 --><p class="noindent">De uitspraak:
+</p>
+<div class="center">
+<!-- l. 1203 --><p class="noindent">
+</p><!-- l. 1204 --><p class="noindent">“<span class="mathjax-inline">\(20\,\mathrm m\)</span> naar het oosten”</p></div>
+<!-- l. 1207 --><p class="noindent">bevat meer informatie.
+</p><!-- l. 1209 --><p class="noindent">Daarmee komen we bij het onderscheid tussen scalaire en vectoriële grootheden.
+</p><!-- l. 1213 --><p class="noindent"></p><section class="fvd-definition"><div class="fvd-definition__title"><span class="fvd-definition__label">DEFINITIE</span><span class="fvd-definition__separator"> — </span><span class="fvd-definition__name">Scalaire grootheid</span></div><div class="fvd-definition__content">
+<p></p><!-- l. 1215 --><p class="noindent">Een <strong>scalaire grootheid</strong> wordt volledig beschreven door een grootte, uitgedrukt met
+een getalwaarde en eenheid.
+</p></div></section>
+<p></p><!-- l. 1220 --><p class="noindent">Voorbeelden zijn:
+</p>
+<div class="mathjax-block">\[ m=5{,}0\,\mathrm {kg}, \]</div>
+<div class="mathjax-block">\[ T=293\,\mathrm K, \]</div>
+<div class="mathjax-block">\[ E=120\,\mathrm J. \]</div>
+<!-- l. 1235 --><p class="noindent"></p><section class="fvd-definition"><div class="fvd-definition__title"><span class="fvd-definition__label">DEFINITIE</span><span class="fvd-definition__separator"> — </span><span class="fvd-definition__name">Vectoriële grootheid</span></div><div class="fvd-definition__content">
+<p></p><!-- l. 1237 --><p class="noindent">Een <strong>vectoriële grootheid</strong> heeft naast een grootte ook een richting en een
+zin.
+</p></div></section>
+<p></p><!-- l. 1242 --><p class="noindent">We stellen vectoriële grootheden bijvoorbeeld voor als:
+</p>
+<div class="mathjax-block">\[ \vec v, \qquad \vec a, \qquad \vec F. \]</div>
+<!-- l. 1252 --><p class="noindent">De grootte van een vector schrijven we als:
+</p>
+<div class="mathjax-block">\[ |\vec v| \]</div>
+<!-- l. 1258 --><p class="noindent">of, wanneer er geen verwarring mogelijk is, eenvoudig als:
+</p>
+<div class="mathjax-block">\[ v. \]</div>
+<!-- l. 1266 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">
+<p></p><!-- l. 1267 --><p class="noindent">Bij sommige fysische vectoren, in het bijzonder krachten, kan ook het aangrijpingspunt
+fysisch belangrijk zijn.
+</p><!-- l. 1270 --><p class="noindent">Dat aangrijpingspunt is echter geen algemene extra eigenschap van een abstracte
+wiskundige vector.
+</p></div></section>
+<p><a id="x1-92r8"></a>
+</p><p></p><!-- l. 1276 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 1276 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 1276 --><p class="noindent">Oefening 8
+</p><!-- l. 1276 --><p class="noindent">— Scalair of vectorieel?
+</p><!-- l. 1276 --><p class="noindent"></p></div>
+<p></p><!-- l. 1276 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 1276 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--b">B</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 1276 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 1278 --><p class="noindent">Bepaal telkens of de grootheid scalair of vectorieel is.
+</p>
+<ol class="enumerate1">
+<li class="enumerate" id="x1-94x1">massa;
+</li>
+<li class="enumerate" id="x1-96x2">kracht;
+</li>
+<li class="enumerate" id="x1-98x3">energie;
+</li>
+<li class="enumerate" id="x1-100x4">snelheid;
+</li>
+<li class="enumerate" id="x1-102x5">temperatuur;
+</li>
+<li class="enumerate" id="x1-104x6">versnelling;
+</li>
+<li class="enumerate" id="x1-106x7">volume;
+                                                                  
+
+                                                                  
+</li>
+<li class="enumerate" id="x1-108x8">elektrisch veld;
+</li>
+<li class="enumerate" id="x1-110x9">tijd;
+</li>
+<li class="enumerate" id="x1-112x10">verplaatsing.</li></ol>
+</div>
+<!-- l. 1293 --><p class="noindent"></p></div>
+<p></p><!-- l. 1293 --><p class="noindent"></p></section>
+<p><a id="x1-113r11"></a>
+</p><p></p><!-- l. 1300 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">11</div><div class="fvd-section-bar__title">Een vector voorstellen</div></div>
+<p></p><!-- l. 1302 --><p class="noindent">Een vector wordt grafisch voorgesteld door een pijl.
+</p><!-- l. 1304 --><p class="noindent">Daarbij stellen we voor:
+</p>
+<div class="mathjax-block">\[ \boxed { \text {grootte, richting en zin} } \]</div>
+<!-- l. 1312 --><p class="noindent">De lengte van de pijl stelt de grootte voor.
+</p><!-- l. 1314 --><p class="noindent">De ligging van de pijl bepaalt de richting.
+</p><!-- l. 1316 --><p class="noindent">De pijlpunt bepaalt de zin.
+<a id="x1-114r6"></a>
+</p><!-- l. 1319 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 1319 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 6<span class="fvd-example__subtitle"> — Een snelheidsvector</span></div>
+<p></p><!-- l. 1319 --><p class="noindent"></p><div class="fvd-example__content">
+<p></p><!-- l. 1321 --><p class="noindent">Een wagen rijdt met een snelheid van:
+</p>
+<div class="mathjax-block">\[ 72\,\mathrm {km/h} \]</div>
+<!-- l. 1327 --><p class="noindent">naar het noordoosten.
+</p><!-- l. 1329 --><p class="noindent">We schrijven de snelheid als:
+</p>
+<div class="mathjax-block">\[ \vec v. \]</div>
+<!-- l. 1335 --><p class="noindent">De grootte is:
+</p>
+<div class="mathjax-block">\[ |\vec v| = 72\,\mathrm {km/h}. \]</div>
+<!-- l. 1343 --><p class="noindent">Om de snelheid volledig te beschrijven moet ook de richting en zin worden
+aangegeven.
+</p></div></section>
+<p><a id="x1-115r1"></a>
+</p><p></p><!-- l. 1349 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 1349 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 1349 --><p class="noindent"></p><div class="fvd-subsection__number">11.1</div>
+<p></p><!-- l. 1349 --><p class="noindent"></p><div class="fvd-subsection__title">Schaal bij een vectortekening</div>
+<p></p><!-- l. 1349 --><p class="noindent"></p></div>
+<p></p><!-- l. 1349 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 1349 --><p class="noindent"></p></div>
+<p></p><!-- l. 1351 --><p class="noindent">Bij een vectortekening kan een schaal worden gebruikt.
+</p><!-- l. 1353 --><p class="noindent">Bijvoorbeeld:
+</p>
+<div class="mathjax-block">\[ 1\,\mathrm {cm} \longleftrightarrow 10\,\mathrm N. \]</div>
+<!-- l. 1361 --><p class="noindent">Een kracht van:
+</p>
+<div class="mathjax-block">\[ 40\,\mathrm N \]</div>
+<!-- l. 1367 --><p class="noindent">wordt dan voorgesteld door een pijl van:
+</p>
+<div class="mathjax-block">\[ 4\,\mathrm {cm}. \]</div>
+<p><a id="x1-116r12"></a>
+</p><!-- l. 1378 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">12</div><div class="fvd-section-bar__title">Vectoren optellen</div></div>
+<p></p><!-- l. 1380 --><p class="noindent">Bij scalaire grootheden volstaat gewone algebra vaak.
+</p><!-- l. 1382 --><p class="noindent">Bij vectoren moeten ook richting en zin worden meegenomen.
+<a id="x1-117r1"></a>
+</p><!-- l. 1385 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 1385 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 1385 --><p class="noindent"></p><div class="fvd-subsection__number">12.1</div>
+<p></p><!-- l. 1385 --><p class="noindent"></p><div class="fvd-subsection__title">Dezelfde richting en dezelfde zin</div>
+<p></p><!-- l. 1385 --><p class="noindent"></p></div>
+<p></p><!-- l. 1385 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 1385 --><p class="noindent"></p></div>
+<p></p><!-- l. 1387 --><p class="noindent">Twee vectoren in dezelfde richting en zin versterken elkaar.
+</p><!-- l. 1389 --><p class="noindent">Als:
+</p>
+<div class="mathjax-block">\[ F_1=3\,\mathrm N \]</div>
+<!-- l. 1395 --><p class="noindent">en:
+</p>
+<div class="mathjax-block">\[ F_2=5\,\mathrm N \]</div>
+<!-- l. 1401 --><p class="noindent">beide naar rechts wijzen, dan:
+</p>
+<div class="mathjax-block">\[ F_{\mathrm {res}} = 3+5 = 8\,\mathrm N. \]</div>
+<!-- l. 1411 --><p class="noindent">Dus:
+</p>
+<div class="mathjax-block">\[ \boxed { F_{\mathrm {res}} = 8\,\mathrm N \text { naar rechts}. } \]</div>
+<p><a id="x1-118r2"></a>
+</p><!-- l. 1423 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 1423 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 1423 --><p class="noindent"></p><div class="fvd-subsection__number">12.2</div>
+<p></p><!-- l. 1423 --><p class="noindent"></p><div class="fvd-subsection__title">Dezelfde richting, tegengestelde zin</div>
+<p></p><!-- l. 1423 --><p class="noindent"></p></div>
+<p></p><!-- l. 1423 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 1423 --><p class="noindent"></p></div>
+<p></p><!-- l. 1425 --><p class="noindent">Stel:
+</p>
+<div class="mathjax-block">\[ F_1=8\,\mathrm N \]</div>
+<!-- l. 1431 --><p class="noindent">naar rechts en:
+</p>
+<div class="mathjax-block">\[ F_2=3\,\mathrm N \]</div>
+<!-- l. 1437 --><p class="noindent">naar links.
+</p><!-- l. 1439 --><p class="noindent">De resulterende kracht is:
+</p>
+<div class="mathjax-block">\[ \boxed { F_{\mathrm {res}} = 5\,\mathrm N \text { naar rechts}. } \]</div>
+<p><a id="x1-119r3"></a>
+</p><!-- l. 1451 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 1451 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 1451 --><p class="noindent"></p><div class="fvd-subsection__number">12.3</div>
+<p></p><!-- l. 1451 --><p class="noindent"></p><div class="fvd-subsection__title">De kop-staartmethode</div>
+<p></p><!-- l. 1451 --><p class="noindent"></p></div>
+<p></p><!-- l. 1451 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 1451 --><p class="noindent"></p></div>
+<p></p><!-- l. 1453 --><p class="noindent">Voor vectoren met verschillende richtingen kunnen we de <strong>kop-staartmethode</strong>
+gebruiken.
+</p><!-- l. 1456 --><p class="noindent">We verschuiven een vector evenwijdig zodat zijn beginpunt samenvalt met het
+eindpunt van de vorige vector.
+</p><!-- l. 1459 --><p class="noindent">De resultante loopt van het beginpunt van de eerste vector naar het eindpunt van de
+laatste vector.
+</p><!-- l. 1462 --><p class="noindent">Symbolisch:
+</p>
+<div class="mathjax-block">\[ \boxed { \vec A+\vec B=\vec R. } \]</div>
+<p><a id="x1-120r9"></a>
+</p><!-- l. 1471 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 1471 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 1471 --><p class="noindent">Oefening 9
+</p><!-- l. 1471 --><p class="noindent">— Kan je vectoren gewoon optellen?
+</p><!-- l. 1471 --><p class="noindent"></p></div>
+<p></p><!-- l. 1471 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 1471 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 1471 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 1473 --><p class="noindent">Een leerling beweert:
+</p>
+<div class="center">
+<!-- l. 1475 --><p class="noindent">
+</p><!-- l. 1476 --><p class="noindent">“De grootte van <span class="mathjax-inline">\(\vec A+\vec B\)</span> is altijd gelijk aan <span class="mathjax-inline">\(A+B\)</span>.”</p></div>
+<!-- l. 1479 --><p class="noindent">Onderzoek deze uitspraak.
+</p>
+<div class="problem-environment question" id="problem11" numbered=" " role="article" titletext=" Question">  Geef een situatie waarin de uitspraak klopt.    </div>
+<div class="problem-environment question" id="problem12" numbered=" " role="article" titletext=" Question">  Geef een situatie waarin de uitspraak niet klopt.    </div>
+<div class="problem-environment question" id="problem13" numbered=" " role="article" titletext=" Question">  Leg met een vectorschets uit waarom de richting van de vectoren belangrijk is.
+                                                                  
+
+                                                                  
+</div>
+</div>
+<!-- l. 1494 --><p class="noindent"></p></div>
+<p></p><!-- l. 1494 --><p class="noindent"></p></section>
+<p><a id="x1-121r13"></a>
+</p><p></p><!-- l. 1501 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">13</div><div class="fvd-section-bar__title">Een vector ontbinden</div></div>
+<p></p><!-- l. 1503 --><p class="noindent">Een vector kunnen we ontbinden in loodrechte componenten.
+</p><!-- l. 1505 --><p class="noindent">In twee dimensies:
+</p>
+<div class="mathjax-block">\[ \boxed { \vec A = \vec A_x+\vec A_y. } \]</div>
+<!-- l. 1515 --><p class="noindent">Als een vector <span class="mathjax-inline">\(\vec A\)</span> een hoek <span class="mathjax-inline">\(\alpha \)</span> maakt met de positieve <span class="mathjax-inline">\(x\)</span>-as, dan geldt:
+</p>
+<div class="mathjax-block">\[ \boxed { A_x=A\cos \alpha } \]</div>
+<!-- l. 1524 --><p class="noindent">en:
+</p>
+<div class="mathjax-block">\[ \boxed { A_y=A\sin \alpha . } \]</div>
+<p><a id="x1-122r7"></a>
+</p><!-- l. 1533 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 1533 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 7<span class="fvd-example__subtitle"> — Een kracht ontbinden</span></div>
+<p></p><!-- l. 1533 --><p class="noindent"></p><div class="fvd-example__content">
+<p></p><!-- l. 1535 --><p class="noindent">Een kracht heeft grootte:
+</p>
+<div class="mathjax-block">\[ F=100\,\mathrm N \]</div>
+<!-- l. 1541 --><p class="noindent">en maakt een hoek van:
+</p>
+<div class="mathjax-block">\[ 30^\circ \]</div>
+<!-- l. 1547 --><p class="noindent">met de horizontale.
+</p><!-- l. 1549 --><p class="noindent">De horizontale component is:
+</p>
+<div class="mathjax-block">\[ F_x = F\cos 30^\circ . \]</div>
+<!-- l. 1557 --><p class="noindent">Dus:
+</p>
+<div class="mathjax-block">\[ F_x = 100\cos 30^\circ \approx 86{,}6\,\mathrm N. \]</div>
+<!-- l. 1567 --><p class="noindent">De verticale component is:
+</p>
+<div class="mathjax-block">\[ F_y = F\sin 30^\circ . \]</div>
+<!-- l. 1575 --><p class="noindent">Dus:
+</p>
+<div class="mathjax-block">\[ F_y = 100\sin 30^\circ = 50{,}0\,\mathrm N. \]</div>
+<!-- l. 1585 --><p class="noindent">Daarmee hebben we de oorspronkelijke kracht vervangen door twee loodrechte
+componenten:
+</p>
+<div class="mathjax-block">\[ \boxed { \vec F=\vec F_x+\vec F_y. } \]</div>
+</div></section>
+<!-- l. 1598 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">
+<p></p><!-- l. 1599 --><p class="noindent">Het ontbinden van vectoren is geen doel op zich.
+</p><!-- l. 1601 --><p class="noindent">Het is een techniek die fysische problemen eenvoudiger maakt omdat we effecten in
+verschillende richtingen afzonderlijk kunnen onderzoeken.
+</p><!-- l. 1605 --><p class="noindent">In het volgende hoofdstuk zullen we dit voortdurend gebruiken bij de wetten van
+Newton.
+</p></div></section>
+<p><a id="x1-123r10"></a>
+</p><p></p><!-- l. 1611 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 1611 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 1611 --><p class="noindent">Oefening 10
+</p><!-- l. 1611 --><p class="noindent">— Vectorcomponenten
+</p><!-- l. 1611 --><p class="noindent"></p></div>
+<p></p><!-- l. 1611 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 1611 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--b">B</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 1611 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 1613 --><p class="noindent">Een kracht van:
+</p>
+<div class="mathjax-block">\[ 40\,\mathrm N \]</div>
+<!-- l. 1619 --><p class="noindent">maakt een hoek van:
+</p>
+<div class="mathjax-block">\[ 60^\circ \]</div>
+<!-- l. 1625 --><p class="noindent">met de positieve horizontale as.
+</p>
+<div class="problem-environment question" id="problem14" numbered=" " role="article" titletext=" Question">  Bereken de horizontale component.    </div>
+<div class="problem-environment question" id="problem15" numbered=" " role="article" titletext=" Question">  Bereken de verticale component.    </div>
+<div class="problem-environment question" id="problem16" numbered=" " role="article" titletext=" Question">  Maak een verzorgde vectorschets.    </div>
+</div>
+<!-- l. 1639 --><p class="noindent"></p></div>
+<p></p><!-- l. 1639 --><p class="noindent"></p></section>
+<p><a id="x1-124r14"></a>
+</p><p></p><!-- l. 1646 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">14</div><div class="fvd-section-bar__title">Van componenten naar grootte en richting</div></div>
+<p></p><!-- l. 1648 --><p class="noindent">Wanneer de loodrechte componenten gekend zijn, kunnen we de grootte van de
+oorspronkelijke vector terugvinden met de stelling van Pythagoras:
+</p>
+<div class="mathjax-block">\[ \boxed { A = \sqrt {A_x^2+A_y^2}. } \]</div>
+<!-- l. 1659 --><p class="noindent">De richting kan worden bepaald met:
+</p>
+<div class="mathjax-block">\[ \boxed { \tan \alpha = \frac {A_y}{A_x}. } \]</div>
+<p><a id="x1-125r8"></a>
+</p><!-- l. 1671 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 1671 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 8</div>
+<p></p><!-- l. 1671 --><p class="noindent"></p><div class="fvd-example__content">
+<p></p><!-- l. 1672 --><p class="noindent">Een vector heeft componenten:
+</p>
+<div class="mathjax-block">\[ A_x=6{,}0 \]</div>
+<!-- l. 1678 --><p class="noindent">en:
+</p>
+<div class="mathjax-block">\[ A_y=8{,}0. \]</div>
+<!-- l. 1684 --><p class="noindent">De grootte is:
+</p>
+<div class="mathjax-block">\[ A = \sqrt {6{,}0^2+8{,}0^2}. \]</div>
+<!-- l. 1692 --><p class="noindent">Dus:
+</p>
+<div class="mathjax-block">\[ \boxed { A=10. } \]</div>
+<!-- l. 1700 --><p class="noindent">Voor de hoek:
+</p>
+<div class="mathjax-block">\[ \tan \alpha = \frac {8}{6}. \]</div>
+<!-- l. 1708 --><p class="noindent">Daaruit:
+</p>
+<div class="mathjax-block">\[ \alpha \approx 53^\circ . \]</div>
+</div></section>
+<!-- l. 1720 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">
+<p></p><!-- l. 1721 --><p class="noindent">Let bij het berekenen van een hoek altijd op het kwadrant waarin de vector
+ligt.
+</p><!-- l. 1724 --><p class="noindent">Alleen:
+</p>
+<div class="mathjax-block">\[ \tan ^{-1} \left ( \frac {A_y}{A_x} \right ) \]</div>
+<!-- l. 1733 --><p class="noindent">berekenen is niet altijd voldoende om de fysisch juiste richting te vinden.
+</p><!-- l. 1736 --><p class="noindent">Maak daarom altijd eerst een schets.
+</p></div></section>
+<p><a id="x1-126r11"></a>
+</p><p></p><!-- l. 1741 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 1741 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 1741 --><p class="noindent">Oefening 11
+</p><!-- l. 1741 --><p class="noindent">— Van componenten naar vector
+</p><!-- l. 1741 --><p class="noindent"></p></div>
+<p></p><!-- l. 1741 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 1741 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--b">B</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 1741 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 1743 --><p class="noindent">Een vector heeft componenten:
+</p>
+<div class="mathjax-block">\[ A_x=-3{,}0 \]</div>
+<!-- l. 1749 --><p class="noindent">en:
+</p>
+<div class="mathjax-block">\[ A_y=4{,}0. \]</div>
+<div class="problem-environment question" id="problem17" numbered=" " role="article" titletext=" Question">  Schets de vector in een assenstelsel.    </div>
+<div class="problem-environment question" id="problem18" numbered=" " role="article" titletext=" Question">  In welk kwadrant ligt de vector?    </div>
+<div class="problem-environment question" id="problem19" numbered=" " role="article" titletext=" Question">  Bereken de grootte.    </div>
+<div class="problem-environment question" id="problem20" numbered=" " role="article" titletext=" Question">  Bepaal de richting ten opzichte van de positieve <span class="mathjax-inline">\(x\)</span>-as.    </div>
+</div>
+<!-- l. 1771 --><p class="noindent"></p></div>
+<p></p><!-- l. 1771 --><p class="noindent"></p></section>
+<p><a id="x1-127r15"></a>
+</p><p></p><!-- l. 1778 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">15</div><div class="fvd-section-bar__title">Afstand en verplaatsing zijn niet hetzelfde</div></div>
+<p></p><!-- l. 1780 --><p class="noindent">Vectoren laten ons onderscheid maken tussen grootheden die op het eerste gezicht
+                                                                  
+
+                                                                  
+sterk op elkaar lijken.
+<a id="x1-128r9"></a>
+</p><!-- l. 1784 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 1784 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 9<span class="fvd-example__subtitle"> — Een reddingsdrone</span></div>
+<p></p><!-- l. 1784 --><p class="noindent"></p><div class="fvd-example__content">
+<p></p><!-- l. 1786 --><p class="noindent">Een reddingsdrone vliegt eerst:
+</p>
+<div class="mathjax-block">\[ 120\,\mathrm m \]</div>
+<!-- l. 1792 --><p class="noindent">naar het oosten en daarna:
+</p>
+<div class="mathjax-block">\[ 50\,\mathrm m \]</div>
+<!-- l. 1798 --><p class="noindent">naar het noorden.
+</p><!-- l. 1800 --><p class="noindent">De afgelegde afstand is:
+</p>
+<div class="mathjax-block">\[ s = 120+50 = 170\,\mathrm m. \]</div>
+<!-- l. 1810 --><p class="noindent">Afstand is hier een scalaire grootheid.
+</p><!-- l. 1812 --><p class="noindent">De verplaatsingsvector heeft componenten:
+</p>
+<div class="mathjax-block">\[ \Delta x = 120\,\mathrm m, \]</div>
+<div class="mathjax-block">\[ \Delta y = 50\,\mathrm m. \]</div>
+<!-- l. 1826 --><p class="noindent">De grootte van de verplaatsing is:
+</p>
+<div class="mathjax-block">\[ |\Delta \vec r| = \sqrt {120^2+50^2}. \]</div>
+<!-- l. 1834 --><p class="noindent">Dus:
+</p>
+<div class="mathjax-block">\[ \boxed { |\Delta \vec r| = 130\,\mathrm m. } \]</div>
+<!-- l. 1844 --><p class="noindent">Voor de richting:
+</p>
+<div class="mathjax-block">\[ \tan \alpha = \frac {50}{120}. \]</div>
+<!-- l. 1852 --><p class="noindent">Daaruit:
+</p>
+<div class="mathjax-block">\[ \alpha \approx 22{,}6^\circ . \]</div>
+<!-- l. 1860 --><p class="noindent">De verplaatsing is dus ongeveer:
+</p>
+<div class="mathjax-block">\[ \boxed { 23^\circ \text { ten noorden van het oosten}. } \]</div>
+</div></section>
+<p><a id="x1-129r12"></a>
+</p><!-- l. 1872 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 1872 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 1872 --><p class="noindent">Oefening 12
+</p><!-- l. 1872 --><p class="noindent">— Robotroute
+</p><!-- l. 1872 --><p class="noindent"></p></div>
+<p></p><!-- l. 1872 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 1872 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 1872 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 1874 --><p class="noindent">Een robot rijdt eerst:
+</p>
+<div class="mathjax-block">\[ 6{,}0\,\mathrm m \]</div>
+<!-- l. 1880 --><p class="noindent">naar het oosten en daarna:
+</p>
+<div class="mathjax-block">\[ 8{,}0\,\mathrm m \]</div>
+<!-- l. 1886 --><p class="noindent">naar het noorden.
+</p>
+<div class="problem-environment question" id="problem21" numbered=" " role="article" titletext=" Question">  Bereken de afgelegde afstand.    </div>
+<div class="problem-environment question" id="problem22" numbered=" " role="article" titletext=" Question">  Bereken de grootte van de verplaatsing.    </div>
+<div class="problem-environment question" id="problem23" numbered=" " role="article" titletext=" Question">  Bepaal de richting van de verplaatsing.    </div>
+<div class="problem-environment question" id="problem24" numbered=" " role="article" titletext=" Question">  Leg uit waarom afstand en grootte van de verplaatsing verschillend zijn.
+</div>
+<div class="problem-environment question" id="problem25" numbered=" " role="article" titletext=" Question">  Welke grootheid is scalair en welke vectorieel?    </div>
+</div>
+<!-- l. 1909 --><p class="noindent"></p></div>
+<p></p><!-- l. 1909 --><p class="noindent"></p></section>
+<p><a id="x1-130r16"></a>
+</p><p></p><!-- l. 1916 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">16</div><div class="fvd-section-bar__title">Eenheden als controlemiddel</div></div>
+<p></p><!-- l. 1918 --><p class="noindent">Eenheden zijn niet alleen een toevoeging achter een antwoord.
+</p><!-- l. 1920 --><p class="noindent">Ze kunnen helpen om fouten te vinden.
+</p><!-- l. 1922 --><p class="noindent">Stel dat iemand schrijft:
+</p>
+<div class="mathjax-block">\[ v=\frac {s}{t^2}. \]</div>
+<!-- l. 1928 --><p class="noindent">De eenheid van het rechterlid is:
+</p>
+<div class="mathjax-block">\[ \frac {\mathrm m}{\mathrm {s^2}} = \mathrm {m/s^2}. \]</div>
+<!-- l. 1936 --><p class="noindent">Dat is de eenheid van een versnelling en niet van een snelheid.
+</p><!-- l. 1938 --><p class="noindent">De formule kan dus onmogelijk een correcte formule voor snelheid zijn.
+</p><!-- l. 1941 --><p class="noindent"></p><section class="fvd-definition"><div class="fvd-definition__title"><span class="fvd-definition__label">DEFINITIE</span><span class="fvd-definition__separator"> — </span><span class="fvd-definition__name">Dimensionele consistentie</span></div><div class="fvd-definition__content">
+<p></p><!-- l. 1943 --><p class="noindent">Een fysische vergelijking is <strong>dimensioneel consistent</strong> wanneer de dimensies van
+beide leden met elkaar overeenstemmen.
+</p></div></section>
+<p><a id="x1-131r10"></a>
+</p><p></p><!-- l. 1950 --><p class="noindent"></p><section class="fvd-example">
+<p></p><!-- l. 1950 --><p class="noindent"></p><div class="fvd-example__title">Voorbeeld 10</div>
+<p></p><!-- l. 1950 --><p class="noindent"></p><div class="fvd-example__content">
+<p></p><!-- l. 1951 --><p class="noindent">Controleer:
+</p>
+<div class="mathjax-block">\[ s=vt. \]</div>
+<!-- l. 1957 --><p class="noindent">Rechts vinden we:
+</p>
+<div class="mathjax-block">\[ [v][t] = \mathrm {m/s}\cdot \mathrm s. \]</div>
+<!-- l. 1965 --><p class="noindent">Dus:
+</p>
+<div class="mathjax-block">\[ [v][t] = \mathrm m. \]</div>
+<!-- l. 1973 --><p class="noindent">Dat komt overeen met de eenheid van <span class="mathjax-inline">\(s\)</span>.
+</p><!-- l. 1975 --><p class="noindent">De vergelijking is dimensioneel consistent.
+</p></div></section>
+<p></p><!-- l. 1981 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">
+<p></p><!-- l. 1982 --><p class="noindent">Dimensionele consistentie bewijst niet dat een formule fysisch juist is.
+</p><!-- l. 1985 --><p class="noindent">Een dimensioneel inconsistente formule kan echter wel onmiddellijk worden
+verworpen.
+</p></div></section>
+<p><a id="x1-132r13"></a>
+</p><p></p><!-- l. 1991 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 1991 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 1991 --><p class="noindent">Oefening 13
+</p><!-- l. 1991 --><p class="noindent">— Controleer de eenheden
+                                                                  
+
+                                                                  
+</p><!-- l. 1991 --><p class="noindent"></p></div>
+<p></p><!-- l. 1991 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 1991 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 1991 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 1993 --><p class="noindent">Onderzoek of de volgende formules dimensioneel mogelijk zijn.
+</p>
+<ol class="enumerate1">
+<li class="enumerate" id="x1-134x1">
+<!-- l. 1997 --><p class="noindent"></p><div class="mathjax-block">\[ v=at \]</div>
+</li>
+<li class="enumerate" id="x1-136x2">
+<!-- l. 2002 --><p class="noindent"></p><div class="mathjax-block">\[ s=vt \]</div>
+</li>
+<li class="enumerate" id="x1-138x3">
+<!-- l. 2007 --><p class="noindent"></p><div class="mathjax-block">\[ s=at \]</div>
+</li>
+<li class="enumerate" id="x1-140x4">
+<!-- l. 2012 --><p class="noindent"></p><div class="mathjax-block">\[ E=Fs \]</div>
+<!-- l. 2016 --><p class="noindent">waarbij <span class="mathjax-inline">\([F]=\mathrm N\)</span> en <span class="mathjax-inline">\([s]=\mathrm m\)</span>.
+</p>
+</li></ol>
+<!-- l. 2020 --><p class="noindent">Leg telkens je redenering uit.
+</p></div>
+<p></p><!-- l. 2022 --><p class="noindent"></p></div>
+<p></p><!-- l. 2022 --><p class="noindent"></p></section>
+<p><a id="x1-141r17"></a>
+</p><p></p><!-- l. 2029 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">17</div><div class="fvd-section-bar__title">Een fysisch probleem systematisch aanpakken</div></div>
+<p></p><!-- l. 2031 --><p class="noindent">Een fysisch probleem oplossen is meer dan een formule zoeken waarin de juiste letters
+voorkomen.
+</p><!-- l. 2034 --><p class="noindent">Bij veel problemen is de moeilijkste stap:
+</p>
+<div class="mathjax-block">\[ \boxed { \text {werkelijke situatie} \longrightarrow \text {fysisch model}. } \]</div>
+<!-- l. 2044 --><p class="noindent">Doorheen deze cursus gebruiken we daarom een systematische aanpak.
+<a id="x1-142r1"></a>
+</p><!-- l. 2047 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 2047 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 2047 --><p class="noindent"></p><div class="fvd-subsection__number">17.1</div>
+<p></p><!-- l. 2047 --><p class="noindent"></p><div class="fvd-subsection__title">Stap 1 — Begrijp de situatie</div>
+<p></p><!-- l. 2047 --><p class="noindent"></p></div>
+<p></p><!-- l. 2047 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 2047 --><p class="noindent"></p></div>
+<p></p><!-- l. 2049 --><p class="noindent">Lees het probleem volledig.
+</p><!-- l. 2051 --><p class="noindent">Vraag jezelf af:
+</p>
+<ul class="itemize1">
+<li class="itemize">Wat gebeurt er?
+</li>
+<li class="itemize">Welke voorwerpen of systemen spelen een rol?
+</li>
+<li class="itemize">Welke informatie is relevant?
+</li>
+<li class="itemize">Welke informatie is eventueel overbodig?</li></ul>
+<p><a id="x1-143r2"></a>
+</p><!-- l. 2061 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 2061 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 2061 --><p class="noindent"></p><div class="fvd-subsection__number">17.2</div>
+<p></p><!-- l. 2061 --><p class="noindent"></p><div class="fvd-subsection__title">Stap 2 — Maak een schets</div>
+<p></p><!-- l. 2061 --><p class="noindent"></p></div>
+<p></p><!-- l. 2061 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 2061 --><p class="noindent"></p></div>
+<p></p><!-- l. 2063 --><p class="noindent">Een eenvoudige schets maakt vaak onmiddellijk duidelijk:
+</p>
+<ul class="itemize1">
+<li class="itemize">welke richting positief wordt gekozen;
+</li>
+<li class="itemize">welke afstanden of hoeken belangrijk zijn;
+</li>
+<li class="itemize">welke vectoren later nodig zullen zijn.</li></ul>
+<p><a id="x1-144r3"></a>
+</p><!-- l. 2072 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 2072 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 2072 --><p class="noindent"></p><div class="fvd-subsection__number">17.3</div>
+<p></p><!-- l. 2072 --><p class="noindent"></p><div class="fvd-subsection__title">Stap 3 — Noteer gegeven en gevraagd</div>
+<p></p><!-- l. 2072 --><p class="noindent"></p></div>
+<p></p><!-- l. 2072 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 2072 --><p class="noindent"></p></div>
+<p></p><!-- l. 2074 --><p class="noindent">Gebruik correcte symbolen en eenheden.
+</p><!-- l. 2076 --><p class="noindent">Bijvoorbeeld:
+</p>
+<div class="mathjax-block">\[ \begin {array}{ll} \text {gegeven:} &amp; m=2{,}0\,\mathrm {kg},\\ &amp; a=3{,}0\,\mathrm {m/s^2}, \\[1ex] \text {gevraagd:} &amp; F=? \end {array} \]</div>
+<p><a id="x1-145r4"></a>
+</p><!-- l. 2091 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 2091 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 2091 --><p class="noindent"></p><div class="fvd-subsection__number">17.4</div>
+<p></p><!-- l. 2091 --><p class="noindent"></p><div class="fvd-subsection__title">Stap 4 — Kies een fysisch model</div>
+<p></p><!-- l. 2091 --><p class="noindent"></p></div>
+<p></p><!-- l. 2091 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 2091 --><p class="noindent"></p></div>
+<p></p><!-- l. 2093 --><p class="noindent">Vraag jezelf af welke fysische principes bruikbaar zijn.
+</p><!-- l. 2095 --><p class="noindent">Later kunnen dat bijvoorbeeld zijn:
+</p>
+<div class="mathjax-block">\[ \sum \vec F=m\vec a, \]</div>
+<!-- l. 2101 --><p class="noindent">de gravitatiewet,
+                                                                  
+
+                                                                  
+</p>
+<div class="mathjax-block">\[ F_g = G\frac {m_1m_2}{r^2}, \]</div>
+<!-- l. 2109 --><p class="noindent">of de wet van Coulomb.
+<a id="x1-146r5"></a>
+</p><!-- l. 2112 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 2112 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 2112 --><p class="noindent"></p><div class="fvd-subsection__number">17.5</div>
+<p></p><!-- l. 2112 --><p class="noindent"></p><div class="fvd-subsection__title">Stap 5 — Werk indien mogelijk symbolisch</div>
+<p></p><!-- l. 2112 --><p class="noindent"></p></div>
+<p></p><!-- l. 2112 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 2112 --><p class="noindent"></p></div>
+<p></p><!-- l. 2114 --><p class="noindent">Probeer de gevraagde grootheid eerst symbolisch vrij te maken.
+</p><!-- l. 2116 --><p class="noindent">Dat maakt zichtbaar hoe het antwoord afhangt van de verschillende grootheden en
+verkleint de kans op invoerfouten.
+<a id="x1-147r6"></a>
+</p><!-- l. 2120 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 2120 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 2120 --><p class="noindent"></p><div class="fvd-subsection__number">17.6</div>
+<p></p><!-- l. 2120 --><p class="noindent"></p><div class="fvd-subsection__title">Stap 6 — Reken uit</div>
+<p></p><!-- l. 2120 --><p class="noindent"></p></div>
+<p></p><!-- l. 2120 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 2120 --><p class="noindent"></p></div>
+<p></p><!-- l. 2122 --><p class="noindent">Vul pas daarna de getalwaarden in.
+</p><!-- l. 2124 --><p class="noindent">Gebruik geschikte eenheden en rond verantwoord af.
+<a id="x1-148r7"></a>
+</p><!-- l. 2127 --><p class="noindent"></p><div class="fvd-subsection">
+<p></p><!-- l. 2127 --><p class="noindent"></p><div class="fvd-subsection__row">
+<p></p><!-- l. 2127 --><p class="noindent"></p><div class="fvd-subsection__number">17.7</div>
+<p></p><!-- l. 2127 --><p class="noindent"></p><div class="fvd-subsection__title">Stap 7 — Controleer het resultaat</div>
+<p></p><!-- l. 2127 --><p class="noindent"></p></div>
+<p></p><!-- l. 2127 --><p class="noindent"></p><div class="fvd-subsection__line"></div>
+<p></p><!-- l. 2127 --><p class="noindent"></p></div>
+<p></p><!-- l. 2129 --><p class="noindent">Vraag jezelf af:
+</p>
+<ul class="itemize1">
+<li class="itemize">Heeft het antwoord de juiste eenheid?
+</li>
+<li class="itemize">Is de grootteorde realistisch?
+</li>
+<li class="itemize">Is het teken logisch?
+</li>
+<li class="itemize">Is de richting logisch?
+</li>
+<li class="itemize">Heb ik verantwoord afgerond?
+</li>
+<li class="itemize">Beantwoordt mijn resultaat werkelijk de gestelde vraag?</li></ul>
+<!-- l. 2142 --><p class="noindent"></p><section class="fvd-remark"><div class="fvd-remark__title"><span class="fvd-remark__label">OPMERKING</span></div><div class="fvd-remark__content">
+<p></p><!-- l. 2143 --><p class="noindent">Een fysische berekening eindigt niet wanneer de rekenmachine een getal
+geeft.
+</p><!-- l. 2146 --><p class="noindent">Een oplossing is pas volledig wanneer het resultaat gecontroleerd en fysisch
+geïnterpreteerd is.
+</p></div></section>
+<p><a id="x1-149r18"></a>
+</p><p></p><!-- l. 2156 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">18</div><div class="fvd-section-bar__title">Geïntegreerde oefeningen</div></div>
+<p><a id="x1-150r14"></a>
+</p><p></p><!-- l. 2159 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 2159 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 2159 --><p class="noindent">Oefening 14
+</p><!-- l. 2159 --><p class="noindent">— Van nanometer tot kilometer
+</p><!-- l. 2159 --><p class="noindent"></p></div>
+<p></p><!-- l. 2159 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 2159 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--b">B</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 2159 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 2161 --><p class="noindent">Zet alle waarden om naar SI-eenheden en schrijf ze daarna in wetenschappelijke
+notatie.
+</p>
+<ol class="enumerate1">
+<li class="enumerate" id="x1-152x1"><span class="mathjax-inline">\(450\,\mathrm {nm}\)</span>
+</li>
+<li class="enumerate" id="x1-154x2"><span class="mathjax-inline">\(3{,}2\,\mathrm {mm}\)</span>
+</li>
+<li class="enumerate" id="x1-156x3"><span class="mathjax-inline">\(7{,}5\,\mathrm {km}\)</span>
+</li>
+<li class="enumerate" id="x1-158x4"><span class="mathjax-inline">\(25\,\mathrm {\mu s}\)</span>
+</li>
+<li class="enumerate" id="x1-160x5"><span class="mathjax-inline">\(3{,}6\,\mathrm {cm^2}\)</span></li></ol>
+</div>
+<!-- l. 2172 --><p class="noindent"></p></div>
+<p></p><!-- l. 2172 --><p class="noindent"></p></section>
+<p><a id="x1-161r15"></a>
+</p><p></p><!-- l. 2175 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 2175 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 2175 --><p class="noindent">Oefening 15
+</p><!-- l. 2175 --><p class="noindent">— Dichtheid uit meetgegevens
+</p><!-- l. 2175 --><p class="noindent"></p></div>
+<p></p><!-- l. 2175 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 2175 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--b">B</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 2175 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 2177 --><p class="noindent">Een laborant meet:
+</p>
+<div class="mathjax-block">\[ m=0{,}00450\,\mathrm {kg} \]</div>
+<!-- l. 2183 --><p class="noindent">en:
+</p>
+<div class="mathjax-block">\[ V=1{,}20\cdot 10^{-6}\,\mathrm {m^3}. \]</div>
+<!-- l. 2189 --><p class="noindent">De dichtheid wordt gegeven door:
+</p>
+<div class="mathjax-block">\[ \rho =\frac {m}{V}. \]</div>
+<div class="problem-environment question" id="problem26" numbered=" " role="article" titletext=" Question">  Bereken de dichtheid.    </div>
+<div class="problem-environment question" id="problem27" numbered=" " role="article" titletext=" Question">  Rapporteer het resultaat met een verantwoord aantal beduidende cijfers.
+</div>
+<div class="problem-environment question" id="problem28" numbered=" " role="article" titletext=" Question">  Controleer de eenheid.    </div>
+</div>
+<!-- l. 2207 --><p class="noindent"></p></div>
+<p></p><!-- l. 2207 --><p class="noindent"></p></section>
+<p><a id="x1-162r16"></a>
+</p><p></p><!-- l. 2210 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 2210 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 2210 --><p class="noindent">Oefening 16
+</p><!-- l. 2210 --><p class="noindent">— Welke vector hoort erbij?
+</p><!-- l. 2210 --><p class="noindent"></p></div>
+<p></p><!-- l. 2210 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 2210 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--b">B</span></div>
+<p></p><!-- l. 2210 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 2212 --><p class="noindent">Een drone beweegt met:
+</p>
+<div class="mathjax-block">\[ 12\,\mathrm {m/s} \]</div>
+<!-- l. 2218 --><p class="noindent">naar het westen.
+</p>
+<div class="problem-environment question" id="problem29" numbered=" " role="article" titletext=" Question">  Welke informatie bevat alleen het getal <span class="mathjax-inline">\(12\,\mathrm {m/s}\)</span>?    </div>
+<div class="problem-environment question" id="problem30" numbered=" " role="article" titletext=" Question">  Waarom is die informatie onvoldoende om de snelheid als vector volledig te
+beschrijven?    </div>
+<div class="problem-environment question" id="problem31" numbered=" " role="article" titletext=" Question">  Maak een vectorschets.    </div>
+</div>
+<!-- l. 2233 --><p class="noindent"></p></div>
+<p></p><!-- l. 2233 --><p class="noindent"></p></section>
+<p><a id="x1-163r17"></a>
+</p><p></p><!-- l. 2236 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 2236 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 2236 --><p class="noindent">Oefening 17
+</p><!-- l. 2236 --><p class="noindent">— Twee krachten combineren
+</p><!-- l. 2236 --><p class="noindent"></p></div>
+<p></p><!-- l. 2236 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 2236 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 2236 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 2238 --><p class="noindent">Op een voorwerp werken twee loodrechte krachten:
+</p>
+<div class="mathjax-block">\[ F_x=30\,\mathrm N \]</div>
+<!-- l. 2244 --><p class="noindent">naar rechts en:
+</p>
+<div class="mathjax-block">\[ F_y=40\,\mathrm N \]</div>
+<!-- l. 2250 --><p class="noindent">naar boven.
+</p>
+<div class="problem-environment question" id="problem32" numbered=" " role="article" titletext=" Question">  Teken beide vectoren.    </div>
+<div class="problem-environment question" id="problem33" numbered=" " role="article" titletext=" Question">  Bepaal grafisch de richting van de resultante.    </div>
+<div class="problem-environment question" id="problem34" numbered=" " role="article" titletext=" Question">  Bereken de grootte van de resultante.    </div>
+<div class="problem-environment question" id="problem35" numbered=" " role="article" titletext=" Question">  Bereken de hoek van de resultante met de positieve horizontale richting.
+</div>
+</div>
+<!-- l. 2268 --><p class="noindent"></p></div>
+<p></p><!-- l. 2268 --><p class="noindent"></p></section>
+<p><a id="x1-164r18"></a>
+</p><p></p><!-- l. 2271 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 2271 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 2271 --><p class="noindent">Oefening 18
+</p><!-- l. 2271 --><p class="noindent">— Een slecht experiment
+</p><!-- l. 2271 --><p class="noindent"></p></div>
+<p></p><!-- l. 2271 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 2271 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 2271 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 2273 --><p class="noindent">Een leerling wil onderzoeken hoe de lengte van een metalen draad afhangt van zijn
+temperatuur.
+</p><!-- l. 2276 --><p class="noindent">Hij meet de lengte bij verschillende temperaturen, maar gebruikt bij iedere
+temperatuur een andere draad van hetzelfde materiaal.
+</p>
+<div class="problem-environment question" id="problem36" numbered=" " role="article" titletext=" Question">  Wat is de onafhankelijke variabele?    </div>
+<div class="problem-environment question" id="problem37" numbered=" " role="article" titletext=" Question">  Wat is de afhankelijke variabele?    </div>
+<div class="problem-environment question" id="problem38" numbered=" " role="article" titletext=" Question">  Waarom is het gebruiken van telkens een andere draad problematisch?
+</div>
+<div class="problem-environment question" id="problem39" numbered=" " role="article" titletext=" Question">  Hoe zou je het experiment verbeteren?    </div>
+</div>
+<!-- l. 2295 --><p class="noindent"></p></div>
+<p></p><!-- l. 2295 --><p class="noindent"></p></section>
+<p><a id="x1-165r19"></a>
+</p><p></p><!-- l. 2298 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 2298 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 2298 --><p class="noindent">Oefening 19
+</p><!-- l. 2298 --><p class="noindent">— Ontwerp een experiment
+</p><!-- l. 2298 --><p class="noindent"></p></div>
+<p></p><!-- l. 2298 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 2298 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--g">G</span></div>
+<p></p><!-- l. 2298 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 2300 --><p class="noindent">Een onderzoeker wil nagaan of de uitrekking van een elastiek recht evenredig is met
+de aangelegde kracht.
+</p><!-- l. 2303 --><p class="noindent">Ontwerp een experiment.
+</p><!-- l. 2305 --><p class="noindent">Beschrijf:
+</p>
+<ol class="enumerate1">
+<li class="enumerate" id="x1-167x1">de onderzoeksvraag;
+</li>
+<li class="enumerate" id="x1-169x2">een toetsbare hypothese;
+</li>
+<li class="enumerate" id="x1-171x3">de onafhankelijke variabele;
+</li>
+<li class="enumerate" id="x1-173x4">de afhankelijke variabele;
+</li>
+<li class="enumerate" id="x1-175x5">minstens drie controlevariabelen;
+</li>
+<li class="enumerate" id="x1-177x6">welke grootheden worden gemeten;
+</li>
+<li class="enumerate" id="x1-179x7">welke eenheden worden gebruikt;
+</li>
+<li class="enumerate" id="x1-181x8">hoe de meetgegevens in een grafiek worden voorgesteld;
+</li>
+<li class="enumerate" id="x1-183x9">welk grafisch patroon je verwacht bij recht evenredigheid;
+</li>
+<li class="enumerate" id="x1-185x10">hoe je beoordeelt of de meetgegevens voldoende bij het model passen;
+</li>
+<li class="enumerate" id="x1-187x11">minstens twee mogelijke bronnen van meetonzekerheid.</li></ol>
+</div>
+<!-- l. 2321 --><p class="noindent"></p></div>
+<p></p><!-- l. 2321 --><p class="noindent"></p></section>
+<p><a id="x1-188r20"></a>
+</p><p></p><!-- l. 2324 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 2324 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 2324 --><p class="noindent">Oefening 20
+</p><!-- l. 2324 --><p class="noindent">— Navigeren met wind
+</p><!-- l. 2324 --><p class="noindent"></p></div>
+<p></p><!-- l. 2324 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 2324 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--g">G</span></div>
+<p></p><!-- l. 2324 --><p class="noindent"></p><div class="fvd-exercise__content">
+<p></p><!-- l. 2326 --><p class="noindent">Een drone moet rechtstreeks van punt <span class="mathjax-inline">\(A\)</span> naar punt <span class="mathjax-inline">\(B\)</span> vliegen.
+</p><!-- l. 2328 --><p class="noindent">Punt <span class="mathjax-inline">\(B\)</span> ligt ten opzichte van <span class="mathjax-inline">\(A\)</span>:
+</p>
+<div class="mathjax-block">\[ 240\,\mathrm m \]</div>
+<!-- l. 2334 --><p class="noindent">naar het oosten en:
+</p>
+<div class="mathjax-block">\[ 180\,\mathrm m \]</div>
+<!-- l. 2340 --><p class="noindent">naar het noorden.
+</p><!-- l. 2342 --><p class="noindent">De drone kan ten opzichte van de lucht vliegen met een snelheid van:
+</p>
+<div class="mathjax-block">\[ 15{,}0\,\mathrm {m/s}. \]</div>
+<!-- l. 2348 --><p class="noindent">Er staat een constante wind met snelheid:
+</p>
+<div class="mathjax-block">\[ 4{,}0\,\mathrm {m/s} \]</div>
+<!-- l. 2354 --><p class="noindent">naar het oosten.
+</p><!-- l. 2356 --><p class="noindent">Onderzoek in welke richting de drone ten opzichte van de lucht moet vliegen om
+rechtstreeks van <span class="mathjax-inline">\(A\)</span> naar <span class="mathjax-inline">\(B\)</span> te bewegen.
+</p><!-- l. 2359 --><p class="noindent">Maak eerst een duidelijke vectorschets en beschrijf je oplossingsstrategie voordat je
+begint te rekenen.
+</p></div>
+<p></p><!-- l. 2362 --><p class="noindent"></p></div>
+<p></p><!-- l. 2362 --><p class="noindent"></p></section>
+<p><a id="x1-189r19"></a>
+</p><p></p><!-- l. 2369 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">19</div><div class="fvd-section-bar__title">Veelvoorkomende denkfouten</div></div>
+<p></p>
+<ul class="itemize1">
+<li class="itemize">
+<!-- l. 2373 --><p class="noindent"><strong>Een getal zonder eenheid noteren.</strong>
+</p>
+<!-- l. 2375 --><p class="noindent">In een fysische context is:
+</p>
+<div class="mathjax-block">\[ 12 \]</div>
+<!-- l. 2381 --><p class="noindent">meestal onvoldoende.
+</p>
+</li>
+<li class="itemize">
+<!-- l. 2383 --><p class="noindent"><strong>Alle cijfers van de rekenmachine overnemen.</strong>
+</p>
+<!-- l. 2385 --><p class="noindent">De rekenmachine kent de nauwkeurigheid van je metingen niet.
+</p>
+</li>
+<li class="itemize">
+<!-- l. 2387 --><p class="noindent"><strong>Het  aantal  decimalen  verwarren  met  het  aantal  beduidende
+cijfers.</strong>
+</p>
+<!-- l. 2390 --><p class="noindent">Bijvoorbeeld:
+</p>
+<div class="mathjax-block">\[ 0{,}00450 \]</div>
+<!-- l. 2396 --><p class="noindent">heeft drie beduidende cijfers.
+</p>
+</li>
+<li class="itemize">
+<!-- l. 2398 --><p class="noindent"><strong>Een oppervlakte-eenheid lineair omzetten.</strong>
+</p>
+<!-- l. 2400 --><p class="noindent">Uit:
+</p>
+<div class="mathjax-block">\[ 1\,\mathrm {cm}=10^{-2}\,\mathrm m \]</div>
+<!-- l. 2406 --><p class="noindent">volgt:
+</p>
+<div class="mathjax-block">\[ 1\,\mathrm {cm^2}=10^{-4}\,\mathrm {m^2}. \]</div>
+</li>
+<li class="itemize">
+<!-- l. 2412 --><p class="noindent"><strong>Vectoren behandelen alsof ze gewone positieve getallen zijn.</strong>
+</p>
+<!-- l. 2415 --><p class="noindent">Richting en zin zijn essentieel.
+                                                                  
+
+                                                                  
+</p>
+</li>
+<li class="itemize">
+<!-- l. 2417 --><p class="noindent"><strong>Een berekening uitvoeren zonder eerst een schets of model te
+maken.</strong>
+</p>
+<!-- l. 2420 --><p class="noindent">Bij complexere problemen leidt dit vaak tot teken- of interpretatiefouten.
+</p>
+</li>
+<li class="itemize">
+<!-- l. 2423 --><p class="noindent"><strong>Een afwijkende meting zomaar verwijderen.</strong>
+</p>
+<!-- l. 2425 --><p class="noindent">Eerst moet onderzocht worden waarom die meting afwijkt.
+</p>
+</li></ul>
+<p><a id="x1-190r20"></a>
+</p><!-- l. 2434 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">20</div><div class="fvd-section-bar__title">Samenvatting</div></div>
+<p></p><!-- l. 2436 --><p class="noindent">Een fysische grootheid wordt beschreven met een getalwaarde en eenheid:
+</p>
+<div class="mathjax-block">\[ \boxed { \text {grootheid} = \text {getalwaarde} \times \text {eenheid}. } \]</div>
+<!-- l. 2448 --><p class="noindent">Voor wetenschappelijke communicatie gebruiken we bij voorkeur SI-eenheden.
+</p><!-- l. 2451 --><p class="noindent">Zeer grote en zeer kleine waarden kunnen worden geschreven als:
+</p>
+<div class="mathjax-block">\[ \boxed { a\cdot 10^n } \]</div>
+<!-- l. 2459 --><p class="noindent">met:
+</p>
+<div class="mathjax-block">\[ 1\leq |a|&lt;10. \]</div>
+<!-- l. 2465 --><p class="noindent">Een meetresultaat heeft een beperkte nauwkeurigheid.
+</p><!-- l. 2467 --><p class="noindent">Het aantal gerapporteerde cijfers moet daarmee overeenkomen.
+</p><!-- l. 2469 --><p class="noindent">Bij vermenigvuldigen en delen bepaalt in deze cursus doorgaans de meetwaarde met
+het kleinste aantal beduidende cijfers de rapportering van het eindresultaat.
+</p><!-- l. 2473 --><p class="noindent">Bij optellen en aftrekken kijken we naar de plaats van het laatste betrouwbare
+cijfer.
+</p><!-- l. 2476 --><p class="noindent">Een scalaire grootheid wordt door haar grootte beschreven.
+</p><!-- l. 2478 --><p class="noindent">Een vectoriële grootheid heeft:
+</p>
+<div class="mathjax-block">\[ \boxed { \text {grootte, richting en zin}. } \]</div>
+<!-- l. 2486 --><p class="noindent">Een vector kan worden ontbonden:
+</p>
+<div class="mathjax-block">\[ \boxed { A_x=A\cos \alpha } \]</div>
+<!-- l. 2494 --><p class="noindent">en:
+</p>
+<div class="mathjax-block">\[ \boxed { A_y=A\sin \alpha . } \]</div>
+<!-- l. 2502 --><p class="noindent">Uit componenten volgt:
+</p>
+<div class="mathjax-block">\[ \boxed { A=\sqrt {A_x^2+A_y^2}. } \]</div>
+<!-- l. 2510 --><p class="noindent">De richting kan worden bepaald met:
+</p>
+<div class="mathjax-block">\[ \boxed { \tan \alpha =\frac {A_y}{A_x}. } \]</div>
+<!-- l. 2518 --><p class="noindent">Een fysische vergelijking moet dimensioneel consistent zijn.
+</p><!-- l. 2520 --><p class="noindent">Bij experimenteel onderzoek onderscheiden we:
+</p>
+<div class="mathjax-block">\[ \boxed { \text {onafhankelijke variabele}, \quad \text {afhankelijke variabele}, \quad \text {controlevariabelen}. } \]</div>
+<!-- l. 2532 --><p class="noindent">Een goede probleemaanpak verloopt bijvoorbeeld als:
+</p>
+<div class="mathjax-block">\[ \boxed { \text {begrijpen} \rightarrow \text {schetsen} \rightarrow \text {gegevens} \rightarrow \text {model} \rightarrow \text {rekenen} \rightarrow \text {controleren} \rightarrow \text {interpreteren}. } \]</div>
+<p><a id="x1-191r21"></a>
+</p><!-- l. 2557 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">21</div><div class="fvd-section-bar__title">Wat moet je zeker beheersen?</div></div>
+<p></p><!-- l. 2559 --><p class="noindent">Voor je verdergaat naar de wetten van Newton moet je de onderstaande vaardigheden
+voldoende beheersen.
+</p><!-- l. 2562 --><p class="noindent">Je moet:
+</p>
+<ul class="itemize1">
+<li class="itemize">fysische grootheden en eenheden correct kunnen noteren;
+</li>
+<li class="itemize">courante SI-voorvoegsels kunnen gebruiken;
+</li>
+<li class="itemize">eenheden kunnen omzetten;
+</li>
+<li class="itemize">ook oppervlakte- en volume-eenheden correct kunnen omzetten;
+</li>
+<li class="itemize">wetenschappelijke notatie kunnen lezen en schrijven;
+</li>
+<li class="itemize">het aantal beduidende cijfers van een meetwaarde kunnen bepalen;
+</li>
+<li class="itemize">een berekend resultaat verantwoord kunnen afronden;
+</li>
+<li class="itemize">een meetresultaat kritisch kunnen beoordelen;
+</li>
+<li class="itemize">scalaire en vectoriële grootheden kunnen onderscheiden;
+</li>
+<li class="itemize">een vector correct kunnen voorstellen;
+</li>
+<li class="itemize">vectoren kunnen optellen;
+</li>
+<li class="itemize">een vector kunnen ontbinden in horizontale en verticale componenten;
+</li>
+<li class="itemize">uit componenten grootte en richting kunnen terugvinden;
+</li>
+<li class="itemize">eenheden kunnen gebruiken als controle op een fysische formule;
+</li>
+<li class="itemize">onafhankelijke, afhankelijke en controlevariabelen kunnen onderscheiden;
+</li>
+<li class="itemize">een fysisch probleem systematisch kunnen aanpakken.
+</li></ul>
+<!-- l. 2602 --><p class="noindent">De oefeningen met de markering <span class="obeylines-h"><code class="verb">\ESS</code></span> zijn noodzakelijk om deze gereedschapskist
+voldoende te beheersen.
+</p><!-- l. 2605 --><p class="noindent">Niet alle essentiële oefeningen zijn <span class="obeylines-h"><code class="verb">\oefB</code></span>-oefeningen. Sommige <span class="obeylines-h"><code class="verb">\oefU</code></span>-oefeningen
+zijn eveneens noodzakelijk omdat je niet alleen technieken moet uitvoeren,
+maar meetgegevens, modellen en redeneringen ook kritisch moet kunnen
+analyseren.
+<a id="x1-192r22"></a>
+</p><!-- l. 2615 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">22</div><div class="fvd-section-bar__title">Vooruitblik: van vectoren naar krachten</div></div>
+<p></p><!-- l. 2617 --><p class="noindent">We beschikken nu over een aantal belangrijke gereedschappen.
+</p><!-- l. 2619 --><p class="noindent">We kunnen:
+</p>
+<div class="mathjax-block">\[ \text {meten}, \]</div>
+<div class="mathjax-block">\[ \text {eenheden gebruiken}, \]</div>
+<div class="mathjax-block">\[ \text {vectoren voorstellen}, \]</div>
+<div class="mathjax-block">\[ \text {vectoren ontbinden}, \]</div>
+<!-- l. 2637 --><p class="noindent">en:
+</p>
+<div class="mathjax-block">\[ \text {fysische problemen systematisch analyseren}. \]</div>
+<!-- l. 2643 --><p class="noindent">In het volgende hoofdstuk gebruiken we deze gereedschappen voor een fundamentele
+vraag:
+</p>
+<div class="center">
+<!-- l. 2646 --><p class="noindent">
+</p><!-- l. 2647 --><p class="noindent"><em>Waarom verandert de beweging van een voorwerp?</em></p></div>
+<!-- l. 2650 --><p class="noindent">Daarvoor onderzoeken we krachten en de drie wetten van Newton.
+</p><!-- l. 2652 --><p class="noindent">De stap wordt:
+</p>
+<div class="mathjax-block">\[ \boxed { \text {vectoren} \longrightarrow \text {krachten} \longrightarrow \sum \vec F \longrightarrow \text {bewegingsverandering}. } \]</div>
+</div><!-- XIMERA-PREVIOUS-NEXT-START --><nav aria-label="Hoofdstuknavigatie" class="chapter-navigation">
+<a class="chapter-navigation__card chapter-navigation__card--previous" data-visible="false" href="#">
+<span aria-hidden="true" class="chapter-navigation__icon">
+            ←
+        </span>
+<span class="chapter-navigation__content">
+<span class="chapter-navigation__label">
+                Vorig hoofdstuk
+            </span>
+<span class="chapter-navigation__title">
+</span>
+</span>
+</a>
+<a class="chapter-navigation__card chapter-navigation__card--overview" href="index.html">
+<span aria-hidden="true" class="chapter-navigation__overview-icon">
+<span></span>
+<span></span>
+<span></span>
+</span>
+<span class="chapter-navigation__content">
+<span class="chapter-navigation__label">
+                Cursus
+            </span>
+<span class="chapter-navigation__title">
+                Overzicht
+            </span>
+</span>
+</a>
+<a class="chapter-navigation__card chapter-navigation__card--next" data-visible="true" href="2-Newton.html">
+<span class="chapter-navigation__content">
+<span class="chapter-navigation__label">
+                Volgend hoofdstuk
+            </span>
+<span class="chapter-navigation__title">
+                Krachten en de wetten van Newton
+            </span>
+</span>
+<span aria-hidden="true" class="chapter-navigation__icon">
+            →
+        </span>
+</a>
+</nav><!-- XIMERA-PREVIOUS-NEXT-END --></article></main><!-- XIMERA-CHAPTER-LAYOUT-END --><div class="course-footer-clear"></div><!-- XIMERA-FOOTER-START --><footer class="site-footer">
+<div aria-hidden="true" class="site-footer__accent"></div>
+<div class="site-footer__inner">
+<div class="site-footer__quote">
+<span aria-hidden="true" class="site-footer__quote-mark">◈</span>
+<p class="site-footer__quote-text">
+                Think mathematically. Create digitally. Shape the future.
+            </p>
+</div>
+<div aria-hidden="true" class="site-footer__divider"></div>
+<div class="site-footer__grid">
+<section class="site-footer__column">
+<p class="site-footer__eyebrow">
+                    Wiskunde 7 FVD
+                </p>
+<h2 class="site-footer__title">
+                    Fundamentele Vorming Digitale Creatie
+                </h2>
+<p class="site-footer__text">
+                    Wiskundige basis voor programmeren, graphics,
+                    animatie, simulatie en 3D.
+                </p>
+</section>
+<section class="site-footer__column">
+<p class="site-footer__eyebrow">
+                    Ontwikkeling
+                </p>
+<p class="site-footer__name">
+                    Ingmar Herreman
+                </p>
+<p class="site-footer__text">
+                    GO! Athena Campus Bellevue
+                </p>
+<p class="site-footer__text">
+                    Versie 1.0 · 2026
+                </p>
+</section>
+<section class="site-footer__column">
+<p class="site-footer__eyebrow">
+                    Technologie
+                </p>
+<div class="site-footer__tech">
+<span>Ximera</span>
+<span>HTML</span>
+<span>PDF</span>
+<span>GeoGebra</span>
+<span>GitHub</span>
+</div>
+</section>
+</div>
+<div class="site-footer__bottom">
+<span>Gebouwd met Ximera</span>
+<span aria-hidden="true">•</span>
+<span>Voor 7 FVD</span>
+<span aria-hidden="true">•</span>
+<span>© 2026</span>
+</div>
+</div>
+</footer><!-- XIMERA-FOOTER-END --><script src="../../../assets/js/chapter-layout.js"></script></body>
+</html>

@@ -1,0 +1,2478 @@
+\documentclass{ximera}
+
+\input{../../../preamble.tex}
+\input{../../../Opmaak.tex}
+\addPrintStyle{../../..}
+
+\title{Bewegen onder invloed van velden}
+\author{Ingmar Herreman}
+
+\begin{abstract}
+In de vorige hoofdstukken leerden we bewegingen beschrijven en onderzochten
+we hoe een resulterende kracht volgens de wetten van Newton een beweging
+verandert. In dit hoofdstuk brengen we die ideeën samen met een begrip dat
+je al eerder ontmoette: het veld.
+
+We starten bij gravitatie. Newtons gravitatiewet en het gravitatieveld
+worden kort geactiveerd en vervolgens gekoppeld aan de cirkelbeweging.
+Zo ontdekken we waarom een satelliet voortdurend naar de aarde kan vallen
+zonder het aardoppervlak te bereiken. Uit de combinatie van gravitatie,
+Newton II en centripetale versnelling leiden we de baansnelheid en de
+omlooptijd van een satelliet af. Daarbij verschijnt ook het verband van
+Kepler op een natuurlijke manier.
+
+Daarna maken we transfer naar elektrische en magnetische velden. Een
+geladen deeltje in een homogeen elektrisch veld ondervindt een constante
+kracht en vertoont daardoor een beweging die sterk lijkt op een worp in
+een homogeen gravitatieveld. In een homogeen magnetisch veld kan de
+magnetische kracht daarentegen voortdurend loodrecht op de snelheid staan
+en zo een cirkelbaan veroorzaken.
+
+Doorheen het hoofdstuk staat één gedachte centraal:
+\[
+\boxed{\text{veld}\longrightarrow\text{kracht}\longrightarrow
+\text{versnelling}\longrightarrow\text{beweging}.}
+\]
+Dezelfde wetten van de mechanica verbinden zo vallende voorwerpen,
+satellieten en bewegende geladen deeltjes.
+\end{abstract}
+
+\begin{document}
+
+% FVD_CHAPTER_DATA_START
+% Automatisch gegenereerd uit index.tex.
+% Niet handmatig aanpassen.
+\fvdchapterdata{1}{Beweging en kracht — Van beweging beschrijven tot energie begrijpen}{7}
+% FVD_CHAPTER_DATA_END
+
+
+
+\maketitle
+
+% ============================================================
+% 1 VOORKENNIS EN LEERDOELEN
+% ============================================================
+
+\begin{voorkennis}
+  \item Je kan de wetten van Newton gebruiken, in het bijzonder
+        $\sum\vec F=m\vec a$.
+  \item Je kan een vrijlichaamsdiagram maken en krachten vectorieel analyseren.
+  \item Je kent bij een eenparige cirkelbeweging
+        $v=\omega r$ en $a_c=v^2/r=\omega^2r$.
+  \item Je kent uit eerdere leerstof de begrippen gravitatieveld,
+        elektrisch veld en magnetisch veld.
+  \item Je kent de gravitatiekracht, elektrische kracht en magnetische
+        kracht op een bewegende lading.
+  \item Je kan bewegingen in één en twee dimensies analyseren.
+  \item Je kan evenredigheden en machtsverbanden interpreteren.
+\end{voorkennis}
+
+\begin{leerdoelen}
+  \item Je kan Newtons gravitatiewet en het gravitatieveld analyseren en
+        kwantificeren.
+  \item Je kan het onderscheid maken tussen afstand tot een
+        planeetmiddelpunt, baanstraal en hoogte boven het oppervlak.
+  \item Je kan het verband tussen gravitatiekracht en centripetale
+        versnelling van een satelliet verklaren en gebruiken.
+  \item Je kan voor een cirkelvormige satellietbaan de baansnelheid en
+        omlooptijd afleiden, interpreteren en berekenen.
+  \item Je kan het verband $T^2\sim r^3$ analyseren.
+  \item Je kan uitleggen waarom astronauten in een baan om de aarde
+        gewichtloos lijken zonder dat de gravitatie daar nul is.
+  \item Je kan de beweging van een geladen deeltje in een homogeen
+        elektrisch veld analyseren.
+  \item Je kan de magnetische kracht op een bewegende lading koppelen aan
+        een cirkelbeweging wanneer $\vec v\perp\vec B$.
+  \item Je kan overeenkomsten en verschillen tussen gravitatie-, elektrische
+        en magnetische krachtwerking analyseren.
+  \item Je kan nieuwe veldproblemen systematisch mathematiseren vanuit
+        veld, kracht, Newton II en kinematica.
+\end{leerdoelen}
+
+
+% ============================================================
+% 2 OPENING
+% ============================================================
+
+\FVDsection{Eén mechanica, verschillende velden}
+
+Een appel valt naar de aarde. Een kunstmaan beweegt rond de aarde.
+Een elektron wordt versneld tussen twee geladen platen. Een ion buigt
+af in een magnetisch veld.
+
+Op het eerste gezicht lijken dit vier totaal verschillende verschijnselen.
+Toch kunnen we ze met dezelfde denkwijze onderzoeken.
+
+Een veld bepaalt welke kracht een geschikt systeem in een bepaald punt
+ondervindt. Die kracht bepaalt volgens Newton II de versnelling, en de
+versnelling bepaalt hoe de snelheid verandert:
+
+\[
+\boxed{
+\text{veld}
+\longrightarrow
+\text{kracht}
+\longrightarrow
+\text{versnelling}
+\longrightarrow
+\text{beweging}.
+}
+\]
+
+Dit hoofdstuk is daarom geen verzameling nieuwe formules. Het is een
+synthese van begrippen die we eerder afzonderlijk leerden gebruiken.
+
+
+\begin{oefening}[Vier bewegingen, één denkwijze]{\oefU\ESS}
+
+Beschouw de volgende situaties:
+
+\begin{enumerate}
+  \item een steen valt in vacuüm nabij het aardoppervlak;
+  \item een satelliet beweegt in een cirkelbaan rond de aarde;
+  \item een positief geladen deeltje vertrekt uit rust in een homogeen
+        elektrisch veld;
+  \item een positief geladen deeltje beweegt loodrecht op een homogeen
+        magnetisch veld.
+\end{enumerate}
+
+\begin{question}
+Geef voor elke situatie aan welke kracht de beweging beïnvloedt.
+\end{question}
+
+\begin{question}
+Voorspel voor elke situatie of de grootte van de snelheid constant kan
+blijven.
+\end{question}
+
+\begin{question}
+Voorspel voor elke situatie of de richting van de snelheid verandert.
+\end{question}
+
+\begin{question}
+Welke twee situaties verwacht je met een cirkelbeweging te kunnen
+verbinden?
+\end{question}
+
+Bewaar je antwoorden. Aan het einde van het hoofdstuk keren we naar deze
+vergelijking terug.
+
+\end{oefening}
+
+
+% ============================================================
+% DEEL A GRAVITATIE
+% ============================================================
+
+\FVDsection{Gravitatie opnieuw geactiveerd}
+
+Alle massa's trekken elkaar gravitatieel aan. Voor twee puntmassa's
+$m_1$ en $m_2$ op onderlinge afstand $r$ geldt voor de grootte van de
+gravitatiekracht:
+
+\[
+\boxed{
+F_g=G\frac{m_1m_2}{r^2}.
+}
+\]
+
+Hierbij is
+
+\[
+G\approx 6{,}67\cdot10^{-11}\,
+\mathrm{\frac{N\,m^2}{kg^2}}
+\]
+
+de gravitatieconstante.
+
+Voor een bolsymmetrisch hemellichaam mogen we, buiten het hemellichaam,
+de massa voor de gravitatieberekening behandelen alsof ze in het
+middelpunt geconcentreerd is.
+
+\begin{opmerking}
+De afstand $r$ in de gravitatiewet is dus niet de hoogte boven het
+oppervlak. Ze is de afstand tussen de massamiddelpunten.
+\end{opmerking}
+
+
+\FVDsubsection{Een inverse-kwadratenwet}
+
+Als de massa's constant blijven:
+
+\[
+F_g\sim\frac1{r^2}.
+\]
+
+Dus:
+
+\[
+r\rightarrow 2r
+\quad\Longrightarrow\quad
+F_g\rightarrow\frac14F_g,
+\]
+
+en:
+
+\[
+r\rightarrow 3r
+\quad\Longrightarrow\quad
+F_g\rightarrow\frac19F_g.
+\]
+
+Het verband is niet lineair.
+
+
+\begin{oefening}[Redeneren met de gravitatiewet]{\oefB\ESS}
+
+Twee puntmassa's oefenen een gravitatiekracht $F$ op elkaar uit.
+
+\begin{question}
+Hoe groot wordt de kracht als één massa verdubbelt en de andere
+grootheden gelijk blijven?
+\end{question}
+
+\begin{question}
+Hoe groot wordt de kracht als beide massa's verdubbelen?
+\end{question}
+
+\begin{question}
+Hoe groot wordt de kracht als de afstand tussen de massa's verdubbelt?
+\end{question}
+
+\begin{question}
+Met welke factor moet de afstand veranderen om de kracht viermaal zo
+klein te maken?
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 4 GRAVITATIEVELD
+% ============================================================
+
+\FVDsection{Het gravitatieveld}
+
+In plaats van voor elke mogelijke proefmassa opnieuw de gravitatiekracht
+te berekenen, beschrijven we de ruimte rond een massa met een veld.
+
+\begin{definitie}
+De \textbf{gravitatieveldsterkte} $\vec g$ in een punt is de
+gravitatiekracht per eenheid proefmassa:
+
+\[
+\boxed{
+\vec g=\frac{\vec F_g}{m}.
+}
+\]
+\end{definitie}
+
+Voor een bolsymmetrische bronmassa $M$:
+
+\[
+F_g=G\frac{Mm}{r^2}.
+\]
+
+Delen door $m$ geeft:
+
+\[
+\boxed{
+g(r)=G\frac{M}{r^2}.
+}
+\]
+
+De vector $\vec g$ wijst naar het middelpunt van de aantrekkende massa.
+
+De eenheden
+
+\[
+\mathrm{\frac{N}{kg}}
+\]
+
+en
+
+\[
+\mathrm{\frac{m}{s^2}}
+\]
+
+zijn voor de gravitatieveldsterkte equivalent.
+
+
+\FVDsubsection{Waarom is $g$ nabij de aarde ongeveer constant?}
+
+Op het aardoppervlak:
+
+\[
+g_0=G\frac{M_A}{R_A^2}.
+\]
+
+Op hoogte $h$ boven het aardoppervlak:
+
+\[
+r=R_A+h
+\]
+
+en dus:
+
+\[
+\boxed{
+g(h)=G\frac{M_A}{(R_A+h)^2}.
+}
+\]
+
+Voor hoogtes die zeer klein zijn tegenover $R_A$ verandert $r$ relatief
+weinig. Daarom mogen we in veel val- en worpproblemen nabij het
+aardoppervlak $g$ als ongeveer constant beschouwen.
+
+Voor satellieten op grote hoogte mag dat niet zomaar.
+
+
+\begin{oefening}[Hoogte is geen baanstraal]{\oefB\ESS}
+
+Een satelliet bevindt zich op hoogte $h$ boven een planeet met straal
+$R$.
+
+\begin{question}
+Welke afstand moet in
+\[
+g=G\frac{M}{r^2}
+\]
+worden gebruikt?
+\end{question}
+
+\begin{question}
+Schrijf $g$ als functie van $R$ en $h$.
+\end{question}
+
+\begin{question}
+Een satelliet bevindt zich op hoogte $h=R$. Hoe groot is daar de
+gravitatieveldsterkte als fractie van de veldsterkte aan het oppervlak?
+\end{question}
+
+\end{oefening}
+
+
+\begin{oefening}[Een grafiek van $g(r)$]{\oefU\ESS}
+
+Voor punten buiten een bolsymmetrische planeet geldt:
+
+\[
+g(r)=G\frac{M}{r^2}.
+\]
+
+\begin{question}
+Beschrijf het functietype en het gedrag van $g(r)$ voor $r>R$.
+\end{question}
+
+\begin{question}
+Wat gebeurt er met $g$ als $r$ zeer groot wordt?
+\end{question}
+
+\begin{question}
+Is $g(r)$ lineair dalend? Motiveer wiskundig.
+\end{question}
+
+\begin{question}
+Welke grafiek zou je kunnen maken om het inverse-kwadratenverband te
+lineariseren?
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 5 NEWTONS KANON
+% ============================================================
+
+\FVDsection{Van vallende steen naar satelliet}
+
+Stel je een voorwerp voor dat vanaf een zeer hoge berg horizontaal wordt
+weggeschoten.
+
+Bij een kleine beginsnelheid valt het voorwerp naar de aarde en raakt
+het oppervlak.
+
+Bij een grotere beginsnelheid legt het tijdens zijn val een grotere
+horizontale afstand af.
+
+In het ideale gedachte-experiment kan de beginsnelheid zo groot worden
+dat het aardoppervlak door zijn kromming even snel ``wegvalt'' als het
+voorwerp naar de aarde valt. Het voorwerp blijft dan voortdurend vallen,
+maar bereikt de aarde niet.
+
+Dat is de essentie van een baanbeweging.
+
+\begin{center}
+\[
+\boxed{
+\text{een satelliet in een baan is voortdurend in vrije val}.
+}
+\]
+\end{center}
+
+De gravitatiekracht verdwijnt dus niet. Integendeel: ze is precies de
+kracht die de baan voortdurend doet afbuigen.
+
+
+\begin{oefening}[Een hardnekkige misconceptie]{\oefU\ESS}
+
+Een leerling zegt:
+
+\begin{quote}
+``Een satelliet blijft in de ruimte omdat daar bijna geen zwaartekracht
+meer is.''
+\end{quote}
+
+\begin{question}
+Waarom kan die uitspraak niet verklaren waarom de satelliet een
+cirkelbaan volgt?
+\end{question}
+
+\begin{question}
+Wat zou er volgens Newton I gebeuren als de resulterende kracht werkelijk
+nul was?
+\end{question}
+
+\begin{question}
+Welke richting heeft de versnelling van een satelliet in een
+cirkelbaan?
+\end{question}
+
+\begin{question}
+Welke kracht kan die versnelling veroorzaken?
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 6 SATELLIET CIRKELBAAN
+% ============================================================
+
+\FVDsection{Gravitatie als radiale resultante}
+
+Beschouw een satelliet met massa $m$ in een cirkelbaan met straal $r$
+rond een planeet met massa $M$.
+
+In het ideale model verwaarlozen we andere krachten.
+
+De enige kracht op de satelliet is dan de gravitatiekracht:
+
+\[
+F_g=G\frac{Mm}{r^2}.
+\]
+
+De satelliet voert een cirkelbeweging uit, dus:
+
+\[
+a_c=\frac{v^2}{r}.
+\]
+
+Volgens Newton II in de radiale richting:
+
+\[
+\sum F_r=ma_c.
+\]
+
+Omdat de gravitatiekracht de volledige radiale resultante levert:
+
+\[
+G\frac{Mm}{r^2}
+=
+m\frac{v^2}{r}.
+\]
+
+Dit is de centrale vergelijking voor een ideale cirkelvormige
+satellietbaan.
+
+\begin{opmerking}
+We tekenen in het vrijlichaamsdiagram alleen $\vec F_g$. We tekenen
+niet nog een extra ``centripetale kracht''. De gravitatiekracht
+\emph{is} hier de radiale resultante.
+\end{opmerking}
+
+
+% ============================================================
+% 7 BAANSNELHEID
+% ============================================================
+
+\FVDsection{De baansnelheid afleiden}
+
+Vertrek van:
+
+\[
+G\frac{Mm}{r^2}
+=
+m\frac{v^2}{r}.
+\]
+
+De satellietmassa $m$ valt weg:
+
+\[
+G\frac{M}{r^2}
+=
+\frac{v^2}{r}.
+\]
+
+Vermenigvuldig met $r$:
+
+\[
+\frac{GM}{r}=v^2.
+\]
+
+Dus:
+
+\[
+\boxed{
+v_{\mathrm{baan}}
+=
+\sqrt{\frac{GM}{r}}.
+}
+\]
+
+Deze formule vertelt meer dan alleen hoe we een getal berekenen.
+
+Bij een gegeven centrale massa $M$:
+
+\[
+\boxed{
+v_{\mathrm{baan}}\sim\frac1{\sqrt r}.
+}
+\]
+
+Een satelliet in een grotere cirkelbaan beweegt dus trager.
+
+
+\FVDsubsection{Waarom verdwijnt de satellietmassa?}
+
+Een zwaardere satelliet ondervindt een grotere gravitatiekracht:
+
+\[
+F_g\sim m.
+\]
+
+Maar volgens Newton II is ook meer kracht nodig om dezelfde versnelling
+aan een grotere massa te geven:
+
+\[
+F=ma.
+\]
+
+De factor $m$ verschijnt aan beide kanten en valt weg.
+
+Dat is dezelfde diepe eigenschap die we bij vrije val nabij het
+aardoppervlak zagen.
+
+
+\begin{oefening}[Baansnelheid analyseren]{\oefU\ESS}
+
+Twee satellieten bewegen in cirkelbanen rond dezelfde planeet. Voor de
+tweede satelliet geldt:
+
+\[
+r_2=4r_1.
+\]
+
+\begin{question}
+Bepaal zonder getallen de verhouding $v_2/v_1$.
+\end{question}
+
+\begin{question}
+Welke satelliet beweegt sneller?
+\end{question}
+
+\begin{question}
+Hangt je antwoord af van de massa's van de satellieten?
+\end{question}
+
+\begin{question}
+Leg uit waarom de uitspraak ``een hogere satelliet moet sneller bewegen
+om niet te vallen'' fout is voor ideale cirkelbanen.
+\end{question}
+
+\end{oefening}
+
+
+\begin{oefening}[Satelliet rond de aarde]{\oefB\ESS}
+
+Gebruik:
+
+\[
+M_A=5{,}97\cdot10^{24}\,\mathrm{kg},
+\qquad
+R_A=6{,}37\cdot10^6\,\mathrm m.
+\]
+
+Een satelliet beweegt op hoogte
+
+\[
+h=400\,\mathrm{km}
+\]
+
+in een ideale cirkelbaan.
+
+\begin{question}
+Bepaal de baanstraal $r$.
+\end{question}
+
+\begin{question}
+Bereken de baansnelheid.
+\end{question}
+
+\begin{question}
+Vergelijk $g$ op die hoogte met $g$ aan het aardoppervlak.
+\end{question}
+
+\begin{question}
+Leg op basis van je resultaat uit waarom ``geen zwaartekracht'' geen
+goede verklaring is voor gewichtloosheid in een lage baan om de aarde.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 8 OMPLOOPTIJD
+% ============================================================
+
+\FVDsection{De omlooptijd}
+
+Voor een eenparige cirkelbeweging is:
+
+\[
+v=\frac{2\pi r}{T}.
+\]
+
+Voor een satelliet in een ideale cirkelbaan vonden we:
+
+\[
+v=\sqrt{\frac{GM}{r}}.
+\]
+
+We stellen beide uitdrukkingen gelijk:
+
+\[
+\frac{2\pi r}{T}
+=
+\sqrt{\frac{GM}{r}}.
+\]
+
+Na herschikken:
+
+\[
+\boxed{
+T
+=
+2\pi\sqrt{\frac{r^3}{GM}}.
+}
+\]
+
+Voor eenzelfde centrale massa $M$:
+
+\[
+\boxed{
+T\sim r^{3/2}.
+}
+\]
+
+Een satelliet in een grotere baan heeft dus een langere omlooptijd.
+
+
+\begin{oefening}[Verhoudingen zonder rekenmachine]{\oefU\ESS}
+
+Twee satellieten bewegen rond dezelfde planeet in ideale cirkelbanen.
+
+\[
+r_2=4r_1.
+\]
+
+\begin{question}
+Bepaal $T_2/T_1$.
+\end{question}
+
+\begin{question}
+Bepaal opnieuw $v_2/v_1$.
+\end{question}
+
+\begin{question}
+Leg uit waarom een grotere baan tegelijk een kleinere baansnelheid en
+een grotere omlooptijd oplevert.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 9 KEPLER III
+% ============================================================
+
+\FVDsection{Keplers derde wet verschijnt uit Newton}
+
+Kwadrateren van
+
+\[
+T
+=
+2\pi\sqrt{\frac{r^3}{GM}}
+\]
+
+geeft:
+
+\[
+\boxed{
+T^2
+=
+\frac{4\pi^2}{GM}r^3.
+}
+\]
+
+Voor objecten die rond dezelfde centrale massa bewegen, is
+
+\[
+\frac{4\pi^2}{GM}
+\]
+
+constant. Dus:
+
+\[
+\boxed{
+T^2\sim r^3.
+}
+\]
+
+Dit is de vorm van Keplers derde wet voor cirkelbanen.
+
+Het verband is didactisch belangrijk omdat het laat zien dat een
+empirisch patroon in planeetbewegingen verklaard kan worden vanuit
+Newtons dynamica en gravitatiewet.
+
+
+\FVDsubsection{Lineariseren}
+
+Een grafiek van $T$ tegen $r$ is niet lineair.
+
+Maar:
+
+\[
+T^2
+=
+\left(\frac{4\pi^2}{GM}\right)r^3.
+\]
+
+Een grafiek van $T^2$ tegen $r^3$ hoort dus een rechte door de oorsprong
+te geven met richtingscoëfficiënt:
+
+\[
+\boxed{
+a=\frac{4\pi^2}{GM}.
+}
+\]
+
+Uit de helling kunnen we zelfs de massa van het centrale hemellichaam
+bepalen:
+
+\[
+\boxed{
+M=\frac{4\pi^2}{Ga}.
+}
+\]
+
+
+\begin{oefening}[Een planeet wegen zonder weegschaal]{\oefG}
+
+Van verschillende manen rond dezelfde planeet zijn de baanstraal $r$
+en omlooptijd $T$ bekend.
+
+\begin{question}
+Welke twee grootheden zet je tegen elkaar uit om volgens het
+cirkelbaanmodel een rechte te verwachten?
+\end{question}
+
+\begin{question}
+Wat is de fysische betekenis van de helling van die rechte?
+\end{question}
+
+\begin{question}
+Leid een formule af waarmee je uit de helling de massa van de planeet
+kan bepalen.
+\end{question}
+
+\begin{question}
+Waarom is dit een voorbeeld van indirect meten?
+\end{question}
+
+\begin{question}
+Welke aannames van het model kunnen bij echte gegevens afwijkingen
+veroorzaken?
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 10 GEOSTATIONAIR
+% ============================================================
+
+\FVDsection{Een satelliet die boven hetzelfde punt blijft}
+
+Communicatie- en weersatellieten kunnen zo worden geplaatst dat ze voor
+een waarnemer op aarde boven ongeveer hetzelfde punt aan de hemel
+blijven.
+
+Zo'n satelliet noemen we \textbf{geostationair}.
+
+Daarvoor volstaat niet alleen een bepaalde omlooptijd. De baan moet ook
+geschikt georiënteerd zijn.
+
+Voor een geostationaire satelliet geldt in het ideale model onder meer:
+
+\begin{itemize}
+  \item de baan is cirkelvormig;
+  \item de baan ligt in het vlak van de evenaar;
+  \item de satelliet beweegt in dezelfde draairichting als de aarde;
+  \item de omlooptijd komt overeen met de rotatieperiode van de aarde
+        ten opzichte van de sterren.
+\end{itemize}
+
+Uit
+
+\[
+T^2=\frac{4\pi^2}{GM_A}r^3
+\]
+
+volgt:
+
+\[
+\boxed{
+r
+=
+\sqrt[3]{\frac{GM_AT^2}{4\pi^2}}.
+}
+\]
+
+Dit is de afstand tot het aardmiddelpunt.
+
+De hoogte boven het aardoppervlak is:
+
+\[
+\boxed{
+h=r-R_A.
+}
+\]
+
+
+\begin{oefening}[Geostationaire baan]{\oefU\ESS}
+
+Neem voor een eerste berekening:
+
+\[
+T=23\,\mathrm h\,56\,\mathrm{min},
+\]
+
+\[
+M_A=5{,}97\cdot10^{24}\,\mathrm{kg},
+\qquad
+R_A=6{,}37\cdot10^6\,\mathrm m.
+\]
+
+\begin{question}
+Zet de periode om naar SI-eenheden.
+\end{question}
+
+\begin{question}
+Bereken de vereiste baanstraal.
+\end{question}
+
+\begin{question}
+Bereken de hoogte boven het aardoppervlak.
+\end{question}
+
+\begin{question}
+Bereken de baansnelheid.
+\end{question}
+
+\begin{question}
+Waarom zou een satelliet met dezelfde periode maar in een polaire baan
+niet geostationair zijn?
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 11 GEWICHTLOOSHEID
+% ============================================================
+
+\FVDsection{Gewichtloosheid is geen afwezigheid van gravitatie}
+
+Astronauten in een ruimtestation lijken gewichtloos. Toch is het
+gravitatieveld in een lage aardbaan nog aanzienlijk.
+
+De verklaring is dat ruimtestation en astronaut samen vrijwel dezelfde
+vrije val uitvoeren.
+
+Als een astronaut los in het station zweeft, oefent de vloer geen
+ondersteunende normaalkracht op de astronaut uit.
+
+Dat is wat het gevoel van gewichtloosheid veroorzaakt.
+
+\begin{opmerking}
+De term ``gewicht'' wordt in verschillende contexten verschillend
+gebruikt. In dit hoofdstuk is het belangrijk onderscheid te maken tussen
+de gravitatiekracht $F_g$ en de contactkracht die bijvoorbeeld een
+weegschaal meet.
+\end{opmerking}
+
+
+\begin{oefening}[Wat meet een weegschaal?]{\oefU\ESS}
+
+Vergelijk een persoon:
+
+\begin{enumerate}
+  \item stilstaand op de aarde;
+  \item in een lift in vrije val;
+  \item zwevend in een ruimtestation in een cirkelbaan.
+\end{enumerate}
+
+\begin{question}
+Is de gravitatiekracht in elk van de drie situaties noodzakelijk nul?
+\end{question}
+
+\begin{question}
+Wanneer kan de normaalkracht van een weegschaal nul zijn?
+\end{question}
+
+\begin{question}
+Leg uit waarom ``gewichtloos'' niet hetzelfde hoeft te betekenen als
+``zonder gravitatiekracht''.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 12 MODELKRITIEK
+% ============================================================
+
+\FVDsection{Hoe goed is ons satellietmodel?}
+
+We hebben tot nu toe vaak aangenomen dat:
+
+\begin{itemize}
+  \item de centrale massa bolsymmetrisch is;
+  \item de satelliet als puntmassa kan worden behandeld;
+  \item de baan perfect cirkelvormig is;
+  \item alleen de gravitatiekracht van één centrale massa belangrijk is;
+  \item luchtweerstand verwaarloosbaar is.
+\end{itemize}
+
+Echte banen kunnen elliptisch zijn en worden beïnvloed door andere
+hemellichamen, de niet-perfecte bolsymmetrie van de aarde en, in lage
+banen, een kleine atmosferische weerstand.
+
+Een model is dus geen kopie van de werkelijkheid. Het is een
+doelgerichte vereenvoudiging.
+
+
+\begin{oefening}[Model of werkelijkheid?]{\oefG}
+
+Een zeer lage satellietbaan wordt met het ideale cirkelbaanmodel
+beschreven.
+
+\begin{question}
+Welke kracht ontbreekt mogelijk in het model?
+\end{question}
+
+\begin{question}
+Verwacht je dat de mechanische energie van de satelliet in werkelijkheid
+perfect constant blijft wanneer die kracht niet verwaarloosbaar is?
+Motiveer kwalitatief.
+\end{question}
+
+\begin{question}
+Waarom kan een model toch nuttig zijn wanneer het niet alle details van
+de werkelijkheid bevat?
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% DEEL B ELEKTRISCH VELD
+% ============================================================
+
+\FVDsection{Transfer: bewegen in een elektrisch veld}
+
+Gravitatie is niet het enige veld dat een kracht kan veroorzaken.
+
+Voor een lading $q$ in een elektrisch veld geldt:
+
+\[
+\boxed{
+\vec F_E=q\vec E.
+}
+\]
+
+Voor een positieve lading heeft $\vec F_E$ dezelfde richting en zin als
+$\vec E$.
+
+Voor een negatieve lading is de zin tegengesteld.
+
+
+\FVDsubsection{Newton II toepassen}
+
+Als de elektrische kracht de enige relevante kracht is:
+
+\[
+m\vec a=q\vec E.
+\]
+
+Dus:
+
+\[
+\boxed{
+\vec a=\frac qm\vec E.
+}
+\]
+
+In een \textbf{homogeen} elektrisch veld is $\vec E$ constant. Voor een
+deeltje met constante massa en lading is dan ook $\vec a$ constant.
+
+We herkennen dus opnieuw een EVRB, maar nu veroorzaakt door een
+elektrische kracht.
+
+
+\begin{oefening}[Positief of negatief?]{\oefB}
+
+Een geladen deeltje wordt vanuit rust losgelaten in een homogeen
+elektrisch veld dat naar rechts wijst.
+
+\begin{question}
+In welke richting versnelt een positief deeltje?
+\end{question}
+
+\begin{question}
+In welke richting versnelt een negatief deeltje?
+\end{question}
+
+\begin{question}
+Waarom moet het teken van $q$ behouden blijven in de vectoriële
+vergelijking
+\[
+\vec a=\frac qm\vec E?
+\]
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 14 GRAVITATIE VS ELEKTRISCH
+% ============================================================
+
+\FVDsection{Gravitatieveld en elektrisch veld vergelijken}
+
+De twee veldconcepten vertonen een opvallende structuur.
+
+Voor gravitatie:
+
+\[
+\vec F_g=m\vec g.
+\]
+
+Voor elektriciteit:
+
+\[
+\vec F_E=q\vec E.
+\]
+
+In beide gevallen is er:
+
+\[
+\boxed{
+\text{eigenschap van het deeltje}
+\times
+\text{veldsterkte}
+=
+\text{kracht}.
+}
+\]
+
+Maar er zijn ook belangrijke verschillen.
+
+Massa is in de klassieke mechanica positief en gravitatie tussen
+gewone massa's is aantrekkend.
+
+Elektrische lading kan positief of negatief zijn. Daardoor kan de
+elektrische kracht in de zin van $\vec E$ of in de tegengestelde zin
+werken.
+
+
+\begin{oefening}[Analogie met grenzen]{\oefU\ESS}
+
+Vergelijk:
+
+\[
+\vec F_g=m\vec g
+\]
+
+en
+
+\[
+\vec F_E=q\vec E.
+\]
+
+\begin{question}
+Welke rol speelt $m$ in de eerste vergelijking?
+\end{question}
+
+\begin{question}
+Welke rol speelt $q$ in de tweede?
+\end{question}
+
+\begin{question}
+Waarom vallen verschillende massa's in hetzelfde ideale gravitatieveld
+met dezelfde versnelling?
+\end{question}
+
+\begin{question}
+Waarom hoeven twee deeltjes met verschillende $q/m$-verhouding in
+hetzelfde elektrische veld niet dezelfde versnelling te hebben?
+\end{question}
+
+\begin{question}
+Waarom is een analogie nuttig, maar nooit een bewijs dat twee
+verschijnselen fysisch identiek zijn?
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 15 ELEKTRISCHE WORP
+% ============================================================
+
+\FVDsection{Een geladen deeltje tussen evenwijdige platen}
+
+Beschouw een positief geladen deeltje dat horizontaal een gebied met
+een homogeen verticaal elektrisch veld binnenkomt.
+
+Kies:
+
+\[
+\vec v_0=v_0\vec e_x
+\]
+
+en een elektrisch veld in de positieve $y$-richting.
+
+Dan:
+
+\[
+F_x=0
+\]
+
+en dus:
+
+\[
+a_x=0.
+\]
+
+Horizontaal:
+
+\[
+\boxed{
+x(t)=x_0+v_0t.
+}
+\]
+
+Verticaal:
+
+\[
+F_y=qE
+\]
+
+en:
+
+\[
+a_y=\frac{qE}{m}.
+\]
+
+Als $v_{y,0}=0$:
+
+\[
+\boxed{
+y(t)
+=
+y_0+\frac12\frac{qE}{m}t^2.
+}
+\]
+
+De beweging is dus de samenstelling van:
+
+\begin{itemize}
+  \item een eenparige horizontale beweging;
+  \item een eenparig versnelde verticale beweging.
+\end{itemize}
+
+Dat is wiskundig dezelfde structuur als de horizontale worp in een
+homogeen gravitatieveld.
+
+
+\FVDsubsection{De baanvergelijking}
+
+Uit:
+
+\[
+x-x_0=v_0t
+\]
+
+volgt:
+
+\[
+t=\frac{x-x_0}{v_0}.
+\]
+
+Invullen in de verticale bewegingsvergelijking geeft:
+
+\[
+y-y_0
+=
+\frac12\frac{qE}{m}
+\left(\frac{x-x_0}{v_0}\right)^2.
+\]
+
+Dus:
+
+\[
+\boxed{
+y(x)
+=
+y_0+
+\frac{qE}{2mv_0^2}(x-x_0)^2.
+}
+\]
+
+Binnen het gebied met homogeen elektrisch veld is de baan dus
+parabolisch.
+
+
+\begin{oefening}[Elektrische afbuiging]{\oefU}
+
+Een positief geladen deeltje komt horizontaal met snelheid $v_0$ een
+homogeen elektrisch veld binnen. Het veld wijst verticaal omhoog.
+
+\begin{question}
+Maak een krachten- en bewegingsanalyse per component.
+\end{question}
+
+\begin{question}
+Leid $a_y=qE/m$ af.
+\end{question}
+
+\begin{question}
+Stel $x(t)$ en $y(t)$ op voor $x_0=y_0=0$ en $v_{y,0}=0$.
+\end{question}
+
+\begin{question}
+Elimineer $t$ en leid de baanvergelijking af.
+\end{question}
+
+\begin{question}
+Wat verandert er aan de baan wanneer $q$ negatief is?
+\end{question}
+
+\begin{question}
+Wat gebeurt er met de afbuiging wanneer $v_0$ groter wordt?
+Interpreteer de factor $1/v_0^2$.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% DEEL C MAGNETISCH VELD
+% ============================================================
+
+\FVDsection{Bewegen in een magnetisch veld}
+
+Een bewegende elektrische lading kan in een magnetisch veld een
+magnetische kracht ondervinden.
+
+Voor de grootte geldt:
+
+\[
+\boxed{
+F_B=|q|vB\sin\alpha,
+}
+\]
+
+waar $\alpha$ de hoek is tussen $\vec v$ en $\vec B$.
+
+De magnetische kracht staat loodrecht op zowel de snelheid als het
+magnetisch veld.
+
+
+\FVDsubsection{Drie bijzondere gevallen}
+
+Als:
+
+\[
+\alpha=0^\circ
+\quad\text{of}\quad
+180^\circ,
+\]
+
+dan:
+
+\[
+F_B=0.
+\]
+
+Als:
+
+\[
+\alpha=90^\circ,
+\]
+
+dan is de kracht maximaal:
+
+\[
+\boxed{
+F_B=|q|vB.
+}
+\]
+
+Het geval $\vec v\perp\vec B$ is bijzonder interessant, omdat de kracht
+dan voortdurend loodrecht op de snelheid kan staan.
+
+
+\begin{oefening}[Eerst richting, dan grootte]{\oefB}
+
+Een geladen deeltje beweegt in een homogeen magnetisch veld.
+
+\begin{question}
+Hoe groot is de magnetische kracht als het deeltje evenwijdig aan
+$\vec B$ beweegt?
+\end{question}
+
+\begin{question}
+Hoe groot is de magnetische kracht als het deeltje loodrecht op
+$\vec B$ beweegt?
+\end{question}
+
+\begin{question}
+Waarom kan een stilstaande lading door een zuiver magnetisch veld niet
+worden versneld?
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 17 MAGNETISCHE CIRKELBAAN
+% ============================================================
+
+\FVDsection{Wanneer magnetisme een cirkelbaan maakt}
+
+Beschouw een geladen deeltje dat met snelheid $\vec v$ loodrecht op een
+homogeen magnetisch veld $\vec B$ beweegt.
+
+Dan is:
+
+\[
+F_B=|q|vB.
+\]
+
+De kracht staat op elk moment loodrecht op $\vec v$. Ze verandert dus
+de richting van de snelheidsvector.
+
+Wanneer het magnetische veld homogeen is en er geen andere relevante
+krachten zijn, levert de magnetische kracht de radiale resultante:
+
+\[
+F_B=ma_c.
+\]
+
+Dus:
+
+\[
+|q|vB
+=
+m\frac{v^2}{r}.
+\]
+
+Voor $v\neq0$:
+
+\[
+|q|B
+=
+m\frac vr.
+\]
+
+Daaruit:
+
+\[
+\boxed{
+r=\frac{mv}{|q|B}.
+}
+\]
+
+Dit is een krachtige relatie: de kromming van de baan bevat informatie
+over massa, lading, snelheid en magnetische veldsterkte.
+
+
+\FVDsubsection{Wat vertelt de formule?}
+
+Als de andere grootheden constant blijven:
+
+\[
+r\sim m,
+\]
+
+\[
+r\sim v,
+\]
+
+\[
+r\sim\frac1{|q|},
+\]
+
+en:
+
+\[
+r\sim\frac1B.
+\]
+
+Een groter $B$ buigt de baan dus sterker af en geeft een kleinere
+straal.
+
+Een sneller deeltje krijgt in hetzelfde veld een grotere baanstraal.
+
+
+\begin{oefening}[Verbanden analyseren]{\oefU}
+
+Een geladen deeltje beweegt loodrecht op een homogeen magnetisch veld.
+
+\begin{question}
+Wat gebeurt er met $r$ als $v$ verdubbelt?
+\end{question}
+
+\begin{question}
+Wat gebeurt er met $r$ als $B$ verdubbelt?
+\end{question}
+
+\begin{question}
+Wat gebeurt er met $r$ als zowel $m$ als $|q|$ verdubbelen?
+\end{question}
+
+\begin{question}
+Waarom moet je bij elk antwoord vermelden welke andere grootheden
+constant blijven?
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 18 SNELHEIDSGROOTTE
+% ============================================================
+
+\FVDsection{Kan een magnetische kracht de snelheidsgrootte veranderen?}
+
+Bij $\vec v\perp\vec B$ staat de magnetische kracht loodrecht op de
+snelheid.
+
+De kracht verandert daardoor de richting van $\vec v$, maar niet de
+snelheidsgrootte.
+
+Dit is precies wat nodig is voor een eenparige cirkelbeweging:
+
+\[
+|\vec v|=\text{constant},
+\qquad
+\vec v\neq\text{constant}.
+\]
+
+De versnelling is niet nul, want de richting van $\vec v$ verandert
+voortdurend.
+
+\begin{oefening}[Constante snelheid en toch versnellen]{\oefU}
+
+Een leerling zegt:
+
+\begin{quote}
+``Als het magnetisch veld de snelheid niet groter maakt, kan het deeltje
+ook geen versnelling hebben.''
+\end{quote}
+
+\begin{question}
+Welke verwarring maakt de leerling?
+\end{question}
+
+\begin{question}
+Welke grootheid blijft constant in een ideale magnetische cirkelbaan?
+\end{question}
+
+\begin{question}
+Welke grootheid verandert wel voortdurend?
+\end{question}
+
+\begin{question}
+Leg de link met de eenparige cirkelbeweging uit H5.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 19 PERIODE MAGNETISCHE BAAN
+% ============================================================
+
+\FVDsection{Verdieping: de omlooptijd in een magnetisch veld}
+
+Voor een cirkelbeweging:
+
+\[
+T=\frac{2\pi r}{v}.
+\]
+
+Voor de magnetische cirkelbaan:
+
+\[
+r=\frac{mv}{|q|B}.
+\]
+
+Invullen geeft:
+
+\[
+T
+=
+\frac{2\pi}{v}
+\frac{mv}{|q|B}.
+\]
+
+De snelheid valt weg:
+
+\[
+\boxed{
+T=\frac{2\pi m}{|q|B}.
+}
+\]
+
+En dus:
+
+\[
+\boxed{
+\omega=\frac{|q|B}{m}.
+}
+\]
+
+Binnen dit niet-relativistische ideale model hangt de omlooptijd dus
+niet af van de snelheid.
+
+
+\begin{oefening}[Een verrassend resultaat]{\oefG}
+
+Twee identieke positief geladen deeltjes bewegen loodrecht op hetzelfde
+homogene magnetische veld.
+
+Voor de snelheden geldt:
+
+\[
+v_2=3v_1.
+\]
+
+\begin{question}
+Bepaal $r_2/r_1$.
+\end{question}
+
+\begin{question}
+Bepaal $T_2/T_1$.
+\end{question}
+
+\begin{question}
+Hoe kan het tweede deeltje een grotere cirkel afleggen in dezelfde
+omlooptijd?
+\end{question}
+
+\begin{question}
+Welke aannames liggen aan deze conclusie ten grondslag?
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 20 TEKEN VAN LADING
+% ============================================================
+
+\FVDsection{De zin van de afbuiging}
+
+De formule
+
+\[
+r=\frac{mv}{|q|B}
+\]
+
+bevat $|q|$, omdat de straal positief is.
+
+Maar het \textbf{teken} van de lading is wel essentieel voor de zin van
+de magnetische kracht.
+
+Een positieve en een negatieve lading met dezelfde massa,
+snelheidsgrootte en $|q|$ krijgen in hetzelfde magnetische veld een
+baan met dezelfde straal, maar buigen in tegengestelde zin af.
+
+\begin{oefening}[Zelfde straal, andere zin]{\oefU}
+
+Een positief en een negatief deeltje hebben dezelfde massa, dezelfde
+$|q|$ en dezelfde beginsnelheid. Ze komen loodrecht hetzelfde homogene
+magnetische veld binnen.
+
+\begin{question}
+Vergelijk de grootte van de magnetische krachten.
+\end{question}
+
+\begin{question}
+Vergelijk de baanstralen.
+\end{question}
+
+\begin{question}
+Vergelijk de zin van de afbuiging.
+\end{question}
+
+\begin{question}
+Waarom mag je in de straalformule $|q|$ gebruiken, maar niet vergeten
+dat het teken van $q$ fysische informatie bevat?
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 21 q/m
+% ============================================================
+
+\FVDsection{De baan als meetinstrument}
+
+Uit:
+
+\[
+r=\frac{mv}{|q|B}
+\]
+
+volgt:
+
+\[
+\boxed{
+\frac{m}{|q|}
+=
+\frac{Br}{v}.
+}
+\]
+
+Een gemeten baanstraal kan dus, als $B$ en $v$ bekend zijn, informatie
+geven over de verhouding tussen massa en ladingsgrootte.
+
+Dat principe ligt aan de basis van technieken waarbij geladen deeltjes
+worden gescheiden of geïdentificeerd op basis van hun beweging in
+velden.
+
+\begin{oefening}[Onbekend deeltje]{\oefG}
+
+Een positief geladen deeltje beweegt loodrecht op een homogeen
+magnetisch veld. De grootheden $B$, $v$ en $r$ worden experimenteel
+bepaald.
+
+\begin{question}
+Leid een formule af voor $m/|q|$.
+\end{question}
+
+\begin{question}
+Welke metingen zijn nodig?
+\end{question}
+
+\begin{question}
+Als twee deeltjes dezelfde snelheid hebben en in hetzelfde veld een
+verschillende straal beschrijven, wat kan je dan over hun
+$m/|q|$-verhouding besluiten?
+\end{question}
+
+\begin{question}
+Waarom kan de baanstraal alleen niet altijd volstaan om een deeltje
+uniek te identificeren?
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 22 GEKRUISTE VELDEN
+% ============================================================
+
+\FVDsection{Gevorderd: elektrische en magnetische kracht samen}
+
+Velden kunnen tegelijk aanwezig zijn.
+
+Stel dat een geladen deeltje door een gebied beweegt waarin een
+elektrisch en een magnetisch veld zo georiënteerd zijn dat de
+elektrische en magnetische kracht tegengestelde zin hebben.
+
+Voor een rechtlijnige beweging zonder afbuiging moet:
+
+\[
+\sum\vec F=\vec0.
+\]
+
+In grootte:
+
+\[
+F_E=F_B.
+\]
+
+Voor loodrechte snelheid en magnetisch veld:
+
+\[
+|q|E=|q|vB.
+\]
+
+Dus:
+
+\[
+\boxed{
+v=\frac EB.
+}
+\]
+
+Alleen deeltjes met deze snelheid gaan in het ideale model rechtdoor.
+
+
+\begin{oefening}[Snelheidsselector]{\oefG}
+
+Een bundel geladen deeltjes beweegt door gekruiste homogene elektrische
+en magnetische velden.
+
+\begin{question}
+Leid de voorwaarde
+\[
+v=\frac EB
+\]
+af voor een niet-afgebogen deeltje.
+\end{question}
+
+\begin{question}
+Waarom verdwijnt $q$ uit deze formule?
+\end{question}
+
+\begin{question}
+Wat gebeurt er kwalitatief met een deeltje dat sneller beweegt dan
+$E/B$, als de twee krachten bij $v=E/B$ tegengesteld zijn?
+\end{question}
+
+\begin{question}
+Waarom is dit een voorbeeld van technologie die een fysisch model als
+selectiemechanisme gebruikt?
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 23 GROTE SYNTHESE
+% ============================================================
+
+\FVDsection{Drie velden, drie bewegingspatronen}
+
+We kunnen nu verschillende situaties naast elkaar plaatsen.
+
+\[
+\boxed{
+\vec F_g=m\vec g
+}
+\]
+
+in een ongeveer homogeen gravitatieveld geeft:
+
+\[
+\vec a=\vec g.
+\]
+
+Een constante veldvector geeft dus een constante versnelling.
+
+Voor een homogeen elektrisch veld:
+
+\[
+\boxed{
+\vec F_E=q\vec E
+}
+\]
+
+en:
+
+\[
+\boxed{
+\vec a=\frac qm\vec E.
+}
+\]
+
+Ook hier kan de versnelling constant zijn.
+
+Voor een magnetisch veld:
+
+\[
+\boxed{
+F_B=|q|vB\sin\alpha.
+}
+\]
+
+Bij $\vec v\perp\vec B$ staat de kracht voortdurend loodrecht op de
+snelheid en kan een cirkelbeweging ontstaan.
+
+Bij een radiaal gravitatieveld rond een bolmassa:
+
+\[
+g(r)=\frac{GM}{r^2},
+\]
+
+wijst de kracht naar het centrum. Bij de juiste tangentiële snelheid
+kan ook daar een cirkelbaan ontstaan.
+
+
+\FVDsubsection{De structuur achter de formules}
+
+Het belangrijkste inzicht van dit hoofdstuk is niet één afzonderlijke
+formule, maar een strategie:
+
+\[
+\boxed{
+\begin{array}{c}
+\text{1. Welk veld is aanwezig?}\\[2mm]
+\downarrow\\[2mm]
+\text{2. Welke kracht werkt op het gekozen systeem?}\\[2mm]
+\downarrow\\[2mm]
+\text{3. Wat zegt }\sum\vec F=m\vec a\text{?}\\[2mm]
+\downarrow\\[2mm]
+\text{4. Welk bewegingsmodel past bij }\vec a\text{?}\\[2mm]
+\downarrow\\[2mm]
+\text{5. Wat voorspelt het model?}
+\end{array}
+}
+\]
+
+
+\begin{oefening}[Herken het bewegingsmodel]{\oefU\ESS}
+
+Koppel elk geval aan het meest geschikte ideale bewegingsmodel en
+motiveer vanuit de kracht.
+
+\begin{enumerate}
+  \item Een geladen deeltje start uit rust in een homogeen elektrisch veld.
+  \item Een geladen deeltje beweegt evenwijdig aan een homogeen magnetisch
+        veld en er werken geen andere krachten.
+  \item Een geladen deeltje beweegt loodrecht op een homogeen magnetisch veld.
+  \item Een satelliet beweegt met geschikte tangentiële snelheid rond een
+        bolsymmetrische planeet.
+  \item Een voorwerp wordt horizontaal geworpen nabij het aardoppervlak.
+\end{enumerate}
+
+Gebruik waar passend de termen EVRB, ERB, horizontale worp en ECB.
+
+\end{oefening}
+
+
+% ============================================================
+% 24 MATHEMATISEREN
+% ============================================================
+
+\FVDsection{Een veldprobleem systematisch oplossen}
+
+Gebruik bij nieuwe problemen niet meteen een formule. Werk vanuit de
+fysica.
+
+\begin{enumerate}
+  \item \textbf{Kies het systeem.}
+        Is het een satelliet, ion, elektron, planeet of ander object?
+  \item \textbf{Identificeer het veld.}
+        Gravitatie, elektrisch, magnetisch of een combinatie?
+  \item \textbf{Bepaal de kracht.}
+        Bijvoorbeeld
+        \[
+        F_g=G\frac{Mm}{r^2},
+        \quad
+        \vec F_E=q\vec E,
+        \quad
+        F_B=|q|vB\sin\alpha.
+        \]
+  \item \textbf{Gebruik Newton II.}
+        \[
+        \sum\vec F=m\vec a.
+        \]
+  \item \textbf{Herken het bewegingsmodel.}
+        Is $\vec a$ constant? Staat $\vec a$ loodrecht op $\vec v$?
+        Is de versnelling radiaal?
+  \item \textbf{Voeg de juiste kinematica toe.}
+        Bijvoorbeeld
+        \[
+        a_c=\frac{v^2}{r}
+        \]
+        of de bewegingsvergelijkingen bij constante versnelling.
+  \item \textbf{Los symbolisch op waar dat zinvol is.}
+  \item \textbf{Controleer dimensies, richting en grootteorde.}
+  \item \textbf{Interpreteer het resultaat fysisch.}
+\end{enumerate}
+
+
+% ============================================================
+% 25 GEMENGDE OEFENINGEN
+% ============================================================
+
+\FVDsection{Geïntegreerde oefeningen}
+
+\begin{oefening}[Van $g$ naar een satellietbaan]{\oefU\ESS}
+
+Op afstand $r$ van het middelpunt van een planeet wordt de
+gravitatieveldsterkte gemeten als $g_r$.
+
+Een satelliet beweegt op diezelfde afstand in een ideale cirkelbaan.
+
+\begin{question}
+Toon zonder de massa van de planeet expliciet te gebruiken dat:
+\[
+\boxed{
+v=\sqrt{g_rr}.
+}
+\]
+\end{question}
+
+\begin{question}
+Leid vervolgens af:
+\[
+\boxed{
+T=2\pi\sqrt{\frac r{g_r}}.
+}
+\]
+\end{question}
+
+\begin{question}
+Waarom is dit een mooi voorbeeld van het combineren van twee eerder
+geleerde modellen?
+\end{question}
+
+\end{oefening}
+
+
+\begin{oefening}[Een onbekende planeet]{\oefG}
+
+Een maan beweegt in een vrijwel cirkelvormige baan rond een onbekende
+planeet. De baanstraal en omlooptijd zijn gemeten als $r$ en $T$.
+
+\begin{question}
+Leid af:
+\[
+\boxed{
+M=\frac{4\pi^2r^3}{GT^2}.
+}
+\]
+\end{question}
+
+\begin{question}
+Welke massa verschijnt niet in het eindresultaat?
+\end{question}
+
+\begin{question}
+Leg uit waarom de baan van een maan informatie bevat over de massa van
+de planeet.
+\end{question}
+
+\begin{question}
+Welke experimentele grootheden bepalen vooral de onzekerheid op de
+berekende massa?
+\end{question}
+
+\end{oefening}
+
+
+\begin{oefening}[Elektrisch of gravitatieel?]{\oefU}
+
+Een deeltje beweegt door een gebied waarin een constante kracht naar
+beneden werkt. De baan is parabolisch.
+
+\begin{question}
+Kan je alleen uit de vorm van de baan besluiten dat de kracht
+gravitatieel is? Motiveer.
+\end{question}
+
+\begin{question}
+Geef een elektrische situatie die wiskundig dezelfde soort baan kan
+opleveren.
+\end{question}
+
+\begin{question}
+Welke bijkomende informatie zou helpen om beide modellen te
+onderscheiden?
+\end{question}
+
+\end{oefening}
+
+
+\begin{oefening}[Twee ionen in hetzelfde magneetveld]{\oefG}
+
+Twee positief geladen ionen komen met dezelfde snelheid loodrecht
+hetzelfde homogene magnetische veld binnen.
+
+Voor de eerste geldt:
+
+\[
+m_1=m,\qquad q_1=e.
+\]
+
+Voor de tweede:
+
+\[
+m_2=4m,\qquad q_2=2e.
+\]
+
+\begin{question}
+Bepaal $r_2/r_1$.
+\end{question}
+
+\begin{question}
+Bepaal $T_2/T_1$.
+\end{question}
+
+\begin{question}
+Welke van beide banen is sterker gekromd?
+\end{question}
+
+\begin{question}
+Welke verhouding $m/|q|$ wordt door de baan zichtbaar?
+\end{question}
+
+\end{oefening}
+
+
+\begin{oefening}[Welke uitspraak klopt?]{\oefU\ESS}
+
+Beoordeel telkens de uitspraak en verbeter ze indien nodig.
+
+\begin{enumerate}
+  \item ``Een satelliet is gewichtloos omdat $g=0$.''
+  \item ``Centripetale kracht is een extra kracht die naast gravitatie
+        op een satelliet werkt.''
+  \item ``Een hogere cirkelbaan vraagt een grotere baansnelheid.''
+  \item ``Een homogeen elektrisch veld kan een constante versnelling
+        veroorzaken.''
+  \item ``Een magnetische kracht kan bij $\vec v\perp\vec B$ de richting
+        van de snelheid veranderen zonder de snelheidsgrootte te veranderen.''
+  \item ``Als twee deeltjes in hetzelfde magneetveld dezelfde baanstraal
+        hebben, moeten ze dezelfde massa hebben.''
+\end{enumerate}
+
+Motiveer elk antwoord met een fysisch verband en niet alleen met woorden.
+
+\end{oefening}
+
+
+% ============================================================
+% 26 ICT EN DATA
+% ============================================================
+
+\FVDsection{Onderzoeken met data en ICT}
+
+Dit hoofdstuk leent zich sterk tot modelleren en gegevensanalyse.
+
+Voor satellieten voorspelt het model:
+
+\[
+T^2=\frac{4\pi^2}{GM}r^3.
+\]
+
+Met echte of gegeven satellietgegevens kan je:
+
+\begin{enumerate}
+  \item $r$ en $T$ verzamelen;
+  \item $r^3$ en $T^2$ berekenen;
+  \item een spreidingsdiagram van $T^2$ tegen $r^3$ maken;
+  \item een lineaire regressie uitvoeren;
+  \item de helling interpreteren;
+  \item daaruit $M$ schatten;
+  \item afwijkingen en meetonzekerheid bespreken.
+\end{enumerate}
+
+Zo wordt een theoretische afleiding een toetsbaar model.
+
+
+\begin{oefening}[Onderzoeksopdracht: Kepler uit data]{\oefU\ESS}
+
+Gebruik een dataset met minstens vier manen of satellieten rond
+hetzelfde centrale hemellichaam.
+
+\begin{question}
+Maak een tabel met $r$, $T$, $r^3$ en $T^2$.
+\end{question}
+
+\begin{question}
+Maak met ICT een grafiek van $T^2$ tegen $r^3$.
+\end{question}
+
+\begin{question}
+Voer een geschikte regressie uit.
+\end{question}
+
+\begin{question}
+Interpreteer de helling fysisch.
+\end{question}
+
+\begin{question}
+Gebruik de helling om de massa van het centrale hemellichaam te
+schatten.
+\end{question}
+
+\begin{question}
+Vergelijk met een referentiewaarde en bespreek mogelijke oorzaken van
+een verschil.
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 27 VERDIEPING ALGEMENE MAGNETISCHE BEWEGING
+% ============================================================
+
+\FVDsection{Gevorderd: wat als $\vec v$ niet loodrecht op $\vec B$ staat?}
+
+Tot nu toe namen we bij de magnetische cirkelbaan:
+
+\[
+\vec v\perp\vec B.
+\]
+
+Bij een algemene invalshoek kunnen we de snelheid ontbinden in:
+
+\[
+\vec v=\vec v_\parallel+\vec v_\perp.
+\]
+
+De component $v_\parallel$ veroorzaakt geen magnetische kracht:
+
+\[
+F_{B,\parallel}=0.
+\]
+
+De loodrechte component $v_\perp$ veroorzaakt wel een magnetische
+afbuiging.
+
+De combinatie van:
+
+\begin{itemize}
+  \item een eenparige beweging langs de veldrichting;
+  \item een cirkelbeweging loodrecht op de veldrichting
+\end{itemize}
+
+levert een schroefvormige of helicale baan.
+
+De straal van de cirkelcomponent is:
+
+\[
+\boxed{
+r=\frac{mv_\perp}{|q|B}.
+}
+\]
+
+Dit is een mooi voorbeeld van het onafhankelijk analyseren van
+vectorcomponenten.
+
+
+\begin{oefening}[Helix in een magnetisch veld]{\oefG}
+
+Een geladen deeltje komt onder een hoek in een homogeen magnetisch veld.
+
+\begin{question}
+Ontbind $\vec v$ in $v_\parallel$ en $v_\perp$.
+\end{question}
+
+\begin{question}
+Welke component bepaalt de straal van de baan?
+\end{question}
+
+\begin{question}
+Welke component bepaalt hoe snel het deeltje langs de veldrichting
+opschuift?
+\end{question}
+
+\begin{question}
+Wat voor baan ontstaat als $v_\parallel=0$?
+\end{question}
+
+\begin{question}
+Wat voor baan ontstaat als $v_\perp=0$?
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% 28 WISKUNDIGE VERDIEPING
+% ============================================================
+
+\FVDsection{Wiskundige verdieping: machtswetten herkennen}
+
+Verschillende relaties uit dit hoofdstuk zijn machtsverbanden.
+
+Voor gravitatie:
+
+\[
+g(r)=GM\,r^{-2}.
+\]
+
+Voor een satelliet:
+
+\[
+v(r)=\sqrt{GM}\,r^{-1/2},
+\]
+
+en:
+
+\[
+T(r)=\frac{2\pi}{\sqrt{GM}}r^{3/2}.
+\]
+
+De exponent vertelt onmiddellijk hoe gevoelig een grootheid is voor een
+verandering van $r$.
+
+Bijvoorbeeld:
+
+\[
+r\rightarrow kr
+\]
+
+geeft:
+
+\[
+g\rightarrow k^{-2}g,
+\]
+
+\[
+v\rightarrow k^{-1/2}v,
+\]
+
+\[
+T\rightarrow k^{3/2}T.
+\]
+
+
+\begin{oefening}[Eén verandering, drie gevolgen]{\oefG}
+
+Een satelliet verhuist in een ideaal model van een cirkelbaan met
+straal $r$ naar een cirkelbaan met straal $9r$ rond dezelfde planeet.
+
+Vergelijk voor beide banen:
+
+\begin{question}
+de gravitatieveldsterkte;
+\end{question}
+
+\begin{question}
+de baansnelheid;
+\end{question}
+
+\begin{question}
+de omlooptijd.
+\end{question}
+
+Los op met de machtsverbanden, zonder de formules telkens volledig
+numeriek in te vullen.
+
+\end{oefening}
+
+
+% ============================================================
+% 29 WAT NIET IN DIT HOOFDSTUK
+% ============================================================
+
+\FVDsection{Vooruitblik: velden en energie}
+
+Een gravitatieveld kan ook energetisch beschreven worden. In je eerdere
+leerstof ontmoette je mogelijk al gravitatiepotentiaal en
+gravitatiepotentiële energie.
+
+Voor grote afstanden is de eenvoudige nabij-aardeformule
+
+\[
+E_{p}=mgh
+\]
+
+niet algemeen genoeg. Dan verschijnt een afstandsafhankelijke
+gravitatie-energie.
+
+We bouwen die energiebeschrijving hier bewust nog niet volledig uit.
+Ze past inhoudelijk beter nadat arbeid en energie in deze cursus
+systematisch behandeld zijn.
+
+Dan kunnen we onder andere onderzoeken:
+
+\begin{itemize}
+  \item gravitatiepotentiële energie op grote afstand;
+  \item arbeid in een gravitatieveld;
+  \item totale mechanische energie van banen;
+  \item ontsnappingssnelheid.
+\end{itemize}
+
+Zo vermijden we dat kracht-, bewegings- en energiemodellen door elkaar
+worden geïntroduceerd voordat hun eigen betekenis helder is.
+
+
+% ============================================================
+% 30 SAMENVATTING
+% ============================================================
+
+\FVDsection{Samenvatting}
+
+Voor gravitatie:
+
+\[
+\boxed{
+F_g=G\frac{Mm}{r^2}
+}
+\]
+
+en:
+
+\[
+\boxed{
+g(r)=G\frac{M}{r^2}.
+}
+\]
+
+Voor een ideale cirkelvormige satellietbaan:
+
+\[
+G\frac{Mm}{r^2}
+=
+m\frac{v^2}{r}.
+\]
+
+Daaruit:
+
+\[
+\boxed{
+v_{\mathrm{baan}}
+=
+\sqrt{\frac{GM}{r}}
+}
+\]
+
+en:
+
+\[
+\boxed{
+T
+=
+2\pi\sqrt{\frac{r^3}{GM}}.
+}
+\]
+
+Dus voor dezelfde centrale massa:
+
+\[
+\boxed{
+T^2\sim r^3.
+}
+\]
+
+Voor een elektrisch veld:
+
+\[
+\boxed{
+\vec F_E=q\vec E
+}
+\]
+
+en in een homogeen elektrisch veld:
+
+\[
+\boxed{
+\vec a=\frac qm\vec E.
+}
+\]
+
+Voor een bewegende lading in een magnetisch veld:
+
+\[
+\boxed{
+F_B=|q|vB\sin\alpha.
+}
+\]
+
+Bij $\vec v\perp\vec B$ en zonder andere relevante krachten:
+
+\[
+|q|vB=m\frac{v^2}{r}
+\]
+
+en dus:
+
+\[
+\boxed{
+r=\frac{mv}{|q|B}.
+}
+\]
+
+Als verdieping:
+
+\[
+\boxed{
+T=\frac{2\pi m}{|q|B}.
+}
+\]
+
+Doorheen al deze situaties blijft dezelfde analysekern gelden:
+
+\[
+\boxed{
+\text{veld}
+\rightarrow
+\text{kracht}
+\rightarrow
+\text{Newton II}
+\rightarrow
+\text{versnelling}
+\rightarrow
+\text{beweging}.
+}
+\]
+
+
+
+% ============================================================
+% 32 SLOT
+% ============================================================
+
+\FVDsection{Van krachten naar energie}
+
+We begonnen dit thema met de vraag hoe we beweging kunnen beschrijven.
+Daarna onderzochten we waardoor beweging verandert.
+
+In dit hoofdstuk zagen we hoe ver die ideeën reiken. Dezelfde wetten
+verklaren zowel bewegingen op astronomische schaal als de afbuiging van
+geladen deeltjes.
+
+Maar krachten zijn niet de enige taal waarmee we beweging kunnen
+analyseren.
+
+Soms is het veel efficiënter om niet elk moment van de beweging te
+volgen, maar te onderzoeken hoeveel energie wordt overgedragen of
+omgezet.
+
+Daarmee ontstaat de volgende stap:
+
+\[
+\boxed{
+\text{kracht en beweging}
+\longrightarrow
+\text{arbeid en energie}.
+}
+\]
+
+\end{document}

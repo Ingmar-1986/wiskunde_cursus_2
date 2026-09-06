@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en-US" xml:lang="en-US">
+<head> <title>Oefeningen — Lineaire regressie – Van data naar functies — verbanden herkennen en gedrag onderzoeken</title>
+<meta charset="utf-8"/>
+<meta content="TeX4ht (https://tug.org/tex4ht/)" name="generator"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="\aa:CssFile " rel="stylesheet" type="text/css"/>
+<meta content="Lineaire-regressie-oefeningen.online.tex" name="src"/>
+<script>window.MathJax = { tex: { tags: "ams", }, }; </script>
+<script async="async" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+<meta content="Ingmar Herreman" name="author"/>
+<meta content="version 2.5.1" name="ximera"/>
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" media="screen" rel="stylesheet"/>
+<script async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js" type="text/javascript"></script>
+<link href="../../../assets/css/base.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/global.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/Header_Footer.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/ChapterLayout.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/chapter-hero.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/ExerciseHero.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/learning-boxes.css" media="screen" rel="stylesheet"/><link href="../../../assets/css/CourseOverview.css" media="screen" rel="stylesheet"/></head><body><!-- XIMERA-HEADER-START --><!-- =========================================================
+     HEADER.HTML — Wiskunde 7 FVD
+     Plaats dit bestand bijvoorbeeld in:
+     assets/html/Header.html
+     ========================================================= -->
+<header aria-labelledby="fvd-hero-title" class="fvd-hero">
+<div aria-hidden="true" class="fvd-hero__grid"></div>
+<div aria-hidden="true" class="fvd-hero__glow fvd-hero__glow--left"></div>
+<div aria-hidden="true" class="fvd-hero__glow fvd-hero__glow--right"></div>
+<div class="fvd-hero__inner">
+<!-- Groot Athena-logo links -->
+<div class="fvd-hero__brand">
+<img alt="Athena secundair onderwijs" class="fvd-hero__logo" src="/images/banners/logo_athena.png"/>
+</div>
+<div aria-hidden="true" class="fvd-hero__divider"></div>
+<!-- Centrale titel en leerinhouden -->
+<div class="fvd-hero__content">
+<p class="fvd-hero__eyebrow">
+                    Fundamentele Vorming Digitale Creatie
+                </p>
+<h1 class="fvd-hero__title" id="fvd-hero-title">
+<span class="fvd-hero__title-main">Wiskunde</span>
+<span class="fvd-hero__title-accent">7 FVD</span>
+</h1>
+<div aria-hidden="true" class="fvd-hero__pink-line"></div>
+<p class="fvd-hero__subtitle">
+                    Wiskundige inzichten die je nodig hebt om digitale werelden te bouwen.
+                </p>
+<div aria-label="Onderwerpen in deze cursus" class="fvd-hero__chips">
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<rect height="18" rx="2" width="14" x="5" y="3"></rect>
+<path d="M8 7h8M8 11h2M14 11h2M8 15h2M14 15h2M8 18h2M14 18h2"></path>
+</svg>
+                        Basiswiskunde
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M4 17c4-1 4-10 8-10 2 0 2 3 4 3 1 0 2-.4 4-2"></path>
+<path d="M7 20 13 4"></path>
+</svg>
+                        Algebra
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M5 8h14M5 16h14"></path>
+</svg>
+                        Vergelijkingen
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M4 19V5M4 19h16"></path>
+<path d="m7 16 4-5 3 2 4-6"></path>
+</svg>
+                        Functies
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M5 18 18 5"></path>
+<path d="M12 5h6v6"></path>
+</svg>
+                        Vectoren
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="7"></circle>
+<path d="M12 2v20M2 12h20"></path>
+</svg>
+                        Coördinaten
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="m12 3 8 4.5v9L12 21l-8-4.5v-9z"></path>
+<path d="m4 7.5 8 4.5 8-4.5M12 12v9"></path>
+</svg>
+                        3D-meetkunde
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M3 16c3-8 7-8 10 0 2 5 5 4 8-4"></path>
+</svg>
+                        Goniometrie
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M5 18V6M5 18h14"></path>
+<path d="M8 16c1-6 3-9 8-10"></path>
+</svg>
+                        Logaritmen
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="m7 6 10 5-10 5z"></path>
+<path d="m7 10 10 5-10 5"></path>
+</svg>
+                        Transformaties
+                    </span>
+</div>
+</div>
+<!-- Rechterzijde met wiskundige SVG-tekeningen -->
+<div aria-hidden="true" class="fvd-hero__visual">
+<!-- 3D-kubus -->
+<svg class="fvd-visual fvd-visual--cube" viewbox="0 0 310 245">
+<g class="fvd-svg-cyan">
+<path d="M65 72 185 86 245 48 125 34Z"></path>
+<path d="M65 72v110l120 16V86"></path>
+<path d="M185 86 245 48v110l-60 40"></path>
+<path class="fvd-svg-dash" d="M125 34v110M125 144 65 182M125 144l120 14"></path>
+<path d="M125 144 90 210M125 144l88 28M125 144V15"></path>
+<path d="m90 210 11-4-7-9M213 172l-9-7-2 11M125 15l-6 11h12"></path>
+</g>
+<g class="fvd-svg-label">
+<text x="82" y="225">x</text>
+<text x="220" y="180">y</text>
+<text x="132" y="18">z</text>
+</g>
+</svg>
+<!-- Matrix -->
+<svg class="fvd-visual fvd-visual--matrix" viewbox="0 0 220 100">
+<g class="fvd-svg-soft">
+<text x="0" y="58">A =</text>
+<path d="M60 10c-12 18-12 62 0 80M205 10c12 18 12 62 0 80"></path>
+<text x="82" y="36">1</text>
+<text x="123" y="36">2</text>
+<text x="165" y="36">0</text>
+<text x="73" y="61">−1</text>
+<text x="123" y="61">0</text>
+<text x="165" y="61">3</text>
+<text x="82" y="86">2</text>
+<text x="113" y="86">−2</text>
+<text x="165" y="86">1</text>
+</g>
+</svg>
+<!-- Vectoren en rotatie -->
+<svg class="fvd-visual fvd-visual--vectors" viewbox="0 0 260 170">
+<g class="fvd-svg-cyan">
+<path d="M55 138 132 74"></path>
+<path d="m132 74-13 3 8 10"></path>
+<path d="M55 138h125"></path>
+<path d="m180 138-12-6v12"></path>
+<path class="fvd-svg-dash" d="M55 138c24-65 116-95 156-25"></path>
+</g>
+<g class="fvd-svg-pink">
+<path d="M55 138 207 104"></path>
+<path d="m207 104-13-2 5 12"></path>
+<path class="fvd-svg-dash" d="M211 113c17-13 25-5 21 11"></path>
+<path d="m232 124-9-8-2 12"></path>
+</g>
+<g class="fvd-svg-label">
+<text x="38" y="153">O</text>
+<text x="138" y="73">u⃗</text>
+<text x="188" y="98">v⃗</text>
+<text x="141" y="130">x⃗</text>
+<text x="222" y="102">Rθ</text>
+</g>
+</svg>
+<!-- Bézier-curve -->
+<svg class="fvd-visual fvd-visual--bezier" viewbox="0 0 280 110">
+<g class="fvd-svg-soft">
+<path d="M30 82 85 30 190 30 245 82"></path>
+</g>
+<g class="fvd-svg-cyan">
+<path d="M30 82c42-12 55-52 105-52s67 40 110 52"></path>
+</g>
+<g class="fvd-svg-pink">
+<circle cx="30" cy="82" r="4"></circle>
+<circle cx="85" cy="30" r="4"></circle>
+<circle cx="190" cy="30" r="4"></circle>
+<circle cx="245" cy="82" r="4"></circle>
+</g>
+<g class="fvd-svg-label">
+<text x="18" y="102">P₀</text>
+<text x="74" y="20">P₁</text>
+<text x="181" y="20">P₂</text>
+<text x="238" y="102">P₃</text>
+<text x="103" y="79">Bézier-curve</text>
+</g>
+</svg>
+</div>
+</div>
+<div aria-hidden="true" class="fvd-hero__pink-corner"></div>
+</header><!-- XIMERA-HEADER-END --><!-- XIMERA-CHAPTER-HERO-START --><section class="chapter-hero">
+<div aria-hidden="true" class="chapter-hero__decoration">
+<span class="chapter-hero__formula">
+            f(x) = ax² + bx + c
+        </span>
+<span class="chapter-hero__curve"></span>
+<span class="chapter-hero__grid"></span>
+</div>
+<div class="chapter-hero__content">
+<div class="chapter-hero__theme">
+<span class="chapter-hero__theme-label">
+                Thema 3
+            </span>
+<span class="chapter-hero__theme-dot"></span>
+<span class="chapter-hero__theme-name">
+                Verbanden onderzoeken met data
+            </span>
+</div>
+<div class="chapter-hero__chapter-label">
+            Hoofdstuk
+        </div>
+<div class="chapter-hero__main">
+<div class="chapter-hero__number">
+                6
+            </div>
+<div class="chapter-hero__text">
+<h1 class="chapter-hero__title">
+                    Oefeningen — Lineaire regressie
+                </h1>
+<p class="chapter-hero__abstract">
+</p>
+</div>
+</div>
+<div class="chapter-hero__accent"></div>
+</div>
+</section><!-- XIMERA-CHAPTER-HERO-END --><button aria-controls="courseSidebar" aria-expanded="false" class="course-menu-button" id="courseMenuButton" type="button">☰ Toon cursusinhoud</button><div class="course-sidebar-overlay" id="courseSidebarOverlay"></div><!-- XIMERA-CHAPTER-LAYOUT-START --><main class="chapter-layout"><!--
+    AUTOMATISCH GEGENEREERD BESTAND
+
+    Dit bestand wordt opgebouwd door:
+        scripts/generate-sidebar.sh
+
+    Bewerk niet dit bestand, maar:
+        assets/html/SidebarTemplate.html
+        en modules/.../index.tex
+-->
+<aside class="course-sidebar" id="courseSidebar">
+<div class="sidebar-header">
+<div class="sidebar-header__text">
+<span class="sidebar-label">
+                Van data naar functies — verbanden herkennen en gedrag onderzoeken
+            </span>
+<h2 class="sidebar-title">
+                Cursusinhoud
+            </h2>
+</div>
+<button aria-label="Sluit cursusmenu" class="sidebar-close" id="sidebarClose" type="button">
+            ×
+        </button>
+</div>
+<nav aria-label="Cursusinhoud" class="course-navigation">
+<div class="course-section" data-theme="1">
+<button aria-controls="course-section-1-parate-kennis-het-gereedschap-dat-je-nodig-hebt" aria-expanded="true" class="course-section-toggle" type="button">
+<span class="course-section-number">
+            1
+        </span>
+<span class="course-section-title">
+            Parate kennis — Het gereedschap dat je nodig hebt
+        </span>
+<span aria-hidden="true" class="course-section-arrow">
+            ▾
+        </span>
+</button>
+<div class="course-section-content" id="course-section-1-parate-kennis-het-gereedschap-dat-je-nodig-hebt">
+<a class="course-chapter-link" data-chapter="Thema1-Parate-kennis/Parate-kennis" href="Thema1-Parate-kennis/Parate-kennis.html">
+<span class="course-chapter-number">
+                1
+            </span>
+<span class="course-chapter-title">
+                Parate kennis — Je wiskundige gereedschapskist
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema1-Parate-kennis/Parate-kennis-oefeningen" href="Thema1-Parate-kennis/Parate-kennis-oefeningen.html">
+<span class="course-chapter-number">
+                2
+            </span>
+<span class="course-chapter-title">
+                Oefeningen — Parate kennis
+            </span>
+</a>
+</div>
+</div>
+<div class="course-section" data-theme="2">
+<button aria-controls="course-section-2-van-werkelijkheid-naar-wiskunde-en-terug" aria-expanded="true" class="course-section-toggle" type="button">
+<span class="course-section-number">
+            2
+        </span>
+<span class="course-section-title">
+            Van werkelijkheid naar wiskunde — en terug
+        </span>
+<span aria-hidden="true" class="course-section-arrow">
+            ▾
+        </span>
+</button>
+<div class="course-section-content" id="course-section-2-van-werkelijkheid-naar-wiskunde-en-terug">
+<a class="course-chapter-link" data-chapter="Thema2-Modelleren/Werkelijkheid-terug" href="Thema2-Modelleren/Werkelijkheid-terug.html">
+<span class="course-chapter-number">
+                1
+            </span>
+<span class="course-chapter-title">
+                Van werkelijkheid naar wiskunde — en terug
+            </span>
+</a>
+</div>
+</div>
+<div class="course-section is-open" data-theme="3">
+<button aria-controls="course-section-3-verbanden-onderzoeken-met-data" aria-expanded="true" class="course-section-toggle" type="button">
+<span class="course-section-number">
+            3
+        </span>
+<span class="course-section-title">
+            Verbanden onderzoeken met data
+        </span>
+<span aria-hidden="true" class="course-section-arrow">
+            ▾
+        </span>
+</button>
+<div class="course-section-content" id="course-section-3-verbanden-onderzoeken-met-data">
+<a class="course-chapter-link" data-chapter="Thema3-Verbanden/Van-data-naar-puntenwolk" href="Thema3-Verbanden/Van-data-naar-puntenwolk.html">
+<span class="course-chapter-number">
+                1
+            </span>
+<span class="course-chapter-title">
+                Van data naar puntenwolk
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema3-Verbanden/Van-data-naar-puntenwolk-oefeningen" href="Thema3-Verbanden/Van-data-naar-puntenwolk-oefeningen.html">
+<span class="course-chapter-number">
+                2
+            </span>
+<span class="course-chapter-title">
+                Oefeningen — Van data naar puntenwolk
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema3-Verbanden/Correlatie" href="Thema3-Verbanden/Correlatie.html">
+<span class="course-chapter-number">
+                3
+            </span>
+<span class="course-chapter-title">
+                Correlatie — Hoe sterk is het lineaire verband?
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema3-Verbanden/Correlatie-oefeningen" href="Thema3-Verbanden/Correlatie-oefeningen.html">
+<span class="course-chapter-number">
+                4
+            </span>
+<span class="course-chapter-title">
+                Oefeningen — Correlatie
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema3-Verbanden/Lineaire-regressie" href="Thema3-Verbanden/Lineaire-regressie.html">
+<span class="course-chapter-number">
+                5
+            </span>
+<span class="course-chapter-title">
+                Lineaire regressie — Van data naar model
+            </span>
+</a>
+<a aria-current="page" class="course-chapter-link is-active" data-chapter="Thema3-Verbanden/Lineaire-regressie-oefeningen" href="Thema3-Verbanden/Lineaire-regressie-oefeningen.html">
+<span class="course-chapter-number">
+                6
+            </span>
+<span class="course-chapter-title">
+                Oefeningen — Lineaire regressie
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema3-Verbanden/Samenhang-oorzaak" href="Thema3-Verbanden/Samenhang-oorzaak.html">
+<span class="course-chapter-number">
+                7
+            </span>
+<span class="course-chapter-title">
+                Samenhang is nog geen oorzaak
+            </span>
+</a>
+<a class="course-chapter-link" data-chapter="Thema3-Verbanden/Samenhang-oorzaak-oefeningen" href="Thema3-Verbanden/Samenhang-oorzaak-oefeningen.html">
+<span class="course-chapter-number">
+                8
+            </span>
+<span class="course-chapter-title">
+                Oefeningen — Samenhang is nog geen oorzaak
+            </span>
+</a>
+</div>
+</div>
+</nav>
+</aside>
+<article class="chapter-content"><div class="chapter-body">
+<div class="preamble">
+</div>
+<style> .activity-body pre { white-space: pre; background-color: lightgray; } .xmyoutube { aspect-ratio: 16/9; min-width: 75%; } .image-environment img { width: unset; } </style>
+<div class="maketitle"></div>
+<p><a id="x1-2r1"></a>
+</p><!-- l. 17 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">1</div><div class="fvd-section-bar__title">Basis — een regressiemodel lezen</div></div>
+<p><a id="x1-3r1"></a>
+</p><p></p><!-- l. 20 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 20 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 20 --><p class="noindent">Oefening 1
+</p><!-- l. 20 --><p class="noindent">— Parameters interpreteren
+</p><!-- l. 20 --><p class="noindent"></p></div>
+<p></p><!-- l. 20 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 20 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--b">B</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 20 --><p class="noindent"></p><div class="fvd-exercise__content"> Voor een dataset werd het regressiemodel
+<p></p>
+<div class="mathjax-block">\[ \hat y=-2{,}8x+74 \]</div>
+<!-- l. 27 --><p class="noindent">gevonden. <span class="mathjax-inline">\(x\)</span> wordt gemeten in <span class="mathjax-inline">\({}^{\circ }\mathrm C\)</span> en <span class="mathjax-inline">\(y\)</span> in <span class="mathjax-inline">\(\mathrm {kWh}\)</span>.
+</p>
+<div class="problem-environment question" id="problem1" numbered=" " role="article" titletext=" Question">  Wat is de eenheid van de richtingscoëfficiënt?
+<div class="accordion">
+<h3 class="xmoplossing"></h3>
+<div class="accordion-item xmoplossing-content" id="accordion-item2">
+<div class="mathjax-block">\[ \frac {\mathrm {kWh}}{{}^{\circ }\mathrm C}. \]</div> </div>
+</div>
+</div>
+<div class="problem-environment question" id="problem3" numbered=" " role="article" titletext=" Question">  Interpreteer <span class="mathjax-inline">\(-2{,}8\)</span>.
+<div class="accordion">
+<h3 class="xmoplossing"></h3>
+<div class="accordion-item xmoplossing-content" id="accordion-item4"> 
+ Wanneer <span class="mathjax-inline">\(x\)</span> met <span class="mathjax-inline">\(1\,{}^{\circ }\mathrm C\)</span> toeneemt, daalt de door het model voorspelde waarde van <span class="mathjax-inline">\(y\)</span> met <span class="mathjax-inline">\(2{,}8\,\mathrm {kWh}\)</span>. </div>
+</div>
+</div>
+<div class="problem-environment question" id="problem5" numbered=" " role="article" titletext=" Question">  Wat betekent <span class="mathjax-inline">\(74\)</span> algebraïsch?
+<div class="accordion">
+<h3 class="xmoplossing"></h3>
+<div class="accordion-item xmoplossing-content" id="accordion-item6"> 
+ Voor <span class="mathjax-inline">\(x=0\,{}^{\circ }\mathrm C\)</span> voorspelt het model <span class="mathjax-inline">\(\hat y=74\,\mathrm {kWh}\)</span>. </div>
+</div>
+</div> </div>
+<!-- l. 57 --><p class="noindent"></p></div>
+<p></p><!-- l. 57 --><p class="noindent"></p></section>
+<p><a id="x1-4r2"></a>
+</p><p></p><!-- l. 60 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 60 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 60 --><p class="noindent">Oefening 2
+</p><!-- l. 60 --><p class="noindent">— Voorspellen met een model
+</p><!-- l. 60 --><p class="noindent"></p></div>
+<p></p><!-- l. 60 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 60 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--b">B</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 60 --><p class="noindent"></p><div class="fvd-exercise__content"> Voor een sensor geldt binnen het onderzochte bereik
+<p></p>
+<div class="mathjax-block">\[ \hat U=0{,}42T+1{,}8, \]</div>
+<!-- l. 67 --><p class="noindent">met <span class="mathjax-inline">\(T\)</span> in <span class="mathjax-inline">\({}^{\circ }\mathrm C\)</span> en <span class="mathjax-inline">\(U\)</span> in volt.
+</p>
+<div class="problem-environment question" id="problem7" numbered=" " role="article" titletext=" Question">  Voorspel <span class="mathjax-inline">\(U\)</span> bij <span class="mathjax-inline">\(T=20\,{}^{\circ }\mathrm C\)</span>.
+<div class="accordion">
+<h3 class="xmoplossing"></h3>
+<div class="accordion-item xmoplossing-content" id="accordion-item8">
+<div class="mathjax-block">\[ \hat U=0{,}42\cdot 20+1{,}8=10{,}2\,\mathrm V. \]</div> </div>
+</div>
+</div>
+<div class="problem-environment question" id="problem9" numbered=" " role="article" titletext=" Question">  Wat betekent het dakje in <span class="mathjax-inline">\(\hat U\)</span>?
+<div class="accordion">
+<h3 class="xmoplossing"></h3>
+<div class="accordion-item xmoplossing-content" id="accordion-item10"> 
+ Het gaat om de door het regressiemodel voorspelde waarde, niet noodzakelijk om de
+werkelijk gemeten waarde. </div>
+</div>
+</div> </div>
+<!-- l. 87 --><p class="noindent"></p></div>
+<p></p><!-- l. 87 --><p class="noindent"></p></section>
+<p><a id="x1-5r3"></a>
+</p><p></p><!-- l. 90 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 90 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 90 --><p class="noindent">Oefening 3
+</p><!-- l. 90 --><p class="noindent">— Interpolatie of extrapolatie?
+</p><!-- l. 90 --><p class="noindent"></p></div>
+<p></p><!-- l. 90 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 90 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--b">B</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 90 --><p class="noindent"></p><div class="fvd-exercise__content"> Een model is gebaseerd op metingen voor
+<p></p>
+<div class="mathjax-block">\[ 15\leq x\leq 80. \]</div>
+<!-- l. 97 --><p class="noindent">Classificeer de volgende voorspellingen.
+</p>
+<div class="mathjax-block">\[ x=20,\qquad x=57,\qquad x=80,\qquad x=95,\qquad x=4. \]</div>
+<div class="accordion">
+<h3 class="xmoplossing"></h3>
+<div class="accordion-item xmoplossing-content" id="accordion-item11">
+<span class="mathjax-inline">\(x=20\)</span>, <span class="mathjax-inline">\(57\)</span> en <span class="mathjax-inline">\(80\)</span> liggen binnen het gemeten bereik en zijn interpolaties. <span class="mathjax-inline">\(x=95\)</span> en <span class="mathjax-inline">\(x=4\)</span> liggen buiten het
+bereik en zijn extrapolaties. </div>
+</div>
+</div>
+<!-- l. 108 --><p class="noindent"></p></div>
+<p></p><!-- l. 108 --><p class="noindent"></p></section>
+<p><a id="x1-6r4"></a>
+</p><p></p><!-- l. 111 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 111 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 111 --><p class="noindent">Oefening 4
+</p><!-- l. 111 --><p class="noindent">— Gemeten en voorspeld
+</p><!-- l. 111 --><p class="noindent"></p></div>
+<p></p><!-- l. 111 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 111 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--b">B</span></div>
+<p></p><!-- l. 111 --><p class="noindent"></p><div class="fvd-exercise__content"> Voor een waarneming geldt
+<p></p>
+<div class="mathjax-block">\[ y=53{,}7 \qquad \text {en}\qquad \hat y=50{,}9. \]</div>
+<div class="problem-environment question" id="problem12" numbered=" " role="article" titletext=" Question">  Bereken het residu.
+<div class="accordion">
+<h3 class="xmoplossing"></h3>
+<div class="accordion-item xmoplossing-content" id="accordion-item13">
+<div class="mathjax-block">\[ e=y-\hat y=53{,}7-50{,}9=2{,}8. \]</div> </div>
+</div>
+</div>
+<div class="problem-environment question" id="problem14" numbered=" " role="article" titletext=" Question">  Ligt het meetpunt boven of onder de regressierechte?
+<div class="accordion">
+<h3 class="xmoplossing"></h3>
+<div class="accordion-item xmoplossing-content" id="accordion-item15"> 
+ Boven de regressierechte, want het residu is positief. </div>
+</div>
+</div> </div>
+<!-- l. 137 --><p class="noindent"></p></div>
+<p></p><!-- l. 137 --><p class="noindent"></p></section>
+<p><a id="x1-7r2"></a>
+</p><p></p><!-- l. 141 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">2</div><div class="fvd-section-bar__title">Verdieping — van dataset naar model</div></div>
+<p><a id="x1-8r5"></a>
+</p><p></p><!-- l. 144 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 144 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 144 --><p class="noindent">Oefening 5
+</p><!-- l. 144 --><p class="noindent">— Groei van een jonge plant
+</p><!-- l. 144 --><p class="noindent"></p></div>
+<p></p><!-- l. 144 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 144 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 144 --><p class="noindent"></p><div class="fvd-exercise__content"> Van een jonge plant wordt gedurende de eerste weken de hoogte gemeten.
+<p></p>
+<div class="mathjax-block">\[ \begin {array}{c|rrrrrrrr} t\;(\mathrm {week})&amp;1&amp;2&amp;3&amp;4&amp;5&amp;6&amp;7&amp;8\\ \hline h\;(\mathrm {cm})&amp;8{,}2&amp;11{,}1&amp;14{,}5&amp;17{,}2&amp;20{,}6&amp;23{,}1&amp;26{,}5&amp;29{,}4 \end {array} \]</div>
+<div class="problem-environment question" id="problem16" numbered=" " role="article" titletext=" Question">  Maak met ICT een spreidingsdiagram en beschrijf het patroon.    </div>
+<div class="problem-environment question" id="problem17" numbered=" " role="article" titletext=" Question">  Bepaal <span class="mathjax-inline">\(r\)</span> en voer een lineaire regressie uit.    </div>
+<div class="problem-environment question" id="problem18" numbered=" " role="article" titletext=" Question">  Noteer het model als
+<div class="mathjax-block">\[ \hat h=at+b. \]</div> </div>
+<div class="problem-environment question" id="problem19" numbered=" " role="article" titletext=" Question">  Interpreteer <span class="mathjax-inline">\(a\)</span> met eenheid.
+<div class="accordion">
+<h3 class="xmoplossing"></h3>
+<div class="accordion-item xmoplossing-content" id="accordion-item20">
+<span class="mathjax-inline">\(a\)</span> geeft de gemiddelde toename van de door het model voorspelde planthoogte per
+week, in <span class="mathjax-inline">\(\mathrm {cm/week}\)</span>. </div>
+</div>
+</div>
+<div class="problem-environment question" id="problem21" numbered=" " role="article" titletext=" Question">  Gebruik het model om de hoogte in week <span class="mathjax-inline">\(6{,}5\)</span> te schatten. Is dit interpolatie of
+extrapolatie?
+<div class="accordion">
+<h3 class="xmoplossing"></h3>
+<div class="accordion-item xmoplossing-content" id="accordion-item22"> 
+ De voorspelling wordt verkregen door <span class="mathjax-inline">\(t=6{,}5\)</span> in het gevonden model in te vullen. Het
+is interpolatie omdat <span class="mathjax-inline">\(6{,}5\)</span> binnen het gemeten interval van <span class="mathjax-inline">\(1\)</span> tot <span class="mathjax-inline">\(8\)</span> weken ligt. </div>
+</div>
+</div>
+<div class="problem-environment question" id="problem23" numbered=" " role="article" titletext=" Question">  Is een voorspelling voor week <span class="mathjax-inline">\(52\)</span> verantwoord?
+<div class="accordion">
+<h3 class="xmoplossing"></h3>
+<div class="accordion-item xmoplossing-content" id="accordion-item24"> 
+ Niet zonder bijkomende informatie. Dat is een zeer verre extrapolatie. Biologische
+groei blijft bovendien niet onbeperkt lineair. </div>
+</div>
+</div> </div>
+<!-- l. 198 --><p class="noindent"></p></div>
+<p></p><!-- l. 198 --><p class="noindent"></p></section>
+<p><a id="x1-9r6"></a>
+</p><p></p><!-- l. 201 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 201 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 201 --><p class="noindent">Oefening 6
+</p><!-- l. 201 --><p class="noindent">— Hoogte en temperatuur
+</p><!-- l. 201 --><p class="noindent"></p></div>
+<p></p><!-- l. 201 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 201 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 201 --><p class="noindent"></p><div class="fvd-exercise__content"> Op acht meetstations worden hoogte en gemiddelde temperatuur gemeten.
+<p></p>
+<div class="mathjax-block">\[ \begin {array}{c|rrrrrrrr} H\;(\mathrm m)&amp;120&amp;280&amp;450&amp;690&amp;910&amp;1180&amp;1450&amp;1710\\ \hline T\;({}^{\circ }\mathrm C)&amp;15{,}8&amp;15{,}0&amp;13{,}9&amp;12{,}8&amp;11{,}7&amp;10{,}1&amp;8{,}9&amp;7{,}2 \end {array} \]</div>
+<div class="problem-environment question" id="problem25" numbered=" " role="article" titletext=" Question">  Maak een spreidingsdiagram en beoordeel of een lineair model zinvol lijkt.
+</div>
+<div class="problem-environment question" id="problem26" numbered=" " role="article" titletext=" Question">  Bepaal met ICT <span class="mathjax-inline">\(r\)</span> en de regressierechte.    </div>
+<div class="problem-environment question" id="problem27" numbered=" " role="article" titletext=" Question">  Interpreteer de richtingscoëfficiënt met eenheid.
+<div class="accordion">
+<h3 class="xmoplossing"></h3>
+<div class="accordion-item xmoplossing-content" id="accordion-item28"> 
+ De richtingscoëfficiënt geeft de verandering van de voorspelde temperatuur per
+meter hoogte, in <span class="mathjax-inline">\({}^{\circ }\mathrm C/\mathrm m\)</span>. Voor een praktischere interpretatie kan men de verandering per <span class="mathjax-inline">\(100\,\mathrm m\)</span>
+berekenen. </div>
+</div>
+</div>
+<div class="problem-environment question" id="problem29" numbered=" " role="article" titletext=" Question">  Voorspel met het model de temperatuur op <span class="mathjax-inline">\(1000\,\mathrm m\)</span> hoogte en classificeer de
+voorspelling.
+<div class="accordion">
+<h3 class="xmoplossing"></h3>
+<div class="accordion-item xmoplossing-content" id="accordion-item30"> 
+ Vul <span class="mathjax-inline">\(H=1000\)</span> in in het gevonden regressiemodel. Het is interpolatie, want <span class="mathjax-inline">\(1000\,\mathrm m\)</span> ligt binnen het
+gemeten hoogtebereik. </div>
+</div>
+</div>
+<div class="problem-environment question" id="problem31" numbered=" " role="article" titletext=" Question">  Waarom moet je voorzichtig zijn met een voorspelling voor <span class="mathjax-inline">\(8000\,\mathrm m\)</span>?
+<div class="accordion">
+<h3 class="xmoplossing"></h3>
+<div class="accordion-item xmoplossing-content" id="accordion-item32"> 
+ Dat is een zeer verre extrapolatie. Het gevonden lokale lineaire verband hoeft over
+zo’n groot hoogtebereik niet geldig te blijven. </div>
+</div>
+</div> </div>
+<!-- l. 250 --><p class="noindent"></p></div>
+<p></p><!-- l. 250 --><p class="noindent"></p></section>
+<p><a id="x1-10r7"></a>
+</p><p></p><!-- l. 253 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 253 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 253 --><p class="noindent">Oefening 7
+</p><!-- l. 253 --><p class="noindent">— Wanneer heeft het intercept betekenis?
+</p><!-- l. 253 --><p class="noindent"></p></div>
+<p></p><!-- l. 253 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 253 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 253 --><p class="noindent"></p><div class="fvd-exercise__content"> Een regressiemodel voor de massa <span class="mathjax-inline">\(m\)</span> van metalen staven in functie van hun lengte <span class="mathjax-inline">\(L\)</span>
+is
+<p></p>
+<div class="mathjax-block">\[ \hat m=2{,}31L+1{,}7. \]</div>
+<!-- l. 261 --><p class="noindent">De gemeten lengtes liggen tussen <span class="mathjax-inline">\(10\,\mathrm {cm}\)</span> en <span class="mathjax-inline">\(50\,\mathrm {cm}\)</span>.
+</p>
+<div class="problem-environment question" id="problem33" numbered=" " role="article" titletext=" Question">  Wat betekent de richtingscoëfficiënt?
+<div class="accordion">
+<h3 class="xmoplossing"></h3>
+<div class="accordion-item xmoplossing-content" id="accordion-item34"> 
+ Volgens het model neemt de voorspelde massa met ongeveer <span class="mathjax-inline">\(2{,}31\,\mathrm g\)</span> toe per extra
+centimeter lengte. </div>
+</div>
+</div>
+<div class="problem-environment question" id="problem35" numbered=" " role="article" titletext=" Question">  Algebraïsch voorspelt het model bij <span class="mathjax-inline">\(L=0\)</span> een massa van <span class="mathjax-inline">\(1{,}7\,\mathrm g\)</span>. Waarom moet je die
+interpretatie kritisch bekijken?
+<div class="accordion">
+<h3 class="xmoplossing"></h3>
+<div class="accordion-item xmoplossing-content" id="accordion-item36">
+<span class="mathjax-inline">\(L=0\)</span> ligt buiten het onderzochte bereik en een staaf met lengte nul heeft in deze context
+geen gewone fysische betekenis. Het intercept hoeft dus geen betekenisvolle fysische
+grootheid te zijn. </div>
+</div>
+</div> </div>
+<!-- l. 283 --><p class="noindent"></p></div>
+<p></p><!-- l. 283 --><p class="noindent"></p></section>
+<p><a id="x1-11r3"></a>
+</p><p></p><!-- l. 287 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">3</div><div class="fvd-section-bar__title">Geïntegreerd analyseren</div></div>
+<p><a id="x1-12r8"></a>
+</p><p></p><!-- l. 290 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 290 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 290 --><p class="noindent">Oefening 8
+</p><!-- l. 290 --><p class="noindent">— Kalibratie van een oplossing
+</p><!-- l. 290 --><p class="noindent"></p></div>
+<p></p><!-- l. 290 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 290 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 290 --><p class="noindent"></p><div class="fvd-exercise__content"> In een chemisch experiment wordt de absorbantie <span class="mathjax-inline">\(A\)</span> gemeten voor oplossingen met
+bekende concentratie <span class="mathjax-inline">\(c\)</span>.
+<p></p>
+<div class="mathjax-block">\[ \begin {array}{c|rrrrrrrr} c\;(\mathrm {mmol/L})&amp;0{,}5&amp;1{,}0&amp;1{,}5&amp;2{,}0&amp;2{,}5&amp;3{,}0&amp;3{,}5&amp;4{,}0\\ \hline A&amp;0{,}12&amp;0{,}21&amp;0{,}34&amp;0{,}43&amp;0{,}55&amp;0{,}64&amp;0{,}77&amp;0{,}85 \end {array} \]</div>
+<!-- l. 301 --><p class="noindent">Een onbekende oplossing heeft een gemeten absorbantie van <span class="mathjax-inline">\(0{,}60\)</span>.
+</p>
+<div class="problem-environment question" id="problem37" numbered=" " role="article" titletext=" Question">  Maak een spreidingsdiagram en beoordeel de lineariteit.    </div>
+<div class="problem-environment question" id="problem38" numbered=" " role="article" titletext=" Question">  Bepaal <span class="mathjax-inline">\(r\)</span> en een lineair regressiemodel voor <span class="mathjax-inline">\(A\)</span> in functie van <span class="mathjax-inline">\(c\)</span>.    </div>
+<div class="problem-environment question" id="problem39" numbered=" " role="article" titletext=" Question">  Interpreteer de richtingscoëfficiënt.    </div>
+<div class="problem-environment question" id="problem40" numbered=" " role="article" titletext=" Question">  Gebruik het model om te onderzoeken welke concentratie ongeveer overeenkomt
+met <span class="mathjax-inline">\(A=0{,}60\)</span>.
+<div class="accordion">
+<h3 class="xmoplossing"></h3>
+<div class="accordion-item xmoplossing-content" id="accordion-item41"> 
+ Los in het gevonden model <div class="mathjax-block">\[ 0{,}60=ac+b \]</div> op naar <span class="mathjax-inline">\(c\)</span>. De precieze waarde hangt af van de door ICT
+gevonden en afgeronde regressiecoëfficiënten. </div>
+</div>
+</div>
+<div class="problem-environment question" id="problem42" numbered=" " role="article" titletext=" Question">  Leg uit waarom het meetbereik van de kalibratie belangrijk is voor de
+betrouwbaarheid van deze schatting.
+<div class="accordion">
+<h3 class="xmoplossing"></h3>
+<div class="accordion-item xmoplossing-content" id="accordion-item43"> 
+ Binnen het gekalibreerde bereik hebben we gegevens die het lineaire model
+ondersteunen. Buiten dat bereik zouden we extrapoleren en weten we niet of dezelfde
+lineaire relatie geldig blijft. </div>
+</div>
+</div> </div>
+<!-- l. 339 --><p class="noindent"></p></div>
+<p></p><!-- l. 339 --><p class="noindent"></p></section>
+<p><a id="x1-13r9"></a>
+</p><p></p><!-- l. 342 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 342 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 342 --><p class="noindent">Oefening 9
+</p><!-- l. 342 --><p class="noindent">— Een model dat te ver wordt doorgetrokken
+</p><!-- l. 342 --><p class="noindent"></p></div>
+<p></p><!-- l. 342 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 342 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--u">U</span><span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span></div>
+<p></p><!-- l. 342 --><p class="noindent"></p><div class="fvd-exercise__content"> Voor baby’s tussen <span class="mathjax-inline">\(1\)</span> en <span class="mathjax-inline">\(12\)</span> maanden wordt een sterk lineair verband gevonden tussen
+leeftijd <span class="mathjax-inline">\(t\)</span> in maanden en lichaamslengte <span class="mathjax-inline">\(L\)</span> in cm:
+<p></p>
+<div class="mathjax-block">\[ \hat L=1{,}55t+52{,}4. \]</div>
+<div class="problem-environment question" id="problem44" numbered=" " role="article" titletext=" Question">  Interpreteer <span class="mathjax-inline">\(1{,}55\)</span>.
+<div class="accordion">
+<h3 class="xmoplossing"></h3>
+<div class="accordion-item xmoplossing-content" id="accordion-item45"> 
+ Binnen het onderzochte leeftijdsbereik neemt de voorspelde lichaamslengte volgens
+het model gemiddeld met ongeveer <span class="mathjax-inline">\(1{,}55\,\mathrm {cm}\)</span> per extra maand toe. </div>
+</div>
+</div>
+<div class="problem-environment question" id="problem46" numbered=" " role="article" titletext=" Question">  Voorspel de lengte bij <span class="mathjax-inline">\(t=8\)</span> maanden. Is dit interpolatie of extrapolatie?
+                                                                  
+
+                                                                  
+<div class="accordion">
+<h3 class="xmoplossing"></h3>
+<div class="accordion-item xmoplossing-content" id="accordion-item47">
+<div class="mathjax-block">\[ \hat L=1{,}55\cdot 8+52{,}4=64{,}8\,\mathrm {cm}. \]</div> Dit is interpolatie. </div>
+</div>
+</div>
+<div class="problem-environment question" id="problem48" numbered=" " role="article" titletext=" Question">  Bereken wat het model voor <span class="mathjax-inline">\(t=240\)</span> maanden voorspelt.
+<div class="accordion">
+<h3 class="xmoplossing"></h3>
+<div class="accordion-item xmoplossing-content" id="accordion-item49">
+<div class="mathjax-block">\[ \hat L=1{,}55\cdot 240+52{,}4=424{,}4\,\mathrm {cm}. \]</div> </div>
+</div>
+</div>
+<div class="problem-environment question" id="problem50" numbered=" " role="article" titletext=" Question">  Wat leert dit resultaat over modelleren?
+<div class="accordion">
+<h3 class="xmoplossing"></h3>
+<div class="accordion-item xmoplossing-content" id="accordion-item51"> 
+ Een regressiemodel kan binnen het onderzochte bereik zeer bruikbaar zijn en bij
+verre extrapolatie volkomen onrealistische voorspellingen geven. Een model moet
+altijd in zijn context en toepassingsgebied worden geïnterpreteerd. </div>
+</div>
+</div>
+</div>
+<!-- l. 392 --><p class="noindent"></p></div>
+<p></p><!-- l. 392 --><p class="noindent"></p></section>
+<p><a id="x1-14r4"></a>
+</p><p></p><!-- l. 396 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">4</div><div class="fvd-section-bar__title">Gevorderd — modelkeuze en kritiek</div></div>
+<p><a id="x1-15r10"></a>
+</p><p></p><!-- l. 399 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 399 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 399 --><p class="noindent">Oefening 10
+</p><!-- l. 399 --><p class="noindent">— Rechte of kromme?
+</p><!-- l. 399 --><p class="noindent"></p></div>
+<p></p><!-- l. 399 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 399 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--g">G</span></div>
+<p></p><!-- l. 399 --><p class="noindent"></p><div class="fvd-exercise__content"> Een experiment levert de gegevens
+<p></p>
+<div class="mathjax-block">\[ \begin {array}{c|rrrrrrrr} x&amp;1&amp;2&amp;3&amp;4&amp;5&amp;6&amp;7&amp;8\\ \hline y&amp;1{,}1&amp;3{,}9&amp;9{,}2&amp;16{,}1&amp;24{,}8&amp;36{,}3&amp;49{,}1&amp;64{,}2 \end {array} \]</div>
+<div class="problem-environment question" id="problem52" numbered=" " role="article" titletext=" Question">  Maak een spreidingsdiagram.    </div>
+<div class="problem-environment question" id="problem53" numbered=" " role="article" titletext=" Question">  Laat ICT toch een lineaire regressie uitvoeren.    </div>
+<div class="problem-environment question" id="problem54" numbered=" " role="article" titletext=" Question">  Leg uit waarom een regressierechte hier ondanks de software-uitvoer geen goede
+modelkeuze is.
+<div class="accordion">
+<h3 class="xmoplossing"></h3>
+<div class="accordion-item xmoplossing-content" id="accordion-item55"> 
+ De punten volgen duidelijk een krom, ongeveer kwadratisch patroon. De afwijkingen
+van een rechte zijn systematisch en niet willekeurig. Een softwarepakket kan altijd
+een regressierechte berekenen, maar dat betekent niet dat het model inhoudelijk
+geschikt is. </div>
+</div>
+</div> </div>
+<!-- l. 428 --><p class="noindent"></p></div>
+<p></p><!-- l. 428 --><p class="noindent"></p></section>
+<p><a id="x1-16r11"></a>
+</p><p></p><!-- l. 431 --><p class="noindent"></p><section class="fvd-exercise">
+<p></p><!-- l. 431 --><p class="noindent"></p><div class="fvd-exercise__title">
+<p></p><!-- l. 431 --><p class="noindent">Oefening 11
+</p><!-- l. 431 --><p class="noindent">— Onderzoek een eigen dataset
+</p><!-- l. 431 --><p class="noindent"></p></div>
+<p></p><!-- l. 431 --><p class="noindent"></p><div class="fvd-exercise__body">
+<p></p><!-- l. 431 --><p class="noindent"></p><div class="fvd-exercise__meta"><span class="fvd-exercise-chip fvd-exercise-chip--g">G</span></div>
+<p></p><!-- l. 431 --><p class="noindent"></p><div class="fvd-exercise__content"> Zoek of verzamel een kleine dataset met twee numerieke grootheden uit fysica,
+chemie, biologie, technologie of een andere wetenschappelijke context.
+<p></p><!-- l. 436 --><p class="noindent">Voer een volledige analyse uit:
+</p>
+<ol class="enumerate1">
+<li class="enumerate" id="x1-18x1">beschrijf de grootheden, eenheden en bron van de gegevens;
+</li>
+<li class="enumerate" id="x1-20x2">maak een spreidingsdiagram;
+</li>
+<li class="enumerate" id="x1-22x3">analyseer richting, vorm, sterkte en bijzonderheden;
+</li>
+<li class="enumerate" id="x1-24x4">bepaal <span class="mathjax-inline">\(r\)</span>;
+</li>
+<li class="enumerate" id="x1-26x5">beoordeel of een lineair model geschikt is;
+</li>
+<li class="enumerate" id="x1-28x6">bepaal indien verantwoord de regressierechte;
+</li>
+<li class="enumerate" id="x1-30x7">interpreteer de parameters;
+                                                                  
+
+                                                                  
+</li>
+<li class="enumerate" id="x1-32x8">maak één zinvolle voorspelling;
+</li>
+<li class="enumerate" id="x1-34x9">bepaal of dit interpolatie of extrapolatie is;
+</li>
+<li class="enumerate" id="x1-36x10">formuleer minstens één beperking van je model.</li></ol>
+<div class="accordion">
+<h3 class="xmoplossing"></h3>
+<div class="accordion-item xmoplossing-content" id="accordion-item56"> 
+ Er zijn veel correcte oplossingen mogelijk. De kwaliteit wordt bepaald door de
+samenhang tussen dataset, grafische analyse, modelkeuze, interpretatie en kritische
+terugkoppeling naar de context. </div>
+</div>
+</div>
+<!-- l. 456 --><p class="noindent"></p></div>
+<p></p><!-- l. 456 --><p class="noindent"></p></section>
+<p><a id="x1-37r5"></a>
+</p><p></p><!-- l. 460 --><p class="noindent"></p><div class="fvd-section-bar"><div class="fvd-section-bar__number">5</div><div class="fvd-section-bar__title">Essentiële oefeningen</div></div>
+<p></p><!-- l. 463 --><p class="noindent">Voor dit hoofdstuk behoren de volgende oefeningen tot het minimumtraject:
+</p>
+<ul class="itemize1">
+<li class="itemize"><strong>Parameters interpreteren</strong> — <span class="mathjax-inline">\(a\)</span>, <span class="mathjax-inline">\(b\)</span> en eenheden correct lezen;
+</li>
+<li class="itemize"><strong>Voorspellen met een model</strong> — een regressiemodel gebruiken;
+</li>
+<li class="itemize"><strong>Interpolatie of extrapolatie?</strong> — het toepassingsgebied bewaken;
+</li>
+<li class="itemize"><strong>Groei van een jonge plant</strong> — van dataset naar regressiemodel;
+</li>
+<li class="itemize"><strong>Hoogte en temperatuur</strong> — een STEM-dataset volledig analyseren;
+                                                                  
+
+                                                                  
+</li>
+<li class="itemize"><strong>Wanneer  heeft  het  intercept  betekenis?</strong>  —  parameters  kritisch
+interpreteren;
+</li>
+<li class="itemize"><strong>Kalibratie van een oplossing</strong> — regressie als wetenschappelijk model
+gebruiken;
+</li>
+<li class="itemize"><strong>Een model dat te ver wordt doorgetrokken</strong> — extrapolatie kritisch
+beoordelen.</li></ul>
+<!-- l. 476 --><p class="noindent">De <span class="fvd-exercise-chip fvd-exercise-chip--b">B</span>-oefeningen leggen de noodzakelijke technische basis. De <span class="fvd-exercise-chip fvd-exercise-chip--u">U</span>-oefeningen met <span class="fvd-exercise-chip fvd-exercise-chip--ess">ESS</span>zijn
+eveneens essentieel omdat het leerplandoel op <strong>analyseren</strong> staat: leerlingen moeten
+bij nieuwe gegevens zelf grafiek, correlatie, regressiemodel en context met elkaar in
+verband kunnen brengen.
+                                                                  
+
+                                                                  
+</p>
+</div><!-- XIMERA-PREVIOUS-NEXT-START --><nav aria-label="Hoofdstuknavigatie" class="chapter-navigation">
+<a class="chapter-navigation__card chapter-navigation__card--previous" data-visible="true" href="Lineaire-regressie.html">
+<span aria-hidden="true" class="chapter-navigation__icon">
+            ←
+        </span>
+<span class="chapter-navigation__content">
+<span class="chapter-navigation__label">
+                Vorig hoofdstuk
+            </span>
+<span class="chapter-navigation__title">
+                Lineaire regressie — Van data naar model
+            </span>
+</span>
+</a>
+<a class="chapter-navigation__card chapter-navigation__card--overview" href="index.html">
+<span aria-hidden="true" class="chapter-navigation__overview-icon">
+<span></span>
+<span></span>
+<span></span>
+</span>
+<span class="chapter-navigation__content">
+<span class="chapter-navigation__label">
+                Cursus
+            </span>
+<span class="chapter-navigation__title">
+                Overzicht
+            </span>
+</span>
+</a>
+<a class="chapter-navigation__card chapter-navigation__card--next" data-visible="true" href="Samenhang-oorzaak.html">
+<span class="chapter-navigation__content">
+<span class="chapter-navigation__label">
+                Volgend hoofdstuk
+            </span>
+<span class="chapter-navigation__title">
+                Samenhang is nog geen oorzaak
+            </span>
+</span>
+<span aria-hidden="true" class="chapter-navigation__icon">
+            →
+        </span>
+</a>
+</nav><!-- XIMERA-PREVIOUS-NEXT-END --></article></main><!-- XIMERA-CHAPTER-LAYOUT-END --><div class="course-footer-clear"></div><!-- XIMERA-FOOTER-START --><footer class="site-footer">
+<div aria-hidden="true" class="site-footer__accent"></div>
+<div class="site-footer__inner">
+<div class="site-footer__quote">
+<span aria-hidden="true" class="site-footer__quote-mark">◈</span>
+<p class="site-footer__quote-text">
+                Think mathematically. Create digitally. Shape the future.
+            </p>
+</div>
+<div aria-hidden="true" class="site-footer__divider"></div>
+<div class="site-footer__grid">
+<section class="site-footer__column">
+<p class="site-footer__eyebrow">
+                    Wiskunde 7 FVD
+                </p>
+<h2 class="site-footer__title">
+                    Fundamentele Vorming Digitale Creatie
+                </h2>
+<p class="site-footer__text">
+                    Wiskundige basis voor programmeren, graphics,
+                    animatie, simulatie en 3D.
+                </p>
+</section>
+<section class="site-footer__column">
+<p class="site-footer__eyebrow">
+                    Ontwikkeling
+                </p>
+<p class="site-footer__name">
+                    Ingmar Herreman
+                </p>
+<p class="site-footer__text">
+                    GO! Athena Campus Bellevue
+                </p>
+<p class="site-footer__text">
+                    Versie 1.0 · 2026
+                </p>
+</section>
+<section class="site-footer__column">
+<p class="site-footer__eyebrow">
+                    Technologie
+                </p>
+<div class="site-footer__tech">
+<span>Ximera</span>
+<span>HTML</span>
+<span>PDF</span>
+<span>GeoGebra</span>
+<span>GitHub</span>
+</div>
+</section>
+</div>
+<div class="site-footer__bottom">
+<span>Gebouwd met Ximera</span>
+<span aria-hidden="true">•</span>
+<span>Voor 7 FVD</span>
+<span aria-hidden="true">•</span>
+<span>© 2026</span>
+</div>
+</div>
+</footer><!-- XIMERA-FOOTER-END --><script src="../../../assets/js/chapter-layout.js"></script></body>
+</html>

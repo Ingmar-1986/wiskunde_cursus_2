@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en-US" xml:lang="en-US">
+<head> <title>Van krachten tot kernen</title>
+<meta charset="utf-8"/>
+<meta content="TeX4ht (https://tug.org/tex4ht/)" name="generator"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="\aa:CssFile " rel="stylesheet" type="text/css"/>
+<meta content="index.online.tex" name="src"/>
+<script>window.MathJax = { tex: { tags: "ams", }, }; </script>
+<script async="async" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+<meta content="" name="og:image"/>
+<meta content="xourse" name="description"/>
+<meta content="Ingmar Herreman" name="author"/>
+<meta content="version 2.5.1" name="ximera"/>
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" media="screen" rel="stylesheet"/>
+<script src="https://ximera.osu.edu/public/javascripts/standalone.min.js" type="text/javascript"></script>
+<link href="../../assets/css/base.css" media="screen" rel="stylesheet"/>
+<link href="../../assets/css/global.css" media="screen" rel="stylesheet"/>
+<link href="../../assets/css/Header_Footer.css" media="screen" rel="stylesheet"/>
+<link href="../../assets/css/ModuleLayout.css" media="screen" rel="stylesheet"/>
+<style id="FVD-COMPACT-COURSE-CARDS">
+.course-theme-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 420px));
+    align-items: start;
+    align-content: start;
+    grid-auto-rows: auto;
+    gap: 1.25rem;
+}
+.course-card {
+    height: auto !important;
+    min-height: 0 !important;
+    align-self: start;
+}
+.course-card-link {
+    display: flex;
+    flex-direction: column;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 1.25rem;
+}
+.course-card-abstract {
+    margin: 0.9rem 0 1.1rem;
+    line-height: 1.55;
+}
+.course-card-footer {
+    margin-top: auto;
+}
+</style>
+<style id="FVD-FOOTER-LAYOUT-FIX">
+.course-footer-clear {
+    display: block;
+    width: 100%;
+    clear: both;
+}
+
+body > .site-footer {
+    display: block;
+    width: 100%;
+    max-width: none;
+    clear: both;
+    box-sizing: border-box;
+}
+</style>  <link rel="stylesheet" href="../../assets/css/module-banner.css">
+</head><body>
+<!-- XIMERA-HEADER-START -->
+<!-- =========================================================
+     HEADER.HTML — Wiskunde 7 FVD
+     Plaats dit bestand bijvoorbeeld in:
+     assets/html/Header.html
+     ========================================================= -->
+<header aria-labelledby="fvd-hero-title" class="fvd-hero">
+<div aria-hidden="true" class="fvd-hero__grid"></div>
+<div aria-hidden="true" class="fvd-hero__glow fvd-hero__glow--left"></div>
+<div aria-hidden="true" class="fvd-hero__glow fvd-hero__glow--right"></div>
+<div class="fvd-hero__inner">
+<!-- Groot Athena-logo links -->
+<div class="fvd-hero__brand">
+<img alt="Athena secundair onderwijs" class="fvd-hero__logo" src="/images/banners/logo_athena.png"/>
+</div>
+<div aria-hidden="true" class="fvd-hero__divider"></div>
+<!-- Centrale titel en leerinhouden -->
+<div class="fvd-hero__content">
+<p class="fvd-hero__eyebrow">
+                    Fundamentele Vorming Digitale Creatie
+                </p>
+<h1 class="fvd-hero__title" id="fvd-hero-title">
+<span class="fvd-hero__title-main">Wiskunde</span>
+<span class="fvd-hero__title-accent">7 FVD</span>
+</h1>
+<div aria-hidden="true" class="fvd-hero__pink-line"></div>
+<p class="fvd-hero__subtitle">
+                    Wiskundige inzichten die je nodig hebt om digitale werelden te bouwen.
+                </p>
+<div aria-label="Onderwerpen in deze cursus" class="fvd-hero__chips">
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<rect height="18" rx="2" width="14" x="5" y="3"></rect>
+<path d="M8 7h8M8 11h2M14 11h2M8 15h2M14 15h2M8 18h2M14 18h2"></path>
+</svg>
+                        Basiswiskunde
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M4 17c4-1 4-10 8-10 2 0 2 3 4 3 1 0 2-.4 4-2"></path>
+<path d="M7 20 13 4"></path>
+</svg>
+                        Algebra
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M5 8h14M5 16h14"></path>
+</svg>
+                        Vergelijkingen
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M4 19V5M4 19h16"></path>
+<path d="m7 16 4-5 3 2 4-6"></path>
+</svg>
+                        Functies
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M5 18 18 5"></path>
+<path d="M12 5h6v6"></path>
+</svg>
+                        Vectoren
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="7"></circle>
+<path d="M12 2v20M2 12h20"></path>
+</svg>
+                        Coördinaten
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="m12 3 8 4.5v9L12 21l-8-4.5v-9z"></path>
+<path d="m4 7.5 8 4.5 8-4.5M12 12v9"></path>
+</svg>
+                        3D-meetkunde
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M3 16c3-8 7-8 10 0 2 5 5 4 8-4"></path>
+</svg>
+                        Goniometrie
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M5 18V6M5 18h14"></path>
+<path d="M8 16c1-6 3-9 8-10"></path>
+</svg>
+                        Logaritmen
+                    </span>
+<span class="fvd-chip">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="m7 6 10 5-10 5z"></path>
+<path d="m7 10 10 5-10 5"></path>
+</svg>
+                        Transformaties
+                    </span>
+</div>
+</div>
+<!-- Rechterzijde met wiskundige SVG-tekeningen -->
+<div aria-hidden="true" class="fvd-hero__visual">
+<!-- 3D-kubus -->
+<svg class="fvd-visual fvd-visual--cube" viewbox="0 0 310 245">
+<g class="fvd-svg-cyan">
+<path d="M65 72 185 86 245 48 125 34Z"></path>
+<path d="M65 72v110l120 16V86"></path>
+<path d="M185 86 245 48v110l-60 40"></path>
+<path class="fvd-svg-dash" d="M125 34v110M125 144 65 182M125 144l120 14"></path>
+<path d="M125 144 90 210M125 144l88 28M125 144V15"></path>
+<path d="m90 210 11-4-7-9M213 172l-9-7-2 11M125 15l-6 11h12"></path>
+</g>
+<g class="fvd-svg-label">
+<text x="82" y="225">x</text>
+<text x="220" y="180">y</text>
+<text x="132" y="18">z</text>
+</g>
+</svg>
+<!-- Matrix -->
+<svg class="fvd-visual fvd-visual--matrix" viewbox="0 0 220 100">
+<g class="fvd-svg-soft">
+<text x="0" y="58">A =</text>
+<path d="M60 10c-12 18-12 62 0 80M205 10c12 18 12 62 0 80"></path>
+<text x="82" y="36">1</text>
+<text x="123" y="36">2</text>
+<text x="165" y="36">0</text>
+<text x="73" y="61">−1</text>
+<text x="123" y="61">0</text>
+<text x="165" y="61">3</text>
+<text x="82" y="86">2</text>
+<text x="113" y="86">−2</text>
+<text x="165" y="86">1</text>
+</g>
+</svg>
+<!-- Vectoren en rotatie -->
+<svg class="fvd-visual fvd-visual--vectors" viewbox="0 0 260 170">
+<g class="fvd-svg-cyan">
+<path d="M55 138 132 74"></path>
+<path d="m132 74-13 3 8 10"></path>
+<path d="M55 138h125"></path>
+<path d="m180 138-12-6v12"></path>
+<path class="fvd-svg-dash" d="M55 138c24-65 116-95 156-25"></path>
+</g>
+<g class="fvd-svg-pink">
+<path d="M55 138 207 104"></path>
+<path d="m207 104-13-2 5 12"></path>
+<path class="fvd-svg-dash" d="M211 113c17-13 25-5 21 11"></path>
+<path d="m232 124-9-8-2 12"></path>
+</g>
+<g class="fvd-svg-label">
+<text x="38" y="153">O</text>
+<text x="138" y="73">u⃗</text>
+<text x="188" y="98">v⃗</text>
+<text x="141" y="130">x⃗</text>
+<text x="222" y="102">Rθ</text>
+</g>
+</svg>
+<!-- Bézier-curve -->
+<svg class="fvd-visual fvd-visual--bezier" viewbox="0 0 280 110">
+<g class="fvd-svg-soft">
+<path d="M30 82 85 30 190 30 245 82"></path>
+</g>
+<g class="fvd-svg-cyan">
+<path d="M30 82c42-12 55-52 105-52s67 40 110 52"></path>
+</g>
+<g class="fvd-svg-pink">
+<circle cx="30" cy="82" r="4"></circle>
+<circle cx="85" cy="30" r="4"></circle>
+<circle cx="190" cy="30" r="4"></circle>
+<circle cx="245" cy="82" r="4"></circle>
+</g>
+<g class="fvd-svg-label">
+<text x="18" y="102">P₀</text>
+<text x="74" y="20">P₁</text>
+<text x="181" y="20">P₂</text>
+<text x="238" y="102">P₃</text>
+<text x="103" y="79">Bézier-curve</text>
+</g>
+</svg>
+</div>
+</div>
+<div aria-hidden="true" class="fvd-hero__pink-corner"></div>
+</header><!-- XIMERA-HEADER-END -->
+
+<!-- MODULE_BANNER_START -->
+<section class="fvd-module-banner">
+    <div class="fvd-module-banner__glow fvd-module-banner__glow--left"></div>
+    <div class="fvd-module-banner__glow fvd-module-banner__glow--right"></div>
+  
+    <div class="fvd-module-banner__grid"></div>
+  
+    <div class="fvd-module-banner__icon" aria-hidden="true">
+      <svg viewBox="0 0 64 64" role="img">
+        <rect x="13" y="7" width="38" height="50" rx="8"></rect>
+        <rect x="19" y="14" width="26" height="10" rx="2"></rect>
+  
+        <circle cx="22" cy="33" r="2.5"></circle>
+        <circle cx="32" cy="33" r="2.5"></circle>
+        <circle cx="42" cy="33" r="2.5"></circle>
+  
+        <circle cx="22" cy="42" r="2.5"></circle>
+        <circle cx="32" cy="42" r="2.5"></circle>
+        <circle cx="42" cy="42" r="2.5"></circle>
+  
+        <circle cx="22" cy="51" r="2.5"></circle>
+        <circle cx="32" cy="51" r="2.5"></circle>
+        <circle cx="42" cy="51" r="2.5"></circle>
+      </svg>
+    </div>
+  
+    <div class="fvd-module-banner__content">
+      <div class="fvd-module-banner__label">
+        Module 1
+      </div>
+  
+      <h1 class="fvd-module-banner__title">
+        Van krachten tot kernen
+      </h1>
+  
+      <p class="fvd-module-banner__description">
+        In deze cursus bouwen we verder op de fysica uit de tweede graad en onderzoeken we hoe krachten en velden ons helpen om verschijnselen op heel verschillende schalen te begrijpen: van de beweging van alledaagse voorwerpen en planeten tot de wisselwerking tussen elektrische ladingen en de processen in de atoomkern. We starten met de gereedschapskist van de fysicus. Grootheden en eenheden, beduidende cijfers, wetenschappelijke notatie en vectoren vormen de taal waarmee we fysische verschijnselen nauwkeurig kunnen beschrijven. Daarna hernemen en verdiepen we de wetten van Newton. We leren krachten analyseren, vectorieel voorstellen en gebruiken om de beweging van voorwerpen te verklaren en te voorspellen. Vervolgens maken we de stap van krachten die we rechtstreeks waarnemen naar krachten die op afstand werken. Vanuit de gravitatie onderzoeken we hoe massa's elkaar aantrekken en hoe het begrip veld toelaat om die wisselwerking te beschrijven. Daarna ontdekken we dat elektrische ladingen op een verrassend gelijkaardige manier met elkaar interageren. De wet van Coulomb, het elektrische veld, elektrische potentiële energie, potentiaal en spanning bouwen samen een steeds rijker model van elektrische wisselwerking op. Vanuit elektrische ladingen zetten we de stap naar magnetisme. We onderzoeken hoe bewegende ladingen en elektrische stromen magnetische velden veroorzaken en hoe magnetische velden op bewegende ladingen kunnen inwerken. Daarna ontdekken we met elektromagnetische inductie dat een veranderend magnetisch veld op zijn beurt elektrische effecten kan veroorzaken. Zo groeien elektriciteit en magnetisme uit van twee ogenschijnlijk verschillende verschijnselen tot onderdelen van één samenhangend fysisch verhaal. Ten slotte richten we onze blik op een veel kleinere schaal: de atoomkern. We onderzoeken de opbouw en stabiliteit van kernen, radioactief verval en kernreacties en bestuderen hoe massa en energie met elkaar verbonden zijn. Begrippen zoals halveringstijd, bindingsenergie en massadefect laten zien hoe dezelfde fysische manier van denken ook processen kan beschrijven die zich diep binnenin de materie afspelen. Doorheen de cursus gebruiken we wiskunde als taal van de fysica. Vectoren helpen ons krachten en velden te beschrijven, functies tonen hoe fysische grootheden van elkaar afhangen en exponentiële modellen krijgen een concrete betekenis bij radioactief verval. We leren niet alleen formules gebruiken, maar ook modellen opbouwen, verbanden herkennen en resultaten kritisch interpreteren. Experimenten, metingen en gegevensanalyse vormen daarbij een essentieel onderdeel van de fysica. We leren onderzoeksvragen stellen, metingen uitvoeren, gegevens verwerken en nagaan in welke mate een model de werkelijkheid beschrijft. Ook toepassingen uit wetenschap en technologie laten zien hoe de onderzochte principes buiten het klaslokaal worden gebruikt. Fysica wordt zo geen verzameling afzonderlijke formules en wetten. Van Newtons bewegingswetten over gravitatie en elektromagnetisme tot processen in de atoomkern zoeken we telkens naar dezelfde onderliggende vragen: welke wisselwerkingen spelen een rol, hoe kunnen we ze modelleren en wat kunnen we ermee verklaren en voorspellen?
+      </p>
+  
+      <div class="fvd-module-banner__meta">
+        <div class="fvd-module-banner__meta-item">
+          <span class="fvd-module-banner__meta-icon">◷</span>
+          <span>18 lesuren</span>
+        </div>
+  
+        <div class="fvd-module-banner__divider"></div>
+  
+        <div class="fvd-module-banner__meta-item">
+          <span class="fvd-module-banner__meta-icon">▤</span>
+          <span>2 thema's</span>
+        </div>
+  
+        <div class="fvd-module-banner__divider"></div>
+  
+        <div class="fvd-module-banner__meta-item">
+          <span class="fvd-module-banner__meta-icon">▶</span>
+          <span>Start hier</span>
+        </div>
+      </div>
+    </div>
+  
+    <div class="fvd-module-banner__visual" aria-hidden="true">
+      <div class="fvd-module-banner__symbols">
+        <span>+</span>
+        <span>−</span>
+        <span>×</span>
+        <span>÷</span>
+      </div>
+  
+      <svg class="fvd-module-banner__graph" viewBox="0 0 360 180">
+        <line x1="35" y1="142" x2="335" y2="142"></line>
+        <line x1="92" y1="160" x2="92" y2="20"></line>
+  
+        <path
+          d="M45 140
+             C80 140, 80 72, 125 72
+             C170 72, 165 118, 205 118
+             C245 118, 235 40, 280 40
+             C315 40, 316 94, 335 98">
+        </path>
+      </svg>
+    </div>
+  </section>
+<!-- MODULE_BANNER_END -->
+
+<style> .activity-body pre { white-space: pre; background-color: lightgray; } .xmyoutube { aspect-ratio: 16/9; min-width: 75%; } .image-environment img { width: unset; } </style>
+
+<p><a id="x1-2r1"></a>
+</p><details class="course-theme" open=""><summary class="course-theme__summary"><span class="course-theme__summary-main"><span class="course-theme__badge">Thema 1</span><span class="course-theme__text"><span class="course-theme__title">Gereedschapskist en Newton - Van meten en vectoren tot krachten en beweging</span><span class="course-theme__count">2 hoofdstukken</span></span></span><span aria-hidden="true" class="course-theme__chevron">⌄</span></summary><div class="course-theme-cards"><article class="course-card">
+<div class="course-card-link">
+<div class="course-card-header">
+<div class="course-card-number-block">
+<span class="course-card-label">
+                    Hoofdstuk
+                </span>
+<span class="course-card-number">
+                    1
+                </span>
+</div>
+<h3 class="course-card-title">
+                De gereedschapskist van de fysicus
+            </h3>
+</div>
+<p class="course-card-abstract">
+            Fysica begint met waarnemen en meten. Een afstand, een tijdsduur, een massa of een temperatuur wordt pas bruikbare wetenschappelijke informatie wanneer duidelijk is welke grootheid gemeten werd, in welke eenheid het resultaat wordt uitgedrukt en hoe nauwkeurig de meting is. In dit eerste hoofdstuk bouwen we daarom een gereedschapskist op die we doorheen de volledige fysicacursus zullen gebruiken. We werken met fysische grootheden en SI-eenheden, wetenschappelijke notatie, voorvoegsels, meetnauwkeurigheid en beduidende cijfers. Daarna maken we de stap van scalaire naar vectoriële grootheden. Krachten, snelheden en versnellingen hebben immers niet alleen een grootte, maar ook een richting en een zin. We leren vectoren voorstellen, optellen en ontbinden in componenten. Ook experimenteren krijgt een plaats. We onderzoeken hoe een wetenschappelijke onderzoeksvraag wordt vertaald naar meetbare grootheden en hoe meetresultaten kritisch worden verwerkt en geïnterpreteerd. Ten slotte ontwikkelen we een vaste aanpak voor fysische problemen: de situatie begrijpen, een geschikt model kiezen, systematisch rekenen en het resultaat kritisch controleren. Deze gereedschappen vormen de basis voor het volgende hoofdstuk, waarin we krachten en de wetten van Newton bestuderen.
+        </p>
+<div class="course-card-footer">
+<a class="course-card-button" href="Thema1-Newton/1-Parate-kennis.html">
+                Hoofdstuk openen →
+            </a>
+</div>
+</div>
+</article><article class="course-card">
+<div class="course-card-link">
+<div class="course-card-header">
+<div class="course-card-number-block">
+<span class="course-card-label">
+                    Hoofdstuk
+                </span>
+<span class="course-card-number">
+                    2
+                </span>
+</div>
+<h3 class="course-card-title">
+                Krachten en de wetten van Newton
+            </h3>
+</div>
+<p class="course-card-abstract">
+            Waarom begint een stilstaande fiets te bewegen wanneer je op de pedalen duwt? Waarom word je in een optrekkende bus naar achteren geduwd? Waarom trekt de aarde aan een appel, maar trekt die appel tegelijk ook aan de aarde? Om zulke vragen te beantwoorden hebben we het begrip kracht nodig. Een kracht is geen eigenschap die een voorwerp zomaar bezit, maar beschrijft een wisselwerking tussen systemen. In dit hoofdstuk herhalen en verdiepen we de drie wetten van Newton. We onderzoeken wat een resulterende kracht betekent, waarom een kracht een vector is en hoe kracht en versnelling met elkaar verbonden zijn. Bijzondere aandacht gaat naar de derde wet van Newton. Krachten ontstaan immers steeds in wisselwerking: als voorwerp A een kracht uitoefent op voorwerp B, dan oefent B tegelijk een even grote maar tegengesteld gerichte kracht uit op A. Deze ideeën vormen de brug naar de volgende hoofdstukken. Daar zullen we twee fundamentele krachten op afstand onderzoeken: de gravitatiekracht tussen massa's en de elektrische kracht tussen ladingen.
+        </p>
+<div class="course-card-footer">
+<a class="course-card-button" href="Thema1-Newton/2-Newton.html">
+                Hoofdstuk openen →
+            </a>
+</div>
+</div>
+</article></div></details><details class="course-theme"><summary class="course-theme__summary"><span class="course-theme__summary-main"><span class="course-theme__badge">Thema 2</span><span class="course-theme__text"><span class="course-theme__title">Krachten op afstand - Van gravitatie tot elektrische velden</span><span class="course-theme__count">3 hoofdstukken</span></span></span><span aria-hidden="true" class="course-theme__chevron">⌄</span></summary><div class="course-theme-cards"><article class="course-card">
+<div class="course-card-link">
+<div class="course-card-header">
+<div class="course-card-number-block">
+<span class="course-card-label">
+                    Hoofdstuk
+                </span>
+<span class="course-card-number">
+                    1
+                </span>
+</div>
+<h3 class="course-card-title">
+                Gravitatie: aantrekking op afstand
+            </h3>
+</div>
+<p class="course-card-abstract">
+            Waarom valt een appel naar de aarde? Waarom blijft de maan in de buurt van de aarde? En waarom bewegen planeten rond de zon? Op het eerste gezicht lijken dit verschillende verschijnselen. Newton zag echter dat ze met dezelfde fundamentele wisselwerking kunnen worden verklaard: gravitatie. In dit hoofdstuk onderzoeken we hoe elke massa andere massa's aantrekt. We bouwen de vertrouwde zwaartekracht nabij het aardoppervlak uit tot een universele krachtwet die geldt voor appels, mensen, planeten, sterren en satellieten. Daarna maken we een belangrijke conceptuele stap. In plaats van alleen te vragen welke kracht twee massa's op elkaar uitoefenen, beschrijven we hoe een massa de ruimte rondom zich beïnvloedt. Zo ontstaat het begrip gravitatieveld. We onderzoeken hoe gravitatiekracht en gravitatieveld afhangen van massa en afstand, leren veldlijnen interpreteren en gebruiken het superpositiebeginsel wanneer meerdere massa's tegelijk een invloed uitoefenen. Ten slotte passen we het gravitatiemodel toe op satellieten. Daarmee ontdekken we dat vallen en rond een planeet bewegen veel nauwer met elkaar verbonden zijn dan je misschien zou verwachten. Gravitatie vormt bovendien onze eerste kennismaking met een veldkracht. In de volgende hoofdstukken zullen we ontdekken dat elektrische interacties een opvallend gelijkaardige wiskundige structuur hebben.
+        </p>
+<div class="course-card-footer">
+<a class="course-card-button" href="Thema2-Veldkrachten/1-Gravitatiekracht.html">
+                Hoofdstuk openen →
+            </a>
+</div>
+</div>
+</article><article class="course-card">
+<div class="course-card-link">
+<div class="course-card-header">
+<div class="course-card-number-block">
+<span class="course-card-label">
+                    Hoofdstuk
+                </span>
+<span class="course-card-number">
+                    2
+                </span>
+</div>
+<h3 class="course-card-title">
+                Elektrische kracht: aantrekken en afstoten
+            </h3>
+</div>
+<p class="course-card-abstract">
+            Een ballon die na het wrijven aan een muur blijft hangen, haren die rechtop gaan staan, een kleine schok bij het aanraken van een metalen deurklink en een bliksemflits tijdens een onweersbui lijken op het eerste gezicht heel verschillende verschijnselen. Toch hebben ze iets gemeen: elektrische lading. In dit hoofdstuk onderzoeken we eerst hoe elektrische lading zich manifesteert. We bekijken hoe positieve en negatieve lading samenhangen met de atomaire structuur van materie en onderzoeken hoe lading kan worden overgedragen of herverdeeld. Daarbij maken we onderscheid tussen geleiders en isolatoren en bestuderen we elektrostatische influentie en aarding. Vervolgens onderzoeken we de krachtwerking tussen elektrische ladingen. Met de wet van Coulomb kunnen we de elektrische kracht kwantitatief beschrijven. We analyseren hoe deze kracht afhangt van de grootte van de ladingen en van hun onderlinge afstand. De wiskundige vorm van de wet van Coulomb zal opvallend vertrouwd lijken. In het vorige hoofdstuk vonden we voor gravitatie immers ook een inverse-kwadratenwet. Ten slotte onderzoeken we situaties waarin meerdere ladingen tegelijk een kracht uitoefenen. Omdat elektrische kracht een vector is, moeten we daarbij krachten vectorieel combineren. Zo maken we opnieuw de stap van waarnemen naar verklaren en van verklaren naar voorspellen.
+        </p>
+<div class="course-card-footer">
+<a class="course-card-button" href="Thema2-Veldkrachten/2-Elektrische-kracht.html">
+                Hoofdstuk openen →
+            </a>
+</div>
+</div>
+</article><article class="course-card">
+<div class="course-card-link">
+<div class="course-card-header">
+<div class="course-card-number-block">
+<span class="course-card-label">
+                    Hoofdstuk
+                </span>
+<span class="course-card-number">
+                    3
+                </span>
+</div>
+<h3 class="course-card-title">
+                Elektrisch veld en potentiaal
+            </h3>
+</div>
+<p class="course-card-abstract">
+            Een elektrische lading kan een andere lading aantrekken of afstoten, zelfs wanneer beide voorwerpen elkaar niet raken. In het vorige hoofdstuk beschreven we deze wisselwerking met de wet van Coulomb. Maar hoe kan een lading op afstand een kracht uitoefenen? Om die vraag te beantwoorden voeren we het begrip elektrisch veld in. Een geladen voorwerp verandert de elektrische eigenschappen van de ruimte rondom zich. Wanneer we een andere lading in die ruimte plaatsen, ondervindt ze een elektrische kracht. We onderzoeken hoe we zo'n elektrisch veld kunnen beschrijven met de elektrische veldvector en hoe veldlijnen ons helpen om de structuur van een veld zichtbaar te maken. We bestuderen radiale velden, homogene velden en het veld van een elektrische dipool. Wanneer meerdere ladingen aanwezig zijn, combineren we hun bijdragen met het superpositiebeginsel. Daarna bekijken we dezelfde elektrische wisselwerking vanuit een energetisch perspectief. We voeren elektrische potentiële energie, elektrische potentiaal en spanning in en onderzoeken het verband tussen veld, arbeid en energie. Zo ontstaan twee complementaire manieren om elektrische wisselwerkingen te beschrijven: \[ kracht en veld energie en potentiaal \] Ten slotte brengen we deze ideeën opnieuw samen met de mechanica. Een geladen deeltje in een elektrisch veld ondervindt een kracht en kan daardoor versnellen. Elektrische velden kunnen dus niet alleen krachten uitoefenen, maar ook de beweging en energie van geladen deeltjes veranderen.
+        </p>
+<div class="course-card-footer">
+<a class="course-card-button" href="Thema2-Veldkrachten/3-Elektrisch-veld.html">
+                Hoofdstuk openen →
+            </a>
+</div>
+</div>
+</article></div></details><details class="course-theme"><summary class="course-theme__summary"><span class="course-theme__summary-main"><span class="course-theme__badge">Thema 3</span><span class="course-theme__text"><span class="course-theme__title">Elektriciteit wordt magnetisme - Van bewegende ladingen tot elektromagnetische inductie</span><span class="course-theme__count">0 hoofdstukken</span></span></span><span aria-hidden="true" class="course-theme__chevron">⌄</span></summary></details><details class="course-theme"><summary class="course-theme__summary"><span class="course-theme__summary-main"><span class="course-theme__badge">Thema 4</span><span class="course-theme__text"><span class="course-theme__title">Binnen in de kern- Van kernstructuur tot radioactief verval</span><span class="course-theme__count">0 hoofdstukken</span></span></span><span aria-hidden="true" class="course-theme__chevron">⌄</span></summary></details><!-- XIMERA-FOOTER-START --><footer class="site-footer">
+
+<div class="site-footer__inner">
+<div class="site-footer__quote">
+<span aria-hidden="true" class="site-footer__quote-mark">◈</span>
+<p class="site-footer__quote-text">
+                Think mathematically. Create digitally. Shape the future.
+            </p>
+</div>
+
+<div class="site-footer__grid">
+<section class="site-footer__column">
+<p class="site-footer__eyebrow">
+                    Wiskunde 7 FVD
+                </p>
+<h2 class="site-footer__title">
+                    Fundamentele Vorming Digitale Creatie
+                </h2>
+<p class="site-footer__text">
+                    Wiskundige basis voor programmeren, graphics,
+                    animatie, simulatie en 3D.
+                </p>
+</section>
+<section class="site-footer__column">
+<p class="site-footer__eyebrow">
+                    Ontwikkeling
+                </p>
+<p class="site-footer__name">
+                    Ingmar Herreman
+                </p>
+<p class="site-footer__text">
+                    GO! Athena Campus Bellevue
+                </p>
+<p class="site-footer__text">
+                    Versie 1.0 · 2026
+                </p>
+</section>
+<section class="site-footer__column">
+<p class="site-footer__eyebrow">
+                    Technologie
+                </p>
+<div class="site-footer__tech">
+<span>Ximera</span>
+<span>HTML</span>
+<span>PDF</span>
+<span>GeoGebra</span>
+<span>GitHub</span>
+</div>
+</section>
+</div>
+<div class="site-footer__bottom">
+<span>Gebouwd met Ximera</span>
+<span aria-hidden="true">•</span>
+<span>Voor 7 FVD</span>
+<span aria-hidden="true">•</span>
+<span>© 2026</span>
+</div>
+</div>
+</footer><!-- XIMERA-FOOTER-END --> <script src="../../assets/js/theme-toggle.js"></script>
+</body>
+</html>

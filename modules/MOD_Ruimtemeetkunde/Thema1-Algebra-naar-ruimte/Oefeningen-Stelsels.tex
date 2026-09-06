@@ -1,0 +1,2239 @@
+\documentclass{ximera}
+
+\input{../../../preamble.tex}
+\input{../../../Opmaak.tex}
+\addPrintStyle{../../..}
+
+\title{Oefeningen — Stelsels herbekeken}
+\author{Ingmar Herreman}
+
+\begin{document}
+
+% FVD_CHAPTER_DATA_START
+% Automatisch gegenereerd uit index.tex.
+% Niet handmatig aanpassen.
+\fvdchapterdata{1}{Van algebra naar ruimte}{1}
+% FVD_CHAPTER_DATA_END
+
+
+
+
+
+
+
+\maketitle
+
+\FVDbeginExercises
+
+% ============================================================
+% INLEIDING
+% ============================================================
+
+\begin{opmerking}
+Dit hoofdstuk is een herhaling van leerstof uit het vijfde jaar.
+
+De bedoeling is niet dat je opnieuw tientallen stelsels volledig
+met de hand reduceert. Voor omvangrijke berekeningen mag je ICT gebruiken.
+
+Je moet vooral kunnen:
+
+\begin{itemize}
+    \item een stelsel correct invoeren;
+    \item de gereduceerde matrix interpreteren;
+    \item de rang bepalen;
+    \item de oplosbaarheid analyseren;
+    \item vrije onbekenden herkennen;
+    \item een oplossingsverzameling correct schrijven;
+    \item je besluit wiskundig motiveren.
+\end{itemize}
+\end{opmerking}
+
+
+% ============================================================
+% BASIS
+% ============================================================
+
+\FVDsection{Basis — techniek opnieuw activeren}
+
+
+% ------------------------------------------------------------
+% OEFENING 1
+% ------------------------------------------------------------
+
+\begin{oefening}[Van stelsel naar matrix]{\oefB\ESS}
+
+Schrijf van elk stelsel de coëfficiëntenmatrix \(A\),
+de kolommatrix \(B\) en de uitgebreide matrix \(A_b\).
+
+\begin{question}
+
+\[
+\begin{cases}
+2x-3y+z=7,\\
+x+4y-2z=-1,\\
+3x-z=5.
+\end{cases}
+\]
+
+\begin{oplossing}
+
+De volgorde van de onbekenden is \(x,y,z\).
+
+\[
+A=
+\begin{bmatrix}
+2&-3&1\\
+1&4&-2\\
+3&0&-1
+\end{bmatrix},
+\qquad
+B=
+\begin{bmatrix}
+7\\-1\\5
+\end{bmatrix}.
+\]
+
+Dus
+
+\[
+A_b=
+\left[
+\begin{array}{ccc|c}
+2&-3&1&7\\
+1&4&-2&-1\\
+3&0&-1&5
+\end{array}
+\right].
+\]
+
+Merk op dat in de derde vergelijking de coëfficiënt van \(y\)
+gelijk is aan \(0\).
+
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+\[
+\begin{cases}
+x_1-2x_3+x_4=3,\\
+2x_1+x_2+4x_4=-1,\\
+x_2+3x_3=5.
+\end{cases}
+\]
+
+\begin{oplossing}
+
+De volgorde is
+
+\[
+x_1,x_2,x_3,x_4.
+\]
+
+Daarom
+
+\[
+A=
+\begin{bmatrix}
+1&0&-2&1\\
+2&1&0&4\\
+0&1&3&0
+\end{bmatrix},
+\qquad
+B=
+\begin{bmatrix}
+3\\-1\\5
+\end{bmatrix}.
+\]
+
+De uitgebreide matrix is
+
+\[
+A_b=
+\left[
+\begin{array}{cccc|c}
+1&0&-2&1&3\\
+2&1&0&4&-1\\
+0&1&3&0&5
+\end{array}
+\right].
+\]
+
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+
+% ------------------------------------------------------------
+% OEFENING 2
+% ------------------------------------------------------------
+
+\begin{oefening}[Lees de gereduceerde matrix]{\oefB\ESS}
+
+De volgende matrices zijn reeds met ICT gereduceerd.
+
+Bepaal telkens:
+
+\begin{enumerate}
+    \item \(\operatorname{rang}(A)\);
+    \item \(\operatorname{rang}(A_b)\);
+    \item het aantal vrije onbekenden;
+    \item het aantal oplossingen;
+    \item indien mogelijk: de oplossingsverzameling.
+\end{enumerate}
+
+
+\begin{question}
+
+\[
+\left[
+\begin{array}{ccc|c}
+1&0&0&2\\
+0&1&0&-1\\
+0&0&1&5
+\end{array}
+\right]
+\]
+
+\begin{oplossing}
+
+Er zijn drie pivots in \(A\):
+
+\[
+\operatorname{rang}(A)=3.
+\]
+
+Ook
+
+\[
+\operatorname{rang}(A_b)=3.
+\]
+
+Er zijn \(n=3\) onbekenden, dus
+
+\[
+3-3=0
+\]
+
+vrije onbekenden.
+
+Daarom is er precies één oplossing:
+
+\[
+V=\{(2,-1,5)\}.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+\[
+\left[
+\begin{array}{ccc|c}
+1&0&2&4\\
+0&1&-3&1\\
+0&0&0&0
+\end{array}
+\right]
+\]
+
+\begin{oplossing}
+
+\[
+\operatorname{rang}(A)
+=
+\operatorname{rang}(A_b)
+=
+2.
+\]
+
+Omdat \(n=3\), is er
+
+\[
+3-2=1
+\]
+
+vrije onbekende.
+
+Dus het stelsel heeft oneindig veel oplossingen.
+
+Neem
+
+\[
+z=t.
+\]
+
+Dan
+
+\[
+x+2z=4
+\quad\Longrightarrow\quad
+x=4-2t
+\]
+
+en
+
+\[
+y-3z=1
+\quad\Longrightarrow\quad
+y=1+3t.
+\]
+
+Dus
+
+\[
+V=
+\left\{
+(4-2t,1+3t,t)
+\mid t\in\mathbb{R}
+\right\}.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+\[
+\left[
+\begin{array}{ccc|c}
+1&0&2&4\\
+0&1&-3&1\\
+0&0&0&1
+\end{array}
+\right]
+\]
+
+\begin{oplossing}
+
+Voor \(A\):
+
+\[
+\operatorname{rang}(A)=2.
+\]
+
+Voor \(A_b\):
+
+\[
+\operatorname{rang}(A_b)=3.
+\]
+
+Dus
+
+\[
+\operatorname{rang}(A)<\operatorname{rang}(A_b).
+\]
+
+De laatste rij betekent bovendien
+
+\[
+0=1,
+\]
+
+wat onmogelijk is.
+
+Daarom
+
+\[
+V=\varnothing.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+
+% ------------------------------------------------------------
+% OEFENING 3
+% ------------------------------------------------------------
+
+\begin{oefening}[Reduceren met ICT en analyseren]{\oefB\ESS}
+
+Gebruik ICT om de uitgebreide matrix van elk stelsel naar gereduceerde
+rij-echelonvorm te brengen.
+
+Noteer vervolgens expliciet:
+
+\[
+\operatorname{rang}(A),\qquad
+\operatorname{rang}(A_b),
+\]
+
+het aantal vrije onbekenden en je besluit over de oplosbaarheid.
+
+
+\begin{question}
+
+\[
+\begin{cases}
+2x+3y+z=11,\\
+3x+y+2z=11,\\
+x+2y+3z=14.
+\end{cases}
+\]
+
+\begin{oplossing}
+
+Met ICT:
+
+\[
+A_b
+\sim
+\left[
+\begin{array}{ccc|c}
+1&0&0&1\\
+0&1&0&2\\
+0&0&1&3
+\end{array}
+\right].
+\]
+
+Dus
+
+\[
+\operatorname{rang}(A)
+=
+\operatorname{rang}(A_b)
+=
+3=n.
+\]
+
+Er zijn geen vrije onbekenden.
+
+Het stelsel heeft precies één oplossing:
+
+\[
+V=\{(1,2,3)\}.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+\[
+\begin{cases}
+x-2y=1,\\
+2x+y-z=1,\\
+3x-y-z=2.
+\end{cases}
+\]
+
+\begin{oplossing}
+
+Met ICT:
+
+\[
+A_b
+\sim
+\left[
+\begin{array}{ccc|c}
+1&0&-\frac25&\frac35\\
+0&1&-\frac15&-\frac15\\
+0&0&0&0
+\end{array}
+\right].
+\]
+
+Daarom
+
+\[
+\operatorname{rang}(A)
+=
+\operatorname{rang}(A_b)
+=
+2<3.
+\]
+
+Er is één vrije onbekende.
+
+Neem
+
+\[
+z=t.
+\]
+
+Dan
+
+\[
+x=\frac35+\frac25t
+\]
+
+en
+
+\[
+y=-\frac15+\frac15t.
+\]
+
+Dus
+
+\[
+V=
+\left\{
+\left(
+\frac35+\frac25t,
+-\frac15+\frac15t,
+t
+\right)
+\mid t\in\mathbb{R}
+\right\}.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+\[
+\begin{cases}
+2x+2y+4z=13,\\
+y+z=5,\\
+x+2y+3z=8.
+\end{cases}
+\]
+
+\begin{oplossing}
+
+Met ICT:
+
+\[
+A_b
+\sim
+\left[
+\begin{array}{ccc|c}
+1&0&1&0\\
+0&1&1&0\\
+0&0&0&1
+\end{array}
+\right].
+\]
+
+Voor de coëfficiëntenmatrix geldt
+
+\[
+\operatorname{rang}(A)=2,
+\]
+
+maar voor de uitgebreide matrix
+
+\[
+\operatorname{rang}(A_b)=3.
+\]
+
+Dus
+
+\[
+\operatorname{rang}(A)
+<
+\operatorname{rang}(A_b).
+\]
+
+Het stelsel is strijdig:
+
+\[
+V=\varnothing.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+
+% ------------------------------------------------------------
+% OEFENING 4
+% ------------------------------------------------------------
+
+\begin{oefening}[Vrije onbekenden]{\oefB\ESS}
+
+Voor elk van de volgende gereduceerde matrices:
+
+\begin{enumerate}
+    \item duid de pivotkolommen aan;
+    \item geef de vrije onbekenden;
+    \item bepaal het aantal vrije parameters;
+    \item schrijf de volledige oplossingsverzameling.
+\end{enumerate}
+
+
+\begin{question}
+
+\[
+\left[
+\begin{array}{ccc|c}
+1&0&2&3\\
+0&1&-1&4\\
+0&0&0&0
+\end{array}
+\right]
+\]
+
+\begin{oplossing}
+
+De pivots liggen in kolommen \(1\) en \(2\).
+
+Dus \(x\) en \(y\) zijn pivotvariabelen en \(z\) is vrij.
+
+Neem
+
+\[
+z=t.
+\]
+
+Dan
+
+\[
+x=3-2t,
+\qquad
+y=4+t.
+\]
+
+Dus
+
+\[
+V=
+\left\{
+(3-2t,4+t,t)
+\mid t\in\mathbb{R}
+\right\}.
+\]
+
+Equivalent:
+
+\[
+\begin{pmatrix}
+x\\y\\z
+\end{pmatrix}
+=
+\begin{pmatrix}
+3\\4\\0
+\end{pmatrix}
++
+t
+\begin{pmatrix}
+-2\\1\\1
+\end{pmatrix}.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+\[
+\left[
+\begin{array}{cccc|c}
+1&0&-2&3&1\\
+0&1&1&-1&2\\
+0&0&0&0&0
+\end{array}
+\right]
+\]
+
+\begin{oplossing}
+
+De pivots liggen in kolommen \(1\) en \(2\).
+
+Dus
+
+\[
+x_3=s,
+\qquad
+x_4=t
+\]
+
+zijn vrij.
+
+Uit de eerste rij:
+
+\[
+x_1-2x_3+3x_4=1
+\]
+
+volgt
+
+\[
+x_1=1+2s-3t.
+\]
+
+Uit de tweede rij:
+
+\[
+x_2+x_3-x_4=2
+\]
+
+volgt
+
+\[
+x_2=2-s+t.
+\]
+
+Dus
+
+\[
+V=
+\left\{
+(1+2s-3t,\,2-s+t,\,s,\,t)
+\mid s,t\in\mathbb{R}
+\right\}.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+
+% ------------------------------------------------------------
+% OEFENING 5
+% ------------------------------------------------------------
+
+\begin{oefening}[Homogene stelsels]{\oefB\ESS}
+
+Gebruik ICT waar nodig.
+
+
+\begin{question}
+
+Beschouw
+
+\[
+\begin{cases}
+2x+y+3z=0,\\
+y+2z=0,\\
+-x+5y=0.
+\end{cases}
+\]
+
+Heeft dit stelsel niet-triviale oplossingen?
+
+Motiveer met behulp van de rang.
+
+\begin{oplossing}
+
+De reductie geeft
+
+\[
+A_b
+\sim
+\left[
+\begin{array}{ccc|c}
+1&0&0&0\\
+0&1&0&0\\
+0&0&1&0
+\end{array}
+\right].
+\]
+
+Dus
+
+\[
+\operatorname{rang}(A)=3=n.
+\]
+
+Er zijn geen vrije onbekenden.
+
+Het stelsel heeft enkel de triviale oplossing:
+
+\[
+V=\{(0,0,0)\}.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+Beschouw
+
+\[
+\begin{cases}
+x+3y-z=0,\\
+2x+6y-3z=0,\\
+x+3y+3z=0.
+\end{cases}
+\]
+
+Bepaal de oplossingsverzameling.
+
+\begin{oplossing}
+
+Met ICT:
+
+\[
+A_b
+\sim
+\left[
+\begin{array}{ccc|c}
+1&3&0&0\\
+0&0&1&0\\
+0&0&0&0
+\end{array}
+\right].
+\]
+
+Dus
+
+\[
+\operatorname{rang}(A)=2<3.
+\]
+
+Er is één vrije onbekende.
+
+Uit de tweede rij:
+
+\[
+z=0.
+\]
+
+Neem
+
+\[
+y=t.
+\]
+
+Dan
+
+\[
+x=-3t.
+\]
+
+Dus
+
+\[
+V=
+\left\{
+(-3t,t,0)
+\mid t\in\mathbb{R}
+\right\}.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+
+% ============================================================
+% VERDIEPING
+% ============================================================
+
+\FVDsection{Verdieping — analyseren en redeneren}
+
+
+% ------------------------------------------------------------
+% OEFENING 6
+% ------------------------------------------------------------
+
+\begin{oefening}[Beslis zonder verder te rekenen]{\oefU\ESS}
+
+Voor elk geval is de reductie voldoende ver uitgevoerd om de oplosbaarheid
+te kunnen bepalen.
+
+Je mag niet verder reduceren.
+
+Bepaal het aantal oplossingen en motiveer.
+
+
+\begin{question}
+
+\[
+\left[
+\begin{array}{ccc|c}
+1&2&-1&4\\
+0&1&3&2\\
+0&0&5&-10
+\end{array}
+\right].
+\]
+
+\begin{oplossing}
+
+Alle drie de coëfficiëntenkolommen bevatten een pivot.
+
+Daarom
+
+\[
+\operatorname{rang}(A)
+=
+\operatorname{rang}(A_b)
+=
+3=n.
+\]
+
+Het stelsel heeft precies één oplossing.
+
+Het is niet nodig de oplossing zelf uit te rekenen.
+
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+\[
+\left[
+\begin{array}{ccc|c}
+1&2&-1&4\\
+0&1&3&2\\
+0&0&0&-6
+\end{array}
+\right].
+\]
+
+\begin{oplossing}
+
+De laatste rij geeft
+
+\[
+0=-6.
+\]
+
+Dat is onmogelijk.
+
+Equivalent:
+
+\[
+\operatorname{rang}(A)=2
+\]
+
+maar
+
+\[
+\operatorname{rang}(A_b)=3.
+\]
+
+Dus het stelsel heeft geen oplossing.
+
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+\[
+\left[
+\begin{array}{cccc|c}
+1&2&0&-1&5\\
+0&0&1&3&2\\
+0&0&0&0&0
+\end{array}
+\right].
+\]
+
+\begin{oplossing}
+
+Er zijn twee pivots:
+
+\[
+\operatorname{rang}(A)
+=
+\operatorname{rang}(A_b)
+=
+2.
+\]
+
+Er zijn vier onbekenden.
+
+Dus
+
+\[
+4-2=2
+\]
+
+vrije onbekenden.
+
+Het stelsel heeft oneindig veel oplossingen met twee vrije parameters.
+
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+
+% ------------------------------------------------------------
+% OEFENING 7
+% ------------------------------------------------------------
+
+\begin{oefening}[Vind de fout in de redenering]{\oefU\ESS}
+
+Een leerling krijgt na reductie
+
+\[
+\left[
+\begin{array}{ccc|c}
+1&0&1&-2\\
+0&1&1&5\\
+0&0&0&7
+\end{array}
+\right].
+\]
+
+Hij schrijft:
+
+\[
+\operatorname{rang}(A)=3,
+\qquad
+\operatorname{rang}(A_b)=2.
+\]
+
+Daarom heeft het stelsel geen oplossing.
+
+Analyseer deze redenering.
+
+\begin{oplossing}
+
+De conclusie ``geen oplossing'' is juist, maar de rangen zijn fout.
+
+Voor de coëfficiëntenmatrix
+
+\[
+A=
+\begin{bmatrix}
+1&0&1\\
+0&1&1\\
+0&0&0
+\end{bmatrix}
+\]
+
+zijn er twee pivots. Dus
+
+\[
+\operatorname{rang}(A)=2.
+\]
+
+In de uitgebreide matrix ontstaat door de laatste kolom een derde pivot:
+
+\[
+\operatorname{rang}(A_b)=3.
+\]
+
+Dus
+
+\[
+\operatorname{rang}(A)
+<
+\operatorname{rang}(A_b),
+\]
+
+en daarom is het stelsel strijdig.
+
+Bovendien geldt algemeen altijd
+
+\[
+\operatorname{rang}(A_b)
+\geq
+\operatorname{rang}(A),
+\]
+
+omdat \(A_b\) ontstaat door aan \(A\) een kolom toe te voegen.
+
+\end{oplossing}
+
+\end{oefening}
+
+
+
+% ------------------------------------------------------------
+% OEFENING 8
+% ------------------------------------------------------------
+
+\begin{oefening}[Zelfde coëfficiënten, ander rechterlid]{\oefU\ESS}
+
+Beschouw de twee gereduceerde uitgebreide matrices
+
+\[
+M_1=
+\left[
+\begin{array}{ccc|c}
+1&0&2&3\\
+0&1&-1&4\\
+0&0&0&0
+\end{array}
+\right]
+\]
+
+en
+
+\[
+M_2=
+\left[
+\begin{array}{ccc|c}
+1&0&2&0\\
+0&1&-1&0\\
+0&0&0&1
+\end{array}
+\right].
+\]
+
+\begin{question}
+
+De coëfficiëntenmatrices hebben dezelfde rang.
+Toch is de oplosbaarheid volledig verschillend.
+
+Verklaar.
+
+\begin{oplossing}
+
+Voor beide matrices is
+
+\[
+\operatorname{rang}(A)=2.
+\]
+
+Bij \(M_1\):
+
+\[
+\operatorname{rang}(A_b)=2,
+\]
+
+dus
+
+\[
+\operatorname{rang}(A)
+=
+\operatorname{rang}(A_b)
+<
+3.
+\]
+
+Het stelsel heeft oneindig veel oplossingen.
+
+Bij \(M_2\) geeft de laatste rij
+
+\[
+0=1.
+\]
+
+Daarom
+
+\[
+\operatorname{rang}(A_b)=3.
+\]
+
+Dus
+
+\[
+\operatorname{rang}(A)
+<
+\operatorname{rang}(A_b),
+\]
+
+en het stelsel heeft geen oplossing.
+
+De rang van \(A\) alleen is dus onvoldoende om de oplosbaarheid
+van een niet-homogeen stelsel te bepalen.
+
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+
+% ------------------------------------------------------------
+% OEFENING 9
+% ------------------------------------------------------------
+
+\begin{oefening}[Hoeveel vrijheid blijft over?]{\oefU\ESS}
+
+Een oplosbaar lineair stelsel bevat \(7\) onbekenden.
+
+De coëfficiëntenmatrix heeft rang \(4\).
+
+\begin{question}
+
+Hoeveel vrije parameters heeft de oplossingsverzameling?
+
+\[
+\answer{3}
+\]
+
+\begin{oplossing}
+
+Omdat het stelsel oplosbaar is,
+
+\[
+\operatorname{rang}(A)
+=
+\operatorname{rang}(A_b).
+\]
+
+Het aantal vrije parameters is
+
+\[
+n-\operatorname{rang}(A)
+=
+7-4
+=
+3.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+Heeft het stelsel één of oneindig veel oplossingen?
+
+\begin{multipleChoice}
+    \choice{geen oplossing}
+    \choice{precies één oplossing}
+    \choice[correct]{oneindig veel oplossingen}
+\end{multipleChoice}
+
+\begin{oplossing}
+
+Er zijn drie vrije parameters. Elke parameter kan vrij variëren in
+\(\mathbb{R}\), dus er zijn oneindig veel oplossingen.
+
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+
+% ------------------------------------------------------------
+% OEFENING 10
+% ------------------------------------------------------------
+
+\begin{oefening}[Van parameter naar ruimte]{\oefU\ESS}
+
+Beschouw
+
+\[
+V=
+\left\{
+(3-2t,4+t,t)
+\mid t\in\mathbb{R}
+\right\}.
+\]
+
+\begin{question}
+
+Schrijf deze oplossingsverzameling in de vorm
+
+\[
+\begin{pmatrix}
+x\\y\\z
+\end{pmatrix}
+=
+\begin{pmatrix}
+x_0\\y_0\\z_0
+\end{pmatrix}
++
+t
+\begin{pmatrix}
+a\\b\\c
+\end{pmatrix}.
+\]
+
+\begin{oplossing}
+
+\[
+\begin{pmatrix}
+x\\y\\z
+\end{pmatrix}
+=
+\begin{pmatrix}
+3\\4\\0
+\end{pmatrix}
++
+t
+\begin{pmatrix}
+-2\\1\\1
+\end{pmatrix}.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+Bereken de punten van de oplossingsverzameling voor
+
+\[
+t=0,\qquad t=1,\qquad t=-1.
+\]
+
+\begin{oplossing}
+
+Voor \(t=0\):
+
+\[
+(3,4,0).
+\]
+
+Voor \(t=1\):
+
+\[
+(1,5,1).
+\]
+
+Voor \(t=-1\):
+
+\[
+(5,3,-1).
+\]
+
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+Wat voor meetkundige figuur vormen alle oplossingen?
+
+\begin{multipleChoice}
+    \choice{één punt}
+    \choice[correct]{een rechte}
+    \choice{een vlak}
+    \choice{de volledige ruimte}
+\end{multipleChoice}
+
+\begin{oplossing}
+
+Er is één vrije parameter.
+
+Wanneer \(t\) varieert, vertrekken we vanuit het vaste punt
+
+\[
+(3,4,0)
+\]
+
+en bewegen we in de vaste richting
+
+\[
+(-2,1,1).
+\]
+
+Daarom vormt de oplossingsverzameling een rechte.
+
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+
+% ------------------------------------------------------------
+% OEFENING 11
+% ------------------------------------------------------------
+
+\begin{oefening}[Rang en meetkundige betekenis]{\oefU\ESS}
+
+Een oplosbaar stelsel heeft drie onbekenden \(x,y,z\).
+
+Vul de tabel aan.
+
+\[
+\begin{array}{c|c|c|c}
+\operatorname{rang}(A)
+&
+\text{vrije parameters}
+&
+\text{aantal oplossingen}
+&
+\text{meetkundige vorm}
+\\
+\hline
+3 & ? & ? & ?\\
+2 & ? & ? & ?\\
+1 & ? & ? & ?\\
+0 & ? & ? & ?
+\end{array}
+\]
+
+\begin{oplossing}
+
+\[
+\begin{array}{c|c|c|c}
+\operatorname{rang}(A)
+&
+\text{vrije parameters}
+&
+\text{aantal oplossingen}
+&
+\text{meetkundige vorm}
+\\
+\hline
+3&0&1&\text{punt}\\
+2&1&\infty&\text{rechte}\\
+1&2&\infty&\text{vlak}\\
+0&3&\infty&\mathbb{R}^{3}
+\end{array}
+\]
+
+De tabel geldt alleen wanneer het stelsel oplosbaar is.
+
+\end{oplossing}
+
+\end{oefening}
+
+
+
+% ------------------------------------------------------------
+% OEFENING 12
+% ------------------------------------------------------------
+
+\begin{oefening}[Een homogeen stelsel analyseren zonder het op te lossen]{\oefU}
+
+Een homogeen stelsel heeft \(5\) onbekenden en
+
+\[
+\operatorname{rang}(A)=3.
+\]
+
+Beantwoord zonder het stelsel expliciet op te lossen.
+
+\begin{question}
+
+Kan het stelsel strijdig zijn?
+
+\begin{multipleChoice}
+    \choice{ja}
+    \choice[correct]{nee}
+\end{multipleChoice}
+
+\begin{oplossing}
+
+Nee.
+
+Een homogeen stelsel heeft altijd minstens de nuloplossing.
+
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+Hoeveel vrije parameters zijn er?
+
+\[
+\answer{2}
+\]
+
+\begin{oplossing}
+
+\[
+5-3=2.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+Bestaan er niet-triviale oplossingen?
+
+\begin{multipleChoice}
+    \choice[correct]{ja}
+    \choice{nee}
+\end{multipleChoice}
+
+\begin{oplossing}
+
+Ja.
+
+Omdat
+
+\[
+\operatorname{rang}(A)=3<5,
+\]
+
+zijn er twee vrije parameters. De nuloplossing is dus niet de enige
+oplossing.
+
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+
+% ------------------------------------------------------------
+% OEFENING 13
+% ------------------------------------------------------------
+
+\begin{oefening}[Kies de juiste informatie]{\oefU}
+
+Voor een stelsel met vier onbekenden is gegeven:
+
+\[
+\operatorname{rang}(A)=3.
+\]
+
+Een leerling beweert:
+
+\begin{center}
+``Het stelsel heeft dus oneindig veel oplossingen.''
+\end{center}
+
+Is dit besluit correct?
+
+\begin{oplossing}
+
+Niet noodzakelijk.
+
+Uit
+
+\[
+\operatorname{rang}(A)=3<4
+\]
+
+weten we alleen dat er, \emph{als het stelsel oplosbaar is},
+één vrije parameter zal zijn.
+
+We moeten eerst ook
+
+\[
+\operatorname{rang}(A_b)
+\]
+
+kennen.
+
+Er zijn twee mogelijkheden:
+
+\[
+\operatorname{rang}(A_b)=3
+\]
+
+geeft oneindig veel oplossingen, maar
+
+\[
+\operatorname{rang}(A_b)=4
+\]
+
+geeft geen oplossing.
+
+De gegeven informatie is dus onvoldoende.
+
+\end{oplossing}
+
+\end{oefening}
+
+
+
+% ============================================================
+% GEVORDERD
+% ============================================================
+
+\FVDsection{Gevorderd — combineren en generaliseren}
+
+
+% ------------------------------------------------------------
+% OEFENING 14
+% ------------------------------------------------------------
+
+\begin{oefening}[Een parameter in het rechterlid]{\oefG}
+
+Beschouw
+
+\[
+\begin{cases}
+x+y+z=2,\\
+2x+2y+2z=4,\\
+x+y+z=k.
+\end{cases}
+\]
+
+Onderzoek afhankelijk van \(k\) de oplosbaarheid van het stelsel.
+
+\begin{oplossing}
+
+De tweede vergelijking is tweemaal de eerste.
+
+De derde vergelijking heeft hetzelfde linkerlid als de eerste.
+
+Als
+
+\[
+k=2,
+\]
+
+zijn de eerste en derde vergelijking identiek en geldt
+
+\[
+\operatorname{rang}(A)
+=
+\operatorname{rang}(A_b)
+=
+1<3.
+\]
+
+Er zijn dan twee vrije parameters en dus oneindig veel oplossingen.
+
+Als
+
+\[
+k\neq2,
+\]
+
+vragen de eerste en derde vergelijking tegelijk dat
+
+\[
+x+y+z=2
+\]
+
+en
+
+\[
+x+y+z=k.
+\]
+
+Dat is onmogelijk.
+
+Na reductie ontstaat een rij van de vorm
+
+\[
+[0\ 0\ 0\mid k-2].
+\]
+
+Dus voor
+
+\[
+k\neq2
+\]
+
+geldt
+
+\[
+\operatorname{rang}(A)
+<
+\operatorname{rang}(A_b),
+\]
+
+en heeft het stelsel geen oplossing.
+
+Samengevat:
+
+\[
+\boxed{
+\begin{array}{ll}
+k=2 &: \text{oneindig veel oplossingen},\\[1mm]
+k\neq2 &: \text{geen oplossing}.
+\end{array}
+}
+\]
+
+\end{oplossing}
+
+\end{oefening}
+
+
+
+% ------------------------------------------------------------
+% OEFENING 15
+% ------------------------------------------------------------
+
+\begin{oefening}[Kan dit bestaan?]{\oefG}
+
+Bepaal telkens of de beschreven situatie mogelijk is.
+Motiveer.
+
+
+\begin{question}
+
+Een stelsel met drie onbekenden waarvoor
+
+\[
+\operatorname{rang}(A)=3
+\]
+
+en
+
+\[
+\operatorname{rang}(A_b)=2.
+\]
+
+\begin{oplossing}
+
+Dit is onmogelijk.
+
+Omdat \(A_b\) ontstaat door aan \(A\) één kolom toe te voegen, geldt altijd
+
+\[
+\operatorname{rang}(A_b)
+\geq
+\operatorname{rang}(A).
+\]
+
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+Een stelsel met vier onbekenden waarvoor
+
+\[
+\operatorname{rang}(A)
+=
+\operatorname{rang}(A_b)
+=
+3
+\]
+
+en precies één oplossing.
+
+\begin{oplossing}
+
+Dit is onmogelijk.
+
+Er zijn vier onbekenden maar slechts drie pivots.
+
+Dus
+
+\[
+4-3=1
+\]
+
+onbekende is vrij.
+
+Het stelsel heeft daarom oneindig veel oplossingen.
+
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+Een homogeen stelsel met zes onbekenden, rang \(6\)
+en alleen de nuloplossing.
+
+\begin{oplossing}
+
+Dit is mogelijk.
+
+Omdat
+
+\[
+\operatorname{rang}(A)=6=n,
+\]
+
+zijn alle onbekenden pivotvariabelen en zijn er geen vrije parameters.
+
+Het homogene stelsel heeft dan enkel
+
+\[
+X=0.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+
+% ------------------------------------------------------------
+% OEFENING 16
+% ------------------------------------------------------------
+
+\begin{oefening}[Van een rechte naar een stelsel]{\oefG}
+
+Gegeven is de verzameling
+
+\[
+V=
+\left\{
+(1+2t,-1+t,3-t)
+\mid t\in\mathbb{R}
+\right\}.
+\]
+
+\begin{question}
+
+Toon aan dat voor elk punt van \(V\)
+
+\[
+x-2y=3
+\]
+
+geldt.
+
+\begin{oplossing}
+
+Voor een punt van \(V\) geldt
+
+\[
+x=1+2t,
+\qquad
+y=-1+t.
+\]
+
+Dus
+
+\[
+x-2y
+=
+1+2t-2(-1+t)
+=
+1+2t+2-2t
+=
+3.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+Zoek nog een lineaire vergelijking in \(x,y,z\)
+die door elk punt van \(V\) wordt voldaan.
+
+\begin{oplossing}
+
+Er zijn meerdere mogelijkheden.
+
+We hebben
+
+\[
+y=-1+t
+\]
+
+en
+
+\[
+z=3-t.
+\]
+
+Daarom
+
+\[
+y+z
+=
+(-1+t)+(3-t)
+=
+2.
+\]
+
+Een mogelijke tweede vergelijking is dus
+
+\[
+y+z=2.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+Beschouw nu het stelsel
+
+\[
+\begin{cases}
+x-2y=3,\\
+y+z=2.
+\end{cases}
+\]
+
+Toon met behulp van rang en vrije parameters aan dat het
+oneindig veel oplossingen heeft.
+
+\begin{oplossing}
+
+De uitgebreide matrix is
+
+\[
+\left[
+\begin{array}{ccc|c}
+1&-2&0&3\\
+0&1&1&2
+\end{array}
+\right].
+\]
+
+Er zijn twee pivots:
+
+\[
+\operatorname{rang}(A)
+=
+\operatorname{rang}(A_b)
+=
+2.
+\]
+
+Er zijn drie onbekenden, dus
+
+\[
+3-2=1
+\]
+
+vrije parameter.
+
+Het stelsel heeft daarom oneindig veel oplossingen.
+
+Neem
+
+\[
+z=s.
+\]
+
+Dan
+
+\[
+y=2-s
+\]
+
+en
+
+\[
+x=3+2y
+=7-2s.
+\]
+
+Dus
+
+\[
+V=
+\left\{
+(7-2s,2-s,s)
+\mid s\in\mathbb{R}
+\right\}.
+\]
+
+Dit is dezelfde rechte als de oorspronkelijke verzameling,
+maar met een andere parametrisatie.
+
+Neem namelijk
+
+\[
+s=3-t.
+\]
+
+Dan
+
+\[
+(7-2s,2-s,s)
+=
+(1+2t,-1+t,3-t).
+\]
+
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+
+% ------------------------------------------------------------
+% OEFENING 17
+% ------------------------------------------------------------
+
+\begin{oefening}[Redeneren over rang]{\oefG}
+
+Leg uit waarom voor elke matrix \(A\) en haar uitgebreide matrix \(A_b\)
+
+\[
+\operatorname{rang}(A_b)
+\geq
+\operatorname{rang}(A)
+\]
+
+moet gelden.
+
+\begin{oplossing}
+
+De uitgebreide matrix \(A_b\) ontstaat door aan \(A\) één extra kolom
+toe te voegen.
+
+Alle kolommen die reeds in \(A\) aanwezig waren, blijven dus aanwezig
+in \(A_b\).
+
+Door een kolom toe te voegen kunnen bestaande onafhankelijke
+kolommen niet plots afhankelijk worden.
+
+De maximale hoeveelheid lineair onafhankelijke informatie kan daarom
+niet afnemen.
+
+Dus
+
+\[
+\operatorname{rang}(A_b)
+\geq
+\operatorname{rang}(A).
+\]
+
+De extra kolom kan de rang:
+
+\begin{itemize}
+    \item onveranderd laten;
+    \item of met één verhogen.
+\end{itemize}
+
+Daarom is ook
+
+\[
+\operatorname{rang}(A_b)
+\leq
+\operatorname{rang}(A)+1.
+\]
+
+\end{oplossing}
+
+\end{oefening}
+
+
+
+% ============================================================
+% SLOTOPDRACHT
+% ============================================================
+
+\FVDsection{Eindcheck}
+
+
+\begin{oefening}[Alles samen]{\oefU\ESS}
+
+Een stelsel met onbekenden \(x,y,z\) wordt met ICT gereduceerd tot
+
+\[
+\left[
+\begin{array}{ccc|c}
+1&0&-2&5\\
+0&1&3&-1\\
+0&0&0&0
+\end{array}
+\right].
+\]
+
+Beantwoord zonder bijkomende ICT.
+
+
+\begin{question}
+
+Bepaal
+
+\[
+\operatorname{rang}(A)
+\qquad\text{en}\qquad
+\operatorname{rang}(A_b).
+\]
+
+\begin{oplossing}
+
+\[
+\operatorname{rang}(A)
+=
+\operatorname{rang}(A_b)
+=
+2.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+Hoeveel vrije onbekenden zijn er?
+
+\[
+\answer{1}
+\]
+
+\end{question}
+
+
+\begin{question}
+
+Hoeveel oplossingen heeft het stelsel?
+
+\begin{multipleChoice}
+    \choice{geen}
+    \choice{precies één}
+    \choice[correct]{oneindig veel}
+\end{multipleChoice}
+
+\end{question}
+
+
+\begin{question}
+
+Schrijf de oplossingsverzameling.
+
+\begin{oplossing}
+
+De derde kolom bevat geen pivot, dus neem
+
+\[
+z=t.
+\]
+
+Dan
+
+\[
+x-2z=5
+\quad\Longrightarrow\quad
+x=5+2t
+\]
+
+en
+
+\[
+y+3z=-1
+\quad\Longrightarrow\quad
+y=-1-3t.
+\]
+
+Dus
+
+\[
+V=
+\left\{
+(5+2t,-1-3t,t)
+\mid t\in\mathbb{R}
+\right\}.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+Schrijf de oplossing in vectorvorm.
+
+\begin{oplossing}
+
+\[
+\begin{pmatrix}
+x\\y\\z
+\end{pmatrix}
+=
+\begin{pmatrix}
+5\\-1\\0
+\end{pmatrix}
++
+t
+\begin{pmatrix}
+2\\-3\\1
+\end{pmatrix}.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+Welke meetkundige figuur beschrijft deze oplossingsverzameling?
+
+\begin{multipleChoice}
+    \choice{een punt}
+    \choice[correct]{een rechte}
+    \choice{een vlak}
+    \choice{de volledige ruimte}
+\end{multipleChoice}
+
+\begin{oplossing}
+
+Er is één vrije parameter.
+
+De oplossing heeft de vorm
+
+\[
+P=P_0+t\vec{v}.
+\]
+
+Dat beschrijft een rechte in de ruimte.
+
+Dit is precies de vorm die in een volgend hoofdstuk opnieuw zal verschijnen.
+
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+
+% ============================================================
+% ESSENTIËLE OEFENINGEN
+% ============================================================
+
+\FVDsection{Essentiële oefeningen}
+
+\begin{opmerking}
+Om deze opfrissing voldoende te beheersen voor het vervolg van de module,
+moet je minstens de volgende oefeningen zelfstandig aankunnen:
+
+\begin{itemize}
+    \item \textbf{Oefening 1:} een stelsel correct naar matrixnotatie omzetten;
+    \item \textbf{Oefening 2:} rang en oplosbaarheid uit een gereduceerde matrix aflezen;
+    \item \textbf{Oefening 3:} een stelsel met ICT reduceren en het resultaat analyseren;
+    \item \textbf{Oefening 4:} vrije onbekenden herkennen en parametriseren;
+    \item \textbf{Oefening 5:} homogene stelsels analyseren;
+    \item \textbf{Oefening 6:} oplosbaarheid bepalen zonder onnodig verder te rekenen;
+    \item \textbf{Oefening 7:} fouten in een rangredenering herkennen;
+    \item \textbf{Oefening 8:} \(\operatorname{rang}(A)\) en
+          \(\operatorname{rang}(A_b)\) correct onderscheiden;
+    \item \textbf{Oefening 9:} rang koppelen aan het aantal vrije parameters;
+    \item \textbf{Oefening 10:} een geparametriseerde oplossing in vectorvorm schrijven;
+    \item \textbf{Oefening 11:} rang koppelen aan de meetkundige dimensie
+          van een oplosbare oplossingsverzameling;
+    \item \textbf{Eindcheck:} de volledige redenering zelfstandig uitvoeren.
+\end{itemize}
+
+De oefeningen uit de categorie \textbf{Gevorderd} zijn niet noodzakelijk
+voor het minimumtraject, maar bereiden sterk voor op verdere
+ruimtemeetkunde en lineaire algebra.
+\end{opmerking}
+
+
+\end{document}
