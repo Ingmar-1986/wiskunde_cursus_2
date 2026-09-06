@@ -7,6 +7,8 @@ import re
 import sys
 from pathlib import Path
 
+from bs4 import BeautifulSoup, Comment, NavigableString, Tag
+
 
 # ============================================================
 # CONFIGURATIE
@@ -22,17 +24,63 @@ IGNORED_TEX_FILES = {
 }
 
 
+# Gegevens voor de modulebanner.
+# Pas hier later eenvoudig titel, beschrijving en lesuren aan.
+MODULE_INFO = {
+    1: {
+        "title": "Basiswiskunde",
+        "description": (
+            "De fundering voor programmeren, 3D, vectoren "
+            "en digitale creatie."
+        ),
+        "lesson_hours": 18,
+    },
+    2: {
+        "title": "Objecten beschrijven",
+        "description": (
+            "Coördinaten, meetkunde en vergelijkingen gebruiken "
+            "om digitale objecten nauwkeurig te beschrijven."
+        ),
+        "lesson_hours": 24,
+    },
+    3: {
+        "title": "Verbanden modelleren",
+        "description": (
+            "Functies en modellen gebruiken om verbanden in "
+            "digitale toepassingen te begrijpen."
+        ),
+        "lesson_hours": 30,
+    },
+    4: {
+        "title": "Objecten bewegen en transformeren",
+        "description": (
+            "Goniometrie, vectoren en transformaties toepassen "
+            "op beweging en animatie."
+        ),
+        "lesson_hours": 28,
+    },
+    5: {
+        "title": "Een digitale wereld creëren",
+        "description": (
+            "3D-vectoren, matrices en geïntegreerde modellen "
+            "gebruiken voor digitale creatie."
+        ),
+        "lesson_hours": 20,
+    },
+}
+
+
 # ============================================================
 # REGULIERE EXPRESSIES
 # ============================================================
 
 INDEX_ITEM_PATTERN = re.compile(
     r"""
-    \\part\s*\{
+    \\(?:FVDpart|part)\s*\{
         (?P<theme>[^{}]+)
     \}
     |
-    \\(?:activity|include|input)
+    \\activity
     (?:\s*\[[^\]]*\])?
     \s*\{
         (?P<path>[^}]+)
@@ -40,6 +88,28 @@ INDEX_ITEM_PATTERN = re.compile(
     """,
     re.VERBOSE | re.DOTALL,
 )
+
+
+MODULE_TITLE_PATTERN = re.compile(
+    r"""
+    \\(?:fvdtitle|title)
+    \s*
+    \{
+        (?P<title>[^{}]*)
+    \}
+    """,
+    re.IGNORECASE | re.DOTALL | re.VERBOSE,
+)
+
+MODULE_ABSTRACT_PATTERN = re.compile(
+    r"""
+    \\begin\s*\{\s*abstract\s*\}
+    (?P<abstract>.*?)
+    \\end\s*\{\s*abstract\s*\}
+    """,
+    re.IGNORECASE | re.DOTALL | re.VERBOSE,
+)
+
 
 TEX_TITLE_PATTERN = re.compile(
     r"""
@@ -56,7 +126,7 @@ CHAPTER_DATA_PATTERN = re.compile(
     r"""
     %\s*FVD_CHAPTER_DATA_START\s*
     .*?
-    %\s*FVD_CHAPTER_DATA_END\s*
+    %\s*FVD_CHAPTER_DATA_END[^\S\r\n]*
     """,
     re.IGNORECASE | re.DOTALL | re.VERBOSE,
 )
@@ -73,6 +143,25 @@ EXISTING_HERO_PATTERN = re.compile(
     <!--\s*CHAPTER_HERO_START\s*-->
     .*?
     <!--\s*CHAPTER_HERO_END\s*-->
+    """,
+    re.IGNORECASE | re.DOTALL | re.VERBOSE,
+)
+
+
+EXISTING_MODULE_BANNER_PATTERN = re.compile(
+    r"""
+    <!--\s*MODULE_BANNER_START\s*-->
+    .*?
+    <!--\s*MODULE_BANNER_END\s*-->
+    """,
+    re.IGNORECASE | re.DOTALL | re.VERBOSE,
+)
+
+COURSE_CONTENT_HEADING_PATTERN = re.compile(
+    r"""
+    <h(?P<level>[1-6])\b[^>]*>
+    (?P<content>.*?Cursusinhoud.*?)
+    </h(?P=level)>
     """,
     re.IGNORECASE | re.DOTALL | re.VERBOSE,
 )
@@ -237,7 +326,7 @@ def humanize_slug(value: str) -> str:
 
 
 def normalize_stem(raw_path: str) -> str:
-    """Zet een LaTeX-pad om naar een bestandsstam."""
+    """Zet een LaTeX-pad om naar een relatief pad zonder .tex-extensie."""
 
     value = raw_path.strip().replace(
         "\\",
@@ -247,8 +336,7 @@ def normalize_stem(raw_path: str) -> str:
     if value.endswith(".tex"):
         value = value[:-4]
 
-    return Path(value).name
-
+    return value
 
 # ============================================================
 # CURSUSSTRUCTUUR UIT INDEX.TEX
@@ -257,16 +345,35 @@ def normalize_stem(raw_path: str) -> str:
 def read_course_structure(
     index_tex: Path,
 ) -> list[dict[str, str | int]]:
-    """
+    r"""
     Lees thema's en hoofdstukken uit index.tex.
 
-    Elke \\part{...} start:
+    Elke \FVDpart{...} of \part{...} start:
     - een nieuw thema;
     - de hoofdstuknummering opnieuw vanaf 1.
+
+    \FVDchapterpair{theorie}{oefeningen} wordt voor deze parser
+    omgezet naar één of twee gewone \activity{...}-items.
+    Een leeg tweede argument wordt overgeslagen.
     """
 
-    document = read_text(
-        index_tex
+    document = read_text(index_tex)
+
+    # Maak \FVDchapterpair begrijpelijk voor de bestaande activity-parser.
+    # Theorie en oefeningen blijven aparte online activities.
+    document = re.sub(
+        r"\\FVDchapterpair\s*"
+        r"\{([^{}]*)\}\s*"
+        r"\{([^{}]*)\}",
+        lambda match: (
+            f"\\activity{{{match.group(1).strip()}}}\n"
+            + (
+                f"\\activity{{{match.group(2).strip()}}}"
+                if match.group(2).strip()
+                else ""
+            )
+        ),
+        document,
     )
 
     structure: list[dict[str, str | int]] = []
@@ -274,35 +381,28 @@ def read_course_structure(
     current_theme_number = 0
     current_theme_title = ""
     current_chapter_number = 0
+    current_theory_number = 0
 
-    for match in INDEX_ITEM_PATTERN.finditer(
-        document
-    ):
-        theme_title = match.group(
-            "theme"
-        )
-
-        activity_path = match.group(
-            "path"
-        )
+    for match in INDEX_ITEM_PATTERN.finditer(document):
+        theme_title = match.group("theme")
+        activity_path = match.group("path")
 
         if theme_title is not None:
             current_theme_number += 1
-
-            current_theme_title = clean_tex_text(
-                theme_title
-            )
-
+            current_theme_title = clean_tex_text(theme_title)
             current_chapter_number = 0
-
             continue
 
         if activity_path is None:
             continue
 
-        stem = normalize_stem(
-            activity_path
-        )
+        activity_path = activity_path.strip()
+
+        # Deze placeholders komen alleen voor in de macrodefinitie zelf.
+        if activity_path in {"#1", "#2"}:
+            continue
+
+        stem = normalize_stem(activity_path)
 
         if not stem:
             continue
@@ -312,14 +412,21 @@ def read_course_structure(
 
         if current_theme_number == 0:
             current_theme_number = 1
-
-            current_theme_title = humanize_slug(
-                index_tex.parent.name
-            )
-
+            current_theme_title = humanize_slug(index_tex.parent.name)
             current_chapter_number = 0
 
         current_chapter_number += 1
+
+        activity_name = Path(stem).name.casefold()
+        is_exercises = activity_name.startswith("oefeningen-")
+
+        if is_exercises:
+            display_number = f"{current_theory_number}.OEF"
+            pdf_chapter_number = current_theory_number
+        else:
+            current_theory_number += 1
+            display_number = str(current_theory_number)
+            pdf_chapter_number = current_theory_number
 
         structure.append(
             {
@@ -327,10 +434,67 @@ def read_course_structure(
                 "theme_number": current_theme_number,
                 "theme_title": current_theme_title,
                 "chapter_number": current_chapter_number,
+                "display_number": display_number,
+                "pdf_chapter_number": pdf_chapter_number,
             }
         )
 
     return structure
+
+
+
+def extract_module_metadata(
+    index_tex: Path,
+    module_dir: Path,
+    module_number: int,
+) -> tuple[str, str]:
+    r"""
+    Lees de moduletitel en modulebeschrijving rechtstreeks uit index.tex.
+
+    De titel komt uit:
+        \fvdtitle{...}
+        of \title{...}
+
+    De beschrijving komt uit:
+        \begin{abstract}
+        ...
+        \end{abstract}
+
+    Alleen wanneer die gegevens ontbreken, wordt MODULE_INFO als reserve gebruikt.
+    """
+
+    source = read_text(index_tex)
+
+    title_match = MODULE_TITLE_PATTERN.search(source)
+    abstract_match = MODULE_ABSTRACT_PATTERN.search(source)
+
+    fallback_data = MODULE_INFO.get(module_number, {})
+
+    if title_match:
+        module_title = clean_tex_text(
+            title_match.group("title")
+        )
+    else:
+        module_title = str(
+            fallback_data.get(
+                "title",
+                humanize_slug(module_dir.name),
+            )
+        )
+
+    if abstract_match:
+        module_description = clean_tex_text(
+            abstract_match.group("abstract")
+        )
+    else:
+        module_description = str(
+            fallback_data.get(
+                "description",
+                "De wiskundige basis voor digitale creatie.",
+            )
+        )
+
+    return module_title, module_description
 
 
 # ============================================================
@@ -346,30 +510,18 @@ def extract_title_from_tex(
     tex_path = module_dir / f"{stem}.tex"
 
     if not tex_path.is_file():
-        return humanize_slug(
-            stem
-        )
+        return humanize_slug(stem)
 
-    document = read_text(
-        tex_path
-    )
+    document = read_text(tex_path)
 
-    match = TEX_TITLE_PATTERN.search(
-        document
-    )
+    match = TEX_TITLE_PATTERN.search(document)
 
     if not match:
-        return humanize_slug(
-            stem
-        )
+        return humanize_slug(stem)
 
-    title = clean_tex_text(
-        match.group("title")
-    )
+    title = clean_tex_text(match.group("title"))
 
-    return title or humanize_slug(
-        stem
-    )
+    return title or humanize_slug(stem)
 
 
 # ============================================================
@@ -413,7 +565,7 @@ def create_chapter_data_block(
         f"{{{theme_number}}}"
         f"{{{safe_theme_title}}}"
         f"{{{chapter_number}}}\n"
-        "% FVD_CHAPTER_DATA_END"
+        "% FVD_CHAPTER_DATA_END\n\n"
     )
 
 
@@ -605,6 +757,389 @@ def wrap_hero(hero: str) -> str:
     )
 
 
+
+# ============================================================
+# OUDE MODULE-INTRO VERWIJDEREN
+# ============================================================
+
+def remove_old_module_intro(
+    document: str,
+    module_number: int,
+    module_title: str,
+) -> str:
+    """
+    Verwijder het volledige oude module-introblok boven de nieuwe banner.
+
+    Dit verwijdert onder meer:
+    - "MOD1 Basiswiskunde";
+    - de titel "Cursusinhoud";
+    - de begeleidende zin "Kies hieronder een thema ...".
+
+    De functie werkt generiek voor MOD1, MOD2, MOD3, enzovoort.
+    De nieuwe modulebanner en de eigenlijke themakaarten blijven behouden.
+    """
+
+    soup = BeautifulSoup(document, "lxml")
+
+    # 1. Verwijder bekende introcontainers volledig.
+    for selector in (
+        ".module-overview-intro",
+        ".course-overview-intro",
+        ".xourse-intro",
+    ):
+        for element in soup.select(selector):
+            element.decompose()
+
+    removable_texts = {
+        "cursusinhoud",
+        (
+            "kies hieronder een thema en open het hoofdstuk "
+            "waarmee je wilt starten."
+        ),
+    }
+
+    module_labels = {
+        f"mod{module_number} {module_title}".casefold(),
+        f"module {module_number} {module_title}".casefold(),
+        f"mod {module_number} {module_title}".casefold(),
+    }
+
+    # 2. Verwijder losse koppen en tekstregels die samen het oude blok vormen.
+    candidates = soup.find_all(
+        ["h1", "h2", "h3", "p", "div", "span", "header", "section"]
+    )
+
+    for element in candidates:
+        if element.parent is None:
+            continue
+
+        # Containers met andere structurele onderdelen niet verwijderen.
+        if element.find(
+            [
+                "article",
+                "details",
+                "nav",
+                "footer",
+                "main",
+            ]
+        ):
+            continue
+
+        text_value = " ".join(
+            element.get_text(" ", strip=True).split()
+        )
+        folded = text_value.casefold()
+
+        if folded in removable_texts or folded in module_labels:
+            element.decompose()
+            continue
+
+        # Ondersteun maplabels zoals "MOD1 Basiswiskunde" of "MOD2 ...".
+        if re.fullmatch(
+            rf"mod(?:ule)?\s*0*{module_number}\s+{re.escape(module_title)}",
+            text_value,
+            flags=re.IGNORECASE,
+        ):
+            element.decompose()
+
+    # 3. Verwijder lege wrappers die na bovenstaande bewerking overblijven.
+    changed = True
+
+    while changed:
+        changed = False
+
+        for element in soup.find_all(["div", "section", "header"]):
+            if element.parent is None:
+                continue
+
+            classes = " ".join(element.get("class", []))
+            element_classes = element.get("class", [])
+
+            # Decoratieve onderdelen van de algemene FVD-header
+            # mogen nooit als "lege wrappers" verwijderd worden.
+            if any(
+                class_name.startswith("fvd-hero__")
+                for class_name in element_classes
+            ):
+                continue
+
+            if "module-banner" in classes:
+                continue
+
+            has_visible_text = bool(
+                element.get_text(" ", strip=True)
+            )
+
+            has_meaningful_child = element.find(
+                [
+                    "img",
+                    "svg",
+                    "article",
+                    "details",
+                    "nav",
+                    "footer",
+                    "main",
+                ]
+            )
+
+            if not has_visible_text and has_meaningful_child is None:
+                element.decompose()
+                changed = True
+
+    return str(soup)
+
+
+# ============================================================
+# MODULEBANNER OPBOUWEN EN INVOEGEN
+# ============================================================
+
+def extract_module_number(module_dir: Path) -> int:
+    """Lees het modulenummer uit een mapnaam zoals MOD1-Basiswiskunde."""
+
+    match = re.search(
+        r"MOD\s*0*(\d+)",
+        module_dir.name,
+        flags=re.IGNORECASE,
+    )
+
+    if match:
+        return int(match.group(1))
+
+    return 1
+
+
+def create_module_banner(
+    template: str,
+    module_number: int,
+    module_title: str,
+    module_description: str,
+    lesson_hours: int,
+    theme_count: int,
+) -> str:
+    """Vul de placeholders in module-banner.html."""
+
+    replacements = {
+        "MODULE_NUMBER": str(module_number),
+        "MODULE_TITLE": module_title,
+        "MODULE_DESCRIPTION": module_description,
+        "LESSON_HOURS": str(lesson_hours),
+        "THEME_COUNT": str(theme_count),
+    }
+
+    result = template
+
+    for placeholder, value in replacements.items():
+        result = result.replace(
+            "{{" + placeholder + "}}",
+            html.escape(value, quote=False),
+        )
+
+    return result.strip()
+
+
+def wrap_module_banner(banner: str) -> str:
+    """Plaats herkenbare commentaren rond de modulebanner."""
+
+    return (
+        "<!-- MODULE_BANNER_START -->\n"
+        f"{banner}\n"
+        "<!-- MODULE_BANNER_END -->"
+    )
+
+
+def inject_module_banner(
+    document: str,
+    banner: str,
+) -> str:
+    """
+    Plaats de modulebanner na de volledige Ximera-header/introsectie.
+
+    Een bestaande banner wordt eerst verwijderd, zodat hij ook
+    werkelijk naar de juiste positie wordt verplaatst.
+    """
+
+    block = wrap_module_banner(
+        banner
+    )
+
+    # Verwijder eerst een bestaande banner.
+    # Anders wordt ze alleen op haar oude, verkeerde plaats vervangen.
+    document = EXISTING_MODULE_BANNER_PATTERN.sub(
+        "",
+        document,
+        count=1,
+    )
+
+    # Beste invoegpositie: onmiddellijk na de volledige websiteheader.
+    # De oude module-intro wordt niet langer gegenereerd, waardoor
+    # XIMERA-INTRO-END niet altijd bestaat.
+    header_marker = "<!-- XIMERA-HEADER-END -->"
+
+    if header_marker in document:
+        return document.replace(
+            header_marker,
+            header_marker + "\n\n" + block,
+            1,
+        )
+
+    # Compatibiliteit met oudere pagina's die nog een introblok bevatten.
+    intro_marker = "<!-- XIMERA-INTRO-END -->"
+
+    if intro_marker in document:
+        return document.replace(
+            intro_marker,
+            intro_marker + "\n\n" + block,
+            1,
+        )
+
+    # Reservepositie: vóór de Ximera-preamble.
+    preamble_marker = '<div class="preamble">'
+
+    if preamble_marker in document:
+        return document.replace(
+            preamble_marker,
+            block + "\n\n" + preamble_marker,
+            1,
+        )
+
+    # Laatste noodoplossing: direct na <body>.
+    match = BODY_PATTERN.search(
+        document
+    )
+
+    if match:
+        return insert_after(
+            document,
+            match,
+            block,
+        )
+
+    return block + "\n" + document
+
+def module_html_candidates(
+    module_dir: Path,
+) -> list[Path]:
+    """Zoek de gewone HTML-versie van de module-index."""
+
+    candidates = [
+        module_dir / "index.html",
+    ]
+
+    return [
+        path
+        for path in candidates
+        if path.is_file()
+    ]
+    
+def ensure_module_css(
+    document: str,
+) -> str:
+    """Voeg module-banner.css toe als die link nog ontbreekt."""
+
+    if "module-banner.css" in document:
+        return document
+
+    match = HEAD_CLOSE_PATTERN.search(
+        document
+    )
+
+    if not match:
+        return document
+
+    css_link = (
+        '  <link rel="stylesheet" '
+        'href="../../assets/css/module-banner.css">\n'
+    )
+
+    position = match.start()
+
+    return (
+        document[:position]
+        + css_link
+        + document[position:]
+    )
+def process_module_banner(
+    module_dir: Path,
+    index_tex: Path,
+    template_path: Path,
+    course_structure: list[dict[str, str | int]],
+) -> int:
+    """Plaats de modulebanner in de module-overzichtspagina."""
+
+    if not template_path.is_file():
+        raise ValueError(
+            f"Modulebanner-template niet gevonden: {template_path}"
+        )
+
+    candidates = module_html_candidates(module_dir)
+
+    if not candidates:
+        print(
+            f"Waarschuwing: geen index.html gevonden in {module_dir}",
+            file=sys.stderr,
+        )
+        return 0
+
+    module_number = extract_module_number(module_dir)
+    module_data = MODULE_INFO.get(module_number, {})
+
+    module_title, module_description = extract_module_metadata(
+        index_tex=index_tex,
+        module_dir=module_dir,
+        module_number=module_number,
+    )
+
+    lesson_hours = int(
+        module_data.get("lesson_hours", 0)
+    )
+    theme_count = len(
+        {int(item["theme_number"]) for item in course_structure}
+    )
+
+    template = read_text(template_path)
+    banner = create_module_banner(
+        template=template,
+        module_number=module_number,
+        module_title=module_title,
+        module_description=module_description,
+        lesson_hours=lesson_hours,
+        theme_count=theme_count,
+    )
+
+    processed_count = 0
+
+    for html_path in candidates:
+        document = read_text(html_path)
+
+        document = remove_old_module_intro(
+            document=document,
+            module_number=module_number,
+            module_title=module_title,
+        )
+
+        document = inject_module_banner(
+            document,
+            banner,
+        )
+
+        document = ensure_module_css(
+            document
+        )
+
+        write_text(
+            html_path,
+            document,
+        )
+
+        print(
+            f"Modulebanner ingevoegd: {html_path} "
+            f"(module {module_number}: {module_title})"
+        )
+        processed_count += 1
+
+    return processed_count
+
+
 # ============================================================
 # CSS EN HERO INVOEGEN
 # ============================================================
@@ -616,9 +1151,10 @@ def ensure_chapter_css(document: str) -> str:
     """
 
     css_files = [
-        "chapter-hero.css",
-        "learning-boxes.css",
-    ]
+    "chapter-hero.css",
+    "exercise-hero.css",
+    "learning-boxes.css",
+]
 
     missing_links = []
 
@@ -769,11 +1305,10 @@ def html_candidates(
     module_dir: Path,
     stem: str,
 ) -> list[Path]:
-    """Zoek de gewone en online HTML-versie."""
+    """Zoek de gewone HTML-versie."""
 
     candidates = [
         module_dir / f"{stem}.html",
-        module_dir / f"{stem}.online.html",
     ]
 
     return [
@@ -791,6 +1326,7 @@ def process_module(
     module_dir: Path,
     index_tex: Path,
     template_path: Path,
+    module_template_path: Path,
 ) -> int:
     """
     Verwerk alle hoofdstukken van één module.
@@ -828,6 +1364,13 @@ def process_module(
             f"Geen thema's of hoofdstukken gevonden in {index_tex}"
         )
 
+    processed_module_count = process_module_banner(
+        module_dir=module_dir,
+        index_tex=index_tex,
+        template_path=module_template_path,
+        course_structure=course_structure,
+    )
+
     processed_tex_count = 0
     processed_html_count = 0
 
@@ -847,6 +1390,14 @@ def process_module(
         chapter_number = int(
             item["chapter_number"]
         )
+        
+        display_number = str(
+            item["display_number"]
+        )
+        
+        pdf_chapter_number = int(
+            item["pdf_chapter_number"]
+        )
 
         # ----------------------------------------------------
         # TEX: PDF-METADATA BIJWERKEN
@@ -858,42 +1409,16 @@ def process_module(
             tex_path=tex_path,
             theme_number=theme_number,
             theme_title=theme_title,
-            chapter_number=chapter_number,
+            chapter_number=pdf_chapter_number,
         )
 
         processed_tex_count += 1
 
         # ----------------------------------------------------
-        # HTML: HERO BIJWERKEN
+        # HTML-HERO
         # ----------------------------------------------------
-
-        candidates = html_candidates(
-            module_dir,
-            stem,
-        )
-
-        if not candidates:
-            print(
-                f"Waarschuwing: geen HTML gevonden voor "
-                f"thema {theme_number}, hoofdstuk "
-                f"{chapter_number}: {stem}",
-                file=sys.stderr,
-            )
-
-            continue
-
-        for html_path in candidates:
-            process_html_file(
-                html_path=html_path,
-                module_dir=module_dir,
-                stem=stem,
-                template=template,
-                theme_number=theme_number,
-                theme_title=theme_title,
-                chapter_number=chapter_number,
-            )
-
-            processed_html_count += 1
+        # Wordt volledig beheerd door enhance-chapter.py.
+        # Hier niets meer injecteren om dubbele hero's te vermijden.
 
     if processed_tex_count == 0:
         raise ValueError(
@@ -911,7 +1436,16 @@ def process_module(
         f"{processed_html_count} HTML-bestand(en)."
     )
 
-    return processed_tex_count + processed_html_count
+    print(
+        f"Modulebanner bijgewerkt in "
+        f"{processed_module_count} HTML-bestand(en)."
+    )
+
+    return (
+        processed_tex_count
+        + processed_html_count
+        + processed_module_count
+    )
 
 
 # ============================================================
@@ -921,16 +1455,18 @@ def process_module(
 def main() -> int:
     """Lees argumenten en verwerk één module."""
 
-    if len(sys.argv) != 4:
+    if len(sys.argv) != 5:
         print(
             "Gebruik:\n"
             "  python3 scripts/inject-chapter-heroes.py "
-            "<modulemap> <index.tex> <chapter-hero.html>\n\n"
+            "<modulemap> <index.tex> <chapter-hero.html> "
+            "<module-banner.html>\n\n"
             "Voorbeeld:\n"
             "  python3 scripts/inject-chapter-heroes.py "
             "modules/basiswiskunde "
             "modules/basiswiskunde/index.tex "
-            "assets/html/chapter-hero.html",
+            "assets/html/chapter-hero.html "
+            "assets/html/module-banner.html",
             file=sys.stderr,
         )
 
@@ -948,11 +1484,16 @@ def main() -> int:
         sys.argv[3]
     )
 
+    module_template_path = Path(
+        sys.argv[4]
+    )
+
     try:
         count = process_module(
             module_dir=module_dir,
             index_tex=index_tex,
             template_path=template_path,
+            module_template_path=module_template_path,
         )
 
     except (OSError, ValueError) as error:

@@ -3,369 +3,563 @@
 set -euo pipefail
 
 # ============================================================
-# PROJECTROOT BEPALEN
+# Ximera – sidebar genereren
+#
+# Gebruik:
+#   bash scripts/generate-sidebar.sh modules/basiswiskunde
+#
+# Zonder argument:
+#   bash scripts/generate-sidebar.sh
+#
+# Dan wordt standaard modules/basiswiskunde gebruikt.
 # ============================================================
 
 PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-cd "$PROJECT_ROOT"
 
-# ============================================================
-# ARGUMENT CONTROLEREN
-# ============================================================
+MODULE_RELATIVE="${1:-modules/basiswiskunde}"
+MODULE_DIR="$PROJECT_ROOT/$MODULE_RELATIVE"
 
-MODULE_DIR="${1:-}"
+INDEX_FILE="$MODULE_DIR/index.tex"
+TEMPLATE_FILE="$PROJECT_ROOT/assets/html/SidebarTemplate.html"
+OUTPUT_FILE="$MODULE_DIR/CourseSidebar.generated.html"
 
-if [ -z "$MODULE_DIR" ]; then
-    echo "Gebruik:"
-    echo "bash scripts/generate-sidebar.sh modules/basiswiskunde"
+echo
+echo "Sidebar genereren"
+echo "────────────────────────────────────────"
+echo "Module:    $MODULE_RELATIVE"
+echo "Index:     $INDEX_FILE"
+echo "Template:  $TEMPLATE_FILE"
+echo "Uitvoer:   $OUTPUT_FILE"
+echo
+
+if [[ ! -d "$MODULE_DIR" ]]; then
+    echo "Fout: modulemap bestaat niet:"
+    echo "  $MODULE_DIR"
     exit 1
 fi
 
-# Eventuele afsluitende slash verwijderen
-MODULE_DIR="${MODULE_DIR%/}"
-
-XOURSE_HTML="$MODULE_DIR/index.html"
-SIDEBAR_OUTPUT="$MODULE_DIR/CourseSidebar.generated.html"
-
-if [ ! -f "$XOURSE_HTML" ]; then
-    echo "Fout: $XOURSE_HTML werd niet gevonden."
+if [[ ! -f "$INDEX_FILE" ]]; then
+    echo "Fout: index.tex niet gevonden:"
+    echo "  $INDEX_FILE"
     exit 1
 fi
 
-# ============================================================
-# MODULENAAM AFLEIDEN
-# ============================================================
+if [[ ! -f "$TEMPLATE_FILE" ]]; then
+    echo "Fout: SidebarTemplate.html niet gevonden:"
+    echo "  $TEMPLATE_FILE"
+    exit 1
+fi
 
-MODULE_NAME="$(basename "$MODULE_DIR")"
-
-# basiswiskunde -> Basiswiskunde
-# lineaire-functies -> Lineaire Functies
-MODULE_TITLE="$(
-    printf '%s' "$MODULE_NAME" |
-    sed 's/_/ /g; s/-/ /g' |
-    awk '{
-        for (i = 1; i <= NF; i++) {
-            $i = toupper(substr($i, 1, 1)) substr($i, 2)
-        }
-        print
-    }'
-)"
-
-# ============================================================
-# SIDEBAR GENEREREN MET PYTHON
-# ============================================================
-
-python3 - \
-    "$XOURSE_HTML" \
-    "$SIDEBAR_OUTPUT" \
-    "$MODULE_TITLE" <<'PY'
+python3 - "$INDEX_FILE" "$TEMPLATE_FILE" "$OUTPUT_FILE" "$MODULE_DIR" <<'PYTHON'
 from __future__ import annotations
 
 import html
 import re
 import sys
 from pathlib import Path
-from urllib.parse import urlparse
-
-
-source_file = Path(sys.argv[1])
-output_file = Path(sys.argv[2])
-module_title = sys.argv[3]
-
-document = source_file.read_text(encoding="utf-8")
 
 
 # ============================================================
-# HULPFUNCTIES
+# Paden
 # ============================================================
 
-TAG_PATTERN = re.compile(r"<[^>]+>", re.DOTALL)
+index_file = Path(sys.argv[1])
+template_file = Path(sys.argv[2])
+output_file = Path(sys.argv[3])
+module_dir = Path(sys.argv[4])
 
 
-def strip_html(value: str) -> str:
-    """Verwijder HTML-tags en decodeer entiteiten."""
-    value = TAG_PATTERN.sub("", value)
-    return html.unescape(value).strip()
+# ============================================================
+# Hulpfuncties
+# ============================================================
+
+def read_text(path: Path) -> str:
+    return path.read_text(encoding="utf-8")
 
 
-def normalize_href(raw_href: str) -> str:
+def remove_comments(source: str) -> str:
     """
-    Zet bijvoorbeeld:
-
-    modules/basiswiskunde/breuken
-    ./breuken
-    breuken
-    breuken.html
-
-    om naar:
-
-    breuken.html
+    Verwijdert LaTeX-commentaar, maar behoudt escaped procenttekens: \%
     """
+    cleaned_lines: list[str] = []
 
-    parsed = urlparse(raw_href)
-    path = parsed.path.rstrip("/")
+    for line in source.splitlines():
+        result: list[str] = []
+        escaped = False
 
-    filename = Path(path).name
+        for character in line:
+            if character == "%" and not escaped:
+                break
 
-    if not filename:
-        return "#"
+            result.append(character)
 
-    if not filename.endswith(".html"):
-        filename += ".html"
+            if character == "\\":
+                escaped = not escaped
+            else:
+                escaped = False
 
-    return filename
+        cleaned_lines.append("".join(result))
+
+    return "\n".join(cleaned_lines)
+
+
+def clean_latex_text(value: str) -> str:
+    """
+    Zet eenvoudige LaTeX-opmaak om naar leesbare platte tekst.
+    Dit is voldoende voor titels in de sidebar.
+    """
+    value = value.strip()
+
+    replacements = {
+        r"\&": "&",
+        r"\%": "%",
+        r"\#": "#",
+        r"\_": "_",
+        r"\{": "{",
+        r"\}": "}",
+        "~": " ",
+        "---": "—",
+        "--": "–",
+    }
+
+    for old, new in replacements.items():
+        value = value.replace(old, new)
+
+    # Veelgebruikte opmaakcommando's verwijderen,
+    # maar de inhoud tussen accolades behouden.
+    formatting_commands = (
+        "textbf",
+        "textit",
+        "emph",
+        "mathrm",
+        "mathbf",
+        "mathit",
+        "textrm",
+        "textsf",
+        "texttt",
+    )
+
+    for command in formatting_commands:
+        value = re.sub(
+            rf"\\{command}\s*\{{([^{{}}]*)\}}",
+            r"\1",
+            value,
+        )
+
+    # Eenvoudige inline math-delimiters verwijderen.
+    value = value.replace(r"\(", "").replace(r"\)", "")
+    value = value.replace("$", "")
+
+    # Resterende eenvoudige LaTeX-commando's verwijderen.
+    value = re.sub(r"\\[a-zA-Z@]+\*?", "", value)
+
+    # Losse accolades verwijderen.
+    value = value.replace("{", "").replace("}", "")
+
+    # Witruimte normaliseren.
+    value = re.sub(r"\s+", " ", value)
+
+    return value.strip()
+
+
+def extract_first_argument(source: str, command_names: tuple[str, ...]) -> str | None:
+    """
+    Zoekt het eerste argument van bijvoorbeeld:
+        \title{Titel}
+        \fvdtitle{Titel}
+
+    Ondersteunt ook eenvoudige geneste accolades.
+    """
+    command_pattern = "|".join(re.escape(name) for name in command_names)
+
+    match = re.search(
+        rf"\\(?:{command_pattern})\s*\{{",
+        source,
+    )
+
+    if not match:
+        return None
+
+    start = match.end()
+    depth = 1
+    position = start
+
+    while position < len(source):
+        character = source[position]
+
+        if character == "\\":
+            position += 2
+            continue
+
+        if character == "{":
+            depth += 1
+        elif character == "}":
+            depth -= 1
+
+            if depth == 0:
+                return source[start:position]
+
+        position += 1
+
+    return None
+
+
+def resolve_activity_file(activity: str) -> Path | None:
+    """
+    Ondersteunt onder meer:
+
+        \activity{rekenen}
+        \activity{hoofdstukken/rekenen}
+        \activity{rekenen.tex}
+        \activity{rekenen/rekenen}
+
+    Probeert enkele gebruikelijke Ximera-structuren.
+    """
+    activity = activity.strip()
+
+    candidates: list[Path] = []
+
+    activity_path = Path(activity)
+
+    if activity_path.suffix == ".tex":
+        candidates.append(module_dir / activity_path)
+    else:
+        candidates.extend(
+            [
+                module_dir / f"{activity}.tex",
+                module_dir / activity / f"{activity_path.name}.tex",
+                module_dir / activity / "index.tex",
+            ]
+        )
+
+    for candidate in candidates:
+        if candidate.is_file():
+            return candidate
+
+    return None
+
+
+def activity_url(activity: str) -> str:
+    """
+    Maakt de HTML-link die bij een activity hoort.
+    """
+    activity = activity.strip().replace("\\", "/")
+
+    if activity.endswith(".tex"):
+        activity = activity[:-4]
+
+    if activity.endswith("/index"):
+        activity = activity[:-6]
+
+    return f"{activity}.html"
+
+
+def activity_fallback_title(activity: str) -> str:
+    """
+    Maakt van bijvoorbeeld wetenschappelijke_notatie:
+        Wetenschappelijke notatie
+    """
+    name = Path(activity).stem
+    name = name.replace("-", " ").replace("_", " ")
+    name = re.sub(r"\s+", " ", name).strip()
+
+    return name[:1].upper() + name[1:] if name else "Hoofdstuk"
+
+
+def get_activity_title(activity: str) -> tuple[str, Path | None]:
+    chapter_file = resolve_activity_file(activity)
+
+    if chapter_file is None:
+        return activity_fallback_title(activity), None
+
+    source = remove_comments(read_text(chapter_file))
+
+    title = extract_first_argument(
+        source,
+        (
+            "title",
+            "fvdtitle",
+            "activitytitle",
+            "chaptertitle",
+        ),
+    )
+
+    if title:
+        cleaned = clean_latex_text(title)
+
+        if cleaned:
+            return cleaned, chapter_file
+
+    return activity_fallback_title(activity), chapter_file
+
+
+def make_slug(value: str) -> str:
+    value = value.lower()
+    value = re.sub(r"[^a-z0-9]+", "-", value)
+    return value.strip("-")
 
 
 # ============================================================
-# THEMA'S EN HOOFDSTUKKAARTEN VINDEN
+# index.tex analyseren
 # ============================================================
 
-# Herkent de omgezette themahoofding:
-#
-# <div class="activity-card card-sectionheading card part" id="part1">
-#   <div class="card-block">
-#     <h4 class="card-title">Getallen en bewerkingen</h4>
-#   </div>
-# </div>
-#
-PART_PATTERN = re.compile(
-    r"""
-    <div
-        (?=[^>]*\bclass=["'][^"']*\bpart\b[^"']*["'])
-        (?=[^>]*\bclass=["'][^"']*\bcard-sectionheading\b[^"']*["'])
-        [^>]*>
-        .*?
-        <h4
-            [^>]*\bclass=["'][^"']*\bcard-title\b[^"']*["']
-            [^>]*>
-            (?P<title>.*?)
-        </h4>
-        .*?
-    </div>
-    \s*
-    </div>
-    """,
-    re.IGNORECASE | re.DOTALL | re.VERBOSE,
+index_source = remove_comments(read_text(index_file))
+
+module_title_raw = extract_first_argument(
+    index_source,
+    (
+        "fvdtitle",
+        "title",
+    ),
 )
 
-
-# Herkent een Ximera-hoofdstukkaart:
-#
-# <a class='activity card '
-#    href='modules/basiswiskunde/breuken'>
-#     <h3>...</h3>
-#     <h2>Machten en wortels</h2>
-#     breuken
-# </a>
-#
-CHAPTER_PATTERN = re.compile(
-    r"""
-    <a
-        (?=[^>]*\bclass=["'][^"']*\bactivity\b[^"']*\bcard\b[^"']*["'])
-        [^>]*\bhref=["'](?P<href>[^"']+)["']
-        [^>]*>
-        (?P<body>.*?)
-    </a>
-    """,
-    re.IGNORECASE | re.DOTALL | re.VERBOSE,
+module_title = (
+    clean_latex_text(module_title_raw)
+    if module_title_raw
+    else module_dir.name.replace("-", " ").replace("_", " ").title()
 )
 
-
-CHAPTER_TITLE_PATTERN = re.compile(
+token_pattern = re.compile(
     r"""
-    <h2[^>]*>
-        (?P<title>.*?)
-    </h2>
+    \\(?:FVDpart|part)\s*\{(?P<part>[^{}]*)\}
+    |
+    \\FVDchapterpair\s*
+        \{(?P<pair_theory>[^{}]*)\}\s*
+        \{(?P<pair_exercises>[^{}]*)\}
+    |
+    \\activity\s*\{(?P<activity>[^{}]*)\}
     """,
-    re.IGNORECASE | re.DOTALL | re.VERBOSE,
+    re.VERBOSE,
 )
-
-
-# ============================================================
-# TOKENS IN DOCUMENTVOLGORDE VERZAMELEN
-# ============================================================
-
-tokens: list[tuple[int, str, re.Match[str]]] = []
-
-for match in PART_PATTERN.finditer(document):
-    tokens.append((match.start(), "part", match))
-
-for match in CHAPTER_PATTERN.finditer(document):
-    tokens.append((match.start(), "chapter", match))
-
-tokens.sort(key=lambda item: item[0])
-
-
-# ============================================================
-# STRUCTUUR OPBOUWEN
-# ============================================================
 
 sections: list[dict[str, object]] = []
 current_section: dict[str, object] | None = None
 
-for _, token_type, match in tokens:
+for match in token_pattern.finditer(index_source):
+    part_name = match.group("part")
+    activity_name = match.group("activity")
+    pair_theory = match.group("pair_theory")
+    pair_exercises = match.group("pair_exercises")
 
-    if token_type == "part":
-        title = strip_html(match.group("title"))
-
-        if not title:
-            continue
+    if part_name is not None:
+        theme_title = clean_latex_text(part_name)
 
         current_section = {
-            "title": title,
-            "chapters": [],
+            "title": theme_title,
+            "activities": [],
         }
 
         sections.append(current_section)
         continue
 
-    if token_type == "chapter":
-        chapter_body = match.group("body")
-        raw_href = match.group("href")
+    activities_to_add: list[str] = []
 
-        title_match = CHAPTER_TITLE_PATTERN.search(chapter_body)
+    if pair_theory is not None:
+        theory = pair_theory.strip()
+        exercises = (pair_exercises or "").strip()
 
-        if not title_match:
-            print(
-                f"Waarschuwing: geen <h2>-titel gevonden voor link {raw_href}",
-                file=sys.stderr,
-            )
+        if theory:
+            activities_to_add.append(theory)
+
+        if exercises:
+            activities_to_add.append(exercises)
+
+    elif activity_name is not None:
+        activity_name = activity_name.strip()
+
+        # De #1 en #2 uit de definitie van \FVDchapterpair
+        # zijn geen echte activities.
+        if activity_name in {"#1", "#2"}:
             continue
 
-        chapter_title = strip_html(title_match.group("title"))
-        chapter_href = normalize_href(raw_href)
+        activities_to_add.append(activity_name)
 
-        if current_section is None:
-            current_section = {
-                "title": "Hoofdstukken",
-                "chapters": [],
-            }
-            sections.append(current_section)
+    if not activities_to_add:
+        continue
 
-        chapters = current_section["chapters"]
+    # Activities vóór de eerste \part krijgen een neutrale sectie.
+    if current_section is None:
+        current_section = {
+            "title": "Inleiding",
+            "activities": [],
+        }
+        sections.append(current_section)
 
-        assert isinstance(chapters, list)
-
-        chapters.append(
-            {
-                "title": chapter_title,
-                "href": chapter_href,
-            }
-        )
-
-
-# Lege thema's verwijderen
-sections = [
-    section
-    for section in sections
-    if isinstance(section.get("chapters"), list)
-    and len(section["chapters"]) > 0
-]
-
+    current_section["activities"].extend(activities_to_add)
 
 if not sections:
-    print(
-        "Fout: geen thema's of hoofdstukken gevonden in index.html.",
-        file=sys.stderr,
+    raise SystemExit(
+        "Fout: geen \\part{...} of \\activity{...} gevonden in index.tex."
     )
-    sys.exit(1)
 
 
 # ============================================================
-# HTML GENEREREN
+# Sidebarinhoud genereren
 # ============================================================
 
-lines: list[str] = []
+sidebar_sections: list[str] = []
+total_chapters = 0
+missing_files: list[str] = []
 
-lines.append('<aside class="course-sidebar" id="courseSidebar">')
-lines.append("")
-lines.append('    <div class="sidebar-header">')
-lines.append("        <div>")
-lines.append(
-    f'            <span class="sidebar-label">{html.escape(module_title)}</span>'
-)
-lines.append("            <h2>Cursusinhoud</h2>")
-lines.append("        </div>")
-lines.append("")
-lines.append("        <button")
-lines.append('            class="sidebar-close"')
-lines.append('            id="sidebarClose"')
-lines.append('            type="button"')
-lines.append('            aria-label="Sluit cursusmenu"')
-lines.append("        >")
-lines.append("            ×")
-lines.append("        </button>")
-lines.append("    </div>")
-lines.append("")
-lines.append(
-    '    <nav class="course-navigation" aria-label="Cursusinhoud">'
-)
-lines.append("")
+for theme_index, section in enumerate(sections, start=1):
+    theme_title = str(section["title"])
+    activities = list(section["activities"])
 
-for section_index, section in enumerate(sections, start=1):
+    if not activities:
+        continue
 
-    section_title = str(section["title"])
-    chapters = section["chapters"]
+    theme_slug = make_slug(theme_title) or f"thema-{theme_index}"
+    section_id = f"course-section-{theme_index}-{theme_slug}"
 
-    assert isinstance(chapters, list)
+    chapter_links: list[str] = []
 
-    lines.append('        <div class="course-section">')
-    lines.append("")
-    lines.append(
-        '            <button class="course-section-toggle" type="button">'
-    )
-    lines.append(
-        f'                <span class="section-number">{section_index}</span>'
-    )
-    lines.append(
-        "                "
-        f'<span class="section-name">{html.escape(section_title)}</span>'
-    )
-    lines.append(
-        '                <span class="section-arrow">⌄</span>'
-    )
-    lines.append("            </button>")
-    lines.append("")
-    lines.append('            <div class="course-section-content">')
+        # De theoriehoofdstukken beginnen per thema opnieuw bij 1.
+    # Een oefeningenactivity krijgt het nummer van het vorige
+    # theoriehoofdstuk, gevolgd door .OEF.
+    theory_index = 0
 
-    for chapter_index, chapter in enumerate(chapters, start=1):
+    for activity in activities:
+        total_chapters += 1
 
-        chapter_title = str(chapter["title"])
-        chapter_href = str(chapter["href"])
-        chapter_number = f"{section_index}.{chapter_index}"
+        chapter_title, chapter_file = get_activity_title(activity)
 
-        lines.append(
-            "                "
-            f'<a href="{html.escape(chapter_href, quote=True)}">'
-            f"{chapter_number} {html.escape(chapter_title)}"
-            "</a>"
+        if chapter_file is None:
+            missing_files.append(activity)
+
+        activity_name = Path(activity).name.casefold()
+        is_exercises = activity_name.startswith("oefeningen-")
+
+        if is_exercises:
+            number = f"{theory_index}.OEF"
+        else:
+            theory_index += 1
+            number = str(theory_index)
+            
+        url = activity_url(activity)
+
+        chapter_links.append(
+            f"""\
+        <a
+            class="course-chapter-link"
+            href="{html.escape(url, quote=True)}"
+            data-chapter="{html.escape(activity, quote=True)}"
+        >
+            <span class="course-chapter-number">
+                {html.escape(number)}
+            </span>
+
+            <span class="course-chapter-title">
+                {html.escape(chapter_title)}
+            </span>
+        </a>"""
         )
 
-    lines.append("            </div>")
-    lines.append("")
-    lines.append("        </div>")
-    lines.append("")
+    links_html = "\n\n".join(chapter_links)
 
-lines.append("    </nav>")
-lines.append("")
-lines.append("</aside>")
+    sidebar_sections.append(
+        f"""\
+<div
+    class="course-section"
+    data-theme="{theme_index}"
+>
+
+    <button
+        class="course-section-toggle"
+        type="button"
+        aria-expanded="true"
+        aria-controls="{html.escape(section_id, quote=True)}"
+    >
+        <span class="course-section-number">
+            {theme_index}
+        </span>
+
+        <span class="course-section-title">
+            {html.escape(theme_title)}
+        </span>
+
+        <span
+            class="course-section-arrow"
+            aria-hidden="true"
+        >
+            ▾
+        </span>
+    </button>
+
+    <div
+        class="course-section-content"
+        id="{html.escape(section_id, quote=True)}"
+    >
+{links_html}
+    </div>
+
+</div>"""
+    )
+
+sidebar_content = "\n\n".join(sidebar_sections)
+
+
+# ============================================================
+# Template invullen
+# ============================================================
+
+template = read_text(template_file)
+
+# Ondersteunt beide namen die in eerdere templates gebruikt werden.
+template = template.replace("{{MODULE}}", html.escape(module_title))
+template = template.replace("{{MODULE_TITLE}}", html.escape(module_title))
+template = template.replace("{{SIDEBAR_CONTENT}}", sidebar_content)
+
+remaining_placeholders = sorted(
+    set(re.findall(r"\{\{[A-Z0-9_]+\}\}", template))
+)
+
+if remaining_placeholders:
+    print(
+        "Waarschuwing: niet-ingevulde placeholders in SidebarTemplate.html:"
+    )
+
+    for placeholder in remaining_placeholders:
+        print(f"  - {placeholder}")
+
+
+# ============================================================
+# Bestand schrijven
+# ============================================================
+
+generated_notice = """\
+<!--
+    AUTOMATISCH GEGENEREERD BESTAND
+
+    Dit bestand wordt opgebouwd door:
+        scripts/generate-sidebar.sh
+
+    Bewerk niet dit bestand, maar:
+        assets/html/SidebarTemplate.html
+        en modules/.../index.tex
+-->
+
+"""
 
 output_file.write_text(
-    "\n".join(lines) + "\n",
+    generated_notice + template.strip() + "\n",
     encoding="utf-8",
 )
 
+print(f"Module:       {module_title}")
+print(f"Thema's:      {len(sidebar_sections)}")
+print(f"Hoofdstukken: {total_chapters}")
+print(f"Geschreven:   {output_file}")
 
-# ============================================================
-# RESULTAAT TONEN
-# ============================================================
+if missing_files:
+    print()
+    print("Waarschuwing: voor deze activities werd geen TeX-bestand gevonden:")
 
-chapter_count = sum(
-    len(section["chapters"])
-    for section in sections
-)
+    for activity in missing_files:
+        print(f"  - {activity}")
 
-print(f"Sidebar aangemaakt: {output_file}")
-print(f"Aantal thema's: {len(sections)}")
-print(f"Aantal hoofdstukken: {chapter_count}")
-PY
+    print("De bestandsnaam werd daarom als voorlopige titel gebruikt.")
+PYTHON
+
+echo
+echo "Sidebar succesvol gegenereerd."
+echo
