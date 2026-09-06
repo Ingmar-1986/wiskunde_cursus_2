@@ -1,0 +1,16 @@
+station ,hoogte(m), temperatuur(C)
+Berlijn ,49, 9.1
+Brocken ,1152, 2.4
+Boedapest, 130, 10.9
+Dobratsch ,2140, 0.1
+Feuerkogel ,1592, 3.3
+Graz ,342, 9.4
+Innsbruck, 579, 8.4
+Klagenfurt, 448, 8.1
+Lugano, 276, 13.0
+Praag, 374, 7.9
+Salzburg, 437, 8.6
+Säntis, 2496, -2.3
+Sonnblick, 3106, -6.4
+Wenen, 203, 9.1
+Zugspitze, 2962, -5.0

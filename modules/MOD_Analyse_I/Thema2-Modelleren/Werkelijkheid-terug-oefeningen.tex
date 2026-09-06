@@ -1,0 +1,658 @@
+\documentclass{ximera}
+
+\input{../../../preamble.tex}
+\input{../../../Opmaak.tex}
+\addPrintStyle{../../..}
+
+\title{Van werkelijkheid naar wiskunde --- en terug}
+\author{Ingmar Herreman}
+
+
+
+\begin{document}
+
+
+
+
+
+
+
+
+\maketitle
+
+
+% ====================================================================
+% 1. GROOTHEDEN EN VARIABELEN
+% ====================================================================
+
+\begin{oefening}[Van experiment naar variabelen]{\oefB \ESS}
+
+Bij een experiment wordt onderzocht hoe de uitrekking van een veer
+afhangt van de kracht die erop wordt uitgeoefend.
+
+Voor verschillende krachten wordt de uitrekking gemeten.
+
+\begin{question}
+Welke grootheid is de onafhankelijke variabele?
+
+\begin{multipleChoice}
+  \choice[correct]{de uitgeoefende kracht}
+  \choice{de uitrekking van de veer}
+\end{multipleChoice}
+
+
+\begin{oplossing}
+De onafhankelijke variabele is de \textbf{uitgeoefende kracht}.
+\end{oplossing}
+
+\end{question}
+
+\begin{question}
+Welke grootheid is de afhankelijke variabele?
+
+\begin{multipleChoice}
+  \choice{de uitgeoefende kracht}
+  \choice[correct]{de uitrekking van de veer}
+\end{multipleChoice}
+
+
+\begin{oplossing}
+De afhankelijke variabele is de \textbf{uitrekking van de veer}.
+\end{oplossing}
+
+\end{question}
+
+\begin{question}
+Welke keuze van variabelen is geschikt?
+
+\begin{multipleChoice}
+  \choice[correct]{$F=$ kracht en $u=$ uitrekking}
+  \choice{$F=$ kleur van de veer en $u=$ temperatuur van het lokaal}
+  \choice{$F=$ uitrekking en $u=$ merk van de veer}
+\end{multipleChoice}
+
+
+\begin{oplossing}
+Een geschikte keuze is
+\[
+F=\text{kracht},
+\qquad
+u=\text{uitrekking}.
+\]
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+% ====================================================================
+% 2. TABEL EN GRAFIEK INTERPRETEREN
+% ====================================================================
+
+\begin{oefening}[Een afkoelend voorwerp]{\oefB \ESS}
+
+Van een warm voorwerp wordt om de vijf minuten de temperatuur gemeten.
+
+\[
+\begin{array}{c|cccccc}
+t\;(\mathrm{min})
+&0&5&10&15&20&25\\ \hline
+T\;({}^{\circ}\mathrm C)
+&82&67&56&48&42&38
+\end{array}
+\]
+
+\begin{question}
+Welke uitspraak beschrijft de gegevens het best?
+
+\begin{multipleChoice}
+  \choice{De temperatuur stijgt ongeveer gelijkmatig.}
+  \choice{De temperatuur daalt elke vijf minuten met exact hetzelfde bedrag.}
+  \choice[correct]{De temperatuur daalt, maar de daling wordt geleidelijk kleiner.}
+  \choice{Er is geen herkenbaar patroon.}
+\end{multipleChoice}
+
+
+\begin{oplossing}
+De temperatuur daalt, maar de daling wordt geleidelijk kleiner.
+\end{oplossing}
+
+\end{question}
+
+\begin{question}
+Je wilt de gemeten temperatuur op $t=15\,\mathrm{min}$ kennen.
+Welke voorstelling geeft die exacte meetwaarde het gemakkelijkst?
+
+\begin{multipleChoice}
+  \choice[correct]{de tabel}
+  \choice{een schets van de grafiek}
+\end{multipleChoice}
+
+
+\begin{oplossing}
+De tabel geeft de exacte gemeten waarde het gemakkelijkst:
+\[
+T(15)=48\,{}^\circ\mathrm C.
+\]
+\end{oplossing}
+
+\end{question}
+
+\begin{question}
+Je wilt vooral het globale verloop van de temperatuur onderzoeken.
+Welke voorstelling is dan meestal het handigst?
+
+\begin{multipleChoice}
+  \choice{de tabel}
+  \choice[correct]{de grafiek}
+\end{multipleChoice}
+
+
+\begin{oplossing}
+Voor het globale verloop is een \textbf{grafiek} doorgaans het handigst.
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+% ====================================================================
+% 3. MATHEMATISEREN EN DEMATHEMATISEREN
+% ====================================================================
+
+\begin{oefening}[Een batterij ontlaadt]{\oefB \ESS}
+
+Tijdens een experiment wordt de spanning van een batterij gedurende
+enkele uren gemeten.
+
+Een leerling kiest
+
+\[
+t=\text{tijd in uren},
+\qquad
+U=\text{spanning in volt}.
+\]
+
+Een model geeft
+
+\[
+U(4)=10{,}8.
+\]
+
+\begin{question}
+Welke stap is een voorbeeld van mathematiseren?
+
+\begin{multipleChoice}
+  \choice[correct]{De tijd en spanning kiezen als relevante grootheden en ze voorstellen door $t$ en $U$.}
+  \choice{Besluiten dat de spanning na vier uur volgens het model $10{,}8$ volt bedraagt.}
+\end{multipleChoice}
+
+
+\begin{oplossing}
+Het kiezen van de relevante grootheden en ze voorstellen door $t$ en $U$
+is een stap van \textbf{mathematiseren}.
+\end{oplossing}
+
+\end{question}
+
+\begin{question}
+Welke interpretatie van $U(4)=10{,}8$ is correct?
+
+\begin{multipleChoice}
+  \choice{Na $10{,}8$ uur bedraagt de spanning $4$ volt.}
+  \choice[correct]{Na $4$ uur bedraagt de spanning volgens het model $10{,}8$ volt.}
+  \choice{De spanning daalt elk uur met $10{,}8$ volt.}
+\end{multipleChoice}
+
+
+\begin{oplossing}
+\[
+U(4)=10{,}8
+\]
+betekent: na $4$ uur bedraagt de spanning volgens het model
+$10{,}8\,\mathrm V$.
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+% ====================================================================
+% 4. INTERPOLATIE EN EXTRAPOLATIE
+% ====================================================================
+
+\begin{oefening}[Een groeiende bacteriecultuur]{\oefB \ESS}
+
+Een bacteriecultuur wordt gedurende $12$ uur gevolgd.
+Er zijn metingen beschikbaar voor
+
+\[
+0\leq t\leq12.
+\]
+
+Een model wordt opgesteld op basis van deze gegevens.
+
+\begin{question}
+Een voorspelling voor $t=7{,}5$ uur is
+
+\begin{multipleChoice}
+  \choice[correct]{interpolatie.}
+  \choice{extrapolatie.}
+\end{multipleChoice}
+
+
+\begin{oplossing}
+Omdat $7{,}5$ binnen het meetinterval $[0,12]$ ligt, is dit
+\textbf{interpolatie}.
+\end{oplossing}
+
+\end{question}
+
+\begin{question}
+Een voorspelling voor $t=15$ uur is
+
+\begin{multipleChoice}
+  \choice{interpolatie.}
+  \choice[correct]{extrapolatie.}
+\end{multipleChoice}
+
+
+\begin{oplossing}
+Omdat $15$ buiten het meetinterval $[0,12]$ ligt, is dit
+\textbf{extrapolatie}.
+\end{oplossing}
+
+\end{question}
+
+\begin{question}
+Een leerling gebruikt het model om de populatie na $200$ uur te voorspellen.
+Welke beoordeling is het best?
+
+\begin{multipleChoice}
+  \choice{De voorspelling is betrouwbaar zolang de berekening correct is.}
+  \choice[correct]{We extrapoleren zeer ver en moeten nagaan of de aannames en het patroon dan nog geldig zijn.}
+  \choice{Een wiskundig model mag nooit buiten de meetpunten gebruikt worden.}
+\end{multipleChoice}
+
+
+\begin{oplossing}
+Dit is een zeer verre extrapolatie. We moeten nagaan of de aannames
+van het model en het waargenomen patroon na zoveel tijd nog geldig zijn.
+Een correcte berekening alleen maakt de voorspelling niet betrouwbaar.
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+% ====================================================================
+% 5. EEN MODEL KRITISCH BEOORDELEN
+% ====================================================================
+
+\begin{oefening}[Vrije val: wat zit niet in het model?]{\oefU \ESS}
+
+Voor een vallend voorwerp wordt het model
+
+\[
+h(t)=100-4{,}9t^2
+\]
+
+gebruikt, met $h$ in meter en $t$ in seconden.
+
+\begin{question}
+Welke informatie is in dit model rechtstreeks opgenomen?
+
+\begin{multipleChoice}
+  \choice[correct]{de hoogte als functie van de tijd}
+  \choice{de vorm en kleur van het voorwerp}
+  \choice{de windsnelheid op elke hoogte}
+  \choice{alle eigenschappen van de werkelijke valbeweging}
+\end{multipleChoice}
+
+
+\begin{oplossing}
+Het model beschrijft rechtstreeks de \textbf{hoogte als functie van de tijd}.
+\end{oplossing}
+
+\end{question}
+
+\begin{question}
+Het model voorspelt voor een bepaalde tijd een negatieve hoogte.
+Wat is de beste reactie?
+
+\begin{multipleChoice}
+  \choice{Een negatieve uitkomst bewijst dat de algebra fout is.}
+  \choice[correct]{We moeten nagaan of het model nog gebruikt wordt binnen de fysische situatie waarvoor het bedoeld was.}
+  \choice{Negatieve getallen mogen niet in modellen voorkomen.}
+\end{multipleChoice}
+
+
+\begin{oplossing}
+Een negatieve hoogte betekent niet automatisch dat de algebra fout is.
+We moeten nagaan of het model nog gebruikt wordt binnen de fysische
+situatie waarvoor het bedoeld was. Na het bereiken van de grond
+beschrijft dit model de werkelijke valbeweging bijvoorbeeld niet meer.
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+% ====================================================================
+% 6. MISLEIDENDE GRAFIEKEN
+% ====================================================================
+
+\begin{oefening}[Dezelfde gegevens, een andere indruk]{\oefU \ESS}
+
+De gemiddelde meetwaarde van een grootheid stijgt van $198$ naar $202$.
+
+Een eerste grafiek gebruikt een verticale as van $0$ tot $220$.
+Een tweede grafiek gebruikt een verticale as van $197$ tot $203$.
+
+\begin{question}
+In welke grafiek zal de stijging visueel het grootst lijken?
+
+\begin{multipleChoice}
+  \choice{in de eerste grafiek}
+  \choice[correct]{in de tweede grafiek}
+  \choice{in beide noodzakelijk even groot}
+\end{multipleChoice}
+
+
+\begin{oplossing}
+De stijging zal in de tweede grafiek visueel het grootst lijken,
+omdat de verticale as daar slechts van $197$ tot $203$ loopt.
+\end{oplossing}
+
+\end{question}
+
+\begin{question}
+Is de tweede grafiek daarom automatisch fout?
+
+\begin{multipleChoice}
+  \choice{Ja, iedere verticale as moet bij nul beginnen.}
+  \choice[correct]{Nee, maar de gekozen schaal moet mee in rekening worden gebracht bij de interpretatie.}
+\end{multipleChoice}
+
+
+\begin{oplossing}
+Nee. De grafiek is niet automatisch fout, maar de gekozen schaal
+vergroot de visuele indruk van het verschil. De schaal moet dus
+mee geïnterpreteerd worden.
+\end{oplossing}
+
+\end{question}
+
+\begin{question}
+Welke informatie controleer je minstens voordat je een conclusie trekt?
+
+\begin{selectAll}
+  \choice[correct]{de grootheden op de assen}
+  \choice[correct]{de gebruikte eenheden}
+  \choice[correct]{de schaal van de assen}
+  \choice[correct]{het bereik dat wordt weergegeven}
+  \choice{of de grafiek er visueel aantrekkelijk uitziet}
+\end{selectAll}
+
+
+\begin{oplossing}
+Controleer minstens:
+\begin{itemize}
+  \item de grootheden op de assen;
+  \item de gebruikte eenheden;
+  \item de schaal van de assen;
+  \item het weergegeven bereik.
+\end{itemize}
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+% ====================================================================
+% 7. SAMENHANG EN CAUSALITEIT
+% ====================================================================
+
+\begin{oefening}[Zonnebrillen en ijsjes]{\oefU \ESS}
+
+In een onderzoek over verschillende dagen blijkt dat op dagen waarop
+meer zonnebrillen worden verkocht, ook meer ijsjes worden verkocht.
+
+Een leerling concludeert:
+
+\begin{center}
+``De verkoop van zonnebrillen veroorzaakt een hogere ijsverkoop.''
+\end{center}
+
+\begin{question}
+Is die conclusie verantwoord?
+
+\begin{multipleChoice}
+  \choice{Ja, want beide variabelen veranderen samen.}
+  \choice[correct]{Nee, samenhang alleen bewijst geen causaliteit.}
+\end{multipleChoice}
+
+
+\begin{oplossing}
+Nee. Dat beide variabelen samen veranderen toont \textbf{samenhang},
+maar bewijst op zichzelf geen causaliteit.
+\end{oplossing}
+
+\end{question}
+
+\begin{question}
+Welke derde variabele zou de gevonden samenhang kunnen verklaren?
+
+\begin{multipleChoice}
+  \choice[correct]{de buitentemperatuur}
+  \choice{het serienummer van de zonnebrillen}
+  \choice{de volgorde waarin de gegevens in de tabel staan}
+\end{multipleChoice}
+
+
+\begin{oplossing}
+Een mogelijke derde variabele is de \textbf{buitentemperatuur}.
+Op warme dagen kunnen zowel meer zonnebrillen als meer ijsjes worden verkocht.
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+% ====================================================================
+% 8. INTEGRERENDE MODELOPGAVE
+% ====================================================================
+
+\begin{oefening}[Een zonnepaneel onderzoeken]{\oefU \ESS}
+
+Tijdens één dag wordt op verschillende tijdstippen het elektrisch
+vermogen van een zonnepaneel gemeten.
+
+\[
+\begin{array}{c|ccccccc}
+t\;(\mathrm h)
+&8&10&12&14&16&18&20\\ \hline
+P\;(\mathrm W)
+&85&210&345&390&315&155&25
+\end{array}
+\]
+
+\begin{question}
+Welke twee grootheden worden in dit experiment onderzocht?
+
+\begin{freeResponse}
+\end{freeResponse}
+
+
+\begin{oplossing}
+De onderzochte grootheden zijn:
+\begin{itemize}
+  \item de tijd $t$, uitgedrukt in uur;
+  \item het elektrisch vermogen $P$, uitgedrukt in watt.
+\end{itemize}
+\end{oplossing}
+
+\end{question}
+
+\begin{question}
+Welke variabele zou je als onafhankelijke variabele kiezen? Verklaar.
+
+\begin{freeResponse}
+\end{freeResponse}
+
+
+\begin{oplossing}
+Een natuurlijke keuze is de tijd $t$ als onafhankelijke variabele,
+omdat onderzocht wordt hoe het vermogen gedurende de dag verandert.
+Het vermogen $P$ is dan de afhankelijke variabele.
+\end{oplossing}
+
+\end{question}
+
+\begin{question}
+Beschrijf het globale patroon in de gegevens.
+
+\begin{freeResponse}
+\end{freeResponse}
+
+
+\begin{oplossing}
+Het vermogen stijgt van $8$ uur tot ongeveer $14$ uur, bereikt daar
+een maximum en daalt daarna opnieuw. Het globale patroon is dus
+duidelijk \textbf{niet lineair}.
+\end{oplossing}
+
+\end{question}
+
+\begin{question}
+Is een schatting van $P$ om $13$ uur interpolatie of extrapolatie?
+Verklaar.
+
+\begin{freeResponse}
+\end{freeResponse}
+
+
+\begin{oplossing}
+Dit is \textbf{interpolatie}, want $13$ uur ligt binnen het
+meetinterval van $8$ uur tot $20$ uur.
+\end{oplossing}
+
+\end{question}
+
+\begin{question}
+Een leerling gebruikt deze gegevens om het vermogen om $2$ uur 's nachts
+te voorspellen door het patroon eenvoudig verder te trekken.
+
+Waarom moet je die voorspelling kritisch beoordelen?
+
+\begin{freeResponse}
+\end{freeResponse}
+
+
+\begin{oplossing}
+$2$ uur 's nachts ligt ver buiten het gemeten tijdsinterval.
+Bovendien verandert de fysische situatie: 's nachts is er geen
+rechtstreekse zoninstraling. Het patroon van overdag mag dus niet
+zomaar verder worden doorgetrokken.
+\end{oplossing}
+
+\end{question}
+
+\begin{question}
+Noem minstens één factor uit de werkelijkheid die het vermogen beïnvloedt
+maar niet rechtstreeks in een model $P(t)$ voorkomt.
+
+\begin{freeResponse}
+\end{freeResponse}
+
+
+\begin{oplossing}
+Mogelijke factoren zijn bijvoorbeeld:
+\begin{itemize}
+  \item bewolking;
+  \item zoninstraling;
+  \item schaduw;
+  \item de oriëntatie en hellingshoek van het paneel;
+  \item de temperatuur van het paneel.
+\end{itemize}
+Andere wetenschappelijk verantwoorde antwoorden zijn mogelijk.
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+% ====================================================================
+% 9. OPEN MODELOPGAVE
+% ====================================================================
+
+\begin{oefening}[Van werkelijkheid naar model]{\oefG}
+
+Je wilt onderzoeken hoe snel een kop warme drank afkoelt in een lokaal.
+
+Ontwerp een eenvoudige aanpak voor dit onderzoek.
+
+Beschrijf minstens:
+
+\begin{enumerate}
+  \item welke grootheden je meet;
+  \item welke variabelen je invoert en welke eenheden je gebruikt;
+  \item welke grootheid je als onafhankelijke variabele kiest;
+  \item hoe je de gegevens zou voorstellen;
+  \item welke patronen je in de gegevens zou onderzoeken;
+  \item welke aannames of omstandigheden belangrijk kunnen zijn;
+  \item wanneer een voorspelling met je model volgens jou onbetrouwbaar
+        zou kunnen worden.
+\end{enumerate}
+
+
+
+\begin{oplossing}
+Een mogelijke onderzoeksopzet is:
+
+\begin{enumerate}
+  \item Meet de \textbf{tijd} en de \textbf{temperatuur van de drank}
+        op regelmatige tijdstippen. Het is ook zinvol de
+        \textbf{omgevingstemperatuur} te registreren.
+
+  \item Kies bijvoorbeeld
+        \[
+        t=\text{tijd in minuten},
+        \qquad
+        T=\text{temperatuur in }{}^\circ\mathrm C.
+        \]
+
+  \item De tijd $t$ is de onafhankelijke variabele en de temperatuur
+        $T$ de afhankelijke variabele.
+
+  \item Noteer de meetwaarden in een tabel en stel ze vervolgens
+        grafisch voor.
+
+  \item Onderzoek hoe de temperatuur afneemt en of de afkoeling
+        geleidelijk trager wordt naarmate de temperatuur van de drank
+        dichter bij de omgevingstemperatuur komt.
+
+  \item Houd relevante omstandigheden zoveel mogelijk constant,
+        bijvoorbeeld de hoeveelheid drank, het soort beker, een
+        eventueel deksel, luchtstroming en de omgevingstemperatuur.
+
+  \item Voorspellingen worden minder betrouwbaar wanneer we ver buiten
+        het gemeten tijdsinterval extrapoleren of wanneer de
+        omstandigheden veranderen.
+\end{enumerate}
+
+Dit is één mogelijke aanpak. Andere goed gemotiveerde en
+wetenschappelijk verantwoorde onderzoeksopzetten zijn eveneens correct.
+\end{oplossing}
+
+\end{oefening}
+
+\end{document}

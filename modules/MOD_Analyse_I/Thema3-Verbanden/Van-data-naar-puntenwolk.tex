@@ -38,6 +38,8 @@ lineaire regressie in de volgende hoofdstukken.
 
 
 
+
+
 \maketitle
 
 \begin{voorkennis}
@@ -115,17 +117,13 @@ de lengte en de massa worden gemeten.
 
 De waarden in dezelfde kolom horen bij \textbf{dezelfde staaf}.
 We mogen de eerste waarneming dus schrijven als
-
-\[
+\(
 (10,24),
-\]
-
+\)
 de tweede als
-
-\[
+\(
 (14,32),
-\]
-
+\)
 enzovoort.
 
 \begin{definitie}
@@ -140,6 +138,7 @@ Bij elke waarneming horen dus twee waarden die samen gemeten zijn.
 \end{definitie}
 
 \begin{oefening}[Wat hoort bij elkaar?]{\oefB \ESS}
+
 In een onderzoek worden voor verschillende dagen de buitentemperatuur
 en het dagelijkse elektriciteitsverbruik van een koelinstallatie gemeten.
 
@@ -181,50 +180,59 @@ Een \textbf{spreidingsdiagram} of \textbf{puntenwolk} is een grafische
 voorstelling van gekoppelde numerieke gegevens.
 
 Elk gegevenspaar
-
 \[
 (x_i,y_i)
 \]
-
 wordt voorgesteld door één punt in een assenstelsel.
 \end{definitie}
 
-Voor de metalen staven krijgen we dus acht punten. De punten hoeven
-niet exact op een rechte of kromme te liggen. Het gaat om
-\textbf{meetgegevens}; natuurlijke variatie en meetonzekerheid zijn
-normaal.
+Voor de metalen staven krijgen we dus acht punten.
 
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=0.72\textwidth,
+    height=7cm,
+    axis lines=left,
+    xlabel={lengte $x$},
+    ylabel={massa $y$},
+    xmin=0,
+    xmax=90,
+    ymin=0,
+    ymax=100,
+    xtick={0,10,...,90},
+    ytick={0,10,...,100},
+    grid=major,
+    clip=false
+]
 
-\FVDsubsection{Wat stelt één punt voor?}
+\addplot[
+    only marks,
+    mark=*,
+    mark size=2.5pt
+]
+coordinates {
+    (10,14)
+    (20,23)
+    (30,37)
+    (40,44)
+    (50,58)
+    (60,66)
+    (70,82)
+    (80,87)
+};
 
-Een punt in een spreidingsdiagram heeft altijd een betekenis in de
-context.
+\end{axis}
+\end{tikzpicture}
+\end{center}
 
-Het punt
+In het spreidingsdiagram wordt iets zichtbaar wat in de tabel
+minder gemakkelijk opvalt: de punten vertonen een duidelijk patroon.
 
-\[
-(26,61)
-\]
+De punten hoeven niet exact op een rechte of kromme te liggen.
+Het gaat om \textbf{meetgegevens}; natuurlijke variatie en
+meetonzekerheid zijn normaal.
 
-betekent in het voorbeeld:
-
-\begin{quote}
-Een staaf met een lengte van $26\,\mathrm{cm}$ heeft een gemeten
-massa van $61\,\mathrm{g}$.
-\end{quote}
-
-\begin{opmerking}
-Lees een punt nooit alleen als ``$(26,61)$''.
-
-Een goede interpretatie bevat:
-
-\begin{itemize}
-  \item de twee grootheden;
-  \item de twee waarden;
-  \item de eenheden;
-  \item de betekenis in de context.
-\end{itemize}
-\end{opmerking}
 
 
 \FVDsubsection{Welke grootheid komt op welke as?}
@@ -260,6 +268,7 @@ onderzoek.
 
 
 \begin{oefening}[De assen kiezen]{\oefB \ESS}
+
 Een leerling onderzoekt bij een veer hoe de uitrekking verandert
 wanneer verschillende massa's worden opgehangen.
 
@@ -287,6 +296,7 @@ De naam of het symbool van de grootheid en de gebruikte eenheid.
 % ============================================================
 
 Een puntenwolk beoordelen we niet op basis van één punt.
+
 We bekijken het \textbf{globale patroon}.
 
 Daarbij gebruiken we vier aandachtspunten:
@@ -323,6 +333,60 @@ van de andere grootheid.
 Positief en negatief zeggen dus iets over de \textbf{richting} van
 de puntenwolk, niet over hoe sterk het verband is.
 
+\begin{center}
+\begin{tikzpicture}
+
+\begin{axis}[
+    name=positief,
+    width=0.38\textwidth,
+    height=4.6cm,
+    axis lines=left,
+    xmin=0, xmax=10,
+    ymin=0, ymax=10,
+    xtick=\empty,
+    ytick=\empty,
+    title={\small positief verband},
+    clip=false
+]
+\addplot[
+    only marks,
+    mark=*,
+    mark size=1.8pt
+]
+coordinates {
+    (1,2.0) (2,2.3) (3,3.8) (4,4.1)
+    (5,5.8) (6,5.5) (7,7.2) (8,7.7) (9,8.5)
+};
+\end{axis}
+
+\begin{axis}[
+    at={(positief.east)},
+    anchor=west,
+    xshift=1.3cm,
+    width=0.38\textwidth,
+    height=4.6cm,
+    axis lines=left,
+    xmin=0, xmax=10,
+    ymin=0, ymax=10,
+    xtick=\empty,
+    ytick=\empty,
+    title={\small negatief verband},
+    clip=false
+]
+\addplot[
+    only marks,
+    mark=*,
+    mark size=1.8pt
+]
+coordinates {
+    (1,8.5) (2,7.9) (3,7.0) (4,6.4)
+    (5,5.2) (6,4.8) (7,3.6) (8,2.7) (9,2.2)
+};
+\end{axis}
+
+\end{tikzpicture}
+\end{center}
+
 \begin{voorbeeld}[Twee wetenschappelijke situaties]
 Bij eenzelfde soort metalen staaf verwachten we doorgaans een positief
 verband tussen lengte en massa.
@@ -347,6 +411,60 @@ Bij een \textbf{niet-lineair verband} volgt de puntenwolk duidelijk
 een andere vorm, bijvoorbeeld een kromme.
 \end{definitie}
 
+\begin{center}
+\begin{tikzpicture}
+
+\begin{axis}[
+    name=lineair,
+    width=0.38\textwidth,
+    height=4.6cm,
+    axis lines=left,
+    xmin=0, xmax=10,
+    ymin=0, ymax=10,
+    xtick=\empty,
+    ytick=\empty,
+    title={\small ongeveer lineair},
+]
+\addplot[
+    only marks,
+    mark=*,
+    mark size=1.8pt
+]
+coordinates {
+    (1,1.7) (2,2.5) (3,3.1) (4,4.4)
+    (5,5.0) (6,6.2) (7,6.8) (8,8.0) (9,8.6)
+};
+\end{axis}
+
+\begin{axis}[
+    at={(lineair.east)},
+    anchor=west,
+    xshift=1.3cm,
+    width=0.38\textwidth,
+    height=4.6cm,
+    axis lines=left,
+    xmin=-4, xmax=4,
+    ymin=0, ymax=10,
+    xtick=\empty,
+    ytick=\empty,
+    title={\small niet-lineair},
+]
+\addplot[
+    only marks,
+    mark=*,
+    mark size=1.8pt
+]
+coordinates {
+    (-3.5,8.5) (-3,6.8) (-2.5,5.5) (-2,4.1)
+    (-1.5,2.9) (-1,2.0) (-0.5,1.3) (0,1.0)
+    (0.5,1.4) (1,2.0) (1.5,2.8) (2,4.2)
+    (2.5,5.6) (3,7.0) (3.5,8.7)
+};
+\end{axis}
+
+\end{tikzpicture}
+\end{center}
+
 Dat onderscheid is belangrijk. In het volgende hoofdstuk zullen we
 een getal invoeren dat specifiek de sterkte van een
 \textbf{lineair} verband beschrijft.
@@ -369,6 +487,58 @@ we informeel van een sterker verband.
 
 Wanneer de punten veel verder verspreid liggen, is het verband zwakker.
 
+\begin{center}
+\begin{tikzpicture}
+
+\begin{axis}[
+    name=sterk,
+    width=0.38\textwidth,
+    height=4.6cm,
+    axis lines=left,
+    xmin=0, xmax=10,
+    ymin=0, ymax=10,
+    xtick=\empty,
+    ytick=\empty,
+    title={\small sterker verband},
+]
+\addplot[
+    only marks,
+    mark=*,
+    mark size=1.8pt
+]
+coordinates {
+    (1,1.5) (2,2.4) (3,3.2) (4,4.0)
+    (5,5.1) (6,6.0) (7,7.1) (8,8.0) (9,8.8)
+};
+\end{axis}
+
+\begin{axis}[
+    at={(sterk.east)},
+    anchor=west,
+    xshift=1.3cm,
+    width=0.38\textwidth,
+    height=4.6cm,
+    axis lines=left,
+    xmin=0, xmax=10,
+    ymin=0, ymax=10,
+    xtick=\empty,
+    ytick=\empty,
+    title={\small zwakker verband},
+]
+\addplot[
+    only marks,
+    mark=*,
+    mark size=1.8pt
+]
+coordinates {
+    (1,1.5) (2,4.0) (3,2.2) (4,5.5)
+    (5,4.1) (6,7.4) (7,5.1) (8,8.2) (9,6.8)
+};
+\end{axis}
+
+\end{tikzpicture}
+\end{center}
+
 \begin{opmerking}
 In dit hoofdstuk beoordelen we de sterkte nog \textbf{visueel}.
 
@@ -388,13 +558,75 @@ Een \textbf{uitschieter} is een waarneming die opvallend ver van het
 algemene patroon van de andere gegevens ligt.
 \end{definitie}
 
+\begin{center}
+\begin{tikzpicture}
+
+\begin{axis}[
+    name=outlier,
+    width=0.38\textwidth,
+    height=4.6cm,
+    axis lines=left,
+    xmin=0, xmax=10,
+    ymin=0, ymax=10,
+    xtick=\empty,
+    ytick=\empty,
+    title={\small uitschieter},
+]
+\addplot[
+    only marks,
+    mark=*,
+    mark size=1.8pt
+]
+coordinates {
+    (1,1.4) (2,2.3) (3,3.1) (4,4.2)
+    (5,5.0) (6,6.1) (7,7.0) (8,8.0)
+};
+\addplot[
+    only marks,
+    mark=*,
+    mark size=2.8pt
+]
+coordinates {
+    (7.5,2.0)
+};
+\end{axis}
+
+\begin{axis}[
+    at={(outlier.east)},
+    anchor=west,
+    xshift=1.3cm,
+    width=0.38\textwidth,
+    height=4.6cm,
+    axis lines=left,
+    xmin=0, xmax=10,
+    ymin=0, ymax=10,
+    xtick=\empty,
+    ytick=\empty,
+    title={\small twee clusters},
+]
+\addplot[
+    only marks,
+    mark=*,
+    mark size=1.8pt
+]
+coordinates {
+    (1.2,2.0) (1.7,2.4) (2.1,1.8) (2.5,2.7)
+    (2.8,2.2)
+    (6.5,7.0) (7.0,7.6) (7.4,6.8) (8.0,7.9)
+    (8.5,7.2)
+};
+\end{axis}
+
+\end{tikzpicture}
+\end{center}
+
 Een uitschieter kan verschillende oorzaken hebben:
 
 \begin{itemize}
-  \item een meet- of invoerfout;
-  \item een uitzonderlijke maar correcte waarneming;
-  \item een andere experimentele situatie;
-  \item een aanwijzing dat ons model te eenvoudig is.
+    \item een meet- of invoerfout;
+    \item een uitzonderlijke maar correcte waarneming;
+    \item een andere experimentele situatie;
+    \item een aanwijzing dat ons model te eenvoudig is.
 \end{itemize}
 
 We verwijderen een uitschieter daarom nooit automatisch.
@@ -416,9 +648,7 @@ twee leeftijdsgroepen of twee experimentele omstandigheden.
 % ============================================================
 
 Een goede analyse bestaat niet uit één woord zoals ``positief'' of
-``sterk''.
-
-Gebruik bij een nieuwe puntenwolk bij voorkeur deze volgorde:
+``sterk''. Gebruik bij een nieuwe puntenwolk bij voorkeur deze volgorde:
 
 \begin{enumerate}
   \item \textbf{Context:} welke twee grootheden worden vergeleken?
@@ -430,30 +660,88 @@ Gebruik bij een nieuwe puntenwolk bij voorkeur deze volgorde:
 \end{enumerate}
 
 \begin{voorbeeld}[Hoogte en temperatuur]
-Stel dat meetstations op verschillende hoogtes worden vergeleken en
-de puntenwolk duidelijk van linksboven naar rechtsonder loopt.
 
-Een goede beschrijving is bijvoorbeeld:
-
-\begin{quote}
-De gegevens suggereren een vrij sterk negatief en ongeveer lineair
-verband tussen hoogte en temperatuur. Hoger gelegen meetstations
-hebben in deze dataset doorgaans een lagere temperatuur. Eén station
-wijkt opvallend af van het globale patroon.
-\end{quote}
-
-Merk op wat we \textbf{niet} schrijven:
-
-\begin{quote}
-Hoogte veroorzaakt hier zeker de gemeten temperatuur.
-\end{quote}
-
-Een spreidingsdiagram toont samenhang in de gegevens, maar bewijst
-op zichzelf geen causaliteit.
-\end{voorbeeld}
+  Stel dat meetstations op verschillende hoogtes worden vergeleken.
+  Onderstaande puntenwolk toont de gemeten hoogte en temperatuur.
+  
+  \begin{center}
+  \begin{tikzpicture}
+  \begin{axis}[
+      width=0.68\textwidth,
+      height=6.2cm,
+      axis lines=left,
+      xlabel={hoogte (m)},
+      ylabel={temperatuur ($^\circ$C)},
+      xmin=0,
+      xmax=2200,
+      ymin=0,
+      ymax=22,
+      xtick={0,500,1000,1500,2000},
+      ytick={0,5,10,15,20},
+      grid=major,
+      clip=false
+  ]
+  
+  % Punten die het globale negatieve lineaire verband vormen
+  \addplot[
+      only marks,
+      mark=*,
+      mark size=2.2pt
+  ]
+  coordinates {
+      (150,19.0)
+      (350,17.5)
+      (550,16.4)
+      (750,14.2)
+      (950,13.1)
+      (1150,11.0)
+      (1400,9.8)
+      (1600,7.5)
+      (1850,6.2)
+      (2050,4.3)
+  };
+  
+  % Opvallende uitschieter
+  \addplot[
+      only marks,
+      mark=*,
+      mark size=3.2pt
+  ]
+  coordinates {
+      (1500,15.8)
+  };
+  
+  \node[
+      anchor=west
+  ] at (axis cs:1530,15.8) {\small uitschieter};
+  
+  \end{axis}
+  \end{tikzpicture}
+  \end{center}
+  
+  Een goede beschrijving is bijvoorbeeld:
+  
+  \begin{quote}
+  De gegevens suggereren een vrij sterk negatief en ongeveer lineair
+  verband tussen hoogte en temperatuur. Hoger gelegen meetstations
+  hebben in deze dataset doorgaans een lagere temperatuur. Eén station
+  wijkt opvallend af van het globale patroon.
+  \end{quote}
+  
+  Merk op wat we \textbf{niet} schrijven:
+  
+  \begin{quote}
+  Hoogte veroorzaakt hier zeker de gemeten temperatuur.
+  \end{quote}
+  
+  Een spreidingsdiagram toont samenhang in de gegevens, maar bewijst
+  op zichzelf geen causaliteit.
+  
+  \end{voorbeeld}
 
 
 \begin{oefening}[Van losse woorden naar een analyse]{\oefU \ESS}
+
 Een leerling bekijkt een spreidingsdiagram van buitentemperatuur en
 dagelijks gasverbruik van een schoolgebouw. De punten liggen vrij dicht
 rond een dalende rechte band, behalve één punt dat veel hoger ligt.
@@ -501,114 +789,5 @@ bewijs voor causaliteit.
 \end{question}
 \end{oefening}
 
-
-% ============================================================
-\FVDsection{Een spreidingsdiagram maken met ICT}
-% ============================================================
-
-Bij grotere datasets gebruiken we ICT om de puntenwolk te tekenen.
-Dat bespaart tijd, maar de software neemt het denkwerk niet over.
-
-Een correcte werkwijze is:
-
-\begin{enumerate}
-  \item controleer welke twee kolommen gekoppelde gegevens bevatten;
-  \item kies welke grootheid op de horizontale en verticale as komt;
-  \item maak een spreidingsdiagram;
-  \item geef beide assen een betekenisvolle naam en eenheid;
-  \item controleer de schaal;
-  \item beschrijf daarna richting, vorm, sterkte en bijzonderheden.
-\end{enumerate}
-
-\begin{opmerking}
-Een lijngrafiek en een spreidingsdiagram zijn niet hetzelfde.
-
-Bij een spreidingsdiagram worden afzonderlijke gekoppelde waarnemingen
-als punten weergegeven. De punten hoeven niet in meetvolgorde met
-lijnstukken verbonden te worden.
-\end{opmerking}
-
-
-% ============================================================
-\FVDsection{Grafieken kritisch bekijken}
-% ============================================================
-
-Ook een correct getekende puntenwolk kan verkeerd geïnterpreteerd worden.
-
-Let daarom op:
-
-\begin{itemize}
-  \item de schaal van beide assen;
-  \item het bereik van de gemeten waarden;
-  \item het aantal waarnemingen;
-  \item mogelijke uitschieters;
-  \item mogelijke clusters;
-  \item de vraag of het globale patroon werkelijk lineair lijkt.
-\end{itemize}
-
-\begin{voorbeeld}[Een te snelle conclusie]
-Een onderzoek bevat slechts vijf meetpunten. Vier punten liggen dicht
-bij elkaar en één punt ligt ver weg. Door dat ene punt lijkt een sterk
-stijgend verband te ontstaan.
-
-Dan is ``er is een sterk positief verband'' een te snelle conclusie.
-De uitschieter heeft mogelijk een zeer grote invloed op het beeld.
-We moeten eerst onderzoeken wat er met die waarneming aan de hand is.
-\end{voorbeeld}
-
-
-% ============================================================
-\FVDsection{Samengevat}
-% ============================================================
-
-Wanneer twee numerieke grootheden bij dezelfde waarnemingen worden
-gemeten, kunnen we hun samenhang onderzoeken met een spreidingsdiagram.
-
-\[
-\important{
-(x_i,y_i)
-\longrightarrow
-\text{punt}
-\longrightarrow
-\text{puntenwolk}
-\longrightarrow
-\text{patroon}
-\longrightarrow
-\text{voorzichtige conclusie}
-}
-\]
-
-Bij het lezen van een puntenwolk onderzoeken we steeds:
-
-\[
-\boxed{
-\text{richting}
-\quad
-\text{vorm}
-\quad
-\text{sterkte}
-\quad
-\text{bijzonderheden}
-}
-\]
-
-Een positief verband betekent dat grotere waarden doorgaans samengaan
-met grotere waarden. Bij een negatief verband gaan grotere waarden
-doorgaans samen met kleinere waarden.
-
-Een verband kan ongeveer lineair of duidelijk niet-lineair zijn.
-Uitschieters en clusters mogen niet zomaar genegeerd worden.
-
-Ten slotte geldt:
-
-\[
-\important{
-\text{een spreidingsdiagram toont een patroon in gegevens,
-maar bewijst geen causaliteit}
-}
-\]
-
-In het volgende hoofdstuk gaan we een ongeveer lineair verband
-nauwkeuriger beschrijven met de \textbf{correlatiecoëfficiënt}.
 
 \end{document}

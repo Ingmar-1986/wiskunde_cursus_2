@@ -43,6 +43,8 @@ We leren daarom voortdurend heen en weer bewegen tussen
 
 
 
+
+
 \maketitle
 
 \begin{voorkennis}
@@ -138,10 +140,62 @@ dataset zichtbaar maakt.
 Bij een ongeveer lineair verband gebruiken we een rechte als trendlijn.
 \end{definitie}
 
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=0.68\textwidth,
+    height=5.8cm,
+    axis lines=left,
+    xmin=0,
+    xmax=10,
+    ymin=0,
+    ymax=10,
+    xtick=\empty,
+    ytick=\empty,
+    xlabel={$x$},
+    ylabel={$y$},
+    clip=false
+]
+
+% puntenwolk
+\addplot[
+    only marks,
+    mark=*,
+    mark size=2pt
+]
+coordinates {
+    (1,8.5)
+    (2,7.7)
+    (3,7.4)
+    (4,6.1)
+    (5,6.0)
+    (6,4.7)
+    (7,4.1)
+    (8,3.1)
+    (9,2.8)
+};
+
+% trendlijn
+\addplot[
+    domain=0.8:9.2,
+    samples=2,
+    thick
+]
+{9.3 - 0.75*x};
+
+\node[
+    anchor=south west
+] at (axis cs:6.2,5.0) {\small trendlijn};
+
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
 Zo'n rechte moet niet door elk punt gaan. Bij meetgegevens verwachten
 we juist dat punten boven en onder de rechte liggen.
 
 \begin{voorbeeld}[Temperatuur en energieverbruik]
+
 Stel dat het gasverbruik van een gebouw op koude dagen hoger ligt en
 de puntenwolk ongeveer een dalende rechte band vormt.
 
@@ -155,8 +209,8 @@ Een dalende trendlijn vat dan de algemene tendens samen:
 
 De lijn beschrijft het patroon, maar voorspelt niet exact hoeveel gas
 op elke afzonderlijke dag wordt verbruikt.
-\end{voorbeeld}
 
+\end{voorbeeld}
 
 % ============================================================
 \FVDsection{Van trendlijn naar lineaire regressie}
@@ -210,163 +264,64 @@ meetgegevens is.
 \end{opmerking}
 
 
-% ============================================================
-\FVDsection{Waarom precies deze rechte?}
-% ============================================================
 
-Voor één puntenwolk kunnen we veel verschillende rechten tekenen.
-Lineaire regressie kiest niet zomaar een ``mooie'' rechte.
-
-Voor iedere waarneming vergelijken we de gemeten waarde $y_i$ met de
-door de rechte voorspelde waarde $\hat y_i$.
-
-Het verticale verschil is
-
-\[
-e_i=y_i-\hat y_i.
-\]
-
-\begin{definitie}
-Het verschil
-
-\[
-\boxed{e_i=y_i-\hat y_i}
-\]
-
-tussen een gemeten waarde en de bijbehorende voorspelde waarde noemen
-we het \textbf{residu}.
-\end{definitie}
-
-De gebruikelijke regressierechte wordt zo gekozen dat de som van de
-kwadraten van deze verticale afwijkingen zo klein mogelijk is:
-
-\[
-\sum_{i=1}^{n}(y_i-\hat y_i)^2.
-\]
-
-Deze methode heet de \textbf{kleinste-kwadratenmethode}.
-
-\begin{opmerking}
-Je hoeft de formules waarmee $a$ en $b$ uit alle gegevens worden
-berekend hier niet uit het hoofd te leren.
-
-ICT voert de berekening uit. Wat je wel moet begrijpen, is wat de
-gevonden rechte betekent en waarom ze een model is voor de volledige
-puntenwolk.
-\end{opmerking}
 
 
 % ============================================================
 \FVDsection{Het regressiemodel interpreteren}
 % ============================================================
 
-Een regressievergelijking is pas nuttig wanneer we haar terug kunnen
-vertalen naar de context.
-
-Beschouw
-
+Bij een regressiemodel
 \[
-\hat y=ax+b.
+\hat y=ax+b
 \]
+heeft $a$ en $b$ dezelfde wiskundige betekenis als bij een gewone rechte,
+maar we interpreteren ze nu in de context van de gegevens.
 
-We onderzoeken afzonderlijk $a$ en $b$.
+\begin{itemize}
+    \item $a$ geeft aan hoeveel de \textbf{voorspelde} waarde van $y$
+    verandert wanneer $x$ met één eenheid toeneemt.
 
+    \item $b$ is de voorspelde waarde van $y$ voor $x=0$.
+\end{itemize}
 
-% ------------------------------------------------------------
-\FVDsubsection{De richtingscoëfficiënt}
-% ------------------------------------------------------------
-
-De richtingscoëfficiënt $a$ beschrijft hoeveel de voorspelde waarde
-van $y$ gemiddeld verandert wanneer $x$ met één eenheid toeneemt.
-
+De eenheid van $a$ is
 \[
-\boxed{
-a=
-\frac{\text{verandering in voorspelde }y}
-{\text{verandering in }x}
-}
-\]
-
-De eenheid van $a$ is dus
-
-\[
-\frac{\text{eenheid van }y}
-{\text{eenheid van }x}.
+\frac{\text{eenheid van }y}{\text{eenheid van }x}.
 \]
 
 \begin{voorbeeld}[Temperatuur en gasverbruik]
-Stel dat
 
+Stel dat
 \[
 \hat G=-24{,}5T+790,
 \]
-
 waarbij $T$ de buitentemperatuur in ${}^{\circ}\mathrm C$ is en $G$
 het dagelijkse gasverbruik in $\mathrm{kWh}$.
 
-Dan heeft de richtingscoëfficiënt de eenheid
+Volgens het model daalt het voorspelde gasverbruik met ongeveer
+$24{,}5\,\mathrm{kWh}$ wanneer de temperatuur $1\,{}^{\circ}\mathrm C$
+stijgt.
 
-\[
-\frac{\mathrm{kWh}}{{}^{\circ}\mathrm C}.
-\]
+De waarde $790$ is het voorspelde gasverbruik bij $T=0\,{}^{\circ}\mathrm C$.
 
-Een stijging van de buitentemperatuur met $1\,{}^{\circ}\mathrm C$
-gaat volgens het model samen met een daling van het voorspelde
-dagelijkse gasverbruik met ongeveer $24{,}5\,\mathrm{kWh}$.
 \end{voorbeeld}
 
 \begin{opmerking}
-Gebruik bij observationele gegevens voorzichtig taalgebruik.
 
-``Als $x$ met één eenheid stijgt, voorspelt het model ...'' is veiliger
-dan automatisch te zeggen dat de verandering van $x$ de verandering
-van $y$ \emph{veroorzaakt}.
-\end{opmerking}
+Interpreteer parameters alleen binnen een zinvolle context.
 
+Bij observationele gegevens schrijven we bijvoorbeeld liever
+``als $x$ stijgt, voorspelt het model ...'' dan dat we automatisch
+een oorzakelijk verband formuleren.
 
-% ------------------------------------------------------------
-\FVDsubsection{Het intercept}
-% ------------------------------------------------------------
-
-Het getal $b$ is de voorspelde waarde van $y$ voor
-
-\[
-x=0.
-\]
-
-Algebraïsch is dat eenvoudig. Inhoudelijk kan het veel subtieler zijn.
-
-\begin{voorbeeld}[Leeftijd en lichaamslengte]
-Stel dat voor een beperkte leeftijdsgroep een lineair regressiemodel
-
-\[
-\hat L=5{,}8t+51
-\]
-
-wordt gevonden.
-
-Algebraïsch voorspelt het model bij $t=0$ een lengte van
-$51\,\mathrm{cm}$.
-
-Of die waarde inhoudelijk zinvol geïnterpreteerd mag worden, hangt af
-van de onderzochte populatie en het meetbereik.
-\end{voorbeeld}
-
-\begin{opmerking}
-Een parameter kan wiskundig perfect bepaald zijn zonder in de context
-een nuttige betekenis te hebben.
-
-Vraag daarom steeds:
-
-\[
-\important{
-\text{Ligt }x=0\text{ in of nabij het onderzochte gebied?}
-}
-\]
+Ook het intercept $b$ is alleen inhoudelijk betekenisvol wanneer
+$x=0$ relevant is voor de onderzochte situatie.
 \end{opmerking}
 
 
 \begin{oefening}[Lees het model]{\oefB \ESS}
+
 Voor een experiment geldt binnen het onderzochte meetbereik
 
 \[
@@ -444,122 +399,8 @@ Dit is een modelvoorspelling, geen garantie dat een nieuwe meting exact
 $98{,}0\,\mathrm W$ zal opleveren.
 
 
-% ============================================================
-\FVDsection{Interpoleren en extrapoleren}
-% ============================================================
-
-Niet elke voorspelling met dezelfde regressierechte is even betrouwbaar.
-
-\begin{definitie}
-Bij \textbf{interpolatie} gebruiken we een model om een waarde te
-schatten \textbf{binnen het bereik van de waargenomen $x$-waarden}.
-\end{definitie}
-
-\begin{definitie}
-Bij \textbf{extrapolatie} gebruiken we een model om een waarde te
-schatten \textbf{buiten het bereik van de waargenomen $x$-waarden}.
-\end{definitie}
-
-\begin{voorbeeld}
-Als de instraling in de dataset varieerde van
-
-\[
-180\,\mathrm{W/m^2}
-\quad\text{tot}\quad
-840\,\mathrm{W/m^2},
-\]
-
-dan is een voorspelling voor
-
-\[
-I=600\,\mathrm{W/m^2}
-\]
-
-interpolatie.
-
-Een voorspelling voor
-
-\[
-I=1200\,\mathrm{W/m^2}
-\]
-
-is extrapolatie.
-\end{voorbeeld}
-
-\begin{opmerking}
-Extrapolatie is riskanter omdat we veronderstellen dat het gevonden
-patroon ook buiten het gemeten gebied blijft gelden.
-
-Dat hoeft niet zo te zijn.
-
-Een model dat in een beperkt interval uitstekend werkt, kan daarbuiten
-fysisch, biologisch of economisch onmogelijk worden.
-\end{opmerking}
 
 
-% ============================================================
-\FVDsection{Model en werkelijkheid vergelijken}
-% ============================================================
-
-Een regressierechte loopt meestal niet door de meetpunten.
-
-Voor een meetpunt $(x_i,y_i)$ voorspelt het model
-
-\[
-\hat y_i=ax_i+b.
-\]
-
-Het residu is
-
-\[
-e_i=y_i-\hat y_i.
-\]
-
-Daaruit volgt:
-
-\[
-e_i>0
-\]
-
-als het meetpunt boven de regressierechte ligt, en
-
-\[
-e_i<0
-\]
-
-als het meetpunt onder de regressierechte ligt.
-
-\begin{voorbeeld}
-Een model voorspelt voor een bepaalde waarneming
-
-\[
-\hat y=72{,}4,
-\]
-
-terwijl werkelijk
-
-\[
-y=75{,}1
-\]
-
-werd gemeten.
-
-Dan is
-
-\[
-e=75{,}1-72{,}4=2{,}7.
-\]
-
-De gemeten waarde ligt dus $2{,}7$ eenheden boven de voorspelde waarde.
-\end{voorbeeld}
-
-\begin{opmerking}
-Residuen zijn hier vooral een hulpmiddel om na te denken over de
-kwaliteit van een model.
-
-Een systematisch patroon in de afwijkingen kan erop wijzen dat een
-rechte niet de meest geschikte modelvorm is.
-\end{opmerking}
 
 
 % ============================================================
@@ -599,65 +440,9 @@ waardeloos.
 \end{voorbeeld}
 
 
-% ============================================================
-\FVDsection{Lineaire regressie met ICT}
-% ============================================================
-
-Bij realistische datasets laten we ICT de regressiecoëfficiënten
-berekenen.
-
-De volledige werkwijze is:
-
-\begin{enumerate}
-  \item bepaal welke twee numerieke grootheden worden onderzocht;
-  \item maak een spreidingsdiagram;
-  \item beschrijf richting, vorm, sterkte en bijzonderheden;
-  \item bepaal de correlatiecoëfficiënt;
-  \item beoordeel of een lineair model zinvol is;
-  \item voer lineaire regressie uit;
-  \item noteer het model als $\hat y=ax+b$;
-  \item interpreteer $a$ en, indien zinvol, $b$;
-  \item gebruik het model eventueel voor een voorspelling;
-  \item beoordeel de voorspelling in de context.
-\end{enumerate}
-
-\begin{opmerking}
-ICT neemt de berekening over, niet de analyse.
-
-Een software-uitvoer met
-
-\[
-a=2{,}417,\qquad b=-5{,}82,\qquad r=0{,}93
-\]
-
-is pas bruikbaar wanneer je weet wat deze getallen in de concrete
-situatie betekenen.
-\end{opmerking}
-
-
-% ============================================================
-\FVDsection{Een volledige modelanalyse}
-% ============================================================
-
-We brengen nu de volledige leerlijn samen.
-
-\[
-\important{
-\text{dataset}
-\rightarrow
-\text{puntenwolk}
-\rightarrow
-\text{correlatie}
-\rightarrow
-\text{regressiemodel}
-\rightarrow
-\text{voorspelling}
-\rightarrow
-\text{kritische interpretatie}
-}
-\]
 
 \begin{oefening}[Van gegevens naar model]{\oefU \ESS}
+
 Een zonnepaneel wordt bij verschillende waarden van de instraling
 onderzocht. ICT levert op basis van de metingen het model
 
@@ -726,58 +511,6 @@ voorspelling worden beschouwd.
 \end{oefening}
 
 
-% ============================================================
-\FVDsection{Samengevat}
-% ============================================================
 
-Wanneer een puntenwolk ongeveer lineair is, kunnen we het globale
-verband modelleren met een regressierechte:
-
-\[
-\boxed{\hat y=ax+b}.
-\]
-
-De richtingscoëfficiënt $a$ beschrijft de verandering van de voorspelde
-$y$-waarde per eenheid verandering van $x$.
-
-Het intercept $b$ is de voorspelde waarde voor $x=0$, maar heeft niet
-in elke context een zinvolle interpretatie.
-
-Het verschil tussen gemeten en voorspelde waarde noemen we het residu:
-
-\[
-\boxed{e=y-\hat y}.
-\]
-
-Bij voorspellingen onderscheiden we:
-
-\[
-\boxed{\text{interpolatie: binnen het meetbereik}}
-\]
-
-en
-
-\[
-\boxed{\text{extrapolatie: buiten het meetbereik}}.
-\]
-
-De volledige modelleercyclus is:
-
-\[
-\boxed{
-\text{data}
-\rightarrow
-\text{grafiek}
-\rightarrow
-\text{model}
-\rightarrow
-\text{voorspelling}
-\rightarrow
-\text{werkelijkheid}
-}
-\]
-
-Een regressiemodel is dus geen eindpunt. We moeten altijd opnieuw
-vragen of het resultaat in de werkelijkheid zinvol is.
 
 \end{document}
