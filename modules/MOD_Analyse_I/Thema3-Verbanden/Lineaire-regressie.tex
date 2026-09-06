@@ -4,42 +4,18 @@
 \input{../../../Opmaak.tex}
 \addPrintStyle{../../..}
 
-\title{Lineaire regressie --- Van data naar model}
+\title{Oefeningen --- Lineaire regressie}
 \author{Ingmar Herreman}
 
-\begin{abstract}
-Een spreidingsdiagram maakt een verband zichtbaar en de
-correlatiecoëfficiënt beschrijft hoe sterk twee grootheden lineair
-samenhangen. Wanneer de puntenwolk ongeveer lineair is, kunnen we nog
-een stap verder gaan: we proberen het verband te beschrijven met een
-rechte.
-
-Zo ontstaat een \textbf{lineair regressiemodel}. Dat model laat ons
-niet alleen het globale patroon samenvatten, maar ook voorspellingen
-maken en veranderingen interpreteren.
-
-In dit hoofdstuk onderzoeken we wat een trendlijn en een regressierechte
-betekenen, hoe we het voorschrift
-\[
-\hat y=ax+b
-\]
-in een concrete context interpreteren en wanneer een voorspelling wel
-of niet verantwoord is.
-
-Daarbij blijft de werkelijkheid centraal staan. Een regressierechte is
-geen exacte wet en een voorspelling is niet automatisch betrouwbaar.
-We leren daarom voortdurend heen en weer bewegen tussen
-\textbf{data}, \textbf{grafiek}, \textbf{model} en
-\textbf{werkelijkheid}.
-\end{abstract}
 
 \begin{document}
 
 % FVD_CHAPTER_DATA_START
 % Automatisch gegenereerd uit index.tex.
 % Niet handmatig aanpassen.
-\fvdchapterdata{3}{Verbanden onderzoeken met data}{8}
+\fvdchapterdata{3}{Verbanden onderzoeken met data}{9}
 % FVD_CHAPTER_DATA_END
+
 
 
 
@@ -47,470 +23,394 @@ We leren daarom voortdurend heen en weer bewegen tussen
 
 \maketitle
 
-\begin{voorkennis}
-  \item Je weet wat gekoppelde numerieke gegevens zijn.
-  \item Je kan een spreidingsdiagram maken en systematisch analyseren.
-  \item Je kan beoordelen of een puntenwolk ongeveer lineair is.
-  \item Je kan de correlatiecoëfficiënt $r$ bepalen met ICT en interpreteren.
-  \item Je kan de betekenis van de richtingscoëfficiënt en het snijpunt met de verticale as van een rechte interpreteren.
-\end{voorkennis}
-
-\begin{leerdoelen}
-  \item Je kan uitleggen waarom een trendlijn een puntenwolk kan samenvatten.
-  \item Je kan beoordelen of een lineair model zinvol is voor een gegeven dataset.
-  \item Je kan met ICT een lineaire regressie uitvoeren.
-  \item Je kan het voorschrift van een regressierechte correct noteren.
-  \item Je kan de richtingscoëfficiënt van een regressierechte interpreteren met eenheid en context.
-  \item Je kan het intercept interpreteren en beoordelen of die interpretatie inhoudelijk zinvol is.
-  \item Je kan met een regressiemodel voorspellingen maken.
-  \item Je kan interpolatie en extrapolatie onderscheiden.
-  \item Je kan beoordelen of een voorspelling verantwoord is.
-  \item Je kan gemeten en voorspelde waarden vergelijken.
-  \item Je kan een lineair regressiemodel kritisch terugkoppelen naar de werkelijkheid.
-\end{leerdoelen}
 
 
-% ============================================================
-\FVDsection{Van verband naar model}
-% ============================================================
-
-In de vorige hoofdstukken onderzochten we eerst de puntenwolk en daarna
-de correlatiecoëfficiënt.
-
-Stel dat beide dezelfde boodschap geven:
-
-\begin{itemize}
-  \item de punten liggen ongeveer rond een rechte band;
-  \item de lineaire correlatie is sterk.
-\end{itemize}
-
-Dan ligt een nieuwe vraag voor de hand:
-
-\begin{center}
-\textbf{Kunnen we het globale verband met een rechte beschrijven?}
-\end{center}
-
-Dat is een stap van \textbf{gegevens analyseren} naar
-\textbf{modelleren}.
+\begin{oefening}[Parameters interpreteren]{\oefB \ESS}
+Voor een dataset werd het regressiemodel
 
 \[
-\important{
-\text{werkelijkheid}
-\longrightarrow
-\text{metingen}
-\longrightarrow
-\text{puntenwolk}
-\longrightarrow
-\text{wiskundig model}
-}
+\hat y=-2{,}8x+74
 \]
 
-Later keren we ook terug:
-
-\[
-\important{
-\text{wiskundig model}
-\longrightarrow
-\text{voorspelling}
-\longrightarrow
-\text{interpretatie in de werkelijkheid}
-}
-\]
-
-\begin{opmerking}
-Een model is bewust eenvoudiger dan de werkelijkheid.
-
-De regressierechte hoeft dus niet door alle meetpunten te gaan.
-Ze probeert het \textbf{globale lineaire patroon} van de gegevens
-samen te vatten.
-\end{opmerking}
-
-
-% ============================================================
-\FVDsection{Een trendlijn door een puntenwolk}
-% ============================================================
-
-Wanneer een puntenwolk ongeveer lineair is, kunnen we er visueel een
-rechte doorheen tekenen die de algemene richting van de punten volgt.
-
-\begin{definitie}
-Een \textbf{trendlijn} is een lijn die het globale patroon in een
-dataset zichtbaar maakt.
-
-Bij een ongeveer lineair verband gebruiken we een rechte als trendlijn.
-\end{definitie}
-
-\begin{center}
-\begin{tikzpicture}
-\begin{axis}[
-    width=0.68\textwidth,
-    height=5.8cm,
-    axis lines=left,
-    xmin=0,
-    xmax=10,
-    ymin=0,
-    ymax=10,
-    xtick=\empty,
-    ytick=\empty,
-    xlabel={$x$},
-    ylabel={$y$},
-    clip=false
-]
-
-% puntenwolk
-\addplot[
-    only marks,
-    mark=*,
-    mark size=2pt
-]
-coordinates {
-    (1,8.5)
-    (2,7.7)
-    (3,7.4)
-    (4,6.1)
-    (5,6.0)
-    (6,4.7)
-    (7,4.1)
-    (8,3.1)
-    (9,2.8)
-};
-
-% trendlijn
-\addplot[
-    domain=0.8:9.2,
-    samples=2,
-    thick
-]
-{9.3 - 0.75*x};
-
-\node[
-    anchor=south west
-] at (axis cs:6.2,5.0) {\small trendlijn};
-
-\end{axis}
-\end{tikzpicture}
-\end{center}
-
-Zo'n rechte moet niet door elk punt gaan. Bij meetgegevens verwachten
-we juist dat punten boven en onder de rechte liggen.
-
-\begin{voorbeeld}[Temperatuur en energieverbruik]
-
-Stel dat het gasverbruik van een gebouw op koude dagen hoger ligt en
-de puntenwolk ongeveer een dalende rechte band vormt.
-
-Een dalende trendlijn vat dan de algemene tendens samen:
-
-\[
-\text{hogere buitentemperatuur}
-\quad\longleftrightarrow\quad
-\text{lager gasverbruik}.
-\]
-
-De lijn beschrijft het patroon, maar voorspelt niet exact hoeveel gas
-op elke afzonderlijke dag wordt verbruikt.
-
-\end{voorbeeld}
-
-% ============================================================
-\FVDsection{Van trendlijn naar lineaire regressie}
-% ============================================================
-
-Verschillende leerlingen kunnen met het oog verschillende redelijke
-trendlijnen tekenen. We willen daarom een systematische methode om uit
-de gegevens één rechte te bepalen.
-
-Dat is het doel van \textbf{lineaire regressie}.
-
-\begin{definitie}
-Bij \textbf{lineaire regressie} bepalen we een rechte die het lineaire
-verband tussen twee numerieke grootheden zo goed mogelijk beschrijft.
-
-We schrijven het regressiemodel als
-
-\[
-\boxed{\hat y=ax+b}.
-\]
-
-Hierbij is
-
-\[
-\hat y
-\]
-
-de door het model \textbf{voorspelde} waarde van $y$.
-\end{definitie}
-
-Het dakje in $\hat y$ is betekenisvol.
-
-De gemeten waarde $y$ en de voorspelde waarde $\hat y$ zijn immers niet
-noodzakelijk gelijk.
-
-\begin{opmerking}
-We schrijven dus liever
-
-\[
-\hat y=ax+b
-\]
-
-dan
-
-\[
-y=ax+b,
-\]
-
-om duidelijk te maken dat de rechte een \textbf{model} voor de
-meetgegevens is.
-\end{opmerking}
-
-
-
-
-
-% ============================================================
-\FVDsection{Het regressiemodel interpreteren}
-% ============================================================
-
-Bij een regressiemodel
-\[
-\hat y=ax+b
-\]
-heeft $a$ en $b$ dezelfde wiskundige betekenis als bij een gewone rechte,
-maar we interpreteren ze nu in de context van de gegevens.
-
-\begin{itemize}
-    \item $a$ geeft aan hoeveel de \textbf{voorspelde} waarde van $y$
-    verandert wanneer $x$ met één eenheid toeneemt.
-
-    \item $b$ is de voorspelde waarde van $y$ voor $x=0$.
-\end{itemize}
-
-De eenheid van $a$ is
-\[
-\frac{\text{eenheid van }y}{\text{eenheid van }x}.
-\]
-
-\begin{voorbeeld}[Temperatuur en gasverbruik]
-
-Stel dat
-\[
-\hat G=-24{,}5T+790,
-\]
-waarbij $T$ de buitentemperatuur in ${}^{\circ}\mathrm C$ is en $G$
-het dagelijkse gasverbruik in $\mathrm{kWh}$.
-
-Volgens het model daalt het voorspelde gasverbruik met ongeveer
-$24{,}5\,\mathrm{kWh}$ wanneer de temperatuur $1\,{}^{\circ}\mathrm C$
-stijgt.
-
-De waarde $790$ is het voorspelde gasverbruik bij $T=0\,{}^{\circ}\mathrm C$.
-
-\end{voorbeeld}
-
-\begin{opmerking}
-
-Interpreteer parameters alleen binnen een zinvolle context.
-
-Bij observationele gegevens schrijven we bijvoorbeeld liever
-``als $x$ stijgt, voorspelt het model ...'' dan dat we automatisch
-een oorzakelijk verband formuleren.
-
-Ook het intercept $b$ is alleen inhoudelijk betekenisvol wanneer
-$x=0$ relevant is voor de onderzochte situatie.
-\end{opmerking}
-
-
-\begin{oefening}[Lees het model]{\oefB \ESS}
-
-Voor een experiment geldt binnen het onderzochte meetbereik
-
-\[
-\hat y=3{,}4x+12.
-\]
-
-$x$ wordt gemeten in seconden en $y$ in meter.
+gevonden. $x$ wordt gemeten in ${}^{\circ}\mathrm C$ en $y$ in
+$\mathrm{kWh}$.
 
 \begin{question}
 Wat is de eenheid van de richtingscoëfficiënt?
 
-\begin{multipleChoice}
-  \choice{m}
-  \choice{s}
-  \choice[correct]{m/s}
-  \choice{s/m}
-\end{multipleChoice}
-\end{question}
-
-\begin{question}
-Interpreteer $a=3{,}4$.
-
 \begin{oplossing}
-Wanneer $x$ met $1\,\mathrm{s}$ toeneemt, neemt de door het model
-voorspelde waarde van $y$ toe met $3{,}4\,\mathrm{m}$.
+\[
+\frac{\mathrm{kWh}}{{}^{\circ}\mathrm C}.
+\]
 \end{oplossing}
 \end{question}
 
 \begin{question}
-Wat betekent $12$ algebraïsch?
+Interpreteer $-2{,}8$.
 
 \begin{oplossing}
-Voor $x=0\,\mathrm{s}$ voorspelt het model $\hat y=12\,\mathrm{m}$.
-Of die waarde inhoudelijk betekenisvol is, moet uit de context en het
-meetbereik blijken.
+Wanneer $x$ met $1\,{}^{\circ}\mathrm C$ toeneemt, daalt de door het
+model voorspelde waarde van $y$ met $2{,}8\,\mathrm{kWh}$.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Wat betekent $74$ algebraïsch?
+
+\begin{oplossing}
+Voor $x=0\,{}^{\circ}\mathrm C$ voorspelt het model
+$\hat y=74\,\mathrm{kWh}$.
 \end{oplossing}
 \end{question}
 \end{oefening}
 
 
-% ============================================================
-\FVDsection{Voorspellen met een regressiemodel}
-% ============================================================
-
-Een belangrijk voordeel van een regressiemodel is dat we voor een
-gegeven waarde van $x$ een bijbehorende waarde van $y$ kunnen
-\textbf{schatten}.
-
-Stel bijvoorbeeld
+\begin{oefening}[Voorspellen met een model]{\oefB \ESS}
+Voor een sensor geldt binnen het onderzochte bereik
 
 \[
-\hat P=0{,}158I+3{,}2,
+\hat U=0{,}42T+1{,}8,
 \]
 
-met $I$ de instraling in $\mathrm{W/m^2}$ en $P$ het elektrisch
-vermogen in $\mathrm W$.
+met $T$ in ${}^{\circ}\mathrm C$ en $U$ in volt.
 
-Voor
+\begin{question}
+Voorspel $U$ bij $T=20\,{}^{\circ}\mathrm C$.
+
+\begin{oplossing}
+\[
+\hat U=0{,}42\cdot20+1{,}8=10{,}2\,\mathrm V.
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Wat betekent het dakje in $\hat U$?
+
+\begin{oplossing}
+Het gaat om de door het regressiemodel voorspelde waarde, niet
+noodzakelijk om de werkelijk gemeten waarde.
+\end{oplossing}
+\end{question}
+\end{oefening}
+
+
+\begin{oefening}[Interpolatie of extrapolatie?]{\oefB \ESS}
+Een model is gebaseerd op metingen voor
 
 \[
-I=600\,\mathrm{W/m^2}
+15\leq x\leq 80.
 \]
 
-voorspelt het model
+Classificeer de volgende voorspellingen.
 
 \[
-\hat P
-=
-0{,}158\cdot600+3{,}2
-=
-98{,}0\,\mathrm W.
+x=20,\qquad x=57,\qquad x=80,\qquad x=95,\qquad x=4.
 \]
 
-Dit is een modelvoorspelling, geen garantie dat een nieuwe meting exact
-$98{,}0\,\mathrm W$ zal opleveren.
+\begin{oplossing}
+$x=20$, $57$ en $80$ liggen binnen het gemeten bereik en zijn
+interpolaties. $x=95$ en $x=4$ liggen buiten het bereik en zijn
+extrapolaties.
+\end{oplossing}
+\end{oefening}
 
 
-
-
-
-
-% ============================================================
-\FVDsection{Wanneer is een lineair model zinvol?}
-% ============================================================
-
-Een grote correlatiecoëfficiënt alleen is geen automatische toestemming
-om een regressierechte zonder nadenken te gebruiken.
-
-We controleren minstens:
-
-\begin{enumerate}
-  \item Is de puntenwolk ongeveer lineair?
-  \item Zijn er opvallende uitschieters of clusters?
-  \item Is de context verenigbaar met een lineair model?
-  \item Ligt de gewenste voorspelling binnen of buiten het meetbereik?
-  \item Is de voorspelde waarde inhoudelijk plausibel?
-\end{enumerate}
-
-\begin{voorbeeld}[Een biologisch onmogelijke voorspelling]
-Stel dat een lineair model de lichaamslengte van jonge kinderen goed
-beschrijft tussen $1$ en $12$ maanden.
-
-Wanneer we hetzelfde model tot $20$ jaar extrapoleren, kan het een
-absurde lichaamslengte voorspellen.
-
-De berekening kan algebraïsch correct zijn en toch wetenschappelijk
-waardeloos.
+\begin{oefening}[Gemeten en voorspeld]{\oefB}
+Voor een waarneming geldt
 
 \[
-\important{
-\text{correct rekenen}
-\neq
-\text{correct modelleren}
-}
+y=53{,}7
+\qquad\text{en}\qquad
+\hat y=50{,}9.
 \]
-\end{voorbeeld}
 
+\begin{question}
+Bereken het residu.
 
-
-\begin{oefening}[Van gegevens naar model]{\oefU \ESS}
-
-Een zonnepaneel wordt bij verschillende waarden van de instraling
-onderzocht. ICT levert op basis van de metingen het model
-
+\begin{oplossing}
 \[
-\hat P=0{,}158I+3{,}2
+e=y-\hat y=53{,}7-50{,}9=2{,}8.
 \]
+\end{oplossing}
+\end{question}
 
+\begin{question}
+Ligt het meetpunt boven of onder de regressierechte?
+
+\begin{oplossing}
+Boven de regressierechte, want het residu is positief.
+\end{oplossing}
+\end{question}
+\end{oefening}
+
+
+
+
+
+\begin{oefening}[Groei van jongensbaby's]{\oefU \ESS}
+
+Gebruik
+
+\csv
+{https://raw.githubusercontent.com/Ingmar-1986/wiskunde_cursus_2/main/modules/Data/Statistiek/lengtebabys.csv}
+{lengtebabys.csv}
+
+Open de dataset met geschikte ICT. Maak een spreidingsdiagram, bepaal
+$r$ en voer een lineaire regressie uit. Je hoeft de gegevens niet
+handmatig over te nemen.
+
+\begin{question}
+Beoordeel op basis van de puntenwolk of een lineair model binnen het
+gemeten leeftijdsgebied redelijk lijkt.
+
+\begin{oplossing}
+De punten liggen vrij dicht rond een stijgende rechte band. Binnen
+het beperkte gemeten leeftijdsgebied is een lineair model daarom een
+redelijke eerste benadering.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+ICT geeft ongeveer
+\[
+r=0{,}976
+\]
 en
-
 \[
-r=0{,}996.
+\hat L=1{,}877t+54{,}733.
 \]
-
-De gemeten instraling varieerde van
-$180\,\mathrm{W/m^2}$ tot $840\,\mathrm{W/m^2}$.
-
-\begin{question}
-Wat vertelt $r=0{,}996$?
+Interpreteer de richtingscoëfficiënt met eenheid.
 
 \begin{oplossing}
-Er is in de dataset een zeer sterke positieve lineaire samenhang tussen
-instraling en elektrisch vermogen.
+Volgens het model neemt de voorspelde gemiddelde lengte binnen het
+onderzochte gebied per extra levensmaand met ongeveer
+\[
+1{,}88\,\mathrm{cm}
+\]
+toe.
 \end{oplossing}
 \end{question}
 
 \begin{question}
-Interpreteer de richtingscoëfficiënt.
-
-\begin{oplossing}
-Volgens het model neemt het voorspelde elektrische vermogen met
-ongeveer $0{,}158\,\mathrm W$ toe wanneer de instraling met
-$1\,\mathrm{W/m^2}$ toeneemt.
-\end{oplossing}
-\end{question}
-
-\begin{question}
-Voorspel het vermogen bij $I=500\,\mathrm{W/m^2}$.
+Voorspel de gemiddelde lengte op $10{,}5$ maanden en classificeer de
+voorspelling.
 
 \begin{oplossing}
 \[
-\hat P=0{,}158\cdot500+3{,}2=82{,}2\,\mathrm W.
+\hat L(10{,}5)
+=1{,}876923\cdot10{,}5+54{,}7333
+\approx74{,}44\,\mathrm{cm}.
+\]
+Dit is interpolatie omdat $10{,}5$ maanden binnen het gemeten interval
+van $1$ tot $12$ maanden ligt.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Waarom is hetzelfde model ongeschikt om de gemiddelde lengte op
+$20$ jaar te voorspellen?
+
+\begin{oplossing}
+Dat is een extreme extrapolatie. Menselijke groei blijft niet lineair
+doorlopen tot volwassen leeftijd, zodat het model buiten het beperkte
+meetgebied zijn betekenis verliest.
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+\begin{oefening}[Hoogte en temperatuur in weerstations]{\oefU \ESS}
+
+Gebruik
+
+\csv
+{https://raw.githubusercontent.com/Ingmar-1986/wiskunde_cursus_2/main/modules/Data/Statistiek/weerstations.csv}
+{weerstations.csv}
+
+Maak met ICT een spreidingsdiagram van temperatuur in functie van hoogte
+en bepaal een lineair regressiemodel.
+
+\begin{question}
+Beschrijf de puntenwolk en beoordeel of een lineair model zinvol lijkt.
+
+\begin{oplossing}
+De puntenwolk vertoont een sterk negatief en ongeveer lineair verband:
+hogere stations zijn in deze dataset doorgaans kouder.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+ICT geeft ongeveer
+\[
+r=-0{,}975
+\]
+en
+\[
+\hat T=-0{,}00542H+10{,}995.
+\]
+Interpreteer de richtingscoëfficiënt liever per $100\,\mathrm m$.
+
+\begin{oplossing}
+Per extra $100\,\mathrm m$ hoogte daalt de door het model voorspelde
+temperatuur gemiddeld met ongeveer
+\[
+0{,}542\,{}^\circ\mathrm C.
 \]
 \end{oplossing}
 \end{question}
 
 \begin{question}
-Is dit interpolatie of extrapolatie?
+Gebruik het model om de temperatuur op $1000\,\mathrm m$ te voorspellen.
 
 \begin{oplossing}
-Interpolatie, want $500\,\mathrm{W/m^2}$ ligt binnen het onderzochte
-bereik.
+\[
+\hat T(1000)
+=-0{,}0054232\cdot1000+10{,}9948
+\approx5{,}57\,{}^\circ\mathrm C.
+\]
+Omdat $1000\,\mathrm m$ binnen het gemeten hoogtegebied ligt, is dit
+interpolatie.
 \end{oplossing}
 \end{question}
 
 \begin{question}
-Een leerling gebruikt hetzelfde model bij
-$I=2000\,\mathrm{W/m^2}$. Wat is het belangrijkste probleem?
+Waarom moet een voorspelling voor $8000\,\mathrm m$ kritisch worden
+beoordeeld?
 
 \begin{oplossing}
-Dit is een sterke extrapolatie buiten het onderzochte meetbereik.
-We weten niet of het lineaire patroon daar nog geldig is. De berekende
-waarde mag daarom niet zonder bijkomende argumenten als betrouwbare
-voorspelling worden beschouwd.
+$8000\,\mathrm m$ ligt ver buiten het gemeten hoogtegebied. Dit is
+een zeer verre extrapolatie en het lokale lineaire verband hoeft daar
+niet geldig te blijven.
 \end{oplossing}
 \end{question}
+
+\end{oefening}
+
+
+\begin{oefening}[Archaeopteryx]{\oefU \ESS}
+
+Gebruik
+
+\csv
+{https://raw.githubusercontent.com/Ingmar-1986/wiskunde_cursus_2/main/modules/Data/Statistiek/archaeopteryx.csv}
+{archaeopteryx.csv}
+
+De dataset bevat lengtes van dijbeen en opperarmbeen van fossielen.
+
+\begin{question}
+Maak een spreidingsdiagram en beoordeel de lineariteit.
+
+\begin{oplossing}
+De vijf punten liggen zeer dicht rond een stijgende rechte band.
+Een lineair model lijkt voor deze beperkte dataset zeer geschikt.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Bepaal met ICT $r$ en de regressierechte voor opperarmbeen in functie
+van dijbeen.
+
+\begin{oplossing}
+Ongeveer:
+\[
+r=0{,}994
+\]
+en
+\[
+\widehat{\text{opperarmbeen}}
+=1{,}197\cdot\text{dijbeen}-3{,}660.
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Welke waarschuwing hoort bij de zeer hoge correlatie?
+
+\begin{oplossing}
+De dataset bevat slechts vijf waarnemingen. De hoge correlatie toont
+een zeer sterke lineaire samenhang in deze gegevens, maar zegt niet
+dat elk toekomstig fossiel exact op dezelfde rechte zal liggen.
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+
+
+\begin{oefening}[Van puntenwolk naar modelkeuze]{\oefU \ESS}
+
+Vergelijk
+
+\begin{itemize}
+  \item \texttt{lengtebabys.csv},
+  \item \texttt{weerstations.csv},
+  \item \texttt{druk.csv}.
+\end{itemize}
+
+Gebruik ICT om voor elke dataset een spreidingsdiagram en een
+regressierechte te verkrijgen.
+
+\begin{question}
+Bij welke datasets lijkt een lineair regressiemodel grafisch het meest
+verantwoord?
+
+\begin{oplossing}
+Bij \texttt{lengtebabys.csv} en \texttt{weerstations.csv} liggen de
+punten ongeveer rond een rechte band. Bij \texttt{druk.csv} is het
+verband sterk maar systematisch gekromd, zodat een rechte belangrijke
+structuur mist.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Waarom mag software die altijd een regressierechte berekent niet zelf
+de modelkeuze bepalen?
+
+\begin{oplossing}
+Software kan voor elke dataset een rechte berekenen. De leerling moet
+echter op basis van puntenwolk, residuen en context beoordelen of die
+rechte ook een zinvolle beschrijving is.
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+
+
+\begin{oefening}[Wiskunde voorspellen uit fysica?]{\oefG}
+
+Gebruik
+
+\csv
+{https://raw.githubusercontent.com/Ingmar-1986/wiskunde_cursus_2/main/modules/Data/Statistiek/wiskfys.csv}
+{wiskfys.csv}
+
+Bepaal met ICT eerst de regressie van fysica op wiskunde.
+
+Een leerling draait daarna die formule algebraïsch om en gebruikt ze
+om wiskunde uit fysica te voorspellen.
+
+\begin{question}
+Is dat automatisch dezelfde regressierechte als wanneer je vanaf het
+begin wiskunde op fysica regresseert? Leg uit.
+
+\begin{oplossing}
+Nee. Bij lineaire regressie worden de verticale afwijkingen ten opzichte
+van de gekozen afhankelijke variabele geminimaliseerd. Wanneer de rollen
+van $x$ en $y$ worden omgewisseld, verandert dus ook het regressieprobleem.
+De ene regressierechte algebraïsch omkeren is in het algemeen niet
+hetzelfde als de andere regressie uitvoeren.
+\end{oplossing}
+\end{question}
+
 \end{oefening}
 
 
 
 
 \end{document}
+

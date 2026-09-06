@@ -24,9 +24,7 @@
 
 \maketitle
 
-% ============================================================
-\FVDsection{Basis --- gegevens en spreidingsdiagrammen}
-% ============================================================
+
 
 \begin{oefening}[Gekoppelde gegevens]{\oefB \ESS}
 Een bioloog meet bij zes planten de hoogte en de massa van de bovengrondse
@@ -146,298 +144,219 @@ experimentele opzet en fysische kennis nodig.
 \end{oefening}
 
 
-% ============================================================
-\FVDsection{Verdieping --- puntenwolken analyseren}
-% ============================================================
 
-\begin{oefening}[Temperatuur en energieverbruik]{\oefU \ESS}
-Een school onderzoekt tijdens tien winterdagen de gemiddelde
-buitentemperatuur en het gasverbruik.
 
+
+\begin{oefening}[Lengte en schoenmaat]{\oefU \ESS}
+
+Gebruik het gegevensbestand
+
+\csv
+{https://raw.githubusercontent.com/Ingmar-1986/wiskunde_cursus_2/main/modules/Data/Statistiek/schoenmaat.csv}
+{schoenmaat.csv}
+
+Open het bestand met geschikte ICT en maak een spreidingsdiagram.
+Je hoeft de gegevens niet handmatig over te nemen.
+
+\begin{question}
+Beschrijf de puntenwolk systematisch volgens
 \[
-\begin{array}{c|rrrrrrrrrr}
-T\;({}^{\circ}\mathrm C)&-2&0&2&4&5&7&8&10&11&13\\ \hline
-G\;(\mathrm{kWh})&820&790&735&690&655&610&590&535&520&470
-\end{array}
+\text{richting, vorm, sterkte en bijzonderheden}.
 \]
 
-\begin{question}
-Maak een spreidingsdiagram.
-\end{question}
-
-\begin{question}
-Analyseer de puntenwolk met de vier aandachtspunten:
-richting, vorm, sterkte en bijzonderheden.
-
 \begin{oplossing}
-Er is een sterk negatief en ongeveer lineair verband. Bij hogere
-buitentemperaturen ligt het gasverbruik doorgaans lager. De punten
-liggen vrij dicht rond een dalende rechte band en er is in deze kleine
-dataset geen uitgesproken uitschieter zichtbaar.
+De puntenwolk vertoont een duidelijk positief en ongeveer lineair
+verband. Grotere lengtes gaan in deze dataset doorgaans samen met
+grotere schoenmaten. De punten liggen vrij dicht rond een stijgende
+rechte band, al is er natuurlijke spreiding.
 \end{oplossing}
 \end{question}
 
 \begin{question}
-Formuleer een contextgebonden conclusie zonder meer te beweren dan de
-gegevens toelaten.
+Welke conclusie is verantwoord?
 
-\begin{oplossing}
-Tijdens deze tien winterdagen gaat een hogere gemiddelde
-buitentemperatuur doorgaans samen met een lager gasverbruik van de
-school. De gegevens suggereren een sterk negatief, ongeveer lineair
-verband.
-\end{oplossing}
+\begin{multipleChoice}
+  \choice[correct]{In deze dataset hangt lichaamslengte positief samen met schoenmaat.}
+  \choice{Iedere persoon die langer is, heeft noodzakelijk een grotere schoenmaat.}
+  \choice{Lichaamslengte bepaalt de schoenmaat exact.}
+\end{multipleChoice}
 \end{question}
+
 \end{oefening}
 
 
-\begin{oefening}[Een verband dat niet lineair is]{\oefU \ESS}
-Een sensor wordt getest. Voor verschillende waarden van $x$ wordt
-de respons $y$ gemeten.
+\begin{oefening}[Festivalgeluid en klachten]{\oefU \ESS}
 
-\[
-\begin{array}{c|rrrrrrrrr}
-x&-4&-3&-2&-1&0&1&2&3&4\\ \hline
-y&16{,}2&9{,}1&4{,}2&1{,}0&0{,}2&1{,}1&3{,}9&9{,}2&15{,}8
-\end{array}
-\]
+Gebruik
 
-\begin{question}
-Maak een spreidingsdiagram.
-\end{question}
+\csv
+{https://raw.githubusercontent.com/Ingmar-1986/wiskunde_cursus_2/main/modules/Data/Statistiek/festival.csv}
+{festival.csv}
 
-\begin{question}
-Is er een duidelijk verband tussen $x$ en $y$?
+De gegevens koppelen afstand tot een festivalterrein aan het aantal
+geregistreerde klachten.
 
-\begin{oplossing}
-Ja. De punten volgen duidelijk een U-vormig patroon.
-\end{oplossing}
-\end{question}
-
-\begin{question}
-Is het verband ongeveer lineair?
-
-\begin{oplossing}
-Nee. Een rechte beschrijft het globale patroon niet goed.
-\end{oplossing}
-\end{question}
-
-\begin{question}
-Waarom is deze oefening belangrijk voordat we correlatie bestuderen?
-
-\begin{oplossing}
-Omdat een dataset een sterk en duidelijk verband kan vertonen zonder
-dat dit verband lineair is. Een maat voor lineaire samenhang moet dus
-altijd samen met de puntenwolk geïnterpreteerd worden.
-\end{oplossing}
-\end{question}
-\end{oefening}
-
-
-\begin{oefening}[De verdachte meting]{\oefU \ESS}
-Bij een experiment worden de volgende waarden gemeten.
-
-\[
-\begin{array}{c|rrrrrrrr}
-x&1&2&3&4&5&6&7&8\\ \hline
-y&2{,}1&4{,}0&6{,}2&8{,}1&10{,}0&24{,}5&14{,}2&16{,}1
-\end{array}
-\]
-
-\begin{question}
-Maak een spreidingsdiagram en beschrijf het globale patroon.
-
-\begin{oplossing}
-De meeste punten volgen een sterk positief en ongeveer lineair patroon.
-Het punt bij $x=6$ ligt opvallend ver boven dit patroon.
-\end{oplossing}
-\end{question}
-
-\begin{question}
-Welke waarneming is een mogelijke uitschieter?
-
-\begin{oplossing}
-$(6,24{,}5)$.
-\end{oplossing}
-\end{question}
-
-\begin{question}
-Een leerling verwijdert het punt onmiddellijk. Beoordeel die werkwijze.
-
-\begin{oplossing}
-Dat is niet verantwoord zonder onderzoek. Het kan om een invoer- of
-meetfout gaan, maar ook om een correcte uitzonderlijke waarneming.
-Eerst moet de oorzaak worden nagegaan.
-\end{oplossing}
-\end{question}
-\end{oefening}
-
-
-\begin{oefening}[Twee groepen in één puntenwolk]{\oefU}
-Een onderzoeker meet de massa en de lengte van onderdelen die afkomstig
-zijn van twee verschillende materialen. In de puntenwolk ontstaan twee
-duidelijk gescheiden groepen.
-
-\begin{question}
-Hoe noemen we zulke groepen?
-
-\begin{oplossing}
-Clusters.
-\end{oplossing}
-\end{question}
-
-\begin{question}
-Waarom is het gevaarlijk om alleen één globale trend door alle punten
-te beschrijven?
-
-\begin{oplossing}
-Omdat de twee materialen mogelijk elk een ander verband vertonen.
-Een globale trend kan de groepsstructuur verbergen en daardoor een
-misleidende samenvatting geven.
-\end{oplossing}
-\end{question}
-\end{oefening}
-
-
-% ============================================================
-\FVDsection{Geïntegreerd analyseren}
-% ============================================================
-
-\begin{oefening}[Zonnepaneel]{\oefU \ESS}
-Tijdens een practicum wordt op verschillende momenten de instraling
-op een zonnepaneel en het geleverde elektrische vermogen gemeten.
-
-\[
-\begin{array}{c|rrrrrrrr}
-I\;(\mathrm{W/m^2})&180&260&340&430&510&620&730&840\\ \hline
-P\;(\mathrm{W})&31&43&58&70&86&101&119&136
-\end{array}
-\]
-
-Voer een volledige eerste analyse uit.
-
-\begin{question}
-Benoem de twee numerieke grootheden en hun eenheden.
-
-\begin{oplossing}
-Instraling $I$ in $\mathrm{W/m^2}$ en elektrisch vermogen $P$ in
-$\mathrm W$.
-\end{oplossing}
-\end{question}
-
-\begin{question}
 Maak met ICT een spreidingsdiagram.
-\end{question}
 
 \begin{question}
-Beschrijf richting, vorm, sterkte en bijzonderheden.
+Beschrijf het globale patroon. Let ook op bijzondere waarnemingen.
 
 \begin{oplossing}
-De puntenwolk vertoont een sterk positief en ongeveer lineair verband.
-Grotere instraling gaat in deze dataset samen met groter geleverd
-vermogen. De punten liggen dicht rond een stijgende rechte band en er
-is geen duidelijke uitschieter.
+De puntenwolk heeft globaal een dalende tendens: op grotere afstand
+zijn er doorgaans minder klachten. De punten liggen echter niet mooi
+rond één rechte band en enkele waarnemingen wijken sterk af van het
+globale beeld.
 \end{oplossing}
 \end{question}
 
 \begin{question}
-Formuleer een voorzichtige conclusie.
+Waarom zou je op basis van deze grafiek niet onmiddellijk besluiten
+dat een lineair model geschikt is?
 
 \begin{oplossing}
-Binnen het onderzochte meetbereik gaat een grotere instraling doorgaans
-samen met een groter elektrisch vermogen van het zonnepaneel. De
-gegevens suggereren een sterk positief en ongeveer lineair verband.
+De vorm van de puntenwolk is niet duidelijk lineair en enkele punten
+hebben een grote invloed op het globale beeld. Een rechte kan daardoor
+belangrijke structuur in de gegevens verbergen.
 \end{oplossing}
 \end{question}
 
-\begin{question}
-Welke vervolgvraag ligt voor de hand als we het verband nauwkeuriger
-willen beschrijven?
-
-\begin{oplossing}
-We kunnen onderzoeken hoe sterk het lineaire verband is en vervolgens
-een lineair model bepalen. Dat leidt naar correlatie en lineaire
-regressie.
-\end{oplossing}
-\end{question}
 \end{oefening}
 
 
-% ============================================================
-\FVDsection{Gevorderd --- kritisch onderzoeken}
-% ============================================================
+\begin{oefening}[Druk en volume]{\oefU \ESS}
 
-\begin{oefening}[Kan één punt een verhaal veranderen?]{\oefG}
-Een dataset bevat aanvankelijk de punten
+Gebruik
 
-\[
-(2,8),\ (3,7),\ (4,6),\ (5,5),\ (6,4),\ (7,3).
-\]
+\csv
+{https://raw.githubusercontent.com/Ingmar-1986/wiskunde_cursus_2/main/modules/Data/Statistiek/druk.csv}
+{druk.csv}
 
-Daar wordt één extra punt $(20,20)$ aan toegevoegd.
+Maak met ICT een spreidingsdiagram van druk in functie van volume.
 
 \begin{question}
-Maak een spreidingsdiagram van de eerste zes punten en beschrijf het verband.
-\end{question}
-
-\begin{question}
-Voeg daarna $(20,20)$ toe. Hoe verandert het globale beeld?
-\end{question}
-
-\begin{question}
-Leg uit waarom een analyse nooit uitsluitend op een automatisch
-berekend getal mag steunen.
+Beschrijf richting, vorm en sterkte van het verband.
 
 \begin{oplossing}
-Een uitzonderlijk punt kan de numerieke samenvatting sterk beïnvloeden.
-De puntenwolk toont de structuur van de gegevens en maakt zulke
-bijzonderheden zichtbaar. Grafische en numerieke informatie moeten
-daarom samen geïnterpreteerd worden.
+Er is een zeer duidelijk negatief verband: bij grotere volumes is de
+druk kleiner. De punten volgen echter een krom patroon en niet
+perfect een rechte band.
 \end{oplossing}
 \end{question}
+
+\begin{question}
+Is ``sterk verband'' hier hetzelfde als ``sterk lineair verband''?
+Leg uit.
+
+\begin{oplossing}
+Nee. De gegevens vertonen een sterk systematisch verband, maar de
+vorm is krom. Een lineaire maat of een rechte beschrijft daarom niet
+alle structuur van de puntenwolk.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Welke algemene les volgt hieruit voor het analyseren van datasets?
+
+\begin{oplossing}
+Bekijk altijd eerst de puntenwolk. De vorm van het verband bepaalt
+welke wiskundige samenvatting of welk model zinvol kan zijn.
+\end{oplossing}
+\end{question}
+
 \end{oefening}
 
 
-\begin{oefening}[Ontwerp zelf een dataset]{\oefG}
-Maak zelf drie kleine datasets met telkens minstens acht punten:
+\begin{oefening}[Een biologische puntenwolk]{\oefU}
+
+Gebruik
+
+\csv
+{https://raw.githubusercontent.com/Ingmar-1986/wiskunde_cursus_2/main/modules/Data/Statistiek/slakken.csv}
+{slakken.csv}
+
+De dataset bevat voor slakken een gewicht en een voetoppervlakte.
+
+\begin{question}
+Maak met ICT een spreidingsdiagram en beschrijf het globale patroon.
+
+\begin{oplossing}
+Er is een duidelijk positief verband: zwaardere slakken hebben in deze
+dataset doorgaans een grotere voetoppervlakte. De punten liggen vrij
+dicht rond een stijgende band.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Welke mogelijke bijzonderheden in de puntenwolk verdienen nader
+onderzoek?
+
+\begin{oplossing}
+Punten die opvallend ver van de globale band liggen of groepjes die
+duidelijk van elkaar gescheiden zijn, verdienen nader onderzoek.
+Men moet eerst nagaan of zulke punten meetfouten, correcte uitzonderingen
+of een andere biologische situatie voorstellen.
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+
+
+\begin{oefening}[Van dataset naar verantwoorde beschrijving]{\oefU \ESS}
+
+Kies één van de datasets uit dit hoofdstuk die je nog niet volledig
+hebt besproken.
+
+Open het CSV-bestand met geschikte ICT en maak een spreidingsdiagram.
+Neem de gegevens niet handmatig over.
+
+Schrijf daarna een korte analyse waarin je minstens bespreekt:
 
 \begin{enumerate}
-  \item een sterk positief ongeveer lineair verband;
-  \item een sterk negatief ongeveer lineair verband;
-  \item een sterk maar duidelijk niet-lineair verband.
+  \item welke twee numerieke grootheden worden vergeleken;
+  \item richting;
+  \item vorm;
+  \item sterkte;
+  \item uitschieters of clusters;
+  \item of een rechte als eerste model zinvol lijkt;
+  \item welke conclusie je uit de grafiek wel en niet mag trekken.
 \end{enumerate}
 
-Maak voor elke dataset een spreidingsdiagram en schrijf er een korte
-analyse bij volgens richting, vorm, sterkte en bijzonderheden.
-
 \begin{oplossing}
-Er zijn veel correcte antwoorden mogelijk. De grafieken en de
-beschrijvingen moeten onderling consistent zijn. Bij de derde dataset
-moet duidelijk zijn dat ``sterk verband'' niet hetzelfde betekent als
-``sterk lineair verband''.
+Er zijn meerdere correcte antwoorden mogelijk. Een sterk antwoord
+beschrijft de globale puntenwolk en baseert de conclusie niet op één
+afzonderlijk punt. De gekozen modelvorm moet aansluiten bij wat in de
+grafiek zichtbaar is.
 \end{oplossing}
+
 \end{oefening}
 
 
-% ============================================================
-\FVDsection{Essentiële oefeningen}
-% ============================================================
 
-Voor dit hoofdstuk behoren de volgende oefeningen tot het minimumtraject:
+\begin{oefening}[De grafiek beslist mee]{\oefG}
 
-\begin{itemize}
-  \item \textbf{Gekoppelde gegevens} --- betekenis van gegevensparen;
-  \item \textbf{Richting herkennen} --- positief en negatief verband;
-  \item \textbf{Tabel naar puntenwolk} --- een spreidingsdiagram maken en lezen;
-  \item \textbf{Temperatuur en energieverbruik} --- een nieuwe puntenwolk analyseren;
-  \item \textbf{Een verband dat niet lineair is} --- lineair en niet-lineair onderscheiden;
-  \item \textbf{De verdachte meting} --- uitschieters herkennen en kritisch behandelen;
-  \item \textbf{Zonnepaneel} --- geïntegreerde analyse in een STEM-context.
-\end{itemize}
+Vergelijk de datasets \texttt{schoenmaat.csv}, \texttt{festival.csv}
+en \texttt{druk.csv}.
 
-De eerste oefeningen trainen noodzakelijke basisvaardigheden.
-De \oefU-oefeningen met \ESS zijn eveneens essentieel: zonder het
-zelfstandig analyseren van nieuwe gegevens wordt het vereiste
-beheersingsniveau niet bereikt.
+Maak voor elke dataset een spreidingsdiagram en rangschik ze niet op
+basis van een automatisch berekend getal, maar op basis van hun
+\emph{geschiktheid voor een lineair model}.
+
+Motiveer je rangschikking met kenmerken van de puntenwolken.
+
+\begin{oplossing}
+Er is ruimte voor nuance, maar de motivatie moet steunen op de vorm
+van de puntenwolken. \texttt{schoenmaat.csv} vertoont een duidelijk
+ongeveer lineair patroon. Bij \texttt{druk.csv} is het verband sterk
+maar duidelijk gekromd. \texttt{festival.csv} bevat een zwakkere en
+onregelmatiger structuur met invloedrijke punten. De grafiek is dus
+essentieel bij modelkeuze.
+\end{oplossing}
+
+\end{oefening}
+
+
+
 
 \end{document}

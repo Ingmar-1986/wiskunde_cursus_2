@@ -25,9 +25,6 @@
 \maketitle
 
 
-% ============================================================
-\FVDsection{Basis --- r lezen en interpreteren}
-% ============================================================
 
 \begin{oefening}[Teken en sterkte]{\oefB \ESS}
 Geef voor elke correlatiecoëfficiënt de richting en een globale
@@ -142,358 +139,249 @@ verband bestaan. Daarom moet ook de puntenwolk bekeken worden.
 \end{oefening}
 
 
-% ============================================================
-\FVDsection{Verdieping --- r en puntenwolk samen gebruiken}
-% ============================================================
 
-\begin{oefening}[Temperatuur en gasverbruik]{\oefU \ESS}
-Voor tien winterdagen werden de gemiddelde buitentemperatuur en het
-gasverbruik van een school gemeten.
 
+
+\begin{oefening}[Wiskunde en fysica]{\oefU \ESS}
+
+Gebruik
+
+\csv
+{https://raw.githubusercontent.com/Ingmar-1986/wiskunde_cursus_2/main/modules/Data/Statistiek/wiskfys.csv}
+{wiskfys.csv}
+
+Open de gegevens met geschikte ICT. Maak een spreidingsdiagram en
+bepaal de correlatiecoëfficiënt.
+
+\begin{question}
+Beschrijf eerst de puntenwolk zonder naar $r$ te kijken.
+
+\begin{oplossing}
+De puntenwolk vertoont een positieve, ongeveer lineaire samenhang met
+duidelijke spreiding.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+ICT geeft ongeveer
 \[
-\begin{array}{c|rrrrrrrrrr}
-T\;({}^{\circ}\mathrm C)&-2&0&2&4&5&7&8&10&11&13\\ \hline
-G\;(\mathrm{kWh})&820&790&735&690&655&610&590&535&520&470
-\end{array}
+r=0{,}743.
 \]
-
-\begin{question}
-Maak met ICT een spreidingsdiagram.
-\end{question}
-
-\begin{question}
-Bepaal met ICT de correlatiecoëfficiënt $r$.
+Leg uit hoe teken en absolute waarde van $r$ overeenkomen met de grafiek.
 
 \begin{oplossing}
-Afhankelijk van afronding wordt een waarde zeer dicht bij $-1$
-gevonden.
+$r$ is positief, wat overeenkomt met de stijgende tendens.
+Omdat $|r|$ duidelijk groter is dan nul maar niet vlak bij $1$ ligt,
+is er een behoorlijk sterke maar niet perfecte lineaire samenhang.
+Dat past bij de zichtbare spreiding rond een stijgende band.
 \end{oplossing}
 \end{question}
 
 \begin{question}
-Leg uit waarom het teken van $r$ past bij de puntenwolk.
+Een leerling besluit:
+\begin{quote}
+``Goede punten voor wiskunde veroorzaken goede punten voor fysica.''
+\end{quote}
+Waarom volgt dit niet uit $r$?
 
 \begin{oplossing}
-De puntenwolk daalt: hogere buitentemperaturen gaan doorgaans samen
-met lager gasverbruik. Daarom is $r$ negatief.
+$r$ beschrijft lineaire samenhang, geen causaliteit. Andere factoren
+kunnen beide resultaten beïnvloeden.
 \end{oplossing}
 \end{question}
 
-\begin{question}
-Formuleer een volledige conclusie.
-
-\begin{oplossing}
-De puntenwolk en de correlatiecoëfficiënt wijzen op een zeer sterk
-negatief en ongeveer lineair verband tussen buitentemperatuur en
-gasverbruik tijdens deze dagen. Hogere temperaturen gaan in deze
-dataset doorgaans samen met een lager gasverbruik.
-\end{oplossing}
-\end{question}
 \end{oefening}
 
 
-\begin{oefening}[Sterk verband, kleine r]{\oefU \ESS}
-Een sensor levert de volgende gegevens.
+\begin{oefening}[Geschiedenis en aardrijkskunde]{\oefU \ESS}
 
+Gebruik
+
+\csv
+{https://raw.githubusercontent.com/Ingmar-1986/wiskunde_cursus_2/main/modules/Data/Statistiek/examen.csv}
+{examen.csv}
+
+Maak een spreidingsdiagram en bepaal $r$.
+
+\begin{question}
+ICT geeft ongeveer
 \[
-\begin{array}{c|rrrrrrrrr}
-x&-4&-3&-2&-1&0&1&2&3&4\\ \hline
-y&16&9&4&1&0&1&4&9&16
-\end{array}
+r=-0{,}107.
 \]
-
-\begin{question}
-Maak een spreidingsdiagram en beschrijf het patroon.
+Wat betekent deze waarde?
 
 \begin{oplossing}
-De punten liggen exact op een U-vormig patroon, overeenkomstig
-$y=x^2$. Het verband is zeer sterk, maar niet lineair.
+Er is in deze dataset weinig lineaire samenhang tussen de twee
+examenscores. Het licht negatieve teken verandert daar weinig aan.
 \end{oplossing}
 \end{question}
 
 \begin{question}
-Bepaal $r$ met ICT.
+Waarom moet je de puntenwolk toch bekijken en niet alleen $r$ rapporteren?
 
 \begin{oplossing}
-Door de symmetrie is $r=0$.
+$r$ vat slechts lineaire samenhang samen. De grafiek kan uitschieters,
+clusters of een niet-lineaire structuur tonen die in één getal
+verdwijnt.
 \end{oplossing}
 \end{question}
 
-\begin{question}
-Waarom is ``$r=0$, dus er is geen verband'' hier fout?
-
-\begin{oplossing}
-Omdat $r$ lineaire samenhang meet. De puntenwolk vertoont een perfect
-niet-lineair verband.
-\end{oplossing}
-\end{question}
-
-\begin{question}
-Welke algemene regel neem je uit deze oefening mee?
-
-\begin{oplossing}
-Bekijk altijd de puntenwolk voordat je een correlatiecoëfficiënt
-interpreteert.
-\end{oplossing}
-\end{question}
 \end{oefening}
 
 
-\begin{oefening}[De invloed van een uitschieter]{\oefU \ESS}
-Beschouw eerst de dataset
+\begin{oefening}[Druk en volume: sterk maar niet perfect lineair]{\oefU \ESS}
 
+Gebruik opnieuw
+
+\csv
+{https://raw.githubusercontent.com/Ingmar-1986/wiskunde_cursus_2/main/modules/Data/Statistiek/druk.csv}
+{druk.csv}
+
+\begin{question}
+Bepaal met ICT $r$.
+
+\begin{oplossing}
 \[
-\begin{array}{c|rrrrrrr}
-x&1&2&3&4&5&6&7\\ \hline
-y&2&4&6&8&10&12&14
-\end{array}
+r\approx -0{,}971.
 \]
+\end{oplossing}
+\end{question}
 
-en voeg daarna de waarneming
+\begin{question}
+Een leerling zegt:
+\begin{quote}
+``Omdat $|r|$ bijna $1$ is, is een rechte zeker het beste model.''
+\end{quote}
+Beoordeel deze uitspraak aan de hand van de puntenwolk.
 
+\begin{oplossing}
+De uitspraak is te sterk. $r$ is inderdaad zeer groot in absolute
+waarde, maar de puntenwolk vertoont een duidelijke kromming. Een hoge
+lineaire correlatie garandeert niet dat een rechte inhoudelijk het
+beste model is.
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+\begin{oefening}[Vaders en zonen]{\oefU}
+
+Gebruik
+
+\csv
+{https://raw.githubusercontent.com/Ingmar-1986/wiskunde_cursus_2/main/modules/Data/Statistiek/vaderzoon.csv}
+{vaderzoon.csv}
+
+Maak een spreidingsdiagram en bepaal $r$.
+
+\begin{question}
+Beschrijf de lineaire samenhang.
+
+\begin{oplossing}
+De correlatie is positief en matig tot behoorlijk sterk:
 \[
-(8,2)
+r\approx0{,}704.
 \]
-
-toe.
-
-\begin{question}
-Bepaal $r$ voor de eerste zeven punten.
-
-\begin{oplossing}
-$r=1$, want de punten liggen exact op de stijgende rechte $y=2x$.
+Langere vaders hebben in deze dataset doorgaans langere zonen, maar
+de samenhang is verre van perfect.
 \end{oplossing}
 \end{question}
 
 \begin{question}
-Maak daarna de puntenwolk met het extra punt en bepaal opnieuw $r$.
-\end{question}
-
-\begin{question}
-Beschrijf wat er gebeurt.
+Waarom mag je uit $r$ geen exacte voorspelling voor één individuele
+zoon afleiden?
 
 \begin{oplossing}
-Het extra punt wijkt sterk af van het oorspronkelijke lineaire patroon
-en verlaagt de correlatiecoëfficiënt aanzienlijk. Eén uitschieter kan
-dus een numerieke samenvatting sterk beïnvloeden.
+De punten vertonen duidelijke spreiding. Correlatie beschrijft een
+globale samenhang in de groep en bepaalt geen individuele uitkomst.
 \end{oplossing}
 \end{question}
 
-\begin{question}
-Mag je het extra punt daarom verwijderen?
-
-\begin{oplossing}
-Niet automatisch. Eerst moet onderzocht worden of het om een fout,
-een uitzonderlijke correcte waarneming of een andere situatie gaat.
-\end{oplossing}
-\end{question}
 \end{oefening}
 
 
-\begin{oefening}[Zelfde richting, andere sterkte]{\oefU}
-Twee experimenten leveren beide een positieve correlatie op:
-
-\[
-r_A=0{,}96,
-\qquad
-r_B=0{,}54.
-\]
-
-\begin{question}
-Wat hebben beide datasets gemeenschappelijk?
-
-\begin{oplossing}
-Beide vertonen een positieve lineaire samenhang.
-\end{oplossing}
-\end{question}
-
-\begin{question}
-Wat is verschillend?
-
-\begin{oplossing}
-De lineaire samenhang is in dataset $A$ duidelijk sterker dan in
-dataset $B$, omdat $|r_A|>|r_B|$.
-\end{oplossing}
-\end{question}
-
-\begin{question}
-Kun je zonder puntenwolken uitsluiten dat één van de datasets een
-uitschieter bevat?
-
-\begin{oplossing}
-Nee. De correlatiecoëfficiënt alleen toont de structuur van de
-puntenwolk niet.
-\end{oplossing}
-\end{question}
-\end{oefening}
 
 
-% ============================================================
-\FVDsection{Geïntegreerd analyseren}
-% ============================================================
+\begin{oefening}[Correlaties vergelijken zonder de grafiek te vergeten]{\oefU \ESS}
 
-\begin{oefening}[Absorbantie en concentratie]{\oefU \ESS}
-In een chemisch experiment wordt voor verschillende concentraties van
-een oplossing de absorbantie gemeten.
-
-\[
-\begin{array}{c|rrrrrrrr}
-c\;(\mathrm{mmol/L})&0{,}5&1{,}0&1{,}5&2{,}0&2{,}5&3{,}0&3{,}5&4{,}0\\ \hline
-A&0{,}12&0{,}21&0{,}34&0{,}43&0{,}55&0{,}64&0{,}77&0{,}85
-\end{array}
-\]
-
-Voer een volledige correlatieanalyse uit.
-
-\begin{question}
-Maak een spreidingsdiagram.
-\end{question}
-
-\begin{question}
-Beschrijf richting, vorm, sterkte en eventuele bijzonderheden.
-
-\begin{oplossing}
-De punten vertonen een sterk positief en ongeveer lineair verband,
-zonder opvallende uitschieters.
-\end{oplossing}
-\end{question}
-
-\begin{question}
-Bepaal $r$ met ICT.
-\end{question}
-
-\begin{question}
-Leg uit hoe de waarde van $r$ aansluit bij de grafische analyse.
-
-\begin{oplossing}
-De waarde van $r$ ligt zeer dicht bij $1$, wat past bij de puntenwolk:
-de punten liggen dicht rond een stijgende rechte band.
-\end{oplossing}
-\end{question}
-
-\begin{question}
-Formuleer een contextgebonden conclusie.
-
-\begin{oplossing}
-Binnen het onderzochte concentratiebereik vertonen concentratie en
-absorbantie een zeer sterke positieve en ongeveer lineaire samenhang:
-hogere concentraties gaan in deze dataset samen met hogere
-absorbanties.
-\end{oplossing}
-\end{question}
-\end{oefening}
-
-
-\begin{oefening}[Trainingsuren en testresultaat]{\oefU \ESS}
-Bij twaalf leerlingen wordt het aantal uren voorbereiding voor een
-test vergeleken met het behaalde resultaat. De software geeft
-
-\[
-r=0{,}76.
-\]
-
-De puntenwolk is stijgend en ongeveer lineair, maar bevat vrij veel
-spreiding.
-
-\begin{question}
-Interpreteer $r$.
-
-\begin{oplossing}
-Er is een vrij sterke positieve lineaire samenhang: leerlingen met
-meer voorbereidingsuren behalen in deze dataset doorgaans hogere
-resultaten.
-\end{oplossing}
-\end{question}
-
-\begin{question}
-Een leerling schrijft:
-``76\% van het testresultaat wordt veroorzaakt door het aantal
-trainingsuren.'' Beoordeel die uitspraak.
-
-\begin{oplossing}
-Die uitspraak is fout. $r=0{,}76$ is geen percentage verklaarde
-variatie en bewijst bovendien geen causaliteit.
-\end{oplossing}
-\end{question}
-
-\begin{question}
-Welke informatie uit de puntenwolk blijft belangrijk naast $r$?
-
-\begin{oplossing}
-De ongeveer lineaire vorm, de spreiding van de punten en eventuele
-uitschieters of clusters.
-\end{oplossing}
-\end{question}
-\end{oefening}
-
-
-% ============================================================
-\FVDsection{Gevorderd --- wanneer één getal niet genoeg is}
-% ============================================================
-
-\begin{oefening}[Maak r misleidend]{\oefG}
-Ontwerp met ICT twee datasets:
-
-\begin{enumerate}
-  \item een dataset met $r$ dicht bij $0$ maar met een duidelijk
-        niet-lineair verband;
-  \item een dataset waarin één uitzonderlijk punt de waarde van $r$
-        sterk verandert.
-\end{enumerate}
-
-Maak voor beide datasets een spreidingsdiagram en schrijf een korte
-analyse waarin je uitlegt waarom de puntenwolk noodzakelijk is voor
-een correcte interpretatie.
-
-\begin{oplossing}
-Er zijn veel correcte oplossingen mogelijk. Bij de eerste dataset
-moet een duidelijk krom patroon zichtbaar zijn ondanks een kleine
-lineaire correlatie. Bij de tweede moet aantoonbaar zijn dat één
-waarneming de correlatiecoëfficiënt sterk beïnvloedt.
-\end{oplossing}
-\end{oefening}
-
-
-\begin{oefening}[Kan r alleen beslissen?]{\oefG}
-Een onderzoeker heeft drie datasets en wil voor elk ervan later een
-lineair model opstellen. Hij sorteert ze uitsluitend volgens $|r|$ en
-kiest de dataset met de grootste waarde.
-
-Leg uit waarom deze werkwijze onvoldoende is en stel een betere
-beslisprocedure voor.
-
-\begin{oplossing}
-Een grote $|r|$ is nuttige informatie over lineaire samenhang, maar
-toont niet of er bijvoorbeeld uitschieters, clusters of andere
-bijzonderheden aanwezig zijn. Een betere procedure is eerst de
-puntenwolk te onderzoeken, de lineariteit en bijzondere punten te
-beoordelen, daarna $r$ te interpreteren en pas vervolgens te beslissen
-of een lineair model inhoudelijk zinvol is.
-\end{oplossing}
-\end{oefening}
-
-
-% ============================================================
-\FVDsection{Essentiële oefeningen}
-% ============================================================
-
-Voor dit hoofdstuk behoren de volgende oefeningen tot het minimumtraject:
+Vergelijk de datasets
 
 \begin{itemize}
-  \item \textbf{Teken en sterkte} --- teken en $|r|$ correct interpreteren;
-  \item \textbf{Welke is sterker?} --- sterkte vergelijken via $|r|$;
-  \item \textbf{Mogelijk of onmogelijk?} --- het bereik van $r$ beheersen;
-  \item \textbf{Wat betekent nul?} --- $r\approx0$ correct interpreteren;
-  \item \textbf{Temperatuur en gasverbruik} --- $r$ bepalen en in context analyseren;
-  \item \textbf{Sterk verband, kleine r} --- de beperking tot lineaire samenhang begrijpen;
-  \item \textbf{De invloed van een uitschieter} --- grafische en numerieke informatie combineren;
-  \item \textbf{Absorbantie en concentratie} --- een volledige correlatieanalyse uitvoeren;
-  \item \textbf{Trainingsuren en testresultaat} --- correcte en foutieve conclusies onderscheiden.
+  \item \texttt{examen.csv},
+  \item \texttt{wiskfys.csv},
+  \item \texttt{schoenmaat.csv},
+  \item \texttt{druk.csv}.
 \end{itemize}
 
-De \oefB-oefeningen leggen de noodzakelijke begrippen en technieken
-vast. De geïntegreerde \oefU-oefeningen met \ESS zijn eveneens
-essentieel: het leerplandoel vraagt dat leerlingen gegevens
-\textbf{analyseren}, niet alleen waarden van $r$ classificeren.
+Gebruik ICT om voor elke dataset een spreidingsdiagram en $r$ te verkrijgen.
+
+\begin{question}
+Rangschik de datasets volgens $|r|$.
+
+\begin{oplossing}
+Met de huidige datasets geldt ongeveer:
+\[
+|r_{\text{examen}}|\approx0{,}107,\qquad
+|r_{\text{wiskfys}}|\approx0{,}743,
+\]
+\[
+|r_{\text{schoenmaat}}|\approx0{,}895,\qquad
+|r_{\text{druk}}|\approx0{,}971.
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Welke dataset toont het duidelijkst waarom de grootste $|r|$ niet
+automatisch betekent dat een lineair model het meest geschikt is?
+
+\begin{oplossing}
+\texttt{druk.csv}. De absolute correlatie is zeer groot, maar de
+puntenwolk vertoont een systematisch krom patroon.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Formuleer één algemene regel voor het interpreteren van $r$.
+
+\begin{oplossing}
+Interpreteer $r$ nooit los van de puntenwolk en de context. $r$ meet
+alleen de richting en sterkte van \emph{lineaire} samenhang.
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+
+\begin{oefening}[Kies het betere argument]{\oefG}
+
+Twee leerlingen vergelijken twee datasets.
+
+Leerling A zegt:
+\begin{quote}
+``Dataset 1 is beter voor regressie, want $|r|$ is groter.''
+\end{quote}
+
+Leerling B zegt:
+\begin{quote}
+``Ik wil eerst beide puntenwolken zien en daarna $r$ interpreteren.''
+\end{quote}
+
+Schrijf een beargumenteerde reactie. Gebruik minstens één concrete
+dataset uit dit hoofdstuk als tegenvoorbeeld tegen een te mechanische
+interpretatie van $r$.
+
+\begin{oplossing}
+Leerling B redeneert statistisch sterker. Een grote $|r|$ is relevante
+informatie, maar toont geen kromming, uitschieters of clusters.
+\texttt{druk.csv} is een duidelijk tegenvoorbeeld: $|r|$ ligt dicht
+bij $1$, terwijl de puntenwolk een krom patroon vertoont.
+\end{oplossing}
+
+\end{oefening}
+
+
 
 \end{document}
