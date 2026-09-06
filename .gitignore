@@ -338,12 +338,28 @@ gpgkey
 xmDevEnvFiles.tgz
 
 
-!testmodule/testmodule.pdf
-
 !modules/
 !modules/**/
+
+# Bronbestanden van de cursus
+!modules/**/*.tex
+
+# Data
+!modules/**/*.csv
+
+# Afbeeldingen die tot de cursus behoren
+!modules/**/*.png
+!modules/**/*.jpg
+!modules/**/*.jpeg
+!modules/**/*.svg
+!modules/**/*.webp
+
+# HTML indien je die bewust in Git wilt bewaren
 !modules/**/*.html
 
-# Negeer geen PDF's
+# PDF-map buiten modules
 !pdf/
 !pdf/*.pdf
+
+# Gegenereerde Ximera-figuren
+modules/**/*.online-*.svg
