@@ -1,30 +1,45 @@
-#!/usr/bin/env bash
-
+#!/bin/bash
 #
-# Ximera wrapper
-# Zorgt ervoor dat xmlatex binnen de juiste Docker-container draait.
+# This script is a wrapper around (and in its full version an extension of)
+# ximera's xake command THAT ENSURES IT'S RUNNING IN A DOCKER CONTAINER
 #
-
-set -o pipefail
+# Usage:
+#   xmlatex bake
+#   xmlatex bake test/myximerafile.tex
+#   xmlatex bash
+#   xmlatex frost
+#   xmlatex serve
+#   xmlatex name
+#   xmlatex all
+#
+# Advanced usage:
+#   XAKE_IMAGE=ghcr.io/ximeraproject/xake2023:latest xmlatex compile demo.tex
+#   COMMAND=pdflatex xmlatex demo.tex
+#
+# Debugging:
+#   DEBUG=1 xmlatex bake ...
+#
 
 : "${CONFIG_FILE:=./xmScripts/config.txt}"
 
-if [[ -f "$CONFIG_FILE" ]]; then
-    [[ -n "${DEBUG:-}" ]] && echo "Loading settings from config file $CONFIG_FILE."
+if [[ -f "$CONFIG_FILE" ]]
+then
+    [[ -n "$DEBUG" ]] && echo "Loading settings from config file $CONFIG_FILE."
     # shellcheck disable=SC1090
     . "$CONFIG_FILE"
 fi
 
-#
-# Standaardinstellingen
-#
+
+# ------------------------------------------------------------
+# Defaults
+# ------------------------------------------------------------
 
 : "${XAKE_BASE:=ximeralatex}"
 : "${XAKE_VERSION:=v2.7.10}"
 : "${XAKE_CONTAINER:=$XAKE_BASE:$XAKE_VERSION}"
 : "${DOCKER_REPO:=ghcr.io/ximeraproject/}"
 
-# Historische compatibiliteit
+# Historic compatibility
 : "${XAKE_IMAGE:=$DOCKER_REPO$XAKE_CONTAINER}"
 : "${DOCKER_IMAGE:=$XAKE_IMAGE}"
 
@@ -35,80 +50,79 @@ export DOCKER_DEFAULT_PLATFORM
 : "${SERVER_NAME:=ximeraserver}"
 : "${SERVER_IMAGE:=registry.gitlab.kuleuven.be/wet/ximera/ximeradocker:2.3_b}"
 
+# Dev environment
 : "${DEVENV_TGZFILE:=xmDevEnvFiles.tgz}"
 : "${DEVENV_VERSION:=releases/latest/download}"
 : "${DEVENV_REPO:=ximeraProject/ximeraNewProject}"
-: "${DEVENV_URL:=https://github.com/$DEVENV_REPO/$DEVENV_VERSION/$DEVENV_TGZFILE}"
+: "${DEVENV_URL:=https://github.com/$DEVENV_REPO/$DEVENV_VERSION/xmDevEnvFiles.tgz}"
 
-#
-# Lokale projectmap wordt in de container gekoppeld aan /code
-#
+
+# ------------------------------------------------------------
+# Project mount and command
+# ------------------------------------------------------------
 
 : "${MOUNTDIR:=$(pwd)}"
-#
-# De Windows Docker-client begrijpt geen WSL-pad zoals /mnt/c/...
-# Zet het mountpad daarom om naar een Windows-pad wanneer docker.exe wordt gebruikt.
-#
-DOCKER_MOUNTDIR="$MOUNTDIR"
-
-if docker version 2>/dev/null | grep -q "OS/Arch:.*windows"; then
-    DOCKER_MOUNTDIR="$(wslpath -w "$MOUNTDIR")"
-fi
 : "${XM_KEYFILE:=.xmKeyFile}"
-
-#
-# Commando dat binnen de container wordt uitgevoerd
-#
-
 : "${COMMAND:=xmlatex}"
 
-#
-# Bevinden we ons al in Docker?
-#
 
-if [[ -f /.dockerenv ]]; then
-    [[ -n "${DEBUG:-}" ]] && \
+# ------------------------------------------------------------
+# Detect whether we are already inside a container
+# ------------------------------------------------------------
+
+if [[ -f /.dockerenv ]]
+then
+    [[ -n "$DEBUG" ]] && \
         echo "Running in docker container (with local hostname $HOSTNAME)"
 
-elif [[ -n "${KUBERNETES_SERVICE_HOST:-}" ]]; then
+elif [[ -n "$KUBERNETES_SERVICE_HOST" ]]
+then
     echo "Running in kubernetes container ($KUBERNETES_SERVICE_HOST)"
 
 else
-    [[ -n "${DEBUG:-}" ]] && echo "Running $0 on host ($HOSTNAME)"
+    [[ -n "$DEBUG" ]] && echo "Running $0 on host ($HOSTNAME)"
+
+
+    # --------------------------------------------------------
+    # Interactive mode
+    # --------------------------------------------------------
 
     INTERACTIVE=""
 
-    #
-    # Optionele interactieve modus
-    #
-
-    if [[ "${1:-}" == "-i" ]]; then
+    if [[ "${1:-}" == "-i" ]]
+    then
         INTERACTIVE="-it"
         shift
     fi
 
-    if [[ "${1:-}" == "bash" ]]; then
-        INTERACTIVE="-it"
-    elif tty >/dev/null 2>&1; then
+    if [[ "${1:-}" == "bash" ]]
+    then
         INTERACTIVE="-it"
     fi
 
-    #
-    # Lokaal IP-adres
-    #
+    if tty >/dev/null 2>&1
+    then
+        INTERACTIVE="-it"
+    fi
 
-    if [[ -z "${LOCAL_IP:-}" ]]; then
+
+    # --------------------------------------------------------
+    # Local IP
+    # --------------------------------------------------------
+
+    if [[ -z "${LOCAL_IP:-}" ]]
+    then
         LOCAL_IP="$(hostname -I 2>/dev/null | awk '{print $1}')"
-        [[ -n "${DEBUG:-}" ]] && echo "Setting LOCAL_IP=$LOCAL_IP"
+        [[ -n "$DEBUG" ]] && echo "Setting LOCAL_IP=$LOCAL_IP"
     fi
 
-    export LOCAL_IP
 
-    #
-    # Lokale Ximera-server starten
-    #
+    # --------------------------------------------------------
+    # Ximera server
+    # --------------------------------------------------------
 
-    if [[ "${1:-}" == "ximeraserver" ]]; then
+    if [[ "${1:-}" == "ximeraserver" ]]
+    then
         echo "Starting ximera $SERVER_NAME from $SERVER_IMAGE on port $SERVER_PORT"
 
         docker run \
@@ -120,25 +134,30 @@ else
         exit $?
     fi
 
-    #
-    # Controleer of Docker beschikbaar is
-    #
 
-    if ! command -v docker >/dev/null 2>&1; then
-        echo "Fout: Docker werd niet gevonden."
-        echo "Controleer Docker Desktop en de WSL-integratie."
-        exit 127
+    # --------------------------------------------------------
+    # Convert WSL path to Windows path for Docker Desktop
+    # --------------------------------------------------------
+
+    DOCKER_MOUNTDIR="$MOUNTDIR"
+
+    if grep -qi microsoft /proc/version 2>/dev/null \
+        && command -v wslpath >/dev/null 2>&1
+    then
+        DOCKER_MOUNTDIR="$(wslpath -w "$MOUNTDIR")"
     fi
 
-    if ! docker info >/dev/null 2>&1; then
-        echo "Fout: Docker is gevonden, maar de Docker-engine is niet bereikbaar."
-        echo "Start Docker Desktop en wacht tot de engine actief is."
-        exit 1
-    fi
+
+    # --------------------------------------------------------
+    # Run container using the current WSL user
+    # --------------------------------------------------------
+
+
 
     echo "Restarting myself in docker (from image $DOCKER_IMAGE)"
 
-    if [[ -n "${DEBUG:-}" ]]; then
+    if [[ -n "$DEBUG" ]]
+    then
         echo "Dockerinstellingen:"
         echo "  projectmap : $MOUNTDIR"
         echo "  dockerpad  : $DOCKER_MOUNTDIR"
@@ -147,51 +166,31 @@ else
         echo "  commando   : $COMMAND $*"
     fi
 
-    #
-    # Bouw de docker-argumenten veilig op als array.
-    # Daardoor blijven paden met spaties correct behouden.
-    #
 
-    DOCKER_ARGS=(
-        run
-        --env LOCAL_IP
-        --env XIMERA_URL
-        --env XIMERA_NAME
-        --env GPG_KEY
-        --env GPG_KEY_ID
-        --env DEBUG
-        --network host
-        --rm
-        --mount "type=bind,source=$DOCKER_MOUNTDIR,target=/code"
-        --workdir /code
-    )
-
-    if [[ -n "$INTERACTIVE" ]]; then
-        DOCKER_ARGS+=("$INTERACTIVE")
-    fi
-
-    DOCKER_ARGS+=(
-        "$DOCKER_IMAGE"
-        "$COMMAND"
-    )
-
-    DOCKER_ARGS+=("$@")
-
-    if [[ -n "${DEBUG:-}" ]]; then
-        printf 'Uitgevoerd commando:'
-        printf ' %q' docker "${DOCKER_ARGS[@]}"
-        printf '\n'
-    fi
-
-    command docker "${DOCKER_ARGS[@]}"
+docker run \
+  --env LOCAL_IP \
+  --env XIMERA_URL \
+  --env XIMERA_NAME \
+  --env GPG_KEY \
+  --env GPG_KEY_ID \
+  --env DEBUG \
+  --network host \
+  --rm \
+  $INTERACTIVE \
+  --mount "type=bind,source=${DOCKER_MOUNTDIR},target=/code" \
+  "$DOCKER_IMAGE" \
+  "$COMMAND" \
+  "$@"
+  
     exit $?
 fi
 
-#
-# Deze lokale wrapper hoort normaal niet rechtstreeks binnen Docker te draaien.
-# In de container hoort de volledige xmlatex-versie uit de image aanwezig te zijn.
-#
 
-echo "Sorry, this limited xmlatex wrapper should not run directly inside a Docker container."
-echo "The Docker image should provide the full xmlatex implementation."
+# ------------------------------------------------------------
+# This limited wrapper should not run inside the container
+# ------------------------------------------------------------
+
+echo "Sorry, this limited version of this xmlatex script should not be run inside a docker container."
+echo "Find and run the full version, perhaps called xmlatex.full."
+
 exit 1
