@@ -1774,5 +1774,14 @@ fill=fvdmagenta,
   }%
 }
 
+% ============================================================
+% CSV-DATABESTAND
+% Gebruik: \csv{url}{bestandsnaam}
+% ============================================================
+
+\providecommand{\csv}[2]{%
+  \href{#1}{\texttt{#2}}%
+}
+
 
 \input{OpmaakTikz.tex}
