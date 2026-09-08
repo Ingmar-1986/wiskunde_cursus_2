@@ -391,6 +391,7 @@ def read_course_structure(
             current_theme_number += 1
             current_theme_title = clean_tex_text(theme_title)
             current_chapter_number = 0
+            current_theory_number = 0
             continue
 
         if activity_path is None:
@@ -418,7 +419,10 @@ def read_course_structure(
         current_chapter_number += 1
 
         activity_name = Path(stem).name.casefold()
-        is_exercises = activity_name.startswith("oefeningen-")
+        is_exercises = (
+        activity_name.startswith("oefeningen-")
+        or activity_name.endswith("-oefeningen")
+        )
 
         if is_exercises:
             display_number = f"{current_theory_number}.OEF"

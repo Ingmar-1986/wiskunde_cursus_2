@@ -1,0 +1,1224 @@
+\documentclass{ximera}
+
+\input{../../../preamble.tex}
+\input{../../../Opmaak.tex}
+\addPrintStyle{../../..}
+
+\title{Oefeningen — Primitieve functies van veeltermfuncties}
+\author{Ingmar Herreman}
+
+\begin{document}
+
+% FVD_CHAPTER_DATA_START
+% Automatisch gegenereerd uit index.tex.
+% Niet handmatig aanpassen.
+\fvdchapterdata{2}{Van oppervlakte naar integraal}{3}
+% FVD_CHAPTER_DATA_END
+
+
+% ============================================================
+% OEFENING 1 — HERKENNEN EN CONTROLEREN
+% ============================================================
+
+\begin{oefening}[Is dit een primitieve?]{\oefB\ESS}
+
+Gegeven is
+\[
+f(x)=6x^2-4x+3.
+\]
+
+\begin{question}
+Controleer door af te leiden of
+\[
+F(x)=2x^3-2x^2+3x+7
+\]
+een primitieve functie van $f$ is.
+\end{question}
+
+\begin{question}
+Controleer hetzelfde voor
+\[
+G(x)=2x^3-2x^2+3x-12.
+\]
+\end{question}
+
+\begin{question}
+Is
+\[
+H(x)=2x^3-2x^2+3x^2+1
+\]
+een primitieve van $f$? Motiveer.
+\end{question}
+
+\begin{question}
+Leg uit waarom $F$ en $G$ slechts door een constante van elkaar verschillen.
+\end{question}
+
+\begin{oplossing}
+
+We gebruiken de definitie: $F$ is een primitieve van $f$ als $F'(x)=f(x)$.
+
+\begin{enumerate}
+\item
+\[
+F'(x)=6x^2-4x+3=f(x).
+\]
+Dus $F$ is een primitieve van $f$.
+
+\item
+\[
+G'(x)=6x^2-4x+3=f(x).
+\]
+Dus ook $G$ is een primitieve van $f$.
+
+\item
+\[
+H'(x)=6x^2-4x+6x=6x^2+2x.
+\]
+Dit is niet gelijk aan $f(x)$, dus $H$ is geen primitieve van $f$.
+
+\item
+\[
+F(x)-G(x)=19.
+\]
+Het verschil is constant. Dat is precies wat we verwachten voor twee primitieve functies van dezelfde functie.
+\end{enumerate}
+
+\end{oplossing}
+
+\end{oefening}
+
+
+% ============================================================
+% OEFENING 2 — FAMILIE EN +C
+% ============================================================
+
+\begin{oefening}[Een hele familie primitieve functies]{\oefB\ESS}
+
+Gegeven is
+\[
+f(x)=3x^2.
+\]
+
+\begin{question}
+Toon aan dat elk van de volgende functies een primitieve is van $f$:
+\[
+F_1(x)=x^3,
+\qquad
+F_2(x)=x^3+5,
+\qquad
+F_3(x)=x^3-17.
+\]
+\end{question}
+
+\begin{question}
+Geef nog twee andere primitieve functies van $f$.
+\end{question}
+
+\begin{question}
+Noteer de volledige familie primitieve functies met behulp van de onbepaalde integraal.
+\end{question}
+
+\begin{question}
+Waarom mag de integratieconstante $C$ niet worden weggelaten wanneer naar de onbepaalde integraal wordt gevraagd?
+\end{question}
+
+\begin{oplossing}
+
+\begin{enumerate}
+\item
+Voor alle drie geldt
+\[
+F_i'(x)=3x^2.
+\]
+Ze zijn dus allemaal primitieve functies van $f$.
+
+\item
+Bijvoorbeeld
+\[
+x^3+2
+\qquad\text{en}\qquad
+x^3-100.
+\]
+
+\item
+\[
+\boxed{\int 3x^2\,dx=x^3+C.}
+\]
+
+\item
+Omdat er oneindig veel primitieve functies zijn. Ze verschillen onderling door een constante. Zonder $+C$ geef je slechts één lid van die familie.
+\end{enumerate}
+
+\end{oplossing}
+
+\end{oefening}
+
+
+% ============================================================
+% OEFENING 3 — NOTATIE
+% ============================================================
+
+\begin{oefening}[Lees de onbepaalde integraal]{\oefB}
+
+Beschouw
+\[
+\int (4x^3-2x+5)\,dx.
+\]
+
+\begin{question}
+Wat is de integrand?
+\end{question}
+
+\begin{question}
+Wat is de integratievariabele?
+\end{question}
+
+\begin{question}
+Wat stelt het symbool $C$ voor in het antwoord?
+\end{question}
+
+\begin{question}
+Leg in woorden het verschil uit tussen
+\[
+\int f(x)\,dx
+\qquad\text{en}\qquad
+\int_a^b f(x)\,dx.
+\]
+\end{question}
+
+\begin{oplossing}
+
+\begin{enumerate}
+\item De integrand is $4x^3-2x+5$.
+\item De integratievariabele is $x$.
+\item $C$ is de integratieconstante en kan elke reële waarde aannemen.
+\item De onbepaalde integraal beschrijft een familie primitieve functies. De bepaalde integraal is een getal en stelt een georiënteerde accumulatie over een interval voor.
+\end{enumerate}
+
+\end{oplossing}
+
+\end{oefening}
+
+
+% ============================================================
+% OEFENING 4 — MACHTSREGEL
+% ============================================================
+
+\begin{oefening}[De machtsregel inoefenen]{\oefB\ESS}
+
+Bepaal telkens de onbepaalde integraal.
+
+\begin{question}
+\[
+\int x^2\,dx
+\]
+\end{question}
+
+\begin{question}
+\[
+\int x^5\,dx
+\]
+\end{question}
+
+\begin{question}
+\[
+\int x^8\,dx
+\]
+\end{question}
+
+\begin{question}
+\[
+\int x\,dx
+\]
+\end{question}
+
+\begin{question}
+\[
+\int 1\,dx
+\]
+\end{question}
+
+\begin{question}
+\[
+\int x^{12}\,dx
+\]
+\end{question}
+
+\begin{oplossing}
+
+Met
+\[
+\int x^n\,dx=\frac{x^{n+1}}{n+1}+C
+\qquad(n\neq -1)
+\]
+krijgen we:
+
+\begin{enumerate}
+\item $\displaystyle \frac{x^3}{3}+C$.
+\item $\displaystyle \frac{x^6}{6}+C$.
+\item $\displaystyle \frac{x^9}{9}+C$.
+\item $\displaystyle \frac{x^2}{2}+C$.
+\item $\displaystyle x+C$.
+\item $\displaystyle \frac{x^{13}}{13}+C$.
+\end{enumerate}
+
+\end{oplossing}
+
+\end{oefening}
+
+
+% ============================================================
+% OEFENING 5 — CONSTANTE FACTOREN
+% ============================================================
+
+\begin{oefening}[Constante factoren]{\oefB\ESS}
+
+Bepaal telkens de volledige familie primitieve functies.
+
+\begin{question}
+\[
+f(x)=4x^3.
+\]
+\end{question}
+
+\begin{question}
+\[
+g(x)=-7x^5.
+\]
+\end{question}
+
+\begin{question}
+\[
+h(x)=\frac{3}{2}x^4.
+\]
+\end{question}
+
+\begin{question}
+\[
+p(x)=-\frac{5}{3}x^2.
+\]
+\end{question}
+
+\begin{question}
+\[
+q(x)=9.
+\]
+\end{question}
+
+\begin{oplossing}
+
+\begin{enumerate}
+\item $F(x)=x^4+C$.
+\item $G(x)=-\dfrac{7}{6}x^6+C$.
+\item $H(x)=\dfrac{3}{10}x^5+C$.
+\item $P(x)=-\dfrac{5}{9}x^3+C$.
+\item $Q(x)=9x+C$.
+\end{enumerate}
+
+\end{oplossing}
+
+\end{oefening}
+
+
+% ============================================================
+% OEFENING 6 — VEELTERMFUNCTIES, OUDE REEKS GEÏNTEGREERD
+% ============================================================
+
+\begin{oefening}[Veeltermfuncties term voor term integreren]{\oefB\ESS}
+
+Bepaal telkens de volledige familie primitieve functies.
+
+\begin{question}
+\[
+f(x)=-\frac{4}{3}x^3+\frac{2}{3}x.
+\]
+\end{question}
+
+\begin{question}
+\[
+g(x)=2x-4.
+\]
+\end{question}
+
+\begin{question}
+\[
+h(x)=\frac12x^3+6x^2-4x+8.
+\]
+\end{question}
+
+\begin{question}
+\[
+p(x)=-\frac23x^2+\frac34x.
+\]
+\end{question}
+
+\begin{question}
+\[
+q(x)=8x^3-12x^2+6x-1.
+\]
+\end{question}
+
+\begin{oplossing}
+
+\begin{enumerate}
+\item
+\[
+F(x)=-\frac{x^4}{3}+\frac{x^2}{3}+C.
+\]
+
+\item
+\[
+G(x)=x^2-4x+C.
+\]
+
+\item
+\[
+H(x)=\frac{x^4}{8}+2x^3-2x^2+8x+C.
+\]
+
+\item
+\[
+P(x)=-\frac{2x^3}{9}+\frac{3x^2}{8}+C.
+\]
+
+\item
+\[
+Q(x)=2x^4-4x^3+3x^2-x+C.
+\]
+\end{enumerate}
+
+\end{oplossing}
+
+\end{oefening}
+
+
+% ============================================================
+% OEFENING 7 — MEER VEELTERMEN
+% ============================================================
+
+\begin{oefening}[Veeltermfuncties — extra inoefening]{\oefB}
+
+Bepaal telkens de onbepaalde integraal.
+
+\begin{question}
+\[
+\int (6x^5-3x^2+8x-4)\,dx
+\]
+\end{question}
+
+\begin{question}
+\[
+\int (5x^4+2x^3-7x+9)\,dx
+\]
+\end{question}
+
+\begin{question}
+\[
+\int (-3x^6+4x^2-5)\,dx
+\]
+\end{question}
+
+\begin{question}
+\[
+\int \left(\frac34x^3-\frac25x^2+\frac12x-6\right)\,dx
+\]
+\end{question}
+
+\begin{oplossing}
+
+\begin{enumerate}
+\item
+\[
+x^6-x^3+4x^2-4x+C.
+\]
+\item
+\[
+x^5+\frac12x^4-\frac72x^2+9x+C.
+\]
+\item
+\[
+-\frac37x^7+\frac43x^3-5x+C.
+\]
+\item
+\[
+\frac{3}{16}x^4-\frac{2}{15}x^3+\frac14x^2-6x+C.
+\]
+\end{enumerate}
+
+\end{oplossing}
+
+\end{oefening}
+
+
+% ============================================================
+% OEFENING 8 — EERST ALGEBRA
+% ============================================================
+
+\begin{oefening}[Eerst vereenvoudigen, dan integreren]{\oefB\ESS}
+
+Vereenvoudig eerst de integrand. Bepaal daarna de onbepaalde integraal.
+
+\begin{question}
+\[
+\int \left(2x(x^2-3)+x^3+4\right)\,dx
+\]
+\end{question}
+
+\begin{question}
+\[
+\int \left((x+2)(x^2-3x+1)\right)\,dx
+\]
+\end{question}
+
+\begin{question}
+\[
+\int \left(3x^2-2(x^2-4x+1)+5\right)\,dx
+\]
+\end{question}
+
+\begin{question}
+\[
+\int \left(x(x-1)(x+1)+2x\right)\,dx
+\]
+\end{question}
+
+\begin{oplossing}
+
+\begin{enumerate}
+\item
+\[
+2x(x^2-3)+x^3+4=3x^3-6x+4,
+\]
+dus
+\[
+\boxed{\frac34x^4-3x^2+4x+C}.
+\]
+
+\item
+\[
+(x+2)(x^2-3x+1)=x^3-x^2-5x+2,
+\]
+dus
+\[
+\boxed{\frac14x^4-\frac13x^3-\frac52x^2+2x+C}.
+\]
+
+\item
+\[
+3x^2-2(x^2-4x+1)+5=x^2+8x+3,
+\]
+dus
+\[
+\boxed{\frac13x^3+4x^2+3x+C}.
+\]
+
+\item
+\[
+x(x-1)(x+1)+2x=x(x^2-1)+2x=x^3+x,
+\]
+dus
+\[
+\boxed{\frac14x^4+\frac12x^2+C}.
+\]
+\end{enumerate}
+
+\end{oplossing}
+
+\end{oefening}
+
+
+% ============================================================
+% OEFENING 9 — CONTROLEREN DOOR AFLEIDEN
+% ============================================================
+
+\begin{oefening}[Controleer je antwoord]{\oefB\ESS}
+
+Een leerling heeft telkens een onbepaalde integraal berekend. Controleer het antwoord door af te leiden. Verbeter wanneer nodig.
+
+\begin{question}
+\[
+\int 4x^3\,dx=4x^4+C.
+\]
+\end{question}
+
+\begin{question}
+\[
+\int (6x^2-4x+5)\,dx=2x^3-2x^2+5x+C.
+\]
+\end{question}
+
+\begin{question}
+\[
+\int (3x^4+2)\,dx=\frac35x^5+2x+C.
+\]
+\end{question}
+
+\begin{question}
+\[
+\int (-8x+3)\,dx=-4x^2+3x+C.
+\]
+\end{question}
+
+\begin{oplossing}
+
+\begin{enumerate}
+\item Fout. $(4x^4+C)'=16x^3$. Correct is
+\[
+\boxed{\int 4x^3\,dx=x^4+C}.
+\]
+
+\item Correct, want
+\[
+(2x^3-2x^2+5x+C)'=6x^2-4x+5.
+\]
+
+\item Correct, want
+\[
+\left(\frac35x^5+2x+C\right)'=3x^4+2.
+\]
+
+\item Correct, want
+\[
+(-4x^2+3x+C)'=-8x+3.
+\]
+\end{enumerate}
+
+\end{oplossing}
+
+\end{oefening}
+
+
+% ============================================================
+% OEFENING 10 — +C EN REDENEREN
+% ============================================================
+
+\begin{oefening}[Waarom $+C$?]{\oefU\ESS}
+
+Een leerling schrijft
+\[
+\int (6x-2)\,dx=3x^2-2x.
+\]
+
+\begin{question}
+Is $3x^2-2x$ een primitieve van $6x-2$? Leg uit.
+\end{question}
+
+\begin{question}
+Waarom is het antwoord toch onvolledig als gevraagd wordt naar de onbepaalde integraal?
+\end{question}
+
+\begin{question}
+Schrijf de correcte onbepaalde integraal.
+\end{question}
+
+\begin{question}
+Zijn de functies
+\[
+3x^2-2x+4
+\qquad\text{en}\qquad
+3x^2-2x-\pi
+\]
+ook primitieve functies van $6x-2$?
+\end{question}
+
+\begin{oplossing}
+
+\begin{enumerate}
+\item Ja, want $(3x^2-2x)'=6x-2$.
+\item De onbepaalde integraal vraagt naar de volledige familie primitieve functies.
+\item
+\[
+\boxed{\int(6x-2)\,dx=3x^2-2x+C.}
+\]
+\item Ja. Constante termen verdwijnen bij het afleiden.
+\end{enumerate}
+
+\end{oplossing}
+
+\end{oefening}
+
+
+% ============================================================
+% OEFENING 11 — SPECIFIEKE PRIMITIEVE: OUDE OPGAVE + EXTRA
+% ============================================================
+
+\begin{oefening}[Een primitieve bepalen met een voorwaarde]{\oefB\ESS}
+
+Bepaal telkens de primitieve functie $F$ die voldoet aan de gegeven voorwaarde.
+
+\begin{question}
+\[
+f(x)=8x^2-x^2+4x-3,
+\qquad
+F(1)=2.
+\]
+\end{question}
+
+\begin{question}
+\[
+f(x)=6x^2-4x+3,
+\qquad
+F(1)=5.
+\]
+\end{question}
+
+\begin{question}
+\[
+f(x)=4x^3-2x,
+\qquad
+F(0)=-3.
+\]
+\end{question}
+
+\begin{question}
+\[
+f(x)=3x^2+2x-1,
+\qquad
+F(-1)=4.
+\]
+\end{question}
+
+\begin{oplossing}
+
+\begin{enumerate}
+\item Eerst
+\[
+f(x)=7x^2+4x-3.
+\]
+Dus
+\[
+F(x)=\frac73x^3+2x^2-3x+C.
+\]
+Uit $F(1)=2$ volgt
+\[
+\frac73+2-3+C=2
+\]
+en dus
+\[
+C=\frac23.
+\]
+Daarom
+\[
+\boxed{F(x)=\frac73x^3+2x^2-3x+\frac23}.
+\]
+
+\item
+\[
+F(x)=2x^3-2x^2+3x+C.
+\]
+Uit $F(1)=5$:
+\[
+2-2+3+C=5,
+\]
+dus $C=2$. Daarom
+\[
+\boxed{F(x)=2x^3-2x^2+3x+2}.
+\]
+
+\item
+\[
+F(x)=x^4-x^2+C.
+\]
+Uit $F(0)=-3$ volgt $C=-3$. Dus
+\[
+\boxed{F(x)=x^4-x^2-3}.
+\]
+
+\item
+\[
+F(x)=x^3+x^2-x+C.
+\]
+Uit $F(-1)=4$ volgt
+\[
+-1+1+1+C=4,
+\]
+dus $C=3$. Daarom
+\[
+\boxed{F(x)=x^3+x^2-x+3}.
+\]
+\end{enumerate}
+
+\end{oplossing}
+
+\end{oefening}
+
+
+% ============================================================
+% OEFENING 12 — VOORWAARDEN EN PARAMETER
+% ============================================================
+
+\begin{oefening}[Welke constante hoort erbij?]{\oefU}
+
+Gegeven is
+\[
+f(x)=12x^2-6x+4.
+\]
+
+\begin{question}
+Bepaal de volledige familie primitieve functies van $f$.
+\end{question}
+
+\begin{question}
+Bepaal de primitieve $F$ waarvoor $F(0)=7$.
+\end{question}
+
+\begin{question}
+Bepaal de primitieve $G$ waarvoor $G(2)=0$.
+\end{question}
+
+\begin{question}
+Bepaal het constante verschil $F(x)-G(x)$.
+\end{question}
+
+\begin{oplossing}
+
+\begin{enumerate}
+\item
+\[
+4x^3-3x^2+4x+C.
+\]
+
+\item Uit $F(0)=7$ volgt $C=7$, dus
+\[
+F(x)=4x^3-3x^2+4x+7.
+\]
+
+\item
+\[
+G(2)=32-12+8+C=28+C=0,
+\]
+dus $C=-28$ en
+\[
+G(x)=4x^3-3x^2+4x-28.
+\]
+
+\item
+\[
+F(x)-G(x)=35.
+\]
+\end{enumerate}
+
+\end{oplossing}
+
+\end{oefening}
+
+
+% ============================================================
+% OEFENING 13 — NEGATIEVE EN RATIONALE EXPONENTEN UIT OUDE REEKS
+% ============================================================
+
+\begin{oefening}[Eerst herschrijven als een macht]{\oefU}
+
+De volgende functies zijn geen veeltermfuncties. Schrijf ze eerst met machten en pas daarna de machtsregel toe. Gebruik de regel alleen wanneer de exponent niet gelijk is aan $-1$.
+
+\begin{question}
+\[
+f(x)=\frac{1}{x^2}-1+2x^2.
+\]
+\end{question}
+
+\begin{question}
+\[
+g(x)=\frac{1}{\sqrt{x}}+2.
+\]
+\end{question}
+
+\begin{question}
+\[
+h(x)=\sqrt[3]{x^5}.
+\]
+\end{question}
+
+\begin{question}
+\[
+p(x)=\frac{1}{\sqrt{x}}.
+\]
+\end{question}
+
+\begin{question}
+\[
+q(x)=\frac{2}{x^3}+4.
+\]
+\end{question}
+
+\begin{question}
+\[
+r(x)=\frac{1}{x^3}+1+x^2.
+\]
+\end{question}
+
+\begin{oplossing}
+
+We gebruiken
+\[
+\frac1{x^2}=x^{-2},
+\qquad
+\frac1{\sqrt{x}}=x^{-1/2},
+\qquad
+\sqrt[3]{x^5}=x^{5/3}.
+\]
+
+\begin{enumerate}
+\item
+\[
+F(x)=-\frac1x-x+\frac23x^3+C.
+\]
+
+\item
+\[
+G(x)=2\sqrt{x}+2x+C.
+\]
+
+\item
+\[
+H(x)=\frac38x^{8/3}+C
+=\frac38\sqrt[3]{x^8}+C.
+\]
+
+\item
+\[
+P(x)=2\sqrt{x}+C.
+\]
+
+\item
+\[
+Q(x)=4x-\frac1{x^2}+C.
+\]
+
+\item
+\[
+R(x)=-\frac1{2x^2}+x+\frac{x^3}{3}+C.
+\]
+\end{enumerate}
+
+\end{oplossing}
+
+\end{oefening}
+
+
+% ============================================================
+% OEFENING 14 — F EN F' RELATIE
+% ============================================================
+
+\begin{oefening}[Wat vertelt $f$ over haar primitieve?]{\oefU\ESS}
+
+Een functie $F$ is een primitieve van
+\[
+f(x)=x^2-4.
+\]
+
+\begin{question}
+Bepaal de nulpunten van $f$.
+\end{question}
+
+\begin{question}
+Onderzoek het teken van $f$.
+\end{question}
+
+\begin{question}
+Op welke intervallen is elke primitieve $F$ stijgend?
+\end{question}
+
+\begin{question}
+Op welk interval is elke primitieve $F$ dalend?
+\end{question}
+
+\begin{question}
+Wat kun je zeggen over de raaklijnen aan de grafiek van $F$ bij $x=-2$ en $x=2$?
+\end{question}
+
+\begin{question}
+Moet je voor deze vragen eerst een formule voor $F$ bepalen? Leg uit.
+\end{question}
+
+\begin{oplossing}
+
+Omdat $F'(x)=f(x)$, bepaalt het teken van $f$ het verloop van $F$.
+
+\begin{enumerate}
+\item
+\[
+x^2-4=0
+\quad\Longleftrightarrow\quad
+x=-2\text{ of }x=2.
+\]
+
+\item
+\[
+f(x)>0 \text{ voor }x<-2\text{ en }x>2,
+\]
+terwijl
+\[
+f(x)<0 \text{ voor }-2<x<2.
+\]
+
+\item $F$ is stijgend op $]-\infty,-2[$ en $]2,+\infty[$.
+\item $F$ is dalend op $]-2,2[$.
+\item Omdat $F'(-2)=F'(2)=0$, zijn de raaklijnen daar horizontaal.
+\item Nee. De relatie $F'=f$ volstaat om het verloop te onderzoeken.
+\end{enumerate}
+
+\end{oplossing}
+
+\end{oefening}
+
+
+% ============================================================
+% OEFENING 15 — OMGEKEERD REDENEREN
+% ============================================================
+
+\begin{oefening}[Van primitieve naar integrand]{\oefB}
+
+Gegeven is een functie $F$. Bepaal telkens de functie $f$ waarvoor $F$ een primitieve is.
+
+\begin{question}
+\[
+F(x)=2x^4-3x^2+7x-5.
+\]
+\end{question}
+
+\begin{question}
+\[
+F(x)=-\frac12x^6+4x^3-2.
+\]
+\end{question}
+
+\begin{question}
+\[
+F(x)=\frac35x^5-\frac23x^3+x+9.
+\]
+\end{question}
+
+\begin{oplossing}
+
+We leiden $F$ af.
+
+\begin{enumerate}
+\item
+\[
+f(x)=8x^3-6x+7.
+\]
+\item
+\[
+f(x)=-3x^5+12x^2.
+\]
+\item
+\[
+f(x)=3x^4-2x^2+1.
+\]
+\end{enumerate}
+
+\end{oplossing}
+
+\end{oefening}
+
+
+% ============================================================
+% OEFENING 16 — FOUTENANALYSE
+% ============================================================
+
+\begin{oefening}[Zoek de fout]{\oefU\ESS}
+
+Onderzoek elke redenering. Geef aan wat fout loopt en verbeter het antwoord.
+
+\begin{question}
+Een leerling schrijft
+\[
+\int x^4\,dx=4x^3+C.
+\]
+\end{question}
+
+\begin{question}
+Een leerling schrijft
+\[
+\int 5x^2\,dx=\frac53x^3.
+\]
+\end{question}
+
+\begin{question}
+Een leerling schrijft
+\[
+\int (2x^3-4x)\,dx
+=\frac12x^4-2x^2+C.
+\]
+\end{question}
+
+\begin{question}
+Een leerling beweert: ``Als $F$ en $G$ beide primitieve functies van $f$ zijn, dan zijn $F$ en $G$ noodzakelijk gelijk.''
+\end{question}
+
+\begin{oplossing}
+
+\begin{enumerate}
+\item De machtsregel voor afgeleiden werd ten onrechte gebruikt. Correct:
+\[
+\boxed{\int x^4\,dx=\frac15x^5+C}.
+\]
+
+\item De primitieve zelf is correct, maar $+C$ ontbreekt. Correct:
+\[
+\boxed{\int 5x^2\,dx=\frac53x^3+C}.
+\]
+
+\item Correct, want
+\[
+\left(\frac12x^4-2x^2+C\right)'=2x^3-4x.
+\]
+
+\item Fout. Twee primitieve functies van dezelfde functie kunnen door een constante verschillen:
+\[
+F(x)=G(x)+C.
+\]
+\end{enumerate}
+
+\end{oplossing}
+
+\end{oefening}
+
+
+% ============================================================
+% OEFENING 17 — GEMENGDE ZELFCHECK
+% ============================================================
+
+\begin{oefening}[Zelfcheck: primitieve functies]{\oefU\ESS}
+
+Gegeven is
+\[
+f(x)=4x^3-6x^2+2x.
+\]
+
+\begin{question}
+Bepaal de volledige familie primitieve functies van $f$.
+\end{question}
+
+\begin{question}
+Bepaal de primitieve $F$ waarvoor $F(0)=-2$.
+\end{question}
+
+\begin{question}
+Controleer je antwoord door $F$ af te leiden.
+\end{question}
+
+\begin{question}
+Bepaal de punten waar de grafiek van $F$ een horizontale raaklijn kan hebben. Je hoeft de functiewaarden van die punten niet te bepalen.
+\end{question}
+
+\begin{question}
+Leg uit welk verband je bij de vorige vraag gebruikt tussen $f$ en $F$.
+\end{question}
+
+\begin{oplossing}
+
+\begin{enumerate}
+\item
+\[
+\int (4x^3-6x^2+2x)\,dx
+=x^4-2x^3+x^2+C.
+\]
+
+\item Uit $F(0)=-2$ volgt $C=-2$. Dus
+\[
+\boxed{F(x)=x^4-2x^3+x^2-2}.
+\]
+
+\item
+\[
+F'(x)=4x^3-6x^2+2x=f(x).
+\]
+
+\item Horizontale raaklijnen voldoen aan $F'(x)=0$. Omdat $F'=f$, moeten we dus
+\[
+4x^3-6x^2+2x=0.
+\]
+We ontbinden:
+\[
+2x(2x^2-3x+1)=2x(2x-1)(x-1)=0.
+\]
+Dus
+\[
+x=0,\qquad x=\frac12,\qquad x=1.
+\]
+Bij deze drie abscissen heeft de grafiek van $F$ een horizontale raaklijn.
+
+\item We gebruiken
+\[
+F'(x)=f(x).
+\]
+Een horizontale raaklijn aan $F$ ontstaat waar $F'(x)=0$, dus waar $f(x)=0$.
+\end{enumerate}
+
+\end{oplossing}
+
+\end{oefening}
+
+
+% ============================================================
+% OEFENING 18 — GEVORDERD: REDENEREN ZONDER ALLES UIT TE REKENEN
+% ============================================================
+
+\begin{oefening}[Primitieven vergelijken]{\oefG}
+
+Van twee functies $F$ en $G$ weten we dat
+\[
+F'(x)=G'(x)=2x^3-6x.
+\]
+Verder geldt
+\[
+F(1)=4
+\qquad\text{en}\qquad
+G(1)=-3.
+\]
+
+\begin{question}
+Wat kun je besluiten over $F(x)-G(x)$ zonder de functies volledig te bepalen?
+\end{question}
+
+\begin{question}
+Bepaal de waarde van $F(x)-G(x)$.
+\end{question}
+
+\begin{question}
+Stel dat $H$ nog een andere primitieve is van $2x^3-6x$. Welke vorm heeft $H$ ten opzichte van $F$?
+\end{question}
+
+\begin{question}
+Bepaal nu ter controle expliciet de algemene primitieve van $2x^3-6x$.
+\end{question}
+
+\begin{oplossing}
+
+\begin{enumerate}
+\item Omdat $F'$ en $G'$ gelijk zijn, is
+\[
+(F-G)'=0.
+\]
+Dus $F-G$ is constant.
+
+\item Bij $x=1$:
+\[
+F(1)-G(1)=4-(-3)=7.
+\]
+Dus
+\[
+\boxed{F(x)-G(x)=7.}
+\]
+
+\item Er bestaat een constante $k$ zodat
+\[
+H(x)=F(x)+k.
+\]
+
+\item
+\[
+\int (2x^3-6x)\,dx
+=\frac12x^4-3x^2+C.
+\]
+\end{enumerate}
+
+\end{oplossing}
+
+\end{oefening}
+
+\end{document}
+
