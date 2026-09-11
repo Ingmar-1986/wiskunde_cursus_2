@@ -1,0 +1,64 @@
+<nav class="chapter-navigation" aria-label="Hoofdstuknavigatie">
+
+    <a
+        class="chapter-navigation__card chapter-navigation__card--previous"
+        href="{{PREVIOUS_URL}}"
+        data-visible="{{HAS_PREVIOUS}}"
+    >
+        <span class="chapter-navigation__icon" aria-hidden="true">
+            ←
+        </span>
+
+        <span class="chapter-navigation__content">
+            <span class="chapter-navigation__label">
+                Vorig hoofdstuk
+            </span>
+
+            <span class="chapter-navigation__title">
+                {{PREVIOUS_TITLE}}
+            </span>
+        </span>
+    </a>
+
+    <a
+        class="chapter-navigation__card chapter-navigation__card--overview"
+        href="{{OVERVIEW_URL}}"
+    >
+        <span class="chapter-navigation__overview-icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+        </span>
+
+        <span class="chapter-navigation__content">
+            <span class="chapter-navigation__label">
+                Cursus
+            </span>
+
+            <span class="chapter-navigation__title">
+                Overzicht
+            </span>
+        </span>
+    </a>
+
+    <a
+        class="chapter-navigation__card chapter-navigation__card--next"
+        href="{{NEXT_URL}}"
+        data-visible="{{HAS_NEXT}}"
+    >
+        <span class="chapter-navigation__content">
+            <span class="chapter-navigation__label">
+                Volgend hoofdstuk
+            </span>
+
+            <span class="chapter-navigation__title">
+                {{NEXT_TITLE}}
+            </span>
+        </span>
+
+        <span class="chapter-navigation__icon" aria-hidden="true">
+            →
+        </span>
+    </a>
+
+</nav>
