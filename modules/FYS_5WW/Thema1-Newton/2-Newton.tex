@@ -1,34 +1,51 @@
 \documentclass{ximera}
 
 \input{../../../preamble.tex}
+
 \input{../../../Opmaak.tex}
+
 \addPrintStyle{../../..}
 
 \title{Krachten en de wetten van Newton}
+
 \author{Ingmar Herreman}
 
 \begin{abstract}
+
 Waarom begint een stilstaande fiets te bewegen wanneer je op de pedalen
+
 duwt? Waarom word je in een optrekkende bus naar achteren geduwd?
+
 Waarom trekt de aarde aan een appel, maar trekt die appel tegelijk ook
+
 aan de aarde?
 
 Om zulke vragen te beantwoorden hebben we het begrip kracht nodig.
+
 Een kracht is geen eigenschap die een voorwerp zomaar bezit, maar
+
 beschrijft een wisselwerking tussen systemen.
 
 In dit hoofdstuk herhalen en verdiepen we de drie wetten van Newton.
+
 We onderzoeken wat een resulterende kracht betekent, waarom een kracht
+
 een vector is en hoe kracht en versnelling met elkaar verbonden zijn.
 
 Bijzondere aandacht gaat naar de derde wet van Newton. Krachten ontstaan
+
 immers steeds in wisselwerking: als voorwerp A een kracht uitoefent op
+
 voorwerp B, dan oefent B tegelijk een even grote maar tegengesteld
+
 gerichte kracht uit op A.
 
 Deze ideeën vormen de brug naar de volgende hoofdstukken. Daar zullen
+
 we twee fundamentele krachten op afstand onderzoeken: de gravitatiekracht
+
 tussen massa's en de elektrische kracht tussen ladingen.
+
 \end{abstract}
 
 \begin{document}
@@ -41,56 +58,82 @@ tussen massa's en de elektrische kracht tussen ladingen.
 
 
 
-
-
 \maketitle
 
 
 % ============================================================
+
 % VOORKENNIS EN LEERDOELEN
+
 % ============================================================
 
 \begin{voorkennis}
-  \item Je kan scalaire en vectoriële grootheden onderscheiden.
-  \item Je kan een vector beschrijven aan de hand van grootte, richting en zin.
-  \item Je kan eenvoudige vectoren grafisch optellen.
-  \item Je begrijpt wat een resulterende vector is.
-  \item Je kent de begrippen massa, snelheid en versnelling uit de tweede graad.
-  \item Je kan eenvoudige formules gebruiken en een onbekende grootheid vrijmaken.
+
+ \item Je kan scalaire en vectoriële grootheden onderscheiden.
+
+ \item Je kan een vector beschrijven aan de hand van grootte, richting en zin.
+
+ \item Je kan eenvoudige vectoren grafisch optellen.
+
+ \item Je begrijpt wat een resulterende vector is.
+
+ \item Je kent de begrippen massa, snelheid en versnelling uit de tweede graad.
+
+ \item Je kan eenvoudige formules gebruiken en een onbekende grootheid vrijmaken.
+
 \end{voorkennis}
 
 \begin{leerdoelen}
-  \item Je kan uitleggen dat een kracht een wisselwerking tussen twee systemen beschrijft.
-  \item Je kan een kracht correct als vector voorstellen.
-  \item Je kan bij eenvoudige situaties de resulterende kracht bepalen.
-  \item Je kan de eerste wet van Newton uitleggen en toepassen in eenvoudige situaties.
-  \item Je kan het verband tussen resulterende kracht, massa en versnelling uitleggen met de tweede wet van Newton.
-  \item Je kan eenvoudige berekeningen uitvoeren met $\sum\vec F=m\vec a$.
-  \item Je kan de derde wet van Newton correct formuleren.
-  \item Je kan in een concrete situatie een actie-reactiepaar herkennen.
-  \item Je kan uitleggen waarom actie- en reactiekracht elkaar niet opheffen.
-  \item Je kan onderscheid maken tussen een krachtenpaar volgens Newton III en twee krachten die op hetzelfde voorwerp werken.
-  \item Je kan het superpositiebeginsel voor krachten gebruiken.
-  \item Je kan de wetten van Newton verbinden met gravitatiekracht en elektrische kracht.
+
+ \item Je kan uitleggen dat een kracht een wisselwerking tussen twee systemen beschrijft.
+
+ \item Je kan een kracht correct als vector voorstellen.
+
+ \item Je kan bij eenvoudige situaties de resulterende kracht bepalen.
+
+ \item Je kan de eerste wet van Newton uitleggen en toepassen in eenvoudige situaties.
+
+ \item Je kan het verband tussen resulterende kracht, massa en versnelling uitleggen met de tweede wet van Newton.
+
+ \item Je kan eenvoudige berekeningen uitvoeren met $\sum\vec F=m\vec a$.
+
+ \item Je kan de derde wet van Newton correct formuleren.
+
+ \item Je kan in een concrete situatie een actie-reactiepaar herkennen.
+
+ \item Je kan uitleggen waarom actie- en reactiekracht elkaar niet opheffen.
+
+ \item Je kan onderscheid maken tussen een krachtenpaar volgens Newton III en twee krachten die op hetzelfde voorwerp werken.
+
+ \item Je kan het superpositiebeginsel voor krachten gebruiken.
+
+ \item Je kan de wetten van Newton verbinden met gravitatiekracht en elektrische kracht.
+
 \end{leerdoelen}
 
 
 % ============================================================
+
 % 1. WAAROM NEWTON?
+
 % ============================================================
 
 \FVDsection{Waarom verandert een beweging?}
 
 In het vorige hoofdstuk bouwden we een aantal gereedschappen op om
+
 fysische verschijnselen te beschrijven.
 
 We kunnen grootheden meten, vectoren voorstellen en verschillende
+
 vectoren combineren.
 
 Maar daarmee is een fundamentele vraag nog niet beantwoord:
 
 \begin{center}
+
 \textit{Waarom verandert de beweging van een voorwerp?}
+
 \end{center}
 
 Een voetbal blijft liggen tot iemand ertegen trapt.
@@ -102,6 +145,7 @@ Een auto vertraagt wanneer hij remt.
 Een steen die wordt losgelaten versnelt naar de aarde.
 
 De maan verandert voortdurend van bewegingsrichting terwijl ze rond
+
 de aarde beweegt.
 
 In al deze voorbeelden verandert de snelheidsvector.
@@ -109,53 +153,61 @@ In al deze voorbeelden verandert de snelheidsvector.
 Dat kan betekenen dat:
 
 \begin{itemize}
-  \item de grootte van de snelheid verandert;
-  \item de richting van de snelheid verandert;
-  \item of beide tegelijk veranderen.
+
+ \item de grootte van de snelheid verandert;
+
+ \item de richting van de snelheid verandert;
+
+ \item of beide tegelijk veranderen.
+
 \end{itemize}
 
 Een verandering van de snelheidsvector betekent dat er een versnelling is.
 
-\[
-\boxed{
-\text{verandering van }\vec v
-\quad\Longleftrightarrow\quad
-\vec a\neq\vec 0
-}
-\]
+\[\boxed{ \text{verandering van }\vec v \quad\Longleftrightarrow\quad \vec a\neq\vec 0 }\]
 
 Newton legde het verband tussen zo'n bewegingsverandering en de
+
 krachten die op een voorwerp werken.
 
 
 % ============================================================
+
 % 2. KRACHT ALS WISSELWERKING
+
 % ============================================================
 
 \FVDsection{Een kracht ontstaat door een wisselwerking}
 
 We spreken in het dagelijks leven gemakkelijk over ``een kracht op
+
 een voorwerp''.
 
 Maar fysisch is het belangrijk om verder te vragen:
 
 \begin{center}
+
 \textit{Welk systeem oefent die kracht uit?}
+
 \end{center}
 
 Wanneer je tegen een muur duwt, oefent je hand een kracht uit op de
+
 muur.
 
 Wanneer de aarde een appel aantrekt, oefent de aarde een kracht uit
+
 op de appel.
 
 Wanneer twee geladen deeltjes elkaar afstoten, oefent elke lading een
+
 elektrische kracht uit op de andere.
 
 
 \begin{definitie}[Kracht]
 
 Een \textbf{kracht} beschrijft een wisselwerking waarbij een systeem
+
 een invloed uitoefent op een ander systeem.
 
 Een kracht is een vectoriële grootheid.
@@ -165,51 +217,40 @@ Een kracht is een vectoriële grootheid.
 
 We schrijven een kracht bijvoorbeeld als:
 
-\[
-\vec F.
-\]
+\[\vec F.\]
 
 De SI-eenheid van kracht is de newton:
 
-\[
-\boxed{
-[F]=\mathrm N.
-}
-\]
+\[\boxed{ [F]=\mathrm N. }\]
 
 
 \FVDsubsection{Wie oefent kracht uit op wie?}
 
 Om verwarring te vermijden kunnen we bij een kracht expliciet
+
 vermelden welk systeem de kracht uitoefent en op welk systeem de
+
 kracht werkt.
 
 We schrijven bijvoorbeeld:
 
-\[
-\boxed{
-\vec F_{A\rightarrow B}
-}
-\]
+\[\boxed{ \vec F_{A\rightarrow B} }\]
 
 voor:
 
 \begin{center}
+
 de kracht die systeem $A$ uitoefent op systeem $B$.
+
 \end{center}
 
 De pijl in het onderschrift betekent dus niet de richting van de
+
 krachtvector in de ruimte.
 
 Hij geeft aan:
 
-\[
-\boxed{
-\text{wie oefent de kracht uit}
-\rightarrow
-\text{op wie werkt de kracht}.
-}
-\]
+\[\boxed{ \text{wie oefent de kracht uit} \rightarrow \text{op wie werkt de kracht}. }\]
 
 
 \begin{voorbeeld}[De aarde en een appel]
@@ -218,19 +259,16 @@ Een appel bevindt zich boven het aardoppervlak.
 
 De aarde oefent een gravitatiekracht uit op de appel:
 
-\[
-\vec F_{\mathrm{aarde}\rightarrow\mathrm{appel}}.
-\]
+\[\vec F_{\mathrm{aarde}\rightarrow\mathrm{appel}}.\]
 
 Maar de interactie werkt in beide richtingen.
 
 De appel oefent eveneens een gravitatiekracht uit op de aarde:
 
-\[
-\vec F_{\mathrm{appel}\rightarrow\mathrm{aarde}}.
-\]
+\[\vec F_{\mathrm{appel}\rightarrow\mathrm{aarde}}.\]
 
 Later zullen we zien dat deze twee krachten een actie-reactiepaar
+
 vormen.
 
 \end{voorbeeld}
@@ -239,28 +277,73 @@ vormen.
 \begin{oefening}[Wie oefent de kracht uit?]{\oefB\ESS}
 
 Beschrijf bij elke situatie duidelijk welk systeem een kracht
+
 uitoefent op welk ander systeem.
 
 \begin{enumerate}
-  \item De aarde trekt een satelliet aan.
-  \item Een magneet trekt een ijzeren voorwerp aan.
-  \item Een positief geladen deeltje stoot een ander positief geladen
-        deeltje af.
-  \item Een hand duwt tegen een deur.
-  \item De vloer duwt tegen de voeten van een leerling.
+
+ \item De aarde trekt een satelliet aan.
+
+ \item Een magneet trekt een ijzeren voorwerp aan.
+
+ \item Een positief geladen deeltje stoot een ander positief geladen
+
+    deeltje af.
+
+ \item Een hand duwt tegen een deur.
+
+ \item De vloer duwt tegen de voeten van een leerling.
+
 \end{enumerate}
 
 Gebruik waar mogelijk de notatie:
 
-\[
-\vec F_{A\rightarrow B}.
-\]
+\[\vec F_{A\rightarrow B}.\]
+
+
+\begin{oplossing}
+
+We noteren telkens eerst het systeem dat de kracht uitoefent en daarna
+
+het systeem waarop de kracht werkt.
+
+\begin{enumerate}
+
+  \item De aarde oefent een kracht uit op de satelliet:
+
+  \[\boxed{\vec F_{\mathrm{aarde}\rightarrow\mathrm{satelliet}}}.\]
+
+  \item De magneet oefent een kracht uit op het ijzeren voorwerp:
+
+  \[\boxed{\vec F_{\mathrm{magneet}\rightarrow\mathrm{voorwerp}}}.\]
+
+  \item Het eerste positief geladen deeltje oefent een afstotende
+
+  elektrische kracht uit op het tweede:
+
+  \[\boxed{\vec F_{1\rightarrow2}}.\]
+
+  \item De hand oefent een kracht uit op de deur:
+
+  \[\boxed{\vec F_{\mathrm{hand}\rightarrow\mathrm{deur}}}.\]
+
+  \item De vloer oefent een kracht uit op de voeten van de leerling:
+
+  \[\boxed{\vec F_{\mathrm{vloer}\rightarrow\mathrm{leerling}}}.\]
+
+\end{enumerate}
+
+In elk geval beschrijft de kracht een wisselwerking tussen twee systemen.
+
+\end{oplossing}
 
 \end{oefening}
 
 
 % ============================================================
+
 % 3. KRACHT IS VECTORIEEL
+
 % ============================================================
 
 \FVDsection{Een kracht is een vector}
@@ -268,18 +351,16 @@ Gebruik waar mogelijk de notatie:
 Het is niet voldoende om te zeggen:
 
 \begin{center}
-``Er werkt een kracht van $20\,\mathrm N$.''
+
+``Er werkt een kracht van $20\,\mathrm N$''
+
 \end{center}
 
 We moeten ook weten in welke richting en zin de kracht werkt.
 
 Een kracht heeft dus:
 
-\[
-\boxed{
-\text{grootte, richting en zin}.
-}
-\]
+\[\boxed{ \text{grootte, richting en zin}. }\]
 
 Daarom is kracht een vectoriële grootheid.
 
@@ -290,48 +371,33 @@ Twee leerlingen trekken aan een kar.
 
 De eerste leerling oefent een kracht van:
 
-\[
-50\,\mathrm N
-\]
+\[50\,\mathrm N\]
 
 naar rechts uit.
 
 De tweede leerling oefent een kracht van:
 
-\[
-30\,\mathrm N
-\]
+\[30\,\mathrm N\]
 
 naar links uit.
 
 Omdat de krachten tegengesteld gericht zijn, is de resulterende kracht:
 
-\[
-F_{\mathrm{res}}
-=
-50-30
-=
-20\,\mathrm N.
-\]
+\[F_{\mathrm{res}} = 50-30 = 20\,\mathrm N.\]
 
 De zin is naar rechts.
 
 Dus:
 
-\[
-\boxed{
-\vec F_{\mathrm{res}}
-=
-20\,\mathrm N
-\text{ naar rechts}.
-}
-\]
+\[\boxed{ \vec F_{\mathrm{res}} = 20\,\mathrm N \text{ naar rechts}. }\]
 
 \end{voorbeeld}
 
 
 % ============================================================
+
 % 4. RESULTANTE
+
 % ============================================================
 
 \FVDsection{De resulterende kracht}
@@ -339,9 +405,11 @@ Dus:
 Op een voorwerp werkt meestal niet slechts één kracht.
 
 Op een boek dat op een tafel ligt werkt bijvoorbeeld de
+
 gravitatiekracht van de aarde, maar ook een kracht van de tafel.
 
 Voor de beweging van het voorwerp is het gezamenlijke effect van alle
+
 krachten belangrijk.
 
 We noemen dit de \textbf{resulterende kracht} of \textbf{nettokracht}.
@@ -350,39 +418,27 @@ We noemen dit de \textbf{resulterende kracht} of \textbf{nettokracht}.
 \begin{definitie}[Resulterende kracht]
 
 De \textbf{resulterende kracht} is de vectorsom van alle krachten die
+
 op hetzelfde gekozen systeem werken.
 
-\[
-\boxed{
-\vec F_{\mathrm{res}}
-=
-\sum_i\vec F_i
-}
-\]
+\[\boxed{ \vec F_{\mathrm{res}} = \sum_i\vec F_i }\]
 
 \end{definitie}
 
 
 Bij twee krachten:
 
-\[
-\vec F_{\mathrm{res}}
-=
-\vec F_1+\vec F_2.
-\]
+\[\vec F_{\mathrm{res}} = \vec F_1+\vec F_2.\]
 
 Bij drie krachten:
 
-\[
-\vec F_{\mathrm{res}}
-=
-\vec F_1+\vec F_2+\vec F_3.
-\]
+\[\vec F_{\mathrm{res}} = \vec F_1+\vec F_2+\vec F_3.\]
 
 
 \begin{opmerking}
 
 We mogen alleen krachten optellen wanneer we het effect van die
+
 krachten op \textbf{hetzelfde systeem} onderzoeken.
 
 Dat wordt straks bijzonder belangrijk bij de derde wet van Newton.
@@ -396,23 +452,78 @@ Bepaal telkens de resulterende kracht.
 
 \begin{enumerate}
 
-  \item $12\,\mathrm N$ naar rechts en $8\,\mathrm N$ naar rechts.
+ \item $12\,\mathrm N$ naar rechts en $8\,\mathrm N$ naar rechts.
 
-  \item $12\,\mathrm N$ naar rechts en $8\,\mathrm N$ naar links.
+ \item $12\,\mathrm N$ naar rechts en $8\,\mathrm N$ naar links.
 
-  \item $25\,\mathrm N$ omhoog en $25\,\mathrm N$ omlaag.
+ \item $25\,\mathrm N$ omhoog en $25\,\mathrm N$ omlaag.
 
-  \item $4\,\mathrm N$ naar rechts en $3\,\mathrm N$ omhoog.
+ \item $4\,\mathrm N$ naar rechts en $3\,\mathrm N$ omhoog.
 
 \end{enumerate}
 
 Maak telkens eerst een vectorschets.
 
+
+\begin{oplossing}
+
+Kies rechts en omhoog als positieve zin.
+
+\begin{enumerate}
+
+  \item Beide krachten wijzen naar rechts:
+
+  \[F_{\mathrm{res}}=12+8=20\,\mathrm N.\]
+
+  Dus:
+
+  \[\boxed{\vec F_{\mathrm{res}}=20\,\mathrm N\text{ naar rechts}}.\]
+
+  \item De krachten zijn tegengesteld:
+
+  \[F_{\mathrm{res}}=12-8=4\,\mathrm N.\]
+
+  Dus:
+
+  \[\boxed{\vec F_{\mathrm{res}}=4\,\mathrm N\text{ naar rechts}}.\]
+
+  \item De krachten zijn even groot en tegengesteld:
+
+  \[F_{\mathrm{res}}=25-25=0.\]
+
+  Dus:
+
+  \[\boxed{\vec F_{\mathrm{res}}=\vec 0}.\]
+
+  \item De krachten staan loodrecht op elkaar. Met Pythagoras:
+
+  \[F_{\mathrm{res}}=\sqrt{4^2+3^2}=5\,\mathrm N.\]
+
+  Voor de richting:
+
+  \[\tan\theta=\frac{3}{4}, \qquad \theta\approx36{,}9^\circ.\]
+
+  Dus:
+
+  \[\boxed{F_{\mathrm{res}}=5{,}0\,\mathrm N}\]
+
+  onder een hoek van ongeveer
+
+  \[\boxed{36{,}9^\circ}\]
+
+  boven de horizontale naar rechts.
+
+\end{enumerate}
+
+\end{oplossing}
+
 \end{oefening}
 
 
 % ============================================================
+
 % 5. NEWTON I
+
 % ============================================================
 
 \FVDsection{De eerste wet van Newton: traagheid}
@@ -422,25 +533,24 @@ Stel dat een ijshockeypuck over bijna wrijvingsloos ijs glijdt.
 Wat gebeurt er wanneer niemand de puck nog aanraakt?
 
 Onze dagelijkse ervaring kan ons misleiden. Voorwerpen op aarde komen
+
 meestal uiteindelijk tot stilstand, maar dat gebeurt omdat er
+
 wrijvings- en weerstandskrachten aanwezig zijn.
 
+
 Wanneer de resulterende kracht nul is, is er geen reden waarom de
+
 snelheidsvector zou veranderen.
 
 
 \begin{definitie}[Eerste wet van Newton]
 
 Wanneer de resulterende kracht op een voorwerp nul is, blijft zijn
+
 snelheidsvector constant.
 
-\[
-\boxed{
-\sum\vec F=\vec 0
-\quad\Longrightarrow\quad
-\vec v=\text{constant}.
-}
-\]
+\[\boxed{ \sum\vec F=\vec 0 \quad\Longrightarrow\quad \vec v=\text{constant}. }\]
 
 \end{definitie}
 
@@ -449,20 +559,17 @@ Dit bevat twee belangrijke mogelijkheden.
 
 Het voorwerp kan in rust zijn:
 
-\[
-\vec v=\vec 0.
-\]
+\[\vec v=\vec 0.\]
 
 Maar het kan ook bewegen met constante snelheid in een rechte lijn:
 
-\[
-\vec v=\text{constant}\neq\vec 0.
-\]
+\[\vec v=\text{constant}\neq\vec 0.\]
 
 
 \begin{opmerking}
 
 Een resulterende kracht van nul betekent dus \textbf{niet}
+
 noodzakelijk dat een voorwerp stilstaat.
 
 Het betekent dat de snelheidsvector niet verandert.
@@ -473,12 +580,20 @@ Het betekent dat de snelheidsvector niet verandert.
 \FVDsubsection{Traagheid}
 
 De neiging van een voorwerp om zijn bewegingstoestand te behouden
+
 noemen we \textbf{traagheid}.
 
 
 \begin{definitie}[Traagheid]
 
+   \begin{image}
+
+      \includegraphics{../images/Fysica/Lambik.jpg}
+
+      \end{image}
+
 \textbf{Traagheid} is de eigenschap van materie waardoor een voorwerp
+
 zich verzet tegen een verandering van zijn bewegingstoestand.
 
 \end{definitie}
@@ -486,7 +601,9 @@ zich verzet tegen een verandering van zijn bewegingstoestand.
 De massa is een maat voor die traagheid.
 
 Een vrachtwagen heeft een grotere massa dan een fiets en is daarom
+
 moeilijker in beweging te brengen, af te remmen of van richting te
+
 veranderen.
 
 
@@ -497,11 +614,15 @@ Je staat rechtop in een stilstaande bus.
 Plots trekt de bus vooruit op.
 
 Je lichaam heeft de neiging zijn oorspronkelijke bewegingstoestand
+
 te behouden. Je voeten worden door de vloer van de bus naar voren
+
 versneld, terwijl de rest van je lichaam niet onmiddellijk dezelfde
+
 bewegingsverandering ondergaat.
 
 Ten opzichte van de bus lijkt het daardoor alsof je naar achteren
+
 beweegt.
 
 Dit is een gevolg van traagheid.
@@ -514,30 +635,62 @@ Dit is een gevolg van traagheid.
 Een leerling zegt:
 
 \begin{center}
-``Een voorwerp kan alleen blijven bewegen zolang er een kracht in de
-bewegingsrichting op werkt.''
+
+"Een voorwerp kan alleen blijven bewegen zolang er een kracht in de
+
+bewegingsrichting op werkt"
+
 \end{center}
 
 Beoordeel deze uitspraak met behulp van de eerste wet van Newton.
 
 Geef ook een voorbeeld dat je redenering ondersteunt.
 
+
+\begin{oplossing}
+
+De uitspraak is fout.
+
+Volgens de eerste wet van Newton geldt:
+
+\[\sum\vec F=\vec0 \quad\Longrightarrow\quad \vec v=\text{constant}.\]
+
+Een voorwerp waarop geen resulterende kracht werkt, kan dus zowel
+
+stilstaan als met constante snelheid in een rechte lijn bewegen.
+
+Een kracht is niet nodig om een beweging te onderhouden.
+
+Een resulterende kracht is nodig om de snelheidsvector te
+
+\emph{veranderen}.
+
+Een voorbeeld is een ruimtesonde die ver van andere hemellichamen
+
+beweegt. Wanneer de resulterende kracht verwaarloosbaar is, blijft ze
+
+met constante snelheid in een rechte lijn bewegen zonder dat daarvoor
+
+een kracht in de bewegingsrichting nodig is.
+
+\end{oplossing}
+
 \end{oefening}
 
 
 % ============================================================
+
 % 6. NEWTON II
+
 % ============================================================
 
-\FVDsection{De tweede wet van Newton: kracht verandert beweging}
+\FVDsection{Wet II - kracht verandert beweging}
 
 De eerste wet vertelt wat gebeurt wanneer de resulterende kracht nul is.
 
 Maar wat gebeurt er wanneer:
 
-\[
-\sum\vec F\neq\vec 0?
-\]
+\[\sum\vec F\neq\vec 0?\]
 
 Dan verandert de snelheidsvector.
 
@@ -547,26 +700,17 @@ Het voorwerp versnelt.
 \begin{definitie}[Tweede wet van Newton]
 
 De versnelling van een voorwerp wordt bepaald door de resulterende
+
 kracht en de massa van het voorwerp.
 
-\[
-\boxed{
-\sum\vec F=m\vec a.
-}
-\]
+\[\boxed{ \sum\vec F=m\vec a. }\]
 
 \end{definitie}
 
 
 Daaruit volgt:
 
-\[
-\boxed{
-\vec a
-=
-\frac{\sum\vec F}{m}.
-}
-\]
+\[\boxed{ \vec a = \frac{\sum\vec F}{m}. }\]
 
 
 Deze formule bevat veel fysische informatie.
@@ -576,11 +720,10 @@ Deze formule bevat veel fysische informatie.
 
 Bij gelijke massa geldt:
 
-\[
-a\propto F_{\mathrm{res}}.
-\]
+\[a\propto F_{\mathrm{res}}.\]
 
 Een tweemaal zo grote resulterende kracht veroorzaakt een tweemaal
+
 zo grote versnelling.
 
 
@@ -588,42 +731,45 @@ zo grote versnelling.
 
 Bij dezelfde resulterende kracht geldt:
 
-\[
-a\propto\frac{1}{m}.
-\]
+\[a\propto\frac{1}{m}.\]
 
 Een grotere massa betekent dus een kleinere versnelling bij dezelfde
+
 resulterende kracht.
 
+\begin{image}
+
+   \includegraphics{../images/Fysica/newton2kracht1.png}
+
+   \end{image}
+
+   \begin{image}
+
+      \includegraphics{../images/Fysica/newton2kracht2.png}
+
+      \end{image}
 
 \FVDsubsection{De richting van de versnelling}
 
 Omdat $m$ een positieve scalaire grootheid is, hebben:
 
-\[
-\vec a
-\]
+\[\vec a\]
 
 en:
 
-\[
-\sum\vec F
-\]
+\[\sum\vec F\]
 
 dezelfde richting en zin.
 
 Dus:
 
-\[
-\boxed{
-\vec a\parallel\vec F_{\mathrm{res}}.
-}
-\]
+\[\boxed{ \vec a\parallel\vec F_{\mathrm{res}}. }\]
 
 
 \begin{opmerking}
 
 De versnelling heeft de richting van de \textbf{resulterende kracht},
+
 niet noodzakelijk de richting van één afzonderlijke kracht.
 
 \end{opmerking}
@@ -633,45 +779,25 @@ niet noodzakelijk de richting van één afzonderlijke kracht.
 
 Op een kar met massa:
 
-\[
-m=4{,}0\,\mathrm{kg}
-\]
+\[m=4{,}0\,\mathrm{kg}\]
 
 werkt een resulterende kracht van:
 
-\[
-F_{\mathrm{res}}=12\,\mathrm N.
-\]
+\[F_{\mathrm{res}}=12\,\mathrm N.\]
 
 Uit:
 
-\[
-F_{\mathrm{res}}=ma
-\]
+\[F_{\mathrm{res}}=ma\]
 
 volgt:
 
-\[
-a
-=
-\frac{F_{\mathrm{res}}}{m}.
-\]
+\[a = \frac{F_{\mathrm{res}}}{m}.\]
 
 Dus:
 
-\[
-a
-=
-\frac{12}{4{,}0}
-=
-3{,}0\,\mathrm{m/s^2}.
-\]
+\[a = \frac{12}{4{,}0} = 3{,}0\,\mathrm{m/s^2}.\]
 
-\[
-\boxed{
-a=3{,}0\,\mathrm{m/s^2}.
-}
-\]
+\[\boxed{ a=3{,}0\,\mathrm{m/s^2}. }\]
 
 \end{voorbeeld}
 
@@ -680,19 +806,56 @@ a=3{,}0\,\mathrm{m/s^2}.
 
 \begin{enumerate}
 
-  \item Op een voorwerp van $5{,}0\,\mathrm{kg}$ werkt een
-        resulterende kracht van $20\,\mathrm N$.
-        Bereken de versnelling.
+ \item Op een voorwerp van $5{,}0\,\mathrm{kg}$ werkt een
 
-  \item Een voorwerp versnelt met $3{,}0\,\mathrm{m/s^2}$ onder
-        invloed van een resulterende kracht van $15\,\mathrm N$.
-        Bereken de massa.
+    resulterende kracht van $20\,\mathrm N$.
 
-  \item Een voorwerp van $2{,}5\,\mathrm{kg}$ krijgt een versnelling
-        van $4{,}0\,\mathrm{m/s^2}$.
-        Bereken de resulterende kracht.
+    Bereken de versnelling.
+
+ \item Een voorwerp versnelt met $3{,}0\,\mathrm{m/s^2}$ onder
+
+    invloed van een resulterende kracht van $15\,\mathrm N$.
+
+    Bereken de massa.
+
+ \item Een voorwerp van $2{,}5\,\mathrm{kg}$ krijgt een versnelling
+
+    van $4{,}0\,\mathrm{m/s^2}$.
+
+    Bereken de resulterende kracht.
 
 \end{enumerate}
+
+
+\begin{oplossing}
+
+We gebruiken de tweede wet van Newton:
+
+\[F_{\mathrm{res}}=ma.\]
+
+\begin{enumerate}
+
+  \item
+
+  \[a=\frac{F_{\mathrm{res}}}{m} =\frac{20}{5{,}0} =4{,}0\,\mathrm{m/s^2}.\]
+
+  \[\boxed{a=4{,}0\,\mathrm{m/s^2}}.\]
+
+  \item
+
+  \[m=\frac{F_{\mathrm{res}}}{a} =\frac{15}{3{,}0} =5{,}0\,\mathrm{kg}.\]
+
+  \[\boxed{m=5{,}0\,\mathrm{kg}}.\]
+
+  \item
+
+  \[F_{\mathrm{res}}=ma =(2{,}5)(4{,}0) =10\,\mathrm N.\]
+
+  \[\boxed{F_{\mathrm{res}}=10\,\mathrm N}.\]
+
+\end{enumerate}
+
+\end{oplossing}
 
 \end{oefening}
 
@@ -700,63 +863,103 @@ a=3{,}0\,\mathrm{m/s^2}.
 \begin{oefening}[Dezelfde kracht, andere massa]{\oefU\ESS}
 
 Twee karretjes worden afzonderlijk voortgeduwd door dezelfde constante
+
 resulterende kracht.
 
 Karretje A heeft massa:
 
-\[
-m_A=2{,}0\,\mathrm{kg}.
-\]
+\[m_A=2{,}0\,\mathrm{kg}.\]
 
 Karretje B heeft massa:
 
-\[
-m_B=6{,}0\,\mathrm{kg}.
-\]
+\[m_B=6{,}0\,\mathrm{kg}.\]
 
 Zonder de kracht numeriek te kennen:
 
 \begin{enumerate}
-  \item vergelijk $a_A$ en $a_B$;
-  \item bepaal de verhouding
-  \[
-  \frac{a_A}{a_B};
-  \]
-  \item verklaar je antwoord fysisch met het begrip traagheid.
+
+ \item vergelijk $a_A$ en $a_B$;
+
+ \item bepaal de verhouding
+
+ \[\frac{a_A}{a_B};\]
+
+ \item verklaar je antwoord fysisch met het begrip traagheid.
+
 \end{enumerate}
+
+
+\begin{oplossing}
+
+Voor beide karretjes is de resulterende kracht dezelfde.
+
+Volgens Newton II:
+
+\[a=\frac{F_{\mathrm{res}}}{m}.\]
+
+Dus:
+
+\[a_A=\frac{F}{2{,}0} \qquad\text{en}\qquad a_B=\frac{F}{6{,}0}.\]
+
+\begin{enumerate}
+
+  \item Omdat karretje A de kleinste massa heeft:
+
+  \[\boxed{a_A>a_B}.\]
+
+  \item
+
+  \[\frac{a_A}{a_B} = \frac{F/m_A}{F/m_B} = \frac{m_B}{m_A} = \frac{6{,}0}{2{,}0} =3.\]
+
+  Dus:
+
+  \[\boxed{\frac{a_A}{a_B}=3}.\]
+
+  Karretje A versnelt driemaal zo sterk als karretje B.
+
+  \item Karretje B heeft een driemaal zo grote massa en dus een grotere
+
+  traagheid. Bij dezelfde resulterende kracht verandert zijn
+
+  bewegingstoestand daarom minder sterk.
+
+\end{enumerate}
+
+\end{oplossing}
 
 \end{oefening}
 
 
 % ============================================================
+
 % 7. NEWTON III
+
 % ============================================================
 
-\FVDsection{De derde wet van Newton: krachten komen in paren}
+\FVDsection{Wet III - krachten komen in paren}
 
 Tot nu toe bekeken we vooral welke krachten op één gekozen voorwerp
+
 werken.
 
 Maar een kracht ontstaat altijd door een interactie tussen twee
+
 systemen.
 
 Wanneer systeem $A$ een kracht uitoefent op systeem $B$, oefent
+
 systeem $B$ tegelijk een kracht uit op systeem $A$.
 
 
 \begin{definitie}[Derde wet van Newton]
 
 Wanneer systeem $A$ een kracht uitoefent op systeem $B$, oefent
+
 systeem $B$ tegelijkertijd een even grote maar tegengesteld gerichte
+
 kracht uit op systeem $A$.
 
-\[
-\boxed{
-\vec F_{A\rightarrow B}
-=
--\vec F_{B\rightarrow A}.
-}
-\]
+\[\boxed{ \vec F_{A\rightarrow B} = -\vec F_{B\rightarrow A}. }\]
 
 \end{definitie}
 
@@ -764,12 +967,19 @@ kracht uit op systeem $A$.
 De twee krachten:
 
 \begin{itemize}
-  \item ontstaan door dezelfde interactie;
-  \item zijn even groot;
-  \item hebben dezelfde richting;
-  \item hebben tegengestelde zin;
-  \item treden gelijktijdig op;
-  \item werken op verschillende systemen.
+
+ \item ontstaan door dezelfde interactie;
+
+ \item zijn even groot;
+
+ \item hebben dezelfde richting;
+
+ \item hebben tegengestelde zin;
+
+ \item treden gelijktijdig op;
+
+ \item werken op verschillende systemen.
+
 \end{itemize}
 
 
@@ -777,32 +987,38 @@ De twee krachten:
 
 Het laatste punt is cruciaal:
 
-\[
-\boxed{
-\text{actie en reactie werken op verschillende voorwerpen.}
-}
-\]
+\[\boxed{ \text{actie en reactie werken op verschillende voorwerpen.} }\]
 
 Daarom heffen ze elkaar niet op wanneer we de beweging van één
+
 afzonderlijk voorwerp onderzoeken.
 
 \end{opmerking}
 
+\begin{image}
+
+   \includegraphics{../images/Fysica/newton3.png}
+
+   \end{image}
 
 % ============================================================
+
 % 8. ACTIE EN REACTIE
+
 % ============================================================
 
-\FVDsection{Actie en reactie herkennen}
+\FVDsubsection{Actie en reactie herkennen}
 
 De woorden ``actie'' en ``reactie'' kunnen misleidend zijn.
 
 Ze betekenen niet dat eerst de ene kracht ontstaat en pas daarna de
+
 andere.
 
 Beide krachten bestaan tegelijkertijd.
 
 Er is ook geen fysisch onderscheid waarbij één kracht belangrijker
+
 of ``de echte kracht'' zou zijn.
 
 Beide maken deel uit van dezelfde interactie.
@@ -814,26 +1030,15 @@ Je duwt met je hand tegen een muur.
 
 Je hand oefent een kracht uit op de muur:
 
-\[
-\vec F_{\mathrm{hand}\rightarrow\mathrm{muur}}.
-\]
+\[\vec F_{\mathrm{hand}\rightarrow\mathrm{muur}}.\]
 
 De muur oefent tegelijkertijd een kracht uit op je hand:
 
-\[
-\vec F_{\mathrm{muur}\rightarrow\mathrm{hand}}.
-\]
+\[\vec F_{\mathrm{muur}\rightarrow\mathrm{hand}}.\]
 
 Volgens Newton III:
 
-\[
-\boxed{
-\vec F_{\mathrm{hand}\rightarrow\mathrm{muur}}
-=
--
-\vec F_{\mathrm{muur}\rightarrow\mathrm{hand}}.
-}
-\]
+\[\boxed{ \vec F_{\mathrm{hand}\rightarrow\mathrm{muur}} = - \vec F_{\mathrm{muur}\rightarrow\mathrm{hand}}. }\]
 
 Daarom voel je de muur tegen je hand duwen.
 
@@ -848,55 +1053,36 @@ Skater A duwt tegen skater B.
 
 Dan oefent A een kracht uit op B:
 
-\[
-\vec F_{A\rightarrow B}.
-\]
+\[\vec F_{A\rightarrow B}.\]
 
 Tegelijk oefent B een kracht uit op A:
 
-\[
-\vec F_{B\rightarrow A}.
-\]
+\[\vec F_{B\rightarrow A}.\]
 
 De krachten zijn even groot:
 
-\[
-F_{A\rightarrow B}
-=
-F_{B\rightarrow A}.
-\]
+\[F_{A\rightarrow B} = F_{B\rightarrow A}.\]
 
 Toch hoeven hun versnellingen niet even groot te zijn.
 
 Volgens Newton II:
 
-\[
-a_A
-=
-\frac{F}{m_A}
-\]
+\[a_A = \frac{F}{m_A}\]
 
 en:
 
-\[
-a_B
-=
-\frac{F}{m_B}.
-\]
+\[a_B = \frac{F}{m_B}.\]
 
 Als:
 
-\[
-m_A<m_B,
-\]
+\[m_A<m_B,\]
 
 dan:
 
-\[
-a_A>a_B.
-\]
+\[a_A>a_B.\]
 
 De lichtere skater krijgt dus de grootste versnelling, hoewel beide
+
 krachten even groot zijn.
 
 \end{voorbeeld}
@@ -906,49 +1092,101 @@ krachten even groot zijn.
 
 Skater A heeft massa:
 
-\[
-m_A=50\,\mathrm{kg}
-\]
+\[m_A=50\,\mathrm{kg}\]
 
 en skater B:
 
-\[
-m_B=75\,\mathrm{kg}.
-\]
+\[m_B=75\,\mathrm{kg}.\]
 
 Tijdens het afduwen oefent A een kracht van:
 
-\[
-120\,\mathrm N
-\]
+\[120\,\mathrm N\]
 
 uit op B.
 
 \begin{question}
+
 Hoe groot is de kracht die B op A uitoefent?
+
 \end{question}
 
 \begin{question}
+
 Bereken de versnelling van A.
+
 \end{question}
 
 \begin{question}
+
 Bereken de versnelling van B.
+
 \end{question}
 
 \begin{question}
+
 Leg uit waarom de versnellingen verschillend zijn terwijl de krachten
+
 even groot zijn.
+
 \end{question}
+
+
+\begin{oplossing}
+
+Volgens Newton III zijn de krachten die beide skaters op elkaar
+
+uitoefenen even groot en tegengesteld gericht.
+
+\begin{enumerate}
+
+  \item B oefent een kracht van
+
+  \[\boxed{120\,\mathrm N}\]
+
+  uit op A, in de tegengestelde zin van de kracht van A op B.
+
+  \item Voor skater A:
+
+  \[a_A=\frac{F}{m_A} =\frac{120}{50} =2{,}4\,\mathrm{m/s^2}.\]
+
+  Dus:
+
+  \[\boxed{a_A=2{,}4\,\mathrm{m/s^2}}.\]
+
+  \item Voor skater B:
+
+  \[a_B=\frac{F}{m_B} =\frac{120}{75} =1{,}6\,\mathrm{m/s^2}.\]
+
+  Dus:
+
+  \[\boxed{a_B=1{,}6\,\mathrm{m/s^2}}.\]
+
+  \item De krachten zijn volgens Newton III even groot, maar de massa's
+
+  zijn verschillend. Volgens
+
+  \[a=\frac{F}{m}\]
+
+  krijgt bij dezelfde kracht de kleinste massa de grootste versnelling.
+
+  Daarom:
+
+  \[\boxed{a_A>a_B}.\]
+
+\end{enumerate}
+
+\end{oplossing}
 
 \end{oefening}
 
 
 % ============================================================
+
 % 9. ACTIE-REACTIE VERSUS EVENWICHT
+
 % ============================================================
 
-\FVDsection{Een belangrijke valkuil: krachtpaar of krachtenevenwicht?}
+\FVDsubsection{Een belangrijke valkuil: krachtpaar of krachtenevenwicht?}
 
 Dit is een van de belangrijkste onderscheidingen in de mechanica.
 
@@ -956,26 +1194,17 @@ Beschouw een boek dat stil op een tafel ligt.
 
 Op het boek werkt de gravitatiekracht van de aarde:
 
-\[
-\vec F_{\mathrm{aarde}\rightarrow\mathrm{boek}}.
-\]
+\[\vec F_{\mathrm{aarde}\rightarrow\mathrm{boek}}.\]
 
 Daarnaast oefent de tafel een opwaartse kracht uit op het boek:
 
-\[
-\vec F_{\mathrm{tafel}\rightarrow\mathrm{boek}}.
-\]
+\[\vec F_{\mathrm{tafel}\rightarrow\mathrm{boek}}.\]
 
 Wanneer het boek in rust blijft, kunnen deze twee krachten elkaar
+
 compenseren:
 
-\[
-\vec F_{\mathrm{aarde}\rightarrow\mathrm{boek}}
-+
-\vec F_{\mathrm{tafel}\rightarrow\mathrm{boek}}
-=
-\vec 0.
-\]
+\[\vec F_{\mathrm{aarde}\rightarrow\mathrm{boek}} + \vec F_{\mathrm{tafel}\rightarrow\mathrm{boek}} = \vec 0.\]
 
 Maar deze twee krachten vormen \textbf{geen} actie-reactiepaar.
 
@@ -983,49 +1212,34 @@ Waarom niet?
 
 Omdat beide krachten op hetzelfde systeem werken:
 
-\[
-\boxed{\text{het boek}.}
-\]
+\[\boxed{\text{het boek}.}\]
 
 
 De reactiekracht bij:
 
-\[
-\vec F_{\mathrm{aarde}\rightarrow\mathrm{boek}}
-\]
+\[\vec F_{\mathrm{aarde}\rightarrow\mathrm{boek}}\]
 
 is:
 
-\[
-\vec F_{\mathrm{boek}\rightarrow\mathrm{aarde}}.
-\]
+\[\vec F_{\mathrm{boek}\rightarrow\mathrm{aarde}}.\]
 
 En de reactiekracht bij:
 
-\[
-\vec F_{\mathrm{tafel}\rightarrow\mathrm{boek}}
-\]
+\[\vec F_{\mathrm{tafel}\rightarrow\mathrm{boek}}\]
 
 is:
 
-\[
-\vec F_{\mathrm{boek}\rightarrow\mathrm{tafel}}.
-\]
+\[\vec F_{\mathrm{boek}\rightarrow\mathrm{tafel}}.\]
 
 
 \begin{opmerking}
 
 Gebruik deze test:
 
-\[
-\boxed{
-\vec F_{A\rightarrow B}
-\quad\leftrightarrow\quad
-\vec F_{B\rightarrow A}
-}
-\]
+\[\boxed{ \vec F_{A\rightarrow B} \quad\leftrightarrow\quad \vec F_{B\rightarrow A} }\]
 
 Bij een actie-reactiepaar worden de namen van de twee systemen dus
+
 omgewisseld.
 
 \end{opmerking}
@@ -1034,35 +1248,85 @@ omgewisseld.
 \begin{oefening}[Actie-reactie of niet?]{\oefB\ESS}
 
 Bepaal telkens of de twee beschreven krachten een actie-reactiepaar
+
 vormen. Verklaar.
 
 \begin{enumerate}
 
-  \item De aarde trekt aan een appel en de appel trekt aan de aarde.
+ \item De aarde trekt aan een appel en de appel trekt aan de aarde.
 
-  \item De aarde trekt een boek naar beneden en de tafel duwt het boek
-        omhoog.
+ \item De aarde trekt een boek naar beneden en de tafel duwt het boek
 
-  \item Een voet duwt tegen een voetbal en de voetbal duwt tegen de voet.
+    omhoog.
 
-  \item Een auto trekt een aanhangwagen vooruit en de aanhangwagen trekt
-        de auto achteruit.
+ \item Een voet duwt tegen een voetbal en de voetbal duwt tegen de voet.
 
-  \item De aarde trekt een satelliet aan en de zon trekt dezelfde
-        satelliet aan.
+ \item Een auto trekt een aanhangwagen vooruit en de aanhangwagen trekt
+
+    de auto achteruit.
+
+ \item De aarde trekt een satelliet aan en de zon trekt dezelfde
+
+    satelliet aan.
 
 \end{enumerate}
+
+
+\begin{oplossing}
+
+\begin{enumerate}
+
+  \item \textbf{Ja.}
+
+  \[\vec F_{\mathrm{aarde}\rightarrow\mathrm{appel}} = -\vec F_{\mathrm{appel}\rightarrow\mathrm{aarde}}.\]
+
+  De twee krachten horen bij dezelfde interactie en werken op
+
+  verschillende systemen.
+
+  \item \textbf{Nee.}
+
+  Beide genoemde krachten werken op het boek. Ze kunnen elkaar
+
+  compenseren, maar vormen geen actie-reactiepaar.
+
+  \item \textbf{Ja.}
+
+  \[\vec F_{\mathrm{voet}\rightarrow\mathrm{bal}} = -\vec F_{\mathrm{bal}\rightarrow\mathrm{voet}}.\]
+
+  \item \textbf{Ja.}
+
+  \[\vec F_{\mathrm{auto}\rightarrow\mathrm{aanhangwagen}} = -\vec F_{\mathrm{aanhangwagen}\rightarrow\mathrm{auto}}.\]
+
+  \item \textbf{Nee.}
+
+  Beide krachten werken op dezelfde satelliet en zijn afkomstig van
+
+  twee verschillende interacties.
+
+  De reactiekracht op de kracht van de aarde op de satelliet is de
+
+  kracht van de satelliet op de aarde. De reactiekracht op de kracht
+
+  van de zon op de satelliet is de kracht van de satelliet op de zon.
+
+\end{enumerate}
+
+\end{oplossing}
 
 \end{oefening}
 
 
 % ============================================================
+
 % 10. DE RAKET
+
 % ============================================================
 
 \FVDsection{Hoe kan een raket zich afzetten in de ruimte?}
 
 Een hardnekkige misconceptie is dat een raket zich in de ruimte niet
+
 zou kunnen voortbewegen omdat er ``niets is om zich tegen af te zetten''.
 
 Maar een raket hoeft zich niet af te zetten tegen de lucht.
@@ -1071,27 +1335,17 @@ De interactie vindt plaats tussen de raket en de uitgestoten gassen.
 
 De raket oefent een kracht uit op de uitlaatgassen:
 
-\[
-\vec F_{\mathrm{raket}\rightarrow\mathrm{gas}}.
-\]
+\[\vec F_{\mathrm{raket}\rightarrow\mathrm{gas}}.\]
 
 De gassen oefenen tegelijkertijd een tegengestelde kracht uit op de
+
 raket:
 
-\[
-\vec F_{\mathrm{gas}\rightarrow\mathrm{raket}}.
-\]
+\[\vec F_{\mathrm{gas}\rightarrow\mathrm{raket}}.\]
 
 Volgens Newton III:
 
-\[
-\boxed{
-\vec F_{\mathrm{raket}\rightarrow\mathrm{gas}}
-=
--
-\vec F_{\mathrm{gas}\rightarrow\mathrm{raket}}.
-}
-\]
+\[\boxed{ \vec F_{\mathrm{raket}\rightarrow\mathrm{gas}} = - \vec F_{\mathrm{gas}\rightarrow\mathrm{raket}}. }\]
 
 De raket kan daardoor ook in het luchtledige versnellen.
 
@@ -1100,32 +1354,74 @@ De raket kan daardoor ook in het luchtledige versnellen.
 
 Een leerling beweert:
 
-\begin{center}
-``Een raket kan in de ruimte niet versnellen, want er is geen lucht
+\begin{center} ``Een raket kan in de ruimte niet versnellen, want er is geen lucht
+
 waartegen hij zich kan afzetten.''
+
 \end{center}
 
 Leg met behulp van Newton III uit waarom deze redenering fout is.
 
 Vermeld expliciet de twee systemen en de twee krachten van het
+
 actie-reactiepaar.
+
+
+\begin{oplossing}
+
+De redenering is fout. Een raket hoeft zich niet tegen de lucht af te
+
+zetten.
+
+De twee relevante systemen zijn:
+
+\begin{itemize}
+
+  \item de raket;
+
+  \item de uitgestoten gassen.
+
+\end{itemize}
+
+De raket oefent een kracht uit op de gassen:
+
+\[\vec F_{\mathrm{raket}\rightarrow\mathrm{gas}}.\]
+
+Tegelijk oefenen de gassen een kracht uit op de raket:
+
+\[\vec F_{\mathrm{gas}\rightarrow\mathrm{raket}}.\]
+
+Volgens Newton III:
+
+\[\boxed{ \vec F_{\mathrm{raket}\rightarrow\mathrm{gas}} = -\vec F_{\mathrm{gas}\rightarrow\mathrm{raket}} }.\]
+
+De raket versnelt door de kracht die de uitgestoten gassen op de raket
+
+uitoefenen. Daarvoor is geen atmosfeer nodig.
+
+\end{oplossing}
 
 \end{oefening}
 
 
 % ============================================================
+
 % 11. SUPERPOSITIE
+
 % ============================================================
 
 \FVDsection{Meerdere krachten tegelijk: superpositie}
 
 Een voorwerp kan tegelijkertijd met meerdere andere systemen
+
 interageren.
 
 Een satelliet kan bijvoorbeeld worden aangetrokken door de aarde,
+
 maar ook door de maan en de zon.
 
 Een geladen deeltje kan tegelijkertijd elektrische krachten
+
 ondervinden van meerdere andere ladingen.
 
 Het gezamenlijke effect vinden we door de krachtvectoren op te tellen.
@@ -1134,28 +1430,17 @@ Het gezamenlijke effect vinden we door de krachtvectoren op te tellen.
 \begin{definitie}[Superpositiebeginsel voor krachten]
 
 Wanneer meerdere krachten op hetzelfde systeem werken, is de
+
 resulterende kracht de vectorsom van de afzonderlijke krachten.
 
-\[
-\boxed{
-\vec F_{\mathrm{res}}
-=
-\sum_i\vec F_i.
-}
-\]
+\[\boxed{ \vec F_{\mathrm{res}} = \sum_i\vec F_i. }\]
 
 \end{definitie}
 
 
 Voor drie krachten:
 
-\[
-\boxed{
-\vec F_{\mathrm{res}}
-=
-\vec F_1+\vec F_2+\vec F_3.
-}
-\]
+\[\boxed{ \vec F_{\mathrm{res}} = \vec F_1+\vec F_2+\vec F_3. }\]
 
 
 \begin{opmerking}
@@ -1163,12 +1448,15 @@ Voor drie krachten:
 Superpositie is straks essentieel.
 
 Bij gravitatie zullen verschillende massa's elk een gravitatiekracht
+
 uitoefenen.
 
 Bij elektriciteit zullen verschillende ladingen elk een elektrische
+
 kracht uitoefenen.
 
 De totale kracht vinden we telkens door de afzonderlijke
+
 \textbf{krachtvectoren} op te tellen.
 
 \end{opmerking}
@@ -1178,38 +1466,21 @@ De totale kracht vinden we telkens door de afzonderlijke
 
 Op een deeltje werken twee krachten langs dezelfde rechte:
 
-\[
-F_1=8{,}0\,\mathrm N
-\]
+\[F_1=8{,}0\,\mathrm N\]
 
 naar rechts en:
 
-\[
-F_2=3{,}0\,\mathrm N
-\]
+\[F_2=3{,}0\,\mathrm N\]
 
 naar links.
 
 Kiezen we rechts als positieve zin, dan:
 
-\[
-F_{\mathrm{res}}
-=
-8{,}0-3{,}0
-=
-5{,}0\,\mathrm N.
-\]
+\[F_{\mathrm{res}} = 8{,}0-3{,}0 = 5{,}0\,\mathrm N.\]
 
 Dus:
 
-\[
-\boxed{
-\vec F_{\mathrm{res}}
-=
-5{,}0\,\mathrm N
-\text{ naar rechts}.
-}
-\]
+\[\boxed{ \vec F_{\mathrm{res}} = 5{,}0\,\mathrm N \text{ naar rechts}. }\]
 
 \end{voorbeeld}
 
@@ -1218,100 +1489,157 @@ Dus:
 
 Op een klein voorwerp werken twee krachten:
 
-\[
-F_1=6{,}0\,\mathrm N
-\]
+\[F_1=6{,}0\,\mathrm N\]
 
 naar rechts en:
 
-\[
-F_2=8{,}0\,\mathrm N
-\]
+\[F_2=8{,}0\,\mathrm N\]
 
 omhoog.
 
 \begin{question}
+
 Maak een vectorschets.
+
 \end{question}
 
 \begin{question}
+
 Bereken de grootte van de resulterende kracht.
+
 \end{question}
 
 \begin{question}
+
 Bepaal de richting van de resulterende kracht.
+
 \end{question}
 
 \begin{question}
+
 Het voorwerp heeft een massa van $2{,}0\,\mathrm{kg}$.
+
 Bereken de grootte van zijn versnelling.
+
 \end{question}
 
 \begin{question}
+
 Welke richting heeft de versnelling?
+
 \end{question}
+
+
+\begin{oplossing}
+
+De horizontale en verticale kracht staan loodrecht op elkaar.
+
+\begin{enumerate}
+
+  \item De vectorschets bevat een krachtvector van
+
+  $6{,}0\,\mathrm N$ naar rechts en vanuit hetzelfde aangrijpingspunt
+
+  een krachtvector van $8{,}0\,\mathrm N$ omhoog. De resultante wijst
+
+  schuin naar rechtsboven.
+
+  \item Met Pythagoras:
+
+  \[F_{\mathrm{res}} = \sqrt{6{,}0^2+8{,}0^2} = 10{,}0\,\mathrm N.\]
+
+  Dus:
+
+  \[\boxed{F_{\mathrm{res}}=10{,}0\,\mathrm N}.\]
+
+  \item Noem $\theta$ de hoek met de horizontale naar rechts.
+
+  \[\tan\theta=\frac{8{,}0}{6{,}0},\]
+
+  zodat
+
+  \[\theta=\arctan\left(\frac{8}{6}\right) \approx53{,}1^\circ.\]
+
+  De resultante wijst dus
+
+  \[\boxed{53{,}1^\circ}\]
+
+  boven de horizontale naar rechts.
+
+  \item Volgens Newton II:
+
+  \[a=\frac{F_{\mathrm{res}}}{m} =\frac{10{,}0}{2{,}0} =5{,}0\,\mathrm{m/s^2}.\]
+
+  Dus:
+
+  \[\boxed{a=5{,}0\,\mathrm{m/s^2}}.\]
+
+  \item Omdat
+
+  \[\vec a=\frac{\vec F_{\mathrm{res}}}{m},\]
+
+  heeft de versnelling dezelfde richting en zin als de resulterende
+
+  kracht: $53{,}1^\circ$ boven de horizontale naar rechts.
+
+\end{enumerate}
+
+\end{oplossing}
 
 \end{oefening}
 
 
 % ============================================================
+
 % 12. NEWTON I EN II SAMEN
+
 % ============================================================
 
 \FVDsection{Newton I en Newton II vertellen hetzelfde verhaal}
 
 De eerste en tweede wet van Newton worden vaak als volledig aparte
+
 wetten geleerd.
 
 Toch sluiten ze sterk bij elkaar aan.
 
 Volgens Newton II:
 
-\[
-\sum\vec F=m\vec a.
-\]
+\[\sum\vec F=m\vec a.\]
 
 Wanneer:
 
-\[
-\sum\vec F=\vec 0,
-\]
+\[\sum\vec F=\vec 0,\]
 
 dan volgt:
 
-\[
-m\vec a=\vec 0.
-\]
+\[m\vec a=\vec 0.\]
 
 Omdat:
 
-\[
-m\neq0,
-\]
+\[m\neq0,\]
 
 moet:
 
-\[
-\vec a=\vec 0.
-\]
+\[\vec a=\vec 0.\]
 
 Dus verandert de snelheidsvector niet:
 
-\[
-\boxed{
-\vec v=\text{constant}.
-}
-\]
+\[\boxed{ \vec v=\text{constant}. }\]
 
 Dat is precies de bewegingstoestand die in Newton I wordt beschreven.
 
 Newton I benadrukt daarnaast het fundamentele idee van traagheid en
+
 de bijzondere betekenis van inertiaalstelsels, waarop we later nog
+
 kunnen terugkomen.
 
 
 % ============================================================
+
 % 13. VAN KRACHT NAAR BEWEGING
+
 % ============================================================
 
 \FVDsection{Van interactie naar bewegingsverandering}
@@ -1322,117 +1650,64 @@ Wanneer twee systemen met elkaar interageren, ontstaan krachten.
 
 Volgens Newton III:
 
-\[
-\boxed{
-\vec F_{A\rightarrow B}
-=
--\vec F_{B\rightarrow A}.
-}
-\]
+\[\boxed{ \vec F_{A\rightarrow B} = -\vec F_{B\rightarrow A}. }\]
 
 Op één systeem kunnen verschillende krachten werken.
 
 Door superpositie:
 
-\[
-\boxed{
-\vec F_{\mathrm{res}}
-=
-\sum_i\vec F_i.
-}
-\]
+\[\boxed{ \vec F_{\mathrm{res}} = \sum_i\vec F_i. }\]
 
 De resulterende kracht bepaalt vervolgens de versnelling:
 
-\[
-\boxed{
-\sum\vec F=m\vec a.
-}
-\]
+\[\boxed{ \sum\vec F=m\vec a. }\]
 
 We krijgen dus de keten:
 
-\[
-\boxed{
-\text{interactie}
-\longrightarrow
-\text{krachten}
-\longrightarrow
-\text{resulterende kracht}
-\longrightarrow
-\text{versnelling}
-\longrightarrow
-\text{verandering van beweging}.
-}
-\]
+\[\boxed{ \text{interactie} \longrightarrow \text{krachten} \longrightarrow \text{resulterende kracht} \longrightarrow \text{versnelling} \longrightarrow \text{verandering van beweging}. }\]
 
 
 % ============================================================
+
 % 14. EEN DIEPERE VRAAG
+
 % ============================================================
 
 \FVDsection{Even grote krachten, maar niet hetzelfde effect}
 
 Newton III zegt:
 
-\[
-F_{A\rightarrow B}
-=
-F_{B\rightarrow A}.
-\]
+\[F_{A\rightarrow B} = F_{B\rightarrow A}.\]
 
 Daaruit zou je ten onrechte kunnen besluiten dat beide voorwerpen ook
+
 even sterk versnellen.
 
 Dat hoeft niet.
 
 Voor systeem A:
 
-\[
-a_A
-=
-\frac{F_{B\rightarrow A}}{m_A}.
-\]
+\[a_A = \frac{F_{B\rightarrow A}}{m_A}.\]
 
 Voor systeem B:
 
-\[
-a_B
-=
-\frac{F_{A\rightarrow B}}{m_B}.
-\]
+\[a_B = \frac{F_{A\rightarrow B}}{m_B}.\]
 
 Omdat de groottes van de krachten gelijk zijn:
 
-\[
-F_{A\rightarrow B}
-=
-F_{B\rightarrow A}
-=
-F,
-\]
+\[F_{A\rightarrow B} = F_{B\rightarrow A} = F,\]
 
 geldt:
 
-\[
-a_A=\frac{F}{m_A}
-\]
+\[a_A=\frac{F}{m_A}\]
 
 en:
 
-\[
-a_B=\frac{F}{m_B}.
-\]
+\[a_B=\frac{F}{m_B}.\]
 
 Daaruit volgt:
 
-\[
-\boxed{
-\frac{a_A}{a_B}
-=
-\frac{m_B}{m_A}.
-}
-\]
+\[\boxed{ \frac{a_A}{a_B} = \frac{m_B}{m_A}. }\]
 
 De versnellingen zijn dus omgekeerd evenredig met de massa's.
 
@@ -1442,27 +1717,25 @@ De versnellingen zijn dus omgekeerd evenredig met de massa's.
 De aarde trekt aan een vallende appel.
 
 Maar volgens Newton III trekt de appel met precies dezelfde kracht
+
 aan de aarde.
 
 Waarom zien we de aarde dan niet merkbaar naar de appel versnellen?
 
 Omdat:
 
-\[
-m_{\mathrm{aarde}}\gg m_{\mathrm{appel}}.
-\]
+\[m_{\mathrm{aarde}}\gg m_{\mathrm{appel}}.\]
 
 Voor dezelfde kracht geldt:
 
-\[
-a=\frac{F}{m}.
-\]
+\[a=\frac{F}{m}.\]
 
 De versnelling van de aarde is daardoor extreem klein.
 
 \begin{center}
-\textbf{De aarde trekt dus niet harder aan de appel dan de appel aan
-de aarde.}
+
+\textbf{De aarde trekt dus niet harder aan de appel dan de appel aan de aarde.}
+
 \end{center}
 
 Het verschil zit in de massa's en daardoor in de versnellingen.
@@ -1473,162 +1746,73 @@ Het verschil zit in de massa's en daardoor in de versnellingen.
 \begin{oefening}[Aarde en astronaut]{\oefU\ESS}
 
 Een astronaut bevindt zich in de ruimte en wordt door de aarde
+
 aangetrokken.
 
 Een leerling zegt:
 
-\begin{center}
-``De aarde oefent een veel grotere kracht uit op de astronaut dan de
+\begin{center} ``De aarde oefent een veel grotere kracht uit op de astronaut dan de
+
 astronaut op de aarde, want de aarde heeft veel meer massa.''
+
 \end{center}
 
 \begin{question}
+
 Is deze uitspraak juist?
+
 \end{question}
 
 \begin{question}
+
 Gebruik Newton III in je verklaring.
+
 \end{question}
 
 \begin{question}
+
 Waarom is de versnelling van de astronaut toch veel groter dan die van
+
 de aarde?
+
 \end{question}
+
+
+\begin{oplossing}
+
+\begin{enumerate}
+
+  \item Nee. De uitspraak is fout.
+
+  \item Volgens Newton III:
+
+  \[\boxed{ \vec F_{\mathrm{aarde}\rightarrow\mathrm{astronaut}} = -\vec F_{\mathrm{astronaut}\rightarrow\mathrm{aarde}} }.\]
+
+  De aarde en de astronaut oefenen dus krachten met dezelfde grootte
+
+  en tegengestelde zin op elkaar uit.
+
+  \item Voor beide systemen geldt Newton II:
+
+  \[a=\frac{F}{m}.\]
+
+  Hoewel de krachtgroottes gelijk zijn, is
+
+  \[m_{\mathrm{aarde}}\gg m_{\mathrm{astronaut}}.\]
+
+  Daarom:
+
+  \[a_{\mathrm{aarde}} = \frac{F}{m_{\mathrm{aarde}}} \ll \frac{F}{m_{\mathrm{astronaut}}} = a_{\mathrm{astronaut}}.\]
+
+  De astronaut krijgt dus een veel grotere versnelling door zijn veel
+
+  kleinere massa.
+
+\end{enumerate}
+
+\end{oplossing}
 
 \end{oefening}
-
-
-% ============================================================
-% 15. BRUG NAAR GRAVITATIE
-% ============================================================
-
-\FVDsection{Vooruitblik: gravitatie als wisselwerking}
-
-Newton vertelt ons hoe krachten samenhangen met beweging.
-
-Maar Newton II vertelt ons nog niet automatisch \textbf{hoe groot}
-een bepaalde interactiekracht is.
-
-Daarvoor hebben we specifieke krachtwetten nodig.
-
-Bij gravitatie stellen we bijvoorbeeld de vraag:
-
-\begin{center}
-\textit{Hoe groot is de kracht waarmee twee massa's elkaar aantrekken?}
-\end{center}
-
-We zullen een verband vinden van de vorm:
-
-\[
-F_g
-=
-G\frac{m_1m_2}{r^2}.
-\]
-
-Daarbij zal Newton III onmiddellijk zichtbaar zijn.
-
-Massa $m_1$ oefent een kracht uit op massa $m_2$:
-
-\[
-\vec F_{1\rightarrow2}.
-\]
-
-Massa $m_2$ oefent een kracht uit op massa $m_1$:
-
-\[
-\vec F_{2\rightarrow1}.
-\]
-
-En:
-
-\[
-\boxed{
-\vec F_{1\rightarrow2}
-=
--\vec F_{2\rightarrow1}.
-}
-\]
-
-
-% ============================================================
-% 16. BRUG NAAR ELEKTRISCHE KRACHT
-% ============================================================
-
-\FVDsection{Vooruitblik: elektrische kracht als wisselwerking}
-
-Een opvallend vergelijkbare structuur verschijnt bij elektrische
-ladingen.
-
-Twee elektrische ladingen oefenen krachten op elkaar uit.
-
-Ook daar geldt Newton III:
-
-\[
-\boxed{
-\vec F_{1\rightarrow2}
-=
--\vec F_{2\rightarrow1}.
-}
-\]
-
-En ook daar zullen we een krachtwet vinden die afhangt van de afstand
-tussen beide systemen.
-
-Later vinden we:
-
-\[
-F_e
-=
-k\frac{|q_1q_2|}{r^2}.
-\]
-
-Vergelijk dit met gravitatie:
-
-\[
-F_g
-=
-G\frac{m_1m_2}{r^2}.
-\]
-
-De overeenkomst is opvallend:
-
-\[
-\boxed{
-\begin{array}{ccc}
-\text{gravitatie}
-&&
-\text{elektriciteit}
-\\[1ex]
-m_1m_2
-&&
-q_1q_2
-\\[1ex]
-G
-&&
-k
-\\[1ex]
-\dfrac{1}{r^2}
-&&
-\dfrac{1}{r^2}
-\end{array}
-}
-\]
-
-Maar er zal ook een belangrijk verschil zijn:
-
-\begin{itemize}
-  \item gravitatie tussen gewone massa's is aantrekkend;
-  \item elektrische interacties kunnen aantrekkend of afstotend zijn.
-\end{itemize}
-
-Dit wordt een van de centrale vergelijkingen in het volgende thema.
-
-
-% ============================================================
-% 17. CONCEPTUELE OEFENINGEN
-% ============================================================
-
-\FVDsection{Oefeningen}
 
 
 \begin{oefening}[Waar of niet waar?]{\oefB\ESS}
@@ -1637,26 +1821,86 @@ Beoordeel elke uitspraak. Verbeter een foute uitspraak.
 
 \begin{enumerate}
 
-  \item Als een voorwerp beweegt, moet er een resulterende kracht in
-        de bewegingsrichting werken.
+ \item Als een voorwerp beweegt, moet er een resulterende kracht in
 
-  \item Als de resulterende kracht nul is, moet het voorwerp stilstaan.
+    de bewegingsrichting werken.
 
-  \item Als de resulterende kracht nul is, is de versnelling nul.
+ \item Als de resulterende kracht nul is, moet het voorwerp stilstaan.
 
-  \item De versnelling heeft dezelfde richting als de resulterende
-        kracht.
+ \item Als de resulterende kracht nul is, is de versnelling nul.
 
-  \item Een grotere massa betekent bij dezelfde resulterende kracht
-        een grotere versnelling.
+ \item De versnelling heeft dezelfde richting als de resulterende
 
-  \item Actie en reactie werken op hetzelfde voorwerp.
+    kracht.
 
-  \item Actie en reactie zijn even groot.
+ \item Een grotere massa betekent bij dezelfde resulterende kracht
 
-  \item Actie en reactie ontstaan tegelijkertijd.
+    een grotere versnelling.
+
+ \item Actie en reactie werken op hetzelfde voorwerp.
+
+ \item Actie en reactie zijn even groot.
+
+ \item Actie en reactie ontstaan tegelijkertijd.
 
 \end{enumerate}
+
+
+\begin{oplossing}
+
+\begin{enumerate}
+
+  \item \textbf{Niet waar.}
+
+  Een voorwerp kan met constante snelheid bewegen terwijl
+
+  \[\sum\vec F=\vec0.\]
+
+  \item \textbf{Niet waar.}
+
+  Een resulterende kracht van nul betekent dat de snelheid constant is.
+
+  Die constante snelheid kan ook verschillend van nul zijn.
+
+  \item \textbf{Waar.}
+
+  Uit
+
+  \[\sum\vec F=m\vec a\]
+
+  volgt bij $\sum\vec F=\vec0$ dat
+
+  \[\vec a=\vec0.\]
+
+  \item \textbf{Waar.}
+
+  Omdat de massa positief is, hebben $\vec a$ en
+
+  $\vec F_{\mathrm{res}}$ dezelfde richting en zin.
+
+  \item \textbf{Niet waar.}
+
+  Bij dezelfde kracht geldt
+
+  \[a=\frac{F}{m}.\]
+
+  Een grotere massa geeft dus een \emph{kleinere} versnelling.
+
+  \item \textbf{Niet waar.}
+
+  Actie en reactie werken altijd op verschillende systemen.
+
+  \item \textbf{Waar.}
+
+  Volgens Newton III zijn de krachtgroottes gelijk.
+
+  \item \textbf{Waar.}
+
+  De twee krachten van een actie-reactiepaar bestaan gelijktijdig.
+
+\end{enumerate}
+
+\end{oplossing}
 
 \end{oefening}
 
@@ -1664,25 +1908,75 @@ Beoordeel elke uitspraak. Verbeter een foute uitspraak.
 \begin{oefening}[Welke wet van Newton?]{\oefB\ESS}
 
 Geef bij elke situatie aan welke wet van Newton het meest rechtstreeks
+
 wordt geïllustreerd. Verklaar kort.
 
 \begin{enumerate}
 
-  \item Een passagier beweegt bij plots remmen naar voren ten opzichte
-        van de auto.
+ \item Een passagier beweegt bij plots remmen naar voren ten opzichte
 
-  \item Een leeg winkelkarretje krijgt bij dezelfde duwkracht een
-        grotere versnelling dan een vol winkelkarretje.
+    van de auto.
 
-  \item Een zwemmer duwt water naar achteren en beweegt daardoor naar
-        voren.
+ \item Een leeg winkelkarretje krijgt bij dezelfde duwkracht een
 
-  \item Een ruimtesonde blijft met constante snelheid bewegen wanneer
-        de resulterende kracht erop nul is.
+    grotere versnelling dan een vol winkelkarretje.
 
-  \item Een geweer ondervindt bij het afvuren een terugslag.
+ \item Een zwemmer duwt water naar achteren en beweegt daardoor naar
+
+    voren.
+
+ \item Een ruimtesonde blijft met constante snelheid bewegen wanneer
+
+    de resulterende kracht erop nul is.
+
+ \item Een geweer ondervindt bij het afvuren een terugslag.
 
 \end{enumerate}
+
+
+\begin{oplossing}
+
+\begin{enumerate}
+
+  \item \textbf{Newton I.}
+
+  Bij het remmen heeft de passagier door traagheid de neiging zijn
+
+  oorspronkelijke bewegingstoestand te behouden.
+
+  \item \textbf{Newton II.}
+
+  Uit
+
+  \[a=\frac{F_{\mathrm{res}}}{m}\]
+
+  volgt dat bij dezelfde kracht de kleinste massa de grootste
+
+  versnelling krijgt.
+
+  \item \textbf{Newton III.}
+
+  De zwemmer duwt het water naar achteren en het water oefent
+
+  tegelijkertijd een tegengestelde kracht uit op de zwemmer.
+
+  \item \textbf{Newton I.}
+
+  Wanneer
+
+  \[\sum\vec F=\vec0,\]
+
+  blijft de snelheid constant.
+
+  \item \textbf{Newton III.}
+
+  Het geweer oefent een kracht uit op de kogel en de kogel oefent
+
+  tegelijkertijd een tegengestelde kracht uit op het geweer.
+
+\end{enumerate}
+
+\end{oplossing}
 
 \end{oefening}
 
@@ -1694,41 +1988,100 @@ Een parachutist valt met constante snelheid naar beneden.
 Op de parachutist werken onder andere:
 
 \begin{itemize}
-  \item een neerwaartse gravitatiekracht;
-  \item een opwaartse luchtweerstandskracht.
+
+ \item een neerwaartse gravitatiekracht;
+
+ \item een opwaartse luchtweerstandskracht.
+
 \end{itemize}
 
 \begin{question}
+
 Wat kan je besluiten over de resulterende kracht?
+
 \end{question}
 
 \begin{question}
+
 Is de versnelling nul? Verklaar.
+
 \end{question}
 
 \begin{question}
+
 Werken er geen krachten omdat de snelheid constant is?
+
 \end{question}
 
 \begin{question}
+
 Vormen de gravitatiekracht en de luchtweerstandskracht een
+
 actie-reactiepaar? Verklaar.
+
 \end{question}
+
+
+\begin{oplossing}
+
+\begin{enumerate}
+
+  \item De parachutist beweegt met constante snelheid, dus:
+
+  \[\vec a=\vec0.\]
+
+  Volgens Newton II:
+
+  \[\sum\vec F=m\vec a=\vec0.\]
+
+  Dus:
+
+  \[\boxed{\vec F_{\mathrm{res}}=\vec0}.\]
+
+  \item Ja. De versnelling is nul omdat de snelheidsvector constant is:
+
+  \[\boxed{\vec a=\vec0}.\]
+
+  \item Nee. Er werken wel degelijk krachten. De neerwaartse
+
+  gravitatiekracht en de opwaartse luchtweerstand zijn even groot en
+
+  tegengesteld gericht. Hun vectorsom is nul:
+
+  \[\boxed{ \vec F_{\mathrm g}+\vec F_{\mathrm{lucht}}=\vec0 }.\]
+
+  \item Nee. Beide genoemde krachten werken op dezelfde parachutist en
+
+  kunnen daarom geen actie-reactiepaar vormen.
+
+  De reactiekracht op de gravitatiekracht van de aarde op de parachutist
+
+  is de gravitatiekracht van de parachutist op de aarde. De
+
+  reactiekracht op de kracht van de lucht op de parachutist is de kracht
+
+  van de parachutist op de lucht.
+
+\end{enumerate}
+
+\end{oplossing}
 
 \end{oefening}
 
 
 \begin{opmerking}
 
-Een parachutist die met constante snelheid daalt noemen we hier niet
-``in vrije val''. In het ideale vrije-valmodel verwaarlozen we de
+Een parachutist die met constante snelheid daalt noemen we hier niet ``in vrije val''. In het ideale vrije-valmodel verwaarlozen we de
+
 luchtweerstand en werkt alleen de gravitatiekracht.
 
 \end{opmerking}
 
 
 % ============================================================
+
 % 18. ANALYSE-OEFENINGEN
+
 % ============================================================
 
 \begin{oefening}[Een botsing tussen een vrachtwagen en een auto]{\oefU\ESS}
@@ -1737,9 +2090,10 @@ Een zware vrachtwagen botst frontaal met een veel lichtere personenauto.
 
 Een leerling zegt:
 
-\begin{center}
-``De vrachtwagen oefent tijdens de botsing een grotere kracht uit op
+\begin{center} ``De vrachtwagen oefent tijdens de botsing een grotere kracht uit op
+
 de auto, want de vrachtwagen is veel zwaarder.''
+
 \end{center}
 
 Analyseer deze redenering.
@@ -1747,13 +2101,67 @@ Analyseer deze redenering.
 Bespreek afzonderlijk:
 
 \begin{enumerate}
-  \item de kracht van de vrachtwagen op de auto;
-  \item de kracht van de auto op de vrachtwagen;
-  \item de versnelling van de vrachtwagen;
-  \item de versnelling van de auto.
+
+ \item de kracht van de vrachtwagen op de auto;
+
+ \item de kracht van de auto op de vrachtwagen;
+
+ \item de versnelling van de vrachtwagen;
+
+ \item de versnelling van de auto.
+
 \end{enumerate}
 
 Gebruik Newton II en Newton III in je verklaring.
+
+
+\begin{oplossing}
+
+De uitspraak van de leerling is fout.
+
+Volgens Newton III geldt tijdens de botsing:
+
+\[\boxed{ \vec F_{\mathrm{vrachtwagen}\rightarrow\mathrm{auto}} = -\vec F_{\mathrm{auto}\rightarrow\mathrm{vrachtwagen}} }.\]
+
+\begin{enumerate}
+
+  \item De vrachtwagen oefent een kracht uit op de auto.
+
+  \item De auto oefent tegelijkertijd een even grote, maar tegengesteld
+
+  gerichte kracht uit op de vrachtwagen. De vrachtwagen oefent dus
+
+  \emph{geen grotere kracht} uit omdat hij zwaarder is.
+
+  \item Voor de vrachtwagen geldt:
+
+  \[a_{\mathrm v}=\frac{F}{m_{\mathrm v}}.\]
+
+  \item Voor de auto geldt:
+
+  \[a_{\mathrm a}=\frac{F}{m_{\mathrm a}}.\]
+
+  Omdat
+
+  \[m_{\mathrm v}>m_{\mathrm a},\]
+
+  volgt bij dezelfde krachtgrootte:
+
+  \[|a_{\mathrm v}|<|a_{\mathrm a}|.\]
+
+\end{enumerate}
+
+De lichtere auto ondervindt dus een grotere versnelling in grootte,
+
+niet een grotere interactiekracht.
+
+Newton III bepaalt de relatie tussen de twee krachten; Newton II
+
+verklaart waarom dezelfde krachtgroottes verschillende versnellingen
+
+kunnen veroorzaken.
+
+\end{oplossing}
 
 \end{oefening}
 
@@ -1764,14 +2172,60 @@ Twee leerlingen trekken aan de uiteinden van hetzelfde touw.
 
 Leerling A beweert:
 
-\begin{center}
-``Ik trek harder aan het touw dan jij aan mij trekt, want ik win.''
+\begin{center} ``Ik trek harder aan het touw dan jij aan mij trekt, want ik win.''
+
 \end{center}
 
 Onderzoek zorgvuldig welke krachten een actie-reactiepaar vormen.
 
 Leg vervolgens uit waarom het feit dat één leerling beweegt niet
+
 betekent dat Newton III geschonden wordt.
+
+
+\begin{oplossing}
+
+De uitspraak is niet correct als daarmee een actie-reactiepaar wordt
+
+bedoeld.
+
+Wanneer leerling A aan het touw trekt, oefent A een kracht uit op het
+
+touw:
+
+\[\vec F_{A\rightarrow\mathrm{touw}}.\]
+
+Het bijbehorende actie-reactiepaar is:
+
+\[\vec F_{\mathrm{touw}\rightarrow A}.\]
+
+Volgens Newton III:
+
+\[\vec F_{A\rightarrow\mathrm{touw}} = -\vec F_{\mathrm{touw}\rightarrow A}.\]
+
+Aan de andere kant vormen
+
+\[\vec F_{B\rightarrow\mathrm{touw}} \quad\text{en}\quad \vec F_{\mathrm{touw}\rightarrow B}\]
+
+een ander actie-reactiepaar.
+
+Dat één leerling uiteindelijk beweegt, betekent niet dat Newton III
+
+geschonden wordt. Voor de beweging van een leerling moeten we alle
+
+krachten optellen die \emph{op die leerling} werken. Naast de kracht
+
+van het touw spelen bijvoorbeeld de krachten tussen de voeten en de
+
+grond een rol.
+
+Newton III vergelijkt krachten die op \emph{verschillende} systemen
+
+werken. Newton II bepaalt uit de resulterende kracht op één systeem
+
+hoe dat systeem versnelt.
+
+\end{oplossing}
 
 \end{oefening}
 
@@ -1780,62 +2234,118 @@ betekent dat Newton III geschonden wordt.
 
 Op een ruimtesonde werken op een bepaald ogenblik drie krachten.
 
-\[
-\vec F_1:
-\quad
-6{,}0\,\mathrm N
-\text{ naar rechts},
-\]
+\[\vec F_1: \quad 6{,}0\,\mathrm N \text{ naar rechts},\]
 
-\[
-\vec F_2:
-\quad
-2{,}0\,\mathrm N
-\text{ naar links},
-\]
+\[\vec F_2: \quad 2{,}0\,\mathrm N \text{ naar links},\]
 
-\[
-\vec F_3:
-\quad
-3{,}0\,\mathrm N
-\text{ omhoog}.
-\]
+\[\vec F_3: \quad 3{,}0\,\mathrm N \text{ omhoog}.\]
 
 De massa van de sonde is:
 
-\[
-m=2{,}0\,\mathrm{kg}.
-\]
+\[m=2{,}0\,\mathrm{kg}.\]
 
 \begin{question}
+
 Maak een vectorschets.
+
 \end{question}
 
 \begin{question}
+
 Bepaal de horizontale en verticale component van de resulterende kracht.
+
 \end{question}
 
 \begin{question}
+
 Bereken de grootte van de resulterende kracht.
+
 \end{question}
 
 \begin{question}
+
 Bepaal de richting van de resulterende kracht.
+
 \end{question}
 
 \begin{question}
+
 Bereken de grootte van de versnelling.
+
 \end{question}
 
 \begin{question}
+
 Welke richting heeft de versnelling?
+
 \end{question}
+
+
+\begin{oplossing}
+
+Kies rechts als positieve $x$-richting en omhoog als positieve
+
+$y$-richting.
+
+\begin{enumerate}
+
+  \item De vectorschets bevat $6{,}0\,\mathrm N$ naar rechts,
+
+  $2{,}0\,\mathrm N$ naar links en $3{,}0\,\mathrm N$ omhoog.
+
+  De resultante wijst naar rechtsboven.
+
+  \item Horizontaal:
+
+  \[F_{\mathrm{res},x}=6{,}0-2{,}0=4{,}0\,\mathrm N.\]
+
+  Verticaal:
+
+  \[F_{\mathrm{res},y}=3{,}0\,\mathrm N.\]
+
+  Dus:
+
+  \[\boxed{ F_{\mathrm{res},x}=4{,}0\,\mathrm N, \qquad F_{\mathrm{res},y}=3{,}0\,\mathrm N }.\]
+
+  \item Met Pythagoras:
+
+  \[F_{\mathrm{res}} = \sqrt{4{,}0^2+3{,}0^2} = 5{,}0\,\mathrm N.\]
+
+  \[\boxed{F_{\mathrm{res}}=5{,}0\,\mathrm N}.\]
+
+  \item Voor de hoek $\theta$ boven de horizontale:
+
+  \[\tan\theta=\frac{3{,}0}{4{,}0},\]
+
+  dus
+
+  \[\theta\approx36{,}9^\circ.\]
+
+  \item Volgens Newton II:
+
+  \[a=\frac{F_{\mathrm{res}}}{m} =\frac{5{,}0}{2{,}0} =2{,}5\,\mathrm{m/s^2}.\]
+
+  \[\boxed{a=2{,}5\,\mathrm{m/s^2}}.\]
+
+  \item De versnelling heeft dezelfde richting en zin als de
+
+  resulterende kracht:
+
+  \[\boxed{36{,}9^\circ}\]
+
+  boven de horizontale naar rechts.
+
+\end{enumerate}
+
+\end{oplossing}
 
 \end{oefening}
 
 
 % ============================================================
+
 % 19. GEVORDERDE OEFENINGEN
+
 % ============================================================
 
 \begin{oefening}[Drie massa's op één lijn]{\oefG}
@@ -1846,44 +2356,94 @@ Massa $A$ bevindt zich links van $B$ en massa $C$ rechts van $B$.
 
 Door gravitatie oefent $A$ een kracht uit op $B$:
 
-\[
-\vec F_{A\rightarrow B}.
-\]
+\[\vec F_{A\rightarrow B}.\]
 
 Ook $C$ oefent een gravitatiekracht uit op $B$:
 
-\[
-\vec F_{C\rightarrow B}.
-\]
+\[\vec F_{C\rightarrow B}.\]
 
 Veronderstel dat:
 
-\[
-F_{A\rightarrow B}
-=
-F_{C\rightarrow B}.
-\]
+\[F_{A\rightarrow B} = F_{C\rightarrow B}.\]
 
 \begin{question}
+
 Bepaal de resulterende gravitatiekracht op $B$.
+
 \end{question}
 
 \begin{question}
+
 Wat kan je op basis van Newton II zeggen over de versnelling van $B$
+
 op dat ogenblik?
+
 \end{question}
 
 \begin{question}
+
 Betekent dit dat er geen gravitatiekrachten op $B$ werken?
+
 \end{question}
 
 \begin{question}
+
 Geef voor $\vec F_{A\rightarrow B}$ het bijhorende actie-reactiepaar.
+
 \end{question}
 
 \begin{question}
+
 Geef voor $\vec F_{C\rightarrow B}$ het bijhorende actie-reactiepaar.
+
 \end{question}
+
+
+\begin{oplossing}
+
+\begin{enumerate}
+
+  \item De kracht van A op B wijst naar links en de kracht van C op B
+
+  naar rechts. Omdat de krachtgroottes gelijk zijn:
+
+  \[\vec F_{A\rightarrow B} + \vec F_{C\rightarrow B} = \vec0.\]
+
+  Dus:
+
+  \[\boxed{\vec F_{\mathrm{res},B}=\vec0}.\]
+
+  \item Volgens Newton II:
+
+  \[\sum\vec F=m_B\vec a_B.\]
+
+  Omdat de resulterende kracht nul is:
+
+  \[\boxed{\vec a_B=\vec0}.\]
+
+  \item Nee. Er werken wel twee gravitatiekrachten op B. Ze zijn alleen
+
+  even groot en tegengesteld gericht, zodat hun vectorsom nul is.
+
+  \item Bij
+
+  \[\vec F_{A\rightarrow B}\]
+
+  hoort volgens Newton III:
+
+  \[\boxed{ \vec F_{B\rightarrow A} = -\vec F_{A\rightarrow B} }.\]
+
+  \item Bij
+
+  \[\vec F_{C\rightarrow B}\]
+
+  hoort:
+
+  \[\boxed{ \vec F_{B\rightarrow C} = -\vec F_{C\rightarrow B} }.\]
+
+\end{enumerate}
+
+\end{oplossing}
 
 \end{oefening}
 
@@ -1893,6 +2453,7 @@ Geef voor $\vec F_{C\rightarrow B}$ het bijhorende actie-reactiepaar.
 Beschouw eerst twee massa's die elkaar door gravitatie aantrekken.
 
 Beschouw daarna twee positieve elektrische ladingen die elkaar
+
 afstoten.
 
 Maak voor beide situaties een schets met de twee krachtvectoren.
@@ -1900,319 +2461,69 @@ Maak voor beide situaties een schets met de twee krachtvectoren.
 Onderzoek vervolgens:
 
 \begin{enumerate}
-  \item wat in beide situaties hetzelfde is volgens Newton III;
-  \item wat verschillend is in de zin van de krachtvectoren;
-  \item waarom in beide gevallen de twee krachten even groot moeten zijn;
-  \item waarom de versnellingen van beide systemen toch verschillend
-        kunnen zijn.
+
+ \item wat in beide situaties hetzelfde is volgens Newton III;
+
+ \item wat verschillend is in de zin van de krachtvectoren;
+
+ \item waarom in beide gevallen de twee krachten even groot moeten zijn;
+
+ \item waarom de versnellingen van beide systemen toch verschillend
+
+    kunnen zijn.
+
 \end{enumerate}
+
+
+\begin{oplossing}
+
+\begin{enumerate}
+
+  \item In beide situaties geldt Newton III.
+
+  Voor gravitatie:
+
+  \[\vec F_{A\rightarrow B} = -\vec F_{B\rightarrow A}.\]
+
+  Voor de elektrische interactie geldt dezelfde structuur:
+
+  \[\vec F_{1\rightarrow2} = -\vec F_{2\rightarrow1}.\]
+
+  De twee krachten zijn dus telkens even groot, liggen langs dezelfde
+
+  werklijn en hebben tegengestelde zin.
+
+  \item Bij gravitatie tussen twee massa's is de wisselwerking
+
+  aantrekkend. De krachtvectoren wijzen dus naar elkaar toe.
+
+  Twee positieve elektrische ladingen stoten elkaar af. De
+
+  krachtvectoren wijzen daarom van elkaar weg.
+
+  \item In beide gevallen gaat het om één interactie tussen twee
+
+  systemen. Volgens Newton III moeten de twee krachten van die
+
+  interactie even groot en tegengesteld gericht zijn.
+
+  \item Voor elk systeem afzonderlijk geldt:
+
+  \[a=\frac{F}{m}.\]
+
+  De krachtgroottes kunnen dus gelijk zijn terwijl de versnellingen
+
+  verschillend zijn wanneer de massa's verschillen.
+
+  Voor twee systemen A en B:
+
+  \[\frac{a_A}{a_B} = \frac{m_B}{m_A}.\]
+
+\end{enumerate}
+
+\end{oplossing}
 
 \end{oefening}
 
-
-% ============================================================
-% 20. MISCONCEPTIES
-% ============================================================
-
-\FVDsection{Veelvoorkomende denkfouten}
-
-\begin{itemize}
-
-  \item \textbf{``Er is een kracht nodig om een beweging in stand te
-  houden.''}
-
-  Niet noodzakelijk. Een resulterende kracht is nodig om de
-  snelheidsvector te veranderen.
-
-  \item \textbf{``Als de resulterende kracht nul is, staat het
-  voorwerp stil.''}
-
-  Niet noodzakelijk. Het voorwerp kan ook met constante snelheid
-  rechtlijnig bewegen.
-
-  \item \textbf{``De versnelling wijst altijd in de richting van de
-  snelheid.''}
-
-  Nee. De versnelling wijst in de richting van de resulterende kracht.
-
-  \item \textbf{``Het zwaarste voorwerp oefent de grootste kracht uit.''}
-
-  Niet bij een actie-reactiepaar. Volgens Newton III zijn beide
-  interactiekrachten even groot.
-
-  \item \textbf{``Actie en reactie heffen elkaar op.''}
-
-  Niet wanneer we één afzonderlijk systeem bestuderen. Ze werken op
-  verschillende systemen.
-
-  \item \textbf{``Reactie komt na actie.''}
-
-  Nee. Beide krachten bestaan tegelijkertijd.
-
-  \item \textbf{``Als een voorwerp niet versnelt, werken er geen
-  krachten.''}
-
-  Niet noodzakelijk. Er kunnen meerdere krachten werken waarvan de
-  vectorsom nul is.
-
-\end{itemize}
-
-
-% ============================================================
-% 21. SAMENVATTING
-% ============================================================
-
-\FVDsection{Samenvatting}
-
-Een kracht beschrijft een wisselwerking tussen systemen.
-
-Kracht is een vectoriële grootheid:
-
-\[
-\boxed{
-\vec F.
-}
-\]
-
-De SI-eenheid is:
-
-\[
-\boxed{
-[F]=\mathrm N.
-}
-\]
-
-Wanneer meerdere krachten op hetzelfde systeem werken, is hun
-resultante:
-
-\[
-\boxed{
-\vec F_{\mathrm{res}}
-=
-\sum_i\vec F_i.
-}
-\]
-
-
-\FVDsubsection*{Eerste wet van Newton}
-
-Als de resulterende kracht nul is:
-
-\[
-\boxed{
-\sum\vec F=\vec 0,
-}
-\]
-
-dan blijft de snelheidsvector constant:
-
-\[
-\boxed{
-\vec v=\text{constant}.
-}
-\]
-
-
-\FVDsubsection*{Tweede wet van Newton}
-
-De resulterende kracht veroorzaakt een versnelling:
-
-\[
-\boxed{
-\sum\vec F=m\vec a.
-}
-\]
-
-Dus:
-
-\[
-\boxed{
-\vec a
-=
-\frac{\sum\vec F}{m}.
-}
-\]
-
-De versnelling heeft dezelfde richting en zin als de resulterende
-kracht.
-
-
-\FVDsubsection*{Derde wet van Newton}
-
-Wanneer systeem $A$ een kracht uitoefent op systeem $B$, oefent $B$
-een even grote, tegengesteld gerichte kracht uit op $A$:
-
-\[
-\boxed{
-\vec F_{A\rightarrow B}
-=
--\vec F_{B\rightarrow A}.
-}
-\]
-
-Actie en reactie:
-
-\begin{itemize}
-  \item zijn even groot;
-  \item zijn tegengesteld gericht;
-  \item treden tegelijkertijd op;
-  \item werken op verschillende systemen.
-\end{itemize}
-
-
-\FVDsubsection*{Superpositie}
-
-Meerdere krachten op hetzelfde systeem worden vectorieel opgeteld:
-
-\[
-\boxed{
-\vec F_{\mathrm{res}}
-=
-\vec F_1+\vec F_2+\cdots.
-}
-\]
-
-
-% ============================================================
-% 22. WAT MOET JE ZEKER BEHEERSEN?
-% ============================================================
-
-\FVDsection{Wat moet je zeker beheersen?}
-
-Voor de volgende hoofdstukken moet je zeker:
-
-\begin{itemize}
-
-  \item begrijpen dat een kracht een interactie tussen systemen
-        beschrijft;
-
-  \item een kracht als vector kunnen interpreteren;
-
-  \item eenvoudige resulterende krachten kunnen bepalen;
-
-  \item begrijpen dat
-        \[
-        \sum\vec F=\vec 0
-        \]
-        niet betekent dat een voorwerp noodzakelijk stilstaat;
-
-  \item de eerste wet van Newton correct kunnen uitleggen;
-
-  \item de tweede wet van Newton kunnen gebruiken:
-        \[
-        \sum\vec F=m\vec a;
-        \]
-
-  \item begrijpen dat de versnelling dezelfde richting heeft als de
-        resulterende kracht;
-
-  \item de derde wet van Newton correct kunnen formuleren;
-
-  \item actie-reactieparen kunnen herkennen;
-
-  \item begrijpen waarom actie en reactie elkaar niet opheffen;
-
-  \item onderscheid kunnen maken tussen krachtenevenwicht en een
-        actie-reactiepaar;
-
-  \item het superpositiebeginsel voor krachten kunnen gebruiken;
-
-  \item kunnen uitleggen waarom twee voorwerpen bij een interactie
-        even grote krachten maar verschillende versnellingen kunnen
-        ondervinden.
-
-\end{itemize}
-
-De oefeningen met de essentieel-markering zijn noodzakelijk voor deze
-basis.
-
-In het bijzonder moeten de essentiële verdiepende oefeningen rond
-Newton III beheerst worden. Alleen de drie wetten uit het hoofd kennen
-is onvoldoende: je moet ze correct kunnen herkennen en gebruiken in
-nieuwe fysische situaties.
-
-
-% ============================================================
-% 23. VOORUITBLIK
-% ============================================================
-
-\FVDsection{Vooruitblik: krachten zonder contact}
-
-Tot nu toe hebben we vooral gevraagd wat een kracht doet.
-
-Newton II vertelt ons:
-
-\[
-\boxed{
-\sum\vec F=m\vec a.
-}
-\]
-
-Newton III vertelt ons hoe krachten bij een interactie in paren
-voorkomen:
-
-\[
-\boxed{
-\vec F_{A\rightarrow B}
-=
--\vec F_{B\rightarrow A}.
-}
-\]
-
-Maar er blijft een nieuwe vraag:
-
-\begin{center}
-\textit{Hoe groot is zo'n interactiekracht?}
-\end{center}
-
-En nog fundamenteler:
-
-\begin{center}
-\textit{Hoe kunnen twee voorwerpen elkaar beïnvloeden zonder elkaar
-aan te raken?}
-\end{center}
-
-In het volgende thema onderzoeken we twee antwoorden op die vraag.
-
-Voor massa's:
-
-\[
-\boxed{\text{gravitatie}}
-\]
-
-en voor elektrische ladingen:
-
-\[
-\boxed{\text{elektrische interactie}.}
-\]
-
-We zullen ontdekken dat beide krachtwetten een verrassend
-gelijkaardige wiskundige structuur hebben:
-
-\[
-F_g
-=
-G\frac{m_1m_2}{r^2}
-\]
-
-en:
-
-\[
-F_e
-=
-k\frac{|q_1q_2|}{r^2}.
-\]
-
-Daarmee maken we de stap:
-
-\[
-\boxed{
-\text{Newton}
-\longrightarrow
-\text{krachten op afstand}
-\longrightarrow
-\text{velden}.
-}
-\]
 
 \end{document}

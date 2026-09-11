@@ -1,0 +1,897 @@
+\documentclass{ximera}
+
+\input{../../../preamble.tex}
+\input{../../../Opmaak.tex}
+\addPrintStyle{../../..}
+
+\title{De kettingregel}
+\author{Ingmar Herreman}
+
+\begin{abstract}
+Niet elke functie bestaat uit een eenvoudige som, een product of een quotiënt.
+Vaak wordt een functie in een andere functie ingevuld.
+
+Zo is
+\[(3x-1)^5\]
+geen gewone macht van $x$: eerst wordt $3x-1$ berekend en daarna wordt
+het resultaat tot de vijfde macht verheven.
+
+Zulke functies noemen we samengestelde functies.
+
+In dit hoofdstuk leer je hun structuur herkennen en afleiden met de
+kettingregel. Daarbij staat niet alleen het uitvoeren van de regel centraal,
+maar vooral het herkennen van de verschillende functielagen en het kiezen
+van een efficiënte afleidingsstrategie.
+
+De kettingregel wordt later opnieuw gebruikt bij rationale, irrationale,
+exponentiële, logaritmische, goniometrische en cyclometrische functies.
+\end{abstract}
+
+\begin{document}
+
+% FVD_CHAPTER_DATA_START
+% Automatisch gegenereerd uit index.tex.
+% Niet handmatig aanpassen.
+\fvdchapterdata{3}{Afleiden van samengestelde functie}{2}
+% FVD_CHAPTER_DATA_END
+
+
+
+
+
+
+\maketitle
+
+
+% ============================================================
+% VOORKENNIS EN LEERDOELEN
+% ============================================================
+
+\begin{voorkennis}
+  \item Je kunt veeltermfuncties afleiden.
+  \item Je kunt de machtsregel gebruiken.
+  \item Je kunt machten met rationale exponenten gebruiken.
+  \item Je kunt de productregel en de quotiëntregel gebruiken.
+  \item Je kunt algebraïsche uitdrukkingen vereenvoudigen.
+  \item Je kunt een samengestelde functie herkennen als een functie
+        die in een andere functie wordt ingevuld.
+\end{voorkennis}
+
+\begin{leerdoelen}
+  \item Je kunt in een samengestelde functie de binnenste en buitenste
+        functie herkennen.
+  \item Je kunt een samengestelde functie schrijven als $f(g(x))$.
+  \item Je kunt de kettingregel formuleren en gebruiken.
+  \item Je kunt uitleggen waarom de afgeleide van $(f(g(x)))$
+        niet alleen $f'(g(x))$ is.
+  \item Je kunt samengestelde functies met meerdere lagen afleiden.
+  \item Je kunt de kettingregel combineren met de productregel en
+        de quotiëntregel.
+  \item Je kunt bepalen welke afleidingsregel eerst moet worden toegepast.
+  \item Je kunt een gevonden afgeleide algebraïsch vereenvoudigen.
+  \item Je kunt domeinvoorwaarden blijven respecteren bij rationale
+        en irrationale functies.
+  \item Je kunt de structuur van een afgeleide analyseren en een
+        geschikte afleidingsstrategie motiveren.
+\end{leerdoelen}
+
+
+% ============================================================
+% 1. WAAROM EEN NIEUWE REGEL?
+% ============================================================
+
+\FVDsection{Wanneer functies in elkaar zitten}
+
+Beschouw de functie
+\[h(x)=(3x-1)^5.\]
+
+De machtsregel
+\[(x^n)'=nx^{n-1}\]
+kunnen we hier niet rechtstreeks toepassen alsof er enkel $x$ tussen
+de haakjes staat.
+
+De functie bestaat namelijk uit twee opeenvolgende bewerkingen:
+
+\begin{enumerate}
+  \item eerst berekenen we
+        \[u=3x-1;\]
+  \item vervolgens berekenen we
+        \[u^5.\]
+\end{enumerate}
+
+We kunnen dus schrijven:
+\[g(x)=3x-1\]
+en
+\[f(u)=u^5.\]
+
+Daarmee wordt
+\[h(x)=f(g(x)).\]
+
+De functie $g$ noemen we de \textbf{binnenste functie} en $f$ de
+\textbf{buitenste functie}.
+
+
+\begin{definitie}[Samengestelde functie]
+Een functie van de vorm
+\[h(x)=f(g(x))\]
+noemen we een \textbf{samengestelde functie}.
+
+We schrijven ook
+\[h=f\circ g.\]
+
+De functie $g$ wordt eerst toegepast en de functie $f$ daarna.
+\end{definitie}
+
+
+\begin{voorbeeld}[Binnen en buiten herkennen]
+Beschouw
+\[h(x)=\sqrt{x^2+4}.\]
+
+We kunnen schrijven:
+\[g(x)=x^2+4\]
+en
+\[f(u)=\sqrt{u}.\]
+
+Dus:
+\[h(x)=f(g(x)).\]
+
+De binnenste functie is $x^2+4$ en de buitenste functie is de
+wortelfunctie.
+\end{voorbeeld}
+
+
+% ============================================================
+% 2. DE KETTINGREGEL
+% ============================================================
+
+\FVDsection{De kettingregel}
+
+Wanneer
+\[h(x)=f(g(x)),\]
+dan verandert $h$ niet alleen omdat de buitenste functie $f$ verandert.
+
+Ook het argument $g(x)$ verandert wanneer $x$ verandert.
+
+Daarom moeten beide veranderingen in rekening worden gebracht.
+
+
+\begin{definitie}[Kettingregel]
+Als $g$ afleidbaar is in $x$ en $f$ afleidbaar is in $g(x)$, dan geldt:
+\[\boxed{(f(g(x)))'=f'(g(x))\cdot g'(x).}\]
+\end{definitie}
+
+
+In woorden:
+
+\begin{center}
+\textbf{leid de buitenste functie af, laat de binnenkant staan,
+en vermenigvuldig met de afgeleide van de binnenste functie.}
+\end{center}
+
+
+Een nuttig schema is:
+\[\boxed{\text{buitenste afgeleide}\times\text{binnenste afgeleide}.}\]
+
+
+% ============================================================
+% 3. EERSTE VOORBEELD
+% ============================================================
+
+\FVDsection{Van buiten naar binnen}
+
+Beschouw opnieuw
+\[h(x)=(3x-1)^5.\]
+
+We herkennen:
+
+\begin{itemize}
+  \item buitenste functie:
+        \[f(u)=u^5;\]
+  \item binnenste functie:
+        \[g(x)=3x-1.\]
+\end{itemize}
+
+De afgeleiden zijn:
+\[f'(u)=5u^4\]
+en
+\[g'(x)=3.\]
+
+Met de kettingregel:
+\[
+h'(x)
+=
+5(3x-1)^4\cdot3.
+\]
+
+Dus:
+\[\boxed{h'(x)=15(3x-1)^4.}\]
+
+
+\begin{opmerking}
+Een veelgemaakte fout is:
+\[(3x-1)^5\longrightarrow5(3x-1)^4.\]
+
+Daar ontbreekt de factor $3$.
+
+De binnenste functie $3x-1$ verandert immers zelf ook met $x$:
+\[(3x-1)'=3.\]
+
+Daarom is:
+\[\boxed{\bigl((3x-1)^5\bigr)'=5(3x-1)^4\cdot3.}\]
+\end{opmerking}
+
+
+% ============================================================
+% 4. EEN PRAKTISCH STAPPENPLAN
+% ============================================================
+
+\FVDsection{Een praktisch stappenplan}
+
+Bij een samengestelde functie kun je systematisch als volgt werken.
+
+\begin{enumerate}
+  \item Zoek de \textbf{buitenste bewerking}.
+  \item Bepaal welke uitdrukking volledig binnen die bewerking zit.
+  \item Leid de buitenste functie af terwijl je de binnenste uitdrukking
+        voorlopig laat staan.
+  \item Vermenigvuldig met de afgeleide van de binnenste functie.
+  \item Herhaal de kettingregel wanneer de binnenste functie zelf opnieuw
+        samengesteld is.
+  \item Vereenvoudig het resultaat indien dat zinvol is.
+\end{enumerate}
+
+
+\begin{voorbeeld}[Wortelfunctie]
+Bepaal de afgeleide van
+\[f(x)=\sqrt{x^2+1}.\]
+
+We schrijven:
+\[f(x)=(x^2+1)^{1/2}.\]
+
+De buitenste functie is een macht met exponent $\frac12$.
+De binnenste functie is
+\[u=x^2+1.\]
+
+Dus:
+\[
+f'(x)
+=
+\frac12(x^2+1)^{-1/2}\cdot2x.
+\]
+
+Daaruit volgt:
+\[\boxed{f'(x)=\frac{x}{\sqrt{x^2+1}}.}\]
+\end{voorbeeld}
+
+
+\begin{voorbeeld}[Negatieve exponent]
+Bepaal de afgeleide van
+\[f(x)=\frac{1}{(2x+3)^4}.\]
+
+We herschrijven:
+\[f(x)=(2x+3)^{-4}.\]
+
+Met de kettingregel:
+\[
+f'(x)
+=
+-4(2x+3)^{-5}\cdot2.
+\]
+
+Dus:
+\[\boxed{f'(x)=-\frac{8}{(2x+3)^5}.}\]
+\end{voorbeeld}
+
+
+% ============================================================
+% 5. NOTATIE MET EEN TUSSENVARIABELE
+% ============================================================
+
+\FVDsection{Werken met een tussenvariabele}
+
+Bij complexere functies kan een tussenvariabele de structuur duidelijker
+maken.
+
+Neem:
+\[y=(x^2-3x+1)^6.\]
+
+Stel:
+\[u=x^2-3x+1.\]
+
+Dan:
+\[y=u^6.\]
+
+We berekenen:
+\[\frac{dy}{du}=6u^5\]
+en
+\[\frac{du}{dx}=2x-3.\]
+
+Daarom:
+\[
+\frac{dy}{dx}
+=
+\frac{dy}{du}\cdot\frac{du}{dx}.
+\]
+
+Dus:
+\[
+\frac{dy}{dx}
+=
+6u^5(2x-3).
+\]
+
+We vervangen $u$ opnieuw:
+\[\boxed{y'=6(x^2-3x+1)^5(2x-3).}\]
+
+
+\begin{opmerking}
+De notatie
+\[\frac{dy}{dx}=\frac{dy}{du}\cdot\frac{du}{dx}\]
+lijkt op het wegdelen van $du$.
+
+Dat is een nuttige geheugensteun, maar de symbolen
+$\frac{dy}{dx}$ en $\frac{dy}{du}$ zijn afgeleiden en geen gewone
+breuken.
+
+De eigenlijke wiskundige regel blijft:
+\[\boxed{(f\circ g)'=(f'\circ g)\cdot g'.}\]
+\end{opmerking}
+
+
+% ============================================================
+% 6. MEERDERE LAGEN
+% ============================================================
+
+\FVDsection{Samengestelde functies met meerdere lagen}
+
+Een functie kan meer dan twee functielagen bevatten.
+
+Beschouw:
+\[f(x)=\sqrt{(2x-1)^3+4}.\]
+
+We kunnen drie lagen onderscheiden:
+
+\begin{enumerate}
+  \item $2x-1$;
+  \item $(2x-1)^3+4$;
+  \item de vierkantswortel.
+\end{enumerate}
+
+We werken van buiten naar binnen.
+
+Eerst:
+\[
+f'(x)
+=
+\frac{1}{2\sqrt{(2x-1)^3+4}}
+\cdot
+\left((2x-1)^3+4\right)'.
+\]
+
+Voor de resterende afgeleide gebruiken we opnieuw de kettingregel:
+\[
+\left((2x-1)^3+4\right)'
+=
+3(2x-1)^2\cdot2.
+\]
+
+Dus:
+\[
+f'(x)
+=
+\frac{1}{2\sqrt{(2x-1)^3+4}}
+\cdot
+6(2x-1)^2.
+\]
+
+Na vereenvoudigen:
+\[\boxed{f'(x)=\frac{3(2x-1)^2}{\sqrt{(2x-1)^3+4}}.}\]
+
+
+\begin{opmerking}
+Bij meerdere lagen gebruiken we de kettingregel herhaaldelijk.
+
+Je kunt dit onthouden als:
+\[\boxed{\text{buiten}\longrightarrow\text{binnen}\longrightarrow
+\text{nog verder naar binnen}.}\]
+
+Van elke laag verschijnt uiteindelijk een afgeleide factor.
+\end{opmerking}
+
+
+% ============================================================
+% 7. KETTINGREGEL OF PRODUCTREGEL?
+% ============================================================
+
+\FVDsection{Welke structuur zie je?}
+
+Een belangrijke vaardigheid is herkennen welke regel bij welke structuur
+hoort.
+
+Vergelijk:
+\[f(x)=(x^2+1)(x-3)\]
+met
+\[g(x)=(x^2+1)^3.\]
+
+Bij $f$ worden twee functies met elkaar \textbf{vermenigvuldigd}.
+Daarom gebruiken we de productregel.
+
+Bij $g$ wordt de functie $x^2+1$ \textbf{ingevuld} in de machtsfunctie
+$u^3$.
+Daarom gebruiken we de kettingregel.
+
+
+\begin{opmerking}
+Haakjes betekenen niet automatisch dat je de kettingregel nodig hebt.
+
+Vraag altijd:
+
+\begin{center}
+\textbf{Welke bewerking verbindt de functies?}
+\end{center}
+
+\begin{itemize}
+  \item som of verschil $\longrightarrow$ som- of verschilregel;
+  \item product $\longrightarrow$ productregel;
+  \item quotiënt $\longrightarrow$ quotiëntregel;
+  \item functie in een functie $\longrightarrow$ kettingregel.
+\end{itemize}
+\end{opmerking}
+
+
+% ============================================================
+% 8. REGELS COMBINEREN
+% ============================================================
+
+\FVDsection{De kettingregel combineren met andere regels}
+
+In complexere functies moeten verschillende afleidingsregels gecombineerd
+worden.
+
+Beschouw:
+\[f(x)=x^2(x+1)^4.\]
+
+De buitenste structuur is een product:
+\[x^2\cdot(x+1)^4.\]
+
+We beginnen dus met de productregel:
+\[
+f'(x)
+=
+2x(x+1)^4
++
+x^2\left((x+1)^4\right)'.
+\]
+
+Voor de tweede factor gebruiken we de kettingregel:
+\[
+\left((x+1)^4\right)'
+=
+4(x+1)^3.
+\]
+
+Dus:
+\[
+f'(x)
+=
+2x(x+1)^4
++
+4x^2(x+1)^3.
+\]
+
+We kunnen ontbinden:
+\[
+f'(x)
+=
+2x(x+1)^3\bigl((x+1)+2x\bigr).
+\]
+
+Daarom:
+\[\boxed{f'(x)=2x(x+1)^3(3x+1).}\]
+
+
+\begin{voorbeeld}[Quotiëntregel en kettingregel]
+Bepaal de afgeleide van
+\[f(x)=\frac{(x^2+1)^3}{x-1}.\]
+
+De buitenste structuur is een quotiënt.
+
+Neem:
+\[u(x)=(x^2+1)^3\]
+en
+\[v(x)=x-1.\]
+
+Voor $u'$ gebruiken we de kettingregel:
+\[u'(x)=3(x^2+1)^2\cdot2x=6x(x^2+1)^2.\]
+
+Verder:
+\[v'(x)=1.\]
+
+Met de quotiëntregel:
+\[
+f'(x)
+=
+\frac{6x(x^2+1)^2(x-1)-(x^2+1)^3}{(x-1)^2}.
+\]
+
+We kunnen $(x^2+1)^2$ ontbinden:
+\[
+f'(x)
+=
+\frac{(x^2+1)^2\bigl(6x(x-1)-(x^2+1)\bigr)}
+     {(x-1)^2}.
+\]
+
+Dus:
+\[\boxed{f'(x)=
+\frac{(x^2+1)^2(5x^2-6x-1)}
+     {(x-1)^2}.}\]
+\end{voorbeeld}
+
+
+% ============================================================
+% 9. DOMEIN BLIJFT BELANGRIJK
+% ============================================================
+
+\FVDsection{Afleiden verandert het oorspronkelijke domein niet}
+
+Beschouw:
+\[f(x)=\sqrt{5-2x}.\]
+
+Voor de oorspronkelijke functie moet gelden:
+\[5-2x\geq0.\]
+
+Dus:
+\[\operatorname{dom}f=\left]-\infty,\frac52\right].\]
+
+Met de kettingregel:
+\[
+f'(x)
+=
+\frac{1}{2\sqrt{5-2x}}\cdot(-2).
+\]
+
+Dus:
+\[\boxed{f'(x)=-\frac{1}{\sqrt{5-2x}}.}\]
+
+Voor de afgeleide moet bovendien de noemer verschillend van nul zijn.
+Daarom:
+\[\operatorname{dom}f'=\left]-\infty,\frac52\right[.\]
+
+
+\begin{opmerking}
+Bij irrationale en rationale functies moet je steeds onderscheid maken
+tussen:
+
+\begin{itemize}
+  \item het domein van de oorspronkelijke functie;
+  \item het domein waarop de afgeleide bestaat.
+\end{itemize}
+
+Een correcte formule voor $f'$ is niet voldoende wanneer ze gebruikt
+wordt buiten haar domein.
+\end{opmerking}
+
+
+
+
+
+% ============================================================
+% 11. STRUCTUURBOOM
+% ============================================================
+
+\FVDsection{Een functie ontleden voor je afleidt}
+
+Bij ingewikkeldere functies helpt het om eerst een structuurboom te maken.
+
+Beschouw:
+\[f(x)=\frac{\sqrt{x^2+1}}{(2x-3)^4}.\]
+
+De hoofdstructuur is:
+\[\boxed{\text{quotiënt}.}\]
+
+De teller bevat:
+\[\boxed{\text{wortel}\circ(x^2+1)}.\]
+
+De noemer bevat:
+\[\boxed{\text{vierde macht}\circ(2x-3)}.\]
+
+Daaruit volgt de strategie:
+
+\begin{enumerate}
+  \item quotiëntregel;
+  \item kettingregel voor de teller;
+  \item kettingregel voor de noemer;
+  \item algebraïsch vereenvoudigen.
+\end{enumerate}
+
+
+\begin{opmerking}
+Bij complexe afgeleiden is de belangrijkste stap vaak niet het rekenen,
+maar het herkennen van de structuur.
+
+Een goede gewoonte is daarom:
+
+\begin{center}
+\textbf{eerst ontleden, dan afleiden.}
+\end{center}
+\end{opmerking}
+
+
+% ============================================================
+% 12. WETENSCHAPPELIJKE INTERPRETATIE
+% ============================================================
+
+\FVDsection{Een ketting van afhankelijkheden}
+
+De kettingregel is niet alleen een rekentechniek.
+
+In wetenschappelijke modellen hangt een grootheid vaak niet rechtstreeks
+af van een andere grootheid, maar via een tussenliggende grootheid.
+
+Stel bijvoorbeeld dat een grootheid $E$ afhangt van $r$:
+\[E=f(r),\]
+terwijl $r$ zelf verandert met de tijd:
+\[r=g(t).\]
+
+Dan is:
+\[E(t)=f(g(t)).\]
+
+De verandering van $E$ in de tijd wordt dan:
+\[\boxed{\frac{dE}{dt}=\frac{dE}{dr}\cdot\frac{dr}{dt}.}\]
+
+De kettingregel beschrijft dus hoe veranderingen zich door een
+\textbf{keten van afhankelijkheden} voortplanten.
+
+
+\begin{voorbeeld}[Oppervlakte van een groeiende cirkel]
+De oppervlakte van een cirkel is
+\[A=\pi r^2.\]
+
+Stel dat de straal verandert volgens
+\[r(t)=2t+1.\]
+
+Dan:
+\[A(t)=\pi(2t+1)^2.\]
+
+Met de kettingregel:
+\[
+A'(t)
+=
+2\pi(2t+1)\cdot2.
+\]
+
+Dus:
+\[\boxed{A'(t)=4\pi(2t+1).}\]
+
+De afgeleide geeft aan hoe snel de oppervlakte verandert wanneer de
+straal zelf met de tijd verandert.
+\end{voorbeeld}
+
+
+
+
+\begin{oefening}[Binnenste en buitenste functie]{\oefB\ESS}
+
+Bepaal telkens de binnenste en buitenste functie.
+
+\begin{enumerate}
+  \item \[f(x)=(2x+3)^5.\]
+  \item \[g(x)=\sqrt{x^2-4x+7}.\]
+  \item \[h(x)=\frac{1}{(3x-1)^2}.\]
+  \item \[p(x)=\left(x^3+2x\right)^4.\]
+\end{enumerate}
+
+\begin{oplossing}
+\begin{enumerate}
+  \item Binnen:
+        \[u=2x+3.\]
+        Buiten:
+        \[f(u)=u^5.\]
+
+  \item Binnen:
+        \[u=x^2-4x+7.\]
+        Buiten:
+        \[g(u)=\sqrt{u}.\]
+
+  \item Binnen:
+        \[u=3x-1.\]
+        Buiten:
+        \[h(u)=u^{-2}.\]
+
+  \item Binnen:
+        \[u=x^3+2x.\]
+        Buiten:
+        \[p(u)=u^4.\]
+\end{enumerate}
+\end{oplossing}
+\end{oefening}
+
+
+\begin{oefening}[Kettingregel toepassen]{\oefB\ESS}
+
+Bepaal de afgeleide.
+
+\begin{enumerate}
+  \item \[f(x)=(4x-1)^6.\]
+  \item \[g(x)=(x^2+3)^4.\]
+  \item \[h(x)=\sqrt{3x+5}.\]
+  \item \[p(x)=\frac{1}{(x^2+1)^3}.\]
+\end{enumerate}
+
+\begin{oplossing}
+\begin{enumerate}
+  \item
+  \[
+  f'(x)=6(4x-1)^5\cdot4.
+  \]
+  Dus:
+  \[\boxed{f'(x)=24(4x-1)^5.}\]
+
+  \item
+  \[
+  g'(x)=4(x^2+3)^3\cdot2x.
+  \]
+  Dus:
+  \[\boxed{g'(x)=8x(x^2+3)^3.}\]
+
+  \item
+  \[
+  h'(x)=\frac{1}{2\sqrt{3x+5}}\cdot3.
+  \]
+  Dus:
+  \[\boxed{h'(x)=\frac{3}{2\sqrt{3x+5}}.}\]
+
+  \item We schrijven
+  \[p(x)=(x^2+1)^{-3}.\]
+
+  Dan:
+  \[
+  p'(x)
+  =
+  -3(x^2+1)^{-4}\cdot2x.
+  \]
+
+  Dus:
+  \[\boxed{p'(x)=-\frac{6x}{(x^2+1)^4}.}\]
+\end{enumerate}
+\end{oplossing}
+\end{oefening}
+
+
+\begin{oefening}[Welke regel eerst?]{\oefU\ESS}
+
+Bepaal telkens eerst de hoofdstructuur van de functie.
+Geef aan welke afleidingsregel je eerst gebruikt en bereken daarna
+de afgeleide.
+
+\begin{enumerate}
+  \item \[f(x)=x^2(x+1)^5.\]
+  \item \[g(x)=\frac{(2x-1)^3}{x+2}.\]
+  \item \[h(x)=\sqrt{x^2+4}.\]
+  \item \[p(x)=\frac{1}{(x^2-1)^2}.\]
+\end{enumerate}
+
+\begin{oplossing}
+\begin{enumerate}
+  \item Hoofdstructuur: product.
+
+  \[
+  f'(x)
+  =
+  2x(x+1)^5
+  +
+  x^2\cdot5(x+1)^4.
+  \]
+
+  Dus:
+  \[
+  f'(x)
+  =
+  x(x+1)^4\bigl(2(x+1)+5x\bigr).
+  \]
+
+  \[\boxed{f'(x)=x(x+1)^4(7x+2).}\]
+
+  \item Hoofdstructuur: quotiënt.
+
+  De teller vereist de kettingregel:
+  \[
+  \bigl((2x-1)^3\bigr)'=6(2x-1)^2.
+  \]
+
+  Dus:
+  \[
+  g'(x)
+  =
+  \frac{6(2x-1)^2(x+2)-(2x-1)^3}{(x+2)^2}.
+  \]
+
+  Ontbinden geeft:
+  \[
+  g'(x)
+  =
+  \frac{(2x-1)^2\left(6(x+2)-(2x-1)\right)}
+       {(x+2)^2}.
+  \]
+
+  Daarom:
+  \[\boxed{g'(x)=\frac{(2x-1)^2(4x+13)}{(x+2)^2}.}\]
+
+  \item Hoofdstructuur: samenstelling.
+
+  \[
+  h'(x)
+  =
+  \frac{1}{2\sqrt{x^2+4}}\cdot2x.
+  \]
+
+  Dus:
+  \[\boxed{h'(x)=\frac{x}{\sqrt{x^2+4}}.}\]
+
+  \item Hoofdstructuur: samenstelling na herschrijven.
+
+  \[
+  p(x)=(x^2-1)^{-2}.
+  \]
+
+  Dus:
+  \[
+  p'(x)
+  =
+  -2(x^2-1)^{-3}\cdot2x.
+  \]
+
+  Daarom:
+  \[\boxed{p'(x)=-\frac{4x}{(x^2-1)^3}.}\]
+\end{enumerate}
+\end{oplossing}
+\end{oefening}
+
+
+\begin{oefening}[Een fout analyseren]{\oefU\ESS}
+
+Een leerling bepaalt voor
+\[f(x)=(x^2+1)^5\]
+de afgeleide als
+\[f'(x)=5(x^2+1)^4.\]
+
+\begin{question}
+Leg uit welke stap ontbreekt.
+\end{question}
+
+\begin{question}
+Bereken de correcte afgeleide.
+\end{question}
+
+\begin{question}
+Leg uit waarom deze fout vooral gevaarlijk wordt bij ingewikkeldere
+samengestelde functies.
+\end{question}
+
+\begin{oplossing}
+De leerling heeft alleen de buitenste macht afgeleid en is vergeten
+dat de binnenste functie $x^2+1$ zelf ook verandert.
+
+De binnenste afgeleide is:
+\[(x^2+1)'=2x.\]
+
+Daarom:
+\[
+f'(x)
+=
+5(x^2+1)^4\cdot2x.
+\]
+
+Dus:
+\[\boxed{f'(x)=10x(x^2+1)^4.}\]
+
+Bij functies met meerdere lagen moet voor elke functielaag de
+bijbehorende afgeleide factor worden meegenomen. Wanneer één laag
+wordt vergeten, is de volledige afgeleide fout.
+\end{oplossing}
+\end{oefening}
+
+
+
+\end{document}

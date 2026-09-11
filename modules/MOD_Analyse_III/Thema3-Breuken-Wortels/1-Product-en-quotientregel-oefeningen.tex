@@ -1,0 +1,1258 @@
+\documentclass{ximera}
+
+\input{../../../preamble.tex}
+\input{../../../Opmaak.tex}
+\addPrintStyle{../../..}
+
+\title{Oefeningen — Producten en quotiënten afleiden}
+\author{Ingmar Herreman}
+
+\begin{abstract}
+In deze oefeningen oefen je de productregel en de quotiëntregel.
+
+Je leert niet alleen formules toepassen, maar ook herkennen welke
+strategie het meest geschikt is, resultaten vereenvoudigen en fouten
+in redeneringen opsporen.
+
+De oefeningen met  vormen samen het minimumtraject.
+\end{abstract}
+
+\begin{document}
+
+% FVD_CHAPTER_DATA_START
+% Automatisch gegenereerd uit index.tex.
+% Niet handmatig aanpassen.
+\fvdchapterdata{3}{Afleiden van samengestelde functie}{1}
+% FVD_CHAPTER_DATA_END
+
+
+
+
+
+
+
+
+
+
+\maketitle
+
+
+
+
+\FVDbeginExercises
+
+
+% ------------------------------------------------------------
+% OEFENING 1
+% ------------------------------------------------------------
+
+\begin{oefening}[Productregel rechtstreeks toepassen]{\oefB\ESS}
+
+Bepaal telkens de afgeleide.
+
+\begin{question}
+\[
+f(x)=(x^2+1)(x-3).
+\]
+
+\begin{oplossing}
+Met
+\[
+u=x^2+1,
+\qquad
+v=x-3
+\]
+geldt
+\[
+u'=2x,
+\qquad
+v'=1.
+\]
+
+Dus
+\[
+\begin{aligned}
+f'(x)
+&=2x(x-3)+(x^2+1)\\
+&=3x^2-6x+1.
+\end{aligned}
+\]
+
+\[
+\boxed{f'(x)=3x^2-6x+1}
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+\[
+g(x)=(2x^3-x)(x^2+4).
+\]
+
+\begin{oplossing}
+\[
+\begin{aligned}
+g'(x)
+&=(6x^2-1)(x^2+4)
+ +(2x^3-x)(2x)\\
+&=10x^4+21x^2-4.
+\end{aligned}
+\]
+
+\[
+\boxed{g'(x)=10x^4+21x^2-4}
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+\[
+h(x)=x^2(3x-5).
+\]
+
+Bereken de afgeleide met de productregel.
+
+\begin{oplossing}
+\[
+\begin{aligned}
+h'(x)
+&=2x(3x-5)+3x^2\\
+&=9x^2-10x.
+\end{aligned}
+\]
+
+\[
+\boxed{h'(x)=9x^2-10x}
+\]
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+% ------------------------------------------------------------
+% OEFENING 2
+% ------------------------------------------------------------
+
+\begin{oefening}[Product of eerst uitwerken?]{\oefB\ESS}
+
+Bepaal telkens de afgeleide op de meest efficiënte manier.
+
+\begin{question}
+\[
+f(x)=x(x^2+4x-1).
+\]
+
+\begin{oplossing}
+Eerst uitwerken is eenvoudig:
+\[
+f(x)=x^3+4x^2-x.
+\]
+
+Dus
+\[
+\boxed{f'(x)=3x^2+8x-1}.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+\[
+g(x)=(x+2)(x-5).
+\]
+
+\begin{oplossing}
+\[
+g(x)=x^2-3x-10,
+\]
+dus
+\[
+\boxed{g'(x)=2x-3}.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+\[
+h(x)=(x^2+1)(x^3-2).
+\]
+
+\begin{oplossing}
+Hier is de productregel handig:
+\[
+\begin{aligned}
+h'(x)
+&=2x(x^3-2)+(x^2+1)3x^2\\
+&=5x^4+3x^2-4x.
+\end{aligned}
+\]
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+% ------------------------------------------------------------
+% OEFENING 3
+% ------------------------------------------------------------
+
+\begin{oefening}[Quotiëntregel]{\oefB\ESS}
+
+Bepaal telkens eerst het domein en daarna de afgeleide.
+
+\begin{question}
+\[
+f(x)=\frac{x^2+3}{x-1}.
+\]
+
+\begin{oplossing}
+\[
+\operatorname{dom}f=\mathbb{R}\setminus\{1\}.
+\]
+
+\[
+\begin{aligned}
+f'(x)
+&=
+\frac{2x(x-1)-(x^2+3)}{(x-1)^2}\\
+&=
+\frac{x^2-2x-3}{(x-1)^2}\\
+&=
+\frac{(x-3)(x+1)}{(x-1)^2}.
+\end{aligned}
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+\[
+g(x)=\frac{2x-1}{x^2+1}.
+\]
+
+\begin{oplossing}
+Omdat
+\[
+x^2+1>0,
+\]
+is
+\[
+\operatorname{dom}g=\mathbb{R}.
+\]
+
+\[
+g'(x)
+=
+\frac{-2x^2+2x+2}{(x^2+1)^2}.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+\[
+h(x)=\frac{x^3+x}{x^2-4}.
+\]
+
+\begin{oplossing}
+\[
+\operatorname{dom}h
+=
+\mathbb{R}\setminus\{-2,2\}.
+\]
+
+\[
+h'(x)
+=
+\frac{x^4-13x^2-4}{(x^2-4)^2}.
+\]
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+% ------------------------------------------------------------
+% OEFENING 4
+% ------------------------------------------------------------
+
+\begin{oefening}[Let op de volgorde]{\oefB\ESS}
+
+Een leerling gebruikt voor
+\[
+f(x)=\frac{x^2+1}{x-3}
+\]
+de formule
+
+\[
+f'(x)=
+\frac{
+(x^2+1)\cdot1-2x(x-3)
+}{
+(x-3)^2
+}.
+\]
+
+\begin{question}
+Welke fout heeft de leerling gemaakt?
+
+\begin{oplossing}
+De volgorde van de teller van de quotiëntregel werd omgekeerd.
+
+De correcte teller is
+\[
+u'v-uv'.
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Bereken de correcte afgeleide.
+
+\begin{oplossing}
+\[
+\begin{aligned}
+f'(x)
+&=
+\frac{
+2x(x-3)-(x^2+1)
+}{
+(x-3)^2
+}\\
+&=
+\boxed{
+\frac{x^2-6x-1}{(x-3)^2}
+}.
+\end{aligned}
+\]
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+% ------------------------------------------------------------
+% OEFENING 5
+% ------------------------------------------------------------
+
+\begin{oefening}[Niet elke breuk vraagt om de quotiëntregel]{\oefB\ESS}
+
+Herschrijf eerst en bepaal daarna de afgeleide.
+
+\begin{question}
+\[
+f(x)=\frac{4}{x^3}.
+\]
+
+\begin{oplossing}
+\[
+f(x)=4x^{-3},
+\]
+dus
+\[
+\boxed{
+f'(x)=-12x^{-4}=-\frac{12}{x^4}
+}.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+\[
+g(x)=\frac{5x^3}{x}.
+\]
+
+\begin{oplossing}
+Voor $x\neq0$:
+\[
+g(x)=5x^2.
+\]
+
+Dus
+\[
+\boxed{g'(x)=10x\qquad(x\neq0)}.
+\]
+
+De oorspronkelijke domeinvoorwaarde $x\neq0$ blijft gelden.
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+\[
+h(x)=\frac{x^4-2x^2}{x^2}.
+\]
+
+\begin{oplossing}
+Voor $x\neq0$:
+\[
+h(x)=x^2-2.
+\]
+
+Dus
+\[
+\boxed{h'(x)=2x\qquad(x\neq0)}.
+\]
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+% ------------------------------------------------------------
+% OEFENING 6
+% ------------------------------------------------------------
+
+\begin{oefening}[Productregel combineren met gekende regels]{\oefB}
+
+Bepaal telkens de afgeleide en vereenvoudig.
+
+\begin{question}
+\[
+f(x)=3x^2(x^3-2x+1).
+\]
+
+\begin{oplossing}
+\[
+\begin{aligned}
+f'(x)
+&=6x(x^3-2x+1)
+ +3x^2(3x^2-2)\\
+&=15x^4-18x^2+6x.
+\end{aligned}
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+\[
+g(x)=(x^2-4)(2x^2+x+1).
+\]
+
+\begin{oplossing}
+\[
+\begin{aligned}
+g'(x)
+&=2x(2x^2+x+1)
+ +(x^2-4)(4x+1).
+\end{aligned}
+\]
+
+Een vereenvoudigde vorm is
+\[
+\boxed{
+g'(x)=8x^3+3x^2-14x-4
+}.
+\]
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+% ------------------------------------------------------------
+% OEFENING 7
+% ------------------------------------------------------------
+
+\begin{oefening}[Quotiënt vereenvoudigen]{\oefB\ESS}
+
+Bepaal de afgeleide en schrijf je antwoord zo eenvoudig mogelijk.
+
+\begin{question}
+\[
+f(x)=\frac{x^2}{x+1}.
+\]
+
+\begin{oplossing}
+\[
+\begin{aligned}
+f'(x)
+&=\frac{2x(x+1)-x^2}{(x+1)^2}\\
+&=\boxed{\frac{x(x+2)}{(x+1)^2}}.
+\end{aligned}
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+\[
+g(x)=\frac{x^2-1}{x}.
+\]
+
+\begin{oplossing}
+Herschrijven is eenvoudiger:
+\[
+g(x)=x-\frac1x.
+\]
+
+Dus
+\[
+\boxed{
+g'(x)=1+\frac1{x^2}
+}
+\qquad(x\neq0).
+\]
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% VERDIEPING
+% ============================================================
+
+\FVDendExercises
+
+
+
+\FVDbeginExercises
+
+
+% ------------------------------------------------------------
+% OEFENING 8
+% ------------------------------------------------------------
+
+\begin{oefening}[Welke strategie kies je?]{\oefU\ESS}
+
+Bepaal de afgeleide.
+
+Schrijf bij elke functie eerst welke strategie je kiest:
+\begin{itemize}
+  \item eerst vereenvoudigen;
+  \item productregel;
+  \item quotiëntregel.
+\end{itemize}
+
+Motiveer je keuze kort.
+
+\begin{question}
+\[
+f(x)=\frac{6}{x^4}.
+\]
+\end{question}
+
+\begin{question}
+\[
+g(x)=(x^2+3)(2x^3-1).
+\]
+\end{question}
+
+\begin{question}
+\[
+h(x)=\frac{x^2+4}{2x-1}.
+\]
+\end{question}
+
+\begin{question}
+\[
+p(x)=\frac{x^5+x^3}{x^3}.
+\]
+\end{question}
+
+\begin{oplossing}
+Mogelijke keuzes:
+
+\[
+f(x)=6x^{-4}
+\]
+dus herschrijven.
+
+Voor $g$ is de productregel natuurlijk.
+
+Voor $h$ is de quotiëntregel natuurlijk.
+
+Voor $p$ geldt, met $x\neq0$,
+\[
+p(x)=x^2+1,
+\]
+dus eerst vereenvoudigen.
+\end{oplossing}
+
+\end{oefening}
+
+
+% ------------------------------------------------------------
+% OEFENING 9
+% ------------------------------------------------------------
+
+\begin{oefening}[Twee methoden vergelijken]{\oefU\ESS}
+
+Gegeven:
+\[
+f(x)=\frac{x^3-2x^2}{x}.
+\]
+
+\begin{question}
+Bepaal $f'$ met de quotiëntregel.
+
+\begin{oplossing}
+\[
+f'(x)
+=
+\frac{
+(3x^2-4x)x-(x^3-2x^2)
+}{
+x^2
+}.
+\]
+
+Vereenvoudigen geeft
+\[
+f'(x)=2x-2
+\qquad (x\neq0).
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Vereenvoudig eerst $f$ en bepaal daarna $f'$.
+
+\begin{oplossing}
+Voor $x\neq0$:
+\[
+f(x)=x^2-2x.
+\]
+
+Dus
+\[
+f'(x)=2x-2.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Welke methode verkies je hier? Motiveer.
+
+\begin{oplossing}
+Eerst vereenvoudigen is hier korter en minder foutgevoelig.
+De domeinvoorwaarde $x\neq0$ moet wel behouden blijven.
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+% ------------------------------------------------------------
+% OEFENING 10
+% ------------------------------------------------------------
+
+\begin{oefening}[Fouten analyseren]{\oefU\ESS}
+
+Een leerling schrijft:
+
+\[
+\begin{aligned}
+f(x)&=(x^2+1)(x^3-2),\\
+f'(x)&=2x(3x^2).
+\end{aligned}
+\]
+
+\begin{question}
+Leg uit waarom dit fout is.
+
+\begin{oplossing}
+De leerling heeft de afgeleiden van beide factoren met elkaar
+vermenigvuldigd.
+
+Maar
+\[
+(uv)'=u'v+uv'.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Bereken de correcte afgeleide.
+
+\begin{oplossing}
+\[
+\begin{aligned}
+f'(x)
+&=2x(x^3-2)+(x^2+1)3x^2\\
+&=5x^4+3x^2-4x.
+\end{aligned}
+\]
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+% ------------------------------------------------------------
+% OEFENING 11
+% ------------------------------------------------------------
+
+\begin{oefening}[Een afgeleide controleren zonder opnieuw te beginnen]{\oefU}
+
+Een leerling beweert dat voor
+\[
+f(x)=\frac{x^2+1}{x+1}
+\]
+geldt:
+\[
+f'(x)=\frac{x^2+2x+1}{(x+1)^2}.
+\]
+
+\begin{question}
+Factoriseer de teller van het voorgestelde antwoord.
+
+\begin{oplossing}
+\[
+x^2+2x+1=(x+1)^2.
+\]
+
+Het voorgestelde antwoord zou dus gelijk zijn aan $1$.
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Kan $f'(x)$ identiek gelijk zijn aan $1$?
+Controleer door $f$ eerst via veeltermdeling te herschrijven.
+
+\begin{oplossing}
+\[
+\frac{x^2+1}{x+1}
+=
+x-1+\frac{2}{x+1}.
+\]
+
+Dus
+\[
+f'(x)
+=
+1-\frac{2}{(x+1)^2}.
+\]
+
+Het voorgestelde antwoord is dus fout.
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+% ------------------------------------------------------------
+% OEFENING 12
+% ------------------------------------------------------------
+
+\begin{oefening}[Van afgeleide naar verloop]{\oefU\ESS}
+
+Gegeven:
+\[
+f(x)=\frac{x^2}{x+1}.
+\]
+
+Je weet dat
+\[
+f'(x)=\frac{x(x+2)}{(x+1)^2}.
+\]
+
+\begin{question}
+Welke waarden mogen niet in het domein voorkomen?
+
+\begin{oplossing}
+\[
+x\neq-1.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Welke factor bepaalt het teken van de noemer van $f'$?
+
+\begin{oplossing}
+De noemer
+\[
+(x+1)^2
+\]
+is positief voor alle $x\neq-1$.
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Waar is $f'(x)=0$?
+
+\begin{oplossing}
+\[
+x(x+2)=0
+\]
+dus
+\[
+x=-2
+\qquad\text{of}\qquad
+x=0.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Stel een tekentabel voor $f'$ op en bepaal waar $f$ stijgt
+en daalt.
+
+\begin{oplossing}
+Het teken wordt bepaald door
+\[
+x(x+2).
+\]
+
+Dus:
+\[
+f'>0
+\quad\text{voor}\quad
+x<-2
+\quad\text{en}\quad
+x>0,
+\]
+en
+\[
+f'<0
+\quad\text{voor}\quad
+-2<x<-1
+\quad\text{en}\quad
+-1<x<0.
+\]
+
+Daarom stijgt $f$ op
+\[
+]-\infty,-2[
+\quad\text{en}\quad
+]0,+\infty[
+\]
+en daalt ze op
+\[
+]-2,-1[
+\quad\text{en}\quad
+]-1,0[.
+\]
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+% ------------------------------------------------------------
+% OEFENING 13
+% ------------------------------------------------------------
+
+\begin{oefening}[Parameter en horizontale raaklijn]{\oefU\ESS}
+
+Beschouw
+\[
+f_a(x)=\frac{x^2+a}{x-1}.
+\]
+
+\begin{question}
+Bepaal $f_a'(x)$.
+
+\begin{oplossing}
+\[
+f_a'(x)
+=
+\frac{x^2-2x-a}{(x-1)^2}.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Bepaal $a$ zodat de grafiek in $x=2$ een horizontale raaklijn heeft.
+
+\begin{oplossing}
+Een horizontale raaklijn vereist
+\[
+f_a'(2)=0.
+\]
+
+Dus
+\[
+4-4-a=0,
+\]
+waaruit
+\[
+\boxed{a=0}.
+\]
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+% ------------------------------------------------------------
+% OEFENING 14
+% ------------------------------------------------------------
+
+\begin{oefening}[Parallel geschakelde weerstanden]{\oefU}
+
+Een vaste weerstand $R>0$ wordt parallel geschakeld met een
+variabele weerstand $x>0$.
+
+De vervangingsweerstand is
+\[
+R_{\mathrm{v}}(x)
+=
+\frac{Rx}{R+x}.
+\]
+
+\begin{question}
+Bepaal
+\[
+R_{\mathrm{v}}'(x).
+\]
+
+\begin{oplossing}
+\[
+\begin{aligned}
+R_{\mathrm{v}}'(x)
+&=
+\frac{
+R(R+x)-Rx
+}{
+(R+x)^2
+}\\
+&=
+\boxed{
+\frac{R^2}{(R+x)^2}
+}.
+\end{aligned}
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Welk teken heeft $R_{\mathrm{v}}'(x)$ voor $R>0$ en $x>0$?
+
+\begin{oplossing}
+\[
+R_{\mathrm{v}}'(x)>0.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Wat betekent dit fysisch?
+
+\begin{oplossing}
+Wanneer de variabele weerstand $x$ groter wordt, neemt ook de
+vervangingsweerstand toe.
+
+De afgeleide geeft bovendien aan hoe gevoelig de vervangingsweerstand
+is voor een kleine verandering van $x$.
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+% GEVORDERD
+% ============================================================
+
+\FVDendExercises
+
+
+
+\FVDbeginExercises
+
+
+% ------------------------------------------------------------
+% OEFENING 15
+% ------------------------------------------------------------
+
+\begin{oefening}[Reconstrueer een parameter]{\oefG}
+
+Gegeven:
+\[
+f_a(x)=\frac{x^2+a}{x+2}.
+\]
+
+De raaklijn aan de grafiek in het punt met abscis $x=0$
+heeft richtingscoëfficiënt $-1$.
+
+Bepaal $a$.
+
+\begin{oplossing}
+\[
+f_a'(x)
+=
+\frac{
+2x(x+2)-(x^2+a)
+}{
+(x+2)^2
+}.
+\]
+
+Dus
+\[
+f_a'(0)
+=
+-\frac{a}{4}.
+\]
+
+Uit
+\[
+-\frac{a}{4}=-1
+\]
+volgt
+\[
+\boxed{a=4}.
+\]
+\end{oplossing}
+
+\end{oefening}
+
+
+% ------------------------------------------------------------
+% OEFENING 16
+% ------------------------------------------------------------
+
+\begin{oefening}[Ontwerp zelf een functie]{\oefG}
+
+Zoek een rationale functie van de vorm
+\[
+f(x)=\frac{x^2+a}{x+b}
+\]
+waarvoor:
+
+\[
+x=1
+\]
+niet tot het domein behoort en de grafiek in $x=0$ een horizontale
+raaklijn heeft.
+
+\begin{question}
+Bepaal eerst $b$.
+
+\begin{oplossing}
+Omdat $x=1$ uit het domein moet verdwijnen:
+\[
+1+b=0,
+\]
+dus
+\[
+b=-1.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Bepaal daarna $a$.
+
+\begin{oplossing}
+Nu:
+\[
+f(x)=\frac{x^2+a}{x-1}.
+\]
+
+De afgeleide is
+\[
+f'(x)
+=
+\frac{x^2-2x-a}{(x-1)^2}.
+\]
+
+Voor een horizontale raaklijn in $x=0$:
+\[
+f'(0)=0.
+\]
+
+Dus
+\[
+-a=0,
+\]
+waaruit
+\[
+a=0.
+\]
+
+Een mogelijke functie is dus
+\[
+\boxed{
+f(x)=\frac{x^2}{x-1}
+}.
+\]
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+% ------------------------------------------------------------
+% OEFENING 17
+% ------------------------------------------------------------
+
+\begin{oefening}[Een algemene eigenschap onderzoeken]{\oefG}
+
+Beschouw
+\[
+f(x)=\frac{ax+b}{cx+d},
+\]
+waarbij
+\[
+cx+d\neq0.
+\]
+
+\begin{question}
+Bepaal $f'(x)$.
+
+\begin{oplossing}
+\[
+\begin{aligned}
+f'(x)
+&=
+\frac{
+a(cx+d)-c(ax+b)
+}{
+(cx+d)^2
+}\\
+&=
+\frac{
+acx+ad-acx-bc
+}{
+(cx+d)^2
+}\\
+&=
+\boxed{
+\frac{ad-bc}{(cx+d)^2}
+}.
+\end{aligned}
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Welke bijzondere eigenschap heeft de teller van $f'(x)$?
+
+\begin{oplossing}
+De teller
+\[
+ad-bc
+\]
+is constant en hangt niet af van $x$.
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Wat kun je zeggen over het teken van $f'$ als
+\[
+ad-bc>0?
+\]
+
+\begin{oplossing}
+Omdat
+\[
+(cx+d)^2>0
+\]
+op het domein, geldt overal
+\[
+f'(x)>0.
+\]
+
+De functie is dus op elk interval van haar domein strikt stijgend.
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Wat gebeurt er als
+\[
+ad-bc=0?
+\]
+
+\begin{oplossing}
+Dan is
+\[
+f'(x)=0
+\]
+op elk interval van het domein.
+
+In dat geval zijn teller en noemer evenredig en stelt de breuk,
+waar gedefinieerd, een constante functie voor.
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+% ------------------------------------------------------------
+% OEFENING 18
+% ------------------------------------------------------------
+
+\begin{oefening}[Bewering beoordelen]{\oefG}
+
+Een leerling beweert:
+
+\begin{quote}
+Een functie die als quotiënt geschreven is, moet altijd met de
+quotiëntregel worden afgeleid.
+\end{quote}
+
+Onderzoek deze bewering.
+
+\begin{question}
+Geef een tegenvoorbeeld waarvoor herschrijven duidelijk eenvoudiger is.
+
+\begin{oplossing}
+Bijvoorbeeld:
+\[
+f(x)=\frac{3}{x^2}=3x^{-2}.
+\]
+
+Dan is
+\[
+f'(x)=-6x^{-3}.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Geef een voorbeeld waarvoor de quotiëntregel wel een natuurlijke
+keuze is.
+
+\begin{oplossing}
+Bijvoorbeeld:
+\[
+g(x)=\frac{x^2+1}{x-2}.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Formuleer een betere algemene strategie.
+
+\begin{oplossing}
+Onderzoek eerst of de functie eenvoudig kan worden herschreven of
+vereenvoudigd. Kies pas daarna de afleidingsregel die tot de meest
+efficiënte en overzichtelijke berekening leidt.
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+\FVDendExercises
+
+
+
+
+\end{document}

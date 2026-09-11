@@ -1,0 +1,1101 @@
+\documentclass{ximera}
+
+\input{../../../preamble.tex}
+\input{../../../Opmaak.tex}
+
+\title{Functieonderzoek}
+\author{Ingmar Herreman}
+
+\begin{document}
+
+% FVD_CHAPTER_DATA_START
+% Automatisch gegenereerd uit index.tex.
+% Niet handmatig aanpassen.
+\fvdchapterdata{3}{Afleiden van samengestelde functie}{4}
+% FVD_CHAPTER_DATA_END
+
+
+
+
+
+\begin{abstract}
+In de vorige hoofdstukken leerde je afgeleiden berekenen met onder meer
+de productregel, quotiëntregel, kettingregel en de regel van l'Hôpital.
+In dit hoofdstuk gebruiken we die technieken als gereedschap om het
+\textbf{verloop van functies te analyseren}.
+
+De centrale vraag is niet langer alleen ``wat is \(f'(x)\)?'', maar:
+\emph{wat vertelt \(f'(x)\) en \(f''(x)\) over de functie en haar grafiek?}
+
+We herhalen kort de stelling van Rolle en de middelwaardestelling van
+Lagrange, die je eerder voor veeltermfuncties zag, en passen ze nu ook toe
+op andere functietypes. Daarna bouwen we stap voor stap naar volledige
+functieonderzoeken en extremumproblemen.
+\end{abstract}
+
+\maketitle
+
+\begin{voorkennis}
+  \item Je kan het domein, nulpunten en tekenverloop van een functie bepalen.
+  \item Je kan limieten berekenen en horizontale, verticale en schuine asymptoten onderzoeken.
+  \item Je kan de eerste en tweede afgeleide functie berekenen.
+  \item Je kan de productregel, quotiëntregel en kettingregel toepassen.
+  \item Je kent het verband tussen het teken van \(f'(x)\) en stijgen of dalen.
+  \item Je kent de begrippen lokaal maximum, lokaal minimum en buigpunt.
+  \item Je hebt de stelling van Rolle en de middelwaardestelling van Lagrange al gezien voor veeltermfuncties.
+\end{voorkennis}
+
+\begin{leerdoelen}
+  \item Je kan de voorwaarden van de stelling van Rolle controleren en de stelling toepassen op verschillende functietypes.
+  \item Je kan de voorwaarden van de middelwaardestelling van Lagrange controleren en de stelling toepassen en interpreteren.
+  \item Je kan met \(f'(x)\) intervallen van stijgen en dalen bepalen.
+  \item Je kan stationaire punten onderzoeken en beslissen of er een lokaal extremum optreedt.
+  \item Je kan met \(f''(x)\) de kromming van een grafiek onderzoeken en buigpunten bepalen.
+  \item Je kan informatie over domein, nulpunten, teken, asymptoten, \(f'\) en \(f''\) samenbrengen in een volledig functieonderzoek.
+  \item Je kan vanuit analytische informatie een betrouwbare grafiekschets opbouwen.
+  \item Je kan volledige functieonderzoeken uitvoeren voor rationale, irrationale, exponentiële, logaritmische en goniometrische functies.
+  \item Je kan extremumproblemen mathematiseren, oplossen en het gevonden extremum in de context interpreteren.
+  \item Je kan je keuzes en conclusies wiskundig verantwoorden.
+\end{leerdoelen}
+
+% ============================================================
+% 1. VAN AFGELEIDE NAAR VERLOOP
+% ============================================================
+
+\FVDsection{Van afgeleide naar verloop}
+
+De afgeleide \(f'(x)\) beschrijft de lokale verandering van een functie.
+Het teken van \(f'(x)\) vertelt daarom rechtstreeks of de grafiek stijgt
+of daalt.
+
+\begin{eigenschap}[Teken van de eerste afgeleide]
+Voor een afleidbare functie \(f\) op een interval geldt:
+
+\[
+f'(x)>0 \Longrightarrow f \text{ is stijgend},
+\qquad
+f'(x)<0 \Longrightarrow f \text{ is dalend}.
+\]
+
+Een punt waarvoor
+
+\[f'(a)=0\]
+
+heet een \textbf{stationair punt}. Zo'n punt kan een lokaal maximum,
+een lokaal minimum of een stationair punt zonder extremum zijn.
+\end{eigenschap}
+
+\begin{opmerking}[Horizontale raaklijn is niet hetzelfde als extremum]
+Uit \(f'(a)=0\) volgt alleen dat de raaklijn horizontaal is.
+Voor een extremum moet het teken van \(f'\) rond \(a\) veranderen.
+
+\[
++\ \to\ - \quad \Longrightarrow \quad \text{lokaal maximum},
+\]
+
+\[
+-\ \to\ + \quad \Longrightarrow \quad \text{lokaal minimum}.
+\]
+
+Als het teken niet verandert, is er geen extremum.
+\end{opmerking}
+
+\begin{voorbeeld}[Een rationaal voorbeeld]
+Onderzoek het stijgen en dalen van
+
+\[f(x)=\frac{x^3}{2-x^2}.\]
+
+Het domein is
+
+\[\operatorname{dom}f=\mathbb{R}\setminus\{-\sqrt2,\sqrt2\}.\]
+
+De afgeleide is
+
+\[
+f'(x)
+=
+\frac{3x^2(2-x^2)-x^3(-2x)}{(2-x^2)^2}
+=
+\frac{x^2(6-x^2)}{(2-x^2)^2}.
+\]
+
+Omdat de noemer in het domein strikt positief is, wordt het teken van
+\(f'\) bepaald door
+
+\[x^2(6-x^2).\]
+
+De kritieke waarden zijn \(x=0\) en \(x=\pm\sqrt6\), terwijl
+\(x=\pm\sqrt2\) niet tot het domein behoren.
+
+We krijgen:
+
+\[
+\begin{array}{c|ccccccccc}
+x & (-\infty,-\sqrt6) & -\sqrt6 &
+(-\sqrt6,-\sqrt2) & (-\sqrt2,0) & 0 &
+(0,\sqrt2) & (\sqrt2,\sqrt6) & \sqrt6 & (\sqrt6,+\infty)\\
+\hline
+f'(x) & - & 0 & + & + & 0 & + & + & 0 & -\\
+\end{array}
+\]
+
+Dus \(f\) is dalend op \((-\infty,-\sqrt6)\), stijgend op de delen van
+het domein tussen \(-\sqrt6\) en \(\sqrt6\), en opnieuw dalend op
+\((\sqrt6,+\infty)\).
+
+Bij \(x=-\sqrt6\) verandert \(f'\) van \(-\) naar \(+\): daar ligt een
+lokaal minimum. Bij \(x=\sqrt6\) verandert \(f'\) van \(+\) naar \(-\):
+daar ligt een lokaal maximum. Bij \(x=0\) verandert het teken niet, dus
+daar is geen extremum.
+\end{voorbeeld}
+
+% ============================================================
+% 2. ROLLE
+% ============================================================
+
+\FVDsection{Korte herhaling: de stelling van Rolle}
+
+De stelling van Rolle ken je al uit het functieonderzoek van
+veeltermfuncties. We herhalen ze kort en leggen de nadruk op de
+\textbf{voorwaarden} en op toepassingen buiten de veeltermfuncties.
+
+\begin{eigenschap}[Stelling van Rolle]
+Als een functie \(f\)
+
+\begin{enumerate}
+  \item continu is op het gesloten interval \([a,b]\),
+  \item afleidbaar is op het open interval \((a,b)\),
+  \item en \(f(a)=f(b)\),
+\end{enumerate}
+
+dan bestaat er minstens één \(c\in(a,b)\) waarvoor
+
+\[\boxed{f'(c)=0.}\]
+\end{eigenschap}
+
+Geometrisch betekent dit: als de grafiek op de uiteinden van het interval
+dezelfde hoogte heeft, dan bestaat er minstens één punt tussenin waar de
+raaklijn horizontaal is.
+
+\begin{voorbeeld}[Rolle voor een goniometrische functie]
+Beschouw
+
+\[f(x)=\sin x\]
+
+op \([0,\pi]\).
+
+De functie is continu op \([0,\pi]\), afleidbaar op \((0,\pi)\) en
+
+\[f(0)=0=f(\pi).\]
+
+Rolle garandeert dus minstens één \(c\in(0,\pi)\) waarvoor \(f'(c)=0\).
+
+Omdat
+
+\[f'(x)=\cos x,\]
+
+vinden we
+
+\[\cos c=0 \Longrightarrow c=\frac{\pi}{2}.\]
+\end{voorbeeld}
+
+\begin{voorbeeld}[Wanneer Rolle niet toepasbaar is]
+Beschouw
+
+\[f(x)=\frac1x\]
+
+op \([-1,1]\).
+
+Hoewel
+
+\[f(-1)=f(1)=1 \quad\text{niet geldt,}\]
+
+is er bovendien nog een fundamenteler probleem: \(f\) is niet continu op
+\([-1,1]\), want \(x=0\) ligt niet in het domein.
+
+De stelling van Rolle kan dus niet worden toegepast.
+\end{voorbeeld}
+
+\begin{opmerking}[De stelling geeft een bestaan, geen uniek punt]
+Rolle zegt dat er \emph{minstens één} geschikte \(c\) bestaat.
+Er kunnen er meerdere zijn.
+
+De stelling zegt ook niet dat elk stationair punt een extremum is.
+\end{opmerking}
+
+% ============================================================
+% 3. LAGRANGE
+% ============================================================
+
+\FVDsection{Korte herhaling: de middelwaardestelling van Lagrange}
+
+De middelwaardestelling van Lagrange veralgemeent Rolle.
+
+\begin{eigenschap}[Middelwaardestelling van Lagrange]
+Als een functie \(f\)
+
+\begin{enumerate}
+  \item continu is op \([a,b]\),
+  \item afleidbaar is op \((a,b)\),
+\end{enumerate}
+
+dan bestaat er minstens één \(c\in(a,b)\) waarvoor
+
+\[
+\boxed{f'(c)=\frac{f(b)-f(a)}{b-a}.}
+\]
+
+De rechterkant is de richtingscoëfficiënt van de koorde door
+\((a,f(a))\) en \((b,f(b))\).
+\end{eigenschap}
+
+Geometrisch zegt de stelling dat er ergens tussen \(a\) en \(b\) een
+raaklijn bestaat die evenwijdig is met die koorde.
+
+\begin{voorbeeld}[Lagrange voor een exponentiële functie]
+Beschouw
+
+\[f(x)=e^x\]
+
+op \([0,1]\).
+
+De voorwaarden zijn vervuld. Er bestaat dus een \(c\in(0,1)\) waarvoor
+
+\[
+f'(c)=\frac{e-1}{1-0}=e-1.
+\]
+
+Omdat \(f'(x)=e^x\), volgt
+
+\[e^c=e-1.\]
+
+Dus
+
+\[\boxed{c=\ln(e-1).}\]
+\end{voorbeeld}
+
+\begin{voorbeeld}[Interpretatie in fysica]
+Een deeltje beweegt volgens een plaatsfunctie \(s(t)\). Tussen
+\(t=a\) en \(t=b\) is de gemiddelde snelheid
+
+\[
+v_{\mathrm{gem}}
+=
+\frac{s(b)-s(a)}{b-a}.
+\]
+
+Als \(s\) continu is op \([a,b]\) en afleidbaar op \((a,b)\), dan zegt
+Lagrange dat er minstens één tijdstip \(c\in(a,b)\) bestaat waarop
+
+\[
+v(c)=s'(c)=v_{\mathrm{gem}}.
+\]
+
+De stelling verbindt dus een gemiddelde verandering over een interval
+met een ogenblikkelijke verandering in minstens één punt.
+\end{voorbeeld}
+
+\begin{opmerking}[Rolle als bijzonder geval]
+Als \(f(a)=f(b)\), dan is
+
+\[
+\frac{f(b)-f(a)}{b-a}=0.
+\]
+
+Lagrange geeft dan \(f'(c)=0\). Rolle is dus een bijzonder geval van
+de middelwaardestelling van Lagrange.
+\end{opmerking}
+
+% ============================================================
+% 4. TWEEDE AFGELEIDE
+% ============================================================
+
+\FVDsection{De tweede afgeleide en de kromming van de grafiek}
+
+De tweede afgeleide vertelt hoe de eerste afgeleide verandert.
+
+\begin{eigenschap}[Kromming]
+Op een interval waar \(f''\) bestaat:
+
+\[
+f''(x)>0
+\]
+
+betekent dat \(f'\) toeneemt. De hellingen van de raaklijnen worden groter.
+
+\[
+f''(x)<0
+\]
+
+betekent dat \(f'\) afneemt. De hellingen van de raaklijnen worden kleiner.
+\end{eigenschap}
+
+In deze cursus gebruiken we de termen \textbf{hol} en \textbf{bol}
+volgens de afgesproken conventie in de cursus. Belangrijker dan de naam
+is dat je steeds het teken van \(f''\) koppelt aan de verandering van de
+helling.
+
+\begin{definitie}[Buigpunt]
+Een punt \(B(a,f(a))\) is een \textbf{buigpunt} wanneer de kromming van
+de grafiek verandert bij \(x=a\).
+
+Een noodzakelijke controle is dus dat het teken van \(f''\) aan
+weerszijden van \(a\) verandert.
+\end{definitie}
+
+\begin{opmerking}[Ook hier is nul worden niet voldoende]
+Uit
+
+\[f''(a)=0\]
+
+volgt niet automatisch dat \(B(a,f(a))\) een buigpunt is.
+
+Je moet nagaan of het teken van \(f''\) werkelijk verandert.
+\end{opmerking}
+
+\begin{voorbeeld}[Stationair buigpunt]
+Neem
+
+\[f(x)=x^3.\]
+
+Dan
+
+\[f'(x)=3x^2,\qquad f''(x)=6x.\]
+
+Bij \(x=0\) geldt zowel \(f'(0)=0\) als \(f''(0)=0\).
+De tweede afgeleide verandert van negatief naar positief, dus \((0,0)\)
+is een buigpunt. Omdat \(f'(0)=0\), heeft de grafiek daar bovendien een
+horizontale raaklijn.
+
+Het punt is dus een \textbf{stationair buigpunt}, geen extremum.
+\end{voorbeeld}
+
+% ============================================================
+% 5. VOLLEDIG FUNCTIEONDERZOEK
+% ============================================================
+
+\FVDsection{Een volledig functieonderzoek}
+
+Een volledig functieonderzoek combineert informatie die je in vorige
+hoofdstukken afzonderlijk hebt leren bepalen.
+
+Gebruik onderstaande volgorde als \textbf{controlelijst}, niet als
+mechanisch voorschrift. Soms kan een stap worden overgeslagen of is een
+andere volgorde efficiënter.
+
+\begin{enumerate}
+  \item Bepaal het \textbf{domein}.
+  \item Onderzoek \textbf{continuïteit} en eventuele domeinonderbrekingen.
+  \item Bepaal \textbf{nulpunten} en snijpunten met de assen.
+  \item Onderzoek het \textbf{teken van \(f\)}.
+  \item Onderzoek eventuele \textbf{symmetrie} of periodiciteit.
+  \item Bepaal relevante \textbf{limieten} en \textbf{asymptoten}.
+  \item Bereken \(f'\), onderzoek het teken en bepaal \textbf{stijgen, dalen en extrema}.
+  \item Bereken \(f''\), onderzoek het teken en bepaal \textbf{kromming en buigpunten}.
+  \item Breng alle informatie samen in een \textbf{verloopschema}.
+  \item Maak ten slotte een \textbf{grafiekschets} die met alle gegevens overeenstemt.
+\end{enumerate}
+
+\begin{opmerking}[Niet elk functietype vraagt dezelfde accenten]
+Bij een rationale functie spelen verticale en eventueel horizontale of
+schuine asymptoten vaak een belangrijke rol.
+
+Bij een exponentiële functie zijn domein en continuïteit meestal
+eenvoudig, maar gedrag op oneindig en groeisnelheid zijn essentieel.
+
+Bij een logaritmische functie moet het domein zorgvuldig worden bewaakt.
+
+Bij een goniometrische functie zijn periodiciteit en symmetrie vaak
+belangrijker dan gedrag voor \(x\to\pm\infty\).
+\end{opmerking}
+
+% ============================================================
+% 6. VOLLEDIG RATIONAAL VOORBEELD
+% ============================================================
+
+\FVDsection{Volledig voorbeeld: een rationale functie}
+
+Onderzoek volledig
+
+\[
+f(x)=\frac{x^3}{x^2-1}.
+\]
+
+Dit voorbeeld sluit aan bij het oudere cursusmateriaal, maar wordt hier
+systematisch en correct opgebouwd.
+
+\FVDsubsection{Domein en continuïteit}
+
+De noemer mag niet nul zijn:
+
+\[
+x^2-1=0
+\Longleftrightarrow
+x=\pm1.
+\]
+
+Dus
+
+\[
+\boxed{\operatorname{dom}f=\mathbb{R}\setminus\{-1,1\}.}
+\]
+
+Als rationale functie is \(f\) continu op elk interval van haar domein.
+
+\FVDsubsection{Nulpunten, assen en teken}
+
+De teller is nul voor
+
+\[x^3=0\Longleftrightarrow x=0.\]
+
+Dus de grafiek snijdt beide assen in
+
+\[\boxed{(0,0)}.\]
+
+Voor het teken onderzoeken we
+
+\[
+\frac{x^3}{(x-1)(x+1)}.
+\]
+
+De kritieke waarden zijn \(-1,0,1\). Daaruit volgt:
+
+\[
+\begin{array}{c|ccccccc}
+x&(-\infty,-1)&-1&(-1,0)&0&(0,1)&1&(1,+\infty)\\
+\hline
+f(x)&-&\mid&+&0&-&\mid&+
+\end{array}
+\]
+
+\FVDsubsection{Symmetrie}
+
+\[
+f(-x)=\frac{-x^3}{x^2-1}=-f(x).
+\]
+
+Dus \(f\) is oneven en de grafiek is puntsymmetrisch ten opzichte van
+de oorsprong.
+
+\FVDsubsection{Asymptoten}
+
+Omdat de noemer nul wordt bij \(x=\pm1\), onderzoeken we eenzijdige
+limieten. Dat levert verticale asymptoten
+
+\[
+\boxed{x=-1 \qquad\text{en}\qquad x=1.}
+\]
+
+De graad van de teller is precies één groter dan die van de noemer.
+We voeren een veeltermdeling uit:
+
+\[
+\frac{x^3}{x^2-1}
+=
+x+\frac{x}{x^2-1}.
+\]
+
+Omdat
+
+\[
+\lim_{x\to\pm\infty}\frac{x}{x^2-1}=0,
+\]
+
+heeft de grafiek de schuine asymptoot
+
+\[
+\boxed{y=x.}
+\]
+
+De ligging ten opzichte van deze asymptoot wordt bepaald door
+
+\[
+f(x)-x=\frac{x}{x^2-1}.
+\]
+
+\FVDsubsection{Eerste afgeleide: stijgen, dalen en extrema}
+
+\[
+f'(x)
+=
+\frac{3x^2(x^2-1)-x^3(2x)}{(x^2-1)^2}
+=
+\frac{x^2(x^2-3)}{(x^2-1)^2}.
+\]
+
+De noemer is positief op het domein, dus het teken wordt bepaald door
+
+\[x^2(x^2-3).\]
+
+De nulpunten van \(f'\) zijn
+
+\[x=-\sqrt3,\quad x=0,\quad x=\sqrt3.\]
+
+Samen met de domeingrenzen \(x=\pm1\) krijgen we het tekenverloop:
+
+\[
+\begin{array}{c|ccccccccccc}
+x & (-\infty,-\sqrt3) & -\sqrt3 & (-\sqrt3,-1) & -1 &
+(-1,0) & 0 & (0,1) & 1 & (1,\sqrt3) & \sqrt3 & (\sqrt3,+\infty)\\
+\hline
+f'(x)&+&0&-&\mid&-&0&-&\mid&-&0&+
+\end{array}
+\]
+
+Dus:
+
+\[
+x=-\sqrt3 \quad\text{geeft een lokaal maximum},
+\]
+
+\[
+x=\sqrt3 \quad\text{geeft een lokaal minimum}.
+\]
+
+Bij \(x=0\) verandert het teken van \(f'\) niet, dus daar ligt geen
+extremum.
+
+De functiewaarden zijn
+
+\[
+f(-\sqrt3)=\frac{-3\sqrt3}{2},
+\qquad
+f(\sqrt3)=\frac{3\sqrt3}{2}.
+\]
+
+\FVDsubsection{Tweede afgeleide: kromming en buigpunten}
+
+Uit
+
+\[
+f'(x)=\frac{x^2(x^2-3)}{(x^2-1)^2}
+\]
+
+volgt na vereenvoudiging
+
+\[
+\boxed{f''(x)=\frac{2x(x^2+3)}{(x^2-1)^3}.}
+\]
+
+Omdat \(x^2+3>0\), wordt het teken van \(f''\) bepaald door
+
+\[
+\frac{x}{(x^2-1)^3}.
+\]
+
+De mogelijke scheidingswaarden zijn \(-1,0,1\). We krijgen:
+
+\[
+\begin{array}{c|ccccccc}
+x&(-\infty,-1)&-1&(-1,0)&0&(0,1)&1&(1,+\infty)\\
+\hline
+f''(x)&-&\mid&+&0&-&\mid&+
+\end{array}
+\]
+
+Bij \(x=0\) verandert het teken van \(f''\), dus
+
+\[
+\boxed{(0,0)}
+\]
+
+is een buigpunt. Omdat ook \(f'(0)=0\), is dit een stationair buigpunt.
+
+\FVDsubsection{Synthese}
+
+Een correcte grafiekschets moet nu tegelijk voldoen aan:
+
+\begin{itemize}
+  \item puntsymmetrie ten opzichte van de oorsprong;
+  \item verticale asymptoten \(x=-1\) en \(x=1\);
+  \item schuine asymptoot \(y=x\);
+  \item lokaal maximum bij \(x=-\sqrt3\);
+  \item lokaal minimum bij \(x=\sqrt3\);
+  \item stationair buigpunt in \((0,0)\);
+  \item de gevonden stijg-, daal- en krommingsintervallen.
+\end{itemize}
+
+Dit is de kern van een functieonderzoek: de grafiek is het
+\textbf{gevolg} van de analytische informatie, niet van gokken op basis
+van enkele losse punten.
+
+% ============================================================
+% 7. ANDERE FUNCTIETYPES
+% ============================================================
+
+\FVDsection{Functieonderzoek buiten rationale functies}
+
+Het leerdoel gaat over functies in het algemeen. Daarom moet je de
+werkwijze ook kunnen overdragen naar andere functietypes.
+
+\FVDsubsection{Irrationale functie}
+
+Beschouw
+
+\[f(x)=x\sqrt{x+2}.\]
+
+Het domein is
+
+\[[-2,+\infty).\]
+
+Met de product- en kettingregel:
+
+\[
+f'(x)
+=
+\sqrt{x+2}+\frac{x}{2\sqrt{x+2}}
+=
+\frac{3x+4}{2\sqrt{x+2}}.
+\]
+
+Voor \(x>-2\) is de noemer positief. Het teken van \(f'\) wordt dus
+bepaald door \(3x+4\). Het enige stationaire punt ligt bij
+
+\[x=-\frac43.\]
+
+Daar verandert \(f'\) van negatief naar positief, zodat \(f\) daar een
+lokaal én absoluut minimum bereikt.
+
+Hier zie je hoe domeinvoorwaarden en afgeleiden samen het verloop bepalen.
+
+\FVDsubsection{Exponentiële functie}
+
+Beschouw
+
+\[f(x)=x e^{-x}.\]
+
+Het domein is \(\mathbb{R}\). Met de productregel:
+
+\[
+f'(x)=e^{-x}(1-x).
+\]
+
+Omdat \(e^{-x}>0\), wordt het teken volledig bepaald door \(1-x\).
+Dus \(f\) stijgt voor \(x<1\), daalt voor \(x>1\) en heeft een maximum
+bij
+
+\[
+\boxed{\left(1,\frac1e\right)}.
+\]
+
+De tweede afgeleide is
+
+\[
+f''(x)=e^{-x}(x-2).
+\]
+
+Dus bij \(x=2\) verandert de kromming en ligt een buigpunt.
+
+\FVDsubsection{Logaritmische functie}
+
+Beschouw
+
+\[f(x)=\frac{\ln x}{x},\qquad x>0.\]
+
+De afgeleide is
+
+\[
+f'(x)=\frac{1-\ln x}{x^2}.
+\]
+
+Omdat \(x^2>0\), wordt het teken bepaald door \(1-\ln x\). Dus
+
+\[
+f'(x)=0
+\Longleftrightarrow
+\ln x=1
+\Longleftrightarrow
+x=e.
+\]
+
+De functie stijgt op \((0,e)\), daalt op \((e,+\infty)\) en heeft een
+maximum in
+
+\[
+\boxed{\left(e,\frac1e\right)}.
+\]
+
+\FVDsubsection{Goniometrische functie}
+
+Beschouw
+
+\[f(x)=\sin x+\frac12\sin(2x).\]
+
+Omdat de functie periodiek is, volstaat het vaak om één periode te
+onderzoeken.
+
+\[
+f'(x)=\cos x+\cos(2x).
+\]
+
+Nu wordt het functieonderzoek gekoppeld aan goniometrische vergelijkingen:
+de stationaire punten vind je door
+
+\[
+\cos x+\cos(2x)=0
+\]
+
+op het gekozen interval op te lossen.
+
+Hier is dus niet alleen de afgeleide techniek belangrijk, maar ook de
+keuze van een geschikte algebraïsche of goniometrische methode.
+
+% ============================================================
+% 8. EXTREMUMPROBLEMEN
+% ============================================================
+
+\FVDsection{Extremumproblemen: van context naar functie}
+
+Bij een extremumprobleem is de functie meestal niet gegeven. Je moet ze
+zelf opstellen uit de context.
+
+Dat maakt deze problemen fundamenteel anders dan een standaardvraag
+``bepaal de extrema van \(f\)''.
+
+\begin{opmerking}[Modelleerstrategie]
+Een bruikbare aanpak is:
+
+\begin{enumerate}
+  \item \textbf{Kies de variabele.}
+  \item \textbf{Vertaal de voorwaarden} uit de context naar vergelijkingen.
+  \item \textbf{Stel de doelfunctie op}: welke grootheid moet maximaal of minimaal worden?
+  \item \textbf{Bepaal het betekenisvolle domein}. Contextvoorwaarden zijn hier essentieel.
+  \item Bereken \(f'\) en bepaal kandidaat-extrema.
+  \item \textbf{Controleer} dat het gevonden punt werkelijk het gevraagde extremum geeft.
+  \item \textbf{Interpreteer} het resultaat in de oorspronkelijke context, met correcte eenheden.
+\end{enumerate}
+\end{opmerking}
+
+\begin{voorbeeld}[Maximale oppervlakte]
+Een rechthoek heeft een omtrek van \(40\,\mathrm{m}\).
+Welke afmetingen geven de grootste oppervlakte?
+
+Noem de lengte \(x\) en de breedte \(y\). Dan
+
+\[
+2x+2y=40
+\Longrightarrow
+y=20-x.
+\]
+
+De oppervlakte is
+
+\[
+A(x)=x(20-x)=20x-x^2.
+\]
+
+Uit de context volgt
+
+\[0<x<20.\]
+
+Nu
+
+\[
+A'(x)=20-2x.
+\]
+
+Dus
+
+\[
+A'(x)=0
+\Longleftrightarrow
+x=10.
+\]
+
+Verder is
+
+\[A''(x)=-2<0,\]
+
+dus \(x=10\) geeft een maximum.
+
+De breedte is dan ook \(10\). De optimale rechthoek is dus een vierkant:
+
+\[
+\boxed{10\,\mathrm{m}\times10\,\mathrm{m}}.
+\]
+
+De maximale oppervlakte is
+
+\[
+\boxed{100\,\mathrm{m}^2}.
+\]
+\end{voorbeeld}
+
+\begin{voorbeeld}[Minimale materiaalkost: open doos]
+Uit een vierkant stuk karton met zijde \(30\,\mathrm{cm}\) worden in
+de vier hoeken gelijke vierkantjes met zijde \(x\) weggeknipt. Daarna
+worden de randen omhoog gevouwen.
+
+Het volume van de open doos is
+
+\[
+V(x)=x(30-2x)^2.
+\]
+
+Uit de context volgt
+
+\[0<x<15.\]
+
+Als we het volume willen maximaliseren, onderzoeken we
+
+\[
+V'(x)
+=
+(30-2x)^2-4x(30-2x).
+\]
+
+Factoriseren geeft
+
+\[
+V'(x)=(30-2x)(30-6x).
+\]
+
+Binnen het betekenisvolle domein is
+
+\[x=5\]
+
+de relevante stationaire waarde. Een tekenonderzoek toont dat \(V'\)
+daar van positief naar negatief verandert.
+
+Dus het volume is maximaal voor
+
+\[
+\boxed{x=5\,\mathrm{cm}}.
+\]
+
+De doos heeft dan afmetingen
+
+\[
+20\,\mathrm{cm}\times20\,\mathrm{cm}\times5\,\mathrm{cm}
+\]
+
+en maximaal volume
+
+\[
+\boxed{2000\,\mathrm{cm}^3}.
+\]
+\end{voorbeeld}
+
+\begin{voorbeeld}[Wetenschappelijke context: maximale vermogensoverdracht]
+Een eenvoudige modelvorm voor het vermogen dat aan een belasting
+\(R>0\) wordt geleverd is
+
+\[
+P(R)=\frac{E^2R}{(R+r)^2},
+\]
+
+waar \(E>0\) en \(r>0\) constanten zijn.
+
+We zoeken voor welke \(R\) het vermogen maximaal is.
+
+Omdat \(E^2>0\), volstaat het het verloop van
+
+\[
+p(R)=\frac{R}{(R+r)^2}
+\]
+
+te onderzoeken.
+
+\[
+p'(R)
+=
+\frac{(R+r)^2-2R(R+r)}{(R+r)^4}
+=
+\frac{r-R}{(R+r)^3}.
+\]
+
+Voor \(R>0\) is de noemer positief. Dus \(p'\) is positief voor \(R<r\)
+en negatief voor \(R>r\).
+
+Het vermogen is daarom maximaal wanneer
+
+\[
+\boxed{R=r.}
+\]
+
+Dit is een voorbeeld waarin een afgeleide rechtstreeks leidt tot een
+technisch ontwerpcriterium.
+\end{voorbeeld}
+
+% ============================================================
+% 9. ICT
+% ============================================================
+
+\FVDsection{ICT als controle- en onderzoeksinstrument}
+
+Een grafiekprogramma of CAS kan zeer nuttig zijn bij functieonderzoek,
+maar het vervangt de analyse niet.
+
+Gebruik ICT bijvoorbeeld om:
+
+\begin{itemize}
+  \item een analytisch gevonden grafiekschets te controleren;
+  \item vermoedelijke extrema of buigpunten te lokaliseren vóór je ze exact berekent;
+  \item het effect van een parameter te onderzoeken;
+  \item verschillende modellen te vergelijken;
+  \item numerieke resultaten te controleren wanneer een exacte oplossing niet haalbaar is.
+\end{itemize}
+
+\begin{opmerking}[Analytisch eerst, digitaal bewust]
+Een grafiekvenster kan belangrijke kenmerken verbergen of vervormen.
+Een verticale asymptoot kan bijvoorbeeld als een bijna verticale lijn
+verschijnen, en een extremum kan buiten het gekozen venster liggen.
+
+Gebruik ICT daarom als \textbf{onderzoeks- en controlemiddel}, niet als
+vervanging voor domeinonderzoek, limieten en tekenanalyse.
+\end{opmerking}
+
+% ============================================================
+% 10. KORTE CONTROLE
+% ============================================================
+
+\FVDsection{Korte controle}
+
+\begin{oefening}[Rolle en Lagrange]{\oefB\ESS}
+\begin{question}
+Onderzoek of Rolle toepasbaar is op
+\[f(x)=\cos x\]
+op \([0,2\pi]\). Bepaal alle waarden \(c\in(0,2\pi)\) waarvoor de
+conclusie van Rolle geldt.
+
+\begin{oplossing}
+De functie is continu op \([0,2\pi]\), afleidbaar op \((0,2\pi)\) en
+\[
+f(0)=1=f(2\pi).
+\]
+Rolle is dus toepasbaar. Omdat
+\[
+f'(x)=-\sin x,
+\]
+moet
+\[
+\sin c=0.
+\]
+Binnen \((0,2\pi)\) geeft dit
+\[
+\boxed{c=\pi}.
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Toon met Lagrange dat er voor \(f(x)=\ln x\) op \([1,e]\) een
+\(c\in(1,e)\) bestaat waarvoor
+\[
+f'(c)=\frac1{e-1}.
+\]
+Bepaal \(c\).
+
+\begin{oplossing}
+\(\ln x\) is continu op \([1,e]\) en afleidbaar op \((1,e)\).
+Lagrange geeft
+\[
+f'(c)=\frac{\ln e-\ln1}{e-1}=\frac1{e-1}.
+\]
+Omdat
+\[
+f'(c)=\frac1c,
+\]
+volgt
+\[
+\boxed{c=e-1}.
+\]
+\end{oplossing}
+\end{question}
+\end{oefening}
+
+\begin{oefening}[Van \(f'\) en \(f''\) naar conclusies]{\oefB\ESS}
+Gegeven is
+\[
+f'(x)=\frac{(x-1)(x+2)}{(x-3)^2}
+\]
+voor een functie met \(x=3\) buiten het domein.
+
+\begin{question}
+Bepaal de intervallen waarop \(f\) stijgt en daalt.
+
+\begin{oplossing}
+De noemer is positief in het domein. Het teken wordt dus bepaald door
+\[
+(x-1)(x+2).
+\]
+Daarom is \(f'\) positief voor \(x<-2\) en \(x>1\), en negatief voor
+\(-2<x<1\), met opsplitsing bij \(x=3\).
+
+Dus \(f\) stijgt op
+\[
+(-\infty,-2),\qquad(1,3),\qquad(3,+\infty)
+\]
+en daalt op
+\[
+(-2,1).
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Welke stationaire waarden leveren een lokaal extremum?
+
+\begin{oplossing}
+Bij \(x=-2\) verandert \(f'\) van positief naar negatief: lokaal maximum.
+
+Bij \(x=1\) verandert \(f'\) van negatief naar positief: lokaal minimum.
+\end{oplossing}
+\end{question}
+\end{oefening}
+
+\begin{oefening}[Analyseer, niet alleen bereken]{\oefU\ESS}
+Voor
+\[
+f(x)=x e^{-x}
+\]
+berekende een leerling
+\[
+f'(x)=e^{-x}(1-x).
+\]
+
+Leg zonder een grafiekprogramma te gebruiken uit waarom de functie exact
+één lokaal extremum heeft, welk type extremum dit is en waarom het zelfs
+een absoluut maximum is.
+
+\begin{oplossing}
+Omdat \(e^{-x}>0\) voor alle \(x\), wordt het teken van \(f'\) volledig
+bepaald door \(1-x\).
+
+Voor \(x<1\) is \(f'(x)>0\), dus \(f\) stijgt. Voor \(x>1\) is
+\(f'(x)<0\), dus \(f\) daalt. Bij \(x=1\) verandert het teken van positief
+naar negatief, zodat daar een lokaal maximum ligt.
+
+Verder geldt
+\[
+\lim_{x\to+\infty}xe^{-x}=0
+\]
+en
+\[
+\lim_{x\to-\infty}xe^{-x}=-\infty.
+\]
+Omdat de functie eerst stijgt tot \(x=1\) en daarna daalt, is het maximum
+ook absoluut. De maximale functiewaarde is
+\[
+\boxed{f(1)=\frac1e}.
+\]
+\end{oplossing}
+\end{oefening}
+
+\begin{opmerking}[Wat moet je minimaal beheersen?]
+Om het officiële leerplandoel op het vereiste niveau te bereiken, moet je
+meer kunnen dan afgeleiden berekenen.
+
+Je moet zeker de oefeningen met \(\ESS\) beheersen. Daarin moet je:
+
+\begin{itemize}
+  \item voorwaarden van Rolle en Lagrange controleren;
+  \item informatie uit \(f'\) en \(f''\) interpreteren;
+  \item zelf kritieke waarden selecteren;
+  \item verschillende onderdelen van een functieonderzoek combineren;
+  \item een conclusie over extrema of kromming verantwoorden;
+  \item en bij extremumproblemen de wiskundige functie uit een context kunnen opstellen.
+\end{itemize}
+\end{opmerking}
+
+\end{document}

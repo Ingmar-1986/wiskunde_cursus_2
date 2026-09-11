@@ -1,0 +1,627 @@
+\documentclass{ximera}
+
+\input{../../../preamble.tex}
+\input{../../../Opmaak.tex}
+\addPrintStyle{../../..}
+
+\title{Oefeningen — De regel van l'Hôpital}
+\author{Ingmar Herreman}
+
+\begin{document}
+
+% FVD_CHAPTER_DATA_START
+% Automatisch gegenereerd uit index.tex.
+% Niet handmatig aanpassen.
+\fvdchapterdata{3}{Afleiden van samengestelde functie}{3}
+% FVD_CHAPTER_DATA_END
+
+
+
+\maketitle
+
+\FVDbeginExercises
+
+\begin{opmerking}
+Bij elke limiet geldt dezelfde afspraak: \textbf{bepaal eerst de vorm}.
+Gebruik l'Hôpital alleen wanneer de voorwaarden vervuld zijn.
+
+De oefeningen met \ESS zijn essentieel om het leerplandoel te
+beheersen. Dat zijn niet alleen technische oefeningen: ook oefeningen
+waarin je zelf een methode moet kiezen of een fout moet analyseren zijn
+essentieel.
+\end{opmerking}
+
+% ============================================================
+% BASIS
+% ============================================================
+
+\FVDsection{Basis — techniek en voorwaarden}
+
+\begin{oefening}[Herken de vorm]{\oefB\ESS}
+Bepaal telkens de vorm die ontstaat door substitutie. Beslis of
+l'Hôpital rechtstreeks mag worden toegepast.
+
+\begin{question}
+\[\lim_{x\to3}\frac{x^2-4x+3}{x-3}.\]
+\begin{oplossing}
+Substitutie geeft \(0/0\). L'Hôpital mag rechtstreeks worden toegepast.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+\[\lim_{x\to+\infty}\frac{3x-2}{9x+7}.\]
+\begin{oplossing}
+De vorm is \(\infty/\infty\). L'Hôpital mag rechtstreeks worden toegepast.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+\[\lim_{x\to0}\frac{x+1}{x^2+1}.\]
+\begin{oplossing}
+De vorm is \(1/1\). Er is geen onbepaalde vorm en l'Hôpital mag niet
+worden toegepast. De limiet is \(1\).
+\end{oplossing}
+\end{question}
+
+\begin{question}
+\[\lim_{x\to0^+}x\ln x.\]
+\begin{oplossing}
+De vorm is \(0\cdot(-\infty)\). L'Hôpital mag niet rechtstreeks worden
+toegepast. Eerst moet de uitdrukking tot een geschikt quotiënt worden
+omgevormd.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+\[\lim_{x\to+\infty}\left(\sqrt{x^2+1}-x\right).\]
+\begin{oplossing}
+De vorm is \(\infty-\infty\). L'Hôpital mag niet rechtstreeks worden
+toegepast. Rationaliseren is hier een natuurlijke eerste stap.
+\end{oplossing}
+\end{question}
+\end{oefening}
+
+\begin{oefening}[De vorm \(0/0\)]{\oefB\ESS}
+Bereken met de regel van l'Hôpital.
+
+\begin{question}
+\[\lim_{x\to3}\frac{x^2-4x+3}{x-3}.\]
+\begin{oplossing}
+\[
+\lim_{x\to3}\frac{x^2-4x+3}{x-3}
+\overset{\mathrm H}{=}
+\lim_{x\to3}(2x-4)=2.
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+\[\lim_{x\to-1}\frac{x+1}{x^2-1}.\]
+\begin{oplossing}
+\[
+\lim_{x\to-1}\frac{x+1}{x^2-1}
+\overset{\mathrm H}{=}
+\lim_{x\to-1}\frac{1}{2x}=-\frac12.
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+\[\lim_{x\to1}\frac{2x^2+3x-5}{3x^2+4x-7}.\]
+\begin{oplossing}
+\[
+\lim_{x\to1}\frac{2x^2+3x-5}{3x^2+4x-7}
+\overset{\mathrm H}{=}
+\lim_{x\to1}\frac{4x+3}{6x+4}
+=\frac7{10}.
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+\[\lim_{x\to\sqrt2}\frac{x^4-4}{x^2-2}.\]
+\begin{oplossing}
+\[
+\lim_{x\to\sqrt2}\frac{x^4-4}{x^2-2}
+\overset{\mathrm H}{=}
+\lim_{x\to\sqrt2}\frac{4x^3}{2x}
+=
+\lim_{x\to\sqrt2}2x^2=4.
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+\[\lim_{x\to4}\frac{\sqrt{x}-2}{x-4}.\]
+\begin{oplossing}
+\[
+\lim_{x\to4}\frac{\sqrt{x}-2}{x-4}
+\overset{\mathrm H}{=}
+\lim_{x\to4}\frac{1}{2\sqrt{x}}=\frac14.
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+\[\lim_{x\to0}\frac{e^x-1}{x}.\]
+\begin{oplossing}
+\[
+\lim_{x\to0}\frac{e^x-1}{x}
+\overset{\mathrm H}{=}
+\lim_{x\to0}e^x=1.
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+\[\lim_{x\to0}\frac{\sin x}{x}.\]
+\begin{oplossing}
+\[
+\lim_{x\to0}\frac{\sin x}{x}
+\overset{\mathrm H}{=}
+\lim_{x\to0}\cos x=1.
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+\[\lim_{x\to1}\frac{\ln x}{x-1}.\]
+\begin{oplossing}
+\[
+\lim_{x\to1}\frac{\ln x}{x-1}
+\overset{\mathrm H}{=}
+\lim_{x\to1}\frac{1/x}{1}=1.
+\]
+\end{oplossing}
+\end{question}
+\end{oefening}
+
+\begin{oefening}[De vorm \(\infty/\infty\)]{\oefB\ESS}
+Bereken met de regel van l'Hôpital.
+
+\begin{question}
+\[\lim_{x\to+\infty}\frac{3x-2}{9x+7}.\]
+\begin{oplossing}
+\[
+\lim_{x\to+\infty}\frac{3x-2}{9x+7}
+\overset{\mathrm H}{=}\frac39=\frac13.
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+\[\lim_{x\to+\infty}\frac{6x^2+2x+2}{5x^2-3x+4}.\]
+\begin{oplossing}
+Na twee toepassingen:
+\[
+\lim_{x\to+\infty}\frac{6x^2+2x+2}{5x^2-3x+4}
+\overset{\mathrm H}{=}
+\lim_{x\to+\infty}\frac{12x+2}{10x-3}
+\overset{\mathrm H}{=}\frac{12}{10}=\frac65.
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+\[\lim_{x\to+\infty}\frac{x^2}{e^x}.\]
+\begin{oplossing}
+\[
+\lim_{x\to+\infty}\frac{x^2}{e^x}
+\overset{\mathrm H}{=}
+\lim_{x\to+\infty}\frac{2x}{e^x}
+\overset{\mathrm H}{=}
+\lim_{x\to+\infty}\frac2{e^x}=0.
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+\[\lim_{x\to+\infty}\frac{\ln x}{x}.\]
+\begin{oplossing}
+\[
+\lim_{x\to+\infty}\frac{\ln x}{x}
+\overset{\mathrm H}{=}
+\lim_{x\to+\infty}\frac1x=0.
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+\[\lim_{x\to-\infty}\frac{x}{x^2+5}.\]
+\begin{oplossing}
+\[
+\lim_{x\to-\infty}\frac{x}{x^2+5}
+\overset{\mathrm H}{=}
+\lim_{x\to-\infty}\frac1{2x}=0.
+\]
+\end{oplossing}
+\end{question}
+\end{oefening}
+
+\begin{oefening}[Meermaals l'Hôpital]{\oefB\ESS}
+Bereken. Controleer na elke toepassing opnieuw de vorm.
+
+\begin{question}
+\[\lim_{x\to0}\frac{1-\cos x}{x^2}.\]
+\begin{oplossing}
+Eerst \(0/0\):
+\[
+\lim_{x\to0}\frac{1-\cos x}{x^2}
+\overset{\mathrm H}{=}
+\lim_{x\to0}\frac{\sin x}{2x}.
+\]
+Opnieuw \(0/0\):
+\[
+\lim_{x\to0}\frac{\sin x}{2x}
+\overset{\mathrm H}{=}
+\lim_{x\to0}\frac{\cos x}{2}=\frac12.
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+\[\lim_{x\to0}\frac{e^x-1-x}{x^2}.\]
+\begin{oplossing}
+\[
+\lim_{x\to0}\frac{e^x-1-x}{x^2}
+\overset{\mathrm H}{=}
+\lim_{x\to0}\frac{e^x-1}{2x}
+\overset{\mathrm H}{=}
+\lim_{x\to0}\frac{e^x}{2}=\frac12.
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+\[\lim_{x\to+\infty}\frac{2x^3+x^2+1}{3x^4-2x}.\]
+\begin{oplossing}
+\[
+\begin{aligned}
+\lim_{x\to+\infty}\frac{2x^3+x^2+1}{3x^4-2x}
+&\overset{\mathrm H}{=}\lim_{x\to+\infty}\frac{6x^2+2x}{12x^3-2}\\
+&\overset{\mathrm H}{=}\lim_{x\to+\infty}\frac{12x+2}{36x^2}\\
+&\overset{\mathrm H}{=}\lim_{x\to+\infty}\frac{12}{72x}=0.
+\end{aligned}
+\]
+\end{oplossing}
+\end{question}
+\end{oefening}
+
+% ============================================================
+% VERDIEPING
+% ============================================================
+
+\FVDsection{Verdieping — analyseren en kiezen}
+
+\begin{oefening}[Welke methode kies je?]{\oefU\ESS}
+Bereken elke limiet. Bepaal eerst de vorm en kies vervolgens een
+efficiënte methode. Motiveer waarom l'Hôpital wel of niet aangewezen is.
+
+\begin{question}
+\[\lim_{x\to2}\frac{x^2-4}{x-2}.\]
+\begin{oplossing}
+De vorm is \(0/0\), dus l'Hôpital mag. Ontbinden is nog eenvoudiger:
+\[
+\frac{x^2-4}{x-2}=x+2
+\]
+voor \(x\neq2\). De limiet is \(4\).
+\end{oplossing}
+\end{question}
+
+\begin{question}
+\[\lim_{x\to+\infty}\frac{4x^2-3x+1}{2x^2+5}.\]
+\begin{oplossing}
+De vorm is \(\infty/\infty\). L'Hôpital mag, maar delen door \(x^2\)
+is efficiënter:
+\[
+\lim_{x\to+\infty}
+\frac{4-\frac3x+\frac1{x^2}}{2+\frac5{x^2}}=2.
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+\[\lim_{x\to4}\frac{\sqrt{x}-2}{x-4}.\]
+\begin{oplossing}
+De vorm is \(0/0\). Zowel l'Hôpital als rationaliseren is geschikt.
+Met l'Hôpital volgt onmiddellijk \(1/4\).
+\end{oplossing}
+\end{question}
+
+\begin{question}
+\[\lim_{x\to+\infty}\frac{\ln x}{x^2}.\]
+\begin{oplossing}
+De vorm is \(\infty/\infty\). L'Hôpital is efficiënt:
+\[
+\lim_{x\to+\infty}\frac{\ln x}{x^2}
+\overset{\mathrm H}{=}
+\lim_{x\to+\infty}\frac{1/x}{2x}
+=
+\lim_{x\to+\infty}\frac1{2x^2}=0.
+\]
+\end{oplossing}
+\end{question}
+\end{oefening}
+
+\begin{oefening}[Vind en herstel de fout]{\oefU\ESS}
+Analyseer elke redenering. Geef aan waar de fout zit en bereken daarna
+de limiet correct.
+
+\begin{question}
+Een leerling schrijft
+\[
+\lim_{x\to0}\frac{x+1}{x+2}
+\overset{\mathrm H}{=}
+\lim_{x\to0}\frac11=1.
+\]
+\begin{oplossing}
+De fout gebeurt vóór het afleiden: de vorm is \(1/2\), niet \(0/0\)
+of \(\infty/\infty\). L'Hôpital mag niet worden toegepast.
+\[
+\lim_{x\to0}\frac{x+1}{x+2}=\frac12.
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Een leerling schrijft
+\[
+\lim_{x\to0}\frac{\sin x}{x}
+\overset{\mathrm H}{=}
+\lim_{x\to0}\frac{\cos x\cdot x-\sin x}{x^2}.
+\]
+\begin{oplossing}
+De leerling gebruikt de quotiëntregel. Bij l'Hôpital moeten teller en
+noemer afzonderlijk worden afgeleid:
+\[
+\lim_{x\to0}\frac{\sin x}{x}
+\overset{\mathrm H}{=}
+\lim_{x\to0}\frac{\cos x}{1}=1.
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Een leerling ziet
+\[
+\lim_{x\to0^+}x\ln x
+\]
+en ``past l'Hôpital toe'' door teller en factor afzonderlijk af te leiden.
+\begin{oplossing}
+De vorm is \(0\cdot(-\infty)\), geen quotiëntvorm. Eerst herschrijven:
+\[
+x\ln x=\frac{\ln x}{1/x}.
+\]
+Nu ontstaat \((-\infty)/\infty\), zodat
+\[
+\lim_{x\to0^+}\frac{\ln x}{1/x}
+\overset{\mathrm H}{=}
+\lim_{x\to0^+}(-x)=0.
+\]
+\end{oplossing}
+\end{question}
+\end{oefening}
+
+\begin{oefening}[Eenzijdige limieten]{\oefU\ESS}
+Bereken en let zorgvuldig op het teken.
+
+\begin{question}
+\[\lim_{x\to6^-}\frac{x^2-8x+12}{x^2-12x+36}.\]
+\begin{oplossing}
+Substitutie geeft \(0/0\). Met l'Hôpital:
+\[
+\lim_{x\to6^-}\frac{x^2-8x+12}{x^2-12x+36}
+\overset{\mathrm H}{=}
+\lim_{x\to6^-}\frac{2x-8}{2x-12}.
+\]
+De teller nadert \(4>0\), de noemer nadert \(0^-\). Dus
+\[
+\boxed{-\infty}.
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+\[\lim_{x\to-1^+}\frac{x^2+2x+1}{x^3+3x^2+3x+1}.\]
+\begin{oplossing}
+De vorm is \(0/0\). Omdat
+\[
+\frac{(x+1)^2}{(x+1)^3}=\frac1{x+1}
+\]
+voor \(x\neq-1\), volgt bij \(x\to-1^+\):
+\[
+\boxed{+\infty}.
+\]
+L'Hôpital leidt na vereenvoudiging tot hetzelfde besluit.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+\[\lim_{x\to\frac12^-}\frac{2x-1}{4x^2-4x+1}.\]
+\begin{oplossing}
+Omdat \(4x^2-4x+1=(2x-1)^2\),
+\[
+\frac{2x-1}{4x^2-4x+1}=\frac1{2x-1}.
+\]
+Voor \(x\to\frac12^-\) nadert de noemer \(0^-\). Dus
+\[
+\boxed{-\infty}.
+\]
+\end{oplossing}
+\end{question}
+\end{oefening}
+
+\begin{oefening}[Eerst omvormen]{\oefU\ESS}
+Bereken. L'Hôpital mag niet als eerste stap worden gebruikt.
+
+\begin{question}
+\[\lim_{x\to0^+}x\ln x.\]
+\begin{oplossing}
+\[
+x\ln x=\frac{\ln x}{1/x}.
+\]
+Dus
+\[
+\lim_{x\to0^+}x\ln x
+\overset{\mathrm H}{=}
+\lim_{x\to0^+}\frac{1/x}{-1/x^2}
+=
+\lim_{x\to0^+}(-x)=0.
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+\[\lim_{x\to+\infty}\left(\sqrt{x^2+2}-x\right).\]
+\begin{oplossing}
+Rationaliseer:
+\[
+\sqrt{x^2+2}-x
+=
+\frac{2}{\sqrt{x^2+2}+x}.
+\]
+De noemer gaat naar \(+\infty\), dus
+\[
+\boxed{0}.
+\]
+Na de omvorming is l'Hôpital zelfs niet meer nodig.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+\[\lim_{x\to+\infty}\left(\sqrt{x^2+x}-x\right).\]
+\begin{oplossing}
+\[
+\sqrt{x^2+x}-x
+=
+\frac{x}{\sqrt{x^2+x}+x}.
+\]
+Delen door \(x>0\) geeft
+\[
+\frac1{\sqrt{1+\frac1x}+1}\longrightarrow\frac12.
+\]
+Dus
+\[
+\boxed{\frac12}.
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+\[\lim_{x\to0}(1+x)^{1/x}.\]
+\begin{oplossing}
+De vorm is \(1^\infty\). Stel \(L\) gelijk aan de limiet. Dan
+\[
+\ln L=\lim_{x\to0}\frac{\ln(1+x)}x.
+\]
+Dit is \(0/0\), zodat
+\[
+\ln L
+\overset{\mathrm H}{=}
+\lim_{x\to0}\frac1{1+x}=1.
+\]
+Daarom
+\[
+\boxed{L=e}.
+\]
+\end{oplossing}
+\end{question}
+\end{oefening}
+
+\begin{oefening}[Parameterlimiet]{\oefU}
+Neem \(a>0\) en \(m,n\in\mathbb{N}\). Bepaal
+
+\[\lim_{x\to a}\frac{x^m-a^m}{x^n-a^n}.\]
+
+\begin{oplossing}
+De vorm is \(0/0\). Met l'Hôpital:
+\[
+\lim_{x\to a}\frac{x^m-a^m}{x^n-a^n}
+=
+\lim_{x\to a}\frac{mx^{m-1}}{nx^{n-1}}
+=
+\boxed{\frac mn a^{m-n}}.
+\]
+\end{oplossing}
+\end{oefening}
+
+% ============================================================
+% GEVORDERD
+% ============================================================
+
+\FVDsection{Gevorderd — transfer en verdieping}
+
+\begin{oefening}[Groeisnelheden vergelijken]{\oefG}
+Onderzoek voor \(n\in\mathbb{N}\) de limiet
+
+\[\lim_{x\to+\infty}\frac{x^n}{e^x}.\]
+
+Formuleer op basis van je berekening een algemeen besluit over de
+groei van \(e^x\) tegenover een vaste macht van \(x\).
+
+\begin{oplossing}
+De vorm is \(\infty/\infty\). Na \(n\) toepassingen van l'Hôpital:
+\[
+\lim_{x\to+\infty}\frac{x^n}{e^x}
+=
+\lim_{x\to+\infty}\frac{n!}{e^x}=0.
+\]
+Dus \(e^x\) groeit voor \(x\to+\infty\) uiteindelijk sneller dan elke
+vaste positieve macht \(x^n\).
+\end{oplossing}
+\end{oefening}
+
+\begin{oefening}[Een limiet als lokale vergelijking]{\oefG}
+Bepaal de constante \(c\) waarvoor
+
+\[\lim_{x\to0}\frac{e^x-1-x-cx^2}{x^2}=0.\]
+
+\begin{oplossing}
+De vorm is \(0/0\). Een eerste toepassing geeft opnieuw \(0/0\):
+\[
+\lim_{x\to0}\frac{e^x-1-2cx}{2x}.
+\]
+Nogmaals l'Hôpital:
+\[
+\lim_{x\to0}\frac{e^x-2c}{2}=\frac{1-2c}{2}.
+\]
+Deze limiet moet \(0\) zijn. Dus
+\[
+1-2c=0
+\qquad\Longrightarrow\qquad
+\boxed{c=\frac12}.
+\]
+\end{oplossing}
+\end{oefening}
+
+\begin{oefening}[Analyseer een bewering]{\oefG}
+Een leerling beweert:
+
+\begin{center}
+``Als teller en noemer beide naar oneindig gaan, mag je teller en
+noemer blijven afleiden tot er constanten overblijven.''
+\end{center}
+
+Beoordeel deze uitspraak. Geef aan wat er correct aan is en wat ontbreekt.
+
+\begin{oplossing}
+De uitspraak is te sterk.
+
+Bij een vorm \(\infty/\infty\) kan l'Hôpital worden toegepast wanneer
+de voorwaarden van de regel vervuld zijn. Na elke toepassing moet echter
+opnieuw worden nagegaan welke vorm ontstaat. Zodra de nieuwe limiet geen
+\(0/0\) of \(\infty/\infty\) meer is, mag l'Hôpital niet zomaar opnieuw
+worden toegepast.
+
+Bovendien hoeft men niet ``tot constanten'' af te leiden: men stopt zodra
+de nieuwe limiet bepaald kan worden. Ten slotte kan een andere methode,
+zoals delen door de hoogste macht, veel efficiënter zijn.
+\end{oplossing}
+\end{oefening}
+
+
+
+\FVDendExercises
+
+\end{document}
+

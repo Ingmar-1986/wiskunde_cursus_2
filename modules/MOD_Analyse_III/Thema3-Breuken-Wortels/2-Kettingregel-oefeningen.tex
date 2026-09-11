@@ -1,0 +1,1256 @@
+\documentclass{ximera}
+
+\input{../../../preamble.tex}
+\input{../../../Opmaak.tex}
+\addPrintStyle{../../..}
+
+\title{Oefeningen — De kettingregel}
+\author{Ingmar Herreman}
+
+\begin{document}
+
+% FVD_CHAPTER_DATA_START
+% Automatisch gegenereerd uit index.tex.
+% Niet handmatig aanpassen.
+\fvdchapterdata{3}{Afleiden van samengestelde functie}{2}
+% FVD_CHAPTER_DATA_END
+
+
+
+
+\maketitle
+
+
+
+\begin{oefening}[Binnen en buiten herkennen]{\oefB\ESS}
+
+Bepaal telkens de binnenste en de buitenste functie.
+
+\begin{enumerate}
+  \item \[f(x)=(3x-2)^7.\]
+  \item \[g(x)=\sqrt{x^2+5x+8}.\]
+  \item \[h(x)=\frac{1}{(2x+1)^4}.\]
+  \item \[p(x)=\left(x^3-4x+1\right)^5.\]
+  \item \[q(x)=\sqrt{(x-1)^2+4}.\]
+\end{enumerate}
+
+\begin{oplossing}
+\begin{enumerate}
+  \item Binnen: \[u=3x-2.\] Buiten: \[f(u)=u^7.\]
+  \item Binnen: \[u=x^2+5x+8.\] Buiten: \[g(u)=\sqrt{u}.\]
+  \item Binnen: \[u=2x+1.\] Buiten: \[h(u)=u^{-4}.\]
+  \item Binnen: \[u=x^3-4x+1.\] Buiten: \[p(u)=u^5.\]
+  \item Buiten: \[\sqrt{\phantom{x}}.\] Binnen: \[(x-1)^2+4.\]
+  De binnenste uitdrukking bevat zelf opnieuw een samenstelling:
+  \[(x-1)^2.\]
+\end{enumerate}
+\end{oplossing}
+
+\end{oefening}
+
+
+
+\begin{oefening}[De kettingregel toepassen]{\oefB\ESS}
+
+Bepaal telkens de afgeleide.
+
+\begin{enumerate}
+  \item \[f(x)=(5x+2)^4.\]
+  \item \[g(x)=(x^2-3)^6.\]
+  \item \[h(x)=\sqrt{4x+7}.\]
+  \item \[p(x)=(2x^2+x-1)^5.\]
+  \item \[q(x)=\frac{1}{(3x-2)^3}.\]
+  \item \[r(x)=\sqrt{x^3+1}.\]
+\end{enumerate}
+
+\begin{oplossing}
+\begin{enumerate}
+  \item \[f'(x)=4(5x+2)^3\cdot5.\]
+  Dus:
+  \[\boxed{f'(x)=20(5x+2)^3.}\]
+
+  \item \[g'(x)=6(x^2-3)^5\cdot2x.\]
+  Dus:
+  \[\boxed{g'(x)=12x(x^2-3)^5.}\]
+
+  \item \[h'(x)=\frac{1}{2\sqrt{4x+7}}\cdot4.\]
+  Dus:
+  \[\boxed{h'(x)=\frac{2}{\sqrt{4x+7}}.}\]
+
+  \item \[p'(x)=5(2x^2+x-1)^4(4x+1).\]
+
+  \item We schrijven:
+  \[q(x)=(3x-2)^{-3}.\]
+  Dan:
+  \[q'(x)=-3(3x-2)^{-4}\cdot3.\]
+  Dus:
+  \[\boxed{q'(x)=-\frac{9}{(3x-2)^4}.}\]
+
+  \item \[r'(x)=\frac{1}{2\sqrt{x^3+1}}\cdot3x^2.\]
+  Dus:
+  \[\boxed{r'(x)=\frac{3x^2}{2\sqrt{x^3+1}}.}\]
+\end{enumerate}
+\end{oplossing}
+
+\end{oefening}
+
+
+
+
+\begin{oefening}[Meerdere lagen]{\oefB\ESS}
+
+Bepaal de afgeleide.
+
+\begin{enumerate}
+  \item \[f(x)=\left((2x-1)^2+3\right)^4.\]
+  \item \[g(x)=\sqrt{(x+2)^3+1}.\]
+  \item \[h(x)=\left((x^2+1)^3-2\right)^5.\]
+  \item \[p(x)=\frac{1}{\left((3x-1)^2+4\right)^2}.\]
+\end{enumerate}
+
+\begin{oplossing}
+\begin{enumerate}
+  \item
+  \[f'(x)=4\left((2x-1)^2+3\right)^3\cdot2(2x-1)\cdot2.\]
+  Dus:
+  \[\boxed{f'(x)=16(2x-1)\left((2x-1)^2+3\right)^3.}\]
+
+  \item
+  \[g'(x)=\frac{1}{2\sqrt{(x+2)^3+1}}\cdot3(x+2)^2.\]
+  Dus:
+  \[\boxed{g'(x)=\frac{3(x+2)^2}{2\sqrt{(x+2)^3+1}}.}\]
+
+  \item
+  \[h'(x)=5\left((x^2+1)^3-2\right)^4\cdot3(x^2+1)^2\cdot2x.\]
+  Dus:
+  \[\boxed{h'(x)=30x(x^2+1)^2\left((x^2+1)^3-2\right)^4.}\]
+
+  \item
+  \[p(x)=\left((3x-1)^2+4\right)^{-2}.\]
+  Dus:
+  \[p'(x)=-2\left((3x-1)^2+4\right)^{-3}\cdot2(3x-1)\cdot3.\]
+  Daarom:
+  \[\boxed{p'(x)=-\frac{12(3x-1)}{\left((3x-1)^2+4\right)^3}.}\]
+\end{enumerate}
+\end{oplossing}
+
+\end{oefening}
+
+
+
+\begin{oefening}[Domein en afgeleide]{\oefB\ESS}
+
+Bepaal voor elke functie:
+\begin{enumerate}
+  \item het domein van de functie;
+  \item de afgeleide;
+  \item het domein van de afgeleide.
+\end{enumerate}
+
+\begin{question}
+\[f(x)=\sqrt{5-2x}.\]
+\end{question}
+
+\begin{question}
+\[g(x)=\sqrt{x^2-4}.\]
+\end{question}
+
+\begin{question}
+\[h(x)=\frac{1}{(x-3)^4}.\]
+\end{question}
+
+\begin{oplossing}
+
+Voor
+\[f(x)=\sqrt{5-2x}\]
+moet:
+\[5-2x\geq0.\]
+
+Dus:
+\[\operatorname{dom}f=\left]-\infty,\frac52\right].\]
+
+Verder:
+\[f'(x)=-\frac{1}{\sqrt{5-2x}}.\]
+
+Daarom:
+\[\operatorname{dom}f'=\left]-\infty,\frac52\right[.\]
+
+Voor
+\[g(x)=\sqrt{x^2-4}\]
+moet:
+\[x^2-4\geq0.\]
+
+Dus:
+\[\operatorname{dom}g=]-\infty,-2]\cup[2,+\infty[.\]
+
+Verder:
+\[g'(x)=\frac{x}{\sqrt{x^2-4}}.\]
+
+Daarom:
+\[\operatorname{dom}g'=]-\infty,-2[\cup]2,+\infty[.\]
+
+Voor
+\[h(x)=\frac{1}{(x-3)^4}\]
+geldt:
+\[\operatorname{dom}h=\mathbb R\setminus\{3\}.\]
+
+We schrijven:
+\[h(x)=(x-3)^{-4}.\]
+
+Dus:
+\[h'(x)=-4(x-3)^{-5}.\]
+
+Daarom:
+\[\boxed{h'(x)=-\frac4{(x-3)^5}}\]
+met:
+\[\operatorname{dom}h'=\mathbb R\setminus\{3\}.\]
+
+\end{oplossing}
+
+\end{oefening}
+
+
+
+\begin{oefening}[Welke regel eerst?]{\oefU\ESS}
+
+Bepaal eerst de hoofdstructuur van de functie.
+Noteer welke afleidingsregel je eerst gebruikt en bereken daarna de afgeleide.
+
+\begin{enumerate}
+  \item \[f(x)=x^3(x^2+1)^4.\]
+  \item \[g(x)=\frac{(2x+1)^5}{x^2+3}.\]
+  \item \[h(x)=\sqrt{x^2+4x+7}.\]
+  \item \[p(x)=\frac{x^2}{\sqrt{x+1}}.\]
+  \item \[q(x)=(x^2-1)^3(x+2)^4.\]
+\end{enumerate}
+
+\begin{oplossing}
+\begin{enumerate}
+  \item Hoofdregel: productregel.
+  \[
+  f'(x)=3x^2(x^2+1)^4+x^3\cdot4(x^2+1)^3\cdot2x.
+  \]
+  Dus:
+  \[\boxed{f'(x)=x^2(x^2+1)^3(11x^2+3).}\]
+
+  \item Hoofdregel: quotiëntregel.
+  \[
+  g'(x)=
+  \frac{10(2x+1)^4(x^2+3)-(2x+1)^5(2x)}{(x^2+3)^2}.
+  \]
+  Dus:
+  \[\boxed{g'(x)=\frac{(2x+1)^4(6x^2-2x+30)}{(x^2+3)^2}.}\]
+
+  \item Hoofdregel: kettingregel.
+  \[
+  h'(x)=\frac{2x+4}{2\sqrt{x^2+4x+7}}.
+  \]
+  Dus:
+  \[\boxed{h'(x)=\frac{x+2}{\sqrt{x^2+4x+7}}.}\]
+
+  \item Efficiënt is herschrijven:
+  \[p(x)=x^2(x+1)^{-1/2}.\]
+  Dan:
+  \[
+  p'(x)=2x(x+1)^{-1/2}-\frac12x^2(x+1)^{-3/2}.
+  \]
+  Dus:
+  \[\boxed{p'(x)=\frac{x(3x+4)}{2(x+1)^{3/2}}.}\]
+
+  \item Hoofdregel: productregel.
+  \[
+  q'(x)=6x(x^2-1)^2(x+2)^4+4(x^2-1)^3(x+2)^3.
+  \]
+  Dus:
+  \[\boxed{q'(x)=2(x^2-1)^2(x+2)^3(5x^2+6x-2).}\]
+\end{enumerate}
+\end{oplossing}
+
+\end{oefening}
+
+
+
+
+\begin{oefening}[Wat ging er fout?]{\oefU\ESS}
+
+Analyseer elke afleiding.
+Geef aan of ze correct is. Indien niet, leg de fout uit en verbeter.
+
+\begin{enumerate}
+  \item
+  \[
+  f(x)=(3x+1)^4,\qquad
+  f'(x)=4(3x+1)^3.
+  \]
+
+  \item
+  \[
+  g(x)=(x^2+1)^5,\qquad
+  g'(x)=5(2x)^4\cdot2.
+  \]
+
+  \item
+  \[
+  h(x)=x(x+1)^3,\qquad
+  h'(x)=3x(x+1)^2.
+  \]
+
+  \item
+  \[
+  p(x)=\sqrt{2x^2+3},\qquad
+  p'(x)=\frac{4x}{2\sqrt{2x^2+3}}.
+  \]
+\end{enumerate}
+
+\begin{oplossing}
+\begin{enumerate}
+  \item Fout. De afgeleide van de binnenste functie ontbreekt.
+  \[
+  f'(x)=4(3x+1)^3\cdot3.
+  \]
+  Dus:
+  \[\boxed{f'(x)=12(3x+1)^3.}\]
+
+  \item Fout. Bij het afleiden van de buitenste macht moet $x^2+1$ blijven staan.
+  \[
+  g'(x)=5(x^2+1)^4\cdot2x.
+  \]
+  Dus:
+  \[\boxed{g'(x)=10x(x^2+1)^4.}\]
+
+  \item Fout. De hoofdstructuur is een product.
+  \[
+  h'(x)=(x+1)^3+3x(x+1)^2.
+  \]
+  Dus:
+  \[\boxed{h'(x)=(x+1)^2(4x+1).}\]
+
+  \item Correct.
+  \[
+  p'(x)=\frac{1}{2\sqrt{2x^2+3}}\cdot4x
+  =\frac{2x}{\sqrt{2x^2+3}}.
+  \]
+\end{enumerate}
+\end{oplossing}
+
+\end{oefening}
+
+
+
+
+\begin{oefening}[Afleiden]{\oefU\ESS}
+
+Bepaal de afgeleide.
+
+\begin{enumerate}
+  \item \[f(x)=\frac{\sqrt{x^2+1}}{x+2}.\]
+  \item \[g(x)=\frac{(x^2-1)^3}{(2x+1)^2}.\]
+  \item \[h(x)=x^2\sqrt{3x-1}.\]
+  \item \[p(x)=\frac{\sqrt{(x-1)^2+4}}{(x+1)^3}.\]
+\end{enumerate}
+
+\begin{oplossing}
+\begin{enumerate}
+  \item
+  \[
+  f'(x)=
+  \frac{\frac{x}{\sqrt{x^2+1}}(x+2)-\sqrt{x^2+1}}{(x+2)^2}.
+  \]
+  Dus:
+  \[\boxed{f'(x)=\frac{2x-1}{(x+2)^2\sqrt{x^2+1}}.}\]
+
+  \item
+  \[
+  g'(x)=
+  \frac{6x(x^2-1)^2(2x+1)^2-(x^2-1)^3\cdot4(2x+1)}
+       {(2x+1)^4}.
+  \]
+  Dus:
+  \[\boxed{g'(x)=\frac{2(x^2-1)^2(x^2+3x+2)}{(2x+1)^3}.}\]
+
+  \item
+  \[
+  h'(x)=2x\sqrt{3x-1}+x^2\frac{3}{2\sqrt{3x-1}}.
+  \]
+  Dus:
+  \[\boxed{h'(x)=\frac{x(15x-4)}{2\sqrt{3x-1}}.}\]
+
+  \item
+  Met
+  \[
+  u(x)=\sqrt{(x-1)^2+4}
+  \]
+  geldt:
+  \[
+  u'(x)=\frac{x-1}{\sqrt{(x-1)^2+4}}.
+  \]
+  Met
+  \[
+  v(x)=(x+1)^3
+  \]
+  geldt:
+  \[
+  v'(x)=3(x+1)^2.
+  \]
+  Dus:
+  \[
+  p'(x)=
+  \frac{
+  \frac{x-1}{\sqrt{(x-1)^2+4}}(x+1)^3
+  -
+  3(x+1)^2\sqrt{(x-1)^2+4}
+  }
+  {(x+1)^6}.
+  \]
+\end{enumerate}
+\end{oplossing}
+
+\end{oefening}
+
+
+
+
+\begin{oefening}[Een ballon die groter wordt]{\oefU\ESS}
+
+Een bolvormige ballon heeft volume
+\[
+V=\frac{4}{3}\pi r^3.
+\]
+
+De straal verandert in de tijd volgens
+\[
+r(t)=2+0{,}4t,
+\]
+waarbij $r$ in centimeter en $t$ in seconden wordt uitgedrukt.
+
+\begin{question}
+Schrijf $V$ als functie van $t$.
+\end{question}
+
+\begin{question}
+Bepaal $\dfrac{dV}{dt}$.
+\end{question}
+
+\begin{question}
+Bereken hoe snel het volume verandert op het tijdstip $t=5$.
+\end{question}
+
+\begin{question}
+Leg uit waar in deze berekening de kettingregel optreedt.
+\end{question}
+
+\begin{oplossing}
+
+\[
+V(t)=\frac{4}{3}\pi(2+0{,}4t)^3.
+\]
+
+Met de kettingregel:
+\[
+\frac{dV}{dt}
+=
+\frac{4}{3}\pi\cdot3(2+0{,}4t)^2\cdot0{,}4.
+\]
+
+Dus:
+\[
+\boxed{\frac{dV}{dt}=1{,}6\pi(2+0{,}4t)^2.}
+\]
+
+Voor $t=5$:
+\[
+r(5)=4.
+\]
+
+Dus:
+\[
+\boxed{\frac{dV}{dt}(5)=25{,}6\pi\ \mathrm{cm^3/s}.}
+\]
+
+De kettingregel is nodig omdat:
+\[
+V\longrightarrow r\longrightarrow t.
+\]
+
+\end{oplossing}
+
+\end{oefening}
+
+
+\begin{oefening}[Temperatuur langs een buis]{\oefU\ESS}
+
+Langs een rechte buis varieert de temperatuur volgens
+\[
+T(x)=20+5x^2,
+\]
+waarbij $T$ in graden Celsius en $x$ in meter wordt uitgedrukt.
+
+Een sensor beweegt door de buis volgens
+\[
+x(t)=0{,}3t.
+\]
+
+\begin{question}
+Schrijf de temperatuur die de sensor meet als functie van de tijd.
+\end{question}
+
+\begin{question}
+Bepaal $\dfrac{dT}{dt}$.
+\end{question}
+
+\begin{question}
+Hoe snel verandert de gemeten temperatuur op $t=10$?
+\end{question}
+
+\begin{oplossing}
+
+\[
+T(t)=20+5(0{,}3t)^2.
+\]
+
+Met de kettingregel:
+\[
+\frac{dT}{dt}
+=
+\frac{dT}{dx}\cdot\frac{dx}{dt}.
+\]
+
+Nu:
+\[
+\frac{dT}{dx}=10x
+\]
+en:
+\[
+\frac{dx}{dt}=0{,}3.
+\]
+
+Dus:
+\[
+\frac{dT}{dt}=3x.
+\]
+
+Voor $t=10$ is:
+\[
+x=3.
+\]
+
+Daarom:
+\[
+\boxed{\frac{dT}{dt}=9\ ^\circ\mathrm{C/s}.}
+\]
+
+\end{oplossing}
+
+\end{oefening}
+
+
+\begin{oefening}[Een bewegend punt op een parabool]{\oefU\ESS}
+
+Een punt beweegt langs de parabool
+\[
+y=x^2+1.
+\]
+
+Zijn $x$-coördinaat verandert volgens
+\[
+x(t)=t^2-1.
+\]
+
+\begin{question}
+Schrijf $y$ als functie van $t$.
+\end{question}
+
+\begin{question}
+Bepaal $\dfrac{dy}{dt}$ met behulp van de kettingregel.
+\end{question}
+
+\begin{question}
+Bereken $\dfrac{dy}{dt}$ op het tijdstip $t=2$.
+\end{question}
+
+\begin{oplossing}
+
+\[
+y(t)=(t^2-1)^2+1.
+\]
+
+Met de kettingregel:
+\[
+\frac{dy}{dt}
+=
+\frac{dy}{dx}\cdot\frac{dx}{dt}.
+\]
+
+Nu:
+\[
+\frac{dy}{dx}=2x
+\]
+en:
+\[
+\frac{dx}{dt}=2t.
+\]
+
+Dus:
+\[
+\frac{dy}{dt}=4tx.
+\]
+
+Omdat:
+\[
+x=t^2-1,
+\]
+krijgen we:
+\[
+\boxed{\frac{dy}{dt}=4t(t^2-1).}
+\]
+
+Voor $t=2$:
+\[
+\boxed{\frac{dy}{dt}(2)=24.}
+\]
+
+\end{oplossing}
+
+\end{oefening}
+
+
+
+
+\begin{oefening}[Een onbekende parameter]{\oefG}
+
+Gegeven is:
+\[
+f(x)=(ax+b)^5.
+\]
+
+Verder weet je dat:
+\[
+f'(1)=160
+\]
+en:
+\[
+a+b=2.
+\]
+
+Bepaal mogelijke waarden van $a$ en $b$.
+
+\begin{oplossing}
+
+\[
+f'(x)=5a(ax+b)^4.
+\]
+
+Dus:
+\[
+160=5a(a+b)^4.
+\]
+
+Met $a+b=2$:
+\[
+160=5a\cdot16=80a.
+\]
+
+Dus:
+\[
+a=2
+\]
+en:
+\[
+b=0.
+\]
+
+Daarom:
+\[
+\boxed{a=2,\qquad b=0.}
+\]
+
+\end{oplossing}
+
+\end{oefening}
+
+
+\begin{oefening}[Werk achteruit]{\oefG}
+
+Gegeven is:
+\[
+f'(x)=12x(x^2+1)^5.
+\]
+
+Zoek een mogelijke functie $f$ van de vorm
+\[
+f(x)=A(x^2+1)^n+C.
+\]
+
+Bepaal $A$ en $n$.
+
+\begin{oplossing}
+
+\[
+f'(x)=2Anx(x^2+1)^{n-1}.
+\]
+
+Vergelijk met:
+\[
+12x(x^2+1)^5.
+\]
+
+Daaruit volgt:
+\[
+n-1=5,
+\]
+dus:
+\[
+n=6.
+\]
+
+Verder:
+\[
+2An=12.
+\]
+
+Dus:
+\[
+12A=12,
+\]
+zodat:
+\[
+A=1.
+\]
+
+Een mogelijke functie is:
+\[
+\boxed{f(x)=(x^2+1)^6+C.}
+\]
+
+\end{oplossing}
+
+\end{oefening}
+
+
+
+\begin{oefening}[Zonder volledig uit te werken]{\oefG}
+
+Gegeven:
+\[
+f(x)=(x^2-4x+5)^6.
+\]
+
+\begin{question}
+Bepaal $f'(x)$ zonder de zesde macht uit te werken.
+\end{question}
+
+\begin{question}
+Bepaal alle waarden van $x$ waarvoor
+\[
+f'(x)=0.
+\]
+\end{question}
+
+\begin{question}
+Leg uit waarom het in deze oefening bijzonder onpraktisch zou zijn
+om eerst $f(x)$ volledig uit te werken.
+\end{question}
+
+\begin{oplossing}
+
+\[
+f'(x)=6(x^2-4x+5)^5(2x-4).
+\]
+
+Dus:
+\[
+\boxed{f'(x)=12(x-2)(x^2-4x+5)^5.}
+\]
+
+Voor:
+\[
+f'(x)=0
+\]
+geldt:
+\[
+12(x-2)(x^2-4x+5)^5=0.
+\]
+
+Nu:
+\[
+x^2-4x+5=(x-2)^2+1>0.
+\]
+
+Dus:
+\[
+\boxed{x=2.}
+\]
+
+Volledig uitwerken zou een veelterm van graad $12$ opleveren en verbergt
+de samengestelde structuur van de functie.
+
+\end{oplossing}
+
+\end{oefening}
+
+
+% ============================================================
+% GEVORDERD — COMBINATIE VAN REGELS
+% ============================================================
+
+\begin{oefening}[Product, quotiënt en kettingregel]{\oefG}
+
+Bepaal de afgeleide van:
+\[
+f(x)=\frac{x^2(x^2+1)^3}{(2x-1)^4}.
+\]
+
+Werk systematisch en probeer het eindresultaat te factoriseren.
+
+\begin{oplossing}
+
+We schrijven:
+\[
+f(x)=x^2(x^2+1)^3(2x-1)^{-4}.
+\]
+
+Dan:
+\[
+\begin{aligned}
+f'(x)
+&=
+2x(x^2+1)^3(2x-1)^{-4}\\
+&\quad+
+x^2\cdot6x(x^2+1)^2(2x-1)^{-4}\\
+&\quad-
+8x^2(x^2+1)^3(2x-1)^{-5}.
+\end{aligned}
+\]
+
+We halen de gemeenschappelijke factor buiten:
+\[
+f'(x)
+=
+2x(x^2+1)^2(2x-1)^{-5}
+\left[
+(x^2+1)(2x-1)+3x^2(2x-1)-4x(x^2+1)
+\right].
+\]
+
+De uitdrukking tussen haakjes wordt:
+\[
+4x^3-4x^2+2x-1.
+\]
+
+Dus:
+\[
+\boxed{
+f'(x)
+=
+\frac{
+2x(x^2+1)^2(4x^3-4x^2+2x-1)
+}
+{(2x-1)^5}
+}.
+\]
+
+\end{oplossing}
+
+\end{oefening}
+
+
+% ============================================================
+% GEVORDERDE VRAAGSTUKKEN
+% ============================================================
+
+\begin{oefening}[Een bol smelt]{\oefG}
+
+Een bolvormig stuk ijs heeft op tijdstip $t$ een straal
+\[
+r(t)=\sqrt{25-2t},
+\]
+waarbij $r$ in centimeter en $t$ in minuten wordt uitgedrukt.
+
+Het volume van de bol is:
+\[
+V=\frac{4}{3}\pi r^3.
+\]
+
+\begin{question}
+Voor welke waarden van $t$ is dit model fysisch betekenisvol?
+\end{question}
+
+\begin{question}
+Bepaal $\dfrac{dV}{dt}$.
+\end{question}
+
+\begin{question}
+Leg uit waarom $\dfrac{dV}{dt}$ negatief is.
+\end{question}
+
+\begin{question}
+Bereken hoe snel het volume afneemt op het tijdstip $t=8$.
+\end{question}
+
+\begin{oplossing}
+
+Voor het model moet:
+\[
+25-2t\geq0.
+\]
+
+Dus:
+\[
+\boxed{0\leq t\leq12{,}5.}
+\]
+
+Verder:
+\[
+V(t)=\frac{4}{3}\pi(25-2t)^{3/2}.
+\]
+
+Met de kettingregel:
+\[
+\frac{dV}{dt}
+=
+\frac{4}{3}\pi\cdot\frac32(25-2t)^{1/2}\cdot(-2).
+\]
+
+Dus:
+\[
+\boxed{\frac{dV}{dt}=-4\pi\sqrt{25-2t}.}
+\]
+
+Voor $t=8$:
+\[
+25-16=9.
+\]
+
+Dus:
+\[
+\boxed{\frac{dV}{dt}(8)=-12\pi\ \mathrm{cm^3/min}.}
+\]
+
+\end{oplossing}
+
+\end{oefening}
+
+
+\begin{oefening}[Een kegel wordt gevuld]{\oefG}
+
+Een kegelvormig vat heeft hoogte $12\,\mathrm{cm}$ en straal
+$6\,\mathrm{cm}$.
+
+Tijdens het vullen vormt het water steeds een gelijkvormige kegel.
+
+Noem $h$ de waterhoogte en $r$ de straal van het wateroppervlak.
+Door gelijkvormigheid geldt:
+\[
+\frac{r}{h}=\frac{6}{12}.
+\]
+
+De waterhoogte verandert volgens:
+\[
+h(t)=\sqrt{t+1}.
+\]
+
+Het volume van een kegel is:
+\[
+V=\frac13\pi r^2h.
+\]
+
+\begin{question}
+Druk $r$ uit in functie van $h$.
+\end{question}
+
+\begin{question}
+Schrijf $V$ uitsluitend als functie van $h$.
+\end{question}
+
+\begin{question}
+Schrijf vervolgens $V$ als functie van $t$.
+\end{question}
+
+\begin{question}
+Bepaal $\dfrac{dV}{dt}$.
+\end{question}
+
+\begin{question}
+Welke keten van afhankelijkheden herken je in dit model?
+\end{question}
+
+\begin{oplossing}
+
+Uit de gelijkvormigheid:
+\[
+r=\frac{h}{2}.
+\]
+
+Daarom:
+\[
+V
+=
+\frac13\pi\left(\frac h2\right)^2h
+=
+\frac{\pi}{12}h^3.
+\]
+
+Omdat:
+\[
+h(t)=\sqrt{t+1},
+\]
+krijgen we:
+\[
+V(t)=\frac{\pi}{12}(t+1)^{3/2}.
+\]
+
+Met de kettingregel:
+\[
+\frac{dV}{dt}
+=
+\frac{\pi}{12}\cdot\frac32(t+1)^{1/2}.
+\]
+
+Dus:
+\[
+\boxed{\frac{dV}{dt}=\frac{\pi}{8}\sqrt{t+1}.}
+\]
+
+De afhankelijkheidsketen is:
+\[
+t\longrightarrow h\longrightarrow r\longrightarrow V.
+\]
+
+Na eliminatie van $r$:
+\[
+\boxed{t\longrightarrow h\longrightarrow V.}
+\]
+
+\end{oplossing}
+
+\end{oefening}
+
+
+\begin{oefening}[Een camera volgt een drone]{\oefG}
+
+Een drone vliegt horizontaal op een constante hoogte van
+$60\,\mathrm{m}$.
+
+De horizontale afstand tot een waarnemer wordt beschreven door:
+\[
+x(t)=5t,
+\]
+waarbij $x$ in meter en $t$ in seconden wordt uitgedrukt.
+
+De afstand $d$ tussen de waarnemer en de drone voldoet aan:
+\[
+d=\sqrt{x^2+60^2}.
+\]
+
+\begin{question}
+Schrijf $d$ als functie van $t$.
+\end{question}
+
+\begin{question}
+Bepaal $\dfrac{dd}{dt}$.
+\end{question}
+
+\begin{question}
+Bereken hoe snel de afstand tot de drone verandert op $t=16$.
+\end{question}
+
+\begin{question}
+Waarom is $\dfrac{dd}{dt}$ niet gelijk aan $5\,\mathrm{m/s}$?
+\end{question}
+
+\begin{oplossing}
+
+\[
+d(t)=\sqrt{25t^2+3600}.
+\]
+
+Met de kettingregel:
+\[
+\frac{dd}{dt}
+=
+\frac{1}{2\sqrt{25t^2+3600}}\cdot50t.
+\]
+
+Dus:
+\[
+\boxed{\frac{dd}{dt}=\frac{25t}{\sqrt{25t^2+3600}}.}
+\]
+
+Voor $t=16$:
+\[
+d(16)=100.
+\]
+
+Dus:
+\[
+\boxed{\frac{dd}{dt}(16)=4\,\mathrm{m/s}.}
+\]
+
+De horizontale afstand groeit met $5\,\mathrm{m/s}$, maar $d$ is de schuine
+afstand tot de waarnemer. Die verandert dus niet met dezelfde snelheid.
+
+\end{oplossing}
+
+\end{oefening}
+
+
+\begin{oefening}[Van positie naar vermogen]{\oefG}
+
+De potentiële energie van een systeem wordt in een vereenvoudigd model
+gegeven door:
+\[
+E(x)=3(x^2+4)^2,
+\]
+waarbij $E$ in joule wordt uitgedrukt.
+
+Een deeltje beweegt volgens:
+\[
+x(t)=2t-1.
+\]
+
+Het vermogen dat samenhangt met de verandering van deze energie wordt
+gedefinieerd als:
+\[
+P(t)=\frac{dE}{dt}.
+\]
+
+\begin{question}
+Schrijf $E$ als functie van $t$.
+\end{question}
+
+\begin{question}
+Bepaal $P(t)$.
+\end{question}
+
+\begin{question}
+Bereken het vermogen op $t=2$.
+\end{question}
+
+\begin{question}
+Schrijf de berekening ook in de vorm
+\[
+\frac{dE}{dt}
+=
+\frac{dE}{dx}\cdot\frac{dx}{dt}.
+\]
+Leg uit wat beide factoren fysisch voorstellen.
+\end{question}
+
+\begin{oplossing}
+
+\[
+\frac{dE}{dx}
+=
+3\cdot2(x^2+4)\cdot2x
+=
+12x(x^2+4).
+\]
+
+Verder:
+\[
+\frac{dx}{dt}=2.
+\]
+
+Daarom:
+\[
+P(t)=24x(x^2+4).
+\]
+
+Met:
+\[
+x=2t-1
+\]
+volgt:
+\[
+\boxed{
+P(t)
+=
+24(2t-1)\left((2t-1)^2+4\right)
+}.
+\]
+
+Voor $t=2$:
+\[
+x=3.
+\]
+
+Dus:
+\[
+\boxed{P(2)=936\,\mathrm W.}
+\]
+
+De factor $\frac{dE}{dx}$ beschrijft hoe de energie verandert met de positie.
+De factor $\frac{dx}{dt}$ is de snelheid waarmee de positie verandert.
+
+\end{oplossing}
+
+\end{oefening}
+
+
+\begin{oefening}[Omgekeerd redeneren bij een groeiende cirkel]{\oefG}
+
+De oppervlakte van een cirkel is:
+\[
+A=\pi r^2.
+\]
+
+Op een bepaald ogenblik is:
+\[
+r=5\,\mathrm{cm}.
+\]
+
+Op dat ogenblik groeit de oppervlakte met:
+\[
+20\pi\,\mathrm{cm^2/s}.
+\]
+
+\begin{question}
+Bepaal op dat ogenblik $\dfrac{dr}{dt}$.
+\end{question}
+
+\begin{question}
+Leg uit waarom dit een toepassing van de kettingregel is, hoewel
+$r(t)$ niet expliciet gegeven is.
+\end{question}
+
+\begin{oplossing}
+
+Met de kettingregel:
+\[
+\frac{dA}{dt}
+=
+\frac{dA}{dr}\cdot\frac{dr}{dt}.
+\]
+
+Omdat:
+\[
+A=\pi r^2,
+\]
+geldt:
+\[
+\frac{dA}{dr}=2\pi r.
+\]
+
+Dus:
+\[
+20\pi
+=
+2\pi\cdot5\cdot\frac{dr}{dt}.
+\]
+
+Daarom:
+\[
+\boxed{\frac{dr}{dt}=2\,\mathrm{cm/s}.}
+\]
+
+Hoewel $r(t)$ niet expliciet gekend is, hangt $A$ via $r$ af van de tijd:
+\[
+A=A(r(t)).
+\]
+
+\end{oplossing}
+
+\end{oefening}
+
+
+\end{document}

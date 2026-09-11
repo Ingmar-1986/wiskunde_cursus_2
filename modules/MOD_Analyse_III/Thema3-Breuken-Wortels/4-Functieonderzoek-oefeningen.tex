@@ -1,0 +1,1339 @@
+\documentclass{ximera}
+
+\input{../../../preamble.tex}
+\input{../../../Opmaak.tex}
+\addPrintStyle{../../..}
+
+\title{Oefeningen — Functieonderzoek}
+\author{Ingmar Herreman}
+
+\begin{document}
+
+% FVD_CHAPTER_DATA_START
+% Automatisch gegenereerd uit index.tex.
+% Niet handmatig aanpassen.
+\fvdchapterdata{3}{Afleiden van samengestelde functie}{4}
+% FVD_CHAPTER_DATA_END
+
+
+
+\maketitle
+
+\FVDbeginExercises
+
+\begin{opmerking}
+De oefeningen zijn opgebouwd van deelvaardigheden naar volledige analyse.
+
+\textbf{\ESS} betekent dat de oefening noodzakelijk is om het
+leerplandoel op het vereiste beheersingsniveau te bereiken. Ook meerdere
+Verdiepingsopgaven zijn daarom essentieel: een functieonderzoek is meer
+dan een afgeleide berekenen.
+\end{opmerking}
+
+% ============================================================
+% BASIS 1
+% ============================================================
+
+\FVDsection{Basis — Rolle en Lagrange}
+
+\begin{oefening}[Stelling van Rolle: voorwaarden controleren]{\oefB\ESS}
+Onderzoek telkens of de stelling van Rolle toepasbaar is op het gegeven
+interval. Als dat zo is, bepaal minstens één geschikte waarde \(c\).
+
+\begin{question}
+\[
+f(x)=x^2-4x+3,\qquad [1,3].
+\]
+\begin{oplossing}
+Veeltermfuncties zijn continu en afleidbaar op \(\mathbb{R}\).
+Verder
+\[
+f(1)=0=f(3).
+\]
+Rolle is toepasbaar. Omdat
+\[
+f'(x)=2x-4,
+\]
+geldt
+\[
+f'(c)=0\Longleftrightarrow c=2.
+\]
+Dus
+\[
+\boxed{c=2}.
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+\[
+f(x)=\sin x,\qquad [0,\pi].
+\]
+\begin{oplossing}
+\(\sin x\) is continu en afleidbaar en
+\[
+f(0)=f(\pi)=0.
+\]
+Dus Rolle is toepasbaar. Uit
+\[
+f'(x)=\cos x
+\]
+volgt
+\[
+\boxed{c=\frac{\pi}{2}}.
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+\[
+f(x)=\frac1x,\qquad [-1,1].
+\]
+\begin{oplossing}
+Rolle is niet toepasbaar. De functie is niet eens gedefinieerd in
+\(x=0\) en dus niet continu op \([-1,1]\).
+\end{oplossing}
+\end{question}
+
+\begin{question}
+\[
+f(x)=\ln x,\qquad [1,e].
+\]
+\begin{oplossing}
+De functie is continu op \([1,e]\) en afleidbaar op \((1,e)\), maar
+\[
+f(1)=0,\qquad f(e)=1.
+\]
+Omdat de eindwaarden niet gelijk zijn, is Rolle niet toepasbaar.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+\[
+f(x)=\cos x,\qquad [0,2\pi].
+\]
+\begin{oplossing}
+De voorwaarden zijn vervuld en
+\[
+f(0)=1=f(2\pi).
+\]
+Verder
+\[
+f'(x)=-\sin x.
+\]
+Binnen \((0,2\pi)\) is
+\[
+\boxed{c=\pi}
+\]
+een geschikte waarde.
+\end{oplossing}
+\end{question}
+\end{oefening}
+
+\begin{oefening}[Middelwaardestelling van Lagrange]{\oefB\ESS}
+Controleer de voorwaarden en bepaal alle gevraagde waarden \(c\).
+
+\begin{question}
+\[
+f(x)=x^2,\qquad [1,3].
+\]
+\begin{oplossing}
+De gemiddelde helling is
+\[
+\frac{f(3)-f(1)}{3-1}=\frac{9-1}{2}=4.
+\]
+Volgens Lagrange bestaat \(c\in(1,3)\) met
+\[
+f'(c)=4.
+\]
+Omdat \(f'(x)=2x\),
+\[
+2c=4\Longrightarrow\boxed{c=2}.
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+\[
+f(x)=\sqrt{x},\qquad [1,4].
+\]
+\begin{oplossing}
+De functie is continu op \([1,4]\) en afleidbaar op \((1,4)\).
+De gemiddelde helling is
+\[
+\frac{2-1}{4-1}=\frac13.
+\]
+Omdat
+\[
+f'(x)=\frac1{2\sqrt{x}},
+\]
+moet
+\[
+\frac1{2\sqrt{c}}=\frac13.
+\]
+Dus
+\[
+2\sqrt c=3
+\Longrightarrow
+\boxed{c=\frac94}.
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+\[
+f(x)=\ln x,\qquad [1,e].
+\]
+\begin{oplossing}
+De gemiddelde helling is
+\[
+\frac{1-0}{e-1}=\frac1{e-1}.
+\]
+Omdat
+\[
+f'(x)=\frac1x,
+\]
+volgt
+\[
+\frac1c=\frac1{e-1}
+\Longrightarrow
+\boxed{c=e-1}.
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+\[
+f(x)=e^x,\qquad [0,1].
+\]
+\begin{oplossing}
+De gemiddelde helling is
+\[
+e-1.
+\]
+Omdat \(f'(x)=e^x\),
+\[
+e^c=e-1
+\Longrightarrow
+\boxed{c=\ln(e-1)}.
+\]
+\end{oplossing}
+\end{question}
+\end{oefening}
+
+% ============================================================
+% BASIS 2
+% ============================================================
+
+\FVDsection{Basis — stijgen, dalen en extrema}
+
+\begin{oefening}[Teken van \(f'\)]{\oefB\ESS}
+Bepaal voor elke functie de intervallen waarop ze stijgt en daalt, en
+bepaal de lokale extrema.
+
+\begin{question}
+\[
+f(x)=\frac{x^3}{x^2-1}.
+\]
+\begin{oplossing}
+\[
+f'(x)=\frac{x^2(x^2-3)}{(x^2-1)^2}.
+\]
+De noemer is positief in het domein. Kritieke waarden:
+\[
+x=-\sqrt3,\ 0,\ \sqrt3,
+\]
+met \(x=\pm1\) buiten het domein.
+
+Het teken van \(f'\) is positief voor \(|x|>\sqrt3\) en negatief voor
+\(|x|<\sqrt3\), behalve aan de domeinonderbrekingen.
+
+Dus er is een lokaal maximum bij \(x=-\sqrt3\) en een lokaal minimum
+bij \(x=\sqrt3\). Bij \(x=0\) is geen extremum.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+\[
+f(x)=\frac{x^2-3}{x^2+1}.
+\]
+\begin{oplossing}
+\[
+f'(x)=\frac{2x(x^2+1)-2x(x^2-3)}{(x^2+1)^2}
+=\frac{8x}{(x^2+1)^2}.
+\]
+De noemer is steeds positief. Dus \(f'<0\) voor \(x<0\) en \(f'>0\)
+voor \(x>0\). De functie heeft een minimum bij
+\[
+x=0,\qquad f(0)=-3.
+\]
+Dus het minimum is
+\[
+\boxed{(0,-3)}.
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+\[
+f(x)=\frac{3}{x-3}.
+\]
+\begin{oplossing}
+\[
+f'(x)=-\frac{3}{(x-3)^2}<0
+\]
+voor elk \(x\neq3\). De functie is dus dalend op
+\[
+(-\infty,3)\quad\text{en}\quad(3,+\infty).
+\]
+Er zijn geen extrema.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+\[
+f(x)=x e^{-x}.
+\]
+\begin{oplossing}
+\[
+f'(x)=e^{-x}(1-x).
+\]
+Omdat \(e^{-x}>0\), is \(f'>0\) voor \(x<1\) en \(f'<0\) voor \(x>1\).
+Dus er is een maximum bij
+\[
+\boxed{\left(1,\frac1e\right)}.
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+\[
+f(x)=\frac{\ln x}{x},\qquad x>0.
+\]
+\begin{oplossing}
+\[
+f'(x)=\frac{1-\ln x}{x^2}.
+\]
+De noemer is positief. Dus \(f'>0\) als \(\ln x<1\), dus voor \(x<e\),
+en \(f'<0\) voor \(x>e\).
+
+De functie heeft een maximum bij
+\[
+\boxed{\left(e,\frac1e\right)}.
+\]
+\end{oplossing}
+\end{question}
+\end{oefening}
+
+\begin{oefening}[Horizontale raaklijn versus extremum]{\oefB\ESS}
+Bepaal alle punten met horizontale raaklijn en beslis welke daarvan
+extrema zijn.
+
+\begin{question}
+\[
+f(x)=x^3.
+\]
+\begin{oplossing}
+\[
+f'(x)=3x^2.
+\]
+Dus alleen \(x=0\) geeft een horizontale raaklijn. Het teken van \(f'\)
+is aan beide zijden positief, dus er is geen extremum. \((0,0)\) is een
+stationair buigpunt.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+\[
+f(x)=x^4-4x^2.
+\]
+\begin{oplossing}
+\[
+f'(x)=4x^3-8x=4x(x^2-2).
+\]
+Stationaire waarden:
+\[
+x=-\sqrt2,\quad0,\quad\sqrt2.
+\]
+Tekenonderzoek van \(f'\) geeft:
+bij \(x=-\sqrt2\) een minimum, bij \(x=0\) een maximum en bij
+\(x=\sqrt2\) een minimum.
+
+De functiewaarden zijn
+\[
+f(\pm\sqrt2)=-4,\qquad f(0)=0.
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+\[
+f(x)=\frac{x^3+5x^2+12x+8}{3x^2},\qquad x\neq0.
+\]
+\begin{oplossing}
+Schrijf eerst
+\[
+f(x)=\frac13\left(x+5+\frac{12}{x}+\frac{8}{x^2}\right).
+\]
+Dan
+\[
+f'(x)=\frac13\left(1-\frac{12}{x^2}-\frac{16}{x^3}\right)
+=\frac{x^3-12x-16}{3x^3}.
+\]
+Omdat
+\[
+x^3-12x-16=(x-4)(x+2)^2,
+\]
+zijn de stationaire waarden \(x=-2\) en \(x=4\).
+
+Bij \(x=-2\) verandert het teken niet, dus geen extremum.
+Bij \(x=4\) verandert \(f'\) van negatief naar positief, dus een lokaal
+minimum.
+\end{oplossing}
+\end{question}
+\end{oefening}
+
+% ============================================================
+% BASIS 3
+% ============================================================
+
+\FVDsection{Basis — tweede afgeleide en buigpunten}
+
+\begin{oefening}[Kromming en buigpunten]{\oefB\ESS}
+Onderzoek waar de grafiek van elke functie van kromming verandert en
+bepaal de buigpunten.
+
+\begin{question}
+\[
+f(x)=x^3-3x.
+\]
+\begin{oplossing}
+\[
+f''(x)=6x.
+\]
+Het teken verandert bij \(x=0\), dus
+\[
+\boxed{(0,0)}
+\]
+is een buigpunt.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+\[
+f(x)=\frac{x^2+4}{x}=x+\frac4x.
+\]
+\begin{oplossing}
+\[
+f'(x)=1-\frac4{x^2},
+\qquad
+f''(x)=\frac8{x^3}.
+\]
+De tweede afgeleide verandert van negatief naar positief bij \(x=0\),
+maar \(x=0\) behoort niet tot het domein. Er is dus \textbf{geen}
+buigpunt.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+\[
+f(x)=x e^{-x}.
+\]
+\begin{oplossing}
+\[
+f'(x)=e^{-x}(1-x),
+\]
+\[
+f''(x)=e^{-x}(x-2).
+\]
+Omdat \(e^{-x}>0\), verandert \(f''\) van negatief naar positief bij
+\(x=2\). Dus
+\[
+\boxed{\left(2,\frac2{e^2}\right)}
+\]
+is een buigpunt.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+\[
+f(x)=\ln x,\qquad x>0.
+\]
+\begin{oplossing}
+\[
+f''(x)=-\frac1{x^2}<0
+\]
+voor elk \(x>0\). De kromming verandert nergens, dus er zijn geen
+buigpunten.
+\end{oplossing}
+\end{question}
+\end{oefening}
+
+% ============================================================
+% VERDIEPING 1
+% ============================================================
+
+\FVDsection{Verdieping — volledig functieonderzoek}
+
+\begin{oefening}[Volledig onderzoek van rationale functies]{\oefU\ESS}
+Onderzoek volledig. Behandel waar relevant:
+
+\begin{itemize}
+  \item domein en continuïteit;
+  \item nulpunten en teken;
+  \item symmetrie;
+  \item limieten en asymptoten;
+  \item stijgen, dalen en extrema;
+  \item kromming en buigpunten;
+  \item synthese in een grafiekschets.
+\end{itemize}
+
+\begin{question}
+\[
+f(x)=-\frac1x.
+\]
+\begin{oplossing}
+Domein:
+\[
+\mathbb{R}\setminus\{0\}.
+\]
+Geen nulpunten. De functie is oneven.
+
+Verticale asymptoot:
+\[
+x=0.
+\]
+Horizontale asymptoot:
+\[
+y=0.
+\]
+
+\[
+f'(x)=\frac1{x^2}>0
+\]
+op beide domeinintervallen, dus de functie stijgt op
+\[
+(-\infty,0)\quad\text{en}\quad(0,+\infty).
+\]
+
+\[
+f''(x)=-\frac2{x^3}.
+\]
+De kromming verschilt links en rechts van \(0\), maar \(0\) ligt niet
+in het domein, dus er is geen buigpunt.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+\[
+f(x)=\frac{x+4}{x+3}.
+\]
+\begin{oplossing}
+Domein:
+\[
+\mathbb{R}\setminus\{-3\}.
+\]
+Nulpunt:
+\[
+x=-4.
+\]
+Verder
+\[
+f(x)=1+\frac1{x+3}.
+\]
+Dus verticale asymptoot \(x=-3\) en horizontale asymptoot \(y=1\).
+
+\[
+f'(x)=-\frac1{(x+3)^2}<0.
+\]
+Dus de functie is dalend op elk deel van het domein en heeft geen extrema.
+
+\[
+f''(x)=\frac2{(x+3)^3}.
+\]
+Het teken verandert over \(x=-3\), maar \(x=-3\) ligt niet in het domein.
+Dus er is geen buigpunt.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+\[
+f(x)=\frac{x^2-4x+4}{x^2-1}.
+\]
+\begin{oplossing}
+Domein:
+\[
+\mathbb{R}\setminus\{-1,1\}.
+\]
+De teller is \((x-2)^2\), dus \(x=2\) is een dubbel nulpunt.
+
+Omdat teller en noemer dezelfde graad hebben, is
+\[
+y=1
+\]
+een horizontale asymptoot. Verder zijn
+\[
+x=-1,\qquad x=1
+\]
+verticale asymptoten.
+
+De eerste afgeleide is
+\[
+f'(x)=\frac{4x^2-10x+4}{(x^2-1)^2}
+=
+\frac{2(2x-1)(x-2)}{(x^2-1)^2}.
+\]
+Het tekenonderzoek gebeurt met de scheidingswaarden
+\[
+-1,\quad \frac12,\quad1,\quad2.
+\]
+Daaruit volgen een lokaal maximum bij \(x=\frac12\) en een lokaal minimum
+bij \(x=2\), rekening houdend met de domeinonderbrekingen.
+
+Voor het volledige tweede-afgeleideonderzoek kan een CAS ter controle
+worden gebruikt, maar de uiteindelijke conclusies moeten analytisch
+worden verantwoord.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+\[
+f(x)=\frac{x^3}{x^2-1}.
+\]
+\begin{oplossing}
+Dit is het volledige voorbeeld uit de theorie.
+
+\[
+\operatorname{dom}f=\mathbb{R}\setminus\{-1,1\},
+\qquad
+f(-x)=-f(x).
+\]
+Nulpunt: \(x=0\).
+
+Verticale asymptoten:
+\[
+x=\pm1.
+\]
+Schuine asymptoot:
+\[
+y=x.
+\]
+
+\[
+f'(x)=\frac{x^2(x^2-3)}{(x^2-1)^2}.
+\]
+Lokaal maximum bij
+\[
+x=-\sqrt3,
+\]
+lokaal minimum bij
+\[
+x=\sqrt3.
+\]
+Bij \(x=0\) geen extremum.
+
+\[
+f''(x)=\frac{2x(x^2+3)}{(x^2-1)^3}.
+\]
+De oorsprong is een stationair buigpunt.
+\end{oplossing}
+\end{question}
+\end{oefening}
+
+\begin{oefening}[Volledig onderzoek van andere functietypes]{\oefU\ESS}
+Onderzoek het verloop en schets de grafiek.
+
+\begin{question}
+\[
+f(x)=x\sqrt{x+2}.
+\]
+\begin{oplossing}
+Domein:
+\[
+[-2,+\infty).
+\]
+Nulpunten:
+\[
+x=-2,\quad x=0.
+\]
+
+Voor \(x>-2\):
+\[
+f'(x)=\frac{3x+4}{2\sqrt{x+2}}.
+\]
+Dus \(f\) daalt op
+\[
+\left(-2,-\frac43\right)
+\]
+en stijgt op
+\[
+\left(-\frac43,+\infty\right).
+\]
+Het minimum ligt bij
+\[
+x=-\frac43.
+\]
+De functiewaarde is
+\[
+f\left(-\frac43\right)
+=
+-\frac43\sqrt{\frac23}.
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+\[
+f(x)=x e^{-x}.
+\]
+\begin{oplossing}
+Domein \(\mathbb{R}\). Nulpunt \(x=0\).
+
+\[
+f'(x)=e^{-x}(1-x).
+\]
+Maximum bij
+\[
+\left(1,\frac1e\right).
+\]
+
+\[
+f''(x)=e^{-x}(x-2).
+\]
+Buigpunt:
+\[
+\left(2,\frac2{e^2}\right).
+\]
+
+Verder
+\[
+\lim_{x\to+\infty}xe^{-x}=0,
+\]
+dus \(y=0\) is een horizontale asymptoot aan de rechterkant.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+\[
+f(x)=\frac{\ln x}{x}.
+\]
+\begin{oplossing}
+Domein:
+\[
+(0,+\infty).
+\]
+Nulpunt:
+\[
+x=1.
+\]
+
+\[
+f'(x)=\frac{1-\ln x}{x^2}.
+\]
+Maximum bij
+\[
+\left(e,\frac1e\right).
+\]
+
+De tweede afgeleide is
+\[
+f''(x)=\frac{2\ln x-3}{x^3}.
+\]
+Dus het buigpunt ligt bij
+\[
+2\ln x-3=0
+\Longrightarrow
+x=e^{3/2}.
+\]
+Daarbij hoort
+\[
+f(e^{3/2})=\frac{3}{2e^{3/2}}.
+\]
+
+Verder
+\[
+\lim_{x\to0^+}\frac{\ln x}{x}=-\infty
+\]
+en
+\[
+\lim_{x\to+\infty}\frac{\ln x}{x}=0.
+\]
+Dus \(x=0\) is een verticale asymptoot en \(y=0\) een horizontale
+asymptoot voor \(x\to+\infty\).
+\end{oplossing}
+\end{question}
+\end{oefening}
+
+% ============================================================
+% VERDIEPING 2
+% ============================================================
+
+\FVDsection{Verdieping — analyseren en redeneren}
+
+\begin{oefening}[Van informatie naar grafiek]{\oefU\ESS}
+Een functie \(f\) heeft domein \(\mathbb{R}\setminus\{2\}\) en voldoet
+aan:
+
+\[
+\lim_{x\to2^-}f(x)=+\infty,
+\qquad
+\lim_{x\to2^+}f(x)=-\infty,
+\]
+\[
+\lim_{x\to\pm\infty}f(x)=1,
+\]
+\[
+f'(x)>0 \text{ voor }x<0,\qquad
+f'(x)<0 \text{ voor }0<x<2,
+\]
+\[
+f'(x)<0 \text{ voor }2<x<4,\qquad
+f'(x)>0 \text{ voor }x>4.
+\]
+
+Verder is \(f(0)=3\) en \(f(4)=-2\).
+
+\begin{question}
+Bepaal de asymptoten.
+\begin{oplossing}
+Verticale asymptoot:
+\[
+\boxed{x=2}.
+\]
+Horizontale asymptoot:
+\[
+\boxed{y=1}.
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Bepaal de lokale extrema.
+\begin{oplossing}
+Bij \(x=0\) verandert \(f'\) van positief naar negatief:
+\[
+\boxed{(0,3)\text{ is een lokaal maximum}.}
+\]
+Bij \(x=4\) verandert \(f'\) van negatief naar positief:
+\[
+\boxed{(4,-2)\text{ is een lokaal minimum}.}
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Schets een mogelijke grafiek die aan alle gegevens voldoet.
+\begin{oplossing}
+De schets moet twee takken hebben, met verticale asymptoot \(x=2\),
+horizontale asymptoot \(y=1\), een lokaal maximum in \((0,3)\) op de
+linkertak en een lokaal minimum in \((4,-2)\) op de rechtertak.
+\end{oplossing}
+\end{question}
+\end{oefening}
+
+\begin{oefening}[Foutenanalyse]{\oefU\ESS}
+Analyseer de redenering en corrigeer waar nodig.
+
+\begin{question}
+Een leerling schrijft:
+``\(f'(2)=0\), dus \(f\) heeft een extremum bij \(x=2\).''
+\begin{oplossing}
+Onvoldoende. \(f'(2)=0\) toont alleen dat \(x=2\) stationair is.
+Men moet bijvoorbeeld het teken van \(f'\) links en rechts van \(2\)
+onderzoeken. Alleen bij een tekenverandering volgt een lokaal extremum.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Een leerling schrijft:
+``\(f''(1)=0\), dus \((1,f(1))\) is een buigpunt.''
+\begin{oplossing}
+Onvoldoende. Men moet controleren of de kromming werkelijk verandert,
+bijvoorbeeld via een tekenverandering van \(f''\).
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Een leerling vindt bij een rationale functie \(f''(3)=0\), maar
+\(3\notin\operatorname{dom}f\), en noemt \(x=3\) toch een buigpunt.
+\begin{oplossing}
+Dat is onmogelijk. Een buigpunt is een punt van de grafiek. Als
+\(3\notin\operatorname{dom}f\), bestaat \((3,f(3))\) niet.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Een leerling gebruikt een grafiekprogramma en besluit dat een functie
+geen extremum heeft omdat er in het venster \([-10,10]\times[-10,10]\)
+geen extremum zichtbaar is.
+\begin{oplossing}
+Dit is geen geldige analytische conclusie. Het extremum kan buiten het
+venster liggen of slecht zichtbaar zijn. Men moet het teken van \(f'\)
+onderzoeken of het venster doelgericht aanpassen op basis van analytische
+informatie.
+\end{oplossing}
+\end{question}
+\end{oefening}
+
+\begin{oefening}[Rolle en Lagrange als redeneerinstrument]{\oefU\ESS}
+\begin{question}
+Een functie \(f\) is continu op \([2,7]\), afleidbaar op \((2,7)\) en
+voldoet aan \(f(2)=5\) en \(f(7)=5\). Wat kan je met zekerheid besluiten?
+
+\begin{oplossing}
+Volgens Rolle bestaat minstens één \(c\in(2,7)\) waarvoor
+\[
+\boxed{f'(c)=0}.
+\]
+Men kan niet besluiten dat dit punt uniek is of dat het een extremum is.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Een positie \(s(t)\) voldoet aan \(s(2)=15\,\mathrm m\) en
+\(s(8)=51\,\mathrm m\). Veronderstel dat \(s\) continu is op \([2,8]\)
+en afleidbaar op \((2,8)\). Toon aan dat er een ogenblik is waarop de
+ogenblikkelijke snelheid \(6\,\mathrm{m/s}\) bedraagt.
+
+\begin{oplossing}
+De gemiddelde snelheid is
+\[
+\frac{51-15}{8-2}
+=
+\frac{36}{6}
+=
+6\,\mathrm{m/s}.
+\]
+Volgens Lagrange bestaat minstens één \(c\in(2,8)\) waarvoor
+\[
+s'(c)=6\,\mathrm{m/s}.
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Waarom kan dezelfde conclusie niet automatisch worden getrokken als de
+plaatsfunctie op één tijdstip tussen \(2\) en \(8\) een sprong maakt?
+
+\begin{oplossing}
+Dan is de continuïteitsvoorwaarde op \([2,8]\) geschonden. De
+middelwaardestelling van Lagrange is dan niet toepasbaar.
+\end{oplossing}
+\end{question}
+\end{oefening}
+
+% ============================================================
+% EXTREMUMPROBLEMEN
+% ============================================================
+
+\FVDsection{Verdieping — extremumproblemen}
+
+\begin{oefening}[Van context naar doelfunctie]{\oefU\ESS}
+Los de problemen volledig op. Noteer expliciet:
+
+\begin{itemize}
+  \item de gekozen variabele;
+  \item de doelfunctie;
+  \item het betekenisvolle domein;
+  \item de extremumberekening;
+  \item de interpretatie met eenheden.
+\end{itemize}
+
+\begin{question}
+Een rechthoek heeft omtrek \(60\,\mathrm m\). Bepaal de afmetingen
+waarvoor de oppervlakte maximaal is.
+
+\begin{oplossing}
+Neem lengte \(x\) en breedte \(y\). Uit
+\[
+2x+2y=60
+\]
+volgt
+\[
+y=30-x.
+\]
+Dus
+\[
+A(x)=x(30-x)=30x-x^2,
+\qquad 0<x<30.
+\]
+\[
+A'(x)=30-2x.
+\]
+Daarom
+\[
+A'(x)=0\Longleftrightarrow x=15.
+\]
+Omdat \(A''(x)=-2<0\), is dit een maximum.
+
+Dus
+\[
+\boxed{15\,\mathrm m\times15\,\mathrm m}
+\]
+met maximale oppervlakte
+\[
+\boxed{225\,\mathrm m^2}.
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Een rechthoek wordt ingeschreven onder de parabool
+\[
+y=12-x^2
+\]
+met de basis op de \(x\)-as en symmetrisch rond de \(y\)-as. Bepaal de
+afmetingen van de rechthoek met maximale oppervlakte.
+
+\begin{oplossing}
+Neem \(x>0\) als halve breedte. Dan is de volledige breedte \(2x\) en
+de hoogte
+\[
+12-x^2.
+\]
+De doelfunctie is
+\[
+A(x)=2x(12-x^2)=24x-2x^3.
+\]
+Uit de context:
+\[
+0<x<\sqrt{12}.
+\]
+\[
+A'(x)=24-6x^2.
+\]
+Dus
+\[
+x^2=4\Longrightarrow x=2.
+\]
+De breedte is \(4\) en de hoogte
+\[
+12-4=8.
+\]
+Dus de optimale afmetingen zijn
+\[
+\boxed{4\times8}
+\]
+en de maximale oppervlakte is
+\[
+\boxed{32}.
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Uit een vierkant karton van \(24\,\mathrm{cm}\) bij
+\(24\,\mathrm{cm}\) worden in elke hoek vierkantjes met zijde \(x\)
+geknipt. De randen worden omhoog gevouwen tot een open doos. Voor welke
+\(x\) is het volume maximaal?
+
+\begin{oplossing}
+\[
+V(x)=x(24-2x)^2,
+\qquad 0<x<12.
+\]
+\[
+V'(x)=(24-2x)(24-6x).
+\]
+Kandidaten zijn \(x=12\) en \(x=4\), maar \(x=12\) is een randpunt waar
+het volume nul wordt. Binnen het domein geeft
+\[
+\boxed{x=4\,\mathrm{cm}}
+\]
+het maximum.
+
+De doos is dan
+\[
+16\,\mathrm{cm}\times16\,\mathrm{cm}\times4\,\mathrm{cm}
+\]
+en
+\[
+\boxed{V_{\max}=1024\,\mathrm{cm}^3}.
+\]
+\end{oplossing}
+\end{question}
+\end{oefening}
+
+\begin{oefening}[STEM — maximale vermogensoverdracht]{\oefU\ESS}
+Een bron met elektromotorische spanning \(E>0\) en inwendige weerstand
+\(r>0\) levert aan een belasting \(R>0\) het vermogen
+
+\[
+P(R)=\frac{E^2R}{(R+r)^2}.
+\]
+
+\begin{question}
+Bepaal \(P'(R)\).
+
+\begin{oplossing}
+\[
+P'(R)
+=
+E^2\frac{(R+r)^2-2R(R+r)}{(R+r)^4}
+=
+E^2\frac{r-R}{(R+r)^3}.
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Voor welke \(R\) is het vermogen maximaal?
+
+\begin{oplossing}
+Voor \(R>0\) zijn \(E^2\) en \((R+r)^3\) positief. Het teken van \(P'\)
+wordt dus bepaald door \(r-R\).
+
+Daarom:
+\[
+P'(R)>0\quad\text{voor }R<r,
+\]
+\[
+P'(R)<0\quad\text{voor }R>r.
+\]
+Dus
+\[
+\boxed{R=r}
+\]
+geeft het maximale vermogen.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Bepaal het maximale vermogen.
+
+\begin{oplossing}
+\[
+P(r)
+=
+\frac{E^2r}{(2r)^2}
+=
+\boxed{\frac{E^2}{4r}}.
+\]
+\end{oplossing}
+\end{question}
+\end{oefening}
+
+% ============================================================
+% GEVORDERD
+% ============================================================
+
+\FVDsection{Gevorderd — parameters, modelleren en synthese}
+
+\begin{oefening}[Parameteronderzoek]{\oefG}
+Gegeven is
+
+\[
+f_a(x)=\frac{x-2}{1-ax}.
+\]
+
+Onderzoek voor welke waarden van \(a\) de functie op elk interval van
+haar domein strikt stijgend is.
+
+\begin{oplossing}
+Met de quotiëntregel:
+\[
+f_a'(x)
+=
+\frac{1(1-ax)-(x-2)(-a)}{(1-ax)^2}
+=
+\frac{1-2a}{(1-ax)^2}.
+\]
+
+Op het domein is de noemer positief. De functie is dus strikt stijgend
+als
+\[
+1-2a>0.
+\]
+Daaruit volgt
+\[
+\boxed{a<\frac12}.
+\]
+
+Voor \(a=\frac12\) is de afgeleide nul op het domein en is de functie
+constant op elk domeininterval; voor \(a>\frac12\) is ze dalend.
+\end{oplossing}
+\end{oefening}
+
+\begin{oefening}[Parameter en extremum]{\oefG}
+Bepaal \(a\) en \(b\) zodat
+
+\[
+f(x)=\frac{ax}{x^2+b}
+\]
+
+bij \(x=\frac52\) een lokale extreme waarde \(1\) bereikt.
+
+\begin{oplossing}
+De voorwaarden zijn
+\[
+f\left(\frac52\right)=1
+\]
+en
+\[
+f'\left(\frac52\right)=0.
+\]
+
+Eerst
+\[
+f'(x)
+=
+a\frac{(x^2+b)-2x^2}{(x^2+b)^2}
+=
+a\frac{b-x^2}{(x^2+b)^2}.
+\]
+
+Voor een niet-triviale oplossing \(a\neq0\) geeft
+\[
+b-\left(\frac52\right)^2=0,
+\]
+dus
+\[
+\boxed{b=\frac{25}{4}}.
+\]
+
+Dan
+\[
+1
+=
+f\left(\frac52\right)
+=
+\frac{a\cdot\frac52}{\frac{25}{4}+\frac{25}{4}}
+=
+\frac{a\cdot\frac52}{\frac{25}{2}}
+=
+\frac a5.
+\]
+Dus
+\[
+\boxed{a=5}.
+\]
+
+Omdat het teken van \(f'\) bij \(x=\frac52\) van positief naar negatief
+verandert, is het inderdaad een lokaal maximum.
+\end{oplossing}
+\end{oefening}
+
+\begin{oefening}[Ontwerp een functieonderzoek]{\oefG}
+Kies zelf één functie uit elk van de volgende twee groepen:
+
+\begin{itemize}
+  \item een rationale functie met minstens één verticale asymptoot;
+  \item een exponentiële of logaritmische functie met minstens één extremum of buigpunt.
+\end{itemize}
+
+Voer voor beide een volledig functieonderzoek uit. Gebruik daarna een
+grafiekprogramma uitsluitend om je resultaat te controleren.
+
+Beschrijf ten minste één verschil in aanpak tussen beide functietypes.
+
+\begin{oplossing}
+Dit is een open onderzoeksopdracht. Een volledige oplossing moet minstens
+bevatten:
+
+\begin{itemize}
+  \item correcte domeinanalyse;
+  \item relevante limieten en asymptoten;
+  \item correcte eerste en tweede afgeleide;
+  \item tekenanalyse van \(f'\) en \(f''\);
+  \item extrema en buigpunten;
+  \item een grafiekschets;
+  \item een vergelijking tussen de aanpak voor beide functietypes;
+  \item een expliciete controle met ICT zonder de analytische redenering
+  door de software te vervangen.
+\end{itemize}
+\end{oplossing}
+\end{oefening}
+
+\begin{oefening}[Modelleerprobleem zonder vooraf gegeven functie]{\oefG}
+Een cilindervormig blik moet een vast volume \(V>0\) hebben.
+Veronderstel dat de materiaalkost evenredig is met de totale oppervlakte
+van een gesloten cilinder.
+
+Bepaal de verhouding tussen hoogte \(h\) en straal \(r\) waarvoor zo
+weinig mogelijk materiaal nodig is.
+
+\begin{oplossing}
+De volumebeperking is
+\[
+V=\pi r^2h,
+\]
+dus
+\[
+h=\frac{V}{\pi r^2}.
+\]
+
+De oppervlakte is
+\[
+A=2\pi r^2+2\pi rh.
+\]
+
+Invullen geeft
+\[
+A(r)=2\pi r^2+\frac{2V}{r},
+\qquad r>0.
+\]
+
+De afgeleide is
+\[
+A'(r)=4\pi r-\frac{2V}{r^2}.
+\]
+
+Voor een extremum:
+\[
+4\pi r-\frac{2V}{r^2}=0
+\]
+\[
+4\pi r^3=2V
+\]
+\[
+2\pi r^3=V.
+\]
+
+Omdat
+\[
+V=\pi r^2h,
+\]
+volgt
+\[
+\pi r^2h=2\pi r^3.
+\]
+
+Dus
+\[
+\boxed{h=2r}.
+\]
+
+De optimale hoogte is dus gelijk aan de diameter van de cilinder.
+Verder
+\[
+A''(r)=4\pi+\frac{4V}{r^3}>0,
+\]
+dus het gevonden punt geeft een minimum.
+\end{oplossing}
+\end{oefening}
+
+\begin{opmerking}[Minimale beheersing]
+Voor het officiële beheersingsniveau moeten minstens alle oefeningen met
+\ESS beheerst zijn.
+
+Dat omvat:
+
+\begin{itemize}
+  \item Rolle en Lagrange toepassen na controle van de voorwaarden;
+  \item tekenonderzoek van \(f'\) en \(f''\);
+  \item extrema en buigpunten correct classificeren;
+  \item volledige functieonderzoeken uitvoeren voor meer dan alleen
+  veeltermfuncties;
+  \item informatie synthetiseren tot een grafiek;
+  \item fouten in redeneringen analyseren;
+  \item en extremumproblemen vanuit een context mathematiseren en oplossen.
+\end{itemize}
+
+De \oefG-opgaven gaan verder in zelfstandigheid, parametrisering,
+modellering en voorbereiding op verdere studies.
+\end{opmerking}
+
+\FVDendExercises
+
+\end{document}
+

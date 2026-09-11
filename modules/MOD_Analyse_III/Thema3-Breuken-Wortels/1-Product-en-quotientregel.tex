@@ -1,0 +1,1383 @@
+
+
+
+
+
+\documentclass{ximera}
+
+\input{../../../preamble.tex}
+\input{../../../Opmaak.tex}
+\addPrintStyle{../../..}
+
+\begin{document}
+
+% FVD_CHAPTER_DATA_START
+% Automatisch gegenereerd uit index.tex.
+% Niet handmatig aanpassen.
+\fvdchapterdata{3}{Afleiden van samengestelde functie}{1}
+% FVD_CHAPTER_DATA_END
+
+
+
+
+
+
+
+
+
+
+\title{Producten en quotiënten afleiden}
+
+\begin{abstract}
+Tot nu toe kon je vooral functies afleiden die geschreven zijn als een som
+van eenvoudige termen.
+
+Maar functies komen vaak voor als een product of een quotiënt.
+Denk bijvoorbeeld aan
+\[
+f(x)=(x^2+1)(3x-2)
+\qquad\text{of}\qquad
+g(x)=\frac{x^2+1}{x-2}.
+\]
+
+In dit hoofdstuk leer je hoe je zulke functies afleidt.
+Daarbij is niet alleen het correct toepassen van een formule belangrijk:
+je leert ook herkennen welke afleidingsregel geschikt is en wanneer
+herschrijven eenvoudiger is.
+
+Die keuzes worden later essentieel bij het onderzoeken van rationale
+functies en bij het oplossen van limietproblemen.
+\end{abstract}
+
+\maketitle
+
+
+% ============================================================
+% VOORKENNIS EN LEERDOELEN
+% ============================================================
+
+\begin{voorkennis}
+  \item Je kan veeltermfuncties afleiden.
+  \item Je kent de machtsregel
+        \[
+        (x^n)'=nx^{n-1}.
+        \]
+  \item Je kan de som- en verschilregel gebruiken.
+  \item Je kan machten met negatieve exponenten vereenvoudigen.
+  \item Je kent het domein van een rationale functie.
+  \item Je kan algebraïsche uitdrukkingen vereenvoudigen en ontbinden.
+\end{voorkennis}
+
+\begin{leerdoelen}
+  \item Je kunt de productregel gebruiken om een product van functies af te leiden.
+  \item Je kunt de quotiëntregel gebruiken om een quotiënt van functies af te leiden.
+  \item Je kunt uitleggen waarom
+        \[
+        (uv)'\neq u'v'
+        \qquad\text{en}\qquad
+        \left(\frac{u}{v}\right)'\neq\frac{u'}{v'}.
+        \]
+  \item Je kunt in een functie de factoren of de teller en noemer herkennen.
+  \item Je kunt bepalen welke afleidingsregel geschikt is.
+  \item Je kunt herkennen wanneer herschrijven eenvoudiger is dan het toepassen
+        van de product- of quotiëntregel.
+  \item Je kunt verschillende afleidingsregels combineren.
+  \item Je kunt een gevonden afgeleide algebraïsch vereenvoudigen.
+  \item Je kunt bij rationale functies rekening houden met het domein.
+\end{leerdoelen}
+
+% ============================================================
+% 1. NIET ELKE BEWERKING MAG JE ZOMAAR AFLEIDEN
+% ============================================================
+
+\FVDsection{Niet elke bewerking mag je zomaar afleiden}
+
+Voor sommen en verschillen ken je eenvoudige regels:
+\[
+(u+v)'=u'+v'
+\]
+en
+\[
+(u-v)'=u'-v'.
+\]
+
+Het is verleidelijk om te denken dat dit voor elke bewerking op dezelfde
+manier werkt.
+
+Bij een product zou je bijvoorbeeld kunnen vermoeden dat
+\[
+(uv)'=u'v'.
+\]
+
+Dat is echter niet juist.
+
+\begin{voorbeeld}
+Neem
+\[
+u(x)=x
+\qquad\text{en}\qquad
+v(x)=x.
+\]
+
+Dan is
+\[
+u(x)v(x)=x^2,
+\]
+dus
+\[
+(uv)'(x)=2x.
+\]
+
+Maar
+\[
+u'(x)v'(x)=1\cdot1=1.
+\]
+
+Bijgevolg:
+\[
+(uv)'\neq u'v'.
+\]
+\end{voorbeeld}
+
+Hetzelfde probleem ontstaat bij een quotiënt. In het algemeen geldt ook
+niet
+\[
+\left(\frac{u}{v}\right)'=\frac{u'}{v'}.
+\]
+
+Voor producten en quotiënten hebben we dus nieuwe afleidingsregels nodig.
+
+
+% ============================================================
+% 2. DE PRODUCTREGEL
+% ============================================================
+
+\FVDsection{De productregel}
+
+Beschouw twee afleidbare functies $u$ en $v$ en hun product
+\[
+f(x)=u(x)v(x).
+\]
+
+Wanneer $x$ verandert, kunnen \emph{beide} factoren veranderen.
+De verandering van het product wordt daarom niet alleen bepaald door
+$u'$ of alleen door $v'$.
+
+\begin{eigenschap}[Productregel]
+Als $u$ en $v$ afleidbaar zijn, dan geldt
+\[
+\boxed{
+(uv)'=u'v+uv'
+}
+\]
+
+of, volledig uitgeschreven,
+\[
+\boxed{
+\frac{d}{dx}\bigl(u(x)v(x)\bigr)
+=
+u'(x)v(x)+u(x)v'(x).
+}
+\]
+\end{eigenschap}
+
+Een handige geheugensteun is:
+
+\[
+\boxed{
+\text{afgeleide eerste}\cdot\text{tweede}
++
+\text{eerste}\cdot\text{afgeleide tweede}
+}
+\]
+
+
+% ------------------------------------------------------------
+% Voorbeeld 1
+% ------------------------------------------------------------
+
+\begin{voorbeeld}
+Bepaal de afgeleide van
+\[
+f(x)=(x^2+1)(3x-2).
+\]
+
+We herkennen twee factoren:
+\[
+u(x)=x^2+1,
+\qquad
+v(x)=3x-2.
+\]
+
+Hun afgeleiden zijn
+\[
+u'(x)=2x,
+\qquad
+v'(x)=3.
+\]
+
+Met de productregel:
+\[
+f'(x)
+=
+u'(x)v(x)+u(x)v'(x).
+\]
+
+Dus
+\[
+f'(x)
+=
+2x(3x-2)+(x^2+1)\cdot3.
+\]
+
+We vereenvoudigen:
+\[
+\begin{aligned}
+f'(x)
+&=6x^2-4x+3x^2+3\\
+&=9x^2-4x+3.
+\end{aligned}
+\]
+
+Bijgevolg:
+\[
+\boxed{f'(x)=9x^2-4x+3.}
+\]
+\end{voorbeeld}
+
+
+% ============================================================
+% 3. MOET JE ALTIJD DE PRODUCTREGEL GEBRUIKEN?
+% ============================================================
+
+\FVDsection{Moet je altijd de productregel gebruiken?}
+
+Een formule herkennen betekent nog niet dat je ze automatisch moet
+gebruiken.
+
+Soms is het slimmer om de functie eerst te herschrijven.
+
+\begin{voorbeeld}
+Bepaal de afgeleide van
+\[
+f(x)=x^2(x+3).
+\]
+
+\textbf{Methode 1: productregel}
+
+\[
+\begin{aligned}
+f'(x)
+&=2x(x+3)+x^2\\
+&=2x^2+6x+x^2\\
+&=3x^2+6x.
+\end{aligned}
+\]
+
+\textbf{Methode 2: eerst uitwerken}
+
+Omdat
+\[
+f(x)=x^3+3x^2,
+\]
+krijgen we onmiddellijk
+\[
+f'(x)=3x^2+6x.
+\]
+
+Beide methoden geven uiteraard hetzelfde resultaat.
+\end{voorbeeld}
+
+\begin{opmerking}
+Een goede strategie is niet noodzakelijk de strategie met de
+meeste formules.
+
+Vraag jezelf vóór je begint af:
+
+\[
+\boxed{\text{Kan ik de functie eerst eenvoudiger schrijven?}}
+\]
+\end{opmerking}
+
+
+% ============================================================
+% 4. DE QUOTIËNTREGEL
+% ============================================================
+
+\FVDsection{De quotiëntregel}
+
+We bekijken nu een functie van de vorm
+\[
+f(x)=\frac{u(x)}{v(x)},
+\qquad
+v(x)\neq0.
+\]
+
+Ook hier veranderen teller en noemer wanneer $x$ verandert.
+
+De afgeleide is \emph{niet}
+\[
+\frac{u'}{v'}.
+\]
+
+Daarvoor geldt een aparte regel.
+
+\begin{eigenschap}[Quotiëntregel]
+Als $u$ en $v$ afleidbaar zijn en $v(x)\neq0$, dan geldt
+\[
+\boxed{
+\left(\frac{u}{v}\right)'
+=
+\frac{u'v-uv'}{v^2}
+}
+\]
+
+of volledig uitgeschreven:
+\[
+\boxed{
+\frac{d}{dx}
+\left(
+\frac{u(x)}{v(x)}
+\right)
+=
+\frac{
+u'(x)v(x)-u(x)v'(x)
+}{
+[v(x)]^2
+}.
+}
+\]
+\end{eigenschap}
+
+Een geheugensteun is:
+
+\[
+\boxed{
+\frac{
+\text{afgeleide teller}\cdot\text{noemer}
+-
+\text{teller}\cdot\text{afgeleide noemer}
+}{
+\text{noemer}^2
+}
+}
+\]
+
+Let vooral op het \textbf{minteken}.
+
+
+% ============================================================
+% 5. EEN EERSTE RATIONALE FUNCTIE
+% ============================================================
+
+\FVDsection{Een eerste rationale functie afleiden}
+
+\begin{voorbeeld}
+Bepaal de afgeleide van
+\[
+f(x)=\frac{x^2+1}{x-2}.
+\]
+
+Eerst bepalen we het domein:
+\[
+\operatorname{dom}f=\mathbb{R}\setminus\{2\}.
+\]
+
+We kiezen
+\[
+u(x)=x^2+1,
+\qquad
+v(x)=x-2.
+\]
+
+Dan:
+\[
+u'(x)=2x,
+\qquad
+v'(x)=1.
+\]
+
+Met de quotiëntregel:
+\[
+f'(x)
+=
+\frac{2x(x-2)-(x^2+1)\cdot1}{(x-2)^2}.
+\]
+
+Vereenvoudigen geeft
+\[
+\begin{aligned}
+f'(x)
+&=
+\frac{2x^2-4x-x^2-1}{(x-2)^2}\\
+&=
+\frac{x^2-4x-1}{(x-2)^2}.
+\end{aligned}
+\]
+
+Dus
+\[
+\boxed{
+f'(x)=\frac{x^2-4x-1}{(x-2)^2}
+}
+\qquad (x\neq2).
+\]
+\end{voorbeeld}
+
+Merk op dat het domein niet plots verandert doordat we een afgeleide
+berekenen. De oorspronkelijke functie is niet gedefinieerd voor $x=2$,
+dus daar spreken we ook niet over haar afgeleide.
+
+
+% ============================================================
+% 6. EEN VASTE AANPAK
+% ============================================================
+
+\FVDsection{Een vaste aanpak voor de quotiëntregel}
+
+Bij ingewikkeldere uitdrukkingen helpt een systematische aanpak.
+
+
+Voor
+\[
+f(x)=\frac{u(x)}{v(x)}
+\]
+kun je als volgt werken:
+
+\begin{enumerate}
+  \item bepaal eerst waar de functie gedefinieerd is;
+  \item herken teller $u$ en noemer $v$;
+  \item bepaal afzonderlijk $u'$ en $v'$;
+  \item schrijf de quotiëntregel op;
+  \item vul zorgvuldig in;
+  \item vereenvoudig pas daarna;
+  \item controleer of je antwoord past bij het domein.
+\end{enumerate}
+
+
+
+\begin{voorbeeld}
+Bepaal de afgeleide van
+\[
+f(x)=\frac{2x^3-x}{x^2+1}.
+\]
+
+Omdat
+\[
+x^2+1>0
+\]
+voor alle reële $x$, geldt
+\[
+\operatorname{dom}f=\mathbb{R}.
+\]
+
+Neem
+\[
+u(x)=2x^3-x,
+\qquad
+v(x)=x^2+1.
+\]
+
+Dan
+\[
+u'(x)=6x^2-1,
+\qquad
+v'(x)=2x.
+\]
+
+Dus
+\[
+f'(x)
+=
+\frac{
+(6x^2-1)(x^2+1)-(2x^3-x)(2x)
+}{
+(x^2+1)^2
+}.
+\]
+
+We werken de teller uit:
+\[
+\begin{aligned}
+(6x^2-1)(x^2+1)
+&=6x^4+5x^2-1,\\
+(2x^3-x)(2x)
+&=4x^4-2x^2.
+\end{aligned}
+\]
+
+Daarom
+\[
+f'(x)
+=
+\frac{
+2x^4+7x^2-1
+}{
+(x^2+1)^2
+}.
+\]
+
+Dus
+\[
+\boxed{
+f'(x)=
+\frac{2x^4+7x^2-1}{(x^2+1)^2}.
+}
+\]
+\end{voorbeeld}
+
+
+% ============================================================
+% 7. EERST HERSCHRIJVEN OF QUOTIËNTREGEL?
+% ============================================================
+
+\FVDsection{Eerst herschrijven of de quotiëntregel gebruiken?}
+
+Niet elke breuk vraagt om de quotiëntregel.
+
+Vergelijk de volgende functies:
+\[
+f(x)=\frac{3}{x^2}
+\qquad\text{en}\qquad
+g(x)=\frac{x^2+1}{x-2}.
+\]
+
+Voor $f$ kunnen we schrijven
+\[
+f(x)=3x^{-2}.
+\]
+
+De machtsregel geeft dan onmiddellijk
+\[
+f'(x)=-6x^{-3}
+=
+-\frac{6}{x^3}.
+\]
+
+De quotiëntregel gebruiken zou hier correct kunnen zijn, maar is
+onnodig omslachtig.
+
+Voor
+\[
+g(x)=\frac{x^2+1}{x-2}
+\]
+is zo'n eenvoudige herschrijving niet beschikbaar.
+Daar is de quotiëntregel een natuurlijke keuze.
+
+
+Kijk vóór het afleiden naar de structuur van de functie.
+
+\[
+\boxed{
+\begin{array}{c}
+\text{Kan ik eenvoudig herschrijven?}\\[1mm]
+\downarrow\\[1mm]
+\text{ja: herschrijf eerst}\\
+\text{nee: kies een geschikte afleidingsregel}
+\end{array}
+}
+\]
+
+
+
+% ============================================================
+% 8. VEREENVOUDIGEN IS GEEN BIJZAAK
+% ============================================================
+
+\FVDsection{Waarom vereenvoudigen belangrijk is}
+
+Bij een afgeleide is een vereenvoudigde vorm vaak veel informatiever dan
+de vorm die rechtstreeks uit de afleidingsregel ontstaat.
+
+\begin{voorbeeld}
+Neem
+\[
+f(x)=\frac{x^2}{x+1}.
+\]
+
+De quotiëntregel geeft
+\[
+f'(x)
+=
+\frac{2x(x+1)-x^2}{(x+1)^2}.
+\]
+
+Dat is correct, maar we kunnen de teller vereenvoudigen:
+\[
+2x(x+1)-x^2
+=
+2x^2+2x-x^2
+=
+x^2+2x.
+\]
+
+Factoriseren geeft:
+\[
+x^2+2x=x(x+2).
+\]
+
+Dus
+\[
+\boxed{
+f'(x)=\frac{x(x+2)}{(x+1)^2}.
+}
+\]
+
+Deze vorm is later veel nuttiger.
+
+Omdat
+\[
+(x+1)^2>0
+\qquad (x\neq-1),
+\]
+wordt het teken van $f'$ volledig bepaald door
+\[
+x(x+2).
+\]
+
+We kunnen daardoor veel gemakkelijker onderzoeken waar $f$ stijgt of
+daalt.
+\end{voorbeeld}
+
+Dit is precies waarom algebra en analyse niet los van elkaar staan:
+een goede algebraïsche vorm maakt de eigenschappen van een functie
+zichtbaar.
+
+
+
+
+
+% ============================================================
+
+% 10. KIES JE STRATEGIE
+% ============================================================
+
+\FVDsection{Kies je strategie}
+
+Bij het afleiden moet je steeds vaker eerst beslissen \emph{wat voor
+functie je voor je hebt}.
+
+\begin{center}
+\[
+\begin{array}{c|c}
+\text{structuur} & \text{mogelijke aanpak}\\
+\hline
+u+v & \text{somregel}\\[1mm]
+u-v & \text{verschilregel}\\[1mm]
+c\,u & \text{constante-factorregel}\\[1mm]
+uv & \text{productregel}\\[1mm]
+\dfrac{u}{v} & \text{quotiëntregel}\\
+\end{array}
+\]
+\end{center}
+
+Maar deze tabel is geen automatisch stappenplan.
+
+Bijvoorbeeld
+\[
+\frac{5}{x^3}
+\]
+ziet eruit als een quotiënt, maar
+\[
+5x^{-3}
+\]
+is veel gemakkelijker af te leiden.
+
+De centrale vraag wordt dus:
+
+\[
+\boxed{
+\text{Welke voorstelling van de functie maakt het afleiden het eenvoudigst?}
+}
+\]
+
+
+
+
+\begin{oefening}[Productregel herkennen]{\oefB\ESS}
+
+  Bepaal de afgeleide.
+  
+  \begin{question}
+  
+  \[
+  f(x)=(x^2+1)(x-3).
+  \]
+  
+  \begin{oplossing}
+  We herkennen een product van
+  \[
+  u(x)=x^2+1
+  \qquad\text{en}\qquad
+  v(x)=x-3.
+  \]
+  
+  Met de productregel:
+  \[
+  (uv)'=u'v+uv'.
+  \]
+  
+  Omdat
+  \[
+  u'(x)=2x
+  \qquad\text{en}\qquad
+  v'(x)=1,
+  \]
+  krijgen we
+  \[
+  \begin{aligned}
+  f'(x)
+  &=2x(x-3)+(x^2+1)\cdot1\\
+  &=2x^2-6x+x^2+1\\
+  &=3x^2-6x+1.
+  \end{aligned}
+  \]
+  
+  Dus
+  \[
+  \boxed{f'(x)=3x^2-6x+1}.
+  \]
+  \end{oplossing}
+  
+  \end{question}
+  
+  
+  \begin{question}
+  
+  \[
+  g(x)=(2x^3-x)(x^2+4).
+  \]
+  
+  \begin{oplossing}
+  We nemen
+  \[
+  u(x)=2x^3-x,
+  \qquad
+  v(x)=x^2+4.
+  \]
+  
+  Dan
+  \[
+  u'(x)=6x^2-1,
+  \qquad
+  v'(x)=2x.
+  \]
+  
+  Met de productregel:
+  \[
+  \begin{aligned}
+  g'(x)
+  &=(6x^2-1)(x^2+4)+(2x^3-x)(2x)\\
+  &=6x^4+23x^2-4+4x^4-2x^2\\
+  &=10x^4+21x^2-4.
+  \end{aligned}
+  \]
+  
+  Dus
+  \[
+  \boxed{g'(x)=10x^4+21x^2-4}.
+  \]
+  \end{oplossing}
+  
+  \end{question}
+  
+  
+  \begin{question}
+  
+  \[
+  h(x)=x^2(3x-5).
+  \]
+  
+  Bereken de afgeleide op twee manieren:
+  
+  \begin{enumerate}
+    \item met de productregel;
+    \item door eerst uit te werken.
+  \end{enumerate}
+  
+  Vergelijk beide methoden.
+  
+  \begin{oplossing}
+  \textbf{Methode 1: productregel}
+  
+  We nemen
+  \[
+  u(x)=x^2,
+  \qquad
+  v(x)=3x-5.
+  \]
+  
+  Dan
+  \[
+  u'(x)=2x,
+  \qquad
+  v'(x)=3.
+  \]
+  
+  Dus
+  \[
+  \begin{aligned}
+  h'(x)
+  &=2x(3x-5)+x^2\cdot3\\
+  &=6x^2-10x+3x^2\\
+  &=9x^2-10x.
+  \end{aligned}
+  \]
+  
+  \textbf{Methode 2: eerst uitwerken}
+  
+  We schrijven
+  \[
+  h(x)=3x^3-5x^2.
+  \]
+  
+  Daaruit volgt rechtstreeks
+  \[
+  h'(x)=9x^2-10x.
+  \]
+  
+  Beide methoden geven dus hetzelfde resultaat:
+  \[
+  \boxed{h'(x)=9x^2-10x}.
+  \]
+  
+  Hier is eerst uitwerken iets korter. De productregel is correct,
+  maar niet noodzakelijk de meest efficiënte methode.
+  \end{oplossing}
+  
+  \end{question}
+  
+  \end{oefening}
+  
+  
+  
+  \begin{oefening}[Quotiëntregel]{\oefB\ESS}
+  
+  Bepaal telkens eerst het domein en vervolgens de afgeleide.
+  
+  \begin{question}
+  
+  \[
+  f(x)=\frac{x^2+3}{x-1}.
+  \]
+  
+  \begin{oplossing}
+  De noemer mag niet nul zijn:
+  \[
+  x-1\neq0.
+  \]
+  
+  Dus
+  \[
+  \boxed{\operatorname{dom}f=\mathbb{R}\setminus\{1\}}.
+  \]
+  
+  We nemen
+  \[
+  u(x)=x^2+3,
+  \qquad
+  v(x)=x-1.
+  \]
+  
+  Dan
+  \[
+  u'(x)=2x,
+  \qquad
+  v'(x)=1.
+  \]
+  
+  Met de quotiëntregel:
+  \[
+  \begin{aligned}
+  f'(x)
+  &=
+  \frac{2x(x-1)-(x^2+3)\cdot1}{(x-1)^2}\\
+  &=
+  \frac{2x^2-2x-x^2-3}{(x-1)^2}\\
+  &=
+  \frac{x^2-2x-3}{(x-1)^2}.
+  \end{aligned}
+  \]
+  
+  De teller kan worden ontbonden:
+  \[
+  x^2-2x-3=(x-3)(x+1).
+  \]
+  
+  Dus
+  \[
+  \boxed{
+  f'(x)=\frac{(x-3)(x+1)}{(x-1)^2}
+  }
+  \qquad (x\neq1).
+  \]
+  \end{oplossing}
+  
+  \end{question}
+  
+  
+  \begin{question}
+  
+  \[
+  g(x)=\frac{2x-1}{x^2+1}.
+  \]
+  
+  \begin{oplossing}
+  Omdat
+  \[
+  x^2+1>0
+  \]
+  voor alle reële $x$, geldt
+  \[
+  \boxed{\operatorname{dom}g=\mathbb{R}}.
+  \]
+  
+  We nemen
+  \[
+  u(x)=2x-1,
+  \qquad
+  v(x)=x^2+1.
+  \]
+  
+  Dan
+  \[
+  u'(x)=2,
+  \qquad
+  v'(x)=2x.
+  \]
+  
+  Dus
+  \[
+  \begin{aligned}
+  g'(x)
+  &=
+  \frac{2(x^2+1)-(2x-1)(2x)}
+       {(x^2+1)^2}\\
+  &=
+  \frac{2x^2+2-4x^2+2x}
+       {(x^2+1)^2}\\
+  &=
+  \frac{-2x^2+2x+2}
+       {(x^2+1)^2}.
+  \end{aligned}
+  \]
+  
+  Dus
+  \[
+  \boxed{
+  g'(x)=\frac{-2x^2+2x+2}{(x^2+1)^2}
+  }.
+  \]
+  \end{oplossing}
+  
+  \end{question}
+  
+  
+  \begin{question}
+  
+  \[
+  h(x)=\frac{x^3+x}{x^2-4}.
+  \]
+  
+  \begin{oplossing}
+  De noemer mag niet nul zijn:
+  \[
+  x^2-4\neq0.
+  \]
+  
+  Dus
+  \[
+  x\neq-2
+  \qquad\text{en}\qquad
+  x\neq2.
+  \]
+  
+  Daarom
+  \[
+  \boxed{
+  \operatorname{dom}h=\mathbb{R}\setminus\{-2,2\}
+  }.
+  \]
+  
+  We nemen
+  \[
+  u(x)=x^3+x,
+  \qquad
+  v(x)=x^2-4.
+  \]
+  
+  Dan
+  \[
+  u'(x)=3x^2+1,
+  \qquad
+  v'(x)=2x.
+  \]
+  
+  Met de quotiëntregel:
+  \[
+  h'(x)
+  =
+  \frac{
+  (3x^2+1)(x^2-4)-(x^3+x)(2x)
+  }{
+  (x^2-4)^2
+  }.
+  \]
+  
+  We vereenvoudigen de teller:
+  \[
+  \begin{aligned}
+  (3x^2+1)(x^2-4)
+  &=3x^4-11x^2-4,\\
+  (x^3+x)(2x)
+  &=2x^4+2x^2.
+  \end{aligned}
+  \]
+  
+  Dus
+  \[
+  \begin{aligned}
+  h'(x)
+  &=
+  \frac{
+  3x^4-11x^2-4-(2x^4+2x^2)
+  }{
+  (x^2-4)^2
+  }\\
+  &=
+  \frac{x^4-13x^2-4}{(x^2-4)^2}.
+  \end{aligned}
+  \]
+  
+  Daarom
+  \[
+  \boxed{
+  h'(x)=\frac{x^4-13x^2-4}{(x^2-4)^2}
+  }
+  \qquad (x\neq\pm2).
+  \]
+  \end{oplossing}
+  
+  \end{question}
+  
+  \end{oefening}
+  
+  
+  
+  \begin{oefening}[Welke methode kies je?]{\oefU\ESS}
+  
+  Bepaal de afgeleide. Kies telkens eerst een geschikte strategie en
+  motiveer kort waarom je die kiest.
+  
+  \begin{question}
+  
+  \[
+  f(x)=\frac{4}{x^3}.
+  \]
+  
+  \begin{oplossing}
+  Hoewel $f$ als een quotiënt geschreven is, is de quotiëntregel hier
+  onnodig omslachtig.
+  
+  We herschrijven:
+  \[
+  f(x)=4x^{-3},
+  \qquad x\neq0.
+  \]
+  
+  Met de machtsregel:
+  \[
+  f'(x)=4(-3)x^{-4}.
+  \]
+  
+  Dus
+  \[
+  \boxed{
+  f'(x)=-12x^{-4}=-\frac{12}{x^4}
+  }
+  \qquad (x\neq0).
+  \]
+  
+  \textbf{Strategie:} eerst herschrijven en daarna de machtsregel gebruiken.
+  \end{oplossing}
+  
+  \end{question}
+  
+  
+  \begin{question}
+  
+  \[
+  g(x)=x(x^2-5).
+  \]
+  
+  \begin{oplossing}
+  We kunnen de productregel gebruiken, maar eerst uitwerken is hier
+  nog eenvoudiger:
+  \[
+  g(x)=x^3-5x.
+  \]
+  
+  Dus
+  \[
+  \boxed{
+  g'(x)=3x^2-5
+  }.
+  \]
+  
+  Met de productregel zouden we hetzelfde krijgen:
+  \[
+  g'(x)=1\cdot(x^2-5)+x\cdot2x
+       =3x^2-5.
+  \]
+  
+  \textbf{Strategie:} eerst uitwerken is hier het meest efficiënt.
+  \end{oplossing}
+  
+  \end{question}
+  
+  
+  \begin{question}
+  
+  \[
+  h(x)=\frac{x^2+2}{x+1}.
+  \]
+  
+  \begin{oplossing}
+  De teller en noemer kunnen niet eenvoudig zo worden herschreven
+  dat de breuk verdwijnt. De quotiëntregel is daarom een natuurlijke keuze.
+  
+  Het domein is
+  \[
+  \operatorname{dom}h=\mathbb{R}\setminus\{-1\}.
+  \]
+  
+  Met
+  \[
+  u(x)=x^2+2,
+  \qquad
+  v(x)=x+1
+  \]
+  geldt
+  \[
+  u'(x)=2x,
+  \qquad
+  v'(x)=1.
+  \]
+  
+  Dus
+  \[
+  \begin{aligned}
+  h'(x)
+  &=
+  \frac{
+  2x(x+1)-(x^2+2)
+  }{
+  (x+1)^2
+  }\\
+  &=
+  \frac{x^2+2x-2}{(x+1)^2}.
+  \end{aligned}
+  \]
+  
+  Daarom
+  \[
+  \boxed{
+  h'(x)=\frac{x^2+2x-2}{(x+1)^2}
+  }
+  \qquad (x\neq-1).
+  \]
+  
+  \textbf{Strategie:} quotiëntregel.
+  \end{oplossing}
+  
+  \end{question}
+  
+  
+  \begin{question}
+  
+  \[
+  p(x)=\frac{x^4-2x^2}{x^2}.
+  \]
+  
+  \begin{oplossing}
+  Eerst bepalen we het domein:
+  \[
+  x\neq0.
+  \]
+  
+  Daarna vereenvoudigen we:
+  \[
+  p(x)
+  =
+  \frac{x^4}{x^2}
+  -
+  \frac{2x^2}{x^2}
+  =
+  x^2-2
+  \qquad (x\neq0).
+  \]
+  
+  Dus
+  \[
+  \boxed{
+  p'(x)=2x
+  }
+  \qquad (x\neq0).
+  \]
+  
+  \textbf{Strategie:} eerst vereenvoudigen. De quotiëntregel zou correct
+  zijn, maar is hier onnodig lang.
+  
+  Merk op dat $x=0$ uitgesloten blijft, ook al komt die beperking
+  niet meer voor in de vereenvoudigde formule.
+  \end{oplossing}
+  
+  \end{question}
+  
+  \end{oefening}
+  
+  
+  
+  \begin{oefening}[Een fout analyseren]{\oefU\ESS}
+  
+  Een leerling berekent voor
+  \[
+  f(x)=\frac{x^2+1}{x-2}
+  \]
+  de afgeleide als volgt:
+  \[
+  f'(x)=\frac{2x}{1}=2x.
+  \]
+  
+  \begin{question}
+  
+  Leg precies uit welke fout de leerling maakt.
+  
+  \begin{oplossing}
+  De leerling heeft teller en noemer afzonderlijk afgeleid en daarna
+  de resultaten gedeeld:
+  \[
+  \left(\frac{u}{v}\right)'
+  \stackrel{\text{fout}}{=}
+  \frac{u'}{v'}.
+  \]
+  
+  Dat is geen geldige afleidingsregel.
+  
+  Voor een quotiënt geldt:
+  \[
+  \boxed{
+  \left(\frac{u}{v}\right)'
+  =
+  \frac{u'v-uv'}{v^2}
+  }.
+  \]
+  
+  De verandering van teller én noemer moet dus samen in rekening
+  worden gebracht.
+  \end{oplossing}
+  
+  \end{question}
+  
+  
+  \begin{question}
+  
+  Bereken de juiste afgeleide.
+  
+  \begin{oplossing}
+  Het domein is
+  \[
+  \operatorname{dom}f=\mathbb{R}\setminus\{2\}.
+  \]
+  
+  Neem
+  \[
+  u(x)=x^2+1,
+  \qquad
+  v(x)=x-2.
+  \]
+  
+  Dan
+  \[
+  u'(x)=2x,
+  \qquad
+  v'(x)=1.
+  \]
+  
+  Met de quotiëntregel:
+  \[
+  \begin{aligned}
+  f'(x)
+  &=
+  \frac{
+  2x(x-2)-(x^2+1)\cdot1
+  }{
+  (x-2)^2
+  }\\
+  &=
+  \frac{
+  2x^2-4x-x^2-1
+  }{
+  (x-2)^2
+  }\\
+  &=
+  \frac{x^2-4x-1}{(x-2)^2}.
+  \end{aligned}
+  \]
+  
+  Dus
+  \[
+  \boxed{
+  f'(x)=\frac{x^2-4x-1}{(x-2)^2}
+  }
+  \qquad (x\neq2).
+  \]
+  \end{oplossing}
+  
+  \end{question}
+  
+  
+  \begin{question}
+  
+  Leg uit waarom de gebruikte foutieve regel niet de quotiëntregel kan zijn.
+  
+  \begin{oplossing}
+  De quotiëntregel zegt niet dat teller en noemer afzonderlijk worden
+  afgeleid.
+  
+  De correcte structuur is
+  \[
+  \frac{u'v-uv'}{v^2}.
+  \]
+  
+  In het antwoord van de leerling ontbreken dus:
+  
+  \begin{itemize}
+    \item de oorspronkelijke noemer $v$ bij de eerste term;
+    \item de oorspronkelijke teller $u$ bij de tweede term;
+    \item het verschil tussen beide producten;
+    \item het kwadraat $v^2$ in de noemer.
+  \end{itemize}
+  
+  De berekening
+  \[
+  \frac{u'}{v'}
+  \]
+  heeft daarom niets te maken met de quotiëntregel voor afgeleiden.
+  
+  Later zal een uitdrukking van de vorm
+  \[
+  \frac{u'}{v'}
+  \]
+  wel opduiken bij de regel van l'Hôpital, maar daar gaat het om
+  \emph{limieten} en niet om de afgeleide van een quotiënt.
+  \end{oplossing}
+  
+  \end{question}
+  
+  \end{oefening}
+
+
+
+
+\end{document}

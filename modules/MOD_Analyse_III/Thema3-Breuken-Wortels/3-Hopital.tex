@@ -1,0 +1,595 @@
+\documentclass{ximera}
+
+\input{../../../preamble.tex}
+\input{../../../Opmaak.tex}
+
+\title{De regel van l'Hôpital}
+\author{Ingmar Herreman}
+
+\begin{document}
+
+% FVD_CHAPTER_DATA_START
+% Automatisch gegenereerd uit index.tex.
+% Niet handmatig aanpassen.
+\fvdchapterdata{3}{Afleiden van samengestelde functie}{3}
+% FVD_CHAPTER_DATA_END
+
+
+
+
+
+\begin{abstract}
+Sommige limieten leveren na rechtstreekse substitutie geen getal op, maar
+een onbepaalde vorm zoals \(0/0\) of \(\infty/\infty\).
+De regel van l'Hôpital maakt het in zulke gevallen mogelijk om een
+quotiënt te vervangen door een nieuw quotiënt van afgeleiden.
+
+De belangrijkste vaardigheid is niet het afleiden zelf, maar het
+\textbf{analyseren van de limiet}: welke vorm ontstaat, mag l'Hôpital
+worden toegepast, is een omvorming nodig en welke methode is het meest
+efficiënt?
+\end{abstract}
+
+\maketitle
+
+\begin{voorkennis}
+  \item Je kan limieten algebraïsch bepalen.
+  \item Je herkent onbepaalde vormen.
+  \item Je kan veeltermfuncties, rationale en irrationale functies afleiden.
+  \item Je kan exponentiële, logaritmische en goniometrische functies afleiden.
+  \item Je kan de productregel, quotiëntregel en kettingregel toepassen.
+\end{voorkennis}
+
+\begin{leerdoelen}
+  \item Je kan bij een limiet eerst de vorm bepalen door substitutie.
+  \item Je kan herkennen wanneer de regel van l'Hôpital rechtstreeks toepasbaar is.
+  \item Je kan de regel van l'Hôpital correct toepassen bij de vormen \(0/0\) en \(\infty/\infty\).
+  \item Je kan l'Hôpital meermaals toepassen wanneer opnieuw een geschikte onbepaalde vorm ontstaat.
+  \item Je kan andere onbepaalde vormen waar nodig omvormen tot \(0/0\) of \(\infty/\infty\).
+  \item Je kan beslissen wanneer een algebraïsche methode eenvoudiger is dan l'Hôpital.
+  \item Je kan een foutieve toepassing van l'Hôpital herkennen en verklaren.
+  \item Je kan je keuze van een limietmethode wiskundig motiveren.
+\end{leerdoelen}
+
+% ============================================================
+% 1. ONBEPAALDE VORMEN
+% ============================================================
+
+\FVDsection{Wanneer zegt substitutie nog niet genoeg?}
+
+Bij veel limieten is rechtstreekse substitutie de eerste stap.
+Soms ontstaat onmiddellijk een getal. Soms ontstaat een uitdrukking
+waaruit de limiet nog niet kan worden afgeleid.
+
+Vergelijk bijvoorbeeld
+
+\[\lim_{x\to 1}\frac{x+2}{x+3}=\frac34.\]
+
+Hier is er geen probleem. Maar bij
+
+\[\lim_{x\to 1}\frac{x^2-1}{x-1}\]
+
+geeft substitutie
+
+\[\frac00.\]
+
+De notatie \(0/0\) is \textbf{geen uitkomst}. Ze vertelt alleen dat
+teller en noemer beide naar nul gaan en dat we verder moeten onderzoeken
+hoe snel dit gebeurt.
+
+\begin{definitie}[Onbepaalde vorm]
+Een \textbf{onbepaalde vorm} is een symbolische vorm die op zichzelf
+onvoldoende informatie bevat om de waarde van een limiet te bepalen.
+
+Voor de regel van l'Hôpital zijn vooral
+
+\[\boxed{\frac00 \qquad\text{en}\qquad \frac{\infty}{\infty}}\]
+
+van belang.
+\end{definitie}
+
+Andere klassieke onbepaalde vormen zijn
+
+\[\infty-\infty,\qquad 0\cdot\infty,\qquad 1^\infty,\qquad 0^0,\qquad \infty^0.\]
+
+Voor deze vormen mag l'Hôpital \textbf{niet rechtstreeks} worden
+toegepast. Soms kunnen we de uitdrukking eerst herschrijven.
+
+\begin{opmerking}[De vorm is geen antwoord]
+Schrijf nooit
+
+\[\lim_{x\to a}f(x)=\frac00\]
+
+alsof \(0/0\) de limietwaarde is. Correct is bijvoorbeeld:
+
+\[
+\frac{x^2-1}{x-1}\xrightarrow[x\to1]{}\frac00,
+\]
+
+dus de limiet heeft de onbepaalde vorm \(0/0\) en moet verder worden
+onderzocht.
+\end{opmerking}
+
+% ============================================================
+% 2. REGEL
+% ============================================================
+
+\FVDsection{De regel van l'Hôpital}
+
+De regel vergelijkt de snelheid waarmee teller en noemer naar nul of
+naar oneindig gaan.
+
+\begin{eigenschap}[Regel van l'Hôpital]
+Beschouw in een omgeving van \(a\) twee afleidbare functies \(f\) en
+\(g\), met \(g'(x)\neq0\) voor \(x\neq a\).
+
+Als
+
+\[\lim_{x\to a}f(x)=\lim_{x\to a}g(x)=0\]
+
+of als teller en noemer in grootte onbegrensd worden, en als
+
+\[\lim_{x\to a}\frac{f'(x)}{g'(x)}=L\]
+
+bestaat in \(\mathbb{R}\cup\{-\infty,+\infty\}\), dan geldt
+
+\[\boxed{\lim_{x\to a}\frac{f(x)}{g(x)}=\lim_{x\to a}\frac{f'(x)}{g'(x)}=L.}\]
+
+Dezelfde regel geldt voor eenzijdige limieten en voor
+\(x\to+\infty\) of \(x\to-\infty\), mits aan de overeenkomstige
+voorwaarden is voldaan.
+\end{eigenschap}
+
+\begin{opmerking}[Geen quotiëntregel]
+Bij l'Hôpital bepalen we \textbf{niet} de afgeleide van het quotiënt.
+
+We vervangen
+
+\[\frac{f(x)}{g(x)}\]
+
+door
+
+\[\frac{f'(x)}{g'(x)},\]
+
+en dus niet door
+
+\[\frac{f'(x)g(x)-f(x)g'(x)}{g(x)^2}.\]
+\end{opmerking}
+
+\FVDsubsection{Een betrouwbaar stappenplan}
+
+Gebruik bij elke limiet dezelfde denkvolgorde:
+
+\begin{enumerate}
+  \item \textbf{Substitueer} en bepaal de vorm.
+  \item \textbf{Beslis} of de vorm \(0/0\) of \(\infty/\infty\) is.
+  \item Alleen dan: \textbf{differentieer teller en noemer afzonderlijk}.
+  \item \textbf{Bepaal opnieuw de limiet}.
+  \item Ontstaat opnieuw \(0/0\) of \(\infty/\infty\)? Dan mag l'Hôpital opnieuw worden toegepast.
+  \item \textbf{Controleer} of een algebraïsche vereenvoudiging niet sneller of inzichtelijker is.
+\end{enumerate}
+
+% ============================================================
+% 3. VORM 0/0
+% ============================================================
+
+\FVDsection{De vorm \(\frac00\)}
+
+\begin{voorbeeld}[Een eerste toepassing]
+Bepaal
+
+\[\lim_{x\to3}\frac{27-x^3}{2x^2-11x+15}.\]
+
+Substitutie geeft
+
+\[\frac{27-27}{18-33+15}=\frac00.\]
+
+L'Hôpital is dus toepasbaar:
+
+\[
+\lim_{x\to3}\frac{27-x^3}{2x^2-11x+15}
+\overset{\mathrm H}{=}
+\lim_{x\to3}\frac{-3x^2}{4x-11}
+=-27.
+\]
+\end{voorbeeld}
+
+\begin{voorbeeld}[Met een wortelfunctie]
+Bepaal
+
+\[\lim_{x\to4}\frac{\sqrt{x}-2}{x-4}.\]
+
+Substitutie geeft \(0/0\). Daarom
+
+\[
+\lim_{x\to4}\frac{\sqrt{x}-2}{x-4}
+\overset{\mathrm H}{=}
+\lim_{x\to4}\frac{\frac{1}{2\sqrt{x}}}{1}
+=\frac14.
+\]
+
+Deze limiet kan ook met de toegevoegde vorm worden berekend. Dat is een
+goede herinnering dat l'Hôpital een \emph{methode} is, niet altijd de
+enige of de beste methode.
+\end{voorbeeld}
+
+\begin{voorbeeld}[Goniometrische functie]
+Gebruik de bekende limiet of l'Hôpital om
+
+\[\lim_{x\to0}\frac{\sin x}{x}\]
+
+te bepalen. De vorm is \(0/0\), zodat
+
+\[
+\lim_{x\to0}\frac{\sin x}{x}
+\overset{\mathrm H}{=}
+\lim_{x\to0}\cos x
+=1.
+\]
+\end{voorbeeld}
+
+% ============================================================
+% 4. INFINITY/INFINITY
+% ============================================================
+
+\FVDsection{De vorm \(\frac{\infty}{\infty}\)}
+
+\begin{voorbeeld}
+Bepaal
+
+\[\lim_{x\to+\infty}\frac{2x^2}{x+4}.\]
+
+Teller en noemer gaan beide naar \(+\infty\). Dus
+
+\[
+\lim_{x\to+\infty}\frac{2x^2}{x+4}
+\overset{\mathrm H}{=}
+\lim_{x\to+\infty}\frac{4x}{1}
+=+\infty.
+\]
+\end{voorbeeld}
+
+\begin{voorbeeld}[Exponentiële groei tegenover veeltermgroei]
+Bepaal
+
+\[\lim_{x\to+\infty}\frac{x^2}{e^x}.\]
+
+We krijgen \(\infty/\infty\). Een eerste toepassing geeft opnieuw
+\(\infty/\infty\):
+
+\[
+\lim_{x\to+\infty}\frac{x^2}{e^x}
+\overset{\mathrm H}{=}
+\lim_{x\to+\infty}\frac{2x}{e^x}
+\overset{\mathrm H}{=}
+\lim_{x\to+\infty}\frac{2}{e^x}
+=0.
+\]
+
+Dit illustreert dat de exponentiële functie uiteindelijk sneller groeit
+dan elke vaste macht \(x^n\).
+\end{voorbeeld}
+
+% ============================================================
+% 5. MEERMAALS
+% ============================================================
+
+\FVDsection{L'Hôpital meermaals toepassen}
+
+Na één toepassing kan opnieuw een geschikte onbepaalde vorm ontstaan.
+Dan mag de regel opnieuw worden gebruikt.
+
+\begin{voorbeeld}
+Bepaal
+
+\[\lim_{x\to+\infty}\frac{2x^3+x^2+1}{3x^4-2x}.\]
+
+We krijgen achtereenvolgens
+
+\[
+\frac{\infty}{\infty}
+\overset{\mathrm H}{\longrightarrow}
+\frac{\infty}{\infty}
+\overset{\mathrm H}{\longrightarrow}
+\frac{\infty}{\infty}.
+\]
+
+Daarom
+
+\[
+\begin{aligned}
+\lim_{x\to+\infty}\frac{2x^3+x^2+1}{3x^4-2x}
+&\overset{\mathrm H}{=}\lim_{x\to+\infty}\frac{6x^2+2x}{12x^3-2}\\
+&\overset{\mathrm H}{=}\lim_{x\to+\infty}\frac{12x+2}{36x^2}\\
+&\overset{\mathrm H}{=}\lim_{x\to+\infty}\frac{12}{72x}=0.
+\end{aligned}
+\]
+
+Voor rationale functies zou delen door de hoogste macht hier sneller zijn.
+De berekening is dus ook een oefening in \textbf{methodekeuze}.
+\end{voorbeeld}
+
+% ============================================================
+% 6. WANNEER NIET?
+% ============================================================
+
+\FVDsection{Wanneer mag l'Hôpital niet rechtstreeks?}
+
+\begin{opmerking}[Eerst de vorm controleren]
+L'Hôpital is geen algemene regel voor elk quotiënt.
+
+Bijvoorbeeld:
+
+\[\lim_{x\to0}\frac{x+1}{x+2}=\frac12.\]
+
+De vorm is \(1/2\), niet \(0/0\) of \(\infty/\infty\).
+L'Hôpital toepassen zou hier niet gerechtvaardigd zijn.
+\end{opmerking}
+
+\begin{voorbeeld}[Een typische fout]
+Een leerling schrijft
+
+\[
+\lim_{x\to0}\frac{x+1}{x+2}
+\overset{\mathrm H}{=}
+\lim_{x\to0}\frac11=1.
+\]
+
+Dit is fout. Rechtstreekse substitutie gaf al
+
+\[\frac12,\]
+
+dus er was geen onbepaalde vorm. De regel mocht niet worden toegepast.
+\end{voorbeeld}
+
+\begin{voorbeeld}[Een oneindige breuk die niet onbepaald is]
+Bepaal
+
+\[\lim_{x\to+\infty}\frac{x}{x^2+1}.\]
+
+De vorm is
+
+\[\frac{\infty}{\infty},\]
+
+dus l'Hôpital mag:
+
+\[
+\lim_{x\to+\infty}\frac{x}{x^2+1}
+\overset{\mathrm H}{=}
+\lim_{x\to+\infty}\frac{1}{2x}=0.
+\]
+
+Merk op dat delen door \(x^2\) eveneens snel tot hetzelfde resultaat leidt.
+\end{voorbeeld}
+
+% ============================================================
+% 7. OMVORMEN
+% ============================================================
+
+\FVDsection{Andere onbepaalde vormen eerst omvormen}
+
+Sommige limieten zijn niet meteen een quotiënt van de vorm \(0/0\) of
+\(\infty/\infty\). Dan moet eerst worden nagedacht.
+
+\FVDsubsection{De vorm \(0\cdot\infty\)}
+
+\begin{voorbeeld}
+Bepaal
+
+\[\lim_{x\to0^+}x\ln x.\]
+
+De vorm is \(0\cdot(-\infty)\). L'Hôpital kan niet rechtstreeks worden
+toegepast. Schrijf eerst
+
+\[x\ln x=\frac{\ln x}{1/x}.\]
+
+Nu ontstaat \((-\infty)/\infty\), zodat
+
+\[
+\lim_{x\to0^+}\frac{\ln x}{1/x}
+\overset{\mathrm H}{=}
+\lim_{x\to0^+}\frac{1/x}{-1/x^2}
+=
+\lim_{x\to0^+}(-x)=0.
+\]
+\end{voorbeeld}
+
+\FVDsubsection{De vorm \(\infty-\infty\)}
+
+\begin{voorbeeld}
+Bepaal
+
+\[\lim_{x\to+\infty}\left(\sqrt{x^2+x}-x\right).\]
+
+De vorm is \(\infty-\infty\). We maken eerst een quotiënt met de
+toegevoegde uitdrukking:
+
+\[
+\sqrt{x^2+x}-x
+=
+\frac{x}{\sqrt{x^2+x}+x}.
+\]
+
+Nu is de vorm \(\infty/\infty\). L'Hôpital is mogelijk, maar hier is
+delen door \(x\) eenvoudiger:
+
+\[
+\frac{x}{\sqrt{x^2+x}+x}
+=
+\frac{1}{\sqrt{1+\frac1x}+1}
+\longrightarrow \frac12.
+\]
+
+De analyse van de vorm leidde dus tot een methode, maar niet noodzakelijk
+tot l'Hôpital.
+\end{voorbeeld}
+
+\FVDsubsection{Onbepaalde machten}
+
+Bij vormen zoals \(1^\infty\), \(0^0\) en \(\infty^0\) kan een
+logaritmische omzetting nuttig zijn.
+
+\begin{voorbeeld}[Een klassieke exponentiële limiet]
+Bepaal
+
+\[\lim_{x\to0}(1+x)^{1/x}.\]
+
+Noem de limiet \(L\) en neem de natuurlijke logaritme:
+
+\[\ln L=\lim_{x\to0}\frac{\ln(1+x)}{x}.\]
+
+Dit is \(0/0\). Daarom
+
+\[
+\ln L
+\overset{\mathrm H}{=}
+\lim_{x\to0}\frac{1/(1+x)}{1}=1.
+\]
+
+Dus
+
+\[\boxed{L=e}.\]
+\end{voorbeeld}
+
+% ============================================================
+% 8. METHODEKEUZE
+% ============================================================
+
+\FVDsection{L'Hôpital of een andere methode?}
+
+Een sterke limietberekening begint met een keuze.
+
+\begin{opmerking}[Kies bewust]
+Vraag jezelf achtereenvolgens af:
+
+\begin{enumerate}
+  \item Kan ik rechtstreeks substitueren?
+  \item Ontstaat een onbepaalde vorm?
+  \item Kan ik eenvoudig ontbinden, vereenvoudigen, rationaliseren of delen door de hoogste macht?
+  \item Is de vorm \(0/0\) of \(\infty/\infty\), zodat l'Hôpital efficiënt is?
+  \item Moet ik de uitdrukking eerst omvormen?
+\end{enumerate}
+
+Een correcte maar nodeloos lange methode is wiskundig minder sterk dan
+een korte methode waarvan je kunt uitleggen waarom ze werkt.
+\end{opmerking}
+
+\begin{voorbeeld}[Twee methoden vergelijken]
+Bepaal
+
+\[\lim_{x\to2}\frac{x^2-4}{x-2}.\]
+
+Met ontbinden:
+
+\[
+\frac{x^2-4}{x-2}=x+2
+\qquad(x\neq2),
+\]
+
+dus de limiet is \(4\).
+
+Met l'Hôpital:
+
+\[
+\lim_{x\to2}\frac{x^2-4}{x-2}
+\overset{\mathrm H}{=}
+\lim_{x\to2}\frac{2x}{1}=4.
+\]
+
+Beide methoden zijn correct. Ontbinden toont hier duidelijker waarom de
+schijnbare singulariteit verdwijnt.
+\end{voorbeeld}
+
+% ============================================================
+% 9. KORTE CONTROLE
+% ============================================================
+
+\FVDsection{Korte controle}
+
+\begin{oefening}[Mag l'Hôpital?]{\oefB\ESS}
+Bepaal bij elke limiet eerst de vorm. Beslis daarna of l'Hôpital
+\textbf{rechtstreeks} mag worden toegepast. Motiveer kort.
+
+\begin{question}
+\[\lim_{x\to1}\frac{x^2-1}{x-1}.\]
+
+\begin{oplossing}
+Substitutie geeft \(0/0\). L'Hôpital mag rechtstreeks worden toegepast.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+\[\lim_{x\to0}\frac{x+1}{x+2}.\]
+
+\begin{oplossing}
+Substitutie geeft \(1/2\). Dit is geen onbepaalde vorm. L'Hôpital mag
+niet worden toegepast.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+\[\lim_{x\to0^+}x\ln x.\]
+
+\begin{oplossing}
+De vorm is \(0\cdot(-\infty)\). L'Hôpital mag niet rechtstreeks worden
+toegepast. Na herschrijven als \(\ln x/(1/x)\) ontstaat wel een geschikte
+quotiëntvorm.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+\[\lim_{x\to+\infty}\frac{\ln x}{x}.\]
+
+\begin{oplossing}
+De vorm is \(\infty/\infty\). L'Hôpital mag rechtstreeks worden toegepast.
+\end{oplossing}
+\end{question}
+\end{oefening}
+
+\begin{oefening}[Bereken en verantwoord]{\oefU\ESS}
+Bereken de limieten. Noteer telkens eerst de vorm en motiveer je
+methodekeuze.
+
+\begin{question}
+\[\lim_{x\to0}\frac{e^x-1}{x}.\]
+
+\begin{oplossing}
+De vorm is \(0/0\). Met l'Hôpital:
+
+\[
+\lim_{x\to0}\frac{e^x-1}{x}
+\overset{\mathrm H}{=}
+\lim_{x\to0}e^x=1.
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+\[\lim_{x\to+\infty}\frac{\ln x}{x}.\]
+
+\begin{oplossing}
+De vorm is \(\infty/\infty\). Met l'Hôpital:
+
+\[
+\lim_{x\to+\infty}\frac{\ln x}{x}
+\overset{\mathrm H}{=}
+\lim_{x\to+\infty}\frac{1/x}{1}=0.
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Een leerling gebruikt l'Hôpital voor
+\[\lim_{x\to2}\frac{x^2+1}{x+1}.\]
+Analyseer de aanpak.
+
+\begin{oplossing}
+Substitutie geeft \(5/3\), dus geen onbepaalde vorm. De limiet is
+\(\frac53\) en l'Hôpital mag hier niet worden toegepast.
+\end{oplossing}
+\end{question}
+\end{oefening}
+
+
+
+\end{document}
