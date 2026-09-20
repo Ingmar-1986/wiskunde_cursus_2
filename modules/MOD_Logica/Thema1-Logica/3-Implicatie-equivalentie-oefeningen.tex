@@ -1,0 +1,1706 @@
+\documentclass{ximera}
+
+\input{../../../preamble.tex}
+\input{../../../Opmaak.tex}
+
+\addPrintStyle{../../..}
+
+\title{Oefeningen — Implicatie en equivalentie}
+
+\author{Ingmar Herreman}
+
+\begin{document}
+
+% FVD_CHAPTER_DATA_START
+% Automatisch gegenereerd uit index.tex.
+% Niet handmatig aanpassen.
+\fvdchapterdata{1}{Logica — De taal van correct redeneren}{3}
+% FVD_CHAPTER_DATA_END
+
+\maketitle
+
+\FVDResetExercises
+
+
+
+
+
+\begin{oefening}[Voorwaarde en conclusie]{\oefB\ESS}
+
+Bepaal bij elke implicatie de voorwaarde en de conclusie.
+
+\begin{question}
+
+Als $n$ deelbaar is door $8$, dan is $n$ even.
+
+\begin{oplossing}
+
+Voorwaarde:
+
+\[
+n\text{ is deelbaar door }8.
+\]
+
+Conclusie:
+
+\[
+n\text{ is even}.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+Als $x>5$, dan is $x>2$.
+
+\begin{oplossing}
+
+Voorwaarde:
+
+\[
+x>5.
+\]
+
+Conclusie:
+
+\[
+x>2.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+Als een driehoek gelijkzijdig is, dan heeft hij drie gelijke hoeken.
+
+\begin{oplossing}
+
+Voorwaarde: de driehoek is gelijkzijdig.
+
+Conclusie: de driehoek heeft drie gelijke hoeken.
+
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+% ------------------------------------------------------------
+
+\begin{oefening}[Waarheidstabel]{\oefB\ESS}
+
+Vul de waarheidstabel aan.
+
+\[
+\begin{array}{c|c|c}
+p&q&p\Rightarrow q\\
+\hline
+\text{waar}&\text{waar}&\answer{\text{waar}}\\
+\text{waar}&\text{onwaar}&\answer{\text{onwaar}}\\
+\text{onwaar}&\text{waar}&\answer{\text{waar}}\\
+\text{onwaar}&\text{onwaar}&\answer{\text{waar}}
+\end{array}
+\]
+
+\begin{question}
+
+In hoeveel rijen is de implicatie onwaar?
+
+\begin{multipleChoice}
+
+  \choice[correct]{In precies één rij.}
+
+  \choice{In twee rijen.}
+
+  \choice{In drie rijen.}
+
+  \choice{In vier rijen.}
+
+\end{multipleChoice}
+
+\end{question}
+
+
+\begin{question}
+
+Beschrijf die situatie in woorden.
+
+\begin{oplossing}
+
+Een implicatie is onwaar wanneer de voorwaarde waar is en de conclusie
+onwaar.
+
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+% ------------------------------------------------------------
+
+\begin{oefening}[Waar of onwaar?]{\oefB\ESS}
+
+Bepaal telkens de waarheidswaarde.
+
+\begin{question}
+
+\[
+(3<5)\Rightarrow(9<25).
+\]
+
+\begin{oplossing}
+
+Beide deeluitspraken zijn waar.
+
+De implicatie is dus waar.
+
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+\[
+(7>2)\Rightarrow(7\text{ is even}).
+\]
+
+\begin{oplossing}
+
+De voorwaarde is waar en de conclusie onwaar.
+
+De implicatie is dus onwaar.
+
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+\[
+(2>7)\Rightarrow(10<3).
+\]
+
+\begin{oplossing}
+
+De voorwaarde is onwaar.
+
+De implicatie is daarom waar.
+
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+\[
+(2>7)\Rightarrow(10>3).
+\]
+
+\begin{oplossing}
+
+De voorwaarde is onwaar.
+
+De implicatie is daarom waar.
+
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+% ------------------------------------------------------------
+
+\begin{oefening}[Omgekeerde en contrapositieve]{\oefB\ESS}
+
+Gegeven:
+
+\[
+p\Rightarrow q.
+\]
+
+\begin{question}
+
+Welke uitspraak is de omgekeerde?
+
+\begin{multipleChoice}
+
+  \choice{$\neg p\Rightarrow\neg q$}
+
+  \choice[correct]{$q\Rightarrow p$}
+
+  \choice{$\neg q\Rightarrow\neg p$}
+
+  \choice{$p\Leftrightarrow q$}
+
+\end{multipleChoice}
+
+\end{question}
+
+
+\begin{question}
+
+Welke uitspraak is de contrapositieve?
+
+\begin{multipleChoice}
+
+  \choice{$q\Rightarrow p$}
+
+  \choice{$\neg p\Rightarrow\neg q$}
+
+  \choice[correct]{$\neg q\Rightarrow\neg p$}
+
+  \choice{$p\land q$}
+
+\end{multipleChoice}
+
+\end{question}
+
+
+\begin{question}
+
+Welke uitspraak heeft altijd dezelfde waarheidswaarde als
+$p\Rightarrow q$?
+
+\begin{multipleChoice}
+
+  \choice{$q\Rightarrow p$}
+
+  \choice[correct]{$\neg q\Rightarrow\neg p$}
+
+  \choice{$\neg p\Rightarrow\neg q$}
+
+\end{multipleChoice}
+
+\end{question}
+
+\end{oefening}
+
+
+
+
+\begin{oefening}[Deelbaarheid]{\oefB\ESS}
+
+Onderzoek voor $n\in\mathbb{Z}$ of de uitspraken waar of onwaar zijn.
+Geef bij een onware uitspraak een tegenvoorbeeld.
+
+\begin{question}
+
+Als $n$ deelbaar is door $10$, dan is $n$ deelbaar door $5$.
+
+\begin{oplossing}
+
+Waar.
+
+Als
+
+\[
+n=10k
+\]
+
+met $k\in\mathbb{Z}$, dan
+
+\[
+n=5(2k),
+\]
+
+dus is $n$ deelbaar door $5$.
+
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+Als $n$ deelbaar is door $5$, dan is $n$ deelbaar door $10$.
+
+\begin{oplossing}
+
+Onwaar.
+
+Bijvoorbeeld
+
+\[
+n=15.
+\]
+
+Dan is $15$ deelbaar door $5$, maar niet door $10$.
+
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+Als $n$ deelbaar is door $12$, dan is $n$ deelbaar door $4$.
+
+\begin{oplossing}
+
+Waar.
+
+Uit
+
+\[
+n=12k
+\]
+
+volgt
+
+\[
+n=4(3k).
+\]
+
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+Als $n$ even is, dan is $n^2$ deelbaar door $4$.
+
+\begin{oplossing}
+
+Waar.
+
+Als $n$ even is, bestaat er een $k\in\mathbb{Z}$ zodat
+
+\[
+n=2k.
+\]
+
+Dan
+
+\[
+n^2=(2k)^2=4k^2,
+\]
+
+dus is $n^2$ deelbaar door $4$.
+
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+% ------------------------------------------------------------
+
+\begin{oefening}[Zoek gericht een tegenvoorbeeld]{\oefU\ESS}
+
+Onderzoek telkens de implicatie voor $x\in\mathbb{R}$.
+Als ze onwaar is, geef dan een tegenvoorbeeld en leg uit waarom dit
+tegenvoorbeeld de implicatie weerlegt.
+
+\begin{question}
+
+\[
+x>5\Rightarrow x^2>25.
+\]
+
+\begin{oplossing}
+
+Waar.
+
+Uit $x>5$ volgt dat $x$ positief is en dus
+
+\[
+x^2>25.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+\[
+x^2>25\Rightarrow x>5.
+\]
+
+\begin{oplossing}
+
+Onwaar.
+
+Neem bijvoorbeeld
+
+\[
+x=-6.
+\]
+
+Dan
+
+\[
+x^2=36>25,
+\]
+
+maar
+
+\[
+x>5
+\]
+
+is onwaar.
+
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+\[
+x^2=16\Rightarrow x=4.
+\]
+
+\begin{oplossing}
+
+Onwaar.
+
+Neem
+
+\[
+x=-4.
+\]
+
+Dan is
+
+\[
+x^2=16
+\]
+
+waar, maar
+
+\[
+x=4
+\]
+
+onwaar.
+
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+\[
+x=4\Rightarrow x^2=16.
+\]
+
+\begin{oplossing}
+
+Waar.
+
+Als $x=4$, dan volgt onmiddellijk
+
+\[
+x^2=16.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+% ------------------------------------------------------------
+
+\begin{oefening}[Het domein doet ertoe]{\oefU\ESS}
+
+Beschouw de implicatie
+
+\[
+x^2=4\Rightarrow x=2.
+\]
+
+\begin{question}
+
+Onderzoek de uitspraak voor $x\in\mathbb{R}$.
+
+\begin{oplossing}
+
+De uitspraak is onwaar.
+
+Voor
+
+\[
+x=-2
+\]
+
+is de voorwaarde $x^2=4$ waar, maar de conclusie $x=2$ onwaar.
+
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+Onderzoek dezelfde uitspraak voor $x\in[0,+\infty[$.
+
+\begin{oplossing}
+
+Binnen dit domein is de uitspraak waar.
+
+De oplossingen van
+
+\[
+x^2=4
+\]
+
+zijn $x=-2$ en $x=2$, maar $-2$ behoort niet tot het gekozen domein.
+
+De enige toegelaten waarde waarvoor de voorwaarde waar is, is dus
+
+\[
+x=2.
+\]
+
+Dan is ook de conclusie waar.
+
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+Wat leert dit voorbeeld over implicaties?
+
+\begin{oplossing}
+
+De waarheidswaarde van een uitspraak met veranderlijken kan afhangen
+van het gekozen domein.
+
+Daarom moet het domein steeds duidelijk zijn.
+
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+
+
+
+\begin{oefening}[Vertalen]{\oefB\ESS}
+
+Gegeven:
+
+\[
+p\Rightarrow q.
+\]
+
+Vul telkens aan.
+
+\begin{question}
+
+$p$ is een \wordChoice{
+\choice[correct]{voldoende}
+\choice{nodige}
+} voorwaarde voor $q$.
+
+\end{question}
+
+
+\begin{question}
+
+$q$ is een \wordChoice{
+\choice{voldoende}
+\choice[correct]{nodige}
+} voorwaarde voor $p$.
+
+\end{question}
+
+\end{oefening}
+
+
+% ------------------------------------------------------------
+
+\begin{oefening}[Meetkundige voorwaarden]{\oefU\ESS}
+
+Beschouw de eigenschappen van een vierhoek:
+
+\[
+p:\quad \text{de vierhoek is een vierkant},
+\]
+
+\[
+q:\quad \text{de vierhoek is een rechthoek}.
+\]
+
+\begin{question}
+
+Welke implicatie is altijd waar?
+
+\begin{multipleChoice}
+
+  \choice[correct]{$p\Rightarrow q$}
+
+  \choice{$q\Rightarrow p$}
+
+\end{multipleChoice}
+
+\end{question}
+
+
+\begin{question}
+
+Is vierkant zijn nodig of voldoende om rechthoek te zijn?
+
+\begin{oplossing}
+
+Vierkant zijn is voldoende om rechthoek te zijn.
+
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+Is rechthoek zijn nodig of voldoende om vierkant te zijn?
+
+\begin{oplossing}
+
+Rechthoek zijn is nodig om vierkant te zijn.
+
+Het is niet voldoende, want niet elke rechthoek is een vierkant.
+
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+Geef een tegenvoorbeeld dat aantoont dat
+
+\[
+q\Rightarrow p
+\]
+
+onwaar is.
+
+\begin{oplossing}
+
+Elke rechthoek waarvan twee aangrenzende zijden verschillende lengtes
+hebben is een tegenvoorbeeld.
+
+Bijvoorbeeld een rechthoek met zijden $3$ en $5$.
+
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+% ------------------------------------------------------------
+
+\begin{oefening}[Zelf de richting bepalen]{\oefU\ESS}
+
+Schrijf telkens de juiste implicatie en bepaal welke eigenschap nodig
+en welke voldoende is.
+
+\begin{question}
+
+Een geheel getal is deelbaar door $20$.
+Een geheel getal is deelbaar door $5$.
+
+\begin{oplossing}
+
+Noem
+
+\[
+p:\quad n\text{ is deelbaar door }20
+\]
+
+en
+
+\[
+q:\quad n\text{ is deelbaar door }5.
+\]
+
+Dan geldt
+
+\[
+p\Rightarrow q.
+\]
+
+Deelbaar zijn door $20$ is voldoende voor deelbaar zijn door $5$.
+
+Deelbaar zijn door $5$ is nodig voor deelbaar zijn door $20$.
+
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+Een driehoek is gelijkzijdig.
+Een driehoek is gelijkbenig.
+
+\begin{oplossing}
+
+Elke gelijkzijdige driehoek is gelijkbenig.
+
+Dus
+
+\[
+\text{gelijkzijdig}\Rightarrow\text{gelijkbenig}.
+\]
+
+Gelijkzijdig zijn is voldoende voor gelijkbenig zijn.
+
+Gelijkbenig zijn is nodig voor gelijkzijdig zijn.
+
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+
+
+
+\begin{oefening}[Drie uitspraken vergelijken]{\oefU\ESS}
+
+Beschouw voor $n\in\mathbb{Z}$:
+
+\[
+p:\quad n\text{ is deelbaar door }8,
+\]
+
+\[
+q:\quad n\text{ is even}.
+\]
+
+\begin{question}
+
+Formuleer $p\Rightarrow q$ in woorden en bepaal de waarheidswaarde.
+
+\begin{oplossing}
+
+Als $n$ deelbaar is door $8$, dan is $n$ even.
+
+Deze uitspraak is waar.
+
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+Formuleer de omgekeerde uitspraak en bepaal de waarheidswaarde.
+
+\begin{oplossing}
+
+De omgekeerde is
+
+\[
+q\Rightarrow p.
+\]
+
+In woorden:
+
+Als $n$ even is, dan is $n$ deelbaar door $8$.
+
+Deze uitspraak is onwaar.
+
+Bijvoorbeeld $n=6$.
+
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+Formuleer de contrapositieve uitspraak.
+
+\begin{oplossing}
+
+\[
+\neg q\Rightarrow\neg p.
+\]
+
+In woorden:
+
+Als $n$ niet even is, dan is $n$ niet deelbaar door $8$.
+
+Voor gehele getallen:
+
+Als $n$ oneven is, dan is $n$ niet deelbaar door $8$.
+
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+Welke twee van de drie uitspraken hebben noodzakelijk dezelfde
+waarheidswaarde?
+
+\begin{oplossing}
+
+De oorspronkelijke implicatie
+
+\[
+p\Rightarrow q
+\]
+
+en haar contrapositieve
+
+\[
+\neg q\Rightarrow\neg p.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+% ------------------------------------------------------------
+
+\begin{oefening}[Een redenering controleren]{\oefU\ESS}
+
+Een leerling redeneert:
+
+\begin{center}
+``Als een getal deelbaar is door $6$, dan is het deelbaar door $3$.
+Het getal $15$ is deelbaar door $3$.
+Dus $15$ is deelbaar door $6$.''
+\end{center}
+
+\begin{question}
+
+Is de conclusie correct?
+
+\begin{multipleChoice}
+
+  \choice{Ja.}
+
+  \choice[correct]{Nee.}
+
+\end{multipleChoice}
+
+\end{question}
+
+
+\begin{question}
+
+Schrijf de gegeven implicatie als $p\Rightarrow q$.
+
+\begin{oplossing}
+
+Neem
+
+\[
+p:\quad n\text{ is deelbaar door }6
+\]
+
+en
+
+\[
+q:\quad n\text{ is deelbaar door }3.
+\]
+
+Dan is de gegeven implicatie
+
+\[
+p\Rightarrow q.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+Welke ongeldige stap maakt de leerling?
+
+\begin{oplossing}
+
+De leerling redeneert van $q$ naar $p$.
+
+Hij gebruikt dus de omgekeerde implicatie
+
+\[
+q\Rightarrow p,
+\]
+
+terwijl alleen
+
+\[
+p\Rightarrow q
+\]
+
+gegeven is.
+
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+
+
+\begin{oefening}[Wanneer is er een equivalentie?]{\oefB\ESS}
+
+Gegeven zijn twee uitspraken $p$ en $q$.
+
+\begin{question}
+
+Wat moet gelden om te mogen schrijven
+
+\[
+p\Leftrightarrow q?
+\]
+
+\begin{multipleChoice}
+
+  \choice{Alleen $p\Rightarrow q$ moet waar zijn.}
+
+  \choice{Alleen $q\Rightarrow p$ moet waar zijn.}
+
+  \choice[correct]{Zowel $p\Rightarrow q$ als $q\Rightarrow p$ moet waar zijn.}
+
+\end{multipleChoice}
+
+\end{question}
+
+\end{oefening}
+
+
+% ------------------------------------------------------------
+
+\begin{oefening}[Equivalent of niet?]{\oefU\ESS}
+
+Onderzoek telkens of de twee eigenschappen equivalent zijn.
+
+\begin{question}
+
+Voor $n\in\mathbb{Z}$:
+
+\[
+p:\quad n\text{ is deelbaar door }6,
+\]
+
+\[
+q:\quad n\text{ is deelbaar door }2\text{ en door }3.
+\]
+
+\begin{oplossing}
+
+De eigenschappen zijn equivalent.
+
+Als $n$ deelbaar is door $6$, dan is $n$ deelbaar door $2$ en door $3$.
+
+Omgekeerd geldt voor gehele getallen: als $n$ deelbaar is door zowel
+$2$ als $3$, dan is $n$ deelbaar door $6$.
+
+Dus
+
+\[
+p\Leftrightarrow q.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+Voor $x\in\mathbb{R}$:
+
+\[
+p:\quad x=3,
+\]
+
+\[
+q:\quad x^2=9.
+\]
+
+\begin{oplossing}
+
+Niet equivalent.
+
+Wel geldt
+
+\[
+x=3\Rightarrow x^2=9.
+\]
+
+Maar de omgekeerde uitspraak is onwaar, want $x=-3$ voldoet aan
+$x^2=9$ maar niet aan $x=3$.
+
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+Voor $x\in[0,+\infty[$:
+
+\[
+p:\quad x=3,
+\]
+
+\[
+q:\quad x^2=9.
+\]
+
+\begin{oplossing}
+
+Binnen dit domein zijn de eigenschappen wel equivalent.
+
+De negatieve oplossing $x=-3$ is niet toegelaten.
+
+Dus
+
+\[
+x=3\Leftrightarrow x^2=9.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+
+
+
+\begin{oefening}[Foutenanalyse]{\oefU\ESS}
+
+Een leerling beweert:
+
+\begin{center}
+``Als $x>4$, dan is $x^2>16$.
+Dus als $x^2>16$, dan is $x>4$.''
+\end{center}
+
+\begin{question}
+
+Welke stap maakt de leerling?
+
+\begin{oplossing}
+
+De leerling vervangt
+
+\[
+p\Rightarrow q
+\]
+
+door de omgekeerde uitspraak
+
+\[
+q\Rightarrow p.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+Toon met een tegenvoorbeeld aan dat het besluit niet geldig is.
+
+\begin{oplossing}
+
+Neem bijvoorbeeld
+
+\[
+x=-5.
+\]
+
+Dan is
+
+\[
+x^2=25>16,
+\]
+
+maar
+
+\[
+x>4
+\]
+
+is onwaar.
+
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+Formuleer wel een uitspraak die logisch gelijkwaardig is met
+
+\[
+x>4\Rightarrow x^2>16.
+\]
+
+\begin{oplossing}
+
+De contrapositieve is logisch gelijkwaardig:
+
+\[
+x^2\leq16\Rightarrow x\leq4.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+% ------------------------------------------------------------
+
+\begin{oefening}[Sensor en alarm]{\oefU\ESS}
+
+Een laboratorium gebruikt een temperatuursensor.
+
+De regelsoftware bevat de instructie:
+
+\begin{center}
+Als de temperatuur hoger is dan $100^\circ\mathrm{C}$,
+dan wordt het alarm geactiveerd.
+\end{center}
+
+Neem
+
+\[
+p:\quad T>100^\circ\mathrm{C}
+\]
+
+en
+
+\[
+q:\quad \text{het alarm is actief}.
+\]
+
+\begin{question}
+
+Schrijf de regel symbolisch.
+
+\begin{oplossing}
+
+\[
+p\Rightarrow q.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+Tijdens een experiment is het alarm niet actief.
+Wat mag je op basis van de gegeven regel besluiten?
+
+\begin{oplossing}
+
+We gebruiken de contrapositieve:
+
+\[
+\neg q\Rightarrow\neg p.
+\]
+
+Dus als het alarm niet actief is, dan is
+
+\[
+T\leq100^\circ\mathrm{C}.
+\]
+
+Dit veronderstelt uiteraard dat de opgegeven logische regel het
+functioneren van het systeem correct beschrijft.
+
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+Tijdens een ander experiment is het alarm wel actief.
+Mag je uitsluitend op basis van de gegeven regel besluiten dat
+
+\[
+T>100^\circ\mathrm{C}?
+\]
+
+\begin{oplossing}
+
+Nee.
+
+Dat zou de omgekeerde implicatie gebruiken:
+
+\[
+q\Rightarrow p.
+\]
+
+Die volgt niet uit de gegeven regel.
+
+Het alarm zou eventueel ook door een andere oorzaak geactiveerd kunnen
+worden.
+
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+% ------------------------------------------------------------
+
+\begin{oefening}[Een algoritme analyseren]{\oefU}
+
+Een programma bevat de regel:
+
+\begin{center}
+Als een ingevoerd geheel getal een veelvoud is van $12$,
+dan toont het programma de melding ``geschikt''.
+\end{center}
+
+Een invoer levert de melding ``geschikt'' op.
+
+\begin{question}
+
+Kan je uit de gegeven informatie met zekerheid besluiten dat het
+ingevoerde getal een veelvoud van $12$ was?
+
+\begin{oplossing}
+
+Nee.
+
+De regel zegt alleen
+
+\[
+p\Rightarrow q,
+\]
+
+waarbij
+
+\[
+p:\quad \text{het getal is een veelvoud van }12
+\]
+
+en
+
+\[
+q:\quad \text{de melding ``geschikt'' verschijnt}.
+\]
+
+Uit $q$ volgt niet automatisch $p$.
+
+Er kunnen in het programma nog andere voorwaarden bestaan die dezelfde
+melding veroorzaken.
+
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+Welke extra informatie zou nodig zijn om de conclusie wel te mogen
+trekken?
+
+\begin{oplossing}
+
+We zouden ook moeten weten dat
+
+\[
+q\Rightarrow p.
+\]
+
+Dus: de melding ``geschikt'' verschijnt alleen wanneer het getal een
+veelvoud van $12$ is.
+
+Samen met de oorspronkelijke regel krijgen we dan
+
+\[
+p\Leftrightarrow q.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+
+
+
+\begin{oefening}[Voorwaarden ontwerpen]{\oefG}
+
+Een automatisch ventilatiesysteem moet aan de volgende eis voldoen:
+
+\begin{center}
+Wanneer de temperatuur hoger is dan $30^\circ\mathrm{C}$,
+moet de ventilator zeker draaien.
+\end{center}
+
+Neem
+
+\[
+p:\quad T>30^\circ\mathrm{C}
+\]
+
+en
+
+\[
+q:\quad \text{de ventilator draait}.
+\]
+
+\begin{question}
+
+Formuleer de eis symbolisch.
+
+\begin{oplossing}
+
+\[
+p\Rightarrow q.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+Een ontwerper stelt voor om de software zo te maken dat
+
+\[
+q\Rightarrow p.
+\]
+
+Is dat dezelfde eis?
+
+\begin{oplossing}
+
+Nee.
+
+De oorspronkelijke eis zegt dat een hoge temperatuur voldoende is om
+de ventilator te laten draaien.
+
+De nieuwe uitspraak zegt dat de ventilator alleen kan draaien wanneer
+de temperatuur hoger is dan $30^\circ\mathrm{C}$.
+
+Dat is een andere voorwaarde.
+
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+Wat betekent
+
+\[
+p\Leftrightarrow q
+\]
+
+in deze context?
+
+\begin{oplossing}
+
+Dan geldt zowel
+
+\[
+p\Rightarrow q
+\]
+
+als
+
+\[
+q\Rightarrow p.
+\]
+
+De ventilator draait dus precies wanneer de temperatuur hoger is dan
+$30^\circ\mathrm{C}$.
+
+Een temperatuur boven $30^\circ\mathrm{C}$ is dan zowel nodig als
+voldoende voor het draaien van de ventilator.
+
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+% ------------------------------------------------------------
+
+\begin{oefening}[Een bewering onderzoeken]{\oefG}
+
+Een leerling formuleert voor $x\in\mathbb{R}$:
+
+\[
+x^2>1\Rightarrow x>1.
+\]
+
+Een tweede leerling zegt:
+
+\begin{center}
+``De uitspraak is bijna juist. We moeten alleen $>$ vervangen door
+$\geq$.''
+\end{center}
+
+\begin{question}
+
+Onderzoek de oorspronkelijke uitspraak.
+
+\begin{oplossing}
+
+Ze is onwaar.
+
+Bijvoorbeeld
+
+\[
+x=-2
+\]
+
+geeft
+
+\[
+x^2=4>1,
+\]
+
+maar
+
+\[
+x>1
+\]
+
+is onwaar.
+
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+Onderzoek het voorstel
+
+\[
+x^2\geq1\Rightarrow x\geq1.
+\]
+
+\begin{oplossing}
+
+Ook deze uitspraak is onwaar.
+
+Opnieuw is bijvoorbeeld
+
+\[
+x=-2
+\]
+
+een tegenvoorbeeld.
+
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+Formuleer zelf een correcte conclusie $q$ zodat
+
+\[
+x^2>1\Rightarrow q
+\]
+
+voor alle $x\in\mathbb{R}$ waar is en de conclusie zo precies mogelijk
+de mogelijke waarden van $x$ beschrijft.
+
+\begin{oplossing}
+
+Uit
+
+\[
+x^2>1
+\]
+
+volgt
+
+\[
+|x|>1.
+\]
+
+Dit betekent
+
+\[
+x<-1\quad\text{of}\quad x>1.
+\]
+
+Een correcte implicatie is dus
+
+\[
+x^2>1
+\Rightarrow
+(x<-1\lor x>1).
+\]
+
+Sterker nog: beide voorwaarden zijn equivalent:
+
+\[
+x^2>1
+\Leftrightarrow
+(x<-1\lor x>1).
+\]
+
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+% ------------------------------------------------------------
+
+\begin{oefening}[Zelf een tegenvoorbeeld construeren]{\oefG}
+
+Bedenk zelf voor elk van de volgende situaties een voorbeeld van twee
+wiskundige eigenschappen $p$ en $q$.
+
+\begin{question}
+
+$p\Rightarrow q$ is waar, maar $q\Rightarrow p$ is onwaar.
+
+\begin{oplossing}
+
+Er zijn veel mogelijkheden.
+
+Bijvoorbeeld voor $n\in\mathbb{Z}$:
+
+\[
+p:\quad n\text{ is deelbaar door }4,
+\]
+
+\[
+q:\quad n\text{ is even}.
+\]
+
+Dan is
+
+\[
+p\Rightarrow q
+\]
+
+waar, maar
+
+\[
+q\Rightarrow p
+\]
+
+onwaar, bijvoorbeeld voor $n=6$.
+
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+$p\Rightarrow q$ en $q\Rightarrow p$ zijn beide waar.
+
+\begin{oplossing}
+
+Bijvoorbeeld voor $n\in\mathbb{Z}$:
+
+\[
+p:\quad n\text{ is even},
+\]
+
+\[
+q:\quad n^2\text{ is even}.
+\]
+
+Dan geldt
+
+\[
+p\Leftrightarrow q.
+\]
+
+Andere correcte voorbeelden zijn mogelijk.
+
+\end{oplossing}
+
+\end{question}
+
+
+\begin{question}
+
+Leg uit waarom de tweede situatie precies betekent dat $p$ en $q$
+equivalent zijn.
+
+\begin{oplossing}
+
+Een equivalentie
+
+\[
+p\Leftrightarrow q
+\]
+
+betekent dat beide richtingen waar zijn:
+
+\[
+p\Rightarrow q
+\]
+
+en
+
+\[
+q\Rightarrow p.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+
+\end{document}
+
+

@@ -1,0 +1,1790 @@
+
+
+
+\documentclass{ximera}
+
+\input{../../../preamble.tex}
+\input{../../../Opmaak.tex}
+
+\addPrintStyle{../../..}
+
+\title{Implicatie en equivalentie}
+
+\author{Ingmar Herreman}
+
+\begin{abstract}
+
+Veel wiskundige uitspraken hebben de vorm
+\textbf{``als \ldots, dan \ldots''}.
+
+Als een geheel getal deelbaar is door $4$, dan is het even.
+Als een driehoek gelijkzijdig is, dan is hij gelijkbenig.
+Als $x>3$, dan is $x^2>9$.
+
+Zulke uitspraken noemen we \textbf{implicaties}.
+
+In dit hoofdstuk onderzoeken we zorgvuldig wat een implicatie betekent.
+We leren wanneer een implicatie waar of onwaar is en ontdekken waarom
+een implicatie iets anders zegt dan haar omgekeerde.
+
+Daarbij maken we kennis met nodige en voldoende voorwaarden en met de
+contrapositieve uitspraak. Ten slotte onderzoeken we wanneer twee
+voorwaarden precies even sterk zijn en dus een equivalentie vormen.
+
+Deze begrippen zijn fundamenteel voor wiskundig redeneren.
+Later zullen we ze gebruiken om redeneringen te analyseren en
+wiskundige uitspraken te bewijzen.
+
+\end{abstract}
+
+\begin{document}
+
+% FVD_CHAPTER_DATA_START
+% Automatisch gegenereerd uit index.tex.
+% Niet handmatig aanpassen.
+\fvdchapterdata{1}{Logica — De taal van correct redeneren}{3}
+% FVD_CHAPTER_DATA_END
+
+
+
+\maketitle
+
+
+% ============================================================
+% VOORKENNIS
+% ============================================================
+
+\begin{voorkennis}
+
+  \item Je weet wat een wiskundige uitspraak is.
+
+  \item Je kan de waarheidswaarde van een uitspraak bepalen.
+
+  \item Je kan uitspraken benoemen met letters zoals $p$ en $q$.
+
+  \item Je kent de logische operatoren
+        $\neg$, $\land$ en $\lor$.
+
+  \item Je kan eenvoudige samengestelde uitspraken analyseren.
+
+  \item Je kan een waarheidstabel lezen en opstellen.
+
+  \item Je begrijpt dat één tegenvoorbeeld volstaat om een algemene
+        bewering te weerleggen.
+
+\end{voorkennis}
+
+
+% ============================================================
+% LEERDOELEN
+% ============================================================
+
+\begin{leerdoelen}
+
+  \item Je kan een implicatie herkennen en noteren als $p\Rightarrow q$.
+
+  \item Je kan in een implicatie de voorwaarde en de conclusie herkennen.
+
+  \item Je kan de waarheidswaarde van een implicatie bepalen.
+
+  \item Je kan de waarheidstabel van een implicatie interpreteren.
+
+  \item Je kan uitleggen wanneer een implicatie onwaar is.
+
+  \item Je kan nodige en voldoende voorwaarden herkennen en formuleren.
+
+  \item Je kan bij een implicatie de omgekeerde uitspraak formuleren.
+
+  \item Je kan bij een implicatie de contrapositieve uitspraak formuleren.
+
+  \item Je kan het verschil uitleggen tussen een implicatie en haar omgekeerde.
+
+  \item Je kan onderzoeken of een implicatie en haar omgekeerde waar zijn.
+
+  \item Je kan een equivalentie herkennen en noteren als $p\Leftrightarrow q$.
+
+  \item Je kan equivalenties formuleren met ``als en slechts als''.
+
+  \item Je kan logische uitspraken in nieuwe situaties analyseren en
+        je besluit verantwoorden.
+
+\end{leerdoelen}
+
+
+% ============================================================
+\FVDsection{Als \ldots, dan \ldots}
+% ============================================================
+
+Beschouw de uitspraak
+
+\begin{center}
+Als een geheel getal deelbaar is door $4$, dan is het even.
+\end{center}
+
+Deze uitspraak bestaat uit twee delen.
+
+We noemen
+
+\[
+p:\quad n\text{ is deelbaar door }4
+\]
+
+en
+
+\[
+q:\quad n\text{ is even}.
+\]
+
+De oorspronkelijke uitspraak zegt dan:
+
+\begin{center}
+als $p$, dan $q$.
+\end{center}
+
+Symbolisch schrijven we
+
+\[
+p\Rightarrow q.
+\]
+
+
+\begin{definitie}
+
+Een \textbf{implicatie} is een samengestelde uitspraak van de vorm
+
+\[
+p\Rightarrow q.
+\]
+
+We lezen dit als
+
+\begin{center}
+``als $p$, dan $q$''
+\end{center}
+
+of
+
+\begin{center}
+``$p$ impliceert $q$''.
+\end{center}
+
+De uitspraak $p$ noemen we de \textbf{voorwaarde}.
+
+De uitspraak $q$ noemen we de \textbf{conclusie}.
+
+\end{definitie}
+
+
+\begin{voorbeeld}[Voorwaarde en conclusie]
+
+Beschouw
+
+\begin{center}
+Als $n$ een veelvoud van $6$ is, dan is $n$ deelbaar door $3$.
+\end{center}
+
+We kunnen schrijven
+
+\[
+p:\quad n\text{ is een veelvoud van }6
+\]
+
+en
+
+\[
+q:\quad n\text{ is deelbaar door }3.
+\]
+
+De uitspraak heeft dus de vorm
+
+\[
+p\Rightarrow q.
+\]
+
+De voorwaarde is dat $n$ een veelvoud van $6$ is.
+
+De conclusie is dat $n$ deelbaar is door $3$.
+
+\end{voorbeeld}
+
+
+\begin{opmerking}
+
+De pijl
+
+\[
+\Rightarrow
+\]
+
+betekent niet dat we een berekening uitvoeren.
+
+Hij drukt een \textbf{logisch verband} uit:
+
+wanneer de voorwaarde waar is, moet ook de conclusie waar zijn.
+
+\end{opmerking}
+
+
+\begin{oefening}[Voorwaarde en conclusie herkennen]{\oefB\ESS}
+
+Beschouw de uitspraak:
+
+\begin{center}
+Als een getal deelbaar is door $10$, dan is het even.
+\end{center}
+
+\begin{question}
+
+Welke uitspraak is de voorwaarde?
+
+\begin{multipleChoice}
+  \choice[correct]{Het getal is deelbaar door $10$.}
+  \choice{Het getal is even.}
+\end{multipleChoice}
+
+\end{question}
+
+\begin{question}
+
+Welke uitspraak is de conclusie?
+
+\begin{multipleChoice}
+  \choice{Het getal is deelbaar door $10$.}
+  \choice[correct]{Het getal is even.}
+\end{multipleChoice}
+
+\end{question}
+
+\begin{question}
+
+Schrijf de uitspraak symbolisch wanneer
+
+\[
+p:\quad n\text{ is deelbaar door }10
+\]
+
+en
+
+\[
+q:\quad n\text{ is even}.
+\]
+
+\begin{oplossing}
+
+\[
+p\Rightarrow q.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+\FVDsection{Wanneer is een implicatie waar?}
+% ============================================================
+
+Bij een conjunctie of disjunctie konden we de waarheidswaarde bepalen
+uit de waarheidswaarden van $p$ en $q$.
+
+Dat kan ook bij een implicatie.
+
+Beschouw opnieuw
+
+\[
+p\Rightarrow q.
+\]
+
+De belangrijkste vraag is:
+
+\begin{center}
+Wanneer wordt de belofte ``als $p$, dan $q$'' geschonden?
+\end{center}
+
+
+% ------------------------------------------------------------
+\FVDsubsection{De voorwaarde is waar}
+% ------------------------------------------------------------
+
+Stel dat $p$ waar is.
+
+Dan beweert de implicatie dat ook $q$ waar moet zijn.
+
+Als $q$ inderdaad waar is, klopt de implicatie.
+
+Als $q$ onwaar is, hebben we precies een situatie gevonden waarin
+de voorwaarde vervuld is maar de conclusie niet.
+
+Dan is de implicatie onwaar.
+
+
+\begin{voorbeeld}
+
+Beschouw voor een geheel getal $n$:
+
+\[
+p:\quad n\text{ is deelbaar door }4
+\]
+
+en
+
+\[
+q:\quad n\text{ is even}.
+\]
+
+Voor $n=12$ zijn $p$ en $q$ beide waar.
+
+De implicatie
+
+\[
+p\Rightarrow q
+\]
+
+wordt in dit geval dus niet geschonden.
+
+\end{voorbeeld}
+
+
+\begin{voorbeeld}[Hoe maak je een implicatie onwaar?]
+
+Beschouw de bewering
+
+\begin{center}
+Als een geheel getal even is, dan is het deelbaar door $4$.
+\end{center}
+
+Neem
+
+\[
+n=6.
+\]
+
+Dan is de voorwaarde
+
+\[
+6\text{ is even}
+\]
+
+waar, maar de conclusie
+
+\[
+6\text{ is deelbaar door }4
+\]
+
+onwaar.
+
+We hebben dus een geval gevonden waarin
+
+\[
+p\text{ waar}
+\qquad\text{en}\qquad
+q\text{ onwaar}.
+\]
+
+Daarom is de algemene implicatie onwaar.
+
+Het getal $6$ is een \textbf{tegenvoorbeeld}.
+
+\end{voorbeeld}
+
+
+\begin{opmerking}
+
+Om een algemene implicatie
+
+\[
+p\Rightarrow q
+\]
+
+te weerleggen, zoeken we dus naar een geval waarvoor
+
+\[
+p\text{ waar}
+\qquad\text{en}\qquad
+q\text{ onwaar}.
+\]
+
+Eén zo'n tegenvoorbeeld volstaat.
+
+\end{opmerking}
+
+
+% ------------------------------------------------------------
+\FVDsubsection{De voorwaarde is onwaar}
+% ------------------------------------------------------------
+
+Wat gebeurt er wanneer $p$ onwaar is?
+
+Beschouw:
+
+\begin{center}
+Als een geheel getal deelbaar is door $4$, dan is het even.
+\end{center}
+
+Neem $n=7$.
+
+De voorwaarde
+
+\[
+7\text{ is deelbaar door }4
+\]
+
+is onwaar.
+
+De uitspraak heeft niets beloofd over getallen die niet deelbaar zijn
+door $4$.
+
+Het getal $7$ kan de implicatie dus niet weerleggen.
+
+Hetzelfde geldt voor $n=6$.
+
+Ook daar is de voorwaarde ``deelbaar door $4$'' onwaar.
+Dat $6$ wel even is, verandert daar niets aan.
+
+
+\begin{opmerking}
+
+Wanneer de voorwaarde $p$ onwaar is, kan de implicatie
+
+\[
+p\Rightarrow q
+\]
+
+niet worden weerlegd.
+
+In de klassieke wiskundige logica beschouwen we de implicatie dan als
+\textbf{waar}.
+
+\end{opmerking}
+
+
+Dit geeft de volledige waarheidstabel:
+
+\[
+\begin{array}{c|c|c}
+p & q & p\Rightarrow q\\
+\hline
+\text{waar}   & \text{waar}   & \text{waar}\\
+\text{waar}   & \text{onwaar} & \text{onwaar}\\
+\text{onwaar} & \text{waar}   & \text{waar}\\
+\text{onwaar} & \text{onwaar} & \text{waar}
+\end{array}
+\]
+
+
+\begin{opmerking}
+
+Een implicatie is slechts in één situatie onwaar:
+
+\[
+\important{
+p\Rightarrow q
+\text{ is onwaar precies wanneer }
+p\text{ waar is en }q\text{ onwaar.}
+}
+\]
+
+Dit is een van de belangrijkste regels uit dit hoofdstuk.
+
+\end{opmerking}
+
+
+\begin{oefening}[Waarheidswaarde van een implicatie]{\oefB\ESS}
+
+Gegeven:
+
+\[
+p:\quad 10>5
+\]
+
+en
+
+\[
+q:\quad 10\text{ is oneven}.
+\]
+
+\begin{question}
+
+Bepaal de waarheidswaarde van $p$.
+
+\begin{oplossing}
+
+$p$ is waar.
+
+\end{oplossing}
+
+\end{question}
+
+\begin{question}
+
+Bepaal de waarheidswaarde van $q$.
+
+\begin{oplossing}
+
+$q$ is onwaar.
+
+\end{oplossing}
+
+\end{question}
+
+\begin{question}
+
+Bepaal de waarheidswaarde van
+
+\[
+p\Rightarrow q.
+\]
+
+\begin{oplossing}
+
+De voorwaarde $p$ is waar en de conclusie $q$ is onwaar.
+
+Daarom is
+
+\[
+p\Rightarrow q
+\]
+
+onwaar.
+
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+\FVDsection{Een implicatie onderzoeken}
+% ============================================================
+
+Bij een uitspraak met veranderlijken moeten we goed onderscheiden tussen
+een paar voorbeelden controleren en de algemene uitspraak onderzoeken.
+
+Beschouw
+
+\[
+x>2\Rightarrow x^2>4
+\]
+
+met $x\in\mathbb{R}$.
+
+Voor $x=3$ krijgen we
+
+\[
+3>2\Rightarrow 3^2>4.
+\]
+
+Beide delen zijn waar.
+
+Ook voor $x=10$ werkt de uitspraak.
+
+Maar enkele voorbeelden tonen nog niet aan dat de implicatie voor
+\textbf{alle} toegelaten waarden geldt.
+
+We moeten onderzoeken of er een waarde bestaat waarvoor de voorwaarde
+waar is en de conclusie onwaar.
+
+
+\begin{voorbeeld}[Een ware implicatie analyseren]
+
+Onderzoek voor $x\in\mathbb{R}$:
+
+\[
+x>2\Rightarrow x^2>4.
+\]
+
+Als $x>2$, dan is $x$ positief.
+
+Daarom mogen we de ongelijkheid $x>2$ kwadrateren zonder de orde te
+veranderen:
+
+\[
+x^2>4.
+\]
+
+Telkens wanneer de voorwaarde waar is, is dus ook de conclusie waar.
+
+De implicatie is waar.
+
+\end{voorbeeld}
+
+
+\begin{voorbeeld}[Een tegenvoorbeeld zoeken]
+
+Onderzoek voor $x\in\mathbb{R}$:
+
+\[
+x^2>4\Rightarrow x>2.
+\]
+
+Op het eerste gezicht lijkt deze uitspraak aannemelijk.
+
+Maar neem
+
+\[
+x=-3.
+\]
+
+Dan geldt
+
+\[
+(-3)^2=9>4,
+\]
+
+dus de voorwaarde is waar.
+
+De conclusie
+
+\[
+-3>2
+\]
+
+is onwaar.
+
+Daarom is de implicatie onwaar.
+
+\end{voorbeeld}
+
+
+\begin{opmerking}
+
+Bij het onderzoeken van een implicatie is het vaak efficiënter om niet
+willekeurig voorbeelden te proberen.
+
+Vraag jezelf af:
+
+\begin{center}
+\textbf{Kan de voorwaarde waar zijn terwijl de conclusie onwaar is?}
+\end{center}
+
+Als dat kan, zoek dan gericht naar zo'n geval.
+
+\end{opmerking}
+
+
+\begin{oefening}[Een implicatie analyseren]{\oefU\ESS}
+
+Beschouw voor $x\in\mathbb{R}$ de uitspraak
+
+\[
+x^2>9\Rightarrow x>3.
+\]
+
+\begin{question}
+
+Onderzoek of de implicatie waar is.
+
+\begin{oplossing}
+
+De implicatie is onwaar.
+
+We zoeken een waarde waarvoor
+
+\[
+x^2>9
+\]
+
+waar is maar
+
+\[
+x>3
+\]
+
+onwaar.
+
+Neem bijvoorbeeld
+
+\[
+x=-4.
+\]
+
+Dan is
+
+\[
+(-4)^2=16>9,
+\]
+
+maar
+
+\[
+-4>3
+\]
+
+is onwaar.
+
+Dus $x=-4$ is een tegenvoorbeeld.
+
+\end{oplossing}
+
+\end{question}
+
+\begin{question}
+
+Leg uit waarom het controleren van $x=4$, $x=5$ en $x=10$
+niet volstaat om de algemene uitspraak te bewijzen.
+
+\begin{oplossing}
+
+Die waarden tonen alleen dat de implicatie voor enkele afzonderlijke
+gevallen niet wordt geschonden.
+
+Om een uitspraak over alle reële getallen te bewijzen, moeten alle
+mogelijke waarden door een algemene redenering worden afgedekt.
+
+Bovendien missen de gekozen voorbeelden de negatieve waarden die juist
+tegenvoorbeelden opleveren.
+
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+\FVDsection{Voldoende en nodige voorwaarden}
+% ============================================================
+
+Een implicatie
+
+\[
+p\Rightarrow q
+\]
+
+kan op verschillende manieren in woorden worden uitgedrukt.
+
+Beschouw:
+
+\begin{center}
+Als een geheel getal deelbaar is door $4$, dan is het even.
+\end{center}
+
+De eigenschap ``deelbaar zijn door $4$'' is voldoende om te besluiten
+dat het getal even is.
+
+We zeggen daarom:
+
+\begin{center}
+deelbaar zijn door $4$ is een \textbf{voldoende voorwaarde}
+voor even zijn.
+\end{center}
+
+Omgekeerd: als een getal deelbaar is door $4$, dan moet het noodzakelijk
+even zijn.
+
+We zeggen daarom:
+
+\begin{center}
+even zijn is een \textbf{nodige voorwaarde}
+voor deelbaar zijn door $4$.
+\end{center}
+
+
+\begin{definitie}
+
+Als
+
+\[
+p\Rightarrow q,
+\]
+
+dan is
+
+\begin{itemize}
+
+  \item $p$ een \textbf{voldoende voorwaarde} voor $q$;
+
+  \item $q$ een \textbf{nodige voorwaarde} voor $p$.
+
+\end{itemize}
+
+\end{definitie}
+
+
+\begin{opmerking}
+
+Een handige manier om dit te onthouden is:
+
+\[
+\boxed{
+p\Rightarrow q
+}
+\]
+
+betekent dat $p$ sterk genoeg is om $q$ te garanderen.
+
+Dus $p$ is \textbf{voldoende}.
+
+Tegelijk kan $p$ niet waar zijn zonder dat $q$ waar is.
+
+Dus $q$ is \textbf{nodig}.
+
+\end{opmerking}
+
+
+\begin{voorbeeld}[Een meetkundig voorbeeld]
+
+Beschouw:
+
+\begin{center}
+Als een vierhoek een vierkant is, dan is hij een rechthoek.
+\end{center}
+
+Dus:
+
+\begin{itemize}
+
+  \item vierkant zijn is een voldoende voorwaarde om rechthoek te zijn;
+
+  \item rechthoek zijn is een nodige voorwaarde om een vierkant te zijn.
+
+\end{itemize}
+
+Rechthoek zijn is echter niet voldoende om een vierkant te zijn.
+
+Een rechthoek met zijden $3$ en $5$ is bijvoorbeeld geen vierkant.
+
+\end{voorbeeld}
+
+
+\begin{oefening}[Nodig of voldoende?]{\oefU\ESS}
+
+Gegeven is de ware implicatie:
+
+\begin{center}
+Als een geheel getal deelbaar is door $12$, dan is het deelbaar door $3$.
+\end{center}
+
+\begin{question}
+
+Vul aan:
+
+\begin{center}
+Deelbaar zijn door $12$ is een \wordChoice{
+\choice[correct]{voldoende}
+\choice{nodige}
+} voorwaarde voor deelbaar zijn door $3$.
+\end{center}
+
+\end{question}
+
+\begin{question}
+
+Vul aan:
+
+\begin{center}
+Deelbaar zijn door $3$ is een \wordChoice{
+\choice{voldoende}
+\choice[correct]{nodige}
+} voorwaarde voor deelbaar zijn door $12$.
+\end{center}
+
+\end{question}
+
+\begin{question}
+
+Is deelbaar zijn door $3$ ook voldoende om deelbaar te zijn door $12$?
+Verantwoord.
+
+\begin{oplossing}
+
+Nee.
+
+Bijvoorbeeld $6$ is deelbaar door $3$, maar niet door $12$.
+
+Dus deelbaar zijn door $3$ is niet voldoende om deelbaar te zijn door
+$12$.
+
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+\FVDsection{De omgekeerde uitspraak}
+% ============================================================
+
+Beschouw opnieuw
+
+\[
+p\Rightarrow q.
+\]
+
+We kunnen de rollen van $p$ en $q$ verwisselen.
+
+Dan krijgen we
+
+\[
+q\Rightarrow p.
+\]
+
+Dit noemen we de \textbf{omgekeerde uitspraak}.
+
+
+\begin{definitie}
+
+Bij de implicatie
+
+\[
+p\Rightarrow q
+\]
+
+is
+
+\[
+q\Rightarrow p
+\]
+
+de \textbf{omgekeerde uitspraak}.
+
+\end{definitie}
+
+
+\begin{voorbeeld}
+
+De oorspronkelijke uitspraak is:
+
+\begin{center}
+Als een geheel getal deelbaar is door $4$, dan is het even.
+\end{center}
+
+De omgekeerde uitspraak is:
+
+\begin{center}
+Als een geheel getal even is, dan is het deelbaar door $4$.
+\end{center}
+
+De oorspronkelijke uitspraak is waar.
+
+De omgekeerde uitspraak is onwaar.
+
+Het getal
+
+\[
+6
+\]
+
+is immers even, maar niet deelbaar door $4$.
+
+\end{voorbeeld}
+
+
+\begin{opmerking}
+
+Uit
+
+\[
+p\Rightarrow q
+\]
+
+mogen we in het algemeen \textbf{niet} besluiten dat
+
+\[
+q\Rightarrow p.
+\]
+
+Een implicatie en haar omgekeerde zijn verschillende uitspraken en
+moeten afzonderlijk worden onderzocht.
+
+\end{opmerking}
+
+
+\begin{voorbeeld}[Een veelgemaakte denkfout]
+
+We weten:
+
+\begin{center}
+Als een dier een hond is, dan is het een zoogdier.
+\end{center}
+
+Daaruit volgt niet:
+
+\begin{center}
+Als een dier een zoogdier is, dan is het een hond.
+\end{center}
+
+Een kat is een eenvoudig tegenvoorbeeld.
+
+De fout ontstaat doordat de richting van de implicatie ongemerkt wordt
+omgekeerd.
+
+\end{voorbeeld}
+
+
+\begin{oefening}[De richting doet ertoe]{\oefU\ESS}
+
+Beschouw voor $x\in\mathbb{R}$:
+
+\[
+p:\quad x>3
+\]
+
+en
+
+\[
+q:\quad x^2>9.
+\]
+
+\begin{question}
+
+Onderzoek
+
+\[
+p\Rightarrow q.
+\]
+
+\begin{oplossing}
+
+De implicatie is waar.
+
+Als $x>3$, dan is $x$ positief en volgt
+
+\[
+x^2>9.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+\begin{question}
+
+Formuleer de omgekeerde uitspraak.
+
+\begin{oplossing}
+
+\[
+q\Rightarrow p,
+\]
+
+dus
+
+\[
+x^2>9\Rightarrow x>3.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+\begin{question}
+
+Onderzoek de omgekeerde uitspraak.
+
+\begin{oplossing}
+
+De omgekeerde uitspraak is onwaar.
+
+Neem bijvoorbeeld
+
+\[
+x=-4.
+\]
+
+Dan is
+
+\[
+x^2=16>9,
+\]
+
+maar
+
+\[
+x>3
+\]
+
+is onwaar.
+
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+\FVDsection{De contrapositieve uitspraak}
+% ============================================================
+
+Naast de omgekeerde uitspraak is er nog een belangrijke uitspraak die
+bij een implicatie hoort.
+
+Vertrek van
+
+\[
+p\Rightarrow q.
+\]
+
+Ontken de conclusie en de voorwaarde en wissel hun plaats.
+
+We krijgen
+
+\[
+\neg q\Rightarrow\neg p.
+\]
+
+Dit noemen we de \textbf{contrapositieve uitspraak}.
+
+
+\begin{definitie}
+
+Bij de implicatie
+
+\[
+p\Rightarrow q
+\]
+
+is
+
+\[
+\neg q\Rightarrow\neg p
+\]
+
+de \textbf{contrapositieve uitspraak}.
+
+\end{definitie}
+
+
+\begin{voorbeeld}
+
+Beschouw:
+
+\begin{center}
+Als een geheel getal deelbaar is door $4$, dan is het even.
+\end{center}
+
+We nemen
+
+\[
+p:\quad n\text{ is deelbaar door }4
+\]
+
+en
+
+\[
+q:\quad n\text{ is even}.
+\]
+
+De contrapositieve uitspraak is
+
+\[
+\neg q\Rightarrow\neg p.
+\]
+
+In woorden:
+
+\begin{center}
+Als $n$ niet even is, dan is $n$ niet deelbaar door $4$.
+\end{center}
+
+Voor gehele getallen kunnen we ook schrijven:
+
+\begin{center}
+Als $n$ oneven is, dan is $n$ niet deelbaar door $4$.
+\end{center}
+
+\end{voorbeeld}
+
+
+% ------------------------------------------------------------
+\FVDsubsection{Implicatie en contrapositieve}
+% ------------------------------------------------------------
+
+Vergelijk de waarheidstabellen.
+
+\[
+\begin{array}{c|c|c|c|c}
+p&q&p\Rightarrow q&\neg q&\neg q\Rightarrow\neg p\\
+\hline
+\text{waar}&\text{waar}&\text{waar}&\text{onwaar}&\text{waar}\\
+\text{waar}&\text{onwaar}&\text{onwaar}&\text{waar}&\text{onwaar}\\
+\text{onwaar}&\text{waar}&\text{waar}&\text{onwaar}&\text{waar}\\
+\text{onwaar}&\text{onwaar}&\text{waar}&\text{waar}&\text{waar}
+\end{array}
+\]
+
+De kolommen van
+
+\[
+p\Rightarrow q
+\]
+
+en
+
+\[
+\neg q\Rightarrow\neg p
+\]
+
+zijn identiek.
+
+Daarom hebben beide uitspraken altijd dezelfde waarheidswaarde.
+
+
+\begin{opmerking}
+
+Een implicatie en haar contrapositieve zijn logisch gelijkwaardig:
+
+\[
+\important{
+p\Rightarrow q
+\quad\Longleftrightarrow\quad
+\neg q\Rightarrow\neg p.
+}
+\]
+
+Dit is fundamenteel voor een bewijstechniek die we later zullen leren:
+\textbf{bewijs door contrapositie}.
+
+\end{opmerking}
+
+
+\begin{oefening}[Contrapositieve formuleren]{\oefB\ESS}
+
+Beschouw:
+
+\begin{center}
+Als een geheel getal deelbaar is door $6$, dan is het deelbaar door $3$.
+\end{center}
+
+\begin{question}
+
+Neem
+
+\[
+p:\quad n\text{ is deelbaar door }6
+\]
+
+en
+
+\[
+q:\quad n\text{ is deelbaar door }3.
+\]
+
+Welke formule stelt de contrapositieve voor?
+
+\begin{multipleChoice}
+
+  \choice{$q\Rightarrow p$}
+
+  \choice{$\neg p\Rightarrow\neg q$}
+
+  \choice[correct]{$\neg q\Rightarrow\neg p$}
+
+  \choice{$p\Rightarrow\neg q$}
+
+\end{multipleChoice}
+
+\end{question}
+
+\begin{question}
+
+Formuleer de contrapositieve in woorden.
+
+\begin{oplossing}
+
+Als $n$ niet deelbaar is door $3$, dan is $n$ niet deelbaar door $6$.
+
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+\FVDsection{Equivalentie}
+% ============================================================
+
+Soms geldt een implicatie in beide richtingen.
+
+Beschouw voor een geheel getal $n$:
+
+\[
+p:\quad n\text{ is even}
+\]
+
+en
+
+\[
+q:\quad n^2\text{ is even}.
+\]
+
+Dan geldt
+
+\[
+p\Rightarrow q.
+\]
+
+Als $n$ even is, dan is $n^2$ immers even.
+
+Maar ook de omgekeerde uitspraak
+
+\[
+q\Rightarrow p
+\]
+
+is waar.
+
+In zo'n geval zeggen we dat $p$ en $q$ equivalent zijn.
+
+
+\begin{definitie}
+
+De \textbf{equivalentie} van twee uitspraken $p$ en $q$ noteren we als
+
+\[
+p\Leftrightarrow q.
+\]
+
+We lezen dit als
+
+\begin{center}
+``$p$ als en slechts als $q$''
+\end{center}
+
+of
+
+\begin{center}
+``$p$ is equivalent met $q$''.
+\end{center}
+
+De equivalentie is waar wanneer $p$ en $q$ dezelfde waarheidswaarde
+hebben.
+
+\end{definitie}
+
+
+De waarheidstabel is
+
+\[
+\begin{array}{c|c|c}
+p&q&p\Leftrightarrow q\\
+\hline
+\text{waar}&\text{waar}&\text{waar}\\
+\text{waar}&\text{onwaar}&\text{onwaar}\\
+\text{onwaar}&\text{waar}&\text{onwaar}\\
+\text{onwaar}&\text{onwaar}&\text{waar}
+\end{array}
+\]
+
+
+\begin{opmerking}
+
+Een equivalentie betekent dat beide implicaties gelden:
+
+\[
+\important{
+p\Leftrightarrow q
+\quad\text{betekent}\quad
+(p\Rightarrow q)\land(q\Rightarrow p).
+}
+\]
+
+We moeten dus twee richtingen controleren.
+
+\end{opmerking}
+
+
+% ------------------------------------------------------------
+\FVDsubsection{Nodig én voldoende}
+% ------------------------------------------------------------
+
+Als
+
+\[
+p\Leftrightarrow q,
+\]
+
+dan geldt zowel
+
+\[
+p\Rightarrow q
+\]
+
+als
+
+\[
+q\Rightarrow p.
+\]
+
+Daarom is $p$ zowel een nodige als een voldoende voorwaarde voor $q$.
+
+En omgekeerd is $q$ zowel nodig als voldoende voor $p$.
+
+
+\begin{voorbeeld}
+
+Voor $n\in\mathbb{Z}$ geldt:
+
+\[
+n\text{ is even}
+\Leftrightarrow
+n^2\text{ is even}.
+\]
+
+Dus:
+
+\begin{center}
+$n$ is even als en slechts als $n^2$ even is.
+\end{center}
+
+\end{voorbeeld}
+
+
+\begin{voorbeeld}[Geen equivalentie]
+
+Voor $n\in\mathbb{Z}$ geldt
+
+\[
+n\text{ is deelbaar door }4
+\Rightarrow
+n\text{ is even}.
+\]
+
+Maar de omgekeerde implicatie is niet altijd waar.
+
+Daarom mogen we niet schrijven
+
+\[
+n\text{ is deelbaar door }4
+\Leftrightarrow
+n\text{ is even}.
+\]
+
+\end{voorbeeld}
+
+
+\begin{oefening}[Implicatie of equivalentie?]{\oefU\ESS}
+
+Onderzoek voor $n\in\mathbb{Z}$ de eigenschappen
+
+\[
+p:\quad n\text{ is deelbaar door }10
+\]
+
+en
+
+\[
+q:\quad n\text{ is deelbaar door }5.
+\]
+
+\begin{question}
+
+Is
+
+\[
+p\Rightarrow q
+\]
+
+waar?
+
+\begin{oplossing}
+
+Ja.
+
+Elk veelvoud van $10$ is ook een veelvoud van $5$.
+
+\end{oplossing}
+
+\end{question}
+
+\begin{question}
+
+Is
+
+\[
+q\Rightarrow p
+\]
+
+waar?
+
+\begin{oplossing}
+
+Nee.
+
+Bijvoorbeeld $15$ is deelbaar door $5$, maar niet door $10$.
+
+\end{oplossing}
+
+\end{question}
+
+\begin{question}
+
+Mogen we schrijven
+
+\[
+p\Leftrightarrow q?
+\]
+
+\begin{oplossing}
+
+Nee.
+
+Voor een equivalentie moeten beide implicaties waar zijn.
+
+Hier is alleen
+
+\[
+p\Rightarrow q
+\]
+
+waar.
+
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+\FVDsection{Verschillende formuleringen herkennen}
+% ============================================================
+
+In wiskundige teksten staat niet altijd letterlijk ``als \ldots, dan
+\ldots''.
+
+Dezelfde logische structuur kan op verschillende manieren worden
+uitgedrukt.
+
+
+\begin{voorbeeld}
+
+De volgende uitspraken drukken dezelfde implicatie uit:
+
+\begin{center}
+Als $n$ deelbaar is door $4$, dan is $n$ even.
+\end{center}
+
+\begin{center}
+$n$ deelbaar door $4$ is voldoende voor $n$ even.
+\end{center}
+
+\begin{center}
+$n$ even is nodig voor $n$ deelbaar door $4$.
+\end{center}
+
+Symbolisch:
+
+\[
+p\Rightarrow q.
+\]
+
+\end{voorbeeld}
+
+
+Voor een equivalentie kunnen we bijvoorbeeld schrijven:
+
+\begin{center}
+$p$ als en slechts als $q$,
+\end{center}
+
+\begin{center}
+$p$ is nodig en voldoende voor $q$,
+\end{center}
+
+of
+
+\[
+p\Leftrightarrow q.
+\]
+
+
+\begin{oefening}[Logische taal interpreteren]{\oefU\ESS}
+
+Beschouw de uitspraak:
+
+\begin{center}
+Deelbaar zijn door $6$ is voldoende om deelbaar te zijn door $3$.
+\end{center}
+
+Neem
+
+\[
+p:\quad n\text{ is deelbaar door }6
+\]
+
+en
+
+\[
+q:\quad n\text{ is deelbaar door }3.
+\]
+
+\begin{question}
+
+Welke symbolische uitspraak hoort hierbij?
+
+\begin{multipleChoice}
+
+  \choice[correct]{$p\Rightarrow q$}
+
+  \choice{$q\Rightarrow p$}
+
+  \choice{$p\Leftrightarrow q$}
+
+\end{multipleChoice}
+
+\end{question}
+
+\begin{question}
+
+Welke van de volgende zinnen drukt dezelfde implicatie uit?
+
+\begin{multipleChoice}
+
+  \choice{Deelbaar zijn door $6$ is nodig voor deelbaar zijn door $3$.}
+
+  \choice[correct]{Deelbaar zijn door $3$ is nodig voor deelbaar zijn door $6$.}
+
+  \choice{Deelbaar zijn door $3$ is voldoende voor deelbaar zijn door $6$.}
+
+\end{multipleChoice}
+
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+\FVDsection{Logische structuur in toepassingen}
+% ============================================================
+
+Implicaties komen niet alleen in zuivere wiskunde voor.
+
+Ook in informatica, elektronica en wetenschappen worden voorwaarden
+voortdurend gebruikt.
+
+
+\begin{voorbeeld}[Een temperatuuralarm]
+
+Een regelsysteem bevat de volgende instructie:
+
+\begin{center}
+Als de temperatuur hoger is dan $80^\circ\mathrm{C}$,
+dan wordt het alarm geactiveerd.
+\end{center}
+
+Neem
+
+\[
+p:\quad T>80^\circ\mathrm{C}
+\]
+
+en
+
+\[
+q:\quad \text{het alarm is actief}.
+\]
+
+De regel heeft de vorm
+
+\[
+p\Rightarrow q.
+\]
+
+Stel dat het alarm actief is.
+
+Mogen we daaruit besluiten dat
+
+\[
+T>80^\circ\mathrm{C}?
+\]
+
+Niet noodzakelijk.
+
+Het alarm kan misschien ook om een andere reden geactiveerd worden,
+bijvoorbeeld door rookdetectie.
+
+Uit
+
+\[
+p\Rightarrow q
+\]
+
+volgt immers niet automatisch
+
+\[
+q\Rightarrow p.
+\]
+
+\end{voorbeeld}
+
+
+\begin{oefening}[Een fout besluit analyseren]{\oefU\ESS}
+
+Een beveiligingssysteem werkt volgens de regel:
+
+\begin{center}
+Als de druk in een vat hoger is dan de veiligheidsgrens,
+dan gaat het waarschuwingslampje branden.
+\end{center}
+
+Een leerling ziet dat het waarschuwingslampje brandt en besluit:
+
+\begin{center}
+``Dus de druk is hoger dan de veiligheidsgrens.''
+\end{center}
+
+\begin{question}
+
+Is dit besluit logisch gerechtvaardigd op basis van de gegeven regel?
+
+\begin{multipleChoice}
+
+  \choice{Ja.}
+
+  \choice[correct]{Nee.}
+
+\end{multipleChoice}
+
+\end{question}
+
+\begin{question}
+
+Leg uit welke logische fout wordt gemaakt.
+
+\begin{oplossing}
+
+Neem
+
+\[
+p:\quad \text{de druk is hoger dan de veiligheidsgrens}
+\]
+
+en
+
+\[
+q:\quad \text{het lampje brandt}.
+\]
+
+Gegeven is alleen
+
+\[
+p\Rightarrow q.
+\]
+
+De leerling gebruikt echter de omgekeerde uitspraak
+
+\[
+q\Rightarrow p.
+\]
+
+Die volgt niet automatisch uit de oorspronkelijke implicatie.
+
+Het lampje zou bijvoorbeeld ook door een testfunctie of een andere
+storing geactiveerd kunnen worden.
+
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+
+\end{document}

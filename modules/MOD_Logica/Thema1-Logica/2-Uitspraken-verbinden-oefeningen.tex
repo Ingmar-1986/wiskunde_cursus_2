@@ -1,0 +1,2485 @@
+\documentclass{ximera}
+
+\input{../../../preamble.tex}
+
+\input{../../../Opmaak.tex}
+
+\addPrintStyle{../../..}
+
+\title{Oefeningen --- Uitspraken verbinden}
+
+\author{Ingmar Herreman}
+
+
+
+\begin{document}
+
+% FVD_CHAPTER_DATA_START
+% Automatisch gegenereerd uit index.tex.
+% Niet handmatig aanpassen.
+\fvdchapterdata{1}{Logica — De taal van correct redeneren}{2}
+% FVD_CHAPTER_DATA_END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\maketitle
+
+
+
+
+
+% ============================================================
+
+% BASIS
+
+% ============================================================
+
+
+
+\begin{oefening}[De negatie bepalen]{\oefB \ESS}
+
+Geef telkens de negatie van de uitspraak.
+
+\begin{question}
+
+\[
+p:\quad 7<12
+\]
+
+\begin{oplossing}
+
+De negatie is
+
+\[
+\neg p:\quad 7\geq12.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+
+
+\begin{question}
+
+\[
+q:\quad x>5
+\]
+
+\begin{oplossing}
+
+De negatie is
+
+\[
+\neg q:\quad x\leq5.
+\]
+
+Let op: $x<5$ is niet de volledige negatie, want dan wordt $x=5$
+
+vergeten.
+
+\end{oplossing}
+
+\end{question}
+
+
+
+\begin{question}
+
+\[
+r:\quad x\leq-2
+\]
+
+\begin{oplossing}
+
+\[
+\neg r:\quad x>-2.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+
+
+\begin{question}
+
+\[
+s:\quad n=8
+\]
+
+\begin{oplossing}
+
+\[
+\neg s:\quad n\neq8.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+
+
+\begin{question}
+
+\[
+t:\quad n\text{ is deelbaar door }3.
+\]
+
+\begin{oplossing}
+
+\[
+\neg t:\quad n\text{ is niet deelbaar door }3.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+
+
+
+\begin{oefening}[Waarheidswaarde van een negatie]{\oefB \ESS}
+
+Gegeven zijn de uitspraken
+
+\[
+p:\quad 13\text{ is een priemgetal},
+\]
+
+\[
+q:\quad 20<15,
+\]
+
+\[
+r:\quad \sqrt{16}=4.
+\]
+
+Bepaal telkens de waarheidswaarde.
+
+\begin{question}
+
+$p$
+
+\begin{oplossing}
+
+Waar.
+
+\end{oplossing}
+
+\end{question}
+
+
+
+\begin{question}
+
+$\neg p$
+
+\begin{oplossing}
+
+Onwaar.
+
+\end{oplossing}
+
+\end{question}
+
+
+
+\begin{question}
+
+$q$
+
+\begin{oplossing}
+
+Onwaar.
+
+\end{oplossing}
+
+\end{question}
+
+
+
+\begin{question}
+
+$\neg q$
+
+\begin{oplossing}
+
+Waar.
+
+\end{oplossing}
+
+\end{question}
+
+
+
+\begin{question}
+
+$\neg r$
+
+\begin{oplossing}
+
+$r$ is waar, want
+
+\[
+\sqrt{16}=4.
+\]
+
+Dus $\neg r$ is onwaar.
+
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+
+
+
+\begin{oefening}[En: de conjunctie]{\oefB \ESS}
+
+Gegeven zijn
+
+\[
+p:\quad 18\text{ is even}
+\]
+
+en
+
+\[
+q:\quad 18\text{ is deelbaar door }3.
+\]
+
+\begin{question}
+
+Bepaal de waarheidswaarde van $p$ en $q$.
+
+\begin{oplossing}
+
+Beide uitspraken zijn waar.
+
+\[
+p=W,
+\qquad
+q=W.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+
+
+\begin{question}
+
+Bepaal de waarheidswaarde van
+
+\[
+p\land q.
+\]
+
+\begin{oplossing}
+
+Een conjunctie is waar als beide onderdelen waar zijn.
+
+Dus
+
+\[
+p\land q=W.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+
+
+\begin{question}
+
+Schrijf $p\land q$ in woorden.
+
+\begin{oplossing}
+
+\begin{center}
+
+$18$ is even en $18$ is deelbaar door $3$.
+
+\end{center}
+
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+
+
+
+\begin{oefening}[Of: de disjunctie]{\oefB \ESS}
+
+Gegeven zijn
+
+\[
+p:\quad 15\text{ is even}
+\]
+
+en
+
+\[
+q:\quad 15\text{ is deelbaar door }5.
+\]
+
+\begin{question}
+
+Bepaal de waarheidswaarde van $p$ en $q$.
+
+\begin{oplossing}
+
+\[
+p=O,
+\qquad
+q=W.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+
+
+\begin{question}
+
+Bepaal de waarheidswaarde van
+
+\[
+p\lor q.
+\]
+
+\begin{oplossing}
+
+De disjunctie is waar zodra minstens één van beide uitspraken waar is.
+
+Omdat $q$ waar is,
+
+\[
+p\lor q=W.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+
+
+\begin{question}
+
+Bepaal de waarheidswaarde van
+
+\[
+p\land q.
+\]
+
+\begin{oplossing}
+
+Omdat $p$ onwaar is, zijn niet beide uitspraken waar.
+
+Dus
+
+\[
+p\land q=O.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+
+
+
+\begin{oefening}[Conjunctie of disjunctie?]{\oefB \ESS}
+
+Gegeven zijn
+
+\[
+p=W,
+\qquad
+q=O.
+\]
+
+Bepaal de waarheidswaarde van elke uitdrukking.
+
+\begin{question}
+
+\[
+p\land q
+\]
+
+\begin{multipleChoice}
+
+  \choice{waar}
+
+  \choice[correct]{onwaar}
+
+\end{multipleChoice}
+
+\end{question}
+
+
+
+\begin{question}
+
+\[
+p\lor q
+\]
+
+\begin{multipleChoice}
+
+  \choice[correct]{waar}
+
+  \choice{onwaar}
+
+\end{multipleChoice}
+
+\end{question}
+
+
+
+\begin{question}
+
+\[
+\neg p
+\]
+
+\begin{multipleChoice}
+
+  \choice{waar}
+
+  \choice[correct]{onwaar}
+
+\end{multipleChoice}
+
+\end{question}
+
+
+
+\begin{question}
+
+\[
+\neg q
+\]
+
+\begin{multipleChoice}
+
+  \choice[correct]{waar}
+
+  \choice{onwaar}
+
+\end{multipleChoice}
+
+\end{question}
+
+\end{oefening}
+
+
+
+
+
+\begin{oefening}[Het wiskundige ``of'']{\oefB \ESS}
+
+Gegeven zijn
+
+\[
+p:\quad 12\text{ is even}
+\]
+
+en
+
+\[
+q:\quad 12\text{ is deelbaar door }3.
+\]
+
+\begin{question}
+
+Welke uitspraken zijn waar?
+
+\begin{multipleChoice}
+
+  \choice{$p$ is waar en $q$ is onwaar.}
+
+  \choice{$p$ is onwaar en $q$ is waar.}
+
+  \choice[correct]{$p$ en $q$ zijn beide waar.}
+
+  \choice{$p$ en $q$ zijn beide onwaar.}
+
+\end{multipleChoice}
+
+\end{question}
+
+
+
+\begin{question}
+
+Wat is de waarheidswaarde van
+
+\[
+p\lor q?
+\]
+
+\begin{multipleChoice}
+
+  \choice[correct]{waar}
+
+  \choice{onwaar}
+
+\end{multipleChoice}
+
+\end{question}
+
+
+
+\begin{question}
+
+Een leerling zegt:
+
+\begin{quote}
+
+``$p\lor q$ kan niet waar zijn, want bij ``of'' mag maar één van de
+
+twee uitspraken waar zijn.''
+
+\end{quote}
+
+Beoordeel deze redenering.
+
+\begin{oplossing}
+
+De redenering is fout.
+
+In de wiskundige logica is $\lor$ een \textbf{inclusieve disjunctie}.
+
+Dat betekent dat
+
+\[
+p\lor q
+\]
+
+waar is wanneer minstens één van beide uitspraken waar is.
+
+Ook wanneer $p$ en $q$ allebei waar zijn, is $p\lor q$ dus waar.
+
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+
+
+
+\begin{oefening}[Waarheidstabel van de basisoperatoren]{\oefB \ESS}
+
+Vul de waarheidstabel aan.
+
+\[
+\begin{array}{c|c|c|c|c}
+p&q&\neg p&p\land q&p\lor q\\
+\hline
+W&W&\phantom{O}&\phantom{W}&\phantom{W}\\
+W&O&\phantom{O}&\phantom{O}&\phantom{W}\\
+O&W&\phantom{W}&\phantom{O}&\phantom{W}\\
+O&O&\phantom{W}&\phantom{O}&\phantom{O}
+\end{array}
+\]
+
+\begin{oplossing}
+
+\[
+\begin{array}{c|c|c|c|c}
+p&q&\neg p&p\land q&p\lor q\\
+\hline
+W&W&O&W&W\\
+W&O&O&O&W\\
+O&W&W&O&W\\
+O&O&W&O&O
+\end{array}
+\]
+
+\end{oplossing}
+
+\end{oefening}
+
+
+
+
+
+\begin{oefening}[Van symbolen naar woorden]{\oefB \ESS}
+
+Gegeven zijn
+
+\[
+p:\quad x>2
+\]
+
+en
+
+\[
+q:\quad x<7.
+\]
+
+Vertaal elke uitdrukking naar gewone wiskundige taal.
+
+\begin{question}
+
+\[
+p\land q
+\]
+
+\begin{oplossing}
+
+\[
+x>2\text{ en }x<7.
+\]
+
+Dit kan ook worden geschreven als
+
+\[
+2<x<7.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+
+
+\begin{question}
+
+\[
+p\lor q
+\]
+
+\begin{oplossing}
+
+\[
+x>2\text{ of }x<7.
+\]
+
+Het woord ``of'' wordt inclusief geïnterpreteerd.
+
+\end{oplossing}
+
+\end{question}
+
+
+
+\begin{question}
+
+\[
+\neg p
+\]
+
+\begin{oplossing}
+
+\[
+x\leq2.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+
+
+\begin{question}
+
+\[
+\neg q
+\]
+
+\begin{oplossing}
+
+\[
+x\geq7.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+
+
+
+\begin{oefening}[Van woorden naar symbolen]{\oefB \ESS}
+
+Gegeven zijn
+
+\[
+p:\quad n\text{ is even}
+\]
+
+en
+
+\[
+q:\quad n>10.
+\]
+
+Schrijf de volgende uitspraken met logische symbolen.
+
+\begin{question}
+
+$n$ is even en groter dan $10$.
+
+\begin{oplossing}
+
+\[
+p\land q.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+
+
+\begin{question}
+
+$n$ is even of groter dan $10$.
+
+\begin{oplossing}
+
+\[
+p\lor q.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+
+
+\begin{question}
+
+$n$ is niet even.
+
+\begin{oplossing}
+
+\[
+\neg p.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+
+
+\begin{question}
+
+$n$ is even en niet groter dan $10$.
+
+\begin{oplossing}
+
+\[
+p\land\neg q.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+
+
+
+\begin{oefening}[Samengestelde uitspraken berekenen]{\oefB \ESS}
+
+Gegeven zijn
+
+\[
+p=W,
+\qquad
+q=O,
+\qquad
+r=W.
+\]
+
+Bepaal telkens de waarheidswaarde.
+
+\begin{question}
+
+\[
+\neg p\lor q
+\]
+
+\begin{oplossing}
+
+\[
+\neg p=O.
+\]
+
+Dus
+
+\[
+\neg p\lor q
+=
+O\lor O
+=
+O.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+
+
+\begin{question}
+
+\[
+p\land\neg q
+\]
+
+\begin{oplossing}
+
+Omdat
+
+\[
+\neg q=W,
+\]
+
+krijgen we
+
+\[
+p\land\neg q
+=
+W\land W
+=
+W.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+
+
+\begin{question}
+
+\[
+(p\land q)\lor r
+\]
+
+\begin{oplossing}
+
+Eerst:
+
+\[
+p\land q
+=
+W\land O
+=
+O.
+\]
+
+Daarna:
+
+\[
+O\lor W=W.
+\]
+
+Dus de samengestelde uitspraak is waar.
+
+\end{oplossing}
+
+\end{question}
+
+
+
+\begin{question}
+
+\[
+p\land(q\lor r)
+\]
+
+\begin{oplossing}
+
+Eerst:
+
+\[
+q\lor r
+=
+O\lor W
+=
+W.
+\]
+
+Daarna:
+
+\[
+p\land W
+=
+W\land W
+=
+W.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+
+
+
+% ============================================================
+
+% VERDIEPING
+
+% ============================================================
+
+
+
+\begin{oefening}[Haakjes maken verschil]{\oefU \ESS}
+
+Vergelijk
+
+\[
+A=\neg p\land q
+\]
+
+en
+
+\[
+B=\neg(p\land q).
+\]
+
+Maak voor beide uitdrukkingen een waarheidstabel.
+
+\begin{oplossing}
+
+Voor $A$:
+
+\[
+\begin{array}{c|c|c|c}
+p&q&\neg p&\neg p\land q\\
+\hline
+W&W&O&O\\
+W&O&O&O\\
+O&W&W&W\\
+O&O&W&O
+\end{array}
+\]
+
+Voor $B$:
+
+\[
+\begin{array}{c|c|c|c}
+p&q&p\land q&\neg(p\land q)\\
+\hline
+W&W&W&O\\
+W&O&O&W\\
+O&W&O&W\\
+O&O&O&W
+\end{array}
+\]
+
+De eindkolommen zijn verschillend.
+
+De twee uitdrukkingen hebben dus niet dezelfde logische betekenis.
+
+\end{oplossing}
+
+\end{oefening}
+
+
+
+
+
+\begin{oefening}[De hoofdoperator herkennen]{\oefU \ESS}
+
+Bepaal voor elke samengestelde uitspraak:
+
+\begin{enumerate}
+
+  \item de elementaire uitspraken;
+
+  \item de gebruikte logische operatoren;
+
+  \item de hoofdoperator.
+
+\end{enumerate}
+
+
+
+\begin{question}
+
+\[
+\neg p\lor q
+\]
+
+\begin{oplossing}
+
+De elementaire uitspraken zijn $p$ en $q$.
+
+De operatoren zijn $\neg$ en $\lor$.
+
+De hoofdoperator is $\lor$, want de volledige uitspraak verbindt
+
+$\neg p$ en $q$ door een disjunctie.
+
+\end{oplossing}
+
+\end{question}
+
+
+
+\begin{question}
+
+\[
+\neg(p\lor q)
+\]
+
+\begin{oplossing}
+
+De elementaire uitspraken zijn $p$ en $q$.
+
+De operatoren zijn $\lor$ en $\neg$.
+
+De hoofdoperator is $\neg$, want de volledige disjunctie wordt ontkend.
+
+\end{oplossing}
+
+\end{question}
+
+
+
+\begin{question}
+
+\[
+(p\land q)\lor r
+\]
+
+\begin{oplossing}
+
+De elementaire uitspraken zijn $p$, $q$ en $r$.
+
+De operatoren zijn $\land$ en $\lor$.
+
+De hoofdoperator is $\lor$.
+
+\end{oplossing}
+
+\end{question}
+
+
+
+\begin{question}
+
+\[
+p\land(\neg q\lor r)
+\]
+
+\begin{oplossing}
+
+De elementaire uitspraken zijn $p$, $q$ en $r$.
+
+De operatoren zijn $\land$, $\neg$ en $\lor$.
+
+De hoofdoperator is $\land$.
+
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+
+
+
+\begin{oefening}[Vind de fout]{\oefU \ESS}
+
+Een leerling moet de negatie bepalen van
+
+\[
+x>3.
+\]
+
+Hij schrijft
+
+\[
+\neg(x>3)
+\quad\Longrightarrow\quad
+x<3.
+\]
+
+\begin{question}
+
+Is dit correct?
+
+\begin{multipleChoice}
+
+  \choice{Ja.}
+
+  \choice[correct]{Nee.}
+
+\end{multipleChoice}
+
+\end{question}
+
+
+
+\begin{question}
+
+Welke waarde toont onmiddellijk dat de negatie onvolledig is?
+
+\begin{oplossing}
+
+\[
+x=3.
+\]
+
+De oorspronkelijke uitspraak $x>3$ is voor $x=3$ onwaar.
+
+De negatie moet dus voor $x=3$ waar zijn.
+
+Maar $3<3$ is onwaar.
+
+\end{oplossing}
+
+\end{question}
+
+
+
+\begin{question}
+
+Geef de correcte negatie.
+
+\begin{oplossing}
+
+\[
+x\leq3.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+
+
+\begin{question}
+
+Welke algemene les volgt hieruit?
+
+\begin{oplossing}
+
+Een uitspraak negeren betekent de volledige verzameling situaties
+
+beschrijven waarin de oorspronkelijke uitspraak niet waar is.
+
+Bij ongelijkheden moet daarom ook goed op de grenswaarde worden gelet.
+
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+
+
+
+\begin{oefening}[Waar voor welke waarden?]{\oefU \ESS}
+
+Neem $x\in\mathbb{R}$.
+
+Beschouw
+
+\[
+p:\quad x>-2
+\]
+
+en
+
+\[
+q:\quad x\leq4.
+\]
+
+\begin{question}
+
+Voor welke waarden van $x$ is
+
+\[
+p\land q
+\]
+
+waar?
+
+\begin{oplossing}
+
+Beide voorwaarden moeten tegelijk gelden:
+
+\[
+x>-2
+\]
+
+en
+
+\[
+x\leq4.
+\]
+
+Dus
+
+\[
+-2<x\leq4.
+\]
+
+In intervalnotatie:
+
+\[
+]-2,4].
+\]
+
+\end{oplossing}
+
+\end{question}
+
+
+
+\begin{question}
+
+Voor welke waarden van $x$ is
+
+\[
+\neg p
+\]
+
+waar?
+
+\begin{oplossing}
+
+\[
+x\leq-2.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+
+
+\begin{question}
+
+Voor welke waarden van $x$ is
+
+\[
+\neg q
+\]
+
+waar?
+
+\begin{oplossing}
+
+\[
+x>4.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+
+
+\begin{question}
+
+Voor welke waarden van $x$ is
+
+\[
+\neg p\lor\neg q
+\]
+
+waar?
+
+\begin{oplossing}
+
+We hebben
+
+\[
+\neg p:\quad x\leq-2
+\]
+
+en
+
+\[
+\neg q:\quad x>4.
+\]
+
+De disjunctie is dus waar voor
+
+\[
+x\leq-2
+\qquad\text{of}\qquad
+x>4.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+
+
+
+\begin{oefening}[Analyseer de toegangsvoorwaarden]{\oefU \ESS}
+
+Een laboratorium gebruikt een elektronisch toegangscontrolesysteem.
+
+Definieer
+
+\[
+p:\quad \text{de badge is geldig}
+\]
+
+en
+
+\[
+q:\quad \text{de pincode is correct}.
+\]
+
+De deur gaat open als
+
+\[
+p\land q
+\]
+
+waar is.
+
+\begin{question}
+
+Wat gebeurt er wanneer de badge geldig is maar de pincode fout?
+
+\begin{oplossing}
+
+Dan is
+
+\[
+p=W,
+\qquad
+q=O.
+\]
+
+Dus
+
+\[
+p\land q=O.
+\]
+
+De deur blijft gesloten.
+
+\end{oplossing}
+
+\end{question}
+
+
+
+\begin{question}
+
+Wat gebeurt er wanneer de badge ongeldig is maar de pincode correct?
+
+\begin{oplossing}
+
+\[
+p=O,
+\qquad
+q=W.
+\]
+
+Dus opnieuw
+
+\[
+p\land q=O.
+\]
+
+De deur blijft gesloten.
+
+\end{oplossing}
+
+\end{question}
+
+
+
+\begin{question}
+
+Een programmeur vervangt per ongeluk de voorwaarde door
+
+\[
+p\lor q.
+\]
+
+Waarom veroorzaakt dit een ernstig beveiligingsprobleem?
+
+\begin{oplossing}
+
+Bij een disjunctie volstaat het dat één voorwaarde waar is.
+
+Daardoor zou iemand toegang kunnen krijgen met alleen een geldige
+
+badge of alleen een correcte pincode.
+
+Het oorspronkelijke systeem eiste bewust dat beide voorwaarden
+
+tegelijk voldaan waren.
+
+\end{oplossing}
+
+\end{question}
+
+
+
+\begin{question}
+
+Welke logische operator past dus bij het woord ``beide''?
+
+\begin{oplossing}
+
+De conjunctie:
+
+\[
+\land.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+
+
+
+\begin{oefening}[Een alarmsysteem]{\oefU \ESS}
+
+In een chemische installatie wordt een alarm geactiveerd wanneer
+
+\begin{itemize}
+
+  \item de temperatuur hoger is dan $90\,{}^\circ\mathrm C$;
+
+  \item of de druk hoger is dan $6\,\mathrm{bar}$.
+
+\end{itemize}
+
+Definieer
+
+\[
+p:\quad T>90
+\]
+
+en
+
+\[
+q:\quad P>6.
+\]
+
+\begin{question}
+
+Schrijf de alarmvoorwaarde symbolisch.
+
+\begin{oplossing}
+
+\[
+p\lor q.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+
+
+\begin{question}
+
+Gaat het alarm af bij
+
+\[
+T=95\,{}^\circ\mathrm C,
+\qquad
+P=5\,\mathrm{bar}?
+\]
+
+\begin{oplossing}
+
+$p$ is waar en $q$ is onwaar.
+
+Dus
+
+\[
+p\lor q=W.
+\]
+
+Het alarm gaat af.
+
+\end{oplossing}
+
+\end{question}
+
+
+
+\begin{question}
+
+Gaat het alarm af bij
+
+\[
+T=85\,{}^\circ\mathrm C,
+\qquad
+P=7\,\mathrm{bar}?
+\]
+
+\begin{oplossing}
+
+$p$ is onwaar en $q$ is waar.
+
+Dus
+
+\[
+p\lor q=W.
+\]
+
+Het alarm gaat af.
+
+\end{oplossing}
+
+\end{question}
+
+
+
+\begin{question}
+
+Gaat het alarm af wanneer zowel de temperatuur als de druk te hoog zijn?
+
+\begin{oplossing}
+
+Ja.
+
+Dan zijn $p$ en $q$ beide waar en dus is ook
+
+\[
+p\lor q
+\]
+
+waar.
+
+Dit illustreert het inclusieve karakter van het wiskundige ``of''.
+
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+
+
+
+\begin{oefening}[Wat zegt deze voorwaarde precies?]{\oefU \ESS}
+
+Een computerprogramma selecteert meetwaarden waarvoor
+
+\[
+x\geq5\land x<12.
+\]
+
+\begin{question}
+
+Welke van de volgende waarden worden geselecteerd?
+
+\[
+4,\quad5,\quad8,\quad12,\quad15
+\]
+
+\begin{oplossing}
+
+De geselecteerde waarden zijn
+
+\[
+5\quad\text{en}\quad8.
+\]
+
+De waarde $12$ wordt niet geselecteerd omdat de tweede voorwaarde
+
+strikt $x<12$ is.
+
+\end{oplossing}
+
+\end{question}
+
+
+
+\begin{question}
+
+Schrijf de selectievoorwaarde in intervalnotatie.
+
+\begin{oplossing}
+
+\[
+[5,12[.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+
+
+\begin{question}
+
+Een programmeur vervangt $\land$ door $\lor$:
+
+\[
+x\geq5\lor x<12.
+\]
+
+Onderzoek wat er nu gebeurt.
+
+\begin{oplossing}
+
+Voor elk reëel getal is minstens één van beide voorwaarden waar.
+
+Als $x<5$, dan geldt zeker $x<12$.
+
+Als $x\geq5$, dan is de eerste voorwaarde waar.
+
+Dus elk reëel getal voldoet aan
+
+\[
+x\geq5\lor x<12.
+\]
+
+De nieuwe selectievoorwaarde selecteert dus alle reële getallen.
+
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+
+
+
+\begin{oefening}[Twee uitdrukkingen vergelijken]{\oefU \ESS}
+
+Onderzoek met een waarheidstabel de uitdrukkingen
+
+\[
+A=\neg(p\land q)
+\]
+
+en
+
+\[
+B=\neg p\lor\neg q.
+\]
+
+\begin{question}
+
+Maak de volledige waarheidstabel.
+
+\begin{oplossing}
+
+\[
+\begin{array}{c|c|c|c|c|c|c}
+p&q&p\land q&\neg(p\land q)&\neg p&\neg q&
+\neg p\lor\neg q\\
+\hline
+W&W&W&O&O&O&O\\
+W&O&O&W&O&W&W\\
+O&W&O&W&W&O&W\\
+O&O&O&W&W&W&W
+\end{array}
+\]
+
+\end{oplossing}
+
+\end{question}
+
+
+
+\begin{question}
+
+Wat valt op wanneer je de laatste relevante kolommen vergelijkt?
+
+\begin{oplossing}
+
+De kolommen van
+
+\[
+\neg(p\land q)
+\]
+
+en
+
+\[
+\neg p\lor\neg q
+\]
+
+zijn identiek.
+
+Beide uitdrukkingen hebben dus voor elke mogelijke combinatie van
+
+waarheidswaarden dezelfde waarheidswaarde.
+
+\end{oplossing}
+
+\end{question}
+
+
+
+\begin{question}
+
+Waarom is deze conclusie sterker dan wanneer we slechts één keuze
+
+voor $p$ en $q$ zouden controleren?
+
+\begin{oplossing}
+
+De waarheidstabel onderzoekt alle mogelijke combinaties van
+
+waarheidswaarden van $p$ en $q$.
+
+We baseren de conclusie dus niet op één voorbeeld, maar op alle
+
+mogelijke gevallen.
+
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+
+
+
+% ============================================================
+
+% GEVORDERD
+
+% ============================================================
+
+
+
+\begin{oefening}[Een complexe waarheidstabel]{\oefG}
+
+Maak de volledige waarheidstabel van
+
+\[
+\neg p\lor(q\land r).
+\]
+
+Werk systematisch met tussenkolommen.
+
+\begin{oplossing}
+
+We bepalen eerst $\neg p$ en $q\land r$.
+
+\[
+\begin{array}{c|c|c|c|c|c}
+p&q&r&\neg p&q\land r&\neg p\lor(q\land r)\\
+\hline
+W&W&W&O&W&W\\
+W&W&O&O&O&O\\
+W&O&W&O&O&O\\
+W&O&O&O&O&O\\
+O&W&W&W&W&W\\
+O&W&O&W&O&W\\
+O&O&W&W&O&W\\
+O&O&O&W&O&W
+\end{array}
+\]
+
+De eindkolom wordt dus
+
+\[
+W,\ O,\ O,\ O,\ W,\ W,\ W,\ W.
+\]
+
+\end{oplossing}
+
+\end{oefening}
+
+
+
+
+
+\begin{oefening}[Ontwerp een logisch regelsysteem]{\oefG}
+
+Een autonome kas beschikt over drie sensoren:
+
+\[
+p:\quad \text{de temperatuur is te hoog},
+\]
+
+\[
+q:\quad \text{de luchtvochtigheid is te laag},
+\]
+
+\[
+r:\quad \text{het regent buiten}.
+\]
+
+Ontwerp een logische voorwaarde voor elk van de volgende acties.
+
+\begin{question}
+
+De ventilatie wordt ingeschakeld wanneer de temperatuur te hoog is
+
+of de luchtvochtigheid te laag is.
+
+\begin{oplossing}
+
+\[
+p\lor q.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+
+
+\begin{question}
+
+Het irrigatiesysteem wordt ingeschakeld wanneer de luchtvochtigheid
+
+te laag is en het buiten niet regent.
+
+\begin{oplossing}
+
+\[
+q\land\neg r.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+
+
+\begin{question}
+
+Het waarschuwingssysteem wordt geactiveerd wanneer de temperatuur
+
+te hoog is en tegelijk minstens één van de twee andere toestanden
+
+optreedt.
+
+\begin{oplossing}
+
+\[
+p\land(q\lor r).
+\]
+
+\end{oplossing}
+
+\end{question}
+
+
+
+\begin{question}
+
+Geef voor de vorige voorwaarde één combinatie van waarheidswaarden
+
+waarbij het waarschuwingssysteem niet geactiveerd wordt, hoewel twee
+
+van de drie elementaire uitspraken waar zijn.
+
+\begin{oplossing}
+
+Neem bijvoorbeeld
+
+\[
+p=O,\qquad q=W,\qquad r=W.
+\]
+
+Dan is
+
+\[
+q\lor r=W,
+\]
+
+maar
+
+\[
+p\land(q\lor r)
+=
+O\land W
+=
+O.
+\]
+
+Het systeem wordt dus niet geactiveerd.
+
+Dit toont dat niet alleen het aantal ware uitspraken telt, maar vooral
+
+de logische structuur waarin ze gecombineerd worden.
+
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+
+
+
+\begin{oefening}[Kan je de fout vinden zonder alles uit te rekenen?]{\oefG}
+
+Een leerling beweert:
+
+\[
+\neg(p\lor q)
+\]
+
+en
+
+\[
+\neg p\lor\neg q
+\]
+
+hebben altijd dezelfde waarheidswaarde.
+
+\begin{question}
+
+Zoek één keuze voor $p$ en $q$ waarmee je de bewering kunt weerleggen.
+
+\begin{oplossing}
+
+Neem bijvoorbeeld
+
+\[
+p=W,
+\qquad
+q=O.
+\]
+
+Dan is
+
+\[
+p\lor q=W,
+\]
+
+dus
+
+\[
+\neg(p\lor q)=O.
+\]
+
+Maar
+
+\[
+\neg p=O
+\]
+
+en
+
+\[
+\neg q=W,
+\]
+
+zodat
+
+\[
+\neg p\lor\neg q=W.
+\]
+
+De twee uitdrukkingen hebben dus verschillende waarheidswaarden.
+
+\end{oplossing}
+
+\end{question}
+
+
+
+\begin{question}
+
+Waarom volstaat deze ene combinatie om de bewering ``altijd dezelfde
+
+waarheidswaarde'' te ontkrachten?
+
+\begin{oplossing}
+
+De bewering is algemeen: ze zegt dat de uitdrukkingen voor elke
+
+mogelijke combinatie dezelfde waarheidswaarde hebben.
+
+Eén combinatie waarvoor de waarheidswaarden verschillen is daarom
+
+een tegenvoorbeeld en volstaat om de algemene bewering te weerleggen.
+
+\end{oplossing}
+
+\end{question}
+
+
+
+\begin{question}
+
+Wat zou je moeten doen om wél aan te tonen dat twee logische
+
+uitdrukkingen altijd dezelfde waarheidswaarde hebben?
+
+\begin{oplossing}
+
+We moeten alle mogelijke combinaties van waarheidswaarden onderzoeken.
+
+Bij een eindig aantal elementaire uitspraken kan dat systematisch met
+
+een waarheidstabel.
+
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+
+
+
+\begin{oefening}[Analyse van een medische beslisregel]{\oefG}
+
+Een automatisch bewakingssysteem op een intensieve-zorgafdeling
+
+registreert twee vereenvoudigde voorwaarden:
+
+\[
+p:\quad \text{de zuurstofsaturatie ligt onder de ingestelde grens},
+\]
+
+\[
+q:\quad \text{de hartfrequentie ligt buiten het ingestelde bereik}.
+\]
+
+Dit is uitsluitend een wiskundig model van de logische structuur van
+
+een bewakingssysteem.
+
+Een eerste ontwerp activeert een waarschuwing wanneer
+
+\[
+p\lor q.
+\]
+
+\begin{question}
+
+Beschrijf in woorden wanneer de waarschuwing wordt geactiveerd.
+
+\begin{oplossing}
+
+De waarschuwing wordt geactiveerd wanneer minstens één van beide
+
+voorwaarden optreedt:
+
+\begin{itemize}
+
+  \item de zuurstofsaturatie ligt onder de ingestelde grens;
+
+  \item de hartfrequentie ligt buiten het ingestelde bereik;
+
+  \item of beide situaties treden tegelijk op.
+
+\end{itemize}
+
+\end{oplossing}
+
+\end{question}
+
+
+
+\begin{question}
+
+Een tweede ontwerp gebruikt
+
+\[
+p\land q.
+\]
+
+Wat is het fundamentele verschil?
+
+\begin{oplossing}
+
+Bij
+
+\[
+p\land q
+\]
+
+wordt alleen gewaarschuwd als beide voorwaarden tegelijk waar zijn.
+
+Dit is dus een veel strengere voorwaarde dan
+
+\[
+p\lor q,
+\]
+
+waar één afwijkende toestand al voldoende is.
+
+\end{oplossing}
+
+\end{question}
+
+
+
+\begin{question}
+
+Waarom kan een kleine verandering van een logische operator in een
+
+technologisch systeem grote gevolgen hebben?
+
+\begin{oplossing}
+
+De operator bepaalt welke combinaties van toestanden tot een bepaalde
+
+actie leiden.
+
+Het vervangen van $\lor$ door $\land$, of omgekeerd, verandert dus de
+
+volledige beslisregel en kan ertoe leiden dat een systeem te vaak of
+
+juist te weinig reageert.
+
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+
+
+
+\begin{oefening}[Construeer zelf]{\oefG}
+
+Maak zelf drie elementaire wiskundige uitspraken $p$, $q$ en $r$.
+
+Construeer vervolgens een samengestelde uitspraak waarin minstens
+
+\[
+\neg,\qquad\land,\qquad\lor
+\]
+
+elk minstens één keer voorkomen.
+
+\begin{question}
+
+Noteer de drie elementaire uitspraken en geef hun waarheidswaarden.
+
+\end{question}
+
+
+
+\begin{question}
+
+Schrijf je samengestelde uitspraak symbolisch.
+
+\end{question}
+
+
+
+\begin{question}
+
+Vertaal de samengestelde uitspraak volledig naar woorden.
+
+\end{question}
+
+
+
+\begin{question}
+
+Bepaal de waarheidswaarde van de samengestelde uitspraak en motiveer
+
+stap voor stap.
+
+\end{question}
+
+
+
+\begin{oplossing}
+
+Er zijn veel correcte antwoorden mogelijk.
+
+Een voorbeeld:
+
+\[
+p:\quad 8\text{ is even}\qquad(W),
+\]
+
+\[
+q:\quad 8\text{ is een priemgetal}\qquad(O),
+\]
+
+\[
+r:\quad 8>5\qquad(W).
+\]
+
+Neem
+
+\[
+\neg q\land(p\lor r).
+\]
+
+We hebben
+
+\[
+\neg q=W
+\]
+
+en
+
+\[
+p\lor r=W.
+\]
+
+Daarom:
+
+\[
+\neg q\land(p\lor r)
+=
+W\land W
+=
+W.
+\]
+
+Een correct eigen antwoord moet dezelfde logische stappen duidelijk
+
+verantwoorden.
+
+\end{oplossing}
+
+\end{oefening}
+
+
+
+
+
+% ============================================================
+
+% SYNTHESE
+
+% ============================================================
+
+
+
+\begin{oefening}[Synthese: van taal tot logische analyse]{\oefU \ESS}
+
+Beschouw voor $x\in\mathbb{R}$ de voorwaarden
+
+\[
+p:\quad x\geq-1
+\]
+
+en
+
+\[
+q:\quad x<4.
+\]
+
+\begin{question}
+
+Vertaal
+
+\[
+p\land q
+\]
+
+naar een voorwaarde voor $x$.
+
+\begin{oplossing}
+
+\[
+x\geq-1\land x<4.
+\]
+
+Dus
+
+\[
+-1\leq x<4.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+
+
+\begin{question}
+
+Welke van de waarden
+
+\[
+-2,\quad-1,\quad0,\quad4,\quad5
+\]
+
+maken $p\land q$ waar?
+
+\begin{oplossing}
+
+Alleen
+
+\[
+-1\quad\text{en}\quad0.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+
+
+\begin{question}
+
+Geef de negatie van $p$.
+
+\begin{oplossing}
+
+\[
+\neg p:\quad x<-1.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+
+
+\begin{question}
+
+Geef de negatie van $q$.
+
+\begin{oplossing}
+
+\[
+\neg q:\quad x\geq4.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+
+
+\begin{question}
+
+Beschrijf wanneer
+
+\[
+\neg p\lor\neg q
+\]
+
+waar is.
+
+\begin{oplossing}
+
+De uitspraak is waar wanneer
+
+\[
+x<-1
+\]
+
+of
+
+\[
+x\geq4.
+\]
+
+Dus voor
+
+\[
+x\in]-\infty,-1[\ \cup\ [4,+\infty[.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+
+
+\begin{question}
+
+Vergelijk dit antwoord met het gebied waarin $p\land q$ waar is.
+
+Wat merk je op?
+
+\begin{oplossing}
+
+$p\land q$ is waar voor
+
+\[
+-1\leq x<4.
+\]
+
+$\neg p\lor\neg q$ is precies waar buiten dat interval.
+
+We zien hier dus opnieuw het patroon dat later formeel wordt beschreven
+
+door een wet van De Morgan:
+
+\[
+\neg(p\land q)
+\]
+
+heeft dezelfde waarheidswaarden als
+
+\[
+\neg p\lor\neg q.
+\]
+
+\end{oplossing}
+
+\end{question}
+
+\end{oefening}
+
+
+
+
+
+\end{document}
+

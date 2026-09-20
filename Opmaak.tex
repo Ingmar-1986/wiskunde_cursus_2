@@ -1783,5 +1783,97 @@ fill=fvdmagenta,
   \href{#1}{\texttt{#2}}%
 }
 
+% ============================================================
+% GEOGEBRA
+%
+% Gebruik:
+% \begin{fvdgeogebra}[Wanneer stelt een kromme een functie voor?]
+% ...
+% \end{fvdgeogebra}
+% ============================================================
+
+\ifdefined\HCode
+
+% ============================================================
+% GEOGEBRA — HTML
+% ============================================================
+
+\newenvironment{fvdgeogebra}[1][]
+{%
+  \HCode{<section class="fvd-geogebra">}%
+  \HCode{<div class="fvd-geogebra__title">}%
+  \HCode{<span class="fvd-geogebra__label">}%
+  GEOGEBRA%
+  \HCode{</span>}%
+  \if\relax\detokenize{#1}\relax
+  \else
+    \HCode{<span class="fvd-geogebra__separator"> — </span>}%
+    \HCode{<span class="fvd-geogebra__name">}%
+    #1%
+    \HCode{</span>}%
+  \fi
+  \HCode{</div>}%
+  \HCode{<div class="fvd-geogebra__content">}%
+}
+{%
+  \HCode{</div></section>}%
+}
+
+\else
+
+% ============================================================
+% GEOGEBRA — PDF
+% ============================================================
+
+\definecolor{fvdGeoGebraBlue}{HTML}{2F6FA5}
+\definecolor{fvdGeoGebraSoft}{HTML}{F4F9FC}
+\definecolor{fvdGeoGebraText}{HTML}{243746}
+\definecolor{fvdGeoGebraNavy}{HTML}{123B63}
+
+\newtcolorbox{fvdgeogebra}[1][]{%
+  enhanced,
+  breakable,
+  colback=fvdGeoGebraSoft,
+  colframe=fvdGeoGebraBlue,
+  coltext=fvdGeoGebraText,
+  boxrule=0.8pt,
+  leftrule=3pt,
+  arc=3mm,
+  outer arc=3mm,
+  left=6mm,
+  right=6mm,
+  top=3mm,
+  bottom=5mm,
+  before skip=6mm,
+  after skip=7mm,
+  title={%
+    \sffamily\bfseries
+    \color{fvdGeoGebraBlue}%
+    GEOGEBRA%
+    \if\relax\detokenize{#1}\relax
+    \else
+      \hspace{1mm}---\hspace{1mm}%
+      \color{fvdGeoGebraNavy}#1%
+    \fi
+  },
+  colbacktitle=fvdGeoGebraSoft,
+  coltitle=fvdGeoGebraBlue,
+  fonttitle=\sffamily\bfseries,
+  boxed title style={
+    colback=fvdGeoGebraSoft,
+    colframe=fvdGeoGebraSoft,
+    boxrule=0pt,
+  },
+  attach boxed title to top left={
+    xshift=4mm,
+    yshift=-2mm
+  },
+}
+
+\fi
+
+
+
+
 
 \input{OpmaakTikz.tex}

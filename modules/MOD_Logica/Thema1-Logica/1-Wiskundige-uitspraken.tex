@@ -1,0 +1,1078 @@
+\documentclass{ximera}
+
+\input{../../../preamble.tex}
+\input{../../../Opmaak.tex}
+\addPrintStyle{../../..}
+
+\title{Wiskundige uitspraken}
+\author{Ingmar Herreman}
+
+\begin{abstract}
+Wiskunde bestaat niet alleen uit berekeningen en formules.
+We doen ook voortdurend \textbf{uitspraken}: beweringen waarvan we
+willen weten of ze waar of onwaar zijn.
+
+In dit hoofdstuk onderzoeken we wat een wiskundige uitspraak precies is.
+We leren uitspraken onderscheiden van vragen, opdrachten en formules
+met veranderlijken. Daarbij ontdekken we dat de betekenis van een
+wiskundige bewering ook kan afhangen van het domein waarin we werken.
+
+Vervolgens maken we kennis met \textbf{open uitspraken} en
+\textbf{predicaten}. Daarmee kunnen we eigenschappen van getallen
+en andere wiskundige objecten nauwkeurig formuleren.
+
+Ten slotte onderzoeken we waarom voorbeelden nuttig zijn, maar niet
+volstaan om een algemene uitspraak te bewijzen, en hoe één goed gekozen
+tegenvoorbeeld een algemene bewering wel kan weerleggen.
+
+Zo leggen we het fundament voor de logische taal waarmee we in de
+volgende hoofdstukken samengestelde uitspraken en wiskundige
+redeneringen zullen analyseren.
+\end{abstract}
+
+\begin{document}
+
+% FVD_CHAPTER_DATA_START
+% Automatisch gegenereerd uit index.tex.
+% Niet handmatig aanpassen.
+\fvdchapterdata{1}{Logica — De taal van correct redeneren}{1}
+% FVD_CHAPTER_DATA_END
+
+
+
+
+
+
+
+
+
+
+
+
+
+\maketitle
+
+
+% ============================================================
+% VOORKENNIS
+% ============================================================
+
+\begin{voorkennis}
+  \item Je kan werken met de getallenverzamelingen
+        $\mathbb{N}$, $\mathbb{Z}$, $\mathbb{Q}$ en $\mathbb{R}$.
+  \item Je kan eenvoudige gelijkheden en ongelijkheden interpreteren.
+  \item Je kan waarden invullen voor een veranderlijke.
+  \item Je kent begrippen zoals even en oneven getal, veelvoud en priemgetal.
+  \item Je kan een wiskundige bewering controleren aan de hand van een berekening of voorbeeld.
+\end{voorkennis}
+
+
+% ============================================================
+% LEERDOELEN
+% ============================================================
+
+\begin{leerdoelen}
+  \item Je kan herkennen of een zin een wiskundige uitspraak is.
+  \item Je kan de waarheidswaarde van een eenvoudige wiskundige uitspraak bepalen en verantwoorden.
+  \item Je kan uitleggen waarom vragen en opdrachten geen wiskundige uitspraken zijn.
+  \item Je kan een uitspraak onderscheiden van een open uitspraak.
+  \item Je kan een predicaat herkennen en met een notatie zoals $P(x)$ beschrijven.
+  \item Je kan onderzoeken voor welke waarden een predicaat waar of onwaar is.
+  \item Je kan uitleggen waarom het gekozen domein belangrijk is voor de betekenis van een uitspraak.
+  \item Je kan een open uitspraak omvormen tot een uitspraak door een veranderlijke een waarde te geven.
+  \item Je kan een algemene bewering onderzoeken met voorbeelden en tegenvoorbeelden.
+  \item Je kan uitleggen waarom voorbeelden een algemene uitspraak niet bewijzen en waarom één tegenvoorbeeld ze wel kan weerleggen.
+\end{leerdoelen}
+
+
+% ============================================================
+\FVDsection{Wanneer is iets een wiskundige uitspraak?}
+% ============================================================
+
+Bekijk de volgende zinnen.
+
+\[
+\begin{array}{ll}
+\text{A.} & 17\text{ is een priemgetal.}\\[2mm]
+\text{B.} & 15\text{ is een priemgetal.}\\[2mm]
+\text{C.} & \text{Is }17\text{ een priemgetal?}\\[2mm]
+\text{D.} & \text{Bereken }17+25.\\[2mm]
+\text{E.} & x+3=8.
+\end{array}
+\]
+
+Ze hebben allemaal met wiskunde te maken, maar logisch gezien zijn ze
+niet van hetzelfde type.
+
+Van zin A kunnen we bepalen dat hij \textbf{waar} is.
+
+Zin B is \textbf{onwaar}.
+
+Zin C is een vraag en zin D is een opdracht. Ze beweren zelf niets
+waarvan we kunnen zeggen dat het waar of onwaar is.
+
+Bij zin E ontstaat nog een ander probleem. Voor $x=5$ is de gelijkheid
+waar, maar voor $x=2$ is ze onwaar. Zonder te weten wat $x$ voorstelt,
+heeft de formule dus nog geen vaste waarheidswaarde.
+
+Dit onderscheid vormt het vertrekpunt van de wiskundige logica.
+
+
+\begin{definitie}
+Een \textbf{wiskundige uitspraak} is een bewering waarvan
+ondubbelzinnig kan worden vastgesteld of ze \textbf{waar} of
+\textbf{onwaar} is.
+
+De waarde \emph{waar} of \emph{onwaar} noemen we de
+\textbf{waarheidswaarde} van de uitspraak.
+\end{definitie}
+
+
+\begin{voorbeeld}[Ware en onware uitspraken]
+
+De bewering
+
+\[
+8+5=13
+\]
+
+is een wiskundige uitspraak en is waar.
+
+Ook
+
+\[
+7^2=42
+\]
+
+is een wiskundige uitspraak, maar ze is onwaar, want
+
+\[
+7^2=49.
+\]
+
+Het feit dat een bewering onwaar is, verhindert dus niet dat ze een
+wiskundige uitspraak is.
+\end{voorbeeld}
+
+
+\begin{opmerking}
+Een \textbf{uitspraak} is niet hetzelfde als een
+\textbf{ware uitspraak}.
+
+Zowel
+
+\[
+2+3=5
+\]
+
+als
+
+\[
+2+3=7
+\]
+
+zijn uitspraken. Ze hebben alleen een verschillende waarheidswaarde.
+\end{opmerking}
+
+
+% ------------------------------------------------------------
+\FVDsubsection{Niet elke wiskundige zin is een uitspraak}
+% ------------------------------------------------------------
+
+Een zin kan wiskundige symbolen of begrippen bevatten zonder zelf een
+wiskundige uitspraak te zijn.
+
+Vergelijk:
+
+\[
+\begin{array}{ll}
+\text{A.} & 25\text{ is een kwadraatgetal.}\\
+\text{B.} & \text{Is }25\text{ een kwadraatgetal?}\\
+\text{C.} & \text{Bereken }\sqrt{25}.
+\end{array}
+\]
+
+Alleen A is een uitspraak.
+
+B is een \textbf{vraag} en C een \textbf{opdracht}.
+
+
+\begin{oefening}[Uitspraak of niet?]{\oefB \ESS}
+
+Bepaal telkens of de zin een wiskundige uitspraak is.
+
+\begin{question}
+\[
+11\text{ is een priemgetal.}
+\]
+
+\begin{multipleChoice}
+  \choice[correct]{Dit is een uitspraak.}
+  \choice{Dit is geen uitspraak.}
+\end{multipleChoice}
+\end{question}
+
+\begin{question}
+\[
+\text{Bereken }3^4.
+\]
+
+\begin{multipleChoice}
+  \choice{Dit is een uitspraak.}
+  \choice[correct]{Dit is geen uitspraak.}
+\end{multipleChoice}
+\end{question}
+
+\begin{question}
+\[
+\sqrt{2}\in\mathbb{Q}.
+\]
+
+\begin{multipleChoice}
+  \choice[correct]{Dit is een uitspraak.}
+  \choice{Dit is geen uitspraak.}
+\end{multipleChoice}
+\end{question}
+
+\begin{question}
+Leg uit waarom de vorige bewering een uitspraak is, ook al is ze onwaar.
+
+\begin{oplossing}
+De bewering heeft een ondubbelzinnige waarheidswaarde.
+Omdat $\sqrt{2}$ niet rationaal is, is de uitspraak onwaar.
+Een uitspraak hoeft niet waar te zijn om een uitspraak te zijn.
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+\FVDsection{Wiskundige taal moet precies zijn}
+% ============================================================
+
+In gewone taal gebruiken we vaak woorden waarvan de betekenis afhangt
+van de context.
+
+Beschouw bijvoorbeeld:
+
+\begin{center}
+\textit{20 is een groot getal.}
+\end{center}
+
+Is dat waar?
+
+Dat hangt af van wat we met \emph{groot} bedoelen.
+
+Voor het aantal leerlingen in een klas kan $20$ een behoorlijk aantal
+zijn. Voor het aantal moleculen in een druppel water is $20$ juist
+uitzonderlijk klein.
+
+Vergelijk dit met
+
+\[
+20>15.
+\]
+
+Hier is geen interpretatie nodig. De bewering heeft een
+ondubbelzinnige waarheidswaarde.
+
+
+\begin{opmerking}
+Wiskundige logica vereist dat we zo precies mogelijk formuleren
+\textbf{wat} we beweren en \textbf{binnen welke context} we dat
+beweren.
+
+Dat wordt later essentieel wanneer we willen bepalen of een conclusie
+werkelijk uit bepaalde voorwaarden volgt.
+\end{opmerking}
+
+
+\begin{voorbeeld}[Van vaag naar precies]
+
+De zin
+
+\begin{center}
+\textit{$x$ is dicht bij $10$.}
+\end{center}
+
+is zonder verdere afspraak niet precies genoeg.
+
+We kunnen de bedoeling bijvoorbeeld nauwkeuriger formuleren als
+
+\[
+|x-10|<0{,}1.
+\]
+
+Nu ligt exact vast welke waarden van $x$ aan de voorwaarde voldoen.
+\end{voorbeeld}
+
+
+% ============================================================
+\FVDsection{Uitspraken benoemen}
+% ============================================================
+
+Wanneer we later verschillende uitspraken met elkaar verbinden,
+zou het omslachtig zijn om telkens de volledige zin te schrijven.
+
+Daarom geven we uitspraken vaak een korte naam.
+
+We gebruiken daarvoor meestal letters zoals
+
+\[
+p,\qquad q,\qquad r,\ldots
+\]
+
+
+\begin{voorbeeld}[Twee uitspraken]
+
+We definiëren
+
+\[
+p:\quad 12\text{ is even}
+\]
+
+en
+
+\[
+q:\quad 12\text{ is deelbaar door }3.
+\]
+
+Beide uitspraken zijn waar.
+
+De letters $p$ en $q$ stellen hier dus geen getallen voor.
+Elke letter verwijst naar een \textbf{volledige uitspraak}.
+\end{voorbeeld}
+
+
+\begin{opmerking}
+In de volgende hoofdstukken zullen we uitspraken combineren.
+
+Zo zullen we bijvoorbeeld onderzoeken wat precies bedoeld wordt met
+
+\[
+p\text{ en }q,
+\qquad
+p\text{ of }q
+\]
+
+en
+
+\[
+\text{als }p\text{, dan }q.
+\]
+
+Daarvoor moeten we eerst goed begrijpen wat $p$ en $q$ afzonderlijk
+betekenen.
+\end{opmerking}
+
+
+% ============================================================
+\FVDsection{Open uitspraken}
+% ============================================================
+
+Beschouw nu
+
+\[
+x+3=8.
+\]
+
+Kunnen we zeggen dat deze formule waar of onwaar is?
+
+Voor
+
+\[
+x=5
+\]
+
+krijgen we
+
+\[
+5+3=8,
+\]
+
+en is de bewering waar.
+
+Voor
+
+\[
+x=2
+\]
+
+krijgen we
+
+\[
+2+3=8,
+\]
+
+en is de bewering onwaar.
+
+De waarheidswaarde hangt dus af van de gekozen waarde van $x$.
+
+
+\begin{definitie}
+Een \textbf{open uitspraak} is een bewering met één of meer
+veranderlijken waarvan de waarheidswaarde afhangt van de waarden
+van die veranderlijken.
+\end{definitie}
+
+
+\begin{voorbeeld}[Een open uitspraak]
+
+Beschouw
+
+\[
+x^2=9.
+\]
+
+Voor $x=3$ is de bewering waar.
+
+Voor $x=-3$ is ze eveneens waar.
+
+Voor $x=2$ is ze onwaar.
+
+Zolang $x$ geen bepaalde waarde heeft, is $x^2=9$ dus een open
+uitspraak.
+\end{voorbeeld}
+
+
+\begin{oefening}[Van open uitspraak naar uitspraak]{\oefB \ESS}
+
+Beschouw
+
+\[
+x^2<10.
+\]
+
+\begin{question}
+Is de formule zonder verdere informatie een uitspraak met één vaste
+waarheidswaarde?
+
+\begin{multipleChoice}
+  \choice{Ja.}
+  \choice[correct]{Nee.}
+\end{multipleChoice}
+\end{question}
+
+\begin{question}
+Onderzoek de formule voor $x=3$.
+
+\begin{oplossing}
+We krijgen
+
+\[
+3^2<10
+\]
+
+of
+
+\[
+9<10.
+\]
+
+De ontstane uitspraak is waar.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Onderzoek de formule voor $x=4$.
+
+\begin{oplossing}
+We krijgen
+
+\[
+4^2<10
+\]
+
+of
+
+\[
+16<10.
+\]
+
+De ontstane uitspraak is onwaar.
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+\FVDsection{Predicaten}
+% ============================================================
+
+Open uitspraken komen in de wiskunde voortdurend voor.
+
+Om er gemakkelijk naar te verwijzen, gebruiken we een notatie zoals
+
+\[
+P(x).
+\]
+
+Beschouw bijvoorbeeld
+
+\[
+P(x):\quad x^2>4.
+\]
+
+De letter $P$ staat voor de eigenschap
+
+\begin{center}
+\textit{het kwadraat van $x$ is groter dan $4$.}
+\end{center}
+
+
+\begin{definitie}
+Een \textbf{predicaat} $P(x)$ beschrijft een eigenschap van $x$.
+
+Wanneer we voor $x$ een toegelaten waarde invullen, ontstaat een
+uitspraak waarvan we de waarheidswaarde kunnen bepalen.
+\end{definitie}
+
+
+\begin{voorbeeld}[Even zijn als predicaat]
+
+Definieer
+
+\[
+P(n):\quad n\text{ is even}.
+\]
+
+Dan is
+
+\[
+P(8)
+\]
+
+waar, terwijl
+
+\[
+P(11)
+\]
+
+onwaar is.
+\end{voorbeeld}
+
+
+Een predicaat kan ook meer dan één veranderlijke bevatten.
+
+
+\begin{voorbeeld}[Een predicaat met twee veranderlijken]
+
+Definieer
+
+\[
+Q(x,y):\quad x<y.
+\]
+
+Dan is
+
+\[
+Q(2,5)
+\]
+
+waar, want $2<5$.
+
+Daarentegen is
+
+\[
+Q(7,3)
+\]
+
+onwaar.
+\end{voorbeeld}
+
+
+\begin{opmerking}
+Let op het verschil tussen
+
+\[
+p:\quad 7\text{ is een priemgetal}
+\]
+
+en
+
+\[
+P(x):\quad x\text{ is een priemgetal}.
+\]
+
+De eerste formule stelt één concrete uitspraak voor.
+
+De tweede beschrijft een eigenschap die we voor verschillende waarden
+van $x$ kunnen onderzoeken.
+\end{opmerking}
+
+
+% ============================================================
+\FVDsection{Het domein doet ertoe}
+% ============================================================
+
+Wanneer een veranderlijke voorkomt, moeten we weten welke waarden die
+veranderlijke mag aannemen.
+
+Beschouw bijvoorbeeld
+
+\[
+P(x):\quad x^2=2.
+\]
+
+Als we alleen natuurlijke getallen toelaten, dan is er geen enkele
+waarde van $x$ waarvoor $P(x)$ waar is.
+
+Werken we in de reële getallen, dan zijn er wel oplossingen:
+
+\[
+x=\sqrt{2}
+\qquad\text{en}\qquad
+x=-\sqrt{2}.
+\]
+
+De verzameling waarin we werken speelt dus een essentiële rol.
+
+
+\begin{definitie}
+Het \textbf{domein} of \textbf{universum} van een veranderlijke is
+de verzameling van waarden die de veranderlijke mag aannemen.
+\end{definitie}
+
+
+\begin{voorbeeld}[Hetzelfde predicaat, een ander domein]
+
+Beschouw
+
+\[
+P(x):\quad x^2=4.
+\]
+
+In het domein
+
+\[
+\mathbb{N}
+\]
+
+is $x=2$ een waarde waarvoor $P(x)$ waar is.
+
+In het domein
+
+\[
+\mathbb{Z}
+\]
+
+zijn zowel $x=2$ als $x=-2$ waarden waarvoor $P(x)$ waar is.
+
+Het predicaat is hetzelfde, maar de toegelaten waarden hangen af
+van het domein.
+\end{voorbeeld}
+
+
+\begin{voorbeeld}[Een vergelijking zonder oplossing in elk domein]
+
+Beschouw
+
+\[
+Q(x):\quad x^2=-1.
+\]
+
+Voor
+
+\[
+x\in\mathbb{R}
+\]
+
+is er geen waarde waarvoor $Q(x)$ waar is.
+
+Wanneer we later met complexe getallen werken, verandert die situatie.
+
+Ook dit toont waarom het domein deel uitmaakt van de betekenis van
+een wiskundige bewering.
+\end{voorbeeld}
+
+
+\begin{opmerking}
+Wanneer je een uitspraak met veranderlijken analyseert, stel dan steeds
+de volgende vragen:
+
+\[
+\important{
+\begin{array}{c}
+\text{Welke veranderlijke komt voor?}\\
+\text{Welke waarden mag ze aannemen?}\\
+\text{In welk domein werken we?}
+\end{array}
+}
+\]
+\end{opmerking}
+
+
+% ============================================================
+\FVDsection{Van een open uitspraak naar een uitspraak}
+% ============================================================
+
+Een open uitspraak heeft nog geen vaste waarheidswaarde.
+
+We hebben al gezien dat we dit kunnen veranderen door een concrete
+waarde voor de veranderlijke in te vullen.
+
+
+\begin{voorbeeld}
+
+Gegeven is
+
+\[
+P(x):\quad x^2<25,
+\qquad x\in\mathbb{R}.
+\]
+
+Voor $x=3$ krijgen we
+
+\[
+P(3):\quad 3^2<25,
+\]
+
+dus een ware uitspraak.
+
+Voor $x=7$ krijgen we
+
+\[
+P(7):\quad 7^2<25,
+\]
+
+dus een onware uitspraak.
+\end{voorbeeld}
+
+
+Maar in de wiskunde willen we vaak veel meer zeggen.
+
+We willen bijvoorbeeld beweren:
+
+\begin{quote}
+Voor elk reëel getal geldt dat zijn kwadraat niet-negatief is.
+\end{quote}
+
+Of:
+
+\begin{quote}
+Er bestaat een reëel getal waarvan het kwadraat gelijk is aan $2$.
+\end{quote}
+
+De woorden
+
+\begin{center}
+\textbf{voor elk}
+\qquad\text{en}\qquad
+\textbf{er bestaat}
+\end{center}
+
+maken van een open uitspraak opnieuw een uitspraak met een
+waarheidswaarde.
+
+Later zullen we hiervoor de symbolen
+
+\[
+\forall
+\qquad\text{en}\qquad
+\exists
+\]
+
+gebruiken.
+
+Deze symbolen noemen we \textbf{kwantoren}.
+
+
+\begin{opmerking}
+We werken kwantoren hier nog niet systematisch uit.
+
+Voorlopig is vooral het volgende onderscheid belangrijk:
+
+\[
+\important{
+\begin{array}{c}
+P(x) \text{ beschrijft een eigenschap van }x,\\[1mm]
+P(a) \text{ is na het invullen van }a\text{ een concrete uitspraak.}
+\end{array}
+}
+\]
+\end{opmerking}
+
+
+% ============================================================
+\FVDsection{Voorbeelden onderzoeken}
+% ============================================================
+
+Wanneer we een wiskundige bewering tegenkomen, is het vaak verstandig
+om eerst enkele voorbeelden te onderzoeken.
+
+Beschouw bijvoorbeeld de bewering:
+
+\begin{center}
+\textit{Het kwadraat van een oneven geheel getal is oneven.}
+\end{center}
+
+We kunnen controleren:
+
+\[
+3^2=9,
+\qquad
+5^2=25,
+\qquad
+7^2=49,
+\qquad
+11^2=121.
+\]
+
+Al deze voorbeelden ondersteunen de bewering.
+
+Maar hebben we daarmee bewezen dat ze voor \textbf{elk} oneven geheel
+getal geldt?
+
+Nee.
+
+We hebben slechts een eindig aantal gevallen gecontroleerd.
+
+
+\begin{opmerking}
+Voorbeelden zijn bijzonder nuttig om
+
+\begin{itemize}
+  \item een uitspraak te begrijpen;
+  \item patronen te ontdekken;
+  \item een vermoeden te formuleren;
+  \item mogelijke fouten op te sporen.
+\end{itemize}
+
+Maar een verzameling voorbeelden vormt in het algemeen geen bewijs
+van een uitspraak die over alle mogelijke gevallen gaat.
+\end{opmerking}
+
+
+Dit onderscheid zal later belangrijk worden wanneer we wiskundige
+bewijzen leren opbouwen.
+
+
+% ============================================================
+\FVDsection{Tegenvoorbeelden}
+% ============================================================
+
+Bekijk nu de volgende bewering:
+
+\begin{center}
+\textit{Alle priemgetallen zijn oneven.}
+\end{center}
+
+We controleren enkele priemgetallen:
+
+\[
+3,\quad5,\quad7,\quad11,\quad13,\quad17.
+\]
+
+Ze zijn allemaal oneven.
+
+Toch is de bewering onwaar.
+
+Het getal
+
+\[
+2
+\]
+
+is namelijk zowel priem als even.
+
+
+\begin{definitie}
+Een \textbf{tegenvoorbeeld} is een voorbeeld dat aantoont dat een
+algemene bewering niet waar is.
+\end{definitie}
+
+
+In dit geval is
+
+\[
+2
+\]
+
+een tegenvoorbeeld voor de bewering
+
+\begin{center}
+\textit{Alle priemgetallen zijn oneven.}
+\end{center}
+
+
+Daar ontstaat een belangrijke asymmetrie:
+
+\[
+\important{
+\begin{array}{c}
+\text{Veel bevestigende voorbeelden bewijzen een algemene uitspraak niet.}\\[2mm]
+\text{Eén geldig tegenvoorbeeld volstaat om ze te weerleggen.}
+\end{array}
+}
+\]
+
+
+\begin{voorbeeld}[Een verborgen tegenvoorbeeld]
+
+Een leerling onderzoekt
+
+\[
+n^2>n
+\]
+
+voor natuurlijke getallen en controleert
+
+\[
+2^2>2,\qquad
+3^2>3,\qquad
+4^2>4,\qquad
+5^2>5.
+\]
+
+De leerling besluit:
+
+\begin{quote}
+Voor elk natuurlijk getal $n$ geldt $n^2>n$.
+\end{quote}
+
+Die conclusie is te snel.
+
+Als $0\in\mathbb{N}$ volgens de gebruikte conventie, dan geeft $n=0$
+
+\[
+0^2>0,
+\]
+
+wat onwaar is.
+
+Ook voor $n=1$ krijgen we
+
+\[
+1^2>1,
+\]
+
+wat eveneens onwaar is.
+
+Het voorbeeld toont meteen waarom zowel het \textbf{domein} als de
+precieze formulering van een algemene uitspraak belangrijk zijn.
+\end{voorbeeld}
+
+
+\begin{oefening}[Zoek een tegenvoorbeeld]{\oefB \ESS}
+
+Een leerling beweert:
+
+\begin{center}
+Elk oneven geheel getal is een priemgetal.
+\end{center}
+
+\begin{question}
+Geef één tegenvoorbeeld.
+
+\begin{oplossing}
+Bijvoorbeeld $9$.
+
+Het getal $9$ is oneven, maar
+
+\[
+9=3\cdot3,
+\]
+
+dus $9$ is geen priemgetal.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Waarom volstaat dit ene voorbeeld om de algemene bewering te
+weerleggen?
+
+\begin{oplossing}
+De bewering zegt dat de eigenschap voor elk oneven geheel getal geldt.
+Het getal $9$ behoort tot die verzameling maar bezit de beweerde
+eigenschap niet. De algemene bewering kan daarom niet waar zijn.
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+% ============================================================
+\FVDsection{Logica in wetenschap en technologie}
+% ============================================================
+
+De begrippen uit dit hoofdstuk zijn niet alleen belangrijk binnen de
+zuivere wiskunde.
+
+Een computerprogramma, meettoestel of regelsysteem moet eveneens
+beslissingen nemen op basis van voorwaarden die waar of onwaar zijn.
+
+
+\begin{voorbeeld}[Een temperatuursensor]
+
+Een koelsysteem moet inschakelen wanneer de temperatuur hoger wordt
+dan $80\,{}^\circ\mathrm C$.
+
+We kunnen de voorwaarde schrijven als
+
+\[
+P(T):\quad T>80,
+\]
+
+waarbij $T$ de temperatuur in graden Celsius voorstelt.
+
+Bij
+
+\[
+T=72
+\]
+
+is $P(T)$ onwaar.
+
+Bij
+
+\[
+T=93
+\]
+
+is $P(T)$ waar.
+
+Een regelsysteem kan op basis van die waarheidswaarde een actie
+uitvoeren.
+\end{voorbeeld}
+
+
+De instructie
+
+\begin{quote}
+Schakel de koeling in wanneer de temperatuur hoog is.
+\end{quote}
+
+is voor een computer onvoldoende precies.
+
+Wat betekent immers \emph{hoog}?
+
+De voorwaarde
+
+\[
+T>80\,{}^\circ\mathrm C
+\]
+
+legt dat ondubbelzinnig vast.
+
+
+\begin{opmerking}
+Dezelfde basisgedachte komt terug in onder andere
+
+\begin{itemize}
+  \item computerprogramma's;
+  \item algoritmen;
+  \item digitale schakelingen;
+  \item automatische regelsystemen;
+  \item wetenschappelijke modellen;
+  \item databanken en zoekopdrachten.
+\end{itemize}
+
+Logica helpt ons niet alleen correct te rekenen.
+Ze dwingt ons vooral om precies te formuleren
+\textbf{wat we beweren}.
+\end{opmerking}
+
+
+\end{document}

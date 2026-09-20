@@ -1,0 +1,1371 @@
+\documentclass{ximera}
+
+\input{../../../preamble.tex}
+\input{../../../Opmaak.tex}
+\addPrintStyle{../../..}
+
+\title{Oefeningen --- Wiskundige uitspraken}
+\author{Ingmar Herreman}
+
+\begin{document}
+
+% FVD_CHAPTER_DATA_START
+% Automatisch gegenereerd uit index.tex.
+% Niet handmatig aanpassen.
+\fvdchapterdata{1}{Logica — De taal van correct redeneren}{1}
+% FVD_CHAPTER_DATA_END
+
+
+
+
+
+
+
+
+
+
+
+
+
+\maketitle
+
+
+% ============================================================
+% BASIS
+% ============================================================
+
+
+\begin{oefening}[Uitspraak, vraag of opdracht?]{\oefB \ESS}
+
+Bepaal telkens of de gegeven zin een wiskundige uitspraak is.
+
+\begin{question}
+\[
+13\text{ is een priemgetal.}
+\]
+
+\begin{multipleChoice}
+  \choice[correct]{Dit is een wiskundige uitspraak.}
+  \choice{Dit is geen wiskundige uitspraak.}
+\end{multipleChoice}
+\end{question}
+
+
+\begin{question}
+\[
+\text{Bereken }7^2-3.
+\]
+
+\begin{multipleChoice}
+  \choice{Dit is een wiskundige uitspraak.}
+  \choice[correct]{Dit is geen wiskundige uitspraak.}
+\end{multipleChoice}
+\end{question}
+
+
+\begin{question}
+\[
+\text{Is }21\text{ deelbaar door }7?
+\]
+
+\begin{multipleChoice}
+  \choice{Dit is een wiskundige uitspraak.}
+  \choice[correct]{Dit is geen wiskundige uitspraak.}
+\end{multipleChoice}
+\end{question}
+
+
+\begin{question}
+\[
+21\text{ is deelbaar door }7.
+\]
+
+\begin{multipleChoice}
+  \choice[correct]{Dit is een wiskundige uitspraak.}
+  \choice{Dit is geen wiskundige uitspraak.}
+\end{multipleChoice}
+\end{question}
+
+
+\begin{question}
+Leg kort uit waarom de derde en vierde zin logisch niet van hetzelfde
+type zijn.
+
+\begin{oplossing}
+De derde zin is een vraag. Hij vraagt naar een waarheidswaarde maar
+beweert zelf niets.
+
+De vierde zin is wel een bewering waarvan we kunnen bepalen of ze waar
+of onwaar is. Het is dus een wiskundige uitspraak.
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+
+\begin{oefening}[Waar of onwaar?]{\oefB \ESS}
+
+Bepaal de waarheidswaarde van elke uitspraak en motiveer indien nodig.
+
+\begin{question}
+\[
+3^3=27.
+\]
+
+\begin{oplossing}
+De uitspraak is waar, want
+\[
+3^3=27.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+\[
+\sqrt{49}=-7.
+\]
+
+\begin{oplossing}
+De uitspraak is onwaar.
+
+Met $\sqrt{49}$ bedoelen we de niet-negatieve vierkantswortel, dus
+\[
+\sqrt{49}=7.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+\[
+17\in\mathbb{Q}.
+\]
+
+\begin{oplossing}
+De uitspraak is waar. Elk geheel getal is rationaal, want
+\[
+17=\frac{17}{1}.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+\[
+\pi\in\mathbb{Q}.
+\]
+
+\begin{oplossing}
+De uitspraak is onwaar. $\pi$ is irrationaal.
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+\[
+0\text{ is een positief reëel getal.}
+\]
+
+\begin{oplossing}
+De uitspraak is onwaar. Het getal $0$ is noch positief, noch negatief.
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+
+\begin{oefening}[Onwaar betekent niet ``geen uitspraak'']{\oefB \ESS}
+
+Een leerling zegt:
+
+\begin{quote}
+``$15$ is een priemgetal is geen uitspraak, want het is fout.''
+\end{quote}
+
+Beoordeel deze redenering.
+
+\begin{oplossing}
+De redenering is fout.
+
+De zin
+\[
+15\text{ is een priemgetal}
+\]
+is wel degelijk een wiskundige uitspraak, omdat we ondubbelzinnig
+kunnen bepalen of hij waar of onwaar is.
+
+De uitspraak is onwaar, omdat
+\[
+15=3\cdot5.
+\]
+
+Een uitspraak hoeft dus niet waar te zijn om een uitspraak te zijn.
+\end{oplossing}
+
+\end{oefening}
+
+
+
+\begin{oefening}[Open uitspraak of concrete uitspraak?]{\oefB \ESS}
+
+Bepaal telkens of het om een concrete uitspraak of een open uitspraak
+gaat.
+
+\begin{question}
+\[
+x+5=12.
+\]
+
+\begin{multipleChoice}
+  \choice{Concrete uitspraak}
+  \choice[correct]{Open uitspraak}
+\end{multipleChoice}
+\end{question}
+
+
+\begin{question}
+\[
+7+5=12.
+\]
+
+\begin{multipleChoice}
+  \choice[correct]{Concrete uitspraak}
+  \choice{Open uitspraak}
+\end{multipleChoice}
+\end{question}
+
+
+\begin{question}
+\[
+n\text{ is even.}
+\]
+
+\begin{multipleChoice}
+  \choice{Concrete uitspraak}
+  \choice[correct]{Open uitspraak}
+\end{multipleChoice}
+\end{question}
+
+
+\begin{question}
+\[
+24\text{ is even.}
+\]
+
+\begin{multipleChoice}
+  \choice[correct]{Concrete uitspraak}
+  \choice{Open uitspraak}
+\end{multipleChoice}
+\end{question}
+
+
+\begin{question}
+Wat is het wezenlijke verschil tussen beide soorten?
+
+\begin{oplossing}
+Een concrete uitspraak heeft één vaste waarheidswaarde.
+
+Bij een open uitspraak komt minstens één vrije veranderlijke voor en
+hangt de waarheidswaarde af van de waarde die aan die veranderlijke
+wordt toegekend.
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+
+\begin{oefening}[Een predicaat onderzoeken]{\oefB \ESS}
+
+Gegeven is
+
+\[
+P(x):\quad x^2<20.
+\]
+
+Bepaal telkens de waarheidswaarde.
+
+\begin{question}
+$P(2)$
+
+\begin{oplossing}
+\[
+2^2=4<20.
+\]
+
+Dus $P(2)$ is waar.
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$P(4)$
+
+\begin{oplossing}
+\[
+4^2=16<20.
+\]
+
+Dus $P(4)$ is waar.
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$P(5)$
+
+\begin{oplossing}
+\[
+5^2=25>20.
+\]
+
+Dus $P(5)$ is onwaar.
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+$P(-4)$
+
+\begin{oplossing}
+\[
+(-4)^2=16<20.
+\]
+
+Dus $P(-4)$ is waar.
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Geef zelf één waarde waarvoor $P(x)$ waar is en één waarde waarvoor
+$P(x)$ onwaar is.
+
+\begin{oplossing}
+Er zijn meerdere mogelijkheden.
+
+Bijvoorbeeld:
+\[
+P(0)\text{ is waar}
+\]
+en
+\[
+P(10)\text{ is onwaar}.
+\]
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+
+\begin{oefening}[Zelf een predicaat formuleren]{\oefB \ESS}
+
+Schrijf elke eigenschap als een predicaat.
+
+\begin{question}
+``$x$ is groter dan $7$.''
+
+\begin{oplossing}
+Bijvoorbeeld
+\[
+P(x):\quad x>7.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+``$n$ is deelbaar door $4$.''
+
+\begin{oplossing}
+Bijvoorbeeld
+\[
+Q(n):\quad n\text{ is deelbaar door }4.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+``Het kwadraat van $x$ is kleiner dan $10$.''
+
+\begin{oplossing}
+Bijvoorbeeld
+\[
+R(x):\quad x^2<10.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Formuleer zelf een predicaat $S(n)$ over gehele getallen dat voor
+sommige waarden waar en voor andere waarden onwaar is.
+
+\begin{oplossing}
+Er zijn veel mogelijkheden.
+
+Bijvoorbeeld
+\[
+S(n):\quad n\text{ is oneven}.
+\]
+
+Dan is $S(5)$ waar en $S(8)$ onwaar.
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+
+\begin{oefening}[Het domein verandert de situatie]{\oefB \ESS}
+
+Beschouw
+
+\[
+P(x):\quad x^2=9.
+\]
+
+\begin{question}
+Welke waarden voldoen als het domein $\mathbb{N}$ is?
+
+\begin{oplossing}
+In $\mathbb{N}$ voldoet
+\[
+x=3.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Welke waarden voldoen als het domein $\mathbb{Z}$ is?
+
+\begin{oplossing}
+In $\mathbb{Z}$ voldoen
+\[
+x=-3
+\qquad\text{en}\qquad
+x=3.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Wat leren deze twee antwoorden over het domein?
+
+\begin{oplossing}
+Het domein bepaalt welke waarden voor de veranderlijke toegelaten zijn.
+Daardoor kan hetzelfde predicaat binnen verschillende domeinen tot
+verschillende verzamelingen oplossingen leiden.
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+
+\begin{oefening}[Kan de uitspraak waar worden?]{\oefB}
+
+Beschouw de volgende predicaten.
+
+\begin{question}
+\[
+P(x):\quad x^2=16,
+\qquad x\in\mathbb{Z}.
+\]
+
+Geef alle waarden van $x$ waarvoor $P(x)$ waar is.
+
+\begin{oplossing}
+\[
+x=-4\quad\text{of}\quad x=4.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+\[
+Q(x):\quad x^2=3,
+\qquad x\in\mathbb{Z}.
+\]
+
+Bestaat er een waarde waarvoor $Q(x)$ waar is?
+
+\begin{oplossing}
+Nee. Er bestaat geen geheel getal waarvan het kwadraat gelijk is aan
+$3$.
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Verander het domein van $Q(x)$ naar $\mathbb{R}$. Wat verandert er?
+
+\begin{oplossing}
+Nu zijn er wel waarden waarvoor het predicaat waar is:
+\[
+x=-\sqrt{3}
+\qquad\text{en}\qquad
+x=\sqrt{3}.
+\]
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+
+% ============================================================
+% VERDIEPING
+% ============================================================
+
+
+\begin{oefening}[De formulering onderzoeken]{\oefU \ESS}
+
+Een leerling schrijft:
+
+\begin{center}
+``$100$ is een groot getal.''
+\end{center}
+
+\begin{question}
+Waarom is deze zin zonder extra informatie problematisch als
+wiskundige uitspraak?
+
+\begin{oplossing}
+Het woord ``groot'' heeft zonder verdere afspraak geen ondubbelzinnige
+wiskundige betekenis. De waarheidswaarde hangt af van de gekozen
+context of norm.
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Geef een preciezere wiskundige formulering waarin $100$ wel in een
+ondubbelzinnige uitspraak voorkomt.
+
+\begin{oplossing}
+Bijvoorbeeld
+\[
+100>75.
+\]
+
+Of:
+\[
+100\text{ is deelbaar door }25.
+\]
+
+Andere ondubbelzinnige formuleringen zijn mogelijk.
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+
+\begin{oefening}[Het verborgen domein]{\oefU \ESS}
+
+Een leerling schrijft:
+
+\begin{quote}
+``De vergelijking $x^2=2$ heeft geen oplossing.''
+\end{quote}
+
+\begin{question}
+Waarom is deze uitspraak onvoldoende precies?
+
+\begin{oplossing}
+Omdat niet vermeld wordt binnen welk domein naar oplossingen wordt
+gezocht.
+
+In $\mathbb{Q}$ heeft de vergelijking geen oplossing, maar in
+$\mathbb{R}$ wel:
+\[
+x=\pm\sqrt{2}.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Herschrijf de uitspraak zodat ze waar en volledig duidelijk is.
+
+\begin{oplossing}
+Bijvoorbeeld:
+\[
+\text{De vergelijking }x^2=2\text{ heeft geen oplossing in }\mathbb{Q}.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Herschrijf ze vervolgens als een ware uitspraak over $\mathbb{R}$.
+
+\begin{oplossing}
+Bijvoorbeeld:
+\[
+\text{De vergelijking }x^2=2\text{ heeft twee oplossingen in }
+\mathbb{R}.
+\]
+
+Die oplossingen zijn
+\[
+-\sqrt{2}\quad\text{en}\quad\sqrt{2}.
+\]
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+
+\begin{oefening}[Een fout in de redenering]{\oefU \ESS}
+
+Een leerling onderzoekt de uitspraak
+
+\begin{center}
+``Het kwadraat van elk positief geheel getal is groter dan het getal
+zelf.''
+\end{center}
+
+Hij berekent
+
+\[
+2^2>2,\qquad
+3^2>3,\qquad
+4^2>4,\qquad
+5^2>5
+\]
+
+en besluit:
+
+\begin{quote}
+``Ik heb vier voorbeelden gecontroleerd, dus de uitspraak is bewezen.''
+\end{quote}
+
+\begin{question}
+Wat is fout aan deze redenering?
+
+\begin{oplossing}
+Een eindig aantal bevestigende voorbeelden toont niet aan dat een
+algemene uitspraak voor alle toegelaten waarden geldt.
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Is de oorspronkelijke uitspraak waar?
+
+\begin{oplossing}
+Nee.
+
+Voor
+\[
+n=1
+\]
+krijgen we
+\[
+1^2>1,
+\]
+dus
+\[
+1>1,
+\]
+wat onwaar is.
+
+Het getal $1$ is een tegenvoorbeeld.
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Wat zou veranderen als de bewering alleen betrekking had op gehele
+getallen $n\geq2$?
+
+\begin{oplossing}
+Dan verdwijnt het tegenvoorbeeld $n=1$.
+
+De uitspraak is voor $n\geq2$ inderdaad waar, maar de gecontroleerde
+voorbeelden alleen vormen nog steeds geen algemeen bewijs.
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+
+\begin{oefening}[Tegenvoorbeelden zoeken]{\oefU \ESS}
+
+Geef indien mogelijk een tegenvoorbeeld voor elke bewering.
+Als er geen tegenvoorbeeld bestaat, vermeld dat.
+
+\begin{question}
+Elk even natuurlijk getal is deelbaar door $4$.
+
+\begin{oplossing}
+Bijvoorbeeld
+\[
+2.
+\]
+
+Het getal $2$ is even maar niet deelbaar door $4$.
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Elk veelvoud van $6$ is even.
+
+\begin{oplossing}
+Er bestaat geen tegenvoorbeeld.
+
+Elk veelvoud van $6$ heeft de vorm
+\[
+6k=2(3k),
+\]
+en is dus even.
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Voor elk reëel getal $x$ geldt
+\[
+x^2>x.
+\]
+
+\begin{oplossing}
+Er zijn veel tegenvoorbeelden.
+
+Bijvoorbeeld
+\[
+x=\frac12.
+\]
+
+Dan is
+\[
+x^2=\frac14<\frac12.
+\]
+
+Ook $x=0$ en $x=1$ zijn tegenvoorbeelden.
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Elk priemgetal is oneven.
+
+\begin{oplossing}
+\[
+2
+\]
+is een tegenvoorbeeld. Het is priem en even.
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+
+\begin{oefening}[Een bewering herstellen]{\oefU \ESS}
+
+Een algemene bewering blijkt fout te zijn.
+
+Probeer ze telkens met een zo klein mogelijke wijziging correct te maken.
+
+\begin{question}
+Elk geheel getal is positief.
+
+\begin{oplossing}
+Er zijn verschillende mogelijke correcties.
+
+Bijvoorbeeld:
+\[
+\text{Elk positief geheel getal is groter dan }0.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Elk priemgetal is oneven.
+
+\begin{oplossing}
+Bijvoorbeeld:
+\[
+\text{Elk priemgetal groter dan }2\text{ is oneven.}
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Voor elk reëel getal $x$ geldt
+\[
+x^2>0.
+\]
+
+\begin{oplossing}
+Bijvoorbeeld:
+\[
+\text{Voor elk reëel getal }x\neq0\text{ geldt }x^2>0.
+\]
+
+Een andere correcte formulering is
+\[
+x^2\geq0
+\]
+voor elk reëel getal $x$.
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+
+\begin{oefening}[Dezelfde formule, andere betekenis]{\oefU \ESS}
+
+Beschouw
+
+\[
+P(x):\quad x^2<4.
+\]
+
+Onderzoek het predicaat in verschillende domeinen.
+
+\begin{question}
+Voor welke $x\in\mathbb{Z}$ is $P(x)$ waar?
+
+\begin{oplossing}
+\[
+x\in\{-1,0,1\}.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Voor welke $x\in\mathbb{R}$ is $P(x)$ waar?
+
+\begin{oplossing}
+\[
+-2<x<2.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Leg uit waarom de formule zelf niet veranderd is, maar het antwoord
+toch sterk verschilt.
+
+\begin{oplossing}
+Het predicaat $x^2<4$ blijft hetzelfde.
+
+Het domein bepaalt echter welke waarden van $x$ toegelaten zijn.
+Daarom is de verzameling waarden waarvoor het predicaat waar is
+afhankelijk van het domein.
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+
+\begin{oefening}[Wat wordt werkelijk beweerd?]{\oefU \ESS}
+
+Bekijk de volgende drie zinnen:
+
+\[
+\begin{array}{ll}
+\text{A.}&x^2=25,\\[1mm]
+\text{B.}&5^2=25,\\[1mm]
+\text{C.}&\text{Er bestaat een reëel getal waarvan het kwadraat }25\text{ is.}
+\end{array}
+\]
+
+\begin{question}
+Welke zin is een open uitspraak?
+
+\begin{oplossing}
+A is een open uitspraak, omdat $x$ vrij voorkomt.
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Welke zinnen zijn concrete uitspraken met een waarheidswaarde?
+
+\begin{oplossing}
+B en C zijn concrete uitspraken.
+
+Beide zijn waar.
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Waarom is C logisch sterker geformuleerd dan enkel het invullen van
+$x=5$?
+
+\begin{oplossing}
+C beweert dat er minstens één reëel getal bestaat dat aan de eigenschap
+voldoet.
+
+Het invullen van $x=5$ levert meteen zo'n voorbeeld en toont daardoor
+dat C waar is.
+
+Deze formulering loopt vooruit op de existentiële kwantor die later
+wordt ingevoerd.
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+
+\begin{oefening}[Een regelsysteem]{\oefU}
+
+Een automatische ventilator in een serre gebruikt de voorwaarde
+
+\[
+P(T):\quad T>28,
+\]
+
+waarbij $T$ de temperatuur in graden Celsius is.
+
+De ventilator wordt ingeschakeld wanneer $P(T)$ waar is.
+
+\begin{question}
+Bepaal de toestand van de ventilator bij
+\[
+T=24.
+\]
+
+\begin{oplossing}
+Omdat
+\[
+24>28
+\]
+onwaar is, is $P(24)$ onwaar. De ventilator wordt niet ingeschakeld.
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Bepaal de toestand bij
+\[
+T=31{,}5.
+\]
+
+\begin{oplossing}
+Omdat
+\[
+31{,}5>28
+\]
+waar is, is $P(31{,}5)$ waar. De ventilator wordt ingeschakeld.
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Een technicus schrijft in het programma:
+
+\begin{center}
+``Schakel de ventilator in als het warm is.''
+\end{center}
+
+Waarom is deze instructie ongeschikt voor een computerprogramma?
+
+\begin{oplossing}
+Het begrip ``warm'' is niet ondubbelzinnig gedefinieerd.
+Een computerprogramma heeft een precieze voorwaarde nodig die als
+waar of onwaar kan worden beoordeeld, bijvoorbeeld
+\[
+T>28.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Welke rol speelt het domein van $T$ in dit model?
+
+\begin{oplossing}
+Het domein bepaalt welke temperaturen als mogelijke invoer worden
+beschouwd. In een realistische toepassing kan men bijvoorbeeld een
+praktisch meetbereik vastleggen.
+
+De wiskundige voorwaarde krijgt betekenis binnen dat gekozen domein.
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+
+\begin{oefening}[Wetenschappelijke uitspraken preciseren]{\oefU}
+
+Beoordeel de volgende uitspraken als wetenschappelijke formulering.
+
+\begin{question}
+``Een zware planeet heeft een grote zwaartekracht.''
+
+Waarom is deze zin onvoldoende precies om als wiskundige uitspraak te
+gebruiken?
+
+\begin{oplossing}
+Begrippen zoals ``zwaar'' en ``groot'' zijn niet exact gedefinieerd.
+Bovendien hangt de zwaartekracht niet alleen van de massa af, maar ook
+van bijvoorbeeld de afstand tot het massamiddelpunt.
+
+Er moet dus worden vastgelegd welke grootheden bedoeld worden en welke
+voorwaarden gelden.
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+``De elektrische stroom is hoog.''
+
+Welke informatie ontbreekt om hiervan een bruikbare logische
+voorwaarde in een beveiligingssysteem te maken?
+
+\begin{oplossing}
+Er moet minstens een grenswaarde worden vastgelegd.
+
+Bijvoorbeeld:
+\[
+I>10\,\mathrm{A}.
+\]
+
+Dan kan voor elke gemeten stroomsterkte ondubbelzinnig worden bepaald
+of de voorwaarde waar of onwaar is.
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+
+% ============================================================
+% GEVORDERD
+% ============================================================
+
+
+\begin{oefening}[Een misleidend patroon]{\oefG}
+
+Een leerling onderzoekt de formule
+
+\[
+P(n):\quad n^2+n+41\text{ is een priemgetal},
+\qquad n\in\mathbb{N}.
+\]
+
+Voor
+
+\[
+n=0,1,2,3,4,5
+\]
+
+vindt hij telkens een priemgetal.
+
+Daarom beweert hij:
+
+\begin{quote}
+``Voor elk natuurlijk getal $n$ is $n^2+n+41$ een priemgetal.''
+\end{quote}
+
+\begin{question}
+Waarom vormen de zes berekeningen geen bewijs?
+
+\begin{oplossing}
+De bewering gaat over alle natuurlijke getallen. Het controleren van
+een eindig aantal waarden bewijst niet dat het predicaat voor elke
+mogelijke waarde waar is.
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Onderzoek $n=40$.
+
+\begin{oplossing}
+Voor $n=40$ krijgen we
+\[
+40^2+40+41
+=
+1600+40+41
+=
+1681.
+\]
+
+Maar
+\[
+1681=41^2.
+\]
+
+Dit is dus geen priemgetal.
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Wat is de logische betekenis van $n=40$ voor de oorspronkelijke
+bewering?
+
+\begin{oplossing}
+$n=40$ is een tegenvoorbeeld.
+
+Eén tegenvoorbeeld volstaat om de algemene bewering te weerleggen.
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Welke belangrijke les over patroonherkenning volgt hieruit?
+
+\begin{oplossing}
+Een patroon dat voor veel voorbeelden zichtbaar is, kan aanleiding
+geven tot een vermoeden maar vormt nog geen algemeen bewijs.
+
+Bij algemene uitspraken moeten ook niet-geteste gevallen logisch worden
+verantwoord.
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+
+\begin{oefening}[Ontwerp zelf een tegenvoorbeeld]{\oefG}
+
+Construeer zelf een foutieve algemene uitspraak over gehele getallen
+die:
+
+\begin{enumerate}
+  \item voor minstens vijf eenvoudige testwaarden waar lijkt;
+  \item toch minstens één tegenvoorbeeld heeft.
+\end{enumerate}
+
+Geef vervolgens:
+
+\begin{enumerate}
+  \item het gebruikte predicaat;
+  \item het domein;
+  \item vijf bevestigende voorbeelden;
+  \item één tegenvoorbeeld;
+  \item een verbeterde versie van de uitspraak.
+\end{enumerate}
+
+\begin{oplossing}
+Er zijn veel correcte antwoorden mogelijk.
+
+Een mogelijk voorbeeld is:
+
+\[
+P(n):\quad n^2+n+2\text{ is even},
+\]
+maar deze uitspraak is eigenlijk altijd waar en heeft dus geen
+tegenvoorbeeld. Dat voorbeeld voldoet daarom niet aan de opdracht.
+
+Een wel bruikbaar voorbeeld is:
+
+\begin{quote}
+Voor elk natuurlijk getal $n$ is $n^2+n+41$ priem.
+\end{quote}
+
+Voor verschillende kleine waarden van $n$ levert dit priemgetallen,
+terwijl $n=40$ een tegenvoorbeeld geeft.
+
+Een sterk antwoord vermeldt duidelijk waarom de eerste voorbeelden
+alleen ondersteuning geven en waarom het tegenvoorbeeld de algemene
+bewering ontkracht.
+\end{oplossing}
+
+\end{oefening}
+
+
+
+\begin{oefening}[Een mini-onderzoek in logische precisie]{\oefG}
+
+Kies één van de volgende contexten:
+
+\begin{itemize}
+  \item temperatuurregeling;
+  \item batterijbewaking;
+  \item verkeersdetectie;
+  \item medische meting;
+  \item robotica;
+  \item een eigen wetenschappelijke of technologische context.
+\end{itemize}
+
+Formuleer binnen die context een predicaat
+
+\[
+P(x)
+\]
+
+dat door een automatisch systeem als waar of onwaar kan worden
+beoordeeld.
+
+Werk vervolgens de volgende punten uit:
+
+\begin{enumerate}
+  \item Wat stelt de veranderlijke $x$ voor?
+  \item Wat is een zinvol domein?
+  \item Wat betekent $P(x)$?
+  \item Geef twee waarden waarvoor $P(x)$ waar is.
+  \item Geef twee waarden waarvoor $P(x)$ onwaar is.
+  \item Formuleer dezelfde voorwaarde eerst in gewone, maar vage taal.
+  \item Leg uit waarom de wiskundige formulering beter geschikt is voor
+        een automatisch systeem.
+\end{enumerate}
+
+\begin{oplossing}
+Er zijn meerdere correcte oplossingen mogelijk.
+
+Een mogelijk voorbeeld is batterijbewaking:
+
+\[
+P(V):\quad V<3{,}3,
+\]
+
+waarbij $V$ de batterijspanning in volt is.
+
+Een mogelijk domein is bijvoorbeeld
+
+\[
+V\in[0,4{,}2].
+\]
+
+$P(3{,}0)$ en $P(2{,}8)$ zijn waar, terwijl $P(3{,}7)$ en $P(4{,}0)$
+onwaar zijn.
+
+De vage formulering ``de batterijspanning is laag'' wordt vervangen
+door een precieze grensvoorwaarde. Daardoor kan het systeem voor elke
+gemeten waarde ondubbelzinnig beslissen of de toestand optreedt.
+\end{oplossing}
+
+\end{oefening}
+
+
+
+% ============================================================
+% SYNTHESE
+% ============================================================
+
+
+\begin{oefening}[Alles samen: analyseer de bewering]{\oefU \ESS}
+
+Beschouw de bewering:
+
+\begin{center}
+``Het kwadraat van elk geheel getal is groter dan het oorspronkelijke
+getal.''
+\end{center}
+
+\begin{question}
+Welke veranderlijke zou je gebruiken en wat is het domein?
+
+\begin{oplossing}
+Bijvoorbeeld $n$, met
+\[
+n\in\mathbb{Z}.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Schrijf de bijhorende open uitspraak als predicaat.
+
+\begin{oplossing}
+\[
+P(n):\quad n^2>n.
+\]
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Onderzoek $P(-2)$, $P(0)$, $P(1)$ en $P(3)$.
+
+\begin{oplossing}
+\[
+P(-2):\quad4>-2
+\]
+is waar.
+
+\[
+P(0):\quad0>0
+\]
+is onwaar.
+
+\[
+P(1):\quad1>1
+\]
+is onwaar.
+
+\[
+P(3):\quad9>3
+\]
+is waar.
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Is de oorspronkelijke algemene bewering waar?
+
+\begin{oplossing}
+Nee.
+
+Zowel $n=0$ als $n=1$ is een tegenvoorbeeld.
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Formuleer een aangepaste algemene uitspraak die wel waar is.
+
+\begin{oplossing}
+Bijvoorbeeld:
+
+\begin{center}
+Voor elk geheel getal $n<0$ of $n>1$ geldt $n^2>n$.
+\end{center}
+
+Of:
+\[
+n^2\geq n
+\]
+voor elk geheel getal $n$.
+\end{oplossing}
+\end{question}
+
+
+\begin{question}
+Waarom is deze oefening meer dan alleen een berekening?
+
+\begin{oplossing}
+We moeten de formulering interpreteren, een domein herkennen, een
+predicaat opstellen, verschillende gevallen onderzoeken, een
+tegenvoorbeeld gebruiken en uiteindelijk een algemene bewering
+beoordelen en verbeteren.
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+
+\end{document}

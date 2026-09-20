@@ -1,0 +1,589 @@
+\documentclass{ximera}
+
+\input{../../../preamble.tex}
+\input{../../../Opmaak.tex}
+\addPrintStyle{../../..}
+
+\title{Oefeningen — De inverse functie}
+\author{Ingmar Herreman}
+
+\begin{document}
+
+% FVD_CHAPTER_DATA_START
+% Automatisch gegenereerd uit index.tex.
+% Niet handmatig aanpassen.
+\fvdchapterdata{4}{Van relatie naar functie}{4}
+% FVD_CHAPTER_DATA_END
+
+
+
+
+
+
+
+\maketitle
+\FVDbeginExercises
+
+\FVDsection{Basis — noodzakelijke begrippen en technieken}
+
+\begin{oefening}[Vooruit en terug]{\oefB\ESS}
+
+Een bijectie \(f\) voldoet aan
+\[
+f(2)=7,\qquad f(5)=1,\qquad f(-1)=4.
+\]
+
+\begin{question}
+Bepaal \(f^{-1}(7)\), \(f^{-1}(1)\) en \(f^{-1}(4)\).
+
+\begin{oplossing}
+\[
+f^{-1}(7)=2,\qquad
+f^{-1}(1)=5,\qquad
+f^{-1}(4)=-1.
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Welk punt op de grafiek van \(f^{-1}\) hoort bij het punt \((2,7)\) op \(f\)?
+
+\begin{oplossing}
+\[
+(7,2).
+\]
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+\begin{oefening}[Domein en bereik wisselen]{\oefB\ESS}
+
+Gegeven is een bijectie \(f\) met
+\[
+\operatorname{dom}f=[-3,5]
+\]
+en
+\[
+\operatorname{ber}f=[2,10].
+\]
+
+\begin{question}
+Bepaal \(\operatorname{dom}f^{-1}\).
+
+\begin{oplossing}
+\[
+\operatorname{dom}f^{-1}=[2,10].
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Bepaal \(\operatorname{ber}f^{-1}\).
+
+\begin{oplossing}
+\[
+\operatorname{ber}f^{-1}=[-3,5].
+\]
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+\begin{oefening}[Inverse grafiek]{\oefB\ESS}
+
+Een bijectieve functie gaat door de punten
+\[
+(-2,1),\quad(0,2),\quad(3,5),\quad(4,7).
+\]
+
+\begin{question}
+Geef vier punten van de inverse functie.
+
+\begin{oplossing}
+\[
+(1,-2),\quad(2,0),\quad(5,3),\quad(7,4).
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Leg uit welke meetkundige transformatie de punten omzet.
+
+\begin{oplossing}
+De coördinaten worden verwisseld. Dat is een spiegeling ten opzichte van
+de rechte \(y=x\).
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+\begin{oefening}[Inverse van een lineaire functie]{\oefB\ESS}
+
+Bepaal telkens de inverse functie.
+
+\begin{question}
+\[
+f(x)=2x+5.
+\]
+
+\begin{oplossing}
+\[
+y=2x+5
+\]
+geeft na verwisselen
+\[
+x=2y+5.
+\]
+Dus
+\[
+\boxed{f^{-1}(x)=\frac{x-5}{2}.}
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+\[
+g(x)=\frac{x-4}{3}.
+\]
+
+\begin{oplossing}
+\[
+y=\frac{x-4}{3}
+\Longrightarrow
+x=3y+4.
+\]
+Na verwisselen volgt
+\[
+\boxed{g^{-1}(x)=3x+4.}
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Controleer één van beide antwoorden door de functies na elkaar uit te voeren.
+
+\begin{oplossing}
+Bijvoorbeeld:
+\[
+f^{-1}(f(x))
+=
+\frac{(2x+5)-5}{2}
+=x.
+\]
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+\begin{oefening}[Kwadraatfunctie met domeinbeperking]{\oefB\ESS}
+
+Gegeven
+\[
+f:[0,+\infty[\to[4,+\infty[:x\mapsto x^2+4.
+\]
+
+\begin{question}
+Bepaal \(f^{-1}\).
+
+\begin{oplossing}
+\[
+y=x^2+4
+\]
+en dus na verwisselen
+\[
+x=y^2+4.
+\]
+Daaruit:
+\[
+y=\sqrt{x-4}.
+\]
+Dus
+\[
+\boxed{f^{-1}(x)=\sqrt{x-4}.}
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Geef domein en bereik van \(f^{-1}\).
+
+\begin{oplossing}
+\[
+\operatorname{dom}f^{-1}=[4,+\infty[,
+\qquad
+\operatorname{ber}f^{-1}=[0,+\infty[.
+\]
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+\FVDsection{Verdieping — grafisch analyseren}
+
+\begin{oefening}[Grafiek en inverse samen analyseren]{\oefU\ESS}
+
+Beschouw
+\[
+f(x)=\frac12x+2.
+\]
+
+\begin{question}
+Bepaal algebraïsch \(f^{-1}\).
+
+\begin{oplossing}
+\[
+y=\frac12x+2
+\Longrightarrow
+x=\frac12y+2
+\Longrightarrow
+y=2x-4.
+\]
+Dus
+\[
+f^{-1}(x)=2x-4.
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Teken \(f\), \(f^{-1}\) en \(y=x\) in hetzelfde assenstelsel.
+
+\begin{oplossing}
+De rechten \(y=\frac12x+2\) en \(y=2x-4\) zijn elkaars spiegelbeeld
+ten opzichte van \(y=x\).
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Bepaal het snijpunt van \(f\) met \(f^{-1}\).
+
+\begin{oplossing}
+Een punt dat bij spiegeling in \(y=x\) op zichzelf blijft, ligt op \(y=x\).
+Dus:
+\[
+x=\frac12x+2
+\Longrightarrow x=4.
+\]
+Het snijpunt is
+\[
+(4,4).
+\]
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+\begin{oefening}[GeoGebra: ontdek de spiegeling]{\oefU\ESS}
+
+Voer in GeoGebra
+\[
+f(x)=3x-2
+\]
+in.
+
+\begin{enumerate}
+    \item Bepaal zelf \(f^{-1}\) en voer die functie ook in.
+    \item Teken \(y=x\).
+    \item Kies een beweegbaar punt \(A\) op \(f\).
+    \item Spiegel \(A\) in \(y=x\).
+    \item Onderzoek of het spiegelpunt steeds op \(f^{-1}\) ligt.
+    \item Formuleer een verklaring met coördinaten.
+\end{enumerate}
+
+\begin{oplossing}
+\[
+f^{-1}(x)=\frac{x+2}{3}.
+\]
+Als
+\[
+A=(a,f(a))=(a,b),
+\]
+dan is het spiegelpunt
+\[
+A'=(b,a).
+\]
+Omdat \(f^{-1}(b)=a\), ligt \(A'\) op de grafiek van \(f^{-1}\).
+\end{oplossing}
+
+\end{oefening}
+
+\begin{oefening}[Welke inverse hoort erbij?]{\oefU\ESS}
+
+Beschouw
+\[
+f:[0,+\infty[\to[2,+\infty[:x\mapsto (x+1)^2+1.
+\]
+
+\begin{question}
+Bepaal de inverse functie.
+
+\begin{oplossing}
+\[
+y=(x+1)^2+1.
+\]
+Verwissel:
+\[
+x=(y+1)^2+1.
+\]
+Dus
+\[
+x-1=(y+1)^2.
+\]
+Omdat \(y\geq0\) in het bereik van de inverse:
+\[
+y+1=\sqrt{x-1}.
+\]
+Daarom
+\[
+\boxed{f^{-1}(x)=\sqrt{x-1}-1.}
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Waarom nemen we niet de negatieve wortel?
+
+\begin{oplossing}
+Omdat het bereik van \(f^{-1}\) gelijk is aan het domein van \(f\),
+namelijk \([0,+\infty[\). De negatieve tak zou niet met die domeinkeuze
+overeenkomen.
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+\begin{oefening}[Geen inverse functie zonder beperking]{\oefU\ESS}
+
+Beschouw
+\[
+f:\mathbb R\to[0,+\infty[:x\mapsto(x-2)^2.
+\]
+
+\begin{question}
+Waarom bestaat er op dit domein geen inverse functie?
+
+\begin{oplossing}
+De functie is niet injectief. Bijvoorbeeld
+\[
+f(1)=f(3)=1.
+\]
+De functiewaarde \(1\) heeft dus twee originelen.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Geef twee mogelijke domeinbeperkingen die een inverse functie mogelijk maken.
+
+\begin{oplossing}
+\[
+[2,+\infty[
+\qquad\text{of}\qquad
+]-\infty,2].
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Bepaal voor beide keuzes de inverse.
+
+\begin{oplossing}
+Voor domein \([2,+\infty[\):
+\[
+f^{-1}(x)=2+\sqrt{x}.
+\]
+
+Voor domein \(]-\infty,2]\):
+\[
+f^{-1}(x)=2-\sqrt{x}.
+\]
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+\begin{oefening}[Inverse in een sensorcontext]{\oefU\ESS}
+
+Een sensor heeft het kalibratiemodel
+\[
+U(T)=0{,}40+0{,}025T,
+\qquad 0\leq T\leq100.
+\]
+
+\begin{question}
+Bepaal het bereik van \(U\).
+
+\begin{oplossing}
+\[
+U(0)=0{,}40,\qquad U(100)=2{,}90.
+\]
+Dus
+\[
+\operatorname{ber}U=[0{,}40,2{,}90].
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Bepaal de inverse omzetting \(T(U)\).
+
+\begin{oplossing}
+\[
+U=0{,}40+0{,}025T
+\Longrightarrow
+\boxed{T(U)=\frac{U-0{,}40}{0{,}025}.}
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Een meettoestel registreert \(1{,}65\) V. Welke temperatuur rapporteert het model?
+
+\begin{oplossing}
+\[
+T(1{,}65)=\frac{1{,}65-0{,}40}{0{,}025}=50.
+\]
+Dus \(50^\circ\mathrm C\).
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Leg in woorden uit wat de oorspronkelijke functie en de inverse functie
+elk doen.
+
+\begin{oplossing}
+De oorspronkelijke functie zet temperatuur om in sensorspanning.
+De inverse functie zet een gemeten sensorspanning terug om in de
+bijbehorende temperatuur.
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+\FVDsection{Gevorderd — redeneren, transfer en modellering}
+
+\begin{oefening}[Snijpunten van een functie en haar inverse]{\oefG}
+
+Een leerling beweert:
+
+\begin{center}
+``Een functie en haar inverse snijden elkaar altijd op de rechte \(y=x\).''
+\end{center}
+
+Onderzoek de uitspraak kritisch.
+
+\begin{question}
+Leg uit waarom punten die door de spiegeling in \(y=x\) op zichzelf blijven,
+op \(y=x\) liggen.
+
+\begin{oplossing}
+Een punt \((a,b)\) blijft bij het verwisselen van coördinaten hetzelfde
+precies wanneer \(a=b\). Zulke punten liggen op \(y=x\).
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Betekent dit automatisch dat elke functie en haar inverse een snijpunt hebben?
+
+\begin{oplossing}
+Nee. Een functie kan bijectief zijn zonder een vast punt \(f(x)=x\)
+in haar domein te hebben. De grafieken zijn wel elkaars spiegelbeeld,
+maar hoeven elkaar niet noodzakelijk te snijden.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Welke vergelijking zoek je als je gemeenschappelijke punten op \(y=x\)
+wil vinden?
+
+\begin{oplossing}
+\[
+f(x)=x.
+\]
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+\begin{oefening}[Ontwerp een omkeerbare meetfunctie]{\oefG}
+
+Een meetsysteem moet een grootheid \(q\in[0,10]\) coderen als een spanning
+\(U\in[1,5]\). Het systeem moet zo ontworpen zijn dat \(q\) uit \(U\)
+eenduidig kan worden teruggevonden.
+
+\begin{enumerate}
+    \item Ontwerp een eenvoudige lineaire bijectie \(U(q)\).
+    \item Bepaal de inverse \(q(U)\).
+    \item Controleer beide samenstellingen.
+    \item Teken beide grafieken samen met \(y=x\).
+    \item Leg uit waarom bijectiviteit voor zo'n meetsysteem inhoudelijk noodzakelijk is.
+\end{enumerate}
+
+\begin{oplossing}
+Een natuurlijke keuze is de rechte door \((0,1)\) en \((10,5)\):
+\[
+U(q)=1+0{,}4q.
+\]
+Daaruit:
+\[
+q(U)=\frac{U-1}{0{,}4}.
+\]
+De samenstellingen geven telkens de oorspronkelijke invoer terug.
+Bijectiviteit garandeert dat elke toegelaten sensoruitvoer bij precies één
+waarde van de gemeten grootheid hoort.
+\end{oplossing}
+
+\end{oefening}
+
+\begin{oefening}[Voorbereiding op cyclometrische functies]{\oefG}
+
+Beschouw de grafiek van
+\[
+f(x)=\sin x.
+\]
+
+Gebruik GeoGebra.
+
+\begin{enumerate}
+    \item Onderzoek met horizontale lijnen waarom sinus op \(\mathbb R\)
+          niet injectief is.
+    \item Zoek een interval waarop iedere waarde tussen \(-1\) en \(1\)
+          precies één keer wordt aangenomen.
+    \item Leg uit waarom een domeinbeperking noodzakelijk is als we later
+          een inverse van sinus willen definiëren.
+\end{enumerate}
+
+\begin{oplossing}
+Sinus is periodiek en neemt dezelfde waarden oneindig vaak aan.
+Een standaard geschikt interval is
+\[
+\left[-\frac{\pi}{2},\frac{\pi}{2}\right].
+\]
+Op dit interval neemt sinus iedere waarde uit \([-1,1]\) precies eenmaal aan.
+Met dit beperkte domein ontstaat een bijectie naar \([-1,1]\), zodat een
+inverse functie kan worden gedefinieerd. De volledige cyclometrische functie
+wordt later systematisch behandeld.
+\end{oplossing}
+
+\end{oefening}
+
+\FVDsection{Minimumcontrole — beheers je de inverse functie?}
+
+\begin{opmerking}
+De oefeningen met \textbf{\(\blacklozenge\) Essentieel} vormen samen de
+minimale beheersingskern.
+
+Je moet zonder hulp kunnen uitleggen en grafisch analyseren waarom
+\[
+(a,b)\leftrightarrow(b,a)
+\]
+leidt tot spiegeling in \(y=x\), domein en bereik correct kunnen verwisselen,
+een eenvoudige inverse kunnen bepalen en controleren, en herkennen wanneer
+eerst een domeinbeperking noodzakelijk is.
+
+Daarmee is de algemene basis voor inverse functies gelegd. De expliciet in
+het leerplan vermelde cyclometrische functies worden later afgewerkt in
+samenhang met de goniometrische functies.
+\end{opmerking}
+
+\end{document}

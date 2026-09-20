@@ -1,0 +1,1596 @@
+  \documentclass{ximera}
+
+  \input{../../../preamble.tex}
+  \input{../../../Opmaak.tex}
+  \addPrintStyle{../../..}
+
+  \title{Uitspraken verbinden}
+  \author{Ingmar Herreman}
+
+  \begin{abstract}
+  In het vorige hoofdstuk maakten we kennis met wiskundige uitspraken:
+  beweringen waarvan we kunnen bepalen of ze waar of onwaar zijn.
+
+  Maar wiskundige redeneringen bestaan zelden uit slechts één uitspraak.
+  We combineren uitspraken voortdurend met woorden zoals
+  \textbf{niet}, \textbf{en} en \textbf{of}.
+
+  In dit hoofdstuk onderzoeken we hoe zulke samengestelde uitspraken
+  worden opgebouwd. We leren de logische operatoren negatie,
+  conjunctie en disjunctie kennen en onderzoeken met waarheidstabellen
+  hoe de waarheidswaarde van een samengestelde uitspraak afhangt van
+  de waarheidswaarden van haar onderdelen.
+
+  Daarbij besteden we bijzondere aandacht aan het verschil tussen
+  dagelijkse taal en wiskundige logica. Vooral het woord \emph{of}
+  heeft in de wiskunde een precieze betekenis die soms verschilt van
+  het gewone taalgebruik.
+
+  Zo bouwen we stap voor stap de formele taal op waarmee we later
+  complexere wiskundige uitspraken, implicaties en redeneringen
+  kunnen analyseren.
+  \end{abstract}
+
+  \begin{document}
+
+  % FVD_CHAPTER_DATA_START
+% Automatisch gegenereerd uit index.tex.
+% Niet handmatig aanpassen.
+\fvdchapterdata{1}{Logica — De taal van correct redeneren}{2}
+% FVD_CHAPTER_DATA_END
+
+
+
+
+
+
+
+
+
+
+
+
+
+  \maketitle
+
+
+  % ============================================================
+  % VOORKENNIS
+  % ============================================================
+
+  \begin{voorkennis}
+    \item Je weet wat een wiskundige uitspraak is.
+    \item Je kan de waarheidswaarde van een eenvoudige uitspraak bepalen.
+    \item Je weet wat een open uitspraak en een predicaat zijn.
+    \item Je begrijpt dat het gekozen domein de betekenis van een uitspraak kan beïnvloeden.
+    \item Je kan uitspraken benoemen met letters zoals $p$, $q$ en $r$.
+  \end{voorkennis}
+
+
+  % ============================================================
+  % LEERDOELEN
+  % ============================================================
+
+  \begin{leerdoelen}
+    \item Je kan de negatie van een uitspraak interpreteren en noteren.
+    \item Je kan bepalen wanneer een negatie waar of onwaar is.
+    \item Je kan twee uitspraken verbinden met een conjunctie.
+    \item Je kan twee uitspraken verbinden met een disjunctie.
+    \item Je kan de symbolen $\neg$, $\land$ en $\lor$ correct gebruiken.
+    \item Je kan de waarheidswaarde van samengestelde uitspraken bepalen.
+    \item Je kan waarheidstabellen opstellen en interpreteren.
+    \item Je begrijpt dat het wiskundige ``of'' inclusief is.
+    \item Je kan gewone taal vertalen naar logische symbolen en omgekeerd.
+    \item Je kan samengestelde uitspraken analyseren en hun logische structuur herkennen.
+  \end{leerdoelen}
+
+
+  % ============================================================
+  \FVDsection{Van eenvoudige naar samengestelde uitspraken}
+  % ============================================================
+
+  Beschouw de uitspraken
+
+  \[
+  p:\quad 12\text{ is even}
+  \]
+
+  en
+
+  \[
+  q:\quad 12\text{ is deelbaar door }3.
+  \]
+
+  Beide uitspraken zijn waar.
+
+  We kunnen uit deze twee uitspraken nieuwe uitspraken vormen, bijvoorbeeld:
+
+  \begin{center}
+  $12$ is even \textbf{en} $12$ is deelbaar door $3$.
+  \end{center}
+
+  of
+
+  \begin{center}
+  $12$ is even \textbf{of} $12$ is deelbaar door $3$.
+  \end{center}
+
+  We kunnen ook één uitspraak ontkennen:
+
+  \begin{center}
+  $12$ is \textbf{niet} even.
+  \end{center}
+
+  De woorden
+
+  \[
+  \text{niet},\qquad \text{en},\qquad \text{of}
+  \]
+
+  hebben in de logica een precieze betekenis.
+
+  Ze worden \textbf{logische operatoren} genoemd.
+
+
+  \begin{definitie}
+  Een \textbf{samengestelde uitspraak} is een uitspraak die wordt opgebouwd
+  uit één of meer andere uitspraken met behulp van logische operatoren.
+  \end{definitie}
+
+
+  In dit hoofdstuk bestuderen we drie fundamentele operatoren:
+
+  \[
+  \neg \qquad \land \qquad \lor
+  \]
+
+  met respectievelijk de betekenis
+
+  \[
+  \text{niet},\qquad \text{en},\qquad \text{of}.
+  \]
+
+
+  % ============================================================
+  \FVDsection{De negatie}
+  % ============================================================
+
+  We beginnen met de eenvoudigste logische bewerking.
+
+  Beschouw
+
+  \[
+  p:\quad 15\text{ is deelbaar door }3.
+  \]
+
+  Deze uitspraak is waar.
+
+  De uitspraak
+
+  \begin{center}
+  $15$ is niet deelbaar door $3$
+  \end{center}
+
+  zegt precies het tegenovergestelde.
+
+  We noemen dit de \textbf{negatie} van $p$.
+
+
+  \begin{definitie}
+  De \textbf{negatie} van een uitspraak $p$ is de uitspraak die beweert
+  dat $p$ niet waar is.
+
+  We noteren:
+
+  \[
+  \neg p.
+  \]
+
+  We lezen dit als
+
+  \begin{center}
+  ``niet $p$''
+  \end{center}
+
+  of
+
+  \begin{center}
+  ``het is niet zo dat $p$''.
+  \end{center}
+  \end{definitie}
+
+
+  \begin{voorbeeld}
+
+  Neem
+
+  \[
+  p:\quad 17\text{ is een priemgetal}.
+  \]
+
+  Dan is
+
+  \[
+  \neg p:\quad 17\text{ is geen priemgetal}.
+  \]
+
+  Omdat $p$ waar is, is $\neg p$ onwaar.
+  \end{voorbeeld}
+
+
+  \begin{voorbeeld}
+
+  Neem
+
+  \[
+  q:\quad 10>15.
+  \]
+
+  Dan is
+
+  \[
+  \neg q:\quad 10\leq15.
+  \]
+
+  De uitspraak $q$ is onwaar, terwijl $\neg q$ waar is.
+  \end{voorbeeld}
+
+
+  Dit leidt tot een eerste eenvoudige waarheidstabel.
+
+  \[
+  \begin{array}{c|c}
+  p & \neg p\\
+  \hline
+  \text{waar} & \text{onwaar}\\
+  \text{onwaar} & \text{waar}
+  \end{array}
+  \]
+
+
+  \begin{opmerking}
+  De negatie van een uitspraak heeft altijd de tegengestelde
+  waarheidswaarde.
+
+  \[
+  \important{
+  p\text{ waar}
+  \iff
+  \neg p\text{ onwaar}
+  }
+  \]
+
+  en
+
+  \[
+  \important{
+  p\text{ onwaar}
+  \iff
+  \neg p\text{ waar}.
+  }
+  \]
+  \end{opmerking}
+
+
+  % ------------------------------------------------------------
+  \FVDsubsection{Correct negeren}
+  % ------------------------------------------------------------
+
+  Een negatie vormen betekent niet noodzakelijk dat we gewoon het woord
+  ``niet'' ergens in de zin toevoegen.
+
+  We moeten de betekenis van de volledige uitspraak ontkennen.
+
+
+  \begin{voorbeeld}
+
+  Beschouw
+
+  \[
+  p:\quad x>5.
+  \]
+
+  De negatie is niet
+
+  \[
+  x<5,
+  \]
+
+  want dan zouden we $x=5$ vergeten.
+
+  De correcte negatie is
+
+  \[
+  \neg p:\quad x\leq5.
+  \]
+  \end{voorbeeld}
+
+
+  \begin{voorbeeld}
+
+  Beschouw
+
+  \[
+  p:\quad x=4.
+  \]
+
+  Dan is
+
+  \[
+  \neg p:\quad x\neq4.
+  \]
+  \end{voorbeeld}
+
+
+  \begin{voorbeeld}
+
+  Beschouw
+
+  \[
+  p:\quad n\text{ is even}.
+  \]
+
+  Als $n\in\mathbb{Z}$, dan kunnen we schrijven
+
+  \[
+  \neg p:\quad n\text{ is oneven}.
+  \]
+
+  Hier gebruiken we de eigenschap dat elk geheel getal ofwel even,
+  ofwel oneven is.
+  \end{voorbeeld}
+
+
+  \begin{oefening}[Negaties herkennen]{\oefB \ESS}
+
+  Geef telkens de correcte negatie.
+
+  \begin{question}
+  \[
+  x<7
+  \]
+
+  \begin{oplossing}
+  \[
+  x\geq7.
+  \]
+  \end{oplossing}
+  \end{question}
+
+
+  \begin{question}
+  \[
+  x\geq2
+  \]
+
+  \begin{oplossing}
+  \[
+  x<2.
+  \]
+  \end{oplossing}
+  \end{question}
+
+
+  \begin{question}
+  \[
+  n\text{ is deelbaar door }5.
+  \]
+
+  \begin{oplossing}
+  \[
+  n\text{ is niet deelbaar door }5.
+  \]
+  \end{oplossing}
+  \end{question}
+
+  \end{oefening}
+
+
+  % ============================================================
+  \FVDsection{De conjunctie: en}
+  % ============================================================
+
+  Beschouw opnieuw twee uitspraken:
+
+  \[
+  p:\quad 12\text{ is even}
+  \]
+
+  en
+
+  \[
+  q:\quad 12\text{ is deelbaar door }3.
+  \]
+
+  We kunnen ze samenvoegen tot
+
+  \begin{center}
+  $12$ is even \textbf{en} $12$ is deelbaar door $3$.
+  \end{center}
+
+  Symbolisch schrijven we
+
+  \[
+  p\land q.
+  \]
+
+
+  \begin{definitie}
+  De \textbf{conjunctie} van twee uitspraken $p$ en $q$ is de samengestelde
+  uitspraak
+
+  \[
+  p\land q.
+  \]
+
+  We lezen dit als
+
+  \begin{center}
+  ``$p$ en $q$''.
+  \end{center}
+
+  De conjunctie is waar als \textbf{beide} uitspraken waar zijn.
+  \end{definitie}
+
+
+  Laten we alle mogelijkheden onderzoeken.
+
+  \[
+  \begin{array}{c|c|c}
+  p & q & p\land q\\
+  \hline
+  \text{waar} & \text{waar} & \text{waar}\\
+  \text{waar} & \text{onwaar} & \text{onwaar}\\
+  \text{onwaar} & \text{waar} & \text{onwaar}\\
+  \text{onwaar} & \text{onwaar} & \text{onwaar}
+  \end{array}
+  \]
+
+
+  De waarheidstabel toont dat slechts één situatie de conjunctie waar maakt:
+
+  \[
+  \important{
+  p\land q\text{ is waar als zowel }p\text{ als }q\text{ waar zijn.}
+  }
+  \]
+
+
+  \begin{voorbeeld}
+
+  Neem
+
+  \[
+  p:\quad 10\text{ is even}
+  \]
+
+  en
+
+  \[
+  q:\quad 10>7.
+  \]
+
+  Beide zijn waar.
+
+  Dus
+
+  \[
+  p\land q
+  \]
+
+  is waar.
+  \end{voorbeeld}
+
+
+  \begin{voorbeeld}
+
+  Neem
+
+  \[
+  p:\quad 9\text{ is oneven}
+  \]
+
+  en
+
+  \[
+  q:\quad 9\text{ is een priemgetal}.
+  \]
+
+  Dan is $p$ waar maar $q$ onwaar.
+
+  Daarom is
+
+  \[
+  p\land q
+  \]
+
+  onwaar.
+  \end{voorbeeld}
+
+
+  % ------------------------------------------------------------
+  \FVDsubsection{Een conjunctie analyseren}
+  % ------------------------------------------------------------
+
+  Een conjunctie bevat twee voorwaarden die tegelijk vervuld moeten zijn.
+
+
+  \begin{voorbeeld}
+
+  Beschouw
+
+  \[
+  x>2\land x<7.
+  \]
+
+  Deze samengestelde uitspraak betekent dat beide voorwaarden tegelijk
+  moeten gelden.
+
+  We kunnen dit ook schrijven als
+
+  \[
+  2<x<7.
+  \]
+
+  Voor $x=5$ is de uitspraak waar.
+
+  Voor $x=8$ is de eerste voorwaarde wel waar, maar de tweede niet.
+  De conjunctie is dan onwaar.
+  \end{voorbeeld}
+
+
+  \begin{voorbeeld}[Een domein beschrijven]
+
+  De voorwaarde
+
+  \[
+  x\geq0\land x\leq1
+  \]
+
+  beschrijft precies de reële getallen in het interval
+
+  \[
+  [0,1].
+  \]
+
+  Logische operatoren kunnen dus gebruikt worden om verzamelingen
+  of voorwaarden nauwkeurig te beschrijven.
+  \end{voorbeeld}
+
+
+  \begin{oefening}[Conjuncties]{\oefB \ESS}
+
+  Gegeven:
+
+  \[
+  p:\quad 6\text{ is even},
+  \]
+
+  \[
+  q:\quad 6\text{ is een priemgetal}.
+  \]
+
+  \begin{question}
+  Bepaal de waarheidswaarde van $p$.
+
+  \begin{oplossing}
+  $p$ is waar.
+  \end{oplossing}
+  \end{question}
+
+  \begin{question}
+  Bepaal de waarheidswaarde van $q$.
+
+  \begin{oplossing}
+  $q$ is onwaar, want
+  \[
+  6=2\cdot3.
+  \]
+  \end{oplossing}
+  \end{question}
+
+  \begin{question}
+  Bepaal de waarheidswaarde van
+
+  \[
+  p\land q.
+  \]
+
+  \begin{oplossing}
+  De conjunctie is onwaar, omdat niet beide uitspraken waar zijn.
+  \end{oplossing}
+  \end{question}
+
+  \end{oefening}
+
+
+  % ============================================================
+  \FVDsection{De disjunctie: of}
+  % ============================================================
+
+  Nu verbinden we twee uitspraken met het woord \textbf{of}.
+
+  Beschouw
+
+  \[
+  p:\quad 12\text{ is even}
+  \]
+
+  en
+
+  \[
+  q:\quad 12\text{ is deelbaar door }5.
+  \]
+
+  De samengestelde uitspraak
+
+  \begin{center}
+  $12$ is even \textbf{of} $12$ is deelbaar door $5$
+  \end{center}
+
+  noteren we als
+
+  \[
+  p\lor q.
+  \]
+
+
+  \begin{definitie}
+  De \textbf{disjunctie} van twee uitspraken $p$ en $q$ is de
+  samengestelde uitspraak
+
+  \[
+  p\lor q.
+  \]
+
+  We lezen dit als
+
+  \begin{center}
+  ``$p$ of $q$''.
+  \end{center}
+
+  De disjunctie is waar zodra \textbf{minstens één} van beide uitspraken
+  waar is.
+  \end{definitie}
+
+
+  De volledige waarheidstabel is
+
+  \[
+  \begin{array}{c|c|c}
+  p & q & p\lor q\\
+  \hline
+  \text{waar} & \text{waar} & \text{waar}\\
+  \text{waar} & \text{onwaar} & \text{waar}\\
+  \text{onwaar} & \text{waar} & \text{waar}\\
+  \text{onwaar} & \text{onwaar} & \text{onwaar}
+  \end{array}
+  \]
+
+
+  Dus:
+
+  \[
+  \important{
+  p\lor q\text{ is alleen onwaar als zowel }p\text{ als }q\text{ onwaar zijn.}
+  }
+  \]
+
+
+  % ============================================================
+  \FVDsection{Het wiskundige ``of'' is inclusief}
+  % ============================================================
+
+  In het dagelijkse taalgebruik heeft het woord \emph{of} niet altijd
+  dezelfde betekenis.
+
+  Iemand vraagt bijvoorbeeld:
+
+  \begin{center}
+  ``Wil je koffie of thee?''
+  \end{center}
+
+  Vaak wordt daarmee bedoeld dat je één van beide kiest.
+
+  In de wiskundige logica betekent
+
+  \[
+  p\lor q
+  \]
+
+  echter:
+
+  \begin{center}
+  $p$ is waar, of $q$ is waar, \textbf{of beide zijn waar}.
+  \end{center}
+
+
+  Dit noemen we het \textbf{inclusieve of}.
+
+
+  \begin{voorbeeld}
+
+  Neem
+
+  \[
+  p:\quad 12\text{ is even}
+  \]
+
+  en
+
+  \[
+  q:\quad 12\text{ is deelbaar door }3.
+  \]
+
+  Beide uitspraken zijn waar.
+
+  Daarom is ook
+
+  \[
+  p\lor q
+  \]
+
+  waar.
+  \end{voorbeeld}
+
+
+  \begin{opmerking}
+  In de wiskundige logica betekent
+
+  \[
+  p\lor q
+  \]
+
+  standaard het \textbf{inclusieve} of.
+
+  De situatie waarbij precies één van beide uitspraken waar mag zijn,
+  wordt een \textbf{exclusieve disjunctie} genoemd.
+
+  Die gebruiken we voorlopig niet als afzonderlijke logische operator.
+  \end{opmerking}
+
+
+  % ------------------------------------------------------------
+  \FVDsubsection{Een belangrijk verschil}
+  % ------------------------------------------------------------
+
+  Vergelijk de uitspraken
+
+  \[
+  p\land q
+  \]
+
+  en
+
+  \[
+  p\lor q.
+  \]
+
+  Bij een conjunctie moeten \textbf{beide} onderdelen waar zijn.
+
+  Bij een disjunctie volstaat het dat \textbf{minstens één} onderdeel
+  waar is.
+
+  We kunnen dat samenvatten:
+
+  \[
+  \important{
+  \begin{array}{c}
+  p\land q
+  \quad\Longrightarrow\quad
+  \text{beide voorwaarden moeten gelden}\\[2mm]
+  p\lor q
+  \quad\Longrightarrow\quad
+  \text{minstens één voorwaarde moet gelden}
+  \end{array}
+  }
+  \]
+
+
+  \begin{oefening}[En of of?]{\oefB \ESS}
+
+  Beschouw
+
+  \[
+  p:\quad 8>3
+  \]
+
+  en
+
+  \[
+  q:\quad 8<5.
+  \]
+
+  \begin{question}
+  Bepaal de waarheidswaarde van
+
+  \[
+  p\land q.
+  \]
+
+  \begin{oplossing}
+  $p$ is waar en $q$ is onwaar.
+
+  Dus
+  \[
+  p\land q
+  \]
+  is onwaar.
+  \end{oplossing}
+  \end{question}
+
+
+  \begin{question}
+  Bepaal de waarheidswaarde van
+
+  \[
+  p\lor q.
+  \]
+
+  \begin{oplossing}
+  Omdat minstens één van beide uitspraken waar is, is
+  \[
+  p\lor q
+  \]
+  waar.
+  \end{oplossing}
+  \end{question}
+
+  \end{oefening}
+
+
+  % ============================================================
+  \FVDsection{Waarheidstabellen}
+  % ============================================================
+
+  Tot nu toe hebben we voor elke operator afzonderlijk onderzocht wanneer
+  een samengestelde uitspraak waar is.
+
+  Een \textbf{waarheidstabel} verzamelt alle mogelijke combinaties van
+  waarheidswaarden systematisch.
+
+
+  Bij twee uitspraken $p$ en $q$ zijn er vier mogelijke combinaties:
+
+  \[
+  \begin{array}{c|c}
+  p & q\\
+  \hline
+  \text{waar} & \text{waar}\\
+  \text{waar} & \text{onwaar}\\
+  \text{onwaar} & \text{waar}\\
+  \text{onwaar} & \text{onwaar}
+  \end{array}
+  \]
+
+
+  We kunnen meerdere logische operatoren in één tabel vergelijken:
+
+  \[
+  \begin{array}{c|c|c|c}
+  p & q & p\land q & p\lor q\\
+  \hline
+  \text{waar} & \text{waar} & \text{waar} & \text{waar}\\
+  \text{waar} & \text{onwaar} & \text{onwaar} & \text{waar}\\
+  \text{onwaar} & \text{waar} & \text{onwaar} & \text{waar}\\
+  \text{onwaar} & \text{onwaar} & \text{onwaar} & \text{onwaar}
+  \end{array}
+  \]
+
+
+  \begin{definitie}
+  Een \textbf{waarheidstabel} is een tabel waarin voor alle mogelijke
+  waarheidswaarden van de elementaire uitspraken de waarheidswaarde van
+  een samengestelde uitspraak wordt bepaald.
+  \end{definitie}
+
+
+  Waarheidstabellen zijn meer dan een rekenschema.
+
+  Ze stellen ons in staat om de \textbf{logische structuur} van een
+  uitspraak te onderzoeken zonder afhankelijk te zijn van de concrete
+  inhoud van $p$ en $q$.
+
+
+  % ------------------------------------------------------------
+  \FVDsubsection{Een waarheidstabel stap voor stap}
+  % ------------------------------------------------------------
+
+  Beschouw
+
+  \[
+  \neg p\land q.
+  \]
+
+  We bouwen de tabel in stappen.
+
+  Eerst noteren we alle mogelijkheden voor $p$ en $q$.
+
+  Vervolgens bepalen we $\neg p$.
+
+  Ten slotte bepalen we wanneer $\neg p$ en $q$ tegelijk waar zijn.
+
+  \[
+  \begin{array}{c|c|c|c}
+  p & q & \neg p & \neg p\land q\\
+  \hline
+  \text{waar} & \text{waar}
+  & \text{onwaar} & \text{onwaar}\\
+
+  \text{waar} & \text{onwaar}
+  & \text{onwaar} & \text{onwaar}\\
+
+  \text{onwaar} & \text{waar}
+  & \text{waar} & \text{waar}\\
+
+  \text{onwaar} & \text{onwaar}
+  & \text{waar} & \text{onwaar}
+  \end{array}
+  \]
+
+
+  \begin{opmerking}
+  Bij een complexe logische uitdrukking werk je best
+  \textbf{van binnen naar buiten}.
+
+  Voeg voor tussenstappen extra kolommen toe.
+
+  Zo verklein je de kans op fouten.
+  \end{opmerking}
+
+
+  \begin{oefening}[Een waarheidstabel opbouwen]{\oefB \ESS}
+
+  Maak de waarheidstabel van
+
+  \[
+  p\land\neg q.
+  \]
+
+  \begin{oplossing}
+
+  \[
+  \begin{array}{c|c|c|c}
+  p&q&\neg q&p\land\neg q\\
+  \hline
+  \text{waar}&\text{waar}&\text{onwaar}&\text{onwaar}\\
+  \text{waar}&\text{onwaar}&\text{waar}&\text{waar}\\
+  \text{onwaar}&\text{waar}&\text{onwaar}&\text{onwaar}\\
+  \text{onwaar}&\text{onwaar}&\text{waar}&\text{onwaar}
+  \end{array}
+  \]
+
+  De samengestelde uitspraak is dus alleen waar wanneer
+  $p$ waar en $q$ onwaar is.
+  \end{oplossing}
+
+  \end{oefening}
+
+
+  % ============================================================
+  \FVDsection{Van gewone taal naar logische symbolen}
+  % ============================================================
+
+  Logische symbolen zijn geen doel op zich.
+
+  Ze geven ons een compacte en precieze manier om de structuur van
+  uitspraken zichtbaar te maken.
+
+
+  \begin{voorbeeld}
+
+  Gegeven:
+
+  \[
+  p:\quad n\text{ is even}
+  \]
+
+  en
+
+  \[
+  q:\quad n>10.
+  \]
+
+  De uitspraak
+
+  \begin{center}
+  $n$ is even en groter dan $10$
+  \end{center}
+
+  kan worden geschreven als
+
+  \[
+  p\land q.
+  \]
+  \end{voorbeeld}
+
+
+  \begin{voorbeeld}
+
+  Met dezelfde definities betekent
+
+  \[
+  p\lor q
+  \]
+
+  de uitspraak
+
+  \begin{center}
+  $n$ is even of $n$ is groter dan $10$.
+  \end{center}
+
+  Omdat het wiskundige ``of'' inclusief is, mag $n$ ook aan beide
+  voorwaarden voldoen.
+  \end{voorbeeld}
+
+
+  \begin{voorbeeld}
+
+  De uitspraak
+
+  \begin{center}
+  $n$ is niet even
+  \end{center}
+
+  wordt
+
+  \[
+  \neg p.
+  \]
+  \end{voorbeeld}
+
+
+  % ------------------------------------------------------------
+  \FVDsubsection{De hoofdoperator herkennen}
+  % ------------------------------------------------------------
+
+  Wanneer verschillende operatoren voorkomen, is het belangrijk om te
+  zien welke bewerking de volledige uitspraak op het hoogste niveau
+  opbouwt.
+
+  Beschouw
+
+  \[
+  \neg p\land q.
+  \]
+
+  Hier vormen we eerst $\neg p$.
+
+  Daarna verbinden we $\neg p$ en $q$ met \emph{en}.
+
+  De hoofdoperator is dus
+
+  \[
+  \land.
+  \]
+
+
+  Beschouw daarentegen
+
+  \[
+  \neg(p\land q).
+  \]
+
+  Hier wordt eerst de conjunctie
+
+  \[
+  p\land q
+  \]
+
+  gevormd.
+
+  Daarna wordt de volledige conjunctie ontkend.
+
+  De hoofdoperator is nu
+
+  \[
+  \neg.
+  \]
+
+
+  \begin{opmerking}
+  Haakjes zijn in logische uitdrukkingen essentieel.
+
+  De uitdrukkingen
+
+  \[
+  \neg p\land q
+  \]
+
+  en
+
+  \[
+  \neg(p\land q)
+  \]
+
+  hebben niet dezelfde structuur en hoeven dus ook niet dezelfde
+  waarheidswaarde te hebben.
+  \end{opmerking}
+
+
+  % ============================================================
+  \FVDsection{Haakjes veranderen de betekenis}
+  % ============================================================
+
+  Beschouw bijvoorbeeld
+
+  \[
+  p=\text{waar},
+  \qquad
+  q=\text{onwaar}.
+  \]
+
+  Dan is
+
+  \[
+  \neg p\land q
+  \]
+
+  gelijk aan
+
+  \[
+  \text{onwaar}\land\text{onwaar},
+  \]
+
+  dus onwaar.
+
+  Maar
+
+  \[
+  \neg(p\land q)
+  \]
+
+  wordt
+
+  \[
+  \neg(\text{waar}\land\text{onwaar}).
+  \]
+
+  Omdat
+
+  \[
+  \text{waar}\land\text{onwaar}
+  \]
+
+  onwaar is, krijgen we
+
+  \[
+  \neg(\text{onwaar}),
+  \]
+
+  dus waar.
+
+  De twee uitdrukkingen hebben hier verschillende waarheidswaarden.
+
+
+  \begin{oefening}[Structuur analyseren]{\oefU \ESS}
+
+  Gegeven zijn
+
+  \[
+  p=\text{onwaar},
+  \qquad
+  q=\text{waar}.
+  \]
+
+  Bepaal de waarheidswaarde van de volgende uitspraken.
+
+  \begin{question}
+  \[
+  \neg p\land q
+  \]
+
+  \begin{oplossing}
+  Omdat $p$ onwaar is, is $\neg p$ waar.
+
+  Dus
+  \[
+  \neg p\land q
+  =
+  \text{waar}\land\text{waar},
+  \]
+  en de uitspraak is waar.
+  \end{oplossing}
+  \end{question}
+
+
+  \begin{question}
+  \[
+  \neg(p\land q)
+  \]
+
+  \begin{oplossing}
+  Eerst:
+  \[
+  p\land q
+  =
+  \text{onwaar}\land\text{waar}
+  =
+  \text{onwaar}.
+  \]
+
+  Dus:
+  \[
+  \neg(p\land q)
+  =
+  \text{waar}.
+  \]
+  \end{oplossing}
+  \end{question}
+
+
+  \begin{question}
+  Zijn de twee uitdrukkingen daarom altijd logisch gelijkwaardig?
+
+  \begin{oplossing}
+  Nee.
+
+  Dat beide uitdrukkingen in dit ene geval dezelfde waarheidswaarde
+  hebben, volstaat niet om te besluiten dat ze voor elke mogelijke
+  combinatie van $p$ en $q$ dezelfde waarheidswaarde hebben.
+
+  Om dat te onderzoeken moeten we alle gevallen vergelijken,
+  bijvoorbeeld met een waarheidstabel.
+  \end{oplossing}
+  \end{question}
+
+  \end{oefening}
+
+
+  % ============================================================
+  \FVDsection{Een eerste ontdekking met waarheidstabellen}
+  % ============================================================
+
+  Waarheidstabellen laten ons niet alleen de waarheidswaarde van één
+  uitdrukking bepalen.
+
+  We kunnen er ook twee logische uitdrukkingen mee vergelijken.
+
+
+  Beschouw
+
+  \[
+  \neg(p\land q)
+  \]
+
+  en
+
+  \[
+  \neg p\lor\neg q.
+  \]
+
+  We maken een waarheidstabel.
+
+  \[
+  \begin{array}{c|c|c|c|c|c|c}
+  p&q&p\land q&\neg(p\land q)&\neg p&\neg q&
+  \neg p\lor\neg q\\
+  \hline
+  W&W&W&O&O&O&O\\
+  W&O&O&W&O&W&W\\
+  O&W&O&W&W&O&W\\
+  O&O&O&W&W&W&W
+  \end{array}
+  \]
+
+  We zien iets opvallends.
+
+  De kolommen van
+
+  \[
+  \neg(p\land q)
+  \]
+
+  en
+
+  \[
+  \neg p\lor\neg q
+  \]
+
+  zijn identiek.
+
+  De twee uitdrukkingen hebben dus voor elke mogelijke combinatie van
+  $p$ en $q$ dezelfde waarheidswaarde.
+
+
+  \begin{opmerking}
+  Dit is geen toevalligheid.
+
+  We hebben hier een belangrijke logische wet ontdekt.
+
+  In een later hoofdstuk zullen we zulke \textbf{logische equivalenties}
+  systematisch bestuderen en leren gebruiken.
+
+  We zullen dan onder andere zien dat
+
+  \[
+  \neg(p\land q)
+  \]
+
+  dezelfde logische betekenis heeft als
+
+  \[
+  \neg p\lor\neg q.
+  \]
+  \end{opmerking}
+
+
+  Deze ontdekking is een mooi voorbeeld van de kracht van een
+  waarheidstabel:
+
+  \[
+  \important{
+  \text{we onderzoeken niet één voorbeeld, maar alle mogelijke
+  waarheidswaarden tegelijk.}
+  }
+  \]
+
+
+  % ============================================================
+  \FVDsection{Voorwaarden in wiskunde en wetenschappen}
+  % ============================================================
+
+  Conjuncties en disjuncties komen voortdurend voor in wiskundige en
+  wetenschappelijke modellen.
+
+
+  \begin{voorbeeld}[Temperatuurbewaking]
+
+  Een machine werkt veilig wanneer de temperatuur minstens
+  $20\,{}^\circ\mathrm C$ en hoogstens $70\,{}^\circ\mathrm C$ is.
+
+  We kunnen de veiligheidsvoorwaarde schrijven als
+
+  \[
+  T\geq20\land T\leq70.
+  \]
+
+  Beide voorwaarden moeten tegelijk gelden.
+  \end{voorbeeld}
+
+
+  \begin{voorbeeld}[Een alarmsysteem]
+
+  Een alarmsysteem wordt geactiveerd wanneer
+
+  \begin{itemize}
+    \item de temperatuur hoger is dan $80\,{}^\circ\mathrm C$,
+    \item of de druk hoger is dan $5\,\mathrm{bar}$.
+  \end{itemize}
+
+  Definieer
+
+  \[
+  p:\quad T>80
+  \]
+
+  en
+
+  \[
+  q:\quad P>5.
+  \]
+
+  De alarmvoorwaarde wordt
+
+  \[
+  p\lor q.
+  \]
+
+  Het alarm gaat dus af wanneer één van beide voorwaarden waar is,
+  maar ook wanneer beide tegelijk waar zijn.
+  \end{voorbeeld}
+
+
+  \begin{voorbeeld}[Selectie van data]
+
+  Een onderzoeker wil uit een databestand alleen metingen selecteren
+  waarvoor
+
+  \[
+  10\leq t\leq20.
+  \]
+
+  Logisch kunnen we dit schrijven als
+
+  \[
+  t\geq10\land t\leq20.
+  \]
+
+  Ook databanken, zoekmachines en programmeertalen gebruiken voortdurend
+  zulke logische voorwaarden.
+  \end{voorbeeld}
+
+
+  % ============================================================
+  \FVDsection{Logische voorwaarden in informatica}
+  % ============================================================
+
+  In een computerprogramma kunnen beslissingen rechtstreeks gebaseerd
+  zijn op logische voorwaarden.
+
+  Bijvoorbeeld:
+
+  \[
+  T>80
+  \]
+
+  kan waar of onwaar zijn.
+
+  Maar ook complexere voorwaarden zijn mogelijk:
+
+  \[
+  T>80\lor P>5
+  \]
+
+  of
+
+  \[
+  T>20\land T<70.
+  \]
+
+
+  Een programma kan op basis van de waarheidswaarde vervolgens een
+  actie uitvoeren.
+
+
+  \begin{voorbeeld}[Toegangscontrole]
+
+  Een systeem geeft toegang wanneer iemand
+
+  \begin{itemize}
+    \item een geldige badge heeft;
+    \item én een correcte pincode invoert.
+  \end{itemize}
+
+  Definieer
+
+  \[
+  p:\quad \text{de badge is geldig}
+  \]
+
+  en
+
+  \[
+  q:\quad \text{de pincode is correct}.
+  \]
+
+  De toegangsvoorwaarde is
+
+  \[
+  p\land q.
+  \]
+
+  Als één van beide voorwaarden niet voldaan is, wordt de toegang
+  geweigerd.
+  \end{voorbeeld}
+
+
+  \begin{opmerking}
+  Logische operatoren vormen een fundamenteel onderdeel van onder andere
+
+  \begin{itemize}
+    \item programmeertalen;
+    \item algoritmen;
+    \item zoekopdrachten;
+    \item digitale elektronica;
+    \item regelsystemen;
+    \item artificiële intelligentie;
+    \item databanken.
+  \end{itemize}
+
+  Dezelfde formele logica die we in de wiskunde gebruiken, vormt dus
+  ook een belangrijke basis van digitale technologie.
+  \end{opmerking}
+
+
+  % ============================================================
+  \FVDsection{Analyseren in plaats van gokken}
+  % ============================================================
+
+  Bij eenvoudige uitspraken kunnen we vaak onmiddellijk zien of een
+  samengestelde uitspraak waar is.
+
+  Bij ingewikkeldere structuren wordt intuïtie minder betrouwbaar.
+
+
+  Beschouw bijvoorbeeld
+
+  \[
+  \neg(p\lor q)\land r.
+  \]
+
+  Om deze uitdrukking correct te onderzoeken, moeten we de structuur
+  herkennen.
+
+  We kunnen ze stap voor stap ontleden:
+
+  \[
+  p\lor q
+  \]
+
+  vervolgens
+
+  \[
+  \neg(p\lor q)
+  \]
+
+  en ten slotte
+
+  \[
+  \neg(p\lor q)\land r.
+  \]
+
+
+  \begin{opmerking}
+  Bij het analyseren van een samengestelde uitspraak zijn drie vragen
+  bijzonder nuttig:
+
+  \[
+  \important{
+  \begin{array}{l}
+  1.\ \text{Uit welke elementaire uitspraken bestaat ze?}\\[1mm]
+  2.\ \text{Welke logische operatoren komen voor?}\\[1mm]
+  3.\ \text{Welke operator bepaalt de structuur van de volledige uitspraak?}
+  \end{array}
+  }
+  \]
+  \end{opmerking}
+
+
+  \begin{oefening}[Ontleed de uitspraak]{\oefU \ESS}
+
+  Beschouw
+
+  \[
+  \neg p\lor(q\land r).
+  \]
+
+  \begin{question}
+  Welke elementaire uitspraken komen voor?
+
+  \begin{oplossing}
+  $p$, $q$ en $r$.
+  \end{oplossing}
+  \end{question}
+
+
+  \begin{question}
+  Welke logische operatoren komen voor?
+
+  \begin{oplossing}
+  Negatie $\neg$, disjunctie $\lor$ en conjunctie $\land$.
+  \end{oplossing}
+  \end{question}
+
+
+  \begin{question}
+  Welke bewerking gebeurt eerst binnen de haakjes?
+
+  \begin{oplossing}
+  De conjunctie
+  \[
+  q\land r.
+  \]
+  \end{oplossing}
+  \end{question}
+
+
+  \begin{question}
+  Wat is de hoofdoperator van de volledige uitspraak?
+
+  \begin{oplossing}
+  De hoofdoperator is
+  \[
+  \lor.
+  \]
+
+  De volledige uitspraak verbindt $\neg p$ met $(q\land r)$ door middel
+  van een disjunctie.
+  \end{oplossing}
+  \end{question}
+
+  \end{oefening}
+
+
+
+  \end{document}

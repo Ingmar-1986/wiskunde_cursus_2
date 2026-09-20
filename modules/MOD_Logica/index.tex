@@ -1,0 +1,308 @@
+\documentclass{xourse}
+
+\input{../../preamble.tex}
+\input{../../Opmaak.tex}
+\addPrintStyle{../..}
+
+
+\fvdtitle{Wiskundige structuren en redeneringen}
+\author{Ingmar Herreman}
+
+\begin{abstract}
+
+  In deze module verdiepen we ons in de logische en structurele fundamenten
+  van de wiskunde.
+  
+  We starten met de taal van de logica. We onderzoeken wiskundige uitspraken
+  en hun waarheidswaarde en leren werken met logische operatoren, implicaties
+  en equivalenties. Met logische wetten en kwantoren leren we samengestelde
+  uitspraken analyseren, correct formuleren en negeren. Daarbij besteden we
+  bijzondere aandacht aan de opbouw en geldigheid van wiskundige redeneringen.
+  
+  Vervolgens richten we onze aandacht op de gehele getallen. We onderzoeken
+  deelbaarheid, de Euclidische deling, priemgetallen en priemfactoren en
+  ontdekken hoe modulorekenen toelaat om op een efficiënte manier over
+  gehele getallen en hun eigenschappen te redeneren.
+  
+  Vanuit deze concrete eigenschappen van getallen en bewerkingen maken we
+  ten slotte de stap naar algebraïsche structuren. We onderzoeken welke
+  eigenschappen bewerkingen gemeenschappelijk hebben en hoe deze aanleiding
+  geven tot structuren zoals groepen, ringen en lichamen. Zo maken we kennis
+  met de kracht van abstractie: verschillende wiskundige objecten kunnen
+  volgens dezelfde onderliggende structuur worden bestudeerd.
+  
+  Doorheen de module besteden we bijzondere aandacht aan wiskundig redeneren,
+  argumenteren en bewijzen. We leren uitspraken kritisch onderzoeken,
+  tegenvoorbeelden zoeken en redeneringen zorgvuldig opbouwen en beoordelen.
+  Deze vaardigheden worden in de verdere cursus telkens opnieuw gebruikt en
+  verder ontwikkeld.
+  
+  Logica, getaltheorie en algebraïsche structuren laten zien hoe wiskunde
+  verder gaat dan rekenen alleen. Ze maken zichtbaar hoe wiskundigen vanuit
+  precieze taal, geldige redeneringen en herkenbare structuren nieuwe
+  eigenschappen ontdekken en algemene resultaten opbouwen.
+  
+  \end{abstract}
+   
+
+
+% ============================================================
+% MODULEGEGEVENS
+% ============================================================
+
+\def\fvdmodulenummer{1}
+\def\fvdmoduletitel{Wiskundige structuren en redeneringen}
+\def\fvdmodulebeeld{../images/banners/logica.png}
+\def\fvdschoolembleem{../images/banners/logo_bellevue.png}
+\def\fvdschoollogo{../images/banners/logo_bellevue.png}
+\renewcommand{\fvdschoolnaam}{Campus Bellevue Izegem}
+
+\def\fvdklas{56 Wetenschappen-wiskunde}
+\def\fvdschooljaar{2026--2027}
+\def\fvdmodulevariant{THEORIE}
+\def\fvdmodulesubtitel{}
+
+
+
+% ============================================================
+% THEORIE + BIJHORENDE OEFENINGEN
+%
+% HTML:
+%   theorie + oefeningen
+%
+% PDF:
+%   alleen theorie
+% ============================================================
+
+\newcommand{\FVDchapterpair}[2]{%
+  \ifdefined\HCode
+
+    % ONLINE: theorie
+    \activity{#1}%
+
+    % ONLINE: oefeningen, indien aanwezig
+    \if\relax\detokenize{#2}\relax
+    \else
+      \activity{#2}%
+    \fi
+
+  \else
+
+    % PDF: alleen theorie
+    \activity{#1}%
+
+  \fi
+}
+
+
+\begin{document}
+
+
+\FVDmodulecover
+
+
+
+% ============================================================
+% UITLEG BIJ DE MODULE — ALLEEN PDF
+% ============================================================
+
+\ifdefined\HCode
+  % HTML: niets
+\else
+  \input{../Hoe_werkt_module.tex}
+\fi
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% MODULE-OPENING
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\ifdefined\HCode
+  % Website: gebruik de gewone Ximera-titelpagina.
+  \maketitle
+\else
+  % PDF: gebruik de automatisch gegenereerde module-opening.
+  \IfFileExists{module-opening.generated.tex}{%
+    \input{module-opening.generated.tex}%
+  }{%
+    \PackageWarning{FVD}{Automatische module-opening ontbreekt}%
+    \maketitle
+  }%
+\fi
+
+
+\FVDpart{Logica — De taal van correct redeneren}
+
+\FVDthemeopening{../images/banners/thema1-logica.png}
+
+
+
+
+
+
+
+
+
+
+% BEGIN AUTO THEME OVERVIEW
+\begin{hoofdstukoverzicht}
+  \FVDthemechaptertile{1}{Wiskundige uitspraken}
+  \FVDthemechaptertile{2}{Uitspraken verbinden}
+  \FVDthemechaptertile{3}{Implicatie en equivalentie}
+\end{hoofdstukoverzicht}
+% END AUTO THEME OVERVIEW
+
+\begin{themaintro}{Waarom logica?}
+
+  In de wiskunde is een juist antwoord niet voldoende.
+  We willen ook weten \emph{waarom} een uitspraak waar is en of de redenering
+  die ernaartoe leidt werkelijk geldig is.
+  
+  Dat vraagt om een precieze taal. Woorden zoals \emph{en}, \emph{of},
+  \emph{als \ldots dan}, \emph{voor alle} en \emph{er bestaat} hebben in de
+  wiskunde een heel specifieke betekenis. Een kleine verandering in zo'n
+  formulering kan de betekenis van een uitspraak volledig veranderen.
+  
+  In dit thema bouwen we daarom de taal van de logica op.
+  We onderzoeken wanneer uitspraken waar of onwaar zijn en hoe samengestelde
+  uitspraken worden gevormd. We bestuderen implicaties en equivalenties,
+  leren werken met logische wetten en onderzoeken hoe kwantoren zoals
+  \(\forall\) en \(\exists\) de betekenis van een uitspraak bepalen.
+  
+  Maar logica gaat verder dan het correct gebruiken van symbolen.
+  Ze geeft ons gereedschap om redeneringen kritisch te onderzoeken.
+  Volgt een conclusie werkelijk uit de gegeven voorwaarden?
+  Is een omgekeerde uitspraak ook waar?
+  Hoe ontken je een wiskundige uitspraak correct?
+  En kan één tegenvoorbeeld voldoende zijn om een algemene bewering te
+  weerleggen?
+  
+  Daarmee leggen we tegelijk een fundament voor een van de belangrijkste
+  vaardigheden in de wiskunde: \emph{bewijzen}.
+  Doorheen de verdere cursus zullen we steeds opnieuw uitspraken formuleren,
+  redeneringen opbouwen, argumenten beoordelen en bewijzen ontwikkelen.
+  De logica uit dit thema vormt daarbij onze gemeenschappelijke taal.
+  
+  Ook buiten de wiskunde is die manier van denken belangrijk.
+  Logische structuren spelen een centrale rol in onder andere informatica,
+  algoritmen, digitale schakelingen, artificiële intelligentie en
+  wetenschappelijk onderzoek. Overal waar conclusies uit informatie worden
+  afgeleid, is de vraag dezelfde:
+  
+  \begin{center}
+  {\bfseries Volgt wat we besluiten werkelijk uit wat we weten?}
+  \end{center}
+  
+  \end{themaintro}
+
+  \FVDchapterpair
+  {Thema1-Logica/1-Wiskundige-uitspraken}
+  {Thema1-Logica/1-Wiskundige-uitspraken-oefeningen}
+
+\FVDchapterpair
+{Thema1-Logica/2-Uitspraken-verbinden}
+{Thema1-Logica/2-Uitspraken-verbinden-oefeningen}
+
+\FVDchapterpair
+{Thema1-Logica/3-Implicatie-equivalentie}
+{Thema1-Logica/3-Implicatie-equivalentie-oefeningen}
+
+% \FVDchapterpair
+%   {Thema1-Logica/Logische-wetten}
+%   {Thema1-Logica/Logische-wetten-oefeningen}
+
+% \FVDchapterpair
+%   {Thema1-Logica/Uitspraken-negeren}
+%   {Thema1-Logica/Uitspraken-negeren-oefeningen}
+
+% \FVDchapterpair
+%   {Thema1-Logica/Kwantoren}
+%   {Thema1-Logica/Kwantoren-oefeningen}
+
+% \FVDchapterpair
+%   {Thema1-Logica/Kwantoren-negeren-en-verwisselen}
+%   {Thema1-Logica/Kwantoren-negeren-en-verwisselen-oefeningen}
+
+% \FVDchapterpair
+%   {Thema1-Logica/Redeneringen-analyseren}
+%   {Thema1-Logica/Redeneringen-analyseren-oefeningen}
+
+% \FVDchapterpair
+%   {Thema1-Logica/Van-logica-naar-bewijs}
+%   {Thema1-Logica/Van-logica-naar-bewijs-oefeningen}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\FVDpart{Deelbaarheid en getaltheorie — Structuur in de gehele getallen}
+
+
+
+
+
+
+
+
+
+
+% BEGIN AUTO THEME OVERVIEW
+\begin{hoofdstukoverzicht}
+  \FVDthemeoverviewempty
+\end{hoofdstukoverzicht}
+% END AUTO THEME OVERVIEW
+
+\FVDpart{Algebraïsche structuren — Van concrete bewerkingen naar abstracte structuren}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
+% BEGIN AUTO THEME OVERVIEW
+\begin{hoofdstukoverzicht}
+  \FVDthemeoverviewempty
+\end{hoofdstukoverzicht}
+% END AUTO THEME OVERVIEW
