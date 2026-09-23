@@ -1,0 +1,304 @@
+\documentclass{xourse}
+
+
+\input{../../preamble.tex}
+\input{../../Opmaak.tex}
+\addPrintStyle{../..}
+  
+
+\fvdtitle{De digitale wereld begrijpen}
+\author{Ingmar Herreman}
+
+
+\begin{abstract}
+
+    In deze module bouwen we de wiskundige basis op die je nodig hebt voor de
+    rest van de cursus. We vertrekken van getallen en rekenvaardigheid en groeien
+    stap voor stap naar algebra, formules en eenvoudige wiskundige modellen.
+    
+    \\ \ \\
+    
+    We oefenen hoofdrekenen, negatieve getallen, kommagetallen, breuken,
+    procenten en verhoudingen. Daarna onderzoeken we machten, wortels en
+    wetenschappelijke notatie. Vanuit concrete berekeningen maken we vervolgens
+    de stap naar rekenen met letters en formules.
+    \\ \ \\
+    De wiskunde krijgt betekenis in toepassingen met onder andere pixels,
+    resoluties, beeldverhoudingen, coördinaten, schaalfactoren en andere
+    grootheden uit digitale creatie en technologie. Waar het zinvol is,
+    gebruiken we GeoGebra om verbanden te onderzoeken en zichtbaar te maken.
+    \\ \ \\
+    Een computer kan razendsnel rekenen, maar jij moet kunnen beoordelen of een
+    resultaat logisch is. Daarom leren we ook schatten, controleren, een geschikte
+    strategie kiezen en kritisch naar resultaten kijken.
+    
+    \begin{center}
+    \textbf{Het doel is niet alleen correct rekenen, maar wiskunde gebruiken om
+    verbanden te begrijpen, problemen op te lossen en de digitale wereld te
+    beschrijven.}
+    \end{center}
+      
+  \end{abstract}
+
+
+% ============================================================
+% MODULEGEGEVENS
+% ============================================================
+
+\def\fvdmodulenummer{1}
+\def\fvdmoduletitel{De digitale wereld begrijpen}
+\def\fvdmodulebeeld{../images/banners/digitale_wereld.png}
+\def\fvdschoolembleem{../images/banners/logo_athena.png}
+\def\fvdschoollogo{../images/banners/logo_athena.png}
+\renewcommand{\fvdschoolnaam}{Athena Pottelberg Kortrijk}
+\def\vaknaam{Wiskunde}
+
+\def\fvdklas{7 FVD}
+\def\fvdschooljaar{2026--2027}
+%\def\fvdmodulevariant{                             }
+%\def\fvdmodulesubtitel{}
+
+
+
+% ============================================================
+% THEORIE + BIJHORENDE OEFENINGEN
+%
+% HTML:
+%   theorie + oefeningen
+%
+% PDF:
+%   alleen theorie
+% ============================================================
+
+\newcommand{\FVDchapterpair}[2]{%
+  \ifdefined\HCode
+
+    % ONLINE: theorie
+    \activity{#1}%
+
+    % ONLINE: oefeningen, indien aanwezig
+    \if\relax\detokenize{#2}\relax
+    \else
+      \activity{#2}%
+    \fi
+
+  \else
+
+    % PDF: alleen theorie
+    \activity{#1}%
+
+  \fi
+}
+
+
+\begin{document}
+
+\FVDmodulecover
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% MODULE-OPENING
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\ifdefined\HCode
+  % Website: gebruik de gewone Ximera-titelpagina.
+  \maketitle
+\else
+  % PDF: gebruik de automatisch gegenereerde module-opening.
+  \IfFileExists{module-opening.generated.tex}{%
+    \input{module-opening.generated.tex}%
+  }{%
+    \PackageWarning{FVD}{Automatische module-opening ontbreekt}%
+    \maketitle
+  }%
+\fi
+
+
+\FVDpart{Rekenen in een digitale wereld}
+
+\FVDthemeopening{../images/banners/thema1-rekenen.png}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% BEGIN AUTO THEME OVERVIEW
+\begin{hoofdstukoverzicht}
+  \FVDthemechaptertile{1}{Getallen en hoofdrekenen}
+  \FVDthemechaptertile{2}{2 Breuken}
+  \FVDthemechaptertile{3}{3 Procenten}
+  \FVDthemechaptertile{4}{4 Verhoudingen}
+\end{hoofdstukoverzicht}
+% END AUTO THEME OVERVIEW
+
+\begin{themaintro}{\textbf{Rekenvaardigheden zijn niet overbodig}}
+
+  Computers voeren elke seconde enorme aantallen berekeningen uit. Games,
+  animaties, beelden en digitale modellen bestaan uiteindelijk uit getallen:
+  pixelafmetingen, kleurwaarden, coördinaten, tijdstappen, schaalfactoren,
+  snelheden en nog veel meer.
+  \\ \ \\
+  Maar een computer die kan rekenen, maakt rekenvaardigheid niet overbodig.
+  Integendeel. Wie met digitale technologie werkt, moet kunnen inschatten of
+  een resultaat logisch is, fouten herkennen en begrijpen welke berekening
+  achter een toepassing zit.
+  \\ \ \\
+  In dit thema bouwen we daarom een stevige rekenbasis op. We starten met
+  getallen en hoofdrekenen en ontwikkelen strategieën om berekeningen handig,
+  vlot en betrouwbaar uit te voeren. We leren schatten en controleren, zodat
+  we niet alleen een antwoord kunnen berekenen, maar ook kunnen beoordelen of
+  dat antwoord redelijk is.
+  \\ \ \\
+  Daarna onderzoeken we breuken, procenten en verhoudingen. Ze laten ons
+  dezelfde hoeveelheid op verschillende manieren beschrijven en zijn
+  onmisbaar bij onder andere schaalfactoren, beeldverhoudingen, resoluties en
+  relatieve veranderingen.
+  \\ \ \\
+  Ook machten, wortels en wetenschappelijke notatie krijgen een plaats.
+  Daarmee kunnen we zeer grote en zeer kleine getallen efficiënt voorstellen,
+  vergelijken en verwerken.
+  \\ \ \\
+  Geleidelijk maken we vervolgens de overgang van rekenen met concrete
+  getallen naar rekenen met letters en formules. Algebra maakt het mogelijk
+  om patronen en verbanden algemeen te beschrijven en vormt daarmee een brug
+  naar de wiskunde die later in de cursus aan bod komt.
+  \\ \ \\
+  Doorheen het thema verbinden we deze technieken met situaties uit de
+  digitale wereld. We rekenen met pixels, afmetingen, coördinaten,
+  schaalfactoren en andere grootheden die voorkomen in digitale creatie en
+  technologie.
+  \\ \ \\
+  Het doel is daarbij niet om zoveel mogelijk berekeningen uit het hoofd te
+  maken. We willen leren wanneer een berekening eenvoudig kan, welke strategie
+  efficiënt is, wanneer een digitaal hulpmiddel nuttig is en hoe we het
+  verkregen resultaat kritisch kunnen controleren.
+  \\ \ \\
+  Zo groeien getallen uit van iets waarmee we rekenen tot een taal waarmee we
+  de digitale wereld kunnen beschrijven en begrijpen.
+
+\end{themaintro}
+
+
+
+
+
+
+
+
+
+
+\FVDchapterpair{Thema1-Rekenen/1-Getallen}{}
+\FVDchapterpair{Thema1-Rekenen/2-Breuken}{}
+\FVDchapterpair{Thema1-Rekenen/3-Procenten}{}
+\FVDchapterpair{Thema1-Rekenen/4-Verhoudingen}{}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% THEMA 2
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\FVDpart{Machten, wortels en grootteorde}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% BEGIN AUTO THEME OVERVIEW
+\begin{hoofdstukoverzicht}
+  \FVDthemeoverviewempty
+\end{hoofdstukoverzicht}
+% END AUTO THEME OVERVIEW
+
+\FVDpart{Algebra als taal}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% BEGIN AUTO THEME OVERVIEW
+\begin{hoofdstukoverzicht}
+  \FVDthemeoverviewempty
+\end{hoofdstukoverzicht}
+% END AUTO THEME OVERVIEW
+
+\FVDpart{Wiskunde onderzoeken en toepassen}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
+
+% BEGIN AUTO THEME OVERVIEW
+\begin{hoofdstukoverzicht}
+  \FVDthemeoverviewempty
+\end{hoofdstukoverzicht}
+% END AUTO THEME OVERVIEW
