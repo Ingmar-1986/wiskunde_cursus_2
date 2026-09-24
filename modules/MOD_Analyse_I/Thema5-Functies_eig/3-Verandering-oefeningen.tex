@@ -1,0 +1,469 @@
+\documentclass{ximera}
+
+\input{../../../preamble.tex}
+\input{../../../Opmaak.tex}
+\addPrintStyle{../../..}
+
+\title{Oefeningen — Hoe verandert een functie?}
+\author{Ingmar Herreman}
+
+\begin{document}
+
+\fvdchapterdata{5}{Het gedrag van functies beschrijven}{3}
+
+\maketitle
+\FVDbeginExercises
+
+\begin{opmerking}
+De oefeningen met \(\blacklozenge\) zijn essentieel.
+Omdat het leerplandoel op niveau \emph{analyseren} staat,
+moet je veranderingen niet alleen herkennen maar ook verschillende
+voorstellingen verbinden en conclusies motiveren.
+\end{opmerking}
+
+
+% ============================================================
+% BASIS
+% ============================================================
+
+\FVDsection{Basis — verandering herkennen}
+
+\begin{oefening}[Gelijke stappen]{\oefB\ESS}
+
+Gegeven zijn drie tabellen.
+
+\[
+\begin{array}{c|ccccc}
+x&0&1&2&3&4\\ \hline
+f(x)&2&5&8&11&14
+\end{array}
+\]
+
+\[
+\begin{array}{c|ccccc}
+x&0&1&2&3&4\\ \hline
+g(x)&0&1&4&9&16
+\end{array}
+\]
+
+\[
+\begin{array}{c|ccccc}
+x&0&1&2&3&4\\ \hline
+h(x)&0&5&9&12&14
+\end{array}
+\]
+
+\begin{question}
+Bereken voor elke functie de opeenvolgende veranderingen.
+\begin{oplossing}
+Voor \(f\): \(+3,+3,+3,+3\).
+
+Voor \(g\): \(+1,+3,+5,+7\).
+
+Voor \(h\): \(+5,+4,+3,+2\).
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Classificeer de stijging.
+\begin{oplossing}
+\(f\): constante stijging.
+
+\(g\): toenemende stijging.
+
+\(h\): afnemende stijging.
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+\begin{oefening}[Drie manieren van dalen]{\oefB\ESS}
+
+Classificeer telkens de daling.
+
+\begin{question}
+\[
+\begin{array}{c|ccccc}
+x&0&1&2&3&4\\ \hline
+f(x)&12&10&8&6&4
+\end{array}
+\]
+
+\begin{oplossing}
+De veranderingen zijn \(-2,-2,-2,-2\).
+Dit is constante daling.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+\[
+\begin{array}{c|ccccc}
+x&0&1&2&3&4\\ \hline
+g(x)&20&19&16&11&4
+\end{array}
+\]
+
+\begin{oplossing}
+De veranderingen zijn \(-1,-3,-5,-7\).
+De daling wordt sterker: toenemende daling.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+\[
+\begin{array}{c|ccccc}
+x&0&1&2&3&4\\ \hline
+h(x)&20&14&10&8&7
+\end{array}
+\]
+
+\begin{oplossing}
+De veranderingen zijn \(-6,-4,-2,-1\).
+De functie daalt nog steeds, maar steeds minder sterk:
+afnemende daling.
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+\begin{oefening}[Taal correct gebruiken]{\oefB\ESS}
+
+Beoordeel de uitspraken.
+
+\begin{question}
+``Bij afnemende stijging daalt de functie.''
+\begin{oplossing}
+Fout. De functie stijgt nog steeds; alleen de stijging wordt minder sterk.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+``Bij toenemende daling worden de functiewaarden kleiner.''
+\begin{oplossing}
+Juist. Bovendien wordt de afname steeds sterker.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+``Een rechte met positieve richtingscoëfficiënt vertoont constante stijging.''
+\begin{oplossing}
+Juist.
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+\begin{oefening}[Grafieken herkennen]{\oefB\ESS}
+
+Koppel op \(x>0\) elk voorschrift aan de juiste beschrijving:
+
+\[
+f(x)=2x+1,\qquad
+g(x)=x^2,\qquad
+h(x)=\sqrt{x}.
+\]
+
+Kies uit:
+\begin{enumerate}
+  \item constante stijging;
+  \item toenemende stijging;
+  \item afnemende stijging.
+\end{enumerate}
+
+\begin{oplossing}
+\[
+f:\text{ constante stijging},
+\qquad
+g:\text{ toenemende stijging},
+\qquad
+h:\text{ afnemende stijging}.
+\]
+\end{oplossing}
+
+\end{oefening}
+
+
+% ============================================================
+% VERDIEPING
+% ============================================================
+
+\FVDsection{Verdieping — analyseren en verbinden}
+
+\begin{oefening}[Waarom moeten de stappen gelijk zijn?]{\oefU\ESS}
+
+Een leerling vergelijkt:
+
+\[
+f(2)-f(1)=3
+\]
+
+met
+
+\[
+f(8)-f(3)=7
+\]
+
+en besluit: ``De stijging neemt toe, want \(7>3\).''
+
+Analyseer de redenering.
+
+\begin{oplossing}
+De conclusie is niet verantwoord.
+De eerste verandering hoort bij een stap van \(1\) in \(x\),
+de tweede bij een stap van \(5\).
+Om de verandering rechtstreeks te vergelijken, moeten we gelijke
+stappen in de invoer gebruiken of de verandering per eenheid vergelijken.
+\end{oplossing}
+
+\end{oefening}
+
+
+\begin{oefening}[Van beschrijving naar schets]{\oefU\ESS}
+
+Schets een mogelijke grafiek die:
+\begin{itemize}
+  \item voor \(x<0\) toenemend stijgt;
+  \item voor \(0<x<3\) afnemend stijgt;
+  \item voor \(x>3\) toenemend daalt.
+\end{itemize}
+
+\begin{question}
+Wat moet er rond \(x=3\) met het gewone verloop gebeuren?
+\begin{oplossing}
+De functie gaat van stijgend naar dalend.
+Daar ontstaat dus een lokaal maximum.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Is de grafiek uniek bepaald?
+\begin{oplossing}
+Nee. De kenmerken leggen het kwalitatieve gedrag vast,
+maar niet alle functiewaarden of de exacte vorm.
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+\begin{oefening}[Opwarming analyseren]{\oefU\ESS}
+
+De temperatuur van een voorwerp wordt om de minuut gemeten:
+
+\[
+\begin{array}{c|rrrrrr}
+t\text{ (min)}&0&1&2&3&4&5\\ \hline
+T\text{ (}^{\circ}\mathrm C\text{)}&20&38&51&60&66&70
+\end{array}
+\]
+
+\begin{question}
+Toon met de tabel aan dat de temperatuur stijgt.
+\begin{oplossing}
+Elke volgende temperatuur is groter dan de vorige.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Classificeer de stijging.
+\begin{oplossing}
+De toenames zijn
+\[
++18,\ +13,\ +9,\ +6,\ +4.
+\]
+Ze worden kleiner. Er is dus afnemende stijging.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Interpreteer dit in de context.
+\begin{oplossing}
+Het voorwerp wordt nog steeds warmer, maar de temperatuur neemt per minuut
+steeds minder toe. De opwarming vertraagt.
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+\begin{oefening}[Afstand en beweging]{\oefU\ESS}
+
+Voor een voertuig wordt gemeten:
+
+\[
+\begin{array}{c|rrrrrr}
+t\text{ (s)}&0&1&2&3&4&5\\ \hline
+s\text{ (m)}&0&3&8&15&24&35
+\end{array}
+\]
+
+\begin{question}
+Bereken de afstandstoenames per seconde.
+\begin{oplossing}
+\[
+3,\ 5,\ 7,\ 9,\ 11\text{ m}.
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Wat kun je besluiten over \(s(t)\)?
+\begin{oplossing}
+De afstand stijgt en de stijging neemt toe.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Wat betekent dit kwalitatief voor de beweging?
+\begin{oplossing}
+Per seconde wordt meer afstand afgelegd dan in de vorige seconde.
+Het voertuig beweegt dus steeds sneller in de beschouwde meetgegevens.
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+
+\begin{oefening}[Vind de begripsfout]{\oefU\ESS}
+
+Een leerling bekijkt een grafiek die stijgt maar steeds vlakker wordt en zegt:
+
+``De functie begint te dalen, want de stijging neemt af.''
+
+Leg precies uit wat fout is.
+
+\begin{oplossing}
+De leerling verwart de functiewaarden met de verandering ervan.
+De functiewaarden nemen nog steeds toe, dus de functie stijgt.
+Alleen de hoeveelheid waarmee ze toenemen wordt kleiner.
+Dat is afnemende stijging, niet daling.
+\end{oplossing}
+
+\end{oefening}
+
+
+\begin{oefening}[Vier situaties vergelijken]{\oefU\ESS}
+
+Geef voor elke beschrijving aan welke situatie bedoeld wordt.
+
+\begin{enumerate}
+  \item De functiewaarden nemen toe en de grafiek wordt steiler.
+  \item De functiewaarden nemen af en de grafiek vlakt af.
+  \item De functiewaarden nemen toe en de grafiek vlakt af.
+  \item De functiewaarden nemen af en de grafiek wordt steiler.
+\end{enumerate}
+
+\begin{oplossing}
+\begin{enumerate}
+  \item toenemende stijging;
+  \item afnemende daling;
+  \item afnemende stijging;
+  \item toenemende daling.
+\end{enumerate}
+\end{oplossing}
+
+\end{oefening}
+
+
+% ============================================================
+% GEVORDERD
+% ============================================================
+
+\FVDsection{Gevorderd — onderzoeken en modelleren}
+
+\begin{oefening}[Eén functie, verschillende regimes]{\oefG}
+
+Een functie heeft achtereenvolgens:
+\[
+\text{toenemende stijging}
+\longrightarrow
+\text{afnemende stijging}
+\longrightarrow
+\text{afnemende daling}
+\longrightarrow
+\text{toenemende daling}.
+\]
+
+Maak een kwalitatieve schets en duid aan:
+\begin{itemize}
+  \item waar een lokaal extremum noodzakelijk ontstaat;
+  \item waar het soort stijging/daling verandert zonder dat een extremum nodig is.
+\end{itemize}
+
+\begin{oplossing}
+Tussen afnemende stijging en afnemende daling verandert de functie van stijgend
+naar dalend; daar is een lokaal maximum noodzakelijk.
+
+Tussen toenemende en afnemende stijging kan de functie aan beide kanten blijven stijgen.
+Daar hoeft dus geen extremum te liggen. Hetzelfde geldt voor een verandering
+tussen twee soorten daling.
+\end{oplossing}
+
+\end{oefening}
+
+
+\begin{oefening}[Welke tabel past?]{\oefG}
+
+Ontwerp zelf drie tabellen met \(x=0,1,2,3,4,5\):
+\begin{enumerate}
+  \item één met toenemende stijging;
+  \item één met afnemende stijging;
+  \item één met afnemende daling.
+\end{enumerate}
+
+Zorg ervoor dat de functiewaarden niet eenvoudigweg afkomstig zijn van de
+standaardvoorbeelden \(x\), \(x^2\) of \(\sqrt{x}\).
+Motiveer telkens met de opeenvolgende verschillen.
+
+\begin{oplossing}
+Meerdere antwoorden zijn mogelijk. Essentieel is dat de verschillen bij gelijke
+stappen respectievelijk positieve en groter wordende, positieve en kleiner wordende,
+en negatieve maar in absolute waarde kleiner wordende waarden hebben.
+\end{oplossing}
+
+\end{oefening}
+
+
+\begin{oefening}[GeoGebra: functies vergelijken]{\oefG}
+
+Onderzoek op \(x\geq0\):
+
+\[
+f(x)=x,\qquad
+g(x)=x^2,\qquad
+h(x)=\sqrt{x}.
+\]
+
+Maak in GeoGebra naast de grafieken ook een tabel voor
+\(x=0,1,2,3,4,5\).
+
+\begin{enumerate}
+  \item Classificeer de stijging van elke functie.
+  \item Onderbouw elke conclusie zowel grafisch als numeriek.
+  \item Onderzoek vervolgens \(-f(x)\), \(-g(x)\) en \(-h(x)\).
+  \item Formuleer wat de spiegeling in de \(x\)-as doet met
+        stijgen/dalen en met toenemend/afnemend veranderen.
+\end{enumerate}
+
+\begin{oplossing}
+\(f\) heeft constante stijging, \(g\) toenemende stijging en \(h\)
+afnemende stijging op het beschouwde gebied.
+
+Spiegeling in de \(x\)-as maakt de functiewaarden tegengesteld:
+constante stijging wordt constante daling,
+toenemende stijging wordt toenemende daling,
+en afnemende stijging wordt afnemende daling.
+\end{oplossing}
+
+\end{oefening}
+
+
+% ============================================================
+% MINIMUM
+% ============================================================
+
+
+\end{document}

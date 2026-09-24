@@ -1,0 +1,359 @@
+\documentclass{ximera}
+\input{../../../preamble.tex}
+\input{../../../Opmaak.tex}
+\addPrintStyle{../../..}
+
+\title{Oefeningen — Periodieke functies en amplitude}
+\author{Ingmar Herreman}
+
+\begin{document}
+
+\fvdchapterdata{5}{Het gedrag van functies beschrijven}{5}
+
+\maketitle
+\FVDbeginExercises
+
+\begin{opmerking}
+De oefeningen met \(\blacklozenge\) zijn essentieel. Het leerplandoel vraagt
+\emph{analyseren}: je moet periode en amplitude niet alleen berekenen, maar ook
+afleiden, voorstellingen verbinden en in context interpreteren.
+\end{opmerking}
+
+\FVDsection{Basis — periode en amplitude bepalen}
+
+\begin{oefening}[Herhaling herkennen]{\oefB\ESS}
+Een functie heeft maxima bij
+\[
+x=-5,\,-1,\,3,\,7,\,11
+\]
+en de tussenliggende grafiekdelen herhalen telkens hetzelfde patroon.
+
+\begin{question}
+Bepaal de periode.
+\begin{oplossing}
+De afstand tussen opeenvolgende overeenkomstige maxima is telkens \(4\).
+Dus
+\[
+T=4.
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Is \(8\) ook een periode?
+\begin{oplossing}
+Ja. Na twee volledige periodes is de grafiek opnieuw dezelfde.
+De fundamentele periode is echter \(4\).
+\end{oplossing}
+\end{question}
+\end{oefening}
+
+\begin{oefening}[Maximum, minimum en amplitude]{\oefB\ESS}
+Een periodieke functie heeft
+\[
+M=13,\qquad m=5.
+\]
+
+\begin{question}
+Bepaal de amplitude.
+\begin{oplossing}
+\[
+A=\frac{13-5}{2}=4.
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Bepaal de middenwaarde.
+\begin{oplossing}
+\[
+d=\frac{13+5}{2}=9.
+\]
+De middenlijn is \(y=9\).
+\end{oplossing}
+\end{question}
+\end{oefening}
+
+\begin{oefening}[Functiewaarden reconstrueren]{\oefB\ESS}
+Een functie \(f\) heeft periode \(6\) en
+\[
+f(1)=3,\qquad f(4)=-2.
+\]
+
+Bepaal:
+\[
+f(7),\quad f(13),\quad f(-5),\quad f(10).
+\]
+
+\begin{oplossing}
+Omdat verschuiven over \(6\) de functiewaarde niet verandert:
+\[
+f(7)=3,\qquad f(13)=3,\qquad f(-5)=3,\qquad f(10)=f(4)=-2.
+\]
+\end{oplossing}
+\end{oefening}
+
+\begin{oefening}[Horizontaal of verticaal?]{\oefB\ESS}
+Vul aan met \emph{periode} of \emph{amplitude}.
+
+\begin{question}
+De horizontale lengte van één volledige herhaling.
+\begin{oplossing}
+Periode.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+De maximale verticale uitwijking ten opzichte van de middenlijn.
+\begin{oplossing}
+Amplitude.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Eenheid bij een tijdgrafiek: seconden.
+\begin{oplossing}
+Dat kan de eenheid van de periode zijn.
+\end{oplossing}
+\end{question}
+\end{oefening}
+
+\FVDsection{Verdieping — analyseren en interpreteren}
+
+\begin{oefening}[Is dit werkelijk één periode?]{\oefU\ESS}
+Een leerling ziet twee opeenvolgende nulpunten van een golvende grafiek op
+\(x=2\) en \(x=5\) en besluit:
+\[
+T=3.
+\]
+
+Leg uit waarom deze conclusie zonder extra informatie niet gerechtvaardigd is.
+
+\begin{oplossing}
+Opeenvolgende nulpunten hoeven geen overeenkomstige punten in het patroon te zijn.
+De grafiek kan bij het ene nulpunt stijgend en bij het andere dalend door de as gaan.
+Voor de periode moeten we punten vergelijken die dezelfde plaats en richting
+binnen het herhalende patroon hebben, bijvoorbeeld twee opeenvolgende maxima.
+\end{oplossing}
+\end{oefening}
+
+\begin{oefening}[Van één cyclus naar de grafiek]{\oefU\ESS}
+Een periodieke functie heeft periode \(4\). Op \(0\leq x\leq4\) geldt:
+\[
+f(0)=1,\quad f(1)=4,\quad f(2)=1,\quad f(3)=-2,\quad f(4)=1.
+\]
+
+\begin{question}
+Bepaal de amplitude en middenwaarde.
+\begin{oplossing}
+\[
+M=4,\qquad m=-2.
+\]
+Dus
+\[
+A=\frac{4-(-2)}2=3,
+\qquad
+d=\frac{4+(-2)}2=1.
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Bepaal \(f(5)\), \(f(6)\), \(f(7)\) en \(f(8)\).
+\begin{oplossing}
+Door de periode \(4\):
+\[
+f(5)=4,\quad f(6)=1,\quad f(7)=-2,\quad f(8)=1.
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Schets minstens drie periodes van een mogelijke vloeiende grafiek.
+\begin{oplossing}
+De schets moet het gegeven patroon om de \(4\) eenheden exact herhalen.
+Meerdere vloeiende grafieken zijn mogelijk omdat slechts enkele punten zijn gegeven.
+\end{oplossing}
+\end{question}
+\end{oefening}
+
+\begin{oefening}[Sensorsignaal]{\oefU\ESS}
+Een periodiek sensorsignaal varieert tussen \(0{,}8\) V en \(5{,}2\) V.
+Eenzelfde piek keert terug na \(0{,}040\) s.
+
+\begin{question}
+Bepaal de periode.
+\begin{oplossing}
+\[
+T=0{,}040\ \mathrm{s}.
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Bepaal amplitude en middenwaarde.
+\begin{oplossing}
+\[
+A=\frac{5{,}2-0{,}8}{2}=2{,}2\ \mathrm V,
+\]
+en
+\[
+d=\frac{5{,}2+0{,}8}{2}=3{,}0\ \mathrm V.
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Interpreteer beide kenmerken.
+\begin{oplossing}
+Het signaalpatroon herhaalt zich om de \(0{,}040\) s.
+De spanning wijkt maximaal \(2{,}2\) V af van de middenwaarde \(3{,}0\) V.
+\end{oplossing}
+\end{question}
+\end{oefening}
+
+\begin{oefening}[Draaiend wiel]{\oefU\ESS}
+Een punt op een wiel bereikt een maximale hoogte van \(2{,}6\) m en een minimale
+hoogte van \(1{,}0\) m. Het wiel maakt één volledige omwenteling in \(3\) s.
+
+\begin{question}
+Bepaal de amplitude van de hoogtefunctie.
+\begin{oplossing}
+\[
+A=\frac{2{,}6-1{,}0}{2}=0{,}8\ \mathrm m.
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Bepaal de middenwaarde en interpreteer ze.
+\begin{oplossing}
+\[
+d=\frac{2{,}6+1{,}0}{2}=1{,}8\ \mathrm m.
+\]
+Dit is de hoogte van het middelpunt van het wiel.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Bepaal de periode en interpreteer ze.
+\begin{oplossing}
+\[
+T=3\ \mathrm s.
+\]
+Na \(3\) seconden heeft het punt opnieuw dezelfde plaats in de cyclus.
+\end{oplossing}
+\end{question}
+\end{oefening}
+
+\begin{oefening}[Foutenanalyse]{\oefU\ESS}
+Een grafiek oscilleert tussen \(y=-3\) en \(y=7\).
+Een leerling zegt:
+``De amplitude is \(10\), want \(7-(-3)=10\).''
+
+Analyseer de fout.
+
+\begin{oplossing}
+\(10\) is de totale verticale afstand tussen minimum en maximum.
+De amplitude is de helft daarvan:
+\[
+A=\frac{7-(-3)}2=5.
+\]
+De middenwaarde is
+\[
+d=\frac{7+(-3)}2=2.
+\]
+\end{oplossing}
+\end{oefening}
+
+\begin{oefening}[Zelfde amplitude, andere periode]{\oefU\ESS}
+Twee periodieke functies hebben beide maximum \(5\) en minimum \(-1\).
+De eerste heeft periode \(4\), de tweede periode \(10\).
+
+\begin{question}
+Vergelijk hun amplitudes.
+\begin{oplossing}
+Beide hebben
+\[
+A=\frac{5-(-1)}2=3.
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Kun je besluiten dat hun grafieken gelijk zijn?
+\begin{oplossing}
+Nee. Ze hebben al een verschillende periode. Bovendien bepalen periode,
+maximum en minimum de precieze vorm van een periodieke grafiek niet volledig.
+\end{oplossing}
+\end{question}
+\end{oefening}
+
+\FVDsection{Gevorderd — onderzoeken en redeneren}
+
+\begin{oefening}[Hoeveel informatie is genoeg?]{\oefG}
+Van een periodieke functie weet je:
+\[
+T=6,\qquad A=2,\qquad d=1.
+\]
+
+Is daarmee de grafiek uniek bepaald? Motiveer en teken twee verschillende
+mogelijke grafieken die aan de gegevens voldoen.
+
+\begin{oplossing}
+Nee. De gegevens bepalen de horizontale herhalingslengte en de verticale schaal,
+maar niet de vorm binnen één periode. Er zijn dus meerdere periodieke grafieken
+mogelijk met dezelfde \(T\), \(A\) en \(d\).
+\end{oplossing}
+\end{oefening}
+
+\begin{oefening}[Een verborgen kleinere periode]{\oefG}
+Een leerling toont aan dat
+\[
+f(x+12)=f(x)
+\]
+voor alle \(x\) en concludeert dat de fundamentele periode \(12\) is.
+
+Welke extra vraag moet nog onderzocht worden?
+
+\begin{oplossing}
+Er moet worden nagegaan of er een kleinere positieve waarde \(T<12\) bestaat
+waarvoor eveneens
+\[
+f(x+T)=f(x)
+\]
+voor alle toegelaten \(x\). De gegeven gelijkheid toont alleen dat \(12\)
+een periode is, niet noodzakelijk de kleinste positieve periode.
+\end{oplossing}
+\end{oefening}
+
+\begin{oefening}[GeoGebra: periode versus amplitude]{\oefG}
+Onderzoek:
+\[
+f(x)=\cos x,\qquad
+g(x)=3\cos x,\qquad
+h(x)=\cos(2x).
+\]
+
+\begin{enumerate}
+  \item Bepaal grafisch periode en amplitude.
+  \item Vergelijk \(f\) met \(g\): welk kenmerk verandert?
+  \item Vergelijk \(f\) met \(h\): welk kenmerk verandert?
+  \item Formuleer een vermoeden over de rol van de factor vóór de functie
+        en de factor bij \(x\).
+\end{enumerate}
+
+\begin{oplossing}
+\(f\) heeft amplitude \(1\) en periode \(2\pi\).
+\(g\) heeft amplitude \(3\) en dezelfde periode \(2\pi\).
+\(h\) heeft amplitude \(1\) en periode \(\pi\).
+
+De factor vóór de cosinus verandert hier de verticale uitwijking.
+De factor bij \(x\) verandert hier de horizontale herhaling.
+De algemene transformatietheorie wordt later systematisch behandeld.
+\end{oplossing}
+\end{oefening}
+
+
+
+\end{document}

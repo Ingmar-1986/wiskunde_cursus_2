@@ -1,45 +1,59 @@
 \documentclass{ximera}
 
 \input{../../../preamble.tex}
+
 \input{../../../Opmaak.tex}
+
 \addPrintStyle{../../..}
 
 \title{Snelheid en versnelling}
+
 \author{Ingmar Herreman}
 
 \begin{abstract}
+
 In het vorige hoofdstuk leerden we een beweging beschrijven met een
+
 referentiestelsel, een positie, een tabel, een grafiek en een
+
 plaatsfunctie $x(t)$.
 
 In dit hoofdstuk stellen we twee nieuwe vragen:
+
 \emph{hoe snel verandert de positie?} en
+
 \emph{hoe snel verandert de snelheid?}
 
 We bouwen de begrippen gemiddelde en ogenblikkelijke snelheid en
+
 versnelling zorgvuldig op. Daarbij verbinden we de fysica rechtstreeks
+
 met de wiskunde: een ogenblikkelijke snelheid ontstaat als limiet van
+
 gemiddelde snelheden en wordt berekend met een afgeleide. Op dezelfde
+
 manier is de versnelling de afgeleide van de snelheidsfunctie.
 
 Daarna keren we de redenering om. Met bepaalde integralen bepalen we
+
 uit een snelheidsfunctie de verplaatsing en uit een versnellingsfunctie
+
 de verandering van de snelheid. Zo ontstaat één samenhangend netwerk:
 
-\[
-x(t)
-\longleftrightarrow
-v(t)
-\longleftrightarrow
-a(t).
-\]
+\[x(t) \longleftrightarrow v(t) \longleftrightarrow a(t).\]
 
 Ten slotte passen we deze ideeën toe op de eenparige rechtlijnige
+
 beweging en de eenparig versnelde rechtlijnige beweging. Daarbij
+
 gebruiken we drie complementaire methoden: bewegingsvergelijkingen,
+
 de praktische oppervlaktemethode in $v(t)$- en $a(t)$-diagrammen en
+
 bepaalde integralen. Grafieken, functievoorschriften, probleemoplossing
+
 en experimentele gegevens worden voortdurend met elkaar verbonden.
+
 \end{abstract}
 
 \begin{document}
@@ -54,292 +68,322 @@ en experimentele gegevens worden voortdurend met elkaar verbonden.
 
 \maketitle
 
-
 % ============================================================
+
 % VOORKENNIS EN LEERDOELEN
+
 % ============================================================
 
 \begin{voorkennis}
-  \item Je kan een beweging beschrijven met een positie $x(t)$.
-  \item Je kan afgelegde weg en verplaatsing van elkaar onderscheiden.
-  \item Je kan informatie aflezen uit een $x(t)$-grafiek.
-  \item Je kent het differentiequotiënt en de betekenis van de limiet in een punt.
-  \item Je kan eenvoudige veeltermfuncties afleiden.
-  \item Je kent de basisbetekenis van een bepaalde integraal als georiënteerde oppervlakte.
-  \item Je kan eenvoudige bepaalde integralen van veeltermfuncties berekenen.
-  \item Je kan werken met een gekozen positieve richting en met positieve en negatieve grootheden.
+
+ \item Je kan een beweging beschrijven met een positie $x(t)$.
+
+ \item Je kan afgelegde weg en verplaatsing van elkaar onderscheiden.
+
+ \item Je kan informatie aflezen uit een $x(t)$-grafiek.
+
+ \item Je kent het differentiequotiënt en de betekenis van de limiet in een punt.
+
+ \item Je kan eenvoudige veeltermfuncties afleiden.
+
+ \item Je kent de basisbetekenis van een bepaalde integraal als georiënteerde oppervlakte.
+
+ \item Je kan eenvoudige bepaalde integralen van veeltermfuncties berekenen.
+
+ \item Je kan werken met een gekozen positieve richting en met positieve en negatieve grootheden.
+
 \end{voorkennis}
 
 \begin{leerdoelen}
-  \item Je kan gemiddelde snelheid en gemiddelde versnelling berekenen en fysisch interpreteren.
-  \item Je kan uitleggen waarom een gemiddelde snelheid niet noodzakelijk het rekenkundig gemiddelde van enkele snelheidswaarden is.
-  \item Je kan ogenblikkelijke snelheid en versnelling interpreteren als limieten van gemiddelde waarden.
-  \item Je kan de snelheidsfunctie bepalen als afgeleide van de plaatsfunctie.
-  \item Je kan de versnellingsfunctie bepalen als afgeleide van de snelheidsfunctie en als tweede afgeleide van de plaatsfunctie.
-  \item Je kan grafieken van $x(t)$, $v(t)$ en $a(t)$ onderling verbinden en analyseren.
-  \item Je kan het teken van snelheid en versnelling correct interpreteren.
-  \item Je kan uit een snelheidsfunctie de verplaatsing bepalen met een bepaalde integraal.
-  \item Je kan uit een versnellingsfunctie het snelheidsverschil bepalen met een bepaalde integraal.
-  \item Je kan verplaatsing praktisch bepalen als georiënteerde oppervlakte onder een $v(t)$-grafiek met rechthoeken, driehoeken en trapezia.
-  \item Je kan snelheidsverschil praktisch bepalen als georiënteerde oppervlakte onder een $a(t)$-grafiek.
-  \item Je kan bij een gegeven beweging doelgericht kiezen tussen oppervlaktemethode, bepaalde integraal en bewegingsvergelijkingen.
-  \item Je kan de eenparige rechtlijnige beweging herkennen als het bijzondere geval $a=0$.
-  \item Je kan de eenparig versnelde rechtlijnige beweging analyseren met grafieken, functies en bewegingsvergelijkingen.
-  \item Je kan problemen met constante versnelling systematisch mathematiseren en oplossen.
-  \item Je kan experimentele gegevens van een rechtlijnige beweging verwerken en beoordelen.
+
+ \item Je kan gemiddelde snelheid en gemiddelde versnelling berekenen en fysisch interpreteren.
+
+ \item Je kan uitleggen waarom een gemiddelde snelheid niet noodzakelijk het rekenkundig gemiddelde van enkele snelheidswaarden is.
+
+ \item Je kan ogenblikkelijke snelheid en versnelling interpreteren als limieten van gemiddelde waarden.
+
+ \item Je kan de snelheidsfunctie bepalen als afgeleide van de plaatsfunctie.
+
+ \item Je kan de versnellingsfunctie bepalen als afgeleide van de snelheidsfunctie en als tweede afgeleide van de plaatsfunctie.
+
+ \item Je kan grafieken van $x(t)$, $v(t)$ en $a(t)$ onderling verbinden en analyseren.
+
+ \item Je kan het teken van snelheid en versnelling correct interpreteren.
+
+ \item Je kan uit een snelheidsfunctie de verplaatsing bepalen met een bepaalde integraal.
+
+ \item Je kan uit een versnellingsfunctie het snelheidsverschil bepalen met een bepaalde integraal.
+
+ \item Je kan verplaatsing praktisch bepalen als georiënteerde oppervlakte onder een $v(t)$-grafiek met rechthoeken, driehoeken en trapezia.
+
+ \item Je kan snelheidsverschil praktisch bepalen als georiënteerde oppervlakte onder een $a(t)$-grafiek.
+
+ \item Je kan bij een gegeven beweging doelgericht kiezen tussen oppervlaktemethode, bepaalde integraal en bewegingsvergelijkingen.
+
+ \item Je kan de eenparige rechtlijnige beweging herkennen als het bijzondere geval $a=0$.
+
+ \item Je kan de eenparig versnelde rechtlijnige beweging analyseren met grafieken, functies en bewegingsvergelijkingen.
+
+ \item Je kan problemen met constante versnelling systematisch mathematiseren en oplossen.
+
+ \item Je kan experimentele gegevens van een rechtlijnige beweging verwerken en beoordelen.
+
 \end{leerdoelen}
 
-
 % ============================================================
+
 % 1 WAAROM?
+
 % ============================================================
 
 \FVDsection{Waarom leer je dit?}
 
 In het vorige hoofdstuk konden we beschrijven \emph{waar} een voorwerp
+
 zich bevindt. Dat is nog niet voldoende om twee bewegingen met elkaar
+
 te vergelijken.
 
 Twee auto's kunnen op hetzelfde punt vertrekken en na $200\,\mathrm{m}$
+
 op dezelfde plaats aankomen. Toch kan de ene auto daar $10\,\mathrm{s}$
+
 over doen en de andere $25\,\mathrm{s}$.
 
 We hebben dus een grootheid nodig die beschrijft hoe snel de positie
+
 verandert.
 
 Die grootheid is de \textbf{snelheid}.
 
 Maar ook snelheid kan veranderen. Een trein die een station verlaat,
+
 een auto die remt en een vallend voorwerp hebben geen constante
+
 snelheid.
 
 Daarom hebben we nog een tweede grootheid nodig: de
+
 \textbf{versnelling}.
 
 In dit hoofdstuk bouwen we deze begrippen niet op als losse formules.
+
 We vertrekken telkens van een verandering:
 
-\[
-\boxed{
-\text{positie}
-\xrightarrow{\text{verandering per tijd}}
-\text{snelheid}
-\xrightarrow{\text{verandering per tijd}}
-\text{versnelling}
-}
-\]
+\[\boxed{ \text{positie} \xrightarrow{\text{verandering per tijd}} \text{snelheid} \xrightarrow{\text{verandering per tijd}} \text{versnelling} }\]
 
 en verbinden die fysische redenering met afgeleiden, limieten,
+
 grafieken en integralen.
 
-
 % ============================================================
+
 % 2 GEMIDDELDE SNELHEID
+
 % ============================================================
 
 \FVDsection{Gemiddelde snelheid}
 
 Beschouw een rechtlijnige beweging. Op tijdstip $t_1$ bevindt een
+
 voorwerp zich op positie $x(t_1)$ en op tijdstip $t_2$ op positie
+
 $x(t_2)$.
 
 De verplaatsing tijdens dit tijdsinterval is
 
-\[
-\Delta x=x(t_2)-x(t_1)
-\]
+\[\Delta x=x(t_2)-x(t_1)\]
 
 en het tijdsinterval is
 
-\[
-\Delta t=t_2-t_1.
-\]
+\[\Delta t=t_2-t_1.\]
 
 \begin{definitie}[Gemiddelde snelheid]
 
 De \textbf{gemiddelde snelheid} tijdens het tijdsinterval
+
 $[t_1,t_2]$ is
 
-\[
-\boxed{
-v_{\mathrm{gem}}
-=
-\frac{\Delta x}{\Delta t}
-=
-\frac{x(t_2)-x(t_1)}{t_2-t_1}.
-}
-\]
+\[\boxed{ v_{\mathrm{gem}} = \frac{\Delta x}{\Delta t} = \frac{x(t_2)-x(t_1)}{t_2-t_1}. }\]
 
 De SI-eenheid is
 
-\[
-[v]=\mathrm{m/s}.
-\]
+\[[v]=\mathrm{m/s}.\]
 
 \end{definitie}
 
 De gemiddelde snelheid gebruikt de \emph{verplaatsing} en niet
+
 noodzakelijk de volledige afgelegde weg.
 
 Daarom kan een gemiddelde snelheid positief, nul of negatief zijn.
-
 
 \FVDsubsection{Grafische betekenis}
 
 In een $x(t)$-diagram liggen de punten
 
-\[
-P_1=(t_1,x(t_1))
-\qquad\text{en}\qquad
-P_2=(t_2,x(t_2)).
-\]
+\[P_1=(t_1,x(t_1)) \qquad\text{en}\qquad P_2=(t_2,x(t_2)).\]
 
 De richtingscoëfficiënt van de rechte door $P_1$ en $P_2$ is
 
-\[
-\frac{x(t_2)-x(t_1)}{t_2-t_1}.
-\]
+\[\frac{x(t_2)-x(t_1)}{t_2-t_1}.\]
 
 Dat is precies de gemiddelde snelheid.
 
 \begin{eigenschap}[Gemiddelde snelheid en secant]
 
 In een positie-tijddiagram is de gemiddelde snelheid over een
+
 tijdsinterval gelijk aan de richtingscoëfficiënt van de
+
 \textbf{secant} door de twee bijbehorende punten van de grafiek.
 
 \end{eigenschap}
-
 
 \begin{voorbeeld}[Een versnellende auto]
 
 De positie van een auto wordt beschreven door
 
-\[
-x(t)=0,60t^2,
-\]
+\[x(t)=0,60t^2,\]
 
 met $x$ in meter en $t$ in seconde.
 
 We bepalen de gemiddelde snelheid tussen $t=10\,\mathrm{s}$ en
+
 $t=20\,\mathrm{s}$.
 
-\[
-x(10)=60\,\mathrm{m},
-\qquad
-x(20)=240\,\mathrm{m}.
-\]
+\[x(10)=60\,\mathrm{m}, \qquad x(20)=240\,\mathrm{m}.\]
 
 Dus
 
-\[
-v_{\mathrm{gem}}
-=
-\frac{240-60}{20-10}
-=
-18\,\mathrm{m/s}.
-\]
+\[v_{\mathrm{gem}} = \frac{240-60}{20-10} = 18\,\mathrm{m/s}.\]
 
 De auto had tijdens dat interval niet voortdurend een snelheid van
+
 $18\,\mathrm{m/s}$. Deze waarde beschrijft de gemiddelde verandering
+
 van de positie per seconde over het volledige interval.
 
 \end{voorbeeld}
 
-
 \FVDsubsection{Een belangrijke misconceptie}
 
 Een gemiddelde snelheid is in het algemeen \textbf{niet} het
+
 rekenkundig gemiddelde van enkele gemeten snelheidswaarden.
 
 \begin{voorbeeld}[Twee gelijke afstanden]
 
 Een fietser legt eerst $5,0\,\mathrm{km}$ af aan
+
 $10\,\mathrm{km/h}$ en daarna nog eens $5,0\,\mathrm{km}$ aan
+
 $20\,\mathrm{km/h}$.
 
 De totale afstand is
 
-\[
-10,0\,\mathrm{km}.
-\]
+\[10,0\,\mathrm{km}.\]
 
 Voor het eerste deel heeft hij nodig:
 
-\[
-\Delta t_1=\frac{5,0}{10}=0,50\,\mathrm{h}.
-\]
+\[\Delta t_1=\frac{5,0}{10}=0,50\,\mathrm{h}.\]
 
 Voor het tweede deel:
 
-\[
-\Delta t_2=\frac{5,0}{20}=0,25\,\mathrm{h}.
-\]
+\[\Delta t_2=\frac{5,0}{20}=0,25\,\mathrm{h}.\]
 
 Dus
 
-\[
-v_{\mathrm{gem}}
-=
-\frac{10,0}{0,75}
-\approx
-13,3\,\mathrm{km/h}.
-\]
+\[v_{\mathrm{gem}} = \frac{10,0}{0,75} \approx 13,3\,\mathrm{km/h}.\]
 
 Dit is niet gelijk aan
 
-\[
-\frac{10+20}{2}=15\,\mathrm{km/h}.
-\]
+\[\frac{10+20}{2}=15\,\mathrm{km/h}.\]
 
 \end{voorbeeld}
-
 
 \begin{oefening}[Gemiddelde snelheid]{\oefB\ESS}
 
 Een voorwerp beweegt langs een rechte lijn volgens
 
-\[
-x(t)=2,0-4,6t+1,1t^2,
-\]
+\[x(t)=2,0-4,6t+1,1t^2,\]
 
 met $x$ in meter en $t$ in seconde.
 
 \begin{question}
+
 Bereken $x(1,0)$ en $x(3,0)$.
+
+\begin{oplossing}
+\[x(1,0)=2,0-4,6+1,1=-1,5\,\mathrm{m}.\]
+\[x(3,0)=2,0-4,6\cdot3,0+1,1\cdot3,0^2=-1,9\,\mathrm{m}.\]
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Bereken de gemiddelde snelheid over het interval
+
 $[1,0\,\mathrm{s},3,0\,\mathrm{s}]$.
+
+\begin{oplossing}
+\[v_{\mathrm{gem}}=\frac{x(3,0)-x(1,0)}{3,0-1,0} =\frac{-1,9-(-1,5)}{2,0} =-0,20\,\mathrm{m/s}.\]
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Interpreteer het teken van je antwoord.
+
+\begin{oplossing}
+Het negatieve teken betekent dat de nettoverplaatsing tijdens dit interval in de negatieve \(x\)-richting gebeurt.
+\end{oplossing}
+
 \end{question}
 
 \end{oefening}
-
 
 \begin{oefening}[Gemiddelde snelheid is niet altijd middelen]{\oefU\ESS}
 
 Een wandelaar legt een traject af dat uit twee even lange stukken bestaat.
+
 Op het eerste stuk is zijn gemiddelde snelheid $4,0\,\mathrm{km/h}$,
+
 op het tweede $6,0\,\mathrm{km/h}$.
 
 \begin{question}
+
 Bepaal zijn gemiddelde snelheid over het volledige traject.
+
+\begin{oplossing}
+Neem voor elk stuk een afstand \(d\). Dan
+\[t_1=\frac d4,\qquad t_2=\frac d6.\]
+De totale afstand is \(2d\) en de totale tijd is
+\[t=\frac d4+\frac d6=\frac{5d}{12}.\]
+Dus
+\[v_{\mathrm{gem}}=\frac{2d}{5d/12}=\frac{24}{5}=4,8\,\mathrm{km/h}.\]
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Leg uit waarom je niet zomaar $(4,0+6,0)/2$ mag gebruiken.
+
+\begin{oplossing}
+De wandelaar brengt niet evenveel tijd door aan beide snelheden. Op het tragere stuk is hij langer onderweg. Een gemiddelde snelheid wordt bepaald uit totale verplaatsing gedeeld door totale tijd.
+\end{oplossing}
+
 \end{question}
 
 \end{oefening}
 
-
 % ============================================================
+
 % 3 GEMIDDELDE VERSNELLING
+
 % ============================================================
 
 \FVDsection{Gemiddelde versnelling}
@@ -347,6 +391,7 @@ Leg uit waarom je niet zomaar $(4,0+6,0)/2$ mag gebruiken.
 Snelheid kan veranderen.
 
 Een auto kan sneller gaan rijden, trager gaan rijden of van
+
 bewegingsrichting veranderen.
 
 We vergelijken daarom de snelheid op twee tijdstippen.
@@ -354,207 +399,207 @@ We vergelijken daarom de snelheid op twee tijdstippen.
 \begin{definitie}[Gemiddelde versnelling]
 
 De \textbf{gemiddelde versnelling} over het tijdsinterval
+
 $[t_1,t_2]$ is
 
-\[
-\boxed{
-a_{\mathrm{gem}}
-=
-\frac{\Delta v}{\Delta t}
-=
-\frac{v(t_2)-v(t_1)}{t_2-t_1}.
-}
-\]
+\[\boxed{ a_{\mathrm{gem}} = \frac{\Delta v}{\Delta t} = \frac{v(t_2)-v(t_1)}{t_2-t_1}. }\]
 
 De SI-eenheid is
 
-\[
-[a]=\mathrm{m/s^2}.
-\]
+\[[a]=\mathrm{m/s^2}.\]
 
 \end{definitie}
 
 De eenheid $\mathrm{m/s^2}$ betekent dat de snelheid per seconde met
-een bepaald aantal $\mathrm{m/s}$ verandert.
 
+een bepaald aantal $\mathrm{m/s}$ verandert.
 
 \begin{voorbeeld}[Remmen]
 
 Een auto vertraagt in $3,0\,\mathrm{s}$ van
+
 $90,0\,\mathrm{km/h}$ naar $60,0\,\mathrm{km/h}$.
 
 We zetten eerst om:
 
-\[
-90,0\,\mathrm{km/h}=25,0\,\mathrm{m/s},
-\]
+\[90,0\,\mathrm{km/h}=25,0\,\mathrm{m/s},\]
 
-\[
-60,0\,\mathrm{km/h}=16,7\,\mathrm{m/s}.
-\]
+\[60,0\,\mathrm{km/h}=16,7\,\mathrm{m/s}.\]
 
 Dus
 
-\[
-a_{\mathrm{gem}}
-=
-\frac{16,7-25,0}{3,0}
-=
--2,8\,\mathrm{m/s^2}.
-\]
+\[a_{\mathrm{gem}} = \frac{16,7-25,0}{3,0} = -2,8\,\mathrm{m/s^2}.\]
 
 Het negatieve teken vertelt ons dat de verandering van de snelheid
+
 in de gekozen positieve richting negatief is.
 
 \end{voorbeeld}
 
-
 \begin{oefening}[Gemiddelde versnelling]{\oefB\ESS}
 
 Een trein rijdt in de positieve $x$-richting. Zijn snelheid verandert
+
 in $12\,\mathrm{s}$ van $8,0\,\mathrm{m/s}$ naar
+
 $20,0\,\mathrm{m/s}$.
 
 \begin{question}
+
 Bereken de gemiddelde versnelling.
+
+\begin{oplossing}
+\[a_{\mathrm{gem}}=\frac{20,0-8,0}{12}=1,0\,\mathrm{m/s^2}.\]
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Leg in woorden uit wat je resultaat fysisch betekent.
+
+\begin{oplossing}
+Tijdens dit tijdsinterval neemt de snelheid gemiddeld elke seconde met \(1,0\,\mathrm{m/s}\) toe in de positieve \(x\)-richting.
+\end{oplossing}
+
 \end{question}
 
 \end{oefening}
 
-
 % ============================================================
+
 % 4 OGENBLIKKELIJKE SNELHEID
+
 % ============================================================
 
 \FVDsection{Van gemiddelde naar ogenblikkelijke snelheid}
 
 Een gemiddelde snelheid vertelt iets over een volledig tijdsinterval.
-Maar een snelheidsmeter in een auto toont de snelheid \emph{op dat
-ogenblik}.
+
+Maar een snelheidsmeter in een auto toont de snelheid \emph{op dat ogenblik}.
 
 Hoe kunnen we uit een plaatsfunctie $x(t)$ zo'n ogenblikkelijke
+
 snelheid bepalen?
 
 We vertrekken opnieuw van de gemiddelde snelheid:
 
-\[
-v_{\mathrm{gem}}
-=
-\frac{x(t+\Delta t)-x(t)}{\Delta t}.
-\]
+\[v_{\mathrm{gem}} = \frac{x(t+\Delta t)-x(t)}{\Delta t}.\]
 
 We laten het tijdsinterval steeds kleiner worden.
 
-\[
-\Delta t\longrightarrow 0.
-\]
+\[\Delta t\longrightarrow 0.\]
 
 De secant in de $x(t)$-grafiek nadert dan tot de raaklijn.
-
 
 \begin{definitie}[Ogenblikkelijke snelheid]
 
 De \textbf{ogenblikkelijke snelheid} op tijdstip $t$ is de limiet van
+
 de gemiddelde snelheid wanneer het tijdsinterval naar nul nadert:
 
-\[
-\boxed{
-v(t)
-=
-\lim_{\Delta t\to0}
-\frac{x(t+\Delta t)-x(t)}{\Delta t}.
-}
-\]
+\[\boxed{ v(t) = \lim_{\Delta t\to0} \frac{x(t+\Delta t)-x(t)}{\Delta t}. }\]
 
 Dit is precies de afgeleide van de plaatsfunctie:
 
-\[
-\boxed{
-v(t)=\frac{dx}{dt}=x'(t).
-}
-\]
+\[\boxed{ v(t)=\frac{dx}{dt}=x'(t). }\]
 
 \end{definitie}
-
 
 \begin{eigenschap}[Grafische betekenis]
 
 In een $x(t)$-diagram is de ogenblikkelijke snelheid gelijk aan de
+
 richtingscoëfficiënt van de raaklijn aan de grafiek.
 
 \end{eigenschap}
-
 
 \begin{voorbeeld}[Een steen wordt omhoog geworpen]
 
 De hoogte van een steen wordt in een vereenvoudigd model beschreven door
 
-\[
-y(t)=-5,0t^2+20t.
-\]
+\[y(t)=-5,0t^2+20t.\]
 
 De snelheidsfunctie is
 
-\[
-v(t)=y'(t)=-10t+20.
-\]
+\[v(t)=y'(t)=-10t+20.\]
 
 Na $1,0\,\mathrm{s}$:
 
-\[
-v(1,0)=10\,\mathrm{m/s}.
-\]
+\[v(1,0)=10\,\mathrm{m/s}.\]
 
 Na $2,0\,\mathrm{s}$:
 
-\[
-v(2,0)=0.
-\]
+\[v(2,0)=0.\]
 
 De steen bevindt zich dan op het hoogste punt van zijn baan.
 
 \end{voorbeeld}
 
-
 \begin{oefening}[Van gemiddelde naar ogenblikkelijke snelheid]{\oefU\ESS}
 
 Een bol beweegt volgens
 
-\[
-x(t)=0,20t^2.
-\]
+\[x(t)=0,20t^2.\]
 
 \begin{question}
+
 Bereken de gemiddelde snelheid over $[1,0;1,5]$.
+
+\begin{oplossing}
+\[x(1,0)=0,20,\qquad x(1,5)=0,45.\]
+Dus
+\[v_{\mathrm{gem}}=\frac{0,45-0,20}{1,5-1,0}=0,50\,\mathrm{m/s}.\]
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Bereken de gemiddelde snelheid over $[1,0;1,1]$.
+
+\begin{oplossing}
+\[x(1,1)=0,20(1,1)^2=0,242.\]
+Dus
+\[v_{\mathrm{gem}}=\frac{0,242-0,200}{0,1}=0,42\,\mathrm{m/s}.\]
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Bereken de ogenblikkelijke snelheid op $t=1,0\,\mathrm{s}$ met de
+
 afgeleide.
+
+\begin{oplossing}
+\[v(t)=x'(t)=0,40t, \qquad v(1,0)=0,40\,\mathrm{m/s}.\]
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Vergelijk de drie resultaten. Wat merk je op?
+
+\begin{oplossing}
+Wanneer het interval vanaf \(t=1,0\,\mathrm{s}\) kleiner wordt, nadert de gemiddelde snelheid de ogenblikkelijke snelheid \(0,40\,\mathrm{m/s}\). Dit illustreert de limietovergang van secant naar raaklijn.
+\end{oplossing}
+
 \end{question}
 
 \end{oefening}
 
-
 % ============================================================
+
 % 5 OGENBLIKKELIJKE VERSNELLING
+
 % ============================================================
 
 \FVDsection{Ogenblikkelijke versnelling}
 
 Net zoals de snelheid zelf kan veranderen, kan ook de verandering van
+
 de snelheid van ogenblik tot ogenblik verschillen.
 
 We passen daarom dezelfde redenering toe op de snelheidsfunctie.
@@ -563,238 +608,202 @@ We passen daarom dezelfde redenering toe op de snelheidsfunctie.
 
 De \textbf{ogenblikkelijke versnelling} op tijdstip $t$ is
 
-\[
-\boxed{
-a(t)
-=
-\lim_{\Delta t\to0}
-\frac{v(t+\Delta t)-v(t)}{\Delta t}.
-}
-\]
+\[\boxed{ a(t) = \lim_{\Delta t\to0} \frac{v(t+\Delta t)-v(t)}{\Delta t}. }\]
 
 Daarom:
 
-\[
-\boxed{
-a(t)=\frac{dv}{dt}=v'(t).
-}
-\]
+\[\boxed{ a(t)=\frac{dv}{dt}=v'(t). }\]
 
 Omdat
 
-\[
-v(t)=x'(t),
-\]
+\[v(t)=x'(t),\]
 
 geldt ook:
 
-\[
-\boxed{
-a(t)=x''(t)=\frac{d^2x}{dt^2}.
-}
-\]
+\[\boxed{ a(t)=x''(t)=\frac{d^2x}{dt^2}. }\]
 
 \end{definitie}
-
 
 \begin{eigenschap}[Grafische betekenis]
 
 In een $v(t)$-diagram is de ogenblikkelijke versnelling gelijk aan de
+
 richtingscoëfficiënt van de raaklijn aan de grafiek.
 
 \end{eigenschap}
-
 
 \begin{voorbeeld}[Plaats, snelheid en versnelling]
 
 Een voorwerp beweegt volgens
 
-\[
-x(t)=3,0t^2+1,0,
-\]
+\[x(t)=3,0t^2+1,0,\]
 
 met $x$ in meter en $t$ in seconde.
 
 Dan:
 
-\[
-v(t)=x'(t)=6,0t
-\]
+\[v(t)=x'(t)=6,0t\]
 
 en:
 
-\[
-a(t)=v'(t)=6,0.
-\]
+\[a(t)=v'(t)=6,0.\]
 
 De versnelling is dus constant:
 
-\[
-\boxed{a=6,0\,\mathrm{m/s^2}.}
-\]
+\[\boxed{a=6,0\,\mathrm{m/s^2}.}\]
 
 \end{voorbeeld}
-
 
 \begin{oefening}[Afleiden tot versnelling]{\oefB\ESS}
 
 Gegeven:
 
-\[
-x(t)=1,5t^3-4,0t^2+2,0t+1,0.
-\]
+\[x(t)=1,5t^3-4,0t^2+2,0t+1,0.\]
 
 \begin{question}
+
 Bepaal de snelheidsfunctie $v(t)$.
+
+\begin{oplossing}
+\[v(t)=x'(t)=4,5t^2-8,0t+2,0.\]
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Bepaal de versnellingsfunctie $a(t)$.
+
+\begin{oplossing}
+\[a(t)=v'(t)=9,0t-8,0.\]
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Bereken $v(2,0)$ en $a(2,0)$.
+
+\begin{oplossing}
+\[v(2,0)=4,5\cdot4-8,0\cdot2+2,0=4,0\,\mathrm{m/s},\]
+\[a(2,0)=9,0\cdot2-8,0=10,0\,\mathrm{m/s^2}.\]
+\end{oplossing}
+
 \end{question}
 
 \end{oefening}
 
-
 % ============================================================
+
 % 6 TEKENS VAN v EN a
+
 % ============================================================
 
 \FVDsection{Wat vertellen de tekens van snelheid en versnelling?}
 
 Het teken van de snelheid vertelt ons in welke zin het voorwerp langs
+
 de gekozen as beweegt.
 
 Bij een positieve $x$-richting naar rechts:
 
-\[
-v>0
-\quad\Rightarrow\quad
-\text{beweging in positieve zin},
-\]
+\[v>0 \quad\Rightarrow\quad \text{beweging in positieve zin},\]
 
-\[
-v<0
-\quad\Rightarrow\quad
-\text{beweging in negatieve zin}.
-\]
+\[v<0 \quad\Rightarrow\quad \text{beweging in negatieve zin}.\]
 
 Het teken van de versnelling vertelt hoe de snelheid verandert.
 
 Een positieve versnelling betekent dus niet automatisch dat het
-voorwerp ``sneller'' gaat.
 
+voorwerp ``sneller'' gaat.
 
 \begin{eigenschap}[Sneller of trager?]
 
 Voor een rechtlijnige beweging geldt:
 
-\[
-v\cdot a>0
-\quad\Rightarrow\quad
-|v|\text{ neemt toe},
-\]
+\[v\cdot a>0 \quad\Rightarrow\quad |v|\text{ neemt toe},\]
 
-\[
-v\cdot a<0
-\quad\Rightarrow\quad
-|v|\text{ neemt af}.
-\]
+\[v\cdot a<0 \quad\Rightarrow\quad |v|\text{ neemt af}.\]
 
 Met andere woorden: een voorwerp gaat sneller wanneer snelheid en
+
 versnelling hetzelfde teken hebben, en trager wanneer ze tegengestelde
+
 tekens hebben.
 
 \end{eigenschap}
-
 
 \begin{voorbeeld}[Negatieve snelheid en negatieve versnelling]
 
 Een trein beweegt in de negatieve $x$-richting met
 
-\[
-v=-5\,\mathrm{m/s}.
-\]
+\[v=-5\,\mathrm{m/s}.\]
 
 Even later rijdt hij
 
-\[
-v=-7\,\mathrm{m/s}.
-\]
+\[v=-7\,\mathrm{m/s}.\]
 
 De snelheid wordt numeriek kleiner, maar de \emph{grootte} van de
+
 snelheid neemt toe:
 
-\[
-|v|:5\longrightarrow7.
-\]
+\[|v|:5\longrightarrow7.\]
 
 De trein gaat dus sneller in negatieve zin. De versnelling is negatief.
 
 \end{voorbeeld}
 
-
 \begin{oefening}[Tekens analyseren]{\oefU\ESS}
 
 Beschouw vier situaties.
 
-\[
-\begin{array}{c|cc}
- & v & a\\ \hline
-A & + & +\\
-B & + & -\\
-C & - & +\\
-D & - & -
-\end{array}
-\]
+\[\begin{array}{c|cc} & v & a\\ \hline A & + & +\\ B & + & -\\ C & - & +\\ D & - & - \end{array}\]
 
 Beschrijf voor elke situatie:
 
 \begin{question}
+
 in welke zin het voorwerp beweegt;
+
+\begin{oplossing}
+Bij A en B is \(v>0\): beweging in positieve zin. Bij C en D is \(v<0\): beweging in negatieve zin.
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 of de grootte van de snelheid toeneemt of afneemt.
+
+\begin{oplossing}
+Bij A en D hebben \(v\) en \(a\) hetzelfde teken, dus \(|v|\) neemt toe. Bij B en C hebben ze een tegengesteld teken, dus \(|v|\) neemt af.
+\end{oplossing}
+
 \end{question}
 
 \end{oefening}
 
-
 % ============================================================
+
 % 7 x-v-a
+
 % ============================================================
 
 \FVDsection{Het verband tussen $x(t)$, $v(t)$ en $a(t)$}
 
 We hebben nu een fundamentele keten opgebouwd:
 
-\[
-\boxed{
-x(t)
-\xrightarrow{\frac{d}{dt}}
-v(t)
-\xrightarrow{\frac{d}{dt}}
-a(t).
-}
-\]
+\[\boxed{ x(t) \xrightarrow{\frac{d}{dt}} v(t) \xrightarrow{\frac{d}{dt}} a(t). }\]
 
 Dat betekent:
 
-\[
-v(t)=x'(t),
-\]
+\[v(t)=x'(t),\]
 
-\[
-a(t)=v'(t)=x''(t).
-\]
+\[a(t)=v'(t)=x''(t).\]
 
 Dit verband moet je niet alleen algebraïsch kunnen gebruiken.
-Je moet het ook grafisch kunnen herkennen.
 
+Je moet het ook grafisch kunnen herkennen.
 
 \FVDsubsection{Van $x(t)$ naar $v(t)$}
 
@@ -803,13 +812,18 @@ De snelheid is de helling van de $x(t)$-grafiek.
 Dus:
 
 \begin{itemize}
-  \item stijgt $x(t)$, dan is $v>0$;
-  \item daalt $x(t)$, dan is $v<0$;
-  \item heeft $x(t)$ een horizontale raaklijn, dan is $v=0$;
-  \item wordt de helling steeds groter, dan is de versnelling positief;
-  \item wordt de helling steeds kleiner, dan is de versnelling negatief.
-\end{itemize}
 
+ \item stijgt $x(t)$, dan is $v>0$;
+
+ \item daalt $x(t)$, dan is $v<0$;
+
+ \item heeft $x(t)$ een horizontale raaklijn, dan is $v=0$;
+
+ \item wordt de helling steeds groter, dan is de versnelling positief;
+
+ \item wordt de helling steeds kleiner, dan is de versnelling negatief.
+
+\end{itemize}
 
 \FVDsubsection{Van $v(t)$ naar $a(t)$}
 
@@ -818,521 +832,501 @@ De versnelling is de helling van de $v(t)$-grafiek.
 Dus:
 
 \begin{itemize}
-  \item een stijgende $v(t)$-grafiek geeft $a>0$;
-  \item een dalende $v(t)$-grafiek geeft $a<0$;
-  \item een horizontale $v(t)$-grafiek geeft $a=0$.
-\end{itemize}
 
+ \item een stijgende $v(t)$-grafiek geeft $a>0$;
+
+ \item een dalende $v(t)$-grafiek geeft $a<0$;
+
+ \item een horizontale $v(t)$-grafiek geeft $a=0$.
+
+\end{itemize}
 
 \begin{oefening}[Drie grafieken verbinden]{\oefU\ESS}
 
 Een voorwerp heeft een $v(t)$-grafiek die gedurende $0\leq t\leq6$
+
 een rechte lijn is van $v(0)=2\,\mathrm{m/s}$ naar
+
 $v(6)=8\,\mathrm{m/s}$.
 
 \begin{question}
+
 Schets de bijbehorende $a(t)$-grafiek.
+
+\begin{oplossing}
+De versnelling is de helling van de \(v(t)\)-grafiek:
+\[a=\frac{8-2}{6-0}=1,0\,\mathrm{m/s^2}.\]
+De \(a(t)\)-grafiek is dus de horizontale rechte \(a(t)=1,0\,\mathrm{m/s^2}\).
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Beschrijf kwalitatief hoe de $x(t)$-grafiek eruitziet.
+
+\begin{oplossing}
+Omdat \(v>0\), stijgt \(x(t)\) voortdurend. Omdat \(v\) lineair toeneemt, wordt de helling van \(x(t)\) steeds groter. De \(x(t)\)-grafiek is dus een stijgende parabool, hol naar boven.
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Leg bij elke stap uit welk afgeleideverband je gebruikt.
+
+\begin{oplossing}
+We gebruiken \(a(t)=v'(t)\) om uit de helling van \(v(t)\) de versnelling te vinden. Verder geldt \(v(t)=x'(t)\): de waarde van \(v\) bepaalt de helling van de \(x(t)\)-grafiek.
+\end{oplossing}
+
 \end{question}
 
 \end{oefening}
 
-
 % ============================================================
+
 % 8 INTEGRALEN
+
 % ============================================================
 
 \FVDsection{De omgekeerde weg: integreren}
 
 Tot nu toe gingen we van positie naar snelheid en van snelheid naar
+
 versnelling door af te leiden.
 
 Maar vaak kennen we juist de snelheidsfunctie of de
+
 versnellingsfunctie en willen we terug informatie over de beweging
+
 vinden.
 
 Daarvoor gebruiken we bepaalde integralen.
-
 
 \FVDsubsection{Van snelheid naar verplaatsing}
 
 Omdat
 
-\[
-v(t)=\frac{dx}{dt},
-\]
+\[v(t)=\frac{dx}{dt},\]
 
 geldt over een tijdsinterval $[t_1,t_2]$:
 
-\[
-\boxed{
-\Delta x
-=
-x(t_2)-x(t_1)
-=
-\int_{t_1}^{t_2}v(t)\,dt.
-}
-\]
+\[\boxed{ \Delta x = x(t_2)-x(t_1) = \int_{t_1}^{t_2}v(t)\,dt. }\]
 
 \begin{eigenschap}[Oppervlakte onder een $v(t)$-grafiek]
 
 De georiënteerde oppervlakte tussen een $v(t)$-grafiek en de tijdas
+
 over $[t_1,t_2]$ is gelijk aan de verplaatsing tijdens dat
+
 tijdsinterval.
 
 \end{eigenschap}
 
 ``Georiënteerd'' betekent dat oppervlakten boven de tijdas positief en
-oppervlakten onder de tijdas negatief bijdragen.
 
+oppervlakten onder de tijdas negatief bijdragen.
 
 \begin{opmerking}
 
 De integraal
 
-\[
-\int_{t_1}^{t_2}v(t)\,dt
-\]
+\[\int_{t_1}^{t_2}v(t)\,dt\]
 
 geeft de \textbf{verplaatsing}, niet altijd de totale afgelegde weg.
 
 Als het voorwerp van bewegingsrichting verandert, moet voor de
+
 afgelegde weg rekening worden gehouden met de grootte van de snelheid:
 
-\[
-\Delta s
-=
-\int_{t_1}^{t_2}|v(t)|\,dt.
-\]
+\[\Delta s = \int_{t_1}^{t_2}|v(t)|dt.\]
 
 \end{opmerking}
-
 
 \begin{voorbeeld}[Verplaatsing uit een snelheidsfunctie]
 
 Een voorwerp heeft
 
-\[
-v(t)=2,0+0,50t
-\]
+\[v(t)=2,0+0,50t\]
 
 voor $0\leq t\leq8,0\,\mathrm{s}$.
 
 De verplaatsing is:
 
-\[
-\Delta x
-=
-\int_0^8(2,0+0,50t)\,dt.
-\]
+\[\Delta x = \int_0^8(2,0+0,50t)\,dt.\]
 
 Dus:
 
-\[
-\Delta x
-=
-\left[2,0t+0,25t^2\right]_0^8
-=
-16+16
-=
-32\,\mathrm{m}.
-\]
+\[\Delta x = \left[2,0t+0,25t^2\right]_0^8 = 16+16 = 32\,\mathrm{m}.\]
 
 \end{voorbeeld}
-
 
 \FVDsubsection{Van versnelling naar snelheidsverschil}
 
 Omdat
 
-\[
-a(t)=\frac{dv}{dt},
-\]
+\[a(t)=\frac{dv}{dt},\]
 
 geldt:
 
-\[
-\boxed{
-\Delta v
-=
-v(t_2)-v(t_1)
-=
-\int_{t_1}^{t_2}a(t)\,dt.
-}
-\]
+\[\boxed{ \Delta v = v(t_2)-v(t_1) = \int_{t_1}^{t_2}a(t)\,dt. }\]
 
 De georiënteerde oppervlakte onder een $a(t)$-grafiek geeft dus de
-verandering van de snelheid.
 
+verandering van de snelheid.
 
 \begin{voorbeeld}[Snelheid reconstrueren]
 
 Een voorwerp heeft
 
-\[
-a(t)=1,5\,\mathrm{m/s^2}
-\]
+\[a(t)=1,5\,\mathrm{m/s^2}\]
 
 voor $0\leq t\leq4,0\,\mathrm{s}$ en begint met
 
-\[
-v(0)=2,0\,\mathrm{m/s}.
-\]
+\[v(0)=2,0\,\mathrm{m/s}.\]
 
 Dan:
 
-\[
-\Delta v
-=
-\int_0^4 1,5\,dt
-=
-6,0\,\mathrm{m/s}.
-\]
+\[\Delta v = \int_0^4 1,5\,dt = 6,0\,\mathrm{m/s}.\]
 
 Dus:
 
-\[
-v(4)=v(0)+\Delta v
-=
-8,0\,\mathrm{m/s}.
-\]
+\[v(4)=v(0)+\Delta v = 8,0\,\mathrm{m/s}.\]
 
 \end{voorbeeld}
-
 
 \FVDsubsection{Afleiden en integreren als omgekeerde processen}
 
 We kunnen de volledige samenhang nu samenvatten:
 
-\[
-\boxed{
-x(t)
-\xrightarrow{\frac{d}{dt}}
-v(t)
-\xrightarrow{\frac{d}{dt}}
-a(t)
-}
-\]
+\[\boxed{ x(t) \xrightarrow{\frac{d}{dt}} v(t) \xrightarrow{\frac{d}{dt}} a(t) }\]
 
 en omgekeerd:
 
-\[
-\boxed{
-a(t)
-\xrightarrow{\int dt}
-\Delta v
-\xrightarrow{\int dt}
-\Delta x.
-}
-\]
+\[\boxed{ a(t) \xrightarrow{\int dt} \Delta v \xrightarrow{\int dt} \Delta x. }\]
 
 Bij integreren hebben we telkens een beginwaarde nodig om een
+
 volledige functie te reconstrueren.
 
 Bijvoorbeeld:
 
-\[
-v(t)=v_0+\int_0^t a(\tau)\,d\tau,
-\]
+\[v(t)=v_0+\int_0^t a(\tau)\,d\tau,\]
 
 en
 
-\[
-x(t)=x_0+\int_0^t v(\tau)\,d\tau.
-\]
-
+\[x(t)=x_0+\int_0^t v(\tau)\,d\tau.\]
 
 \begin{oefening}[Integraal van de snelheid]{\oefB\ESS}
 
 Een voorwerp beweegt volgens
 
-\[
-v(t)=4,0-0,50t,
-\]
+\[v(t)=4,0-0,50t,\]
 
 voor $0\leq t\leq6,0$.
 
 \begin{question}
+
 Bereken de verplaatsing tussen $t=0$ en $t=6,0\,\mathrm{s}$.
+
+\begin{oplossing}
+\[\Delta x=\int_0^6(4,0-0,50t)\,dt =\left[4,0t-0,25t^2\right]_0^6 =24-9=15\,\mathrm{m}.\]
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Bepaal de snelheid op $t=6,0\,\mathrm{s}$.
+
+\begin{oplossing}
+\[v(6,0)=4,0-0,50\cdot6,0=1,0\,\mathrm{m/s}.\]
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Is de afgelegde weg in dit interval gelijk aan de verplaatsing?
+
 Motiveer.
+
+\begin{oplossing}
+Ja. Op het volledige interval is \(v(t)>0\), zodat het voorwerp niet van richting verandert. De afgelegde weg is dus \(15\,\mathrm{m}\).
+\end{oplossing}
+
 \end{question}
 
 \end{oefening}
-
 
 \begin{oefening}[Van versnelling naar snelheid]{\oefU\ESS}
 
 Een beweging wordt beschreven door
 
-\[
-a(t)=0,60t
-\]
+\[a(t)=0,60t\]
 
 voor $0\leq t\leq5,0\,\mathrm{s}$.
 
 Op $t=0$ is
 
-\[
-v_0=2,0\,\mathrm{m/s}.
-\]
+\[v_0=2,0\,\mathrm{m/s}.\]
 
 \begin{question}
+
 Bepaal met een bepaalde integraal de snelheidsverandering tijdens de
+
 eerste $5,0\,\mathrm{s}$.
+
+\begin{oplossing}
+\[\Delta v=\int_0^5 0,60t\,dt =\left[0,30t^2\right]_0^5 =7,5\,\mathrm{m/s}.\]
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Bepaal $v(5,0)$.
+
+\begin{oplossing}
+\[v(5,0)=v_0+\Delta v=2,0+7,5=9,5\,\mathrm{m/s}.\]
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Stel een snelheidsfunctie $v(t)$ op.
+
+\begin{oplossing}
+\[v(t)=v_0+\int_0^t0,60\tau\,d\tau=2,0+0,30t^2.\]
+\end{oplossing}
+
 \end{question}
 
 \end{oefening}
-
 
 \begin{oefening}[Richting veranderen]{\oefU\ESS}
 
 Een voorwerp heeft
 
-\[
-v(t)=t-3
-\]
+\[v(t)=t-3\]
 
 voor $0\leq t\leq6$.
 
 \begin{question}
+
 Op welk tijdstip verandert het voorwerp van bewegingsrichting?
+
+\begin{oplossing}
+\[v(t)=0\Longrightarrow t-3=0\Longrightarrow t=3\,\mathrm{s}.\]
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Bereken de verplaatsing over het volledige interval.
+
+\begin{oplossing}
+\[\Delta x=\int_0^6(t-3)\,dt =\left[\frac12t^2-3t\right]_0^6=0\,\mathrm{m}.\]
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Bereken de totale afgelegde weg.
+
+\begin{oplossing}
+Van \(0\) tot \(3\) ligt de grafiek onder de tijdas en van \(3\) tot \(6\) erboven. Beide driehoeken hebben oppervlakte
+\[\frac12\cdot3\cdot3=4,5\,\mathrm{m}.\]
+Dus
+\[\Delta s=4,5+4,5=9,0\,\mathrm{m}.\]
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Leg uit waarom beide antwoorden verschillen.
+
+\begin{oplossing}
+De verplaatsing houdt rekening met de richting en telt georiënteerde oppervlakten op. De afgelegde weg telt de groottes van beide delen op. Het voorwerp keert op \(t=3\,\mathrm{s}\) om.
+\end{oplossing}
+
 \end{question}
 
 \end{oefening}
 
-
 % ============================================================
+
 % 9 ERB
+
 % ============================================================
 
 \FVDsection{De eenparige rechtlijnige beweging als bijzonder geval}
 
 Uit de tweede graad ken je de
+
 \textbf{eenparige rechtlijnige beweging} of ERB.
 
 Bij een ERB:
 
-\[
-v(t)=v_0=\text{constant}
-\]
+\[v(t)=v_0=\text{constant}\]
 
 en dus:
 
-\[
-a(t)=0.
-\]
+\[a(t)=0.\]
 
 Omdat
 
-\[
-\Delta x=\int v(t)\,dt,
-\]
+\[\Delta x=\int v(t)\,dt,\]
 
 volgt bij constante snelheid:
 
-\[
-\Delta x=v\Delta t.
-\]
+\[\Delta x=v\Delta t.\]
 
 Als we starten op $t=0$ met beginpositie $x_0$, dan:
 
-\[
-\boxed{
-x(t)=x_0+vt.
-}
-\]
-
+\[\boxed{ x(t)=x_0+vt. }\]
 
 \begin{eigenschap}[Grafieken van een ERB]
 
 Bij een ERB:
 
 \begin{itemize}
-  \item is de $a(t)$-grafiek de tijdas;
-  \item is de $v(t)$-grafiek een horizontale rechte;
-  \item is de $x(t)$-grafiek een rechte met richtingscoëfficiënt $v$.
+
+ \item is de $a(t)$-grafiek de tijdas;
+
+ \item is de $v(t)$-grafiek een horizontale rechte;
+
+ \item is de $x(t)$-grafiek een rechte met richtingscoëfficiënt $v$.
+
 \end{itemize}
 
 \end{eigenschap}
 
-
 \begin{oefening}[ERB herkennen]{\oefB}
 
 Leg uit hoe je uit elk van de volgende grafieken kan herkennen dat een
+
 beweging een ERB is:
 
 \begin{question}
+
 een $x(t)$-grafiek;
+
+\begin{oplossing}
+Aan een rechte lijn: de helling en dus de snelheid zijn constant.
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 een $v(t)$-grafiek;
+
+\begin{oplossing}
+Aan een horizontale rechte: \(v\) is constant.
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 een $a(t)$-grafiek.
+
+\begin{oplossing}
+De grafiek valt samen met de tijdas: \(a(t)=0\).
+\end{oplossing}
+
 \end{question}
 
 \end{oefening}
 
-
 % ============================================================
+
 % 10 EVRB
+
 % ============================================================
 
 \FVDsection{De eenparig versnelde rechtlijnige beweging}
 
 We bekijken nu een rechtlijnige beweging waarbij de versnelling
+
 constant is.
 
 \begin{definitie}[Eenparig versnelde rechtlijnige beweging]
 
 Een \textbf{eenparig versnelde rechtlijnige beweging} is een
+
 rechtlijnige beweging met constante versnelling:
 
-\[
-\boxed{a(t)=a_x=\text{constant}.}
-\]
+\[\boxed{a(t)=a_x=\text{constant}.}\]
 
 \end{definitie}
 
-We gebruiken hier bewust de term \emph{eenparig versnelde
-rechtlijnige beweging}. Een constante versnelling kan positief of
-negatief zijn.
+We gebruiken hier bewust de term \emph{eenparig versnelde rechtlijnige beweging}. Een constante versnelling kan positief of
 
+negatief zijn.
 
 \FVDsubsection{De snelheidsfunctie afleiden met een integraal}
 
 Omdat
 
-\[
-a_x=\frac{dv_x}{dt}
-\]
+\[a_x=\frac{dv_x}{dt}\]
 
 en $a_x$ constant is:
 
-\[
-v_x(t)-v_{x,0}
-=
-\int_0^t a_x\,d\tau.
-\]
+\[v_x(t)-v_{x,0} = \int_0^t a_x\,d\tau.\]
 
 Dus:
 
-\[
-\boxed{
-v_x(t)=v_{x,0}+a_xt.
-}
-\]
-
+\[\boxed{ v_x(t)=v_{x,0}+a_xt. }\]
 
 \FVDsubsection{De plaatsfunctie afleiden met een integraal}
 
 We weten:
 
-\[
-v_x(t)=v_{x,0}+a_xt.
-\]
+\[v_x(t)=v_{x,0}+a_xt.\]
 
 Omdat
 
-\[
-v_x=\frac{dx}{dt},
-\]
+\[v_x=\frac{dx}{dt},\]
 
 geldt:
 
-\[
-x(t)-x_0
-=
-\int_0^t\left(v_{x,0}+a_x\tau\right)\,d\tau.
-\]
+\[x(t)-x_0 = \int_0^t\left(v_{x,0}+a_x\tau\right)\,d\tau.\]
 
 Daaruit volgt:
 
-\[
-\boxed{
-x(t)
-=
-x_0+v_{x,0}t+\frac12a_xt^2.
-}
-\]
+\[\boxed{ x(t) = x_0+v_{x,0}t+\frac12a_xt^2. }\]
 
 Deze twee bewegingsvergelijkingen horen bij je formularium:
 
-\[
-\boxed{
-v_x=v_{x,0}+a_xt
-}
-\]
+\[\boxed{ v_x=v_{x,0}+a_xt }\]
 
 en
 
-\[
-\boxed{
-x=x_0+v_{x,0}t+\frac12a_xt^2.
-}
-\]
-
+\[\boxed{ x=x_0+v_{x,0}t+\frac12a_xt^2. }\]
 
 \FVDsubsection{Grafieken van een EVRB}
 
 Bij constante versnelling:
 
-\[
-a(t)=a_x
-\]
+\[a(t)=a_x\]
 
 is de $a(t)$-grafiek een horizontale rechte.
 
 De snelheidsfunctie
 
-\[
-v(t)=v_0+at
-\]
+\[v(t)=v_0+at\]
 
 is een eerstegraadsfunctie.
 
 De plaatsfunctie
 
-\[
-x(t)=x_0+v_0t+\frac12at^2
-\]
+\[x(t)=x_0+v_0t+\frac12at^2\]
 
 is een kwadratische functie.
 
@@ -1341,237 +1335,256 @@ is een kwadratische functie.
 Bij een EVRB:
 
 \begin{itemize}
-  \item is $a(t)$ constant;
-  \item is $v(t)$ een rechte met richtingscoëfficiënt $a$;
-  \item is $x(t)$ een parabool;
-  \item is de oppervlakte onder de $v(t)$-grafiek de verplaatsing;
-  \item is de oppervlakte onder de $a(t)$-grafiek het snelheidsverschil.
+
+ \item is $a(t)$ constant;
+
+ \item is $v(t)$ een rechte met richtingscoëfficiënt $a$;
+
+ \item is $x(t)$ een parabool;
+
+ \item is de oppervlakte onder de $v(t)$-grafiek de verplaatsing;
+
+ \item is de oppervlakte onder de $a(t)$-grafiek het snelheidsverschil.
+
 \end{itemize}
 
 \end{eigenschap}
-
 
 \begin{voorbeeld}[Met beginsnelheid en beginpositie]
 
 Een puntmassa bevindt zich op $t=0$ op
 
-\[
-x_0=4,0\,\mathrm{m}
-\]
+\[x_0=4,0\,\mathrm{m}\]
 
 en heeft
 
-\[
-v_0=2,0\,\mathrm{m/s},
-\qquad
-a=1,0\,\mathrm{m/s^2}.
-\]
+\[v_0=2,0\,\mathrm{m/s}, \qquad a=1,0\,\mathrm{m/s^2}.\]
 
 De snelheidsfunctie is
 
-\[
-v(t)=2,0+1,0t.
-\]
+\[v(t)=2,0+1,0t.\]
 
 De plaatsfunctie is
 
-\[
-x(t)=4,0+2,0t+\frac12t^2.
-\]
+\[x(t)=4,0+2,0t+\frac12t^2.\]
 
 Na $2,0\,\mathrm{s}$:
 
-\[
-v(2)=4,0\,\mathrm{m/s},
-\]
+\[v(2)=4,0\,\mathrm{m/s},\]
 
-\[
-x(2)=10,0\,\mathrm{m}.
-\]
+\[x(2)=10,0\,\mathrm{m}.\]
 
 \end{voorbeeld}
-
 
 \begin{oefening}[EVRB uit functies]{\oefB\ESS}
 
 Een voorwerp beweegt volgens
 
-\[
-x(t)=3,0+5,0t-1,0t^2.
-\]
+\[x(t)=3,0+5,0t-1,0t^2.\]
 
 \begin{question}
+
 Bepaal $v(t)$.
+
+\begin{oplossing}
+\[v(t)=5,0-2,0t.\]
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Bepaal $a(t)$.
+
+\begin{oplossing}
+\[a(t)=-2,0\,\mathrm{m/s^2}.\]
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Toon aan dat de beweging een EVRB is.
+
+\begin{oplossing}
+De versnelling is constant. Dat is precies het kenmerk van een EVRB.
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Bepaal $x_0$, $v_0$ en $a$.
+
+\begin{oplossing}
+\[x_0=3,0\,\mathrm{m},\qquad v_0=5,0\,\mathrm{m/s},\qquad a=-2,0\,\mathrm{m/s^2}.\]
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Op welk tijdstip is de snelheid nul?
+
+\begin{oplossing}
+\[5,0-2,0t=0\Longrightarrow t=2,5\,\mathrm{s}.\]
+\end{oplossing}
+
 \end{question}
 
 \end{oefening}
-
 
 \begin{oefening}[EVRB uit een $v(t)$-grafiek]{\oefU\ESS}
 
 Een snelheidsfunctie is gegeven door de rechte
 
-\[
-v(t)=2,0+\frac{4}{15}t
-\]
+\[v(t)=2,0+\frac{4}{15}t\]
 
 voor $0\leq t\leq15\,\mathrm{s}$.
 
 \begin{question}
+
 Bepaal de versnelling.
+
+\begin{oplossing}
+\[a(t)=v'(t)=\frac4{15}\,\mathrm{m/s^2}\approx0,267\,\mathrm{m/s^2}.\]
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Bepaal met een integraal de verplaatsing tijdens de eerste
+
 $15\,\mathrm{s}$.
+
+\begin{oplossing}
+\[\Delta x=\int_0^{15}\left(2+\frac4{15}t\right)\,dt =\left[2t+\frac2{15}t^2\right]_0^{15}=30+30=60\,\mathrm{m}.\]
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Bepaal dezelfde verplaatsing met de bewegingsvergelijking van de EVRB.
+
+\begin{oplossing}
+\[\Delta x=v_0t+\frac12at^2 =2\cdot15+\frac12\cdot\frac4{15}\cdot15^2 =60\,\mathrm{m}.\]
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Leg uit waarom beide methoden noodzakelijk hetzelfde resultaat geven.
+
+\begin{oplossing}
+De bewegingsvergelijking voor de EVRB volgt zelf uit het integreren van \(v(t)=v_0+at\). Beide methoden berekenen dus dezelfde georiënteerde oppervlakte onder de snelheidsfunctie.
+\end{oplossing}
+
 \end{question}
 
 \end{oefening}
 
-
 % ============================================================
+
 % 11 OPPERVLAKTEMETHODE EN INTEGRALEN
+
 % ============================================================
 
 \FVDsection{De oppervlaktemethode: beweging lezen uit grafieken}
 
 In een snelheids-tijddiagram zit meer informatie dan alleen de
+
 snelheid op een bepaald tijdstip. De oppervlakte tussen de
+
 $v(t)$-grafiek en de tijdas heeft een rechtstreekse fysische
+
 betekenis.
 
 \begin{eigenschap}[Oppervlakte onder een $v(t)$-grafiek]
 
 De \textbf{georiënteerde oppervlakte} tussen de $v(t)$-grafiek en de
+
 tijdas over een tijdsinterval $[t_1,t_2]$ is gelijk aan de
+
 verplaatsing:
 
-\[
-\boxed{
-\Delta x
-=
-\text{georiënteerde oppervlakte onder de }v(t)\text{-grafiek}.
-}
-\]
+\[\boxed{ \Delta x = \text{georiënteerde oppervlakte onder de }v(t)\text{-grafiek}. }\]
 
 Een oppervlakte boven de tijdas draagt positief bij. Een oppervlakte
+
 onder de tijdas draagt negatief bij.
 
 \end{eigenschap}
 
 Deze methode ken je gedeeltelijk uit de tweede graad. We gebruiken ze
+
 hier systematischer en verbinden ze met de bepaalde integraal.
 
 De oppervlaktemethode is vooral handig wanneer een grafiek bestaat uit
-eenvoudige meetkundige figuren zoals rechthoeken, driehoeken en
-trapezia. We hoeven dan geen functievoorschrift te kennen.
 
+eenvoudige meetkundige figuren zoals rechthoeken, driehoeken en
+
+trapezia. We hoeven dan geen functievoorschrift te kennen.
 
 \FVDsubsection{ERB: een rechthoek}
 
 Bij een eenparige rechtlijnige beweging is de snelheid constant:
 
-\[
-v(t)=v.
-\]
+\[v(t)=v.\]
 
 In een $v(t)$-diagram is de grafiek een horizontale rechte. Tussen
+
 $t_1$ en $t_2$ ontstaat een rechthoek met breedte
 
-\[
-\Delta t=t_2-t_1
-\]
+\[\Delta t=t_2-t_1\]
 
 en hoogte $v$.
 
 Daarom:
 
-\[
-\Delta x=v\Delta t.
-\]
+\[\Delta x=v\Delta t.\]
 
 De bekende formule voor een ERB is dus rechtstreeks zichtbaar als de
+
 oppervlakte van een rechthoek.
 
 \begin{voorbeeld}[Een fietser met constante snelheid]
 
 Een fietser rijdt gedurende $12\,\mathrm{s}$ met constante snelheid
 
-\[
-v=5,0\,\mathrm{m/s}.
-\]
+\[v=5,0\,\mathrm{m/s}.\]
 
 De oppervlakte onder de $v(t)$-grafiek is een rechthoek:
 
-\[
-\Delta x
-=
-12\cdot5,0
-=
-60\,\mathrm{m}.
-\]
+\[\Delta x = 12\cdot5,0 = 60\,\mathrm{m}.\]
 
 \end{voorbeeld}
-
 
 \FVDsubsection{EVRB vanuit rust: een driehoek}
 
 Een voorwerp vertrekt uit rust en versnelt eenparig. De snelheid neemt
+
 lineair toe van $0$ tot $v$.
 
 De $v(t)$-grafiek vormt dan samen met de tijdas een driehoek.
 
 De oppervlakte is:
 
-\[
-\Delta x
-=
-\frac12\cdot\Delta t\cdot v.
-\]
+\[\Delta x = \frac12\cdot\Delta t\cdot v.\]
 
 Omdat bij constante versnelling en vertrek uit rust
 
-\[
-v=a\Delta t,
-\]
+\[v=a\Delta t,\]
 
 volgt:
 
-\[
-\Delta x
-=
-\frac12\Delta t\cdot a\Delta t
-=
-\boxed{\frac12a(\Delta t)^2}.
-\]
+\[\Delta x = \frac12\Delta t\cdot a\Delta t = \boxed{\frac12a(\Delta t)^2}.\]
 
 De bewegingsvergelijking verschijnt hier dus rechtstreeks uit de
-meetkundige betekenis van de $v(t)$-grafiek.
 
+meetkundige betekenis van de $v(t)$-grafiek.
 
 \FVDsubsection{EVRB met beginsnelheid: rechthoek en driehoek}
 
@@ -1579,83 +1592,57 @@ Beschouw nu een eenparig versnelde beweging met beginsnelheid $v_0$.
 
 De snelheid is:
 
-\[
-v(t)=v_0+at.
-\]
+\[v(t)=v_0+at.\]
 
 Over een tijdsinterval $\Delta t$ kunnen we de oppervlakte onder de
+
 $v(t)$-grafiek opsplitsen in:
 
 \begin{itemize}
-  \item een rechthoek met oppervlakte $v_0\Delta t$;
-  \item een driehoek met oppervlakte
-        $\frac12\Delta v\,\Delta t$.
+
+ \item een rechthoek met oppervlakte $v_0\Delta t$;
+
+ \item een driehoek met oppervlakte
+
+    $\frac12\Delta v\,\Delta t$.
+
 \end{itemize}
 
 Omdat
 
-\[
-\Delta v=a\Delta t,
-\]
+\[\Delta v=a\Delta t,\]
 
 krijgen we:
 
-\[
-\Delta x
-=
-v_0\Delta t
-+
-\frac12a(\Delta t)^2.
-\]
+\[\Delta x = v_0\Delta t + \frac12a(\Delta t)^2.\]
 
 Dus:
 
-\[
-\boxed{
-\Delta x
-=
-v_0\Delta t+\frac12a(\Delta t)^2.
-}
-\]
+\[\boxed{ \Delta x = v_0\Delta t+\frac12a(\Delta t)^2. }\]
 
 Als $t_0=0$, wordt dit:
 
-\[
-\boxed{
-x(t)
-=
-x_0+v_0t+\frac12at^2.
-}
-\]
+\[\boxed{ x(t) = x_0+v_0t+\frac12at^2. }\]
 
 Dit is dezelfde bewegingsvergelijking die we analytisch via integratie
-kunnen verkrijgen. De grafische en analytische methode beschrijven
-dezelfde fysica.
 
+kunnen verkrijgen. De grafische en analytische methode beschrijven
+
+dezelfde fysica.
 
 \FVDsubsection{Hetzelfde gebied als trapezium}
 
 Bij een EVRB met snelheden $v_1$ en $v_2$ aan de uiteinden van een
+
 tijdsinterval kan dezelfde oppervlakte ook als een trapezium worden
+
 berekend:
 
-\[
-\boxed{
-\Delta x
-=
-\frac{v_1+v_2}{2}\Delta t.
-}
-\]
+\[\boxed{ \Delta x = \frac{v_1+v_2}{2}\Delta t. }\]
 
 Hieruit volgt meteen:
 
-\[
-v_{\mathrm{gem}}
-=
-\frac{\Delta x}{\Delta t}
-=
-\boxed{\frac{v_1+v_2}{2}}
-\]
+\[v_{\mathrm{gem}} = \frac{\Delta x}{\Delta t} = \boxed{\frac{v_1+v_2}{2}}\]
 
 voor een beweging waarbij de snelheid lineair met de tijd verandert.
 
@@ -1663,896 +1650,1094 @@ voor een beweging waarbij de snelheid lineair met de tijd verandert.
 
 De formule
 
-\[
-v_{\mathrm{gem}}=\frac{v_1+v_2}{2}
-\]
+\[v_{\mathrm{gem}}=\frac{v_1+v_2}{2}\]
 
 geldt niet voor een willekeurige beweging. Ze werkt hier omdat
+
 $v(t)$ een lineaire functie is.
 
 \end{opmerking}
-
 
 \begin{voorbeeld}[Optrekken]
 
 Een auto verhoogt zijn snelheid in $6,0\,\mathrm{s}$ eenparig van
 
-\[
-4,0\,\mathrm{m/s}
-\]
+\[4,0\,\mathrm{m/s}\]
 
 naar
 
-\[
-16,0\,\mathrm{m/s}.
-\]
+\[16,0\,\mathrm{m/s}.\]
 
 Met de trapeziummethode:
 
-\[
-\Delta x
-=
-\frac{4,0+16,0}{2}\cdot6,0
-=
-60\,\mathrm{m}.
-\]
+\[\Delta x = \frac{4,0+16,0}{2}\cdot6,0 = 60\,\mathrm{m}.\]
 
 We kunnen hetzelfde gebied opsplitsen:
 
-\[
-\Delta x
-=
-\underbrace{4,0\cdot6,0}_{\text{rechthoek}}
-+
-\underbrace{\frac12\cdot6,0\cdot12,0}_{\text{driehoek}}
-=
-24+36
-=
-60\,\mathrm{m}.
-\]
+\[\Delta x = \underbrace{4,0\cdot6,0}_{\text{rechthoek}} + \underbrace{\frac12\cdot6,0\cdot12,0}_{\text{driehoek}} = 24+36 = 60\,\mathrm{m}.\]
 
 Beide berekeningen beschrijven exact dezelfde oppervlakte.
 
 \end{voorbeeld}
-
 
 \begin{oefening}[Rechthoek, driehoek of trapezium?]{\oefB\ESS}
 
 Bepaal telkens de verplaatsing met de oppervlaktemethode.
 
 \begin{question}
+
 Een voorwerp beweegt $8,0\,\mathrm{s}$ met constante snelheid
+
 $v=3,5\,\mathrm{m/s}$.
+
+\begin{oplossing}
+Rechthoek:
+\[\Delta x=8,0\cdot3,5=28\,\mathrm{m}.\]
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Een voorwerp vertrekt uit rust en bereikt na $5,0\,\mathrm{s}$
+
 een snelheid van $10,0\,\mathrm{m/s}$. De snelheid neemt lineair toe.
+
+\begin{oplossing}
+Driehoek:
+\[\Delta x=\frac12\cdot5,0\cdot10,0=25\,\mathrm{m}.\]
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Een auto versnelt in $4,0\,\mathrm{s}$ eenparig van
+
 $6,0\,\mathrm{m/s}$ naar $14,0\,\mathrm{m/s}$.
+
+\begin{oplossing}
+Trapezium:
+\[\Delta x=\frac{6,0+14,0}{2}\cdot4,0=40\,\mathrm{m}.\]
+\end{oplossing}
+
 \end{question}
 
 Geef bij elke situatie aan welke meetkundige figuur je gebruikt.
 
 \end{oefening}
 
-
 \begin{oefening}[Twee manieren voor dezelfde EVRB]{\oefU\ESS}
 
 Een trein rijdt aanvankelijk met
 
-\[
-v_0=8,0\,\mathrm{m/s}
-\]
+\[v_0=8,0\,\mathrm{m/s}\]
 
 en versnelt gedurende $10,0\,\mathrm{s}$ eenparig met
 
-\[
-a=0,60\,\mathrm{m/s^2}.
-\]
+\[a=0,60\,\mathrm{m/s^2}.\]
 
 \begin{question}
+
 Bepaal de eindsnelheid.
+
+\begin{oplossing}
+\[v=8,0+0,60\cdot10,0=14,0\,\mathrm{m/s}.\]
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Bepaal de verplaatsing door de oppervlakte op te splitsen in een
+
 rechthoek en een driehoek.
+
+\begin{oplossing}
+\[A_{\mathrm{rechthoek}}=8,0\cdot10,0=80\,\mathrm{m}, \qquad A_{\mathrm{driehoek}}=\frac12\cdot10,0\cdot6,0=30\,\mathrm{m}.\]
+Dus \(\Delta x=110\,\mathrm{m}\).
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Bepaal dezelfde verplaatsing met
-\[
-\Delta x=v_0\Delta t+\frac12a(\Delta t)^2.
-\]
+
+\[\Delta x=v_0\Delta t+\frac12a(\Delta t)^2.\]
+
+\begin{oplossing}
+\[\Delta x=8,0\cdot10,0+\frac12\cdot0,60\cdot10,0^2=110\,\mathrm{m}.\]
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Leg uit waarom beide methoden noodzakelijk hetzelfde resultaat geven.
+
+\begin{oplossing}
+De rechthoek stelt \(v_0t\) voor en de driehoek \(\frac12at^2\). Samen vormen ze exact de bewegingsvergelijking.
+\end{oplossing}
+
 \end{question}
 
 \end{oefening}
 
-
 \FVDsubsection{Stukgewijze bewegingen}
 
 In realistische situaties is de beweging vaak niet gedurende het hele
+
 interval van hetzelfde type.
 
 Een voertuig kan bijvoorbeeld:
 
 \begin{enumerate}
-  \item eerst eenparig versnellen;
-  \item daarna een tijdlang met constante snelheid rijden;
-  \item vervolgens eenparig vertragen.
+
+ \item eerst eenparig versnellen;
+
+ \item daarna een tijdlang met constante snelheid rijden;
+
+ \item vervolgens eenparig vertragen.
+
 \end{enumerate}
 
 In een $v(t)$-diagram ontstaat dan een combinatie van driehoeken,
+
 rechthoeken en trapezia.
 
 De totale verplaatsing vinden we door de georiënteerde oppervlakten
+
 van alle stukken op te tellen:
 
-\[
-\boxed{
-\Delta x=A_1+A_2+A_3+\cdots
-}
-\]
+\[\boxed{ \Delta x=A_1+A_2+A_3+\cdots }\]
 
 waarbij het teken van elk oppervlak bepaald wordt door de ligging ten
-opzichte van de tijdas.
 
+opzichte van de tijdas.
 
 \begin{voorbeeld}[Een metro tussen twee stations]
 
 Een metro vertrekt uit rust.
 
 \begin{itemize}
-  \item Van $t=0$ tot $t=10\,\mathrm{s}$ neemt de snelheid lineair toe
-        van $0$ tot $12\,\mathrm{m/s}$.
-  \item Van $t=10\,\mathrm{s}$ tot $t=35\,\mathrm{s}$ blijft de
-        snelheid $12\,\mathrm{m/s}$.
-  \item Van $t=35\,\mathrm{s}$ tot $t=43\,\mathrm{s}$ neemt de snelheid
-        lineair af tot nul.
+
+ \item Van $t=0$ tot $t=10\,\mathrm{s}$ neemt de snelheid lineair toe
+
+    van $0$ tot $12\,\mathrm{m/s}$.
+
+ \item Van $t=10\,\mathrm{s}$ tot $t=35\,\mathrm{s}$ blijft de
+
+    snelheid $12\,\mathrm{m/s}$.
+
+ \item Van $t=35\,\mathrm{s}$ tot $t=43\,\mathrm{s}$ neemt de snelheid
+
+    lineair af tot nul.
+
 \end{itemize}
 
 De verplaatsing bestaat uit:
 
-\[
-A_1=\frac12\cdot10\cdot12=60\,\mathrm{m},
-\]
+\[A_1=\frac12\cdot10\cdot12=60\,\mathrm{m},\]
 
-\[
-A_2=25\cdot12=300\,\mathrm{m},
-\]
+\[A_2=25\cdot12=300\,\mathrm{m},\]
 
-\[
-A_3=\frac12\cdot8\cdot12=48\,\mathrm{m}.
-\]
+\[A_3=\frac12\cdot8\cdot12=48\,\mathrm{m}.\]
 
 Dus:
 
-\[
-\boxed{
-\Delta x=60+300+48=408\,\mathrm{m}.
-}
-\]
+\[\boxed{ \Delta x=60+300+48=408\,\mathrm{m}. }\]
 
 De grafiek maakt bovendien onmiddellijk zichtbaar welke bewegingsfase
+
 een ERB en welke fasen een EVRB zijn.
 
 \end{voorbeeld}
-
 
 \begin{oefening}[Een volledige rit]{\oefU\ESS}
 
 Een elektrische fiets vertrekt uit rust.
 
 \begin{itemize}
-  \item Gedurende $4,0\,\mathrm{s}$ stijgt de snelheid lineair van
-        $0$ naar $8,0\,\mathrm{m/s}$.
-  \item Daarna blijft de snelheid gedurende $12,0\,\mathrm{s}$ constant.
-  \item Vervolgens daalt de snelheid in $5,0\,\mathrm{s}$ lineair tot nul.
+
+ \item Gedurende $4,0\,\mathrm{s}$ stijgt de snelheid lineair van
+
+    $0$ naar $8,0\,\mathrm{m/s}$.
+
+ \item Daarna blijft de snelheid gedurende $12,0\,\mathrm{s}$ constant.
+
+ \item Vervolgens daalt de snelheid in $5,0\,\mathrm{s}$ lineair tot nul.
+
 \end{itemize}
 
 \begin{question}
+
 Schets het $v(t)$-diagram.
+
+\begin{oplossing}
+Verbind de punten \((0,0)\), \((4,8)\), \((16,8)\) en \((21,0)\) met rechte lijnstukken.
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Verdeel het gebied onder de grafiek in eenvoudige meetkundige figuren.
+
+\begin{oplossing}
+Het gebied bestaat uit een driehoek tijdens het versnellen, een rechthoek tijdens de constante snelheid en een driehoek tijdens het vertragen.
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Bereken de verplaatsing tijdens elke bewegingsfase.
+
+\begin{oplossing}
+\[\Delta x_1=\frac12\cdot4\cdot8=16\,\mathrm{m}, \quad \Delta x_2=12\cdot8=96\,\mathrm{m}, \quad \Delta x_3=\frac12\cdot5\cdot8=20\,\mathrm{m}.\]
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Bereken de totale verplaatsing.
+
+\begin{oplossing}
+\[\Delta x=16+96+20=132\,\mathrm{m}.\]
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Bepaal de gemiddelde snelheid over de volledige beweging.
+
+\begin{oplossing}
+De totale tijd is \(21\,\mathrm{s}\), dus
+\[v_{\mathrm{gem}}=\frac{132}{21}\approx6,29\,\mathrm{m/s}.\]
+\end{oplossing}
+
 \end{question}
 
 \end{oefening}
-
 
 \FVDsubsection{Onder de tijdas: het teken telt}
 
 Wanneer $v<0$, beweegt het voorwerp in de negatieve richting.
 
 Het gebied tussen de $v(t)$-grafiek en de tijdas ligt dan onder de
+
 tijdas en levert een \textbf{negatieve bijdrage} aan de verplaatsing.
 
 Stel bijvoorbeeld:
 
-\[
-A_+=30\,\mathrm{m}
-\]
+\[A_+=30\,\mathrm{m}\]
 
 boven de tijdas en
 
-\[
-A_-=12\,\mathrm{m}
-\]
+\[A_-=12\,\mathrm{m}\]
 
 onder de tijdas.
 
 Voor de verplaatsing:
 
-\[
-\Delta x=30-12=18\,\mathrm{m}.
-\]
+\[\Delta x=30-12=18\,\mathrm{m}.\]
 
 Voor de totale afgelegde weg tellen we de groottes van beide gebieden:
 
-\[
-\Delta s=30+12=42\,\mathrm{m}.
-\]
+\[\Delta s=30+12=42\,\mathrm{m}.\]
 
 Dus:
 
-\[
-\boxed{
-\text{verplaatsing}
-=
-\text{positieve oppervlakte}
--
-\text{oppervlakte onder de tijdas}
-}
-\]
+\[\boxed{ \text{verplaatsing} = \text{positieve oppervlakte} - \text{oppervlakte onder de tijdas} }\]
 
 terwijl
 
-\[
-\boxed{
-\text{afgelegde weg}
-=
-\text{som van de groottes van alle oppervlakten}.
-}
-\]
-
+\[\boxed{ \text{afgelegde weg} = \text{som van de groottes van alle oppervlakten}. }\]
 
 \begin{oefening}[Vooruit en terug]{\oefB\ESS}
 
 Een voorwerp heeft de volgende beweging:
 
 \begin{itemize}
-  \item van $t=0$ tot $t=4\,\mathrm{s}$ is
-        $v=+5\,\mathrm{m/s}$;
-  \item van $t=4$ tot $t=6\,\mathrm{s}$ is $v=0$;
-  \item van $t=6$ tot $t=9\,\mathrm{s}$ is
-        $v=-3\,\mathrm{m/s}$.
+
+ \item van $t=0$ tot $t=4\,\mathrm{s}$ is
+
+    $v=+5\,\mathrm{m/s}$;
+
+ \item van $t=4$ tot $t=6\,\mathrm{s}$ is $v=0$;
+
+ \item van $t=6$ tot $t=9\,\mathrm{s}$ is
+
+    $v=-3\,\mathrm{m/s}$.
+
 \end{itemize}
 
 \begin{question}
+
 Schets het $v(t)$-diagram.
+
+\begin{oplossing}
+Van \(0\) tot \(4\,\mathrm{s}\): horizontaal op \(+5\,\mathrm{m/s}\). Van \(4\) tot \(6\,\mathrm{s}\): op \(0\). Van \(6\) tot \(9\,\mathrm{s}\): horizontaal op \(-3\,\mathrm{m/s}\).
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Bereken de verplaatsing met de oppervlaktemethode.
+
+\begin{oplossing}
+\[\Delta x=5\cdot4+0\cdot2+(-3)\cdot3=20-9=11\,\mathrm{m}.\]
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Bereken de totale afgelegde weg.
+
+\begin{oplossing}
+\[\Delta s=20+9=29\,\mathrm{m}.\]
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Bepaal de eindpositie als $x_0=7\,\mathrm{m}$.
+
+\begin{oplossing}
+\[x_{\mathrm{eind}}=7+11=18\,\mathrm{m}.\]
+\end{oplossing}
+
 \end{question}
 
 \end{oefening}
-
 
 \begin{oefening}[Een grafiek die de tijdas snijdt]{\oefU\ESS}
 
 De snelheid van een voorwerp wordt voor $0\leq t\leq8\,\mathrm{s}$
+
 beschreven door een rechte. Er geldt:
 
-\[
-v(0)=6\,\mathrm{m/s},
-\qquad
-v(8)=-2\,\mathrm{m/s}.
-\]
+\[v(0)=6\,\mathrm{m/s}, \qquad v(8)=-2\,\mathrm{m/s}.\]
 
 \begin{question}
+
 Bepaal op welk tijdstip het voorwerp van bewegingsrichting verandert.
+
+\begin{oplossing}
+De helling is \((-2-6)/8=-1\,\mathrm{m/s^2}\), dus \(v(t)=6-t\). Daarom \(v=0\) bij \(t=6\,\mathrm{s}\).
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Bereken de verplaatsing met de oppervlaktemethode.
+
+\begin{oplossing}
+Boven de tijdas:
+\[A_+=\frac12\cdot6\cdot6=18\,\mathrm{m}.\]
+Onder de tijdas:
+\[A_-=-\frac12\cdot2\cdot2=-2\,\mathrm{m}.\]
+Dus
+\[\Delta x=18-2=16\,\mathrm{m}.\]
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Bereken de totale afgelegde weg.
+
+\begin{oplossing}
+\[\Delta s=18+2=20\,\mathrm{m}.\]
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Leg uit waarom je voor de afgelegde weg de volledige driehoek niet
+
 met één teken mag behandelen.
+
+\begin{oplossing}
+Omdat de snelheid bij \(t=6\,\mathrm{s}\) van teken verandert. De oppervlakte onder de tijdas telt negatief mee voor de verplaatsing, maar positief voor de afgelegde weg.
+\end{oplossing}
+
 \end{question}
 
 \end{oefening}
 
-
 \FVDsubsection{Van oppervlaktemethode naar bepaalde integraal}
 
 Wanneer een functievoorschrift voor $v(t)$ beschikbaar is, kunnen we
+
 dezelfde fysische grootheid ook analytisch bepalen.
 
 \begin{eigenschap}[Verplaatsing als bepaalde integraal]
 
 Voor een willekeurige snelheidsfunctie geldt:
 
-\[
-\boxed{
-\Delta x
-=
-x(t_2)-x(t_1)
-=
-\int_{t_1}^{t_2}v(t)\,dt.
-}
-\]
+\[\boxed{ \Delta x = x(t_2)-x(t_1) = \int_{t_1}^{t_2}v(t)\,dt. }\]
 
 De bepaalde integraal is hier de georiënteerde oppervlakte onder de
+
 $v(t)$-grafiek.
 
 \end{eigenschap}
 
 We leiden het integraalbegrip in deze cursus niet opnieuw op. Dat
+
 behoort tot de wiskundecursus. In fysica gebruiken we de bepaalde
+
 integraal als een gekend wiskundig instrument om een beweging te
+
 analyseren.
 
 De oppervlaktemethode en de integraalmethode zijn dus geen twee
+
 verschillende natuurkundige regels:
 
-\[
-\boxed{
-\text{meetkundige oppervlaktemethode}
-\quad\longleftrightarrow\quad
-\text{bepaalde integraal}
-}
-\]
+\[\boxed{ \text{meetkundige oppervlaktemethode} \quad\longleftrightarrow\quad \text{bepaalde integraal} }\]
 
 Ze drukken dezelfde fysische relatie uit.
-
 
 \begin{voorbeeld}[Dezelfde verplaatsing op twee manieren]
 
 Voor
 
-\[
-v(t)=2,0+0,50t
-\]
+\[v(t)=2,0+0,50t\]
 
 op $0\leq t\leq8,0\,\mathrm{s}$ is de grafiek een rechte.
 
 \textbf{Oppervlaktemethode}
 
-\[
-v(0)=2,0\,\mathrm{m/s},
-\qquad
-v(8)=6,0\,\mathrm{m/s}.
-\]
+\[v(0)=2,0\,\mathrm{m/s}, \qquad v(8)=6,0\,\mathrm{m/s}.\]
 
 Het gebied is een trapezium:
 
-\[
-\Delta x
-=
-\frac{2,0+6,0}{2}\cdot8,0
-=
-32\,\mathrm{m}.
-\]
+\[\Delta x = \frac{2,0+6,0}{2}\cdot8,0 = 32\,\mathrm{m}.\]
 
 \textbf{Integraalmethode}
 
-\[
-\Delta x
-=
-\int_0^8(2,0+0,50t)\,dt
-=
-\left[2,0t+0,25t^2\right]_0^8
-=
-32\,\mathrm{m}.
-\]
+\[\Delta x = \int_0^8(2,0+0,50t)\,dt = \left[2,0t+0,25t^2\right]_0^8 = 32\,\mathrm{m}.\]
 
 Beide methoden leveren hetzelfde resultaat omdat ze dezelfde
+
 georiënteerde oppervlakte bepalen.
 
 \end{voorbeeld}
-
 
 \begin{oefening}[Oppervlakte én integraal]{\oefU\ESS}
 
 Gegeven:
 
-\[
-v(t)=3,0+t
-\]
+\[v(t)=3,0+t\]
 
 voor $0\leq t\leq6,0\,\mathrm{s}$.
 
 \begin{question}
+
 Schets de $v(t)$-grafiek.
+
+\begin{oplossing}
+Het is een rechte door \((0,3)\) en \((6,9)\).
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Bereken de verplaatsing met de oppervlaktemethode.
+
+\begin{oplossing}
+\[\Delta x=3\cdot6+\frac12\cdot6\cdot6=18+18=36\,\mathrm{m}.\]
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Bereken dezelfde verplaatsing met een bepaalde integraal.
+
+\begin{oplossing}
+\[\Delta x=\int_0^6(3+t)\,dt =\left[3t+\frac12t^2\right]_0^6=18+18=36\,\mathrm{m}.\]
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Toon in je berekeningen aan welke onderdelen van de integraal
+
 overeenkomen met de rechthoek en de driehoek in de grafiek.
+
+\begin{oplossing}
+De integraal van \(3\) levert \(3\cdot6=18\,\mathrm{m}\), de rechthoek. De integraal van \(t\) levert \(\frac12\cdot6^2=18\,\mathrm{m}\), de driehoek.
+\end{oplossing}
+
 \end{question}
 
 \end{oefening}
-
 
 \begin{oefening}[Wanneer de integraal handiger wordt]{\oefU\ESS}
 
 Een beweging wordt beschreven door
 
-\[
-v(t)=0,30t^2+2,0
-\]
+\[v(t)=0,30t^2+2,0\]
 
 voor $0\leq t\leq5,0\,\mathrm{s}$.
 
 \begin{question}
+
 Schets de snelheidsfunctie.
+
+\begin{oplossing}
+De grafiek is het deel van een omhoog openende parabool vanaf \(v(0)=2,0\) tot \(v(5)=9,5\,\mathrm{m/s}\).
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Leg uit waarom de oppervlakte niet meer exact met één rechthoek,
+
 driehoek of trapezium kan worden bepaald.
+
+\begin{oplossing}
+Omdat \(v(t)\) kwadratisch en dus niet lineair is. De bovengrens van het gebied is gekromd.
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Bereken de verplaatsing met een bepaalde integraal.
+
+\begin{oplossing}
+\[\Delta x=\int_0^5(0,30t^2+2,0)\,dt =\left[0,10t^3+2,0t\right]_0^5 =12,5+10,0=22,5\,\mathrm{m}.\]
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Bepaal de gemiddelde snelheid over het volledige interval.
+
+\begin{oplossing}
+\[v_{\mathrm{gem}}=\frac{22,5}{5,0}=4,5\,\mathrm{m/s}.\]
+\end{oplossing}
+
 \end{question}
 
 \end{oefening}
 
-
 \FVDsubsection{Afgelegde weg met een integraal}
 
 Wanneer $v(t)$ gedurende het volledige interval hetzelfde teken heeft,
+
 is de grootte van de verplaatsing gelijk aan de afgelegde weg.
 
 Wanneer $v(t)$ van teken verandert, moeten we voor de afgelegde weg de
+
 negatieve bijdragen positief meetellen.
 
 Daarom:
 
-\[
-\boxed{
-\Delta s
-=
-\int_{t_1}^{t_2}|v(t)|\,dt.
-}
-\]
+\[\boxed{ \Delta s = \int_{t_1}^{t_2}|v(t)|dt. }\]
 
 In de praktijk kan het vaak inzichtelijker zijn om eerst de
+
 nulwaarden van $v(t)$ te bepalen en het interval daar op te splitsen.
 
 \begin{voorbeeld}[Van richting veranderen]
 
 Gegeven:
 
-\[
-v(t)=t-3
-\]
+\[v(t)=t-3\]
 
 voor $0\leq t\leq6$.
 
 De bewegingsrichting verandert wanneer:
 
-\[
-v(t)=0
-\]
+\[v(t)=0\]
 
 dus:
 
-\[
-t=3\,\mathrm{s}.
-\]
+\[t=3\,\mathrm{s}.\]
 
 De verplaatsing is:
 
-\[
-\Delta x
-=
-\int_0^6(t-3)\,dt
-=
-0.
-\]
+\[\Delta x = \int_0^6(t-3)\,dt = 0.\]
 
 Grafisch zien we twee even grote driehoeken: één onder en één boven de
+
 tijdas.
 
 De afgelegde weg is echter:
 
-\[
-\Delta s
-=
-\int_0^3(3-t)\,dt
-+
-\int_3^6(t-3)\,dt
-=
-4,5+4,5
-=
-9,0\,\mathrm{m}.
-\]
+\[\Delta s = \int_0^3(3-t)\,dt + \int_3^6(t-3)\,dt = 4,5+4,5 = 9,0\,\mathrm{m}.\]
 
 \end{voorbeeld}
-
 
 \begin{oefening}[Verplaatsing tegenover afgelegde weg]{\oefU\ESS}
 
 Gegeven:
 
-\[
-v(t)=2t-4
-\]
+\[v(t)=2t-4\]
 
 voor $0\leq t\leq5\,\mathrm{s}$.
 
 \begin{question}
+
 Bepaal wanneer het voorwerp van bewegingsrichting verandert.
+
+\begin{oplossing}
+\[2t-4=0\Longrightarrow t=2\,\mathrm{s}.\]
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Schets de $v(t)$-grafiek.
+
+\begin{oplossing}
+Het is een rechte door \((0,-4)\), \((2,0)\) en \((5,6)\).
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Bepaal de verplaatsing met de oppervlaktemethode.
+
+\begin{oplossing}
+\[A_-=-\frac12\cdot2\cdot4=-4\,\mathrm{m}, \qquad A_+=\frac12\cdot3\cdot6=9\,\mathrm{m}.\]
+Dus
+\[\Delta x=-4+9=5\,\mathrm{m}.\]
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Controleer de verplaatsing met een bepaalde integraal.
+
+\begin{oplossing}
+\[\Delta x=\int_0^5(2t-4)\,dt =\left[t^2-4t\right]_0^5=25-20=5\,\mathrm{m}.\]
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Bepaal de totale afgelegde weg.
+
+\begin{oplossing}
+\[\Delta s=4+9=13\,\mathrm{m}.\]
+\end{oplossing}
+
 \end{question}
 
 \end{oefening}
-
 
 \FVDsubsection{Dezelfde oppervlaktemethode bij een $a(t)$-grafiek}
 
 Hetzelfde idee geldt voor versnelling.
 
 Omdat versnelling de verandering van snelheid per tijdseenheid
+
 beschrijft, geeft de georiënteerde oppervlakte onder een
+
 $a(t)$-grafiek het snelheidsverschil.
 
 \begin{eigenschap}[Oppervlakte onder een $a(t)$-grafiek]
 
-\[
-\boxed{
-\Delta v
-=
-\text{georiënteerde oppervlakte onder de }a(t)\text{-grafiek}
-}
-\]
+\[\boxed{ \Delta v = \text{georiënteerde oppervlakte onder de }a(t)\text{-grafiek} }\]
 
 en analytisch:
 
-\[
-\boxed{
-\Delta v
-=
-\int_{t_1}^{t_2}a(t)\,dt.
-}
-\]
+\[\boxed{ \Delta v = \int_{t_1}^{t_2}a(t)\,dt. }\]
 
 \end{eigenschap}
 
 Bij een constante versnelling is het gebied een rechthoek:
 
-\[
-\Delta v=a\Delta t.
-\]
+\[\Delta v=a\Delta t.\]
 
 Daaruit volgt onmiddellijk:
 
-\[
-\boxed{
-v=v_0+a\Delta t.
-}
-\]
-
+\[\boxed{ v=v_0+a\Delta t. }\]
 
 \begin{voorbeeld}[Versnelling uit een $a(t)$-diagram]
 
 Een auto heeft gedurende $4,0\,\mathrm{s}$ een constante versnelling
 
-\[
-a=2,5\,\mathrm{m/s^2}.
-\]
+\[a=2,5\,\mathrm{m/s^2}.\]
 
 De oppervlakte onder de $a(t)$-grafiek is:
 
-\[
-\Delta v
-=
-4,0\cdot2,5
-=
-10\,\mathrm{m/s}.
-\]
+\[\Delta v = 4,0\cdot2,5 = 10\,\mathrm{m/s}.\]
 
 Als
 
-\[
-v_0=6,0\,\mathrm{m/s},
-\]
+\[v_0=6,0\,\mathrm{m/s},\]
 
 dan:
 
-\[
-v=16,0\,\mathrm{m/s}.
-\]
+\[v=16,0\,\mathrm{m/s}.\]
 
 \end{voorbeeld}
-
 
 \begin{oefening}[Stukgewijze versnelling]{\oefU\ESS}
 
 Een voertuig heeft de volgende versnelling:
 
 \begin{itemize}
-  \item $a=2,0\,\mathrm{m/s^2}$ gedurende de eerste $3,0\,\mathrm{s}$;
-  \item $a=0$ gedurende de volgende $4,0\,\mathrm{s}$;
-  \item $a=-1,5\,\mathrm{m/s^2}$ gedurende de laatste $2,0\,\mathrm{s}$.
+
+ \item $a=2,0\,\mathrm{m/s^2}$ gedurende de eerste $3,0\,\mathrm{s}$;
+
+ \item $a=0$ gedurende de volgende $4,0\,\mathrm{s}$;
+
+ \item $a=-1,5\,\mathrm{m/s^2}$ gedurende de laatste $2,0\,\mathrm{s}$.
+
 \end{itemize}
 
 De beginsnelheid is
 
-\[
-v_0=5,0\,\mathrm{m/s}.
-\]
+\[v_0=5,0\,\mathrm{m/s}.\]
 
 \begin{question}
+
 Schets het $a(t)$-diagram.
+
+\begin{oplossing}
+Horizontaal op \(2,0\) van \(t=0\) tot \(3\), op \(0\) van \(t=3\) tot \(7\), en op \(-1,5\) van \(t=7\) tot \(9\).
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Bepaal voor elke fase de snelheidsverandering met de
+
 oppervlaktemethode.
+
+\begin{oplossing}
+\[\Delta v_1=2,0\cdot3,0=6,0\,\mathrm{m/s}, \quad \Delta v_2=0, \quad \Delta v_3=-1,5\cdot2,0=-3,0\,\mathrm{m/s}.\]
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Bepaal de snelheid na elke fase.
+
+\begin{oplossing}
+\[v_1=5,0+6,0=11,0\,\mathrm{m/s}, \quad v_2=11,0\,\mathrm{m/s}, \quad v_3=11,0-3,0=8,0\,\mathrm{m/s}.\]
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Bepaal de eindsnelheid.
+
+\begin{oplossing}
+\[\boxed{v_{\mathrm{eind}}=8,0\,\mathrm{m/s}}.\]
+\end{oplossing}
+
 \end{question}
 
 \end{oefening}
-
 
 \FVDsubsection{Welke methode kies je?}
 
 Bij een bewegingsprobleem bestaan vaak verschillende correcte
+
 oplossingsmethoden.
 
 \begin{itemize}
-  \item \textbf{Oppervlaktemethode:} bijzonder efficiënt wanneer een
-        $v(t)$- of $a(t)$-grafiek uit eenvoudige meetkundige stukken
-        bestaat.
-  \item \textbf{Bepaalde integraal:} krachtig wanneer een
-        functievoorschrift gegeven is, zeker bij niet-lineaire
-        functies.
-  \item \textbf{Bewegingsvergelijkingen:} efficiënt bij een ERB of
-        EVRB wanneer beginwaarden en constante versnelling bekend zijn.
+
+ \item \textbf{Oppervlaktemethode:} bijzonder efficiënt wanneer een
+
+    $v(t)$- of $a(t)$-grafiek uit eenvoudige meetkundige stukken
+
+    bestaat.
+
+ \item \textbf{Bepaalde integraal:} krachtig wanneer een
+
+    functievoorschrift gegeven is, zeker bij niet-lineaire
+
+    functies.
+
+ \item \textbf{Bewegingsvergelijkingen:} efficiënt bij een ERB of
+
+    EVRB wanneer beginwaarden en constante versnelling bekend zijn.
+
 \end{itemize}
 
 Een sterke fysische probleemoplosser kiest niet automatisch één
-formule, maar beoordeelt eerst welke voorstelling en welke methode het
-meest geschikt zijn.
 
+formule, maar beoordeelt eerst welke voorstelling en welke methode het
+
+meest geschikt zijn.
 
 \begin{oefening}[Kies een efficiënte methode]{\oefG}
 
 Voor elk van de volgende situaties kies je eerst de meest geschikte
+
 methode: oppervlaktemethode, integraal of bewegingsvergelijking.
+
 Los daarna het probleem op en motiveer je keuze.
 
 \begin{question}
+
 Een $v(t)$-diagram bestaat uit drie rechte lijnstukken en er is geen
+
 functievoorschrift gegeven.
+
+\begin{oplossing}
+Kies de oppervlaktemethode. Verdeel het gebied in rechthoeken, driehoeken of trapezia en tel de georiënteerde oppervlakten op. Zonder de concrete grafiek kan geen uniek numeriek resultaat worden bepaald.
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 De snelheid wordt beschreven door
-\[
-v(t)=0,20t^2+1,5t+2,0.
-\]
+
+\[v(t)=0,20t^2+1,5t+2,0.\]
+
+\begin{oplossing}
+Kies de bepaalde integraal. Voor een interval \([t_1,t_2]\) geldt
+\[\Delta x=\int_{t_1}^{t_2}(0,20t^2+1,5t+2,0)\,dt =\left[\frac1{15}t^3+0,75t^2+2,0t\right]_{t_1}^{t_2}.\]
+Zonder opgegeven tijdsinterval is er geen uniek numeriek antwoord.
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Een voertuig heeft $v_0=12\,\mathrm{m/s}$ en
+
 $a=-2,0\,\mathrm{m/s^2}$. Gevraagd wordt de positie na
+
 $4,0\,\mathrm{s}$.
+
+\begin{oplossing}
+De EVRB-vergelijking is het efficiëntst:
+\[x(4)=x_0+12\cdot4+\frac12(-2,0)\cdot4^2=x_0+32\,\mathrm{m}.\]
+Omdat \(x_0\) niet gegeven is, kan alleen de verplaatsing numeriek worden bepaald:
+\[\Delta x=32\,\mathrm{m}.\]
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Leg voor minstens één situatie uit hoe je het resultaat met een
+
 tweede methode zou kunnen controleren.
+
+\begin{oplossing}
+Bij de EVRB kan je de verplaatsing ook bepalen als de georiënteerde oppervlakte onder de \(v(t)\)-grafiek. Hier daalt \(v\) lineair van \(12\) naar \(4\,\mathrm{m/s}\), zodat
+\[\Delta x=\frac{12+4}{2}\cdot4=32\,\mathrm{m}.\]
+\end{oplossing}
+
 \end{question}
 
 \end{oefening}
 
-
 % 12 MATHEMATISEREN
+
 % ============================================================
 
 \FVDsection{Een bewegingsprobleem mathematiseren}
 
 Bij veel vraagstukken is niet het rekenwerk de grootste moeilijkheid.
+
 De uitdaging is om een situatie om te zetten naar een bruikbaar
+
 fysisch en wiskundig model.
 
 Gebruik daarom systematisch de volgende aanpak.
 
-
 \begin{eigenschap}[Probleemaanpak bij rechtlijnige beweging]
 
 \begin{enumerate}
-  \item \textbf{Begrijp de situatie.}\\
-        Wat gebeurt er fysisch?
 
-  \item \textbf{Maak een schets.}\\
-        Teken de beweging, de relevante posities en eventueel de
-        bewegingsrichting.
+ \item \textbf{Begrijp de situatie.}\\
 
-  \item \textbf{Kies een as.}\\
-        Kies een oorsprong en een positieve richting.
+    Wat gebeurt er fysisch?
 
-  \item \textbf{Noteer de gegevens.}\\
-        Gebruik correcte symbolen en SI-eenheden.
+ \item \textbf{Maak een schets.}\\
 
-  \item \textbf{Noteer wat gezocht wordt.}
+    Teken de beweging, de relevante posities en eventueel de
 
-  \item \textbf{Kies het model.}\\
-        ERB, EVRB of een algemene functie?
+    bewegingsrichting.
 
-  \item \textbf{Kies de geschikte vergelijking of methode.}\\
-        Afgeleide, integraal, grafiek of bewegingsvergelijking?
+ \item \textbf{Kies een as.}\\
 
-  \item \textbf{Reken uit.}
+    Kies een oorsprong en een positieve richting.
 
-  \item \textbf{Controleer.}\\
-        Eenheden, teken, grootteorde en praktische betekenis.
+ \item \textbf{Noteer de gegevens.}\\
 
-  \item \textbf{Interpreteer.}\\
-        Formuleer een fysisch antwoord in woorden.
+    Gebruik correcte symbolen en SI-eenheden.
+
+ \item \textbf{Noteer wat gezocht wordt.}
+
+ \item \textbf{Kies het model.}\\
+
+    ERB, EVRB of een algemene functie?
+
+ \item \textbf{Kies de geschikte vergelijking of methode.}\\
+
+    Afgeleide, integraal, grafiek of bewegingsvergelijking?
+
+ \item \textbf{Reken uit.}
+
+ \item \textbf{Controleer.}\\
+
+    Eenheden, teken, grootteorde en praktische betekenis.
+
+ \item \textbf{Interpreteer.}\\
+
+    Formuleer een fysisch antwoord in woorden.
+
 \end{enumerate}
 
 \end{eigenschap}
-
 
 \begin{voorbeeld}[Kan de bestuurder een boete vermijden?]
 
 Een auto rijdt
 
-\[
-126\,\mathrm{km/h}=35,0\,\mathrm{m/s}
-\]
+\[126\,\mathrm{km/h}=35,0\,\mathrm{m/s}\]
 
 op een weg waar maximaal $90\,\mathrm{km/h}$ is toegestaan.
+
 Op $50\,\mathrm{m}$ vóór een flitspaal begint de bestuurder te reageren.
+
 Zijn reactietijd bedraagt $0,50\,\mathrm{s}$. Daarna remt hij met
+
 constante versnelling
 
-\[
-a=-7,5\,\mathrm{m/s^2}.
-\]
+\[a=-7,5\,\mathrm{m/s^2}.\]
 
 Tijdens de reactietijd rijdt de auto nog met constante snelheid:
 
-\[
-\Delta x_{\mathrm{reactie}}
-=
-35,0\cdot0,50
-=
-17,5\,\mathrm{m}.
-\]
+\[\Delta x_{\mathrm{reactie}} = 35,0\cdot0,50 = 17,5\,\mathrm{m}.\]
 
 Er blijft dus:
 
-\[
-50,0-17,5=32,5\,\mathrm{m}
-\]
+\[50,0-17,5=32,5\,\mathrm{m}\]
 
 over om te remmen.
 
 Daarna moet het remgedeelte als een EVRB worden geanalyseerd.
 
 Dit voorbeeld toont dat één realistische situatie uit verschillende
+
 bewegingsfasen kan bestaan.
 
 \end{voorbeeld}
 
-
 \begin{oefening}[Remmende elektrische step]{\oefU\ESS}
 
 Een elektrische step rijdt met $25,0\,\mathrm{km/h}$. De bestuurder
+
 ziet een obstakel op $18,0\,\mathrm{m}$ afstand. Zijn reactietijd is
+
 $0,70\,\mathrm{s}$. Tijdens het remmen is de versnelling constant en
+
 gelijk aan $-3,0\,\mathrm{m/s^2}$.
 
 Onderzoek of de step vóór het obstakel tot stilstand komt.
 
 Werk volgens de systematische probleemaanpak.
 
-\end{oefening}
+\begin{oplossing}
+Eerst zetten we de snelheid om:
+\[v_0=\frac{25,0}{3,6}\approx6,94\,\mathrm{m/s}.\]
+Tijdens de reactietijd is de beweging ongeveer een ERB:
+\[\Delta x_{\mathrm{reactie}}=6,94\cdot0,70\approx4,86\,\mathrm{m}.\]
+Er blijft
+\[18,0-4,86=13,14\,\mathrm{m}\]
+over om te remmen.
 
+De remtijd volgt uit \(v=v_0+at\):
+\[0=6,94-3,0t \quad\Longrightarrow\quad t_{\mathrm{rem}}\approx2,31\,\mathrm{s}.\]
+De remweg is
+\[\Delta x_{\mathrm{rem}} =v_0t+\frac12at^2 \approx6,94\cdot2,31-\frac12\cdot3,0\cdot2,31^2 \approx8,04\,\mathrm{m}.\]
+De totale stopafstand is dus ongeveer
+\[4,86+8,04=12,90\,\mathrm{m}.\]
+Omdat \(12,90<18,0\), komt de step vóór het obstakel tot stilstand. Er blijft ongeveer
+\[18,0-12,90=5,10\,\mathrm{m}\]
+over.
+\end{oplossing}
+
+\end{oefening}
 
 \begin{oefening}[Twee bewegingsfasen]{\oefG}
 
 Een trein vertrekt uit een station vanuit rust en versnelt gedurende
+
 $40\,\mathrm{s}$ met constante versnelling. Daarna rijdt hij
+
 $120\,\mathrm{s}$ met constante snelheid.
 
 Ontwerp zelf realistische waarden voor de versnelling en bereken:
 
 \begin{question}
+
 de snelheid na de versnellingsfase;
+
 \end{question}
 
 \begin{question}
+
 de totale verplaatsing;
+
 \end{question}
 
 \begin{question}
+
 de gemiddelde snelheid over de volledige beweging.
+
 \end{question}
 
 Bespreek of je gekozen waarden fysisch realistisch zijn.
 
+\begin{oplossing}
+Dit is een open modelleeropdracht; verschillende realistische keuzes zijn mogelijk. Een modelantwoord is \(a=0,50\,\mathrm{m/s^2}\).
+
+Na \(40\,\mathrm{s}\):
+\[v=0+0,50\cdot40=20\,\mathrm{m/s}=72\,\mathrm{km/h}.\]
+Tijdens de versnellingsfase:
+\[\Delta x_1=\frac12\cdot0,50\cdot40^2=400\,\mathrm{m}.\]
+Tijdens de constante fase:
+\[\Delta x_2=20\cdot120=2400\,\mathrm{m}.\]
+Dus
+\[\Delta x_{\mathrm{tot}}=2800\,\mathrm{m}.\]
+De totale tijd is \(160\,\mathrm{s}\), zodat
+\[v_{\mathrm{gem}}=\frac{2800}{160}=17,5\,\mathrm{m/s}=63\,\mathrm{km/h}.\]
+Een versnelling van \(0,50\,\mathrm{m/s^2}\) en een snelheid van \(72\,\mathrm{km/h}\) zijn plausibele waarden voor een trein die uit een station vertrekt. Andere goed gemotiveerde keuzes zijn eveneens correct.
+\end{oplossing}
+
 \end{oefening}
 
-
 % ============================================================
+
 % 13 DATA EN ICT
+
 % ============================================================
 
 \FVDsection{Grafieken, tabellen en ICT}
@@ -2561,127 +2746,165 @@ Niet elke beweging wordt gegeven door een formule.
 
 In experimenten krijgen we vaak meetwaarden:
 
-\[
-(t_i,x_i).
-\]
+\[(t_i,x_i).\]
 
 Daaruit kunnen we met een spreadsheet, GeoGebra, Desmos of
+
 videoanalyse een model opbouwen.
 
 Een sterke analyse verbindt:
 
-\[
-\boxed{
-\text{metingen}
-\longleftrightarrow
-x(t)
-\longleftrightarrow
-v(t)
-\longleftrightarrow
-a(t).
-}
-\]
+\[\boxed{ \text{metingen} \longleftrightarrow x(t) \longleftrightarrow v(t) \longleftrightarrow a(t). }\]
 
 Bij een eenparig versnelde beweging verwachten we bijvoorbeeld:
 
 \begin{itemize}
-  \item een kwadratisch model voor $x(t)$;
-  \item een lineair model voor $v(t)$;
-  \item een ongeveer constante waarde voor $a(t)$.
-\end{itemize}
 
+ \item een kwadratisch model voor $x(t)$;
+
+ \item een lineair model voor $v(t)$;
+
+ \item een ongeveer constante waarde voor $a(t)$.
+
+\end{itemize}
 
 \begin{oefening}[Data analyseren]{\oefU\ESS}
 
 Van een karretje op een helling worden de volgende posities gemeten:
 
-\[
-\begin{array}{c|cccccc}
-t\,(\mathrm{s}) & 0&1&2&3&4&5\\ \hline
-x\,(\mathrm{m}) & 0,00&0,40&1,60&3,60&6,40&10,00
-\end{array}
-\]
+\[\begin{array}{c|cccccc} t\,(\mathrm{s}) & 0&1&2&3&4&5\\ \hline xdt(\mathrm{m}) & 0,00&0,40&1,60&3,60&6,40&10,00 \end{array}\]
 
 \begin{question}
+
 Maak een spreidingsdiagram van $x$ als functie van $t$.
+
+\begin{oplossing}
+Zet \(t\) op de horizontale as en \(x\) op de verticale as en plot de zes meetpunten. De punten liggen op een naar boven gekromde parabool.
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Zoek een passend functievoorschrift.
+
+\begin{oplossing}
+De waarden voldoen exact aan
+\[x(t)=0,40t^2.\]
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Bepaal uit dit model $v(t)$ en $a(t)$.
+
+\begin{oplossing}
+\[v(t)=x'(t)=0,80t, \qquad a(t)=v'(t)=0,80\,\mathrm{m/s^2}.\]
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Beoordeel of de beweging een EVRB kan zijn.
+
+\begin{oplossing}
+Ja. Binnen dit model is de versnelling constant en is \(x(t)\) kwadratisch. Dat past bij een EVRB.
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Formuleer minstens één beperking van je besluit op basis van deze
+
 meetgegevens.
+
+\begin{oplossing}
+Er zijn slechts zes meetpunten en de tabel bevat geen meetonzekerheden. Dat de punten exact op een kwadratische functie liggen, bewijst daarom niet dat een echte beweging onder alle omstandigheden perfect een EVRB is.
+\end{oplossing}
+
 \end{question}
 
 \end{oefening}
 
-
 % ============================================================
+
 % 14 LABO
+
 % ============================================================
 
 \FVDsection{Labo: een versnelde beweging onderzoeken}
 
 In dit hoofdstuk onderzoeken we experimenteel het verband tussen
+
 positie, tijd, snelheid en versnelling.
 
 Een mogelijke opstelling is een karretje of knikker die langs een
+
 helling beweegt. De beweging kan worden geregistreerd met:
 
 \begin{itemize}
-  \item een bewegingssensor;
-  \item videoanalyse;
-  \item een smartphone;
-  \item een afstandssensor gekoppeld aan een programmeerbare stuurmodule.
-\end{itemize}
 
+ \item een bewegingssensor;
+
+ \item videoanalyse;
+
+ \item een smartphone;
+
+ \item een afstandssensor gekoppeld aan een programmeerbare stuurmodule.
+
+\end{itemize}
 
 \FVDsubsection{Onderzoeksvraag}
 
 Een mogelijke onderzoeksvraag is:
 
 \begin{center}
-\textit{Kan de beweging van een karretje op een vaste helling worden
-beschreven als een eenparig versnelde rechtlijnige beweging?}
-\end{center}
 
+\textit{Kan de beweging van een karretje op een vaste helling worden beschreven als een eenparig versnelde rechtlijnige beweging?}
+
+\end{center}
 
 \FVDsubsection{Werkwijze}
 
 \begin{enumerate}
-  \item Formuleer een hypothese.
-  \item Meet de positie op verschillende tijdstippen.
-  \item Verwerk de meetwaarden in een tabel.
-  \item Maak een $x(t)$-grafiek.
-  \item Bepaal een passende trendlijn.
-  \item Bepaal of reconstrueer $v(t)$.
-  \item Bepaal of reconstrueer $a(t)$.
-  \item Vergelijk de grafieken met het theoretische EVRB-model.
-  \item Bespreek meetonzekerheid en mogelijke storende factoren.
-  \item Formuleer een besluit bij de onderzoeksvraag.
-\end{enumerate}
 
+ \item Formuleer een hypothese.
+
+ \item Meet de positie op verschillende tijdstippen.
+
+ \item Verwerk de meetwaarden in een tabel.
+
+ \item Maak een $x(t)$-grafiek.
+
+ \item Bepaal een passende trendlijn.
+
+ \item Bepaal of reconstrueer $v(t)$.
+
+ \item Bepaal of reconstrueer $a(t)$.
+
+ \item Vergelijk de grafieken met het theoretische EVRB-model.
+
+ \item Bespreek meetonzekerheid en mogelijke storende factoren.
+
+ \item Formuleer een besluit bij de onderzoeksvraag.
+
+\end{enumerate}
 
 \begin{opmerking}
 
 Gebruik bij meetresultaten correcte SI-eenheden, wetenschappelijke
+
 notatie en een verantwoord aantal beduidende cijfers.
 
 \end{opmerking}
 
-
 % ============================================================
+
 % 15 GEINTEGREERDE OEFENINGEN
+
 % ============================================================
 
 \FVDsection{Geïntegreerde oefeningen}
@@ -2690,161 +2913,198 @@ notatie en een verantwoord aantal beduidende cijfers.
 
 Een voorwerp beweegt volgens
 
-\[
-x(t)=2,0-4,0t+t^2,
-\]
+\[x(t)=2,0-4,0t+t^2,\]
 
 voor $0\leq t\leq6,0\,\mathrm{s}$.
 
 \begin{question}
+
 Bepaal $v(t)$ en $a(t)$.
+
+\begin{oplossing}
+\[v(t)=-4,0+2t,\qquad a(t)=2,0\,\mathrm{m/s^2}.\]
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Op welk tijdstip verandert het voorwerp van bewegingsrichting?
+
+\begin{oplossing}
+\[-4,0+2t=0\Longrightarrow t=2,0\,\mathrm{s}.\]
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Bepaal de positie op dat tijdstip.
+
+\begin{oplossing}
+\[x(2)=2-8+4=-2,0\,\mathrm{m}.\]
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Bepaal de verplaatsing tussen $t=0$ en $t=6,0\,\mathrm{s}$.
+
+\begin{oplossing}
+\[x(0)=2,0\,\mathrm{m},\qquad x(6)=2-24+36=14\,\mathrm{m}.\]
+Dus
+\[\Delta x=14-2=12\,\mathrm{m}.\]
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Bepaal de totale afgelegde weg in hetzelfde interval.
+
+\begin{oplossing}
+Van \(t=0\) tot \(t=2\):
+\[|x(2)-x(0)|=|-2-2|=4\,\mathrm{m}.\]
+Van \(t=2\) tot \(t=6\):
+\[|x(6)-x(2)|=|14-(-2)|=16\,\mathrm{m}.\]
+Dus
+\[\Delta s=4+16=20\,\mathrm{m}.\]
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Schets kwalitatief $x(t)$, $v(t)$ en $a(t)$ en leg de onderlinge
+
 verbanden uit.
+
+\begin{oplossing}
+\(x(t)\) is een omhoog openende parabool met minimum bij \(t=2\,\mathrm{s}\). \(v(t)\) is een stijgende rechte die de tijdas snijdt bij \(t=2\,\mathrm{s}\). \(a(t)\) is de horizontale rechte \(a=2,0\,\mathrm{m/s^2}\). Dit stemt overeen met \(v=x'\) en \(a=v'\).
+\end{oplossing}
+
 \end{question}
 
 \end{oefening}
-
 
 \begin{oefening}[Van versnelling naar positie]{\oefG}
 
 Een voorwerp beweegt langs een rechte lijn. De versnelling is
 
-\[
-a(t)=0,40t.
-\]
+\[a(t)=0,40t.\]
 
 Verder geldt:
 
-\[
-v(0)=1,0\,\mathrm{m/s},
-\qquad
-x(0)=2,0\,\mathrm{m}.
-\]
+\[v(0)=1,0\,\mathrm{m/s}, \qquad x(0)=2,0\,\mathrm{m}.\]
 
 \begin{question}
+
 Bepaal met integratie de snelheidsfunctie.
+
+\begin{oplossing}
+\[v(t)=v(0)+\int_0^t0,40\tau\,d\tau =1,0+0,20t^2.\]
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Bepaal vervolgens de plaatsfunctie.
+
+\begin{oplossing}
+\[x(t)=x(0)+\int_0^t(1,0+0,20\tau^2)\,d\tau =2,0+t+\frac1{15}t^3.\]
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Bereken de positie en snelheid na $5,0\,\mathrm{s}$.
+
+\begin{oplossing}
+\[v(5)=1,0+0,20\cdot25=6,0\,\mathrm{m/s},\]
+\[x(5)=2,0+5,0+\frac{125}{15}\approx15,3\,\mathrm{m}.\]
+\end{oplossing}
+
 \end{question}
 
 \begin{question}
+
 Leg uit waarom deze beweging geen EVRB is.
+
+\begin{oplossing}
+Omdat \(a(t)=0,40t\) niet constant is. De versnelling verandert met de tijd.
+\end{oplossing}
+
 \end{question}
 
 \end{oefening}
-
 
 \begin{oefening}[Fout zoeken]{\oefU\ESS}
 
 Een leerling ziet dat een voorwerp op een bepaald tijdstip
 
-\[
-v=-4,0\,\mathrm{m/s}
-\qquad\text{en}\qquad
-a=-2,0\,\mathrm{m/s^2}
-\]
+\[v=-4,0\,\mathrm{m/s} \qquad\text{en}\qquad a=-2,0\,\mathrm{m/s^2}\]
 
 heeft en concludeert:
 
 \begin{quote}
+
 ``Omdat de versnelling negatief is, vertraagt het voorwerp.''
+
 \end{quote}
 
 Beoordeel de redenering en verbeter ze.
 
+\begin{oplossing}
+De redenering is fout. Snelheid en versnelling zijn beide negatief en hebben dus hetzelfde teken:
+\[v\cdot a=(-4,0)(-2,0)>0.\]
+Daarom neemt \(|v|\) toe. Het voorwerp beweegt in de negatieve richting en gaat sneller, niet trager. Het teken van \(a\) alleen volstaat niet om te beslissen of de grootte van de snelheid toeneemt of afneemt.
+\end{oplossing}
+
 \end{oefening}
 
-
 % ============================================================
+
 % 16 SAMENVATTING
+
 % ============================================================
 
 \FVDsection{Wat hebben we opgebouwd?}
 
 De centrale structuur van dit hoofdstuk is:
 
-\[
-\boxed{
-x(t)
-\xrightarrow{\frac{d}{dt}}
-v(t)
-\xrightarrow{\frac{d}{dt}}
-a(t).
-}
-\]
+\[\boxed{ x(t) \xrightarrow{\frac{d}{dt}} v(t) \xrightarrow{\frac{d}{dt}} a(t). }\]
 
 De omgekeerde weg gebruiken we met integralen:
 
-\[
-\boxed{
-\Delta v
-=
-\int a(t)\,dt,
-\qquad
-\Delta x
-=
-\int v(t)\,dt.
-}
-\]
+\[\boxed{ \Delta v = \int a(t)\,dt, \qquad \Delta x = \int v(t)\,dt. }\]
 
 Daarbij is de integraal van de snelheid de
+
 \textbf{verplaatsing}. Wanneer een voorwerp van richting verandert,
+
 moet voor de totale afgelegde weg rekening worden gehouden met
+
 $|v(t)|$.
 
 Bij een ERB:
 
-\[
-a=0,
-\qquad
-v=\text{constant},
-\qquad
-x=x_0+vt.
-\]
+\[a=0, \qquad v=\text{constant}, \qquad x=x_0+vt.\]
 
 Bij een EVRB:
 
-\[
-a=\text{constant},
-\]
+\[a=\text{constant},\]
 
-\[
-v=v_0+at,
-\]
+\[v=v_0+at,\]
 
-\[
-x=x_0+v_0t+\frac12at^2.
-\]
+\[x=x_0+v_0t+\frac12at^2.\]
 
 Dezelfde algemene begrippen en methoden vormen in het volgende
+
 hoofdstuk de basis voor de analyse van bewegingen onder invloed van
+
 de zwaartekracht.
-
-
 
 \end{document}

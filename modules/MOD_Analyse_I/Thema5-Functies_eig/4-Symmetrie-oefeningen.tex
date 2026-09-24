@@ -1,0 +1,397 @@
+\documentclass{ximera}
+
+\input{../../../preamble.tex}
+\input{../../../Opmaak.tex}
+\addPrintStyle{../../..}
+
+\title{Oefeningen — Symmetrie}
+\author{Ingmar Herreman}
+
+\begin{document}
+
+\fvdchapterdata{5}{Het gedrag van functies beschrijven}{4}
+
+\maketitle
+\FVDbeginExercises
+
+\begin{opmerking}
+De oefeningen met \(\blacklozenge\) zijn essentieel.
+Je moet symmetrie zowel grafisch als algebraïsch kunnen analyseren en beide
+voorstellingen met elkaar verbinden.
+\end{opmerking}
+
+\FVDsection{Basis — even en oneven herkennen}
+
+\begin{oefening}[Functiewaarden en symmetrie]{\oefB\ESS}
+
+\begin{question}
+Een even functie voldoet aan \(f(4)=7\). Bepaal \(f(-4)\).
+\begin{oplossing}
+Omdat \(f\) even is:
+\[
+f(-4)=f(4)=7.
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Een oneven functie voldoet aan \(g(3)=-5\). Bepaal \(g(-3)\).
+\begin{oplossing}
+Omdat \(g\) oneven is:
+\[
+g(-3)=-g(3)=5.
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Een oneven functie heeft \(0\) in haar domein. Bepaal \(g(0)\).
+\begin{oplossing}
+\[
+g(0)=-g(0)\Rightarrow g(0)=0.
+\]
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+\begin{oefening}[Algebraïsch onderzoeken]{\oefB\ESS}
+
+Onderzoek of de functie even, oneven of geen van beide is.
+
+\begin{question}
+\[
+f(x)=x^4-3x^2+1.
+\]
+\begin{oplossing}
+\[
+f(-x)=x^4-3x^2+1=f(x).
+\]
+Dus \(f\) is even.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+\[
+g(x)=x^5-2x^3+x.
+\]
+\begin{oplossing}
+\[
+g(-x)=-x^5+2x^3-x=-g(x).
+\]
+Dus \(g\) is oneven.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+\[
+h(x)=x^2+2x+1.
+\]
+\begin{oplossing}
+\[
+h(-x)=x^2-2x+1.
+\]
+Dit is noch \(h(x)\), noch \(-h(x)\). Dus \(h\) is geen van beide.
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+\begin{oefening}[Punten reconstrueren]{\oefB\ESS}
+
+\begin{question}
+De grafiek van een even functie bevat
+\[
+(1,3),\quad(2,-1),\quad(4,5).
+\]
+Geef drie andere punten die zeker op de grafiek liggen.
+\begin{oplossing}
+\[
+(-1,3),\quad(-2,-1),\quad(-4,5).
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+De grafiek van een oneven functie bevat
+\[
+(1,3),\quad(2,-1),\quad(4,5).
+\]
+Geef drie andere punten die zeker op de grafiek liggen.
+\begin{oplossing}
+\[
+(-1,-3),\quad(-2,1),\quad(-4,-5).
+\]
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+\begin{oefening}[Rationale functies]{\oefB\ESS}
+
+Onderzoek de symmetrie.
+
+\begin{question}
+\[
+f(x)=\frac{x}{x^2+1}.
+\]
+\begin{oplossing}
+Het domein is \(\mathbb R\).
+\[
+f(-x)=\frac{-x}{x^2+1}=-f(x).
+\]
+Dus \(f\) is oneven.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+\[
+g(x)=\frac{x^2}{x^2+1}.
+\]
+\begin{oplossing}
+\[
+g(-x)=\frac{x^2}{x^2+1}=g(x).
+\]
+Dus \(g\) is even.
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+\FVDsection{Verdieping — symmetrie analyseren}
+
+\begin{oefening}[Het domein telt mee]{\oefU\ESS}
+
+Beschouw
+\[
+f:[0,+\infty[\to\mathbb R:x\mapsto x^2.
+\]
+
+Een leerling zegt:
+``\(f\) is even, want \(f(-x)=f(x)\).''
+
+Analyseer de uitspraak.
+
+\begin{oplossing}
+De uitspraak is fout voor deze functie.
+Het domein is \([0,+\infty[\) en is niet symmetrisch ten opzichte van \(0\).
+Als bijvoorbeeld \(2\) in het domein ligt, ligt \(-2\) er niet in.
+De algebraïsche vorm \(x^2\) alleen volstaat dus niet; het domein hoort bij de functie.
+\end{oplossing}
+
+\end{oefening}
+
+\begin{oefening}[Van nulwaarde naar een nieuwe nulwaarde]{\oefU\ESS}
+
+\begin{question}
+Een even functie heeft \(x=5\) als nulwaarde. Welke andere nulwaarde volgt
+noodzakelijk?
+\begin{oplossing}
+\[
+f(5)=0\Rightarrow f(-5)=f(5)=0.
+\]
+Dus \(-5\) is eveneens een nulwaarde.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Een oneven functie heeft \(x=5\) als nulwaarde. Welke andere nulwaarde volgt?
+\begin{oplossing}
+\[
+f(-5)=-f(5)=0.
+\]
+Dus \(-5\) is eveneens een nulwaarde.
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+\begin{oefening}[Grafische informatie koppelen]{\oefU\ESS}
+
+Een even functie is voor \(x>0\) stijgend.
+
+\begin{question}
+Wat kun je besluiten over het verloop voor \(x<0\)?
+\begin{oplossing}
+Door de spiegeling in de \(y\)-as is de linkerhelft gespiegeld.
+Als de functie rechts stijgt wanneer we van links naar rechts bewegen,
+dan daalt ze links wanneer we van links naar rechts bewegen.
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Leg uit waarom deze conclusie uit de symmetrie volgt.
+\begin{oplossing}
+Bij een even functie hebben \(x\) en \(-x\) dezelfde functiewaarde.
+De volgorde van de overeenkomstige punten wordt links van de \(y\)-as omgekeerd,
+waardoor stijgen rechts overeenkomt met dalen links.
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+\begin{oefening}[Is drie punten controleren voldoende?]{\oefU\ESS}
+
+Een leerling onderzoekt een functie en vindt:
+\[
+f(-1)=f(1),\qquad f(-2)=f(2),\qquad f(-3)=f(3).
+\]
+Hij besluit dat \(f\) even is.
+
+Is dit voldoende? Leg uit.
+
+\begin{oplossing}
+Nee. Voor evenheid moet
+\[
+f(-x)=f(x)
+\]
+gelden voor elke \(x\) uit het domein. Drie controles ondersteunen een vermoeden,
+maar bewijzen de algemene eigenschap niet.
+\end{oplossing}
+
+\end{oefening}
+
+\begin{oefening}[Voorschrift en grafiek verbinden]{\oefU\ESS}
+
+Gegeven:
+\[
+f(x)=\frac{x^3}{x^2-4}.
+\]
+
+\begin{question}
+Bepaal het domein.
+\begin{oplossing}
+\[
+\operatorname{dom}f=\mathbb R\setminus\{-2,2\}.
+\]
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Toon algebraïsch aan dat \(f\) oneven is.
+\begin{oplossing}
+\[
+f(-x)=\frac{-x^3}{x^2-4}=-f(x).
+\]
+Het domein is bovendien symmetrisch ten opzichte van \(0\).
+\end{oplossing}
+\end{question}
+
+\begin{question}
+Als \((3,27/5)\) op de grafiek ligt, welk punt volgt onmiddellijk uit de symmetrie?
+\begin{oplossing}
+\[
+(-3,-27/5).
+\]
+\end{oplossing}
+\end{question}
+
+\end{oefening}
+
+\FVDsection{Gevorderd — redeneren met symmetrie}
+
+\begin{oefening}[Kan een functie beide zijn?]{\oefG}
+
+Kan een functie tegelijk even en oneven zijn?
+Onderzoek de voorwaarden
+\[
+f(-x)=f(x)
+\qquad\text{en}\qquad
+f(-x)=-f(x).
+\]
+
+\begin{oplossing}
+Als beide gelden, dan
+\[
+f(x)=-f(x)
+\]
+voor elke \(x\) uit het domein. Dus
+\[
+2f(x)=0
+\quad\Rightarrow\quad
+f(x)=0.
+\]
+Op een domein dat symmetrisch is ten opzichte van \(0\) is de nulfunctie dus
+zowel even als oneven.
+\end{oplossing}
+
+\end{oefening}
+
+\begin{oefening}[Ontwerp een functie]{\oefG}
+
+Geef:
+\begin{enumerate}
+  \item een even veeltermfunctie met nulwaarden \(-2\) en \(2\);
+  \item een oneven veeltermfunctie met nulwaarden \(-2\), \(0\) en \(2\);
+  \item een functie met dezelfde drie nulwaarden die noch even, noch oneven is.
+\end{enumerate}
+
+Motiveer telkens.
+
+\begin{oplossing}
+Mogelijke antwoorden zijn:
+\[
+f(x)=x^2-4,
+\]
+die even is;
+
+\[
+g(x)=x(x^2-4)=x^3-4x,
+\]
+die oneven is;
+
+en bijvoorbeeld
+\[
+h(x)=x(x-2)(x+2)(x-1),
+\]
+die dezelfde drie gevraagde nulwaarden bevat maar in het algemeen noch even,
+noch oneven is.
+
+Andere correcte voorbeelden zijn mogelijk.
+\end{oplossing}
+
+\end{oefening}
+
+\begin{oefening}[GeoGebra-onderzoek]{\oefG}
+
+Onderzoek in GeoGebra de familie
+\[
+f_a(x)=x^4+a x^2
+\]
+en
+\[
+g_a(x)=x^3+a x.
+\]
+
+Gebruik een schuifknop voor \(a\).
+
+\begin{enumerate}
+  \item Welke symmetrie blijft bij elke waarde van \(a\) behouden?
+  \item Toon dit ook algebraïsch aan.
+  \item Onderzoek hoe nulwaarden en extrema kunnen veranderen terwijl de symmetrie behouden blijft.
+  \item Leg uit waarom symmetrie een kenmerk is dat onafhankelijk kan blijven van andere
+        grafische kenmerken.
+\end{enumerate}
+
+\begin{oplossing}
+Voor elke \(a\) bevat \(f_a\) alleen even machten:
+\[
+f_a(-x)=f_a(x),
+\]
+dus \(f_a\) blijft even.
+
+Voor \(g_a\):
+\[
+g_a(-x)=-x^3-a x=-g_a(x),
+\]
+dus \(g_a\) blijft oneven.
+
+Nulwaarden en extrema kunnen met \(a\) veranderen, terwijl de algebraïsche
+symmetrievoorwaarden behouden blijven.
+\end{oplossing}
+
+\end{oefening}
+
+
+
+\end{document}
