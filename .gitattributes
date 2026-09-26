@@ -4,3 +4,4 @@
 *.css text
 *.js text
 *.html text
+xmScripts/config.txt text eol=lf
