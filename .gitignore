@@ -363,3 +363,10 @@ xmDevEnvFiles.tgz
 
 # Gegenereerde Ximera-figuren
 modules/**/*.online-*.svg
+
+# PDF-buildbestanden negeren
+*.pdf
+
+# Definitieve module-PDF's wel opnemen in Git
+!modules/*/pdf/
+!modules/*/pdf/*.pdf
