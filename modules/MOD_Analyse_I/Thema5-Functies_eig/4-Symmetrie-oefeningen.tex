@@ -23,13 +23,133 @@
 \maketitle
 \FVDbeginExercises
 
-\begin{opmerking}
-De oefeningen met \(\blacklozenge\) zijn essentieel.
-Je moet symmetrie zowel grafisch als algebraïsch kunnen analyseren en beide
-voorstellingen met elkaar verbinden.
-\end{opmerking}
 
-\FVDsection{Basis — even en oneven herkennen}
+
+\begin{oefening} [Even of oneven]{\oefB\ESS}
+
+  Zijn de onderstaande functies even of oneven? \\
+    \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.44014084507042256cm,y=0.6053268765133172cm]
+    \definecolor{cqcqcq}{rgb}{0.7529411764705882,0.7529411764705882,0.7529411764705882}
+    \draw [color=cqcqcq,, xstep=0.8802816901408451cm,ystep=1.2106537530266344cm] (-6.,-4.) grid (6.,4.);
+    \draw[->,color=black] (-6.,0.) -- (6.,0.);
+    \foreach \x in {-6.,-4.,-2.,2.,4.}
+    \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+    \draw[color=black] (5.68,0.08) node [anchor=south west] { x};
+    \draw[->,color=black] (0.,-4.) -- (0.,4.);
+    \foreach \y in {-4.,-2.,2.}
+    \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+    \draw[color=black] (0.1,3.56) node [anchor=west] { y};
+    \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+    \clip(-6.,-4.) rectangle (6.,4.);
+    \draw[line width=1.2pt,smooth,samples=100,domain=-6.0:6.0] plot(\x,{cos(((\x))*180/pi)});
+    \begin{scriptsize}
+    \draw[color=black] (-4.14,-0.62) node {$f$};
+    \end{scriptsize}
+    \end{tikzpicture}
+        \wordChoice{\choice[correct]{even}\choice{oneven}\choice{noch even, noch oneven}}
+
+
+    \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.44014084507042256cm,y=0.6053268765133172cm]
+    \definecolor{cqcqcq}{rgb}{0.7529411764705882,0.7529411764705882,0.7529411764705882}
+    \draw [color=cqcqcq,, xstep=0.8802816901408451cm,ystep=1.2106537530266344cm] (-6.,-4.) grid (6.,4.);
+    \draw[->,color=black] (-6.,0.) -- (6.,0.);
+    \foreach \x in {-6.,-4.,-2.,2.,4.}
+    \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+    \draw[color=black] (5.68,0.08) node [anchor=south west] { x};
+    \draw[->,color=black] (0.,-4.) -- (0.,4.);
+    \foreach \y in {-4.,-2.,2.}
+    \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+    \draw[color=black] (0.1,3.56) node [anchor=west] { y};
+    \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+    \clip(-6.,-4.) rectangle (6.,4.);
+    \draw[line width=1.2pt,smooth,samples=100,domain=-6.0:6.0] plot(\x,{(\x)^(2.0)-0.5*(\x)^(4.0)});
+    \begin{scriptsize}
+    \draw[color=black] (-4.14,-0.62) node {$f$};
+    \end{scriptsize}
+    \end{tikzpicture}
+    \wordChoice{\choice[correct]{even}\choice{oneven}\choice{noch even, noch oneven}}
+
+    \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.44014084507042256cm,y=0.6053268765133172cm]
+    \definecolor{cqcqcq}{rgb}{0.7529411764705882,0.7529411764705882,0.7529411764705882}
+    \draw [color=cqcqcq,, xstep=0.8802816901408451cm,ystep=1.2106537530266344cm] (-6.,-4.) grid (6.,4.);
+    \draw[->,color=black] (-6.,0.) -- (6.,0.);
+    \foreach \x in {-6.,-4.,-2.,2.,4.}
+    \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+    \draw[color=black] (5.68,0.08) node [anchor=south west] { x};
+    \draw[->,color=black] (0.,-4.) -- (0.,4.);
+    \foreach \y in {-4.,-2.,2.}
+    \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+    \draw[color=black] (0.1,3.56) node [anchor=west] { y};
+    \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+    \clip(-6.,-4.) rectangle (6.,4.);
+    \draw[line width=1.2pt,smooth,samples=100,domain=-6.0:6.0] plot(\x,{1.0/(\x)^(2.0)+1.0});
+    \begin{scriptsize}
+    \draw[color=black] (-4.14,-0.62) node {$f$};
+    \end{scriptsize}
+    \end{tikzpicture}
+        \wordChoice{\choice[correct]{even}\choice{oneven}\choice{noch even, noch oneven}}
+    
+    \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.44014084507042256cm,y=0.6053268765133172cm]
+    \definecolor{cqcqcq}{rgb}{0.7529411764705882,0.7529411764705882,0.7529411764705882}
+    \draw [color=cqcqcq,, xstep=0.8802816901408451cm,ystep=1.2106537530266344cm] (-6.,-4.) grid (6.,4.);
+    \draw[->,color=black] (-6.,0.) -- (6.,0.);
+    \foreach \x in {-6.,-4.,-2.,2.,4.}
+    \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+    \draw[color=black] (5.68,0.08) node [anchor=south west] { x};
+    \draw[->,color=black] (0.,-4.) -- (0.,4.);
+    \foreach \y in {-4.,-2.,2.}
+    \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+    \draw[color=black] (0.1,3.56) node [anchor=west] { y};
+    \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+    \clip(-6.,-4.) rectangle (6.,4.);
+    \draw[line width=1.2pt,smooth,samples=100,domain=-6.0:6.0] plot(\x,{1.0/(\x)+2.0*(\x)});
+    \begin{scriptsize}
+    \draw[color=black] (-4.14,-0.62) node {$f$};
+    \end{scriptsize}
+    \end{tikzpicture}
+    \wordChoice{\choice{even}\choice[correct]{oneven}\choice{noch even, noch oneven}}
+
+    \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.44014084507042256cm,y=0.6053268765133172cm]
+    \definecolor{cqcqcq}{rgb}{0.7529411764705882,0.7529411764705882,0.7529411764705882}
+    \draw [color=cqcqcq,, xstep=0.8802816901408451cm,ystep=1.2106537530266344cm] (-6.,-4.) grid (6.,4.);
+    \draw[->,color=black] (-6.,0.) -- (6.,0.);
+    \foreach \x in {-6.,-4.,-2.,2.,4.}
+    \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+    \draw[color=black] (5.68,0.08) node [anchor=south west] { x};
+    \draw[->,color=black] (0.,-4.) -- (0.,4.);
+    \foreach \y in {-4.,-2.,2.}
+    \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+    \draw[color=black] (0.1,3.56) node [anchor=west] { y};
+    \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+    \clip(-6.,-4.) rectangle (6.,4.);
+    \draw[line width=1.2pt,smooth,samples=100,domain=-6.0:6.0]  plot(\x,{(\x)^(3.0)-(\x)});
+    \begin{scriptsize}
+    \draw[color=black] (-4.14,-0.62) node {$f$};
+    \end{scriptsize}
+    \end{tikzpicture}
+        \wordChoice{\choice{even}\choice[correct]{oneven}\choice{noch even, noch oneven}}
+
+    \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.44014084507042256cm,y=0.6053268765133172cm]
+    \definecolor{cqcqcq}{rgb}{0.7529411764705882,0.7529411764705882,0.7529411764705882}
+    \draw [color=cqcqcq,, xstep=0.8802816901408451cm,ystep=1.2106537530266344cm] (-6.,-4.) grid (6.,4.);
+    \draw[->,color=black] (-6.,0.) -- (6.,0.);
+    \foreach \x in {-6.,-4.,-2.,2.,4.}
+    \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+    \draw[color=black] (5.68,0.08) node [anchor=south west] { x};
+    \draw[->,color=black] (0.,-4.) -- (0.,4.);
+    \foreach \y in {-4.,-2.,2.}
+    \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+    \draw[color=black] (0.1,3.56) node [anchor=west] { y};
+    \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+    \clip(-6.,-4.) rectangle (6.,4.);
+    \draw[line width=1.2pt,smooth,samples=100,domain=-6.0:6.0]  plot(\x,{sin(((\x))*180/pi)-0.2*(\x)});
+    \begin{scriptsize}
+    \draw[color=black] (-4.14,-0.62) node {$f$};
+    \end{scriptsize}
+    \end{tikzpicture}
+        \wordChoice{\choice{even}\choice[correct]{oneven}\choice{noch even, noch oneven}}
+\end{oefening}
+
 
 \begin{oefening}[Functiewaarden en symmetrie]{\oefB\ESS}
 
@@ -69,9 +189,9 @@ g(0)=-g(0)\Rightarrow g(0)=0.
 Onderzoek of de functie even, oneven of geen van beide is.
 
 \begin{question}
-\[
+\(
 f(x)=x^4-3x^2+1.
-\]
+\)
 \begin{oplossing}
 \[
 f(-x)=x^4-3x^2+1=f(x).
@@ -81,9 +201,9 @@ Dus \(f\) is even.
 \end{question}
 
 \begin{question}
-\[
+\(
 g(x)=x^5-2x^3+x.
-\]
+\)
 \begin{oplossing}
 \[
 g(-x)=-x^5+2x^3-x=-g(x).
@@ -93,9 +213,9 @@ Dus \(g\) is oneven.
 \end{question}
 
 \begin{question}
-\[
+\(
 h(x)=x^2+2x+1.
-\]
+\)
 \begin{oplossing}
 \[
 h(-x)=x^2-2x+1.
@@ -141,9 +261,9 @@ Geef drie andere punten die zeker op de grafiek liggen.
 Onderzoek de symmetrie.
 
 \begin{question}
-\[
+\(
 f(x)=\frac{x}{x^2+1}.
-\]
+\)
 \begin{oplossing}
 Het domein is \(\mathbb R\).
 \[
@@ -154,9 +274,9 @@ Dus \(f\) is oneven.
 \end{question}
 
 \begin{question}
-\[
+\(
 g(x)=\frac{x^2}{x^2+1}.
-\]
+\)
 \begin{oplossing}
 \[
 g(-x)=\frac{x^2}{x^2+1}=g(x).
@@ -167,7 +287,7 @@ Dus \(g\) is even.
 
 \end{oefening}
 
-\FVDsection{Verdieping — symmetrie analyseren}
+
 
 \begin{oefening}[Het domein telt mee]{\oefU\ESS}
 
@@ -297,7 +417,7 @@ Als \((3,27/5)\) op de grafiek ligt, welk punt volgt onmiddellijk uit de symmetr
 
 \end{oefening}
 
-\FVDsection{Gevorderd — redeneren met symmetrie}
+
 
 \begin{oefening}[Kan een functie beide zijn?]{\oefG}
 

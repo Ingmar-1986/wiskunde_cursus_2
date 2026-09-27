@@ -22,15 +22,325 @@
 \maketitle
 \FVDbeginExercises
 
-\begin{opmerking}
-De oefeningen met \(\blacklozenge\) zijn essentieel. Het leerplandoel vraagt
-\emph{analyseren}: je moet periode en amplitude niet alleen berekenen, maar ook
-afleiden, voorstellingen verbinden en in context interpreteren.
-\end{opmerking}
 
-\FVDsection{Basis — periode en amplitude bepalen}
+% ============================================================
+% Oefening — Periodieke functies herkennen
+% Vereist: \usepackage{tikz}
+% ============================================================
+
+\begin{oefening}[Functie periodiek?]{\oefB\ESS}
+
+
+Welke van de onderstaande grafieken stellen een periodieke functie voor?
+Bepaal voor elke periodieke functie de kleinste positieve periode,
+indien die uit de grafiek kan worden afgeleid.
+
+\begin{center}
+\begin{tikzpicture}[
+    x=0.72cm,
+    y=0.72cm,
+    >=stealth,
+    axis/.style={->, thin},
+    graph/.style={thick, green!50!black},
+    asymptote/.style={red, dashed, thick},
+    point/.style={
+        circle,
+        fill=green!50!black,
+        inner sep=1.6pt
+    },
+    openpoint/.style={
+        circle,
+        draw=green!50!black,
+        fill=white,
+        thick,
+        inner sep=1.5pt
+    },
+    every node/.style={font=\small}
+]
+
+% ============================================================
+% (a) PERIODIEKE FUNCTIE MET ASYMPTOTEN
+% ============================================================
+
+\begin{scope}[xshift=0cm,yshift=5.8cm]
+
+\node[anchor=west,font=\bfseries] at (-2.1,3.1) {(a)};
+
+% Assen
+\draw[axis] (-2,0) -- (7,0) node[right] {$x$};
+\draw[axis] (0,-2) -- (0,3) node[above] {$y$};
+
+% Verticale asymptoten
+\foreach \a in {-1,1,3,5}
+    \draw[asymptote] (\a,-1.8) -- (\a,2.8);
+
+% Periodieke takken
+\foreach \k in {-1,1,3}
+{
+    \draw[
+        graph,
+        domain={\k+0.08}:{\k+1.92},
+        samples=80,
+        smooth
+    ]
+    plot (\x,{1/(sin(90*(\x-\k))) - 2});
+}
+
+% Linker gedeeltelijke tak
+\draw[
+    graph,
+    domain=-1.92:-1.08,
+    samples=50,
+    smooth
+]
+plot (\x,{1/(sin(90*(\x+3))) - 2});
+
+% Rechter gedeeltelijke tak
+\draw[
+    graph,
+    domain=5.08:5.92,
+    samples=50,
+    smooth
+]
+plot (\x,{1/(sin(90*(\x-5))) - 2});
+
+% x-as: maatstreepjes
+\foreach \x/\lab in {
+    -1/-1,
+    1/1,
+    2/2,
+    3/3,
+    4/4,
+    5/5,
+    6/6
+}
+{
+    \draw (\x,0.08) -- (\x,-0.08);
+    \node[below] at (\x,-0.08) {\lab};
+}
+
+% y-as: maatstreepjes
+\foreach \y/\lab in {
+    -1/-1,
+    1/1,
+    2/2
+}
+{
+    \draw (0.08,\y) -- (-0.08,\y);
+    \node[left] at (-0.08,\y) {\lab};
+}
+
+\end{scope}
+
+
+% ============================================================
+% (b) PERIODIEKE FUNCTIE MET UITZONDERLIJKE PUNTEN
+% ============================================================
+
+\begin{scope}[xshift=9.2cm,yshift=5.8cm]
+
+\node[anchor=west,font=\bfseries] at (-2.1,3.1) {(b)};
+
+% Assen
+\draw[axis] (-2,0) -- (4.3,0) node[right] {$x$};
+\draw[axis] (0,-2) -- (0,3) node[above] {$y$};
+
+% Horizontale grafiek
+\draw[graph] (-2,1.5) -- (4,1.5);
+
+% Open punten op de horizontale grafiek
+\foreach \x in {-1.5,-0.5,0.5,1.5,2.5,3.5}
+    \node[openpoint] at (\x,1.5) {};
+
+% Afzonderlijke functiewaarden
+\foreach \x in {-1.5,-0.5,0.5,1.5,2.5,3.5}
+    \node[point] at (\x,0.5) {};
+
+% x-as: maatstreepjes
+\foreach \x/\lab in {
+    -1/-1,
+    1/1,
+    2/2,
+    3/3
+}
+{
+    \draw (\x,0.08) -- (\x,-0.08);
+    \node[below] at (\x,-0.08) {\lab};
+}
+
+% y-as: maatstreepjes
+\foreach \y/\lab in {
+    -1/-1,
+    1/1,
+    2/2
+}
+{
+    \draw (0.08,\y) -- (-0.08,\y);
+    \node[left] at (-0.08,\y) {\lab};
+}
+
+\end{scope}
+
+
+% ============================================================
+% (c) GEEN FUNCTIE
+% ============================================================
+
+\begin{scope}[xshift=0cm,yshift=0cm]
+
+\node[anchor=west,font=\bfseries] at (-2.1,2.5) {(c)};
+
+% Assen
+\draw[axis] (-2,0) -- (7,0) node[right] {$x$};
+\draw[axis] (0,-2) -- (0,2.5) node[above] {$y$};
+
+% Trapvorm
+% De verticale stukken zijn bewust meegetekend:
+% hierdoor is dit geen grafiek van een functie.
+\draw[graph]
+    (-2,1)
+    -- (-0.5,1)
+    -- (-0.5,-1)
+    -- (2.5,-1)
+    -- (2.5,1)
+    -- (5.5,1)
+    -- (5.5,-1)
+    -- (7,-1);
+
+% x-as: maatstreepjes
+\foreach \x/\lab in {
+    -1/-1,
+    1/1,
+    2/2,
+    3/3,
+    4/4,
+    5/5,
+    6/6
+}
+{
+    \draw (\x,0.08) -- (\x,-0.08);
+    \node[below] at (\x,-0.08) {\lab};
+}
+
+% y-as: maatstreepjes
+\foreach \y/\lab in {
+    -1/-1,
+    1/1
+}
+{
+    \draw (0.08,\y) -- (-0.08,\y);
+    \node[left] at (-0.08,\y) {\lab};
+}
+
+\end{scope}
+
+
+% ============================================================
+% (d) GEEN PERIODIEKE FUNCTIE
+% ============================================================
+
+\begin{scope}[xshift=9.2cm,yshift=0cm]
+
+\node[anchor=west,font=\bfseries] at (-2.1,2.5) {(d)};
+
+% Assen
+\draw[axis] (-2,0) -- (4.3,0) node[right] {$x$};
+\draw[axis] (0,-2) -- (0,2.5) node[above] {$y$};
+
+% Halve horizontale rechte
+\draw[graph] (1,1) -- (4,1);
+
+% Open beginpunt
+\node[openpoint] at (1,1) {};
+
+% x-as: maatstreepjes
+\foreach \x/\lab in {
+    -1/-1,
+    1/1,
+    2/2,
+    3/3
+}
+{
+    \draw (\x,0.08) -- (\x,-0.08);
+    \node[below] at (\x,-0.08) {\lab};
+}
+
+% y-as: maatstreepjes
+\foreach \y/\lab in {
+    -1/-1,
+    1/1
+}
+{
+    \draw (0.08,\y) -- (-0.08,\y);
+    \node[left] at (-0.08,\y) {\lab};
+}
+
+\end{scope}
+
+\end{tikzpicture}
+\end{center}
+
+
+% ============================================================
+% OPLOSSING
+% ============================================================
+
+\begin{oplossing}
+
+\begin{enumerate}
+    \item[(a)]
+    De grafiek herhaalt zich na een horizontale verschuiving
+    over \(2\) eenheden.
+
+    De functie is dus periodiek en de kleinste positieve periode is
+
+    \[
+        \boxed{p=2}.
+    \]
+
+    \item[(b)]
+    Zowel de horizontale delen als de uitzonderlijke functiewaarden
+    herhalen zich na een horizontale verschuiving over \(1\) eenheid.
+
+    De functie is dus periodiek en de kleinste positieve periode is
+
+    \[
+        \boxed{p=1}.
+    \]
+
+    \item[(c)]
+    Deze grafiek stelt geen functie voor.
+
+    Voor bepaalde waarden van \(x\) bevat de grafiek een verticaal
+    lijnstuk. Bij zo'n \(x\)-waarde horen dus meerdere waarden van \(y\).
+    De verticale-lijntest is niet voldaan.
+
+    We kunnen deze grafiek daarom niet beschouwen als de grafiek van
+    een periodieke functie.
+
+    \item[(d)]
+    Deze grafiek stelt wel een functie voor, maar de functie is niet
+    periodiek.
+
+    Er bestaat geen \(p>0\) waarvoor
+
+    \[
+        f(x+p)=f(x)
+    \]
+
+    voor alle \(x\) uit het domein waarvoor deze vergelijking van
+    toepassing is.
+
+    De functie heeft dus geen periode.
+\end{enumerate}
+
+\end{oplossing}
+
+\end{oefening}
+
 
 \begin{oefening}[Herhaling herkennen]{\oefB\ESS}
+
 Een functie heeft maxima bij
 \[
 x=-5,\,-1,\,3,\,7,\,11
@@ -58,6 +368,7 @@ De fundamentele periode is echter \(4\).
 \end{oefening}
 
 \begin{oefening}[Maximum, minimum en amplitude]{\oefB\ESS}
+
 Een periodieke functie heeft
 \[
 M=13,\qquad m=5.
@@ -84,6 +395,7 @@ De middenlijn is \(y=9\).
 \end{oefening}
 
 \begin{oefening}[Functiewaarden reconstrueren]{\oefB\ESS}
+
 Een functie \(f\) heeft periode \(6\) en
 \[
 f(1)=3,\qquad f(4)=-2.
@@ -127,9 +439,10 @@ Dat kan de eenheid van de periode zijn.
 \end{question}
 \end{oefening}
 
-\FVDsection{Verdieping — analyseren en interpreteren}
+
 
 \begin{oefening}[Is dit werkelijk één periode?]{\oefU\ESS}
+
 Een leerling ziet twee opeenvolgende nulpunten van een golvende grafiek op
 \(x=2\) en \(x=5\) en besluit:
 \[
@@ -147,6 +460,7 @@ binnen het herhalende patroon hebben, bijvoorbeeld twee opeenvolgende maxima.
 \end{oefening}
 
 \begin{oefening}[Van één cyclus naar de grafiek]{\oefU\ESS}
+
 Een periodieke functie heeft periode \(4\). Op \(0\leq x\leq4\) geldt:
 \[
 f(0)=1,\quad f(1)=4,\quad f(2)=1,\quad f(3)=-2,\quad f(4)=1.
@@ -187,6 +501,7 @@ Meerdere vloeiende grafieken zijn mogelijk omdat slechts enkele punten zijn gege
 \end{oefening}
 
 \begin{oefening}[Sensorsignaal]{\oefU\ESS}
+
 Een periodiek sensorsignaal varieert tussen \(0{,}8\) V en \(5{,}2\) V.
 Eenzelfde piek keert terug na \(0{,}040\) s.
 
@@ -222,6 +537,7 @@ De spanning wijkt maximaal \(2{,}2\) V af van de middenwaarde \(3{,}0\) V.
 \end{oefening}
 
 \begin{oefening}[Draaiend wiel]{\oefU\ESS}
+
 Een punt op een wiel bereikt een maximale hoogte van \(2{,}6\) m en een minimale
 hoogte van \(1{,}0\) m. Het wiel maakt één volledige omwenteling in \(3\) s.
 
@@ -256,6 +572,7 @@ Na \(3\) seconden heeft het punt opnieuw dezelfde plaats in de cyclus.
 \end{oefening}
 
 \begin{oefening}[Foutenanalyse]{\oefU\ESS}
+
 Een grafiek oscilleert tussen \(y=-3\) en \(y=7\).
 Een leerling zegt:
 ``De amplitude is \(10\), want \(7-(-3)=10\).''
@@ -276,6 +593,7 @@ d=\frac{7+(-3)}2=2.
 \end{oefening}
 
 \begin{oefening}[Zelfde amplitude, andere periode]{\oefU\ESS}
+
 Twee periodieke functies hebben beide maximum \(5\) en minimum \(-1\).
 De eerste heeft periode \(4\), de tweede periode \(10\).
 
@@ -298,9 +616,10 @@ maximum en minimum de precieze vorm van een periodieke grafiek niet volledig.
 \end{question}
 \end{oefening}
 
-\FVDsection{Gevorderd — onderzoeken en redeneren}
+
 
 \begin{oefening}[Hoeveel informatie is genoeg?]{\oefG}
+
 Van een periodieke functie weet je:
 \[
 T=6,\qquad A=2,\qquad d=1.
@@ -317,6 +636,7 @@ mogelijk met dezelfde \(T\), \(A\) en \(d\).
 \end{oefening}
 
 \begin{oefening}[Een verborgen kleinere periode]{\oefG}
+
 Een leerling toont aan dat
 \[
 f(x+12)=f(x)
@@ -337,6 +657,7 @@ een periode is, niet noodzakelijk de kleinste positieve periode.
 \end{oefening}
 
 \begin{oefening}[GeoGebra: periode versus amplitude]{\oefG}
+
 Onderzoek:
 \[
 f(x)=\cos x,\qquad

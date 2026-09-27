@@ -293,7 +293,7 @@ Dat geeft:
 % 6. HELLING ZONDER AFGELEIDEN
 % ============================================================
 
-\FVDsection{Kijken naar helling — nog zonder afgeleiden}
+\FVDsection{Kijken naar helling}
 
 We gebruiken hier het woord \textbf{helling} kwalitatief:
 we vergelijken hoe steil een grafiek is.
@@ -307,47 +307,8 @@ we vergelijken hoe steil een grafiek is.
   \item een negatieve helling die naar \(0\) evolueert \(\Rightarrow\) afnemende daling.
 \end{itemize}
 
-\begin{opmerking}[Vooruitblik]
-Later krijgt dit idee een exacte wiskundige taal via afgeleiden.
-Dan zullen we de helling zelf als functie onderzoeken.
-Hier bouwen we eerst het grafische inzicht op dat daarvoor nodig is.
-\end{opmerking}
 
 
-% ============================================================
-% 7. VERANDERINGSPUNTEN
-% ============================================================
-
-\FVDsection{Waar verandert het soort verandering?}
-
-Een grafiek kan bijvoorbeeld eerst toenemend stijgen en daarna afnemend stijgen.
-
-\begin{center}
-\begin{tikzpicture}
-\begin{axis}[
- width=11cm,height=6cm,
- axis lines=middle,
- xmin=-4,xmax=4,ymin=-4,ymax=4,
- xlabel={$x$},ylabel={$y$},
- grid=both,samples=200
-]
-\addplot[very thick,domain=-3.5:3.5] {x^3/12+x};
-\end{axis}
-\end{tikzpicture}
-\end{center}
-
-De manier waarop de helling evolueert kan dus veranderen zonder dat de functie
-ophoudt met stijgen.
-
-We beschrijven in dit hoofdstuk vooral \emph{wat} we grafisch waarnemen.
-De formele studie van kromming, buigpunten en tweede afgeleiden komt later,
-wanneer de nodige analysetechnieken beschikbaar zijn.
-
-\begin{opmerking}
-Een verandering van toenemende naar afnemende stijging is niet automatisch
-een maximum. Bij een maximum verandert het verloop van stijgend naar dalend.
-Hier kan de functie aan beide kanten blijven stijgen.
-\end{opmerking}
 
 
 % ============================================================
@@ -383,6 +344,100 @@ Als de toenames zijn
 
 dan neemt de afstand nog steeds toe, maar steeds minder snel:
 de stijging van \(s\) neemt af.
+
+\begin{center}
+\begin{tikzpicture}[
+    x=0.65cm,
+    y=0.13cm,
+    >=stealth,
+    punt/.style={circle, fill=black, inner sep=1.5pt},
+    every node/.style={font=\small}
+]
+
+% ============================================================
+% 1. CONSTANTE TOENAME
+% ============================================================
+
+\begin{scope}[xshift=0cm]
+
+    \draw[->] (0,0) -- (5.2,0) node[right] {$t$};
+    \draw[->] (0,0) -- (0,23) node[above] {$s$};
+
+    % s = 5t
+    \draw[thick]
+        (0,0) -- (1,5) -- (2,10) -- (3,15) -- (4,20);
+
+    \foreach \x/\y in {0/0,1/5,2/10,3/15,4/20}
+        \node[punt] at (\x,\y) {};
+
+    \node[align=center] at (2.3,-5)
+        {\textbf{Constante toename}\\
+         $5,\;5,\;5,\;5$};
+
+\end{scope}
+
+
+% ============================================================
+% 2. STEEDS GROTERE TOENAME
+% ============================================================
+
+\begin{scope}[xshift=5.5cm]
+
+    \draw[->] (0,0) -- (5.2,0) node[right] {$t$};
+    \draw[->] (0,0) -- (0,23) node[above] {$s$};
+
+    % toenames: 2, 4, 6, 8
+    % cumulatief: 0, 2, 6, 12, 20
+    \draw[thick]
+        plot[smooth] coordinates {
+            (0,0)
+            (1,2)
+            (2,6)
+            (3,12)
+            (4,20)
+        };
+
+    \foreach \x/\y in {0/0,1/2,2/6,3/12,4/20}
+        \node[punt] at (\x,\y) {};
+
+    \node[align=center] at (2.3,-5)
+        {\textbf{Stijging neemt toe}\\
+         $2,\;4,\;6,\;8$};
+
+\end{scope}
+
+
+% ============================================================
+% 3. STEEDS KLEINERE TOENAME
+% ============================================================
+
+\begin{scope}[xshift=11cm]
+
+    \draw[->] (0,0) -- (5.2,0) node[right] {$t$};
+    \draw[->] (0,0) -- (0,23) node[above] {$s$};
+
+    % toenames: 8, 6, 4, 2
+    % cumulatief: 0, 8, 14, 18, 20
+    \draw[thick]
+        plot[smooth] coordinates {
+            (0,0)
+            (1,8)
+            (2,14)
+            (3,18)
+            (4,20)
+        };
+
+    \foreach \x/\y in {0/0,1/8,2/14,3/18,4/20}
+        \node[punt] at (\x,\y) {};
+
+    \node[align=center] at (2.3,-5)
+        {\textbf{Stijging neemt af}\\
+         $8,\;6,\;4,\;2$};
+
+\end{scope}
+
+\end{tikzpicture}
+\end{center}
 
 \begin{opmerking}[Interpretatie]
 Bij een afstand-tijdgrafiek zegt de steilheid iets over hoe snel de afstand verandert.
@@ -435,6 +490,7 @@ de omgevingstemperatuur nadert.
 
 \FVDsection{Onderzoeken met GeoGebra}
 
+\begin{geogebra}
 Onderzoek in GeoGebra de functies
 
 \[
@@ -464,38 +520,9 @@ r(x)=-\sqrt{x}
 
 op \(x\geq0\) en formuleer de overeenkomstige uitspraken over daling.
 
-\begin{opmerking}
-Gebruik GeoGebra om te onderzoeken en te controleren.
-De uiteindelijke conclusie moet je zelf in wiskundige taal kunnen formuleren en motiveren.
-\end{opmerking}
+\end{geogebra}
 
 
-% ============================================================
-% 11. SAMENVATTING
-% ============================================================
 
-\FVDsection{Samenvatting}
-
-\[
-\important{
-\text{stijgen of dalen}
-\longrightarrow
-\text{helling vergelijken}
-\longrightarrow
-\text{constant, toenemend of afnemend veranderen}
-}
-\]
-
-Onthoud:
-\begin{itemize}
-  \item stijgen/dalen en toenemende/afnemende stijging/daling zijn verschillende kenmerken;
-  \item vergelijk bij tabellen veranderingen over gelijke stappen in \(x\);
-  \item toenemende stijging betekent steeds steiler omhoog;
-  \item afnemende stijging betekent stijgen maar afvlakken;
-  \item toenemende daling betekent steeds steiler omlaag;
-  \item afnemende daling betekent dalen maar afvlakken;
-  \item constante stijging of daling hoort bij een constante helling;
-  \item de formele studie met afgeleiden volgt later.
-\end{itemize}
 
 \end{document}

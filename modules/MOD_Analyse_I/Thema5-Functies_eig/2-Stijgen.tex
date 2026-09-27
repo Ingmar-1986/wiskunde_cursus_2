@@ -119,6 +119,51 @@ Grafisch betekent dit:
 \end{array}
 \]
 
+\begin{center} 
+        \begin{tikzpicture}
+    
+            \begin{axis}[
+                        xlabel={$x$},
+                        ylabel={$y$},
+                        %axis equal image=true,
+                        grid,
+                        grid style={gray!50},
+                        grid=both,
+                    axis y line=center,
+                    axis x line=middle, 
+                    axis on top=true,
+                    xmin=-5,
+                    xmax=2,
+                    ymin=-5,
+                    ymax=25,
+                    ytick={\empty},
+                    xtick={\empty},
+                    x=2 cm,
+                        ]
+                \addplot+ [name path =A,domain=-5:3, samples=500, mark=none, ultra thick, teal] {(x+4)*(x-1)*(x-1)+4};
+                \addplot+ [draw=none, name path =B,domain=-5:3, samples=500, mark=none, ultra thick, teal] {-5};
+                \draw[red, very thick,fill=red]  (axis cs: 1,4) circle (0.5 mm) node[below,blue]{minimum};
+                \draw[red, very thick,fill=red]  (axis cs: -2.33,22.52) circle (0.5 mm) node[above,red]{maximum};
+                \node[teal] at (axis cs:-4,9) {$f(x)$};
+                \draw[dashed] (axis cs: -2.33,22.52) -- (axis cs: -2.33,0);
+                \draw[dashed] (axis cs: 1,4) -- (axis cs: 1,0);
+                \node[black] at (axis cs:1,-1) {$b$};
+                \node[black] at (axis cs:-2.33,-1) {$a$};
+                
+                \addplot+[green!20] fill between[of=A and B,soft clip={domain=-5:-2.33}] node[green!50!black] at (axis cs:-3,2) {stijgend}; % filling
+                \addplot+[green!20] fill between[of=A and B,soft clip={domain=1:6}]
+                node[green!50!black] at (axis cs:1.5,-2) {stijgend};
+                \addplot+[red!20] fill between[of=A and B,soft clip={domain=-2.33:1}]
+                node[red!50!black] at (axis cs:-1,2) {dalend};
+                
+                
+            \end{axis}
+            
+            
+            \end{tikzpicture}
+            
+     \end{center}
+
 \begin{opmerking}
 ``Stijgend'' betekent niet hetzelfde als ``positief''.
 Een grafiek kan volledig onder de \(x\)-as liggen en toch stijgen.
@@ -145,10 +190,10 @@ Beschouw een functie met onderstaande grafiek.
 \begin{axis}[
   width=12cm,height=6.5cm,
   axis lines=middle,
-  xmin=-5,xmax=6,ymin=-4,ymax=6,
+  xmin=-5,xmax=6,ymin=-4,ymax=8,
   xlabel={$x$},ylabel={$y$},
   grid=both,
-  xtick={-3,1,4},
+  xtick={-3,-2,...,4},
   samples=200
 ]
 \addplot[very thick,domain=-5:-3] {-0.5*(x+3)^2+4};
@@ -214,6 +259,62 @@ Deze drie begrippen zijn niet hetzelfde.
 
 Een lokaal extremum vergelijkt een functiewaarde met waarden \emph{in de buurt}.
 Een globaal extremum vergelijkt met \emph{alle} functiewaarden op het beschouwde domein.
+
+\begin{tikzpicture}[
+    x=1.25cm,
+    y=1.15cm,
+    >=stealth,
+    every node/.style={font=\small}
+]
+
+% Assen
+\draw[->, thick] (-1.7,0) -- (7.2,0) node[right] {$x$};
+\draw[->, thick] (0,-2.3) -- (0,2.8) node[above] {$y$};
+
+% Oorsprong
+\node[below left] at (0,0) {$0$};
+
+% Grafiek
+\draw[thick]
+    (-1.15,0.85)
+    .. controls (-0.75,2.00) and (-0.35,2.10) .. (-0.15,2.05)
+    .. controls (0.45,1.95) and (0.55,-1.65) .. (1.75,-1.65)
+    .. controls (2.65,-1.65) and (2.65,0.40) .. (3.45,0.40)
+    .. controls (4.15,0.40) and (4.15,-0.95) .. (4.85,-0.95)
+    .. controls (5.55,-0.95) and (5.25,1.75) .. (6.15,1.75)
+    .. controls (6.55,1.75) and (6.75,1.35) .. (6.95,1.15);
+
+% ============================================================
+% Extrema
+% ============================================================
+
+% Globaal maximum
+\fill (-0.15,2.05) circle (2pt);
+\draw[red, thick] (-0.65,2.05) -- (0.35,2.05);
+\node[above left] at (-0.15,2.05) {globaal maximum};
+
+% Globaal minimum
+\fill (1.75,-1.65) circle (2pt);
+\draw[red, thick] (1.25,-1.65) -- (2.25,-1.65);
+\node[below] at (1.75,-1.65) {globaal minimum};
+
+% Lokaal maximum
+\fill (3.45,0.40) circle (2pt);
+\draw[red, thick] (3.05,0.40) -- (3.85,0.40);
+\node[above] at (3.45,0.40) {lokaal maximum};
+
+% Lokaal minimum
+\fill (4.85,-0.95) circle (2pt);
+\draw[red, thick] (4.45,-0.95) -- (5.25,-0.95);
+\node[below] at (4.85,-0.95) {lokaal minimum};
+
+% Tweede lokaal maximum
+\fill (6.15,1.75) circle (2pt);
+\draw[red, thick] (5.75,1.75) -- (6.55,1.75);
+\node[above] at (6.15,1.75) {lokaal maximum};
+
+\end{tikzpicture}
+
 
 \begin{definitie}
 \(f(a)\) is een \textbf{globaal maximum} als
@@ -298,10 +399,10 @@ De hoogte \(h(t)\) van een drone wordt gedurende een testvlucht gemeten.
   grid=both,
   samples=200
 ]
-\addplot[very thick,domain=0:4] {10+15*x-1.5*x^2};
-\addplot[very thick,domain=4:7] {46};
-\addplot[very thick,domain=7:10] {46+10*(x-7)-1.5*(x-7)^2};
-\addplot[very thick,domain=10:12] {62.5-18*(x-10)};
+\addplot[red,very thick,domain=0:4] {10+15*x-1.5*x^2};
+\addplot[red,very thick,domain=4:7] {46};
+\addplot[red,very thick,domain=7:10] {46+10*(x-7)-1.5*(x-7)^2};
+\addplot[red,very thick,domain=10:12] {62.5-18*(x-10)};
 \end{axis}
 \end{tikzpicture}
 \end{center}
@@ -322,6 +423,7 @@ In de context zeggen we bijvoorbeeld:
 
 \FVDsection{Onderzoeken met GeoGebra}
 
+\begin{geogebra}
 Voer in GeoGebra bijvoorbeeld in:
 \[
 f(x)=x^3-3x.
@@ -337,38 +439,10 @@ Onderzoek de grafiek en:
   \item verander het voorschrift in \(g(x)=x^3-3x+4\).
         Welke verloopkenmerken veranderen en welke blijven behouden?
 \end{enumerate}
+\end{geogebra}
 
-\begin{opmerking}
-In dit hoofdstuk gebruiken we nog geen afgeleiden om stijgen, dalen en extrema te bepalen.
-We analyseren het gedrag rechtstreeks vanuit grafiek, functiewaarden en kenmerken.
-Later zullen afgeleiden hiervoor een krachtig nieuw instrument leveren.
-\end{opmerking}
 
-\FVDsection{Samenvatting}
 
-\[
-\boxed{
-\text{grafiek}
-\longleftrightarrow
-\text{stijgen/dalen/constant}
-\longleftrightarrow
-\text{extrema}
-\longleftrightarrow
-\text{verlooptabel}
-\longleftrightarrow
-\text{context}
-}
-\]
 
-Onthoud:
-\begin{itemize}
-  \item lees verloop steeds van links naar rechts;
-  \item stijgend/dalend gaat over verandering van functiewaarden, niet over hun teken;
-  \item stijgend \(\to\) dalend wijst op een lokaal maximum;
-  \item dalend \(\to\) stijgend wijst op een lokaal minimum;
-  \item onderscheid extremumplaats, extremumwaarde en extremumpunt;
-  \item lokaal en globaal zijn verschillende begrippen;
-  \item een verlooptabel moet je ook terug naar grafische informatie kunnen vertalen.
-\end{itemize}
 
 \end{document}

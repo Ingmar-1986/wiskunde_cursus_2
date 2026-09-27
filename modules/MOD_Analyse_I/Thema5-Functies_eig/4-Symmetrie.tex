@@ -82,9 +82,9 @@ g(x)=x^3.
  grid=both,samples=200,
  legend style={at={(0.03,0.97)},anchor=north west}
 ]
-\addplot[very thick,domain=-3:3] {x^2};
+\addplot[red,very thick,domain=-3:3] {x^2};
 \addlegendentry{\(f(x)=x^2\)}
-\addplot[very thick,dashed,domain=-1.7:1.7] {x^3};
+\addplot[blue,very thick,dashed,domain=-3:3] {x^3};
 \addlegendentry{\(g(x)=x^3\)}
 \end{axis}
 \end{tikzpicture}
@@ -391,7 +391,7 @@ delen van de grafiek.
 \end{opmerking}
 
 \FVDsection{Onderzoeken met GeoGebra}
-
+\begin{geogebra}
 Voer in GeoGebra in:
 \[
 f(x)=x^4-3x^2,\qquad
@@ -408,33 +408,7 @@ Onderzoek voor elke functie:
         welk overeenkomstig punt links moet liggen;
   \item controleer je voorspelling in GeoGebra.
 \end{enumerate}
+\end{geogebra}
 
-\begin{opmerking}
-Gebruik de grafiek om een vermoeden te vormen en het voorschrift om dat vermoeden
-algemeen te verantwoorden.
-\end{opmerking}
-
-\FVDsection{Samenvatting}
-
-\[
-\boxed{
-\begin{array}{ccl}
-f(-x)=f(x)
-&\Longleftrightarrow&
-\text{even: symmetrie t.o.v. de \(y\)-as},\\[2mm]
-f(-x)=-f(x)
-&\Longleftrightarrow&
-\text{oneven: puntsymmetrie t.o.v. de oorsprong}.
-\end{array}}
-\]
-
-Onthoud:
-\begin{itemize}
-  \item controleer ook het domein;
-  \item een functie kan even, oneven of geen van beide zijn;
-  \item grafische symmetrie en algebraïsche voorwaarden beschrijven hetzelfde kenmerk;
-  \item gebruik symmetrie om ontbrekende functiewaarden en grafiekdelen af te leiden;
-  \item enkele gecontroleerde punten zijn geen bewijs voor een uitspraak over alle \(x\).
-\end{itemize}
 
 \end{document}
